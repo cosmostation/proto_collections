@@ -5,7 +5,7 @@ import "cosmos/base/v1beta1/coin.proto";
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
 import "umee/peggy/v1/types.proto";
-import "google/protobuf/any.proto";
+import "google/protobuf2/any.proto";
 
 option go_package = "github.com/umee-network/umee/x/peggy/types";
 

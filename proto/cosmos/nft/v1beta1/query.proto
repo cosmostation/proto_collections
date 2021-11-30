@@ -35,12 +35,12 @@ service Query {
   }
 
   // Class queries an NFT class based on its id
-  rpc Class(QueryClassRequest) returns (QueryClassResponse) {
+  rpc NFTsClass(QueryClassRequest) returns (QueryClassResponse) {
     option (google.api.http).get = "/cosmos/nft/v1beta1/classes/{class_id}";
   }
 
   // Classes queries all NFT classes
-  rpc Classes(QueryClassesRequest) returns (QueryClassesResponse) {
+  rpc NFTsClasses(QueryClassesRequest) returns (QueryClassesResponse) {
     option (google.api.http).get = "/cosmos/nft/v1beta1/classes";
   }
 }
@@ -86,7 +86,7 @@ message QueryNFTsOfClassRequest {
 
 // QueryNFTsOfClassResponse is the response type for the Query/NFTsOfClass and Query/NFTsOfClassByOwner RPC methods
 message QueryNFTsOfClassResponse {
-  repeated cosmos.nft.v1beta1.NFT        nfts       = 1;
+  repeated cosmos.nft.v1beta1.CosmosNFT        nfts       = 1;
   cosmos.base.query.v1beta1.PageResponse pagination = 2;
 }
 
@@ -98,7 +98,7 @@ message QueryNFTRequest {
 
 // QueryNFTResponse is the response type for the Query/NFT RPC method
 message QueryNFTResponse {
-  cosmos.nft.v1beta1.NFT nft = 1;
+  cosmos.nft.v1beta1.CosmosNFT nft = 1;
 }
 
 // QueryClassRequest is the request type for the Query/Class RPC method
@@ -108,7 +108,7 @@ message QueryClassRequest {
 
 // QueryClassResponse is the response type for the Query/Class RPC method
 message QueryClassResponse {
-  cosmos.nft.v1beta1.Class class = 1;
+  cosmos.nft.v1beta1.CosmosNFTClass class = 1;
 }
 
 // QueryClassesRequest is the request type for the Query/Classes RPC method
@@ -119,6 +119,6 @@ message QueryClassesRequest {
 
 // QueryClassesResponse is the response type for the Query/Classes RPC method
 message QueryClassesResponse {
-  repeated cosmos.nft.v1beta1.Class      classes    = 1;
+  repeated cosmos.nft.v1beta1.CosmosNFTClass      classes    = 1;
   cosmos.base.query.v1beta1.PageResponse pagination = 2;
 }

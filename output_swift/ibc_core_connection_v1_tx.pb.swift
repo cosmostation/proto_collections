@@ -84,8 +84,8 @@ struct Ibc_Core_Connection_V1_MsgConnectionOpenTry {
   /// the connection identifier of the previous connection in state INIT
   var previousConnectionID: String = String()
 
-  var clientState: SwiftProtobuf.Google_Protobuf_Any {
-    get {return _clientState ?? SwiftProtobuf.Google_Protobuf_Any()}
+  var clientState: Google_Protobuf_Any {
+    get {return _clientState ?? Google_Protobuf_Any()}
     set {_clientState = newValue}
   }
   /// Returns true if `clientState` has been explicitly set.
@@ -140,7 +140,7 @@ struct Ibc_Core_Connection_V1_MsgConnectionOpenTry {
 
   init() {}
 
-  fileprivate var _clientState: SwiftProtobuf.Google_Protobuf_Any? = nil
+  fileprivate var _clientState: Google_Protobuf_Any? = nil
   fileprivate var _counterparty: Ibc_Core_Connection_V1_Counterparty? = nil
   fileprivate var _proofHeight: Ibc_Core_Client_V1_Height? = nil
   fileprivate var _consensusHeight: Ibc_Core_Client_V1_Height? = nil
@@ -177,8 +177,8 @@ struct Ibc_Core_Connection_V1_MsgConnectionOpenAck {
   /// Clears the value of `version`. Subsequent reads from it will return its default value.
   mutating func clearVersion() {self._version = nil}
 
-  var clientState: SwiftProtobuf.Google_Protobuf_Any {
-    get {return _clientState ?? SwiftProtobuf.Google_Protobuf_Any()}
+  var clientState: Google_Protobuf_Any {
+    get {return _clientState ?? Google_Protobuf_Any()}
     set {_clientState = newValue}
   }
   /// Returns true if `clientState` has been explicitly set.
@@ -221,7 +221,7 @@ struct Ibc_Core_Connection_V1_MsgConnectionOpenAck {
   init() {}
 
   fileprivate var _version: Ibc_Core_Connection_V1_Version? = nil
-  fileprivate var _clientState: SwiftProtobuf.Google_Protobuf_Any? = nil
+  fileprivate var _clientState: Google_Protobuf_Any? = nil
   fileprivate var _proofHeight: Ibc_Core_Client_V1_Height? = nil
   fileprivate var _consensusHeight: Ibc_Core_Client_V1_Height? = nil
 }

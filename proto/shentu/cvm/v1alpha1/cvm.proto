@@ -3,7 +3,6 @@ syntax = "proto3";
 package shentu.cvm.v1alpha1;
 
 import "gogoproto/gogo.proto";
-import "cosmos_proto/cosmos.proto";
 
 option go_package = "github.com/certikfoundation/shentu/x/cvm/types";
 option (gogoproto.goproto_stringer_all) = false;

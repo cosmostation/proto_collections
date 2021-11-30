@@ -57,12 +57,12 @@ internal protocol Cosmos_Nft_V1beta1_QueryClientProtocol: GRPCClient {
     callOptions: CallOptions?
   ) -> UnaryCall<Cosmos_Nft_V1beta1_QueryNFTRequest, Cosmos_Nft_V1beta1_QueryNFTResponse>
 
-  func class(
+  func nFTsClass(
     _ request: Cosmos_Nft_V1beta1_QueryClassRequest,
     callOptions: CallOptions?
   ) -> UnaryCall<Cosmos_Nft_V1beta1_QueryClassRequest, Cosmos_Nft_V1beta1_QueryClassResponse>
 
-  func classes(
+  func nFTsClasses(
     _ request: Cosmos_Nft_V1beta1_QueryClassesRequest,
     callOptions: CallOptions?
   ) -> UnaryCall<Cosmos_Nft_V1beta1_QueryClassesRequest, Cosmos_Nft_V1beta1_QueryClassesResponse>
@@ -166,36 +166,36 @@ extension Cosmos_Nft_V1beta1_QueryClientProtocol {
   /// Class queries an NFT class based on its id
   ///
   /// - Parameters:
-  ///   - request: Request to send to Class.
+  ///   - request: Request to send to NFTsClass.
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
-  internal func class(
+  internal func nFTsClass(
     _ request: Cosmos_Nft_V1beta1_QueryClassRequest,
     callOptions: CallOptions? = nil
   ) -> UnaryCall<Cosmos_Nft_V1beta1_QueryClassRequest, Cosmos_Nft_V1beta1_QueryClassResponse> {
     return self.makeUnaryCall(
-      path: "/cosmos.nft.v1beta1.Query/Class",
+      path: "/cosmos.nft.v1beta1.Query/NFTsClass",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
-      interceptors: self.interceptors?.makeClassInterceptors() ?? []
+      interceptors: self.interceptors?.makeNFTsClassInterceptors() ?? []
     )
   }
 
   /// Classes queries all NFT classes
   ///
   /// - Parameters:
-  ///   - request: Request to send to Classes.
+  ///   - request: Request to send to NFTsClasses.
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
-  internal func classes(
+  internal func nFTsClasses(
     _ request: Cosmos_Nft_V1beta1_QueryClassesRequest,
     callOptions: CallOptions? = nil
   ) -> UnaryCall<Cosmos_Nft_V1beta1_QueryClassesRequest, Cosmos_Nft_V1beta1_QueryClassesResponse> {
     return self.makeUnaryCall(
-      path: "/cosmos.nft.v1beta1.Query/Classes",
+      path: "/cosmos.nft.v1beta1.Query/NFTsClasses",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
-      interceptors: self.interceptors?.makeClassesInterceptors() ?? []
+      interceptors: self.interceptors?.makeNFTsClassesInterceptors() ?? []
     )
   }
 }
@@ -217,11 +217,11 @@ internal protocol Cosmos_Nft_V1beta1_QueryClientInterceptorFactoryProtocol {
   /// - Returns: Interceptors to use when invoking 'nFT'.
   func makeNFTInterceptors() -> [ClientInterceptor<Cosmos_Nft_V1beta1_QueryNFTRequest, Cosmos_Nft_V1beta1_QueryNFTResponse>]
 
-  /// - Returns: Interceptors to use when invoking 'class'.
-  func makeClassInterceptors() -> [ClientInterceptor<Cosmos_Nft_V1beta1_QueryClassRequest, Cosmos_Nft_V1beta1_QueryClassResponse>]
+  /// - Returns: Interceptors to use when invoking 'nFTsClass'.
+  func makeNFTsClassInterceptors() -> [ClientInterceptor<Cosmos_Nft_V1beta1_QueryClassRequest, Cosmos_Nft_V1beta1_QueryClassResponse>]
 
-  /// - Returns: Interceptors to use when invoking 'classes'.
-  func makeClassesInterceptors() -> [ClientInterceptor<Cosmos_Nft_V1beta1_QueryClassesRequest, Cosmos_Nft_V1beta1_QueryClassesResponse>]
+  /// - Returns: Interceptors to use when invoking 'nFTsClasses'.
+  func makeNFTsClassesInterceptors() -> [ClientInterceptor<Cosmos_Nft_V1beta1_QueryClassesRequest, Cosmos_Nft_V1beta1_QueryClassesResponse>]
 }
 
 internal final class Cosmos_Nft_V1beta1_QueryClient: Cosmos_Nft_V1beta1_QueryClientProtocol {
@@ -268,10 +268,10 @@ internal protocol Cosmos_Nft_V1beta1_QueryProvider: CallHandlerProvider {
   func nFT(request: Cosmos_Nft_V1beta1_QueryNFTRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Nft_V1beta1_QueryNFTResponse>
 
   /// Class queries an NFT class based on its id
-  func class(request: Cosmos_Nft_V1beta1_QueryClassRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Nft_V1beta1_QueryClassResponse>
+  func nFTsClass(request: Cosmos_Nft_V1beta1_QueryClassRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Nft_V1beta1_QueryClassResponse>
 
   /// Classes queries all NFT classes
-  func classes(request: Cosmos_Nft_V1beta1_QueryClassesRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Nft_V1beta1_QueryClassesResponse>
+  func nFTsClasses(request: Cosmos_Nft_V1beta1_QueryClassesRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Nft_V1beta1_QueryClassesResponse>
 }
 
 extension Cosmos_Nft_V1beta1_QueryProvider {
@@ -329,22 +329,22 @@ extension Cosmos_Nft_V1beta1_QueryProvider {
         userFunction: self.nFT(request:context:)
       )
 
-    case "Class":
+    case "NFTsClass":
       return UnaryServerHandler(
         context: context,
         requestDeserializer: ProtobufDeserializer<Cosmos_Nft_V1beta1_QueryClassRequest>(),
         responseSerializer: ProtobufSerializer<Cosmos_Nft_V1beta1_QueryClassResponse>(),
-        interceptors: self.interceptors?.makeClassInterceptors() ?? [],
-        userFunction: self.class(request:context:)
+        interceptors: self.interceptors?.makeNFTsClassInterceptors() ?? [],
+        userFunction: self.nFTsClass(request:context:)
       )
 
-    case "Classes":
+    case "NFTsClasses":
       return UnaryServerHandler(
         context: context,
         requestDeserializer: ProtobufDeserializer<Cosmos_Nft_V1beta1_QueryClassesRequest>(),
         responseSerializer: ProtobufSerializer<Cosmos_Nft_V1beta1_QueryClassesResponse>(),
-        interceptors: self.interceptors?.makeClassesInterceptors() ?? [],
-        userFunction: self.classes(request:context:)
+        interceptors: self.interceptors?.makeNFTsClassesInterceptors() ?? [],
+        userFunction: self.nFTsClasses(request:context:)
       )
 
     default:
@@ -375,11 +375,11 @@ internal protocol Cosmos_Nft_V1beta1_QueryServerInterceptorFactoryProtocol {
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeNFTInterceptors() -> [ServerInterceptor<Cosmos_Nft_V1beta1_QueryNFTRequest, Cosmos_Nft_V1beta1_QueryNFTResponse>]
 
-  /// - Returns: Interceptors to use when handling 'class'.
+  /// - Returns: Interceptors to use when handling 'nFTsClass'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeClassInterceptors() -> [ServerInterceptor<Cosmos_Nft_V1beta1_QueryClassRequest, Cosmos_Nft_V1beta1_QueryClassResponse>]
+  func makeNFTsClassInterceptors() -> [ServerInterceptor<Cosmos_Nft_V1beta1_QueryClassRequest, Cosmos_Nft_V1beta1_QueryClassResponse>]
 
-  /// - Returns: Interceptors to use when handling 'classes'.
+  /// - Returns: Interceptors to use when handling 'nFTsClasses'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeClassesInterceptors() -> [ServerInterceptor<Cosmos_Nft_V1beta1_QueryClassesRequest, Cosmos_Nft_V1beta1_QueryClassesResponse>]
+  func makeNFTsClassesInterceptors() -> [ServerInterceptor<Cosmos_Nft_V1beta1_QueryClassesRequest, Cosmos_Nft_V1beta1_QueryClassesResponse>]
 }

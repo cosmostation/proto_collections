@@ -3,8 +3,6 @@ package osmosis.txfees.v1beta1;
 
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
-import "google/protobuf/duration.proto";
-
 import "osmosis/txfees/v1beta1/feetoken.proto";
 
 option go_package = "github.com/osmosis-labs/osmosis/x/txfees/types";

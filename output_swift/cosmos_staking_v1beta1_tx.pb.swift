@@ -50,8 +50,8 @@ struct Cosmos_Staking_V1beta1_MsgCreateValidator {
 
   var validatorAddress: String = String()
 
-  var pubkey: SwiftProtobuf.Google_Protobuf_Any {
-    get {return _pubkey ?? SwiftProtobuf.Google_Protobuf_Any()}
+  var pubkey: Google_Protobuf_Any {
+    get {return _pubkey ?? Google_Protobuf_Any()}
     set {_pubkey = newValue}
   }
   /// Returns true if `pubkey` has been explicitly set.
@@ -74,7 +74,7 @@ struct Cosmos_Staking_V1beta1_MsgCreateValidator {
 
   fileprivate var _description_p: Cosmos_Staking_V1beta1_Description? = nil
   fileprivate var _commission: Cosmos_Staking_V1beta1_CommissionRates? = nil
-  fileprivate var _pubkey: SwiftProtobuf.Google_Protobuf_Any? = nil
+  fileprivate var _pubkey: Google_Protobuf_Any? = nil
   fileprivate var _value: Cosmos_Base_V1beta1_Coin? = nil
 }
 

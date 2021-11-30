@@ -1,7 +1,6 @@
 syntax = "proto3";
 package shentu.oracle.v1alpha1;
 
-import "cosmos/base/query/v1beta1/pagination.proto";
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
 import "shentu/oracle/v1alpha1/oracle.proto";
@@ -10,11 +9,11 @@ option go_package = "github.com/certikfoundation/shentu/x/oracle/types";
 
 // Query defines the gRPC querier service for oracle module.
 service Query {
-    rpc Operator(QueryOperatorRequest) returns (QueryOperatorResponse) {
+    rpc OracleOperator(QueryOperatorRequest) returns (QueryOperatorResponse) {
         option (google.api.http).get = "/shentu/oracle/v1alpha1/operator/{address}";
     }
 
-    rpc Operators(QueryOperatorsRequest) returns (QueryOperatorsResponse) {
+    rpc OracleOperators(QueryOperatorsRequest) returns (QueryOperatorsResponse) {
         option (google.api.http).get = "/shentu/oracle/v1alpha1/operators";
     }
 

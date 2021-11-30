@@ -27,7 +27,7 @@ struct Cosmos_Nft_V1beta1_GenesisState {
   // methods supported on all messages.
 
   /// class defines the class of the nft type.
-  var classes: [Cosmos_Nft_V1beta1_Class] = []
+  var classes: [Cosmos_Nft_V1beta1_CosmosNFTClass] = []
 
   var entries: [Cosmos_Nft_V1beta1_Entry] = []
 
@@ -46,7 +46,7 @@ struct Cosmos_Nft_V1beta1_Entry {
   var owner: String = String()
 
   /// nfts is a group of nfts of the same owner
-  var nfts: [Cosmos_Nft_V1beta1_NFT] = []
+  var nfts: [Cosmos_Nft_V1beta1_CosmosNFT] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 

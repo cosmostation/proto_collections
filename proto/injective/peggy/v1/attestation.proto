@@ -4,7 +4,7 @@ package injective.peggy.v1;
 // TODO-JT: add ERC20DeployedEvent claim
 
 import "gogoproto/gogo.proto";
-import "google/protobuf/any.proto";
+import "google/protobuf2/any.proto";
 
 option go_package = "github.com/InjectiveLabs/injective-core/injective-chain/modules/peggy/types";
 

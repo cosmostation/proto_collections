@@ -1,0 +1,12 @@
+syntax = "proto3";
+package starnamed.x.escrow.v1beta1;
+
+import "gogoproto/gogo.proto";
+
+option go_package = "github.com/iov-one/starnamed/x/escrow/types";
+option (gogoproto.goproto_getters_all) = false;
+
+// Params defines the parameters of the escrow module
+message Params {
+    bool module_enabled = 1;
+}

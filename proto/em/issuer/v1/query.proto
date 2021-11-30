@@ -2,7 +2,6 @@ syntax = "proto3";
 package em.issuer.v1;
 
 import "gogoproto/gogo.proto";
-import "cosmos/base/v1beta1/coin.proto";
 import "google/api/annotations.proto";
 import "em/issuer/v1/issuer.proto";
 

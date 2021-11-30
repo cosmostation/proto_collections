@@ -5,7 +5,7 @@ option go_package            = "github.com/cosmos/cosmos-sdk/x/evidence/types";
 option (gogoproto.equal_all) = true;
 
 import "gogoproto/gogo.proto";
-import "google/protobuf/any.proto";
+import "google/protobuf2/any.proto";
 import "cosmos_proto/cosmos.proto";
 
 // Msg defines the evidence Msg service.

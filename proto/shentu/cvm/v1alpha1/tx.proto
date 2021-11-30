@@ -2,8 +2,7 @@ syntax = "proto3";
 package shentu.cvm.v1alpha1;
 
 import "gogoproto/gogo.proto";
-import "shentu/cvm/v1alpha1/cvm.proto";
-import "burrow/payload.proto";
+import "shentu/burrow/payload.proto";
 
 option go_package = "github.com/certikfoundation/shentu/x/cvm/types";
 

@@ -3,7 +3,6 @@ package osmosis.epochs.v1beta1;
 
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
-import "cosmos/base/query/v1beta1/pagination.proto";
 import "osmosis/epochs/genesis.proto";
 
 option go_package = "github.com/osmosis-labs/osmosis/x/epochs/types";

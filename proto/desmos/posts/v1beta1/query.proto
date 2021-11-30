@@ -3,7 +3,6 @@ package desmos.posts.v1beta1;
 
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
-import "google/protobuf/timestamp.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
 import "desmos/posts/v1beta1/posts.proto";
 import "desmos/posts/v1beta1/reactions.proto";

@@ -2,7 +2,7 @@ syntax = "proto3";
 package cosmos.tx.signing.v1beta1;
 
 import "cosmos/crypto/multisig/v1beta1/multisig.proto";
-import "google/protobuf/any.proto";
+import "google/protobuf2/any.proto";
 
 option go_package = "github.com/cosmos/cosmos-sdk/types/tx/signing";
 

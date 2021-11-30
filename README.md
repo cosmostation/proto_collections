@@ -32,3 +32,13 @@ protoc --swift_out=output_swift  \
         -Iproto/ \
         $(find proto/* -iname "*.proto")
 ```
+
+
+## Notice
+cosmos modified proto's default library file.
+for just simple drag&drop for your project, you should modify your proto files import
+```shell
+import "google/protobuf/any.proto";
+-->
+import "google/protobuf2/any.proto";     
+```

@@ -2,7 +2,7 @@ syntax = "proto3";
 package cosmos.crypto.keyring.v1;
 
 import "gogoproto/gogo.proto";
-import "google/protobuf/any.proto";
+import "google/protobuf2/any.proto";
 import "cosmos/crypto/hd/v1/hd.proto";
 
 option go_package                      = "github.com/cosmos/cosmos-sdk/crypto/keyring";

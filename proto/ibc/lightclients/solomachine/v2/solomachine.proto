@@ -7,7 +7,7 @@ option go_package = "github.com/cosmos/ibc-go/v2/modules/light-clients/06-soloma
 import "ibc/core/connection/v1/connection.proto";
 import "ibc/core/channel/v1/channel.proto";
 import "gogoproto/gogo.proto";
-import "google/protobuf/any.proto";
+import "google/protobuf2/any.proto";
 
 // ClientState defines a solo machine client that tracks the current consensus
 // state and if the client is frozen.

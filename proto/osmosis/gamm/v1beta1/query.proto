@@ -7,7 +7,7 @@ import "osmosis/gamm/v1beta1/tx.proto";
 import "cosmos/base/v1beta1/coin.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
 import "google/api/annotations.proto";
-import "google/protobuf/any.proto";
+import "google/protobuf2/any.proto"; 
 import "cosmos_proto/cosmos.proto";
 
 option go_package = "github.com/osmosis-labs/osmosis/x/gamm/types";

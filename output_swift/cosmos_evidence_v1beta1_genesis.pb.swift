@@ -27,7 +27,7 @@ struct Cosmos_Evidence_V1beta1_GenesisState {
   // methods supported on all messages.
 
   /// evidence defines all the evidence at genesis.
-  var evidence: [SwiftProtobuf.Google_Protobuf_Any] = []
+  var evidence: [Google_Protobuf_Any] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 

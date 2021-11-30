@@ -9,7 +9,7 @@ import "cosmos/base/query/v1beta1/pagination.proto";
 import "ibc/core/client/v1/client.proto";
 import "ibc/core/connection/v1/connection.proto";
 import "google/api/annotations.proto";
-import "google/protobuf/any.proto";
+import "google/protobuf2/any.proto";
 
 // Query provides defines the gRPC querier service
 service Query {

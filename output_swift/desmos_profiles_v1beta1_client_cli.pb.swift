@@ -29,8 +29,8 @@ struct Desmos_Profiles_V1beta1_Client_ChainLinkJSON {
 
   /// Address contains the data of the external chain address to be connected
   /// with the Desmos profile
-  var address: SwiftProtobuf.Google_Protobuf_Any {
-    get {return _address ?? SwiftProtobuf.Google_Protobuf_Any()}
+  var address: Google_Protobuf_Any {
+    get {return _address ?? Google_Protobuf_Any()}
     set {_address = newValue}
   }
   /// Returns true if `address` has been explicitly set.
@@ -62,7 +62,7 @@ struct Desmos_Profiles_V1beta1_Client_ChainLinkJSON {
 
   init() {}
 
-  fileprivate var _address: SwiftProtobuf.Google_Protobuf_Any? = nil
+  fileprivate var _address: Google_Protobuf_Any? = nil
   fileprivate var _proof: Desmos_Profiles_V1beta1_Proof? = nil
   fileprivate var _chainConfig: Desmos_Profiles_V1beta1_ChainConfig? = nil
 }

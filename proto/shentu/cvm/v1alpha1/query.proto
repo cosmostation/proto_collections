@@ -3,9 +3,8 @@ package shentu.cvm.v1alpha1;
 
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
-import "shentu/cvm/v1alpha1/cvm.proto";
 import "cosmos/auth/v1beta1/auth.proto";
-import "burrow/acm.proto";
+import "shentu/burrow/acm.proto";
 
 option go_package = "github.com/certikfoundation/shentu/x/cvm/types";
 

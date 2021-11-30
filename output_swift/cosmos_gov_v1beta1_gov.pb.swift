@@ -216,8 +216,8 @@ struct Cosmos_Gov_V1beta1_Proposal {
 
   var proposalID: UInt64 = 0
 
-  var content: SwiftProtobuf.Google_Protobuf_Any {
-    get {return _content ?? SwiftProtobuf.Google_Protobuf_Any()}
+  var content: Google_Protobuf_Any {
+    get {return _content ?? Google_Protobuf_Any()}
     set {_content = newValue}
   }
   /// Returns true if `content` has been explicitly set.
@@ -278,7 +278,7 @@ struct Cosmos_Gov_V1beta1_Proposal {
 
   init() {}
 
-  fileprivate var _content: SwiftProtobuf.Google_Protobuf_Any? = nil
+  fileprivate var _content: Google_Protobuf_Any? = nil
   fileprivate var _finalTallyResult: Cosmos_Gov_V1beta1_TallyResult? = nil
   fileprivate var _submitTime: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
   fileprivate var _depositEndTime: SwiftProtobuf.Google_Protobuf_Timestamp? = nil

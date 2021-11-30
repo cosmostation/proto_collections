@@ -2,9 +2,8 @@ syntax = "proto3";
 package shentu.cert.v1alpha1;
 
 import "gogoproto/gogo.proto";
-import "google/protobuf/any.proto";
+import "google/protobuf2/any.proto"; 
 import "cosmos_proto/cosmos.proto";
-import "shentu/cert/v1alpha1/cert.proto";
 
 option go_package = "github.com/certikfoundation/shentu/x/cert/types";
 

@@ -21,7 +21,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// Class defines the class of the nft type.
-struct Cosmos_Nft_V1beta1_Class {
+struct Cosmos_Nft_V1beta1_CosmosNFTClass {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -45,8 +45,8 @@ struct Cosmos_Nft_V1beta1_Class {
   var uriHash: String = String()
 
   /// data is the metadata of NFT classification,optional
-  var data: SwiftProtobuf.Google_Protobuf_Any {
-    get {return _data ?? SwiftProtobuf.Google_Protobuf_Any()}
+  var data: Google_Protobuf_Any {
+    get {return _data ?? Google_Protobuf_Any()}
     set {_data = newValue}
   }
   /// Returns true if `data` has been explicitly set.
@@ -58,11 +58,11 @@ struct Cosmos_Nft_V1beta1_Class {
 
   init() {}
 
-  fileprivate var _data: SwiftProtobuf.Google_Protobuf_Any? = nil
+  fileprivate var _data: Google_Protobuf_Any? = nil
 }
 
 /// NFT defines the NFT.
-struct Cosmos_Nft_V1beta1_NFT {
+struct Cosmos_Nft_V1beta1_CosmosNFT {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -80,8 +80,8 @@ struct Cosmos_Nft_V1beta1_NFT {
   var uriHash: String = String()
 
   /// data is the metadata of the NFT,optional
-  var data: SwiftProtobuf.Google_Protobuf_Any {
-    get {return _data ?? SwiftProtobuf.Google_Protobuf_Any()}
+  var data: Google_Protobuf_Any {
+    get {return _data ?? Google_Protobuf_Any()}
     set {_data = newValue}
   }
   /// Returns true if `data` has been explicitly set.
@@ -93,15 +93,15 @@ struct Cosmos_Nft_V1beta1_NFT {
 
   init() {}
 
-  fileprivate var _data: SwiftProtobuf.Google_Protobuf_Any? = nil
+  fileprivate var _data: Google_Protobuf_Any? = nil
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.nft.v1beta1"
 
-extension Cosmos_Nft_V1beta1_Class: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Class"
+extension Cosmos_Nft_V1beta1_CosmosNFTClass: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".CosmosNFTClass"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "id"),
     2: .same(proto: "name"),
@@ -155,7 +155,7 @@ extension Cosmos_Nft_V1beta1_Class: SwiftProtobuf.Message, SwiftProtobuf._Messag
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Cosmos_Nft_V1beta1_Class, rhs: Cosmos_Nft_V1beta1_Class) -> Bool {
+  static func ==(lhs: Cosmos_Nft_V1beta1_CosmosNFTClass, rhs: Cosmos_Nft_V1beta1_CosmosNFTClass) -> Bool {
     if lhs.id != rhs.id {return false}
     if lhs.name != rhs.name {return false}
     if lhs.symbol != rhs.symbol {return false}
@@ -168,8 +168,8 @@ extension Cosmos_Nft_V1beta1_Class: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension Cosmos_Nft_V1beta1_NFT: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".NFT"
+extension Cosmos_Nft_V1beta1_CosmosNFT: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".CosmosNFT"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "class_id"),
     2: .same(proto: "id"),
@@ -213,7 +213,7 @@ extension Cosmos_Nft_V1beta1_NFT: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Cosmos_Nft_V1beta1_NFT, rhs: Cosmos_Nft_V1beta1_NFT) -> Bool {
+  static func ==(lhs: Cosmos_Nft_V1beta1_CosmosNFT, rhs: Cosmos_Nft_V1beta1_CosmosNFT) -> Bool {
     if lhs.classID != rhs.classID {return false}
     if lhs.id != rhs.id {return false}
     if lhs.uri != rhs.uri {return false}

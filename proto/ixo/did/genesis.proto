@@ -1,0 +1,13 @@
+syntax = "proto3";
+package did;
+
+import "gogoproto/gogo.proto";
+import "google/protobuf2/any.proto";
+
+option go_package = "github.com/ixofoundation/ixo-blockchain/x/did/types";
+option java_package = "ixo.did";
+
+// GenesisState defines the did module's genesis state.
+message GenesisState {
+  repeated google.protobuf.Any did_docs = 1 [(gogoproto.moretags) = "yaml:\"did_docs\""];
+}

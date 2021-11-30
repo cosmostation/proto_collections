@@ -134,7 +134,7 @@ struct Cosmos_Nft_V1beta1_QueryNFTsOfClassResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var nfts: [Cosmos_Nft_V1beta1_NFT] = []
+  var nfts: [Cosmos_Nft_V1beta1_CosmosNFT] = []
 
   var pagination: Cosmos_Base_Query_V1beta1_PageResponse {
     get {return _pagination ?? Cosmos_Base_Query_V1beta1_PageResponse()}
@@ -173,8 +173,8 @@ struct Cosmos_Nft_V1beta1_QueryNFTResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var nft: Cosmos_Nft_V1beta1_NFT {
-    get {return _nft ?? Cosmos_Nft_V1beta1_NFT()}
+  var nft: Cosmos_Nft_V1beta1_CosmosNFT {
+    get {return _nft ?? Cosmos_Nft_V1beta1_CosmosNFT()}
     set {_nft = newValue}
   }
   /// Returns true if `nft` has been explicitly set.
@@ -186,7 +186,7 @@ struct Cosmos_Nft_V1beta1_QueryNFTResponse {
 
   init() {}
 
-  fileprivate var _nft: Cosmos_Nft_V1beta1_NFT? = nil
+  fileprivate var _nft: Cosmos_Nft_V1beta1_CosmosNFT? = nil
 }
 
 /// QueryClassRequest is the request type for the Query/Class RPC method
@@ -208,8 +208,8 @@ struct Cosmos_Nft_V1beta1_QueryClassResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var `class`: Cosmos_Nft_V1beta1_Class {
-    get {return _class ?? Cosmos_Nft_V1beta1_Class()}
+  var `class`: Cosmos_Nft_V1beta1_CosmosNFTClass {
+    get {return _class ?? Cosmos_Nft_V1beta1_CosmosNFTClass()}
     set {_class = newValue}
   }
   /// Returns true if ``class`` has been explicitly set.
@@ -221,7 +221,7 @@ struct Cosmos_Nft_V1beta1_QueryClassResponse {
 
   init() {}
 
-  fileprivate var _class: Cosmos_Nft_V1beta1_Class? = nil
+  fileprivate var _class: Cosmos_Nft_V1beta1_CosmosNFTClass? = nil
 }
 
 /// QueryClassesRequest is the request type for the Query/Classes RPC method
@@ -253,7 +253,7 @@ struct Cosmos_Nft_V1beta1_QueryClassesResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var classes: [Cosmos_Nft_V1beta1_Class] = []
+  var classes: [Cosmos_Nft_V1beta1_CosmosNFTClass] = []
 
   var pagination: Cosmos_Base_Query_V1beta1_PageResponse {
     get {return _pagination ?? Cosmos_Base_Query_V1beta1_PageResponse()}
