@@ -69,7 +69,7 @@ message QueryClientStateRequest {
 // which the proof was retrieved.
 message QueryClientStateResponse {
   // client state associated with the request identifier
-  google.protobuf.Any client_state = 1;
+  google.protobuf2.Any client_state = 1;
   // merkle proof of existence
   bytes proof = 2;
   // height at which the proof was retrieved
@@ -112,7 +112,7 @@ message QueryConsensusStateRequest {
 // RPC method
 message QueryConsensusStateResponse {
   // consensus state associated with the client identifier at the given height
-  google.protobuf.Any consensus_state = 1;
+  google.protobuf2.Any consensus_state = 1;
   // merkle proof of existence
   bytes proof = 2;
   // height at which the proof was retrieved
@@ -169,7 +169,7 @@ message QueryUpgradedClientStateRequest {}
 // Query/UpgradedClientState RPC method.
 message QueryUpgradedClientStateResponse {
   // client state associated with the request identifier
-  google.protobuf.Any upgraded_client_state = 1;
+  google.protobuf2.Any upgraded_client_state = 1;
 }
 
 // QueryUpgradedConsensusStateRequest is the request type for the
@@ -180,5 +180,5 @@ message QueryUpgradedConsensusStateRequest {}
 // Query/UpgradedConsensusState RPC method.
 message QueryUpgradedConsensusStateResponse {
   // Consensus state associated with the request identifier
-  google.protobuf.Any upgraded_consensus_state = 1;
+  google.protobuf2.Any upgraded_consensus_state = 1;
 }

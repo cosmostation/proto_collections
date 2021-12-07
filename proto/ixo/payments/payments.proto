@@ -55,7 +55,7 @@ message Subscription {
   string periods_so_far      = 3 [(gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Uint", (gogoproto.nullable) = false, (gogoproto.moretags) = "yaml:\"periods_so_far\""];
   string max_periods         = 4 [(gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Uint", (gogoproto.nullable) = false, (gogoproto.moretags) = "yaml:\"max_periods\""];
   string periods_accumulated = 5 [(gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Uint", (gogoproto.nullable) = false, (gogoproto.moretags) = "yaml:\"periods_accumulated\""];
-  google.protobuf.Any period = 6 [(gogoproto.moretags) = "yaml:\"period\""];
+  google.protobuf2.Any period = 6 [(gogoproto.moretags) = "yaml:\"period\""];
 }
 
 // BlockPeriod implements the Period interface and specifies a period in terms of number

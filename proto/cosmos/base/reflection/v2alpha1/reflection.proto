@@ -71,7 +71,7 @@ message InterfaceDescriptor {
   // fullname is the name of the interface
   string fullname = 1;
   // interface_accepting_messages contains information regarding the proto messages which contain the interface as
-  // google.protobuf.Any field
+  // google.protobuf2.Any field
   repeated InterfaceAcceptingMessageDescriptor interface_accepting_messages = 2;
   // interface_implementers is a list of the descriptors of the interface implementers
   repeated InterfaceImplementerDescriptor interface_implementers = 3;
@@ -82,19 +82,19 @@ message InterfaceImplementerDescriptor {
   // fullname is the protobuf queryable name of the interface implementer
   string fullname = 1;
   // type_url defines the type URL used when marshalling the type as any
-  // this is required so we can provide type safe google.protobuf.Any marshalling and
+  // this is required so we can provide type safe google.protobuf2.Any marshalling and
   // unmarshalling, making sure that we don't accept just 'any' type
   // in our interface fields
   string type_url = 2;
 }
 
 // InterfaceAcceptingMessageDescriptor describes a protobuf message which contains
-// an interface represented as a google.protobuf.Any
+// an interface represented as a google.protobuf2.Any
 message InterfaceAcceptingMessageDescriptor {
   // fullname is the protobuf fullname of the type containing the interface
   string fullname = 1;
   // field_descriptor_names is a list of the protobuf name (not fullname) of the field
-  // which contains the interface as google.protobuf.Any (the interface is the same, but
+  // which contains the interface as google.protobuf2.Any (the interface is the same, but
   // it can be in multiple fields of the same proto message)
   repeated string field_descriptor_names = 2;
 }

@@ -43,7 +43,7 @@ message Certificate {
     option (gogoproto.goproto_getters) = false;
 
     uint64 certificate_id = 1 [ (gogoproto.moretags) = "yaml:\"certificate_id\"" ];
-    google.protobuf.Any content = 2 [ (cosmos_proto.accepts_interface) = "Content" ];
+    google.protobuf2.Any content = 2 [ (cosmos_proto.accepts_interface) = "Content" ];
     CompilationContent compilation_content = 3 [ (gogoproto.moretags) = "yaml:\"compilation_content\"" ];
     string description = 4 [ (gogoproto.moretags) = "yaml:\"description\"" ];
     string certifier = 5 [ (gogoproto.moretags) = "yaml:\"certifier\"" ];
@@ -105,7 +105,7 @@ message Platform {
     option (gogoproto.equal) = false;
     option (gogoproto.goproto_getters) = false;
     
-    google.protobuf.Any validator_pubkey = 1 [(cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];
+    google.protobuf2.Any validator_pubkey = 1 [(cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];
     string description = 2;
 }
 

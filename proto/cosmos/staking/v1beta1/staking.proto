@@ -91,7 +91,7 @@ message Validator {
   // operator_address defines the address of the validator's operator; bech encoded in JSON.
   string operator_address = 1 [(cosmos_proto.scalar) = "cosmos.AddressString"];
   // consensus_pubkey is the consensus public key of the validator, as a Protobuf Any.
-  google.protobuf.Any consensus_pubkey = 2 [(cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];
+  google.protobuf2.Any consensus_pubkey = 2 [(cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];
   // jailed defined whether the validator has been jailed from bonded status or not.
   bool jailed = 3;
   // status is the validator status (bonded/unbonding/unbonded).

@@ -97,11 +97,11 @@ private static final long serialVersionUID = 0L;
           }
           case 26: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              extensions_ = new java.util.ArrayList<com.google.protobuf.Any>();
+              extensions_ = new java.util.ArrayList<com.google.protobuf2.Any>();
               mutable_bitField0_ |= 0x00000001;
             }
             extensions_.add(
-                input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry));
+                input.readMessage(com.google.protobuf2.Any.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -201,17 +201,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int EXTENSIONS_FIELD_NUMBER = 3;
-  private java.util.List<com.google.protobuf.Any> extensions_;
+  private java.util.List<com.google.protobuf2.Any> extensions_;
   /**
    * <pre>
    * Application specific response metadata. Must be set in the first response
    * for streaming APIs.
    * </pre>
    *
-   * <code>repeated .google.protobuf.Any extensions = 3;</code>
+   * <code>repeated .google.protobuf2.Any extensions = 3;</code>
    */
   @java.lang.Override
-  public java.util.List<com.google.protobuf.Any> getExtensionsList() {
+  public java.util.List<com.google.protobuf2.Any> getExtensionsList() {
     return extensions_;
   }
   /**
@@ -220,10 +220,10 @@ private static final long serialVersionUID = 0L;
    * for streaming APIs.
    * </pre>
    *
-   * <code>repeated .google.protobuf.Any extensions = 3;</code>
+   * <code>repeated .google.protobuf2.Any extensions = 3;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
+  public java.util.List<? extends com.google.protobuf2.AnyOrBuilder> 
       getExtensionsOrBuilderList() {
     return extensions_;
   }
@@ -233,7 +233,7 @@ private static final long serialVersionUID = 0L;
    * for streaming APIs.
    * </pre>
    *
-   * <code>repeated .google.protobuf.Any extensions = 3;</code>
+   * <code>repeated .google.protobuf2.Any extensions = 3;</code>
    */
   @java.lang.Override
   public int getExtensionsCount() {
@@ -245,10 +245,10 @@ private static final long serialVersionUID = 0L;
    * for streaming APIs.
    * </pre>
    *
-   * <code>repeated .google.protobuf.Any extensions = 3;</code>
+   * <code>repeated .google.protobuf2.Any extensions = 3;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.Any getExtensions(int index) {
+  public com.google.protobuf2.Any getExtensions(int index) {
     return extensions_.get(index);
   }
   /**
@@ -257,10 +257,10 @@ private static final long serialVersionUID = 0L;
    * for streaming APIs.
    * </pre>
    *
-   * <code>repeated .google.protobuf.Any extensions = 3;</code>
+   * <code>repeated .google.protobuf2.Any extensions = 3;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.AnyOrBuilder getExtensionsOrBuilder(
+  public com.google.protobuf2.AnyOrBuilder getExtensionsOrBuilder(
       int index) {
     return extensions_.get(index);
   }
@@ -815,17 +815,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.util.List<com.google.protobuf.Any> extensions_ =
+    private java.util.List<com.google.protobuf2.Any> extensions_ =
       java.util.Collections.emptyList();
     private void ensureExtensionsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        extensions_ = new java.util.ArrayList<com.google.protobuf.Any>(extensions_);
+        extensions_ = new java.util.ArrayList<com.google.protobuf2.Any>(extensions_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> extensionsBuilder_;
+        com.google.protobuf2.Any, com.google.protobuf2.Any.Builder, com.google.protobuf2.AnyOrBuilder> extensionsBuilder_;
 
     /**
      * <pre>
@@ -833,9 +833,9 @@ private static final long serialVersionUID = 0L;
      * for streaming APIs.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any extensions = 3;</code>
+     * <code>repeated .google.protobuf2.Any extensions = 3;</code>
      */
-    public java.util.List<com.google.protobuf.Any> getExtensionsList() {
+    public java.util.List<com.google.protobuf2.Any> getExtensionsList() {
       if (extensionsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(extensions_);
       } else {
@@ -848,7 +848,7 @@ private static final long serialVersionUID = 0L;
      * for streaming APIs.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any extensions = 3;</code>
+     * <code>repeated .google.protobuf2.Any extensions = 3;</code>
      */
     public int getExtensionsCount() {
       if (extensionsBuilder_ == null) {
@@ -863,9 +863,9 @@ private static final long serialVersionUID = 0L;
      * for streaming APIs.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any extensions = 3;</code>
+     * <code>repeated .google.protobuf2.Any extensions = 3;</code>
      */
-    public com.google.protobuf.Any getExtensions(int index) {
+    public com.google.protobuf2.Any getExtensions(int index) {
       if (extensionsBuilder_ == null) {
         return extensions_.get(index);
       } else {
@@ -878,10 +878,10 @@ private static final long serialVersionUID = 0L;
      * for streaming APIs.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any extensions = 3;</code>
+     * <code>repeated .google.protobuf2.Any extensions = 3;</code>
      */
     public Builder setExtensions(
-        int index, com.google.protobuf.Any value) {
+        int index, com.google.protobuf2.Any value) {
       if (extensionsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -900,10 +900,10 @@ private static final long serialVersionUID = 0L;
      * for streaming APIs.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any extensions = 3;</code>
+     * <code>repeated .google.protobuf2.Any extensions = 3;</code>
      */
     public Builder setExtensions(
-        int index, com.google.protobuf.Any.Builder builderForValue) {
+        int index, com.google.protobuf2.Any.Builder builderForValue) {
       if (extensionsBuilder_ == null) {
         ensureExtensionsIsMutable();
         extensions_.set(index, builderForValue.build());
@@ -919,9 +919,9 @@ private static final long serialVersionUID = 0L;
      * for streaming APIs.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any extensions = 3;</code>
+     * <code>repeated .google.protobuf2.Any extensions = 3;</code>
      */
-    public Builder addExtensions(com.google.protobuf.Any value) {
+    public Builder addExtensions(com.google.protobuf2.Any value) {
       if (extensionsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -940,10 +940,10 @@ private static final long serialVersionUID = 0L;
      * for streaming APIs.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any extensions = 3;</code>
+     * <code>repeated .google.protobuf2.Any extensions = 3;</code>
      */
     public Builder addExtensions(
-        int index, com.google.protobuf.Any value) {
+        int index, com.google.protobuf2.Any value) {
       if (extensionsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -962,10 +962,10 @@ private static final long serialVersionUID = 0L;
      * for streaming APIs.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any extensions = 3;</code>
+     * <code>repeated .google.protobuf2.Any extensions = 3;</code>
      */
     public Builder addExtensions(
-        com.google.protobuf.Any.Builder builderForValue) {
+        com.google.protobuf2.Any.Builder builderForValue) {
       if (extensionsBuilder_ == null) {
         ensureExtensionsIsMutable();
         extensions_.add(builderForValue.build());
@@ -981,10 +981,10 @@ private static final long serialVersionUID = 0L;
      * for streaming APIs.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any extensions = 3;</code>
+     * <code>repeated .google.protobuf2.Any extensions = 3;</code>
      */
     public Builder addExtensions(
-        int index, com.google.protobuf.Any.Builder builderForValue) {
+        int index, com.google.protobuf2.Any.Builder builderForValue) {
       if (extensionsBuilder_ == null) {
         ensureExtensionsIsMutable();
         extensions_.add(index, builderForValue.build());
@@ -1000,10 +1000,10 @@ private static final long serialVersionUID = 0L;
      * for streaming APIs.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any extensions = 3;</code>
+     * <code>repeated .google.protobuf2.Any extensions = 3;</code>
      */
     public Builder addAllExtensions(
-        java.lang.Iterable<? extends com.google.protobuf.Any> values) {
+        java.lang.Iterable<? extends com.google.protobuf2.Any> values) {
       if (extensionsBuilder_ == null) {
         ensureExtensionsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -1020,7 +1020,7 @@ private static final long serialVersionUID = 0L;
      * for streaming APIs.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any extensions = 3;</code>
+     * <code>repeated .google.protobuf2.Any extensions = 3;</code>
      */
     public Builder clearExtensions() {
       if (extensionsBuilder_ == null) {
@@ -1038,7 +1038,7 @@ private static final long serialVersionUID = 0L;
      * for streaming APIs.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any extensions = 3;</code>
+     * <code>repeated .google.protobuf2.Any extensions = 3;</code>
      */
     public Builder removeExtensions(int index) {
       if (extensionsBuilder_ == null) {
@@ -1056,9 +1056,9 @@ private static final long serialVersionUID = 0L;
      * for streaming APIs.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any extensions = 3;</code>
+     * <code>repeated .google.protobuf2.Any extensions = 3;</code>
      */
-    public com.google.protobuf.Any.Builder getExtensionsBuilder(
+    public com.google.protobuf2.Any.Builder getExtensionsBuilder(
         int index) {
       return getExtensionsFieldBuilder().getBuilder(index);
     }
@@ -1068,9 +1068,9 @@ private static final long serialVersionUID = 0L;
      * for streaming APIs.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any extensions = 3;</code>
+     * <code>repeated .google.protobuf2.Any extensions = 3;</code>
      */
-    public com.google.protobuf.AnyOrBuilder getExtensionsOrBuilder(
+    public com.google.protobuf2.AnyOrBuilder getExtensionsOrBuilder(
         int index) {
       if (extensionsBuilder_ == null) {
         return extensions_.get(index);  } else {
@@ -1083,9 +1083,9 @@ private static final long serialVersionUID = 0L;
      * for streaming APIs.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any extensions = 3;</code>
+     * <code>repeated .google.protobuf2.Any extensions = 3;</code>
      */
-    public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
+    public java.util.List<? extends com.google.protobuf2.AnyOrBuilder> 
          getExtensionsOrBuilderList() {
       if (extensionsBuilder_ != null) {
         return extensionsBuilder_.getMessageOrBuilderList();
@@ -1099,11 +1099,11 @@ private static final long serialVersionUID = 0L;
      * for streaming APIs.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any extensions = 3;</code>
+     * <code>repeated .google.protobuf2.Any extensions = 3;</code>
      */
-    public com.google.protobuf.Any.Builder addExtensionsBuilder() {
+    public com.google.protobuf2.Any.Builder addExtensionsBuilder() {
       return getExtensionsFieldBuilder().addBuilder(
-          com.google.protobuf.Any.getDefaultInstance());
+          com.google.protobuf2.Any.getDefaultInstance());
     }
     /**
      * <pre>
@@ -1111,12 +1111,12 @@ private static final long serialVersionUID = 0L;
      * for streaming APIs.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any extensions = 3;</code>
+     * <code>repeated .google.protobuf2.Any extensions = 3;</code>
      */
-    public com.google.protobuf.Any.Builder addExtensionsBuilder(
+    public com.google.protobuf2.Any.Builder addExtensionsBuilder(
         int index) {
       return getExtensionsFieldBuilder().addBuilder(
-          index, com.google.protobuf.Any.getDefaultInstance());
+          index, com.google.protobuf2.Any.getDefaultInstance());
     }
     /**
      * <pre>
@@ -1124,18 +1124,18 @@ private static final long serialVersionUID = 0L;
      * for streaming APIs.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any extensions = 3;</code>
+     * <code>repeated .google.protobuf2.Any extensions = 3;</code>
      */
-    public java.util.List<com.google.protobuf.Any.Builder> 
+    public java.util.List<com.google.protobuf2.Any.Builder> 
          getExtensionsBuilderList() {
       return getExtensionsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+        com.google.protobuf2.Any, com.google.protobuf2.Any.Builder, com.google.protobuf2.AnyOrBuilder> 
         getExtensionsFieldBuilder() {
       if (extensionsBuilder_ == null) {
         extensionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+            com.google.protobuf2.Any, com.google.protobuf2.Any.Builder, com.google.protobuf2.AnyOrBuilder>(
                 extensions_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),

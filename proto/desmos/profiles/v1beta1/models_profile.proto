@@ -17,7 +17,7 @@ message Profile {
   option (gogoproto.goproto_stringer) = false;
 
   // Account represents the base Cosmos account associated with this profile
-  google.protobuf.Any account = 1
+  google.protobuf2.Any account = 1
       [ (cosmos_proto.accepts_interface) = "AccountI" ];
 
   // DTag represents the unique tag of this profile

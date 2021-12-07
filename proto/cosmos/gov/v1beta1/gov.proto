@@ -69,7 +69,7 @@ message Proposal {
   option (gogoproto.equal) = true;
 
   uint64                    proposal_id           = 1 [(gogoproto.jsontag) = "id"];
-  google.protobuf.Any       content               = 2 [(cosmos_proto.accepts_interface) = "Content"];
+  google.protobuf2.Any       content               = 2 [(cosmos_proto.accepts_interface) = "Content"];
   ProposalStatus            status                = 3;
   TallyResult               final_tally_result    = 4 [(gogoproto.nullable) = false];
   google.protobuf.Timestamp submit_time           = 5 [(gogoproto.stdtime) = true, (gogoproto.nullable) = false];

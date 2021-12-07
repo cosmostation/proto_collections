@@ -39,7 +39,7 @@ message Attestation {
   bool                observed         = 1;
   repeated string     votes            = 2;
   uint64              height           = 3;
-  google.protobuf.Any claim            = 4;
+  google.protobuf2.Any claim            = 4;
 }
 
 // ERC20Token unique identifier for an Ethereum ERC20 token.

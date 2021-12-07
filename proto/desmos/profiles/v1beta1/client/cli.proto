@@ -16,7 +16,7 @@ message ChainLinkJSON {
 
   // Address contains the data of the external chain address to be connected
   // with the Desmos profile
-  google.protobuf.Any address = 1 [
+  google.protobuf2.Any address = 1 [
     (gogoproto.moretags) = "yaml:\"address\"",
     (cosmos_proto.accepts_interface) = "AddressData"
   ];

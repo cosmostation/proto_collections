@@ -71,7 +71,7 @@ message QueryPlansRequest {
 // QueryPlansResponse is the response type for the Query/Plans RPC method.
 message QueryPlansResponse {
   // plans are the existing plans
-  repeated google.protobuf.Any plans = 1 [(cosmos_proto.accepts_interface) = "PlanI"];
+  repeated google.protobuf2.Any plans = 1 [(cosmos_proto.accepts_interface) = "PlanI"];
 
   // pagination defines the pagination in the response.
   cosmos.base.query.v1beta1.PageResponse pagination = 2;
@@ -84,7 +84,7 @@ message QueryPlanRequest {
 
 // QueryPlanResponse is the response type for the Query/Plan RPC method.
 message QueryPlanResponse {
-  google.protobuf.Any plan = 1 [(cosmos_proto.accepts_interface) = "PlanI"];
+  google.protobuf2.Any plan = 1 [(cosmos_proto.accepts_interface) = "PlanI"];
 }
 
 // QueryStakingsRequest is the request type for the Query/Stakings RPC method.

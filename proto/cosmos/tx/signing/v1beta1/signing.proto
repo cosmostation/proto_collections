@@ -44,7 +44,7 @@ message SignatureDescriptors {
 // clients.
 message SignatureDescriptor {
   // public_key is the public key of the signer
-  google.protobuf.Any public_key = 1;
+  google.protobuf2.Any public_key = 1;
 
   Data data = 2;
 

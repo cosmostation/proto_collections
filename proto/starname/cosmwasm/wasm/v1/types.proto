@@ -85,7 +85,7 @@ message ContractInfo {
 
   // Extension is an extension point to store custom metadata within the
   // persistence model.
-  google.protobuf.Any extension = 7
+  google.protobuf2.Any extension = 7
       [ (cosmos_proto.accepts_interface) = "ContractInfoExtension" ];
 }
 

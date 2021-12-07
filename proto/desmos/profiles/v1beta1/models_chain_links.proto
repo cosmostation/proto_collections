@@ -20,7 +20,7 @@ message ChainLink {
 
   // Address contains the data of the external chain address to be connected
   // with the Desmos profile
-  google.protobuf.Any address = 2 [
+  google.protobuf2.Any address = 2 [
     (gogoproto.moretags) = "yaml:\"address\"",
     (cosmos_proto.accepts_interface) = "AddressData"
   ];
@@ -61,7 +61,7 @@ message Proof {
 
   // PubKey represents the public key associated with the address for which to
   // prove the ownership
-  google.protobuf.Any pub_key = 1 [ (gogoproto.moretags) = "yaml:\"pub_key\"" ];
+  google.protobuf2.Any pub_key = 1 [ (gogoproto.moretags) = "yaml:\"pub_key\"" ];
 
   // Signature represents the hex-encoded signature of the PlainText value
   string signature = 2 [ (gogoproto.moretags) = "yaml:\"signature\"" ];

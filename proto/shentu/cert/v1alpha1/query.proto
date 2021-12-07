@@ -50,7 +50,7 @@ message QueryCertifiersResponse {
 }
 
 message QueryPlatformRequest {
-    google.protobuf.Any pubkey = 1 [(cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];
+    google.protobuf2.Any pubkey = 1 [(cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];
 }
 
 message QueryPlatformResponse {

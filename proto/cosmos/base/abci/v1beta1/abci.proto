@@ -34,7 +34,7 @@ message TxResponse {
   // Amount of gas consumed by transaction.
   int64 gas_used = 10;
   // The request transaction bytes.
-  google.protobuf.Any tx = 11;
+  google.protobuf2.Any tx = 11;
   // Time of the previous block. For heights > 1, it's the weighted median of
   // the timestamps of the valid votes in the block.LastCommit. For height == 1,
   // it's genesis time.

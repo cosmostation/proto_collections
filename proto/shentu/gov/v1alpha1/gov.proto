@@ -84,7 +84,7 @@ message TallyParams {
 message Proposal {
   option (gogoproto.equal) = true;
 
-  google.protobuf.Any content            = 1 [(cosmos_proto.accepts_interface) = "Content"];
+  google.protobuf2.Any content            = 1 [(cosmos_proto.accepts_interface) = "Content"];
   uint64              proposal_id        = 2 [(gogoproto.jsontag) = "id", (gogoproto.moretags) = "yaml:\"id\""];
   ProposalStatus      status             = 3 [(gogoproto.moretags) = "yaml:\"proposal_status\""];
   bool is_proposer_council_member = 4 [ (gogoproto.moretags) = "yaml:\"is_proposer_council_member\"" ];

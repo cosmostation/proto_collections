@@ -15,7 +15,7 @@ message LinkChainAccountPacketData {
   option (gogoproto.goproto_getters) = false;
 
   // SourceAddress contains the details of the external chain address
-  google.protobuf.Any source_address = 1 [
+  google.protobuf2.Any source_address = 1 [
     (gogoproto.moretags) = "yaml:\"source_address\"",
     (cosmos_proto.accepts_interface) = "AddressData"
   ];

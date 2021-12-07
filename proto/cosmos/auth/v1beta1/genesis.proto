@@ -13,5 +13,5 @@ message GenesisState {
   Params params = 1 [(gogoproto.nullable) = false];
 
   // accounts are the accounts present at genesis.
-  repeated google.protobuf.Any accounts = 2;
+  repeated google.protobuf2.Any accounts = 2;
 }

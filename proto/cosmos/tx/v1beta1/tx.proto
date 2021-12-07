@@ -72,7 +72,7 @@ message SignDocDirectAux {
   bytes body_bytes = 1;
 
   // public_key is the public key of the signing account.
-  google.protobuf.Any public_key = 2;
+  google.protobuf2.Any public_key = 2;
 
   // chain_id is the identifier of the chain this transaction targets.
   // It prevents signed transactions from being used on another chain by an
@@ -99,7 +99,7 @@ message TxBody {
   // By convention, the first required signer (usually from the first message)
   // is referred to as the primary signer and pays the fee for the whole
   // transaction.
-  repeated google.protobuf.Any messages = 1;
+  repeated google.protobuf2.Any messages = 1;
 
   // memo is any arbitrary note/comment to be added to the transaction.
   // WARNING: in clients, any publicly exposed text should not be called memo,
@@ -113,12 +113,12 @@ message TxBody {
   // extension_options are arbitrary options that can be added by chains
   // when the default options are not sufficient. If any of these are present
   // and can't be handled, the transaction will be rejected
-  repeated google.protobuf.Any extension_options = 1023;
+  repeated google.protobuf2.Any extension_options = 1023;
 
   // extension_options are arbitrary options that can be added by chains
   // when the default options are not sufficient. If any of these are present
   // and can't be handled, they will be ignored
-  repeated google.protobuf.Any non_critical_extension_options = 2047;
+  repeated google.protobuf2.Any non_critical_extension_options = 2047;
 }
 
 // AuthInfo describes the fee and signer modes that are used to sign a
@@ -148,7 +148,7 @@ message SignerInfo {
   // public_key is the public key of the signer. It is optional for accounts
   // that already exist in state. If unset, the verifier can use the required \
   // signer address for this position and lookup the public key.
-  google.protobuf.Any public_key = 1;
+  google.protobuf2.Any public_key = 1;
 
   // mode_info describes the signing mode of the signer and is a nested
   // structure to support nested multisig pubkey's

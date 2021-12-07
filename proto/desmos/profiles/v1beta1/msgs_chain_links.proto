@@ -12,7 +12,7 @@ option go_package = "github.com/desmos-labs/desmos/v2/x/profiles/types";
 message MsgLinkChainAccount {
   // ChainAddress contains the details of the external chain address to be
   // linked
-  google.protobuf.Any chain_address = 1 [
+  google.protobuf2.Any chain_address = 1 [
     (gogoproto.moretags) = "yaml:\"source_address\"",
     (cosmos_proto.accepts_interface) = "AddressData"
   ];

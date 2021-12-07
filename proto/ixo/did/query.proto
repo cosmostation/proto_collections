@@ -43,7 +43,7 @@ message QueryDidDocRequest {
 
 // QueryDidDocResponse is the response type for the Query/DidDoc RPC method.
 message QueryDidDocResponse {
-  google.protobuf.Any diddoc = 1 [(gogoproto.moretags) = "json:\"did_doc\" yaml:\"did_doc\""];
+  google.protobuf2.Any diddoc = 1 [(gogoproto.moretags) = "json:\"did_doc\" yaml:\"did_doc\""];
 }
 
 // QueryAllDidsRequest is the request type for the Query/AllDids RPC method.
@@ -59,7 +59,7 @@ message QueryAllDidDocsRequest {}
 
 // QueryAllDidDocsResponse is the response type for the Query/AllDidDocs RPC method.
 message QueryAllDidDocsResponse {
-  repeated google.protobuf.Any diddocs = 1 [(gogoproto.moretags) = "json:\"did_docs\" yaml:\"did_docs\""];
+  repeated google.protobuf2.Any diddocs = 1 [(gogoproto.moretags) = "json:\"did_docs\" yaml:\"did_docs\""];
 }
 
 // QueryAddressFromDidRequest is the request type for the Query/AddressFromDid RPC method.

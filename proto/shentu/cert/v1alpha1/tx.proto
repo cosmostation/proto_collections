@@ -33,7 +33,7 @@ message MsgIssueCertificate {
     option (gogoproto.equal) = false;
     option (gogoproto.goproto_getters) = false;
 
-    google.protobuf.Any content = 1 [ (cosmos_proto.accepts_interface) = "Content" ];
+    google.protobuf2.Any content = 1 [ (cosmos_proto.accepts_interface) = "Content" ];
     string compiler = 2 [ (gogoproto.moretags) = "yaml:\"compiler\"" ];
     string bytecode_hash = 3 [ (gogoproto.moretags) = "yaml:\"bytecodehash\"" ];
     string description = 4 [ (gogoproto.moretags) = "yaml:\"description\"" ];
@@ -60,7 +60,7 @@ message MsgCertifyPlatform {
     option (gogoproto.goproto_getters) = false;
 
     string certifier = 1 [ (gogoproto.moretags) = "yaml:\"certifier\"" ];
-    google.protobuf.Any validator_pubkey = 2 [ (cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey" ];
+    google.protobuf2.Any validator_pubkey = 2 [ (cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey" ];
     string platform = 3 [ (gogoproto.moretags) = "yaml:\"platform\"" ];
 }
 

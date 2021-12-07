@@ -18,6 +18,6 @@ message QueryProfileRequest {
 
 // QueryProfileResponse is the response type for the Query/Profile RPC method.
 message QueryProfileResponse {
-  google.protobuf.Any profile = 1
+  google.protobuf2.Any profile = 1
       [ (cosmos_proto.accepts_interface) = "AccountI" ];
 }

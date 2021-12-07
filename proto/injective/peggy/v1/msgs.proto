@@ -210,7 +210,7 @@ message MsgCancelSendToEthResponse {}
 // validator has signed a valset, batch, or logic call that never
 // existed. Subject contains the batch, valset, or logic call.
 message MsgSubmitBadSignatureEvidence {
-  google.protobuf.Any subject   = 1;
+  google.protobuf2.Any subject   = 1;
   string              signature = 2;
   string sender         = 3;
 }

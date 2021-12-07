@@ -23,7 +23,7 @@ message EventCreatedEscrow {
         (gogoproto.nullable) = false,
         (gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"
     ];
-    google.protobuf.Any object = 7 [
+    google.protobuf2.Any object = 7 [
         (cosmos_proto.accepts_interface) = "TransferableObject"
     ];
     uint64 deadline= 8;

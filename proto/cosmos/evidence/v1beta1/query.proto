@@ -30,7 +30,7 @@ message QueryEvidenceRequest {
 // QueryEvidenceResponse is the response type for the Query/Evidence RPC method.
 message QueryEvidenceResponse {
   // evidence returns the requested evidence.
-  google.protobuf.Any evidence = 1;
+  google.protobuf2.Any evidence = 1;
 }
 
 // QueryEvidenceRequest is the request type for the Query/AllEvidence RPC
@@ -44,7 +44,7 @@ message QueryAllEvidenceRequest {
 // method.
 message QueryAllEvidenceResponse {
   // evidence returns all evidences.
-  repeated google.protobuf.Any evidence = 1;
+  repeated google.protobuf2.Any evidence = 1;
 
   // pagination defines the pagination in the response.
   cosmos.base.query.v1beta1.PageResponse pagination = 2;

@@ -13,7 +13,7 @@ message Record {
   // name represents a name of Record
   string name = 1;
   // pub_key represents a public key in any format
-  google.protobuf.Any pub_key = 2;
+  google.protobuf2.Any pub_key = 2;
 
   // Record contains one of the following items
   oneof item {
@@ -30,7 +30,7 @@ message Record {
   // Item is a keyring item stored in a keyring backend.
   // Local item
   message Local {
-    google.protobuf.Any priv_key      = 1;
+    google.protobuf2.Any priv_key      = 1;
     string              priv_key_type = 2;
   }
 

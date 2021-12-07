@@ -29,7 +29,7 @@ message ClientState {
 message ConsensusState {
   option (gogoproto.goproto_getters) = false;
   // public key of the solo machine
-  google.protobuf.Any public_key = 1 [(gogoproto.moretags) = "yaml:\"public_key\""];
+  google.protobuf2.Any public_key = 1 [(gogoproto.moretags) = "yaml:\"public_key\""];
   // diversifier allows the same public key to be re-used across different solo
   // machine clients (potentially on different chains) without being considered
   // misbehaviour.
@@ -44,7 +44,7 @@ message Header {
   uint64              sequence        = 1;
   uint64              timestamp       = 2;
   bytes               signature       = 3;
-  google.protobuf.Any new_public_key  = 4 [(gogoproto.moretags) = "yaml:\"new_public_key\""];
+  google.protobuf2.Any new_public_key  = 4 [(gogoproto.moretags) = "yaml:\"new_public_key\""];
   string              new_diversifier = 5 [(gogoproto.moretags) = "yaml:\"new_diversifier\""];
 }
 
@@ -121,7 +121,7 @@ message HeaderData {
   option (gogoproto.goproto_getters) = false;
 
   // header public key
-  google.protobuf.Any new_pub_key = 1 [(gogoproto.moretags) = "yaml:\"new_pub_key\""];
+  google.protobuf2.Any new_pub_key = 1 [(gogoproto.moretags) = "yaml:\"new_pub_key\""];
   // header diversifier
   string new_diversifier = 2 [(gogoproto.moretags) = "yaml:\"new_diversifier\""];
 }
@@ -131,7 +131,7 @@ message ClientStateData {
   option (gogoproto.goproto_getters) = false;
 
   bytes               path         = 1;
-  google.protobuf.Any client_state = 2 [(gogoproto.moretags) = "yaml:\"client_state\""];
+  google.protobuf2.Any client_state = 2 [(gogoproto.moretags) = "yaml:\"client_state\""];
 }
 
 // ConsensusStateData returns the SignBytes data for consensus state
@@ -140,7 +140,7 @@ message ConsensusStateData {
   option (gogoproto.goproto_getters) = false;
 
   bytes               path            = 1;
-  google.protobuf.Any consensus_state = 2 [(gogoproto.moretags) = "yaml:\"consensus_state\""];
+  google.protobuf2.Any consensus_state = 2 [(gogoproto.moretags) = "yaml:\"consensus_state\""];
 }
 
 // ConnectionStateData returns the SignBytes data for connection state

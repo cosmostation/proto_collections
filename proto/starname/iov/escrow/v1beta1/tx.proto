@@ -28,7 +28,7 @@ service Msg {
 message MsgCreateEscrow {
     string seller = 1;
     string fee_payer = 2;
-    google.protobuf.Any object = 3 [ (cosmos_proto.accepts_interface) = "TransferableObject" ];
+    google.protobuf2.Any object = 3 [ (cosmos_proto.accepts_interface) = "TransferableObject" ];
     repeated cosmos.base.v1beta1.Coin price = 4 [ (gogoproto.nullable) = false, (gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins" ];
     uint64 deadline = 5;
 }

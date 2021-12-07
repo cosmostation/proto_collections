@@ -9,5 +9,5 @@ option java_package = "ixo.did";
 
 // GenesisState defines the did module's genesis state.
 message GenesisState {
-  repeated google.protobuf.Any did_docs = 1 [(gogoproto.moretags) = "yaml:\"did_docs\""];
+  repeated google.protobuf2.Any did_docs = 1 [(gogoproto.moretags) = "yaml:\"did_docs\""];
 }

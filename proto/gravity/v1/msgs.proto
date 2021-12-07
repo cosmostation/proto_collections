@@ -74,7 +74,7 @@ message MsgSubmitEthereumTxConfirmation {
   option (gogoproto.goproto_getters) = false;
 
   // TODO: can we make this take an array?
-  google.protobuf.Any confirmation = 1
+  google.protobuf2.Any confirmation = 1
       [ (cosmos_proto.accepts_interface) = "EthereumTxConfirmation" ];
   string signer = 2;
 }
@@ -110,7 +110,7 @@ message MsgSubmitEthereumTxConfirmationResponse {}
 message MsgSubmitEthereumEvent {
   option (gogoproto.goproto_getters) = false;
 
-  google.protobuf.Any event = 1
+  google.protobuf2.Any event = 1
       [ (cosmos_proto.accepts_interface) = "EthereumEvent" ];
   string signer = 2;
 }

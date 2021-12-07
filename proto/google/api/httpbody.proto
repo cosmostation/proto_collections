@@ -74,5 +74,5 @@ message HttpBody {
 
   // Application specific response metadata. Must be set in the first response
   // for streaming APIs.
-  repeated google.protobuf.Any extensions = 3;
+  repeated google.protobuf2.Any extensions = 3;
 }

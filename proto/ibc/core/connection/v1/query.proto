@@ -128,7 +128,7 @@ message QueryConnectionConsensusStateRequest {
 // Query/ConnectionConsensusState RPC method
 message QueryConnectionConsensusStateResponse {
   // consensus state associated with the channel
-  google.protobuf.Any consensus_state = 1;
+  google.protobuf2.Any consensus_state = 1;
   // client ID associated with the consensus state
   string client_id = 2;
   // merkle proof of existence

@@ -26,7 +26,7 @@ message CosmosNFTClass {
   string uri_hash = 6;
 
   // data is the metadata of NFT classification,optional
-  google.protobuf.Any data = 7;
+  google.protobuf2.Any data = 7;
 }
 
 // NFT defines the NFT.
@@ -44,5 +44,5 @@ message CosmosNFT {
   string uri_hash = 4;
 
   // data is the metadata of the NFT,optional
-  google.protobuf.Any data = 10;
+  google.protobuf2.Any data = 10;
 }

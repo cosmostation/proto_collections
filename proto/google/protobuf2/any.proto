@@ -30,13 +30,13 @@
 
 syntax = "proto3";
 
-package google.protobuf;
+package google.protobuf2;
 
 import "gogoproto/gogo.proto";
 
 option csharp_namespace = "Google.Protobuf.WellKnownTypes";
 option go_package = "types";
-option java_package = "com.google.protobuf";
+option java_package = "com.google.protobuf2";
 option java_outer_classname = "AnyProto";
 option java_multiple_files = true;
 option objc_class_prefix = "GPB";

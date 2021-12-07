@@ -14,7 +14,7 @@ option (gogoproto.goproto_getters_all) = false;
 message Escrow {
     string id = 1;
     string seller = 2;
-    google.protobuf.Any object = 3 [ (cosmos_proto.accepts_interface) = "TransferableObject" ];
+    google.protobuf2.Any object = 3 [ (cosmos_proto.accepts_interface) = "TransferableObject" ];
     //TODO: refactor this to use sdk.Coin instead of sdk.Coins
     // Although the price contains multiple coins, for now we enforce a specific denomination, so there will be only
     // one coin type in a valid escrow
