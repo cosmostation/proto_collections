@@ -1,0 +1,59 @@
+syntax = "proto3";
+package axelar.nexus.v1beta1;
+
+option go_package = "github.com/axelarnetwork/axelar-core/x/nexus/types";
+
+import "gogoproto/gogo.proto";
+import "google/api/annotations.proto";
+import "axelar/nexus/v1beta1/tx.proto";
+import "axelar/nexus/v1beta1/query.proto";
+
+option (gogoproto.goproto_registration) = true;
+
+// Msg defines the nexus Msg service.
+service MsgService {
+  rpc RegisterChainMaintainer(RegisterChainMaintainerRequest)
+      returns (RegisterChainMaintainerResponse) {
+    option (google.api.http) = {
+      post : "/axelar/nexus/registerChainMaintainer"
+      body : "*"
+    };
+  }
+
+  rpc DeregisterChainMaintainer(DeregisterChainMaintainerRequest)
+      returns (DeregisterChainMaintainerResponse) {
+    option (google.api.http) = {
+      post : "/axelar/nexus/deregisterChainMaintainer"
+      body : "*"
+    };
+  }
+
+  rpc ActivateChain(ActivateChainRequest) returns (ActivateChainResponse) {
+    option (google.api.http) = {
+      post : "/axelar/nexus/registerChainMaintainer"
+      body : "*"
+    };
+  }
+
+  rpc DeactivateChain(nexus.v1beta1.DeactivateChainRequest)
+      returns (nexus.v1beta1.DeactivateChainResponse) {
+    option (google.api.http) = {
+    };
+  }
+}
+
+// QueryService defines the gRPC querier service.
+service QueryService {
+  // LatestDepositAddress queries the a deposit address by recipient
+  rpc LatestDepositAddress(LatestDepositAddressRequest)
+      returns (LatestDepositAddressResponse) {
+    option (google.api.http).get = "/nexus/v1beta1/latest_deposit_address/"
+                                   "{recipient_chain}/{recipient_addr}";
+  }
+
+  // TransfersForChain queries transfers by chain
+  rpc TransfersForChain(TransfersForChainRequest)
+      returns (TransfersForChainResponse) {
+    option (google.api.http).get = "/nexus/v1beta1/transfers_for_chain";
+  }
+}

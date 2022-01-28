@@ -1,0 +1,17 @@
+syntax = "proto3";
+package axelar.axelarnet.v1beta1;
+option go_package = "github.com/axelarnetwork/axelar-core/x/axelarnet/types";
+
+import "gogoproto/gogo.proto";
+
+option (gogoproto.goproto_getters_all) = false;
+
+// Params represent the genesis parameters for the module
+message Params {
+  // IBC packet route timeout window
+  uint64 route_timeout_window = 1;
+  string transaction_fee_rate = 2 [
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+    (gogoproto.nullable) = false
+  ];
+}

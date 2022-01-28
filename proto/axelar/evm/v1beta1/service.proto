@@ -1,0 +1,160 @@
+syntax = "proto3";
+package axelar.evm.v1beta1;
+
+option go_package = "github.com/axelarnetwork/axelar-core/x/evm/types";
+
+import "gogoproto/gogo.proto";
+import "google/api/annotations.proto";
+import "axelar/evm/v1beta1/tx.proto";
+import "axelar/evm/v1beta1/query.proto";
+
+option (gogoproto.goproto_registration) = true;
+
+// Msg defines the evm Msg service.
+service MsgService {
+  rpc Link(LinkRequest) returns (LinkResponse) {
+    option (google.api.http) = {
+      post : "/axelar/evm/link/{recipient_chain}"
+      body : "*"
+    };
+  }
+
+  rpc ConfirmChain(ConfirmChainRequest) returns (ConfirmChainResponse) {
+    option (google.api.http) = {
+      post : "/axelar/evm/confirm-chain"
+      body : "*"
+    };
+  }
+
+  rpc ConfirmGatewayDeployment(ConfirmGatewayDeploymentRequest)
+      returns (ConfirmGatewayDeploymentResponse) {
+    option (google.api.http) = {
+      post : "/axelar/evm/confirm-gateway-deployment"
+      body : "*"
+    };
+  }
+
+  rpc ConfirmToken(ConfirmTokenRequest) returns (ConfirmTokenResponse) {
+    option (google.api.http) = {
+      post : "/axelar/evm/confirm-erc20-deploy"
+      body : "*"
+    };
+  }
+
+  rpc ConfirmDeposit(ConfirmDepositRequest) returns (ConfirmDepositResponse) {
+    option (google.api.http) = {
+      post : "/axelar/evm/confirm-erc20-deposit"
+      body : "*"
+    };
+  }
+
+  rpc ConfirmTransferKey(ConfirmTransferKeyRequest)
+      returns (ConfirmTransferKeyResponse) {
+    option (google.api.http) = {
+      post : "/axelar/evm/confirm-transfer-ownership"
+      body : "*"
+    };
+  }
+
+  rpc VoteConfirmChain(VoteConfirmChainRequest)
+      returns (VoteConfirmChainResponse) {
+    option (google.api.http) = {
+      post : "/axelar/evm/vote-confirm-chain",
+      body : "*"
+    };
+  }
+
+  rpc VoteConfirmGatewayDeployment(VoteConfirmGatewayDeploymentRequest)
+      returns (VoteConfirmGatewayDeploymentResponse) {
+    option (google.api.http) = {
+      post : "/axelar/evm/vote-confirm-gateway-deployment",
+      body : "*"
+    };
+  }
+
+  rpc VoteConfirmDeposit(VoteConfirmDepositRequest)
+      returns (VoteConfirmDepositResponse) {
+    option (google.api.http) = {
+      post : "/axelar/evm/vote-confirm-deposit",
+      body : "*"
+    };
+  }
+
+  rpc VoteConfirmToken(VoteConfirmTokenRequest)
+      returns (VoteConfirmTokenResponse) {
+    option (google.api.http) = {
+      post : "/axelar/evm/vote-confirm-token",
+      body : "*"
+    };
+  }
+
+  rpc VoteConfirmTransferKey(VoteConfirmTransferKeyRequest)
+      returns (VoteConfirmTransferKeyResponse) {
+    option (google.api.http) = {
+      post : "/axelar/evm/vote-confirm-transfer-key",
+      body : "*"
+    };
+  }
+
+  rpc CreateDeployToken(CreateDeployTokenRequest)
+      returns (CreateDeployTokenResponse) {
+    option (google.api.http) = {
+      post : "/axelar/evm/create-deploy-token"
+      body : "*"
+    };
+  }
+
+  rpc CreateBurnTokens(CreateBurnTokensRequest)
+      returns (CreateBurnTokensResponse) {
+    option (google.api.http) = {
+      post : "/axelar/evm/sign-burn"
+      body : "*"
+    };
+  }
+
+  rpc CreatePendingTransfers(CreatePendingTransfersRequest)
+      returns (CreatePendingTransfersResponse) {
+    option (google.api.http) = {
+      post : "/axelar/evm/create-pending-transfers"
+      body : "*"
+    };
+  }
+
+  rpc CreateTransferOwnership(CreateTransferOwnershipRequest)
+      returns (CreateTransferOwnershipResponse) {
+    option (google.api.http) = {
+      post : "/axelar/evm/create-transfer-ownership"
+      body : "*"
+    };
+  }
+
+  rpc CreateTransferOperatorship(CreateTransferOperatorshipRequest)
+      returns (CreateTransferOperatorshipResponse) {
+    option (google.api.http) = {
+      post : "/axelar/evm/create-transfer-operatorship"
+      body : "*"
+    };
+  }
+
+  rpc SignCommands(SignCommandsRequest) returns (SignCommandsResponse) {
+    option (google.api.http) = {
+      post : "/axelar/evm/sign-commands"
+      body : "*"
+    };
+  }
+
+  rpc AddChain(AddChainRequest) returns (AddChainResponse) {
+    option (google.api.http) = {
+      post : "/axelar/evm/add-chain"
+      body : "*"
+    };
+  }
+}
+
+// QueryService defines the gRPC querier service.
+service QueryService {
+  // BurnerInfo queries the burner info for the specified address
+  rpc BurnerInfo(BurnerInfoRequest) returns (BurnerInfoResponse) {
+    option (google.api.http).get = "/evm/v1beta1/burner_info";
+  }
+}

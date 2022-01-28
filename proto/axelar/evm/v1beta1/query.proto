@@ -1,0 +1,96 @@
+syntax = "proto3";
+package axelar.evm.v1beta1;
+
+option go_package = "github.com/axelarnetwork/axelar-core/x/evm/types";
+
+import "gogoproto/gogo.proto";
+import "axelar/evm/v1beta1/types.proto";
+
+option (gogoproto.goproto_getters_all) = false;
+
+// DepositQueryParams describe the parameters used to query for an EVM
+// deposit address
+message DepositQueryParams {
+  string address = 1;
+  string asset = 2;
+  string chain = 3;
+}
+
+message QueryBatchedCommandsResponse {
+  string id = 1 [ (gogoproto.customname) = "ID" ];
+  string data = 2;
+  BatchedCommandsStatus status = 3;
+  string key_id = 4 [
+    (gogoproto.customname) = "KeyID",
+    (gogoproto.casttype) =
+        "github.com/axelarnetwork/axelar-core/x/tss/exported.KeyID"
+  ];
+  repeated string signature = 5;
+  string execute_data = 6;
+  string prev_batched_commands_id = 7
+      [ (gogoproto.customname) = "PrevBatchedCommandsID" ];
+  repeated string command_ids = 8 [ (gogoproto.customname) = "CommandIDs" ];
+}
+
+message QueryAddressResponse {
+  message MultisigAddresses {
+    repeated string addresses = 1;
+    uint32 threshold = 2;
+  }
+
+  message ThresholdAddress { string address = 1; }
+
+  string key_id = 1 [
+    (gogoproto.customname) = "KeyID",
+    (gogoproto.casttype) =
+        "github.com/axelarnetwork/axelar-core/x/tss/exported.KeyID"
+  ];
+  oneof address {
+    MultisigAddresses multisig_addresses = 2;
+    ThresholdAddress threshold_address = 3;
+  }
+}
+
+message QueryTokenAddressResponse { string address = 1; }
+
+message QueryDepositStateParams {
+  bytes tx_id = 1 [
+    (gogoproto.nullable) = false,
+    (gogoproto.customtype) = "Hash",
+    (gogoproto.customname) = "TxID"
+  ];
+  bytes burner_address = 2
+      [ (gogoproto.nullable) = false, (gogoproto.customtype) = "Address" ];
+  string amount = 3;
+}
+
+message QueryDepositStateResponse {
+  string log = 1;
+  DepositStatus status = 2;
+}
+
+message QueryBurnerAddressResponse { string address = 1; }
+
+message QueryChainsResponse { repeated string chains = 1; }
+
+message QueryPendingCommandsResponse {
+  repeated QueryCommandResponse commands = 1 [ (gogoproto.nullable) = false ];
+}
+
+message QueryCommandResponse {
+  string id = 1 [ (gogoproto.customname) = "ID" ];
+  string type = 2;
+  map<string, string> params = 3 [ (gogoproto.nullable) = false ];
+  string key_id = 4 [ (gogoproto.customname) = "KeyID" ];
+  uint32 max_gas_cost = 5;
+}
+
+message BurnerInfoRequest {
+  bytes address = 1
+      [ (gogoproto.nullable) = false, (gogoproto.customtype) = "Address" ];
+}
+
+message BurnerInfoResponse {
+  string chain = 1;
+  BurnerInfo burner_info = 2;
+}
