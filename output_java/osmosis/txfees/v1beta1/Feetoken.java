@@ -685,8 +685,8 @@ public final class Feetoken {
       "\026osmosis.txfees.v1beta1\032\024gogoproto/gogo." +
       "proto\"U\n\010FeeToken\022\037\n\005denom\030\001 \001(\tB\020\362\336\037\014ya" +
       "ml:\"denom\"\022\"\n\006poolID\030\002 \001(\004B\022\362\336\037\016yaml:\"po" +
-      "ol_id\":\004\350\240\037\001B0Z.github.com/osmosis-labs/" +
-      "osmosis/x/txfees/typesb\006proto3"
+      "ol_id\":\004\350\240\037\001B3Z1github.com/osmosis-labs/" +
+      "osmosis/v7/x/txfees/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

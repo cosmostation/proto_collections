@@ -7,7 +7,7 @@ import "google/protobuf/timestamp.proto";
 import "cosmos/base/v1beta1/coin.proto";
 import "osmosis/lockup/lock.proto";
 
-option go_package = "github.com/osmosis-labs/osmosis/x/incentives/types";
+option go_package = "github.com/osmosis-labs/osmosis/v7/x/incentives/types";
 
 message Gauge {
   uint64 id = 1;         // unique ID of a Gauge
@@ -17,6 +17,7 @@ message Gauge {
   // these queries
   osmosis.lockup.QueryCondition distribute_to = 3
       [ (gogoproto.nullable) = false ];
+  // total amount of Coins that has been in the gauge.
   repeated cosmos.base.v1beta1.Coin coins = 4 [
     (gogoproto.nullable) = false,
     (gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"

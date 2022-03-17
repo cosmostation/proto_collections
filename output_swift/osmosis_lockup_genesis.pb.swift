@@ -30,6 +30,8 @@ struct Osmosis_Lockup_GenesisState {
 
   var locks: [Osmosis_Lockup_PeriodLock] = []
 
+  var syntheticLocks: [Osmosis_Lockup_SyntheticLock] = []
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -44,6 +46,7 @@ extension Osmosis_Lockup_GenesisState: SwiftProtobuf.Message, SwiftProtobuf._Mes
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "last_lock_id"),
     2: .same(proto: "locks"),
+    3: .standard(proto: "synthetic_locks"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -54,6 +57,7 @@ extension Osmosis_Lockup_GenesisState: SwiftProtobuf.Message, SwiftProtobuf._Mes
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularUInt64Field(value: &self.lastLockID) }()
       case 2: try { try decoder.decodeRepeatedMessageField(value: &self.locks) }()
+      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.syntheticLocks) }()
       default: break
       }
     }
@@ -66,12 +70,16 @@ extension Osmosis_Lockup_GenesisState: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if !self.locks.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.locks, fieldNumber: 2)
     }
+    if !self.syntheticLocks.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.syntheticLocks, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: Osmosis_Lockup_GenesisState, rhs: Osmosis_Lockup_GenesisState) -> Bool {
     if lhs.lastLockID != rhs.lastLockID {return false}
     if lhs.locks != rhs.locks {return false}
+    if lhs.syntheticLocks != rhs.syntheticLocks {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -40,6 +40,8 @@ struct Osmosis_Incentives_GenesisState {
 
   var lockableDurations: [SwiftProtobuf.Google_Protobuf_Duration] = []
 
+  var lastGaugeID: UInt64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -57,6 +59,7 @@ extension Osmosis_Incentives_GenesisState: SwiftProtobuf.Message, SwiftProtobuf.
     1: .same(proto: "params"),
     2: .same(proto: "gauges"),
     3: .standard(proto: "lockable_durations"),
+    4: .standard(proto: "last_gauge_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -68,6 +71,7 @@ extension Osmosis_Incentives_GenesisState: SwiftProtobuf.Message, SwiftProtobuf.
       case 1: try { try decoder.decodeSingularMessageField(value: &self._params) }()
       case 2: try { try decoder.decodeRepeatedMessageField(value: &self.gauges) }()
       case 3: try { try decoder.decodeRepeatedMessageField(value: &self.lockableDurations) }()
+      case 4: try { try decoder.decodeSingularUInt64Field(value: &self.lastGaugeID) }()
       default: break
       }
     }
@@ -83,6 +87,9 @@ extension Osmosis_Incentives_GenesisState: SwiftProtobuf.Message, SwiftProtobuf.
     if !self.lockableDurations.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.lockableDurations, fieldNumber: 3)
     }
+    if self.lastGaugeID != 0 {
+      try visitor.visitSingularUInt64Field(value: self.lastGaugeID, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -90,6 +97,7 @@ extension Osmosis_Incentives_GenesisState: SwiftProtobuf.Message, SwiftProtobuf.
     if lhs._params != rhs._params {return false}
     if lhs.gauges != rhs.gauges {return false}
     if lhs.lockableDurations != rhs.lockableDurations {return false}
+    if lhs.lastGaugeID != rhs.lastGaugeID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

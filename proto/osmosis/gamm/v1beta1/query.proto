@@ -2,15 +2,16 @@ syntax = "proto3";
 package osmosis.gamm.v1beta1;
 
 import "gogoproto/gogo.proto";
-import "osmosis/gamm/v1beta1/balancerPool.proto";
 import "osmosis/gamm/v1beta1/tx.proto";
+import "osmosis/gamm/v1beta1/pool.proto";
+
 import "cosmos/base/v1beta1/coin.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
 import "google/api/annotations.proto";
-import "google/protobuf2/any.proto"; 
+import "google/protobuf2/any.proto";
 import "cosmos_proto/cosmos.proto";
 
-option go_package = "github.com/osmosis-labs/osmosis/x/gamm/types";
+option go_package = "github.com/osmosis-labs/osmosis/v7/x/gamm/types";
 
 service Query {
   rpc Pools(QueryPoolsRequest) returns (QueryPoolsResponse) {
@@ -90,9 +91,7 @@ message QueryNumPoolsResponse {
 message QueryPoolParamsRequest {
   uint64 poolId = 1 [ (gogoproto.moretags) = "yaml:\"pool_id\"" ];
 }
-message QueryPoolParamsResponse {
-  oneof params { BalancerPoolParams balancerPoolParams = 1; }
-}
+message QueryPoolParamsResponse { google.protobuf2.Any params = 1; }
 
 //=============================== TotalShares
 message QueryTotalSharesRequest {

@@ -2270,8 +2270,8 @@ public final class Gov {
       "ivesProposal\022\r\n\005title\030\001 \001(\t\022\023\n\013descripti" +
       "on\030\002 \001(\t\022B\n\007records\030\003 \003(\0132+.osmosis.pool" +
       "incentives.v1beta1.DistrRecordB\004\310\336\037\000:\014\350\240" +
-      "\037\001\210\240\037\000\230\240\037\000B9Z7github.com/osmosis-labs/os" +
-      "mosis/x/pool-incentives/typesb\006proto3"
+      "\037\001\210\240\037\000\230\240\037\000B<Z:github.com/osmosis-labs/os" +
+      "mosis/v7/x/pool-incentives/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
