@@ -55,15 +55,15 @@ internal protocol Osmosis_Gamm_V1beta1_QueryClientProtocol: GRPCClient {
     callOptions: CallOptions?
   ) -> UnaryCall<Osmosis_Gamm_V1beta1_QueryPoolParamsRequest, Osmosis_Gamm_V1beta1_QueryPoolParamsResponse>
 
+  func totalPoolLiquidity(
+    _ request: Osmosis_Gamm_V1beta1_QueryTotalPoolLiquidityRequest,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Osmosis_Gamm_V1beta1_QueryTotalPoolLiquidityRequest, Osmosis_Gamm_V1beta1_QueryTotalPoolLiquidityResponse>
+
   func totalShares(
     _ request: Osmosis_Gamm_V1beta1_QueryTotalSharesRequest,
     callOptions: CallOptions?
   ) -> UnaryCall<Osmosis_Gamm_V1beta1_QueryTotalSharesRequest, Osmosis_Gamm_V1beta1_QueryTotalSharesResponse>
-
-  func poolAssets(
-    _ request: Osmosis_Gamm_V1beta1_QueryPoolAssetsRequest,
-    callOptions: CallOptions?
-  ) -> UnaryCall<Osmosis_Gamm_V1beta1_QueryPoolAssetsRequest, Osmosis_Gamm_V1beta1_QueryPoolAssetsResponse>
 
   func spotPrice(
     _ request: Osmosis_Gamm_V1beta1_QuerySpotPriceRequest,
@@ -176,6 +176,24 @@ extension Osmosis_Gamm_V1beta1_QueryClientProtocol {
     )
   }
 
+  /// Unary call to TotalPoolLiquidity
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to TotalPoolLiquidity.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func totalPoolLiquidity(
+    _ request: Osmosis_Gamm_V1beta1_QueryTotalPoolLiquidityRequest,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Osmosis_Gamm_V1beta1_QueryTotalPoolLiquidityRequest, Osmosis_Gamm_V1beta1_QueryTotalPoolLiquidityResponse> {
+    return self.makeUnaryCall(
+      path: "/osmosis.gamm.v1beta1.Query/TotalPoolLiquidity",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeTotalPoolLiquidityInterceptors() ?? []
+    )
+  }
+
   /// Unary call to TotalShares
   ///
   /// - Parameters:
@@ -194,25 +212,8 @@ extension Osmosis_Gamm_V1beta1_QueryClientProtocol {
     )
   }
 
-  /// Unary call to PoolAssets
-  ///
-  /// - Parameters:
-  ///   - request: Request to send to PoolAssets.
-  ///   - callOptions: Call options.
-  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
-  internal func poolAssets(
-    _ request: Osmosis_Gamm_V1beta1_QueryPoolAssetsRequest,
-    callOptions: CallOptions? = nil
-  ) -> UnaryCall<Osmosis_Gamm_V1beta1_QueryPoolAssetsRequest, Osmosis_Gamm_V1beta1_QueryPoolAssetsResponse> {
-    return self.makeUnaryCall(
-      path: "/osmosis.gamm.v1beta1.Query/PoolAssets",
-      request: request,
-      callOptions: callOptions ?? self.defaultCallOptions,
-      interceptors: self.interceptors?.makePoolAssetsInterceptors() ?? []
-    )
-  }
-
-  /// Unary call to SpotPrice
+  /// SpotPrice defines a gRPC query handler that returns the spot price given
+  /// a base denomination and a quote denomination.
   ///
   /// - Parameters:
   ///   - request: Request to send to SpotPrice.
@@ -284,11 +285,11 @@ internal protocol Osmosis_Gamm_V1beta1_QueryClientInterceptorFactoryProtocol {
   /// - Returns: Interceptors to use when invoking 'poolParams'.
   func makePoolParamsInterceptors() -> [ClientInterceptor<Osmosis_Gamm_V1beta1_QueryPoolParamsRequest, Osmosis_Gamm_V1beta1_QueryPoolParamsResponse>]
 
+  /// - Returns: Interceptors to use when invoking 'totalPoolLiquidity'.
+  func makeTotalPoolLiquidityInterceptors() -> [ClientInterceptor<Osmosis_Gamm_V1beta1_QueryTotalPoolLiquidityRequest, Osmosis_Gamm_V1beta1_QueryTotalPoolLiquidityResponse>]
+
   /// - Returns: Interceptors to use when invoking 'totalShares'.
   func makeTotalSharesInterceptors() -> [ClientInterceptor<Osmosis_Gamm_V1beta1_QueryTotalSharesRequest, Osmosis_Gamm_V1beta1_QueryTotalSharesResponse>]
-
-  /// - Returns: Interceptors to use when invoking 'poolAssets'.
-  func makePoolAssetsInterceptors() -> [ClientInterceptor<Osmosis_Gamm_V1beta1_QueryPoolAssetsRequest, Osmosis_Gamm_V1beta1_QueryPoolAssetsResponse>]
 
   /// - Returns: Interceptors to use when invoking 'spotPrice'.
   func makeSpotPriceInterceptors() -> [ClientInterceptor<Osmosis_Gamm_V1beta1_QuerySpotPriceRequest, Osmosis_Gamm_V1beta1_QuerySpotPriceResponse>]
@@ -337,10 +338,12 @@ internal protocol Osmosis_Gamm_V1beta1_QueryProvider: CallHandlerProvider {
 
   func poolParams(request: Osmosis_Gamm_V1beta1_QueryPoolParamsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Gamm_V1beta1_QueryPoolParamsResponse>
 
+  func totalPoolLiquidity(request: Osmosis_Gamm_V1beta1_QueryTotalPoolLiquidityRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Gamm_V1beta1_QueryTotalPoolLiquidityResponse>
+
   func totalShares(request: Osmosis_Gamm_V1beta1_QueryTotalSharesRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Gamm_V1beta1_QueryTotalSharesResponse>
 
-  func poolAssets(request: Osmosis_Gamm_V1beta1_QueryPoolAssetsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Gamm_V1beta1_QueryPoolAssetsResponse>
-
+  /// SpotPrice defines a gRPC query handler that returns the spot price given
+  /// a base denomination and a quote denomination.
   func spotPrice(request: Osmosis_Gamm_V1beta1_QuerySpotPriceRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Gamm_V1beta1_QuerySpotPriceResponse>
 
   /// Estimate the swap.
@@ -404,6 +407,15 @@ extension Osmosis_Gamm_V1beta1_QueryProvider {
         userFunction: self.poolParams(request:context:)
       )
 
+    case "TotalPoolLiquidity":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Osmosis_Gamm_V1beta1_QueryTotalPoolLiquidityRequest>(),
+        responseSerializer: ProtobufSerializer<Osmosis_Gamm_V1beta1_QueryTotalPoolLiquidityResponse>(),
+        interceptors: self.interceptors?.makeTotalPoolLiquidityInterceptors() ?? [],
+        userFunction: self.totalPoolLiquidity(request:context:)
+      )
+
     case "TotalShares":
       return UnaryServerHandler(
         context: context,
@@ -411,15 +423,6 @@ extension Osmosis_Gamm_V1beta1_QueryProvider {
         responseSerializer: ProtobufSerializer<Osmosis_Gamm_V1beta1_QueryTotalSharesResponse>(),
         interceptors: self.interceptors?.makeTotalSharesInterceptors() ?? [],
         userFunction: self.totalShares(request:context:)
-      )
-
-    case "PoolAssets":
-      return UnaryServerHandler(
-        context: context,
-        requestDeserializer: ProtobufDeserializer<Osmosis_Gamm_V1beta1_QueryPoolAssetsRequest>(),
-        responseSerializer: ProtobufSerializer<Osmosis_Gamm_V1beta1_QueryPoolAssetsResponse>(),
-        interceptors: self.interceptors?.makePoolAssetsInterceptors() ?? [],
-        userFunction: self.poolAssets(request:context:)
       )
 
     case "SpotPrice":
@@ -477,13 +480,13 @@ internal protocol Osmosis_Gamm_V1beta1_QueryServerInterceptorFactoryProtocol {
   ///   Defaults to calling `self.makeInterceptors()`.
   func makePoolParamsInterceptors() -> [ServerInterceptor<Osmosis_Gamm_V1beta1_QueryPoolParamsRequest, Osmosis_Gamm_V1beta1_QueryPoolParamsResponse>]
 
+  /// - Returns: Interceptors to use when handling 'totalPoolLiquidity'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeTotalPoolLiquidityInterceptors() -> [ServerInterceptor<Osmosis_Gamm_V1beta1_QueryTotalPoolLiquidityRequest, Osmosis_Gamm_V1beta1_QueryTotalPoolLiquidityResponse>]
+
   /// - Returns: Interceptors to use when handling 'totalShares'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeTotalSharesInterceptors() -> [ServerInterceptor<Osmosis_Gamm_V1beta1_QueryTotalSharesRequest, Osmosis_Gamm_V1beta1_QueryTotalSharesResponse>]
-
-  /// - Returns: Interceptors to use when handling 'poolAssets'.
-  ///   Defaults to calling `self.makeInterceptors()`.
-  func makePoolAssetsInterceptors() -> [ServerInterceptor<Osmosis_Gamm_V1beta1_QueryPoolAssetsRequest, Osmosis_Gamm_V1beta1_QueryPoolAssetsResponse>]
 
   /// - Returns: Interceptors to use when handling 'spotPrice'.
   ///   Defaults to calling `self.makeInterceptors()`.

@@ -1,6 +1,6 @@
 syntax = "proto3";
 // this is a temporary package setup, needs migration logic
-package osmosis.gamm.poolmodels.balancer;
+package osmosis.gamm.balancer.v1beta1;
 
 import "cosmos_proto/cosmos.proto";
 import "gogoproto/gogo.proto";
@@ -10,8 +10,6 @@ import "google/protobuf/timestamp.proto";
 
 import "cosmos/auth/v1beta1/auth.proto";
 import "cosmos/base/v1beta1/coin.proto";
-
-import "osmosis/gamm/v1beta1/pool.proto";
 
 option go_package = "github.com/osmosis-labs/osmosis/v7/x/gamm/pool-models/balancer";
 
@@ -47,7 +45,7 @@ message SmoothWeightChangeParams {
   // The amount PoolAsset.token.amount field is ignored if present,
   // future type refactorings should just have a type with the denom & weight
   // here.
-  repeated osmosis.gamm.v1beta1.PoolAsset initialPoolWeights = 3 [
+  repeated PoolAsset initialPoolWeights = 3 [
     (gogoproto.moretags) = "yaml:\"initial_pool_weights\"",
     (gogoproto.nullable) = false
   ];
@@ -55,7 +53,7 @@ message SmoothWeightChangeParams {
   // to time between start_time, and start_time + duration. The amount
   // PoolAsset.token.amount field is ignored if present, future type
   // refactorings should just have a type with the denom & weight here.
-  repeated osmosis.gamm.v1beta1.PoolAsset targetPoolWeights = 4 [
+  repeated PoolAsset targetPoolWeights = 4 [
     (gogoproto.moretags) = "yaml:\"target_pool_weights\"",
     (gogoproto.nullable) = false
   ];
@@ -86,6 +84,23 @@ message PoolParams {
   SmoothWeightChangeParams smoothWeightChangeParams = 3 [
     (gogoproto.moretags) = "yaml:\"smooth_weight_change_params\"",
     (gogoproto.nullable) = true
+  ];
+}
+
+// Pool asset is an internal struct that combines the amount of the
+// token in the pool, and its balancer weight.
+// This is an awkward packaging of data,
+// and should be revisited in a future state migration.
+message PoolAsset {
+  // Coins we are talking about,
+  // the denomination must be unique amongst all PoolAssets for this pool.
+  cosmos.base.v1beta1.Coin token = 1
+      [ (gogoproto.moretags) = "yaml:\"token\"", (gogoproto.nullable) = false ];
+  // Weight that is not normalized. This weight must be less than 2^50
+  string weight = 2 [
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int",
+    (gogoproto.moretags) = "yaml:\"weight\"",
+    (gogoproto.nullable) = false
   ];
 }
 
@@ -120,7 +135,7 @@ message Pool {
   ];
   // These are assumed to be sorted by denomiation.
   // They contain the pool asset and the information about the weight
-  repeated osmosis.gamm.v1beta1.PoolAsset poolAssets = 6 [
+  repeated PoolAsset poolAssets = 6 [
     (gogoproto.moretags) = "yaml:\"pool_assets\"",
     (gogoproto.nullable) = false
   ];

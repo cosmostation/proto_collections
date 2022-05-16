@@ -26,9 +26,9 @@ struct Osmosis_Incentives_MsgCreateGauge {
   // methods supported on all messages.
 
   /// flag to show if it's perpetual or multi-epoch
+  /// distribution incentives by third party
   var isPerpetual: Bool = false
 
-  /// distribution incentives by third party
   var owner: String = String()
 
   /// distribute condition of a lock which meet one of these conditions
