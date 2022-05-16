@@ -63,13 +63,13 @@ struct Osmosis_Gamm_Balancer_V1beta1_SmoothWeightChangeParams {
   /// The amount PoolAsset.token.amount field is ignored if present,
   /// future type refactorings should just have a type with the denom & weight
   /// here.
-  var initialPoolWeights: [Osmosis_Gamm_Balancer_V1beta1_PoolAsset] = []
+  var initialPoolWeights: [Osmosis_Gamm_V1beta1_PoolAsset] = []
 
   /// The target pool weights. The pool weights will change linearly with respect
   /// to time between start_time, and start_time + duration. The amount
   /// PoolAsset.token.amount field is ignored if present, future type
   /// refactorings should just have a type with the denom & weight here.
-  var targetPoolWeights: [Osmosis_Gamm_Balancer_V1beta1_PoolAsset] = []
+  var targetPoolWeights: [Osmosis_Gamm_V1beta1_PoolAsset] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -106,36 +106,6 @@ struct Osmosis_Gamm_Balancer_V1beta1_PoolParams {
   init() {}
 
   fileprivate var _smoothWeightChangeParams: Osmosis_Gamm_Balancer_V1beta1_SmoothWeightChangeParams? = nil
-}
-
-/// Pool asset is an internal struct that combines the amount of the
-/// token in the pool, and its balancer weight.
-/// This is an awkward packaging of data,
-/// and should be revisited in a future state migration.
-struct Osmosis_Gamm_Balancer_V1beta1_PoolAsset {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  /// Coins we are talking about,
-  /// the denomination must be unique amongst all PoolAssets for this pool.
-  var token: Cosmos_Base_V1beta1_Coin {
-    get {return _token ?? Cosmos_Base_V1beta1_Coin()}
-    set {_token = newValue}
-  }
-  /// Returns true if `token` has been explicitly set.
-  var hasToken: Bool {return self._token != nil}
-  /// Clears the value of `token`. Subsequent reads from it will return its default value.
-  mutating func clearToken() {self._token = nil}
-
-  /// Weight that is not normalized. This weight must be less than 2^50
-  var weight: String = String()
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _token: Cosmos_Base_V1beta1_Coin? = nil
 }
 
 struct Osmosis_Gamm_Balancer_V1beta1_Pool {
@@ -179,7 +149,7 @@ struct Osmosis_Gamm_Balancer_V1beta1_Pool {
 
   /// These are assumed to be sorted by denomiation.
   /// They contain the pool asset and the information about the weight
-  var poolAssets: [Osmosis_Gamm_Balancer_V1beta1_PoolAsset] = []
+  var poolAssets: [Osmosis_Gamm_V1beta1_PoolAsset] = []
 
   /// sum of all non-normalized pool weights
   var totalWeight: String = String()
@@ -285,44 +255,6 @@ extension Osmosis_Gamm_Balancer_V1beta1_PoolParams: SwiftProtobuf.Message, Swift
     if lhs.swapFee != rhs.swapFee {return false}
     if lhs.exitFee != rhs.exitFee {return false}
     if lhs._smoothWeightChangeParams != rhs._smoothWeightChangeParams {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension Osmosis_Gamm_Balancer_V1beta1_PoolAsset: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PoolAsset"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "token"),
-    2: .same(proto: "weight"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._token) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.weight) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._token {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
-    if !self.weight.isEmpty {
-      try visitor.visitSingularStringField(value: self.weight, fieldNumber: 2)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: Osmosis_Gamm_Balancer_V1beta1_PoolAsset, rhs: Osmosis_Gamm_Balancer_V1beta1_PoolAsset) -> Bool {
-    if lhs._token != rhs._token {return false}
-    if lhs.weight != rhs.weight {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -29,9 +29,9 @@ struct Osmosis_Incentives_Gauge {
   var id: UInt64 = 0
 
   /// flag to show if it's perpetual or multi-epoch
-  /// distribution incentives by third party
   var isPerpetual: Bool = false
 
+  /// distribution incentives by third party
   /// Rewards are distributed to lockups that are are returned by at least one of
   /// these queries
   var distributeTo: Osmosis_Lockup_QueryCondition {
@@ -44,7 +44,6 @@ struct Osmosis_Incentives_Gauge {
   mutating func clearDistributeTo() {self._distributeTo = nil}
 
   /// total amount of Coins that has been in the gauge.
-  /// can distribute multiple coins
   var coins: [Cosmos_Base_V1beta1_Coin] = []
 
   /// distribution start time

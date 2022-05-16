@@ -87,9 +87,9 @@ public final class BalancerPool {
      * here.
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
      */
-    java.util.List<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset> 
+    java.util.List<osmosis.gamm.v1beta1.Pool.PoolAsset> 
         getInitialPoolWeightsList();
     /**
      * <pre>
@@ -100,9 +100,9 @@ public final class BalancerPool {
      * here.
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
      */
-    osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset getInitialPoolWeights(int index);
+    osmosis.gamm.v1beta1.Pool.PoolAsset getInitialPoolWeights(int index);
     /**
      * <pre>
      * The initial pool weights. These are copied from the pool's settings
@@ -112,7 +112,7 @@ public final class BalancerPool {
      * here.
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
      */
     int getInitialPoolWeightsCount();
     /**
@@ -124,9 +124,9 @@ public final class BalancerPool {
      * here.
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
      */
-    java.util.List<? extends osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder> 
+    java.util.List<? extends osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder> 
         getInitialPoolWeightsOrBuilderList();
     /**
      * <pre>
@@ -137,9 +137,9 @@ public final class BalancerPool {
      * here.
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
      */
-    osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder getInitialPoolWeightsOrBuilder(
+    osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder getInitialPoolWeightsOrBuilder(
         int index);
 
     /**
@@ -150,9 +150,9 @@ public final class BalancerPool {
      * refactorings should just have a type with the denom &amp; weight here.
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
      */
-    java.util.List<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset> 
+    java.util.List<osmosis.gamm.v1beta1.Pool.PoolAsset> 
         getTargetPoolWeightsList();
     /**
      * <pre>
@@ -162,9 +162,9 @@ public final class BalancerPool {
      * refactorings should just have a type with the denom &amp; weight here.
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
      */
-    osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset getTargetPoolWeights(int index);
+    osmosis.gamm.v1beta1.Pool.PoolAsset getTargetPoolWeights(int index);
     /**
      * <pre>
      * The target pool weights. The pool weights will change linearly with respect
@@ -173,7 +173,7 @@ public final class BalancerPool {
      * refactorings should just have a type with the denom &amp; weight here.
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
      */
     int getTargetPoolWeightsCount();
     /**
@@ -184,9 +184,9 @@ public final class BalancerPool {
      * refactorings should just have a type with the denom &amp; weight here.
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
      */
-    java.util.List<? extends osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder> 
+    java.util.List<? extends osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder> 
         getTargetPoolWeightsOrBuilderList();
     /**
      * <pre>
@@ -196,9 +196,9 @@ public final class BalancerPool {
      * refactorings should just have a type with the denom &amp; weight here.
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
      */
-    osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder getTargetPoolWeightsOrBuilder(
+    osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder getTargetPoolWeightsOrBuilder(
         int index);
   }
   /**
@@ -291,20 +291,20 @@ public final class BalancerPool {
             }
             case 26: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                initialPoolWeights_ = new java.util.ArrayList<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset>();
+                initialPoolWeights_ = new java.util.ArrayList<osmosis.gamm.v1beta1.Pool.PoolAsset>();
                 mutable_bitField0_ |= 0x00000001;
               }
               initialPoolWeights_.add(
-                  input.readMessage(osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.parser(), extensionRegistry));
+                  input.readMessage(osmosis.gamm.v1beta1.Pool.PoolAsset.parser(), extensionRegistry));
               break;
             }
             case 34: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                targetPoolWeights_ = new java.util.ArrayList<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset>();
+                targetPoolWeights_ = new java.util.ArrayList<osmosis.gamm.v1beta1.Pool.PoolAsset>();
                 mutable_bitField0_ |= 0x00000002;
               }
               targetPoolWeights_.add(
-                  input.readMessage(osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.parser(), extensionRegistry));
+                  input.readMessage(osmosis.gamm.v1beta1.Pool.PoolAsset.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -428,7 +428,7 @@ public final class BalancerPool {
     }
 
     public static final int INITIALPOOLWEIGHTS_FIELD_NUMBER = 3;
-    private java.util.List<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset> initialPoolWeights_;
+    private java.util.List<osmosis.gamm.v1beta1.Pool.PoolAsset> initialPoolWeights_;
     /**
      * <pre>
      * The initial pool weights. These are copied from the pool's settings
@@ -438,10 +438,10 @@ public final class BalancerPool {
      * here.
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
      */
     @java.lang.Override
-    public java.util.List<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset> getInitialPoolWeightsList() {
+    public java.util.List<osmosis.gamm.v1beta1.Pool.PoolAsset> getInitialPoolWeightsList() {
       return initialPoolWeights_;
     }
     /**
@@ -453,10 +453,10 @@ public final class BalancerPool {
      * here.
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder> 
+    public java.util.List<? extends osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder> 
         getInitialPoolWeightsOrBuilderList() {
       return initialPoolWeights_;
     }
@@ -469,7 +469,7 @@ public final class BalancerPool {
      * here.
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
      */
     @java.lang.Override
     public int getInitialPoolWeightsCount() {
@@ -484,10 +484,10 @@ public final class BalancerPool {
      * here.
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
      */
     @java.lang.Override
-    public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset getInitialPoolWeights(int index) {
+    public osmosis.gamm.v1beta1.Pool.PoolAsset getInitialPoolWeights(int index) {
       return initialPoolWeights_.get(index);
     }
     /**
@@ -499,16 +499,16 @@ public final class BalancerPool {
      * here.
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
      */
     @java.lang.Override
-    public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder getInitialPoolWeightsOrBuilder(
+    public osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder getInitialPoolWeightsOrBuilder(
         int index) {
       return initialPoolWeights_.get(index);
     }
 
     public static final int TARGETPOOLWEIGHTS_FIELD_NUMBER = 4;
-    private java.util.List<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset> targetPoolWeights_;
+    private java.util.List<osmosis.gamm.v1beta1.Pool.PoolAsset> targetPoolWeights_;
     /**
      * <pre>
      * The target pool weights. The pool weights will change linearly with respect
@@ -517,10 +517,10 @@ public final class BalancerPool {
      * refactorings should just have a type with the denom &amp; weight here.
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
      */
     @java.lang.Override
-    public java.util.List<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset> getTargetPoolWeightsList() {
+    public java.util.List<osmosis.gamm.v1beta1.Pool.PoolAsset> getTargetPoolWeightsList() {
       return targetPoolWeights_;
     }
     /**
@@ -531,10 +531,10 @@ public final class BalancerPool {
      * refactorings should just have a type with the denom &amp; weight here.
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder> 
+    public java.util.List<? extends osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder> 
         getTargetPoolWeightsOrBuilderList() {
       return targetPoolWeights_;
     }
@@ -546,7 +546,7 @@ public final class BalancerPool {
      * refactorings should just have a type with the denom &amp; weight here.
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
      */
     @java.lang.Override
     public int getTargetPoolWeightsCount() {
@@ -560,10 +560,10 @@ public final class BalancerPool {
      * refactorings should just have a type with the denom &amp; weight here.
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
      */
     @java.lang.Override
-    public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset getTargetPoolWeights(int index) {
+    public osmosis.gamm.v1beta1.Pool.PoolAsset getTargetPoolWeights(int index) {
       return targetPoolWeights_.get(index);
     }
     /**
@@ -574,10 +574,10 @@ public final class BalancerPool {
      * refactorings should just have a type with the denom &amp; weight here.
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
      */
     @java.lang.Override
-    public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder getTargetPoolWeightsOrBuilder(
+    public osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder getTargetPoolWeightsOrBuilder(
         int index) {
       return targetPoolWeights_.get(index);
     }
@@ -1381,17 +1381,17 @@ public final class BalancerPool {
         return durationBuilder_;
       }
 
-      private java.util.List<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset> initialPoolWeights_ =
+      private java.util.List<osmosis.gamm.v1beta1.Pool.PoolAsset> initialPoolWeights_ =
         java.util.Collections.emptyList();
       private void ensureInitialPoolWeightsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          initialPoolWeights_ = new java.util.ArrayList<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset>(initialPoolWeights_);
+          initialPoolWeights_ = new java.util.ArrayList<osmosis.gamm.v1beta1.Pool.PoolAsset>(initialPoolWeights_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder> initialPoolWeightsBuilder_;
+          osmosis.gamm.v1beta1.Pool.PoolAsset, osmosis.gamm.v1beta1.Pool.PoolAsset.Builder, osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder> initialPoolWeightsBuilder_;
 
       /**
        * <pre>
@@ -1402,9 +1402,9 @@ public final class BalancerPool {
        * here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
        */
-      public java.util.List<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset> getInitialPoolWeightsList() {
+      public java.util.List<osmosis.gamm.v1beta1.Pool.PoolAsset> getInitialPoolWeightsList() {
         if (initialPoolWeightsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(initialPoolWeights_);
         } else {
@@ -1420,7 +1420,7 @@ public final class BalancerPool {
        * here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
        */
       public int getInitialPoolWeightsCount() {
         if (initialPoolWeightsBuilder_ == null) {
@@ -1438,9 +1438,9 @@ public final class BalancerPool {
        * here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
        */
-      public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset getInitialPoolWeights(int index) {
+      public osmosis.gamm.v1beta1.Pool.PoolAsset getInitialPoolWeights(int index) {
         if (initialPoolWeightsBuilder_ == null) {
           return initialPoolWeights_.get(index);
         } else {
@@ -1456,10 +1456,10 @@ public final class BalancerPool {
        * here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
        */
       public Builder setInitialPoolWeights(
-          int index, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset value) {
+          int index, osmosis.gamm.v1beta1.Pool.PoolAsset value) {
         if (initialPoolWeightsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1481,10 +1481,10 @@ public final class BalancerPool {
        * here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
        */
       public Builder setInitialPoolWeights(
-          int index, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder builderForValue) {
+          int index, osmosis.gamm.v1beta1.Pool.PoolAsset.Builder builderForValue) {
         if (initialPoolWeightsBuilder_ == null) {
           ensureInitialPoolWeightsIsMutable();
           initialPoolWeights_.set(index, builderForValue.build());
@@ -1503,9 +1503,9 @@ public final class BalancerPool {
        * here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
        */
-      public Builder addInitialPoolWeights(osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset value) {
+      public Builder addInitialPoolWeights(osmosis.gamm.v1beta1.Pool.PoolAsset value) {
         if (initialPoolWeightsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1527,10 +1527,10 @@ public final class BalancerPool {
        * here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
        */
       public Builder addInitialPoolWeights(
-          int index, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset value) {
+          int index, osmosis.gamm.v1beta1.Pool.PoolAsset value) {
         if (initialPoolWeightsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1552,10 +1552,10 @@ public final class BalancerPool {
        * here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
        */
       public Builder addInitialPoolWeights(
-          osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder builderForValue) {
+          osmosis.gamm.v1beta1.Pool.PoolAsset.Builder builderForValue) {
         if (initialPoolWeightsBuilder_ == null) {
           ensureInitialPoolWeightsIsMutable();
           initialPoolWeights_.add(builderForValue.build());
@@ -1574,10 +1574,10 @@ public final class BalancerPool {
        * here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
        */
       public Builder addInitialPoolWeights(
-          int index, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder builderForValue) {
+          int index, osmosis.gamm.v1beta1.Pool.PoolAsset.Builder builderForValue) {
         if (initialPoolWeightsBuilder_ == null) {
           ensureInitialPoolWeightsIsMutable();
           initialPoolWeights_.add(index, builderForValue.build());
@@ -1596,10 +1596,10 @@ public final class BalancerPool {
        * here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
        */
       public Builder addAllInitialPoolWeights(
-          java.lang.Iterable<? extends osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset> values) {
+          java.lang.Iterable<? extends osmosis.gamm.v1beta1.Pool.PoolAsset> values) {
         if (initialPoolWeightsBuilder_ == null) {
           ensureInitialPoolWeightsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -1619,7 +1619,7 @@ public final class BalancerPool {
        * here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
        */
       public Builder clearInitialPoolWeights() {
         if (initialPoolWeightsBuilder_ == null) {
@@ -1640,7 +1640,7 @@ public final class BalancerPool {
        * here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
        */
       public Builder removeInitialPoolWeights(int index) {
         if (initialPoolWeightsBuilder_ == null) {
@@ -1661,9 +1661,9 @@ public final class BalancerPool {
        * here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
        */
-      public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder getInitialPoolWeightsBuilder(
+      public osmosis.gamm.v1beta1.Pool.PoolAsset.Builder getInitialPoolWeightsBuilder(
           int index) {
         return getInitialPoolWeightsFieldBuilder().getBuilder(index);
       }
@@ -1676,9 +1676,9 @@ public final class BalancerPool {
        * here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
        */
-      public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder getInitialPoolWeightsOrBuilder(
+      public osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder getInitialPoolWeightsOrBuilder(
           int index) {
         if (initialPoolWeightsBuilder_ == null) {
           return initialPoolWeights_.get(index);  } else {
@@ -1694,9 +1694,9 @@ public final class BalancerPool {
        * here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
        */
-      public java.util.List<? extends osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder> 
+      public java.util.List<? extends osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder> 
            getInitialPoolWeightsOrBuilderList() {
         if (initialPoolWeightsBuilder_ != null) {
           return initialPoolWeightsBuilder_.getMessageOrBuilderList();
@@ -1713,11 +1713,11 @@ public final class BalancerPool {
        * here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
        */
-      public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder addInitialPoolWeightsBuilder() {
+      public osmosis.gamm.v1beta1.Pool.PoolAsset.Builder addInitialPoolWeightsBuilder() {
         return getInitialPoolWeightsFieldBuilder().addBuilder(
-            osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.getDefaultInstance());
+            osmosis.gamm.v1beta1.Pool.PoolAsset.getDefaultInstance());
       }
       /**
        * <pre>
@@ -1728,12 +1728,12 @@ public final class BalancerPool {
        * here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
        */
-      public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder addInitialPoolWeightsBuilder(
+      public osmosis.gamm.v1beta1.Pool.PoolAsset.Builder addInitialPoolWeightsBuilder(
           int index) {
         return getInitialPoolWeightsFieldBuilder().addBuilder(
-            index, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.getDefaultInstance());
+            index, osmosis.gamm.v1beta1.Pool.PoolAsset.getDefaultInstance());
       }
       /**
        * <pre>
@@ -1744,18 +1744,18 @@ public final class BalancerPool {
        * here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset initialPoolWeights = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"initial_pool_weights&#92;""];</code>
        */
-      public java.util.List<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder> 
+      public java.util.List<osmosis.gamm.v1beta1.Pool.PoolAsset.Builder> 
            getInitialPoolWeightsBuilderList() {
         return getInitialPoolWeightsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder> 
+          osmosis.gamm.v1beta1.Pool.PoolAsset, osmosis.gamm.v1beta1.Pool.PoolAsset.Builder, osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder> 
           getInitialPoolWeightsFieldBuilder() {
         if (initialPoolWeightsBuilder_ == null) {
           initialPoolWeightsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder>(
+              osmosis.gamm.v1beta1.Pool.PoolAsset, osmosis.gamm.v1beta1.Pool.PoolAsset.Builder, osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder>(
                   initialPoolWeights_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -1765,17 +1765,17 @@ public final class BalancerPool {
         return initialPoolWeightsBuilder_;
       }
 
-      private java.util.List<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset> targetPoolWeights_ =
+      private java.util.List<osmosis.gamm.v1beta1.Pool.PoolAsset> targetPoolWeights_ =
         java.util.Collections.emptyList();
       private void ensureTargetPoolWeightsIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
-          targetPoolWeights_ = new java.util.ArrayList<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset>(targetPoolWeights_);
+          targetPoolWeights_ = new java.util.ArrayList<osmosis.gamm.v1beta1.Pool.PoolAsset>(targetPoolWeights_);
           bitField0_ |= 0x00000002;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder> targetPoolWeightsBuilder_;
+          osmosis.gamm.v1beta1.Pool.PoolAsset, osmosis.gamm.v1beta1.Pool.PoolAsset.Builder, osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder> targetPoolWeightsBuilder_;
 
       /**
        * <pre>
@@ -1785,9 +1785,9 @@ public final class BalancerPool {
        * refactorings should just have a type with the denom &amp; weight here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
        */
-      public java.util.List<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset> getTargetPoolWeightsList() {
+      public java.util.List<osmosis.gamm.v1beta1.Pool.PoolAsset> getTargetPoolWeightsList() {
         if (targetPoolWeightsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(targetPoolWeights_);
         } else {
@@ -1802,7 +1802,7 @@ public final class BalancerPool {
        * refactorings should just have a type with the denom &amp; weight here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
        */
       public int getTargetPoolWeightsCount() {
         if (targetPoolWeightsBuilder_ == null) {
@@ -1819,9 +1819,9 @@ public final class BalancerPool {
        * refactorings should just have a type with the denom &amp; weight here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
        */
-      public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset getTargetPoolWeights(int index) {
+      public osmosis.gamm.v1beta1.Pool.PoolAsset getTargetPoolWeights(int index) {
         if (targetPoolWeightsBuilder_ == null) {
           return targetPoolWeights_.get(index);
         } else {
@@ -1836,10 +1836,10 @@ public final class BalancerPool {
        * refactorings should just have a type with the denom &amp; weight here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
        */
       public Builder setTargetPoolWeights(
-          int index, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset value) {
+          int index, osmosis.gamm.v1beta1.Pool.PoolAsset value) {
         if (targetPoolWeightsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1860,10 +1860,10 @@ public final class BalancerPool {
        * refactorings should just have a type with the denom &amp; weight here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
        */
       public Builder setTargetPoolWeights(
-          int index, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder builderForValue) {
+          int index, osmosis.gamm.v1beta1.Pool.PoolAsset.Builder builderForValue) {
         if (targetPoolWeightsBuilder_ == null) {
           ensureTargetPoolWeightsIsMutable();
           targetPoolWeights_.set(index, builderForValue.build());
@@ -1881,9 +1881,9 @@ public final class BalancerPool {
        * refactorings should just have a type with the denom &amp; weight here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
        */
-      public Builder addTargetPoolWeights(osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset value) {
+      public Builder addTargetPoolWeights(osmosis.gamm.v1beta1.Pool.PoolAsset value) {
         if (targetPoolWeightsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1904,10 +1904,10 @@ public final class BalancerPool {
        * refactorings should just have a type with the denom &amp; weight here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
        */
       public Builder addTargetPoolWeights(
-          int index, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset value) {
+          int index, osmosis.gamm.v1beta1.Pool.PoolAsset value) {
         if (targetPoolWeightsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1928,10 +1928,10 @@ public final class BalancerPool {
        * refactorings should just have a type with the denom &amp; weight here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
        */
       public Builder addTargetPoolWeights(
-          osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder builderForValue) {
+          osmosis.gamm.v1beta1.Pool.PoolAsset.Builder builderForValue) {
         if (targetPoolWeightsBuilder_ == null) {
           ensureTargetPoolWeightsIsMutable();
           targetPoolWeights_.add(builderForValue.build());
@@ -1949,10 +1949,10 @@ public final class BalancerPool {
        * refactorings should just have a type with the denom &amp; weight here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
        */
       public Builder addTargetPoolWeights(
-          int index, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder builderForValue) {
+          int index, osmosis.gamm.v1beta1.Pool.PoolAsset.Builder builderForValue) {
         if (targetPoolWeightsBuilder_ == null) {
           ensureTargetPoolWeightsIsMutable();
           targetPoolWeights_.add(index, builderForValue.build());
@@ -1970,10 +1970,10 @@ public final class BalancerPool {
        * refactorings should just have a type with the denom &amp; weight here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
        */
       public Builder addAllTargetPoolWeights(
-          java.lang.Iterable<? extends osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset> values) {
+          java.lang.Iterable<? extends osmosis.gamm.v1beta1.Pool.PoolAsset> values) {
         if (targetPoolWeightsBuilder_ == null) {
           ensureTargetPoolWeightsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -1992,7 +1992,7 @@ public final class BalancerPool {
        * refactorings should just have a type with the denom &amp; weight here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
        */
       public Builder clearTargetPoolWeights() {
         if (targetPoolWeightsBuilder_ == null) {
@@ -2012,7 +2012,7 @@ public final class BalancerPool {
        * refactorings should just have a type with the denom &amp; weight here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
        */
       public Builder removeTargetPoolWeights(int index) {
         if (targetPoolWeightsBuilder_ == null) {
@@ -2032,9 +2032,9 @@ public final class BalancerPool {
        * refactorings should just have a type with the denom &amp; weight here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
        */
-      public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder getTargetPoolWeightsBuilder(
+      public osmosis.gamm.v1beta1.Pool.PoolAsset.Builder getTargetPoolWeightsBuilder(
           int index) {
         return getTargetPoolWeightsFieldBuilder().getBuilder(index);
       }
@@ -2046,9 +2046,9 @@ public final class BalancerPool {
        * refactorings should just have a type with the denom &amp; weight here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
        */
-      public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder getTargetPoolWeightsOrBuilder(
+      public osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder getTargetPoolWeightsOrBuilder(
           int index) {
         if (targetPoolWeightsBuilder_ == null) {
           return targetPoolWeights_.get(index);  } else {
@@ -2063,9 +2063,9 @@ public final class BalancerPool {
        * refactorings should just have a type with the denom &amp; weight here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
        */
-      public java.util.List<? extends osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder> 
+      public java.util.List<? extends osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder> 
            getTargetPoolWeightsOrBuilderList() {
         if (targetPoolWeightsBuilder_ != null) {
           return targetPoolWeightsBuilder_.getMessageOrBuilderList();
@@ -2081,11 +2081,11 @@ public final class BalancerPool {
        * refactorings should just have a type with the denom &amp; weight here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
        */
-      public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder addTargetPoolWeightsBuilder() {
+      public osmosis.gamm.v1beta1.Pool.PoolAsset.Builder addTargetPoolWeightsBuilder() {
         return getTargetPoolWeightsFieldBuilder().addBuilder(
-            osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.getDefaultInstance());
+            osmosis.gamm.v1beta1.Pool.PoolAsset.getDefaultInstance());
       }
       /**
        * <pre>
@@ -2095,12 +2095,12 @@ public final class BalancerPool {
        * refactorings should just have a type with the denom &amp; weight here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
        */
-      public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder addTargetPoolWeightsBuilder(
+      public osmosis.gamm.v1beta1.Pool.PoolAsset.Builder addTargetPoolWeightsBuilder(
           int index) {
         return getTargetPoolWeightsFieldBuilder().addBuilder(
-            index, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.getDefaultInstance());
+            index, osmosis.gamm.v1beta1.Pool.PoolAsset.getDefaultInstance());
       }
       /**
        * <pre>
@@ -2110,18 +2110,18 @@ public final class BalancerPool {
        * refactorings should just have a type with the denom &amp; weight here.
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset targetPoolWeights = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"target_pool_weights&#92;""];</code>
        */
-      public java.util.List<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder> 
+      public java.util.List<osmosis.gamm.v1beta1.Pool.PoolAsset.Builder> 
            getTargetPoolWeightsBuilderList() {
         return getTargetPoolWeightsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder> 
+          osmosis.gamm.v1beta1.Pool.PoolAsset, osmosis.gamm.v1beta1.Pool.PoolAsset.Builder, osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder> 
           getTargetPoolWeightsFieldBuilder() {
         if (targetPoolWeightsBuilder_ == null) {
           targetPoolWeightsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder>(
+              osmosis.gamm.v1beta1.Pool.PoolAsset, osmosis.gamm.v1beta1.Pool.PoolAsset.Builder, osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder>(
                   targetPoolWeights_,
                   ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
@@ -3118,902 +3118,6 @@ public final class BalancerPool {
 
   }
 
-  public interface PoolAssetOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:osmosis.gamm.balancer.v1beta1.PoolAsset)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * Coins we are talking about,
-     * the denomination must be unique amongst all PoolAssets for this pool.
-     * </pre>
-     *
-     * <code>.cosmos.base.v1beta1.Coin token = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token&#92;""];</code>
-     * @return Whether the token field is set.
-     */
-    boolean hasToken();
-    /**
-     * <pre>
-     * Coins we are talking about,
-     * the denomination must be unique amongst all PoolAssets for this pool.
-     * </pre>
-     *
-     * <code>.cosmos.base.v1beta1.Coin token = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token&#92;""];</code>
-     * @return The token.
-     */
-    cosmos.base.v1beta1.CoinOuterClass.Coin getToken();
-    /**
-     * <pre>
-     * Coins we are talking about,
-     * the denomination must be unique amongst all PoolAssets for this pool.
-     * </pre>
-     *
-     * <code>.cosmos.base.v1beta1.Coin token = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token&#92;""];</code>
-     */
-    cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getTokenOrBuilder();
-
-    /**
-     * <pre>
-     * Weight that is not normalized. This weight must be less than 2^50
-     * </pre>
-     *
-     * <code>string weight = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"weight&#92;""];</code>
-     * @return The weight.
-     */
-    java.lang.String getWeight();
-    /**
-     * <pre>
-     * Weight that is not normalized. This weight must be less than 2^50
-     * </pre>
-     *
-     * <code>string weight = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"weight&#92;""];</code>
-     * @return The bytes for weight.
-     */
-    com.google.protobuf.ByteString
-        getWeightBytes();
-  }
-  /**
-   * <pre>
-   * Pool asset is an internal struct that combines the amount of the
-   * token in the pool, and its balancer weight.
-   * This is an awkward packaging of data,
-   * and should be revisited in a future state migration.
-   * </pre>
-   *
-   * Protobuf type {@code osmosis.gamm.balancer.v1beta1.PoolAsset}
-   */
-  public static final class PoolAsset extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:osmosis.gamm.balancer.v1beta1.PoolAsset)
-      PoolAssetOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use PoolAsset.newBuilder() to construct.
-    private PoolAsset(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private PoolAsset() {
-      weight_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new PoolAsset();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private PoolAsset(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
-              if (token_ != null) {
-                subBuilder = token_.toBuilder();
-              }
-              token_ = input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(token_);
-                token_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              weight_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return osmosis.gamm.balancer.v1beta1.BalancerPool.internal_static_osmosis_gamm_balancer_v1beta1_PoolAsset_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return osmosis.gamm.balancer.v1beta1.BalancerPool.internal_static_osmosis_gamm_balancer_v1beta1_PoolAsset_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.class, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder.class);
-    }
-
-    public static final int TOKEN_FIELD_NUMBER = 1;
-    private cosmos.base.v1beta1.CoinOuterClass.Coin token_;
-    /**
-     * <pre>
-     * Coins we are talking about,
-     * the denomination must be unique amongst all PoolAssets for this pool.
-     * </pre>
-     *
-     * <code>.cosmos.base.v1beta1.Coin token = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token&#92;""];</code>
-     * @return Whether the token field is set.
-     */
-    @java.lang.Override
-    public boolean hasToken() {
-      return token_ != null;
-    }
-    /**
-     * <pre>
-     * Coins we are talking about,
-     * the denomination must be unique amongst all PoolAssets for this pool.
-     * </pre>
-     *
-     * <code>.cosmos.base.v1beta1.Coin token = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token&#92;""];</code>
-     * @return The token.
-     */
-    @java.lang.Override
-    public cosmos.base.v1beta1.CoinOuterClass.Coin getToken() {
-      return token_ == null ? cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : token_;
-    }
-    /**
-     * <pre>
-     * Coins we are talking about,
-     * the denomination must be unique amongst all PoolAssets for this pool.
-     * </pre>
-     *
-     * <code>.cosmos.base.v1beta1.Coin token = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token&#92;""];</code>
-     */
-    @java.lang.Override
-    public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getTokenOrBuilder() {
-      return getToken();
-    }
-
-    public static final int WEIGHT_FIELD_NUMBER = 2;
-    private volatile java.lang.Object weight_;
-    /**
-     * <pre>
-     * Weight that is not normalized. This weight must be less than 2^50
-     * </pre>
-     *
-     * <code>string weight = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"weight&#92;""];</code>
-     * @return The weight.
-     */
-    @java.lang.Override
-    public java.lang.String getWeight() {
-      java.lang.Object ref = weight_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        weight_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Weight that is not normalized. This weight must be less than 2^50
-     * </pre>
-     *
-     * <code>string weight = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"weight&#92;""];</code>
-     * @return The bytes for weight.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getWeightBytes() {
-      java.lang.Object ref = weight_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        weight_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (token_ != null) {
-        output.writeMessage(1, getToken());
-      }
-      if (!getWeightBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, weight_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (token_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getToken());
-      }
-      if (!getWeightBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, weight_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset)) {
-        return super.equals(obj);
-      }
-      osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset other = (osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset) obj;
-
-      if (hasToken() != other.hasToken()) return false;
-      if (hasToken()) {
-        if (!getToken()
-            .equals(other.getToken())) return false;
-      }
-      if (!getWeight()
-          .equals(other.getWeight())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasToken()) {
-        hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-        hash = (53 * hash) + getToken().hashCode();
-      }
-      hash = (37 * hash) + WEIGHT_FIELD_NUMBER;
-      hash = (53 * hash) + getWeight().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * Pool asset is an internal struct that combines the amount of the
-     * token in the pool, and its balancer weight.
-     * This is an awkward packaging of data,
-     * and should be revisited in a future state migration.
-     * </pre>
-     *
-     * Protobuf type {@code osmosis.gamm.balancer.v1beta1.PoolAsset}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:osmosis.gamm.balancer.v1beta1.PoolAsset)
-        osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return osmosis.gamm.balancer.v1beta1.BalancerPool.internal_static_osmosis_gamm_balancer_v1beta1_PoolAsset_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return osmosis.gamm.balancer.v1beta1.BalancerPool.internal_static_osmosis_gamm_balancer_v1beta1_PoolAsset_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.class, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder.class);
-      }
-
-      // Construct using osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (tokenBuilder_ == null) {
-          token_ = null;
-        } else {
-          token_ = null;
-          tokenBuilder_ = null;
-        }
-        weight_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return osmosis.gamm.balancer.v1beta1.BalancerPool.internal_static_osmosis_gamm_balancer_v1beta1_PoolAsset_descriptor;
-      }
-
-      @java.lang.Override
-      public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset getDefaultInstanceForType() {
-        return osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset build() {
-        osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset buildPartial() {
-        osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset result = new osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset(this);
-        if (tokenBuilder_ == null) {
-          result.token_ = token_;
-        } else {
-          result.token_ = tokenBuilder_.build();
-        }
-        result.weight_ = weight_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset) {
-          return mergeFrom((osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset other) {
-        if (other == osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.getDefaultInstance()) return this;
-        if (other.hasToken()) {
-          mergeToken(other.getToken());
-        }
-        if (!other.getWeight().isEmpty()) {
-          weight_ = other.weight_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private cosmos.base.v1beta1.CoinOuterClass.Coin token_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> tokenBuilder_;
-      /**
-       * <pre>
-       * Coins we are talking about,
-       * the denomination must be unique amongst all PoolAssets for this pool.
-       * </pre>
-       *
-       * <code>.cosmos.base.v1beta1.Coin token = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token&#92;""];</code>
-       * @return Whether the token field is set.
-       */
-      public boolean hasToken() {
-        return tokenBuilder_ != null || token_ != null;
-      }
-      /**
-       * <pre>
-       * Coins we are talking about,
-       * the denomination must be unique amongst all PoolAssets for this pool.
-       * </pre>
-       *
-       * <code>.cosmos.base.v1beta1.Coin token = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token&#92;""];</code>
-       * @return The token.
-       */
-      public cosmos.base.v1beta1.CoinOuterClass.Coin getToken() {
-        if (tokenBuilder_ == null) {
-          return token_ == null ? cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : token_;
-        } else {
-          return tokenBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * Coins we are talking about,
-       * the denomination must be unique amongst all PoolAssets for this pool.
-       * </pre>
-       *
-       * <code>.cosmos.base.v1beta1.Coin token = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token&#92;""];</code>
-       */
-      public Builder setToken(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
-        if (tokenBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          token_ = value;
-          onChanged();
-        } else {
-          tokenBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Coins we are talking about,
-       * the denomination must be unique amongst all PoolAssets for this pool.
-       * </pre>
-       *
-       * <code>.cosmos.base.v1beta1.Coin token = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token&#92;""];</code>
-       */
-      public Builder setToken(
-          cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
-        if (tokenBuilder_ == null) {
-          token_ = builderForValue.build();
-          onChanged();
-        } else {
-          tokenBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Coins we are talking about,
-       * the denomination must be unique amongst all PoolAssets for this pool.
-       * </pre>
-       *
-       * <code>.cosmos.base.v1beta1.Coin token = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token&#92;""];</code>
-       */
-      public Builder mergeToken(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
-        if (tokenBuilder_ == null) {
-          if (token_ != null) {
-            token_ =
-              cosmos.base.v1beta1.CoinOuterClass.Coin.newBuilder(token_).mergeFrom(value).buildPartial();
-          } else {
-            token_ = value;
-          }
-          onChanged();
-        } else {
-          tokenBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Coins we are talking about,
-       * the denomination must be unique amongst all PoolAssets for this pool.
-       * </pre>
-       *
-       * <code>.cosmos.base.v1beta1.Coin token = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token&#92;""];</code>
-       */
-      public Builder clearToken() {
-        if (tokenBuilder_ == null) {
-          token_ = null;
-          onChanged();
-        } else {
-          token_ = null;
-          tokenBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Coins we are talking about,
-       * the denomination must be unique amongst all PoolAssets for this pool.
-       * </pre>
-       *
-       * <code>.cosmos.base.v1beta1.Coin token = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token&#92;""];</code>
-       */
-      public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getTokenBuilder() {
-        
-        onChanged();
-        return getTokenFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * Coins we are talking about,
-       * the denomination must be unique amongst all PoolAssets for this pool.
-       * </pre>
-       *
-       * <code>.cosmos.base.v1beta1.Coin token = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token&#92;""];</code>
-       */
-      public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getTokenOrBuilder() {
-        if (tokenBuilder_ != null) {
-          return tokenBuilder_.getMessageOrBuilder();
-        } else {
-          return token_ == null ?
-              cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : token_;
-        }
-      }
-      /**
-       * <pre>
-       * Coins we are talking about,
-       * the denomination must be unique amongst all PoolAssets for this pool.
-       * </pre>
-       *
-       * <code>.cosmos.base.v1beta1.Coin token = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token&#92;""];</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
-          getTokenFieldBuilder() {
-        if (tokenBuilder_ == null) {
-          tokenBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder>(
-                  getToken(),
-                  getParentForChildren(),
-                  isClean());
-          token_ = null;
-        }
-        return tokenBuilder_;
-      }
-
-      private java.lang.Object weight_ = "";
-      /**
-       * <pre>
-       * Weight that is not normalized. This weight must be less than 2^50
-       * </pre>
-       *
-       * <code>string weight = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"weight&#92;""];</code>
-       * @return The weight.
-       */
-      public java.lang.String getWeight() {
-        java.lang.Object ref = weight_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          weight_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Weight that is not normalized. This weight must be less than 2^50
-       * </pre>
-       *
-       * <code>string weight = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"weight&#92;""];</code>
-       * @return The bytes for weight.
-       */
-      public com.google.protobuf.ByteString
-          getWeightBytes() {
-        java.lang.Object ref = weight_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          weight_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Weight that is not normalized. This weight must be less than 2^50
-       * </pre>
-       *
-       * <code>string weight = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"weight&#92;""];</code>
-       * @param value The weight to set.
-       * @return This builder for chaining.
-       */
-      public Builder setWeight(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        weight_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Weight that is not normalized. This weight must be less than 2^50
-       * </pre>
-       *
-       * <code>string weight = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"weight&#92;""];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearWeight() {
-        
-        weight_ = getDefaultInstance().getWeight();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Weight that is not normalized. This weight must be less than 2^50
-       * </pre>
-       *
-       * <code>string weight = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"weight&#92;""];</code>
-       * @param value The bytes for weight to set.
-       * @return This builder for chaining.
-       */
-      public Builder setWeightBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        weight_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:osmosis.gamm.balancer.v1beta1.PoolAsset)
-    }
-
-    // @@protoc_insertion_point(class_scope:osmosis.gamm.balancer.v1beta1.PoolAsset)
-    private static final osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset();
-    }
-
-    public static osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<PoolAsset>
-        PARSER = new com.google.protobuf.AbstractParser<PoolAsset>() {
-      @java.lang.Override
-      public PoolAsset parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PoolAsset(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<PoolAsset> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<PoolAsset> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface PoolOrBuilder extends
       // @@protoc_insertion_point(interface_extends:osmosis.gamm.balancer.v1beta1.Pool)
       com.google.protobuf.MessageOrBuilder {
@@ -4120,9 +3224,9 @@ public final class BalancerPool {
      * They contain the pool asset and the information about the weight
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
      */
-    java.util.List<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset> 
+    java.util.List<osmosis.gamm.v1beta1.Pool.PoolAsset> 
         getPoolAssetsList();
     /**
      * <pre>
@@ -4130,16 +3234,16 @@ public final class BalancerPool {
      * They contain the pool asset and the information about the weight
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
      */
-    osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset getPoolAssets(int index);
+    osmosis.gamm.v1beta1.Pool.PoolAsset getPoolAssets(int index);
     /**
      * <pre>
      * These are assumed to be sorted by denomiation.
      * They contain the pool asset and the information about the weight
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
      */
     int getPoolAssetsCount();
     /**
@@ -4148,9 +3252,9 @@ public final class BalancerPool {
      * They contain the pool asset and the information about the weight
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
      */
-    java.util.List<? extends osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder> 
+    java.util.List<? extends osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder> 
         getPoolAssetsOrBuilderList();
     /**
      * <pre>
@@ -4158,9 +3262,9 @@ public final class BalancerPool {
      * They contain the pool asset and the information about the weight
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
      */
-    osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder getPoolAssetsOrBuilder(
+    osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder getPoolAssetsOrBuilder(
         int index);
 
     /**
@@ -4278,11 +3382,11 @@ public final class BalancerPool {
             }
             case 50: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                poolAssets_ = new java.util.ArrayList<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset>();
+                poolAssets_ = new java.util.ArrayList<osmosis.gamm.v1beta1.Pool.PoolAsset>();
                 mutable_bitField0_ |= 0x00000001;
               }
               poolAssets_.add(
-                  input.readMessage(osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.parser(), extensionRegistry));
+                  input.readMessage(osmosis.gamm.v1beta1.Pool.PoolAsset.parser(), extensionRegistry));
               break;
             }
             case 58: {
@@ -4502,17 +3606,17 @@ public final class BalancerPool {
     }
 
     public static final int POOLASSETS_FIELD_NUMBER = 6;
-    private java.util.List<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset> poolAssets_;
+    private java.util.List<osmosis.gamm.v1beta1.Pool.PoolAsset> poolAssets_;
     /**
      * <pre>
      * These are assumed to be sorted by denomiation.
      * They contain the pool asset and the information about the weight
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
      */
     @java.lang.Override
-    public java.util.List<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset> getPoolAssetsList() {
+    public java.util.List<osmosis.gamm.v1beta1.Pool.PoolAsset> getPoolAssetsList() {
       return poolAssets_;
     }
     /**
@@ -4521,10 +3625,10 @@ public final class BalancerPool {
      * They contain the pool asset and the information about the weight
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder> 
+    public java.util.List<? extends osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder> 
         getPoolAssetsOrBuilderList() {
       return poolAssets_;
     }
@@ -4534,7 +3638,7 @@ public final class BalancerPool {
      * They contain the pool asset and the information about the weight
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
      */
     @java.lang.Override
     public int getPoolAssetsCount() {
@@ -4546,10 +3650,10 @@ public final class BalancerPool {
      * They contain the pool asset and the information about the weight
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
      */
     @java.lang.Override
-    public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset getPoolAssets(int index) {
+    public osmosis.gamm.v1beta1.Pool.PoolAsset getPoolAssets(int index) {
       return poolAssets_.get(index);
     }
     /**
@@ -4558,10 +3662,10 @@ public final class BalancerPool {
      * They contain the pool asset and the information about the weight
      * </pre>
      *
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
      */
     @java.lang.Override
-    public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder getPoolAssetsOrBuilder(
+    public osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder getPoolAssetsOrBuilder(
         int index) {
       return poolAssets_.get(index);
     }
@@ -5600,17 +4704,17 @@ public final class BalancerPool {
         return totalSharesBuilder_;
       }
 
-      private java.util.List<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset> poolAssets_ =
+      private java.util.List<osmosis.gamm.v1beta1.Pool.PoolAsset> poolAssets_ =
         java.util.Collections.emptyList();
       private void ensurePoolAssetsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          poolAssets_ = new java.util.ArrayList<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset>(poolAssets_);
+          poolAssets_ = new java.util.ArrayList<osmosis.gamm.v1beta1.Pool.PoolAsset>(poolAssets_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder> poolAssetsBuilder_;
+          osmosis.gamm.v1beta1.Pool.PoolAsset, osmosis.gamm.v1beta1.Pool.PoolAsset.Builder, osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder> poolAssetsBuilder_;
 
       /**
        * <pre>
@@ -5618,9 +4722,9 @@ public final class BalancerPool {
        * They contain the pool asset and the information about the weight
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
        */
-      public java.util.List<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset> getPoolAssetsList() {
+      public java.util.List<osmosis.gamm.v1beta1.Pool.PoolAsset> getPoolAssetsList() {
         if (poolAssetsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(poolAssets_);
         } else {
@@ -5633,7 +4737,7 @@ public final class BalancerPool {
        * They contain the pool asset and the information about the weight
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
        */
       public int getPoolAssetsCount() {
         if (poolAssetsBuilder_ == null) {
@@ -5648,9 +4752,9 @@ public final class BalancerPool {
        * They contain the pool asset and the information about the weight
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
        */
-      public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset getPoolAssets(int index) {
+      public osmosis.gamm.v1beta1.Pool.PoolAsset getPoolAssets(int index) {
         if (poolAssetsBuilder_ == null) {
           return poolAssets_.get(index);
         } else {
@@ -5663,10 +4767,10 @@ public final class BalancerPool {
        * They contain the pool asset and the information about the weight
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
        */
       public Builder setPoolAssets(
-          int index, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset value) {
+          int index, osmosis.gamm.v1beta1.Pool.PoolAsset value) {
         if (poolAssetsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5685,10 +4789,10 @@ public final class BalancerPool {
        * They contain the pool asset and the information about the weight
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
        */
       public Builder setPoolAssets(
-          int index, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder builderForValue) {
+          int index, osmosis.gamm.v1beta1.Pool.PoolAsset.Builder builderForValue) {
         if (poolAssetsBuilder_ == null) {
           ensurePoolAssetsIsMutable();
           poolAssets_.set(index, builderForValue.build());
@@ -5704,9 +4808,9 @@ public final class BalancerPool {
        * They contain the pool asset and the information about the weight
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
        */
-      public Builder addPoolAssets(osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset value) {
+      public Builder addPoolAssets(osmosis.gamm.v1beta1.Pool.PoolAsset value) {
         if (poolAssetsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5725,10 +4829,10 @@ public final class BalancerPool {
        * They contain the pool asset and the information about the weight
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
        */
       public Builder addPoolAssets(
-          int index, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset value) {
+          int index, osmosis.gamm.v1beta1.Pool.PoolAsset value) {
         if (poolAssetsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5747,10 +4851,10 @@ public final class BalancerPool {
        * They contain the pool asset and the information about the weight
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
        */
       public Builder addPoolAssets(
-          osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder builderForValue) {
+          osmosis.gamm.v1beta1.Pool.PoolAsset.Builder builderForValue) {
         if (poolAssetsBuilder_ == null) {
           ensurePoolAssetsIsMutable();
           poolAssets_.add(builderForValue.build());
@@ -5766,10 +4870,10 @@ public final class BalancerPool {
        * They contain the pool asset and the information about the weight
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
        */
       public Builder addPoolAssets(
-          int index, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder builderForValue) {
+          int index, osmosis.gamm.v1beta1.Pool.PoolAsset.Builder builderForValue) {
         if (poolAssetsBuilder_ == null) {
           ensurePoolAssetsIsMutable();
           poolAssets_.add(index, builderForValue.build());
@@ -5785,10 +4889,10 @@ public final class BalancerPool {
        * They contain the pool asset and the information about the weight
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
        */
       public Builder addAllPoolAssets(
-          java.lang.Iterable<? extends osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset> values) {
+          java.lang.Iterable<? extends osmosis.gamm.v1beta1.Pool.PoolAsset> values) {
         if (poolAssetsBuilder_ == null) {
           ensurePoolAssetsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -5805,7 +4909,7 @@ public final class BalancerPool {
        * They contain the pool asset and the information about the weight
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
        */
       public Builder clearPoolAssets() {
         if (poolAssetsBuilder_ == null) {
@@ -5823,7 +4927,7 @@ public final class BalancerPool {
        * They contain the pool asset and the information about the weight
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
        */
       public Builder removePoolAssets(int index) {
         if (poolAssetsBuilder_ == null) {
@@ -5841,9 +4945,9 @@ public final class BalancerPool {
        * They contain the pool asset and the information about the weight
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
        */
-      public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder getPoolAssetsBuilder(
+      public osmosis.gamm.v1beta1.Pool.PoolAsset.Builder getPoolAssetsBuilder(
           int index) {
         return getPoolAssetsFieldBuilder().getBuilder(index);
       }
@@ -5853,9 +4957,9 @@ public final class BalancerPool {
        * They contain the pool asset and the information about the weight
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
        */
-      public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder getPoolAssetsOrBuilder(
+      public osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder getPoolAssetsOrBuilder(
           int index) {
         if (poolAssetsBuilder_ == null) {
           return poolAssets_.get(index);  } else {
@@ -5868,9 +4972,9 @@ public final class BalancerPool {
        * They contain the pool asset and the information about the weight
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
        */
-      public java.util.List<? extends osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder> 
+      public java.util.List<? extends osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder> 
            getPoolAssetsOrBuilderList() {
         if (poolAssetsBuilder_ != null) {
           return poolAssetsBuilder_.getMessageOrBuilderList();
@@ -5884,11 +4988,11 @@ public final class BalancerPool {
        * They contain the pool asset and the information about the weight
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
        */
-      public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder addPoolAssetsBuilder() {
+      public osmosis.gamm.v1beta1.Pool.PoolAsset.Builder addPoolAssetsBuilder() {
         return getPoolAssetsFieldBuilder().addBuilder(
-            osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.getDefaultInstance());
+            osmosis.gamm.v1beta1.Pool.PoolAsset.getDefaultInstance());
       }
       /**
        * <pre>
@@ -5896,12 +5000,12 @@ public final class BalancerPool {
        * They contain the pool asset and the information about the weight
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
        */
-      public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder addPoolAssetsBuilder(
+      public osmosis.gamm.v1beta1.Pool.PoolAsset.Builder addPoolAssetsBuilder(
           int index) {
         return getPoolAssetsFieldBuilder().addBuilder(
-            index, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.getDefaultInstance());
+            index, osmosis.gamm.v1beta1.Pool.PoolAsset.getDefaultInstance());
       }
       /**
        * <pre>
@@ -5909,18 +5013,18 @@ public final class BalancerPool {
        * They contain the pool asset and the information about the weight
        * </pre>
        *
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"pool_assets&#92;""];</code>
        */
-      public java.util.List<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder> 
+      public java.util.List<osmosis.gamm.v1beta1.Pool.PoolAsset.Builder> 
            getPoolAssetsBuilderList() {
         return getPoolAssetsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder> 
+          osmosis.gamm.v1beta1.Pool.PoolAsset, osmosis.gamm.v1beta1.Pool.PoolAsset.Builder, osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder> 
           getPoolAssetsFieldBuilder() {
         if (poolAssetsBuilder_ == null) {
           poolAssetsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder>(
+              osmosis.gamm.v1beta1.Pool.PoolAsset, osmosis.gamm.v1beta1.Pool.PoolAsset.Builder, osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder>(
                   poolAssets_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -6089,11 +5193,6 @@ public final class BalancerPool {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_osmosis_gamm_balancer_v1beta1_PoolParams_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_osmosis_gamm_balancer_v1beta1_PoolAsset_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_osmosis_gamm_balancer_v1beta1_PoolAsset_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_osmosis_gamm_balancer_v1beta1_Pool_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -6113,44 +5212,40 @@ public final class BalancerPool {
       "oto/gogo.proto\032\036google/protobuf/duration" +
       ".proto\032\037google/protobuf/timestamp.proto\032" +
       "\036cosmos/auth/v1beta1/auth.proto\032\036cosmos/" +
-      "base/v1beta1/coin.proto\"\235\003\n\030SmoothWeight" +
-      "ChangeParams\022M\n\nstart_time\030\001 \001(\0132\032.googl" +
-      "e.protobuf.TimestampB\035\220\337\037\001\310\336\037\000\362\336\037\021yaml:\"" +
-      "start_time\"\022^\n\010duration\030\002 \001(\0132\031.google.p" +
-      "rotobuf.DurationB1\310\336\037\000\230\337\037\001\352\336\037\022duration,o" +
-      "mitempty\362\336\037\017yaml:\"duration\"\022i\n\022initialPo" +
-      "olWeights\030\003 \003(\0132(.osmosis.gamm.balancer." +
-      "v1beta1.PoolAssetB#\362\336\037\033yaml:\"initial_poo" +
-      "l_weights\"\310\336\037\000\022g\n\021targetPoolWeights\030\004 \003(" +
-      "\0132(.osmosis.gamm.balancer.v1beta1.PoolAs" +
-      "setB\"\362\336\037\032yaml:\"target_pool_weights\"\310\336\037\000\"" +
-      "\274\002\n\nPoolParams\022R\n\007swapFee\030\001 \001(\tBA\332\336\037&git" +
-      "hub.com/cosmos/cosmos-sdk/types.Dec\362\336\037\017y" +
-      "aml:\"swap_fee\"\310\336\037\000\022R\n\007exitFee\030\002 \001(\tBA\332\336\037" +
-      "&github.com/cosmos/cosmos-sdk/types.Dec\362" +
-      "\336\037\017yaml:\"exit_fee\"\310\336\037\000\022\205\001\n\030smoothWeightC" +
-      "hangeParams\030\003 \001(\01327.osmosis.gamm.balance" +
-      "r.v1beta1.SmoothWeightChangeParamsB*\362\336\037\"" +
-      "yaml:\"smooth_weight_change_params\"\310\336\037\001\"\234" +
-      "\001\n\tPoolAsset\022>\n\005token\030\001 \001(\0132\031.cosmos.bas" +
-      "e.v1beta1.CoinB\024\362\336\037\014yaml:\"token\"\310\336\037\000\022O\n\006" +
-      "weight\030\002 \001(\tB?\332\336\037&github.com/cosmos/cosm" +
-      "os-sdk/types.Int\362\336\037\ryaml:\"weight\"\310\336\037\000\"\360\003" +
-      "\n\004Pool\022#\n\007address\030\001 \001(\tB\022\362\336\037\016yaml:\"addre" +
-      "ss\"\022\n\n\002id\030\002 \001(\004\022b\n\npoolParams\030\003 \001(\0132).os" +
-      "mosis.gamm.balancer.v1beta1.PoolParamsB#" +
-      "\362\336\037\033yaml:\"balancer_pool_params\"\310\336\037\000\022=\n\024f" +
-      "uture_pool_governor\030\004 \001(\tB\037\362\336\037\033yaml:\"fut" +
-      "ure_pool_governor\"\022K\n\013totalShares\030\005 \001(\0132" +
-      "\031.cosmos.base.v1beta1.CoinB\033\362\336\037\023yaml:\"to" +
-      "tal_shares\"\310\336\037\000\022X\n\npoolAssets\030\006 \003(\0132(.os" +
-      "mosis.gamm.balancer.v1beta1.PoolAssetB\032\362" +
-      "\336\037\022yaml:\"pool_assets\"\310\336\037\000\022Z\n\013totalWeight" +
-      "\030\007 \001(\tBE\332\336\037&github.com/cosmos/cosmos-sdk" +
-      "/types.Int\362\336\037\023yaml:\"total_weight\"\310\336\037\000:\021\210" +
-      "\240\037\000\230\240\037\000\312\264-\005PoolIB@Z>github.com/osmosis-l" +
-      "abs/osmosis/v7/x/gamm/pool-models/balanc" +
-      "erb\006proto3"
+      "base/v1beta1/coin.proto\032\037osmosis/gamm/v1" +
+      "beta1/pool.proto\"\213\003\n\030SmoothWeightChangeP" +
+      "arams\022M\n\nstart_time\030\001 \001(\0132\032.google.proto" +
+      "buf.TimestampB\035\220\337\037\001\310\336\037\000\362\336\037\021yaml:\"start_t" +
+      "ime\"\022^\n\010duration\030\002 \001(\0132\031.google.protobuf" +
+      ".DurationB1\310\336\037\000\230\337\037\001\352\336\037\022duration,omitempt" +
+      "y\362\336\037\017yaml:\"duration\"\022`\n\022initialPoolWeigh" +
+      "ts\030\003 \003(\0132\037.osmosis.gamm.v1beta1.PoolAsse" +
+      "tB#\362\336\037\033yaml:\"initial_pool_weights\"\310\336\037\000\022^" +
+      "\n\021targetPoolWeights\030\004 \003(\0132\037.osmosis.gamm" +
+      ".v1beta1.PoolAssetB\"\362\336\037\032yaml:\"target_poo" +
+      "l_weights\"\310\336\037\000\"\274\002\n\nPoolParams\022R\n\007swapFee" +
+      "\030\001 \001(\tBA\332\336\037&github.com/cosmos/cosmos-sdk" +
+      "/types.Dec\362\336\037\017yaml:\"swap_fee\"\310\336\037\000\022R\n\007exi" +
+      "tFee\030\002 \001(\tBA\332\336\037&github.com/cosmos/cosmos" +
+      "-sdk/types.Dec\362\336\037\017yaml:\"exit_fee\"\310\336\037\000\022\205\001" +
+      "\n\030smoothWeightChangeParams\030\003 \001(\01327.osmos" +
+      "is.gamm.balancer.v1beta1.SmoothWeightCha" +
+      "ngeParamsB*\362\336\037\"yaml:\"smooth_weight_chang" +
+      "e_params\"\310\336\037\001\"\347\003\n\004Pool\022#\n\007address\030\001 \001(\tB" +
+      "\022\362\336\037\016yaml:\"address\"\022\n\n\002id\030\002 \001(\004\022b\n\npoolP" +
+      "arams\030\003 \001(\0132).osmosis.gamm.balancer.v1be" +
+      "ta1.PoolParamsB#\362\336\037\033yaml:\"balancer_pool_" +
+      "params\"\310\336\037\000\022=\n\024future_pool_governor\030\004 \001(" +
+      "\tB\037\362\336\037\033yaml:\"future_pool_governor\"\022K\n\013to" +
+      "talShares\030\005 \001(\0132\031.cosmos.base.v1beta1.Co" +
+      "inB\033\362\336\037\023yaml:\"total_shares\"\310\336\037\000\022O\n\npoolA" +
+      "ssets\030\006 \003(\0132\037.osmosis.gamm.v1beta1.PoolA" +
+      "ssetB\032\362\336\037\022yaml:\"pool_assets\"\310\336\037\000\022Z\n\013tota" +
+      "lWeight\030\007 \001(\tBE\332\336\037&github.com/cosmos/cos" +
+      "mos-sdk/types.Int\362\336\037\023yaml:\"total_weight\"" +
+      "\310\336\037\000:\021\210\240\037\000\230\240\037\000\312\264-\005PoolIB@Z>github.com/os" +
+      "mosis-labs/osmosis/v7/x/gamm/pool-models" +
+      "/balancerb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -6161,6 +5256,7 @@ public final class BalancerPool {
           com.google.protobuf.TimestampProto.getDescriptor(),
           cosmos.auth.v1beta1.Auth.getDescriptor(),
           cosmos.base.v1beta1.CoinOuterClass.getDescriptor(),
+          osmosis.gamm.v1beta1.Pool.getDescriptor(),
         });
     internal_static_osmosis_gamm_balancer_v1beta1_SmoothWeightChangeParams_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -6174,14 +5270,8 @@ public final class BalancerPool {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_osmosis_gamm_balancer_v1beta1_PoolParams_descriptor,
         new java.lang.String[] { "SwapFee", "ExitFee", "SmoothWeightChangeParams", });
-    internal_static_osmosis_gamm_balancer_v1beta1_PoolAsset_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_osmosis_gamm_balancer_v1beta1_PoolAsset_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_osmosis_gamm_balancer_v1beta1_PoolAsset_descriptor,
-        new java.lang.String[] { "Token", "Weight", });
     internal_static_osmosis_gamm_balancer_v1beta1_Pool_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_osmosis_gamm_balancer_v1beta1_Pool_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_osmosis_gamm_balancer_v1beta1_Pool_descriptor,
@@ -6205,6 +5295,7 @@ public final class BalancerPool {
     com.google.protobuf.TimestampProto.getDescriptor();
     cosmos.auth.v1beta1.Auth.getDescriptor();
     cosmos.base.v1beta1.CoinOuterClass.getDescriptor();
+    osmosis.gamm.v1beta1.Pool.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

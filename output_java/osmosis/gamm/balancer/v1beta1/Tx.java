@@ -46,27 +46,27 @@ public final class Tx {
     osmosis.gamm.balancer.v1beta1.BalancerPool.PoolParamsOrBuilder getPoolParamsOrBuilder();
 
     /**
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
      */
-    java.util.List<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset> 
+    java.util.List<osmosis.gamm.v1beta1.Pool.PoolAsset> 
         getPoolAssetsList();
     /**
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
      */
-    osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset getPoolAssets(int index);
+    osmosis.gamm.v1beta1.Pool.PoolAsset getPoolAssets(int index);
     /**
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
      */
     int getPoolAssetsCount();
     /**
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
      */
-    java.util.List<? extends osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder> 
+    java.util.List<? extends osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder> 
         getPoolAssetsOrBuilderList();
     /**
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
      */
-    osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder getPoolAssetsOrBuilder(
+    osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder getPoolAssetsOrBuilder(
         int index);
 
     /**
@@ -155,11 +155,11 @@ public final class Tx {
             }
             case 26: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                poolAssets_ = new java.util.ArrayList<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset>();
+                poolAssets_ = new java.util.ArrayList<osmosis.gamm.v1beta1.Pool.PoolAsset>();
                 mutable_bitField0_ |= 0x00000001;
               }
               poolAssets_.add(
-                  input.readMessage(osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.parser(), extensionRegistry));
+                  input.readMessage(osmosis.gamm.v1beta1.Pool.PoolAsset.parser(), extensionRegistry));
               break;
             }
             case 34: {
@@ -268,41 +268,41 @@ public final class Tx {
     }
 
     public static final int POOLASSETS_FIELD_NUMBER = 3;
-    private java.util.List<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset> poolAssets_;
+    private java.util.List<osmosis.gamm.v1beta1.Pool.PoolAsset> poolAssets_;
     /**
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
-    public java.util.List<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset> getPoolAssetsList() {
+    public java.util.List<osmosis.gamm.v1beta1.Pool.PoolAsset> getPoolAssetsList() {
       return poolAssets_;
     }
     /**
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder> 
+    public java.util.List<? extends osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder> 
         getPoolAssetsOrBuilderList() {
       return poolAssets_;
     }
     /**
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public int getPoolAssetsCount() {
       return poolAssets_.size();
     }
     /**
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
-    public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset getPoolAssets(int index) {
+    public osmosis.gamm.v1beta1.Pool.PoolAsset getPoolAssets(int index) {
       return poolAssets_.get(index);
     }
     /**
-     * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
-    public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder getPoolAssetsOrBuilder(
+    public osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder getPoolAssetsOrBuilder(
         int index) {
       return poolAssets_.get(index);
     }
@@ -950,22 +950,22 @@ public final class Tx {
         return poolParamsBuilder_;
       }
 
-      private java.util.List<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset> poolAssets_ =
+      private java.util.List<osmosis.gamm.v1beta1.Pool.PoolAsset> poolAssets_ =
         java.util.Collections.emptyList();
       private void ensurePoolAssetsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          poolAssets_ = new java.util.ArrayList<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset>(poolAssets_);
+          poolAssets_ = new java.util.ArrayList<osmosis.gamm.v1beta1.Pool.PoolAsset>(poolAssets_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder> poolAssetsBuilder_;
+          osmosis.gamm.v1beta1.Pool.PoolAsset, osmosis.gamm.v1beta1.Pool.PoolAsset.Builder, osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder> poolAssetsBuilder_;
 
       /**
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
        */
-      public java.util.List<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset> getPoolAssetsList() {
+      public java.util.List<osmosis.gamm.v1beta1.Pool.PoolAsset> getPoolAssetsList() {
         if (poolAssetsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(poolAssets_);
         } else {
@@ -973,7 +973,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
        */
       public int getPoolAssetsCount() {
         if (poolAssetsBuilder_ == null) {
@@ -983,9 +983,9 @@ public final class Tx {
         }
       }
       /**
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
        */
-      public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset getPoolAssets(int index) {
+      public osmosis.gamm.v1beta1.Pool.PoolAsset getPoolAssets(int index) {
         if (poolAssetsBuilder_ == null) {
           return poolAssets_.get(index);
         } else {
@@ -993,10 +993,10 @@ public final class Tx {
         }
       }
       /**
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setPoolAssets(
-          int index, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset value) {
+          int index, osmosis.gamm.v1beta1.Pool.PoolAsset value) {
         if (poolAssetsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1010,10 +1010,10 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setPoolAssets(
-          int index, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder builderForValue) {
+          int index, osmosis.gamm.v1beta1.Pool.PoolAsset.Builder builderForValue) {
         if (poolAssetsBuilder_ == null) {
           ensurePoolAssetsIsMutable();
           poolAssets_.set(index, builderForValue.build());
@@ -1024,9 +1024,9 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder addPoolAssets(osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset value) {
+      public Builder addPoolAssets(osmosis.gamm.v1beta1.Pool.PoolAsset value) {
         if (poolAssetsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1040,10 +1040,10 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addPoolAssets(
-          int index, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset value) {
+          int index, osmosis.gamm.v1beta1.Pool.PoolAsset value) {
         if (poolAssetsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1057,10 +1057,10 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addPoolAssets(
-          osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder builderForValue) {
+          osmosis.gamm.v1beta1.Pool.PoolAsset.Builder builderForValue) {
         if (poolAssetsBuilder_ == null) {
           ensurePoolAssetsIsMutable();
           poolAssets_.add(builderForValue.build());
@@ -1071,10 +1071,10 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addPoolAssets(
-          int index, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder builderForValue) {
+          int index, osmosis.gamm.v1beta1.Pool.PoolAsset.Builder builderForValue) {
         if (poolAssetsBuilder_ == null) {
           ensurePoolAssetsIsMutable();
           poolAssets_.add(index, builderForValue.build());
@@ -1085,10 +1085,10 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addAllPoolAssets(
-          java.lang.Iterable<? extends osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset> values) {
+          java.lang.Iterable<? extends osmosis.gamm.v1beta1.Pool.PoolAsset> values) {
         if (poolAssetsBuilder_ == null) {
           ensurePoolAssetsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -1100,7 +1100,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearPoolAssets() {
         if (poolAssetsBuilder_ == null) {
@@ -1113,7 +1113,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder removePoolAssets(int index) {
         if (poolAssetsBuilder_ == null) {
@@ -1126,16 +1126,16 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
        */
-      public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder getPoolAssetsBuilder(
+      public osmosis.gamm.v1beta1.Pool.PoolAsset.Builder getPoolAssetsBuilder(
           int index) {
         return getPoolAssetsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
        */
-      public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder getPoolAssetsOrBuilder(
+      public osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder getPoolAssetsOrBuilder(
           int index) {
         if (poolAssetsBuilder_ == null) {
           return poolAssets_.get(index);  } else {
@@ -1143,9 +1143,9 @@ public final class Tx {
         }
       }
       /**
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
        */
-      public java.util.List<? extends osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder> 
+      public java.util.List<? extends osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder> 
            getPoolAssetsOrBuilderList() {
         if (poolAssetsBuilder_ != null) {
           return poolAssetsBuilder_.getMessageOrBuilderList();
@@ -1154,33 +1154,33 @@ public final class Tx {
         }
       }
       /**
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
        */
-      public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder addPoolAssetsBuilder() {
+      public osmosis.gamm.v1beta1.Pool.PoolAsset.Builder addPoolAssetsBuilder() {
         return getPoolAssetsFieldBuilder().addBuilder(
-            osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.getDefaultInstance());
+            osmosis.gamm.v1beta1.Pool.PoolAsset.getDefaultInstance());
       }
       /**
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
        */
-      public osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder addPoolAssetsBuilder(
+      public osmosis.gamm.v1beta1.Pool.PoolAsset.Builder addPoolAssetsBuilder(
           int index) {
         return getPoolAssetsFieldBuilder().addBuilder(
-            index, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.getDefaultInstance());
+            index, osmosis.gamm.v1beta1.Pool.PoolAsset.getDefaultInstance());
       }
       /**
-       * <code>repeated .osmosis.gamm.balancer.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .osmosis.gamm.v1beta1.PoolAsset poolAssets = 3 [(.gogoproto.nullable) = false];</code>
        */
-      public java.util.List<osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder> 
+      public java.util.List<osmosis.gamm.v1beta1.Pool.PoolAsset.Builder> 
            getPoolAssetsBuilderList() {
         return getPoolAssetsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder> 
+          osmosis.gamm.v1beta1.Pool.PoolAsset, osmosis.gamm.v1beta1.Pool.PoolAsset.Builder, osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder> 
           getPoolAssetsFieldBuilder() {
         if (poolAssetsBuilder_ == null) {
           poolAssetsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAsset.Builder, osmosis.gamm.balancer.v1beta1.BalancerPool.PoolAssetOrBuilder>(
+              osmosis.gamm.v1beta1.Pool.PoolAsset, osmosis.gamm.v1beta1.Pool.PoolAsset.Builder, osmosis.gamm.v1beta1.Pool.PoolAssetOrBuilder>(
                   poolAssets_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -1321,12 +1321,6 @@ public final class Tx {
   public interface MsgCreateBalancerPoolResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:osmosis.gamm.balancer.v1beta1.MsgCreateBalancerPoolResponse)
       com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>uint64 pool_id = 1 [(.gogoproto.customname) = "PoolID"];</code>
-     * @return The poolId.
-     */
-    long getPoolId();
   }
   /**
    * Protobuf type {@code osmosis.gamm.balancer.v1beta1.MsgCreateBalancerPoolResponse}
@@ -1373,11 +1367,6 @@ public final class Tx {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              poolId_ = input.readUInt64();
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -1410,17 +1399,6 @@ public final class Tx {
               osmosis.gamm.balancer.v1beta1.Tx.MsgCreateBalancerPoolResponse.class, osmosis.gamm.balancer.v1beta1.Tx.MsgCreateBalancerPoolResponse.Builder.class);
     }
 
-    public static final int POOL_ID_FIELD_NUMBER = 1;
-    private long poolId_;
-    /**
-     * <code>uint64 pool_id = 1 [(.gogoproto.customname) = "PoolID"];</code>
-     * @return The poolId.
-     */
-    @java.lang.Override
-    public long getPoolId() {
-      return poolId_;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1435,9 +1413,6 @@ public final class Tx {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (poolId_ != 0L) {
-        output.writeUInt64(1, poolId_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -1447,10 +1422,6 @@ public final class Tx {
       if (size != -1) return size;
 
       size = 0;
-      if (poolId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, poolId_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1466,8 +1437,6 @@ public final class Tx {
       }
       osmosis.gamm.balancer.v1beta1.Tx.MsgCreateBalancerPoolResponse other = (osmosis.gamm.balancer.v1beta1.Tx.MsgCreateBalancerPoolResponse) obj;
 
-      if (getPoolId()
-          != other.getPoolId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1479,9 +1448,6 @@ public final class Tx {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + POOL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getPoolId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1615,8 +1581,6 @@ public final class Tx {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        poolId_ = 0L;
-
         return this;
       }
 
@@ -1643,7 +1607,6 @@ public final class Tx {
       @java.lang.Override
       public osmosis.gamm.balancer.v1beta1.Tx.MsgCreateBalancerPoolResponse buildPartial() {
         osmosis.gamm.balancer.v1beta1.Tx.MsgCreateBalancerPoolResponse result = new osmosis.gamm.balancer.v1beta1.Tx.MsgCreateBalancerPoolResponse(this);
-        result.poolId_ = poolId_;
         onBuilt();
         return result;
       }
@@ -1692,9 +1655,6 @@ public final class Tx {
 
       public Builder mergeFrom(osmosis.gamm.balancer.v1beta1.Tx.MsgCreateBalancerPoolResponse other) {
         if (other == osmosis.gamm.balancer.v1beta1.Tx.MsgCreateBalancerPoolResponse.getDefaultInstance()) return this;
-        if (other.getPoolId() != 0L) {
-          setPoolId(other.getPoolId());
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1721,37 +1681,6 @@ public final class Tx {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private long poolId_ ;
-      /**
-       * <code>uint64 pool_id = 1 [(.gogoproto.customname) = "PoolID"];</code>
-       * @return The poolId.
-       */
-      @java.lang.Override
-      public long getPoolId() {
-        return poolId_;
-      }
-      /**
-       * <code>uint64 pool_id = 1 [(.gogoproto.customname) = "PoolID"];</code>
-       * @param value The poolId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPoolId(long value) {
-        
-        poolId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 pool_id = 1 [(.gogoproto.customname) = "PoolID"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPoolId() {
-        
-        poolId_ = 0L;
-        onChanged();
         return this;
       }
       @java.lang.Override
@@ -1829,27 +1758,28 @@ public final class Tx {
       "\n*osmosis/gamm/pool-models/balancer/tx.p" +
       "roto\022\035osmosis.gamm.balancer.v1beta1\032\024gog" +
       "oproto/gogo.proto\0324osmosis/gamm/pool-mod" +
-      "els/balancer/balancerPool.proto\"\224\002\n\025MsgC" +
-      "reateBalancerPool\022!\n\006sender\030\001 \001(\tB\021\362\336\037\ry" +
-      "aml:\"sender\"\022U\n\npoolParams\030\002 \001(\0132).osmos" +
-      "is.gamm.balancer.v1beta1.PoolParamsB\026\362\336\037" +
-      "\022yaml:\"pool_params\"\022B\n\npoolAssets\030\003 \003(\0132" +
-      "(.osmosis.gamm.balancer.v1beta1.PoolAsse" +
-      "tB\004\310\336\037\000\022=\n\024future_pool_governor\030\004 \001(\tB\037\362" +
-      "\336\037\033yaml:\"future_pool_governor\"\"<\n\035MsgCre" +
-      "ateBalancerPoolResponse\022\033\n\007pool_id\030\001 \001(\004" +
-      "B\n\342\336\037\006PoolID2\220\001\n\003Msg\022\210\001\n\022CreateBalancerP" +
-      "ool\0224.osmosis.gamm.balancer.v1beta1.MsgC" +
-      "reateBalancerPool\032<.osmosis.gamm.balance" +
-      "r.v1beta1.MsgCreateBalancerPoolResponseB" +
-      "@Z>github.com/osmosis-labs/osmosis/v7/x/" +
-      "gamm/pool-models/balancerb\006proto3"
+      "els/balancer/balancerPool.proto\032\037osmosis" +
+      "/gamm/v1beta1/pool.proto\"\213\002\n\025MsgCreateBa" +
+      "lancerPool\022!\n\006sender\030\001 \001(\tB\021\362\336\037\ryaml:\"se" +
+      "nder\"\022U\n\npoolParams\030\002 \001(\0132).osmosis.gamm" +
+      ".balancer.v1beta1.PoolParamsB\026\362\336\037\022yaml:\"" +
+      "pool_params\"\0229\n\npoolAssets\030\003 \003(\0132\037.osmos" +
+      "is.gamm.v1beta1.PoolAssetB\004\310\336\037\000\022=\n\024futur" +
+      "e_pool_governor\030\004 \001(\tB\037\362\336\037\033yaml:\"future_" +
+      "pool_governor\"\"\037\n\035MsgCreateBalancerPoolR" +
+      "esponse2\220\001\n\003Msg\022\210\001\n\022CreateBalancerPool\0224" +
+      ".osmosis.gamm.balancer.v1beta1.MsgCreate" +
+      "BalancerPool\032<.osmosis.gamm.balancer.v1b" +
+      "eta1.MsgCreateBalancerPoolResponseB@Z>gi" +
+      "thub.com/osmosis-labs/osmosis/v7/x/gamm/" +
+      "pool-models/balancerb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf2.GoGoProtos.getDescriptor(),
           osmosis.gamm.balancer.v1beta1.BalancerPool.getDescriptor(),
+          osmosis.gamm.v1beta1.Pool.getDescriptor(),
         });
     internal_static_osmosis_gamm_balancer_v1beta1_MsgCreateBalancerPool_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1862,16 +1792,16 @@ public final class Tx {
     internal_static_osmosis_gamm_balancer_v1beta1_MsgCreateBalancerPoolResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_osmosis_gamm_balancer_v1beta1_MsgCreateBalancerPoolResponse_descriptor,
-        new java.lang.String[] { "PoolId", });
+        new java.lang.String[] { });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf2.GoGoProtos.customname);
     registry.add(com.google.protobuf2.GoGoProtos.moretags);
     registry.add(com.google.protobuf2.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf2.GoGoProtos.getDescriptor();
     osmosis.gamm.balancer.v1beta1.BalancerPool.getDescriptor();
+    osmosis.gamm.v1beta1.Pool.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

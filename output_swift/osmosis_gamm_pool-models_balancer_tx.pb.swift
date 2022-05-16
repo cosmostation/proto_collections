@@ -37,7 +37,7 @@ struct Osmosis_Gamm_Balancer_V1beta1_MsgCreateBalancerPool {
   /// Clears the value of `poolParams`. Subsequent reads from it will return its default value.
   mutating func clearPoolParams() {self._poolParams = nil}
 
-  var poolAssets: [Osmosis_Gamm_Balancer_V1beta1_PoolAsset] = []
+  var poolAssets: [Osmosis_Gamm_V1beta1_PoolAsset] = []
 
   var futurePoolGovernor: String = String()
 
@@ -52,8 +52,6 @@ struct Osmosis_Gamm_Balancer_V1beta1_MsgCreateBalancerPoolResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
-
-  var poolID: UInt64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -116,31 +114,18 @@ extension Osmosis_Gamm_Balancer_V1beta1_MsgCreateBalancerPool: SwiftProtobuf.Mes
 
 extension Osmosis_Gamm_Balancer_V1beta1_MsgCreateBalancerPoolResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgCreateBalancerPoolResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "pool_id"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularUInt64Field(value: &self.poolID) }()
-      default: break
-      }
+    while let _ = try decoder.nextFieldNumber() {
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.poolID != 0 {
-      try visitor.visitSingularUInt64Field(value: self.poolID, fieldNumber: 1)
-    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: Osmosis_Gamm_Balancer_V1beta1_MsgCreateBalancerPoolResponse, rhs: Osmosis_Gamm_Balancer_V1beta1_MsgCreateBalancerPoolResponse) -> Bool {
-    if lhs.poolID != rhs.poolID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

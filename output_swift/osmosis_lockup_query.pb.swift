@@ -405,41 +405,6 @@ struct Osmosis_Lockup_AccountLockedLongerDurationResponse {
   init() {}
 }
 
-struct Osmosis_Lockup_AccountLockedDurationRequest {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var owner: String = String()
-
-  var duration: SwiftProtobuf.Google_Protobuf_Duration {
-    get {return _duration ?? SwiftProtobuf.Google_Protobuf_Duration()}
-    set {_duration = newValue}
-  }
-  /// Returns true if `duration` has been explicitly set.
-  var hasDuration: Bool {return self._duration != nil}
-  /// Clears the value of `duration`. Subsequent reads from it will return its default value.
-  mutating func clearDuration() {self._duration = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _duration: SwiftProtobuf.Google_Protobuf_Duration? = nil
-}
-
-struct Osmosis_Lockup_AccountLockedDurationResponse {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var locks: [Osmosis_Lockup_PeriodLock] = []
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-}
-
 struct Osmosis_Lockup_AccountLockedLongerDurationNotUnlockingOnlyRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -1358,76 +1323,6 @@ extension Osmosis_Lockup_AccountLockedLongerDurationResponse: SwiftProtobuf.Mess
   }
 
   static func ==(lhs: Osmosis_Lockup_AccountLockedLongerDurationResponse, rhs: Osmosis_Lockup_AccountLockedLongerDurationResponse) -> Bool {
-    if lhs.locks != rhs.locks {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension Osmosis_Lockup_AccountLockedDurationRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".AccountLockedDurationRequest"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "owner"),
-    2: .same(proto: "duration"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularStringField(value: &self.owner) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._duration) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.owner.isEmpty {
-      try visitor.visitSingularStringField(value: self.owner, fieldNumber: 1)
-    }
-    if let v = self._duration {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: Osmosis_Lockup_AccountLockedDurationRequest, rhs: Osmosis_Lockup_AccountLockedDurationRequest) -> Bool {
-    if lhs.owner != rhs.owner {return false}
-    if lhs._duration != rhs._duration {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension Osmosis_Lockup_AccountLockedDurationResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".AccountLockedDurationResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "locks"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeRepeatedMessageField(value: &self.locks) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.locks.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.locks, fieldNumber: 1)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: Osmosis_Lockup_AccountLockedDurationResponse, rhs: Osmosis_Lockup_AccountLockedDurationResponse) -> Bool {
     if lhs.locks != rhs.locks {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

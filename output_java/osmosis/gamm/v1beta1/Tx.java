@@ -75,7 +75,6 @@ public final class Tx {
   /**
    * <pre>
    * ===================== MsgJoinPool
-   * This is really MsgJoinPoolNoSwap
    * </pre>
    *
    * Protobuf type {@code osmosis.gamm.v1beta1.MsgJoinPool}
@@ -506,7 +505,6 @@ public final class Tx {
     /**
      * <pre>
      * ===================== MsgJoinPool
-     * This is really MsgJoinPoolNoSwap
      * </pre>
      *
      * Protobuf type {@code osmosis.gamm.v1beta1.MsgJoinPool}
@@ -5142,18 +5140,6 @@ public final class Tx {
   public interface MsgSwapExactAmountInResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:osmosis.gamm.v1beta1.MsgSwapExactAmountInResponse)
       com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string tokenOutAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_out_amount&#92;""];</code>
-     * @return The tokenOutAmount.
-     */
-    java.lang.String getTokenOutAmount();
-    /**
-     * <code>string tokenOutAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_out_amount&#92;""];</code>
-     * @return The bytes for tokenOutAmount.
-     */
-    com.google.protobuf.ByteString
-        getTokenOutAmountBytes();
   }
   /**
    * Protobuf type {@code osmosis.gamm.v1beta1.MsgSwapExactAmountInResponse}
@@ -5168,7 +5154,6 @@ public final class Tx {
       super(builder);
     }
     private MsgSwapExactAmountInResponse() {
-      tokenOutAmount_ = "";
     }
 
     @java.lang.Override
@@ -5201,12 +5186,6 @@ public final class Tx {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              tokenOutAmount_ = s;
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -5239,44 +5218,6 @@ public final class Tx {
               osmosis.gamm.v1beta1.Tx.MsgSwapExactAmountInResponse.class, osmosis.gamm.v1beta1.Tx.MsgSwapExactAmountInResponse.Builder.class);
     }
 
-    public static final int TOKENOUTAMOUNT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object tokenOutAmount_;
-    /**
-     * <code>string tokenOutAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_out_amount&#92;""];</code>
-     * @return The tokenOutAmount.
-     */
-    @java.lang.Override
-    public java.lang.String getTokenOutAmount() {
-      java.lang.Object ref = tokenOutAmount_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        tokenOutAmount_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string tokenOutAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_out_amount&#92;""];</code>
-     * @return The bytes for tokenOutAmount.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTokenOutAmountBytes() {
-      java.lang.Object ref = tokenOutAmount_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tokenOutAmount_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5291,9 +5232,6 @@ public final class Tx {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getTokenOutAmountBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tokenOutAmount_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -5303,9 +5241,6 @@ public final class Tx {
       if (size != -1) return size;
 
       size = 0;
-      if (!getTokenOutAmountBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tokenOutAmount_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -5321,8 +5256,6 @@ public final class Tx {
       }
       osmosis.gamm.v1beta1.Tx.MsgSwapExactAmountInResponse other = (osmosis.gamm.v1beta1.Tx.MsgSwapExactAmountInResponse) obj;
 
-      if (!getTokenOutAmount()
-          .equals(other.getTokenOutAmount())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5334,8 +5267,6 @@ public final class Tx {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TOKENOUTAMOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getTokenOutAmount().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5469,8 +5400,6 @@ public final class Tx {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        tokenOutAmount_ = "";
-
         return this;
       }
 
@@ -5497,7 +5426,6 @@ public final class Tx {
       @java.lang.Override
       public osmosis.gamm.v1beta1.Tx.MsgSwapExactAmountInResponse buildPartial() {
         osmosis.gamm.v1beta1.Tx.MsgSwapExactAmountInResponse result = new osmosis.gamm.v1beta1.Tx.MsgSwapExactAmountInResponse(this);
-        result.tokenOutAmount_ = tokenOutAmount_;
         onBuilt();
         return result;
       }
@@ -5546,10 +5474,6 @@ public final class Tx {
 
       public Builder mergeFrom(osmosis.gamm.v1beta1.Tx.MsgSwapExactAmountInResponse other) {
         if (other == osmosis.gamm.v1beta1.Tx.MsgSwapExactAmountInResponse.getDefaultInstance()) return this;
-        if (!other.getTokenOutAmount().isEmpty()) {
-          tokenOutAmount_ = other.tokenOutAmount_;
-          onChanged();
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -5576,82 +5500,6 @@ public final class Tx {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private java.lang.Object tokenOutAmount_ = "";
-      /**
-       * <code>string tokenOutAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_out_amount&#92;""];</code>
-       * @return The tokenOutAmount.
-       */
-      public java.lang.String getTokenOutAmount() {
-        java.lang.Object ref = tokenOutAmount_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          tokenOutAmount_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string tokenOutAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_out_amount&#92;""];</code>
-       * @return The bytes for tokenOutAmount.
-       */
-      public com.google.protobuf.ByteString
-          getTokenOutAmountBytes() {
-        java.lang.Object ref = tokenOutAmount_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          tokenOutAmount_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string tokenOutAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_out_amount&#92;""];</code>
-       * @param value The tokenOutAmount to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTokenOutAmount(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        tokenOutAmount_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string tokenOutAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_out_amount&#92;""];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTokenOutAmount() {
-        
-        tokenOutAmount_ = getDefaultInstance().getTokenOutAmount();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string tokenOutAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_out_amount&#92;""];</code>
-       * @param value The bytes for tokenOutAmount to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTokenOutAmountBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        tokenOutAmount_ = value;
-        onChanged();
         return this;
       }
       @java.lang.Override
@@ -7653,18 +7501,6 @@ public final class Tx {
   public interface MsgSwapExactAmountOutResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:osmosis.gamm.v1beta1.MsgSwapExactAmountOutResponse)
       com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string tokenInAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_in_amount&#92;""];</code>
-     * @return The tokenInAmount.
-     */
-    java.lang.String getTokenInAmount();
-    /**
-     * <code>string tokenInAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_in_amount&#92;""];</code>
-     * @return The bytes for tokenInAmount.
-     */
-    com.google.protobuf.ByteString
-        getTokenInAmountBytes();
   }
   /**
    * Protobuf type {@code osmosis.gamm.v1beta1.MsgSwapExactAmountOutResponse}
@@ -7679,7 +7515,6 @@ public final class Tx {
       super(builder);
     }
     private MsgSwapExactAmountOutResponse() {
-      tokenInAmount_ = "";
     }
 
     @java.lang.Override
@@ -7712,12 +7547,6 @@ public final class Tx {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              tokenInAmount_ = s;
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -7750,44 +7579,6 @@ public final class Tx {
               osmosis.gamm.v1beta1.Tx.MsgSwapExactAmountOutResponse.class, osmosis.gamm.v1beta1.Tx.MsgSwapExactAmountOutResponse.Builder.class);
     }
 
-    public static final int TOKENINAMOUNT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object tokenInAmount_;
-    /**
-     * <code>string tokenInAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_in_amount&#92;""];</code>
-     * @return The tokenInAmount.
-     */
-    @java.lang.Override
-    public java.lang.String getTokenInAmount() {
-      java.lang.Object ref = tokenInAmount_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        tokenInAmount_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string tokenInAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_in_amount&#92;""];</code>
-     * @return The bytes for tokenInAmount.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTokenInAmountBytes() {
-      java.lang.Object ref = tokenInAmount_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tokenInAmount_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -7802,9 +7593,6 @@ public final class Tx {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getTokenInAmountBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tokenInAmount_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -7814,9 +7602,6 @@ public final class Tx {
       if (size != -1) return size;
 
       size = 0;
-      if (!getTokenInAmountBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tokenInAmount_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -7832,8 +7617,6 @@ public final class Tx {
       }
       osmosis.gamm.v1beta1.Tx.MsgSwapExactAmountOutResponse other = (osmosis.gamm.v1beta1.Tx.MsgSwapExactAmountOutResponse) obj;
 
-      if (!getTokenInAmount()
-          .equals(other.getTokenInAmount())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7845,8 +7628,6 @@ public final class Tx {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TOKENINAMOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getTokenInAmount().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -7980,8 +7761,6 @@ public final class Tx {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        tokenInAmount_ = "";
-
         return this;
       }
 
@@ -8008,7 +7787,6 @@ public final class Tx {
       @java.lang.Override
       public osmosis.gamm.v1beta1.Tx.MsgSwapExactAmountOutResponse buildPartial() {
         osmosis.gamm.v1beta1.Tx.MsgSwapExactAmountOutResponse result = new osmosis.gamm.v1beta1.Tx.MsgSwapExactAmountOutResponse(this);
-        result.tokenInAmount_ = tokenInAmount_;
         onBuilt();
         return result;
       }
@@ -8057,10 +7835,6 @@ public final class Tx {
 
       public Builder mergeFrom(osmosis.gamm.v1beta1.Tx.MsgSwapExactAmountOutResponse other) {
         if (other == osmosis.gamm.v1beta1.Tx.MsgSwapExactAmountOutResponse.getDefaultInstance()) return this;
-        if (!other.getTokenInAmount().isEmpty()) {
-          tokenInAmount_ = other.tokenInAmount_;
-          onChanged();
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -8087,82 +7861,6 @@ public final class Tx {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private java.lang.Object tokenInAmount_ = "";
-      /**
-       * <code>string tokenInAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_in_amount&#92;""];</code>
-       * @return The tokenInAmount.
-       */
-      public java.lang.String getTokenInAmount() {
-        java.lang.Object ref = tokenInAmount_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          tokenInAmount_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string tokenInAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_in_amount&#92;""];</code>
-       * @return The bytes for tokenInAmount.
-       */
-      public com.google.protobuf.ByteString
-          getTokenInAmountBytes() {
-        java.lang.Object ref = tokenInAmount_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          tokenInAmount_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string tokenInAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_in_amount&#92;""];</code>
-       * @param value The tokenInAmount to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTokenInAmount(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        tokenInAmount_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string tokenInAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_in_amount&#92;""];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTokenInAmount() {
-        
-        tokenInAmount_ = getDefaultInstance().getTokenInAmount();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string tokenInAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_in_amount&#92;""];</code>
-       * @param value The bytes for tokenInAmount to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTokenInAmountBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        tokenInAmount_ = value;
-        onChanged();
         return this;
       }
       @java.lang.Override
@@ -8256,25 +7954,11 @@ public final class Tx {
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getTokenInOrBuilder();
 
     /**
-     * <pre>
-     * repeated cosmos.base.v1beta1.Coin tokensIn = 5 [
-     *   (gogoproto.moretags) = "yaml:&#92;"tokens_in&#92;"",
-     *   (gogoproto.nullable) = false
-     * ];
-     * </pre>
-     *
      * <code>string shareOutMinAmount = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_out_min_amount&#92;""];</code>
      * @return The shareOutMinAmount.
      */
     java.lang.String getShareOutMinAmount();
     /**
-     * <pre>
-     * repeated cosmos.base.v1beta1.Coin tokensIn = 5 [
-     *   (gogoproto.moretags) = "yaml:&#92;"tokens_in&#92;"",
-     *   (gogoproto.nullable) = false
-     * ];
-     * </pre>
-     *
      * <code>string shareOutMinAmount = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_out_min_amount&#92;""];</code>
      * @return The bytes for shareOutMinAmount.
      */
@@ -8284,7 +7968,6 @@ public final class Tx {
   /**
    * <pre>
    * ===================== MsgJoinSwapExternAmountIn
-   * TODO: Rename to MsgJoinSwapExactAmountIn
    * </pre>
    *
    * Protobuf type {@code osmosis.gamm.v1beta1.MsgJoinSwapExternAmountIn}
@@ -8473,13 +8156,6 @@ public final class Tx {
     public static final int SHAREOUTMINAMOUNT_FIELD_NUMBER = 4;
     private volatile java.lang.Object shareOutMinAmount_;
     /**
-     * <pre>
-     * repeated cosmos.base.v1beta1.Coin tokensIn = 5 [
-     *   (gogoproto.moretags) = "yaml:&#92;"tokens_in&#92;"",
-     *   (gogoproto.nullable) = false
-     * ];
-     * </pre>
-     *
      * <code>string shareOutMinAmount = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_out_min_amount&#92;""];</code>
      * @return The shareOutMinAmount.
      */
@@ -8497,13 +8173,6 @@ public final class Tx {
       }
     }
     /**
-     * <pre>
-     * repeated cosmos.base.v1beta1.Coin tokensIn = 5 [
-     *   (gogoproto.moretags) = "yaml:&#92;"tokens_in&#92;"",
-     *   (gogoproto.nullable) = false
-     * ];
-     * </pre>
-     *
      * <code>string shareOutMinAmount = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_out_min_amount&#92;""];</code>
      * @return The bytes for shareOutMinAmount.
      */
@@ -8717,7 +8386,6 @@ public final class Tx {
     /**
      * <pre>
      * ===================== MsgJoinSwapExternAmountIn
-     * TODO: Rename to MsgJoinSwapExactAmountIn
      * </pre>
      *
      * Protobuf type {@code osmosis.gamm.v1beta1.MsgJoinSwapExternAmountIn}
@@ -9122,13 +8790,6 @@ public final class Tx {
 
       private java.lang.Object shareOutMinAmount_ = "";
       /**
-       * <pre>
-       * repeated cosmos.base.v1beta1.Coin tokensIn = 5 [
-       *   (gogoproto.moretags) = "yaml:&#92;"tokens_in&#92;"",
-       *   (gogoproto.nullable) = false
-       * ];
-       * </pre>
-       *
        * <code>string shareOutMinAmount = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_out_min_amount&#92;""];</code>
        * @return The shareOutMinAmount.
        */
@@ -9145,13 +8806,6 @@ public final class Tx {
         }
       }
       /**
-       * <pre>
-       * repeated cosmos.base.v1beta1.Coin tokensIn = 5 [
-       *   (gogoproto.moretags) = "yaml:&#92;"tokens_in&#92;"",
-       *   (gogoproto.nullable) = false
-       * ];
-       * </pre>
-       *
        * <code>string shareOutMinAmount = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_out_min_amount&#92;""];</code>
        * @return The bytes for shareOutMinAmount.
        */
@@ -9169,13 +8823,6 @@ public final class Tx {
         }
       }
       /**
-       * <pre>
-       * repeated cosmos.base.v1beta1.Coin tokensIn = 5 [
-       *   (gogoproto.moretags) = "yaml:&#92;"tokens_in&#92;"",
-       *   (gogoproto.nullable) = false
-       * ];
-       * </pre>
-       *
        * <code>string shareOutMinAmount = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_out_min_amount&#92;""];</code>
        * @param value The shareOutMinAmount to set.
        * @return This builder for chaining.
@@ -9191,13 +8838,6 @@ public final class Tx {
         return this;
       }
       /**
-       * <pre>
-       * repeated cosmos.base.v1beta1.Coin tokensIn = 5 [
-       *   (gogoproto.moretags) = "yaml:&#92;"tokens_in&#92;"",
-       *   (gogoproto.nullable) = false
-       * ];
-       * </pre>
-       *
        * <code>string shareOutMinAmount = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_out_min_amount&#92;""];</code>
        * @return This builder for chaining.
        */
@@ -9208,13 +8848,6 @@ public final class Tx {
         return this;
       }
       /**
-       * <pre>
-       * repeated cosmos.base.v1beta1.Coin tokensIn = 5 [
-       *   (gogoproto.moretags) = "yaml:&#92;"tokens_in&#92;"",
-       *   (gogoproto.nullable) = false
-       * ];
-       * </pre>
-       *
        * <code>string shareOutMinAmount = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_out_min_amount&#92;""];</code>
        * @param value The bytes for shareOutMinAmount to set.
        * @return This builder for chaining.
@@ -9286,18 +8919,6 @@ public final class Tx {
   public interface MsgJoinSwapExternAmountInResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:osmosis.gamm.v1beta1.MsgJoinSwapExternAmountInResponse)
       com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string shareOutAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_out_amount&#92;""];</code>
-     * @return The shareOutAmount.
-     */
-    java.lang.String getShareOutAmount();
-    /**
-     * <code>string shareOutAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_out_amount&#92;""];</code>
-     * @return The bytes for shareOutAmount.
-     */
-    com.google.protobuf.ByteString
-        getShareOutAmountBytes();
   }
   /**
    * Protobuf type {@code osmosis.gamm.v1beta1.MsgJoinSwapExternAmountInResponse}
@@ -9312,7 +8933,6 @@ public final class Tx {
       super(builder);
     }
     private MsgJoinSwapExternAmountInResponse() {
-      shareOutAmount_ = "";
     }
 
     @java.lang.Override
@@ -9345,12 +8965,6 @@ public final class Tx {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              shareOutAmount_ = s;
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -9383,44 +8997,6 @@ public final class Tx {
               osmosis.gamm.v1beta1.Tx.MsgJoinSwapExternAmountInResponse.class, osmosis.gamm.v1beta1.Tx.MsgJoinSwapExternAmountInResponse.Builder.class);
     }
 
-    public static final int SHAREOUTAMOUNT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object shareOutAmount_;
-    /**
-     * <code>string shareOutAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_out_amount&#92;""];</code>
-     * @return The shareOutAmount.
-     */
-    @java.lang.Override
-    public java.lang.String getShareOutAmount() {
-      java.lang.Object ref = shareOutAmount_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        shareOutAmount_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string shareOutAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_out_amount&#92;""];</code>
-     * @return The bytes for shareOutAmount.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getShareOutAmountBytes() {
-      java.lang.Object ref = shareOutAmount_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        shareOutAmount_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -9435,9 +9011,6 @@ public final class Tx {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getShareOutAmountBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, shareOutAmount_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -9447,9 +9020,6 @@ public final class Tx {
       if (size != -1) return size;
 
       size = 0;
-      if (!getShareOutAmountBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, shareOutAmount_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -9465,8 +9035,6 @@ public final class Tx {
       }
       osmosis.gamm.v1beta1.Tx.MsgJoinSwapExternAmountInResponse other = (osmosis.gamm.v1beta1.Tx.MsgJoinSwapExternAmountInResponse) obj;
 
-      if (!getShareOutAmount()
-          .equals(other.getShareOutAmount())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -9478,8 +9046,6 @@ public final class Tx {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SHAREOUTAMOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getShareOutAmount().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -9613,8 +9179,6 @@ public final class Tx {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        shareOutAmount_ = "";
-
         return this;
       }
 
@@ -9641,7 +9205,6 @@ public final class Tx {
       @java.lang.Override
       public osmosis.gamm.v1beta1.Tx.MsgJoinSwapExternAmountInResponse buildPartial() {
         osmosis.gamm.v1beta1.Tx.MsgJoinSwapExternAmountInResponse result = new osmosis.gamm.v1beta1.Tx.MsgJoinSwapExternAmountInResponse(this);
-        result.shareOutAmount_ = shareOutAmount_;
         onBuilt();
         return result;
       }
@@ -9690,10 +9253,6 @@ public final class Tx {
 
       public Builder mergeFrom(osmosis.gamm.v1beta1.Tx.MsgJoinSwapExternAmountInResponse other) {
         if (other == osmosis.gamm.v1beta1.Tx.MsgJoinSwapExternAmountInResponse.getDefaultInstance()) return this;
-        if (!other.getShareOutAmount().isEmpty()) {
-          shareOutAmount_ = other.shareOutAmount_;
-          onChanged();
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -9720,82 +9279,6 @@ public final class Tx {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private java.lang.Object shareOutAmount_ = "";
-      /**
-       * <code>string shareOutAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_out_amount&#92;""];</code>
-       * @return The shareOutAmount.
-       */
-      public java.lang.String getShareOutAmount() {
-        java.lang.Object ref = shareOutAmount_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          shareOutAmount_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string shareOutAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_out_amount&#92;""];</code>
-       * @return The bytes for shareOutAmount.
-       */
-      public com.google.protobuf.ByteString
-          getShareOutAmountBytes() {
-        java.lang.Object ref = shareOutAmount_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          shareOutAmount_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string shareOutAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_out_amount&#92;""];</code>
-       * @param value The shareOutAmount to set.
-       * @return This builder for chaining.
-       */
-      public Builder setShareOutAmount(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        shareOutAmount_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string shareOutAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_out_amount&#92;""];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearShareOutAmount() {
-        
-        shareOutAmount_ = getDefaultInstance().getShareOutAmount();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string shareOutAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_out_amount&#92;""];</code>
-       * @param value The bytes for shareOutAmount to set.
-       * @return This builder for chaining.
-       */
-      public Builder setShareOutAmountBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        shareOutAmount_ = value;
-        onChanged();
         return this;
       }
       @java.lang.Override
@@ -10951,18 +10434,6 @@ public final class Tx {
   public interface MsgJoinSwapShareAmountOutResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:osmosis.gamm.v1beta1.MsgJoinSwapShareAmountOutResponse)
       com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string tokenInAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_in_amount&#92;""];</code>
-     * @return The tokenInAmount.
-     */
-    java.lang.String getTokenInAmount();
-    /**
-     * <code>string tokenInAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_in_amount&#92;""];</code>
-     * @return The bytes for tokenInAmount.
-     */
-    com.google.protobuf.ByteString
-        getTokenInAmountBytes();
   }
   /**
    * Protobuf type {@code osmosis.gamm.v1beta1.MsgJoinSwapShareAmountOutResponse}
@@ -10977,7 +10448,6 @@ public final class Tx {
       super(builder);
     }
     private MsgJoinSwapShareAmountOutResponse() {
-      tokenInAmount_ = "";
     }
 
     @java.lang.Override
@@ -11010,12 +10480,6 @@ public final class Tx {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              tokenInAmount_ = s;
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -11048,44 +10512,6 @@ public final class Tx {
               osmosis.gamm.v1beta1.Tx.MsgJoinSwapShareAmountOutResponse.class, osmosis.gamm.v1beta1.Tx.MsgJoinSwapShareAmountOutResponse.Builder.class);
     }
 
-    public static final int TOKENINAMOUNT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object tokenInAmount_;
-    /**
-     * <code>string tokenInAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_in_amount&#92;""];</code>
-     * @return The tokenInAmount.
-     */
-    @java.lang.Override
-    public java.lang.String getTokenInAmount() {
-      java.lang.Object ref = tokenInAmount_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        tokenInAmount_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string tokenInAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_in_amount&#92;""];</code>
-     * @return The bytes for tokenInAmount.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTokenInAmountBytes() {
-      java.lang.Object ref = tokenInAmount_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tokenInAmount_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -11100,9 +10526,6 @@ public final class Tx {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getTokenInAmountBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tokenInAmount_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -11112,9 +10535,6 @@ public final class Tx {
       if (size != -1) return size;
 
       size = 0;
-      if (!getTokenInAmountBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tokenInAmount_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -11130,8 +10550,6 @@ public final class Tx {
       }
       osmosis.gamm.v1beta1.Tx.MsgJoinSwapShareAmountOutResponse other = (osmosis.gamm.v1beta1.Tx.MsgJoinSwapShareAmountOutResponse) obj;
 
-      if (!getTokenInAmount()
-          .equals(other.getTokenInAmount())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -11143,8 +10561,6 @@ public final class Tx {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TOKENINAMOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getTokenInAmount().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -11278,8 +10694,6 @@ public final class Tx {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        tokenInAmount_ = "";
-
         return this;
       }
 
@@ -11306,7 +10720,6 @@ public final class Tx {
       @java.lang.Override
       public osmosis.gamm.v1beta1.Tx.MsgJoinSwapShareAmountOutResponse buildPartial() {
         osmosis.gamm.v1beta1.Tx.MsgJoinSwapShareAmountOutResponse result = new osmosis.gamm.v1beta1.Tx.MsgJoinSwapShareAmountOutResponse(this);
-        result.tokenInAmount_ = tokenInAmount_;
         onBuilt();
         return result;
       }
@@ -11355,10 +10768,6 @@ public final class Tx {
 
       public Builder mergeFrom(osmosis.gamm.v1beta1.Tx.MsgJoinSwapShareAmountOutResponse other) {
         if (other == osmosis.gamm.v1beta1.Tx.MsgJoinSwapShareAmountOutResponse.getDefaultInstance()) return this;
-        if (!other.getTokenInAmount().isEmpty()) {
-          tokenInAmount_ = other.tokenInAmount_;
-          onChanged();
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -11385,82 +10794,6 @@ public final class Tx {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private java.lang.Object tokenInAmount_ = "";
-      /**
-       * <code>string tokenInAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_in_amount&#92;""];</code>
-       * @return The tokenInAmount.
-       */
-      public java.lang.String getTokenInAmount() {
-        java.lang.Object ref = tokenInAmount_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          tokenInAmount_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string tokenInAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_in_amount&#92;""];</code>
-       * @return The bytes for tokenInAmount.
-       */
-      public com.google.protobuf.ByteString
-          getTokenInAmountBytes() {
-        java.lang.Object ref = tokenInAmount_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          tokenInAmount_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string tokenInAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_in_amount&#92;""];</code>
-       * @param value The tokenInAmount to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTokenInAmount(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        tokenInAmount_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string tokenInAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_in_amount&#92;""];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTokenInAmount() {
-        
-        tokenInAmount_ = getDefaultInstance().getTokenInAmount();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string tokenInAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_in_amount&#92;""];</code>
-       * @param value The bytes for tokenInAmount to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTokenInAmountBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        tokenInAmount_ = value;
-        onChanged();
         return this;
       }
       @java.lang.Override
@@ -12616,18 +11949,6 @@ public final class Tx {
   public interface MsgExitSwapShareAmountInResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:osmosis.gamm.v1beta1.MsgExitSwapShareAmountInResponse)
       com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string tokenOutAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_out_amount&#92;""];</code>
-     * @return The tokenOutAmount.
-     */
-    java.lang.String getTokenOutAmount();
-    /**
-     * <code>string tokenOutAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_out_amount&#92;""];</code>
-     * @return The bytes for tokenOutAmount.
-     */
-    com.google.protobuf.ByteString
-        getTokenOutAmountBytes();
   }
   /**
    * Protobuf type {@code osmosis.gamm.v1beta1.MsgExitSwapShareAmountInResponse}
@@ -12642,7 +11963,6 @@ public final class Tx {
       super(builder);
     }
     private MsgExitSwapShareAmountInResponse() {
-      tokenOutAmount_ = "";
     }
 
     @java.lang.Override
@@ -12675,12 +11995,6 @@ public final class Tx {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              tokenOutAmount_ = s;
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -12713,44 +12027,6 @@ public final class Tx {
               osmosis.gamm.v1beta1.Tx.MsgExitSwapShareAmountInResponse.class, osmosis.gamm.v1beta1.Tx.MsgExitSwapShareAmountInResponse.Builder.class);
     }
 
-    public static final int TOKENOUTAMOUNT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object tokenOutAmount_;
-    /**
-     * <code>string tokenOutAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_out_amount&#92;""];</code>
-     * @return The tokenOutAmount.
-     */
-    @java.lang.Override
-    public java.lang.String getTokenOutAmount() {
-      java.lang.Object ref = tokenOutAmount_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        tokenOutAmount_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string tokenOutAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_out_amount&#92;""];</code>
-     * @return The bytes for tokenOutAmount.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTokenOutAmountBytes() {
-      java.lang.Object ref = tokenOutAmount_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tokenOutAmount_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -12765,9 +12041,6 @@ public final class Tx {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getTokenOutAmountBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tokenOutAmount_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -12777,9 +12050,6 @@ public final class Tx {
       if (size != -1) return size;
 
       size = 0;
-      if (!getTokenOutAmountBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tokenOutAmount_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -12795,8 +12065,6 @@ public final class Tx {
       }
       osmosis.gamm.v1beta1.Tx.MsgExitSwapShareAmountInResponse other = (osmosis.gamm.v1beta1.Tx.MsgExitSwapShareAmountInResponse) obj;
 
-      if (!getTokenOutAmount()
-          .equals(other.getTokenOutAmount())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -12808,8 +12076,6 @@ public final class Tx {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TOKENOUTAMOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getTokenOutAmount().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -12943,8 +12209,6 @@ public final class Tx {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        tokenOutAmount_ = "";
-
         return this;
       }
 
@@ -12971,7 +12235,6 @@ public final class Tx {
       @java.lang.Override
       public osmosis.gamm.v1beta1.Tx.MsgExitSwapShareAmountInResponse buildPartial() {
         osmosis.gamm.v1beta1.Tx.MsgExitSwapShareAmountInResponse result = new osmosis.gamm.v1beta1.Tx.MsgExitSwapShareAmountInResponse(this);
-        result.tokenOutAmount_ = tokenOutAmount_;
         onBuilt();
         return result;
       }
@@ -13020,10 +12283,6 @@ public final class Tx {
 
       public Builder mergeFrom(osmosis.gamm.v1beta1.Tx.MsgExitSwapShareAmountInResponse other) {
         if (other == osmosis.gamm.v1beta1.Tx.MsgExitSwapShareAmountInResponse.getDefaultInstance()) return this;
-        if (!other.getTokenOutAmount().isEmpty()) {
-          tokenOutAmount_ = other.tokenOutAmount_;
-          onChanged();
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -13050,82 +12309,6 @@ public final class Tx {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private java.lang.Object tokenOutAmount_ = "";
-      /**
-       * <code>string tokenOutAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_out_amount&#92;""];</code>
-       * @return The tokenOutAmount.
-       */
-      public java.lang.String getTokenOutAmount() {
-        java.lang.Object ref = tokenOutAmount_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          tokenOutAmount_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string tokenOutAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_out_amount&#92;""];</code>
-       * @return The bytes for tokenOutAmount.
-       */
-      public com.google.protobuf.ByteString
-          getTokenOutAmountBytes() {
-        java.lang.Object ref = tokenOutAmount_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          tokenOutAmount_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string tokenOutAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_out_amount&#92;""];</code>
-       * @param value The tokenOutAmount to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTokenOutAmount(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        tokenOutAmount_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string tokenOutAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_out_amount&#92;""];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTokenOutAmount() {
-        
-        tokenOutAmount_ = getDefaultInstance().getTokenOutAmount();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string tokenOutAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"token_out_amount&#92;""];</code>
-       * @param value The bytes for tokenOutAmount to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTokenOutAmountBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        tokenOutAmount_ = value;
-        onChanged();
         return this;
       }
       @java.lang.Override
@@ -14184,18 +13367,6 @@ public final class Tx {
   public interface MsgExitSwapExternAmountOutResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:osmosis.gamm.v1beta1.MsgExitSwapExternAmountOutResponse)
       com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string shareInAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_in_amount&#92;""];</code>
-     * @return The shareInAmount.
-     */
-    java.lang.String getShareInAmount();
-    /**
-     * <code>string shareInAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_in_amount&#92;""];</code>
-     * @return The bytes for shareInAmount.
-     */
-    com.google.protobuf.ByteString
-        getShareInAmountBytes();
   }
   /**
    * Protobuf type {@code osmosis.gamm.v1beta1.MsgExitSwapExternAmountOutResponse}
@@ -14210,7 +13381,6 @@ public final class Tx {
       super(builder);
     }
     private MsgExitSwapExternAmountOutResponse() {
-      shareInAmount_ = "";
     }
 
     @java.lang.Override
@@ -14243,12 +13413,6 @@ public final class Tx {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              shareInAmount_ = s;
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -14281,44 +13445,6 @@ public final class Tx {
               osmosis.gamm.v1beta1.Tx.MsgExitSwapExternAmountOutResponse.class, osmosis.gamm.v1beta1.Tx.MsgExitSwapExternAmountOutResponse.Builder.class);
     }
 
-    public static final int SHAREINAMOUNT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object shareInAmount_;
-    /**
-     * <code>string shareInAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_in_amount&#92;""];</code>
-     * @return The shareInAmount.
-     */
-    @java.lang.Override
-    public java.lang.String getShareInAmount() {
-      java.lang.Object ref = shareInAmount_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        shareInAmount_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string shareInAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_in_amount&#92;""];</code>
-     * @return The bytes for shareInAmount.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getShareInAmountBytes() {
-      java.lang.Object ref = shareInAmount_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        shareInAmount_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -14333,9 +13459,6 @@ public final class Tx {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getShareInAmountBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, shareInAmount_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -14345,9 +13468,6 @@ public final class Tx {
       if (size != -1) return size;
 
       size = 0;
-      if (!getShareInAmountBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, shareInAmount_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -14363,8 +13483,6 @@ public final class Tx {
       }
       osmosis.gamm.v1beta1.Tx.MsgExitSwapExternAmountOutResponse other = (osmosis.gamm.v1beta1.Tx.MsgExitSwapExternAmountOutResponse) obj;
 
-      if (!getShareInAmount()
-          .equals(other.getShareInAmount())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -14376,8 +13494,6 @@ public final class Tx {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SHAREINAMOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getShareInAmount().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -14511,8 +13627,6 @@ public final class Tx {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        shareInAmount_ = "";
-
         return this;
       }
 
@@ -14539,7 +13653,6 @@ public final class Tx {
       @java.lang.Override
       public osmosis.gamm.v1beta1.Tx.MsgExitSwapExternAmountOutResponse buildPartial() {
         osmosis.gamm.v1beta1.Tx.MsgExitSwapExternAmountOutResponse result = new osmosis.gamm.v1beta1.Tx.MsgExitSwapExternAmountOutResponse(this);
-        result.shareInAmount_ = shareInAmount_;
         onBuilt();
         return result;
       }
@@ -14588,10 +13701,6 @@ public final class Tx {
 
       public Builder mergeFrom(osmosis.gamm.v1beta1.Tx.MsgExitSwapExternAmountOutResponse other) {
         if (other == osmosis.gamm.v1beta1.Tx.MsgExitSwapExternAmountOutResponse.getDefaultInstance()) return this;
-        if (!other.getShareInAmount().isEmpty()) {
-          shareInAmount_ = other.shareInAmount_;
-          onChanged();
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -14618,82 +13727,6 @@ public final class Tx {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private java.lang.Object shareInAmount_ = "";
-      /**
-       * <code>string shareInAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_in_amount&#92;""];</code>
-       * @return The shareInAmount.
-       */
-      public java.lang.String getShareInAmount() {
-        java.lang.Object ref = shareInAmount_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          shareInAmount_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string shareInAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_in_amount&#92;""];</code>
-       * @return The bytes for shareInAmount.
-       */
-      public com.google.protobuf.ByteString
-          getShareInAmountBytes() {
-        java.lang.Object ref = shareInAmount_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          shareInAmount_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string shareInAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_in_amount&#92;""];</code>
-       * @param value The shareInAmount to set.
-       * @return This builder for chaining.
-       */
-      public Builder setShareInAmount(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        shareInAmount_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string shareInAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_in_amount&#92;""];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearShareInAmount() {
-        
-        shareInAmount_ = getDefaultInstance().getShareInAmount();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string shareInAmount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_in_amount&#92;""];</code>
-       * @param value The bytes for shareInAmount to set.
-       * @return This builder for chaining.
-       */
-      public Builder setShareInAmountBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        shareInAmount_ = value;
-        onChanged();
         return this;
       }
       @java.lang.Override
@@ -14875,94 +13908,79 @@ public final class Tx {
       "eta1.CoinB\027\362\336\037\017yaml:\"token_in\"\310\336\037\000\022h\n\021to" +
       "kenOutMinAmount\030\004 \001(\tBM\332\336\037&github.com/co" +
       "smos/cosmos-sdk/types.Int\362\336\037\033yaml:\"token" +
-      "_out_min_amount\"\310\336\037\000\"\201\001\n\034MsgSwapExactAmo" +
-      "untInResponse\022a\n\016tokenOutAmount\030\001 \001(\tBI\332" +
-      "\336\037&github.com/cosmos/cosmos-sdk/types.In" +
-      "t\362\336\037\027yaml:\"token_out_amount\"\310\336\037\000\"j\n\022Swap" +
-      "AmountOutRoute\022\"\n\006poolId\030\001 \001(\004B\022\362\336\037\016yaml" +
-      ":\"pool_id\"\0220\n\014tokenInDenom\030\002 \001(\tB\032\362\336\037\026ya" +
-      "ml:\"token_out_denom\"\"\251\002\n\025MsgSwapExactAmo" +
-      "untOut\022!\n\006sender\030\001 \001(\tB\021\362\336\037\ryaml:\"sender" +
-      "\"\022>\n\006routes\030\002 \003(\0132(.osmosis.gamm.v1beta1" +
-      ".SwapAmountOutRouteB\004\310\336\037\000\022f\n\020tokenInMaxA" +
-      "mount\030\003 \001(\tBL\332\336\037&github.com/cosmos/cosmo" +
-      "s-sdk/types.Int\362\336\037\032yaml:\"token_in_max_am" +
-      "ount\"\310\336\037\000\022E\n\010tokenOut\030\004 \001(\0132\031.cosmos.bas" +
-      "e.v1beta1.CoinB\030\362\336\037\020yaml:\"token_out\"\310\336\037\000" +
-      "\"\200\001\n\035MsgSwapExactAmountOutResponse\022_\n\rto" +
-      "kenInAmount\030\001 \001(\tBH\332\336\037&github.com/cosmos" +
-      "/cosmos-sdk/types.Int\362\336\037\026yaml:\"token_in_" +
-      "amount\"\310\336\037\000\"\221\002\n\031MsgJoinSwapExternAmountI" +
-      "n\022!\n\006sender\030\001 \001(\tB\021\362\336\037\ryaml:\"sender\"\022\"\n\006" +
-      "poolId\030\002 \001(\004B\022\362\336\037\016yaml:\"pool_id\"\022C\n\007toke" +
-      "nIn\030\003 \001(\0132\031.cosmos.base.v1beta1.CoinB\027\362\336" +
-      "\037\017yaml:\"token_in\"\310\336\037\000\022h\n\021shareOutMinAmou" +
-      "nt\030\004 \001(\tBM\332\336\037&github.com/cosmos/cosmos-s" +
-      "dk/types.Int\362\336\037\033yaml:\"share_out_min_amou" +
-      "nt\"\310\336\037\000\"\206\001\n!MsgJoinSwapExternAmountInRes" +
-      "ponse\022a\n\016shareOutAmount\030\001 \001(\tBI\332\336\037&githu" +
-      "b.com/cosmos/cosmos-sdk/types.Int\362\336\037\027yam" +
-      "l:\"share_out_amount\"\310\336\037\000\"\336\002\n\031MsgJoinSwap" +
-      "ShareAmountOut\022!\n\006sender\030\001 \001(\tB\021\362\336\037\ryaml" +
-      ":\"sender\"\022\"\n\006poolId\030\002 \001(\004B\022\362\336\037\016yaml:\"poo" +
-      "l_id\"\022/\n\014tokenInDenom\030\003 \001(\tB\031\362\336\037\025yaml:\"t" +
-      "oken_in_denom\"\022a\n\016shareOutAmount\030\004 \001(\tBI" +
-      "\332\336\037&github.com/cosmos/cosmos-sdk/types.I" +
-      "nt\362\336\037\027yaml:\"share_out_amount\"\310\336\037\000\022f\n\020tok" +
-      "enInMaxAmount\030\005 \001(\tBL\332\336\037&github.com/cosm" +
-      "os/cosmos-sdk/types.Int\362\336\037\032yaml:\"token_i" +
-      "n_max_amount\"\310\336\037\000\"\204\001\n!MsgJoinSwapShareAm" +
-      "ountOutResponse\022_\n\rtokenInAmount\030\001 \001(\tBH" +
-      "\332\336\037&github.com/cosmos/cosmos-sdk/types.I" +
-      "nt\362\336\037\026yaml:\"token_in_amount\"\310\336\037\000\"\337\002\n\030Msg" +
-      "ExitSwapShareAmountIn\022!\n\006sender\030\001 \001(\tB\021\362" +
-      "\336\037\ryaml:\"sender\"\022\"\n\006poolId\030\002 \001(\004B\022\362\336\037\016ya" +
-      "ml:\"pool_id\"\0221\n\rtokenOutDenom\030\003 \001(\tB\032\362\336\037" +
-      "\026yaml:\"token_out_denom\"\022_\n\rshareInAmount" +
-      "\030\004 \001(\tBH\332\336\037&github.com/cosmos/cosmos-sdk" +
-      "/types.Int\362\336\037\026yaml:\"share_in_amount\"\310\336\037\000" +
-      "\022h\n\021tokenOutMinAmount\030\005 \001(\tBM\332\336\037&github." +
-      "com/cosmos/cosmos-sdk/types.Int\362\336\037\033yaml:" +
-      "\"token_out_min_amount\"\310\336\037\000\"\205\001\n MsgExitSw" +
-      "apShareAmountInResponse\022a\n\016tokenOutAmoun" +
-      "t\030\001 \001(\tBI\332\336\037&github.com/cosmos/cosmos-sd" +
-      "k/types.Int\362\336\037\027yaml:\"token_out_amount\"\310\336" +
-      "\037\000\"\222\002\n\032MsgExitSwapExternAmountOut\022!\n\006sen" +
-      "der\030\001 \001(\tB\021\362\336\037\ryaml:\"sender\"\022\"\n\006poolId\030\002" +
-      " \001(\004B\022\362\336\037\016yaml:\"pool_id\"\022E\n\010tokenOut\030\003 \001" +
-      "(\0132\031.cosmos.base.v1beta1.CoinB\030\362\336\037\020yaml:" +
-      "\"token_out\"\310\336\037\000\022f\n\020shareInMaxAmount\030\004 \001(" +
+      "_out_min_amount\"\310\336\037\000\"\036\n\034MsgSwapExactAmou" +
+      "ntInResponse\"j\n\022SwapAmountOutRoute\022\"\n\006po" +
+      "olId\030\001 \001(\004B\022\362\336\037\016yaml:\"pool_id\"\0220\n\014tokenI" +
+      "nDenom\030\002 \001(\tB\032\362\336\037\026yaml:\"token_out_denom\"" +
+      "\"\251\002\n\025MsgSwapExactAmountOut\022!\n\006sender\030\001 \001" +
+      "(\tB\021\362\336\037\ryaml:\"sender\"\022>\n\006routes\030\002 \003(\0132(." +
+      "osmosis.gamm.v1beta1.SwapAmountOutRouteB" +
+      "\004\310\336\037\000\022f\n\020tokenInMaxAmount\030\003 \001(\tBL\332\336\037&git" +
+      "hub.com/cosmos/cosmos-sdk/types.Int\362\336\037\032y" +
+      "aml:\"token_in_max_amount\"\310\336\037\000\022E\n\010tokenOu" +
+      "t\030\004 \001(\0132\031.cosmos.base.v1beta1.CoinB\030\362\336\037\020" +
+      "yaml:\"token_out\"\310\336\037\000\"\037\n\035MsgSwapExactAmou" +
+      "ntOutResponse\"\221\002\n\031MsgJoinSwapExternAmoun" +
+      "tIn\022!\n\006sender\030\001 \001(\tB\021\362\336\037\ryaml:\"sender\"\022\"" +
+      "\n\006poolId\030\002 \001(\004B\022\362\336\037\016yaml:\"pool_id\"\022C\n\007to" +
+      "kenIn\030\003 \001(\0132\031.cosmos.base.v1beta1.CoinB\027" +
+      "\362\336\037\017yaml:\"token_in\"\310\336\037\000\022h\n\021shareOutMinAm" +
+      "ount\030\004 \001(\tBM\332\336\037&github.com/cosmos/cosmos" +
+      "-sdk/types.Int\362\336\037\033yaml:\"share_out_min_am" +
+      "ount\"\310\336\037\000\"#\n!MsgJoinSwapExternAmountInRe" +
+      "sponse\"\336\002\n\031MsgJoinSwapShareAmountOut\022!\n\006" +
+      "sender\030\001 \001(\tB\021\362\336\037\ryaml:\"sender\"\022\"\n\006poolI" +
+      "d\030\002 \001(\004B\022\362\336\037\016yaml:\"pool_id\"\022/\n\014tokenInDe" +
+      "nom\030\003 \001(\tB\031\362\336\037\025yaml:\"token_in_denom\"\022a\n\016" +
+      "shareOutAmount\030\004 \001(\tBI\332\336\037&github.com/cos" +
+      "mos/cosmos-sdk/types.Int\362\336\037\027yaml:\"share_" +
+      "out_amount\"\310\336\037\000\022f\n\020tokenInMaxAmount\030\005 \001(" +
       "\tBL\332\336\037&github.com/cosmos/cosmos-sdk/type" +
-      "s.Int\362\336\037\032yaml:\"share_in_max_amount\"\310\336\037\000\"" +
-      "\205\001\n\"MsgExitSwapExternAmountOutResponse\022_" +
-      "\n\rshareInAmount\030\001 \001(\tBH\332\336\037&github.com/co" +
-      "smos/cosmos-sdk/types.Int\362\336\037\026yaml:\"share" +
-      "_in_amount\"\310\336\037\0002\271\007\n\003Msg\022X\n\010JoinPool\022!.os" +
-      "mosis.gamm.v1beta1.MsgJoinPool\032).osmosis" +
-      ".gamm.v1beta1.MsgJoinPoolResponse\022X\n\010Exi" +
-      "tPool\022!.osmosis.gamm.v1beta1.MsgExitPool" +
-      "\032).osmosis.gamm.v1beta1.MsgExitPoolRespo" +
-      "nse\022s\n\021SwapExactAmountIn\022*.osmosis.gamm." +
-      "v1beta1.MsgSwapExactAmountIn\0322.osmosis.g" +
-      "amm.v1beta1.MsgSwapExactAmountInResponse" +
-      "\022v\n\022SwapExactAmountOut\022+.osmosis.gamm.v1" +
-      "beta1.MsgSwapExactAmountOut\0323.osmosis.ga" +
-      "mm.v1beta1.MsgSwapExactAmountOutResponse" +
-      "\022\202\001\n\026JoinSwapExternAmountIn\022/.osmosis.ga" +
-      "mm.v1beta1.MsgJoinSwapExternAmountIn\0327.o" +
-      "smosis.gamm.v1beta1.MsgJoinSwapExternAmo" +
-      "untInResponse\022\202\001\n\026JoinSwapShareAmountOut" +
-      "\022/.osmosis.gamm.v1beta1.MsgJoinSwapShare" +
-      "AmountOut\0327.osmosis.gamm.v1beta1.MsgJoin" +
-      "SwapShareAmountOutResponse\022\205\001\n\027ExitSwapE" +
-      "xternAmountOut\0220.osmosis.gamm.v1beta1.Ms" +
-      "gExitSwapExternAmountOut\0328.osmosis.gamm." +
-      "v1beta1.MsgExitSwapExternAmountOutRespon" +
-      "se\022\177\n\025ExitSwapShareAmountIn\022..osmosis.ga" +
-      "mm.v1beta1.MsgExitSwapShareAmountIn\0326.os" +
-      "mosis.gamm.v1beta1.MsgExitSwapShareAmoun" +
-      "tInResponseB1Z/github.com/osmosis-labs/o" +
-      "smosis/v7/x/gamm/typesb\006proto3"
+      "s.Int\362\336\037\032yaml:\"token_in_max_amount\"\310\336\037\000\"" +
+      "#\n!MsgJoinSwapShareAmountOutResponse\"\337\002\n" +
+      "\030MsgExitSwapShareAmountIn\022!\n\006sender\030\001 \001(" +
+      "\tB\021\362\336\037\ryaml:\"sender\"\022\"\n\006poolId\030\002 \001(\004B\022\362\336" +
+      "\037\016yaml:\"pool_id\"\0221\n\rtokenOutDenom\030\003 \001(\tB" +
+      "\032\362\336\037\026yaml:\"token_out_denom\"\022_\n\rshareInAm" +
+      "ount\030\004 \001(\tBH\332\336\037&github.com/cosmos/cosmos" +
+      "-sdk/types.Int\362\336\037\026yaml:\"share_in_amount\"" +
+      "\310\336\037\000\022h\n\021tokenOutMinAmount\030\005 \001(\tBM\332\336\037&git" +
+      "hub.com/cosmos/cosmos-sdk/types.Int\362\336\037\033y" +
+      "aml:\"token_out_min_amount\"\310\336\037\000\"\"\n MsgExi" +
+      "tSwapShareAmountInResponse\"\222\002\n\032MsgExitSw" +
+      "apExternAmountOut\022!\n\006sender\030\001 \001(\tB\021\362\336\037\ry" +
+      "aml:\"sender\"\022\"\n\006poolId\030\002 \001(\004B\022\362\336\037\016yaml:\"" +
+      "pool_id\"\022E\n\010tokenOut\030\003 \001(\0132\031.cosmos.base" +
+      ".v1beta1.CoinB\030\362\336\037\020yaml:\"token_out\"\310\336\037\000\022" +
+      "f\n\020shareInMaxAmount\030\004 \001(\tBL\332\336\037&github.co" +
+      "m/cosmos/cosmos-sdk/types.Int\362\336\037\032yaml:\"s" +
+      "hare_in_max_amount\"\310\336\037\000\"$\n\"MsgExitSwapEx" +
+      "ternAmountOutResponse2\271\007\n\003Msg\022X\n\010JoinPoo" +
+      "l\022!.osmosis.gamm.v1beta1.MsgJoinPool\032).o" +
+      "smosis.gamm.v1beta1.MsgJoinPoolResponse\022" +
+      "X\n\010ExitPool\022!.osmosis.gamm.v1beta1.MsgEx" +
+      "itPool\032).osmosis.gamm.v1beta1.MsgExitPoo" +
+      "lResponse\022s\n\021SwapExactAmountIn\022*.osmosis" +
+      ".gamm.v1beta1.MsgSwapExactAmountIn\0322.osm" +
+      "osis.gamm.v1beta1.MsgSwapExactAmountInRe" +
+      "sponse\022v\n\022SwapExactAmountOut\022+.osmosis.g" +
+      "amm.v1beta1.MsgSwapExactAmountOut\0323.osmo" +
+      "sis.gamm.v1beta1.MsgSwapExactAmountOutRe" +
+      "sponse\022\202\001\n\026JoinSwapExternAmountIn\022/.osmo" +
+      "sis.gamm.v1beta1.MsgJoinSwapExternAmount" +
+      "In\0327.osmosis.gamm.v1beta1.MsgJoinSwapExt" +
+      "ernAmountInResponse\022\202\001\n\026JoinSwapShareAmo" +
+      "untOut\022/.osmosis.gamm.v1beta1.MsgJoinSwa" +
+      "pShareAmountOut\0327.osmosis.gamm.v1beta1.M" +
+      "sgJoinSwapShareAmountOutResponse\022\205\001\n\027Exi" +
+      "tSwapExternAmountOut\0220.osmosis.gamm.v1be" +
+      "ta1.MsgExitSwapExternAmountOut\0328.osmosis" +
+      ".gamm.v1beta1.MsgExitSwapExternAmountOut" +
+      "Response\022\177\n\025ExitSwapShareAmountIn\022..osmo" +
+      "sis.gamm.v1beta1.MsgExitSwapShareAmountI" +
+      "n\0326.osmosis.gamm.v1beta1.MsgExitSwapShar" +
+      "eAmountInResponseB1Z/github.com/osmosis-" +
+      "labs/osmosis/v7/x/gamm/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -15011,7 +14029,7 @@ public final class Tx {
     internal_static_osmosis_gamm_v1beta1_MsgSwapExactAmountInResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_osmosis_gamm_v1beta1_MsgSwapExactAmountInResponse_descriptor,
-        new java.lang.String[] { "TokenOutAmount", });
+        new java.lang.String[] { });
     internal_static_osmosis_gamm_v1beta1_SwapAmountOutRoute_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_osmosis_gamm_v1beta1_SwapAmountOutRoute_fieldAccessorTable = new
@@ -15029,7 +14047,7 @@ public final class Tx {
     internal_static_osmosis_gamm_v1beta1_MsgSwapExactAmountOutResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_osmosis_gamm_v1beta1_MsgSwapExactAmountOutResponse_descriptor,
-        new java.lang.String[] { "TokenInAmount", });
+        new java.lang.String[] { });
     internal_static_osmosis_gamm_v1beta1_MsgJoinSwapExternAmountIn_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_osmosis_gamm_v1beta1_MsgJoinSwapExternAmountIn_fieldAccessorTable = new
@@ -15041,7 +14059,7 @@ public final class Tx {
     internal_static_osmosis_gamm_v1beta1_MsgJoinSwapExternAmountInResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_osmosis_gamm_v1beta1_MsgJoinSwapExternAmountInResponse_descriptor,
-        new java.lang.String[] { "ShareOutAmount", });
+        new java.lang.String[] { });
     internal_static_osmosis_gamm_v1beta1_MsgJoinSwapShareAmountOut_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_osmosis_gamm_v1beta1_MsgJoinSwapShareAmountOut_fieldAccessorTable = new
@@ -15053,7 +14071,7 @@ public final class Tx {
     internal_static_osmosis_gamm_v1beta1_MsgJoinSwapShareAmountOutResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_osmosis_gamm_v1beta1_MsgJoinSwapShareAmountOutResponse_descriptor,
-        new java.lang.String[] { "TokenInAmount", });
+        new java.lang.String[] { });
     internal_static_osmosis_gamm_v1beta1_MsgExitSwapShareAmountIn_descriptor =
       getDescriptor().getMessageTypes().get(14);
     internal_static_osmosis_gamm_v1beta1_MsgExitSwapShareAmountIn_fieldAccessorTable = new
@@ -15065,7 +14083,7 @@ public final class Tx {
     internal_static_osmosis_gamm_v1beta1_MsgExitSwapShareAmountInResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_osmosis_gamm_v1beta1_MsgExitSwapShareAmountInResponse_descriptor,
-        new java.lang.String[] { "TokenOutAmount", });
+        new java.lang.String[] { });
     internal_static_osmosis_gamm_v1beta1_MsgExitSwapExternAmountOut_descriptor =
       getDescriptor().getMessageTypes().get(16);
     internal_static_osmosis_gamm_v1beta1_MsgExitSwapExternAmountOut_fieldAccessorTable = new
@@ -15077,7 +14095,7 @@ public final class Tx {
     internal_static_osmosis_gamm_v1beta1_MsgExitSwapExternAmountOutResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_osmosis_gamm_v1beta1_MsgExitSwapExternAmountOutResponse_descriptor,
-        new java.lang.String[] { "ShareInAmount", });
+        new java.lang.String[] { });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.protobuf2.GoGoProtos.customtype);

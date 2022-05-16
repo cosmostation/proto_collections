@@ -21,7 +21,6 @@ public final class Tx {
     /**
      * <pre>
      * flag to show if it's perpetual or multi-epoch
-     * distribution incentives by third party
      * </pre>
      *
      * <code>bool is_perpetual = 1;</code>
@@ -30,11 +29,19 @@ public final class Tx {
     boolean getIsPerpetual();
 
     /**
+     * <pre>
+     * distribution incentives by third party
+     * </pre>
+     *
      * <code>string owner = 2 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
      * @return The owner.
      */
     java.lang.String getOwner();
     /**
+     * <pre>
+     * distribution incentives by third party
+     * </pre>
+     *
      * <code>string owner = 2 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
      * @return The bytes for owner.
      */
@@ -288,7 +295,6 @@ public final class Tx {
     /**
      * <pre>
      * flag to show if it's perpetual or multi-epoch
-     * distribution incentives by third party
      * </pre>
      *
      * <code>bool is_perpetual = 1;</code>
@@ -302,6 +308,10 @@ public final class Tx {
     public static final int OWNER_FIELD_NUMBER = 2;
     private volatile java.lang.Object owner_;
     /**
+     * <pre>
+     * distribution incentives by third party
+     * </pre>
+     *
      * <code>string owner = 2 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
      * @return The owner.
      */
@@ -319,6 +329,10 @@ public final class Tx {
       }
     }
     /**
+     * <pre>
+     * distribution incentives by third party
+     * </pre>
+     *
      * <code>string owner = 2 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
      * @return The bytes for owner.
      */
@@ -947,7 +961,6 @@ public final class Tx {
       /**
        * <pre>
        * flag to show if it's perpetual or multi-epoch
-       * distribution incentives by third party
        * </pre>
        *
        * <code>bool is_perpetual = 1;</code>
@@ -960,7 +973,6 @@ public final class Tx {
       /**
        * <pre>
        * flag to show if it's perpetual or multi-epoch
-       * distribution incentives by third party
        * </pre>
        *
        * <code>bool is_perpetual = 1;</code>
@@ -976,7 +988,6 @@ public final class Tx {
       /**
        * <pre>
        * flag to show if it's perpetual or multi-epoch
-       * distribution incentives by third party
        * </pre>
        *
        * <code>bool is_perpetual = 1;</code>
@@ -991,6 +1002,10 @@ public final class Tx {
 
       private java.lang.Object owner_ = "";
       /**
+       * <pre>
+       * distribution incentives by third party
+       * </pre>
+       *
        * <code>string owner = 2 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
        * @return The owner.
        */
@@ -1007,6 +1022,10 @@ public final class Tx {
         }
       }
       /**
+       * <pre>
+       * distribution incentives by third party
+       * </pre>
+       *
        * <code>string owner = 2 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
        * @return The bytes for owner.
        */
@@ -1024,6 +1043,10 @@ public final class Tx {
         }
       }
       /**
+       * <pre>
+       * distribution incentives by third party
+       * </pre>
+       *
        * <code>string owner = 2 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
        * @param value The owner to set.
        * @return This builder for chaining.
@@ -1039,6 +1062,10 @@ public final class Tx {
         return this;
       }
       /**
+       * <pre>
+       * distribution incentives by third party
+       * </pre>
+       *
        * <code>string owner = 2 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
        * @return This builder for chaining.
        */
@@ -1049,6 +1076,10 @@ public final class Tx {
         return this;
       }
       /**
+       * <pre>
+       * distribution incentives by third party
+       * </pre>
+       *
        * <code>string owner = 2 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
        * @param value The bytes for owner to set.
        * @return This builder for chaining.

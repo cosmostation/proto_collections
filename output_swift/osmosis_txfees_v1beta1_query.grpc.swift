@@ -35,11 +35,6 @@ internal protocol Osmosis_Txfees_V1beta1_QueryClientProtocol: GRPCClient {
     callOptions: CallOptions?
   ) -> UnaryCall<Osmosis_Txfees_V1beta1_QueryFeeTokensRequest, Osmosis_Txfees_V1beta1_QueryFeeTokensResponse>
 
-  func denomSpotPrice(
-    _ request: Osmosis_Txfees_V1beta1_QueryDenomSpotPriceRequest,
-    callOptions: CallOptions?
-  ) -> UnaryCall<Osmosis_Txfees_V1beta1_QueryDenomSpotPriceRequest, Osmosis_Txfees_V1beta1_QueryDenomSpotPriceResponse>
-
   func denomPoolId(
     _ request: Osmosis_Txfees_V1beta1_QueryDenomPoolIdRequest,
     callOptions: CallOptions?
@@ -73,24 +68,6 @@ extension Osmosis_Txfees_V1beta1_QueryClientProtocol {
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeFeeTokensInterceptors() ?? []
-    )
-  }
-
-  /// Unary call to DenomSpotPrice
-  ///
-  /// - Parameters:
-  ///   - request: Request to send to DenomSpotPrice.
-  ///   - callOptions: Call options.
-  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
-  internal func denomSpotPrice(
-    _ request: Osmosis_Txfees_V1beta1_QueryDenomSpotPriceRequest,
-    callOptions: CallOptions? = nil
-  ) -> UnaryCall<Osmosis_Txfees_V1beta1_QueryDenomSpotPriceRequest, Osmosis_Txfees_V1beta1_QueryDenomSpotPriceResponse> {
-    return self.makeUnaryCall(
-      path: "/osmosis.txfees.v1beta1.Query/DenomSpotPrice",
-      request: request,
-      callOptions: callOptions ?? self.defaultCallOptions,
-      interceptors: self.interceptors?.makeDenomSpotPriceInterceptors() ?? []
     )
   }
 
@@ -136,9 +113,6 @@ internal protocol Osmosis_Txfees_V1beta1_QueryClientInterceptorFactoryProtocol {
   /// - Returns: Interceptors to use when invoking 'feeTokens'.
   func makeFeeTokensInterceptors() -> [ClientInterceptor<Osmosis_Txfees_V1beta1_QueryFeeTokensRequest, Osmosis_Txfees_V1beta1_QueryFeeTokensResponse>]
 
-  /// - Returns: Interceptors to use when invoking 'denomSpotPrice'.
-  func makeDenomSpotPriceInterceptors() -> [ClientInterceptor<Osmosis_Txfees_V1beta1_QueryDenomSpotPriceRequest, Osmosis_Txfees_V1beta1_QueryDenomSpotPriceResponse>]
-
   /// - Returns: Interceptors to use when invoking 'denomPoolId'.
   func makeDenomPoolIdInterceptors() -> [ClientInterceptor<Osmosis_Txfees_V1beta1_QueryDenomPoolIdRequest, Osmosis_Txfees_V1beta1_QueryDenomPoolIdResponse>]
 
@@ -177,8 +151,6 @@ internal protocol Osmosis_Txfees_V1beta1_QueryProvider: CallHandlerProvider {
   /// query endpoint
   func feeTokens(request: Osmosis_Txfees_V1beta1_QueryFeeTokensRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Txfees_V1beta1_QueryFeeTokensResponse>
 
-  func denomSpotPrice(request: Osmosis_Txfees_V1beta1_QueryDenomSpotPriceRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Txfees_V1beta1_QueryDenomSpotPriceResponse>
-
   func denomPoolId(request: Osmosis_Txfees_V1beta1_QueryDenomPoolIdRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Txfees_V1beta1_QueryDenomPoolIdResponse>
 
   func baseDenom(request: Osmosis_Txfees_V1beta1_QueryBaseDenomRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Txfees_V1beta1_QueryBaseDenomResponse>
@@ -201,15 +173,6 @@ extension Osmosis_Txfees_V1beta1_QueryProvider {
         responseSerializer: ProtobufSerializer<Osmosis_Txfees_V1beta1_QueryFeeTokensResponse>(),
         interceptors: self.interceptors?.makeFeeTokensInterceptors() ?? [],
         userFunction: self.feeTokens(request:context:)
-      )
-
-    case "DenomSpotPrice":
-      return UnaryServerHandler(
-        context: context,
-        requestDeserializer: ProtobufDeserializer<Osmosis_Txfees_V1beta1_QueryDenomSpotPriceRequest>(),
-        responseSerializer: ProtobufSerializer<Osmosis_Txfees_V1beta1_QueryDenomSpotPriceResponse>(),
-        interceptors: self.interceptors?.makeDenomSpotPriceInterceptors() ?? [],
-        userFunction: self.denomSpotPrice(request:context:)
       )
 
     case "DenomPoolId":
@@ -241,10 +204,6 @@ internal protocol Osmosis_Txfees_V1beta1_QueryServerInterceptorFactoryProtocol {
   /// - Returns: Interceptors to use when handling 'feeTokens'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeFeeTokensInterceptors() -> [ServerInterceptor<Osmosis_Txfees_V1beta1_QueryFeeTokensRequest, Osmosis_Txfees_V1beta1_QueryFeeTokensResponse>]
-
-  /// - Returns: Interceptors to use when handling 'denomSpotPrice'.
-  ///   Defaults to calling `self.makeInterceptors()`.
-  func makeDenomSpotPriceInterceptors() -> [ServerInterceptor<Osmosis_Txfees_V1beta1_QueryDenomSpotPriceRequest, Osmosis_Txfees_V1beta1_QueryDenomSpotPriceResponse>]
 
   /// - Returns: Interceptors to use when handling 'denomPoolId'.
   ///   Defaults to calling `self.makeInterceptors()`.

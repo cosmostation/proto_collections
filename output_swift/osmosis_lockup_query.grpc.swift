@@ -97,11 +97,6 @@ internal protocol Osmosis_Lockup_QueryClientProtocol: GRPCClient {
     callOptions: CallOptions?
   ) -> UnaryCall<Osmosis_Lockup_AccountLockedLongerDurationRequest, Osmosis_Lockup_AccountLockedLongerDurationResponse>
 
-  func accountLockedDuration(
-    _ request: Osmosis_Lockup_AccountLockedDurationRequest,
-    callOptions: CallOptions?
-  ) -> UnaryCall<Osmosis_Lockup_AccountLockedDurationRequest, Osmosis_Lockup_AccountLockedDurationResponse>
-
   func accountLockedLongerDurationNotUnlockingOnly(
     _ request: Osmosis_Lockup_AccountLockedLongerDurationNotUnlockingOnlyRequest,
     callOptions: CallOptions?
@@ -353,24 +348,6 @@ extension Osmosis_Lockup_QueryClientProtocol {
     )
   }
 
-  /// Returns account locked records with a specific duration
-  ///
-  /// - Parameters:
-  ///   - request: Request to send to AccountLockedDuration.
-  ///   - callOptions: Call options.
-  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
-  internal func accountLockedDuration(
-    _ request: Osmosis_Lockup_AccountLockedDurationRequest,
-    callOptions: CallOptions? = nil
-  ) -> UnaryCall<Osmosis_Lockup_AccountLockedDurationRequest, Osmosis_Lockup_AccountLockedDurationResponse> {
-    return self.makeUnaryCall(
-      path: "/osmosis.lockup.Query/AccountLockedDuration",
-      request: request,
-      callOptions: callOptions ?? self.defaultCallOptions,
-      interceptors: self.interceptors?.makeAccountLockedDurationInterceptors() ?? []
-    )
-  }
-
   /// Returns account locked records with longer duration excluding tokens
   /// started unlocking
   ///
@@ -450,9 +427,6 @@ internal protocol Osmosis_Lockup_QueryClientInterceptorFactoryProtocol {
   /// - Returns: Interceptors to use when invoking 'accountLockedLongerDuration'.
   func makeAccountLockedLongerDurationInterceptors() -> [ClientInterceptor<Osmosis_Lockup_AccountLockedLongerDurationRequest, Osmosis_Lockup_AccountLockedLongerDurationResponse>]
 
-  /// - Returns: Interceptors to use when invoking 'accountLockedDuration'.
-  func makeAccountLockedDurationInterceptors() -> [ClientInterceptor<Osmosis_Lockup_AccountLockedDurationRequest, Osmosis_Lockup_AccountLockedDurationResponse>]
-
   /// - Returns: Interceptors to use when invoking 'accountLockedLongerDurationNotUnlockingOnly'.
   func makeAccountLockedLongerDurationNotUnlockingOnlyInterceptors() -> [ClientInterceptor<Osmosis_Lockup_AccountLockedLongerDurationNotUnlockingOnlyRequest, Osmosis_Lockup_AccountLockedLongerDurationNotUnlockingOnlyResponse>]
 
@@ -527,9 +501,6 @@ internal protocol Osmosis_Lockup_QueryProvider: CallHandlerProvider {
 
   /// Returns account locked records with longer duration
   func accountLockedLongerDuration(request: Osmosis_Lockup_AccountLockedLongerDurationRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Lockup_AccountLockedLongerDurationResponse>
-
-  /// Returns account locked records with a specific duration
-  func accountLockedDuration(request: Osmosis_Lockup_AccountLockedDurationRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Lockup_AccountLockedDurationResponse>
 
   /// Returns account locked records with longer duration excluding tokens
   /// started unlocking
@@ -666,15 +637,6 @@ extension Osmosis_Lockup_QueryProvider {
         userFunction: self.accountLockedLongerDuration(request:context:)
       )
 
-    case "AccountLockedDuration":
-      return UnaryServerHandler(
-        context: context,
-        requestDeserializer: ProtobufDeserializer<Osmosis_Lockup_AccountLockedDurationRequest>(),
-        responseSerializer: ProtobufSerializer<Osmosis_Lockup_AccountLockedDurationResponse>(),
-        interceptors: self.interceptors?.makeAccountLockedDurationInterceptors() ?? [],
-        userFunction: self.accountLockedDuration(request:context:)
-      )
-
     case "AccountLockedLongerDurationNotUnlockingOnly":
       return UnaryServerHandler(
         context: context,
@@ -752,10 +714,6 @@ internal protocol Osmosis_Lockup_QueryServerInterceptorFactoryProtocol {
   /// - Returns: Interceptors to use when handling 'accountLockedLongerDuration'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeAccountLockedLongerDurationInterceptors() -> [ServerInterceptor<Osmosis_Lockup_AccountLockedLongerDurationRequest, Osmosis_Lockup_AccountLockedLongerDurationResponse>]
-
-  /// - Returns: Interceptors to use when handling 'accountLockedDuration'.
-  ///   Defaults to calling `self.makeInterceptors()`.
-  func makeAccountLockedDurationInterceptors() -> [ServerInterceptor<Osmosis_Lockup_AccountLockedDurationRequest, Osmosis_Lockup_AccountLockedDurationResponse>]
 
   /// - Returns: Interceptors to use when handling 'accountLockedLongerDurationNotUnlockingOnly'.
   ///   Defaults to calling `self.makeInterceptors()`.
