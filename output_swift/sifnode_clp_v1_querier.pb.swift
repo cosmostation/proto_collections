@@ -362,6 +362,8 @@ struct Sifnode_Clp_V1_ParamsRes {
   /// Clears the value of `params`. Subsequent reads from it will return its default value.
   mutating func clearParams() {self._params = nil}
 
+  var symmetryThreshold: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1048,6 +1050,7 @@ extension Sifnode_Clp_V1_ParamsRes: SwiftProtobuf.Message, SwiftProtobuf._Messag
   static let protoMessageName: String = _protobuf_package + ".ParamsRes"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "params"),
+    2: .standard(proto: "symmetry_threshold"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1057,6 +1060,7 @@ extension Sifnode_Clp_V1_ParamsRes: SwiftProtobuf.Message, SwiftProtobuf._Messag
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._params) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.symmetryThreshold) }()
       default: break
       }
     }
@@ -1066,11 +1070,15 @@ extension Sifnode_Clp_V1_ParamsRes: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     }
+    if !self.symmetryThreshold.isEmpty {
+      try visitor.visitSingularStringField(value: self.symmetryThreshold, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: Sifnode_Clp_V1_ParamsRes, rhs: Sifnode_Clp_V1_ParamsRes) -> Bool {
     if lhs._params != rhs._params {return false}
+    if lhs.symmetryThreshold != rhs.symmetryThreshold {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

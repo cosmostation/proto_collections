@@ -89,6 +89,16 @@ internal protocol Sifnode_Clp_V1_MsgClientProtocol: GRPCClient {
     _ request: Sifnode_Clp_V1_MsgUpdateStakingRewardParams,
     callOptions: CallOptions?
   ) -> UnaryCall<Sifnode_Clp_V1_MsgUpdateStakingRewardParams, Sifnode_Clp_V1_MsgUpdateStakingRewardParamsResponse>
+
+  func setSymmetryThreshold(
+    _ request: Sifnode_Clp_V1_MsgSetSymmetryThreshold,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Sifnode_Clp_V1_MsgSetSymmetryThreshold, Sifnode_Clp_V1_MsgSetSymmetryThresholdResponse>
+
+  func cancelUnlockLiquidity(
+    _ request: Sifnode_Clp_V1_MsgCancelUnlock,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Sifnode_Clp_V1_MsgCancelUnlock, Sifnode_Clp_V1_MsgCancelUnlockResponse>
 }
 
 extension Sifnode_Clp_V1_MsgClientProtocol {
@@ -311,6 +321,42 @@ extension Sifnode_Clp_V1_MsgClientProtocol {
       interceptors: self.interceptors?.makeUpdateStakingRewardParamsInterceptors() ?? []
     )
   }
+
+  /// Unary call to SetSymmetryThreshold
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to SetSymmetryThreshold.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func setSymmetryThreshold(
+    _ request: Sifnode_Clp_V1_MsgSetSymmetryThreshold,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Sifnode_Clp_V1_MsgSetSymmetryThreshold, Sifnode_Clp_V1_MsgSetSymmetryThresholdResponse> {
+    return self.makeUnaryCall(
+      path: "/sifnode.clp.v1.Msg/SetSymmetryThreshold",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeSetSymmetryThresholdInterceptors() ?? []
+    )
+  }
+
+  /// Unary call to CancelUnlockLiquidity
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to CancelUnlockLiquidity.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func cancelUnlockLiquidity(
+    _ request: Sifnode_Clp_V1_MsgCancelUnlock,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Sifnode_Clp_V1_MsgCancelUnlock, Sifnode_Clp_V1_MsgCancelUnlockResponse> {
+    return self.makeUnaryCall(
+      path: "/sifnode.clp.v1.Msg/CancelUnlockLiquidity",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeCancelUnlockLiquidityInterceptors() ?? []
+    )
+  }
 }
 
 internal protocol Sifnode_Clp_V1_MsgClientInterceptorFactoryProtocol {
@@ -350,6 +396,12 @@ internal protocol Sifnode_Clp_V1_MsgClientInterceptorFactoryProtocol {
 
   /// - Returns: Interceptors to use when invoking 'updateStakingRewardParams'.
   func makeUpdateStakingRewardParamsInterceptors() -> [ClientInterceptor<Sifnode_Clp_V1_MsgUpdateStakingRewardParams, Sifnode_Clp_V1_MsgUpdateStakingRewardParamsResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'setSymmetryThreshold'.
+  func makeSetSymmetryThresholdInterceptors() -> [ClientInterceptor<Sifnode_Clp_V1_MsgSetSymmetryThreshold, Sifnode_Clp_V1_MsgSetSymmetryThresholdResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'cancelUnlockLiquidity'.
+  func makeCancelUnlockLiquidityInterceptors() -> [ClientInterceptor<Sifnode_Clp_V1_MsgCancelUnlock, Sifnode_Clp_V1_MsgCancelUnlockResponse>]
 }
 
 internal final class Sifnode_Clp_V1_MsgClient: Sifnode_Clp_V1_MsgClientProtocol {
@@ -401,6 +453,10 @@ internal protocol Sifnode_Clp_V1_MsgProvider: CallHandlerProvider {
   func updatePmtpParams(request: Sifnode_Clp_V1_MsgUpdatePmtpParams, context: StatusOnlyCallContext) -> EventLoopFuture<Sifnode_Clp_V1_MsgUpdatePmtpParamsResponse>
 
   func updateStakingRewardParams(request: Sifnode_Clp_V1_MsgUpdateStakingRewardParams, context: StatusOnlyCallContext) -> EventLoopFuture<Sifnode_Clp_V1_MsgUpdateStakingRewardParamsResponse>
+
+  func setSymmetryThreshold(request: Sifnode_Clp_V1_MsgSetSymmetryThreshold, context: StatusOnlyCallContext) -> EventLoopFuture<Sifnode_Clp_V1_MsgSetSymmetryThresholdResponse>
+
+  func cancelUnlockLiquidity(request: Sifnode_Clp_V1_MsgCancelUnlock, context: StatusOnlyCallContext) -> EventLoopFuture<Sifnode_Clp_V1_MsgCancelUnlockResponse>
 }
 
 extension Sifnode_Clp_V1_MsgProvider {
@@ -521,6 +577,24 @@ extension Sifnode_Clp_V1_MsgProvider {
         userFunction: self.updateStakingRewardParams(request:context:)
       )
 
+    case "SetSymmetryThreshold":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Sifnode_Clp_V1_MsgSetSymmetryThreshold>(),
+        responseSerializer: ProtobufSerializer<Sifnode_Clp_V1_MsgSetSymmetryThresholdResponse>(),
+        interceptors: self.interceptors?.makeSetSymmetryThresholdInterceptors() ?? [],
+        userFunction: self.setSymmetryThreshold(request:context:)
+      )
+
+    case "CancelUnlockLiquidity":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Sifnode_Clp_V1_MsgCancelUnlock>(),
+        responseSerializer: ProtobufSerializer<Sifnode_Clp_V1_MsgCancelUnlockResponse>(),
+        interceptors: self.interceptors?.makeCancelUnlockLiquidityInterceptors() ?? [],
+        userFunction: self.cancelUnlockLiquidity(request:context:)
+      )
+
     default:
       return nil
     }
@@ -576,4 +650,12 @@ internal protocol Sifnode_Clp_V1_MsgServerInterceptorFactoryProtocol {
   /// - Returns: Interceptors to use when handling 'updateStakingRewardParams'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeUpdateStakingRewardParamsInterceptors() -> [ServerInterceptor<Sifnode_Clp_V1_MsgUpdateStakingRewardParams, Sifnode_Clp_V1_MsgUpdateStakingRewardParamsResponse>]
+
+  /// - Returns: Interceptors to use when handling 'setSymmetryThreshold'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeSetSymmetryThresholdInterceptors() -> [ServerInterceptor<Sifnode_Clp_V1_MsgSetSymmetryThreshold, Sifnode_Clp_V1_MsgSetSymmetryThresholdResponse>]
+
+  /// - Returns: Interceptors to use when handling 'cancelUnlockLiquidity'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeCancelUnlockLiquidityInterceptors() -> [ServerInterceptor<Sifnode_Clp_V1_MsgCancelUnlock, Sifnode_Clp_V1_MsgCancelUnlockResponse>]
 }
