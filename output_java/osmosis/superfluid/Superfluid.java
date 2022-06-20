@@ -2519,6 +2519,21 @@ public final class Superfluid {
      * <code>.cosmos.base.v1beta1.Coin delegation_amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coin"];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getDelegationAmountOrBuilder();
+
+    /**
+     * <code>.cosmos.base.v1beta1.Coin equivalent_staked_amount = 4 [(.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coin"];</code>
+     * @return Whether the equivalentStakedAmount field is set.
+     */
+    boolean hasEquivalentStakedAmount();
+    /**
+     * <code>.cosmos.base.v1beta1.Coin equivalent_staked_amount = 4 [(.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coin"];</code>
+     * @return The equivalentStakedAmount.
+     */
+    cosmos.base.v1beta1.CoinOuterClass.Coin getEquivalentStakedAmount();
+    /**
+     * <code>.cosmos.base.v1beta1.Coin equivalent_staked_amount = 4 [(.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coin"];</code>
+     */
+    cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getEquivalentStakedAmountOrBuilder();
   }
   /**
    * <pre>
@@ -2593,6 +2608,19 @@ public final class Superfluid {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(delegationAmount_);
                 delegationAmount_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
+              if (equivalentStakedAmount_ != null) {
+                subBuilder = equivalentStakedAmount_.toBuilder();
+              }
+              equivalentStakedAmount_ = input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(equivalentStakedAmount_);
+                equivalentStakedAmount_ = subBuilder.buildPartial();
               }
 
               break;
@@ -2731,6 +2759,32 @@ public final class Superfluid {
       return getDelegationAmount();
     }
 
+    public static final int EQUIVALENT_STAKED_AMOUNT_FIELD_NUMBER = 4;
+    private cosmos.base.v1beta1.CoinOuterClass.Coin equivalentStakedAmount_;
+    /**
+     * <code>.cosmos.base.v1beta1.Coin equivalent_staked_amount = 4 [(.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coin"];</code>
+     * @return Whether the equivalentStakedAmount field is set.
+     */
+    @java.lang.Override
+    public boolean hasEquivalentStakedAmount() {
+      return equivalentStakedAmount_ != null;
+    }
+    /**
+     * <code>.cosmos.base.v1beta1.Coin equivalent_staked_amount = 4 [(.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coin"];</code>
+     * @return The equivalentStakedAmount.
+     */
+    @java.lang.Override
+    public cosmos.base.v1beta1.CoinOuterClass.Coin getEquivalentStakedAmount() {
+      return equivalentStakedAmount_ == null ? cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : equivalentStakedAmount_;
+    }
+    /**
+     * <code>.cosmos.base.v1beta1.Coin equivalent_staked_amount = 4 [(.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coin"];</code>
+     */
+    @java.lang.Override
+    public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getEquivalentStakedAmountOrBuilder() {
+      return getEquivalentStakedAmount();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2754,6 +2808,9 @@ public final class Superfluid {
       if (delegationAmount_ != null) {
         output.writeMessage(3, getDelegationAmount());
       }
+      if (equivalentStakedAmount_ != null) {
+        output.writeMessage(4, getEquivalentStakedAmount());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2772,6 +2829,10 @@ public final class Superfluid {
       if (delegationAmount_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getDelegationAmount());
+      }
+      if (equivalentStakedAmount_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getEquivalentStakedAmount());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2797,6 +2858,11 @@ public final class Superfluid {
         if (!getDelegationAmount()
             .equals(other.getDelegationAmount())) return false;
       }
+      if (hasEquivalentStakedAmount() != other.hasEquivalentStakedAmount()) return false;
+      if (hasEquivalentStakedAmount()) {
+        if (!getEquivalentStakedAmount()
+            .equals(other.getEquivalentStakedAmount())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2815,6 +2881,10 @@ public final class Superfluid {
       if (hasDelegationAmount()) {
         hash = (37 * hash) + DELEGATION_AMOUNT_FIELD_NUMBER;
         hash = (53 * hash) + getDelegationAmount().hashCode();
+      }
+      if (hasEquivalentStakedAmount()) {
+        hash = (37 * hash) + EQUIVALENT_STAKED_AMOUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getEquivalentStakedAmount().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -2964,6 +3034,12 @@ public final class Superfluid {
           delegationAmount_ = null;
           delegationAmountBuilder_ = null;
         }
+        if (equivalentStakedAmountBuilder_ == null) {
+          equivalentStakedAmount_ = null;
+        } else {
+          equivalentStakedAmount_ = null;
+          equivalentStakedAmountBuilder_ = null;
+        }
         return this;
       }
 
@@ -2996,6 +3072,11 @@ public final class Superfluid {
           result.delegationAmount_ = delegationAmount_;
         } else {
           result.delegationAmount_ = delegationAmountBuilder_.build();
+        }
+        if (equivalentStakedAmountBuilder_ == null) {
+          result.equivalentStakedAmount_ = equivalentStakedAmount_;
+        } else {
+          result.equivalentStakedAmount_ = equivalentStakedAmountBuilder_.build();
         }
         onBuilt();
         return result;
@@ -3055,6 +3136,9 @@ public final class Superfluid {
         }
         if (other.hasDelegationAmount()) {
           mergeDelegationAmount(other.getDelegationAmount());
+        }
+        if (other.hasEquivalentStakedAmount()) {
+          mergeEquivalentStakedAmount(other.getEquivalentStakedAmount());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3354,6 +3438,125 @@ public final class Superfluid {
           delegationAmount_ = null;
         }
         return delegationAmountBuilder_;
+      }
+
+      private cosmos.base.v1beta1.CoinOuterClass.Coin equivalentStakedAmount_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> equivalentStakedAmountBuilder_;
+      /**
+       * <code>.cosmos.base.v1beta1.Coin equivalent_staked_amount = 4 [(.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coin"];</code>
+       * @return Whether the equivalentStakedAmount field is set.
+       */
+      public boolean hasEquivalentStakedAmount() {
+        return equivalentStakedAmountBuilder_ != null || equivalentStakedAmount_ != null;
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin equivalent_staked_amount = 4 [(.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coin"];</code>
+       * @return The equivalentStakedAmount.
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.Coin getEquivalentStakedAmount() {
+        if (equivalentStakedAmountBuilder_ == null) {
+          return equivalentStakedAmount_ == null ? cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : equivalentStakedAmount_;
+        } else {
+          return equivalentStakedAmountBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin equivalent_staked_amount = 4 [(.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coin"];</code>
+       */
+      public Builder setEquivalentStakedAmount(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
+        if (equivalentStakedAmountBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          equivalentStakedAmount_ = value;
+          onChanged();
+        } else {
+          equivalentStakedAmountBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin equivalent_staked_amount = 4 [(.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coin"];</code>
+       */
+      public Builder setEquivalentStakedAmount(
+          cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
+        if (equivalentStakedAmountBuilder_ == null) {
+          equivalentStakedAmount_ = builderForValue.build();
+          onChanged();
+        } else {
+          equivalentStakedAmountBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin equivalent_staked_amount = 4 [(.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coin"];</code>
+       */
+      public Builder mergeEquivalentStakedAmount(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
+        if (equivalentStakedAmountBuilder_ == null) {
+          if (equivalentStakedAmount_ != null) {
+            equivalentStakedAmount_ =
+              cosmos.base.v1beta1.CoinOuterClass.Coin.newBuilder(equivalentStakedAmount_).mergeFrom(value).buildPartial();
+          } else {
+            equivalentStakedAmount_ = value;
+          }
+          onChanged();
+        } else {
+          equivalentStakedAmountBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin equivalent_staked_amount = 4 [(.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coin"];</code>
+       */
+      public Builder clearEquivalentStakedAmount() {
+        if (equivalentStakedAmountBuilder_ == null) {
+          equivalentStakedAmount_ = null;
+          onChanged();
+        } else {
+          equivalentStakedAmount_ = null;
+          equivalentStakedAmountBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin equivalent_staked_amount = 4 [(.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coin"];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getEquivalentStakedAmountBuilder() {
+        
+        onChanged();
+        return getEquivalentStakedAmountFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin equivalent_staked_amount = 4 [(.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coin"];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getEquivalentStakedAmountOrBuilder() {
+        if (equivalentStakedAmountBuilder_ != null) {
+          return equivalentStakedAmountBuilder_.getMessageOrBuilder();
+        } else {
+          return equivalentStakedAmount_ == null ?
+              cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : equivalentStakedAmount_;
+        }
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin equivalent_staked_amount = 4 [(.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coin"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
+          getEquivalentStakedAmountFieldBuilder() {
+        if (equivalentStakedAmountBuilder_ == null) {
+          equivalentStakedAmountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder>(
+                  getEquivalentStakedAmount(),
+                  getParentForChildren(),
+                  isClean());
+          equivalentStakedAmount_ = null;
+        }
+        return equivalentStakedAmountBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -4714,18 +4917,21 @@ public final class Superfluid {
       "\022\024\n\014epoch_number\030\001 \001(\003\022\r\n\005denom\030\002 \001(\t\022W\n" +
       "\nmultiplier\030\003 \001(\tBC\362\336\037\021yaml:\"multiplier\"" +
       "\332\336\037&github.com/cosmos/cosmos-sdk/types.D" +
-      "ec\310\336\037\000\"\271\001\n\032SuperfluidDelegationRecord\022\031\n" +
+      "ec\310\336\037\000\"\243\002\n\032SuperfluidDelegationRecord\022\031\n" +
       "\021delegator_address\030\001 \001(\t\022\031\n\021validator_ad" +
       "dress\030\002 \001(\t\022e\n\021delegation_amount\030\003 \001(\0132\031" +
       ".cosmos.base.v1beta1.CoinB/\310\336\037\000\252\337\037\'githu" +
-      "b.com/cosmos/cosmos-sdk/types.Coin\"T\n#Lo" +
-      "ckIdIntermediaryAccountConnection\022\017\n\007loc" +
-      "k_id\030\001 \001(\004\022\034\n\024intermediary_account\030\002 \001(\t" +
-      "\"%\n\026UnpoolWhitelistedPools\022\013\n\003ids\030\001 \003(\004*" +
-      "Z\n\023SuperfluidAssetType\022\035\n\031SuperfluidAsse" +
-      "tTypeNative\020\000\022\036\n\032SuperfluidAssetTypeLPSh" +
-      "are\020\001\032\004\210\243\036\000B7Z5github.com/osmosis-labs/o" +
-      "smosis/v7/x/superfluid/typesb\006proto3"
+      "b.com/cosmos/cosmos-sdk/types.Coin\022h\n\030eq" +
+      "uivalent_staked_amount\030\004 \001(\0132\031.cosmos.ba" +
+      "se.v1beta1.CoinB+\252\337\037\'github.com/cosmos/c" +
+      "osmos-sdk/types.Coin\"T\n#LockIdIntermedia" +
+      "ryAccountConnection\022\017\n\007lock_id\030\001 \001(\004\022\034\n\024" +
+      "intermediary_account\030\002 \001(\t\"%\n\026UnpoolWhit" +
+      "elistedPools\022\013\n\003ids\030\001 \003(\004*Z\n\023SuperfluidA" +
+      "ssetType\022\035\n\031SuperfluidAssetTypeNative\020\000\022" +
+      "\036\n\032SuperfluidAssetTypeLPShare\020\001\032\004\210\243\036\000B7Z" +
+      "5github.com/osmosis-labs/osmosis/v7/x/su" +
+      "perfluid/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4758,7 +4964,7 @@ public final class Superfluid {
     internal_static_osmosis_superfluid_SuperfluidDelegationRecord_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_osmosis_superfluid_SuperfluidDelegationRecord_descriptor,
-        new java.lang.String[] { "DelegatorAddress", "ValidatorAddress", "DelegationAmount", });
+        new java.lang.String[] { "DelegatorAddress", "ValidatorAddress", "DelegationAmount", "EquivalentStakedAmount", });
     internal_static_osmosis_superfluid_LockIdIntermediaryAccountConnection_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_osmosis_superfluid_LockIdIntermediaryAccountConnection_fieldAccessorTable = new

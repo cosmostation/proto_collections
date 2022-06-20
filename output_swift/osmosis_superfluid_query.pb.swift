@@ -297,9 +297,20 @@ struct Osmosis_Superfluid_SuperfluidDelegationsByDelegatorResponse {
 
   var totalDelegatedCoins: [Cosmos_Base_V1beta1_Coin] = []
 
+  var totalEquivalentStakedAmount: Cosmos_Base_V1beta1_Coin {
+    get {return _totalEquivalentStakedAmount ?? Cosmos_Base_V1beta1_Coin()}
+    set {_totalEquivalentStakedAmount = newValue}
+  }
+  /// Returns true if `totalEquivalentStakedAmount` has been explicitly set.
+  var hasTotalEquivalentStakedAmount: Bool {return self._totalEquivalentStakedAmount != nil}
+  /// Clears the value of `totalEquivalentStakedAmount`. Subsequent reads from it will return its default value.
+  mutating func clearTotalEquivalentStakedAmount() {self._totalEquivalentStakedAmount = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+
+  fileprivate var _totalEquivalentStakedAmount: Cosmos_Base_V1beta1_Coin? = nil
 }
 
 struct Osmosis_Superfluid_SuperfluidUndelegationsByDelegatorRequest {
@@ -824,7 +835,7 @@ extension Osmosis_Superfluid_TotalSuperfluidDelegationsRequest: SwiftProtobuf.Me
 extension Osmosis_Superfluid_TotalSuperfluidDelegationsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".TotalSuperfluidDelegationsResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "totalDelegations"),
+    1: .standard(proto: "total_delegations"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -966,6 +977,7 @@ extension Osmosis_Superfluid_SuperfluidDelegationsByDelegatorResponse: SwiftProt
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "superfluid_delegation_records"),
     2: .standard(proto: "total_delegated_coins"),
+    3: .standard(proto: "total_equivalent_staked_amount"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -976,6 +988,7 @@ extension Osmosis_Superfluid_SuperfluidDelegationsByDelegatorResponse: SwiftProt
       switch fieldNumber {
       case 1: try { try decoder.decodeRepeatedMessageField(value: &self.superfluidDelegationRecords) }()
       case 2: try { try decoder.decodeRepeatedMessageField(value: &self.totalDelegatedCoins) }()
+      case 3: try { try decoder.decodeSingularMessageField(value: &self._totalEquivalentStakedAmount) }()
       default: break
       }
     }
@@ -988,12 +1001,16 @@ extension Osmosis_Superfluid_SuperfluidDelegationsByDelegatorResponse: SwiftProt
     if !self.totalDelegatedCoins.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.totalDelegatedCoins, fieldNumber: 2)
     }
+    if let v = self._totalEquivalentStakedAmount {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: Osmosis_Superfluid_SuperfluidDelegationsByDelegatorResponse, rhs: Osmosis_Superfluid_SuperfluidDelegationsByDelegatorResponse) -> Bool {
     if lhs.superfluidDelegationRecords != rhs.superfluidDelegationRecords {return false}
     if lhs.totalDelegatedCoins != rhs.totalDelegatedCoins {return false}
+    if lhs._totalEquivalentStakedAmount != rhs._totalEquivalentStakedAmount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

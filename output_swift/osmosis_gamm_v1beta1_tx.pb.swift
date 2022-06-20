@@ -21,6 +21,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// ===================== MsgJoinPool
+/// This is really MsgJoinPoolNoSwap
 struct Osmosis_Gamm_V1beta1_MsgJoinPool {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -125,6 +126,8 @@ struct Osmosis_Gamm_V1beta1_MsgSwapExactAmountInResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  var tokenOutAmount: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -177,12 +180,15 @@ struct Osmosis_Gamm_V1beta1_MsgSwapExactAmountOutResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  var tokenInAmount: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 }
 
 /// ===================== MsgJoinSwapExternAmountIn
+/// TODO: Rename to MsgJoinSwapExactAmountIn
 struct Osmosis_Gamm_V1beta1_MsgJoinSwapExternAmountIn {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -201,6 +207,10 @@ struct Osmosis_Gamm_V1beta1_MsgJoinSwapExternAmountIn {
   /// Clears the value of `tokenIn`. Subsequent reads from it will return its default value.
   mutating func clearTokenIn() {self._tokenIn = nil}
 
+  /// repeated cosmos.base.v1beta1.Coin tokensIn = 5 [
+  ///   (gogoproto.moretags) = "yaml:\"tokens_in\"",
+  ///   (gogoproto.nullable) = false
+  /// ];
   var shareOutMinAmount: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -214,6 +224,8 @@ struct Osmosis_Gamm_V1beta1_MsgJoinSwapExternAmountInResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
+
+  var shareOutAmount: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -246,6 +258,8 @@ struct Osmosis_Gamm_V1beta1_MsgJoinSwapShareAmountOutResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  var tokenInAmount: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -276,6 +290,8 @@ struct Osmosis_Gamm_V1beta1_MsgExitSwapShareAmountInResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
+
+  var tokenOutAmount: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -315,6 +331,8 @@ struct Osmosis_Gamm_V1beta1_MsgExitSwapExternAmountOutResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  var shareInAmount: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -328,9 +346,9 @@ extension Osmosis_Gamm_V1beta1_MsgJoinPool: SwiftProtobuf.Message, SwiftProtobuf
   static let protoMessageName: String = _protobuf_package + ".MsgJoinPool"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "sender"),
-    2: .same(proto: "poolId"),
-    3: .same(proto: "shareOutAmount"),
-    4: .same(proto: "tokenInMaxs"),
+    2: .standard(proto: "pool_id"),
+    3: .standard(proto: "share_out_amount"),
+    4: .standard(proto: "token_in_maxs"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -397,9 +415,9 @@ extension Osmosis_Gamm_V1beta1_MsgExitPool: SwiftProtobuf.Message, SwiftProtobuf
   static let protoMessageName: String = _protobuf_package + ".MsgExitPool"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "sender"),
-    2: .same(proto: "poolId"),
-    3: .same(proto: "shareInAmount"),
-    4: .same(proto: "tokenOutMins"),
+    2: .standard(proto: "pool_id"),
+    3: .standard(proto: "share_in_amount"),
+    4: .standard(proto: "token_out_mins"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -465,8 +483,8 @@ extension Osmosis_Gamm_V1beta1_MsgExitPoolResponse: SwiftProtobuf.Message, Swift
 extension Osmosis_Gamm_V1beta1_SwapAmountInRoute: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".SwapAmountInRoute"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "poolId"),
-    2: .same(proto: "tokenOutDenom"),
+    1: .standard(proto: "pool_id"),
+    2: .standard(proto: "token_out_denom"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -505,8 +523,8 @@ extension Osmosis_Gamm_V1beta1_MsgSwapExactAmountIn: SwiftProtobuf.Message, Swif
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "sender"),
     2: .same(proto: "routes"),
-    3: .same(proto: "tokenIn"),
-    4: .same(proto: "tokenOutMinAmount"),
+    3: .standard(proto: "token_in"),
+    4: .standard(proto: "token_out_min_amount"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -552,18 +570,31 @@ extension Osmosis_Gamm_V1beta1_MsgSwapExactAmountIn: SwiftProtobuf.Message, Swif
 
 extension Osmosis_Gamm_V1beta1_MsgSwapExactAmountInResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgSwapExactAmountInResponse"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "token_out_amount"),
+  ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let _ = try decoder.nextFieldNumber() {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.tokenOutAmount) }()
+      default: break
+      }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.tokenOutAmount.isEmpty {
+      try visitor.visitSingularStringField(value: self.tokenOutAmount, fieldNumber: 1)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: Osmosis_Gamm_V1beta1_MsgSwapExactAmountInResponse, rhs: Osmosis_Gamm_V1beta1_MsgSwapExactAmountInResponse) -> Bool {
+    if lhs.tokenOutAmount != rhs.tokenOutAmount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -572,8 +603,8 @@ extension Osmosis_Gamm_V1beta1_MsgSwapExactAmountInResponse: SwiftProtobuf.Messa
 extension Osmosis_Gamm_V1beta1_SwapAmountOutRoute: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".SwapAmountOutRoute"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "poolId"),
-    2: .same(proto: "tokenInDenom"),
+    1: .standard(proto: "pool_id"),
+    2: .standard(proto: "token_in_denom"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -612,8 +643,8 @@ extension Osmosis_Gamm_V1beta1_MsgSwapExactAmountOut: SwiftProtobuf.Message, Swi
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "sender"),
     2: .same(proto: "routes"),
-    3: .same(proto: "tokenInMaxAmount"),
-    4: .same(proto: "tokenOut"),
+    3: .standard(proto: "token_in_max_amount"),
+    4: .standard(proto: "token_out"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -659,18 +690,31 @@ extension Osmosis_Gamm_V1beta1_MsgSwapExactAmountOut: SwiftProtobuf.Message, Swi
 
 extension Osmosis_Gamm_V1beta1_MsgSwapExactAmountOutResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgSwapExactAmountOutResponse"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "token_in_amount"),
+  ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let _ = try decoder.nextFieldNumber() {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.tokenInAmount) }()
+      default: break
+      }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.tokenInAmount.isEmpty {
+      try visitor.visitSingularStringField(value: self.tokenInAmount, fieldNumber: 1)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: Osmosis_Gamm_V1beta1_MsgSwapExactAmountOutResponse, rhs: Osmosis_Gamm_V1beta1_MsgSwapExactAmountOutResponse) -> Bool {
+    if lhs.tokenInAmount != rhs.tokenInAmount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -680,9 +724,9 @@ extension Osmosis_Gamm_V1beta1_MsgJoinSwapExternAmountIn: SwiftProtobuf.Message,
   static let protoMessageName: String = _protobuf_package + ".MsgJoinSwapExternAmountIn"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "sender"),
-    2: .same(proto: "poolId"),
-    3: .same(proto: "tokenIn"),
-    4: .same(proto: "shareOutMinAmount"),
+    2: .standard(proto: "pool_id"),
+    3: .standard(proto: "token_in"),
+    4: .standard(proto: "share_out_min_amount"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -728,18 +772,31 @@ extension Osmosis_Gamm_V1beta1_MsgJoinSwapExternAmountIn: SwiftProtobuf.Message,
 
 extension Osmosis_Gamm_V1beta1_MsgJoinSwapExternAmountInResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgJoinSwapExternAmountInResponse"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "share_out_amount"),
+  ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let _ = try decoder.nextFieldNumber() {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.shareOutAmount) }()
+      default: break
+      }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.shareOutAmount.isEmpty {
+      try visitor.visitSingularStringField(value: self.shareOutAmount, fieldNumber: 1)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: Osmosis_Gamm_V1beta1_MsgJoinSwapExternAmountInResponse, rhs: Osmosis_Gamm_V1beta1_MsgJoinSwapExternAmountInResponse) -> Bool {
+    if lhs.shareOutAmount != rhs.shareOutAmount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -749,10 +806,10 @@ extension Osmosis_Gamm_V1beta1_MsgJoinSwapShareAmountOut: SwiftProtobuf.Message,
   static let protoMessageName: String = _protobuf_package + ".MsgJoinSwapShareAmountOut"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "sender"),
-    2: .same(proto: "poolId"),
-    3: .same(proto: "tokenInDenom"),
-    4: .same(proto: "shareOutAmount"),
-    5: .same(proto: "tokenInMaxAmount"),
+    2: .standard(proto: "pool_id"),
+    3: .standard(proto: "token_in_denom"),
+    4: .standard(proto: "share_out_amount"),
+    5: .standard(proto: "token_in_max_amount"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -803,18 +860,31 @@ extension Osmosis_Gamm_V1beta1_MsgJoinSwapShareAmountOut: SwiftProtobuf.Message,
 
 extension Osmosis_Gamm_V1beta1_MsgJoinSwapShareAmountOutResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgJoinSwapShareAmountOutResponse"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "token_in_amount"),
+  ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let _ = try decoder.nextFieldNumber() {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.tokenInAmount) }()
+      default: break
+      }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.tokenInAmount.isEmpty {
+      try visitor.visitSingularStringField(value: self.tokenInAmount, fieldNumber: 1)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: Osmosis_Gamm_V1beta1_MsgJoinSwapShareAmountOutResponse, rhs: Osmosis_Gamm_V1beta1_MsgJoinSwapShareAmountOutResponse) -> Bool {
+    if lhs.tokenInAmount != rhs.tokenInAmount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -824,10 +894,10 @@ extension Osmosis_Gamm_V1beta1_MsgExitSwapShareAmountIn: SwiftProtobuf.Message, 
   static let protoMessageName: String = _protobuf_package + ".MsgExitSwapShareAmountIn"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "sender"),
-    2: .same(proto: "poolId"),
-    3: .same(proto: "tokenOutDenom"),
-    4: .same(proto: "shareInAmount"),
-    5: .same(proto: "tokenOutMinAmount"),
+    2: .standard(proto: "pool_id"),
+    3: .standard(proto: "token_out_denom"),
+    4: .standard(proto: "share_in_amount"),
+    5: .standard(proto: "token_out_min_amount"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -878,18 +948,31 @@ extension Osmosis_Gamm_V1beta1_MsgExitSwapShareAmountIn: SwiftProtobuf.Message, 
 
 extension Osmosis_Gamm_V1beta1_MsgExitSwapShareAmountInResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgExitSwapShareAmountInResponse"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "token_out_amount"),
+  ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let _ = try decoder.nextFieldNumber() {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.tokenOutAmount) }()
+      default: break
+      }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.tokenOutAmount.isEmpty {
+      try visitor.visitSingularStringField(value: self.tokenOutAmount, fieldNumber: 1)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: Osmosis_Gamm_V1beta1_MsgExitSwapShareAmountInResponse, rhs: Osmosis_Gamm_V1beta1_MsgExitSwapShareAmountInResponse) -> Bool {
+    if lhs.tokenOutAmount != rhs.tokenOutAmount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -899,9 +982,9 @@ extension Osmosis_Gamm_V1beta1_MsgExitSwapExternAmountOut: SwiftProtobuf.Message
   static let protoMessageName: String = _protobuf_package + ".MsgExitSwapExternAmountOut"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "sender"),
-    2: .same(proto: "poolId"),
-    3: .same(proto: "tokenOut"),
-    4: .same(proto: "shareInMaxAmount"),
+    2: .standard(proto: "pool_id"),
+    3: .standard(proto: "token_out"),
+    4: .standard(proto: "share_in_max_amount"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -947,18 +1030,31 @@ extension Osmosis_Gamm_V1beta1_MsgExitSwapExternAmountOut: SwiftProtobuf.Message
 
 extension Osmosis_Gamm_V1beta1_MsgExitSwapExternAmountOutResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgExitSwapExternAmountOutResponse"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "share_in_amount"),
+  ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let _ = try decoder.nextFieldNumber() {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.shareInAmount) }()
+      default: break
+      }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.shareInAmount.isEmpty {
+      try visitor.visitSingularStringField(value: self.shareInAmount, fieldNumber: 1)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: Osmosis_Gamm_V1beta1_MsgExitSwapExternAmountOutResponse, rhs: Osmosis_Gamm_V1beta1_MsgExitSwapExternAmountOutResponse) -> Bool {
+    if lhs.shareInAmount != rhs.shareInAmount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

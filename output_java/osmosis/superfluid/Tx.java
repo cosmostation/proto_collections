@@ -5595,17 +5595,17 @@ public final class Tx {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint64 exitedLockIds = 1;</code>
+     * <code>repeated uint64 exited_lock_ids = 1;</code>
      * @return A list containing the exitedLockIds.
      */
     java.util.List<java.lang.Long> getExitedLockIdsList();
     /**
-     * <code>repeated uint64 exitedLockIds = 1;</code>
+     * <code>repeated uint64 exited_lock_ids = 1;</code>
      * @return The count of exitedLockIds.
      */
     int getExitedLockIdsCount();
     /**
-     * <code>repeated uint64 exitedLockIds = 1;</code>
+     * <code>repeated uint64 exited_lock_ids = 1;</code>
      * @param index The index of the element to return.
      * @return The exitedLockIds at the given index.
      */
@@ -5714,10 +5714,10 @@ public final class Tx {
               osmosis.superfluid.Tx.MsgUnPoolWhitelistedPoolResponse.class, osmosis.superfluid.Tx.MsgUnPoolWhitelistedPoolResponse.Builder.class);
     }
 
-    public static final int EXITEDLOCKIDS_FIELD_NUMBER = 1;
+    public static final int EXITED_LOCK_IDS_FIELD_NUMBER = 1;
     private com.google.protobuf.Internal.LongList exitedLockIds_;
     /**
-     * <code>repeated uint64 exitedLockIds = 1;</code>
+     * <code>repeated uint64 exited_lock_ids = 1;</code>
      * @return A list containing the exitedLockIds.
      */
     @java.lang.Override
@@ -5726,14 +5726,14 @@ public final class Tx {
       return exitedLockIds_;
     }
     /**
-     * <code>repeated uint64 exitedLockIds = 1;</code>
+     * <code>repeated uint64 exited_lock_ids = 1;</code>
      * @return The count of exitedLockIds.
      */
     public int getExitedLockIdsCount() {
       return exitedLockIds_.size();
     }
     /**
-     * <code>repeated uint64 exitedLockIds = 1;</code>
+     * <code>repeated uint64 exited_lock_ids = 1;</code>
      * @param index The index of the element to return.
      * @return The exitedLockIds at the given index.
      */
@@ -5816,7 +5816,7 @@ public final class Tx {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getExitedLockIdsCount() > 0) {
-        hash = (37 * hash) + EXITEDLOCKIDS_FIELD_NUMBER;
+        hash = (37 * hash) + EXITED_LOCK_IDS_FIELD_NUMBER;
         hash = (53 * hash) + getExitedLockIdsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -6082,7 +6082,7 @@ public final class Tx {
          }
       }
       /**
-       * <code>repeated uint64 exitedLockIds = 1;</code>
+       * <code>repeated uint64 exited_lock_ids = 1;</code>
        * @return A list containing the exitedLockIds.
        */
       public java.util.List<java.lang.Long>
@@ -6091,14 +6091,14 @@ public final class Tx {
                  java.util.Collections.unmodifiableList(exitedLockIds_) : exitedLockIds_;
       }
       /**
-       * <code>repeated uint64 exitedLockIds = 1;</code>
+       * <code>repeated uint64 exited_lock_ids = 1;</code>
        * @return The count of exitedLockIds.
        */
       public int getExitedLockIdsCount() {
         return exitedLockIds_.size();
       }
       /**
-       * <code>repeated uint64 exitedLockIds = 1;</code>
+       * <code>repeated uint64 exited_lock_ids = 1;</code>
        * @param index The index of the element to return.
        * @return The exitedLockIds at the given index.
        */
@@ -6106,7 +6106,7 @@ public final class Tx {
         return exitedLockIds_.getLong(index);
       }
       /**
-       * <code>repeated uint64 exitedLockIds = 1;</code>
+       * <code>repeated uint64 exited_lock_ids = 1;</code>
        * @param index The index to set the value at.
        * @param value The exitedLockIds to set.
        * @return This builder for chaining.
@@ -6119,7 +6119,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated uint64 exitedLockIds = 1;</code>
+       * <code>repeated uint64 exited_lock_ids = 1;</code>
        * @param value The exitedLockIds to add.
        * @return This builder for chaining.
        */
@@ -6130,7 +6130,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated uint64 exitedLockIds = 1;</code>
+       * <code>repeated uint64 exited_lock_ids = 1;</code>
        * @param values The exitedLockIds to add.
        * @return This builder for chaining.
        */
@@ -6143,7 +6143,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated uint64 exitedLockIds = 1;</code>
+       * <code>repeated uint64 exited_lock_ids = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearExitedLockIds() {
@@ -6285,26 +6285,26 @@ public final class Tx {
       "SuperfluidDelegateResponse\022\n\n\002ID\030\001 \001(\004\"b" +
       "\n\030MsgUnPoolWhitelistedPool\022!\n\006sender\030\001 \001" +
       "(\tB\021\362\336\037\ryaml:\"sender\"\022#\n\007pool_id\030\002 \001(\004B\022" +
-      "\362\336\037\016yaml:\"pool_id\"\"9\n MsgUnPoolWhitelist" +
-      "edPoolResponse\022\025\n\rexitedLockIds\030\001 \003(\0042\364\004" +
-      "\n\003Msg\022r\n\022SuperfluidDelegate\022).osmosis.su" +
-      "perfluid.MsgSuperfluidDelegate\0321.osmosis" +
-      ".superfluid.MsgSuperfluidDelegateRespons" +
-      "e\022x\n\024SuperfluidUndelegate\022+.osmosis.supe" +
-      "rfluid.MsgSuperfluidUndelegate\0323.osmosis" +
-      ".superfluid.MsgSuperfluidUndelegateRespo" +
-      "nse\022x\n\024SuperfluidUnbondLock\022+.osmosis.su" +
-      "perfluid.MsgSuperfluidUnbondLock\0323.osmos" +
-      "is.superfluid.MsgSuperfluidUnbondLockRes" +
-      "ponse\022\207\001\n\031LockAndSuperfluidDelegate\0220.os" +
-      "mosis.superfluid.MsgLockAndSuperfluidDel" +
-      "egate\0328.osmosis.superfluid.MsgLockAndSup" +
-      "erfluidDelegateResponse\022{\n\025UnPoolWhiteli" +
-      "stedPool\022,.osmosis.superfluid.MsgUnPoolW" +
-      "hitelistedPool\0324.osmosis.superfluid.MsgU" +
-      "nPoolWhitelistedPoolResponseB7Z5github.c" +
-      "om/osmosis-labs/osmosis/v7/x/superfluid/" +
-      "typesb\006proto3"
+      "\362\336\037\016yaml:\"pool_id\"\";\n MsgUnPoolWhitelist" +
+      "edPoolResponse\022\027\n\017exited_lock_ids\030\001 \003(\0042" +
+      "\364\004\n\003Msg\022r\n\022SuperfluidDelegate\022).osmosis." +
+      "superfluid.MsgSuperfluidDelegate\0321.osmos" +
+      "is.superfluid.MsgSuperfluidDelegateRespo" +
+      "nse\022x\n\024SuperfluidUndelegate\022+.osmosis.su" +
+      "perfluid.MsgSuperfluidUndelegate\0323.osmos" +
+      "is.superfluid.MsgSuperfluidUndelegateRes" +
+      "ponse\022x\n\024SuperfluidUnbondLock\022+.osmosis." +
+      "superfluid.MsgSuperfluidUnbondLock\0323.osm" +
+      "osis.superfluid.MsgSuperfluidUnbondLockR" +
+      "esponse\022\207\001\n\031LockAndSuperfluidDelegate\0220." +
+      "osmosis.superfluid.MsgLockAndSuperfluidD" +
+      "elegate\0328.osmosis.superfluid.MsgLockAndS" +
+      "uperfluidDelegateResponse\022{\n\025UnPoolWhite" +
+      "listedPool\022,.osmosis.superfluid.MsgUnPoo" +
+      "lWhitelistedPool\0324.osmosis.superfluid.Ms" +
+      "gUnPoolWhitelistedPoolResponseB7Z5github" +
+      ".com/osmosis-labs/osmosis/v7/x/superflui" +
+      "d/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

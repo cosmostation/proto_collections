@@ -140,11 +140,21 @@ struct Osmosis_Superfluid_SuperfluidDelegationRecord {
   /// Clears the value of `delegationAmount`. Subsequent reads from it will return its default value.
   mutating func clearDelegationAmount() {self._delegationAmount = nil}
 
+  var equivalentStakedAmount: Cosmos_Base_V1beta1_Coin {
+    get {return _equivalentStakedAmount ?? Cosmos_Base_V1beta1_Coin()}
+    set {_equivalentStakedAmount = newValue}
+  }
+  /// Returns true if `equivalentStakedAmount` has been explicitly set.
+  var hasEquivalentStakedAmount: Bool {return self._equivalentStakedAmount != nil}
+  /// Clears the value of `equivalentStakedAmount`. Subsequent reads from it will return its default value.
+  mutating func clearEquivalentStakedAmount() {self._equivalentStakedAmount = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _delegationAmount: Cosmos_Base_V1beta1_Coin? = nil
+  fileprivate var _equivalentStakedAmount: Cosmos_Base_V1beta1_Coin? = nil
 }
 
 struct Osmosis_Superfluid_LockIdIntermediaryAccountConnection {
@@ -316,6 +326,7 @@ extension Osmosis_Superfluid_SuperfluidDelegationRecord: SwiftProtobuf.Message, 
     1: .standard(proto: "delegator_address"),
     2: .standard(proto: "validator_address"),
     3: .standard(proto: "delegation_amount"),
+    4: .standard(proto: "equivalent_staked_amount"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -327,6 +338,7 @@ extension Osmosis_Superfluid_SuperfluidDelegationRecord: SwiftProtobuf.Message, 
       case 1: try { try decoder.decodeSingularStringField(value: &self.delegatorAddress) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.validatorAddress) }()
       case 3: try { try decoder.decodeSingularMessageField(value: &self._delegationAmount) }()
+      case 4: try { try decoder.decodeSingularMessageField(value: &self._equivalentStakedAmount) }()
       default: break
       }
     }
@@ -342,6 +354,9 @@ extension Osmosis_Superfluid_SuperfluidDelegationRecord: SwiftProtobuf.Message, 
     if let v = self._delegationAmount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
     }
+    if let v = self._equivalentStakedAmount {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -349,6 +364,7 @@ extension Osmosis_Superfluid_SuperfluidDelegationRecord: SwiftProtobuf.Message, 
     if lhs.delegatorAddress != rhs.delegatorAddress {return false}
     if lhs.validatorAddress != rhs.validatorAddress {return false}
     if lhs._delegationAmount != rhs._delegationAmount {return false}
+    if lhs._equivalentStakedAmount != rhs._equivalentStakedAmount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

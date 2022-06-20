@@ -457,7 +457,7 @@ extension Osmosis_Superfluid_MsgUnPoolWhitelistedPool: SwiftProtobuf.Message, Sw
 extension Osmosis_Superfluid_MsgUnPoolWhitelistedPoolResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgUnPoolWhitelistedPoolResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "exitedLockIds"),
+    1: .standard(proto: "exited_lock_ids"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {

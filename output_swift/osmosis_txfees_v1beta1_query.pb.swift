@@ -42,6 +42,36 @@ struct Osmosis_Txfees_V1beta1_QueryFeeTokensResponse {
   init() {}
 }
 
+/// QueryDenomSpotPriceRequest defines grpc request structure for querying spot
+/// price for the specified tx fee denom
+struct Osmosis_Txfees_V1beta1_QueryDenomSpotPriceRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var denom: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+/// QueryDenomSpotPriceRequest defines grpc response structure for querying spot
+/// price for the specified tx fee denom
+struct Osmosis_Txfees_V1beta1_QueryDenomSpotPriceResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var poolID: UInt64 = 0
+
+  var spotPrice: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 struct Osmosis_Txfees_V1beta1_QueryDenomPoolIdRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -138,6 +168,76 @@ extension Osmosis_Txfees_V1beta1_QueryFeeTokensResponse: SwiftProtobuf.Message, 
 
   static func ==(lhs: Osmosis_Txfees_V1beta1_QueryFeeTokensResponse, rhs: Osmosis_Txfees_V1beta1_QueryFeeTokensResponse) -> Bool {
     if lhs.feeTokens != rhs.feeTokens {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Osmosis_Txfees_V1beta1_QueryDenomSpotPriceRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QueryDenomSpotPriceRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "denom"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.denom) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.denom.isEmpty {
+      try visitor.visitSingularStringField(value: self.denom, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Osmosis_Txfees_V1beta1_QueryDenomSpotPriceRequest, rhs: Osmosis_Txfees_V1beta1_QueryDenomSpotPriceRequest) -> Bool {
+    if lhs.denom != rhs.denom {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Osmosis_Txfees_V1beta1_QueryDenomSpotPriceResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QueryDenomSpotPriceResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "poolID"),
+    2: .standard(proto: "spot_price"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularUInt64Field(value: &self.poolID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.spotPrice) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.poolID != 0 {
+      try visitor.visitSingularUInt64Field(value: self.poolID, fieldNumber: 1)
+    }
+    if !self.spotPrice.isEmpty {
+      try visitor.visitSingularStringField(value: self.spotPrice, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Osmosis_Txfees_V1beta1_QueryDenomSpotPriceResponse, rhs: Osmosis_Txfees_V1beta1_QueryDenomSpotPriceResponse) -> Bool {
+    if lhs.poolID != rhs.poolID {return false}
+    if lhs.spotPrice != rhs.spotPrice {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
