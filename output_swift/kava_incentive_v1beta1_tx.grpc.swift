@@ -51,6 +51,11 @@ internal protocol Kava_Incentive_V1beta1_MsgClientProtocol: GRPCClient {
     _ request: Kava_Incentive_V1beta1_MsgClaimSwapReward,
     callOptions: CallOptions?
   ) -> UnaryCall<Kava_Incentive_V1beta1_MsgClaimSwapReward, Kava_Incentive_V1beta1_MsgClaimSwapRewardResponse>
+
+  func claimSavingsReward(
+    _ request: Kava_Incentive_V1beta1_MsgClaimSavingsReward,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Kava_Incentive_V1beta1_MsgClaimSavingsReward, Kava_Incentive_V1beta1_MsgClaimSavingsRewardResponse>
 }
 
 extension Kava_Incentive_V1beta1_MsgClientProtocol {
@@ -129,6 +134,24 @@ extension Kava_Incentive_V1beta1_MsgClientProtocol {
       interceptors: self.interceptors?.makeClaimSwapRewardInterceptors() ?? []
     )
   }
+
+  /// ClaimSavingsReward is a message type used to claim savings rewards
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to ClaimSavingsReward.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func claimSavingsReward(
+    _ request: Kava_Incentive_V1beta1_MsgClaimSavingsReward,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Kava_Incentive_V1beta1_MsgClaimSavingsReward, Kava_Incentive_V1beta1_MsgClaimSavingsRewardResponse> {
+    return self.makeUnaryCall(
+      path: "/kava.incentive.v1beta1.Msg/ClaimSavingsReward",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeClaimSavingsRewardInterceptors() ?? []
+    )
+  }
 }
 
 internal protocol Kava_Incentive_V1beta1_MsgClientInterceptorFactoryProtocol {
@@ -144,6 +167,9 @@ internal protocol Kava_Incentive_V1beta1_MsgClientInterceptorFactoryProtocol {
 
   /// - Returns: Interceptors to use when invoking 'claimSwapReward'.
   func makeClaimSwapRewardInterceptors() -> [ClientInterceptor<Kava_Incentive_V1beta1_MsgClaimSwapReward, Kava_Incentive_V1beta1_MsgClaimSwapRewardResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'claimSavingsReward'.
+  func makeClaimSavingsRewardInterceptors() -> [ClientInterceptor<Kava_Incentive_V1beta1_MsgClaimSavingsReward, Kava_Incentive_V1beta1_MsgClaimSavingsRewardResponse>]
 }
 
 internal final class Kava_Incentive_V1beta1_MsgClient: Kava_Incentive_V1beta1_MsgClientProtocol {
@@ -185,6 +211,9 @@ internal protocol Kava_Incentive_V1beta1_MsgProvider: CallHandlerProvider {
 
   /// ClaimSwapReward is a message type used to claim delegator rewards
   func claimSwapReward(request: Kava_Incentive_V1beta1_MsgClaimSwapReward, context: StatusOnlyCallContext) -> EventLoopFuture<Kava_Incentive_V1beta1_MsgClaimSwapRewardResponse>
+
+  /// ClaimSavingsReward is a message type used to claim savings rewards
+  func claimSavingsReward(request: Kava_Incentive_V1beta1_MsgClaimSavingsReward, context: StatusOnlyCallContext) -> EventLoopFuture<Kava_Incentive_V1beta1_MsgClaimSavingsRewardResponse>
 }
 
 extension Kava_Incentive_V1beta1_MsgProvider {
@@ -233,6 +262,15 @@ extension Kava_Incentive_V1beta1_MsgProvider {
         userFunction: self.claimSwapReward(request:context:)
       )
 
+    case "ClaimSavingsReward":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Kava_Incentive_V1beta1_MsgClaimSavingsReward>(),
+        responseSerializer: ProtobufSerializer<Kava_Incentive_V1beta1_MsgClaimSavingsRewardResponse>(),
+        interceptors: self.interceptors?.makeClaimSavingsRewardInterceptors() ?? [],
+        userFunction: self.claimSavingsReward(request:context:)
+      )
+
     default:
       return nil
     }
@@ -256,4 +294,8 @@ internal protocol Kava_Incentive_V1beta1_MsgServerInterceptorFactoryProtocol {
   /// - Returns: Interceptors to use when handling 'claimSwapReward'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeClaimSwapRewardInterceptors() -> [ServerInterceptor<Kava_Incentive_V1beta1_MsgClaimSwapReward, Kava_Incentive_V1beta1_MsgClaimSwapRewardResponse>]
+
+  /// - Returns: Interceptors to use when handling 'claimSavingsReward'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeClaimSavingsRewardInterceptors() -> [ServerInterceptor<Kava_Incentive_V1beta1_MsgClaimSavingsReward, Kava_Incentive_V1beta1_MsgClaimSavingsRewardResponse>]
 }
