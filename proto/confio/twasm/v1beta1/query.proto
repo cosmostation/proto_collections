@@ -1,0 +1,47 @@
+syntax = "proto3";
+package confio.twasm.v1beta1;
+
+import "gogoproto/gogo.proto";
+import "cosmwasm/wasm/v1/types.proto";
+import "google/api/annotations.proto";
+import "cosmos/base/query/v1beta1/pagination.proto";
+
+option go_package = "github.com/confio/tgrade/x/twasm/types";
+
+// Query provides defines the gRPC querier service
+service Query {
+
+  // PrivilegedContracts returns all privileged contracts
+  rpc PrivilegedContracts(QueryPrivilegedContractsRequest)
+      returns (QueryPrivilegedContractsResponse) {
+    option (google.api.http).get = "/tgrade/twasm/v1beta1/contracts/privileged";
+  }
+  // ContractsByPrivilegeType returns all contracts that have registered for the
+  // privilege type
+  rpc ContractsByPrivilegeType(QueryContractsByPrivilegeTypeRequest)
+      returns (QueryContractsByPrivilegeTypeResponse) {
+    option (google.api.http).get =
+        "/tgrade/twasm/v1beta1/contracts/privilege/{privilege_type}";
+  }
+}
+
+// QueryPrivilegedContractsResponse is the request type for the
+// Query/PrivilegedContracts RPC method
+message QueryPrivilegedContractsRequest {}
+
+// QueryPrivilegedContractsResponse is the response type for the
+// Query/PrivilegedContracts RPC method
+message QueryPrivilegedContractsResponse {
+  // contracts are a set of contract addresses
+  repeated string contracts = 1;
+}
+// QueryContractsByPrivilegeTypeRequest is the request type for the
+// Query/ContractsByPrivilegeType RPC method
+message QueryContractsByPrivilegeTypeRequest { string privilege_type = 1; }
+
+// QueryContractsByPrivilegeTypeResponse is the response type for the
+// Query/ContractsByPrivilegeType RPC method
+message QueryContractsByPrivilegeTypeResponse {
+  // contracts are a set of contract addresses
+  repeated string contracts = 1;
+}

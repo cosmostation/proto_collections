@@ -1,0 +1,274 @@
+syntax = "proto3";
+package confio.poe.v1beta1;
+
+import "gogoproto/gogo.proto";
+import "cosmos/base/v1beta1/coin.proto";
+import "cosmwasm/wasm/v1/genesis.proto";
+import "confio/poe/v1beta1/poe.proto";
+import "google/protobuf/duration.proto";
+
+option go_package = "github.com/confio/tgrade/x/poe/types";
+
+// GenesisState - initial state of module
+message GenesisState {
+
+  // params defines all the parameter of the module
+  Params params = 1 [ (gogoproto.nullable) = false ];
+
+  // SetupMode defines which scenario to apply on a genesis import.
+  // Either it is a fresh chain that needs PoE contracts bootstrapped or
+  // the module state has to be restored from a previous state dump.
+  oneof setup_mode {
+    // SeedContracts stores and instantiates the Proof of Engagement
+    // contracts on the chain.
+    SeedContracts seed_contracts = 2;
+    // ImportDump restores the state from an exported state genesis
+    ImportDump import_dump = 3;
+  }
+}
+
+// ImportDump has all module data for non seed mode.
+message ImportDump {
+  // Contracts PoE contract addresses and types
+  repeated PoEContract contracts = 1 [
+    (gogoproto.nullable) = false,
+    (gogoproto.jsontag) = "contracts,omitempty"
+  ];
+}
+
+// SeedContracts contains the contract configuration and group members to setup
+// all PoE contracts on chain.
+message SeedContracts {
+
+  // GenTxs defines the genesis transactions to create a validator.
+  repeated bytes gen_txs = 1 [
+    (gogoproto.casttype) = "encoding/json.RawMessage",
+    (gogoproto.jsontag) = "gentxs",
+    (gogoproto.moretags) = "yaml:\"gentxs\""
+  ];
+
+  // BootstrapAccountAddress single address that is set as bootstrap-account for
+  // the PoE contracts in seed mode.
+  string bootstrap_account_address = 2;
+
+  // Engagement weighted members of the engagement group. Validators should be
+  // in here.
+  repeated TG4Member engagement = 3 [
+    (gogoproto.nullable) = false,
+    (gogoproto.jsontag) = "engagement,omitempty"
+  ];
+
+  StakeContractConfig stake_contract_config = 4
+      [ (gogoproto.jsontag) = "stake_contract_config,omitempty" ];
+
+  ValsetContractConfig valset_contract_config = 5
+      [ (gogoproto.jsontag) = "valset_contract_config,omitempty" ];
+
+  EngagementContractConfig engagement_contract_config = 6
+      [ (gogoproto.jsontag) = "engagement_contract_config,omitempty" ];
+
+  // BondDenom defines the bondable coin denomination.
+  string bond_denom = 7 [ (gogoproto.moretags) = "yaml:\"bond_denom\"" ];
+
+  OversightCommitteeContractConfig oversight_committee_contract_config = 8
+      [ (gogoproto.jsontag) = "oversight_committee_contract_config,omitempty" ];
+
+  CommunityPoolContractConfig community_pool_contract_config = 9
+      [ (gogoproto.jsontag) = "community_pool_contract_config,omitempty" ];
+
+  ValidatorVotingContractConfig validator_voting_contract_config = 10
+      [ (gogoproto.jsontag) = "validator_voting_contract_config,omitempty" ];
+
+  repeated string oversight_community_members = 11
+      [ (gogoproto.jsontag) = "oversight_community_members,omitempty" ];
+
+  repeated string arbiter_pool_members = 12
+      [ (gogoproto.jsontag) = "arbiter_pool_members,omitempty" ];
+
+  ArbiterPoolContractConfig arbiter_pool_contract_config = 13
+      [ (gogoproto.jsontag) = "arbiter_pool_contract_config,omitempty" ];
+
+  MixerContractConfig mixer_contract_config = 14
+      [ (gogoproto.jsontag) = "mixer_contract_config,omitempty" ];
+}
+
+// Mixer contract setup. See
+// https://github.com/confio/poe-contracts/tree/main/contracts/tg4-mixer
+message MixerContractConfig {
+  message Sigmoid {
+    uint64 max_points = 1;
+    string p = 2 [
+      (gogoproto.nullable) = false,
+      (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"
+    ];
+    string s = 3 [
+      (gogoproto.nullable) = false,
+      (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"
+    ];
+  }
+  // Sigmoid returns a sigmoid-like value of staked amount times engagement
+  // points. See the Proof-of-Engagement white-paper for details.
+  Sigmoid sigmoid = 1 [ (gogoproto.nullable) = false ];
+}
+
+// StakeContractConfig initial setup config
+message StakeContractConfig {
+  uint64 min_bond = 1;
+  uint64 tokens_per_point = 2;
+  google.protobuf.Duration unbonding_period = 3
+      [ (gogoproto.nullable) = false, (gogoproto.stdduration) = true ];
+  uint32 claim_autoreturn_limit = 4;
+}
+
+// ValsetContractConfig initial setup config
+message ValsetContractConfig {
+  uint64 min_points = 1;
+  // MaxValidators The maximum number of validators that can be included in the
+  // Tendermint validator set.
+  uint32 max_validators = 2;
+  // EpochLength We update the Tendermint validator set only once per epoch.
+  // Epoch # is env.block.time/epoch_length (round down). The first block with a
+  // new epoch number will trigger a new validator calculation.
+  google.protobuf.Duration epoch_length = 3
+      [ (gogoproto.nullable) = false, (gogoproto.stdduration) = true ];
+  cosmos.base.v1beta1.Coin epoch_reward = 4 [ (gogoproto.nullable) = false ];
+  // Scaling is the factor to multiply cw4-group weights to produce the
+  // Tendermint validator power
+  uint32 scaling = 5;
+  // FeePercentage is the percentage of total accumulated fees that is
+  // subtracted from tokens minted as rewards. 50% by default. To disable this
+  // feature just set it to 0 (which effectively means that fees don't affect
+  // the per-epoch reward).
+  string fee_percentage = 6 [
+    (gogoproto.nullable) = false,
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"
+  ];
+  // CommunityPoolRewardRation in percentage
+  string community_pool_reward_ratio = 7 [
+    (gogoproto.nullable) = false,
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"
+  ];
+  // EngagementRewardRatio reward ration in percentage for all
+  string engagement_reward_ratio = 8 [
+    (gogoproto.nullable) = false,
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"
+  ];
+  // ValidatorRewardRation in percentage for all
+  string validator_reward_ratio = 9 [
+    (gogoproto.nullable) = false,
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"
+  ];
+  // AutoUnjail if set to true, we will auto-unjail any validator after their
+  // jailtime is over.
+  bool auto_unjail = 10;
+
+  // DoubleSignSlashRatio Validators who are caught double signing are jailed
+  // forever and their bonded tokens are slashed based on this value.
+  string double_sign_slash_ratio = 11 [
+    (gogoproto.nullable) = false,
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"
+  ];
+
+  // When a validator joins the valset, verify they sign the first block since
+  // joining or jail them for a period otherwise.
+  //
+  // The verification happens every time the validator becomes an active
+  // validator, including when they are unjailed or when they just gain enough
+  // power to participate.
+  bool verify_validators = 12;
+
+  // OfflineJailDuration duration to jail a validator for in case they don't
+  // sign their first epoch boundary block. After the period, they have to pass
+  // verification again, ad infinitum.
+  google.protobuf.Duration offlineJailDuration = 13
+      [ (gogoproto.nullable) = false, (gogoproto.stdduration) = true ];
+}
+
+// EngagementContractConfig initial setup config
+message EngagementContractConfig {
+  google.protobuf.Duration halflife = 1
+      [ (gogoproto.nullable) = false, (gogoproto.stdduration) = true ];
+}
+
+// OversightCommitteeContractConfig initial setup config for the trusted circle
+message OversightCommitteeContractConfig {
+  // Name of TRUSTED_CIRCLE
+  string name = 1;
+  // EscrowAmount The required escrow amount, in the default denom (utgd)
+  cosmos.base.v1beta1.Coin escrow_amount = 2 [ (gogoproto.nullable) = false ];
+
+  // VotingRules rules for the tally
+  VotingRules voting_rules = 3 [ (gogoproto.nullable) = false ];
+
+  // DenyListContractAddress is an optional cw4 contract with list of addresses
+  // denied to be part of TrustedCircle
+  string deny_list_contract_address = 4;
+}
+
+// CommunityPoolContractConfig initial setup config for the contract
+message CommunityPoolContractConfig {
+  // VotingRules rules for the tally
+  VotingRules voting_rules = 1 [ (gogoproto.nullable) = false ];
+}
+
+// ValidatorVotingContractConfig CommunityPoolContractConfig
+message ValidatorVotingContractConfig {
+  // VotingRules rules for the tally
+  VotingRules voting_rules = 1 [ (gogoproto.nullable) = false ];
+}
+
+// PoEContract address and type information
+message PoEContract {
+  // ContractType type.
+  poe.v1beta1.PoEContractType contract_type = 1;
+  // Address is the bech32 address string
+  string address = 2;
+}
+
+// TG4Member member of the Engagement group.
+message TG4Member {
+  // Address is the bech32 address string
+  string address = 1 [ (gogoproto.jsontag) = "address" ];
+  uint64 points = 2 [ (gogoproto.jsontag) = "points" ];
+}
+
+// VotingRules contains configuration for the tally.
+message VotingRules {
+  // VotingPeriod Voting period in days
+  uint32 voting_period = 1;
+  // Quorum  voting quorum percentage (1-100)
+  string quorum = 2 [
+    (gogoproto.nullable) = false,
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"
+  ];
+  // Threshold voting threshold percentage (50-100)
+  string threshold = 3 [
+    (gogoproto.nullable) = false,
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"
+  ];
+  // AllowEndEarly If true, and absolute threshold and quorum are met, we can
+  // end before voting period finished. (Recommended value: true, unless you
+  // have special needs)
+  bool allow_end_early = 4;
+}
+
+// ArbiterPoolContractConfig initial setup config for the trusted circle
+message ArbiterPoolContractConfig {
+  // Name of TRUSTED_CIRCLE
+  string name = 1;
+  // EscrowAmount The required escrow amount, in the default denom (utgd)
+  cosmos.base.v1beta1.Coin escrow_amount = 2 [ (gogoproto.nullable) = false ];
+
+  // VotingRules rules for the tally
+  VotingRules voting_rules = 3 [ (gogoproto.nullable) = false ];
+
+  // DenyListContractAddress is an optional cw4 contract with list of addresses
+  // denied to be part of TrustedCircle
+  string deny_list_contract_address = 4;
+
+  // DisputeCost The required dispute amount, in the default denom (utgd)
+  cosmos.base.v1beta1.Coin dispute_cost = 5 [ (gogoproto.nullable) = false ];
+
+  google.protobuf.Duration waiting_period = 6
+      [ (gogoproto.nullable) = false, (gogoproto.stdduration) = true ];
+}

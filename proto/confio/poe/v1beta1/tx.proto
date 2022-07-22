@@ -1,0 +1,105 @@
+syntax = "proto3";
+package confio.poe.v1beta1;
+
+import "google/protobuf2/any.proto";
+import "google/protobuf/timestamp.proto";
+import "gogoproto/gogo.proto";
+
+import "cosmos_proto/cosmos.proto";
+import "cosmos/base/v1beta1/coin.proto";
+import "cosmos/staking/v1beta1/staking.proto";
+
+option go_package = "github.com/confio/tgrade/x/poe/types";
+
+// Msg defines the staking Msg service.
+service Msg {
+  // CreateValidator defines a method for creating a new validator.
+  rpc CreateValidator(MsgCreateValidator) returns (MsgCreateValidatorResponse);
+  // MsgCreateValidator defines a method for updating validator metadata
+  rpc UpdateValidator(MsgUpdateValidator) returns (MsgUpdateValidatorResponse);
+  // Delegate defines a method for performing a self delegation of coins
+  // by a node operator
+  rpc Delegate(MsgDelegate) returns (MsgDelegateResponse);
+
+  // Undelegate defines a method for performing an undelegation from a
+  // node operator
+  rpc Undelegate(MsgUndelegate) returns (MsgUndelegateResponse);
+}
+
+// MsgCreateValidator defines a PoE message for creating a new validator.
+// Based on the SDK staking.MsgCreateValidator
+message MsgCreateValidator {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  // Description meta data
+  cosmos.staking.v1beta1.Description description = 1
+      [ (gogoproto.nullable) = false ];
+
+  // OperatorAddress is the bech32 address string
+  string operator_address = 4
+      [ (gogoproto.moretags) = "yaml:\"operator_address\"" ];
+
+  // Pubkey public key
+  google.protobuf2.Any pubkey = 6
+      [ (cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey" ];
+
+  // Amount defines the initial staking amount from a liquid balance
+  cosmos.base.v1beta1.Coin amount = 7 [ (gogoproto.nullable) = false ];
+  // VestingAmount defines the initial staking amount from a vesting account
+  // balance
+  cosmos.base.v1beta1.Coin vesting_amount = 8 [ (gogoproto.nullable) = false ];
+}
+
+// MsgCreateValidatorResponse defines the MsgCreateValidator response type.
+message MsgCreateValidatorResponse {}
+
+// MsgCreateValidator defines a PoE message for updating validator metadata
+message MsgUpdateValidator {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  // New Description meta data
+  cosmos.staking.v1beta1.Description description = 1
+      [ (gogoproto.nullable) = false ];
+
+  // OperatorAddress is the bech32 address string
+  // Also know as "signer" in other messages
+  string operator_address = 2
+      [ (gogoproto.moretags) = "yaml:\"operator_address\"" ];
+}
+
+// MsgUpdateValidatorResponse defines the MsgUpdateValidator response type.
+message MsgUpdateValidatorResponse {}
+
+// MsgDelegate defines a SDK message for performing a self delegation of coins
+// by a node operator
+message MsgDelegate {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  string operator_address = 1
+      [ (gogoproto.moretags) = "yaml:\"operator_address\"" ];
+  cosmos.base.v1beta1.Coin amount = 2 [ (gogoproto.nullable) = false ];
+  cosmos.base.v1beta1.Coin vesting_amount = 3 [ (gogoproto.nullable) = false ];
+}
+
+// MsgDelegateResponse defines the Msg/Delegate response type.
+message MsgDelegateResponse {}
+
+// MsgUndelegate defines a SDK message for performing an undelegation from a
+// node operator
+message MsgUndelegate {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  string operator_address = 1
+      [ (gogoproto.moretags) = "yaml:\"operator_address\"" ];
+  cosmos.base.v1beta1.Coin amount = 2 [ (gogoproto.nullable) = false ];
+}
+
+// MsgUndelegateResponse defines the Msg/Undelegate response type.
+message MsgUndelegateResponse {
+  google.protobuf.Timestamp completion_time = 1
+      [ (gogoproto.nullable) = false, (gogoproto.stdtime) = true ];
+}

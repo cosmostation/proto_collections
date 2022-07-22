@@ -1,0 +1,61 @@
+syntax = "proto3";
+package confio.poe.v1beta1;
+
+import "gogoproto/gogo.proto";
+import "google/protobuf/duration.proto";
+import "google/protobuf/timestamp.proto";
+import "cosmos_proto/cosmos.proto";
+import "cosmos/base/v1beta1/coin.proto";
+import "cosmos/staking/v1beta1/staking.proto";
+import "tendermint/types/types.proto";
+
+option go_package = "github.com/confio/tgrade/x/poe/types";
+
+// PoEContractType type of PoE contract
+enum PoEContractType {
+  option (gogoproto.goproto_enum_prefix) = false;
+
+  UNDEFINED = 0
+      [ (gogoproto.enumvalue_customname) = "PoEContractTypeUndefined" ];
+  STAKING = 1 [ (gogoproto.enumvalue_customname) = "PoEContractTypeStaking" ];
+  VALSET = 2 [ (gogoproto.enumvalue_customname) = "PoEContractTypeValset" ];
+  ENGAGEMENT = 3
+      [ (gogoproto.enumvalue_customname) = "PoEContractTypeEngagement" ];
+  MIXER = 4 [ (gogoproto.enumvalue_customname) = "PoEContractTypeMixer" ];
+  DISTRIBUTION = 5
+      [ (gogoproto.enumvalue_customname) = "PoEContractTypeDistribution" ];
+  OVERSIGHT_COMMUNITY = 6 [ (gogoproto.enumvalue_customname) =
+                                "PoEContractTypeOversightCommunity" ];
+  OVERSIGHT_COMMUNITY_PROPOSALS = 7
+      [ (gogoproto.enumvalue_customname) =
+            "PoEContractTypeOversightCommunityGovProposals" ];
+  COMMUNITY_POOL = 8
+      [ (gogoproto.enumvalue_customname) = "PoEContractTypeCommunityPool" ];
+  VALIDATOR_VOTING = 9
+      [ (gogoproto.enumvalue_customname) = "PoEContractTypeValidatorVoting" ];
+  ARBITER_POOL = 10
+      [ (gogoproto.enumvalue_customname) = "PoEContractTypeArbiterPool" ];
+  ARBITER_POOL_VOTING = 11
+      [ (gogoproto.enumvalue_customname) = "PoEContractTypeArbiterPoolVoting" ];
+}
+
+// Params defines the parameters for the PoE module.
+message Params {
+  option (gogoproto.equal) = true;
+  option (gogoproto.goproto_stringer) = false;
+  // HistoricalEntries is the number of historical entries to persist.
+  uint32 historical_entries = 1
+      [ (gogoproto.moretags) = "yaml:\"historical_entries\"" ];
+  // InitialValEngagementPoints defines the number of engagement for any new
+  // validator joining post genesis
+  uint64 initial_val_engagement_points = 2
+      [ (gogoproto.moretags) = "yaml:\"initial_val_engagement_points\"" ];
+  // MinDelegationAmount defines the minimum amount a post genesis validator
+  // needs to self delegate to receive any engagement points. One must be
+  // exceeded. No minimum condition set when empty.
+  repeated cosmos.base.v1beta1.Coin min_delegation_amounts = 3 [
+    (gogoproto.moretags) = "yaml:\"min_delegation_amounts\"",
+    (gogoproto.nullable) = false,
+    (gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"
+  ];
+}
