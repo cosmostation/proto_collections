@@ -20,7 +20,7 @@ public final class Genesis {
 
     /**
      * <pre>
-     * params defines all the paramaters of the module.
+     * params defines all the parameters of the module.
      * </pre>
      *
      * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
@@ -29,7 +29,7 @@ public final class Genesis {
     boolean hasParams();
     /**
      * <pre>
-     * params defines all the paramaters of the module.
+     * params defines all the parameters of the module.
      * </pre>
      *
      * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
@@ -38,7 +38,7 @@ public final class Genesis {
     cosmos.auth.v1beta1.Auth.Params getParams();
     /**
      * <pre>
-     * params defines all the paramaters of the module.
+     * params defines all the parameters of the module.
      * </pre>
      *
      * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
@@ -201,7 +201,7 @@ public final class Genesis {
     private cosmos.auth.v1beta1.Auth.Params params_;
     /**
      * <pre>
-     * params defines all the paramaters of the module.
+     * params defines all the parameters of the module.
      * </pre>
      *
      * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
@@ -213,7 +213,7 @@ public final class Genesis {
     }
     /**
      * <pre>
-     * params defines all the paramaters of the module.
+     * params defines all the parameters of the module.
      * </pre>
      *
      * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
@@ -225,7 +225,7 @@ public final class Genesis {
     }
     /**
      * <pre>
-     * params defines all the paramaters of the module.
+     * params defines all the parameters of the module.
      * </pre>
      *
      * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
@@ -676,7 +676,7 @@ public final class Genesis {
           cosmos.auth.v1beta1.Auth.Params, cosmos.auth.v1beta1.Auth.Params.Builder, cosmos.auth.v1beta1.Auth.ParamsOrBuilder> paramsBuilder_;
       /**
        * <pre>
-       * params defines all the paramaters of the module.
+       * params defines all the parameters of the module.
        * </pre>
        *
        * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
@@ -687,7 +687,7 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of the module.
+       * params defines all the parameters of the module.
        * </pre>
        *
        * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
@@ -702,7 +702,7 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of the module.
+       * params defines all the parameters of the module.
        * </pre>
        *
        * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
@@ -722,7 +722,7 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of the module.
+       * params defines all the parameters of the module.
        * </pre>
        *
        * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
@@ -740,7 +740,7 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of the module.
+       * params defines all the parameters of the module.
        * </pre>
        *
        * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
@@ -762,7 +762,7 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of the module.
+       * params defines all the parameters of the module.
        * </pre>
        *
        * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
@@ -780,7 +780,7 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of the module.
+       * params defines all the parameters of the module.
        * </pre>
        *
        * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
@@ -792,7 +792,7 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of the module.
+       * params defines all the parameters of the module.
        * </pre>
        *
        * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
@@ -807,7 +807,7 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of the module.
+       * params defines all the parameters of the module.
        * </pre>
        *
        * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
