@@ -25,7 +25,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.33.1)",
-    comments = "Source: iscn/query.proto")
+    comments = "Source: likechain/iscn/query.proto")
 public final class QueryGrpc {
 
   private QueryGrpc() {}
