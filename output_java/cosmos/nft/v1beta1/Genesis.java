@@ -23,24 +23,24 @@ public final class Genesis {
      * class defines the class of the nft type.
      * </pre>
      *
-     * <code>repeated .cosmos.nft.v1beta1.CosmosNFTClass classes = 1;</code>
+     * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
      */
-    java.util.List<cosmos.nft.v1beta1.Nft.CosmosNFTClass> 
+    java.util.List<cosmos.nft.v1beta1.Nft.Class> 
         getClassesList();
     /**
      * <pre>
      * class defines the class of the nft type.
      * </pre>
      *
-     * <code>repeated .cosmos.nft.v1beta1.CosmosNFTClass classes = 1;</code>
+     * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
      */
-    cosmos.nft.v1beta1.Nft.CosmosNFTClass getClasses(int index);
+    cosmos.nft.v1beta1.Nft.Class getClasses(int index);
     /**
      * <pre>
      * class defines the class of the nft type.
      * </pre>
      *
-     * <code>repeated .cosmos.nft.v1beta1.CosmosNFTClass classes = 1;</code>
+     * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
      */
     int getClassesCount();
     /**
@@ -48,18 +48,18 @@ public final class Genesis {
      * class defines the class of the nft type.
      * </pre>
      *
-     * <code>repeated .cosmos.nft.v1beta1.CosmosNFTClass classes = 1;</code>
+     * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
      */
-    java.util.List<? extends cosmos.nft.v1beta1.Nft.CosmosNFTClassOrBuilder> 
+    java.util.List<? extends cosmos.nft.v1beta1.Nft.ClassOrBuilder> 
         getClassesOrBuilderList();
     /**
      * <pre>
      * class defines the class of the nft type.
      * </pre>
      *
-     * <code>repeated .cosmos.nft.v1beta1.CosmosNFTClass classes = 1;</code>
+     * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
      */
-    cosmos.nft.v1beta1.Nft.CosmosNFTClassOrBuilder getClassesOrBuilder(
+    cosmos.nft.v1beta1.Nft.ClassOrBuilder getClassesOrBuilder(
         int index);
 
     /**
@@ -140,11 +140,11 @@ public final class Genesis {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                classes_ = new java.util.ArrayList<cosmos.nft.v1beta1.Nft.CosmosNFTClass>();
+                classes_ = new java.util.ArrayList<cosmos.nft.v1beta1.Nft.Class>();
                 mutable_bitField0_ |= 0x00000001;
               }
               classes_.add(
-                  input.readMessage(cosmos.nft.v1beta1.Nft.CosmosNFTClass.parser(), extensionRegistry));
+                  input.readMessage(cosmos.nft.v1beta1.Nft.Class.parser(), extensionRegistry));
               break;
             }
             case 18: {
@@ -195,16 +195,16 @@ public final class Genesis {
     }
 
     public static final int CLASSES_FIELD_NUMBER = 1;
-    private java.util.List<cosmos.nft.v1beta1.Nft.CosmosNFTClass> classes_;
+    private java.util.List<cosmos.nft.v1beta1.Nft.Class> classes_;
     /**
      * <pre>
      * class defines the class of the nft type.
      * </pre>
      *
-     * <code>repeated .cosmos.nft.v1beta1.CosmosNFTClass classes = 1;</code>
+     * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<cosmos.nft.v1beta1.Nft.CosmosNFTClass> getClassesList() {
+    public java.util.List<cosmos.nft.v1beta1.Nft.Class> getClassesList() {
       return classes_;
     }
     /**
@@ -212,10 +212,10 @@ public final class Genesis {
      * class defines the class of the nft type.
      * </pre>
      *
-     * <code>repeated .cosmos.nft.v1beta1.CosmosNFTClass classes = 1;</code>
+     * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends cosmos.nft.v1beta1.Nft.CosmosNFTClassOrBuilder> 
+    public java.util.List<? extends cosmos.nft.v1beta1.Nft.ClassOrBuilder> 
         getClassesOrBuilderList() {
       return classes_;
     }
@@ -224,7 +224,7 @@ public final class Genesis {
      * class defines the class of the nft type.
      * </pre>
      *
-     * <code>repeated .cosmos.nft.v1beta1.CosmosNFTClass classes = 1;</code>
+     * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
      */
     @java.lang.Override
     public int getClassesCount() {
@@ -235,10 +235,10 @@ public final class Genesis {
      * class defines the class of the nft type.
      * </pre>
      *
-     * <code>repeated .cosmos.nft.v1beta1.CosmosNFTClass classes = 1;</code>
+     * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
      */
     @java.lang.Override
-    public cosmos.nft.v1beta1.Nft.CosmosNFTClass getClasses(int index) {
+    public cosmos.nft.v1beta1.Nft.Class getClasses(int index) {
       return classes_.get(index);
     }
     /**
@@ -246,10 +246,10 @@ public final class Genesis {
      * class defines the class of the nft type.
      * </pre>
      *
-     * <code>repeated .cosmos.nft.v1beta1.CosmosNFTClass classes = 1;</code>
+     * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
      */
     @java.lang.Override
-    public cosmos.nft.v1beta1.Nft.CosmosNFTClassOrBuilder getClassesOrBuilder(
+    public cosmos.nft.v1beta1.Nft.ClassOrBuilder getClassesOrBuilder(
         int index) {
       return classes_.get(index);
     }
@@ -695,26 +695,26 @@ public final class Genesis {
       }
       private int bitField0_;
 
-      private java.util.List<cosmos.nft.v1beta1.Nft.CosmosNFTClass> classes_ =
+      private java.util.List<cosmos.nft.v1beta1.Nft.Class> classes_ =
         java.util.Collections.emptyList();
       private void ensureClassesIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          classes_ = new java.util.ArrayList<cosmos.nft.v1beta1.Nft.CosmosNFTClass>(classes_);
+          classes_ = new java.util.ArrayList<cosmos.nft.v1beta1.Nft.Class>(classes_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          cosmos.nft.v1beta1.Nft.CosmosNFTClass, cosmos.nft.v1beta1.Nft.CosmosNFTClass.Builder, cosmos.nft.v1beta1.Nft.CosmosNFTClassOrBuilder> classesBuilder_;
+          cosmos.nft.v1beta1.Nft.Class, cosmos.nft.v1beta1.Nft.Class.Builder, cosmos.nft.v1beta1.Nft.ClassOrBuilder> classesBuilder_;
 
       /**
        * <pre>
        * class defines the class of the nft type.
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFTClass classes = 1;</code>
+       * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
-      public java.util.List<cosmos.nft.v1beta1.Nft.CosmosNFTClass> getClassesList() {
+      public java.util.List<cosmos.nft.v1beta1.Nft.Class> getClassesList() {
         if (classesBuilder_ == null) {
           return java.util.Collections.unmodifiableList(classes_);
         } else {
@@ -726,7 +726,7 @@ public final class Genesis {
        * class defines the class of the nft type.
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFTClass classes = 1;</code>
+       * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
       public int getClassesCount() {
         if (classesBuilder_ == null) {
@@ -740,9 +740,9 @@ public final class Genesis {
        * class defines the class of the nft type.
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFTClass classes = 1;</code>
+       * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
-      public cosmos.nft.v1beta1.Nft.CosmosNFTClass getClasses(int index) {
+      public cosmos.nft.v1beta1.Nft.Class getClasses(int index) {
         if (classesBuilder_ == null) {
           return classes_.get(index);
         } else {
@@ -754,10 +754,10 @@ public final class Genesis {
        * class defines the class of the nft type.
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFTClass classes = 1;</code>
+       * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
       public Builder setClasses(
-          int index, cosmos.nft.v1beta1.Nft.CosmosNFTClass value) {
+          int index, cosmos.nft.v1beta1.Nft.Class value) {
         if (classesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -775,10 +775,10 @@ public final class Genesis {
        * class defines the class of the nft type.
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFTClass classes = 1;</code>
+       * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
       public Builder setClasses(
-          int index, cosmos.nft.v1beta1.Nft.CosmosNFTClass.Builder builderForValue) {
+          int index, cosmos.nft.v1beta1.Nft.Class.Builder builderForValue) {
         if (classesBuilder_ == null) {
           ensureClassesIsMutable();
           classes_.set(index, builderForValue.build());
@@ -793,9 +793,9 @@ public final class Genesis {
        * class defines the class of the nft type.
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFTClass classes = 1;</code>
+       * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
-      public Builder addClasses(cosmos.nft.v1beta1.Nft.CosmosNFTClass value) {
+      public Builder addClasses(cosmos.nft.v1beta1.Nft.Class value) {
         if (classesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -813,10 +813,10 @@ public final class Genesis {
        * class defines the class of the nft type.
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFTClass classes = 1;</code>
+       * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
       public Builder addClasses(
-          int index, cosmos.nft.v1beta1.Nft.CosmosNFTClass value) {
+          int index, cosmos.nft.v1beta1.Nft.Class value) {
         if (classesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -834,10 +834,10 @@ public final class Genesis {
        * class defines the class of the nft type.
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFTClass classes = 1;</code>
+       * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
       public Builder addClasses(
-          cosmos.nft.v1beta1.Nft.CosmosNFTClass.Builder builderForValue) {
+          cosmos.nft.v1beta1.Nft.Class.Builder builderForValue) {
         if (classesBuilder_ == null) {
           ensureClassesIsMutable();
           classes_.add(builderForValue.build());
@@ -852,10 +852,10 @@ public final class Genesis {
        * class defines the class of the nft type.
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFTClass classes = 1;</code>
+       * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
       public Builder addClasses(
-          int index, cosmos.nft.v1beta1.Nft.CosmosNFTClass.Builder builderForValue) {
+          int index, cosmos.nft.v1beta1.Nft.Class.Builder builderForValue) {
         if (classesBuilder_ == null) {
           ensureClassesIsMutable();
           classes_.add(index, builderForValue.build());
@@ -870,10 +870,10 @@ public final class Genesis {
        * class defines the class of the nft type.
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFTClass classes = 1;</code>
+       * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
       public Builder addAllClasses(
-          java.lang.Iterable<? extends cosmos.nft.v1beta1.Nft.CosmosNFTClass> values) {
+          java.lang.Iterable<? extends cosmos.nft.v1beta1.Nft.Class> values) {
         if (classesBuilder_ == null) {
           ensureClassesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -889,7 +889,7 @@ public final class Genesis {
        * class defines the class of the nft type.
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFTClass classes = 1;</code>
+       * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
       public Builder clearClasses() {
         if (classesBuilder_ == null) {
@@ -906,7 +906,7 @@ public final class Genesis {
        * class defines the class of the nft type.
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFTClass classes = 1;</code>
+       * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
       public Builder removeClasses(int index) {
         if (classesBuilder_ == null) {
@@ -923,9 +923,9 @@ public final class Genesis {
        * class defines the class of the nft type.
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFTClass classes = 1;</code>
+       * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
-      public cosmos.nft.v1beta1.Nft.CosmosNFTClass.Builder getClassesBuilder(
+      public cosmos.nft.v1beta1.Nft.Class.Builder getClassesBuilder(
           int index) {
         return getClassesFieldBuilder().getBuilder(index);
       }
@@ -934,9 +934,9 @@ public final class Genesis {
        * class defines the class of the nft type.
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFTClass classes = 1;</code>
+       * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
-      public cosmos.nft.v1beta1.Nft.CosmosNFTClassOrBuilder getClassesOrBuilder(
+      public cosmos.nft.v1beta1.Nft.ClassOrBuilder getClassesOrBuilder(
           int index) {
         if (classesBuilder_ == null) {
           return classes_.get(index);  } else {
@@ -948,9 +948,9 @@ public final class Genesis {
        * class defines the class of the nft type.
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFTClass classes = 1;</code>
+       * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
-      public java.util.List<? extends cosmos.nft.v1beta1.Nft.CosmosNFTClassOrBuilder> 
+      public java.util.List<? extends cosmos.nft.v1beta1.Nft.ClassOrBuilder> 
            getClassesOrBuilderList() {
         if (classesBuilder_ != null) {
           return classesBuilder_.getMessageOrBuilderList();
@@ -963,41 +963,41 @@ public final class Genesis {
        * class defines the class of the nft type.
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFTClass classes = 1;</code>
+       * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
-      public cosmos.nft.v1beta1.Nft.CosmosNFTClass.Builder addClassesBuilder() {
+      public cosmos.nft.v1beta1.Nft.Class.Builder addClassesBuilder() {
         return getClassesFieldBuilder().addBuilder(
-            cosmos.nft.v1beta1.Nft.CosmosNFTClass.getDefaultInstance());
+            cosmos.nft.v1beta1.Nft.Class.getDefaultInstance());
       }
       /**
        * <pre>
        * class defines the class of the nft type.
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFTClass classes = 1;</code>
+       * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
-      public cosmos.nft.v1beta1.Nft.CosmosNFTClass.Builder addClassesBuilder(
+      public cosmos.nft.v1beta1.Nft.Class.Builder addClassesBuilder(
           int index) {
         return getClassesFieldBuilder().addBuilder(
-            index, cosmos.nft.v1beta1.Nft.CosmosNFTClass.getDefaultInstance());
+            index, cosmos.nft.v1beta1.Nft.Class.getDefaultInstance());
       }
       /**
        * <pre>
        * class defines the class of the nft type.
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFTClass classes = 1;</code>
+       * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
-      public java.util.List<cosmos.nft.v1beta1.Nft.CosmosNFTClass.Builder> 
+      public java.util.List<cosmos.nft.v1beta1.Nft.Class.Builder> 
            getClassesBuilderList() {
         return getClassesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          cosmos.nft.v1beta1.Nft.CosmosNFTClass, cosmos.nft.v1beta1.Nft.CosmosNFTClass.Builder, cosmos.nft.v1beta1.Nft.CosmosNFTClassOrBuilder> 
+          cosmos.nft.v1beta1.Nft.Class, cosmos.nft.v1beta1.Nft.Class.Builder, cosmos.nft.v1beta1.Nft.ClassOrBuilder> 
           getClassesFieldBuilder() {
         if (classesBuilder_ == null) {
           classesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              cosmos.nft.v1beta1.Nft.CosmosNFTClass, cosmos.nft.v1beta1.Nft.CosmosNFTClass.Builder, cosmos.nft.v1beta1.Nft.CosmosNFTClassOrBuilder>(
+              cosmos.nft.v1beta1.Nft.Class, cosmos.nft.v1beta1.Nft.Class.Builder, cosmos.nft.v1beta1.Nft.ClassOrBuilder>(
                   classes_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -1328,24 +1328,24 @@ public final class Genesis {
      * nfts is a group of nfts of the same owner
      * </pre>
      *
-     * <code>repeated .cosmos.nft.v1beta1.CosmosNFT nfts = 2;</code>
+     * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 2;</code>
      */
-    java.util.List<cosmos.nft.v1beta1.Nft.CosmosNFT> 
+    java.util.List<cosmos.nft.v1beta1.Nft.NFT> 
         getNftsList();
     /**
      * <pre>
      * nfts is a group of nfts of the same owner
      * </pre>
      *
-     * <code>repeated .cosmos.nft.v1beta1.CosmosNFT nfts = 2;</code>
+     * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 2;</code>
      */
-    cosmos.nft.v1beta1.Nft.CosmosNFT getNfts(int index);
+    cosmos.nft.v1beta1.Nft.NFT getNfts(int index);
     /**
      * <pre>
      * nfts is a group of nfts of the same owner
      * </pre>
      *
-     * <code>repeated .cosmos.nft.v1beta1.CosmosNFT nfts = 2;</code>
+     * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 2;</code>
      */
     int getNftsCount();
     /**
@@ -1353,18 +1353,18 @@ public final class Genesis {
      * nfts is a group of nfts of the same owner
      * </pre>
      *
-     * <code>repeated .cosmos.nft.v1beta1.CosmosNFT nfts = 2;</code>
+     * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 2;</code>
      */
-    java.util.List<? extends cosmos.nft.v1beta1.Nft.CosmosNFTOrBuilder> 
+    java.util.List<? extends cosmos.nft.v1beta1.Nft.NFTOrBuilder> 
         getNftsOrBuilderList();
     /**
      * <pre>
      * nfts is a group of nfts of the same owner
      * </pre>
      *
-     * <code>repeated .cosmos.nft.v1beta1.CosmosNFT nfts = 2;</code>
+     * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 2;</code>
      */
-    cosmos.nft.v1beta1.Nft.CosmosNFTOrBuilder getNftsOrBuilder(
+    cosmos.nft.v1beta1.Nft.NFTOrBuilder getNftsOrBuilder(
         int index);
   }
   /**
@@ -1427,11 +1427,11 @@ public final class Genesis {
             }
             case 18: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                nfts_ = new java.util.ArrayList<cosmos.nft.v1beta1.Nft.CosmosNFT>();
+                nfts_ = new java.util.ArrayList<cosmos.nft.v1beta1.Nft.NFT>();
                 mutable_bitField0_ |= 0x00000001;
               }
               nfts_.add(
-                  input.readMessage(cosmos.nft.v1beta1.Nft.CosmosNFT.parser(), extensionRegistry));
+                  input.readMessage(cosmos.nft.v1beta1.Nft.NFT.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -1516,16 +1516,16 @@ public final class Genesis {
     }
 
     public static final int NFTS_FIELD_NUMBER = 2;
-    private java.util.List<cosmos.nft.v1beta1.Nft.CosmosNFT> nfts_;
+    private java.util.List<cosmos.nft.v1beta1.Nft.NFT> nfts_;
     /**
      * <pre>
      * nfts is a group of nfts of the same owner
      * </pre>
      *
-     * <code>repeated .cosmos.nft.v1beta1.CosmosNFT nfts = 2;</code>
+     * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 2;</code>
      */
     @java.lang.Override
-    public java.util.List<cosmos.nft.v1beta1.Nft.CosmosNFT> getNftsList() {
+    public java.util.List<cosmos.nft.v1beta1.Nft.NFT> getNftsList() {
       return nfts_;
     }
     /**
@@ -1533,10 +1533,10 @@ public final class Genesis {
      * nfts is a group of nfts of the same owner
      * </pre>
      *
-     * <code>repeated .cosmos.nft.v1beta1.CosmosNFT nfts = 2;</code>
+     * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 2;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends cosmos.nft.v1beta1.Nft.CosmosNFTOrBuilder> 
+    public java.util.List<? extends cosmos.nft.v1beta1.Nft.NFTOrBuilder> 
         getNftsOrBuilderList() {
       return nfts_;
     }
@@ -1545,7 +1545,7 @@ public final class Genesis {
      * nfts is a group of nfts of the same owner
      * </pre>
      *
-     * <code>repeated .cosmos.nft.v1beta1.CosmosNFT nfts = 2;</code>
+     * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 2;</code>
      */
     @java.lang.Override
     public int getNftsCount() {
@@ -1556,10 +1556,10 @@ public final class Genesis {
      * nfts is a group of nfts of the same owner
      * </pre>
      *
-     * <code>repeated .cosmos.nft.v1beta1.CosmosNFT nfts = 2;</code>
+     * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 2;</code>
      */
     @java.lang.Override
-    public cosmos.nft.v1beta1.Nft.CosmosNFT getNfts(int index) {
+    public cosmos.nft.v1beta1.Nft.NFT getNfts(int index) {
       return nfts_.get(index);
     }
     /**
@@ -1567,10 +1567,10 @@ public final class Genesis {
      * nfts is a group of nfts of the same owner
      * </pre>
      *
-     * <code>repeated .cosmos.nft.v1beta1.CosmosNFT nfts = 2;</code>
+     * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 2;</code>
      */
     @java.lang.Override
-    public cosmos.nft.v1beta1.Nft.CosmosNFTOrBuilder getNftsOrBuilder(
+    public cosmos.nft.v1beta1.Nft.NFTOrBuilder getNftsOrBuilder(
         int index) {
       return nfts_.get(index);
     }
@@ -2034,26 +2034,26 @@ public final class Genesis {
         return this;
       }
 
-      private java.util.List<cosmos.nft.v1beta1.Nft.CosmosNFT> nfts_ =
+      private java.util.List<cosmos.nft.v1beta1.Nft.NFT> nfts_ =
         java.util.Collections.emptyList();
       private void ensureNftsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          nfts_ = new java.util.ArrayList<cosmos.nft.v1beta1.Nft.CosmosNFT>(nfts_);
+          nfts_ = new java.util.ArrayList<cosmos.nft.v1beta1.Nft.NFT>(nfts_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          cosmos.nft.v1beta1.Nft.CosmosNFT, cosmos.nft.v1beta1.Nft.CosmosNFT.Builder, cosmos.nft.v1beta1.Nft.CosmosNFTOrBuilder> nftsBuilder_;
+          cosmos.nft.v1beta1.Nft.NFT, cosmos.nft.v1beta1.Nft.NFT.Builder, cosmos.nft.v1beta1.Nft.NFTOrBuilder> nftsBuilder_;
 
       /**
        * <pre>
        * nfts is a group of nfts of the same owner
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFT nfts = 2;</code>
+       * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 2;</code>
        */
-      public java.util.List<cosmos.nft.v1beta1.Nft.CosmosNFT> getNftsList() {
+      public java.util.List<cosmos.nft.v1beta1.Nft.NFT> getNftsList() {
         if (nftsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(nfts_);
         } else {
@@ -2065,7 +2065,7 @@ public final class Genesis {
        * nfts is a group of nfts of the same owner
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFT nfts = 2;</code>
+       * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 2;</code>
        */
       public int getNftsCount() {
         if (nftsBuilder_ == null) {
@@ -2079,9 +2079,9 @@ public final class Genesis {
        * nfts is a group of nfts of the same owner
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFT nfts = 2;</code>
+       * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 2;</code>
        */
-      public cosmos.nft.v1beta1.Nft.CosmosNFT getNfts(int index) {
+      public cosmos.nft.v1beta1.Nft.NFT getNfts(int index) {
         if (nftsBuilder_ == null) {
           return nfts_.get(index);
         } else {
@@ -2093,10 +2093,10 @@ public final class Genesis {
        * nfts is a group of nfts of the same owner
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFT nfts = 2;</code>
+       * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 2;</code>
        */
       public Builder setNfts(
-          int index, cosmos.nft.v1beta1.Nft.CosmosNFT value) {
+          int index, cosmos.nft.v1beta1.Nft.NFT value) {
         if (nftsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2114,10 +2114,10 @@ public final class Genesis {
        * nfts is a group of nfts of the same owner
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFT nfts = 2;</code>
+       * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 2;</code>
        */
       public Builder setNfts(
-          int index, cosmos.nft.v1beta1.Nft.CosmosNFT.Builder builderForValue) {
+          int index, cosmos.nft.v1beta1.Nft.NFT.Builder builderForValue) {
         if (nftsBuilder_ == null) {
           ensureNftsIsMutable();
           nfts_.set(index, builderForValue.build());
@@ -2132,9 +2132,9 @@ public final class Genesis {
        * nfts is a group of nfts of the same owner
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFT nfts = 2;</code>
+       * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 2;</code>
        */
-      public Builder addNfts(cosmos.nft.v1beta1.Nft.CosmosNFT value) {
+      public Builder addNfts(cosmos.nft.v1beta1.Nft.NFT value) {
         if (nftsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2152,10 +2152,10 @@ public final class Genesis {
        * nfts is a group of nfts of the same owner
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFT nfts = 2;</code>
+       * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 2;</code>
        */
       public Builder addNfts(
-          int index, cosmos.nft.v1beta1.Nft.CosmosNFT value) {
+          int index, cosmos.nft.v1beta1.Nft.NFT value) {
         if (nftsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2173,10 +2173,10 @@ public final class Genesis {
        * nfts is a group of nfts of the same owner
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFT nfts = 2;</code>
+       * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 2;</code>
        */
       public Builder addNfts(
-          cosmos.nft.v1beta1.Nft.CosmosNFT.Builder builderForValue) {
+          cosmos.nft.v1beta1.Nft.NFT.Builder builderForValue) {
         if (nftsBuilder_ == null) {
           ensureNftsIsMutable();
           nfts_.add(builderForValue.build());
@@ -2191,10 +2191,10 @@ public final class Genesis {
        * nfts is a group of nfts of the same owner
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFT nfts = 2;</code>
+       * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 2;</code>
        */
       public Builder addNfts(
-          int index, cosmos.nft.v1beta1.Nft.CosmosNFT.Builder builderForValue) {
+          int index, cosmos.nft.v1beta1.Nft.NFT.Builder builderForValue) {
         if (nftsBuilder_ == null) {
           ensureNftsIsMutable();
           nfts_.add(index, builderForValue.build());
@@ -2209,10 +2209,10 @@ public final class Genesis {
        * nfts is a group of nfts of the same owner
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFT nfts = 2;</code>
+       * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 2;</code>
        */
       public Builder addAllNfts(
-          java.lang.Iterable<? extends cosmos.nft.v1beta1.Nft.CosmosNFT> values) {
+          java.lang.Iterable<? extends cosmos.nft.v1beta1.Nft.NFT> values) {
         if (nftsBuilder_ == null) {
           ensureNftsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -2228,7 +2228,7 @@ public final class Genesis {
        * nfts is a group of nfts of the same owner
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFT nfts = 2;</code>
+       * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 2;</code>
        */
       public Builder clearNfts() {
         if (nftsBuilder_ == null) {
@@ -2245,7 +2245,7 @@ public final class Genesis {
        * nfts is a group of nfts of the same owner
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFT nfts = 2;</code>
+       * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 2;</code>
        */
       public Builder removeNfts(int index) {
         if (nftsBuilder_ == null) {
@@ -2262,9 +2262,9 @@ public final class Genesis {
        * nfts is a group of nfts of the same owner
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFT nfts = 2;</code>
+       * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 2;</code>
        */
-      public cosmos.nft.v1beta1.Nft.CosmosNFT.Builder getNftsBuilder(
+      public cosmos.nft.v1beta1.Nft.NFT.Builder getNftsBuilder(
           int index) {
         return getNftsFieldBuilder().getBuilder(index);
       }
@@ -2273,9 +2273,9 @@ public final class Genesis {
        * nfts is a group of nfts of the same owner
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFT nfts = 2;</code>
+       * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 2;</code>
        */
-      public cosmos.nft.v1beta1.Nft.CosmosNFTOrBuilder getNftsOrBuilder(
+      public cosmos.nft.v1beta1.Nft.NFTOrBuilder getNftsOrBuilder(
           int index) {
         if (nftsBuilder_ == null) {
           return nfts_.get(index);  } else {
@@ -2287,9 +2287,9 @@ public final class Genesis {
        * nfts is a group of nfts of the same owner
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFT nfts = 2;</code>
+       * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 2;</code>
        */
-      public java.util.List<? extends cosmos.nft.v1beta1.Nft.CosmosNFTOrBuilder> 
+      public java.util.List<? extends cosmos.nft.v1beta1.Nft.NFTOrBuilder> 
            getNftsOrBuilderList() {
         if (nftsBuilder_ != null) {
           return nftsBuilder_.getMessageOrBuilderList();
@@ -2302,41 +2302,41 @@ public final class Genesis {
        * nfts is a group of nfts of the same owner
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFT nfts = 2;</code>
+       * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 2;</code>
        */
-      public cosmos.nft.v1beta1.Nft.CosmosNFT.Builder addNftsBuilder() {
+      public cosmos.nft.v1beta1.Nft.NFT.Builder addNftsBuilder() {
         return getNftsFieldBuilder().addBuilder(
-            cosmos.nft.v1beta1.Nft.CosmosNFT.getDefaultInstance());
+            cosmos.nft.v1beta1.Nft.NFT.getDefaultInstance());
       }
       /**
        * <pre>
        * nfts is a group of nfts of the same owner
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFT nfts = 2;</code>
+       * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 2;</code>
        */
-      public cosmos.nft.v1beta1.Nft.CosmosNFT.Builder addNftsBuilder(
+      public cosmos.nft.v1beta1.Nft.NFT.Builder addNftsBuilder(
           int index) {
         return getNftsFieldBuilder().addBuilder(
-            index, cosmos.nft.v1beta1.Nft.CosmosNFT.getDefaultInstance());
+            index, cosmos.nft.v1beta1.Nft.NFT.getDefaultInstance());
       }
       /**
        * <pre>
        * nfts is a group of nfts of the same owner
        * </pre>
        *
-       * <code>repeated .cosmos.nft.v1beta1.CosmosNFT nfts = 2;</code>
+       * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 2;</code>
        */
-      public java.util.List<cosmos.nft.v1beta1.Nft.CosmosNFT.Builder> 
+      public java.util.List<cosmos.nft.v1beta1.Nft.NFT.Builder> 
            getNftsBuilderList() {
         return getNftsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          cosmos.nft.v1beta1.Nft.CosmosNFT, cosmos.nft.v1beta1.Nft.CosmosNFT.Builder, cosmos.nft.v1beta1.Nft.CosmosNFTOrBuilder> 
+          cosmos.nft.v1beta1.Nft.NFT, cosmos.nft.v1beta1.Nft.NFT.Builder, cosmos.nft.v1beta1.Nft.NFTOrBuilder> 
           getNftsFieldBuilder() {
         if (nftsBuilder_ == null) {
           nftsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              cosmos.nft.v1beta1.Nft.CosmosNFT, cosmos.nft.v1beta1.Nft.CosmosNFT.Builder, cosmos.nft.v1beta1.Nft.CosmosNFTOrBuilder>(
+              cosmos.nft.v1beta1.Nft.NFT, cosmos.nft.v1beta1.Nft.NFT.Builder, cosmos.nft.v1beta1.Nft.NFTOrBuilder>(
                   nfts_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -2419,12 +2419,12 @@ public final class Genesis {
     java.lang.String[] descriptorData = {
       "\n cosmos/nft/v1beta1/genesis.proto\022\022cosm" +
       "os.nft.v1beta1\032\034cosmos/nft/v1beta1/nft.p" +
-      "roto\"o\n\014GenesisState\0223\n\007classes\030\001 \003(\0132\"." +
-      "cosmos.nft.v1beta1.CosmosNFTClass\022*\n\007ent" +
-      "ries\030\002 \003(\0132\031.cosmos.nft.v1beta1.Entry\"C\n" +
-      "\005Entry\022\r\n\005owner\030\001 \001(\t\022+\n\004nfts\030\002 \003(\0132\035.co" +
-      "smos.nft.v1beta1.CosmosNFTB$Z\"github.com" +
-      "/cosmos/cosmos-sdk/x/nftb\006proto3"
+      "roto\"f\n\014GenesisState\022*\n\007classes\030\001 \003(\0132\031." +
+      "cosmos.nft.v1beta1.Class\022*\n\007entries\030\002 \003(" +
+      "\0132\031.cosmos.nft.v1beta1.Entry\"=\n\005Entry\022\r\n" +
+      "\005owner\030\001 \001(\t\022%\n\004nfts\030\002 \003(\0132\027.cosmos.nft." +
+      "v1beta1.NFTB$Z\"github.com/cosmos/cosmos-" +
+      "sdk/x/nftb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

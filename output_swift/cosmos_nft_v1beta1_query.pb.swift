@@ -102,8 +102,8 @@ struct Cosmos_Nft_V1beta1_QuerySupplyResponse {
   init() {}
 }
 
-/// QueryNFTsOfClassRequest is the request type for the Query/NFTsOfClass RPC method
-struct Cosmos_Nft_V1beta1_QueryNFTsOfClassRequest {
+/// QueryNFTstRequest is the request type for the Query/NFTs RPC method
+struct Cosmos_Nft_V1beta1_QueryNFTsRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -128,13 +128,13 @@ struct Cosmos_Nft_V1beta1_QueryNFTsOfClassRequest {
   fileprivate var _pagination: Cosmos_Base_Query_V1beta1_PageRequest? = nil
 }
 
-/// QueryNFTsOfClassResponse is the response type for the Query/NFTsOfClass and Query/NFTsOfClassByOwner RPC methods
-struct Cosmos_Nft_V1beta1_QueryNFTsOfClassResponse {
+/// QueryNFTsResponse is the response type for the Query/NFTs RPC methods
+struct Cosmos_Nft_V1beta1_QueryNFTsResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var nfts: [Cosmos_Nft_V1beta1_CosmosNFT] = []
+  var nfts: [Cosmos_Nft_V1beta1_NFT] = []
 
   var pagination: Cosmos_Base_Query_V1beta1_PageResponse {
     get {return _pagination ?? Cosmos_Base_Query_V1beta1_PageResponse()}
@@ -173,8 +173,8 @@ struct Cosmos_Nft_V1beta1_QueryNFTResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var nft: Cosmos_Nft_V1beta1_CosmosNFT {
-    get {return _nft ?? Cosmos_Nft_V1beta1_CosmosNFT()}
+  var nft: Cosmos_Nft_V1beta1_NFT {
+    get {return _nft ?? Cosmos_Nft_V1beta1_NFT()}
     set {_nft = newValue}
   }
   /// Returns true if `nft` has been explicitly set.
@@ -186,7 +186,7 @@ struct Cosmos_Nft_V1beta1_QueryNFTResponse {
 
   init() {}
 
-  fileprivate var _nft: Cosmos_Nft_V1beta1_CosmosNFT? = nil
+  fileprivate var _nft: Cosmos_Nft_V1beta1_NFT? = nil
 }
 
 /// QueryClassRequest is the request type for the Query/Class RPC method
@@ -208,8 +208,8 @@ struct Cosmos_Nft_V1beta1_QueryClassResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var `class`: Cosmos_Nft_V1beta1_CosmosNFTClass {
-    get {return _class ?? Cosmos_Nft_V1beta1_CosmosNFTClass()}
+  var `class`: Cosmos_Nft_V1beta1_Class {
+    get {return _class ?? Cosmos_Nft_V1beta1_Class()}
     set {_class = newValue}
   }
   /// Returns true if ``class`` has been explicitly set.
@@ -221,7 +221,7 @@ struct Cosmos_Nft_V1beta1_QueryClassResponse {
 
   init() {}
 
-  fileprivate var _class: Cosmos_Nft_V1beta1_CosmosNFTClass? = nil
+  fileprivate var _class: Cosmos_Nft_V1beta1_Class? = nil
 }
 
 /// QueryClassesRequest is the request type for the Query/Classes RPC method
@@ -253,7 +253,7 @@ struct Cosmos_Nft_V1beta1_QueryClassesResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var classes: [Cosmos_Nft_V1beta1_CosmosNFTClass] = []
+  var classes: [Cosmos_Nft_V1beta1_Class] = []
 
   var pagination: Cosmos_Base_Query_V1beta1_PageResponse {
     get {return _pagination ?? Cosmos_Base_Query_V1beta1_PageResponse()}
@@ -479,8 +479,8 @@ extension Cosmos_Nft_V1beta1_QuerySupplyResponse: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension Cosmos_Nft_V1beta1_QueryNFTsOfClassRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".QueryNFTsOfClassRequest"
+extension Cosmos_Nft_V1beta1_QueryNFTsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QueryNFTsRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "class_id"),
     2: .same(proto: "owner"),
@@ -514,7 +514,7 @@ extension Cosmos_Nft_V1beta1_QueryNFTsOfClassRequest: SwiftProtobuf.Message, Swi
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Cosmos_Nft_V1beta1_QueryNFTsOfClassRequest, rhs: Cosmos_Nft_V1beta1_QueryNFTsOfClassRequest) -> Bool {
+  static func ==(lhs: Cosmos_Nft_V1beta1_QueryNFTsRequest, rhs: Cosmos_Nft_V1beta1_QueryNFTsRequest) -> Bool {
     if lhs.classID != rhs.classID {return false}
     if lhs.owner != rhs.owner {return false}
     if lhs._pagination != rhs._pagination {return false}
@@ -523,8 +523,8 @@ extension Cosmos_Nft_V1beta1_QueryNFTsOfClassRequest: SwiftProtobuf.Message, Swi
   }
 }
 
-extension Cosmos_Nft_V1beta1_QueryNFTsOfClassResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".QueryNFTsOfClassResponse"
+extension Cosmos_Nft_V1beta1_QueryNFTsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QueryNFTsResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "nfts"),
     2: .same(proto: "pagination"),
@@ -553,7 +553,7 @@ extension Cosmos_Nft_V1beta1_QueryNFTsOfClassResponse: SwiftProtobuf.Message, Sw
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Cosmos_Nft_V1beta1_QueryNFTsOfClassResponse, rhs: Cosmos_Nft_V1beta1_QueryNFTsOfClassResponse) -> Bool {
+  static func ==(lhs: Cosmos_Nft_V1beta1_QueryNFTsResponse, rhs: Cosmos_Nft_V1beta1_QueryNFTsResponse) -> Bool {
     if lhs.nfts != rhs.nfts {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

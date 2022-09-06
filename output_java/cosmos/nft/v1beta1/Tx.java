@@ -1630,16 +1630,18 @@ public final class Tx {
   static {
     java.lang.String[] descriptorData = {
       "\n\033cosmos/nft/v1beta1/tx.proto\022\022cosmos.nf" +
-      "t.v1beta1\"I\n\007MsgSend\022\020\n\010class_id\030\001 \001(\t\022\n" +
-      "\n\002id\030\002 \001(\t\022\016\n\006sender\030\003 \001(\t\022\020\n\010receiver\030\004" +
-      " \001(\t\"\021\n\017MsgSendResponse2O\n\003Msg\022H\n\004Send\022\033" +
-      ".cosmos.nft.v1beta1.MsgSend\032#.cosmos.nft" +
-      ".v1beta1.MsgSendResponseB$Z\"github.com/c" +
-      "osmos/cosmos-sdk/x/nftb\006proto3"
+      "t.v1beta1\032\027cosmos/msg/v1/msg.proto\"V\n\007Ms" +
+      "gSend\022\020\n\010class_id\030\001 \001(\t\022\n\n\002id\030\002 \001(\t\022\016\n\006s" +
+      "ender\030\003 \001(\t\022\020\n\010receiver\030\004 \001(\t:\013\202\347\260*\006send" +
+      "er\"\021\n\017MsgSendResponse2O\n\003Msg\022H\n\004Send\022\033.c" +
+      "osmos.nft.v1beta1.MsgSend\032#.cosmos.nft.v" +
+      "1beta1.MsgSendResponseB$Z\"github.com/cos" +
+      "mos/cosmos-sdk/x/nftb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          cosmos.msg.v1.Msg.getDescriptor(),
         });
     internal_static_cosmos_nft_v1beta1_MsgSend_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1653,6 +1655,12 @@ public final class Tx {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_nft_v1beta1_MsgSendResponse_descriptor,
         new java.lang.String[] { });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(cosmos.msg.v1.Msg.signer);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
+    cosmos.msg.v1.Msg.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
