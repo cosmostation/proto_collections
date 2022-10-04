@@ -54,6 +54,8 @@ struct Osmosis_Tokenfactory_V1beta1_QueryParamsResponse {
   fileprivate var _params: Osmosis_Tokenfactory_V1beta1_Params? = nil
 }
 
+/// QueryDenomAuthorityMetadataRequest defines the request structure for the
+/// DenomAuthorityMetadata gRPC query.
 struct Osmosis_Tokenfactory_V1beta1_QueryDenomAuthorityMetadataRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -66,6 +68,8 @@ struct Osmosis_Tokenfactory_V1beta1_QueryDenomAuthorityMetadataRequest {
   init() {}
 }
 
+/// QueryDenomAuthorityMetadataResponse defines the response structure for the
+/// DenomAuthorityMetadata gRPC query.
 struct Osmosis_Tokenfactory_V1beta1_QueryDenomAuthorityMetadataResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -87,6 +91,8 @@ struct Osmosis_Tokenfactory_V1beta1_QueryDenomAuthorityMetadataResponse {
   fileprivate var _authorityMetadata: Osmosis_Tokenfactory_V1beta1_DenomAuthorityMetadata? = nil
 }
 
+/// QueryDenomsFromCreatorRequest defines the request structure for the
+/// DenomsFromCreator gRPC query.
 struct Osmosis_Tokenfactory_V1beta1_QueryDenomsFromCreatorRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -99,6 +105,8 @@ struct Osmosis_Tokenfactory_V1beta1_QueryDenomsFromCreatorRequest {
   init() {}
 }
 
+/// QueryDenomsFromCreatorRequest defines the response structure for the
+/// DenomsFromCreator gRPC query.
 struct Osmosis_Tokenfactory_V1beta1_QueryDenomsFromCreatorResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for

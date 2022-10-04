@@ -20,8 +20,11 @@ public final class Tx {
 
     /**
      * <pre>
-     * flag to show if it's perpetual or multi-epoch
-     * distribution incentives by third party
+     * is_perpetual shows if it's a perpetual or non-perpetual gauge
+     * Non-perpetual gauges distribute their tokens equally per epoch while the
+     * gauge is in the active period. Perpetual gauges distribute all their tokens
+     * at a single time and only distribute their tokens again once the gauge is
+     * refilled
      * </pre>
      *
      * <code>bool is_perpetual = 1;</code>
@@ -30,11 +33,19 @@ public final class Tx {
     boolean getIsPerpetual();
 
     /**
+     * <pre>
+     * owner is the address of gauge creator
+     * </pre>
+     *
      * <code>string owner = 2 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
      * @return The owner.
      */
     java.lang.String getOwner();
     /**
+     * <pre>
+     * owner is the address of gauge creator
+     * </pre>
+     *
      * <code>string owner = 2 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
      * @return The bytes for owner.
      */
@@ -43,7 +54,8 @@ public final class Tx {
 
     /**
      * <pre>
-     * distribute condition of a lock which meet one of these conditions
+     * distribute_to show which lock the gauge should distribute to by time
+     * duration or by timestamp
      * </pre>
      *
      * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -52,7 +64,8 @@ public final class Tx {
     boolean hasDistributeTo();
     /**
      * <pre>
-     * distribute condition of a lock which meet one of these conditions
+     * distribute_to show which lock the gauge should distribute to by time
+     * duration or by timestamp
      * </pre>
      *
      * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -61,7 +74,8 @@ public final class Tx {
     osmosis.lockup.Lock.QueryCondition getDistributeTo();
     /**
      * <pre>
-     * distribute condition of a lock which meet one of these conditions
+     * distribute_to show which lock the gauge should distribute to by time
+     * duration or by timestamp
      * </pre>
      *
      * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -70,7 +84,7 @@ public final class Tx {
 
     /**
      * <pre>
-     * can distribute multiple coins
+     * coins are coin(s) to be distributed by the gauge
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -79,7 +93,7 @@ public final class Tx {
         getCoinsList();
     /**
      * <pre>
-     * can distribute multiple coins
+     * coins are coin(s) to be distributed by the gauge
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -87,7 +101,7 @@ public final class Tx {
     cosmos.base.v1beta1.CoinOuterClass.Coin getCoins(int index);
     /**
      * <pre>
-     * can distribute multiple coins
+     * coins are coin(s) to be distributed by the gauge
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -95,7 +109,7 @@ public final class Tx {
     int getCoinsCount();
     /**
      * <pre>
-     * can distribute multiple coins
+     * coins are coin(s) to be distributed by the gauge
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -104,7 +118,7 @@ public final class Tx {
         getCoinsOrBuilderList();
     /**
      * <pre>
-     * can distribute multiple coins
+     * coins are coin(s) to be distributed by the gauge
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -114,7 +128,7 @@ public final class Tx {
 
     /**
      * <pre>
-     * distribution start time
+     * start_time is the distribution start time
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -123,7 +137,7 @@ public final class Tx {
     boolean hasStartTime();
     /**
      * <pre>
-     * distribution start time
+     * start_time is the distribution start time
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -132,7 +146,7 @@ public final class Tx {
     com.google.protobuf.Timestamp getStartTime();
     /**
      * <pre>
-     * distribution start time
+     * start_time is the distribution start time
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -141,7 +155,8 @@ public final class Tx {
 
     /**
      * <pre>
-     * number of epochs distribution will be done
+     * num_epochs_paid_over is the number of epochs distribution will be completed
+     * over
      * </pre>
      *
      * <code>uint64 num_epochs_paid_over = 6;</code>
@@ -150,6 +165,10 @@ public final class Tx {
     long getNumEpochsPaidOver();
   }
   /**
+   * <pre>
+   * MsgCreateGauge creates a gague to distribute rewards to users
+   * </pre>
+   *
    * Protobuf type {@code osmosis.incentives.MsgCreateGauge}
    */
   public static final class MsgCreateGauge extends
@@ -287,8 +306,11 @@ public final class Tx {
     private boolean isPerpetual_;
     /**
      * <pre>
-     * flag to show if it's perpetual or multi-epoch
-     * distribution incentives by third party
+     * is_perpetual shows if it's a perpetual or non-perpetual gauge
+     * Non-perpetual gauges distribute their tokens equally per epoch while the
+     * gauge is in the active period. Perpetual gauges distribute all their tokens
+     * at a single time and only distribute their tokens again once the gauge is
+     * refilled
      * </pre>
      *
      * <code>bool is_perpetual = 1;</code>
@@ -302,6 +324,10 @@ public final class Tx {
     public static final int OWNER_FIELD_NUMBER = 2;
     private volatile java.lang.Object owner_;
     /**
+     * <pre>
+     * owner is the address of gauge creator
+     * </pre>
+     *
      * <code>string owner = 2 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
      * @return The owner.
      */
@@ -319,6 +345,10 @@ public final class Tx {
       }
     }
     /**
+     * <pre>
+     * owner is the address of gauge creator
+     * </pre>
+     *
      * <code>string owner = 2 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
      * @return The bytes for owner.
      */
@@ -341,7 +371,8 @@ public final class Tx {
     private osmosis.lockup.Lock.QueryCondition distributeTo_;
     /**
      * <pre>
-     * distribute condition of a lock which meet one of these conditions
+     * distribute_to show which lock the gauge should distribute to by time
+     * duration or by timestamp
      * </pre>
      *
      * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -353,7 +384,8 @@ public final class Tx {
     }
     /**
      * <pre>
-     * distribute condition of a lock which meet one of these conditions
+     * distribute_to show which lock the gauge should distribute to by time
+     * duration or by timestamp
      * </pre>
      *
      * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -365,7 +397,8 @@ public final class Tx {
     }
     /**
      * <pre>
-     * distribute condition of a lock which meet one of these conditions
+     * distribute_to show which lock the gauge should distribute to by time
+     * duration or by timestamp
      * </pre>
      *
      * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -379,7 +412,7 @@ public final class Tx {
     private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> coins_;
     /**
      * <pre>
-     * can distribute multiple coins
+     * coins are coin(s) to be distributed by the gauge
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -390,7 +423,7 @@ public final class Tx {
     }
     /**
      * <pre>
-     * can distribute multiple coins
+     * coins are coin(s) to be distributed by the gauge
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -402,7 +435,7 @@ public final class Tx {
     }
     /**
      * <pre>
-     * can distribute multiple coins
+     * coins are coin(s) to be distributed by the gauge
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -413,7 +446,7 @@ public final class Tx {
     }
     /**
      * <pre>
-     * can distribute multiple coins
+     * coins are coin(s) to be distributed by the gauge
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -424,7 +457,7 @@ public final class Tx {
     }
     /**
      * <pre>
-     * can distribute multiple coins
+     * coins are coin(s) to be distributed by the gauge
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -439,7 +472,7 @@ public final class Tx {
     private com.google.protobuf.Timestamp startTime_;
     /**
      * <pre>
-     * distribution start time
+     * start_time is the distribution start time
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -451,7 +484,7 @@ public final class Tx {
     }
     /**
      * <pre>
-     * distribution start time
+     * start_time is the distribution start time
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -463,7 +496,7 @@ public final class Tx {
     }
     /**
      * <pre>
-     * distribution start time
+     * start_time is the distribution start time
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -477,7 +510,8 @@ public final class Tx {
     private long numEpochsPaidOver_;
     /**
      * <pre>
-     * number of epochs distribution will be done
+     * num_epochs_paid_over is the number of epochs distribution will be completed
+     * over
      * </pre>
      *
      * <code>uint64 num_epochs_paid_over = 6;</code>
@@ -712,6 +746,10 @@ public final class Tx {
       return builder;
     }
     /**
+     * <pre>
+     * MsgCreateGauge creates a gague to distribute rewards to users
+     * </pre>
+     *
      * Protobuf type {@code osmosis.incentives.MsgCreateGauge}
      */
     public static final class Builder extends
@@ -946,8 +984,11 @@ public final class Tx {
       private boolean isPerpetual_ ;
       /**
        * <pre>
-       * flag to show if it's perpetual or multi-epoch
-       * distribution incentives by third party
+       * is_perpetual shows if it's a perpetual or non-perpetual gauge
+       * Non-perpetual gauges distribute their tokens equally per epoch while the
+       * gauge is in the active period. Perpetual gauges distribute all their tokens
+       * at a single time and only distribute their tokens again once the gauge is
+       * refilled
        * </pre>
        *
        * <code>bool is_perpetual = 1;</code>
@@ -959,8 +1000,11 @@ public final class Tx {
       }
       /**
        * <pre>
-       * flag to show if it's perpetual or multi-epoch
-       * distribution incentives by third party
+       * is_perpetual shows if it's a perpetual or non-perpetual gauge
+       * Non-perpetual gauges distribute their tokens equally per epoch while the
+       * gauge is in the active period. Perpetual gauges distribute all their tokens
+       * at a single time and only distribute their tokens again once the gauge is
+       * refilled
        * </pre>
        *
        * <code>bool is_perpetual = 1;</code>
@@ -975,8 +1019,11 @@ public final class Tx {
       }
       /**
        * <pre>
-       * flag to show if it's perpetual or multi-epoch
-       * distribution incentives by third party
+       * is_perpetual shows if it's a perpetual or non-perpetual gauge
+       * Non-perpetual gauges distribute their tokens equally per epoch while the
+       * gauge is in the active period. Perpetual gauges distribute all their tokens
+       * at a single time and only distribute their tokens again once the gauge is
+       * refilled
        * </pre>
        *
        * <code>bool is_perpetual = 1;</code>
@@ -991,6 +1038,10 @@ public final class Tx {
 
       private java.lang.Object owner_ = "";
       /**
+       * <pre>
+       * owner is the address of gauge creator
+       * </pre>
+       *
        * <code>string owner = 2 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
        * @return The owner.
        */
@@ -1007,6 +1058,10 @@ public final class Tx {
         }
       }
       /**
+       * <pre>
+       * owner is the address of gauge creator
+       * </pre>
+       *
        * <code>string owner = 2 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
        * @return The bytes for owner.
        */
@@ -1024,6 +1079,10 @@ public final class Tx {
         }
       }
       /**
+       * <pre>
+       * owner is the address of gauge creator
+       * </pre>
+       *
        * <code>string owner = 2 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
        * @param value The owner to set.
        * @return This builder for chaining.
@@ -1039,6 +1098,10 @@ public final class Tx {
         return this;
       }
       /**
+       * <pre>
+       * owner is the address of gauge creator
+       * </pre>
+       *
        * <code>string owner = 2 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
        * @return This builder for chaining.
        */
@@ -1049,6 +1112,10 @@ public final class Tx {
         return this;
       }
       /**
+       * <pre>
+       * owner is the address of gauge creator
+       * </pre>
+       *
        * <code>string owner = 2 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
        * @param value The bytes for owner to set.
        * @return This builder for chaining.
@@ -1070,7 +1137,8 @@ public final class Tx {
           osmosis.lockup.Lock.QueryCondition, osmosis.lockup.Lock.QueryCondition.Builder, osmosis.lockup.Lock.QueryConditionOrBuilder> distributeToBuilder_;
       /**
        * <pre>
-       * distribute condition of a lock which meet one of these conditions
+       * distribute_to show which lock the gauge should distribute to by time
+       * duration or by timestamp
        * </pre>
        *
        * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -1081,7 +1149,8 @@ public final class Tx {
       }
       /**
        * <pre>
-       * distribute condition of a lock which meet one of these conditions
+       * distribute_to show which lock the gauge should distribute to by time
+       * duration or by timestamp
        * </pre>
        *
        * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -1096,7 +1165,8 @@ public final class Tx {
       }
       /**
        * <pre>
-       * distribute condition of a lock which meet one of these conditions
+       * distribute_to show which lock the gauge should distribute to by time
+       * duration or by timestamp
        * </pre>
        *
        * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -1116,7 +1186,8 @@ public final class Tx {
       }
       /**
        * <pre>
-       * distribute condition of a lock which meet one of these conditions
+       * distribute_to show which lock the gauge should distribute to by time
+       * duration or by timestamp
        * </pre>
        *
        * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -1134,7 +1205,8 @@ public final class Tx {
       }
       /**
        * <pre>
-       * distribute condition of a lock which meet one of these conditions
+       * distribute_to show which lock the gauge should distribute to by time
+       * duration or by timestamp
        * </pre>
        *
        * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -1156,7 +1228,8 @@ public final class Tx {
       }
       /**
        * <pre>
-       * distribute condition of a lock which meet one of these conditions
+       * distribute_to show which lock the gauge should distribute to by time
+       * duration or by timestamp
        * </pre>
        *
        * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -1174,7 +1247,8 @@ public final class Tx {
       }
       /**
        * <pre>
-       * distribute condition of a lock which meet one of these conditions
+       * distribute_to show which lock the gauge should distribute to by time
+       * duration or by timestamp
        * </pre>
        *
        * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -1186,7 +1260,8 @@ public final class Tx {
       }
       /**
        * <pre>
-       * distribute condition of a lock which meet one of these conditions
+       * distribute_to show which lock the gauge should distribute to by time
+       * duration or by timestamp
        * </pre>
        *
        * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -1201,7 +1276,8 @@ public final class Tx {
       }
       /**
        * <pre>
-       * distribute condition of a lock which meet one of these conditions
+       * distribute_to show which lock the gauge should distribute to by time
+       * duration or by timestamp
        * </pre>
        *
        * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -1234,7 +1310,7 @@ public final class Tx {
 
       /**
        * <pre>
-       * can distribute multiple coins
+       * coins are coin(s) to be distributed by the gauge
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1248,7 +1324,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * can distribute multiple coins
+       * coins are coin(s) to be distributed by the gauge
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1262,7 +1338,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * can distribute multiple coins
+       * coins are coin(s) to be distributed by the gauge
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1276,7 +1352,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * can distribute multiple coins
+       * coins are coin(s) to be distributed by the gauge
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1297,7 +1373,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * can distribute multiple coins
+       * coins are coin(s) to be distributed by the gauge
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1315,7 +1391,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * can distribute multiple coins
+       * coins are coin(s) to be distributed by the gauge
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1335,7 +1411,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * can distribute multiple coins
+       * coins are coin(s) to be distributed by the gauge
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1356,7 +1432,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * can distribute multiple coins
+       * coins are coin(s) to be distributed by the gauge
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1374,7 +1450,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * can distribute multiple coins
+       * coins are coin(s) to be distributed by the gauge
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1392,7 +1468,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * can distribute multiple coins
+       * coins are coin(s) to be distributed by the gauge
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1411,7 +1487,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * can distribute multiple coins
+       * coins are coin(s) to be distributed by the gauge
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1428,7 +1504,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * can distribute multiple coins
+       * coins are coin(s) to be distributed by the gauge
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1445,7 +1521,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * can distribute multiple coins
+       * coins are coin(s) to be distributed by the gauge
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1456,7 +1532,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * can distribute multiple coins
+       * coins are coin(s) to be distributed by the gauge
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1470,7 +1546,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * can distribute multiple coins
+       * coins are coin(s) to be distributed by the gauge
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1485,7 +1561,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * can distribute multiple coins
+       * coins are coin(s) to be distributed by the gauge
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1496,7 +1572,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * can distribute multiple coins
+       * coins are coin(s) to be distributed by the gauge
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1508,7 +1584,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * can distribute multiple coins
+       * coins are coin(s) to be distributed by the gauge
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1537,7 +1613,7 @@ public final class Tx {
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> startTimeBuilder_;
       /**
        * <pre>
-       * distribution start time
+       * start_time is the distribution start time
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -1548,7 +1624,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * distribution start time
+       * start_time is the distribution start time
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -1563,7 +1639,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * distribution start time
+       * start_time is the distribution start time
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -1583,7 +1659,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * distribution start time
+       * start_time is the distribution start time
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -1601,7 +1677,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * distribution start time
+       * start_time is the distribution start time
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -1623,7 +1699,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * distribution start time
+       * start_time is the distribution start time
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -1641,7 +1717,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * distribution start time
+       * start_time is the distribution start time
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -1653,7 +1729,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * distribution start time
+       * start_time is the distribution start time
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -1668,7 +1744,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * distribution start time
+       * start_time is the distribution start time
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -1690,7 +1766,8 @@ public final class Tx {
       private long numEpochsPaidOver_ ;
       /**
        * <pre>
-       * number of epochs distribution will be done
+       * num_epochs_paid_over is the number of epochs distribution will be completed
+       * over
        * </pre>
        *
        * <code>uint64 num_epochs_paid_over = 6;</code>
@@ -1702,7 +1779,8 @@ public final class Tx {
       }
       /**
        * <pre>
-       * number of epochs distribution will be done
+       * num_epochs_paid_over is the number of epochs distribution will be completed
+       * over
        * </pre>
        *
        * <code>uint64 num_epochs_paid_over = 6;</code>
@@ -1717,7 +1795,8 @@ public final class Tx {
       }
       /**
        * <pre>
-       * number of epochs distribution will be done
+       * num_epochs_paid_over is the number of epochs distribution will be completed
+       * over
        * </pre>
        *
        * <code>uint64 num_epochs_paid_over = 6;</code>
@@ -2205,11 +2284,19 @@ public final class Tx {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * owner is the gauge owner's address
+     * </pre>
+     *
      * <code>string owner = 1 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
      * @return The owner.
      */
     java.lang.String getOwner();
     /**
+     * <pre>
+     * owner is the gauge owner's address
+     * </pre>
+     *
      * <code>string owner = 1 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
      * @return The bytes for owner.
      */
@@ -2217,36 +2304,64 @@ public final class Tx {
         getOwnerBytes();
 
     /**
+     * <pre>
+     * gauge_id is the ID of gauge that rewards are getting added to
+     * </pre>
+     *
      * <code>uint64 gauge_id = 2;</code>
      * @return The gaugeId.
      */
     long getGaugeId();
 
     /**
+     * <pre>
+     * rewards are the coin(s) to add to gauge
+     * </pre>
+     *
      * <code>repeated .cosmos.base.v1beta1.Coin rewards = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> 
         getRewardsList();
     /**
+     * <pre>
+     * rewards are the coin(s) to add to gauge
+     * </pre>
+     *
      * <code>repeated .cosmos.base.v1beta1.Coin rewards = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.Coin getRewards(int index);
     /**
+     * <pre>
+     * rewards are the coin(s) to add to gauge
+     * </pre>
+     *
      * <code>repeated .cosmos.base.v1beta1.Coin rewards = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     int getRewardsCount();
     /**
+     * <pre>
+     * rewards are the coin(s) to add to gauge
+     * </pre>
+     *
      * <code>repeated .cosmos.base.v1beta1.Coin rewards = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
         getRewardsOrBuilderList();
     /**
+     * <pre>
+     * rewards are the coin(s) to add to gauge
+     * </pre>
+     *
      * <code>repeated .cosmos.base.v1beta1.Coin rewards = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getRewardsOrBuilder(
         int index);
   }
   /**
+   * <pre>
+   * MsgAddToGauge adds coins to a previously created gauge
+   * </pre>
+   *
    * Protobuf type {@code osmosis.incentives.MsgAddToGauge}
    */
   public static final class MsgAddToGauge extends
@@ -2352,6 +2467,10 @@ public final class Tx {
     public static final int OWNER_FIELD_NUMBER = 1;
     private volatile java.lang.Object owner_;
     /**
+     * <pre>
+     * owner is the gauge owner's address
+     * </pre>
+     *
      * <code>string owner = 1 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
      * @return The owner.
      */
@@ -2369,6 +2488,10 @@ public final class Tx {
       }
     }
     /**
+     * <pre>
+     * owner is the gauge owner's address
+     * </pre>
+     *
      * <code>string owner = 1 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
      * @return The bytes for owner.
      */
@@ -2390,6 +2513,10 @@ public final class Tx {
     public static final int GAUGE_ID_FIELD_NUMBER = 2;
     private long gaugeId_;
     /**
+     * <pre>
+     * gauge_id is the ID of gauge that rewards are getting added to
+     * </pre>
+     *
      * <code>uint64 gauge_id = 2;</code>
      * @return The gaugeId.
      */
@@ -2401,6 +2528,10 @@ public final class Tx {
     public static final int REWARDS_FIELD_NUMBER = 3;
     private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> rewards_;
     /**
+     * <pre>
+     * rewards are the coin(s) to add to gauge
+     * </pre>
+     *
      * <code>repeated .cosmos.base.v1beta1.Coin rewards = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     @java.lang.Override
@@ -2408,6 +2539,10 @@ public final class Tx {
       return rewards_;
     }
     /**
+     * <pre>
+     * rewards are the coin(s) to add to gauge
+     * </pre>
+     *
      * <code>repeated .cosmos.base.v1beta1.Coin rewards = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     @java.lang.Override
@@ -2416,6 +2551,10 @@ public final class Tx {
       return rewards_;
     }
     /**
+     * <pre>
+     * rewards are the coin(s) to add to gauge
+     * </pre>
+     *
      * <code>repeated .cosmos.base.v1beta1.Coin rewards = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     @java.lang.Override
@@ -2423,6 +2562,10 @@ public final class Tx {
       return rewards_.size();
     }
     /**
+     * <pre>
+     * rewards are the coin(s) to add to gauge
+     * </pre>
+     *
      * <code>repeated .cosmos.base.v1beta1.Coin rewards = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     @java.lang.Override
@@ -2430,6 +2573,10 @@ public final class Tx {
       return rewards_.get(index);
     }
     /**
+     * <pre>
+     * rewards are the coin(s) to add to gauge
+     * </pre>
+     *
      * <code>repeated .cosmos.base.v1beta1.Coin rewards = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     @java.lang.Override
@@ -2618,6 +2765,10 @@ public final class Tx {
       return builder;
     }
     /**
+     * <pre>
+     * MsgAddToGauge adds coins to a previously created gauge
+     * </pre>
+     *
      * Protobuf type {@code osmosis.incentives.MsgAddToGauge}
      */
     public static final class Builder extends
@@ -2817,6 +2968,10 @@ public final class Tx {
 
       private java.lang.Object owner_ = "";
       /**
+       * <pre>
+       * owner is the gauge owner's address
+       * </pre>
+       *
        * <code>string owner = 1 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
        * @return The owner.
        */
@@ -2833,6 +2988,10 @@ public final class Tx {
         }
       }
       /**
+       * <pre>
+       * owner is the gauge owner's address
+       * </pre>
+       *
        * <code>string owner = 1 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
        * @return The bytes for owner.
        */
@@ -2850,6 +3009,10 @@ public final class Tx {
         }
       }
       /**
+       * <pre>
+       * owner is the gauge owner's address
+       * </pre>
+       *
        * <code>string owner = 1 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
        * @param value The owner to set.
        * @return This builder for chaining.
@@ -2865,6 +3028,10 @@ public final class Tx {
         return this;
       }
       /**
+       * <pre>
+       * owner is the gauge owner's address
+       * </pre>
+       *
        * <code>string owner = 1 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
        * @return This builder for chaining.
        */
@@ -2875,6 +3042,10 @@ public final class Tx {
         return this;
       }
       /**
+       * <pre>
+       * owner is the gauge owner's address
+       * </pre>
+       *
        * <code>string owner = 1 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
        * @param value The bytes for owner to set.
        * @return This builder for chaining.
@@ -2893,6 +3064,10 @@ public final class Tx {
 
       private long gaugeId_ ;
       /**
+       * <pre>
+       * gauge_id is the ID of gauge that rewards are getting added to
+       * </pre>
+       *
        * <code>uint64 gauge_id = 2;</code>
        * @return The gaugeId.
        */
@@ -2901,6 +3076,10 @@ public final class Tx {
         return gaugeId_;
       }
       /**
+       * <pre>
+       * gauge_id is the ID of gauge that rewards are getting added to
+       * </pre>
+       *
        * <code>uint64 gauge_id = 2;</code>
        * @param value The gaugeId to set.
        * @return This builder for chaining.
@@ -2912,6 +3091,10 @@ public final class Tx {
         return this;
       }
       /**
+       * <pre>
+       * gauge_id is the ID of gauge that rewards are getting added to
+       * </pre>
+       *
        * <code>uint64 gauge_id = 2;</code>
        * @return This builder for chaining.
        */
@@ -2935,6 +3118,10 @@ public final class Tx {
           cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> rewardsBuilder_;
 
       /**
+       * <pre>
+       * rewards are the coin(s) to add to gauge
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin rewards = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getRewardsList() {
@@ -2945,6 +3132,10 @@ public final class Tx {
         }
       }
       /**
+       * <pre>
+       * rewards are the coin(s) to add to gauge
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin rewards = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public int getRewardsCount() {
@@ -2955,6 +3146,10 @@ public final class Tx {
         }
       }
       /**
+       * <pre>
+       * rewards are the coin(s) to add to gauge
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin rewards = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin getRewards(int index) {
@@ -2965,6 +3160,10 @@ public final class Tx {
         }
       }
       /**
+       * <pre>
+       * rewards are the coin(s) to add to gauge
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin rewards = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder setRewards(
@@ -2982,6 +3181,10 @@ public final class Tx {
         return this;
       }
       /**
+       * <pre>
+       * rewards are the coin(s) to add to gauge
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin rewards = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder setRewards(
@@ -2996,6 +3199,10 @@ public final class Tx {
         return this;
       }
       /**
+       * <pre>
+       * rewards are the coin(s) to add to gauge
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin rewards = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addRewards(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -3012,6 +3219,10 @@ public final class Tx {
         return this;
       }
       /**
+       * <pre>
+       * rewards are the coin(s) to add to gauge
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin rewards = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addRewards(
@@ -3029,6 +3240,10 @@ public final class Tx {
         return this;
       }
       /**
+       * <pre>
+       * rewards are the coin(s) to add to gauge
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin rewards = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addRewards(
@@ -3043,6 +3258,10 @@ public final class Tx {
         return this;
       }
       /**
+       * <pre>
+       * rewards are the coin(s) to add to gauge
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin rewards = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addRewards(
@@ -3057,6 +3276,10 @@ public final class Tx {
         return this;
       }
       /**
+       * <pre>
+       * rewards are the coin(s) to add to gauge
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin rewards = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addAllRewards(
@@ -3072,6 +3295,10 @@ public final class Tx {
         return this;
       }
       /**
+       * <pre>
+       * rewards are the coin(s) to add to gauge
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin rewards = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder clearRewards() {
@@ -3085,6 +3312,10 @@ public final class Tx {
         return this;
       }
       /**
+       * <pre>
+       * rewards are the coin(s) to add to gauge
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin rewards = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder removeRewards(int index) {
@@ -3098,6 +3329,10 @@ public final class Tx {
         return this;
       }
       /**
+       * <pre>
+       * rewards are the coin(s) to add to gauge
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin rewards = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getRewardsBuilder(
@@ -3105,6 +3340,10 @@ public final class Tx {
         return getRewardsFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * rewards are the coin(s) to add to gauge
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin rewards = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getRewardsOrBuilder(
@@ -3115,6 +3354,10 @@ public final class Tx {
         }
       }
       /**
+       * <pre>
+       * rewards are the coin(s) to add to gauge
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin rewards = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
@@ -3126,6 +3369,10 @@ public final class Tx {
         }
       }
       /**
+       * <pre>
+       * rewards are the coin(s) to add to gauge
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin rewards = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addRewardsBuilder() {
@@ -3133,6 +3380,10 @@ public final class Tx {
             cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance());
       }
       /**
+       * <pre>
+       * rewards are the coin(s) to add to gauge
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin rewards = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addRewardsBuilder(
@@ -3141,6 +3392,10 @@ public final class Tx {
             index, cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance());
       }
       /**
+       * <pre>
+       * rewards are the coin(s) to add to gauge
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin rewards = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin.Builder> 

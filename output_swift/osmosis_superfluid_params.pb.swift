@@ -26,8 +26,10 @@ struct Osmosis_Superfluid_Params {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  /// the risk_factor is to be cut on OSMO equivalent value of lp tokens for
-  /// superfluid staking, default: 5%
+  /// minimum_risk_factor is to be cut on OSMO equivalent value of lp tokens for
+  /// superfluid staking, default: 5%. The minimum risk factor works
+  /// to counter-balance the staked amount on chain's exposure to various asset
+  /// volatilities, and have base staking be 'resistant' to volatility.
   var minimumRiskFactor: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()

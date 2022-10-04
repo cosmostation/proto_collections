@@ -272,6 +272,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * DistrInfo returns the pool's matching gauge ids and weights.
+     * </pre>
      */
     public void distrInfo(osmosis.poolincentives.v1beta1.QueryOuterClass.QueryDistrInfoRequest request,
         io.grpc.stub.StreamObserver<osmosis.poolincentives.v1beta1.QueryOuterClass.QueryDistrInfoResponse> responseObserver) {
@@ -279,6 +282,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * Params returns pool incentives params.
+     * </pre>
      */
     public void params(osmosis.poolincentives.v1beta1.QueryOuterClass.QueryParamsRequest request,
         io.grpc.stub.StreamObserver<osmosis.poolincentives.v1beta1.QueryOuterClass.QueryParamsResponse> responseObserver) {
@@ -286,6 +292,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * LockableDurations returns lock durations for pools.
+     * </pre>
      */
     public void lockableDurations(osmosis.poolincentives.v1beta1.QueryOuterClass.QueryLockableDurationsRequest request,
         io.grpc.stub.StreamObserver<osmosis.poolincentives.v1beta1.QueryOuterClass.QueryLockableDurationsResponse> responseObserver) {
@@ -293,6 +302,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * IncentivizedPools returns currently incentivized pools
+     * </pre>
      */
     public void incentivizedPools(osmosis.poolincentives.v1beta1.QueryOuterClass.QueryIncentivizedPoolsRequest request,
         io.grpc.stub.StreamObserver<osmosis.poolincentives.v1beta1.QueryOuterClass.QueryIncentivizedPoolsResponse> responseObserver) {
@@ -300,6 +312,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * ExternalIncentiveGauges returns external incentive gauges.
+     * </pre>
      */
     public void externalIncentiveGauges(osmosis.poolincentives.v1beta1.QueryOuterClass.QueryExternalIncentiveGaugesRequest request,
         io.grpc.stub.StreamObserver<osmosis.poolincentives.v1beta1.QueryOuterClass.QueryExternalIncentiveGaugesResponse> responseObserver) {
@@ -380,6 +395,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * DistrInfo returns the pool's matching gauge ids and weights.
+     * </pre>
      */
     public void distrInfo(osmosis.poolincentives.v1beta1.QueryOuterClass.QueryDistrInfoRequest request,
         io.grpc.stub.StreamObserver<osmosis.poolincentives.v1beta1.QueryOuterClass.QueryDistrInfoResponse> responseObserver) {
@@ -388,6 +406,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * Params returns pool incentives params.
+     * </pre>
      */
     public void params(osmosis.poolincentives.v1beta1.QueryOuterClass.QueryParamsRequest request,
         io.grpc.stub.StreamObserver<osmosis.poolincentives.v1beta1.QueryOuterClass.QueryParamsResponse> responseObserver) {
@@ -396,6 +417,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * LockableDurations returns lock durations for pools.
+     * </pre>
      */
     public void lockableDurations(osmosis.poolincentives.v1beta1.QueryOuterClass.QueryLockableDurationsRequest request,
         io.grpc.stub.StreamObserver<osmosis.poolincentives.v1beta1.QueryOuterClass.QueryLockableDurationsResponse> responseObserver) {
@@ -404,6 +428,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * IncentivizedPools returns currently incentivized pools
+     * </pre>
      */
     public void incentivizedPools(osmosis.poolincentives.v1beta1.QueryOuterClass.QueryIncentivizedPoolsRequest request,
         io.grpc.stub.StreamObserver<osmosis.poolincentives.v1beta1.QueryOuterClass.QueryIncentivizedPoolsResponse> responseObserver) {
@@ -412,6 +439,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * ExternalIncentiveGauges returns external incentive gauges.
+     * </pre>
      */
     public void externalIncentiveGauges(osmosis.poolincentives.v1beta1.QueryOuterClass.QueryExternalIncentiveGaugesRequest request,
         io.grpc.stub.StreamObserver<osmosis.poolincentives.v1beta1.QueryOuterClass.QueryExternalIncentiveGaugesResponse> responseObserver) {
@@ -445,6 +475,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * DistrInfo returns the pool's matching gauge ids and weights.
+     * </pre>
      */
     public osmosis.poolincentives.v1beta1.QueryOuterClass.QueryDistrInfoResponse distrInfo(osmosis.poolincentives.v1beta1.QueryOuterClass.QueryDistrInfoRequest request) {
       return blockingUnaryCall(
@@ -452,6 +485,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * Params returns pool incentives params.
+     * </pre>
      */
     public osmosis.poolincentives.v1beta1.QueryOuterClass.QueryParamsResponse params(osmosis.poolincentives.v1beta1.QueryOuterClass.QueryParamsRequest request) {
       return blockingUnaryCall(
@@ -459,6 +495,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * LockableDurations returns lock durations for pools.
+     * </pre>
      */
     public osmosis.poolincentives.v1beta1.QueryOuterClass.QueryLockableDurationsResponse lockableDurations(osmosis.poolincentives.v1beta1.QueryOuterClass.QueryLockableDurationsRequest request) {
       return blockingUnaryCall(
@@ -466,6 +505,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * IncentivizedPools returns currently incentivized pools
+     * </pre>
      */
     public osmosis.poolincentives.v1beta1.QueryOuterClass.QueryIncentivizedPoolsResponse incentivizedPools(osmosis.poolincentives.v1beta1.QueryOuterClass.QueryIncentivizedPoolsRequest request) {
       return blockingUnaryCall(
@@ -473,6 +515,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * ExternalIncentiveGauges returns external incentive gauges.
+     * </pre>
      */
     public osmosis.poolincentives.v1beta1.QueryOuterClass.QueryExternalIncentiveGaugesResponse externalIncentiveGauges(osmosis.poolincentives.v1beta1.QueryOuterClass.QueryExternalIncentiveGaugesRequest request) {
       return blockingUnaryCall(
@@ -506,6 +551,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * DistrInfo returns the pool's matching gauge ids and weights.
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<osmosis.poolincentives.v1beta1.QueryOuterClass.QueryDistrInfoResponse> distrInfo(
         osmosis.poolincentives.v1beta1.QueryOuterClass.QueryDistrInfoRequest request) {
@@ -514,6 +562,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * Params returns pool incentives params.
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<osmosis.poolincentives.v1beta1.QueryOuterClass.QueryParamsResponse> params(
         osmosis.poolincentives.v1beta1.QueryOuterClass.QueryParamsRequest request) {
@@ -522,6 +573,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * LockableDurations returns lock durations for pools.
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<osmosis.poolincentives.v1beta1.QueryOuterClass.QueryLockableDurationsResponse> lockableDurations(
         osmosis.poolincentives.v1beta1.QueryOuterClass.QueryLockableDurationsRequest request) {
@@ -530,6 +584,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * IncentivizedPools returns currently incentivized pools
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<osmosis.poolincentives.v1beta1.QueryOuterClass.QueryIncentivizedPoolsResponse> incentivizedPools(
         osmosis.poolincentives.v1beta1.QueryOuterClass.QueryIncentivizedPoolsRequest request) {
@@ -538,6 +595,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * ExternalIncentiveGauges returns external incentive gauges.
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<osmosis.poolincentives.v1beta1.QueryOuterClass.QueryExternalIncentiveGaugesResponse> externalIncentiveGauges(
         osmosis.poolincentives.v1beta1.QueryOuterClass.QueryExternalIncentiveGaugesRequest request) {

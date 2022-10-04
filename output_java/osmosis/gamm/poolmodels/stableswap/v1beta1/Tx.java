@@ -70,18 +70,51 @@ public final class Tx {
         int index);
 
     /**
-     * <code>string future_pool_governor = 4 [(.gogoproto.moretags) = "yaml:&#92;"future_pool_governor&#92;""];</code>
+     * <code>repeated uint64 scaling_factors = 4 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+     * @return A list containing the scalingFactors.
+     */
+    java.util.List<java.lang.Long> getScalingFactorsList();
+    /**
+     * <code>repeated uint64 scaling_factors = 4 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+     * @return The count of scalingFactors.
+     */
+    int getScalingFactorsCount();
+    /**
+     * <code>repeated uint64 scaling_factors = 4 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+     * @param index The index of the element to return.
+     * @return The scalingFactors at the given index.
+     */
+    long getScalingFactors(int index);
+
+    /**
+     * <code>string future_pool_governor = 5 [(.gogoproto.moretags) = "yaml:&#92;"future_pool_governor&#92;""];</code>
      * @return The futurePoolGovernor.
      */
     java.lang.String getFuturePoolGovernor();
     /**
-     * <code>string future_pool_governor = 4 [(.gogoproto.moretags) = "yaml:&#92;"future_pool_governor&#92;""];</code>
+     * <code>string future_pool_governor = 5 [(.gogoproto.moretags) = "yaml:&#92;"future_pool_governor&#92;""];</code>
      * @return The bytes for futurePoolGovernor.
      */
     com.google.protobuf.ByteString
         getFuturePoolGovernorBytes();
+
+    /**
+     * <code>string scaling_factor_controller = 6 [(.gogoproto.moretags) = "yaml:&#92;"scaling_factor_controller&#92;""];</code>
+     * @return The scalingFactorController.
+     */
+    java.lang.String getScalingFactorController();
+    /**
+     * <code>string scaling_factor_controller = 6 [(.gogoproto.moretags) = "yaml:&#92;"scaling_factor_controller&#92;""];</code>
+     * @return The bytes for scalingFactorController.
+     */
+    com.google.protobuf.ByteString
+        getScalingFactorControllerBytes();
   }
   /**
+   * <pre>
+   * ===================== MsgCreatePool
+   * </pre>
+   *
    * Protobuf type {@code osmosis.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPool}
    */
   public static final class MsgCreateStableswapPool extends
@@ -96,7 +129,9 @@ public final class Tx {
     private MsgCreateStableswapPool() {
       sender_ = "";
       initialPoolLiquidity_ = java.util.Collections.emptyList();
+      scalingFactors_ = emptyLongList();
       futurePoolGovernor_ = "";
+      scalingFactorController_ = "";
     }
 
     @java.lang.Override
@@ -158,10 +193,37 @@ public final class Tx {
                   input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
               break;
             }
+            case 32: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                scalingFactors_ = newLongList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              scalingFactors_.addLong(input.readUInt64());
+              break;
+            }
             case 34: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                scalingFactors_ = newLongList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                scalingFactors_.addLong(input.readUInt64());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
               futurePoolGovernor_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              scalingFactorController_ = s;
               break;
             }
             default: {
@@ -181,6 +243,9 @@ public final class Tx {
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           initialPoolLiquidity_ = java.util.Collections.unmodifiableList(initialPoolLiquidity_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          scalingFactors_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -303,10 +368,38 @@ public final class Tx {
       return initialPoolLiquidity_.get(index);
     }
 
-    public static final int FUTURE_POOL_GOVERNOR_FIELD_NUMBER = 4;
+    public static final int SCALING_FACTORS_FIELD_NUMBER = 4;
+    private com.google.protobuf.Internal.LongList scalingFactors_;
+    /**
+     * <code>repeated uint64 scaling_factors = 4 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+     * @return A list containing the scalingFactors.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Long>
+        getScalingFactorsList() {
+      return scalingFactors_;
+    }
+    /**
+     * <code>repeated uint64 scaling_factors = 4 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+     * @return The count of scalingFactors.
+     */
+    public int getScalingFactorsCount() {
+      return scalingFactors_.size();
+    }
+    /**
+     * <code>repeated uint64 scaling_factors = 4 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+     * @param index The index of the element to return.
+     * @return The scalingFactors at the given index.
+     */
+    public long getScalingFactors(int index) {
+      return scalingFactors_.getLong(index);
+    }
+    private int scalingFactorsMemoizedSerializedSize = -1;
+
+    public static final int FUTURE_POOL_GOVERNOR_FIELD_NUMBER = 5;
     private volatile java.lang.Object futurePoolGovernor_;
     /**
-     * <code>string future_pool_governor = 4 [(.gogoproto.moretags) = "yaml:&#92;"future_pool_governor&#92;""];</code>
+     * <code>string future_pool_governor = 5 [(.gogoproto.moretags) = "yaml:&#92;"future_pool_governor&#92;""];</code>
      * @return The futurePoolGovernor.
      */
     @java.lang.Override
@@ -323,7 +416,7 @@ public final class Tx {
       }
     }
     /**
-     * <code>string future_pool_governor = 4 [(.gogoproto.moretags) = "yaml:&#92;"future_pool_governor&#92;""];</code>
+     * <code>string future_pool_governor = 5 [(.gogoproto.moretags) = "yaml:&#92;"future_pool_governor&#92;""];</code>
      * @return The bytes for futurePoolGovernor.
      */
     @java.lang.Override
@@ -335,6 +428,44 @@ public final class Tx {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         futurePoolGovernor_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SCALING_FACTOR_CONTROLLER_FIELD_NUMBER = 6;
+    private volatile java.lang.Object scalingFactorController_;
+    /**
+     * <code>string scaling_factor_controller = 6 [(.gogoproto.moretags) = "yaml:&#92;"scaling_factor_controller&#92;""];</code>
+     * @return The scalingFactorController.
+     */
+    @java.lang.Override
+    public java.lang.String getScalingFactorController() {
+      java.lang.Object ref = scalingFactorController_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        scalingFactorController_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string scaling_factor_controller = 6 [(.gogoproto.moretags) = "yaml:&#92;"scaling_factor_controller&#92;""];</code>
+     * @return The bytes for scalingFactorController.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getScalingFactorControllerBytes() {
+      java.lang.Object ref = scalingFactorController_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        scalingFactorController_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -355,6 +486,7 @@ public final class Tx {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      getSerializedSize();
       if (!getSenderBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sender_);
       }
@@ -364,8 +496,18 @@ public final class Tx {
       for (int i = 0; i < initialPoolLiquidity_.size(); i++) {
         output.writeMessage(3, initialPoolLiquidity_.get(i));
       }
+      if (getScalingFactorsList().size() > 0) {
+        output.writeUInt32NoTag(34);
+        output.writeUInt32NoTag(scalingFactorsMemoizedSerializedSize);
+      }
+      for (int i = 0; i < scalingFactors_.size(); i++) {
+        output.writeUInt64NoTag(scalingFactors_.getLong(i));
+      }
       if (!getFuturePoolGovernorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, futurePoolGovernor_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, futurePoolGovernor_);
+      }
+      if (!getScalingFactorControllerBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, scalingFactorController_);
       }
       unknownFields.writeTo(output);
     }
@@ -387,8 +529,25 @@ public final class Tx {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, initialPoolLiquidity_.get(i));
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < scalingFactors_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt64SizeNoTag(scalingFactors_.getLong(i));
+        }
+        size += dataSize;
+        if (!getScalingFactorsList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        scalingFactorsMemoizedSerializedSize = dataSize;
+      }
       if (!getFuturePoolGovernorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, futurePoolGovernor_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, futurePoolGovernor_);
+      }
+      if (!getScalingFactorControllerBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, scalingFactorController_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -414,8 +573,12 @@ public final class Tx {
       }
       if (!getInitialPoolLiquidityList()
           .equals(other.getInitialPoolLiquidityList())) return false;
+      if (!getScalingFactorsList()
+          .equals(other.getScalingFactorsList())) return false;
       if (!getFuturePoolGovernor()
           .equals(other.getFuturePoolGovernor())) return false;
+      if (!getScalingFactorController()
+          .equals(other.getScalingFactorController())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -437,8 +600,14 @@ public final class Tx {
         hash = (37 * hash) + INITIAL_POOL_LIQUIDITY_FIELD_NUMBER;
         hash = (53 * hash) + getInitialPoolLiquidityList().hashCode();
       }
+      if (getScalingFactorsCount() > 0) {
+        hash = (37 * hash) + SCALING_FACTORS_FIELD_NUMBER;
+        hash = (53 * hash) + getScalingFactorsList().hashCode();
+      }
       hash = (37 * hash) + FUTURE_POOL_GOVERNOR_FIELD_NUMBER;
       hash = (53 * hash) + getFuturePoolGovernor().hashCode();
+      hash = (37 * hash) + SCALING_FACTOR_CONTROLLER_FIELD_NUMBER;
+      hash = (53 * hash) + getScalingFactorController().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -535,6 +704,10 @@ public final class Tx {
       return builder;
     }
     /**
+     * <pre>
+     * ===================== MsgCreatePool
+     * </pre>
+     *
      * Protobuf type {@code osmosis.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPool}
      */
     public static final class Builder extends
@@ -587,7 +760,11 @@ public final class Tx {
         } else {
           initialPoolLiquidityBuilder_.clear();
         }
+        scalingFactors_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         futurePoolGovernor_ = "";
+
+        scalingFactorController_ = "";
 
         return this;
       }
@@ -631,7 +808,13 @@ public final class Tx {
         } else {
           result.initialPoolLiquidity_ = initialPoolLiquidityBuilder_.build();
         }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          scalingFactors_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.scalingFactors_ = scalingFactors_;
         result.futurePoolGovernor_ = futurePoolGovernor_;
+        result.scalingFactorController_ = scalingFactorController_;
         onBuilt();
         return result;
       }
@@ -713,8 +896,22 @@ public final class Tx {
             }
           }
         }
+        if (!other.scalingFactors_.isEmpty()) {
+          if (scalingFactors_.isEmpty()) {
+            scalingFactors_ = other.scalingFactors_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureScalingFactorsIsMutable();
+            scalingFactors_.addAll(other.scalingFactors_);
+          }
+          onChanged();
+        }
         if (!other.getFuturePoolGovernor().isEmpty()) {
           futurePoolGovernor_ = other.futurePoolGovernor_;
+          onChanged();
+        }
+        if (!other.getScalingFactorController().isEmpty()) {
+          scalingFactorController_ = other.scalingFactorController_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1182,9 +1379,88 @@ public final class Tx {
         return initialPoolLiquidityBuilder_;
       }
 
+      private com.google.protobuf.Internal.LongList scalingFactors_ = emptyLongList();
+      private void ensureScalingFactorsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          scalingFactors_ = mutableCopy(scalingFactors_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated uint64 scaling_factors = 4 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+       * @return A list containing the scalingFactors.
+       */
+      public java.util.List<java.lang.Long>
+          getScalingFactorsList() {
+        return ((bitField0_ & 0x00000002) != 0) ?
+                 java.util.Collections.unmodifiableList(scalingFactors_) : scalingFactors_;
+      }
+      /**
+       * <code>repeated uint64 scaling_factors = 4 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+       * @return The count of scalingFactors.
+       */
+      public int getScalingFactorsCount() {
+        return scalingFactors_.size();
+      }
+      /**
+       * <code>repeated uint64 scaling_factors = 4 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+       * @param index The index of the element to return.
+       * @return The scalingFactors at the given index.
+       */
+      public long getScalingFactors(int index) {
+        return scalingFactors_.getLong(index);
+      }
+      /**
+       * <code>repeated uint64 scaling_factors = 4 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+       * @param index The index to set the value at.
+       * @param value The scalingFactors to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScalingFactors(
+          int index, long value) {
+        ensureScalingFactorsIsMutable();
+        scalingFactors_.setLong(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint64 scaling_factors = 4 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+       * @param value The scalingFactors to add.
+       * @return This builder for chaining.
+       */
+      public Builder addScalingFactors(long value) {
+        ensureScalingFactorsIsMutable();
+        scalingFactors_.addLong(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint64 scaling_factors = 4 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+       * @param values The scalingFactors to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllScalingFactors(
+          java.lang.Iterable<? extends java.lang.Long> values) {
+        ensureScalingFactorsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, scalingFactors_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint64 scaling_factors = 4 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearScalingFactors() {
+        scalingFactors_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object futurePoolGovernor_ = "";
       /**
-       * <code>string future_pool_governor = 4 [(.gogoproto.moretags) = "yaml:&#92;"future_pool_governor&#92;""];</code>
+       * <code>string future_pool_governor = 5 [(.gogoproto.moretags) = "yaml:&#92;"future_pool_governor&#92;""];</code>
        * @return The futurePoolGovernor.
        */
       public java.lang.String getFuturePoolGovernor() {
@@ -1200,7 +1476,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string future_pool_governor = 4 [(.gogoproto.moretags) = "yaml:&#92;"future_pool_governor&#92;""];</code>
+       * <code>string future_pool_governor = 5 [(.gogoproto.moretags) = "yaml:&#92;"future_pool_governor&#92;""];</code>
        * @return The bytes for futurePoolGovernor.
        */
       public com.google.protobuf.ByteString
@@ -1217,7 +1493,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string future_pool_governor = 4 [(.gogoproto.moretags) = "yaml:&#92;"future_pool_governor&#92;""];</code>
+       * <code>string future_pool_governor = 5 [(.gogoproto.moretags) = "yaml:&#92;"future_pool_governor&#92;""];</code>
        * @param value The futurePoolGovernor to set.
        * @return This builder for chaining.
        */
@@ -1232,7 +1508,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string future_pool_governor = 4 [(.gogoproto.moretags) = "yaml:&#92;"future_pool_governor&#92;""];</code>
+       * <code>string future_pool_governor = 5 [(.gogoproto.moretags) = "yaml:&#92;"future_pool_governor&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearFuturePoolGovernor() {
@@ -1242,7 +1518,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string future_pool_governor = 4 [(.gogoproto.moretags) = "yaml:&#92;"future_pool_governor&#92;""];</code>
+       * <code>string future_pool_governor = 5 [(.gogoproto.moretags) = "yaml:&#92;"future_pool_governor&#92;""];</code>
        * @param value The bytes for futurePoolGovernor to set.
        * @return This builder for chaining.
        */
@@ -1254,6 +1530,82 @@ public final class Tx {
   checkByteStringIsUtf8(value);
         
         futurePoolGovernor_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object scalingFactorController_ = "";
+      /**
+       * <code>string scaling_factor_controller = 6 [(.gogoproto.moretags) = "yaml:&#92;"scaling_factor_controller&#92;""];</code>
+       * @return The scalingFactorController.
+       */
+      public java.lang.String getScalingFactorController() {
+        java.lang.Object ref = scalingFactorController_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          scalingFactorController_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string scaling_factor_controller = 6 [(.gogoproto.moretags) = "yaml:&#92;"scaling_factor_controller&#92;""];</code>
+       * @return The bytes for scalingFactorController.
+       */
+      public com.google.protobuf.ByteString
+          getScalingFactorControllerBytes() {
+        java.lang.Object ref = scalingFactorController_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          scalingFactorController_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string scaling_factor_controller = 6 [(.gogoproto.moretags) = "yaml:&#92;"scaling_factor_controller&#92;""];</code>
+       * @param value The scalingFactorController to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScalingFactorController(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        scalingFactorController_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string scaling_factor_controller = 6 [(.gogoproto.moretags) = "yaml:&#92;"scaling_factor_controller&#92;""];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearScalingFactorController() {
+        
+        scalingFactorController_ = getDefaultInstance().getScalingFactorController();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string scaling_factor_controller = 6 [(.gogoproto.moretags) = "yaml:&#92;"scaling_factor_controller&#92;""];</code>
+       * @param value The bytes for scalingFactorController to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScalingFactorControllerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        scalingFactorController_ = value;
         onChanged();
         return this;
       }
@@ -1321,6 +1673,10 @@ public final class Tx {
     long getPoolId();
   }
   /**
+   * <pre>
+   * Returns a poolID with custom poolName.
+   * </pre>
+   *
    * Protobuf type {@code osmosis.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPoolResponse}
    */
   public static final class MsgCreateStableswapPoolResponse extends
@@ -1570,6 +1926,10 @@ public final class Tx {
       return builder;
     }
     /**
+     * <pre>
+     * Returns a poolID with custom poolName.
+     * </pre>
+     *
      * Protobuf type {@code osmosis.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPoolResponse}
      */
     public static final class Builder extends
@@ -1804,21 +2164,11 @@ public final class Tx {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     * Sender must be the pool's scaling_factor_governor in order for the tx to
-     * succeed
-     * </pre>
-     *
      * <code>string sender = 1 [(.gogoproto.moretags) = "yaml:&#92;"sender&#92;""];</code>
      * @return The sender.
      */
     java.lang.String getSender();
     /**
-     * <pre>
-     * Sender must be the pool's scaling_factor_governor in order for the tx to
-     * succeed
-     * </pre>
-     *
      * <code>string sender = 1 [(.gogoproto.moretags) = "yaml:&#92;"sender&#92;""];</code>
      * @return The bytes for sender.
      */
@@ -1832,23 +2182,28 @@ public final class Tx {
     long getPoolId();
 
     /**
-     * <code>repeated uint64 scaling_factors = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+     * <code>repeated uint64 scaling_factors = 3 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
      * @return A list containing the scalingFactors.
      */
     java.util.List<java.lang.Long> getScalingFactorsList();
     /**
-     * <code>repeated uint64 scaling_factors = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+     * <code>repeated uint64 scaling_factors = 3 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
      * @return The count of scalingFactors.
      */
     int getScalingFactorsCount();
     /**
-     * <code>repeated uint64 scaling_factors = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+     * <code>repeated uint64 scaling_factors = 3 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
      * @param index The index of the element to return.
      * @return The scalingFactors at the given index.
      */
     long getScalingFactors(int index);
   }
   /**
+   * <pre>
+   * Sender must be the pool's scaling_factor_governor in order for the tx to
+   * succeed. Adjusts stableswap scaling factors.
+   * </pre>
+   *
    * Protobuf type {@code osmosis.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactors}
    */
   public static final class MsgStableSwapAdjustScalingFactors extends
@@ -1966,11 +2321,6 @@ public final class Tx {
     public static final int SENDER_FIELD_NUMBER = 1;
     private volatile java.lang.Object sender_;
     /**
-     * <pre>
-     * Sender must be the pool's scaling_factor_governor in order for the tx to
-     * succeed
-     * </pre>
-     *
      * <code>string sender = 1 [(.gogoproto.moretags) = "yaml:&#92;"sender&#92;""];</code>
      * @return The sender.
      */
@@ -1988,11 +2338,6 @@ public final class Tx {
       }
     }
     /**
-     * <pre>
-     * Sender must be the pool's scaling_factor_governor in order for the tx to
-     * succeed
-     * </pre>
-     *
      * <code>string sender = 1 [(.gogoproto.moretags) = "yaml:&#92;"sender&#92;""];</code>
      * @return The bytes for sender.
      */
@@ -2025,7 +2370,7 @@ public final class Tx {
     public static final int SCALING_FACTORS_FIELD_NUMBER = 3;
     private com.google.protobuf.Internal.LongList scalingFactors_;
     /**
-     * <code>repeated uint64 scaling_factors = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+     * <code>repeated uint64 scaling_factors = 3 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
      * @return A list containing the scalingFactors.
      */
     @java.lang.Override
@@ -2034,14 +2379,14 @@ public final class Tx {
       return scalingFactors_;
     }
     /**
-     * <code>repeated uint64 scaling_factors = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+     * <code>repeated uint64 scaling_factors = 3 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
      * @return The count of scalingFactors.
      */
     public int getScalingFactorsCount() {
       return scalingFactors_.size();
     }
     /**
-     * <code>repeated uint64 scaling_factors = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+     * <code>repeated uint64 scaling_factors = 3 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
      * @param index The index of the element to return.
      * @return The scalingFactors at the given index.
      */
@@ -2245,6 +2590,11 @@ public final class Tx {
       return builder;
     }
     /**
+     * <pre>
+     * Sender must be the pool's scaling_factor_governor in order for the tx to
+     * succeed. Adjusts stableswap scaling factors.
+     * </pre>
+     *
      * Protobuf type {@code osmosis.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactors}
      */
     public static final class Builder extends
@@ -2419,11 +2769,6 @@ public final class Tx {
 
       private java.lang.Object sender_ = "";
       /**
-       * <pre>
-       * Sender must be the pool's scaling_factor_governor in order for the tx to
-       * succeed
-       * </pre>
-       *
        * <code>string sender = 1 [(.gogoproto.moretags) = "yaml:&#92;"sender&#92;""];</code>
        * @return The sender.
        */
@@ -2440,11 +2785,6 @@ public final class Tx {
         }
       }
       /**
-       * <pre>
-       * Sender must be the pool's scaling_factor_governor in order for the tx to
-       * succeed
-       * </pre>
-       *
        * <code>string sender = 1 [(.gogoproto.moretags) = "yaml:&#92;"sender&#92;""];</code>
        * @return The bytes for sender.
        */
@@ -2462,11 +2802,6 @@ public final class Tx {
         }
       }
       /**
-       * <pre>
-       * Sender must be the pool's scaling_factor_governor in order for the tx to
-       * succeed
-       * </pre>
-       *
        * <code>string sender = 1 [(.gogoproto.moretags) = "yaml:&#92;"sender&#92;""];</code>
        * @param value The sender to set.
        * @return This builder for chaining.
@@ -2482,11 +2817,6 @@ public final class Tx {
         return this;
       }
       /**
-       * <pre>
-       * Sender must be the pool's scaling_factor_governor in order for the tx to
-       * succeed
-       * </pre>
-       *
        * <code>string sender = 1 [(.gogoproto.moretags) = "yaml:&#92;"sender&#92;""];</code>
        * @return This builder for chaining.
        */
@@ -2497,11 +2827,6 @@ public final class Tx {
         return this;
       }
       /**
-       * <pre>
-       * Sender must be the pool's scaling_factor_governor in order for the tx to
-       * succeed
-       * </pre>
-       *
        * <code>string sender = 1 [(.gogoproto.moretags) = "yaml:&#92;"sender&#92;""];</code>
        * @param value The bytes for sender to set.
        * @return This builder for chaining.
@@ -2557,7 +2882,7 @@ public final class Tx {
          }
       }
       /**
-       * <code>repeated uint64 scaling_factors = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+       * <code>repeated uint64 scaling_factors = 3 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
        * @return A list containing the scalingFactors.
        */
       public java.util.List<java.lang.Long>
@@ -2566,14 +2891,14 @@ public final class Tx {
                  java.util.Collections.unmodifiableList(scalingFactors_) : scalingFactors_;
       }
       /**
-       * <code>repeated uint64 scaling_factors = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+       * <code>repeated uint64 scaling_factors = 3 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
        * @return The count of scalingFactors.
        */
       public int getScalingFactorsCount() {
         return scalingFactors_.size();
       }
       /**
-       * <code>repeated uint64 scaling_factors = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+       * <code>repeated uint64 scaling_factors = 3 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
        * @param index The index of the element to return.
        * @return The scalingFactors at the given index.
        */
@@ -2581,7 +2906,7 @@ public final class Tx {
         return scalingFactors_.getLong(index);
       }
       /**
-       * <code>repeated uint64 scaling_factors = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+       * <code>repeated uint64 scaling_factors = 3 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
        * @param index The index to set the value at.
        * @param value The scalingFactors to set.
        * @return This builder for chaining.
@@ -2594,7 +2919,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated uint64 scaling_factors = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+       * <code>repeated uint64 scaling_factors = 3 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
        * @param value The scalingFactors to add.
        * @return This builder for chaining.
        */
@@ -2605,7 +2930,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated uint64 scaling_factors = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+       * <code>repeated uint64 scaling_factors = 3 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
        * @param values The scalingFactors to add.
        * @return This builder for chaining.
        */
@@ -2618,7 +2943,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated uint64 scaling_factors = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+       * <code>repeated uint64 scaling_factors = 3 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearScalingFactors() {
@@ -3132,33 +3457,37 @@ public final class Tx {
       "ap.v1beta1\032\036cosmos/base/v1beta1/coin.pro" +
       "to\032\024gogoproto/gogo.proto\0329osmosis/gamm/p" +
       "ool-models/stableswap/stableswap_pool.pr" +
-      "oto\"\315\002\n\027MsgCreateStableswapPool\022!\n\006sende" +
+      "oto\"\325\003\n\027MsgCreateStableswapPool\022!\n\006sende" +
       "r\030\001 \001(\tB\021\362\336\037\ryaml:\"sender\"\022c\n\013pool_param" +
       "s\030\002 \001(\01326.osmosis.gamm.poolmodels.stable" +
       "swap.v1beta1.PoolParamsB\026\362\336\037\022yaml:\"pool_" +
       "params\"\022k\n\026initial_pool_liquidity\030\003 \003(\0132" +
       "\031.cosmos.base.v1beta1.CoinB0\310\336\037\000\252\337\037(gith" +
-      "ub.com/cosmos/cosmos-sdk/types.Coins\022=\n\024" +
-      "future_pool_governor\030\004 \001(\tB\037\362\336\037\033yaml:\"fu" +
-      "ture_pool_governor\"\">\n\037MsgCreateStablesw" +
-      "apPoolResponse\022\033\n\007pool_id\030\001 \001(\004B\n\342\336\037\006Poo" +
-      "lID\"\246\001\n!MsgStableSwapAdjustScalingFactor" +
-      "s\022!\n\006sender\030\001 \001(\tB\021\362\336\037\ryaml:\"sender\"\022\033\n\007" +
-      "pool_id\030\002 \001(\004B\n\342\336\037\006PoolID\022A\n\017scaling_fac" +
-      "tors\030\003 \003(\004B(\362\336\037 yaml:\"stableswap_scaling" +
-      "_factor\"\310\336\037\000\"+\n)MsgStableSwapAdjustScali" +
-      "ngFactorsResponse2\371\002\n\003Msg\022\250\001\n\024CreateStab" +
-      "leswapPool\022C.osmosis.gamm.poolmodels.sta" +
-      "bleswap.v1beta1.MsgCreateStableswapPool\032" +
-      "K.osmosis.gamm.poolmodels.stableswap.v1b" +
-      "eta1.MsgCreateStableswapPoolResponse\022\306\001\n" +
-      "\036StableSwapAdjustScalingFactors\022M.osmosi" +
-      "s.gamm.poolmodels.stableswap.v1beta1.Msg" +
-      "StableSwapAdjustScalingFactors\032U.osmosis" +
-      ".gamm.poolmodels.stableswap.v1beta1.MsgS" +
-      "tableSwapAdjustScalingFactorsResponseBBZ" +
-      "@github.com/osmosis-labs/osmosis/v7/x/ga" +
-      "mm/pool-models/stableswapb\006proto3"
+      "ub.com/cosmos/cosmos-sdk/types.Coins\022=\n\017" +
+      "scaling_factors\030\004 \003(\004B$\362\336\037 yaml:\"stables" +
+      "wap_scaling_factor\"\022=\n\024future_pool_gover" +
+      "nor\030\005 \001(\tB\037\362\336\037\033yaml:\"future_pool_governo" +
+      "r\"\022G\n\031scaling_factor_controller\030\006 \001(\tB$\362" +
+      "\336\037 yaml:\"scaling_factor_controller\"\">\n\037M" +
+      "sgCreateStableswapPoolResponse\022\033\n\007pool_i" +
+      "d\030\001 \001(\004B\n\342\336\037\006PoolID\"\242\001\n!MsgStableSwapAdj" +
+      "ustScalingFactors\022!\n\006sender\030\001 \001(\tB\021\362\336\037\ry" +
+      "aml:\"sender\"\022\033\n\007pool_id\030\002 \001(\004B\n\342\336\037\006PoolI" +
+      "D\022=\n\017scaling_factors\030\003 \003(\004B$\362\336\037 yaml:\"st" +
+      "ableswap_scaling_factor\"\"+\n)MsgStableSwa" +
+      "pAdjustScalingFactorsResponse2\371\002\n\003Msg\022\250\001" +
+      "\n\024CreateStableswapPool\022C.osmosis.gamm.po" +
+      "olmodels.stableswap.v1beta1.MsgCreateSta" +
+      "bleswapPool\032K.osmosis.gamm.poolmodels.st" +
+      "ableswap.v1beta1.MsgCreateStableswapPool" +
+      "Response\022\306\001\n\036StableSwapAdjustScalingFact" +
+      "ors\022M.osmosis.gamm.poolmodels.stableswap" +
+      ".v1beta1.MsgStableSwapAdjustScalingFacto" +
+      "rs\032U.osmosis.gamm.poolmodels.stableswap." +
+      "v1beta1.MsgStableSwapAdjustScalingFactor" +
+      "sResponseBBZ@github.com/osmosis-labs/osm" +
+      "osis/v7/x/gamm/pool-models/stableswapb\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3172,7 +3501,7 @@ public final class Tx {
     internal_static_osmosis_gamm_poolmodels_stableswap_v1beta1_MsgCreateStableswapPool_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_osmosis_gamm_poolmodels_stableswap_v1beta1_MsgCreateStableswapPool_descriptor,
-        new java.lang.String[] { "Sender", "PoolParams", "InitialPoolLiquidity", "FuturePoolGovernor", });
+        new java.lang.String[] { "Sender", "PoolParams", "InitialPoolLiquidity", "ScalingFactors", "FuturePoolGovernor", "ScalingFactorController", });
     internal_static_osmosis_gamm_poolmodels_stableswap_v1beta1_MsgCreateStableswapPoolResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_osmosis_gamm_poolmodels_stableswap_v1beta1_MsgCreateStableswapPoolResponse_fieldAccessorTable = new

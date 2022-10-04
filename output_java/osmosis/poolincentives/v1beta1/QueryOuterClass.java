@@ -646,6 +646,18 @@ public final class QueryOuterClass {
        * <code>.google.protobuf.Duration duration = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
        */
       com.google.protobuf.DurationOrBuilder getDurationOrBuilder();
+
+      /**
+       * <code>string gauge_incentive_percentage = 3;</code>
+       * @return The gaugeIncentivePercentage.
+       */
+      java.lang.String getGaugeIncentivePercentage();
+      /**
+       * <code>string gauge_incentive_percentage = 3;</code>
+       * @return The bytes for gaugeIncentivePercentage.
+       */
+      com.google.protobuf.ByteString
+          getGaugeIncentivePercentageBytes();
     }
     /**
      * Protobuf type {@code osmosis.poolincentives.v1beta1.QueryGaugeIdsResponse.GaugeIdWithDuration}
@@ -660,6 +672,7 @@ public final class QueryOuterClass {
         super(builder);
       }
       private GaugeIdWithDuration() {
+        gaugeIncentivePercentage_ = "";
       }
 
       @java.lang.Override
@@ -708,6 +721,12 @@ public final class QueryOuterClass {
                   duration_ = subBuilder.buildPartial();
                 }
 
+                break;
+              }
+              case 26: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                gaugeIncentivePercentage_ = s;
                 break;
               }
               default: {
@@ -779,6 +798,44 @@ public final class QueryOuterClass {
         return getDuration();
       }
 
+      public static final int GAUGE_INCENTIVE_PERCENTAGE_FIELD_NUMBER = 3;
+      private volatile java.lang.Object gaugeIncentivePercentage_;
+      /**
+       * <code>string gauge_incentive_percentage = 3;</code>
+       * @return The gaugeIncentivePercentage.
+       */
+      @java.lang.Override
+      public java.lang.String getGaugeIncentivePercentage() {
+        java.lang.Object ref = gaugeIncentivePercentage_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          gaugeIncentivePercentage_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string gauge_incentive_percentage = 3;</code>
+       * @return The bytes for gaugeIncentivePercentage.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getGaugeIncentivePercentageBytes() {
+        java.lang.Object ref = gaugeIncentivePercentage_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          gaugeIncentivePercentage_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
       private byte memoizedIsInitialized = -1;
       @java.lang.Override
       public final boolean isInitialized() {
@@ -799,6 +856,9 @@ public final class QueryOuterClass {
         if (duration_ != null) {
           output.writeMessage(2, getDuration());
         }
+        if (!getGaugeIncentivePercentageBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, gaugeIncentivePercentage_);
+        }
         unknownFields.writeTo(output);
       }
 
@@ -815,6 +875,9 @@ public final class QueryOuterClass {
         if (duration_ != null) {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(2, getDuration());
+        }
+        if (!getGaugeIncentivePercentageBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, gaugeIncentivePercentage_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -838,6 +901,8 @@ public final class QueryOuterClass {
           if (!getDuration()
               .equals(other.getDuration())) return false;
         }
+        if (!getGaugeIncentivePercentage()
+            .equals(other.getGaugeIncentivePercentage())) return false;
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -856,6 +921,8 @@ public final class QueryOuterClass {
           hash = (37 * hash) + DURATION_FIELD_NUMBER;
           hash = (53 * hash) + getDuration().hashCode();
         }
+        hash = (37 * hash) + GAUGE_INCENTIVE_PERCENTAGE_FIELD_NUMBER;
+        hash = (53 * hash) + getGaugeIncentivePercentage().hashCode();
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -997,6 +1064,8 @@ public final class QueryOuterClass {
             duration_ = null;
             durationBuilder_ = null;
           }
+          gaugeIncentivePercentage_ = "";
+
           return this;
         }
 
@@ -1029,6 +1098,7 @@ public final class QueryOuterClass {
           } else {
             result.duration_ = durationBuilder_.build();
           }
+          result.gaugeIncentivePercentage_ = gaugeIncentivePercentage_;
           onBuilt();
           return result;
         }
@@ -1082,6 +1152,10 @@ public final class QueryOuterClass {
           }
           if (other.hasDuration()) {
             mergeDuration(other.getDuration());
+          }
+          if (!other.getGaugeIncentivePercentage().isEmpty()) {
+            gaugeIncentivePercentage_ = other.gaugeIncentivePercentage_;
+            onChanged();
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -1260,6 +1334,82 @@ public final class QueryOuterClass {
             duration_ = null;
           }
           return durationBuilder_;
+        }
+
+        private java.lang.Object gaugeIncentivePercentage_ = "";
+        /**
+         * <code>string gauge_incentive_percentage = 3;</code>
+         * @return The gaugeIncentivePercentage.
+         */
+        public java.lang.String getGaugeIncentivePercentage() {
+          java.lang.Object ref = gaugeIncentivePercentage_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            gaugeIncentivePercentage_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>string gauge_incentive_percentage = 3;</code>
+         * @return The bytes for gaugeIncentivePercentage.
+         */
+        public com.google.protobuf.ByteString
+            getGaugeIncentivePercentageBytes() {
+          java.lang.Object ref = gaugeIncentivePercentage_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            gaugeIncentivePercentage_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string gauge_incentive_percentage = 3;</code>
+         * @param value The gaugeIncentivePercentage to set.
+         * @return This builder for chaining.
+         */
+        public Builder setGaugeIncentivePercentage(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          gaugeIncentivePercentage_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string gauge_incentive_percentage = 3;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearGaugeIncentivePercentage() {
+          
+          gaugeIncentivePercentage_ = getDefaultInstance().getGaugeIncentivePercentage();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string gauge_incentive_percentage = 3;</code>
+         * @param value The bytes for gaugeIncentivePercentage to set.
+         * @return This builder for chaining.
+         */
+        public Builder setGaugeIncentivePercentageBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          gaugeIncentivePercentage_ = value;
+          onChanged();
+          return this;
         }
         @java.lang.Override
         public final Builder setUnknownFields(
@@ -8548,68 +8698,69 @@ public final class QueryOuterClass {
       "o\032\036osmosis/incentives/gauge.proto\0320osmos" +
       "is/pool-incentives/v1beta1/incentives.pr" +
       "oto\";\n\024QueryGaugeIdsRequest\022#\n\007pool_id\030\001" +
-      " \001(\004B\022\362\336\037\016yaml:\"pool_id\"\"\235\002\n\025QueryGaugeI" +
+      " \001(\004B\022\362\336\037\016yaml:\"pool_id\"\"\302\002\n\025QueryGaugeI" +
       "dsResponse\022\216\001\n\027gauge_ids_with_duration\030\001" +
       " \003(\0132I.osmosis.poolincentives.v1beta1.Qu" +
       "eryGaugeIdsResponse.GaugeIdWithDurationB" +
-      "\"\362\336\037\036yaml:\"gauge_ids_with_duration\"\032s\n\023G" +
-      "augeIdWithDuration\022%\n\010gauge_id\030\001 \001(\004B\023\362\336" +
-      "\037\017yaml:\"gauge_id\"\0225\n\010duration\030\002 \001(\0132\031.go" +
-      "ogle.protobuf.DurationB\010\310\336\037\000\230\337\037\001\"\027\n\025Quer" +
-      "yDistrInfoRequest\"r\n\026QueryDistrInfoRespo" +
-      "nse\022X\n\ndistr_info\030\001 \001(\0132).osmosis.poolin" +
-      "centives.v1beta1.DistrInfoB\031\310\336\037\000\362\336\037\021yaml" +
-      ":\"distr_info\"\"\024\n\022QueryParamsRequest\"S\n\023Q" +
-      "ueryParamsResponse\022<\n\006params\030\001 \001(\0132&.osm" +
-      "osis.poolincentives.v1beta1.ParamsB\004\310\336\037\000" +
-      "\"\037\n\035QueryLockableDurationsRequest\"~\n\036Que" +
-      "ryLockableDurationsResponse\022\\\n\022lockable_" +
-      "durations\030\001 \003(\0132\031.google.protobuf.Durati" +
-      "onB%\310\336\037\000\230\337\037\001\362\336\037\031yaml:\"lockable_durations" +
-      "\"\"\037\n\035QueryIncentivizedPoolsRequest\"\272\001\n\020I" +
-      "ncentivizedPool\022#\n\007pool_id\030\001 \001(\004B\022\362\336\037\016ya" +
-      "ml:\"pool_id\"\022Z\n\021lockable_duration\030\002 \001(\0132" +
-      "\031.google.protobuf.DurationB$\310\336\037\000\230\337\037\001\362\336\037\030" +
-      "yaml:\"lockable_duration\"\022%\n\010gauge_id\030\003 \001" +
-      "(\004B\023\362\336\037\017yaml:\"gauge_id\"\"\221\001\n\036QueryIncenti" +
-      "vizedPoolsResponse\022o\n\022incentivized_pools" +
-      "\030\001 \003(\01320.osmosis.poolincentives.v1beta1." +
-      "IncentivizedPoolB!\310\336\037\000\362\336\037\031yaml:\"incentiv" +
-      "ized_pools\"\"%\n#QueryExternalIncentiveGau" +
-      "gesRequest\"U\n$QueryExternalIncentiveGaug" +
-      "esResponse\022-\n\004data\030\001 \003(\0132\031.osmosis.incen" +
-      "tives.GaugeB\004\310\336\037\0002\245\t\n\005Query\022\265\001\n\010GaugeIds" +
-      "\0224.osmosis.poolincentives.v1beta1.QueryG" +
-      "augeIdsRequest\0325.osmosis.poolincentives." +
-      "v1beta1.QueryGaugeIdsResponse\"<\202\323\344\223\0026\0224/" +
-      "osmosis/pool-incentives/v1beta1/gauge-id" +
-      "s/{pool_id}\022\257\001\n\tDistrInfo\0225.osmosis.pool" +
-      "incentives.v1beta1.QueryDistrInfoRequest" +
-      "\0326.osmosis.poolincentives.v1beta1.QueryD" +
-      "istrInfoResponse\"3\202\323\344\223\002-\022+/osmosis/pool-" +
-      "incentives/v1beta1/distr_info\022\242\001\n\006Params" +
-      "\0222.osmosis.poolincentives.v1beta1.QueryP" +
-      "aramsRequest\0323.osmosis.poolincentives.v1" +
-      "beta1.QueryParamsResponse\"/\202\323\344\223\002)\022\'/osmo" +
-      "sis/pool-incentives/v1beta1/params\022\317\001\n\021L" +
-      "ockableDurations\022=.osmosis.poolincentive" +
-      "s.v1beta1.QueryLockableDurationsRequest\032" +
-      ">.osmosis.poolincentives.v1beta1.QueryLo" +
-      "ckableDurationsResponse\";\202\323\344\223\0025\0223/osmosi" +
-      "s/pool-incentives/v1beta1/lockable_durat" +
-      "ions\022\317\001\n\021IncentivizedPools\022=.osmosis.poo" +
-      "lincentives.v1beta1.QueryIncentivizedPoo" +
-      "lsRequest\032>.osmosis.poolincentives.v1bet" +
-      "a1.QueryIncentivizedPoolsResponse\";\202\323\344\223\002" +
-      "5\0223/osmosis/pool-incentives/v1beta1/ince" +
-      "ntivized_pools\022\350\001\n\027ExternalIncentiveGaug" +
-      "es\022C.osmosis.poolincentives.v1beta1.Quer" +
-      "yExternalIncentiveGaugesRequest\032D.osmosi" +
-      "s.poolincentives.v1beta1.QueryExternalIn" +
-      "centiveGaugesResponse\"B\202\323\344\223\002<\022:/osmosis/" +
-      "pool-incentives/v1beta1/external_incenti" +
-      "ve_gaugesB<Z:github.com/osmosis-labs/osm" +
-      "osis/v7/x/pool-incentives/typesb\006proto3"
+      "\"\362\336\037\036yaml:\"gauge_ids_with_duration\"\032\227\001\n\023" +
+      "GaugeIdWithDuration\022%\n\010gauge_id\030\001 \001(\004B\023\362" +
+      "\336\037\017yaml:\"gauge_id\"\0225\n\010duration\030\002 \001(\0132\031.g" +
+      "oogle.protobuf.DurationB\010\310\336\037\000\230\337\037\001\022\"\n\032gau" +
+      "ge_incentive_percentage\030\003 \001(\t\"\027\n\025QueryDi" +
+      "strInfoRequest\"r\n\026QueryDistrInfoResponse" +
+      "\022X\n\ndistr_info\030\001 \001(\0132).osmosis.poolincen" +
+      "tives.v1beta1.DistrInfoB\031\310\336\037\000\362\336\037\021yaml:\"d" +
+      "istr_info\"\"\024\n\022QueryParamsRequest\"S\n\023Quer" +
+      "yParamsResponse\022<\n\006params\030\001 \001(\0132&.osmosi" +
+      "s.poolincentives.v1beta1.ParamsB\004\310\336\037\000\"\037\n" +
+      "\035QueryLockableDurationsRequest\"~\n\036QueryL" +
+      "ockableDurationsResponse\022\\\n\022lockable_dur" +
+      "ations\030\001 \003(\0132\031.google.protobuf.DurationB" +
+      "%\310\336\037\000\230\337\037\001\362\336\037\031yaml:\"lockable_durations\"\"\037" +
+      "\n\035QueryIncentivizedPoolsRequest\"\272\001\n\020Ince" +
+      "ntivizedPool\022#\n\007pool_id\030\001 \001(\004B\022\362\336\037\016yaml:" +
+      "\"pool_id\"\022Z\n\021lockable_duration\030\002 \001(\0132\031.g" +
+      "oogle.protobuf.DurationB$\310\336\037\000\230\337\037\001\362\336\037\030yam" +
+      "l:\"lockable_duration\"\022%\n\010gauge_id\030\003 \001(\004B" +
+      "\023\362\336\037\017yaml:\"gauge_id\"\"\221\001\n\036QueryIncentiviz" +
+      "edPoolsResponse\022o\n\022incentivized_pools\030\001 " +
+      "\003(\01320.osmosis.poolincentives.v1beta1.Inc" +
+      "entivizedPoolB!\310\336\037\000\362\336\037\031yaml:\"incentivize" +
+      "d_pools\"\"%\n#QueryExternalIncentiveGauges" +
+      "Request\"U\n$QueryExternalIncentiveGaugesR" +
+      "esponse\022-\n\004data\030\001 \003(\0132\031.osmosis.incentiv" +
+      "es.GaugeB\004\310\336\037\0002\245\t\n\005Query\022\265\001\n\010GaugeIds\0224." +
+      "osmosis.poolincentives.v1beta1.QueryGaug" +
+      "eIdsRequest\0325.osmosis.poolincentives.v1b" +
+      "eta1.QueryGaugeIdsResponse\"<\202\323\344\223\0026\0224/osm" +
+      "osis/pool-incentives/v1beta1/gauge-ids/{" +
+      "pool_id}\022\257\001\n\tDistrInfo\0225.osmosis.poolinc" +
+      "entives.v1beta1.QueryDistrInfoRequest\0326." +
+      "osmosis.poolincentives.v1beta1.QueryDist" +
+      "rInfoResponse\"3\202\323\344\223\002-\022+/osmosis/pool-inc" +
+      "entives/v1beta1/distr_info\022\242\001\n\006Params\0222." +
+      "osmosis.poolincentives.v1beta1.QueryPara" +
+      "msRequest\0323.osmosis.poolincentives.v1bet" +
+      "a1.QueryParamsResponse\"/\202\323\344\223\002)\022\'/osmosis" +
+      "/pool-incentives/v1beta1/params\022\317\001\n\021Lock" +
+      "ableDurations\022=.osmosis.poolincentives.v" +
+      "1beta1.QueryLockableDurationsRequest\032>.o" +
+      "smosis.poolincentives.v1beta1.QueryLocka" +
+      "bleDurationsResponse\";\202\323\344\223\0025\0223/osmosis/p" +
+      "ool-incentives/v1beta1/lockable_duration" +
+      "s\022\317\001\n\021IncentivizedPools\022=.osmosis.poolin" +
+      "centives.v1beta1.QueryIncentivizedPoolsR" +
+      "equest\032>.osmosis.poolincentives.v1beta1." +
+      "QueryIncentivizedPoolsResponse\";\202\323\344\223\0025\0223" +
+      "/osmosis/pool-incentives/v1beta1/incenti" +
+      "vized_pools\022\350\001\n\027ExternalIncentiveGauges\022" +
+      "C.osmosis.poolincentives.v1beta1.QueryEx" +
+      "ternalIncentiveGaugesRequest\032D.osmosis.p" +
+      "oolincentives.v1beta1.QueryExternalIncen" +
+      "tiveGaugesResponse\"B\202\323\344\223\002<\022:/osmosis/poo" +
+      "l-incentives/v1beta1/external_incentive_" +
+      "gaugesB<Z:github.com/osmosis-labs/osmosi" +
+      "s/v7/x/pool-incentives/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -8637,7 +8788,7 @@ public final class QueryOuterClass {
     internal_static_osmosis_poolincentives_v1beta1_QueryGaugeIdsResponse_GaugeIdWithDuration_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_osmosis_poolincentives_v1beta1_QueryGaugeIdsResponse_GaugeIdWithDuration_descriptor,
-        new java.lang.String[] { "GaugeId", "Duration", });
+        new java.lang.String[] { "GaugeId", "Duration", "GaugeIncentivePercentage", });
     internal_static_osmosis_poolincentives_v1beta1_QueryDistrInfoRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_osmosis_poolincentives_v1beta1_QueryDistrInfoRequest_fieldAccessorTable = new

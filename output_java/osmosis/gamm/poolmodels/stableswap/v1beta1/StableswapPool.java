@@ -893,7 +893,7 @@ public final class StableswapPool {
      * for calculation amognst assets with different precisions
      * </pre>
      *
-     * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+     * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
      * @return A list containing the scalingFactor.
      */
     java.util.List<java.lang.Long> getScalingFactorList();
@@ -902,7 +902,7 @@ public final class StableswapPool {
      * for calculation amognst assets with different precisions
      * </pre>
      *
-     * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+     * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
      * @return The count of scalingFactor.
      */
     int getScalingFactorCount();
@@ -911,7 +911,7 @@ public final class StableswapPool {
      * for calculation amognst assets with different precisions
      * </pre>
      *
-     * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+     * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
      * @param index The index of the element to return.
      * @return The scalingFactor at the given index.
      */
@@ -919,23 +919,23 @@ public final class StableswapPool {
 
     /**
      * <pre>
-     * scaling_factor_governor is the address can adjust pool scaling factors
+     * scaling_factor_controller is the address can adjust pool scaling factors
      * </pre>
      *
-     * <code>string scaling_factor_governor = 8 [(.gogoproto.moretags) = "yaml:&#92;"scaling_factor_governor&#92;""];</code>
-     * @return The scalingFactorGovernor.
+     * <code>string scaling_factor_controller = 8 [(.gogoproto.moretags) = "yaml:&#92;"scaling_factor_controller&#92;""];</code>
+     * @return The scalingFactorController.
      */
-    java.lang.String getScalingFactorGovernor();
+    java.lang.String getScalingFactorController();
     /**
      * <pre>
-     * scaling_factor_governor is the address can adjust pool scaling factors
+     * scaling_factor_controller is the address can adjust pool scaling factors
      * </pre>
      *
-     * <code>string scaling_factor_governor = 8 [(.gogoproto.moretags) = "yaml:&#92;"scaling_factor_governor&#92;""];</code>
-     * @return The bytes for scalingFactorGovernor.
+     * <code>string scaling_factor_controller = 8 [(.gogoproto.moretags) = "yaml:&#92;"scaling_factor_controller&#92;""];</code>
+     * @return The bytes for scalingFactorController.
      */
     com.google.protobuf.ByteString
-        getScalingFactorGovernorBytes();
+        getScalingFactorControllerBytes();
   }
   /**
    * <pre>
@@ -958,7 +958,7 @@ public final class StableswapPool {
       futurePoolGovernor_ = "";
       poolLiquidity_ = java.util.Collections.emptyList();
       scalingFactor_ = emptyLongList();
-      scalingFactorGovernor_ = "";
+      scalingFactorController_ = "";
     }
 
     @java.lang.Override
@@ -1068,7 +1068,7 @@ public final class StableswapPool {
             case 66: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              scalingFactorGovernor_ = s;
+              scalingFactorController_ = s;
               break;
             }
             default: {
@@ -1349,7 +1349,7 @@ public final class StableswapPool {
      * for calculation amognst assets with different precisions
      * </pre>
      *
-     * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+     * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
      * @return A list containing the scalingFactor.
      */
     @java.lang.Override
@@ -1362,7 +1362,7 @@ public final class StableswapPool {
      * for calculation amognst assets with different precisions
      * </pre>
      *
-     * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+     * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
      * @return The count of scalingFactor.
      */
     public int getScalingFactorCount() {
@@ -1373,7 +1373,7 @@ public final class StableswapPool {
      * for calculation amognst assets with different precisions
      * </pre>
      *
-     * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+     * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
      * @param index The index of the element to return.
      * @return The scalingFactor at the given index.
      */
@@ -1382,46 +1382,46 @@ public final class StableswapPool {
     }
     private int scalingFactorMemoizedSerializedSize = -1;
 
-    public static final int SCALING_FACTOR_GOVERNOR_FIELD_NUMBER = 8;
-    private volatile java.lang.Object scalingFactorGovernor_;
+    public static final int SCALING_FACTOR_CONTROLLER_FIELD_NUMBER = 8;
+    private volatile java.lang.Object scalingFactorController_;
     /**
      * <pre>
-     * scaling_factor_governor is the address can adjust pool scaling factors
+     * scaling_factor_controller is the address can adjust pool scaling factors
      * </pre>
      *
-     * <code>string scaling_factor_governor = 8 [(.gogoproto.moretags) = "yaml:&#92;"scaling_factor_governor&#92;""];</code>
-     * @return The scalingFactorGovernor.
+     * <code>string scaling_factor_controller = 8 [(.gogoproto.moretags) = "yaml:&#92;"scaling_factor_controller&#92;""];</code>
+     * @return The scalingFactorController.
      */
     @java.lang.Override
-    public java.lang.String getScalingFactorGovernor() {
-      java.lang.Object ref = scalingFactorGovernor_;
+    public java.lang.String getScalingFactorController() {
+      java.lang.Object ref = scalingFactorController_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        scalingFactorGovernor_ = s;
+        scalingFactorController_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * scaling_factor_governor is the address can adjust pool scaling factors
+     * scaling_factor_controller is the address can adjust pool scaling factors
      * </pre>
      *
-     * <code>string scaling_factor_governor = 8 [(.gogoproto.moretags) = "yaml:&#92;"scaling_factor_governor&#92;""];</code>
-     * @return The bytes for scalingFactorGovernor.
+     * <code>string scaling_factor_controller = 8 [(.gogoproto.moretags) = "yaml:&#92;"scaling_factor_controller&#92;""];</code>
+     * @return The bytes for scalingFactorController.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getScalingFactorGovernorBytes() {
-      java.lang.Object ref = scalingFactorGovernor_;
+        getScalingFactorControllerBytes() {
+      java.lang.Object ref = scalingFactorController_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        scalingFactorGovernor_ = b;
+        scalingFactorController_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1468,8 +1468,8 @@ public final class StableswapPool {
       for (int i = 0; i < scalingFactor_.size(); i++) {
         output.writeUInt64NoTag(scalingFactor_.getLong(i));
       }
-      if (!getScalingFactorGovernorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, scalingFactorGovernor_);
+      if (!getScalingFactorControllerBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, scalingFactorController_);
       }
       unknownFields.writeTo(output);
     }
@@ -1516,8 +1516,8 @@ public final class StableswapPool {
         }
         scalingFactorMemoizedSerializedSize = dataSize;
       }
-      if (!getScalingFactorGovernorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, scalingFactorGovernor_);
+      if (!getScalingFactorControllerBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, scalingFactorController_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1554,8 +1554,8 @@ public final class StableswapPool {
           .equals(other.getPoolLiquidityList())) return false;
       if (!getScalingFactorList()
           .equals(other.getScalingFactorList())) return false;
-      if (!getScalingFactorGovernor()
-          .equals(other.getScalingFactorGovernor())) return false;
+      if (!getScalingFactorController()
+          .equals(other.getScalingFactorController())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1590,8 +1590,8 @@ public final class StableswapPool {
         hash = (37 * hash) + SCALING_FACTOR_FIELD_NUMBER;
         hash = (53 * hash) + getScalingFactorList().hashCode();
       }
-      hash = (37 * hash) + SCALING_FACTOR_GOVERNOR_FIELD_NUMBER;
-      hash = (53 * hash) + getScalingFactorGovernor().hashCode();
+      hash = (37 * hash) + SCALING_FACTOR_CONTROLLER_FIELD_NUMBER;
+      hash = (53 * hash) + getScalingFactorController().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1756,7 +1756,7 @@ public final class StableswapPool {
         }
         scalingFactor_ = emptyLongList();
         bitField0_ = (bitField0_ & ~0x00000002);
-        scalingFactorGovernor_ = "";
+        scalingFactorController_ = "";
 
         return this;
       }
@@ -1812,7 +1812,7 @@ public final class StableswapPool {
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.scalingFactor_ = scalingFactor_;
-        result.scalingFactorGovernor_ = scalingFactorGovernor_;
+        result.scalingFactorController_ = scalingFactorController_;
         onBuilt();
         return result;
       }
@@ -1914,8 +1914,8 @@ public final class StableswapPool {
           }
           onChanged();
         }
-        if (!other.getScalingFactorGovernor().isEmpty()) {
-          scalingFactorGovernor_ = other.scalingFactorGovernor_;
+        if (!other.getScalingFactorController().isEmpty()) {
+          scalingFactorController_ = other.scalingFactorController_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -2784,7 +2784,7 @@ public final class StableswapPool {
        * for calculation amognst assets with different precisions
        * </pre>
        *
-       * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+       * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
        * @return A list containing the scalingFactor.
        */
       public java.util.List<java.lang.Long>
@@ -2797,7 +2797,7 @@ public final class StableswapPool {
        * for calculation amognst assets with different precisions
        * </pre>
        *
-       * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+       * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
        * @return The count of scalingFactor.
        */
       public int getScalingFactorCount() {
@@ -2808,7 +2808,7 @@ public final class StableswapPool {
        * for calculation amognst assets with different precisions
        * </pre>
        *
-       * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+       * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
        * @param index The index of the element to return.
        * @return The scalingFactor at the given index.
        */
@@ -2820,7 +2820,7 @@ public final class StableswapPool {
        * for calculation amognst assets with different precisions
        * </pre>
        *
-       * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+       * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
        * @param index The index to set the value at.
        * @param value The scalingFactor to set.
        * @return This builder for chaining.
@@ -2837,7 +2837,7 @@ public final class StableswapPool {
        * for calculation amognst assets with different precisions
        * </pre>
        *
-       * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+       * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
        * @param value The scalingFactor to add.
        * @return This builder for chaining.
        */
@@ -2852,7 +2852,7 @@ public final class StableswapPool {
        * for calculation amognst assets with different precisions
        * </pre>
        *
-       * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+       * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
        * @param values The scalingFactor to add.
        * @return This builder for chaining.
        */
@@ -2869,7 +2869,7 @@ public final class StableswapPool {
        * for calculation amognst assets with different precisions
        * </pre>
        *
-       * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+       * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearScalingFactor() {
@@ -2879,22 +2879,22 @@ public final class StableswapPool {
         return this;
       }
 
-      private java.lang.Object scalingFactorGovernor_ = "";
+      private java.lang.Object scalingFactorController_ = "";
       /**
        * <pre>
-       * scaling_factor_governor is the address can adjust pool scaling factors
+       * scaling_factor_controller is the address can adjust pool scaling factors
        * </pre>
        *
-       * <code>string scaling_factor_governor = 8 [(.gogoproto.moretags) = "yaml:&#92;"scaling_factor_governor&#92;""];</code>
-       * @return The scalingFactorGovernor.
+       * <code>string scaling_factor_controller = 8 [(.gogoproto.moretags) = "yaml:&#92;"scaling_factor_controller&#92;""];</code>
+       * @return The scalingFactorController.
        */
-      public java.lang.String getScalingFactorGovernor() {
-        java.lang.Object ref = scalingFactorGovernor_;
+      public java.lang.String getScalingFactorController() {
+        java.lang.Object ref = scalingFactorController_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          scalingFactorGovernor_ = s;
+          scalingFactorController_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -2902,20 +2902,20 @@ public final class StableswapPool {
       }
       /**
        * <pre>
-       * scaling_factor_governor is the address can adjust pool scaling factors
+       * scaling_factor_controller is the address can adjust pool scaling factors
        * </pre>
        *
-       * <code>string scaling_factor_governor = 8 [(.gogoproto.moretags) = "yaml:&#92;"scaling_factor_governor&#92;""];</code>
-       * @return The bytes for scalingFactorGovernor.
+       * <code>string scaling_factor_controller = 8 [(.gogoproto.moretags) = "yaml:&#92;"scaling_factor_controller&#92;""];</code>
+       * @return The bytes for scalingFactorController.
        */
       public com.google.protobuf.ByteString
-          getScalingFactorGovernorBytes() {
-        java.lang.Object ref = scalingFactorGovernor_;
+          getScalingFactorControllerBytes() {
+        java.lang.Object ref = scalingFactorController_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          scalingFactorGovernor_ = b;
+          scalingFactorController_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -2923,54 +2923,54 @@ public final class StableswapPool {
       }
       /**
        * <pre>
-       * scaling_factor_governor is the address can adjust pool scaling factors
+       * scaling_factor_controller is the address can adjust pool scaling factors
        * </pre>
        *
-       * <code>string scaling_factor_governor = 8 [(.gogoproto.moretags) = "yaml:&#92;"scaling_factor_governor&#92;""];</code>
-       * @param value The scalingFactorGovernor to set.
+       * <code>string scaling_factor_controller = 8 [(.gogoproto.moretags) = "yaml:&#92;"scaling_factor_controller&#92;""];</code>
+       * @param value The scalingFactorController to set.
        * @return This builder for chaining.
        */
-      public Builder setScalingFactorGovernor(
+      public Builder setScalingFactorController(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        scalingFactorGovernor_ = value;
+        scalingFactorController_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * scaling_factor_governor is the address can adjust pool scaling factors
+       * scaling_factor_controller is the address can adjust pool scaling factors
        * </pre>
        *
-       * <code>string scaling_factor_governor = 8 [(.gogoproto.moretags) = "yaml:&#92;"scaling_factor_governor&#92;""];</code>
+       * <code>string scaling_factor_controller = 8 [(.gogoproto.moretags) = "yaml:&#92;"scaling_factor_controller&#92;""];</code>
        * @return This builder for chaining.
        */
-      public Builder clearScalingFactorGovernor() {
+      public Builder clearScalingFactorController() {
         
-        scalingFactorGovernor_ = getDefaultInstance().getScalingFactorGovernor();
+        scalingFactorController_ = getDefaultInstance().getScalingFactorController();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * scaling_factor_governor is the address can adjust pool scaling factors
+       * scaling_factor_controller is the address can adjust pool scaling factors
        * </pre>
        *
-       * <code>string scaling_factor_governor = 8 [(.gogoproto.moretags) = "yaml:&#92;"scaling_factor_governor&#92;""];</code>
-       * @param value The bytes for scalingFactorGovernor to set.
+       * <code>string scaling_factor_controller = 8 [(.gogoproto.moretags) = "yaml:&#92;"scaling_factor_controller&#92;""];</code>
+       * @param value The bytes for scalingFactorController to set.
        * @return This builder for chaining.
        */
-      public Builder setScalingFactorGovernorBytes(
+      public Builder setScalingFactorControllerBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        scalingFactorGovernor_ = value;
+        scalingFactorController_ = value;
         onChanged();
         return this;
       }
@@ -3068,10 +3068,10 @@ public final class StableswapPool {
       "ml:\"total_shares\"\310\336\037\000\022c\n\016pool_liquidity\030" +
       "\006 \003(\0132\031.cosmos.base.v1beta1.CoinB0\310\336\037\000\252\337" +
       "\037(github.com/cosmos/cosmos-sdk/types.Coi" +
-      "ns\022@\n\016scaling_factor\030\007 \003(\004B(\362\336\037 yaml:\"st" +
-      "ableswap_scaling_factor\"\310\336\037\000\022C\n\027scaling_" +
-      "factor_governor\030\010 \001(\tB\"\362\336\037\036yaml:\"scaling" +
-      "_factor_governor\":\021\210\240\037\000\230\240\037\000\312\264-\005PoolIBBZ@" +
+      "ns\022<\n\016scaling_factor\030\007 \003(\004B$\362\336\037 yaml:\"st" +
+      "ableswap_scaling_factor\"\022G\n\031scaling_fact" +
+      "or_controller\030\010 \001(\tB$\362\336\037 yaml:\"scaling_f" +
+      "actor_controller\":\021\210\240\037\000\230\240\037\000\312\264-\005PoolIBBZ@" +
       "github.com/osmosis-labs/osmosis/v7/x/gam" +
       "m/pool-models/stableswapb\006proto3"
     };
@@ -3096,7 +3096,7 @@ public final class StableswapPool {
     internal_static_osmosis_gamm_poolmodels_stableswap_v1beta1_Pool_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_osmosis_gamm_poolmodels_stableswap_v1beta1_Pool_descriptor,
-        new java.lang.String[] { "Address", "Id", "PoolParams", "FuturePoolGovernor", "TotalShares", "PoolLiquidity", "ScalingFactor", "ScalingFactorGovernor", });
+        new java.lang.String[] { "Address", "Id", "PoolParams", "FuturePoolGovernor", "TotalShares", "PoolLiquidity", "ScalingFactor", "ScalingFactorController", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(cosmos_proto.Cosmos.implementsInterface);

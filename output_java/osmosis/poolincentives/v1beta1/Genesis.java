@@ -83,6 +83,21 @@ public final class Genesis {
      * <code>.osmosis.poolincentives.v1beta1.DistrInfo distr_info = 3 [(.gogoproto.nullable) = true, (.gogoproto.moretags) = "yaml:&#92;"distr_info&#92;""];</code>
      */
     osmosis.poolincentives.v1beta1.Incentives.DistrInfoOrBuilder getDistrInfoOrBuilder();
+
+    /**
+     * <code>.osmosis.poolincentives.v1beta1.PoolToGauges pool_to_gauges = 4 [(.gogoproto.nullable) = true, (.gogoproto.moretags) = "yaml:&#92;"pool_to_gauges&#92;""];</code>
+     * @return Whether the poolToGauges field is set.
+     */
+    boolean hasPoolToGauges();
+    /**
+     * <code>.osmosis.poolincentives.v1beta1.PoolToGauges pool_to_gauges = 4 [(.gogoproto.nullable) = true, (.gogoproto.moretags) = "yaml:&#92;"pool_to_gauges&#92;""];</code>
+     * @return The poolToGauges.
+     */
+    osmosis.poolincentives.v1beta1.Incentives.PoolToGauges getPoolToGauges();
+    /**
+     * <code>.osmosis.poolincentives.v1beta1.PoolToGauges pool_to_gauges = 4 [(.gogoproto.nullable) = true, (.gogoproto.moretags) = "yaml:&#92;"pool_to_gauges&#92;""];</code>
+     */
+    osmosis.poolincentives.v1beta1.Incentives.PoolToGaugesOrBuilder getPoolToGaugesOrBuilder();
   }
   /**
    * <pre>
@@ -166,6 +181,19 @@ public final class Genesis {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(distrInfo_);
                 distrInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              osmosis.poolincentives.v1beta1.Incentives.PoolToGauges.Builder subBuilder = null;
+              if (poolToGauges_ != null) {
+                subBuilder = poolToGauges_.toBuilder();
+              }
+              poolToGauges_ = input.readMessage(osmosis.poolincentives.v1beta1.Incentives.PoolToGauges.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(poolToGauges_);
+                poolToGauges_ = subBuilder.buildPartial();
               }
 
               break;
@@ -309,6 +337,32 @@ public final class Genesis {
       return getDistrInfo();
     }
 
+    public static final int POOL_TO_GAUGES_FIELD_NUMBER = 4;
+    private osmosis.poolincentives.v1beta1.Incentives.PoolToGauges poolToGauges_;
+    /**
+     * <code>.osmosis.poolincentives.v1beta1.PoolToGauges pool_to_gauges = 4 [(.gogoproto.nullable) = true, (.gogoproto.moretags) = "yaml:&#92;"pool_to_gauges&#92;""];</code>
+     * @return Whether the poolToGauges field is set.
+     */
+    @java.lang.Override
+    public boolean hasPoolToGauges() {
+      return poolToGauges_ != null;
+    }
+    /**
+     * <code>.osmosis.poolincentives.v1beta1.PoolToGauges pool_to_gauges = 4 [(.gogoproto.nullable) = true, (.gogoproto.moretags) = "yaml:&#92;"pool_to_gauges&#92;""];</code>
+     * @return The poolToGauges.
+     */
+    @java.lang.Override
+    public osmosis.poolincentives.v1beta1.Incentives.PoolToGauges getPoolToGauges() {
+      return poolToGauges_ == null ? osmosis.poolincentives.v1beta1.Incentives.PoolToGauges.getDefaultInstance() : poolToGauges_;
+    }
+    /**
+     * <code>.osmosis.poolincentives.v1beta1.PoolToGauges pool_to_gauges = 4 [(.gogoproto.nullable) = true, (.gogoproto.moretags) = "yaml:&#92;"pool_to_gauges&#92;""];</code>
+     */
+    @java.lang.Override
+    public osmosis.poolincentives.v1beta1.Incentives.PoolToGaugesOrBuilder getPoolToGaugesOrBuilder() {
+      return getPoolToGauges();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -332,6 +386,9 @@ public final class Genesis {
       if (distrInfo_ != null) {
         output.writeMessage(3, getDistrInfo());
       }
+      if (poolToGauges_ != null) {
+        output.writeMessage(4, getPoolToGauges());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -352,6 +409,10 @@ public final class Genesis {
       if (distrInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getDistrInfo());
+      }
+      if (poolToGauges_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getPoolToGauges());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -380,6 +441,11 @@ public final class Genesis {
         if (!getDistrInfo()
             .equals(other.getDistrInfo())) return false;
       }
+      if (hasPoolToGauges() != other.hasPoolToGauges()) return false;
+      if (hasPoolToGauges()) {
+        if (!getPoolToGauges()
+            .equals(other.getPoolToGauges())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -402,6 +468,10 @@ public final class Genesis {
       if (hasDistrInfo()) {
         hash = (37 * hash) + DISTR_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getDistrInfo().hashCode();
+      }
+      if (hasPoolToGauges()) {
+        hash = (37 * hash) + POOL_TO_GAUGES_FIELD_NUMBER;
+        hash = (53 * hash) + getPoolToGauges().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -559,6 +629,12 @@ public final class Genesis {
           distrInfo_ = null;
           distrInfoBuilder_ = null;
         }
+        if (poolToGaugesBuilder_ == null) {
+          poolToGauges_ = null;
+        } else {
+          poolToGauges_ = null;
+          poolToGaugesBuilder_ = null;
+        }
         return this;
       }
 
@@ -604,6 +680,11 @@ public final class Genesis {
           result.distrInfo_ = distrInfo_;
         } else {
           result.distrInfo_ = distrInfoBuilder_.build();
+        }
+        if (poolToGaugesBuilder_ == null) {
+          result.poolToGauges_ = poolToGauges_;
+        } else {
+          result.poolToGauges_ = poolToGaugesBuilder_.build();
         }
         onBuilt();
         return result;
@@ -684,6 +765,9 @@ public final class Genesis {
         }
         if (other.hasDistrInfo()) {
           mergeDistrInfo(other.getDistrInfo());
+        }
+        if (other.hasPoolToGauges()) {
+          mergePoolToGauges(other.getPoolToGauges());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1228,6 +1312,125 @@ public final class Genesis {
         }
         return distrInfoBuilder_;
       }
+
+      private osmosis.poolincentives.v1beta1.Incentives.PoolToGauges poolToGauges_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          osmosis.poolincentives.v1beta1.Incentives.PoolToGauges, osmosis.poolincentives.v1beta1.Incentives.PoolToGauges.Builder, osmosis.poolincentives.v1beta1.Incentives.PoolToGaugesOrBuilder> poolToGaugesBuilder_;
+      /**
+       * <code>.osmosis.poolincentives.v1beta1.PoolToGauges pool_to_gauges = 4 [(.gogoproto.nullable) = true, (.gogoproto.moretags) = "yaml:&#92;"pool_to_gauges&#92;""];</code>
+       * @return Whether the poolToGauges field is set.
+       */
+      public boolean hasPoolToGauges() {
+        return poolToGaugesBuilder_ != null || poolToGauges_ != null;
+      }
+      /**
+       * <code>.osmosis.poolincentives.v1beta1.PoolToGauges pool_to_gauges = 4 [(.gogoproto.nullable) = true, (.gogoproto.moretags) = "yaml:&#92;"pool_to_gauges&#92;""];</code>
+       * @return The poolToGauges.
+       */
+      public osmosis.poolincentives.v1beta1.Incentives.PoolToGauges getPoolToGauges() {
+        if (poolToGaugesBuilder_ == null) {
+          return poolToGauges_ == null ? osmosis.poolincentives.v1beta1.Incentives.PoolToGauges.getDefaultInstance() : poolToGauges_;
+        } else {
+          return poolToGaugesBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.osmosis.poolincentives.v1beta1.PoolToGauges pool_to_gauges = 4 [(.gogoproto.nullable) = true, (.gogoproto.moretags) = "yaml:&#92;"pool_to_gauges&#92;""];</code>
+       */
+      public Builder setPoolToGauges(osmosis.poolincentives.v1beta1.Incentives.PoolToGauges value) {
+        if (poolToGaugesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          poolToGauges_ = value;
+          onChanged();
+        } else {
+          poolToGaugesBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.osmosis.poolincentives.v1beta1.PoolToGauges pool_to_gauges = 4 [(.gogoproto.nullable) = true, (.gogoproto.moretags) = "yaml:&#92;"pool_to_gauges&#92;""];</code>
+       */
+      public Builder setPoolToGauges(
+          osmosis.poolincentives.v1beta1.Incentives.PoolToGauges.Builder builderForValue) {
+        if (poolToGaugesBuilder_ == null) {
+          poolToGauges_ = builderForValue.build();
+          onChanged();
+        } else {
+          poolToGaugesBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.osmosis.poolincentives.v1beta1.PoolToGauges pool_to_gauges = 4 [(.gogoproto.nullable) = true, (.gogoproto.moretags) = "yaml:&#92;"pool_to_gauges&#92;""];</code>
+       */
+      public Builder mergePoolToGauges(osmosis.poolincentives.v1beta1.Incentives.PoolToGauges value) {
+        if (poolToGaugesBuilder_ == null) {
+          if (poolToGauges_ != null) {
+            poolToGauges_ =
+              osmosis.poolincentives.v1beta1.Incentives.PoolToGauges.newBuilder(poolToGauges_).mergeFrom(value).buildPartial();
+          } else {
+            poolToGauges_ = value;
+          }
+          onChanged();
+        } else {
+          poolToGaugesBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.osmosis.poolincentives.v1beta1.PoolToGauges pool_to_gauges = 4 [(.gogoproto.nullable) = true, (.gogoproto.moretags) = "yaml:&#92;"pool_to_gauges&#92;""];</code>
+       */
+      public Builder clearPoolToGauges() {
+        if (poolToGaugesBuilder_ == null) {
+          poolToGauges_ = null;
+          onChanged();
+        } else {
+          poolToGauges_ = null;
+          poolToGaugesBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.osmosis.poolincentives.v1beta1.PoolToGauges pool_to_gauges = 4 [(.gogoproto.nullable) = true, (.gogoproto.moretags) = "yaml:&#92;"pool_to_gauges&#92;""];</code>
+       */
+      public osmosis.poolincentives.v1beta1.Incentives.PoolToGauges.Builder getPoolToGaugesBuilder() {
+        
+        onChanged();
+        return getPoolToGaugesFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.osmosis.poolincentives.v1beta1.PoolToGauges pool_to_gauges = 4 [(.gogoproto.nullable) = true, (.gogoproto.moretags) = "yaml:&#92;"pool_to_gauges&#92;""];</code>
+       */
+      public osmosis.poolincentives.v1beta1.Incentives.PoolToGaugesOrBuilder getPoolToGaugesOrBuilder() {
+        if (poolToGaugesBuilder_ != null) {
+          return poolToGaugesBuilder_.getMessageOrBuilder();
+        } else {
+          return poolToGauges_ == null ?
+              osmosis.poolincentives.v1beta1.Incentives.PoolToGauges.getDefaultInstance() : poolToGauges_;
+        }
+      }
+      /**
+       * <code>.osmosis.poolincentives.v1beta1.PoolToGauges pool_to_gauges = 4 [(.gogoproto.nullable) = true, (.gogoproto.moretags) = "yaml:&#92;"pool_to_gauges&#92;""];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          osmosis.poolincentives.v1beta1.Incentives.PoolToGauges, osmosis.poolincentives.v1beta1.Incentives.PoolToGauges.Builder, osmosis.poolincentives.v1beta1.Incentives.PoolToGaugesOrBuilder> 
+          getPoolToGaugesFieldBuilder() {
+        if (poolToGaugesBuilder_ == null) {
+          poolToGaugesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              osmosis.poolincentives.v1beta1.Incentives.PoolToGauges, osmosis.poolincentives.v1beta1.Incentives.PoolToGauges.Builder, osmosis.poolincentives.v1beta1.Incentives.PoolToGaugesOrBuilder>(
+                  getPoolToGauges(),
+                  getParentForChildren(),
+                  isClean());
+          poolToGauges_ = null;
+        }
+        return poolToGaugesBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1299,15 +1502,18 @@ public final class Genesis {
       "s.proto\022\036osmosis.poolincentives.v1beta1\032" +
       "\024gogoproto/gogo.proto\032\036google/protobuf/d" +
       "uration.proto\0320osmosis/pool-incentives/v" +
-      "1beta1/incentives.proto\"\204\002\n\014GenesisState" +
+      "1beta1/incentives.proto\"\351\002\n\014GenesisState" +
       "\022<\n\006params\030\001 \001(\0132&.osmosis.poolincentive" +
       "s.v1beta1.ParamsB\004\310\336\037\000\022\\\n\022lockable_durat" +
       "ions\030\002 \003(\0132\031.google.protobuf.DurationB%\310" +
       "\336\037\000\230\337\037\001\362\336\037\031yaml:\"lockable_durations\"\022X\n\n" +
       "distr_info\030\003 \001(\0132).osmosis.poolincentive" +
       "s.v1beta1.DistrInfoB\031\310\336\037\001\362\336\037\021yaml:\"distr" +
-      "_info\"B<Z:github.com/osmosis-labs/osmosi" +
-      "s/v7/x/pool-incentives/typesb\006proto3"
+      "_info\"\022c\n\016pool_to_gauges\030\004 \001(\0132,.osmosis" +
+      ".poolincentives.v1beta1.PoolToGaugesB\035\310\336" +
+      "\037\001\362\336\037\025yaml:\"pool_to_gauges\"B<Z:github.co" +
+      "m/osmosis-labs/osmosis/v7/x/pool-incenti" +
+      "ves/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1321,7 +1527,7 @@ public final class Genesis {
     internal_static_osmosis_poolincentives_v1beta1_GenesisState_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_osmosis_poolincentives_v1beta1_GenesisState_descriptor,
-        new java.lang.String[] { "Params", "LockableDurations", "DistrInfo", });
+        new java.lang.String[] { "Params", "LockableDurations", "DistrInfo", "PoolToGauges", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.protobuf2.GoGoProtos.moretags);

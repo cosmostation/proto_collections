@@ -20,6 +20,8 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
+/// SuperfluidAssetType indicates whether the superfluid asset is
+/// a native token itself or the lp share of a pool.
 enum Osmosis_Superfluid_SuperfluidAssetType: SwiftProtobuf.Enum {
   typealias RawValue = Int
   case native // = 0
@@ -70,6 +72,8 @@ struct Osmosis_Superfluid_SuperfluidAsset {
 
   var denom: String = String()
 
+  /// AssetType indicates whether the superfluid asset is a native token or an lp
+  /// share
   var assetType: Osmosis_Superfluid_SuperfluidAssetType = .native
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -78,12 +82,14 @@ struct Osmosis_Superfluid_SuperfluidAsset {
 }
 
 /// SuperfluidIntermediaryAccount takes the role of intermediary between LP token
-/// and OSMO tokens for superfluid staking
+/// and OSMO tokens for superfluid staking. The intermediary account is the
+/// actual account responsible for delegation, not the validator account itself.
 struct Osmosis_Superfluid_SuperfluidIntermediaryAccount {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// Denom indicates the denom of the superfluid asset.
   var denom: String = String()
 
   var valAddr: String = String()
@@ -101,7 +107,7 @@ struct Osmosis_Superfluid_SuperfluidIntermediaryAccount {
 /// to be set as the Time-weighted-average-osmo-backing for the entire duration
 /// of epoch N-1. (Thereby locking whats in use for epoch N as based on the prior
 /// epochs rewards) However for now, this is not the TWAP but instead the spot
-/// price at the boundary.  For different types of assets in the future, it could
+/// price at the boundary. For different types of assets in the future, it could
 /// change.
 struct Osmosis_Superfluid_OsmoEquivalentMultiplierRecord {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
@@ -120,8 +126,8 @@ struct Osmosis_Superfluid_OsmoEquivalentMultiplierRecord {
   init() {}
 }
 
-/// SuperfluidDelegationRecord takes the role of intermediary between LP token
-/// and OSMO tokens for superfluid staking
+/// SuperfluidDelegationRecord is a struct used to indicate superfluid
+/// delegations of an account in the state machine in a user friendly form.
 struct Osmosis_Superfluid_SuperfluidDelegationRecord {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -157,6 +163,9 @@ struct Osmosis_Superfluid_SuperfluidDelegationRecord {
   fileprivate var _equivalentStakedAmount: Cosmos_Base_V1beta1_Coin? = nil
 }
 
+/// LockIdIntermediaryAccountConnection is a struct used to indicate the
+/// relationship between the underlying lock id and superfluid delegation done
+/// via lp shares.
 struct Osmosis_Superfluid_LockIdIntermediaryAccountConnection {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for

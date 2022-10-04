@@ -151,6 +151,37 @@ public final class QueryGrpc {
     return getPoolMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeRequest,
+      osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeResponse> getPoolTypeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PoolType",
+      requestType = osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeRequest.class,
+      responseType = osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeRequest,
+      osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeResponse> getPoolTypeMethod() {
+    io.grpc.MethodDescriptor<osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeRequest, osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeResponse> getPoolTypeMethod;
+    if ((getPoolTypeMethod = QueryGrpc.getPoolTypeMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getPoolTypeMethod = QueryGrpc.getPoolTypeMethod) == null) {
+          QueryGrpc.getPoolTypeMethod = getPoolTypeMethod =
+              io.grpc.MethodDescriptor.<osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeRequest, osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PoolType"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("PoolType"))
+              .build();
+        }
+      }
+    }
+    return getPoolTypeMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolParamsRequest,
       osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolParamsResponse> getPoolParamsMethod;
 
@@ -417,6 +448,18 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * PoolType returns the type of the pool.
+     * Returns "Balancer" as a string literal when the pool is a balancer pool.
+     * Errors if the pool is failed to be type caseted.
+     * </pre>
+     */
+    public void poolType(osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeRequest request,
+        io.grpc.stub.StreamObserver<osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPoolTypeMethod(), responseObserver);
+    }
+
+    /**
      */
     public void poolParams(osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolParamsRequest request,
         io.grpc.stub.StreamObserver<osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolParamsResponse> responseObserver) {
@@ -495,6 +538,13 @@ public final class QueryGrpc {
                 osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolRequest,
                 osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolResponse>(
                   this, METHODID_POOL)))
+          .addMethod(
+            getPoolTypeMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeRequest,
+                osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeResponse>(
+                  this, METHODID_POOL_TYPE)))
           .addMethod(
             getPoolParamsMethod(),
             asyncUnaryCall(
@@ -588,6 +638,19 @@ public final class QueryGrpc {
         io.grpc.stub.StreamObserver<osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getPoolMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * PoolType returns the type of the pool.
+     * Returns "Balancer" as a string literal when the pool is a balancer pool.
+     * Errors if the pool is failed to be type caseted.
+     * </pre>
+     */
+    public void poolType(osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeRequest request,
+        io.grpc.stub.StreamObserver<osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPoolTypeMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -692,6 +755,18 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * PoolType returns the type of the pool.
+     * Returns "Balancer" as a string literal when the pool is a balancer pool.
+     * Errors if the pool is failed to be type caseted.
+     * </pre>
+     */
+    public osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeResponse poolType(osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPoolTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
      */
     public osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolParamsResponse poolParams(osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolParamsRequest request) {
       return blockingUnaryCall(
@@ -791,6 +866,19 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * PoolType returns the type of the pool.
+     * Returns "Balancer" as a string literal when the pool is a balancer pool.
+     * Errors if the pool is failed to be type caseted.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeResponse> poolType(
+        osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPoolTypeMethod(), getCallOptions()), request);
+    }
+
+    /**
      */
     public com.google.common.util.concurrent.ListenableFuture<osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolParamsResponse> poolParams(
         osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolParamsRequest request) {
@@ -850,12 +938,13 @@ public final class QueryGrpc {
   private static final int METHODID_NUM_POOLS = 1;
   private static final int METHODID_TOTAL_LIQUIDITY = 2;
   private static final int METHODID_POOL = 3;
-  private static final int METHODID_POOL_PARAMS = 4;
-  private static final int METHODID_TOTAL_POOL_LIQUIDITY = 5;
-  private static final int METHODID_TOTAL_SHARES = 6;
-  private static final int METHODID_SPOT_PRICE = 7;
-  private static final int METHODID_ESTIMATE_SWAP_EXACT_AMOUNT_IN = 8;
-  private static final int METHODID_ESTIMATE_SWAP_EXACT_AMOUNT_OUT = 9;
+  private static final int METHODID_POOL_TYPE = 4;
+  private static final int METHODID_POOL_PARAMS = 5;
+  private static final int METHODID_TOTAL_POOL_LIQUIDITY = 6;
+  private static final int METHODID_TOTAL_SHARES = 7;
+  private static final int METHODID_SPOT_PRICE = 8;
+  private static final int METHODID_ESTIMATE_SWAP_EXACT_AMOUNT_IN = 9;
+  private static final int METHODID_ESTIMATE_SWAP_EXACT_AMOUNT_OUT = 10;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -889,6 +978,10 @@ public final class QueryGrpc {
         case METHODID_POOL:
           serviceImpl.pool((osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolRequest) request,
               (io.grpc.stub.StreamObserver<osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolResponse>) responseObserver);
+          break;
+        case METHODID_POOL_TYPE:
+          serviceImpl.poolType((osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeRequest) request,
+              (io.grpc.stub.StreamObserver<osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeResponse>) responseObserver);
           break;
         case METHODID_POOL_PARAMS:
           serviceImpl.poolParams((osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolParamsRequest) request,
@@ -979,6 +1072,7 @@ public final class QueryGrpc {
               .addMethod(getNumPoolsMethod())
               .addMethod(getTotalLiquidityMethod())
               .addMethod(getPoolMethod())
+              .addMethod(getPoolTypeMethod())
               .addMethod(getPoolParamsMethod())
               .addMethod(getTotalPoolLiquidityMethod())
               .addMethod(getTotalSharesMethod())

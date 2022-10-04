@@ -17,7 +17,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
- * Msg defines the Msg service.
+ * Msg defines the tokefactory module's gRPC message service.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -154,6 +154,37 @@ public final class MsgGrpc {
     return getChangeAdminMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata,
+      osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse> getSetDenomMetadataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SetDenomMetadata",
+      requestType = osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata.class,
+      responseType = osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata,
+      osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse> getSetDenomMetadataMethod() {
+    io.grpc.MethodDescriptor<osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata, osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse> getSetDenomMetadataMethod;
+    if ((getSetDenomMetadataMethod = MsgGrpc.getSetDenomMetadataMethod) == null) {
+      synchronized (MsgGrpc.class) {
+        if ((getSetDenomMetadataMethod = MsgGrpc.getSetDenomMetadataMethod) == null) {
+          MsgGrpc.getSetDenomMetadataMethod = getSetDenomMetadataMethod =
+              io.grpc.MethodDescriptor.<osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata, osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetDenomMetadata"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MsgMethodDescriptorSupplier("SetDenomMetadata"))
+              .build();
+        }
+      }
+    }
+    return getSetDenomMetadataMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -200,7 +231,7 @@ public final class MsgGrpc {
 
   /**
    * <pre>
-   * Msg defines the Msg service.
+   * Msg defines the tokefactory module's gRPC message service.
    * </pre>
    */
   public static abstract class MsgImplBase implements io.grpc.BindableService {
@@ -227,15 +258,17 @@ public final class MsgGrpc {
     }
 
     /**
-     * <pre>
-     * ForceTransfer is deactivated for now because we need to think through edge
-     * cases rpc ForceTransfer(MsgForceTransfer) returns
-     * (MsgForceTransferResponse);
-     * </pre>
      */
     public void changeAdmin(osmosis.tokenfactory.v1beta1.Tx.MsgChangeAdmin request,
         io.grpc.stub.StreamObserver<osmosis.tokenfactory.v1beta1.Tx.MsgChangeAdminResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getChangeAdminMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void setDenomMetadata(osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata request,
+        io.grpc.stub.StreamObserver<osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getSetDenomMetadataMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -268,13 +301,20 @@ public final class MsgGrpc {
                 osmosis.tokenfactory.v1beta1.Tx.MsgChangeAdmin,
                 osmosis.tokenfactory.v1beta1.Tx.MsgChangeAdminResponse>(
                   this, METHODID_CHANGE_ADMIN)))
+          .addMethod(
+            getSetDenomMetadataMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata,
+                osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse>(
+                  this, METHODID_SET_DENOM_METADATA)))
           .build();
     }
   }
 
   /**
    * <pre>
-   * Msg defines the Msg service.
+   * Msg defines the tokefactory module's gRPC message service.
    * </pre>
    */
   public static final class MsgStub extends io.grpc.stub.AbstractAsyncStub<MsgStub> {
@@ -314,22 +354,25 @@ public final class MsgGrpc {
     }
 
     /**
-     * <pre>
-     * ForceTransfer is deactivated for now because we need to think through edge
-     * cases rpc ForceTransfer(MsgForceTransfer) returns
-     * (MsgForceTransferResponse);
-     * </pre>
      */
     public void changeAdmin(osmosis.tokenfactory.v1beta1.Tx.MsgChangeAdmin request,
         io.grpc.stub.StreamObserver<osmosis.tokenfactory.v1beta1.Tx.MsgChangeAdminResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getChangeAdminMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void setDenomMetadata(osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata request,
+        io.grpc.stub.StreamObserver<osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getSetDenomMetadataMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
    * <pre>
-   * Msg defines the Msg service.
+   * Msg defines the tokefactory module's gRPC message service.
    * </pre>
    */
   public static final class MsgBlockingStub extends io.grpc.stub.AbstractBlockingStub<MsgBlockingStub> {
@@ -366,21 +409,23 @@ public final class MsgGrpc {
     }
 
     /**
-     * <pre>
-     * ForceTransfer is deactivated for now because we need to think through edge
-     * cases rpc ForceTransfer(MsgForceTransfer) returns
-     * (MsgForceTransferResponse);
-     * </pre>
      */
     public osmosis.tokenfactory.v1beta1.Tx.MsgChangeAdminResponse changeAdmin(osmosis.tokenfactory.v1beta1.Tx.MsgChangeAdmin request) {
       return blockingUnaryCall(
           getChannel(), getChangeAdminMethod(), getCallOptions(), request);
     }
+
+    /**
+     */
+    public osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse setDenomMetadata(osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata request) {
+      return blockingUnaryCall(
+          getChannel(), getSetDenomMetadataMethod(), getCallOptions(), request);
+    }
   }
 
   /**
    * <pre>
-   * Msg defines the Msg service.
+   * Msg defines the tokefactory module's gRPC message service.
    * </pre>
    */
   public static final class MsgFutureStub extends io.grpc.stub.AbstractFutureStub<MsgFutureStub> {
@@ -420,16 +465,19 @@ public final class MsgGrpc {
     }
 
     /**
-     * <pre>
-     * ForceTransfer is deactivated for now because we need to think through edge
-     * cases rpc ForceTransfer(MsgForceTransfer) returns
-     * (MsgForceTransferResponse);
-     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<osmosis.tokenfactory.v1beta1.Tx.MsgChangeAdminResponse> changeAdmin(
         osmosis.tokenfactory.v1beta1.Tx.MsgChangeAdmin request) {
       return futureUnaryCall(
           getChannel().newCall(getChangeAdminMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse> setDenomMetadata(
+        osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata request) {
+      return futureUnaryCall(
+          getChannel().newCall(getSetDenomMetadataMethod(), getCallOptions()), request);
     }
   }
 
@@ -437,6 +485,7 @@ public final class MsgGrpc {
   private static final int METHODID_MINT = 1;
   private static final int METHODID_BURN = 2;
   private static final int METHODID_CHANGE_ADMIN = 3;
+  private static final int METHODID_SET_DENOM_METADATA = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -470,6 +519,10 @@ public final class MsgGrpc {
         case METHODID_CHANGE_ADMIN:
           serviceImpl.changeAdmin((osmosis.tokenfactory.v1beta1.Tx.MsgChangeAdmin) request,
               (io.grpc.stub.StreamObserver<osmosis.tokenfactory.v1beta1.Tx.MsgChangeAdminResponse>) responseObserver);
+          break;
+        case METHODID_SET_DENOM_METADATA:
+          serviceImpl.setDenomMetadata((osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata) request,
+              (io.grpc.stub.StreamObserver<osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -536,6 +589,7 @@ public final class MsgGrpc {
               .addMethod(getMintMethod())
               .addMethod(getBurnMethod())
               .addMethod(getChangeAdminMethod())
+              .addMethod(getSetDenomMetadataMethod())
               .build();
         }
       }

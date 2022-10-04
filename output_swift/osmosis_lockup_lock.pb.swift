@@ -20,13 +20,11 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
+/// LockQueryType defines the type of the lock query that can
+/// either be by duration or start time of the lock.
 enum Osmosis_Lockup_LockQueryType: SwiftProtobuf.Enum {
   typealias RawValue = Int
-
-  /// Queries for locks that are longer than a certain duration
   case byDuration // = 0
-
-  /// Queries for lockups that started before a specific time
   case byTime // = 1
   case UNRECOGNIZED(Int)
 
@@ -64,18 +62,27 @@ extension Osmosis_Lockup_LockQueryType: CaseIterable {
 
 #endif  // swift(>=4.2)
 
-/// PeriodLock is a single unit of lock by period. It's a record of locked coin
-/// at a specific time. It stores owner, duration, unlock time and the amount of
-/// coins locked.
+/// PeriodLock is a single lock unit by period defined by the x/lockup module.
+/// It's a record of a locked coin at a specific time. It stores owner, duration,
+/// unlock time and the number of coins locked. A state of a period lock is
+/// created upon lock creation, and deleted once the lock has been matured after
+/// the `duration` has passed since unbonding started.
 struct Osmosis_Lockup_PeriodLock {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// ID is the unique id of the lock.
+  /// The ID of the lock is decided upon lock creation, incrementing by 1 for
+  /// every lock.
   var id: UInt64 = 0
 
+  /// Owner is the account address of the lock owner.
+  /// Only the owner can modify the state of the lock.
   var owner: String = String()
 
+  /// Duration is the time needed for a lock to mature after unlocking has
+  /// started.
   var duration: SwiftProtobuf.Google_Protobuf_Duration {
     get {return _duration ?? SwiftProtobuf.Google_Protobuf_Duration()}
     set {_duration = newValue}
@@ -85,6 +92,9 @@ struct Osmosis_Lockup_PeriodLock {
   /// Clears the value of `duration`. Subsequent reads from it will return its default value.
   mutating func clearDuration() {self._duration = nil}
 
+  /// EndTime refers to the time at which the lock would mature and get deleted.
+  /// This value is first initialized when an unlock has started for the lock,
+  /// end time being block time + duration.
   var endTime: SwiftProtobuf.Google_Protobuf_Timestamp {
     get {return _endTime ?? SwiftProtobuf.Google_Protobuf_Timestamp()}
     set {_endTime = newValue}
@@ -94,6 +104,7 @@ struct Osmosis_Lockup_PeriodLock {
   /// Clears the value of `endTime`. Subsequent reads from it will return its default value.
   mutating func clearEndTime() {self._endTime = nil}
 
+  /// Coins are the tokens locked within the lock, kept in the module account.
   var coins: [Cosmos_Base_V1beta1_Coin] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -104,18 +115,23 @@ struct Osmosis_Lockup_PeriodLock {
   fileprivate var _endTime: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
 }
 
+/// QueryCondition is a struct used for querying locks upon different conditions.
+/// Duration field and timestamp fields could be optional, depending on the
+/// LockQueryType.
 struct Osmosis_Lockup_QueryCondition {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  /// type of lock query, ByLockDuration | ByLockTime
+  /// LockQueryType is a type of lock query, ByLockDuration | ByLockTime
   var lockQueryType: Osmosis_Lockup_LockQueryType = .byDuration
 
-  /// What token denomination are we looking for lockups of
+  /// Denom represents the token denomination we are looking to lock up
   var denom: String = String()
 
-  /// valid when query condition is ByDuration
+  /// Duration is used to query locks with longer duration than the specified
+  /// duration. Duration field must not be nil when the lock query type is
+  /// `ByLockDuration`.
   var duration: SwiftProtobuf.Google_Protobuf_Duration {
     get {return _duration ?? SwiftProtobuf.Google_Protobuf_Duration()}
     set {_duration = newValue}
@@ -125,7 +141,9 @@ struct Osmosis_Lockup_QueryCondition {
   /// Clears the value of `duration`. Subsequent reads from it will return its default value.
   mutating func clearDuration() {self._duration = nil}
 
-  /// valid when query condition is ByTime
+  /// Timestamp is used by locks started before the specified duration.
+  /// Timestamp field must not be nil when the lock query type is `ByLockTime`.
+  /// Querying locks with timestamp is currently not implemented.
   var timestamp: SwiftProtobuf.Google_Protobuf_Timestamp {
     get {return _timestamp ?? SwiftProtobuf.Google_Protobuf_Timestamp()}
     set {_timestamp = newValue}
@@ -143,28 +161,21 @@ struct Osmosis_Lockup_QueryCondition {
   fileprivate var _timestamp: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
 }
 
-/// SyntheticLock is a single unit of synthetic lockup
-/// TODO: Change this to have
-/// * underlying_lock_id
-/// * synthetic_coin
-/// * end_time
-/// * duration
-/// * owner
-/// We then index synthetic locks by the denom, just like we do with normal
-/// locks. Ideally we even get an interface, so we can re-use that same logic.
-/// I currently have no idea how reward distribution is supposed to be working...
-/// EVENTUALLY
-/// we make a "constrained_coin" field, which is what the current "coins" field
-/// is. Constrained coin field can be a #post-v7 feature, since we aren't
-/// allowing partial unlocks of synthetic lockups.
+/// SyntheticLock is creating virtual lockup where new denom is combination of
+/// original denom and synthetic suffix. At the time of synthetic lockup creation
+/// and deletion, accumulation store is also being updated and on querier side,
+/// they can query as freely as native lockup.
 struct Osmosis_Lockup_SyntheticLock {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  /// underlying native lockup id for this synthetic lockup
+  /// Underlying Lock ID is the underlying native lock's id for this synthetic
+  /// lockup. A synthetic lock MUST have an underlying lock.
   var underlyingLockID: UInt64 = 0
 
+  /// SynthDenom is the synthetic denom that is a combination of
+  /// gamm share + bonding status + validator address.
   var synthDenom: String = String()
 
   /// used for unbonding synthetic lockups, for active synthetic lockups, this
@@ -178,6 +189,8 @@ struct Osmosis_Lockup_SyntheticLock {
   /// Clears the value of `endTime`. Subsequent reads from it will return its default value.
   mutating func clearEndTime() {self._endTime = nil}
 
+  /// Duration is the duration for a synthetic lock to mature
+  /// at the point of unbonding has started.
   var duration: SwiftProtobuf.Google_Protobuf_Duration {
     get {return _duration ?? SwiftProtobuf.Google_Protobuf_Duration()}
     set {_duration = newValue}

@@ -76,6 +76,43 @@ struct Osmosis_Poolincentives_V1beta1_DistrRecord {
   init() {}
 }
 
+struct Osmosis_Poolincentives_V1beta1_PoolToGauge {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var poolID: UInt64 = 0
+
+  var gaugeID: UInt64 = 0
+
+  var duration: SwiftProtobuf.Google_Protobuf_Duration {
+    get {return _duration ?? SwiftProtobuf.Google_Protobuf_Duration()}
+    set {_duration = newValue}
+  }
+  /// Returns true if `duration` has been explicitly set.
+  var hasDuration: Bool {return self._duration != nil}
+  /// Clears the value of `duration`. Subsequent reads from it will return its default value.
+  mutating func clearDuration() {self._duration = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _duration: SwiftProtobuf.Google_Protobuf_Duration? = nil
+}
+
+struct Osmosis_Poolincentives_V1beta1_PoolToGauges {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var poolToGauge: [Osmosis_Poolincentives_V1beta1_PoolToGauge] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "osmosis.poolincentives.v1beta1"
@@ -215,6 +252,82 @@ extension Osmosis_Poolincentives_V1beta1_DistrRecord: SwiftProtobuf.Message, Swi
   static func ==(lhs: Osmosis_Poolincentives_V1beta1_DistrRecord, rhs: Osmosis_Poolincentives_V1beta1_DistrRecord) -> Bool {
     if lhs.gaugeID != rhs.gaugeID {return false}
     if lhs.weight != rhs.weight {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Osmosis_Poolincentives_V1beta1_PoolToGauge: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".PoolToGauge"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "pool_id"),
+    2: .standard(proto: "gauge_id"),
+    3: .same(proto: "duration"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularUInt64Field(value: &self.poolID) }()
+      case 2: try { try decoder.decodeSingularUInt64Field(value: &self.gaugeID) }()
+      case 3: try { try decoder.decodeSingularMessageField(value: &self._duration) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.poolID != 0 {
+      try visitor.visitSingularUInt64Field(value: self.poolID, fieldNumber: 1)
+    }
+    if self.gaugeID != 0 {
+      try visitor.visitSingularUInt64Field(value: self.gaugeID, fieldNumber: 2)
+    }
+    if let v = self._duration {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Osmosis_Poolincentives_V1beta1_PoolToGauge, rhs: Osmosis_Poolincentives_V1beta1_PoolToGauge) -> Bool {
+    if lhs.poolID != rhs.poolID {return false}
+    if lhs.gaugeID != rhs.gaugeID {return false}
+    if lhs._duration != rhs._duration {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Osmosis_Poolincentives_V1beta1_PoolToGauges: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".PoolToGauges"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    2: .standard(proto: "pool_to_gauge"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.poolToGauge) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.poolToGauge.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.poolToGauge, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Osmosis_Poolincentives_V1beta1_PoolToGauges, rhs: Osmosis_Poolincentives_V1beta1_PoolToGauges) -> Bool {
+    if lhs.poolToGauge != rhs.poolToGauge {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -47,12 +47,22 @@ struct Osmosis_Poolincentives_V1beta1_GenesisState {
   /// Clears the value of `distrInfo`. Subsequent reads from it will return its default value.
   mutating func clearDistrInfo() {self._distrInfo = nil}
 
+  var poolToGauges: Osmosis_Poolincentives_V1beta1_PoolToGauges {
+    get {return _poolToGauges ?? Osmosis_Poolincentives_V1beta1_PoolToGauges()}
+    set {_poolToGauges = newValue}
+  }
+  /// Returns true if `poolToGauges` has been explicitly set.
+  var hasPoolToGauges: Bool {return self._poolToGauges != nil}
+  /// Clears the value of `poolToGauges`. Subsequent reads from it will return its default value.
+  mutating func clearPoolToGauges() {self._poolToGauges = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _params: Osmosis_Poolincentives_V1beta1_Params? = nil
   fileprivate var _distrInfo: Osmosis_Poolincentives_V1beta1_DistrInfo? = nil
+  fileprivate var _poolToGauges: Osmosis_Poolincentives_V1beta1_PoolToGauges? = nil
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -65,6 +75,7 @@ extension Osmosis_Poolincentives_V1beta1_GenesisState: SwiftProtobuf.Message, Sw
     1: .same(proto: "params"),
     2: .standard(proto: "lockable_durations"),
     3: .standard(proto: "distr_info"),
+    4: .standard(proto: "pool_to_gauges"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -76,6 +87,7 @@ extension Osmosis_Poolincentives_V1beta1_GenesisState: SwiftProtobuf.Message, Sw
       case 1: try { try decoder.decodeSingularMessageField(value: &self._params) }()
       case 2: try { try decoder.decodeRepeatedMessageField(value: &self.lockableDurations) }()
       case 3: try { try decoder.decodeSingularMessageField(value: &self._distrInfo) }()
+      case 4: try { try decoder.decodeSingularMessageField(value: &self._poolToGauges) }()
       default: break
       }
     }
@@ -91,6 +103,9 @@ extension Osmosis_Poolincentives_V1beta1_GenesisState: SwiftProtobuf.Message, Sw
     if let v = self._distrInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
     }
+    if let v = self._poolToGauges {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -98,6 +113,7 @@ extension Osmosis_Poolincentives_V1beta1_GenesisState: SwiftProtobuf.Message, Sw
     if lhs._params != rhs._params {return false}
     if lhs.lockableDurations != rhs.lockableDurations {return false}
     if lhs._distrInfo != rhs._distrInfo {return false}
+    if lhs._poolToGauges != rhs._poolToGauges {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

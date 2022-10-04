@@ -45,6 +45,9 @@ struct Osmosis_Tokenfactory_V1beta1_GenesisState {
   fileprivate var _params: Osmosis_Tokenfactory_V1beta1_Params? = nil
 }
 
+/// GenesisDenom defines a tokenfactory denom that is defined within genesis
+/// state. The structure contains DenomAuthorityMetadata which defines the
+/// denom's admin.
 struct Osmosis_Tokenfactory_V1beta1_GenesisDenom {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for

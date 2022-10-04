@@ -91,6 +91,11 @@ internal protocol Osmosis_Superfluid_QueryClientProtocol: GRPCClient {
     _ request: Osmosis_Superfluid_EstimateSuperfluidDelegatedAmountByValidatorDenomRequest,
     callOptions: CallOptions?
   ) -> UnaryCall<Osmosis_Superfluid_EstimateSuperfluidDelegatedAmountByValidatorDenomRequest, Osmosis_Superfluid_EstimateSuperfluidDelegatedAmountByValidatorDenomResponse>
+
+  func totalDelegationByDelegator(
+    _ request: Osmosis_Superfluid_QueryTotalDelegationByDelegatorRequest,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Osmosis_Superfluid_QueryTotalDelegationByDelegatorRequest, Osmosis_Superfluid_QueryTotalDelegationByDelegatorResponse>
 }
 
 extension Osmosis_Superfluid_QueryClientProtocol {
@@ -98,7 +103,7 @@ extension Osmosis_Superfluid_QueryClientProtocol {
     return "osmosis.superfluid.Query"
   }
 
-  /// Params returns the total set of minting parameters.
+  /// Params returns the total set of superfluid parameters.
   ///
   /// - Parameters:
   ///   - request: Request to send to Params.
@@ -116,7 +121,8 @@ extension Osmosis_Superfluid_QueryClientProtocol {
     )
   }
 
-  /// Returns superfluid asset type
+  /// Returns superfluid asset type, whether if it's a native asset or an lp
+  /// share.
   ///
   /// - Parameters:
   ///   - request: Request to send to AssetType.
@@ -134,7 +140,7 @@ extension Osmosis_Superfluid_QueryClientProtocol {
     )
   }
 
-  /// Returns all superfluid asset types
+  /// Returns all registered superfluid assets.
   ///
   /// - Parameters:
   ///   - request: Request to send to AllAssets.
@@ -152,7 +158,7 @@ extension Osmosis_Superfluid_QueryClientProtocol {
     )
   }
 
-  /// Returns superfluid asset Multiplier
+  /// Returns the osmo equivalent multiplier used in the most recent epoch.
   ///
   /// - Parameters:
   ///   - request: Request to send to AssetMultiplier.
@@ -170,7 +176,7 @@ extension Osmosis_Superfluid_QueryClientProtocol {
     )
   }
 
-  /// Returns all superfluid intermediary account
+  /// Returns all superfluid intermediary accounts.
   ///
   /// - Parameters:
   ///   - request: Request to send to AllIntermediaryAccounts.
@@ -206,8 +212,8 @@ extension Osmosis_Superfluid_QueryClientProtocol {
     )
   }
 
-  /// Returns the total amount of osmo superfluidly staked
-  /// response denominated in uosmo
+  /// Returns the total amount of osmo superfluidly staked.
+  /// Response is denominated in uosmo.
   ///
   /// - Parameters:
   ///   - request: Request to send to TotalSuperfluidDelegations.
@@ -225,7 +231,7 @@ extension Osmosis_Superfluid_QueryClientProtocol {
     )
   }
 
-  /// Returns the coins superfluid delegated for a delegator, validator, denom
+  /// Returns the coins superfluid delegated for the delegator, validator, denom
   /// triplet
   ///
   /// - Parameters:
@@ -244,7 +250,7 @@ extension Osmosis_Superfluid_QueryClientProtocol {
     )
   }
 
-  /// Returns all the superfluid poistions for a specific delegator
+  /// Returns all the delegated superfluid poistions for a specific delegator.
   ///
   /// - Parameters:
   ///   - request: Request to send to SuperfluidDelegationsByDelegator.
@@ -262,7 +268,7 @@ extension Osmosis_Superfluid_QueryClientProtocol {
     )
   }
 
-  /// Unary call to SuperfluidUndelegationsByDelegator
+  /// Returns all the undelegating superfluid poistions for a specific delegator.
   ///
   /// - Parameters:
   ///   - request: Request to send to SuperfluidUndelegationsByDelegator.
@@ -318,6 +324,24 @@ extension Osmosis_Superfluid_QueryClientProtocol {
       interceptors: self.interceptors?.makeEstimateSuperfluidDelegatedAmountByValidatorDenomInterceptors() ?? []
     )
   }
+
+  /// Returns the specified delegations for a specific delegator
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to TotalDelegationByDelegator.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func totalDelegationByDelegator(
+    _ request: Osmosis_Superfluid_QueryTotalDelegationByDelegatorRequest,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Osmosis_Superfluid_QueryTotalDelegationByDelegatorRequest, Osmosis_Superfluid_QueryTotalDelegationByDelegatorResponse> {
+    return self.makeUnaryCall(
+      path: "/osmosis.superfluid.Query/TotalDelegationByDelegator",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeTotalDelegationByDelegatorInterceptors() ?? []
+    )
+  }
 }
 
 internal protocol Osmosis_Superfluid_QueryClientInterceptorFactoryProtocol {
@@ -357,6 +381,9 @@ internal protocol Osmosis_Superfluid_QueryClientInterceptorFactoryProtocol {
 
   /// - Returns: Interceptors to use when invoking 'estimateSuperfluidDelegatedAmountByValidatorDenom'.
   func makeEstimateSuperfluidDelegatedAmountByValidatorDenomInterceptors() -> [ClientInterceptor<Osmosis_Superfluid_EstimateSuperfluidDelegatedAmountByValidatorDenomRequest, Osmosis_Superfluid_EstimateSuperfluidDelegatedAmountByValidatorDenomResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'totalDelegationByDelegator'.
+  func makeTotalDelegationByDelegatorInterceptors() -> [ClientInterceptor<Osmosis_Superfluid_QueryTotalDelegationByDelegatorRequest, Osmosis_Superfluid_QueryTotalDelegationByDelegatorResponse>]
 }
 
 internal final class Osmosis_Superfluid_QueryClient: Osmosis_Superfluid_QueryClientProtocol {
@@ -387,35 +414,37 @@ internal final class Osmosis_Superfluid_QueryClient: Osmosis_Superfluid_QueryCli
 internal protocol Osmosis_Superfluid_QueryProvider: CallHandlerProvider {
   var interceptors: Osmosis_Superfluid_QueryServerInterceptorFactoryProtocol? { get }
 
-  /// Params returns the total set of minting parameters.
+  /// Params returns the total set of superfluid parameters.
   func params(request: Osmosis_Superfluid_QueryParamsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Superfluid_QueryParamsResponse>
 
-  /// Returns superfluid asset type
+  /// Returns superfluid asset type, whether if it's a native asset or an lp
+  /// share.
   func assetType(request: Osmosis_Superfluid_AssetTypeRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Superfluid_AssetTypeResponse>
 
-  /// Returns all superfluid asset types
+  /// Returns all registered superfluid assets.
   func allAssets(request: Osmosis_Superfluid_AllAssetsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Superfluid_AllAssetsResponse>
 
-  /// Returns superfluid asset Multiplier
+  /// Returns the osmo equivalent multiplier used in the most recent epoch.
   func assetMultiplier(request: Osmosis_Superfluid_AssetMultiplierRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Superfluid_AssetMultiplierResponse>
 
-  /// Returns all superfluid intermediary account
+  /// Returns all superfluid intermediary accounts.
   func allIntermediaryAccounts(request: Osmosis_Superfluid_AllIntermediaryAccountsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Superfluid_AllIntermediaryAccountsResponse>
 
   /// Returns intermediary account connected to a superfluid staked lock by id
   func connectedIntermediaryAccount(request: Osmosis_Superfluid_ConnectedIntermediaryAccountRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Superfluid_ConnectedIntermediaryAccountResponse>
 
-  /// Returns the total amount of osmo superfluidly staked
-  /// response denominated in uosmo
+  /// Returns the total amount of osmo superfluidly staked.
+  /// Response is denominated in uosmo.
   func totalSuperfluidDelegations(request: Osmosis_Superfluid_TotalSuperfluidDelegationsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Superfluid_TotalSuperfluidDelegationsResponse>
 
-  /// Returns the coins superfluid delegated for a delegator, validator, denom
+  /// Returns the coins superfluid delegated for the delegator, validator, denom
   /// triplet
   func superfluidDelegationAmount(request: Osmosis_Superfluid_SuperfluidDelegationAmountRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Superfluid_SuperfluidDelegationAmountResponse>
 
-  /// Returns all the superfluid poistions for a specific delegator
+  /// Returns all the delegated superfluid poistions for a specific delegator.
   func superfluidDelegationsByDelegator(request: Osmosis_Superfluid_SuperfluidDelegationsByDelegatorRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Superfluid_SuperfluidDelegationsByDelegatorResponse>
 
+  /// Returns all the undelegating superfluid poistions for a specific delegator.
   func superfluidUndelegationsByDelegator(request: Osmosis_Superfluid_SuperfluidUndelegationsByDelegatorRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Superfluid_SuperfluidUndelegationsByDelegatorResponse>
 
   /// Returns all the superfluid positions of a specific denom delegated to one
@@ -426,6 +455,9 @@ internal protocol Osmosis_Superfluid_QueryProvider: CallHandlerProvider {
   /// This is labeled an estimate, because the way it calculates the amount can
   /// lead rounding errors from the true delegated amount
   func estimateSuperfluidDelegatedAmountByValidatorDenom(request: Osmosis_Superfluid_EstimateSuperfluidDelegatedAmountByValidatorDenomRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Superfluid_EstimateSuperfluidDelegatedAmountByValidatorDenomResponse>
+
+  /// Returns the specified delegations for a specific delegator
+  func totalDelegationByDelegator(request: Osmosis_Superfluid_QueryTotalDelegationByDelegatorRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Superfluid_QueryTotalDelegationByDelegatorResponse>
 }
 
 extension Osmosis_Superfluid_QueryProvider {
@@ -546,6 +578,15 @@ extension Osmosis_Superfluid_QueryProvider {
         userFunction: self.estimateSuperfluidDelegatedAmountByValidatorDenom(request:context:)
       )
 
+    case "TotalDelegationByDelegator":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Osmosis_Superfluid_QueryTotalDelegationByDelegatorRequest>(),
+        responseSerializer: ProtobufSerializer<Osmosis_Superfluid_QueryTotalDelegationByDelegatorResponse>(),
+        interceptors: self.interceptors?.makeTotalDelegationByDelegatorInterceptors() ?? [],
+        userFunction: self.totalDelegationByDelegator(request:context:)
+      )
+
     default:
       return nil
     }
@@ -601,4 +642,8 @@ internal protocol Osmosis_Superfluid_QueryServerInterceptorFactoryProtocol {
   /// - Returns: Interceptors to use when handling 'estimateSuperfluidDelegatedAmountByValidatorDenom'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeEstimateSuperfluidDelegatedAmountByValidatorDenomInterceptors() -> [ServerInterceptor<Osmosis_Superfluid_EstimateSuperfluidDelegatedAmountByValidatorDenomRequest, Osmosis_Superfluid_EstimateSuperfluidDelegatedAmountByValidatorDenomResponse>]
+
+  /// - Returns: Interceptors to use when handling 'totalDelegationByDelegator'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeTotalDelegationByDelegatorInterceptors() -> [ServerInterceptor<Osmosis_Superfluid_QueryTotalDelegationByDelegatorRequest, Osmosis_Superfluid_QueryTotalDelegationByDelegatorResponse>]
 }

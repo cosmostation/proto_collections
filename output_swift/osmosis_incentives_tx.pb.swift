@@ -20,18 +20,24 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
+/// MsgCreateGauge creates a gague to distribute rewards to users
 struct Osmosis_Incentives_MsgCreateGauge {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  /// flag to show if it's perpetual or multi-epoch
-  /// distribution incentives by third party
+  /// is_perpetual shows if it's a perpetual or non-perpetual gauge
+  /// Non-perpetual gauges distribute their tokens equally per epoch while the
+  /// gauge is in the active period. Perpetual gauges distribute all their tokens
+  /// at a single time and only distribute their tokens again once the gauge is
+  /// refilled
   var isPerpetual: Bool = false
 
+  /// owner is the address of gauge creator
   var owner: String = String()
 
-  /// distribute condition of a lock which meet one of these conditions
+  /// distribute_to show which lock the gauge should distribute to by time
+  /// duration or by timestamp
   var distributeTo: Osmosis_Lockup_QueryCondition {
     get {return _distributeTo ?? Osmosis_Lockup_QueryCondition()}
     set {_distributeTo = newValue}
@@ -41,10 +47,10 @@ struct Osmosis_Incentives_MsgCreateGauge {
   /// Clears the value of `distributeTo`. Subsequent reads from it will return its default value.
   mutating func clearDistributeTo() {self._distributeTo = nil}
 
-  /// can distribute multiple coins
+  /// coins are coin(s) to be distributed by the gauge
   var coins: [Cosmos_Base_V1beta1_Coin] = []
 
-  /// distribution start time
+  /// start_time is the distribution start time
   var startTime: SwiftProtobuf.Google_Protobuf_Timestamp {
     get {return _startTime ?? SwiftProtobuf.Google_Protobuf_Timestamp()}
     set {_startTime = newValue}
@@ -54,7 +60,8 @@ struct Osmosis_Incentives_MsgCreateGauge {
   /// Clears the value of `startTime`. Subsequent reads from it will return its default value.
   mutating func clearStartTime() {self._startTime = nil}
 
-  /// number of epochs distribution will be done
+  /// num_epochs_paid_over is the number of epochs distribution will be completed
+  /// over
   var numEpochsPaidOver: UInt64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -75,15 +82,19 @@ struct Osmosis_Incentives_MsgCreateGaugeResponse {
   init() {}
 }
 
+/// MsgAddToGauge adds coins to a previously created gauge
 struct Osmosis_Incentives_MsgAddToGauge {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// owner is the gauge owner's address
   var owner: String = String()
 
+  /// gauge_id is the ID of gauge that rewards are getting added to
   var gaugeID: UInt64 = 0
 
+  /// rewards are the coin(s) to add to gauge
   var rewards: [Cosmos_Base_V1beta1_Coin] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()

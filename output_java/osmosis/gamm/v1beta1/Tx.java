@@ -1191,6 +1191,42 @@ public final class Tx {
   public interface MsgJoinPoolResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:osmosis.gamm.v1beta1.MsgJoinPoolResponse)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string share_out_amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_out_amount&#92;""];</code>
+     * @return The shareOutAmount.
+     */
+    java.lang.String getShareOutAmount();
+    /**
+     * <code>string share_out_amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_out_amount&#92;""];</code>
+     * @return The bytes for shareOutAmount.
+     */
+    com.google.protobuf.ByteString
+        getShareOutAmountBytes();
+
+    /**
+     * <code>repeated .cosmos.base.v1beta1.Coin token_in = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_in&#92;""];</code>
+     */
+    java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> 
+        getTokenInList();
+    /**
+     * <code>repeated .cosmos.base.v1beta1.Coin token_in = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_in&#92;""];</code>
+     */
+    cosmos.base.v1beta1.CoinOuterClass.Coin getTokenIn(int index);
+    /**
+     * <code>repeated .cosmos.base.v1beta1.Coin token_in = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_in&#92;""];</code>
+     */
+    int getTokenInCount();
+    /**
+     * <code>repeated .cosmos.base.v1beta1.Coin token_in = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_in&#92;""];</code>
+     */
+    java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
+        getTokenInOrBuilderList();
+    /**
+     * <code>repeated .cosmos.base.v1beta1.Coin token_in = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_in&#92;""];</code>
+     */
+    cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getTokenInOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code osmosis.gamm.v1beta1.MsgJoinPoolResponse}
@@ -1205,6 +1241,8 @@ public final class Tx {
       super(builder);
     }
     private MsgJoinPoolResponse() {
+      shareOutAmount_ = "";
+      tokenIn_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -1227,6 +1265,7 @@ public final class Tx {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1237,6 +1276,21 @@ public final class Tx {
             case 0:
               done = true;
               break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              shareOutAmount_ = s;
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                tokenIn_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              tokenIn_.add(
+                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -1252,6 +1306,9 @@ public final class Tx {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          tokenIn_ = java.util.Collections.unmodifiableList(tokenIn_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -1269,6 +1326,84 @@ public final class Tx {
               osmosis.gamm.v1beta1.Tx.MsgJoinPoolResponse.class, osmosis.gamm.v1beta1.Tx.MsgJoinPoolResponse.Builder.class);
     }
 
+    public static final int SHARE_OUT_AMOUNT_FIELD_NUMBER = 1;
+    private volatile java.lang.Object shareOutAmount_;
+    /**
+     * <code>string share_out_amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_out_amount&#92;""];</code>
+     * @return The shareOutAmount.
+     */
+    @java.lang.Override
+    public java.lang.String getShareOutAmount() {
+      java.lang.Object ref = shareOutAmount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        shareOutAmount_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string share_out_amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_out_amount&#92;""];</code>
+     * @return The bytes for shareOutAmount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getShareOutAmountBytes() {
+      java.lang.Object ref = shareOutAmount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        shareOutAmount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TOKEN_IN_FIELD_NUMBER = 2;
+    private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> tokenIn_;
+    /**
+     * <code>repeated .cosmos.base.v1beta1.Coin token_in = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_in&#92;""];</code>
+     */
+    @java.lang.Override
+    public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getTokenInList() {
+      return tokenIn_;
+    }
+    /**
+     * <code>repeated .cosmos.base.v1beta1.Coin token_in = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_in&#92;""];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
+        getTokenInOrBuilderList() {
+      return tokenIn_;
+    }
+    /**
+     * <code>repeated .cosmos.base.v1beta1.Coin token_in = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_in&#92;""];</code>
+     */
+    @java.lang.Override
+    public int getTokenInCount() {
+      return tokenIn_.size();
+    }
+    /**
+     * <code>repeated .cosmos.base.v1beta1.Coin token_in = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_in&#92;""];</code>
+     */
+    @java.lang.Override
+    public cosmos.base.v1beta1.CoinOuterClass.Coin getTokenIn(int index) {
+      return tokenIn_.get(index);
+    }
+    /**
+     * <code>repeated .cosmos.base.v1beta1.Coin token_in = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_in&#92;""];</code>
+     */
+    @java.lang.Override
+    public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getTokenInOrBuilder(
+        int index) {
+      return tokenIn_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1283,6 +1418,12 @@ public final class Tx {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!getShareOutAmountBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, shareOutAmount_);
+      }
+      for (int i = 0; i < tokenIn_.size(); i++) {
+        output.writeMessage(2, tokenIn_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1292,6 +1433,13 @@ public final class Tx {
       if (size != -1) return size;
 
       size = 0;
+      if (!getShareOutAmountBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, shareOutAmount_);
+      }
+      for (int i = 0; i < tokenIn_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, tokenIn_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1307,6 +1455,10 @@ public final class Tx {
       }
       osmosis.gamm.v1beta1.Tx.MsgJoinPoolResponse other = (osmosis.gamm.v1beta1.Tx.MsgJoinPoolResponse) obj;
 
+      if (!getShareOutAmount()
+          .equals(other.getShareOutAmount())) return false;
+      if (!getTokenInList()
+          .equals(other.getTokenInList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1318,6 +1470,12 @@ public final class Tx {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SHARE_OUT_AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getShareOutAmount().hashCode();
+      if (getTokenInCount() > 0) {
+        hash = (37 * hash) + TOKEN_IN_FIELD_NUMBER;
+        hash = (53 * hash) + getTokenInList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1446,11 +1604,20 @@ public final class Tx {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getTokenInFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        shareOutAmount_ = "";
+
+        if (tokenInBuilder_ == null) {
+          tokenIn_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          tokenInBuilder_.clear();
+        }
         return this;
       }
 
@@ -1477,6 +1644,17 @@ public final class Tx {
       @java.lang.Override
       public osmosis.gamm.v1beta1.Tx.MsgJoinPoolResponse buildPartial() {
         osmosis.gamm.v1beta1.Tx.MsgJoinPoolResponse result = new osmosis.gamm.v1beta1.Tx.MsgJoinPoolResponse(this);
+        int from_bitField0_ = bitField0_;
+        result.shareOutAmount_ = shareOutAmount_;
+        if (tokenInBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            tokenIn_ = java.util.Collections.unmodifiableList(tokenIn_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.tokenIn_ = tokenIn_;
+        } else {
+          result.tokenIn_ = tokenInBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -1525,6 +1703,36 @@ public final class Tx {
 
       public Builder mergeFrom(osmosis.gamm.v1beta1.Tx.MsgJoinPoolResponse other) {
         if (other == osmosis.gamm.v1beta1.Tx.MsgJoinPoolResponse.getDefaultInstance()) return this;
+        if (!other.getShareOutAmount().isEmpty()) {
+          shareOutAmount_ = other.shareOutAmount_;
+          onChanged();
+        }
+        if (tokenInBuilder_ == null) {
+          if (!other.tokenIn_.isEmpty()) {
+            if (tokenIn_.isEmpty()) {
+              tokenIn_ = other.tokenIn_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureTokenInIsMutable();
+              tokenIn_.addAll(other.tokenIn_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.tokenIn_.isEmpty()) {
+            if (tokenInBuilder_.isEmpty()) {
+              tokenInBuilder_.dispose();
+              tokenInBuilder_ = null;
+              tokenIn_ = other.tokenIn_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              tokenInBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getTokenInFieldBuilder() : null;
+            } else {
+              tokenInBuilder_.addAllMessages(other.tokenIn_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1552,6 +1760,323 @@ public final class Tx {
           }
         }
         return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object shareOutAmount_ = "";
+      /**
+       * <code>string share_out_amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_out_amount&#92;""];</code>
+       * @return The shareOutAmount.
+       */
+      public java.lang.String getShareOutAmount() {
+        java.lang.Object ref = shareOutAmount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          shareOutAmount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string share_out_amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_out_amount&#92;""];</code>
+       * @return The bytes for shareOutAmount.
+       */
+      public com.google.protobuf.ByteString
+          getShareOutAmountBytes() {
+        java.lang.Object ref = shareOutAmount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          shareOutAmount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string share_out_amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_out_amount&#92;""];</code>
+       * @param value The shareOutAmount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setShareOutAmount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        shareOutAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string share_out_amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_out_amount&#92;""];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearShareOutAmount() {
+        
+        shareOutAmount_ = getDefaultInstance().getShareOutAmount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string share_out_amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"share_out_amount&#92;""];</code>
+       * @param value The bytes for shareOutAmount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setShareOutAmountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        shareOutAmount_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> tokenIn_ =
+        java.util.Collections.emptyList();
+      private void ensureTokenInIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          tokenIn_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>(tokenIn_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> tokenInBuilder_;
+
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_in = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_in&#92;""];</code>
+       */
+      public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getTokenInList() {
+        if (tokenInBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(tokenIn_);
+        } else {
+          return tokenInBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_in = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_in&#92;""];</code>
+       */
+      public int getTokenInCount() {
+        if (tokenInBuilder_ == null) {
+          return tokenIn_.size();
+        } else {
+          return tokenInBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_in = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_in&#92;""];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.Coin getTokenIn(int index) {
+        if (tokenInBuilder_ == null) {
+          return tokenIn_.get(index);
+        } else {
+          return tokenInBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_in = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_in&#92;""];</code>
+       */
+      public Builder setTokenIn(
+          int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
+        if (tokenInBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTokenInIsMutable();
+          tokenIn_.set(index, value);
+          onChanged();
+        } else {
+          tokenInBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_in = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_in&#92;""];</code>
+       */
+      public Builder setTokenIn(
+          int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
+        if (tokenInBuilder_ == null) {
+          ensureTokenInIsMutable();
+          tokenIn_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          tokenInBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_in = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_in&#92;""];</code>
+       */
+      public Builder addTokenIn(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
+        if (tokenInBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTokenInIsMutable();
+          tokenIn_.add(value);
+          onChanged();
+        } else {
+          tokenInBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_in = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_in&#92;""];</code>
+       */
+      public Builder addTokenIn(
+          int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
+        if (tokenInBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTokenInIsMutable();
+          tokenIn_.add(index, value);
+          onChanged();
+        } else {
+          tokenInBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_in = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_in&#92;""];</code>
+       */
+      public Builder addTokenIn(
+          cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
+        if (tokenInBuilder_ == null) {
+          ensureTokenInIsMutable();
+          tokenIn_.add(builderForValue.build());
+          onChanged();
+        } else {
+          tokenInBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_in = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_in&#92;""];</code>
+       */
+      public Builder addTokenIn(
+          int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
+        if (tokenInBuilder_ == null) {
+          ensureTokenInIsMutable();
+          tokenIn_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          tokenInBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_in = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_in&#92;""];</code>
+       */
+      public Builder addAllTokenIn(
+          java.lang.Iterable<? extends cosmos.base.v1beta1.CoinOuterClass.Coin> values) {
+        if (tokenInBuilder_ == null) {
+          ensureTokenInIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, tokenIn_);
+          onChanged();
+        } else {
+          tokenInBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_in = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_in&#92;""];</code>
+       */
+      public Builder clearTokenIn() {
+        if (tokenInBuilder_ == null) {
+          tokenIn_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          tokenInBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_in = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_in&#92;""];</code>
+       */
+      public Builder removeTokenIn(int index) {
+        if (tokenInBuilder_ == null) {
+          ensureTokenInIsMutable();
+          tokenIn_.remove(index);
+          onChanged();
+        } else {
+          tokenInBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_in = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_in&#92;""];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getTokenInBuilder(
+          int index) {
+        return getTokenInFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_in = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_in&#92;""];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getTokenInOrBuilder(
+          int index) {
+        if (tokenInBuilder_ == null) {
+          return tokenIn_.get(index);  } else {
+          return tokenInBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_in = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_in&#92;""];</code>
+       */
+      public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
+           getTokenInOrBuilderList() {
+        if (tokenInBuilder_ != null) {
+          return tokenInBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(tokenIn_);
+        }
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_in = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_in&#92;""];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addTokenInBuilder() {
+        return getTokenInFieldBuilder().addBuilder(
+            cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_in = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_in&#92;""];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addTokenInBuilder(
+          int index) {
+        return getTokenInFieldBuilder().addBuilder(
+            index, cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_in = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_in&#92;""];</code>
+       */
+      public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin.Builder> 
+           getTokenInBuilderList() {
+        return getTokenInFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
+          getTokenInFieldBuilder() {
+        if (tokenInBuilder_ == null) {
+          tokenInBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder>(
+                  tokenIn_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          tokenIn_ = null;
+        }
+        return tokenInBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -2781,6 +3306,30 @@ public final class Tx {
   public interface MsgExitPoolResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:osmosis.gamm.v1beta1.MsgExitPoolResponse)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .cosmos.base.v1beta1.Coin token_out = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_out&#92;""];</code>
+     */
+    java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> 
+        getTokenOutList();
+    /**
+     * <code>repeated .cosmos.base.v1beta1.Coin token_out = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_out&#92;""];</code>
+     */
+    cosmos.base.v1beta1.CoinOuterClass.Coin getTokenOut(int index);
+    /**
+     * <code>repeated .cosmos.base.v1beta1.Coin token_out = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_out&#92;""];</code>
+     */
+    int getTokenOutCount();
+    /**
+     * <code>repeated .cosmos.base.v1beta1.Coin token_out = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_out&#92;""];</code>
+     */
+    java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
+        getTokenOutOrBuilderList();
+    /**
+     * <code>repeated .cosmos.base.v1beta1.Coin token_out = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_out&#92;""];</code>
+     */
+    cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getTokenOutOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code osmosis.gamm.v1beta1.MsgExitPoolResponse}
@@ -2795,6 +3344,7 @@ public final class Tx {
       super(builder);
     }
     private MsgExitPoolResponse() {
+      tokenOut_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -2817,6 +3367,7 @@ public final class Tx {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -2827,6 +3378,15 @@ public final class Tx {
             case 0:
               done = true;
               break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                tokenOut_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              tokenOut_.add(
+                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -2842,6 +3402,9 @@ public final class Tx {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          tokenOut_ = java.util.Collections.unmodifiableList(tokenOut_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -2859,6 +3422,46 @@ public final class Tx {
               osmosis.gamm.v1beta1.Tx.MsgExitPoolResponse.class, osmosis.gamm.v1beta1.Tx.MsgExitPoolResponse.Builder.class);
     }
 
+    public static final int TOKEN_OUT_FIELD_NUMBER = 1;
+    private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> tokenOut_;
+    /**
+     * <code>repeated .cosmos.base.v1beta1.Coin token_out = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_out&#92;""];</code>
+     */
+    @java.lang.Override
+    public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getTokenOutList() {
+      return tokenOut_;
+    }
+    /**
+     * <code>repeated .cosmos.base.v1beta1.Coin token_out = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_out&#92;""];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
+        getTokenOutOrBuilderList() {
+      return tokenOut_;
+    }
+    /**
+     * <code>repeated .cosmos.base.v1beta1.Coin token_out = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_out&#92;""];</code>
+     */
+    @java.lang.Override
+    public int getTokenOutCount() {
+      return tokenOut_.size();
+    }
+    /**
+     * <code>repeated .cosmos.base.v1beta1.Coin token_out = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_out&#92;""];</code>
+     */
+    @java.lang.Override
+    public cosmos.base.v1beta1.CoinOuterClass.Coin getTokenOut(int index) {
+      return tokenOut_.get(index);
+    }
+    /**
+     * <code>repeated .cosmos.base.v1beta1.Coin token_out = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_out&#92;""];</code>
+     */
+    @java.lang.Override
+    public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getTokenOutOrBuilder(
+        int index) {
+      return tokenOut_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2873,6 +3476,9 @@ public final class Tx {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      for (int i = 0; i < tokenOut_.size(); i++) {
+        output.writeMessage(1, tokenOut_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2882,6 +3488,10 @@ public final class Tx {
       if (size != -1) return size;
 
       size = 0;
+      for (int i = 0; i < tokenOut_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, tokenOut_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2897,6 +3507,8 @@ public final class Tx {
       }
       osmosis.gamm.v1beta1.Tx.MsgExitPoolResponse other = (osmosis.gamm.v1beta1.Tx.MsgExitPoolResponse) obj;
 
+      if (!getTokenOutList()
+          .equals(other.getTokenOutList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2908,6 +3520,10 @@ public final class Tx {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (getTokenOutCount() > 0) {
+        hash = (37 * hash) + TOKEN_OUT_FIELD_NUMBER;
+        hash = (53 * hash) + getTokenOutList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3036,11 +3652,18 @@ public final class Tx {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getTokenOutFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (tokenOutBuilder_ == null) {
+          tokenOut_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          tokenOutBuilder_.clear();
+        }
         return this;
       }
 
@@ -3067,6 +3690,16 @@ public final class Tx {
       @java.lang.Override
       public osmosis.gamm.v1beta1.Tx.MsgExitPoolResponse buildPartial() {
         osmosis.gamm.v1beta1.Tx.MsgExitPoolResponse result = new osmosis.gamm.v1beta1.Tx.MsgExitPoolResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (tokenOutBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            tokenOut_ = java.util.Collections.unmodifiableList(tokenOut_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.tokenOut_ = tokenOut_;
+        } else {
+          result.tokenOut_ = tokenOutBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -3115,6 +3748,32 @@ public final class Tx {
 
       public Builder mergeFrom(osmosis.gamm.v1beta1.Tx.MsgExitPoolResponse other) {
         if (other == osmosis.gamm.v1beta1.Tx.MsgExitPoolResponse.getDefaultInstance()) return this;
+        if (tokenOutBuilder_ == null) {
+          if (!other.tokenOut_.isEmpty()) {
+            if (tokenOut_.isEmpty()) {
+              tokenOut_ = other.tokenOut_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureTokenOutIsMutable();
+              tokenOut_.addAll(other.tokenOut_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.tokenOut_.isEmpty()) {
+            if (tokenOutBuilder_.isEmpty()) {
+              tokenOutBuilder_.dispose();
+              tokenOutBuilder_ = null;
+              tokenOut_ = other.tokenOut_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              tokenOutBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getTokenOutFieldBuilder() : null;
+            } else {
+              tokenOutBuilder_.addAllMessages(other.tokenOut_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -3142,6 +3801,247 @@ public final class Tx {
           }
         }
         return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> tokenOut_ =
+        java.util.Collections.emptyList();
+      private void ensureTokenOutIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          tokenOut_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>(tokenOut_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> tokenOutBuilder_;
+
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_out = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_out&#92;""];</code>
+       */
+      public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getTokenOutList() {
+        if (tokenOutBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(tokenOut_);
+        } else {
+          return tokenOutBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_out = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_out&#92;""];</code>
+       */
+      public int getTokenOutCount() {
+        if (tokenOutBuilder_ == null) {
+          return tokenOut_.size();
+        } else {
+          return tokenOutBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_out = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_out&#92;""];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.Coin getTokenOut(int index) {
+        if (tokenOutBuilder_ == null) {
+          return tokenOut_.get(index);
+        } else {
+          return tokenOutBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_out = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_out&#92;""];</code>
+       */
+      public Builder setTokenOut(
+          int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
+        if (tokenOutBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTokenOutIsMutable();
+          tokenOut_.set(index, value);
+          onChanged();
+        } else {
+          tokenOutBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_out = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_out&#92;""];</code>
+       */
+      public Builder setTokenOut(
+          int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
+        if (tokenOutBuilder_ == null) {
+          ensureTokenOutIsMutable();
+          tokenOut_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          tokenOutBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_out = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_out&#92;""];</code>
+       */
+      public Builder addTokenOut(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
+        if (tokenOutBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTokenOutIsMutable();
+          tokenOut_.add(value);
+          onChanged();
+        } else {
+          tokenOutBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_out = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_out&#92;""];</code>
+       */
+      public Builder addTokenOut(
+          int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
+        if (tokenOutBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTokenOutIsMutable();
+          tokenOut_.add(index, value);
+          onChanged();
+        } else {
+          tokenOutBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_out = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_out&#92;""];</code>
+       */
+      public Builder addTokenOut(
+          cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
+        if (tokenOutBuilder_ == null) {
+          ensureTokenOutIsMutable();
+          tokenOut_.add(builderForValue.build());
+          onChanged();
+        } else {
+          tokenOutBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_out = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_out&#92;""];</code>
+       */
+      public Builder addTokenOut(
+          int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
+        if (tokenOutBuilder_ == null) {
+          ensureTokenOutIsMutable();
+          tokenOut_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          tokenOutBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_out = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_out&#92;""];</code>
+       */
+      public Builder addAllTokenOut(
+          java.lang.Iterable<? extends cosmos.base.v1beta1.CoinOuterClass.Coin> values) {
+        if (tokenOutBuilder_ == null) {
+          ensureTokenOutIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, tokenOut_);
+          onChanged();
+        } else {
+          tokenOutBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_out = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_out&#92;""];</code>
+       */
+      public Builder clearTokenOut() {
+        if (tokenOutBuilder_ == null) {
+          tokenOut_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          tokenOutBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_out = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_out&#92;""];</code>
+       */
+      public Builder removeTokenOut(int index) {
+        if (tokenOutBuilder_ == null) {
+          ensureTokenOutIsMutable();
+          tokenOut_.remove(index);
+          onChanged();
+        } else {
+          tokenOutBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_out = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_out&#92;""];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getTokenOutBuilder(
+          int index) {
+        return getTokenOutFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_out = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_out&#92;""];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getTokenOutOrBuilder(
+          int index) {
+        if (tokenOutBuilder_ == null) {
+          return tokenOut_.get(index);  } else {
+          return tokenOutBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_out = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_out&#92;""];</code>
+       */
+      public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
+           getTokenOutOrBuilderList() {
+        if (tokenOutBuilder_ != null) {
+          return tokenOutBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(tokenOut_);
+        }
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_out = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_out&#92;""];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addTokenOutBuilder() {
+        return getTokenOutFieldBuilder().addBuilder(
+            cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_out = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_out&#92;""];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addTokenOutBuilder(
+          int index) {
+        return getTokenOutFieldBuilder().addBuilder(
+            index, cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .cosmos.base.v1beta1.Coin token_out = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"token_out&#92;""];</code>
+       */
+      public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin.Builder> 
+           getTokenOutBuilderList() {
+        return getTokenOutFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
+          getTokenOutFieldBuilder() {
+        if (tokenOutBuilder_ == null) {
+          tokenOutBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder>(
+                  tokenOut_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          tokenOut_ = null;
+        }
+        return tokenOutBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -14857,114 +15757,120 @@ public final class Tx {
       "smos/cosmos-sdk/types.Int\362\336\037\026yaml:\"pool_" +
       "amount_out\"\310\336\037\000\022U\n\rtoken_in_maxs\030\004 \003(\0132\031" +
       ".cosmos.base.v1beta1.CoinB#\362\336\037\033yaml:\"tok" +
-      "en_in_max_amounts\"\310\336\037\000\"\025\n\023MsgJoinPoolRes" +
-      "ponse\"\221\002\n\013MsgExitPool\022!\n\006sender\030\001 \001(\tB\021\362" +
-      "\336\037\ryaml:\"sender\"\022#\n\007pool_id\030\002 \001(\004B\022\362\336\037\016y" +
-      "aml:\"pool_id\"\022a\n\017share_in_amount\030\003 \001(\tBH" +
-      "\332\336\037&github.com/cosmos/cosmos-sdk/types.I" +
-      "nt\362\336\037\026yaml:\"share_in_amount\"\310\336\037\000\022W\n\016toke" +
-      "n_out_mins\030\004 \003(\0132\031.cosmos.base.v1beta1.C" +
-      "oinB$\362\336\037\034yaml:\"token_out_min_amounts\"\310\336\037" +
-      "\000\"\025\n\023MsgExitPoolResponse\"m\n\021SwapAmountIn" +
-      "Route\022#\n\007pool_id\030\001 \001(\004B\022\362\336\037\016yaml:\"pool_i" +
-      "d\"\0223\n\017token_out_denom\030\002 \001(\tB\032\362\336\037\026yaml:\"t" +
-      "oken_out_denom\"\"\253\002\n\024MsgSwapExactAmountIn" +
-      "\022!\n\006sender\030\001 \001(\tB\021\362\336\037\ryaml:\"sender\"\022=\n\006r" +
-      "outes\030\002 \003(\0132\'.osmosis.gamm.v1beta1.SwapA" +
-      "mountInRouteB\004\310\336\037\000\022D\n\010token_in\030\003 \001(\0132\031.c" +
-      "osmos.base.v1beta1.CoinB\027\362\336\037\017yaml:\"token" +
-      "_in\"\310\336\037\000\022k\n\024token_out_min_amount\030\004 \001(\tBM" +
-      "\332\336\037&github.com/cosmos/cosmos-sdk/types.I" +
-      "nt\362\336\037\033yaml:\"token_out_min_amount\"\310\336\037\000\"\203\001" +
-      "\n\034MsgSwapExactAmountInResponse\022c\n\020token_" +
-      "out_amount\030\001 \001(\tBI\332\336\037&github.com/cosmos/" +
-      "cosmos-sdk/types.Int\362\336\037\027yaml:\"token_out_" +
-      "amount\"\310\336\037\000\"m\n\022SwapAmountOutRoute\022#\n\007poo" +
-      "l_id\030\001 \001(\004B\022\362\336\037\016yaml:\"pool_id\"\0222\n\016token_" +
-      "in_denom\030\002 \001(\tB\032\362\336\037\026yaml:\"token_out_deno" +
-      "m\"\"\255\002\n\025MsgSwapExactAmountOut\022!\n\006sender\030\001" +
-      " \001(\tB\021\362\336\037\ryaml:\"sender\"\022>\n\006routes\030\002 \003(\0132" +
-      "(.osmosis.gamm.v1beta1.SwapAmountOutRout" +
-      "eB\004\310\336\037\000\022i\n\023token_in_max_amount\030\003 \001(\tBL\332\336" +
-      "\037&github.com/cosmos/cosmos-sdk/types.Int" +
-      "\362\336\037\032yaml:\"token_in_max_amount\"\310\336\037\000\022F\n\tto" +
-      "ken_out\030\004 \001(\0132\031.cosmos.base.v1beta1.Coin" +
-      "B\030\362\336\037\020yaml:\"token_out\"\310\336\037\000\"\202\001\n\035MsgSwapEx" +
-      "actAmountOutResponse\022a\n\017token_in_amount\030" +
-      "\001 \001(\tBH\332\336\037&github.com/cosmos/cosmos-sdk/" +
-      "types.Int\362\336\037\026yaml:\"token_in_amount\"\310\336\037\000\"" +
-      "\226\002\n\031MsgJoinSwapExternAmountIn\022!\n\006sender\030" +
-      "\001 \001(\tB\021\362\336\037\ryaml:\"sender\"\022#\n\007pool_id\030\002 \001(" +
-      "\004B\022\362\336\037\016yaml:\"pool_id\"\022D\n\010token_in\030\003 \001(\0132" +
-      "\031.cosmos.base.v1beta1.CoinB\027\362\336\037\017yaml:\"to" +
-      "ken_in\"\310\336\037\000\022k\n\024share_out_min_amount\030\004 \001(" +
-      "\tBM\332\336\037&github.com/cosmos/cosmos-sdk/type" +
-      "s.Int\362\336\037\033yaml:\"share_out_min_amount\"\310\336\037\000" +
-      "\"\210\001\n!MsgJoinSwapExternAmountInResponse\022c" +
-      "\n\020share_out_amount\030\001 \001(\tBI\332\336\037&github.com" +
-      "/cosmos/cosmos-sdk/types.Int\362\336\037\027yaml:\"sh" +
-      "are_out_amount\"\310\336\037\000\"\346\002\n\031MsgJoinSwapShare" +
-      "AmountOut\022!\n\006sender\030\001 \001(\tB\021\362\336\037\ryaml:\"sen" +
-      "der\"\022#\n\007pool_id\030\002 \001(\004B\022\362\336\037\016yaml:\"pool_id" +
-      "\"\0221\n\016token_in_denom\030\003 \001(\tB\031\362\336\037\025yaml:\"tok" +
-      "en_in_denom\"\022c\n\020share_out_amount\030\004 \001(\tBI" +
-      "\332\336\037&github.com/cosmos/cosmos-sdk/types.I" +
-      "nt\362\336\037\027yaml:\"share_out_amount\"\310\336\037\000\022i\n\023tok" +
-      "en_in_max_amount\030\005 \001(\tBL\332\336\037&github.com/c" +
-      "osmos/cosmos-sdk/types.Int\362\336\037\032yaml:\"toke" +
-      "n_in_max_amount\"\310\336\037\000\"\206\001\n!MsgJoinSwapShar" +
-      "eAmountOutResponse\022a\n\017token_in_amount\030\001 " +
-      "\001(\tBH\332\336\037&github.com/cosmos/cosmos-sdk/ty" +
-      "pes.Int\362\336\037\026yaml:\"token_in_amount\"\310\336\037\000\"\347\002" +
-      "\n\030MsgExitSwapShareAmountIn\022!\n\006sender\030\001 \001" +
-      "(\tB\021\362\336\037\ryaml:\"sender\"\022#\n\007pool_id\030\002 \001(\004B\022" +
-      "\362\336\037\016yaml:\"pool_id\"\0223\n\017token_out_denom\030\003 " +
-      "\001(\tB\032\362\336\037\026yaml:\"token_out_denom\"\022a\n\017share" +
-      "_in_amount\030\004 \001(\tBH\332\336\037&github.com/cosmos/" +
-      "cosmos-sdk/types.Int\362\336\037\026yaml:\"share_in_a" +
-      "mount\"\310\336\037\000\022k\n\024token_out_min_amount\030\005 \001(\t" +
-      "BM\332\336\037&github.com/cosmos/cosmos-sdk/types" +
-      ".Int\362\336\037\033yaml:\"token_out_min_amount\"\310\336\037\000\"" +
-      "\207\001\n MsgExitSwapShareAmountInResponse\022c\n\020" +
-      "token_out_amount\030\001 \001(\tBI\332\336\037&github.com/c" +
-      "osmos/cosmos-sdk/types.Int\362\336\037\027yaml:\"toke" +
-      "n_out_amount\"\310\336\037\000\"\227\002\n\032MsgExitSwapExternA" +
-      "mountOut\022!\n\006sender\030\001 \001(\tB\021\362\336\037\ryaml:\"send" +
-      "er\"\022#\n\007pool_id\030\002 \001(\004B\022\362\336\037\016yaml:\"pool_id\"" +
-      "\022F\n\ttoken_out\030\003 \001(\0132\031.cosmos.base.v1beta" +
-      "1.CoinB\030\362\336\037\020yaml:\"token_out\"\310\336\037\000\022i\n\023shar" +
-      "e_in_max_amount\030\004 \001(\tBL\332\336\037&github.com/co" +
-      "smos/cosmos-sdk/types.Int\362\336\037\032yaml:\"share" +
-      "_in_max_amount\"\310\336\037\000\"\207\001\n\"MsgExitSwapExter" +
-      "nAmountOutResponse\022a\n\017share_in_amount\030\001 " +
-      "\001(\tBH\332\336\037&github.com/cosmos/cosmos-sdk/ty" +
-      "pes.Int\362\336\037\026yaml:\"share_in_amount\"\310\336\037\0002\271\007" +
-      "\n\003Msg\022X\n\010JoinPool\022!.osmosis.gamm.v1beta1" +
-      ".MsgJoinPool\032).osmosis.gamm.v1beta1.MsgJ" +
-      "oinPoolResponse\022X\n\010ExitPool\022!.osmosis.ga" +
-      "mm.v1beta1.MsgExitPool\032).osmosis.gamm.v1" +
-      "beta1.MsgExitPoolResponse\022s\n\021SwapExactAm" +
-      "ountIn\022*.osmosis.gamm.v1beta1.MsgSwapExa" +
-      "ctAmountIn\0322.osmosis.gamm.v1beta1.MsgSwa" +
-      "pExactAmountInResponse\022v\n\022SwapExactAmoun" +
-      "tOut\022+.osmosis.gamm.v1beta1.MsgSwapExact" +
-      "AmountOut\0323.osmosis.gamm.v1beta1.MsgSwap" +
-      "ExactAmountOutResponse\022\202\001\n\026JoinSwapExter" +
-      "nAmountIn\022/.osmosis.gamm.v1beta1.MsgJoin" +
-      "SwapExternAmountIn\0327.osmosis.gamm.v1beta" +
-      "1.MsgJoinSwapExternAmountInResponse\022\202\001\n\026" +
-      "JoinSwapShareAmountOut\022/.osmosis.gamm.v1" +
-      "beta1.MsgJoinSwapShareAmountOut\0327.osmosi" +
-      "s.gamm.v1beta1.MsgJoinSwapShareAmountOut" +
-      "Response\022\205\001\n\027ExitSwapExternAmountOut\0220.o" +
-      "smosis.gamm.v1beta1.MsgExitSwapExternAmo" +
-      "untOut\0328.osmosis.gamm.v1beta1.MsgExitSwa" +
-      "pExternAmountOutResponse\022\177\n\025ExitSwapShar" +
-      "eAmountIn\022..osmosis.gamm.v1beta1.MsgExit" +
-      "SwapShareAmountIn\0326.osmosis.gamm.v1beta1" +
-      ".MsgExitSwapShareAmountInResponseB1Z/git" +
-      "hub.com/osmosis-labs/osmosis/v7/x/gamm/t" +
-      "ypesb\006proto3"
+      "en_in_max_amounts\"\310\336\037\000\"\300\001\n\023MsgJoinPoolRe" +
+      "sponse\022c\n\020share_out_amount\030\001 \001(\tBI\332\336\037&gi" +
+      "thub.com/cosmos/cosmos-sdk/types.Int\362\336\037\027" +
+      "yaml:\"share_out_amount\"\310\336\037\000\022D\n\010token_in\030" +
+      "\002 \003(\0132\031.cosmos.base.v1beta1.CoinB\027\362\336\037\017ya" +
+      "ml:\"token_in\"\310\336\037\000\"\221\002\n\013MsgExitPool\022!\n\006sen" +
+      "der\030\001 \001(\tB\021\362\336\037\ryaml:\"sender\"\022#\n\007pool_id\030" +
+      "\002 \001(\004B\022\362\336\037\016yaml:\"pool_id\"\022a\n\017share_in_am" +
+      "ount\030\003 \001(\tBH\332\336\037&github.com/cosmos/cosmos" +
+      "-sdk/types.Int\362\336\037\026yaml:\"share_in_amount\"" +
+      "\310\336\037\000\022W\n\016token_out_mins\030\004 \003(\0132\031.cosmos.ba" +
+      "se.v1beta1.CoinB$\362\336\037\034yaml:\"token_out_min" +
+      "_amounts\"\310\336\037\000\"]\n\023MsgExitPoolResponse\022F\n\t" +
+      "token_out\030\001 \003(\0132\031.cosmos.base.v1beta1.Co" +
+      "inB\030\362\336\037\020yaml:\"token_out\"\310\336\037\000\"m\n\021SwapAmou" +
+      "ntInRoute\022#\n\007pool_id\030\001 \001(\004B\022\362\336\037\016yaml:\"po" +
+      "ol_id\"\0223\n\017token_out_denom\030\002 \001(\tB\032\362\336\037\026yam" +
+      "l:\"token_out_denom\"\"\253\002\n\024MsgSwapExactAmou" +
+      "ntIn\022!\n\006sender\030\001 \001(\tB\021\362\336\037\ryaml:\"sender\"\022" +
+      "=\n\006routes\030\002 \003(\0132\'.osmosis.gamm.v1beta1.S" +
+      "wapAmountInRouteB\004\310\336\037\000\022D\n\010token_in\030\003 \001(\013" +
+      "2\031.cosmos.base.v1beta1.CoinB\027\362\336\037\017yaml:\"t" +
+      "oken_in\"\310\336\037\000\022k\n\024token_out_min_amount\030\004 \001" +
+      "(\tBM\332\336\037&github.com/cosmos/cosmos-sdk/typ" +
+      "es.Int\362\336\037\033yaml:\"token_out_min_amount\"\310\336\037" +
+      "\000\"\203\001\n\034MsgSwapExactAmountInResponse\022c\n\020to" +
+      "ken_out_amount\030\001 \001(\tBI\332\336\037&github.com/cos" +
+      "mos/cosmos-sdk/types.Int\362\336\037\027yaml:\"token_" +
+      "out_amount\"\310\336\037\000\"m\n\022SwapAmountOutRoute\022#\n" +
+      "\007pool_id\030\001 \001(\004B\022\362\336\037\016yaml:\"pool_id\"\0222\n\016to" +
+      "ken_in_denom\030\002 \001(\tB\032\362\336\037\026yaml:\"token_out_" +
+      "denom\"\"\255\002\n\025MsgSwapExactAmountOut\022!\n\006send" +
+      "er\030\001 \001(\tB\021\362\336\037\ryaml:\"sender\"\022>\n\006routes\030\002 " +
+      "\003(\0132(.osmosis.gamm.v1beta1.SwapAmountOut" +
+      "RouteB\004\310\336\037\000\022i\n\023token_in_max_amount\030\003 \001(\t" +
+      "BL\332\336\037&github.com/cosmos/cosmos-sdk/types" +
+      ".Int\362\336\037\032yaml:\"token_in_max_amount\"\310\336\037\000\022F" +
+      "\n\ttoken_out\030\004 \001(\0132\031.cosmos.base.v1beta1." +
+      "CoinB\030\362\336\037\020yaml:\"token_out\"\310\336\037\000\"\202\001\n\035MsgSw" +
+      "apExactAmountOutResponse\022a\n\017token_in_amo" +
+      "unt\030\001 \001(\tBH\332\336\037&github.com/cosmos/cosmos-" +
+      "sdk/types.Int\362\336\037\026yaml:\"token_in_amount\"\310" +
+      "\336\037\000\"\226\002\n\031MsgJoinSwapExternAmountIn\022!\n\006sen" +
+      "der\030\001 \001(\tB\021\362\336\037\ryaml:\"sender\"\022#\n\007pool_id\030" +
+      "\002 \001(\004B\022\362\336\037\016yaml:\"pool_id\"\022D\n\010token_in\030\003 " +
+      "\001(\0132\031.cosmos.base.v1beta1.CoinB\027\362\336\037\017yaml" +
+      ":\"token_in\"\310\336\037\000\022k\n\024share_out_min_amount\030" +
+      "\004 \001(\tBM\332\336\037&github.com/cosmos/cosmos-sdk/" +
+      "types.Int\362\336\037\033yaml:\"share_out_min_amount\"" +
+      "\310\336\037\000\"\210\001\n!MsgJoinSwapExternAmountInRespon" +
+      "se\022c\n\020share_out_amount\030\001 \001(\tBI\332\336\037&github" +
+      ".com/cosmos/cosmos-sdk/types.Int\362\336\037\027yaml" +
+      ":\"share_out_amount\"\310\336\037\000\"\346\002\n\031MsgJoinSwapS" +
+      "hareAmountOut\022!\n\006sender\030\001 \001(\tB\021\362\336\037\ryaml:" +
+      "\"sender\"\022#\n\007pool_id\030\002 \001(\004B\022\362\336\037\016yaml:\"poo" +
+      "l_id\"\0221\n\016token_in_denom\030\003 \001(\tB\031\362\336\037\025yaml:" +
+      "\"token_in_denom\"\022c\n\020share_out_amount\030\004 \001" +
+      "(\tBI\332\336\037&github.com/cosmos/cosmos-sdk/typ" +
+      "es.Int\362\336\037\027yaml:\"share_out_amount\"\310\336\037\000\022i\n" +
+      "\023token_in_max_amount\030\005 \001(\tBL\332\336\037&github.c" +
+      "om/cosmos/cosmos-sdk/types.Int\362\336\037\032yaml:\"" +
+      "token_in_max_amount\"\310\336\037\000\"\206\001\n!MsgJoinSwap" +
+      "ShareAmountOutResponse\022a\n\017token_in_amoun" +
+      "t\030\001 \001(\tBH\332\336\037&github.com/cosmos/cosmos-sd" +
+      "k/types.Int\362\336\037\026yaml:\"token_in_amount\"\310\336\037" +
+      "\000\"\347\002\n\030MsgExitSwapShareAmountIn\022!\n\006sender" +
+      "\030\001 \001(\tB\021\362\336\037\ryaml:\"sender\"\022#\n\007pool_id\030\002 \001" +
+      "(\004B\022\362\336\037\016yaml:\"pool_id\"\0223\n\017token_out_deno" +
+      "m\030\003 \001(\tB\032\362\336\037\026yaml:\"token_out_denom\"\022a\n\017s" +
+      "hare_in_amount\030\004 \001(\tBH\332\336\037&github.com/cos" +
+      "mos/cosmos-sdk/types.Int\362\336\037\026yaml:\"share_" +
+      "in_amount\"\310\336\037\000\022k\n\024token_out_min_amount\030\005" +
+      " \001(\tBM\332\336\037&github.com/cosmos/cosmos-sdk/t" +
+      "ypes.Int\362\336\037\033yaml:\"token_out_min_amount\"\310" +
+      "\336\037\000\"\207\001\n MsgExitSwapShareAmountInResponse" +
+      "\022c\n\020token_out_amount\030\001 \001(\tBI\332\336\037&github.c" +
+      "om/cosmos/cosmos-sdk/types.Int\362\336\037\027yaml:\"" +
+      "token_out_amount\"\310\336\037\000\"\227\002\n\032MsgExitSwapExt" +
+      "ernAmountOut\022!\n\006sender\030\001 \001(\tB\021\362\336\037\ryaml:\"" +
+      "sender\"\022#\n\007pool_id\030\002 \001(\004B\022\362\336\037\016yaml:\"pool" +
+      "_id\"\022F\n\ttoken_out\030\003 \001(\0132\031.cosmos.base.v1" +
+      "beta1.CoinB\030\362\336\037\020yaml:\"token_out\"\310\336\037\000\022i\n\023" +
+      "share_in_max_amount\030\004 \001(\tBL\332\336\037&github.co" +
+      "m/cosmos/cosmos-sdk/types.Int\362\336\037\032yaml:\"s" +
+      "hare_in_max_amount\"\310\336\037\000\"\207\001\n\"MsgExitSwapE" +
+      "xternAmountOutResponse\022a\n\017share_in_amoun" +
+      "t\030\001 \001(\tBH\332\336\037&github.com/cosmos/cosmos-sd" +
+      "k/types.Int\362\336\037\026yaml:\"share_in_amount\"\310\336\037" +
+      "\0002\271\007\n\003Msg\022X\n\010JoinPool\022!.osmosis.gamm.v1b" +
+      "eta1.MsgJoinPool\032).osmosis.gamm.v1beta1." +
+      "MsgJoinPoolResponse\022X\n\010ExitPool\022!.osmosi" +
+      "s.gamm.v1beta1.MsgExitPool\032).osmosis.gam" +
+      "m.v1beta1.MsgExitPoolResponse\022s\n\021SwapExa" +
+      "ctAmountIn\022*.osmosis.gamm.v1beta1.MsgSwa" +
+      "pExactAmountIn\0322.osmosis.gamm.v1beta1.Ms" +
+      "gSwapExactAmountInResponse\022v\n\022SwapExactA" +
+      "mountOut\022+.osmosis.gamm.v1beta1.MsgSwapE" +
+      "xactAmountOut\0323.osmosis.gamm.v1beta1.Msg" +
+      "SwapExactAmountOutResponse\022\202\001\n\026JoinSwapE" +
+      "xternAmountIn\022/.osmosis.gamm.v1beta1.Msg" +
+      "JoinSwapExternAmountIn\0327.osmosis.gamm.v1" +
+      "beta1.MsgJoinSwapExternAmountInResponse\022" +
+      "\202\001\n\026JoinSwapShareAmountOut\022/.osmosis.gam" +
+      "m.v1beta1.MsgJoinSwapShareAmountOut\0327.os" +
+      "mosis.gamm.v1beta1.MsgJoinSwapShareAmoun" +
+      "tOutResponse\022\205\001\n\027ExitSwapExternAmountOut" +
+      "\0220.osmosis.gamm.v1beta1.MsgExitSwapExter" +
+      "nAmountOut\0328.osmosis.gamm.v1beta1.MsgExi" +
+      "tSwapExternAmountOutResponse\022\177\n\025ExitSwap" +
+      "ShareAmountIn\022..osmosis.gamm.v1beta1.Msg" +
+      "ExitSwapShareAmountIn\0326.osmosis.gamm.v1b" +
+      "eta1.MsgExitSwapShareAmountInResponseB1Z" +
+      "/github.com/osmosis-labs/osmosis/v7/x/ga" +
+      "mm/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -14983,7 +15889,7 @@ public final class Tx {
     internal_static_osmosis_gamm_v1beta1_MsgJoinPoolResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_osmosis_gamm_v1beta1_MsgJoinPoolResponse_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "ShareOutAmount", "TokenIn", });
     internal_static_osmosis_gamm_v1beta1_MsgExitPool_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_osmosis_gamm_v1beta1_MsgExitPool_fieldAccessorTable = new
@@ -14995,7 +15901,7 @@ public final class Tx {
     internal_static_osmosis_gamm_v1beta1_MsgExitPoolResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_osmosis_gamm_v1beta1_MsgExitPoolResponse_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "TokenOut", });
     internal_static_osmosis_gamm_v1beta1_SwapAmountInRoute_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_osmosis_gamm_v1beta1_SwapAmountInRoute_fieldAccessorTable = new

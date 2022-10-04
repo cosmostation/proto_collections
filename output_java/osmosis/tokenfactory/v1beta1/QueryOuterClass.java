@@ -1146,6 +1146,11 @@ public final class QueryOuterClass {
         getDenomBytes();
   }
   /**
+   * <pre>
+   * QueryDenomAuthorityMetadataRequest defines the request structure for the
+   * DenomAuthorityMetadata gRPC query.
+   * </pre>
+   *
    * Protobuf type {@code osmosis.tokenfactory.v1beta1.QueryDenomAuthorityMetadataRequest}
    */
   public static final class QueryDenomAuthorityMetadataRequest extends
@@ -1422,6 +1427,11 @@ public final class QueryOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * QueryDenomAuthorityMetadataRequest defines the request structure for the
+     * DenomAuthorityMetadata gRPC query.
+     * </pre>
+     *
      * Protobuf type {@code osmosis.tokenfactory.v1beta1.QueryDenomAuthorityMetadataRequest}
      */
     public static final class Builder extends
@@ -1717,6 +1727,11 @@ public final class QueryOuterClass {
     osmosis.tokenfactory.v1beta1.AuthorityMetadata.DenomAuthorityMetadataOrBuilder getAuthorityMetadataOrBuilder();
   }
   /**
+   * <pre>
+   * QueryDenomAuthorityMetadataResponse defines the response structure for the
+   * DenomAuthorityMetadata gRPC query.
+   * </pre>
+   *
    * Protobuf type {@code osmosis.tokenfactory.v1beta1.QueryDenomAuthorityMetadataResponse}
    */
   public static final class QueryDenomAuthorityMetadataResponse extends
@@ -1993,6 +2008,11 @@ public final class QueryOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * QueryDenomAuthorityMetadataResponse defines the response structure for the
+     * DenomAuthorityMetadata gRPC query.
+     * </pre>
+     *
      * Protobuf type {@code osmosis.tokenfactory.v1beta1.QueryDenomAuthorityMetadataResponse}
      */
     public static final class Builder extends
@@ -2335,6 +2355,11 @@ public final class QueryOuterClass {
         getCreatorBytes();
   }
   /**
+   * <pre>
+   * QueryDenomsFromCreatorRequest defines the request structure for the
+   * DenomsFromCreator gRPC query.
+   * </pre>
+   *
    * Protobuf type {@code osmosis.tokenfactory.v1beta1.QueryDenomsFromCreatorRequest}
    */
   public static final class QueryDenomsFromCreatorRequest extends
@@ -2611,6 +2636,11 @@ public final class QueryOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * QueryDenomsFromCreatorRequest defines the request structure for the
+     * DenomsFromCreator gRPC query.
+     * </pre>
+     *
      * Protobuf type {@code osmosis.tokenfactory.v1beta1.QueryDenomsFromCreatorRequest}
      */
     public static final class Builder extends
@@ -2916,6 +2946,11 @@ public final class QueryOuterClass {
         getDenomsBytes(int index);
   }
   /**
+   * <pre>
+   * QueryDenomsFromCreatorRequest defines the response structure for the
+   * DenomsFromCreator gRPC query.
+   * </pre>
+   *
    * Protobuf type {@code osmosis.tokenfactory.v1beta1.QueryDenomsFromCreatorResponse}
    */
   public static final class QueryDenomsFromCreatorResponse extends
@@ -3203,6 +3238,11 @@ public final class QueryOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * QueryDenomsFromCreatorRequest defines the response structure for the
+     * DenomsFromCreator gRPC query.
+     * </pre>
+     *
      * Protobuf type {@code osmosis.tokenfactory.v1beta1.QueryDenomsFromCreatorResponse}
      */
     public static final class Builder extends

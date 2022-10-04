@@ -83,8 +83,8 @@ struct Osmosis_Gamm_Poolmodels_Stableswap_V1beta1_Pool {
   /// for calculation amognst assets with different precisions
   var scalingFactor: [UInt64] = []
 
-  /// scaling_factor_governor is the address can adjust pool scaling factors
-  var scalingFactorGovernor: String = String()
+  /// scaling_factor_controller is the address can adjust pool scaling factors
+  var scalingFactorController: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -146,7 +146,7 @@ extension Osmosis_Gamm_Poolmodels_Stableswap_V1beta1_Pool: SwiftProtobuf.Message
     5: .standard(proto: "total_shares"),
     6: .standard(proto: "pool_liquidity"),
     7: .standard(proto: "scaling_factor"),
-    8: .standard(proto: "scaling_factor_governor"),
+    8: .standard(proto: "scaling_factor_controller"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -162,7 +162,7 @@ extension Osmosis_Gamm_Poolmodels_Stableswap_V1beta1_Pool: SwiftProtobuf.Message
       case 5: try { try decoder.decodeSingularMessageField(value: &self._totalShares) }()
       case 6: try { try decoder.decodeRepeatedMessageField(value: &self.poolLiquidity) }()
       case 7: try { try decoder.decodeRepeatedUInt64Field(value: &self.scalingFactor) }()
-      case 8: try { try decoder.decodeSingularStringField(value: &self.scalingFactorGovernor) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self.scalingFactorController) }()
       default: break
       }
     }
@@ -190,8 +190,8 @@ extension Osmosis_Gamm_Poolmodels_Stableswap_V1beta1_Pool: SwiftProtobuf.Message
     if !self.scalingFactor.isEmpty {
       try visitor.visitPackedUInt64Field(value: self.scalingFactor, fieldNumber: 7)
     }
-    if !self.scalingFactorGovernor.isEmpty {
-      try visitor.visitSingularStringField(value: self.scalingFactorGovernor, fieldNumber: 8)
+    if !self.scalingFactorController.isEmpty {
+      try visitor.visitSingularStringField(value: self.scalingFactorController, fieldNumber: 8)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -204,7 +204,7 @@ extension Osmosis_Gamm_Poolmodels_Stableswap_V1beta1_Pool: SwiftProtobuf.Message
     if lhs._totalShares != rhs._totalShares {return false}
     if lhs.poolLiquidity != rhs.poolLiquidity {return false}
     if lhs.scalingFactor != rhs.scalingFactor {return false}
-    if lhs.scalingFactorGovernor != rhs.scalingFactorGovernor {return false}
+    if lhs.scalingFactorController != rhs.scalingFactorController {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

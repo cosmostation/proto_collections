@@ -76,7 +76,7 @@ extension Osmosis_Txfees_V1beta1_QueryClientProtocol {
     )
   }
 
-  /// Unary call to DenomSpotPrice
+  /// DenomSpotPrice returns all spot prices by each registered token denom.
   ///
   /// - Parameters:
   ///   - request: Request to send to DenomSpotPrice.
@@ -94,7 +94,7 @@ extension Osmosis_Txfees_V1beta1_QueryClientProtocol {
     )
   }
 
-  /// Unary call to DenomPoolId
+  /// Returns the poolID for a specified denom input.
   ///
   /// - Parameters:
   ///   - request: Request to send to DenomPoolId.
@@ -112,7 +112,7 @@ extension Osmosis_Txfees_V1beta1_QueryClientProtocol {
     )
   }
 
-  /// Unary call to BaseDenom
+  /// Returns a list of all base denom tokens and their corresponding pools.
   ///
   /// - Parameters:
   ///   - request: Request to send to BaseDenom.
@@ -177,10 +177,13 @@ internal protocol Osmosis_Txfees_V1beta1_QueryProvider: CallHandlerProvider {
   /// query endpoint
   func feeTokens(request: Osmosis_Txfees_V1beta1_QueryFeeTokensRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Txfees_V1beta1_QueryFeeTokensResponse>
 
+  /// DenomSpotPrice returns all spot prices by each registered token denom.
   func denomSpotPrice(request: Osmosis_Txfees_V1beta1_QueryDenomSpotPriceRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Txfees_V1beta1_QueryDenomSpotPriceResponse>
 
+  /// Returns the poolID for a specified denom input.
   func denomPoolId(request: Osmosis_Txfees_V1beta1_QueryDenomPoolIdRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Txfees_V1beta1_QueryDenomPoolIdResponse>
 
+  /// Returns a list of all base denom tokens and their corresponding pools.
   func baseDenom(request: Osmosis_Txfees_V1beta1_QueryBaseDenomRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Txfees_V1beta1_QueryBaseDenomResponse>
 }
 

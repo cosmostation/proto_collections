@@ -26,7 +26,7 @@ struct Osmosis_Mint_V1beta1_Minter {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  /// current epoch provisions
+  /// epoch_provisions represent rewards for the current epoch.
   var epochProvisions: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -34,6 +34,9 @@ struct Osmosis_Mint_V1beta1_Minter {
   init() {}
 }
 
+/// WeightedAddress represents an address with a weight assigned to it.
+/// The weight is used to determine the proportion of the total minted
+/// tokens to be minted to the address.
 struct Osmosis_Mint_V1beta1_WeightedAddress {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -48,24 +51,27 @@ struct Osmosis_Mint_V1beta1_WeightedAddress {
   init() {}
 }
 
+/// DistributionProportions defines the distribution proportions of the minted
+/// denom. In other words, defines which stakeholders will receive the minted
+/// denoms and how much.
 struct Osmosis_Mint_V1beta1_DistributionProportions {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  /// staking defines the proportion of the minted minted_denom that is to be
+  /// staking defines the proportion of the minted mint_denom that is to be
   /// allocated as staking rewards.
   var staking: String = String()
 
-  /// pool_incentives defines the proportion of the minted minted_denom that is
+  /// pool_incentives defines the proportion of the minted mint_denom that is
   /// to be allocated as pool incentives.
   var poolIncentives: String = String()
 
-  /// developer_rewards defines the proportion of the minted minted_denom that is
+  /// developer_rewards defines the proportion of the minted mint_denom that is
   /// to be allocated to developer rewards address.
   var developerRewards: String = String()
 
-  /// community_pool defines the proportion of the minted minted_denom that is
+  /// community_pool defines the proportion of the minted mint_denom that is
   /// to be allocated to the community pool.
   var communityPool: String = String()
 
@@ -74,28 +80,32 @@ struct Osmosis_Mint_V1beta1_DistributionProportions {
   init() {}
 }
 
-/// Params holds parameters for the mint module.
+/// Params holds parameters for the x/mint module.
 struct Osmosis_Mint_V1beta1_Params {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  /// type of coin to mint
+  /// mint_denom is the denom of the coin to mint.
   var mintDenom: String = String()
 
-  /// epoch provisions from the first epoch
+  /// genesis_epoch_provisions epoch provisions from the first epoch.
   var genesisEpochProvisions: String = String()
 
-  /// mint epoch identifier
+  /// epoch_identifier mint epoch identifier e.g. (day, week).
   var epochIdentifier: String = String()
 
-  /// number of epochs take to reduce rewards
+  /// reduction_period_in_epochs the number of epochs it takes
+  /// to reduce the rewards.
   var reductionPeriodInEpochs: Int64 = 0
 
-  /// reduction multiplier to execute on each period
+  /// reduction_factor is the reduction multiplier to execute
+  /// at the end of each period set by reduction_period_in_epochs.
   var reductionFactor: String = String()
 
-  /// distribution_proportions defines the proportion of the minted denom
+  /// distribution_proportions defines the distribution proportions of the minted
+  /// denom. In other words, defines which stakeholders will receive the minted
+  /// denoms and how much.
   var distributionProportions: Osmosis_Mint_V1beta1_DistributionProportions {
     get {return _distributionProportions ?? Osmosis_Mint_V1beta1_DistributionProportions()}
     set {_distributionProportions = newValue}
@@ -105,10 +115,14 @@ struct Osmosis_Mint_V1beta1_Params {
   /// Clears the value of `distributionProportions`. Subsequent reads from it will return its default value.
   mutating func clearDistributionProportions() {self._distributionProportions = nil}
 
-  /// address to receive developer rewards
+  /// weighted_developer_rewards_receivers is the address to receive developer
+  /// rewards with weights assignedt to each address. The final amount that each
+  /// address receives is: epoch_provisions *
+  /// distribution_proportions.developer_rewards * Address's Weight.
   var weightedDeveloperRewardsReceivers: [Osmosis_Mint_V1beta1_WeightedAddress] = []
 
-  /// start epoch to distribute minting rewards
+  /// minting_rewards_distribution_start_epoch start epoch to distribute minting
+  /// rewards
   var mintingRewardsDistributionStartEpoch: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()

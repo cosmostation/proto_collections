@@ -20,20 +20,26 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
+/// Gauge is an object that stores and distributes yields to recipients who
+/// satisfy certain conditions. Currently gauges support conditions around the
+/// duration for which a given denom is locked.
 struct Osmosis_Incentives_Gauge {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  /// unique ID of a Gauge
+  /// id is the unique ID of a Gauge
   var id: UInt64 = 0
 
-  /// flag to show if it's perpetual or multi-epoch
-  /// distribution incentives by third party
+  /// is_perpetual is a flag to show if it's a perpetual or non-perpetual gauge
+  /// Non-perpetual gauges distribute their tokens equally per epoch while the
+  /// gauge is in the active period. Perpetual gauges distribute all their tokens
+  /// at a single time and only distribute their tokens again once the gauge is
+  /// refilled, Intended for use with incentives that get refilled daily.
   var isPerpetual: Bool = false
 
-  /// Rewards are distributed to lockups that are are returned by at least one of
-  /// these queries
+  /// distribute_to is where the gauge rewards are distributed to.
+  /// This is queried via lock duration or by timestamp
   var distributeTo: Osmosis_Lockup_QueryCondition {
     get {return _distributeTo ?? Osmosis_Lockup_QueryCondition()}
     set {_distributeTo = newValue}
@@ -43,11 +49,11 @@ struct Osmosis_Incentives_Gauge {
   /// Clears the value of `distributeTo`. Subsequent reads from it will return its default value.
   mutating func clearDistributeTo() {self._distributeTo = nil}
 
-  /// total amount of Coins that has been in the gauge.
-  /// can distribute multiple coins
+  /// coins is the total amount of coins that have been in the gauge
+  /// Can distribute multiple coin denoms
   var coins: [Cosmos_Base_V1beta1_Coin] = []
 
-  /// distribution start time
+  /// start_time is the distribution start time
   var startTime: SwiftProtobuf.Google_Protobuf_Timestamp {
     get {return _startTime ?? SwiftProtobuf.Google_Protobuf_Timestamp()}
     set {_startTime = newValue}
@@ -57,13 +63,15 @@ struct Osmosis_Incentives_Gauge {
   /// Clears the value of `startTime`. Subsequent reads from it will return its default value.
   mutating func clearStartTime() {self._startTime = nil}
 
-  /// number of epochs distribution will be done
+  /// num_epochs_paid_over is the number of total epochs distribution will be
+  /// completed over
   var numEpochsPaidOver: UInt64 = 0
 
-  /// number of epochs distributed already
+  /// filled_epochs is the number of epochs distribution has been completed on
+  /// already
   var filledEpochs: UInt64 = 0
 
-  /// already distributed coins
+  /// distributed_coins are coins that have been distributed already
   var distributedCoins: [Cosmos_Base_V1beta1_Coin] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -79,6 +87,7 @@ struct Osmosis_Incentives_LockableDurationsInfo {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// List of incentivised durations that gauges will pay out to
   var lockableDurations: [SwiftProtobuf.Google_Protobuf_Duration] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()

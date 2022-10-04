@@ -52,13 +52,14 @@ public final class Tx {
   }
   /**
    * <pre>
-   * MsgCreateDenom is the sdk.Msg type for allowing an account to create
-   * a new denom. It requires a sender address and a subdenomination.
-   * The (sender_address, sub_denomination) pair must be unique and cannot be
-   * re-used. The resulting denom created is `factory/{creator
-   * address}/{subdenom}`. The resultant denom's admin is originally set to be the
-   * creator, but this can be changed later. The token denom does not indicate the
-   * current admin.
+   * MsgCreateDenom defines the message structure for the CreateDenom gRPC service
+   * method. It allows an account to create a new denom. It requires a sender
+   * address and a sub denomination. The (sender_address, sub_denomination) tuple
+   * must be unique and cannot be re-used.
+   * The resulting denom created is defined as
+   * &lt;factory/{creatorAddress}/{subdenom}&gt;. The resulting denom's admin is
+   * originally set to be the creator, but this can be changed later. The token
+   * denom does not indicate the current admin.
    * </pre>
    *
    * Protobuf type {@code osmosis.tokenfactory.v1beta1.MsgCreateDenom}
@@ -401,13 +402,14 @@ public final class Tx {
     }
     /**
      * <pre>
-     * MsgCreateDenom is the sdk.Msg type for allowing an account to create
-     * a new denom. It requires a sender address and a subdenomination.
-     * The (sender_address, sub_denomination) pair must be unique and cannot be
-     * re-used. The resulting denom created is `factory/{creator
-     * address}/{subdenom}`. The resultant denom's admin is originally set to be the
-     * creator, but this can be changed later. The token denom does not indicate the
-     * current admin.
+     * MsgCreateDenom defines the message structure for the CreateDenom gRPC service
+     * method. It allows an account to create a new denom. It requires a sender
+     * address and a sub denomination. The (sender_address, sub_denomination) tuple
+     * must be unique and cannot be re-used.
+     * The resulting denom created is defined as
+     * &lt;factory/{creatorAddress}/{subdenom}&gt;. The resulting denom's admin is
+     * originally set to be the creator, but this can be changed later. The token
+     * denom does not indicate the current admin.
      * </pre>
      *
      * Protobuf type {@code osmosis.tokenfactory.v1beta1.MsgCreateDenom}
@@ -4647,6 +4649,11 @@ public final class Tx {
       com.google.protobuf.MessageOrBuilder {
   }
   /**
+   * <pre>
+   * MsgChangeAdminResponse defines the response structure for an executed
+   * MsgChangeAdmin message.
+   * </pre>
+   *
    * Protobuf type {@code osmosis.tokenfactory.v1beta1.MsgChangeAdminResponse}
    */
   public static final class MsgChangeAdminResponse extends
@@ -4868,6 +4875,11 @@ public final class Tx {
       return builder;
     }
     /**
+     * <pre>
+     * MsgChangeAdminResponse defines the response structure for an executed
+     * MsgChangeAdmin message.
+     * </pre>
+     *
      * Protobuf type {@code osmosis.tokenfactory.v1beta1.MsgChangeAdminResponse}
      */
     public static final class Builder extends
@@ -5060,6 +5072,1215 @@ public final class Tx {
 
   }
 
+  public interface MsgSetDenomMetadataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:osmosis.tokenfactory.v1beta1.MsgSetDenomMetadata)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string sender = 1 [(.gogoproto.moretags) = "yaml:&#92;"sender&#92;""];</code>
+     * @return The sender.
+     */
+    java.lang.String getSender();
+    /**
+     * <code>string sender = 1 [(.gogoproto.moretags) = "yaml:&#92;"sender&#92;""];</code>
+     * @return The bytes for sender.
+     */
+    com.google.protobuf.ByteString
+        getSenderBytes();
+
+    /**
+     * <code>.cosmos.bank.v1beta1.Metadata metadata = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"metadata&#92;""];</code>
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     * <code>.cosmos.bank.v1beta1.Metadata metadata = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"metadata&#92;""];</code>
+     * @return The metadata.
+     */
+    cosmos.bank.v1beta1.Bank.Metadata getMetadata();
+    /**
+     * <code>.cosmos.bank.v1beta1.Metadata metadata = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"metadata&#92;""];</code>
+     */
+    cosmos.bank.v1beta1.Bank.MetadataOrBuilder getMetadataOrBuilder();
+  }
+  /**
+   * <pre>
+   * MsgSetDenomMetadata is the sdk.Msg type for allowing an admin account to set
+   * the denom's bank metadata
+   * </pre>
+   *
+   * Protobuf type {@code osmosis.tokenfactory.v1beta1.MsgSetDenomMetadata}
+   */
+  public static final class MsgSetDenomMetadata extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:osmosis.tokenfactory.v1beta1.MsgSetDenomMetadata)
+      MsgSetDenomMetadataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgSetDenomMetadata.newBuilder() to construct.
+    private MsgSetDenomMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgSetDenomMetadata() {
+      sender_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgSetDenomMetadata();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MsgSetDenomMetadata(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sender_ = s;
+              break;
+            }
+            case 18: {
+              cosmos.bank.v1beta1.Bank.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(cosmos.bank.v1beta1.Bank.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return osmosis.tokenfactory.v1beta1.Tx.internal_static_osmosis_tokenfactory_v1beta1_MsgSetDenomMetadata_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return osmosis.tokenfactory.v1beta1.Tx.internal_static_osmosis_tokenfactory_v1beta1_MsgSetDenomMetadata_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata.class, osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata.Builder.class);
+    }
+
+    public static final int SENDER_FIELD_NUMBER = 1;
+    private volatile java.lang.Object sender_;
+    /**
+     * <code>string sender = 1 [(.gogoproto.moretags) = "yaml:&#92;"sender&#92;""];</code>
+     * @return The sender.
+     */
+    @java.lang.Override
+    public java.lang.String getSender() {
+      java.lang.Object ref = sender_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sender_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string sender = 1 [(.gogoproto.moretags) = "yaml:&#92;"sender&#92;""];</code>
+     * @return The bytes for sender.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSenderBytes() {
+      java.lang.Object ref = sender_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sender_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int METADATA_FIELD_NUMBER = 2;
+    private cosmos.bank.v1beta1.Bank.Metadata metadata_;
+    /**
+     * <code>.cosmos.bank.v1beta1.Metadata metadata = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"metadata&#92;""];</code>
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <code>.cosmos.bank.v1beta1.Metadata metadata = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"metadata&#92;""];</code>
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public cosmos.bank.v1beta1.Bank.Metadata getMetadata() {
+      return metadata_ == null ? cosmos.bank.v1beta1.Bank.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.cosmos.bank.v1beta1.Metadata metadata = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"metadata&#92;""];</code>
+     */
+    @java.lang.Override
+    public cosmos.bank.v1beta1.Bank.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getSenderBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sender_);
+      }
+      if (metadata_ != null) {
+        output.writeMessage(2, getMetadata());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getSenderBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sender_);
+      }
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getMetadata());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata)) {
+        return super.equals(obj);
+      }
+      osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata other = (osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata) obj;
+
+      if (!getSender()
+          .equals(other.getSender())) return false;
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SENDER_FIELD_NUMBER;
+      hash = (53 * hash) + getSender().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgSetDenomMetadata is the sdk.Msg type for allowing an admin account to set
+     * the denom's bank metadata
+     * </pre>
+     *
+     * Protobuf type {@code osmosis.tokenfactory.v1beta1.MsgSetDenomMetadata}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:osmosis.tokenfactory.v1beta1.MsgSetDenomMetadata)
+        osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return osmosis.tokenfactory.v1beta1.Tx.internal_static_osmosis_tokenfactory_v1beta1_MsgSetDenomMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return osmosis.tokenfactory.v1beta1.Tx.internal_static_osmosis_tokenfactory_v1beta1_MsgSetDenomMetadata_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata.class, osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata.Builder.class);
+      }
+
+      // Construct using osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        sender_ = "";
+
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return osmosis.tokenfactory.v1beta1.Tx.internal_static_osmosis_tokenfactory_v1beta1_MsgSetDenomMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      public osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata getDefaultInstanceForType() {
+        return osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata build() {
+        osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata buildPartial() {
+        osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata result = new osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata(this);
+        result.sender_ = sender_;
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata) {
+          return mergeFrom((osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata other) {
+        if (other == osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata.getDefaultInstance()) return this;
+        if (!other.getSender().isEmpty()) {
+          sender_ = other.sender_;
+          onChanged();
+        }
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object sender_ = "";
+      /**
+       * <code>string sender = 1 [(.gogoproto.moretags) = "yaml:&#92;"sender&#92;""];</code>
+       * @return The sender.
+       */
+      public java.lang.String getSender() {
+        java.lang.Object ref = sender_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sender_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string sender = 1 [(.gogoproto.moretags) = "yaml:&#92;"sender&#92;""];</code>
+       * @return The bytes for sender.
+       */
+      public com.google.protobuf.ByteString
+          getSenderBytes() {
+        java.lang.Object ref = sender_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sender_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string sender = 1 [(.gogoproto.moretags) = "yaml:&#92;"sender&#92;""];</code>
+       * @param value The sender to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSender(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sender_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string sender = 1 [(.gogoproto.moretags) = "yaml:&#92;"sender&#92;""];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSender() {
+        
+        sender_ = getDefaultInstance().getSender();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string sender = 1 [(.gogoproto.moretags) = "yaml:&#92;"sender&#92;""];</code>
+       * @param value The bytes for sender to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSenderBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sender_ = value;
+        onChanged();
+        return this;
+      }
+
+      private cosmos.bank.v1beta1.Bank.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.bank.v1beta1.Bank.Metadata, cosmos.bank.v1beta1.Bank.Metadata.Builder, cosmos.bank.v1beta1.Bank.MetadataOrBuilder> metadataBuilder_;
+      /**
+       * <code>.cosmos.bank.v1beta1.Metadata metadata = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"metadata&#92;""];</code>
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.cosmos.bank.v1beta1.Metadata metadata = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"metadata&#92;""];</code>
+       * @return The metadata.
+       */
+      public cosmos.bank.v1beta1.Bank.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? cosmos.bank.v1beta1.Bank.Metadata.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.cosmos.bank.v1beta1.Metadata metadata = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"metadata&#92;""];</code>
+       */
+      public Builder setMetadata(cosmos.bank.v1beta1.Bank.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cosmos.bank.v1beta1.Metadata metadata = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"metadata&#92;""];</code>
+       */
+      public Builder setMetadata(
+          cosmos.bank.v1beta1.Bank.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cosmos.bank.v1beta1.Metadata metadata = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"metadata&#92;""];</code>
+       */
+      public Builder mergeMetadata(cosmos.bank.v1beta1.Bank.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              cosmos.bank.v1beta1.Bank.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cosmos.bank.v1beta1.Metadata metadata = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"metadata&#92;""];</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cosmos.bank.v1beta1.Metadata metadata = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"metadata&#92;""];</code>
+       */
+      public cosmos.bank.v1beta1.Bank.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.cosmos.bank.v1beta1.Metadata metadata = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"metadata&#92;""];</code>
+       */
+      public cosmos.bank.v1beta1.Bank.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              cosmos.bank.v1beta1.Bank.Metadata.getDefaultInstance() : metadata_;
+        }
+      }
+      /**
+       * <code>.cosmos.bank.v1beta1.Metadata metadata = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"metadata&#92;""];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.bank.v1beta1.Bank.Metadata, cosmos.bank.v1beta1.Bank.Metadata.Builder, cosmos.bank.v1beta1.Bank.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              cosmos.bank.v1beta1.Bank.Metadata, cosmos.bank.v1beta1.Bank.Metadata.Builder, cosmos.bank.v1beta1.Bank.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:osmosis.tokenfactory.v1beta1.MsgSetDenomMetadata)
+    }
+
+    // @@protoc_insertion_point(class_scope:osmosis.tokenfactory.v1beta1.MsgSetDenomMetadata)
+    private static final osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata();
+    }
+
+    public static osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgSetDenomMetadata>
+        PARSER = new com.google.protobuf.AbstractParser<MsgSetDenomMetadata>() {
+      @java.lang.Override
+      public MsgSetDenomMetadata parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MsgSetDenomMetadata(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgSetDenomMetadata> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgSetDenomMetadata> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadata getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MsgSetDenomMetadataResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:osmosis.tokenfactory.v1beta1.MsgSetDenomMetadataResponse)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * MsgSetDenomMetadataResponse defines the response structure for an executed
+   * MsgSetDenomMetadata message.
+   * </pre>
+   *
+   * Protobuf type {@code osmosis.tokenfactory.v1beta1.MsgSetDenomMetadataResponse}
+   */
+  public static final class MsgSetDenomMetadataResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:osmosis.tokenfactory.v1beta1.MsgSetDenomMetadataResponse)
+      MsgSetDenomMetadataResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgSetDenomMetadataResponse.newBuilder() to construct.
+    private MsgSetDenomMetadataResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgSetDenomMetadataResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgSetDenomMetadataResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MsgSetDenomMetadataResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return osmosis.tokenfactory.v1beta1.Tx.internal_static_osmosis_tokenfactory_v1beta1_MsgSetDenomMetadataResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return osmosis.tokenfactory.v1beta1.Tx.internal_static_osmosis_tokenfactory_v1beta1_MsgSetDenomMetadataResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse.class, osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse)) {
+        return super.equals(obj);
+      }
+      osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse other = (osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgSetDenomMetadataResponse defines the response structure for an executed
+     * MsgSetDenomMetadata message.
+     * </pre>
+     *
+     * Protobuf type {@code osmosis.tokenfactory.v1beta1.MsgSetDenomMetadataResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:osmosis.tokenfactory.v1beta1.MsgSetDenomMetadataResponse)
+        osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return osmosis.tokenfactory.v1beta1.Tx.internal_static_osmosis_tokenfactory_v1beta1_MsgSetDenomMetadataResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return osmosis.tokenfactory.v1beta1.Tx.internal_static_osmosis_tokenfactory_v1beta1_MsgSetDenomMetadataResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse.class, osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse.Builder.class);
+      }
+
+      // Construct using osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return osmosis.tokenfactory.v1beta1.Tx.internal_static_osmosis_tokenfactory_v1beta1_MsgSetDenomMetadataResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse getDefaultInstanceForType() {
+        return osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse build() {
+        osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse buildPartial() {
+        osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse result = new osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse) {
+          return mergeFrom((osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse other) {
+        if (other == osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:osmosis.tokenfactory.v1beta1.MsgSetDenomMetadataResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:osmosis.tokenfactory.v1beta1.MsgSetDenomMetadataResponse)
+    private static final osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse();
+    }
+
+    public static osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgSetDenomMetadataResponse>
+        PARSER = new com.google.protobuf.AbstractParser<MsgSetDenomMetadataResponse>() {
+      @java.lang.Override
+      public MsgSetDenomMetadataResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MsgSetDenomMetadataResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgSetDenomMetadataResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgSetDenomMetadataResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public osmosis.tokenfactory.v1beta1.Tx.MsgSetDenomMetadataResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_osmosis_tokenfactory_v1beta1_MsgCreateDenom_descriptor;
   private static final 
@@ -5100,6 +6321,16 @@ public final class Tx {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_osmosis_tokenfactory_v1beta1_MsgChangeAdminResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_osmosis_tokenfactory_v1beta1_MsgSetDenomMetadata_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_osmosis_tokenfactory_v1beta1_MsgSetDenomMetadata_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_osmosis_tokenfactory_v1beta1_MsgSetDenomMetadataResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_osmosis_tokenfactory_v1beta1_MsgSetDenomMetadataResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -5112,40 +6343,49 @@ public final class Tx {
       "\n%osmosis/tokenfactory/v1beta1/tx.proto\022" +
       "\034osmosis.tokenfactory.v1beta1\032\024gogoproto" +
       "/gogo.proto\032\036cosmos/base/v1beta1/coin.pr" +
-      "oto\"Z\n\016MsgCreateDenom\022!\n\006sender\030\001 \001(\tB\021\362" +
-      "\336\037\ryaml:\"sender\"\022%\n\010subdenom\030\002 \001(\tB\023\362\336\037\017" +
-      "yaml:\"subdenom\"\"M\n\026MsgCreateDenomRespons" +
-      "e\0223\n\017new_token_denom\030\001 \001(\tB\032\362\336\037\026yaml:\"ne" +
-      "w_token_denom\"\"n\n\007MsgMint\022!\n\006sender\030\001 \001(" +
-      "\tB\021\362\336\037\ryaml:\"sender\"\022@\n\006amount\030\002 \001(\0132\031.c" +
-      "osmos.base.v1beta1.CoinB\025\362\336\037\ryaml:\"amoun" +
-      "t\"\310\336\037\000\"\021\n\017MsgMintResponse\"n\n\007MsgBurn\022!\n\006" +
-      "sender\030\001 \001(\tB\021\362\336\037\ryaml:\"sender\"\022@\n\006amoun" +
-      "t\030\002 \001(\0132\031.cosmos.base.v1beta1.CoinB\025\362\336\037\r" +
-      "yaml:\"amount\"\310\336\037\000\"\021\n\017MsgBurnResponse\"}\n\016" +
-      "MsgChangeAdmin\022!\n\006sender\030\001 \001(\tB\021\362\336\037\ryaml" +
-      ":\"sender\"\022\037\n\005denom\030\002 \001(\tB\020\362\336\037\014yaml:\"deno" +
-      "m\"\022\'\n\tnew_admin\030\003 \001(\tB\024\362\336\037\020yaml:\"new_adm" +
-      "in\"\"\030\n\026MsgChangeAdminResponse2\247\003\n\003Msg\022q\n" +
-      "\013CreateDenom\022,.osmosis.tokenfactory.v1be" +
-      "ta1.MsgCreateDenom\0324.osmosis.tokenfactor" +
-      "y.v1beta1.MsgCreateDenomResponse\022\\\n\004Mint" +
-      "\022%.osmosis.tokenfactory.v1beta1.MsgMint\032" +
-      "-.osmosis.tokenfactory.v1beta1.MsgMintRe" +
-      "sponse\022\\\n\004Burn\022%.osmosis.tokenfactory.v1" +
-      "beta1.MsgBurn\032-.osmosis.tokenfactory.v1b" +
-      "eta1.MsgBurnResponse\022q\n\013ChangeAdmin\022,.os" +
-      "mosis.tokenfactory.v1beta1.MsgChangeAdmi" +
-      "n\0324.osmosis.tokenfactory.v1beta1.MsgChan" +
-      "geAdminResponseB9Z7github.com/osmosis-la" +
-      "bs/osmosis/v7/x/tokenfactory/typesb\006prot" +
-      "o3"
+      "oto\032\036cosmos/bank/v1beta1/bank.proto\"Z\n\016M" +
+      "sgCreateDenom\022!\n\006sender\030\001 \001(\tB\021\362\336\037\ryaml:" +
+      "\"sender\"\022%\n\010subdenom\030\002 \001(\tB\023\362\336\037\017yaml:\"su" +
+      "bdenom\"\"M\n\026MsgCreateDenomResponse\0223\n\017new" +
+      "_token_denom\030\001 \001(\tB\032\362\336\037\026yaml:\"new_token_" +
+      "denom\"\"n\n\007MsgMint\022!\n\006sender\030\001 \001(\tB\021\362\336\037\ry" +
+      "aml:\"sender\"\022@\n\006amount\030\002 \001(\0132\031.cosmos.ba" +
+      "se.v1beta1.CoinB\025\362\336\037\ryaml:\"amount\"\310\336\037\000\"\021" +
+      "\n\017MsgMintResponse\"n\n\007MsgBurn\022!\n\006sender\030\001" +
+      " \001(\tB\021\362\336\037\ryaml:\"sender\"\022@\n\006amount\030\002 \001(\0132" +
+      "\031.cosmos.base.v1beta1.CoinB\025\362\336\037\ryaml:\"am" +
+      "ount\"\310\336\037\000\"\021\n\017MsgBurnResponse\"}\n\016MsgChang" +
+      "eAdmin\022!\n\006sender\030\001 \001(\tB\021\362\336\037\ryaml:\"sender" +
+      "\"\022\037\n\005denom\030\002 \001(\tB\020\362\336\037\014yaml:\"denom\"\022\'\n\tne" +
+      "w_admin\030\003 \001(\tB\024\362\336\037\020yaml:\"new_admin\"\"\030\n\026M" +
+      "sgChangeAdminResponse\"\202\001\n\023MsgSetDenomMet" +
+      "adata\022!\n\006sender\030\001 \001(\tB\021\362\336\037\ryaml:\"sender\"" +
+      "\022H\n\010metadata\030\002 \001(\0132\035.cosmos.bank.v1beta1" +
+      ".MetadataB\027\362\336\037\017yaml:\"metadata\"\310\336\037\000\"\035\n\033Ms" +
+      "gSetDenomMetadataResponse2\252\004\n\003Msg\022q\n\013Cre" +
+      "ateDenom\022,.osmosis.tokenfactory.v1beta1." +
+      "MsgCreateDenom\0324.osmosis.tokenfactory.v1" +
+      "beta1.MsgCreateDenomResponse\022\\\n\004Mint\022%.o" +
+      "smosis.tokenfactory.v1beta1.MsgMint\032-.os" +
+      "mosis.tokenfactory.v1beta1.MsgMintRespon" +
+      "se\022\\\n\004Burn\022%.osmosis.tokenfactory.v1beta" +
+      "1.MsgBurn\032-.osmosis.tokenfactory.v1beta1" +
+      ".MsgBurnResponse\022q\n\013ChangeAdmin\022,.osmosi" +
+      "s.tokenfactory.v1beta1.MsgChangeAdmin\0324." +
+      "osmosis.tokenfactory.v1beta1.MsgChangeAd" +
+      "minResponse\022\200\001\n\020SetDenomMetadata\0221.osmos" +
+      "is.tokenfactory.v1beta1.MsgSetDenomMetad" +
+      "ata\0329.osmosis.tokenfactory.v1beta1.MsgSe" +
+      "tDenomMetadataResponseB9Z7github.com/osm" +
+      "osis-labs/osmosis/v7/x/tokenfactory/type" +
+      "sb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf2.GoGoProtos.getDescriptor(),
           cosmos.base.v1beta1.CoinOuterClass.getDescriptor(),
+          cosmos.bank.v1beta1.Bank.getDescriptor(),
         });
     internal_static_osmosis_tokenfactory_v1beta1_MsgCreateDenom_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -5195,6 +6435,18 @@ public final class Tx {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_osmosis_tokenfactory_v1beta1_MsgChangeAdminResponse_descriptor,
         new java.lang.String[] { });
+    internal_static_osmosis_tokenfactory_v1beta1_MsgSetDenomMetadata_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_osmosis_tokenfactory_v1beta1_MsgSetDenomMetadata_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_osmosis_tokenfactory_v1beta1_MsgSetDenomMetadata_descriptor,
+        new java.lang.String[] { "Sender", "Metadata", });
+    internal_static_osmosis_tokenfactory_v1beta1_MsgSetDenomMetadataResponse_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_osmosis_tokenfactory_v1beta1_MsgSetDenomMetadataResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_osmosis_tokenfactory_v1beta1_MsgSetDenomMetadataResponse_descriptor,
+        new java.lang.String[] { });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.protobuf2.GoGoProtos.moretags);
@@ -5203,6 +6455,7 @@ public final class Tx {
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf2.GoGoProtos.getDescriptor();
     cosmos.base.v1beta1.CoinOuterClass.getDescriptor();
+    cosmos.bank.v1beta1.Bank.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

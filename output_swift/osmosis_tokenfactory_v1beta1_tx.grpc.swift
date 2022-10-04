@@ -25,7 +25,7 @@ import NIO
 import SwiftProtobuf
 
 
-/// Msg defines the Msg service.
+/// Msg defines the tokefactory module's gRPC message service.
 ///
 /// Usage: instantiate `Osmosis_Tokenfactory_V1beta1_MsgClient`, then call methods of this protocol to make API calls.
 internal protocol Osmosis_Tokenfactory_V1beta1_MsgClientProtocol: GRPCClient {
@@ -51,6 +51,11 @@ internal protocol Osmosis_Tokenfactory_V1beta1_MsgClientProtocol: GRPCClient {
     _ request: Osmosis_Tokenfactory_V1beta1_MsgChangeAdmin,
     callOptions: CallOptions?
   ) -> UnaryCall<Osmosis_Tokenfactory_V1beta1_MsgChangeAdmin, Osmosis_Tokenfactory_V1beta1_MsgChangeAdminResponse>
+
+  func setDenomMetadata(
+    _ request: Osmosis_Tokenfactory_V1beta1_MsgSetDenomMetadata,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Osmosis_Tokenfactory_V1beta1_MsgSetDenomMetadata, Osmosis_Tokenfactory_V1beta1_MsgSetDenomMetadataResponse>
 }
 
 extension Osmosis_Tokenfactory_V1beta1_MsgClientProtocol {
@@ -112,9 +117,7 @@ extension Osmosis_Tokenfactory_V1beta1_MsgClientProtocol {
     )
   }
 
-  /// ForceTransfer is deactivated for now because we need to think through edge
-  /// cases rpc ForceTransfer(MsgForceTransfer) returns
-  /// (MsgForceTransferResponse);
+  /// Unary call to ChangeAdmin
   ///
   /// - Parameters:
   ///   - request: Request to send to ChangeAdmin.
@@ -129,6 +132,24 @@ extension Osmosis_Tokenfactory_V1beta1_MsgClientProtocol {
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeChangeAdminInterceptors() ?? []
+    )
+  }
+
+  /// Unary call to SetDenomMetadata
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to SetDenomMetadata.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func setDenomMetadata(
+    _ request: Osmosis_Tokenfactory_V1beta1_MsgSetDenomMetadata,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Osmosis_Tokenfactory_V1beta1_MsgSetDenomMetadata, Osmosis_Tokenfactory_V1beta1_MsgSetDenomMetadataResponse> {
+    return self.makeUnaryCall(
+      path: "/osmosis.tokenfactory.v1beta1.Msg/SetDenomMetadata",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeSetDenomMetadataInterceptors() ?? []
     )
   }
 }
@@ -146,6 +167,9 @@ internal protocol Osmosis_Tokenfactory_V1beta1_MsgClientInterceptorFactoryProtoc
 
   /// - Returns: Interceptors to use when invoking 'changeAdmin'.
   func makeChangeAdminInterceptors() -> [ClientInterceptor<Osmosis_Tokenfactory_V1beta1_MsgChangeAdmin, Osmosis_Tokenfactory_V1beta1_MsgChangeAdminResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'setDenomMetadata'.
+  func makeSetDenomMetadataInterceptors() -> [ClientInterceptor<Osmosis_Tokenfactory_V1beta1_MsgSetDenomMetadata, Osmosis_Tokenfactory_V1beta1_MsgSetDenomMetadataResponse>]
 }
 
 internal final class Osmosis_Tokenfactory_V1beta1_MsgClient: Osmosis_Tokenfactory_V1beta1_MsgClientProtocol {
@@ -170,7 +194,7 @@ internal final class Osmosis_Tokenfactory_V1beta1_MsgClient: Osmosis_Tokenfactor
   }
 }
 
-/// Msg defines the Msg service.
+/// Msg defines the tokefactory module's gRPC message service.
 ///
 /// To build a server, implement a class that conforms to this protocol.
 internal protocol Osmosis_Tokenfactory_V1beta1_MsgProvider: CallHandlerProvider {
@@ -182,10 +206,9 @@ internal protocol Osmosis_Tokenfactory_V1beta1_MsgProvider: CallHandlerProvider 
 
   func burn(request: Osmosis_Tokenfactory_V1beta1_MsgBurn, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Tokenfactory_V1beta1_MsgBurnResponse>
 
-  /// ForceTransfer is deactivated for now because we need to think through edge
-  /// cases rpc ForceTransfer(MsgForceTransfer) returns
-  /// (MsgForceTransferResponse);
   func changeAdmin(request: Osmosis_Tokenfactory_V1beta1_MsgChangeAdmin, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Tokenfactory_V1beta1_MsgChangeAdminResponse>
+
+  func setDenomMetadata(request: Osmosis_Tokenfactory_V1beta1_MsgSetDenomMetadata, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Tokenfactory_V1beta1_MsgSetDenomMetadataResponse>
 }
 
 extension Osmosis_Tokenfactory_V1beta1_MsgProvider {
@@ -234,6 +257,15 @@ extension Osmosis_Tokenfactory_V1beta1_MsgProvider {
         userFunction: self.changeAdmin(request:context:)
       )
 
+    case "SetDenomMetadata":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Osmosis_Tokenfactory_V1beta1_MsgSetDenomMetadata>(),
+        responseSerializer: ProtobufSerializer<Osmosis_Tokenfactory_V1beta1_MsgSetDenomMetadataResponse>(),
+        interceptors: self.interceptors?.makeSetDenomMetadataInterceptors() ?? [],
+        userFunction: self.setDenomMetadata(request:context:)
+      )
+
     default:
       return nil
     }
@@ -257,4 +289,8 @@ internal protocol Osmosis_Tokenfactory_V1beta1_MsgServerInterceptorFactoryProtoc
   /// - Returns: Interceptors to use when handling 'changeAdmin'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeChangeAdminInterceptors() -> [ServerInterceptor<Osmosis_Tokenfactory_V1beta1_MsgChangeAdmin, Osmosis_Tokenfactory_V1beta1_MsgChangeAdminResponse>]
+
+  /// - Returns: Interceptors to use when handling 'setDenomMetadata'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeSetDenomMetadataInterceptors() -> [ServerInterceptor<Osmosis_Tokenfactory_V1beta1_MsgSetDenomMetadata, Osmosis_Tokenfactory_V1beta1_MsgSetDenomMetadataResponse>]
 }

@@ -176,7 +176,8 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Params returns the total set of minting parameters.
+     * Params defines a gRPC query method that returns the tokenfactory module's
+     * parameters.
      * </pre>
      */
     public void params(osmosis.tokenfactory.v1beta1.QueryOuterClass.QueryParamsRequest request,
@@ -185,6 +186,10 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * DenomAuthorityMetadata defines a gRPC query method for fetching
+     * DenomAuthorityMetadata for a particular denom.
+     * </pre>
      */
     public void denomAuthorityMetadata(osmosis.tokenfactory.v1beta1.QueryOuterClass.QueryDenomAuthorityMetadataRequest request,
         io.grpc.stub.StreamObserver<osmosis.tokenfactory.v1beta1.QueryOuterClass.QueryDenomAuthorityMetadataResponse> responseObserver) {
@@ -192,6 +197,10 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * DenomsFromCreator defines a gRPC query method for fetching all
+     * denominations created by a specific admin/creator.
+     * </pre>
      */
     public void denomsFromCreator(osmosis.tokenfactory.v1beta1.QueryOuterClass.QueryDenomsFromCreatorRequest request,
         io.grpc.stub.StreamObserver<osmosis.tokenfactory.v1beta1.QueryOuterClass.QueryDenomsFromCreatorResponse> responseObserver) {
@@ -244,7 +253,8 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Params returns the total set of minting parameters.
+     * Params defines a gRPC query method that returns the tokenfactory module's
+     * parameters.
      * </pre>
      */
     public void params(osmosis.tokenfactory.v1beta1.QueryOuterClass.QueryParamsRequest request,
@@ -254,6 +264,10 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * DenomAuthorityMetadata defines a gRPC query method for fetching
+     * DenomAuthorityMetadata for a particular denom.
+     * </pre>
      */
     public void denomAuthorityMetadata(osmosis.tokenfactory.v1beta1.QueryOuterClass.QueryDenomAuthorityMetadataRequest request,
         io.grpc.stub.StreamObserver<osmosis.tokenfactory.v1beta1.QueryOuterClass.QueryDenomAuthorityMetadataResponse> responseObserver) {
@@ -262,6 +276,10 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * DenomsFromCreator defines a gRPC query method for fetching all
+     * denominations created by a specific admin/creator.
+     * </pre>
      */
     public void denomsFromCreator(osmosis.tokenfactory.v1beta1.QueryOuterClass.QueryDenomsFromCreatorRequest request,
         io.grpc.stub.StreamObserver<osmosis.tokenfactory.v1beta1.QueryOuterClass.QueryDenomsFromCreatorResponse> responseObserver) {
@@ -289,7 +307,8 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Params returns the total set of minting parameters.
+     * Params defines a gRPC query method that returns the tokenfactory module's
+     * parameters.
      * </pre>
      */
     public osmosis.tokenfactory.v1beta1.QueryOuterClass.QueryParamsResponse params(osmosis.tokenfactory.v1beta1.QueryOuterClass.QueryParamsRequest request) {
@@ -298,6 +317,10 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * DenomAuthorityMetadata defines a gRPC query method for fetching
+     * DenomAuthorityMetadata for a particular denom.
+     * </pre>
      */
     public osmosis.tokenfactory.v1beta1.QueryOuterClass.QueryDenomAuthorityMetadataResponse denomAuthorityMetadata(osmosis.tokenfactory.v1beta1.QueryOuterClass.QueryDenomAuthorityMetadataRequest request) {
       return blockingUnaryCall(
@@ -305,6 +328,10 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * DenomsFromCreator defines a gRPC query method for fetching all
+     * denominations created by a specific admin/creator.
+     * </pre>
      */
     public osmosis.tokenfactory.v1beta1.QueryOuterClass.QueryDenomsFromCreatorResponse denomsFromCreator(osmosis.tokenfactory.v1beta1.QueryOuterClass.QueryDenomsFromCreatorRequest request) {
       return blockingUnaryCall(
@@ -331,7 +358,8 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Params returns the total set of minting parameters.
+     * Params defines a gRPC query method that returns the tokenfactory module's
+     * parameters.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<osmosis.tokenfactory.v1beta1.QueryOuterClass.QueryParamsResponse> params(
@@ -341,6 +369,10 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * DenomAuthorityMetadata defines a gRPC query method for fetching
+     * DenomAuthorityMetadata for a particular denom.
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<osmosis.tokenfactory.v1beta1.QueryOuterClass.QueryDenomAuthorityMetadataResponse> denomAuthorityMetadata(
         osmosis.tokenfactory.v1beta1.QueryOuterClass.QueryDenomAuthorityMetadataRequest request) {
@@ -349,6 +381,10 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * DenomsFromCreator defines a gRPC query method for fetching all
+     * denominations created by a specific admin/creator.
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<osmosis.tokenfactory.v1beta1.QueryOuterClass.QueryDenomsFromCreatorResponse> denomsFromCreator(
         osmosis.tokenfactory.v1beta1.QueryOuterClass.QueryDenomsFromCreatorRequest request) {

@@ -35,10 +35,16 @@ struct Osmosis_Superfluid_GenesisState {
   /// Clears the value of `params`. Subsequent reads from it will return its default value.
   mutating func clearParams() {self._params = nil}
 
+  /// superfluid_assets defines the registered superfluid assets that have been
+  /// registered via governance.
   var superfluidAssets: [Osmosis_Superfluid_SuperfluidAsset] = []
 
+  /// osmo_equivalent_multipliers is the records of osmo equivalent amount of
+  /// each superfluid registered pool, updated every epoch.
   var osmoEquivalentMultipliers: [Osmosis_Superfluid_OsmoEquivalentMultiplierRecord] = []
 
+  /// intermediary_accounts is a secondary account for superfluid staking that
+  /// plays an intermediary role between validators and the delegators.
   var intermediaryAccounts: [Osmosis_Superfluid_SuperfluidIntermediaryAccount] = []
 
   var intemediaryAccountConnections: [Osmosis_Superfluid_LockIdIntermediaryAccountConnection] = []

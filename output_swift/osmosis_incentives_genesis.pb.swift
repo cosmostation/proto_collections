@@ -20,7 +20,8 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-/// GenesisState defines the incentives module's genesis state.
+/// GenesisState defines the incentives module's various parameters when first
+/// initialized
 struct Osmosis_Incentives_GenesisState {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -36,10 +37,15 @@ struct Osmosis_Incentives_GenesisState {
   /// Clears the value of `params`. Subsequent reads from it will return its default value.
   mutating func clearParams() {self._params = nil}
 
+  /// gauges are all gauges that should exist at genesis
   var gauges: [Osmosis_Incentives_Gauge] = []
 
+  /// lockable_durations are all lockup durations that gauges can be locked for
+  /// in order to recieve incentives
   var lockableDurations: [SwiftProtobuf.Google_Protobuf_Duration] = []
 
+  /// last_gauge_id is what the gauge number will increment from when creating
+  /// the next gauge after genesis
   var lastGaugeID: UInt64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
