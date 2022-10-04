@@ -1,0 +1,13 @@
+syntax = "proto3";
+package stafihub.stafihub.claim;
+
+import "gogoproto/gogo.proto";
+
+option go_package = "github.com/stafihub/stafihub/x/claim/types";
+option java_package = "stafihub.claim";
+
+// Params defines the parameters for the module.
+message Params {
+  option (gogoproto.goproto_stringer) = false;
+  
+}
