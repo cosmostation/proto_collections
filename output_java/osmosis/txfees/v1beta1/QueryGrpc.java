@@ -212,6 +212,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * DenomSpotPrice returns all spot prices by each registered token denom.
+     * </pre>
      */
     public void denomSpotPrice(osmosis.txfees.v1beta1.QueryOuterClass.QueryDenomSpotPriceRequest request,
         io.grpc.stub.StreamObserver<osmosis.txfees.v1beta1.QueryOuterClass.QueryDenomSpotPriceResponse> responseObserver) {
@@ -219,6 +222,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * Returns the poolID for a specified denom input.
+     * </pre>
      */
     public void denomPoolId(osmosis.txfees.v1beta1.QueryOuterClass.QueryDenomPoolIdRequest request,
         io.grpc.stub.StreamObserver<osmosis.txfees.v1beta1.QueryOuterClass.QueryDenomPoolIdResponse> responseObserver) {
@@ -226,6 +232,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * Returns a list of all base denom tokens and their corresponding pools.
+     * </pre>
      */
     public void baseDenom(osmosis.txfees.v1beta1.QueryOuterClass.QueryBaseDenomRequest request,
         io.grpc.stub.StreamObserver<osmosis.txfees.v1beta1.QueryOuterClass.QueryBaseDenomResponse> responseObserver) {
@@ -294,6 +303,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * DenomSpotPrice returns all spot prices by each registered token denom.
+     * </pre>
      */
     public void denomSpotPrice(osmosis.txfees.v1beta1.QueryOuterClass.QueryDenomSpotPriceRequest request,
         io.grpc.stub.StreamObserver<osmosis.txfees.v1beta1.QueryOuterClass.QueryDenomSpotPriceResponse> responseObserver) {
@@ -302,6 +314,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * Returns the poolID for a specified denom input.
+     * </pre>
      */
     public void denomPoolId(osmosis.txfees.v1beta1.QueryOuterClass.QueryDenomPoolIdRequest request,
         io.grpc.stub.StreamObserver<osmosis.txfees.v1beta1.QueryOuterClass.QueryDenomPoolIdResponse> responseObserver) {
@@ -310,6 +325,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * Returns a list of all base denom tokens and their corresponding pools.
+     * </pre>
      */
     public void baseDenom(osmosis.txfees.v1beta1.QueryOuterClass.QueryBaseDenomRequest request,
         io.grpc.stub.StreamObserver<osmosis.txfees.v1beta1.QueryOuterClass.QueryBaseDenomResponse> responseObserver) {
@@ -345,6 +363,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * DenomSpotPrice returns all spot prices by each registered token denom.
+     * </pre>
      */
     public osmosis.txfees.v1beta1.QueryOuterClass.QueryDenomSpotPriceResponse denomSpotPrice(osmosis.txfees.v1beta1.QueryOuterClass.QueryDenomSpotPriceRequest request) {
       return blockingUnaryCall(
@@ -352,6 +373,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * Returns the poolID for a specified denom input.
+     * </pre>
      */
     public osmosis.txfees.v1beta1.QueryOuterClass.QueryDenomPoolIdResponse denomPoolId(osmosis.txfees.v1beta1.QueryOuterClass.QueryDenomPoolIdRequest request) {
       return blockingUnaryCall(
@@ -359,6 +383,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * Returns a list of all base denom tokens and their corresponding pools.
+     * </pre>
      */
     public osmosis.txfees.v1beta1.QueryOuterClass.QueryBaseDenomResponse baseDenom(osmosis.txfees.v1beta1.QueryOuterClass.QueryBaseDenomRequest request) {
       return blockingUnaryCall(
@@ -394,6 +421,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * DenomSpotPrice returns all spot prices by each registered token denom.
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<osmosis.txfees.v1beta1.QueryOuterClass.QueryDenomSpotPriceResponse> denomSpotPrice(
         osmosis.txfees.v1beta1.QueryOuterClass.QueryDenomSpotPriceRequest request) {
@@ -402,6 +432,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * Returns the poolID for a specified denom input.
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<osmosis.txfees.v1beta1.QueryOuterClass.QueryDenomPoolIdResponse> denomPoolId(
         osmosis.txfees.v1beta1.QueryOuterClass.QueryDenomPoolIdRequest request) {
@@ -410,6 +443,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * Returns a list of all base denom tokens and their corresponding pools.
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<osmosis.txfees.v1beta1.QueryOuterClass.QueryBaseDenomResponse> baseDenom(
         osmosis.txfees.v1beta1.QueryOuterClass.QueryBaseDenomRequest request) {

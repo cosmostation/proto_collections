@@ -84,7 +84,7 @@ extension Osmosis_Poolincentives_V1beta1_QueryClientProtocol {
     )
   }
 
-  /// Unary call to DistrInfo
+  /// DistrInfo returns the pool's matching gauge ids and weights.
   ///
   /// - Parameters:
   ///   - request: Request to send to DistrInfo.
@@ -102,7 +102,7 @@ extension Osmosis_Poolincentives_V1beta1_QueryClientProtocol {
     )
   }
 
-  /// Unary call to Params
+  /// Params returns pool incentives params.
   ///
   /// - Parameters:
   ///   - request: Request to send to Params.
@@ -120,7 +120,7 @@ extension Osmosis_Poolincentives_V1beta1_QueryClientProtocol {
     )
   }
 
-  /// Unary call to LockableDurations
+  /// LockableDurations returns lock durations for pools.
   ///
   /// - Parameters:
   ///   - request: Request to send to LockableDurations.
@@ -138,7 +138,7 @@ extension Osmosis_Poolincentives_V1beta1_QueryClientProtocol {
     )
   }
 
-  /// Unary call to IncentivizedPools
+  /// IncentivizedPools returns currently incentivized pools
   ///
   /// - Parameters:
   ///   - request: Request to send to IncentivizedPools.
@@ -156,7 +156,7 @@ extension Osmosis_Poolincentives_V1beta1_QueryClientProtocol {
     )
   }
 
-  /// Unary call to ExternalIncentiveGauges
+  /// ExternalIncentiveGauges returns external incentive gauges.
   ///
   /// - Parameters:
   ///   - request: Request to send to ExternalIncentiveGauges.
@@ -225,14 +225,19 @@ internal protocol Osmosis_Poolincentives_V1beta1_QueryProvider: CallHandlerProvi
   /// GaugeIds takes the pool id and returns the matching gauge ids and durations
   func gaugeIds(request: Osmosis_Poolincentives_V1beta1_QueryGaugeIdsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Poolincentives_V1beta1_QueryGaugeIdsResponse>
 
+  /// DistrInfo returns the pool's matching gauge ids and weights.
   func distrInfo(request: Osmosis_Poolincentives_V1beta1_QueryDistrInfoRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Poolincentives_V1beta1_QueryDistrInfoResponse>
 
+  /// Params returns pool incentives params.
   func params(request: Osmosis_Poolincentives_V1beta1_QueryParamsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Poolincentives_V1beta1_QueryParamsResponse>
 
+  /// LockableDurations returns lock durations for pools.
   func lockableDurations(request: Osmosis_Poolincentives_V1beta1_QueryLockableDurationsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Poolincentives_V1beta1_QueryLockableDurationsResponse>
 
+  /// IncentivizedPools returns currently incentivized pools
   func incentivizedPools(request: Osmosis_Poolincentives_V1beta1_QueryIncentivizedPoolsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Poolincentives_V1beta1_QueryIncentivizedPoolsResponse>
 
+  /// ExternalIncentiveGauges returns external incentive gauges.
   func externalIncentiveGauges(request: Osmosis_Poolincentives_V1beta1_QueryExternalIncentiveGaugesRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Poolincentives_V1beta1_QueryExternalIncentiveGaugesResponse>
 }
 

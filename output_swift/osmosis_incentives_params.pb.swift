@@ -26,7 +26,8 @@ struct Osmosis_Incentives_Params {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  /// distribution epoch identifier
+  /// distr_epoch_identifier is what epoch type distribution will be triggered by
+  /// (day, week, etc.)
   var distrEpochIdentifier: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()

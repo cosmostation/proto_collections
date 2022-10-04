@@ -20,6 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
+/// ===================== MsgCreatePool
 struct Osmosis_Gamm_Poolmodels_Stableswap_V1beta1_MsgCreateStableswapPool {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -38,7 +39,11 @@ struct Osmosis_Gamm_Poolmodels_Stableswap_V1beta1_MsgCreateStableswapPool {
 
   var initialPoolLiquidity: [Cosmos_Base_V1beta1_Coin] = []
 
+  var scalingFactors: [UInt64] = []
+
   var futurePoolGovernor: String = String()
+
+  var scalingFactorController: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -47,6 +52,7 @@ struct Osmosis_Gamm_Poolmodels_Stableswap_V1beta1_MsgCreateStableswapPool {
   fileprivate var _poolParams: Osmosis_Gamm_Poolmodels_Stableswap_V1beta1_PoolParams? = nil
 }
 
+/// Returns a poolID with custom poolName.
 struct Osmosis_Gamm_Poolmodels_Stableswap_V1beta1_MsgCreateStableswapPoolResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -59,13 +65,13 @@ struct Osmosis_Gamm_Poolmodels_Stableswap_V1beta1_MsgCreateStableswapPoolRespons
   init() {}
 }
 
+/// Sender must be the pool's scaling_factor_governor in order for the tx to
+/// succeed. Adjusts stableswap scaling factors.
 struct Osmosis_Gamm_Poolmodels_Stableswap_V1beta1_MsgStableSwapAdjustScalingFactors {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  /// Sender must be the pool's scaling_factor_governor in order for the tx to
-  /// succeed
   var sender: String = String()
 
   var poolID: UInt64 = 0
@@ -97,7 +103,9 @@ extension Osmosis_Gamm_Poolmodels_Stableswap_V1beta1_MsgCreateStableswapPool: Sw
     1: .same(proto: "sender"),
     2: .standard(proto: "pool_params"),
     3: .standard(proto: "initial_pool_liquidity"),
-    4: .standard(proto: "future_pool_governor"),
+    4: .standard(proto: "scaling_factors"),
+    5: .standard(proto: "future_pool_governor"),
+    6: .standard(proto: "scaling_factor_controller"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -109,7 +117,9 @@ extension Osmosis_Gamm_Poolmodels_Stableswap_V1beta1_MsgCreateStableswapPool: Sw
       case 1: try { try decoder.decodeSingularStringField(value: &self.sender) }()
       case 2: try { try decoder.decodeSingularMessageField(value: &self._poolParams) }()
       case 3: try { try decoder.decodeRepeatedMessageField(value: &self.initialPoolLiquidity) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.futurePoolGovernor) }()
+      case 4: try { try decoder.decodeRepeatedUInt64Field(value: &self.scalingFactors) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.futurePoolGovernor) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.scalingFactorController) }()
       default: break
       }
     }
@@ -125,8 +135,14 @@ extension Osmosis_Gamm_Poolmodels_Stableswap_V1beta1_MsgCreateStableswapPool: Sw
     if !self.initialPoolLiquidity.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.initialPoolLiquidity, fieldNumber: 3)
     }
+    if !self.scalingFactors.isEmpty {
+      try visitor.visitPackedUInt64Field(value: self.scalingFactors, fieldNumber: 4)
+    }
     if !self.futurePoolGovernor.isEmpty {
-      try visitor.visitSingularStringField(value: self.futurePoolGovernor, fieldNumber: 4)
+      try visitor.visitSingularStringField(value: self.futurePoolGovernor, fieldNumber: 5)
+    }
+    if !self.scalingFactorController.isEmpty {
+      try visitor.visitSingularStringField(value: self.scalingFactorController, fieldNumber: 6)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -135,7 +151,9 @@ extension Osmosis_Gamm_Poolmodels_Stableswap_V1beta1_MsgCreateStableswapPool: Sw
     if lhs.sender != rhs.sender {return false}
     if lhs._poolParams != rhs._poolParams {return false}
     if lhs.initialPoolLiquidity != rhs.initialPoolLiquidity {return false}
+    if lhs.scalingFactors != rhs.scalingFactors {return false}
     if lhs.futurePoolGovernor != rhs.futurePoolGovernor {return false}
+    if lhs.scalingFactorController != rhs.scalingFactorController {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

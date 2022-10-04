@@ -34,72 +34,147 @@ public final class Genesis {
     osmosis.superfluid.ParamsOuterClass.ParamsOrBuilder getParamsOrBuilder();
 
     /**
+     * <pre>
+     * superfluid_assets defines the registered superfluid assets that have been
+     * registered via governance.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.SuperfluidAsset superfluid_assets = 2 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<osmosis.superfluid.Superfluid.SuperfluidAsset> 
         getSuperfluidAssetsList();
     /**
+     * <pre>
+     * superfluid_assets defines the registered superfluid assets that have been
+     * registered via governance.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.SuperfluidAsset superfluid_assets = 2 [(.gogoproto.nullable) = false];</code>
      */
     osmosis.superfluid.Superfluid.SuperfluidAsset getSuperfluidAssets(int index);
     /**
+     * <pre>
+     * superfluid_assets defines the registered superfluid assets that have been
+     * registered via governance.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.SuperfluidAsset superfluid_assets = 2 [(.gogoproto.nullable) = false];</code>
      */
     int getSuperfluidAssetsCount();
     /**
+     * <pre>
+     * superfluid_assets defines the registered superfluid assets that have been
+     * registered via governance.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.SuperfluidAsset superfluid_assets = 2 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<? extends osmosis.superfluid.Superfluid.SuperfluidAssetOrBuilder> 
         getSuperfluidAssetsOrBuilderList();
     /**
+     * <pre>
+     * superfluid_assets defines the registered superfluid assets that have been
+     * registered via governance.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.SuperfluidAsset superfluid_assets = 2 [(.gogoproto.nullable) = false];</code>
      */
     osmosis.superfluid.Superfluid.SuperfluidAssetOrBuilder getSuperfluidAssetsOrBuilder(
         int index);
 
     /**
+     * <pre>
+     * osmo_equivalent_multipliers is the records of osmo equivalent amount of
+     * each superfluid registered pool, updated every epoch.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.OsmoEquivalentMultiplierRecord osmo_equivalent_multipliers = 3 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<osmosis.superfluid.Superfluid.OsmoEquivalentMultiplierRecord> 
         getOsmoEquivalentMultipliersList();
     /**
+     * <pre>
+     * osmo_equivalent_multipliers is the records of osmo equivalent amount of
+     * each superfluid registered pool, updated every epoch.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.OsmoEquivalentMultiplierRecord osmo_equivalent_multipliers = 3 [(.gogoproto.nullable) = false];</code>
      */
     osmosis.superfluid.Superfluid.OsmoEquivalentMultiplierRecord getOsmoEquivalentMultipliers(int index);
     /**
+     * <pre>
+     * osmo_equivalent_multipliers is the records of osmo equivalent amount of
+     * each superfluid registered pool, updated every epoch.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.OsmoEquivalentMultiplierRecord osmo_equivalent_multipliers = 3 [(.gogoproto.nullable) = false];</code>
      */
     int getOsmoEquivalentMultipliersCount();
     /**
+     * <pre>
+     * osmo_equivalent_multipliers is the records of osmo equivalent amount of
+     * each superfluid registered pool, updated every epoch.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.OsmoEquivalentMultiplierRecord osmo_equivalent_multipliers = 3 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<? extends osmosis.superfluid.Superfluid.OsmoEquivalentMultiplierRecordOrBuilder> 
         getOsmoEquivalentMultipliersOrBuilderList();
     /**
+     * <pre>
+     * osmo_equivalent_multipliers is the records of osmo equivalent amount of
+     * each superfluid registered pool, updated every epoch.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.OsmoEquivalentMultiplierRecord osmo_equivalent_multipliers = 3 [(.gogoproto.nullable) = false];</code>
      */
     osmosis.superfluid.Superfluid.OsmoEquivalentMultiplierRecordOrBuilder getOsmoEquivalentMultipliersOrBuilder(
         int index);
 
     /**
+     * <pre>
+     * intermediary_accounts is a secondary account for superfluid staking that
+     * plays an intermediary role between validators and the delegators.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.SuperfluidIntermediaryAccount intermediary_accounts = 4 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<osmosis.superfluid.Superfluid.SuperfluidIntermediaryAccount> 
         getIntermediaryAccountsList();
     /**
+     * <pre>
+     * intermediary_accounts is a secondary account for superfluid staking that
+     * plays an intermediary role between validators and the delegators.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.SuperfluidIntermediaryAccount intermediary_accounts = 4 [(.gogoproto.nullable) = false];</code>
      */
     osmosis.superfluid.Superfluid.SuperfluidIntermediaryAccount getIntermediaryAccounts(int index);
     /**
+     * <pre>
+     * intermediary_accounts is a secondary account for superfluid staking that
+     * plays an intermediary role between validators and the delegators.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.SuperfluidIntermediaryAccount intermediary_accounts = 4 [(.gogoproto.nullable) = false];</code>
      */
     int getIntermediaryAccountsCount();
     /**
+     * <pre>
+     * intermediary_accounts is a secondary account for superfluid staking that
+     * plays an intermediary role between validators and the delegators.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.SuperfluidIntermediaryAccount intermediary_accounts = 4 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<? extends osmosis.superfluid.Superfluid.SuperfluidIntermediaryAccountOrBuilder> 
         getIntermediaryAccountsOrBuilderList();
     /**
+     * <pre>
+     * intermediary_accounts is a secondary account for superfluid staking that
+     * plays an intermediary role between validators and the delegators.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.SuperfluidIntermediaryAccount intermediary_accounts = 4 [(.gogoproto.nullable) = false];</code>
      */
     osmosis.superfluid.Superfluid.SuperfluidIntermediaryAccountOrBuilder getIntermediaryAccountsOrBuilder(
@@ -305,6 +380,11 @@ public final class Genesis {
     public static final int SUPERFLUID_ASSETS_FIELD_NUMBER = 2;
     private java.util.List<osmosis.superfluid.Superfluid.SuperfluidAsset> superfluidAssets_;
     /**
+     * <pre>
+     * superfluid_assets defines the registered superfluid assets that have been
+     * registered via governance.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.SuperfluidAsset superfluid_assets = 2 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
@@ -312,6 +392,11 @@ public final class Genesis {
       return superfluidAssets_;
     }
     /**
+     * <pre>
+     * superfluid_assets defines the registered superfluid assets that have been
+     * registered via governance.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.SuperfluidAsset superfluid_assets = 2 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
@@ -320,6 +405,11 @@ public final class Genesis {
       return superfluidAssets_;
     }
     /**
+     * <pre>
+     * superfluid_assets defines the registered superfluid assets that have been
+     * registered via governance.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.SuperfluidAsset superfluid_assets = 2 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
@@ -327,6 +417,11 @@ public final class Genesis {
       return superfluidAssets_.size();
     }
     /**
+     * <pre>
+     * superfluid_assets defines the registered superfluid assets that have been
+     * registered via governance.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.SuperfluidAsset superfluid_assets = 2 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
@@ -334,6 +429,11 @@ public final class Genesis {
       return superfluidAssets_.get(index);
     }
     /**
+     * <pre>
+     * superfluid_assets defines the registered superfluid assets that have been
+     * registered via governance.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.SuperfluidAsset superfluid_assets = 2 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
@@ -345,6 +445,11 @@ public final class Genesis {
     public static final int OSMO_EQUIVALENT_MULTIPLIERS_FIELD_NUMBER = 3;
     private java.util.List<osmosis.superfluid.Superfluid.OsmoEquivalentMultiplierRecord> osmoEquivalentMultipliers_;
     /**
+     * <pre>
+     * osmo_equivalent_multipliers is the records of osmo equivalent amount of
+     * each superfluid registered pool, updated every epoch.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.OsmoEquivalentMultiplierRecord osmo_equivalent_multipliers = 3 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
@@ -352,6 +457,11 @@ public final class Genesis {
       return osmoEquivalentMultipliers_;
     }
     /**
+     * <pre>
+     * osmo_equivalent_multipliers is the records of osmo equivalent amount of
+     * each superfluid registered pool, updated every epoch.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.OsmoEquivalentMultiplierRecord osmo_equivalent_multipliers = 3 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
@@ -360,6 +470,11 @@ public final class Genesis {
       return osmoEquivalentMultipliers_;
     }
     /**
+     * <pre>
+     * osmo_equivalent_multipliers is the records of osmo equivalent amount of
+     * each superfluid registered pool, updated every epoch.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.OsmoEquivalentMultiplierRecord osmo_equivalent_multipliers = 3 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
@@ -367,6 +482,11 @@ public final class Genesis {
       return osmoEquivalentMultipliers_.size();
     }
     /**
+     * <pre>
+     * osmo_equivalent_multipliers is the records of osmo equivalent amount of
+     * each superfluid registered pool, updated every epoch.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.OsmoEquivalentMultiplierRecord osmo_equivalent_multipliers = 3 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
@@ -374,6 +494,11 @@ public final class Genesis {
       return osmoEquivalentMultipliers_.get(index);
     }
     /**
+     * <pre>
+     * osmo_equivalent_multipliers is the records of osmo equivalent amount of
+     * each superfluid registered pool, updated every epoch.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.OsmoEquivalentMultiplierRecord osmo_equivalent_multipliers = 3 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
@@ -385,6 +510,11 @@ public final class Genesis {
     public static final int INTERMEDIARY_ACCOUNTS_FIELD_NUMBER = 4;
     private java.util.List<osmosis.superfluid.Superfluid.SuperfluidIntermediaryAccount> intermediaryAccounts_;
     /**
+     * <pre>
+     * intermediary_accounts is a secondary account for superfluid staking that
+     * plays an intermediary role between validators and the delegators.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.SuperfluidIntermediaryAccount intermediary_accounts = 4 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
@@ -392,6 +522,11 @@ public final class Genesis {
       return intermediaryAccounts_;
     }
     /**
+     * <pre>
+     * intermediary_accounts is a secondary account for superfluid staking that
+     * plays an intermediary role between validators and the delegators.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.SuperfluidIntermediaryAccount intermediary_accounts = 4 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
@@ -400,6 +535,11 @@ public final class Genesis {
       return intermediaryAccounts_;
     }
     /**
+     * <pre>
+     * intermediary_accounts is a secondary account for superfluid staking that
+     * plays an intermediary role between validators and the delegators.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.SuperfluidIntermediaryAccount intermediary_accounts = 4 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
@@ -407,6 +547,11 @@ public final class Genesis {
       return intermediaryAccounts_.size();
     }
     /**
+     * <pre>
+     * intermediary_accounts is a secondary account for superfluid staking that
+     * plays an intermediary role between validators and the delegators.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.SuperfluidIntermediaryAccount intermediary_accounts = 4 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
@@ -414,6 +559,11 @@ public final class Genesis {
       return intermediaryAccounts_.get(index);
     }
     /**
+     * <pre>
+     * intermediary_accounts is a secondary account for superfluid staking that
+     * plays an intermediary role between validators and the delegators.
+     * </pre>
+     *
      * <code>repeated .osmosis.superfluid.SuperfluidIntermediaryAccount intermediary_accounts = 4 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
@@ -1135,6 +1285,11 @@ public final class Genesis {
           osmosis.superfluid.Superfluid.SuperfluidAsset, osmosis.superfluid.Superfluid.SuperfluidAsset.Builder, osmosis.superfluid.Superfluid.SuperfluidAssetOrBuilder> superfluidAssetsBuilder_;
 
       /**
+       * <pre>
+       * superfluid_assets defines the registered superfluid assets that have been
+       * registered via governance.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidAsset superfluid_assets = 2 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<osmosis.superfluid.Superfluid.SuperfluidAsset> getSuperfluidAssetsList() {
@@ -1145,6 +1300,11 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * superfluid_assets defines the registered superfluid assets that have been
+       * registered via governance.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidAsset superfluid_assets = 2 [(.gogoproto.nullable) = false];</code>
        */
       public int getSuperfluidAssetsCount() {
@@ -1155,6 +1315,11 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * superfluid_assets defines the registered superfluid assets that have been
+       * registered via governance.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidAsset superfluid_assets = 2 [(.gogoproto.nullable) = false];</code>
        */
       public osmosis.superfluid.Superfluid.SuperfluidAsset getSuperfluidAssets(int index) {
@@ -1165,6 +1330,11 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * superfluid_assets defines the registered superfluid assets that have been
+       * registered via governance.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidAsset superfluid_assets = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setSuperfluidAssets(
@@ -1182,6 +1352,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * superfluid_assets defines the registered superfluid assets that have been
+       * registered via governance.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidAsset superfluid_assets = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setSuperfluidAssets(
@@ -1196,6 +1371,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * superfluid_assets defines the registered superfluid assets that have been
+       * registered via governance.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidAsset superfluid_assets = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addSuperfluidAssets(osmosis.superfluid.Superfluid.SuperfluidAsset value) {
@@ -1212,6 +1392,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * superfluid_assets defines the registered superfluid assets that have been
+       * registered via governance.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidAsset superfluid_assets = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addSuperfluidAssets(
@@ -1229,6 +1414,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * superfluid_assets defines the registered superfluid assets that have been
+       * registered via governance.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidAsset superfluid_assets = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addSuperfluidAssets(
@@ -1243,6 +1433,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * superfluid_assets defines the registered superfluid assets that have been
+       * registered via governance.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidAsset superfluid_assets = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addSuperfluidAssets(
@@ -1257,6 +1452,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * superfluid_assets defines the registered superfluid assets that have been
+       * registered via governance.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidAsset superfluid_assets = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addAllSuperfluidAssets(
@@ -1272,6 +1472,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * superfluid_assets defines the registered superfluid assets that have been
+       * registered via governance.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidAsset superfluid_assets = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearSuperfluidAssets() {
@@ -1285,6 +1490,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * superfluid_assets defines the registered superfluid assets that have been
+       * registered via governance.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidAsset superfluid_assets = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder removeSuperfluidAssets(int index) {
@@ -1298,6 +1508,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * superfluid_assets defines the registered superfluid assets that have been
+       * registered via governance.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidAsset superfluid_assets = 2 [(.gogoproto.nullable) = false];</code>
        */
       public osmosis.superfluid.Superfluid.SuperfluidAsset.Builder getSuperfluidAssetsBuilder(
@@ -1305,6 +1520,11 @@ public final class Genesis {
         return getSuperfluidAssetsFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * superfluid_assets defines the registered superfluid assets that have been
+       * registered via governance.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidAsset superfluid_assets = 2 [(.gogoproto.nullable) = false];</code>
        */
       public osmosis.superfluid.Superfluid.SuperfluidAssetOrBuilder getSuperfluidAssetsOrBuilder(
@@ -1315,6 +1535,11 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * superfluid_assets defines the registered superfluid assets that have been
+       * registered via governance.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidAsset superfluid_assets = 2 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<? extends osmosis.superfluid.Superfluid.SuperfluidAssetOrBuilder> 
@@ -1326,6 +1551,11 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * superfluid_assets defines the registered superfluid assets that have been
+       * registered via governance.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidAsset superfluid_assets = 2 [(.gogoproto.nullable) = false];</code>
        */
       public osmosis.superfluid.Superfluid.SuperfluidAsset.Builder addSuperfluidAssetsBuilder() {
@@ -1333,6 +1563,11 @@ public final class Genesis {
             osmosis.superfluid.Superfluid.SuperfluidAsset.getDefaultInstance());
       }
       /**
+       * <pre>
+       * superfluid_assets defines the registered superfluid assets that have been
+       * registered via governance.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidAsset superfluid_assets = 2 [(.gogoproto.nullable) = false];</code>
        */
       public osmosis.superfluid.Superfluid.SuperfluidAsset.Builder addSuperfluidAssetsBuilder(
@@ -1341,6 +1576,11 @@ public final class Genesis {
             index, osmosis.superfluid.Superfluid.SuperfluidAsset.getDefaultInstance());
       }
       /**
+       * <pre>
+       * superfluid_assets defines the registered superfluid assets that have been
+       * registered via governance.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidAsset superfluid_assets = 2 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<osmosis.superfluid.Superfluid.SuperfluidAsset.Builder> 
@@ -1375,6 +1615,11 @@ public final class Genesis {
           osmosis.superfluid.Superfluid.OsmoEquivalentMultiplierRecord, osmosis.superfluid.Superfluid.OsmoEquivalentMultiplierRecord.Builder, osmosis.superfluid.Superfluid.OsmoEquivalentMultiplierRecordOrBuilder> osmoEquivalentMultipliersBuilder_;
 
       /**
+       * <pre>
+       * osmo_equivalent_multipliers is the records of osmo equivalent amount of
+       * each superfluid registered pool, updated every epoch.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.OsmoEquivalentMultiplierRecord osmo_equivalent_multipliers = 3 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<osmosis.superfluid.Superfluid.OsmoEquivalentMultiplierRecord> getOsmoEquivalentMultipliersList() {
@@ -1385,6 +1630,11 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * osmo_equivalent_multipliers is the records of osmo equivalent amount of
+       * each superfluid registered pool, updated every epoch.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.OsmoEquivalentMultiplierRecord osmo_equivalent_multipliers = 3 [(.gogoproto.nullable) = false];</code>
        */
       public int getOsmoEquivalentMultipliersCount() {
@@ -1395,6 +1645,11 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * osmo_equivalent_multipliers is the records of osmo equivalent amount of
+       * each superfluid registered pool, updated every epoch.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.OsmoEquivalentMultiplierRecord osmo_equivalent_multipliers = 3 [(.gogoproto.nullable) = false];</code>
        */
       public osmosis.superfluid.Superfluid.OsmoEquivalentMultiplierRecord getOsmoEquivalentMultipliers(int index) {
@@ -1405,6 +1660,11 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * osmo_equivalent_multipliers is the records of osmo equivalent amount of
+       * each superfluid registered pool, updated every epoch.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.OsmoEquivalentMultiplierRecord osmo_equivalent_multipliers = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setOsmoEquivalentMultipliers(
@@ -1422,6 +1682,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * osmo_equivalent_multipliers is the records of osmo equivalent amount of
+       * each superfluid registered pool, updated every epoch.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.OsmoEquivalentMultiplierRecord osmo_equivalent_multipliers = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setOsmoEquivalentMultipliers(
@@ -1436,6 +1701,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * osmo_equivalent_multipliers is the records of osmo equivalent amount of
+       * each superfluid registered pool, updated every epoch.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.OsmoEquivalentMultiplierRecord osmo_equivalent_multipliers = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addOsmoEquivalentMultipliers(osmosis.superfluid.Superfluid.OsmoEquivalentMultiplierRecord value) {
@@ -1452,6 +1722,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * osmo_equivalent_multipliers is the records of osmo equivalent amount of
+       * each superfluid registered pool, updated every epoch.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.OsmoEquivalentMultiplierRecord osmo_equivalent_multipliers = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addOsmoEquivalentMultipliers(
@@ -1469,6 +1744,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * osmo_equivalent_multipliers is the records of osmo equivalent amount of
+       * each superfluid registered pool, updated every epoch.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.OsmoEquivalentMultiplierRecord osmo_equivalent_multipliers = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addOsmoEquivalentMultipliers(
@@ -1483,6 +1763,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * osmo_equivalent_multipliers is the records of osmo equivalent amount of
+       * each superfluid registered pool, updated every epoch.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.OsmoEquivalentMultiplierRecord osmo_equivalent_multipliers = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addOsmoEquivalentMultipliers(
@@ -1497,6 +1782,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * osmo_equivalent_multipliers is the records of osmo equivalent amount of
+       * each superfluid registered pool, updated every epoch.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.OsmoEquivalentMultiplierRecord osmo_equivalent_multipliers = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addAllOsmoEquivalentMultipliers(
@@ -1512,6 +1802,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * osmo_equivalent_multipliers is the records of osmo equivalent amount of
+       * each superfluid registered pool, updated every epoch.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.OsmoEquivalentMultiplierRecord osmo_equivalent_multipliers = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearOsmoEquivalentMultipliers() {
@@ -1525,6 +1820,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * osmo_equivalent_multipliers is the records of osmo equivalent amount of
+       * each superfluid registered pool, updated every epoch.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.OsmoEquivalentMultiplierRecord osmo_equivalent_multipliers = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder removeOsmoEquivalentMultipliers(int index) {
@@ -1538,6 +1838,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * osmo_equivalent_multipliers is the records of osmo equivalent amount of
+       * each superfluid registered pool, updated every epoch.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.OsmoEquivalentMultiplierRecord osmo_equivalent_multipliers = 3 [(.gogoproto.nullable) = false];</code>
        */
       public osmosis.superfluid.Superfluid.OsmoEquivalentMultiplierRecord.Builder getOsmoEquivalentMultipliersBuilder(
@@ -1545,6 +1850,11 @@ public final class Genesis {
         return getOsmoEquivalentMultipliersFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * osmo_equivalent_multipliers is the records of osmo equivalent amount of
+       * each superfluid registered pool, updated every epoch.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.OsmoEquivalentMultiplierRecord osmo_equivalent_multipliers = 3 [(.gogoproto.nullable) = false];</code>
        */
       public osmosis.superfluid.Superfluid.OsmoEquivalentMultiplierRecordOrBuilder getOsmoEquivalentMultipliersOrBuilder(
@@ -1555,6 +1865,11 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * osmo_equivalent_multipliers is the records of osmo equivalent amount of
+       * each superfluid registered pool, updated every epoch.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.OsmoEquivalentMultiplierRecord osmo_equivalent_multipliers = 3 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<? extends osmosis.superfluid.Superfluid.OsmoEquivalentMultiplierRecordOrBuilder> 
@@ -1566,6 +1881,11 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * osmo_equivalent_multipliers is the records of osmo equivalent amount of
+       * each superfluid registered pool, updated every epoch.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.OsmoEquivalentMultiplierRecord osmo_equivalent_multipliers = 3 [(.gogoproto.nullable) = false];</code>
        */
       public osmosis.superfluid.Superfluid.OsmoEquivalentMultiplierRecord.Builder addOsmoEquivalentMultipliersBuilder() {
@@ -1573,6 +1893,11 @@ public final class Genesis {
             osmosis.superfluid.Superfluid.OsmoEquivalentMultiplierRecord.getDefaultInstance());
       }
       /**
+       * <pre>
+       * osmo_equivalent_multipliers is the records of osmo equivalent amount of
+       * each superfluid registered pool, updated every epoch.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.OsmoEquivalentMultiplierRecord osmo_equivalent_multipliers = 3 [(.gogoproto.nullable) = false];</code>
        */
       public osmosis.superfluid.Superfluid.OsmoEquivalentMultiplierRecord.Builder addOsmoEquivalentMultipliersBuilder(
@@ -1581,6 +1906,11 @@ public final class Genesis {
             index, osmosis.superfluid.Superfluid.OsmoEquivalentMultiplierRecord.getDefaultInstance());
       }
       /**
+       * <pre>
+       * osmo_equivalent_multipliers is the records of osmo equivalent amount of
+       * each superfluid registered pool, updated every epoch.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.OsmoEquivalentMultiplierRecord osmo_equivalent_multipliers = 3 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<osmosis.superfluid.Superfluid.OsmoEquivalentMultiplierRecord.Builder> 
@@ -1615,6 +1945,11 @@ public final class Genesis {
           osmosis.superfluid.Superfluid.SuperfluidIntermediaryAccount, osmosis.superfluid.Superfluid.SuperfluidIntermediaryAccount.Builder, osmosis.superfluid.Superfluid.SuperfluidIntermediaryAccountOrBuilder> intermediaryAccountsBuilder_;
 
       /**
+       * <pre>
+       * intermediary_accounts is a secondary account for superfluid staking that
+       * plays an intermediary role between validators and the delegators.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidIntermediaryAccount intermediary_accounts = 4 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<osmosis.superfluid.Superfluid.SuperfluidIntermediaryAccount> getIntermediaryAccountsList() {
@@ -1625,6 +1960,11 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * intermediary_accounts is a secondary account for superfluid staking that
+       * plays an intermediary role between validators and the delegators.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidIntermediaryAccount intermediary_accounts = 4 [(.gogoproto.nullable) = false];</code>
        */
       public int getIntermediaryAccountsCount() {
@@ -1635,6 +1975,11 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * intermediary_accounts is a secondary account for superfluid staking that
+       * plays an intermediary role between validators and the delegators.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidIntermediaryAccount intermediary_accounts = 4 [(.gogoproto.nullable) = false];</code>
        */
       public osmosis.superfluid.Superfluid.SuperfluidIntermediaryAccount getIntermediaryAccounts(int index) {
@@ -1645,6 +1990,11 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * intermediary_accounts is a secondary account for superfluid staking that
+       * plays an intermediary role between validators and the delegators.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidIntermediaryAccount intermediary_accounts = 4 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setIntermediaryAccounts(
@@ -1662,6 +2012,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * intermediary_accounts is a secondary account for superfluid staking that
+       * plays an intermediary role between validators and the delegators.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidIntermediaryAccount intermediary_accounts = 4 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setIntermediaryAccounts(
@@ -1676,6 +2031,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * intermediary_accounts is a secondary account for superfluid staking that
+       * plays an intermediary role between validators and the delegators.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidIntermediaryAccount intermediary_accounts = 4 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addIntermediaryAccounts(osmosis.superfluid.Superfluid.SuperfluidIntermediaryAccount value) {
@@ -1692,6 +2052,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * intermediary_accounts is a secondary account for superfluid staking that
+       * plays an intermediary role between validators and the delegators.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidIntermediaryAccount intermediary_accounts = 4 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addIntermediaryAccounts(
@@ -1709,6 +2074,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * intermediary_accounts is a secondary account for superfluid staking that
+       * plays an intermediary role between validators and the delegators.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidIntermediaryAccount intermediary_accounts = 4 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addIntermediaryAccounts(
@@ -1723,6 +2093,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * intermediary_accounts is a secondary account for superfluid staking that
+       * plays an intermediary role between validators and the delegators.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidIntermediaryAccount intermediary_accounts = 4 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addIntermediaryAccounts(
@@ -1737,6 +2112,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * intermediary_accounts is a secondary account for superfluid staking that
+       * plays an intermediary role between validators and the delegators.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidIntermediaryAccount intermediary_accounts = 4 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addAllIntermediaryAccounts(
@@ -1752,6 +2132,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * intermediary_accounts is a secondary account for superfluid staking that
+       * plays an intermediary role between validators and the delegators.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidIntermediaryAccount intermediary_accounts = 4 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearIntermediaryAccounts() {
@@ -1765,6 +2150,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * intermediary_accounts is a secondary account for superfluid staking that
+       * plays an intermediary role between validators and the delegators.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidIntermediaryAccount intermediary_accounts = 4 [(.gogoproto.nullable) = false];</code>
        */
       public Builder removeIntermediaryAccounts(int index) {
@@ -1778,6 +2168,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * intermediary_accounts is a secondary account for superfluid staking that
+       * plays an intermediary role between validators and the delegators.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidIntermediaryAccount intermediary_accounts = 4 [(.gogoproto.nullable) = false];</code>
        */
       public osmosis.superfluid.Superfluid.SuperfluidIntermediaryAccount.Builder getIntermediaryAccountsBuilder(
@@ -1785,6 +2180,11 @@ public final class Genesis {
         return getIntermediaryAccountsFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * intermediary_accounts is a secondary account for superfluid staking that
+       * plays an intermediary role between validators and the delegators.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidIntermediaryAccount intermediary_accounts = 4 [(.gogoproto.nullable) = false];</code>
        */
       public osmosis.superfluid.Superfluid.SuperfluidIntermediaryAccountOrBuilder getIntermediaryAccountsOrBuilder(
@@ -1795,6 +2195,11 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * intermediary_accounts is a secondary account for superfluid staking that
+       * plays an intermediary role between validators and the delegators.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidIntermediaryAccount intermediary_accounts = 4 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<? extends osmosis.superfluid.Superfluid.SuperfluidIntermediaryAccountOrBuilder> 
@@ -1806,6 +2211,11 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * intermediary_accounts is a secondary account for superfluid staking that
+       * plays an intermediary role between validators and the delegators.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidIntermediaryAccount intermediary_accounts = 4 [(.gogoproto.nullable) = false];</code>
        */
       public osmosis.superfluid.Superfluid.SuperfluidIntermediaryAccount.Builder addIntermediaryAccountsBuilder() {
@@ -1813,6 +2223,11 @@ public final class Genesis {
             osmosis.superfluid.Superfluid.SuperfluidIntermediaryAccount.getDefaultInstance());
       }
       /**
+       * <pre>
+       * intermediary_accounts is a secondary account for superfluid staking that
+       * plays an intermediary role between validators and the delegators.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidIntermediaryAccount intermediary_accounts = 4 [(.gogoproto.nullable) = false];</code>
        */
       public osmosis.superfluid.Superfluid.SuperfluidIntermediaryAccount.Builder addIntermediaryAccountsBuilder(
@@ -1821,6 +2236,11 @@ public final class Genesis {
             index, osmosis.superfluid.Superfluid.SuperfluidIntermediaryAccount.getDefaultInstance());
       }
       /**
+       * <pre>
+       * intermediary_accounts is a secondary account for superfluid staking that
+       * plays an intermediary role between validators and the delegators.
+       * </pre>
+       *
        * <code>repeated .osmosis.superfluid.SuperfluidIntermediaryAccount intermediary_accounts = 4 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<osmosis.superfluid.Superfluid.SuperfluidIntermediaryAccount.Builder> 

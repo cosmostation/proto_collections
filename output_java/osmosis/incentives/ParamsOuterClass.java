@@ -20,7 +20,8 @@ public final class ParamsOuterClass {
 
     /**
      * <pre>
-     * distribution epoch identifier
+     * distr_epoch_identifier is what epoch type distribution will be triggered by
+     * (day, week, etc.)
      * </pre>
      *
      * <code>string distr_epoch_identifier = 1 [(.gogoproto.moretags) = "yaml:&#92;"distr_epoch_identifier&#92;""];</code>
@@ -29,7 +30,8 @@ public final class ParamsOuterClass {
     java.lang.String getDistrEpochIdentifier();
     /**
      * <pre>
-     * distribution epoch identifier
+     * distr_epoch_identifier is what epoch type distribution will be triggered by
+     * (day, week, etc.)
      * </pre>
      *
      * <code>string distr_epoch_identifier = 1 [(.gogoproto.moretags) = "yaml:&#92;"distr_epoch_identifier&#92;""];</code>
@@ -130,7 +132,8 @@ public final class ParamsOuterClass {
     private volatile java.lang.Object distrEpochIdentifier_;
     /**
      * <pre>
-     * distribution epoch identifier
+     * distr_epoch_identifier is what epoch type distribution will be triggered by
+     * (day, week, etc.)
      * </pre>
      *
      * <code>string distr_epoch_identifier = 1 [(.gogoproto.moretags) = "yaml:&#92;"distr_epoch_identifier&#92;""];</code>
@@ -151,7 +154,8 @@ public final class ParamsOuterClass {
     }
     /**
      * <pre>
-     * distribution epoch identifier
+     * distr_epoch_identifier is what epoch type distribution will be triggered by
+     * (day, week, etc.)
      * </pre>
      *
      * <code>string distr_epoch_identifier = 1 [(.gogoproto.moretags) = "yaml:&#92;"distr_epoch_identifier&#92;""];</code>
@@ -481,7 +485,8 @@ public final class ParamsOuterClass {
       private java.lang.Object distrEpochIdentifier_ = "";
       /**
        * <pre>
-       * distribution epoch identifier
+       * distr_epoch_identifier is what epoch type distribution will be triggered by
+       * (day, week, etc.)
        * </pre>
        *
        * <code>string distr_epoch_identifier = 1 [(.gogoproto.moretags) = "yaml:&#92;"distr_epoch_identifier&#92;""];</code>
@@ -501,7 +506,8 @@ public final class ParamsOuterClass {
       }
       /**
        * <pre>
-       * distribution epoch identifier
+       * distr_epoch_identifier is what epoch type distribution will be triggered by
+       * (day, week, etc.)
        * </pre>
        *
        * <code>string distr_epoch_identifier = 1 [(.gogoproto.moretags) = "yaml:&#92;"distr_epoch_identifier&#92;""];</code>
@@ -522,7 +528,8 @@ public final class ParamsOuterClass {
       }
       /**
        * <pre>
-       * distribution epoch identifier
+       * distr_epoch_identifier is what epoch type distribution will be triggered by
+       * (day, week, etc.)
        * </pre>
        *
        * <code>string distr_epoch_identifier = 1 [(.gogoproto.moretags) = "yaml:&#92;"distr_epoch_identifier&#92;""];</code>
@@ -541,7 +548,8 @@ public final class ParamsOuterClass {
       }
       /**
        * <pre>
-       * distribution epoch identifier
+       * distr_epoch_identifier is what epoch type distribution will be triggered by
+       * (day, week, etc.)
        * </pre>
        *
        * <code>string distr_epoch_identifier = 1 [(.gogoproto.moretags) = "yaml:&#92;"distr_epoch_identifier&#92;""];</code>
@@ -555,7 +563,8 @@ public final class ParamsOuterClass {
       }
       /**
        * <pre>
-       * distribution epoch identifier
+       * distr_epoch_identifier is what epoch type distribution will be triggered by
+       * (day, week, etc.)
        * </pre>
        *
        * <code>string distr_epoch_identifier = 1 [(.gogoproto.moretags) = "yaml:&#92;"distr_epoch_identifier&#92;""];</code>

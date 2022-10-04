@@ -15,6 +15,11 @@ public final class Superfluid {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * SuperfluidAssetType indicates whether the superfluid asset is
+   * a native token itself or the lp share of a pool.
+   * </pre>
+   *
    * Protobuf enum {@code osmosis.superfluid.SuperfluidAssetType}
    */
   public enum SuperfluidAssetType
@@ -147,11 +152,21 @@ public final class Superfluid {
         getDenomBytes();
 
     /**
+     * <pre>
+     * AssetType indicates whether the superfluid asset is a native token or an lp
+     * share
+     * </pre>
+     *
      * <code>.osmosis.superfluid.SuperfluidAssetType asset_type = 2;</code>
      * @return The enum numeric value on the wire for assetType.
      */
     int getAssetTypeValue();
     /**
+     * <pre>
+     * AssetType indicates whether the superfluid asset is a native token or an lp
+     * share
+     * </pre>
+     *
      * <code>.osmosis.superfluid.SuperfluidAssetType asset_type = 2;</code>
      * @return The assetType.
      */
@@ -293,6 +308,11 @@ public final class Superfluid {
     public static final int ASSET_TYPE_FIELD_NUMBER = 2;
     private int assetType_;
     /**
+     * <pre>
+     * AssetType indicates whether the superfluid asset is a native token or an lp
+     * share
+     * </pre>
+     *
      * <code>.osmosis.superfluid.SuperfluidAssetType asset_type = 2;</code>
      * @return The enum numeric value on the wire for assetType.
      */
@@ -300,6 +320,11 @@ public final class Superfluid {
       return assetType_;
     }
     /**
+     * <pre>
+     * AssetType indicates whether the superfluid asset is a native token or an lp
+     * share
+     * </pre>
+     *
      * <code>.osmosis.superfluid.SuperfluidAssetType asset_type = 2;</code>
      * @return The assetType.
      */
@@ -709,6 +734,11 @@ public final class Superfluid {
 
       private int assetType_ = 0;
       /**
+       * <pre>
+       * AssetType indicates whether the superfluid asset is a native token or an lp
+       * share
+       * </pre>
+       *
        * <code>.osmosis.superfluid.SuperfluidAssetType asset_type = 2;</code>
        * @return The enum numeric value on the wire for assetType.
        */
@@ -716,6 +746,11 @@ public final class Superfluid {
         return assetType_;
       }
       /**
+       * <pre>
+       * AssetType indicates whether the superfluid asset is a native token or an lp
+       * share
+       * </pre>
+       *
        * <code>.osmosis.superfluid.SuperfluidAssetType asset_type = 2;</code>
        * @param value The enum numeric value on the wire for assetType to set.
        * @return This builder for chaining.
@@ -727,6 +762,11 @@ public final class Superfluid {
         return this;
       }
       /**
+       * <pre>
+       * AssetType indicates whether the superfluid asset is a native token or an lp
+       * share
+       * </pre>
+       *
        * <code>.osmosis.superfluid.SuperfluidAssetType asset_type = 2;</code>
        * @return The assetType.
        */
@@ -737,6 +777,11 @@ public final class Superfluid {
         return result == null ? osmosis.superfluid.Superfluid.SuperfluidAssetType.UNRECOGNIZED : result;
       }
       /**
+       * <pre>
+       * AssetType indicates whether the superfluid asset is a native token or an lp
+       * share
+       * </pre>
+       *
        * <code>.osmosis.superfluid.SuperfluidAssetType asset_type = 2;</code>
        * @param value The assetType to set.
        * @return This builder for chaining.
@@ -751,6 +796,11 @@ public final class Superfluid {
         return this;
       }
       /**
+       * <pre>
+       * AssetType indicates whether the superfluid asset is a native token or an lp
+       * share
+       * </pre>
+       *
        * <code>.osmosis.superfluid.SuperfluidAssetType asset_type = 2;</code>
        * @return This builder for chaining.
        */
@@ -818,11 +868,19 @@ public final class Superfluid {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Denom indicates the denom of the superfluid asset.
+     * </pre>
+     *
      * <code>string denom = 1;</code>
      * @return The denom.
      */
     java.lang.String getDenom();
     /**
+     * <pre>
+     * Denom indicates the denom of the superfluid asset.
+     * </pre>
+     *
      * <code>string denom = 1;</code>
      * @return The bytes for denom.
      */
@@ -854,7 +912,8 @@ public final class Superfluid {
   /**
    * <pre>
    * SuperfluidIntermediaryAccount takes the role of intermediary between LP token
-   * and OSMO tokens for superfluid staking
+   * and OSMO tokens for superfluid staking. The intermediary account is the
+   * actual account responsible for delegation, not the validator account itself.
    * </pre>
    *
    * Protobuf type {@code osmosis.superfluid.SuperfluidIntermediaryAccount}
@@ -955,6 +1014,10 @@ public final class Superfluid {
     public static final int DENOM_FIELD_NUMBER = 1;
     private volatile java.lang.Object denom_;
     /**
+     * <pre>
+     * Denom indicates the denom of the superfluid asset.
+     * </pre>
+     *
      * <code>string denom = 1;</code>
      * @return The denom.
      */
@@ -972,6 +1035,10 @@ public final class Superfluid {
       }
     }
     /**
+     * <pre>
+     * Denom indicates the denom of the superfluid asset.
+     * </pre>
+     *
      * <code>string denom = 1;</code>
      * @return The bytes for denom.
      */
@@ -1222,7 +1289,8 @@ public final class Superfluid {
     /**
      * <pre>
      * SuperfluidIntermediaryAccount takes the role of intermediary between LP token
-     * and OSMO tokens for superfluid staking
+     * and OSMO tokens for superfluid staking. The intermediary account is the
+     * actual account responsible for delegation, not the validator account itself.
      * </pre>
      *
      * Protobuf type {@code osmosis.superfluid.SuperfluidIntermediaryAccount}
@@ -1387,6 +1455,10 @@ public final class Superfluid {
 
       private java.lang.Object denom_ = "";
       /**
+       * <pre>
+       * Denom indicates the denom of the superfluid asset.
+       * </pre>
+       *
        * <code>string denom = 1;</code>
        * @return The denom.
        */
@@ -1403,6 +1475,10 @@ public final class Superfluid {
         }
       }
       /**
+       * <pre>
+       * Denom indicates the denom of the superfluid asset.
+       * </pre>
+       *
        * <code>string denom = 1;</code>
        * @return The bytes for denom.
        */
@@ -1420,6 +1496,10 @@ public final class Superfluid {
         }
       }
       /**
+       * <pre>
+       * Denom indicates the denom of the superfluid asset.
+       * </pre>
+       *
        * <code>string denom = 1;</code>
        * @param value The denom to set.
        * @return This builder for chaining.
@@ -1435,6 +1515,10 @@ public final class Superfluid {
         return this;
       }
       /**
+       * <pre>
+       * Denom indicates the denom of the superfluid asset.
+       * </pre>
+       *
        * <code>string denom = 1;</code>
        * @return This builder for chaining.
        */
@@ -1445,6 +1529,10 @@ public final class Superfluid {
         return this;
       }
       /**
+       * <pre>
+       * Denom indicates the denom of the superfluid asset.
+       * </pre>
+       *
        * <code>string denom = 1;</code>
        * @param value The bytes for denom to set.
        * @return This builder for chaining.
@@ -1681,7 +1769,7 @@ public final class Superfluid {
    * to be set as the Time-weighted-average-osmo-backing for the entire duration
    * of epoch N-1. (Thereby locking whats in use for epoch N as based on the prior
    * epochs rewards) However for now, this is not the TWAP but instead the spot
-   * price at the boundary.  For different types of assets in the future, it could
+   * price at the boundary. For different types of assets in the future, it could
    * change.
    * </pre>
    *
@@ -2058,7 +2146,7 @@ public final class Superfluid {
      * to be set as the Time-weighted-average-osmo-backing for the entire duration
      * of epoch N-1. (Thereby locking whats in use for epoch N as based on the prior
      * epochs rewards) However for now, this is not the TWAP but instead the spot
-     * price at the boundary.  For different types of assets in the future, it could
+     * price at the boundary. For different types of assets in the future, it could
      * change.
      * </pre>
      *
@@ -2537,8 +2625,8 @@ public final class Superfluid {
   }
   /**
    * <pre>
-   * SuperfluidDelegationRecord takes the role of intermediary between LP token
-   * and OSMO tokens for superfluid staking
+   * SuperfluidDelegationRecord is a struct used to indicate superfluid
+   * delegations of an account in the state machine in a user friendly form.
    * </pre>
    *
    * Protobuf type {@code osmosis.superfluid.SuperfluidDelegationRecord}
@@ -2983,8 +3071,8 @@ public final class Superfluid {
     }
     /**
      * <pre>
-     * SuperfluidDelegationRecord takes the role of intermediary between LP token
-     * and OSMO tokens for superfluid staking
+     * SuperfluidDelegationRecord is a struct used to indicate superfluid
+     * delegations of an account in the state machine in a user friendly form.
      * </pre>
      *
      * Protobuf type {@code osmosis.superfluid.SuperfluidDelegationRecord}
@@ -3634,6 +3722,12 @@ public final class Superfluid {
         getIntermediaryAccountBytes();
   }
   /**
+   * <pre>
+   * LockIdIntermediaryAccountConnection is a struct used to indicate the
+   * relationship between the underlying lock id and superfluid delegation done
+   * via lp shares.
+   * </pre>
+   *
    * Protobuf type {@code osmosis.superfluid.LockIdIntermediaryAccountConnection}
    */
   public static final class LockIdIntermediaryAccountConnection extends
@@ -3938,6 +4032,12 @@ public final class Superfluid {
       return builder;
     }
     /**
+     * <pre>
+     * LockIdIntermediaryAccountConnection is a struct used to indicate the
+     * relationship between the underlying lock id and superfluid delegation done
+     * via lp shares.
+     * </pre>
+     *
      * Protobuf type {@code osmosis.superfluid.LockIdIntermediaryAccountConnection}
      */
     public static final class Builder extends

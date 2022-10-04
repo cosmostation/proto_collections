@@ -46,54 +46,104 @@ public final class Genesis {
     osmosis.incentives.ParamsOuterClass.ParamsOrBuilder getParamsOrBuilder();
 
     /**
+     * <pre>
+     * gauges are all gauges that should exist at genesis
+     * </pre>
+     *
      * <code>repeated .osmosis.incentives.Gauge gauges = 2 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<osmosis.incentives.GaugeOuterClass.Gauge> 
         getGaugesList();
     /**
+     * <pre>
+     * gauges are all gauges that should exist at genesis
+     * </pre>
+     *
      * <code>repeated .osmosis.incentives.Gauge gauges = 2 [(.gogoproto.nullable) = false];</code>
      */
     osmosis.incentives.GaugeOuterClass.Gauge getGauges(int index);
     /**
+     * <pre>
+     * gauges are all gauges that should exist at genesis
+     * </pre>
+     *
      * <code>repeated .osmosis.incentives.Gauge gauges = 2 [(.gogoproto.nullable) = false];</code>
      */
     int getGaugesCount();
     /**
+     * <pre>
+     * gauges are all gauges that should exist at genesis
+     * </pre>
+     *
      * <code>repeated .osmosis.incentives.Gauge gauges = 2 [(.gogoproto.nullable) = false];</code>
      */
     java.util.List<? extends osmosis.incentives.GaugeOuterClass.GaugeOrBuilder> 
         getGaugesOrBuilderList();
     /**
+     * <pre>
+     * gauges are all gauges that should exist at genesis
+     * </pre>
+     *
      * <code>repeated .osmosis.incentives.Gauge gauges = 2 [(.gogoproto.nullable) = false];</code>
      */
     osmosis.incentives.GaugeOuterClass.GaugeOrBuilder getGaugesOrBuilder(
         int index);
 
     /**
+     * <pre>
+     * lockable_durations are all lockup durations that gauges can be locked for
+     * in order to recieve incentives
+     * </pre>
+     *
      * <code>repeated .google.protobuf.Duration lockable_durations = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     java.util.List<com.google.protobuf.Duration> 
         getLockableDurationsList();
     /**
+     * <pre>
+     * lockable_durations are all lockup durations that gauges can be locked for
+     * in order to recieve incentives
+     * </pre>
+     *
      * <code>repeated .google.protobuf.Duration lockable_durations = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     com.google.protobuf.Duration getLockableDurations(int index);
     /**
+     * <pre>
+     * lockable_durations are all lockup durations that gauges can be locked for
+     * in order to recieve incentives
+     * </pre>
+     *
      * <code>repeated .google.protobuf.Duration lockable_durations = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     int getLockableDurationsCount();
     /**
+     * <pre>
+     * lockable_durations are all lockup durations that gauges can be locked for
+     * in order to recieve incentives
+     * </pre>
+     *
      * <code>repeated .google.protobuf.Duration lockable_durations = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     java.util.List<? extends com.google.protobuf.DurationOrBuilder> 
         getLockableDurationsOrBuilderList();
     /**
+     * <pre>
+     * lockable_durations are all lockup durations that gauges can be locked for
+     * in order to recieve incentives
+     * </pre>
+     *
      * <code>repeated .google.protobuf.Duration lockable_durations = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     com.google.protobuf.DurationOrBuilder getLockableDurationsOrBuilder(
         int index);
 
     /**
+     * <pre>
+     * last_gauge_id is what the gauge number will increment from when creating
+     * the next gauge after genesis
+     * </pre>
+     *
      * <code>uint64 last_gauge_id = 4;</code>
      * @return The lastGaugeId.
      */
@@ -101,7 +151,8 @@ public final class Genesis {
   }
   /**
    * <pre>
-   * GenesisState defines the incentives module's genesis state.
+   * GenesisState defines the incentives module's various parameters when first
+   * initialized
    * </pre>
    *
    * Protobuf type {@code osmosis.incentives.GenesisState}
@@ -266,6 +317,10 @@ public final class Genesis {
     public static final int GAUGES_FIELD_NUMBER = 2;
     private java.util.List<osmosis.incentives.GaugeOuterClass.Gauge> gauges_;
     /**
+     * <pre>
+     * gauges are all gauges that should exist at genesis
+     * </pre>
+     *
      * <code>repeated .osmosis.incentives.Gauge gauges = 2 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
@@ -273,6 +328,10 @@ public final class Genesis {
       return gauges_;
     }
     /**
+     * <pre>
+     * gauges are all gauges that should exist at genesis
+     * </pre>
+     *
      * <code>repeated .osmosis.incentives.Gauge gauges = 2 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
@@ -281,6 +340,10 @@ public final class Genesis {
       return gauges_;
     }
     /**
+     * <pre>
+     * gauges are all gauges that should exist at genesis
+     * </pre>
+     *
      * <code>repeated .osmosis.incentives.Gauge gauges = 2 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
@@ -288,6 +351,10 @@ public final class Genesis {
       return gauges_.size();
     }
     /**
+     * <pre>
+     * gauges are all gauges that should exist at genesis
+     * </pre>
+     *
      * <code>repeated .osmosis.incentives.Gauge gauges = 2 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
@@ -295,6 +362,10 @@ public final class Genesis {
       return gauges_.get(index);
     }
     /**
+     * <pre>
+     * gauges are all gauges that should exist at genesis
+     * </pre>
+     *
      * <code>repeated .osmosis.incentives.Gauge gauges = 2 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
@@ -306,6 +377,11 @@ public final class Genesis {
     public static final int LOCKABLE_DURATIONS_FIELD_NUMBER = 3;
     private java.util.List<com.google.protobuf.Duration> lockableDurations_;
     /**
+     * <pre>
+     * lockable_durations are all lockup durations that gauges can be locked for
+     * in order to recieve incentives
+     * </pre>
+     *
      * <code>repeated .google.protobuf.Duration lockable_durations = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     @java.lang.Override
@@ -313,6 +389,11 @@ public final class Genesis {
       return lockableDurations_;
     }
     /**
+     * <pre>
+     * lockable_durations are all lockup durations that gauges can be locked for
+     * in order to recieve incentives
+     * </pre>
+     *
      * <code>repeated .google.protobuf.Duration lockable_durations = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     @java.lang.Override
@@ -321,6 +402,11 @@ public final class Genesis {
       return lockableDurations_;
     }
     /**
+     * <pre>
+     * lockable_durations are all lockup durations that gauges can be locked for
+     * in order to recieve incentives
+     * </pre>
+     *
      * <code>repeated .google.protobuf.Duration lockable_durations = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     @java.lang.Override
@@ -328,6 +414,11 @@ public final class Genesis {
       return lockableDurations_.size();
     }
     /**
+     * <pre>
+     * lockable_durations are all lockup durations that gauges can be locked for
+     * in order to recieve incentives
+     * </pre>
+     *
      * <code>repeated .google.protobuf.Duration lockable_durations = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     @java.lang.Override
@@ -335,6 +426,11 @@ public final class Genesis {
       return lockableDurations_.get(index);
     }
     /**
+     * <pre>
+     * lockable_durations are all lockup durations that gauges can be locked for
+     * in order to recieve incentives
+     * </pre>
+     *
      * <code>repeated .google.protobuf.Duration lockable_durations = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     @java.lang.Override
@@ -346,6 +442,11 @@ public final class Genesis {
     public static final int LAST_GAUGE_ID_FIELD_NUMBER = 4;
     private long lastGaugeId_;
     /**
+     * <pre>
+     * last_gauge_id is what the gauge number will increment from when creating
+     * the next gauge after genesis
+     * </pre>
+     *
      * <code>uint64 last_gauge_id = 4;</code>
      * @return The lastGaugeId.
      */
@@ -554,7 +655,8 @@ public final class Genesis {
     }
     /**
      * <pre>
-     * GenesisState defines the incentives module's genesis state.
+     * GenesisState defines the incentives module's various parameters when first
+     * initialized
      * </pre>
      *
      * Protobuf type {@code osmosis.incentives.GenesisState}
@@ -971,6 +1073,10 @@ public final class Genesis {
           osmosis.incentives.GaugeOuterClass.Gauge, osmosis.incentives.GaugeOuterClass.Gauge.Builder, osmosis.incentives.GaugeOuterClass.GaugeOrBuilder> gaugesBuilder_;
 
       /**
+       * <pre>
+       * gauges are all gauges that should exist at genesis
+       * </pre>
+       *
        * <code>repeated .osmosis.incentives.Gauge gauges = 2 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<osmosis.incentives.GaugeOuterClass.Gauge> getGaugesList() {
@@ -981,6 +1087,10 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * gauges are all gauges that should exist at genesis
+       * </pre>
+       *
        * <code>repeated .osmosis.incentives.Gauge gauges = 2 [(.gogoproto.nullable) = false];</code>
        */
       public int getGaugesCount() {
@@ -991,6 +1101,10 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * gauges are all gauges that should exist at genesis
+       * </pre>
+       *
        * <code>repeated .osmosis.incentives.Gauge gauges = 2 [(.gogoproto.nullable) = false];</code>
        */
       public osmosis.incentives.GaugeOuterClass.Gauge getGauges(int index) {
@@ -1001,6 +1115,10 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * gauges are all gauges that should exist at genesis
+       * </pre>
+       *
        * <code>repeated .osmosis.incentives.Gauge gauges = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setGauges(
@@ -1018,6 +1136,10 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * gauges are all gauges that should exist at genesis
+       * </pre>
+       *
        * <code>repeated .osmosis.incentives.Gauge gauges = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setGauges(
@@ -1032,6 +1154,10 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * gauges are all gauges that should exist at genesis
+       * </pre>
+       *
        * <code>repeated .osmosis.incentives.Gauge gauges = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addGauges(osmosis.incentives.GaugeOuterClass.Gauge value) {
@@ -1048,6 +1174,10 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * gauges are all gauges that should exist at genesis
+       * </pre>
+       *
        * <code>repeated .osmosis.incentives.Gauge gauges = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addGauges(
@@ -1065,6 +1195,10 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * gauges are all gauges that should exist at genesis
+       * </pre>
+       *
        * <code>repeated .osmosis.incentives.Gauge gauges = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addGauges(
@@ -1079,6 +1213,10 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * gauges are all gauges that should exist at genesis
+       * </pre>
+       *
        * <code>repeated .osmosis.incentives.Gauge gauges = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addGauges(
@@ -1093,6 +1231,10 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * gauges are all gauges that should exist at genesis
+       * </pre>
+       *
        * <code>repeated .osmosis.incentives.Gauge gauges = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder addAllGauges(
@@ -1108,6 +1250,10 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * gauges are all gauges that should exist at genesis
+       * </pre>
+       *
        * <code>repeated .osmosis.incentives.Gauge gauges = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearGauges() {
@@ -1121,6 +1267,10 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * gauges are all gauges that should exist at genesis
+       * </pre>
+       *
        * <code>repeated .osmosis.incentives.Gauge gauges = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder removeGauges(int index) {
@@ -1134,6 +1284,10 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * gauges are all gauges that should exist at genesis
+       * </pre>
+       *
        * <code>repeated .osmosis.incentives.Gauge gauges = 2 [(.gogoproto.nullable) = false];</code>
        */
       public osmosis.incentives.GaugeOuterClass.Gauge.Builder getGaugesBuilder(
@@ -1141,6 +1295,10 @@ public final class Genesis {
         return getGaugesFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * gauges are all gauges that should exist at genesis
+       * </pre>
+       *
        * <code>repeated .osmosis.incentives.Gauge gauges = 2 [(.gogoproto.nullable) = false];</code>
        */
       public osmosis.incentives.GaugeOuterClass.GaugeOrBuilder getGaugesOrBuilder(
@@ -1151,6 +1309,10 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * gauges are all gauges that should exist at genesis
+       * </pre>
+       *
        * <code>repeated .osmosis.incentives.Gauge gauges = 2 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<? extends osmosis.incentives.GaugeOuterClass.GaugeOrBuilder> 
@@ -1162,6 +1324,10 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * gauges are all gauges that should exist at genesis
+       * </pre>
+       *
        * <code>repeated .osmosis.incentives.Gauge gauges = 2 [(.gogoproto.nullable) = false];</code>
        */
       public osmosis.incentives.GaugeOuterClass.Gauge.Builder addGaugesBuilder() {
@@ -1169,6 +1335,10 @@ public final class Genesis {
             osmosis.incentives.GaugeOuterClass.Gauge.getDefaultInstance());
       }
       /**
+       * <pre>
+       * gauges are all gauges that should exist at genesis
+       * </pre>
+       *
        * <code>repeated .osmosis.incentives.Gauge gauges = 2 [(.gogoproto.nullable) = false];</code>
        */
       public osmosis.incentives.GaugeOuterClass.Gauge.Builder addGaugesBuilder(
@@ -1177,6 +1347,10 @@ public final class Genesis {
             index, osmosis.incentives.GaugeOuterClass.Gauge.getDefaultInstance());
       }
       /**
+       * <pre>
+       * gauges are all gauges that should exist at genesis
+       * </pre>
+       *
        * <code>repeated .osmosis.incentives.Gauge gauges = 2 [(.gogoproto.nullable) = false];</code>
        */
       public java.util.List<osmosis.incentives.GaugeOuterClass.Gauge.Builder> 
@@ -1211,6 +1385,11 @@ public final class Genesis {
           com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> lockableDurationsBuilder_;
 
       /**
+       * <pre>
+       * lockable_durations are all lockup durations that gauges can be locked for
+       * in order to recieve incentives
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public java.util.List<com.google.protobuf.Duration> getLockableDurationsList() {
@@ -1221,6 +1400,11 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * lockable_durations are all lockup durations that gauges can be locked for
+       * in order to recieve incentives
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public int getLockableDurationsCount() {
@@ -1231,6 +1415,11 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * lockable_durations are all lockup durations that gauges can be locked for
+       * in order to recieve incentives
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public com.google.protobuf.Duration getLockableDurations(int index) {
@@ -1241,6 +1430,11 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * lockable_durations are all lockup durations that gauges can be locked for
+       * in order to recieve incentives
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder setLockableDurations(
@@ -1258,6 +1452,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * lockable_durations are all lockup durations that gauges can be locked for
+       * in order to recieve incentives
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder setLockableDurations(
@@ -1272,6 +1471,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * lockable_durations are all lockup durations that gauges can be locked for
+       * in order to recieve incentives
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder addLockableDurations(com.google.protobuf.Duration value) {
@@ -1288,6 +1492,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * lockable_durations are all lockup durations that gauges can be locked for
+       * in order to recieve incentives
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder addLockableDurations(
@@ -1305,6 +1514,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * lockable_durations are all lockup durations that gauges can be locked for
+       * in order to recieve incentives
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder addLockableDurations(
@@ -1319,6 +1533,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * lockable_durations are all lockup durations that gauges can be locked for
+       * in order to recieve incentives
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder addLockableDurations(
@@ -1333,6 +1552,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * lockable_durations are all lockup durations that gauges can be locked for
+       * in order to recieve incentives
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder addAllLockableDurations(
@@ -1348,6 +1572,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * lockable_durations are all lockup durations that gauges can be locked for
+       * in order to recieve incentives
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder clearLockableDurations() {
@@ -1361,6 +1590,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * lockable_durations are all lockup durations that gauges can be locked for
+       * in order to recieve incentives
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder removeLockableDurations(int index) {
@@ -1374,6 +1608,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * lockable_durations are all lockup durations that gauges can be locked for
+       * in order to recieve incentives
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public com.google.protobuf.Duration.Builder getLockableDurationsBuilder(
@@ -1381,6 +1620,11 @@ public final class Genesis {
         return getLockableDurationsFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * lockable_durations are all lockup durations that gauges can be locked for
+       * in order to recieve incentives
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public com.google.protobuf.DurationOrBuilder getLockableDurationsOrBuilder(
@@ -1391,6 +1635,11 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * lockable_durations are all lockup durations that gauges can be locked for
+       * in order to recieve incentives
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public java.util.List<? extends com.google.protobuf.DurationOrBuilder> 
@@ -1402,6 +1651,11 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * lockable_durations are all lockup durations that gauges can be locked for
+       * in order to recieve incentives
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public com.google.protobuf.Duration.Builder addLockableDurationsBuilder() {
@@ -1409,6 +1663,11 @@ public final class Genesis {
             com.google.protobuf.Duration.getDefaultInstance());
       }
       /**
+       * <pre>
+       * lockable_durations are all lockup durations that gauges can be locked for
+       * in order to recieve incentives
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public com.google.protobuf.Duration.Builder addLockableDurationsBuilder(
@@ -1417,6 +1676,11 @@ public final class Genesis {
             index, com.google.protobuf.Duration.getDefaultInstance());
       }
       /**
+       * <pre>
+       * lockable_durations are all lockup durations that gauges can be locked for
+       * in order to recieve incentives
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public java.util.List<com.google.protobuf.Duration.Builder> 
@@ -1440,6 +1704,11 @@ public final class Genesis {
 
       private long lastGaugeId_ ;
       /**
+       * <pre>
+       * last_gauge_id is what the gauge number will increment from when creating
+       * the next gauge after genesis
+       * </pre>
+       *
        * <code>uint64 last_gauge_id = 4;</code>
        * @return The lastGaugeId.
        */
@@ -1448,6 +1717,11 @@ public final class Genesis {
         return lastGaugeId_;
       }
       /**
+       * <pre>
+       * last_gauge_id is what the gauge number will increment from when creating
+       * the next gauge after genesis
+       * </pre>
+       *
        * <code>uint64 last_gauge_id = 4;</code>
        * @param value The lastGaugeId to set.
        * @return This builder for chaining.
@@ -1459,6 +1733,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * last_gauge_id is what the gauge number will increment from when creating
+       * the next gauge after genesis
+       * </pre>
+       *
        * <code>uint64 last_gauge_id = 4;</code>
        * @return This builder for chaining.
        */

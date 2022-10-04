@@ -25,7 +25,7 @@ import NIO
 import SwiftProtobuf
 
 
-/// Query defines the gRPC querier service.
+/// Query defines the gRPC querier service
 ///
 /// Usage: instantiate `Osmosis_Incentives_QueryClient`, then call methods of this protocol to make API calls.
 internal protocol Osmosis_Incentives_QueryClientProtocol: GRPCClient {
@@ -36,11 +36,6 @@ internal protocol Osmosis_Incentives_QueryClientProtocol: GRPCClient {
     _ request: Osmosis_Incentives_ModuleToDistributeCoinsRequest,
     callOptions: CallOptions?
   ) -> UnaryCall<Osmosis_Incentives_ModuleToDistributeCoinsRequest, Osmosis_Incentives_ModuleToDistributeCoinsResponse>
-
-  func moduleDistributedCoins(
-    _ request: Osmosis_Incentives_ModuleDistributedCoinsRequest,
-    callOptions: CallOptions?
-  ) -> UnaryCall<Osmosis_Incentives_ModuleDistributedCoinsRequest, Osmosis_Incentives_ModuleDistributedCoinsResponse>
 
   func gaugeByID(
     _ request: Osmosis_Incentives_GaugeByIDRequest,
@@ -88,7 +83,7 @@ extension Osmosis_Incentives_QueryClientProtocol {
     return "osmosis.incentives.Query"
   }
 
-  /// returns coins that is going to be distributed
+  /// ModuleToDistributeCoins returns coins that are going to be distributed
   ///
   /// - Parameters:
   ///   - request: Request to send to ModuleToDistributeCoins.
@@ -106,25 +101,7 @@ extension Osmosis_Incentives_QueryClientProtocol {
     )
   }
 
-  /// returns coins that are distributed by module so far
-  ///
-  /// - Parameters:
-  ///   - request: Request to send to ModuleDistributedCoins.
-  ///   - callOptions: Call options.
-  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
-  internal func moduleDistributedCoins(
-    _ request: Osmosis_Incentives_ModuleDistributedCoinsRequest,
-    callOptions: CallOptions? = nil
-  ) -> UnaryCall<Osmosis_Incentives_ModuleDistributedCoinsRequest, Osmosis_Incentives_ModuleDistributedCoinsResponse> {
-    return self.makeUnaryCall(
-      path: "/osmosis.incentives.Query/ModuleDistributedCoins",
-      request: request,
-      callOptions: callOptions ?? self.defaultCallOptions,
-      interceptors: self.interceptors?.makeModuleDistributedCoinsInterceptors() ?? []
-    )
-  }
-
-  /// returns Gauge by id
+  /// GaugeByID returns gauges by their respective ID
   ///
   /// - Parameters:
   ///   - request: Request to send to GaugeByID.
@@ -142,7 +119,7 @@ extension Osmosis_Incentives_QueryClientProtocol {
     )
   }
 
-  /// returns gauges both upcoming and active
+  /// Gauges returns both upcoming and active gauges
   ///
   /// - Parameters:
   ///   - request: Request to send to Gauges.
@@ -160,7 +137,7 @@ extension Osmosis_Incentives_QueryClientProtocol {
     )
   }
 
-  /// returns active gauges
+  /// ActiveGauges returns active gauges
   ///
   /// - Parameters:
   ///   - request: Request to send to ActiveGauges.
@@ -178,7 +155,7 @@ extension Osmosis_Incentives_QueryClientProtocol {
     )
   }
 
-  /// returns active gauges per denom
+  /// ActiveGaugesPerDenom returns active gauges by denom
   ///
   /// - Parameters:
   ///   - request: Request to send to ActiveGaugesPerDenom.
@@ -196,7 +173,7 @@ extension Osmosis_Incentives_QueryClientProtocol {
     )
   }
 
-  /// returns scheduled gauges
+  /// Returns scheduled gauges that have not yet occured
   ///
   /// - Parameters:
   ///   - request: Request to send to UpcomingGauges.
@@ -214,7 +191,8 @@ extension Osmosis_Incentives_QueryClientProtocol {
     )
   }
 
-  /// returns scheduled gauges per denom
+  /// UpcomingGaugesPerDenom returns scheduled gauges that have not yet occured
+  /// by denom
   ///
   /// - Parameters:
   ///   - request: Request to send to UpcomingGaugesPerDenom.
@@ -232,9 +210,9 @@ extension Osmosis_Incentives_QueryClientProtocol {
     )
   }
 
-  /// RewardsEst returns an estimate of the rewards at a future specific time.
-  /// The querier either provides an address or a set of locks
-  /// for which they want to find the associated rewards.
+  /// RewardsEst returns an estimate of the rewards from now until a specified
+  /// time in the future The querier either provides an address or a set of locks
+  /// for which they want to find the associated rewards
   ///
   /// - Parameters:
   ///   - request: Request to send to RewardsEst.
@@ -252,7 +230,8 @@ extension Osmosis_Incentives_QueryClientProtocol {
     )
   }
 
-  /// returns lockable durations that are valid to give incentives
+  /// LockableDurations returns lockable durations that are valid to distribute
+  /// incentives for
   ///
   /// - Parameters:
   ///   - request: Request to send to LockableDurations.
@@ -275,9 +254,6 @@ internal protocol Osmosis_Incentives_QueryClientInterceptorFactoryProtocol {
 
   /// - Returns: Interceptors to use when invoking 'moduleToDistributeCoins'.
   func makeModuleToDistributeCoinsInterceptors() -> [ClientInterceptor<Osmosis_Incentives_ModuleToDistributeCoinsRequest, Osmosis_Incentives_ModuleToDistributeCoinsResponse>]
-
-  /// - Returns: Interceptors to use when invoking 'moduleDistributedCoins'.
-  func makeModuleDistributedCoinsInterceptors() -> [ClientInterceptor<Osmosis_Incentives_ModuleDistributedCoinsRequest, Osmosis_Incentives_ModuleDistributedCoinsResponse>]
 
   /// - Returns: Interceptors to use when invoking 'gaugeByID'.
   func makeGaugeByIDInterceptors() -> [ClientInterceptor<Osmosis_Incentives_GaugeByIDRequest, Osmosis_Incentives_GaugeByIDResponse>]
@@ -326,42 +302,41 @@ internal final class Osmosis_Incentives_QueryClient: Osmosis_Incentives_QueryCli
   }
 }
 
-/// Query defines the gRPC querier service.
+/// Query defines the gRPC querier service
 ///
 /// To build a server, implement a class that conforms to this protocol.
 internal protocol Osmosis_Incentives_QueryProvider: CallHandlerProvider {
   var interceptors: Osmosis_Incentives_QueryServerInterceptorFactoryProtocol? { get }
 
-  /// returns coins that is going to be distributed
+  /// ModuleToDistributeCoins returns coins that are going to be distributed
   func moduleToDistributeCoins(request: Osmosis_Incentives_ModuleToDistributeCoinsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Incentives_ModuleToDistributeCoinsResponse>
 
-  /// returns coins that are distributed by module so far
-  func moduleDistributedCoins(request: Osmosis_Incentives_ModuleDistributedCoinsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Incentives_ModuleDistributedCoinsResponse>
-
-  /// returns Gauge by id
+  /// GaugeByID returns gauges by their respective ID
   func gaugeByID(request: Osmosis_Incentives_GaugeByIDRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Incentives_GaugeByIDResponse>
 
-  /// returns gauges both upcoming and active
+  /// Gauges returns both upcoming and active gauges
   func gauges(request: Osmosis_Incentives_GaugesRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Incentives_GaugesResponse>
 
-  /// returns active gauges
+  /// ActiveGauges returns active gauges
   func activeGauges(request: Osmosis_Incentives_ActiveGaugesRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Incentives_ActiveGaugesResponse>
 
-  /// returns active gauges per denom
+  /// ActiveGaugesPerDenom returns active gauges by denom
   func activeGaugesPerDenom(request: Osmosis_Incentives_ActiveGaugesPerDenomRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Incentives_ActiveGaugesPerDenomResponse>
 
-  /// returns scheduled gauges
+  /// Returns scheduled gauges that have not yet occured
   func upcomingGauges(request: Osmosis_Incentives_UpcomingGaugesRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Incentives_UpcomingGaugesResponse>
 
-  /// returns scheduled gauges per denom
+  /// UpcomingGaugesPerDenom returns scheduled gauges that have not yet occured
+  /// by denom
   func upcomingGaugesPerDenom(request: Osmosis_Incentives_UpcomingGaugesPerDenomRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Incentives_UpcomingGaugesPerDenomResponse>
 
-  /// RewardsEst returns an estimate of the rewards at a future specific time.
-  /// The querier either provides an address or a set of locks
-  /// for which they want to find the associated rewards.
+  /// RewardsEst returns an estimate of the rewards from now until a specified
+  /// time in the future The querier either provides an address or a set of locks
+  /// for which they want to find the associated rewards
   func rewardsEst(request: Osmosis_Incentives_RewardsEstRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Incentives_RewardsEstResponse>
 
-  /// returns lockable durations that are valid to give incentives
+  /// LockableDurations returns lockable durations that are valid to distribute
+  /// incentives for
   func lockableDurations(request: Osmosis_Incentives_QueryLockableDurationsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Incentives_QueryLockableDurationsResponse>
 }
 
@@ -382,15 +357,6 @@ extension Osmosis_Incentives_QueryProvider {
         responseSerializer: ProtobufSerializer<Osmosis_Incentives_ModuleToDistributeCoinsResponse>(),
         interceptors: self.interceptors?.makeModuleToDistributeCoinsInterceptors() ?? [],
         userFunction: self.moduleToDistributeCoins(request:context:)
-      )
-
-    case "ModuleDistributedCoins":
-      return UnaryServerHandler(
-        context: context,
-        requestDeserializer: ProtobufDeserializer<Osmosis_Incentives_ModuleDistributedCoinsRequest>(),
-        responseSerializer: ProtobufSerializer<Osmosis_Incentives_ModuleDistributedCoinsResponse>(),
-        interceptors: self.interceptors?.makeModuleDistributedCoinsInterceptors() ?? [],
-        userFunction: self.moduleDistributedCoins(request:context:)
       )
 
     case "GaugeByID":
@@ -476,10 +442,6 @@ internal protocol Osmosis_Incentives_QueryServerInterceptorFactoryProtocol {
   /// - Returns: Interceptors to use when handling 'moduleToDistributeCoins'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeModuleToDistributeCoinsInterceptors() -> [ServerInterceptor<Osmosis_Incentives_ModuleToDistributeCoinsRequest, Osmosis_Incentives_ModuleToDistributeCoinsResponse>]
-
-  /// - Returns: Interceptors to use when handling 'moduleDistributedCoins'.
-  ///   Defaults to calling `self.makeInterceptors()`.
-  func makeModuleDistributedCoinsInterceptors() -> [ServerInterceptor<Osmosis_Incentives_ModuleDistributedCoinsRequest, Osmosis_Incentives_ModuleDistributedCoinsResponse>]
 
   /// - Returns: Interceptors to use when handling 'gaugeByID'.
   ///   Defaults to calling `self.makeInterceptors()`.

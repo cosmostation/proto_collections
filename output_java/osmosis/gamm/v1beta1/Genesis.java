@@ -844,6 +844,10 @@ public final class Genesis {
         int index);
 
     /**
+     * <pre>
+     * will be renamed to next_pool_id in an upcoming version
+     * </pre>
+     *
      * <code>uint64 next_pool_number = 2;</code>
      * @return The nextPoolNumber.
      */
@@ -1020,6 +1024,10 @@ public final class Genesis {
     public static final int NEXT_POOL_NUMBER_FIELD_NUMBER = 2;
     private long nextPoolNumber_;
     /**
+     * <pre>
+     * will be renamed to next_pool_id in an upcoming version
+     * </pre>
+     *
      * <code>uint64 next_pool_number = 2;</code>
      * @return The nextPoolNumber.
      */
@@ -1690,6 +1698,10 @@ public final class Genesis {
 
       private long nextPoolNumber_ ;
       /**
+       * <pre>
+       * will be renamed to next_pool_id in an upcoming version
+       * </pre>
+       *
        * <code>uint64 next_pool_number = 2;</code>
        * @return The nextPoolNumber.
        */
@@ -1698,6 +1710,10 @@ public final class Genesis {
         return nextPoolNumber_;
       }
       /**
+       * <pre>
+       * will be renamed to next_pool_id in an upcoming version
+       * </pre>
+       *
        * <code>uint64 next_pool_number = 2;</code>
        * @param value The nextPoolNumber to set.
        * @return This builder for chaining.
@@ -1709,6 +1725,10 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * will be renamed to next_pool_id in an upcoming version
+       * </pre>
+       *
        * <code>uint64 next_pool_number = 2;</code>
        * @return This builder for chaining.
        */

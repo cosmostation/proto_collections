@@ -1329,6 +1329,10 @@ public final class Tx {
     long getPoolId();
   }
   /**
+   * <pre>
+   * Returns the poolID
+   * </pre>
+   *
    * Protobuf type {@code osmosis.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPoolResponse}
    */
   public static final class MsgCreateBalancerPoolResponse extends
@@ -1578,6 +1582,10 @@ public final class Tx {
       return builder;
     }
     /**
+     * <pre>
+     * Returns the poolID
+     * </pre>
+     *
      * Protobuf type {@code osmosis.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPoolResponse}
      */
     public static final class Builder extends

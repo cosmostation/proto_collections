@@ -402,6 +402,37 @@ public final class QueryGrpc {
     return getEstimateSuperfluidDelegatedAmountByValidatorDenomMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorRequest,
+      osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorResponse> getTotalDelegationByDelegatorMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TotalDelegationByDelegator",
+      requestType = osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorRequest.class,
+      responseType = osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorRequest,
+      osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorResponse> getTotalDelegationByDelegatorMethod() {
+    io.grpc.MethodDescriptor<osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorRequest, osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorResponse> getTotalDelegationByDelegatorMethod;
+    if ((getTotalDelegationByDelegatorMethod = QueryGrpc.getTotalDelegationByDelegatorMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getTotalDelegationByDelegatorMethod = QueryGrpc.getTotalDelegationByDelegatorMethod) == null) {
+          QueryGrpc.getTotalDelegationByDelegatorMethod = getTotalDelegationByDelegatorMethod =
+              io.grpc.MethodDescriptor.<osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorRequest, osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TotalDelegationByDelegator"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("TotalDelegationByDelegator"))
+              .build();
+        }
+      }
+    }
+    return getTotalDelegationByDelegatorMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -455,7 +486,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Params returns the total set of minting parameters.
+     * Params returns the total set of superfluid parameters.
      * </pre>
      */
     public void params(osmosis.superfluid.QueryOuterClass.QueryParamsRequest request,
@@ -465,7 +496,8 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns superfluid asset type
+     * Returns superfluid asset type, whether if it's a native asset or an lp
+     * share.
      * </pre>
      */
     public void assetType(osmosis.superfluid.QueryOuterClass.AssetTypeRequest request,
@@ -475,7 +507,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns all superfluid asset types
+     * Returns all registered superfluid assets.
      * </pre>
      */
     public void allAssets(osmosis.superfluid.QueryOuterClass.AllAssetsRequest request,
@@ -485,7 +517,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns superfluid asset Multiplier
+     * Returns the osmo equivalent multiplier used in the most recent epoch.
      * </pre>
      */
     public void assetMultiplier(osmosis.superfluid.QueryOuterClass.AssetMultiplierRequest request,
@@ -495,7 +527,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns all superfluid intermediary account
+     * Returns all superfluid intermediary accounts.
      * </pre>
      */
     public void allIntermediaryAccounts(osmosis.superfluid.QueryOuterClass.AllIntermediaryAccountsRequest request,
@@ -515,8 +547,8 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns the total amount of osmo superfluidly staked
-     * response denominated in uosmo
+     * Returns the total amount of osmo superfluidly staked.
+     * Response is denominated in uosmo.
      * </pre>
      */
     public void totalSuperfluidDelegations(osmosis.superfluid.QueryOuterClass.TotalSuperfluidDelegationsRequest request,
@@ -526,7 +558,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns the coins superfluid delegated for a delegator, validator, denom
+     * Returns the coins superfluid delegated for the delegator, validator, denom
      * triplet
      * </pre>
      */
@@ -537,7 +569,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns all the superfluid poistions for a specific delegator
+     * Returns all the delegated superfluid poistions for a specific delegator.
      * </pre>
      */
     public void superfluidDelegationsByDelegator(osmosis.superfluid.QueryOuterClass.SuperfluidDelegationsByDelegatorRequest request,
@@ -546,6 +578,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * Returns all the undelegating superfluid poistions for a specific delegator.
+     * </pre>
      */
     public void superfluidUndelegationsByDelegator(osmosis.superfluid.QueryOuterClass.SuperfluidUndelegationsByDelegatorRequest request,
         io.grpc.stub.StreamObserver<osmosis.superfluid.QueryOuterClass.SuperfluidUndelegationsByDelegatorResponse> responseObserver) {
@@ -573,6 +608,16 @@ public final class QueryGrpc {
     public void estimateSuperfluidDelegatedAmountByValidatorDenom(osmosis.superfluid.QueryOuterClass.EstimateSuperfluidDelegatedAmountByValidatorDenomRequest request,
         io.grpc.stub.StreamObserver<osmosis.superfluid.QueryOuterClass.EstimateSuperfluidDelegatedAmountByValidatorDenomResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getEstimateSuperfluidDelegatedAmountByValidatorDenomMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Returns the specified delegations for a specific delegator
+     * </pre>
+     */
+    public void totalDelegationByDelegator(osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorRequest request,
+        io.grpc.stub.StreamObserver<osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getTotalDelegationByDelegatorMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -661,6 +706,13 @@ public final class QueryGrpc {
                 osmosis.superfluid.QueryOuterClass.EstimateSuperfluidDelegatedAmountByValidatorDenomRequest,
                 osmosis.superfluid.QueryOuterClass.EstimateSuperfluidDelegatedAmountByValidatorDenomResponse>(
                   this, METHODID_ESTIMATE_SUPERFLUID_DELEGATED_AMOUNT_BY_VALIDATOR_DENOM)))
+          .addMethod(
+            getTotalDelegationByDelegatorMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorRequest,
+                osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorResponse>(
+                  this, METHODID_TOTAL_DELEGATION_BY_DELEGATOR)))
           .build();
     }
   }
@@ -684,7 +736,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Params returns the total set of minting parameters.
+     * Params returns the total set of superfluid parameters.
      * </pre>
      */
     public void params(osmosis.superfluid.QueryOuterClass.QueryParamsRequest request,
@@ -695,7 +747,8 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns superfluid asset type
+     * Returns superfluid asset type, whether if it's a native asset or an lp
+     * share.
      * </pre>
      */
     public void assetType(osmosis.superfluid.QueryOuterClass.AssetTypeRequest request,
@@ -706,7 +759,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns all superfluid asset types
+     * Returns all registered superfluid assets.
      * </pre>
      */
     public void allAssets(osmosis.superfluid.QueryOuterClass.AllAssetsRequest request,
@@ -717,7 +770,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns superfluid asset Multiplier
+     * Returns the osmo equivalent multiplier used in the most recent epoch.
      * </pre>
      */
     public void assetMultiplier(osmosis.superfluid.QueryOuterClass.AssetMultiplierRequest request,
@@ -728,7 +781,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns all superfluid intermediary account
+     * Returns all superfluid intermediary accounts.
      * </pre>
      */
     public void allIntermediaryAccounts(osmosis.superfluid.QueryOuterClass.AllIntermediaryAccountsRequest request,
@@ -750,8 +803,8 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns the total amount of osmo superfluidly staked
-     * response denominated in uosmo
+     * Returns the total amount of osmo superfluidly staked.
+     * Response is denominated in uosmo.
      * </pre>
      */
     public void totalSuperfluidDelegations(osmosis.superfluid.QueryOuterClass.TotalSuperfluidDelegationsRequest request,
@@ -762,7 +815,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns the coins superfluid delegated for a delegator, validator, denom
+     * Returns the coins superfluid delegated for the delegator, validator, denom
      * triplet
      * </pre>
      */
@@ -774,7 +827,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns all the superfluid poistions for a specific delegator
+     * Returns all the delegated superfluid poistions for a specific delegator.
      * </pre>
      */
     public void superfluidDelegationsByDelegator(osmosis.superfluid.QueryOuterClass.SuperfluidDelegationsByDelegatorRequest request,
@@ -784,6 +837,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * Returns all the undelegating superfluid poistions for a specific delegator.
+     * </pre>
      */
     public void superfluidUndelegationsByDelegator(osmosis.superfluid.QueryOuterClass.SuperfluidUndelegationsByDelegatorRequest request,
         io.grpc.stub.StreamObserver<osmosis.superfluid.QueryOuterClass.SuperfluidUndelegationsByDelegatorResponse> responseObserver) {
@@ -815,6 +871,17 @@ public final class QueryGrpc {
       asyncUnaryCall(
           getChannel().newCall(getEstimateSuperfluidDelegatedAmountByValidatorDenomMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Returns the specified delegations for a specific delegator
+     * </pre>
+     */
+    public void totalDelegationByDelegator(osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorRequest request,
+        io.grpc.stub.StreamObserver<osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getTotalDelegationByDelegatorMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -836,7 +903,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Params returns the total set of minting parameters.
+     * Params returns the total set of superfluid parameters.
      * </pre>
      */
     public osmosis.superfluid.QueryOuterClass.QueryParamsResponse params(osmosis.superfluid.QueryOuterClass.QueryParamsRequest request) {
@@ -846,7 +913,8 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns superfluid asset type
+     * Returns superfluid asset type, whether if it's a native asset or an lp
+     * share.
      * </pre>
      */
     public osmosis.superfluid.QueryOuterClass.AssetTypeResponse assetType(osmosis.superfluid.QueryOuterClass.AssetTypeRequest request) {
@@ -856,7 +924,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns all superfluid asset types
+     * Returns all registered superfluid assets.
      * </pre>
      */
     public osmosis.superfluid.QueryOuterClass.AllAssetsResponse allAssets(osmosis.superfluid.QueryOuterClass.AllAssetsRequest request) {
@@ -866,7 +934,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns superfluid asset Multiplier
+     * Returns the osmo equivalent multiplier used in the most recent epoch.
      * </pre>
      */
     public osmosis.superfluid.QueryOuterClass.AssetMultiplierResponse assetMultiplier(osmosis.superfluid.QueryOuterClass.AssetMultiplierRequest request) {
@@ -876,7 +944,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns all superfluid intermediary account
+     * Returns all superfluid intermediary accounts.
      * </pre>
      */
     public osmosis.superfluid.QueryOuterClass.AllIntermediaryAccountsResponse allIntermediaryAccounts(osmosis.superfluid.QueryOuterClass.AllIntermediaryAccountsRequest request) {
@@ -896,8 +964,8 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns the total amount of osmo superfluidly staked
-     * response denominated in uosmo
+     * Returns the total amount of osmo superfluidly staked.
+     * Response is denominated in uosmo.
      * </pre>
      */
     public osmosis.superfluid.QueryOuterClass.TotalSuperfluidDelegationsResponse totalSuperfluidDelegations(osmosis.superfluid.QueryOuterClass.TotalSuperfluidDelegationsRequest request) {
@@ -907,7 +975,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns the coins superfluid delegated for a delegator, validator, denom
+     * Returns the coins superfluid delegated for the delegator, validator, denom
      * triplet
      * </pre>
      */
@@ -918,7 +986,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns all the superfluid poistions for a specific delegator
+     * Returns all the delegated superfluid poistions for a specific delegator.
      * </pre>
      */
     public osmosis.superfluid.QueryOuterClass.SuperfluidDelegationsByDelegatorResponse superfluidDelegationsByDelegator(osmosis.superfluid.QueryOuterClass.SuperfluidDelegationsByDelegatorRequest request) {
@@ -927,6 +995,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * Returns all the undelegating superfluid poistions for a specific delegator.
+     * </pre>
      */
     public osmosis.superfluid.QueryOuterClass.SuperfluidUndelegationsByDelegatorResponse superfluidUndelegationsByDelegator(osmosis.superfluid.QueryOuterClass.SuperfluidUndelegationsByDelegatorRequest request) {
       return blockingUnaryCall(
@@ -955,6 +1026,16 @@ public final class QueryGrpc {
       return blockingUnaryCall(
           getChannel(), getEstimateSuperfluidDelegatedAmountByValidatorDenomMethod(), getCallOptions(), request);
     }
+
+    /**
+     * <pre>
+     * Returns the specified delegations for a specific delegator
+     * </pre>
+     */
+    public osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorResponse totalDelegationByDelegator(osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getTotalDelegationByDelegatorMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -976,7 +1057,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Params returns the total set of minting parameters.
+     * Params returns the total set of superfluid parameters.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<osmosis.superfluid.QueryOuterClass.QueryParamsResponse> params(
@@ -987,7 +1068,8 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns superfluid asset type
+     * Returns superfluid asset type, whether if it's a native asset or an lp
+     * share.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<osmosis.superfluid.QueryOuterClass.AssetTypeResponse> assetType(
@@ -998,7 +1080,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns all superfluid asset types
+     * Returns all registered superfluid assets.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<osmosis.superfluid.QueryOuterClass.AllAssetsResponse> allAssets(
@@ -1009,7 +1091,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns superfluid asset Multiplier
+     * Returns the osmo equivalent multiplier used in the most recent epoch.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<osmosis.superfluid.QueryOuterClass.AssetMultiplierResponse> assetMultiplier(
@@ -1020,7 +1102,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns all superfluid intermediary account
+     * Returns all superfluid intermediary accounts.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<osmosis.superfluid.QueryOuterClass.AllIntermediaryAccountsResponse> allIntermediaryAccounts(
@@ -1042,8 +1124,8 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns the total amount of osmo superfluidly staked
-     * response denominated in uosmo
+     * Returns the total amount of osmo superfluidly staked.
+     * Response is denominated in uosmo.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<osmosis.superfluid.QueryOuterClass.TotalSuperfluidDelegationsResponse> totalSuperfluidDelegations(
@@ -1054,7 +1136,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns the coins superfluid delegated for a delegator, validator, denom
+     * Returns the coins superfluid delegated for the delegator, validator, denom
      * triplet
      * </pre>
      */
@@ -1066,7 +1148,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns all the superfluid poistions for a specific delegator
+     * Returns all the delegated superfluid poistions for a specific delegator.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<osmosis.superfluid.QueryOuterClass.SuperfluidDelegationsByDelegatorResponse> superfluidDelegationsByDelegator(
@@ -1076,6 +1158,9 @@ public final class QueryGrpc {
     }
 
     /**
+     * <pre>
+     * Returns all the undelegating superfluid poistions for a specific delegator.
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<osmosis.superfluid.QueryOuterClass.SuperfluidUndelegationsByDelegatorResponse> superfluidUndelegationsByDelegator(
         osmosis.superfluid.QueryOuterClass.SuperfluidUndelegationsByDelegatorRequest request) {
@@ -1107,6 +1192,17 @@ public final class QueryGrpc {
       return futureUnaryCall(
           getChannel().newCall(getEstimateSuperfluidDelegatedAmountByValidatorDenomMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Returns the specified delegations for a specific delegator
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorResponse> totalDelegationByDelegator(
+        osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getTotalDelegationByDelegatorMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_PARAMS = 0;
@@ -1121,6 +1217,7 @@ public final class QueryGrpc {
   private static final int METHODID_SUPERFLUID_UNDELEGATIONS_BY_DELEGATOR = 9;
   private static final int METHODID_SUPERFLUID_DELEGATIONS_BY_VALIDATOR_DENOM = 10;
   private static final int METHODID_ESTIMATE_SUPERFLUID_DELEGATED_AMOUNT_BY_VALIDATOR_DENOM = 11;
+  private static final int METHODID_TOTAL_DELEGATION_BY_DELEGATOR = 12;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1186,6 +1283,10 @@ public final class QueryGrpc {
         case METHODID_ESTIMATE_SUPERFLUID_DELEGATED_AMOUNT_BY_VALIDATOR_DENOM:
           serviceImpl.estimateSuperfluidDelegatedAmountByValidatorDenom((osmosis.superfluid.QueryOuterClass.EstimateSuperfluidDelegatedAmountByValidatorDenomRequest) request,
               (io.grpc.stub.StreamObserver<osmosis.superfluid.QueryOuterClass.EstimateSuperfluidDelegatedAmountByValidatorDenomResponse>) responseObserver);
+          break;
+        case METHODID_TOTAL_DELEGATION_BY_DELEGATOR:
+          serviceImpl.totalDelegationByDelegator((osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorRequest) request,
+              (io.grpc.stub.StreamObserver<osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1260,6 +1361,7 @@ public final class QueryGrpc {
               .addMethod(getSuperfluidUndelegationsByDelegatorMethod())
               .addMethod(getSuperfluidDelegationsByValidatorDenomMethod())
               .addMethod(getEstimateSuperfluidDelegatedAmountByValidatorDenomMethod())
+              .addMethod(getTotalDelegationByDelegatorMethod())
               .build();
         }
       }

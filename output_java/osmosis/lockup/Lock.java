@@ -15,23 +15,20 @@ public final class Lock {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * LockQueryType defines the type of the lock query that can
+   * either be by duration or start time of the lock.
+   * </pre>
+   *
    * Protobuf enum {@code osmosis.lockup.LockQueryType}
    */
   public enum LockQueryType
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <pre>
-     * Queries for locks that are longer than a certain duration
-     * </pre>
-     *
      * <code>ByDuration = 0;</code>
      */
     ByDuration(0),
     /**
-     * <pre>
-     * Queries for lockups that started before a specific time
-     * </pre>
-     *
      * <code>ByTime = 1;</code>
      */
     ByTime(1),
@@ -39,18 +36,10 @@ public final class Lock {
     ;
 
     /**
-     * <pre>
-     * Queries for locks that are longer than a certain duration
-     * </pre>
-     *
      * <code>ByDuration = 0;</code>
      */
     public static final int ByDuration_VALUE = 0;
     /**
-     * <pre>
-     * Queries for lockups that started before a specific time
-     * </pre>
-     *
      * <code>ByTime = 1;</code>
      */
     public static final int ByTime_VALUE = 1;
@@ -143,17 +132,33 @@ public final class Lock {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * ID is the unique id of the lock.
+     * The ID of the lock is decided upon lock creation, incrementing by 1 for
+     * every lock.
+     * </pre>
+     *
      * <code>uint64 ID = 1;</code>
      * @return The iD.
      */
     long getID();
 
     /**
+     * <pre>
+     * Owner is the account address of the lock owner.
+     * Only the owner can modify the state of the lock.
+     * </pre>
+     *
      * <code>string owner = 2 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
      * @return The owner.
      */
     java.lang.String getOwner();
     /**
+     * <pre>
+     * Owner is the account address of the lock owner.
+     * Only the owner can modify the state of the lock.
+     * </pre>
+     *
      * <code>string owner = 2 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
      * @return The bytes for owner.
      */
@@ -161,54 +166,107 @@ public final class Lock {
         getOwnerBytes();
 
     /**
+     * <pre>
+     * Duration is the time needed for a lock to mature after unlocking has
+     * started.
+     * </pre>
+     *
      * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
      * @return Whether the duration field is set.
      */
     boolean hasDuration();
     /**
+     * <pre>
+     * Duration is the time needed for a lock to mature after unlocking has
+     * started.
+     * </pre>
+     *
      * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
      * @return The duration.
      */
     com.google.protobuf.Duration getDuration();
     /**
+     * <pre>
+     * Duration is the time needed for a lock to mature after unlocking has
+     * started.
+     * </pre>
+     *
      * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     com.google.protobuf.DurationOrBuilder getDurationOrBuilder();
 
     /**
+     * <pre>
+     * EndTime refers to the time at which the lock would mature and get deleted.
+     * This value is first initialized when an unlock has started for the lock,
+     * end time being block time + duration.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp end_time = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"end_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return Whether the endTime field is set.
      */
     boolean hasEndTime();
     /**
+     * <pre>
+     * EndTime refers to the time at which the lock would mature and get deleted.
+     * This value is first initialized when an unlock has started for the lock,
+     * end time being block time + duration.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp end_time = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"end_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return The endTime.
      */
     com.google.protobuf.Timestamp getEndTime();
     /**
+     * <pre>
+     * EndTime refers to the time at which the lock would mature and get deleted.
+     * This value is first initialized when an unlock has started for the lock,
+     * end time being block time + duration.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp end_time = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"end_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
     com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 
     /**
+     * <pre>
+     * Coins are the tokens locked within the lock, kept in the module account.
+     * </pre>
+     *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> 
         getCoinsList();
     /**
+     * <pre>
+     * Coins are the tokens locked within the lock, kept in the module account.
+     * </pre>
+     *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.Coin getCoins(int index);
     /**
+     * <pre>
+     * Coins are the tokens locked within the lock, kept in the module account.
+     * </pre>
+     *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     int getCoinsCount();
     /**
+     * <pre>
+     * Coins are the tokens locked within the lock, kept in the module account.
+     * </pre>
+     *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
         getCoinsOrBuilderList();
     /**
+     * <pre>
+     * Coins are the tokens locked within the lock, kept in the module account.
+     * </pre>
+     *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getCoinsOrBuilder(
@@ -216,9 +274,11 @@ public final class Lock {
   }
   /**
    * <pre>
-   * PeriodLock is a single unit of lock by period. It's a record of locked coin
-   * at a specific time. It stores owner, duration, unlock time and the amount of
-   * coins locked.
+   * PeriodLock is a single lock unit by period defined by the x/lockup module.
+   * It's a record of a locked coin at a specific time. It stores owner, duration,
+   * unlock time and the number of coins locked. A state of a period lock is
+   * created upon lock creation, and deleted once the lock has been matured after
+   * the `duration` has passed since unbonding started.
    * </pre>
    *
    * Protobuf type {@code osmosis.lockup.PeriodLock}
@@ -352,6 +412,12 @@ public final class Lock {
     public static final int ID_FIELD_NUMBER = 1;
     private long iD_;
     /**
+     * <pre>
+     * ID is the unique id of the lock.
+     * The ID of the lock is decided upon lock creation, incrementing by 1 for
+     * every lock.
+     * </pre>
+     *
      * <code>uint64 ID = 1;</code>
      * @return The iD.
      */
@@ -363,6 +429,11 @@ public final class Lock {
     public static final int OWNER_FIELD_NUMBER = 2;
     private volatile java.lang.Object owner_;
     /**
+     * <pre>
+     * Owner is the account address of the lock owner.
+     * Only the owner can modify the state of the lock.
+     * </pre>
+     *
      * <code>string owner = 2 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
      * @return The owner.
      */
@@ -380,6 +451,11 @@ public final class Lock {
       }
     }
     /**
+     * <pre>
+     * Owner is the account address of the lock owner.
+     * Only the owner can modify the state of the lock.
+     * </pre>
+     *
      * <code>string owner = 2 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
      * @return The bytes for owner.
      */
@@ -401,6 +477,11 @@ public final class Lock {
     public static final int DURATION_FIELD_NUMBER = 3;
     private com.google.protobuf.Duration duration_;
     /**
+     * <pre>
+     * Duration is the time needed for a lock to mature after unlocking has
+     * started.
+     * </pre>
+     *
      * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
      * @return Whether the duration field is set.
      */
@@ -409,6 +490,11 @@ public final class Lock {
       return duration_ != null;
     }
     /**
+     * <pre>
+     * Duration is the time needed for a lock to mature after unlocking has
+     * started.
+     * </pre>
+     *
      * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
      * @return The duration.
      */
@@ -417,6 +503,11 @@ public final class Lock {
       return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
     }
     /**
+     * <pre>
+     * Duration is the time needed for a lock to mature after unlocking has
+     * started.
+     * </pre>
+     *
      * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     @java.lang.Override
@@ -427,6 +518,12 @@ public final class Lock {
     public static final int END_TIME_FIELD_NUMBER = 4;
     private com.google.protobuf.Timestamp endTime_;
     /**
+     * <pre>
+     * EndTime refers to the time at which the lock would mature and get deleted.
+     * This value is first initialized when an unlock has started for the lock,
+     * end time being block time + duration.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp end_time = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"end_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return Whether the endTime field is set.
      */
@@ -435,6 +532,12 @@ public final class Lock {
       return endTime_ != null;
     }
     /**
+     * <pre>
+     * EndTime refers to the time at which the lock would mature and get deleted.
+     * This value is first initialized when an unlock has started for the lock,
+     * end time being block time + duration.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp end_time = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"end_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return The endTime.
      */
@@ -443,6 +546,12 @@ public final class Lock {
       return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
     }
     /**
+     * <pre>
+     * EndTime refers to the time at which the lock would mature and get deleted.
+     * This value is first initialized when an unlock has started for the lock,
+     * end time being block time + duration.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp end_time = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"end_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
@@ -453,6 +562,10 @@ public final class Lock {
     public static final int COINS_FIELD_NUMBER = 5;
     private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> coins_;
     /**
+     * <pre>
+     * Coins are the tokens locked within the lock, kept in the module account.
+     * </pre>
+     *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     @java.lang.Override
@@ -460,6 +573,10 @@ public final class Lock {
       return coins_;
     }
     /**
+     * <pre>
+     * Coins are the tokens locked within the lock, kept in the module account.
+     * </pre>
+     *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     @java.lang.Override
@@ -468,6 +585,10 @@ public final class Lock {
       return coins_;
     }
     /**
+     * <pre>
+     * Coins are the tokens locked within the lock, kept in the module account.
+     * </pre>
+     *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     @java.lang.Override
@@ -475,6 +596,10 @@ public final class Lock {
       return coins_.size();
     }
     /**
+     * <pre>
+     * Coins are the tokens locked within the lock, kept in the module account.
+     * </pre>
+     *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     @java.lang.Override
@@ -482,6 +607,10 @@ public final class Lock {
       return coins_.get(index);
     }
     /**
+     * <pre>
+     * Coins are the tokens locked within the lock, kept in the module account.
+     * </pre>
+     *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
      */
     @java.lang.Override
@@ -703,9 +832,11 @@ public final class Lock {
     }
     /**
      * <pre>
-     * PeriodLock is a single unit of lock by period. It's a record of locked coin
-     * at a specific time. It stores owner, duration, unlock time and the amount of
-     * coins locked.
+     * PeriodLock is a single lock unit by period defined by the x/lockup module.
+     * It's a record of a locked coin at a specific time. It stores owner, duration,
+     * unlock time and the number of coins locked. A state of a period lock is
+     * created upon lock creation, and deleted once the lock has been matured after
+     * the `duration` has passed since unbonding started.
      * </pre>
      *
      * Protobuf type {@code osmosis.lockup.PeriodLock}
@@ -935,6 +1066,12 @@ public final class Lock {
 
       private long iD_ ;
       /**
+       * <pre>
+       * ID is the unique id of the lock.
+       * The ID of the lock is decided upon lock creation, incrementing by 1 for
+       * every lock.
+       * </pre>
+       *
        * <code>uint64 ID = 1;</code>
        * @return The iD.
        */
@@ -943,6 +1080,12 @@ public final class Lock {
         return iD_;
       }
       /**
+       * <pre>
+       * ID is the unique id of the lock.
+       * The ID of the lock is decided upon lock creation, incrementing by 1 for
+       * every lock.
+       * </pre>
+       *
        * <code>uint64 ID = 1;</code>
        * @param value The iD to set.
        * @return This builder for chaining.
@@ -954,6 +1097,12 @@ public final class Lock {
         return this;
       }
       /**
+       * <pre>
+       * ID is the unique id of the lock.
+       * The ID of the lock is decided upon lock creation, incrementing by 1 for
+       * every lock.
+       * </pre>
+       *
        * <code>uint64 ID = 1;</code>
        * @return This builder for chaining.
        */
@@ -966,6 +1115,11 @@ public final class Lock {
 
       private java.lang.Object owner_ = "";
       /**
+       * <pre>
+       * Owner is the account address of the lock owner.
+       * Only the owner can modify the state of the lock.
+       * </pre>
+       *
        * <code>string owner = 2 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
        * @return The owner.
        */
@@ -982,6 +1136,11 @@ public final class Lock {
         }
       }
       /**
+       * <pre>
+       * Owner is the account address of the lock owner.
+       * Only the owner can modify the state of the lock.
+       * </pre>
+       *
        * <code>string owner = 2 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
        * @return The bytes for owner.
        */
@@ -999,6 +1158,11 @@ public final class Lock {
         }
       }
       /**
+       * <pre>
+       * Owner is the account address of the lock owner.
+       * Only the owner can modify the state of the lock.
+       * </pre>
+       *
        * <code>string owner = 2 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
        * @param value The owner to set.
        * @return This builder for chaining.
@@ -1014,6 +1178,11 @@ public final class Lock {
         return this;
       }
       /**
+       * <pre>
+       * Owner is the account address of the lock owner.
+       * Only the owner can modify the state of the lock.
+       * </pre>
+       *
        * <code>string owner = 2 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
        * @return This builder for chaining.
        */
@@ -1024,6 +1193,11 @@ public final class Lock {
         return this;
       }
       /**
+       * <pre>
+       * Owner is the account address of the lock owner.
+       * Only the owner can modify the state of the lock.
+       * </pre>
+       *
        * <code>string owner = 2 [(.gogoproto.moretags) = "yaml:&#92;"owner&#92;""];</code>
        * @param value The bytes for owner to set.
        * @return This builder for chaining.
@@ -1044,6 +1218,11 @@ public final class Lock {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> durationBuilder_;
       /**
+       * <pre>
+       * Duration is the time needed for a lock to mature after unlocking has
+       * started.
+       * </pre>
+       *
        * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
        * @return Whether the duration field is set.
        */
@@ -1051,6 +1230,11 @@ public final class Lock {
         return durationBuilder_ != null || duration_ != null;
       }
       /**
+       * <pre>
+       * Duration is the time needed for a lock to mature after unlocking has
+       * started.
+       * </pre>
+       *
        * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
        * @return The duration.
        */
@@ -1062,6 +1246,11 @@ public final class Lock {
         }
       }
       /**
+       * <pre>
+       * Duration is the time needed for a lock to mature after unlocking has
+       * started.
+       * </pre>
+       *
        * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder setDuration(com.google.protobuf.Duration value) {
@@ -1078,6 +1267,11 @@ public final class Lock {
         return this;
       }
       /**
+       * <pre>
+       * Duration is the time needed for a lock to mature after unlocking has
+       * started.
+       * </pre>
+       *
        * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder setDuration(
@@ -1092,6 +1286,11 @@ public final class Lock {
         return this;
       }
       /**
+       * <pre>
+       * Duration is the time needed for a lock to mature after unlocking has
+       * started.
+       * </pre>
+       *
        * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder mergeDuration(com.google.protobuf.Duration value) {
@@ -1110,6 +1309,11 @@ public final class Lock {
         return this;
       }
       /**
+       * <pre>
+       * Duration is the time needed for a lock to mature after unlocking has
+       * started.
+       * </pre>
+       *
        * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder clearDuration() {
@@ -1124,6 +1328,11 @@ public final class Lock {
         return this;
       }
       /**
+       * <pre>
+       * Duration is the time needed for a lock to mature after unlocking has
+       * started.
+       * </pre>
+       *
        * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public com.google.protobuf.Duration.Builder getDurationBuilder() {
@@ -1132,6 +1341,11 @@ public final class Lock {
         return getDurationFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Duration is the time needed for a lock to mature after unlocking has
+       * started.
+       * </pre>
+       *
        * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
@@ -1143,6 +1357,11 @@ public final class Lock {
         }
       }
       /**
+       * <pre>
+       * Duration is the time needed for a lock to mature after unlocking has
+       * started.
+       * </pre>
+       *
        * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1163,6 +1382,12 @@ public final class Lock {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> endTimeBuilder_;
       /**
+       * <pre>
+       * EndTime refers to the time at which the lock would mature and get deleted.
+       * This value is first initialized when an unlock has started for the lock,
+       * end time being block time + duration.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp end_time = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"end_time&#92;"", (.gogoproto.stdtime) = true];</code>
        * @return Whether the endTime field is set.
        */
@@ -1170,6 +1395,12 @@ public final class Lock {
         return endTimeBuilder_ != null || endTime_ != null;
       }
       /**
+       * <pre>
+       * EndTime refers to the time at which the lock would mature and get deleted.
+       * This value is first initialized when an unlock has started for the lock,
+       * end time being block time + duration.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp end_time = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"end_time&#92;"", (.gogoproto.stdtime) = true];</code>
        * @return The endTime.
        */
@@ -1181,6 +1412,12 @@ public final class Lock {
         }
       }
       /**
+       * <pre>
+       * EndTime refers to the time at which the lock would mature and get deleted.
+       * This value is first initialized when an unlock has started for the lock,
+       * end time being block time + duration.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp end_time = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"end_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder setEndTime(com.google.protobuf.Timestamp value) {
@@ -1197,6 +1434,12 @@ public final class Lock {
         return this;
       }
       /**
+       * <pre>
+       * EndTime refers to the time at which the lock would mature and get deleted.
+       * This value is first initialized when an unlock has started for the lock,
+       * end time being block time + duration.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp end_time = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"end_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder setEndTime(
@@ -1211,6 +1454,12 @@ public final class Lock {
         return this;
       }
       /**
+       * <pre>
+       * EndTime refers to the time at which the lock would mature and get deleted.
+       * This value is first initialized when an unlock has started for the lock,
+       * end time being block time + duration.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp end_time = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"end_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
@@ -1229,6 +1478,12 @@ public final class Lock {
         return this;
       }
       /**
+       * <pre>
+       * EndTime refers to the time at which the lock would mature and get deleted.
+       * This value is first initialized when an unlock has started for the lock,
+       * end time being block time + duration.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp end_time = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"end_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder clearEndTime() {
@@ -1243,6 +1498,12 @@ public final class Lock {
         return this;
       }
       /**
+       * <pre>
+       * EndTime refers to the time at which the lock would mature and get deleted.
+       * This value is first initialized when an unlock has started for the lock,
+       * end time being block time + duration.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp end_time = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"end_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
@@ -1251,6 +1512,12 @@ public final class Lock {
         return getEndTimeFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * EndTime refers to the time at which the lock would mature and get deleted.
+       * This value is first initialized when an unlock has started for the lock,
+       * end time being block time + duration.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp end_time = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"end_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
@@ -1262,6 +1529,12 @@ public final class Lock {
         }
       }
       /**
+       * <pre>
+       * EndTime refers to the time at which the lock would mature and get deleted.
+       * This value is first initialized when an unlock has started for the lock,
+       * end time being block time + duration.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp end_time = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"end_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1291,6 +1564,10 @@ public final class Lock {
           cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> coinsBuilder_;
 
       /**
+       * <pre>
+       * Coins are the tokens locked within the lock, kept in the module account.
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getCoinsList() {
@@ -1301,6 +1578,10 @@ public final class Lock {
         }
       }
       /**
+       * <pre>
+       * Coins are the tokens locked within the lock, kept in the module account.
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public int getCoinsCount() {
@@ -1311,6 +1592,10 @@ public final class Lock {
         }
       }
       /**
+       * <pre>
+       * Coins are the tokens locked within the lock, kept in the module account.
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin getCoins(int index) {
@@ -1321,6 +1606,10 @@ public final class Lock {
         }
       }
       /**
+       * <pre>
+       * Coins are the tokens locked within the lock, kept in the module account.
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder setCoins(
@@ -1338,6 +1627,10 @@ public final class Lock {
         return this;
       }
       /**
+       * <pre>
+       * Coins are the tokens locked within the lock, kept in the module account.
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder setCoins(
@@ -1352,6 +1645,10 @@ public final class Lock {
         return this;
       }
       /**
+       * <pre>
+       * Coins are the tokens locked within the lock, kept in the module account.
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addCoins(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -1368,6 +1665,10 @@ public final class Lock {
         return this;
       }
       /**
+       * <pre>
+       * Coins are the tokens locked within the lock, kept in the module account.
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addCoins(
@@ -1385,6 +1686,10 @@ public final class Lock {
         return this;
       }
       /**
+       * <pre>
+       * Coins are the tokens locked within the lock, kept in the module account.
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addCoins(
@@ -1399,6 +1704,10 @@ public final class Lock {
         return this;
       }
       /**
+       * <pre>
+       * Coins are the tokens locked within the lock, kept in the module account.
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addCoins(
@@ -1413,6 +1722,10 @@ public final class Lock {
         return this;
       }
       /**
+       * <pre>
+       * Coins are the tokens locked within the lock, kept in the module account.
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder addAllCoins(
@@ -1428,6 +1741,10 @@ public final class Lock {
         return this;
       }
       /**
+       * <pre>
+       * Coins are the tokens locked within the lock, kept in the module account.
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder clearCoins() {
@@ -1441,6 +1758,10 @@ public final class Lock {
         return this;
       }
       /**
+       * <pre>
+       * Coins are the tokens locked within the lock, kept in the module account.
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public Builder removeCoins(int index) {
@@ -1454,6 +1775,10 @@ public final class Lock {
         return this;
       }
       /**
+       * <pre>
+       * Coins are the tokens locked within the lock, kept in the module account.
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getCoinsBuilder(
@@ -1461,6 +1786,10 @@ public final class Lock {
         return getCoinsFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * Coins are the tokens locked within the lock, kept in the module account.
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getCoinsOrBuilder(
@@ -1471,6 +1800,10 @@ public final class Lock {
         }
       }
       /**
+       * <pre>
+       * Coins are the tokens locked within the lock, kept in the module account.
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
@@ -1482,6 +1815,10 @@ public final class Lock {
         }
       }
       /**
+       * <pre>
+       * Coins are the tokens locked within the lock, kept in the module account.
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addCoinsBuilder() {
@@ -1489,6 +1826,10 @@ public final class Lock {
             cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance());
       }
       /**
+       * <pre>
+       * Coins are the tokens locked within the lock, kept in the module account.
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addCoinsBuilder(
@@ -1497,6 +1838,10 @@ public final class Lock {
             index, cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance());
       }
       /**
+       * <pre>
+       * Coins are the tokens locked within the lock, kept in the module account.
+       * </pre>
+       *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 5 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin.Builder> 
@@ -1576,7 +1921,7 @@ public final class Lock {
 
     /**
      * <pre>
-     * type of lock query, ByLockDuration | ByLockTime
+     * LockQueryType is a type of lock query, ByLockDuration | ByLockTime
      * </pre>
      *
      * <code>.osmosis.lockup.LockQueryType lock_query_type = 1;</code>
@@ -1585,7 +1930,7 @@ public final class Lock {
     int getLockQueryTypeValue();
     /**
      * <pre>
-     * type of lock query, ByLockDuration | ByLockTime
+     * LockQueryType is a type of lock query, ByLockDuration | ByLockTime
      * </pre>
      *
      * <code>.osmosis.lockup.LockQueryType lock_query_type = 1;</code>
@@ -1595,7 +1940,7 @@ public final class Lock {
 
     /**
      * <pre>
-     * What token denomination are we looking for lockups of
+     * Denom represents the token denomination we are looking to lock up
      * </pre>
      *
      * <code>string denom = 2;</code>
@@ -1604,7 +1949,7 @@ public final class Lock {
     java.lang.String getDenom();
     /**
      * <pre>
-     * What token denomination are we looking for lockups of
+     * Denom represents the token denomination we are looking to lock up
      * </pre>
      *
      * <code>string denom = 2;</code>
@@ -1615,7 +1960,9 @@ public final class Lock {
 
     /**
      * <pre>
-     * valid when query condition is ByDuration
+     * Duration is used to query locks with longer duration than the specified
+     * duration. Duration field must not be nil when the lock query type is
+     * `ByLockDuration`.
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
@@ -1624,7 +1971,9 @@ public final class Lock {
     boolean hasDuration();
     /**
      * <pre>
-     * valid when query condition is ByDuration
+     * Duration is used to query locks with longer duration than the specified
+     * duration. Duration field must not be nil when the lock query type is
+     * `ByLockDuration`.
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
@@ -1633,7 +1982,9 @@ public final class Lock {
     com.google.protobuf.Duration getDuration();
     /**
      * <pre>
-     * valid when query condition is ByDuration
+     * Duration is used to query locks with longer duration than the specified
+     * duration. Duration field must not be nil when the lock query type is
+     * `ByLockDuration`.
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
@@ -1642,7 +1993,9 @@ public final class Lock {
 
     /**
      * <pre>
-     * valid when query condition is ByTime
+     * Timestamp is used by locks started before the specified duration.
+     * Timestamp field must not be nil when the lock query type is `ByLockTime`.
+     * Querying locks with timestamp is currently not implemented.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp timestamp = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -1651,7 +2004,9 @@ public final class Lock {
     boolean hasTimestamp();
     /**
      * <pre>
-     * valid when query condition is ByTime
+     * Timestamp is used by locks started before the specified duration.
+     * Timestamp field must not be nil when the lock query type is `ByLockTime`.
+     * Querying locks with timestamp is currently not implemented.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp timestamp = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -1660,7 +2015,9 @@ public final class Lock {
     com.google.protobuf.Timestamp getTimestamp();
     /**
      * <pre>
-     * valid when query condition is ByTime
+     * Timestamp is used by locks started before the specified duration.
+     * Timestamp field must not be nil when the lock query type is `ByLockTime`.
+     * Querying locks with timestamp is currently not implemented.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp timestamp = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -1668,6 +2025,12 @@ public final class Lock {
     com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder();
   }
   /**
+   * <pre>
+   * QueryCondition is a struct used for querying locks upon different conditions.
+   * Duration field and timestamp fields could be optional, depending on the
+   * LockQueryType.
+   * </pre>
+   *
    * Protobuf type {@code osmosis.lockup.QueryCondition}
    */
   public static final class QueryCondition extends
@@ -1788,7 +2151,7 @@ public final class Lock {
     private int lockQueryType_;
     /**
      * <pre>
-     * type of lock query, ByLockDuration | ByLockTime
+     * LockQueryType is a type of lock query, ByLockDuration | ByLockTime
      * </pre>
      *
      * <code>.osmosis.lockup.LockQueryType lock_query_type = 1;</code>
@@ -1799,7 +2162,7 @@ public final class Lock {
     }
     /**
      * <pre>
-     * type of lock query, ByLockDuration | ByLockTime
+     * LockQueryType is a type of lock query, ByLockDuration | ByLockTime
      * </pre>
      *
      * <code>.osmosis.lockup.LockQueryType lock_query_type = 1;</code>
@@ -1815,7 +2178,7 @@ public final class Lock {
     private volatile java.lang.Object denom_;
     /**
      * <pre>
-     * What token denomination are we looking for lockups of
+     * Denom represents the token denomination we are looking to lock up
      * </pre>
      *
      * <code>string denom = 2;</code>
@@ -1836,7 +2199,7 @@ public final class Lock {
     }
     /**
      * <pre>
-     * What token denomination are we looking for lockups of
+     * Denom represents the token denomination we are looking to lock up
      * </pre>
      *
      * <code>string denom = 2;</code>
@@ -1861,7 +2224,9 @@ public final class Lock {
     private com.google.protobuf.Duration duration_;
     /**
      * <pre>
-     * valid when query condition is ByDuration
+     * Duration is used to query locks with longer duration than the specified
+     * duration. Duration field must not be nil when the lock query type is
+     * `ByLockDuration`.
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
@@ -1873,7 +2238,9 @@ public final class Lock {
     }
     /**
      * <pre>
-     * valid when query condition is ByDuration
+     * Duration is used to query locks with longer duration than the specified
+     * duration. Duration field must not be nil when the lock query type is
+     * `ByLockDuration`.
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
@@ -1885,7 +2252,9 @@ public final class Lock {
     }
     /**
      * <pre>
-     * valid when query condition is ByDuration
+     * Duration is used to query locks with longer duration than the specified
+     * duration. Duration field must not be nil when the lock query type is
+     * `ByLockDuration`.
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
@@ -1899,7 +2268,9 @@ public final class Lock {
     private com.google.protobuf.Timestamp timestamp_;
     /**
      * <pre>
-     * valid when query condition is ByTime
+     * Timestamp is used by locks started before the specified duration.
+     * Timestamp field must not be nil when the lock query type is `ByLockTime`.
+     * Querying locks with timestamp is currently not implemented.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp timestamp = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -1911,7 +2282,9 @@ public final class Lock {
     }
     /**
      * <pre>
-     * valid when query condition is ByTime
+     * Timestamp is used by locks started before the specified duration.
+     * Timestamp field must not be nil when the lock query type is `ByLockTime`.
+     * Querying locks with timestamp is currently not implemented.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp timestamp = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -1923,7 +2296,9 @@ public final class Lock {
     }
     /**
      * <pre>
-     * valid when query condition is ByTime
+     * Timestamp is used by locks started before the specified duration.
+     * Timestamp field must not be nil when the lock query type is `ByLockTime`.
+     * Querying locks with timestamp is currently not implemented.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp timestamp = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -2130,6 +2505,12 @@ public final class Lock {
       return builder;
     }
     /**
+     * <pre>
+     * QueryCondition is a struct used for querying locks upon different conditions.
+     * Duration field and timestamp fields could be optional, depending on the
+     * LockQueryType.
+     * </pre>
+     *
      * Protobuf type {@code osmosis.lockup.QueryCondition}
      */
     public static final class Builder extends
@@ -2314,7 +2695,7 @@ public final class Lock {
       private int lockQueryType_ = 0;
       /**
        * <pre>
-       * type of lock query, ByLockDuration | ByLockTime
+       * LockQueryType is a type of lock query, ByLockDuration | ByLockTime
        * </pre>
        *
        * <code>.osmosis.lockup.LockQueryType lock_query_type = 1;</code>
@@ -2325,7 +2706,7 @@ public final class Lock {
       }
       /**
        * <pre>
-       * type of lock query, ByLockDuration | ByLockTime
+       * LockQueryType is a type of lock query, ByLockDuration | ByLockTime
        * </pre>
        *
        * <code>.osmosis.lockup.LockQueryType lock_query_type = 1;</code>
@@ -2340,7 +2721,7 @@ public final class Lock {
       }
       /**
        * <pre>
-       * type of lock query, ByLockDuration | ByLockTime
+       * LockQueryType is a type of lock query, ByLockDuration | ByLockTime
        * </pre>
        *
        * <code>.osmosis.lockup.LockQueryType lock_query_type = 1;</code>
@@ -2354,7 +2735,7 @@ public final class Lock {
       }
       /**
        * <pre>
-       * type of lock query, ByLockDuration | ByLockTime
+       * LockQueryType is a type of lock query, ByLockDuration | ByLockTime
        * </pre>
        *
        * <code>.osmosis.lockup.LockQueryType lock_query_type = 1;</code>
@@ -2372,7 +2753,7 @@ public final class Lock {
       }
       /**
        * <pre>
-       * type of lock query, ByLockDuration | ByLockTime
+       * LockQueryType is a type of lock query, ByLockDuration | ByLockTime
        * </pre>
        *
        * <code>.osmosis.lockup.LockQueryType lock_query_type = 1;</code>
@@ -2388,7 +2769,7 @@ public final class Lock {
       private java.lang.Object denom_ = "";
       /**
        * <pre>
-       * What token denomination are we looking for lockups of
+       * Denom represents the token denomination we are looking to lock up
        * </pre>
        *
        * <code>string denom = 2;</code>
@@ -2408,7 +2789,7 @@ public final class Lock {
       }
       /**
        * <pre>
-       * What token denomination are we looking for lockups of
+       * Denom represents the token denomination we are looking to lock up
        * </pre>
        *
        * <code>string denom = 2;</code>
@@ -2429,7 +2810,7 @@ public final class Lock {
       }
       /**
        * <pre>
-       * What token denomination are we looking for lockups of
+       * Denom represents the token denomination we are looking to lock up
        * </pre>
        *
        * <code>string denom = 2;</code>
@@ -2448,7 +2829,7 @@ public final class Lock {
       }
       /**
        * <pre>
-       * What token denomination are we looking for lockups of
+       * Denom represents the token denomination we are looking to lock up
        * </pre>
        *
        * <code>string denom = 2;</code>
@@ -2462,7 +2843,7 @@ public final class Lock {
       }
       /**
        * <pre>
-       * What token denomination are we looking for lockups of
+       * Denom represents the token denomination we are looking to lock up
        * </pre>
        *
        * <code>string denom = 2;</code>
@@ -2486,7 +2867,9 @@ public final class Lock {
           com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> durationBuilder_;
       /**
        * <pre>
-       * valid when query condition is ByDuration
+       * Duration is used to query locks with longer duration than the specified
+       * duration. Duration field must not be nil when the lock query type is
+       * `ByLockDuration`.
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
@@ -2497,7 +2880,9 @@ public final class Lock {
       }
       /**
        * <pre>
-       * valid when query condition is ByDuration
+       * Duration is used to query locks with longer duration than the specified
+       * duration. Duration field must not be nil when the lock query type is
+       * `ByLockDuration`.
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
@@ -2512,7 +2897,9 @@ public final class Lock {
       }
       /**
        * <pre>
-       * valid when query condition is ByDuration
+       * Duration is used to query locks with longer duration than the specified
+       * duration. Duration field must not be nil when the lock query type is
+       * `ByLockDuration`.
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
@@ -2532,7 +2919,9 @@ public final class Lock {
       }
       /**
        * <pre>
-       * valid when query condition is ByDuration
+       * Duration is used to query locks with longer duration than the specified
+       * duration. Duration field must not be nil when the lock query type is
+       * `ByLockDuration`.
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
@@ -2550,7 +2939,9 @@ public final class Lock {
       }
       /**
        * <pre>
-       * valid when query condition is ByDuration
+       * Duration is used to query locks with longer duration than the specified
+       * duration. Duration field must not be nil when the lock query type is
+       * `ByLockDuration`.
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
@@ -2572,7 +2963,9 @@ public final class Lock {
       }
       /**
        * <pre>
-       * valid when query condition is ByDuration
+       * Duration is used to query locks with longer duration than the specified
+       * duration. Duration field must not be nil when the lock query type is
+       * `ByLockDuration`.
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
@@ -2590,7 +2983,9 @@ public final class Lock {
       }
       /**
        * <pre>
-       * valid when query condition is ByDuration
+       * Duration is used to query locks with longer duration than the specified
+       * duration. Duration field must not be nil when the lock query type is
+       * `ByLockDuration`.
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
@@ -2602,7 +2997,9 @@ public final class Lock {
       }
       /**
        * <pre>
-       * valid when query condition is ByDuration
+       * Duration is used to query locks with longer duration than the specified
+       * duration. Duration field must not be nil when the lock query type is
+       * `ByLockDuration`.
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
@@ -2617,7 +3014,9 @@ public final class Lock {
       }
       /**
        * <pre>
-       * valid when query condition is ByDuration
+       * Duration is used to query locks with longer duration than the specified
+       * duration. Duration field must not be nil when the lock query type is
+       * `ByLockDuration`.
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
@@ -2641,7 +3040,9 @@ public final class Lock {
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> timestampBuilder_;
       /**
        * <pre>
-       * valid when query condition is ByTime
+       * Timestamp is used by locks started before the specified duration.
+       * Timestamp field must not be nil when the lock query type is `ByLockTime`.
+       * Querying locks with timestamp is currently not implemented.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp timestamp = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -2652,7 +3053,9 @@ public final class Lock {
       }
       /**
        * <pre>
-       * valid when query condition is ByTime
+       * Timestamp is used by locks started before the specified duration.
+       * Timestamp field must not be nil when the lock query type is `ByLockTime`.
+       * Querying locks with timestamp is currently not implemented.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp timestamp = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -2667,7 +3070,9 @@ public final class Lock {
       }
       /**
        * <pre>
-       * valid when query condition is ByTime
+       * Timestamp is used by locks started before the specified duration.
+       * Timestamp field must not be nil when the lock query type is `ByLockTime`.
+       * Querying locks with timestamp is currently not implemented.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp timestamp = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -2687,7 +3092,9 @@ public final class Lock {
       }
       /**
        * <pre>
-       * valid when query condition is ByTime
+       * Timestamp is used by locks started before the specified duration.
+       * Timestamp field must not be nil when the lock query type is `ByLockTime`.
+       * Querying locks with timestamp is currently not implemented.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp timestamp = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -2705,7 +3112,9 @@ public final class Lock {
       }
       /**
        * <pre>
-       * valid when query condition is ByTime
+       * Timestamp is used by locks started before the specified duration.
+       * Timestamp field must not be nil when the lock query type is `ByLockTime`.
+       * Querying locks with timestamp is currently not implemented.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp timestamp = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -2727,7 +3136,9 @@ public final class Lock {
       }
       /**
        * <pre>
-       * valid when query condition is ByTime
+       * Timestamp is used by locks started before the specified duration.
+       * Timestamp field must not be nil when the lock query type is `ByLockTime`.
+       * Querying locks with timestamp is currently not implemented.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp timestamp = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -2745,7 +3156,9 @@ public final class Lock {
       }
       /**
        * <pre>
-       * valid when query condition is ByTime
+       * Timestamp is used by locks started before the specified duration.
+       * Timestamp field must not be nil when the lock query type is `ByLockTime`.
+       * Querying locks with timestamp is currently not implemented.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp timestamp = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -2757,7 +3170,9 @@ public final class Lock {
       }
       /**
        * <pre>
-       * valid when query condition is ByTime
+       * Timestamp is used by locks started before the specified duration.
+       * Timestamp field must not be nil when the lock query type is `ByLockTime`.
+       * Querying locks with timestamp is currently not implemented.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp timestamp = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -2772,7 +3187,9 @@ public final class Lock {
       }
       /**
        * <pre>
-       * valid when query condition is ByTime
+       * Timestamp is used by locks started before the specified duration.
+       * Timestamp field must not be nil when the lock query type is `ByLockTime`.
+       * Querying locks with timestamp is currently not implemented.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp timestamp = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"timestamp&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -2849,7 +3266,8 @@ public final class Lock {
 
     /**
      * <pre>
-     * underlying native lockup id for this synthetic lockup
+     * Underlying Lock ID is the underlying native lock's id for this synthetic
+     * lockup. A synthetic lock MUST have an underlying lock.
      * </pre>
      *
      * <code>uint64 underlying_lock_id = 1;</code>
@@ -2858,11 +3276,21 @@ public final class Lock {
     long getUnderlyingLockId();
 
     /**
+     * <pre>
+     * SynthDenom is the synthetic denom that is a combination of
+     * gamm share + bonding status + validator address.
+     * </pre>
+     *
      * <code>string synth_denom = 2;</code>
      * @return The synthDenom.
      */
     java.lang.String getSynthDenom();
     /**
+     * <pre>
+     * SynthDenom is the synthetic denom that is a combination of
+     * gamm share + bonding status + validator address.
+     * </pre>
+     *
      * <code>string synth_denom = 2;</code>
      * @return The bytes for synthDenom.
      */
@@ -2900,36 +3328,41 @@ public final class Lock {
     com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 
     /**
+     * <pre>
+     * Duration is the duration for a synthetic lock to mature
+     * at the point of unbonding has started.
+     * </pre>
+     *
      * <code>.google.protobuf.Duration duration = 4 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
      * @return Whether the duration field is set.
      */
     boolean hasDuration();
     /**
+     * <pre>
+     * Duration is the duration for a synthetic lock to mature
+     * at the point of unbonding has started.
+     * </pre>
+     *
      * <code>.google.protobuf.Duration duration = 4 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
      * @return The duration.
      */
     com.google.protobuf.Duration getDuration();
     /**
+     * <pre>
+     * Duration is the duration for a synthetic lock to mature
+     * at the point of unbonding has started.
+     * </pre>
+     *
      * <code>.google.protobuf.Duration duration = 4 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     com.google.protobuf.DurationOrBuilder getDurationOrBuilder();
   }
   /**
    * <pre>
-   * SyntheticLock is a single unit of synthetic lockup
-   * TODO: Change this to have
-   * * underlying_lock_id
-   * * synthetic_coin
-   * * end_time
-   * * duration
-   * * owner
-   * We then index synthetic locks by the denom, just like we do with normal
-   * locks. Ideally we even get an interface, so we can re-use that same logic.
-   * I currently have no idea how reward distribution is supposed to be working...
-   * EVENTUALLY
-   * we make a "constrained_coin" field, which is what the current "coins" field
-   * is. Constrained coin field can be a #post-v7 feature, since we aren't
-   * allowing partial unlocks of synthetic lockups.
+   * SyntheticLock is creating virtual lockup where new denom is combination of
+   * original denom and synthetic suffix. At the time of synthetic lockup creation
+   * and deletion, accumulation store is also being updated and on querier side,
+   * they can query as freely as native lockup.
    * </pre>
    *
    * Protobuf type {@code osmosis.lockup.SyntheticLock}
@@ -3050,7 +3483,8 @@ public final class Lock {
     private long underlyingLockId_;
     /**
      * <pre>
-     * underlying native lockup id for this synthetic lockup
+     * Underlying Lock ID is the underlying native lock's id for this synthetic
+     * lockup. A synthetic lock MUST have an underlying lock.
      * </pre>
      *
      * <code>uint64 underlying_lock_id = 1;</code>
@@ -3064,6 +3498,11 @@ public final class Lock {
     public static final int SYNTH_DENOM_FIELD_NUMBER = 2;
     private volatile java.lang.Object synthDenom_;
     /**
+     * <pre>
+     * SynthDenom is the synthetic denom that is a combination of
+     * gamm share + bonding status + validator address.
+     * </pre>
+     *
      * <code>string synth_denom = 2;</code>
      * @return The synthDenom.
      */
@@ -3081,6 +3520,11 @@ public final class Lock {
       }
     }
     /**
+     * <pre>
+     * SynthDenom is the synthetic denom that is a combination of
+     * gamm share + bonding status + validator address.
+     * </pre>
+     *
      * <code>string synth_denom = 2;</code>
      * @return The bytes for synthDenom.
      */
@@ -3143,6 +3587,11 @@ public final class Lock {
     public static final int DURATION_FIELD_NUMBER = 4;
     private com.google.protobuf.Duration duration_;
     /**
+     * <pre>
+     * Duration is the duration for a synthetic lock to mature
+     * at the point of unbonding has started.
+     * </pre>
+     *
      * <code>.google.protobuf.Duration duration = 4 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
      * @return Whether the duration field is set.
      */
@@ -3151,6 +3600,11 @@ public final class Lock {
       return duration_ != null;
     }
     /**
+     * <pre>
+     * Duration is the duration for a synthetic lock to mature
+     * at the point of unbonding has started.
+     * </pre>
+     *
      * <code>.google.protobuf.Duration duration = 4 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
      * @return The duration.
      */
@@ -3159,6 +3613,11 @@ public final class Lock {
       return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
     }
     /**
+     * <pre>
+     * Duration is the duration for a synthetic lock to mature
+     * at the point of unbonding has started.
+     * </pre>
+     *
      * <code>.google.protobuf.Duration duration = 4 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     @java.lang.Override
@@ -3366,20 +3825,10 @@ public final class Lock {
     }
     /**
      * <pre>
-     * SyntheticLock is a single unit of synthetic lockup
-     * TODO: Change this to have
-     * * underlying_lock_id
-     * * synthetic_coin
-     * * end_time
-     * * duration
-     * * owner
-     * We then index synthetic locks by the denom, just like we do with normal
-     * locks. Ideally we even get an interface, so we can re-use that same logic.
-     * I currently have no idea how reward distribution is supposed to be working...
-     * EVENTUALLY
-     * we make a "constrained_coin" field, which is what the current "coins" field
-     * is. Constrained coin field can be a #post-v7 feature, since we aren't
-     * allowing partial unlocks of synthetic lockups.
+     * SyntheticLock is creating virtual lockup where new denom is combination of
+     * original denom and synthetic suffix. At the time of synthetic lockup creation
+     * and deletion, accumulation store is also being updated and on querier side,
+     * they can query as freely as native lockup.
      * </pre>
      *
      * Protobuf type {@code osmosis.lockup.SyntheticLock}
@@ -3566,7 +4015,8 @@ public final class Lock {
       private long underlyingLockId_ ;
       /**
        * <pre>
-       * underlying native lockup id for this synthetic lockup
+       * Underlying Lock ID is the underlying native lock's id for this synthetic
+       * lockup. A synthetic lock MUST have an underlying lock.
        * </pre>
        *
        * <code>uint64 underlying_lock_id = 1;</code>
@@ -3578,7 +4028,8 @@ public final class Lock {
       }
       /**
        * <pre>
-       * underlying native lockup id for this synthetic lockup
+       * Underlying Lock ID is the underlying native lock's id for this synthetic
+       * lockup. A synthetic lock MUST have an underlying lock.
        * </pre>
        *
        * <code>uint64 underlying_lock_id = 1;</code>
@@ -3593,7 +4044,8 @@ public final class Lock {
       }
       /**
        * <pre>
-       * underlying native lockup id for this synthetic lockup
+       * Underlying Lock ID is the underlying native lock's id for this synthetic
+       * lockup. A synthetic lock MUST have an underlying lock.
        * </pre>
        *
        * <code>uint64 underlying_lock_id = 1;</code>
@@ -3608,6 +4060,11 @@ public final class Lock {
 
       private java.lang.Object synthDenom_ = "";
       /**
+       * <pre>
+       * SynthDenom is the synthetic denom that is a combination of
+       * gamm share + bonding status + validator address.
+       * </pre>
+       *
        * <code>string synth_denom = 2;</code>
        * @return The synthDenom.
        */
@@ -3624,6 +4081,11 @@ public final class Lock {
         }
       }
       /**
+       * <pre>
+       * SynthDenom is the synthetic denom that is a combination of
+       * gamm share + bonding status + validator address.
+       * </pre>
+       *
        * <code>string synth_denom = 2;</code>
        * @return The bytes for synthDenom.
        */
@@ -3641,6 +4103,11 @@ public final class Lock {
         }
       }
       /**
+       * <pre>
+       * SynthDenom is the synthetic denom that is a combination of
+       * gamm share + bonding status + validator address.
+       * </pre>
+       *
        * <code>string synth_denom = 2;</code>
        * @param value The synthDenom to set.
        * @return This builder for chaining.
@@ -3656,6 +4123,11 @@ public final class Lock {
         return this;
       }
       /**
+       * <pre>
+       * SynthDenom is the synthetic denom that is a combination of
+       * gamm share + bonding status + validator address.
+       * </pre>
+       *
        * <code>string synth_denom = 2;</code>
        * @return This builder for chaining.
        */
@@ -3666,6 +4138,11 @@ public final class Lock {
         return this;
       }
       /**
+       * <pre>
+       * SynthDenom is the synthetic denom that is a combination of
+       * gamm share + bonding status + validator address.
+       * </pre>
+       *
        * <code>string synth_denom = 2;</code>
        * @param value The bytes for synthDenom to set.
        * @return This builder for chaining.
@@ -3850,6 +4327,11 @@ public final class Lock {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> durationBuilder_;
       /**
+       * <pre>
+       * Duration is the duration for a synthetic lock to mature
+       * at the point of unbonding has started.
+       * </pre>
+       *
        * <code>.google.protobuf.Duration duration = 4 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
        * @return Whether the duration field is set.
        */
@@ -3857,6 +4339,11 @@ public final class Lock {
         return durationBuilder_ != null || duration_ != null;
       }
       /**
+       * <pre>
+       * Duration is the duration for a synthetic lock to mature
+       * at the point of unbonding has started.
+       * </pre>
+       *
        * <code>.google.protobuf.Duration duration = 4 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
        * @return The duration.
        */
@@ -3868,6 +4355,11 @@ public final class Lock {
         }
       }
       /**
+       * <pre>
+       * Duration is the duration for a synthetic lock to mature
+       * at the point of unbonding has started.
+       * </pre>
+       *
        * <code>.google.protobuf.Duration duration = 4 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder setDuration(com.google.protobuf.Duration value) {
@@ -3884,6 +4376,11 @@ public final class Lock {
         return this;
       }
       /**
+       * <pre>
+       * Duration is the duration for a synthetic lock to mature
+       * at the point of unbonding has started.
+       * </pre>
+       *
        * <code>.google.protobuf.Duration duration = 4 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder setDuration(
@@ -3898,6 +4395,11 @@ public final class Lock {
         return this;
       }
       /**
+       * <pre>
+       * Duration is the duration for a synthetic lock to mature
+       * at the point of unbonding has started.
+       * </pre>
+       *
        * <code>.google.protobuf.Duration duration = 4 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder mergeDuration(com.google.protobuf.Duration value) {
@@ -3916,6 +4418,11 @@ public final class Lock {
         return this;
       }
       /**
+       * <pre>
+       * Duration is the duration for a synthetic lock to mature
+       * at the point of unbonding has started.
+       * </pre>
+       *
        * <code>.google.protobuf.Duration duration = 4 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder clearDuration() {
@@ -3930,6 +4437,11 @@ public final class Lock {
         return this;
       }
       /**
+       * <pre>
+       * Duration is the duration for a synthetic lock to mature
+       * at the point of unbonding has started.
+       * </pre>
+       *
        * <code>.google.protobuf.Duration duration = 4 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public com.google.protobuf.Duration.Builder getDurationBuilder() {
@@ -3938,6 +4450,11 @@ public final class Lock {
         return getDurationFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Duration is the duration for a synthetic lock to mature
+       * at the point of unbonding has started.
+       * </pre>
+       *
        * <code>.google.protobuf.Duration duration = 4 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
@@ -3949,6 +4466,11 @@ public final class Lock {
         }
       }
       /**
+       * <pre>
+       * Duration is the duration for a synthetic lock to mature
+       * at the point of unbonding has started.
+       * </pre>
+       *
        * <code>.google.protobuf.Duration duration = 4 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<

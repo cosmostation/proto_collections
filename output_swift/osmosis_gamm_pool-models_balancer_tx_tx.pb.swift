@@ -48,6 +48,7 @@ struct Osmosis_Gamm_Poolmodels_Balancer_V1beta1_MsgCreateBalancerPool {
   fileprivate var _poolParams: Osmosis_Gamm_V1beta1_PoolParams? = nil
 }
 
+/// Returns the poolID
 struct Osmosis_Gamm_Poolmodels_Balancer_V1beta1_MsgCreateBalancerPoolResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for

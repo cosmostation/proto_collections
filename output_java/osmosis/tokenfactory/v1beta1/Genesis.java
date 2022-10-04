@@ -1110,6 +1110,12 @@ public final class Genesis {
     osmosis.tokenfactory.v1beta1.AuthorityMetadata.DenomAuthorityMetadataOrBuilder getAuthorityMetadataOrBuilder();
   }
   /**
+   * <pre>
+   * GenesisDenom defines a tokenfactory denom that is defined within genesis
+   * state. The structure contains DenomAuthorityMetadata which defines the
+   * denom's admin.
+   * </pre>
+   *
    * Protobuf type {@code osmosis.tokenfactory.v1beta1.GenesisDenom}
    */
   public static final class GenesisDenom extends
@@ -1441,6 +1447,12 @@ public final class Genesis {
       return builder;
     }
     /**
+     * <pre>
+     * GenesisDenom defines a tokenfactory denom that is defined within genesis
+     * state. The structure contains DenomAuthorityMetadata which defines the
+     * denom's admin.
+     * </pre>
+     *
      * Protobuf type {@code osmosis.tokenfactory.v1beta1.GenesisDenom}
      */
     public static final class Builder extends

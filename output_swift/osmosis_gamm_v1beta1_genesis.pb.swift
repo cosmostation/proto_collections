@@ -41,6 +41,7 @@ struct Osmosis_Gamm_V1beta1_GenesisState {
 
   var pools: [Google_Protobuf2_Any] = []
 
+  /// will be renamed to next_pool_id in an upcoming version
   var nextPoolNumber: UInt64 = 0
 
   var params: Osmosis_Gamm_V1beta1_Params {

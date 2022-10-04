@@ -53,7 +53,8 @@ extension Osmosis_Tokenfactory_V1beta1_QueryClientProtocol {
     return "osmosis.tokenfactory.v1beta1.Query"
   }
 
-  /// Params returns the total set of minting parameters.
+  /// Params defines a gRPC query method that returns the tokenfactory module's
+  /// parameters.
   ///
   /// - Parameters:
   ///   - request: Request to send to Params.
@@ -71,7 +72,8 @@ extension Osmosis_Tokenfactory_V1beta1_QueryClientProtocol {
     )
   }
 
-  /// Unary call to DenomAuthorityMetadata
+  /// DenomAuthorityMetadata defines a gRPC query method for fetching
+  /// DenomAuthorityMetadata for a particular denom.
   ///
   /// - Parameters:
   ///   - request: Request to send to DenomAuthorityMetadata.
@@ -89,7 +91,8 @@ extension Osmosis_Tokenfactory_V1beta1_QueryClientProtocol {
     )
   }
 
-  /// Unary call to DenomsFromCreator
+  /// DenomsFromCreator defines a gRPC query method for fetching all
+  /// denominations created by a specific admin/creator.
   ///
   /// - Parameters:
   ///   - request: Request to send to DenomsFromCreator.
@@ -148,11 +151,16 @@ internal final class Osmosis_Tokenfactory_V1beta1_QueryClient: Osmosis_Tokenfact
 internal protocol Osmosis_Tokenfactory_V1beta1_QueryProvider: CallHandlerProvider {
   var interceptors: Osmosis_Tokenfactory_V1beta1_QueryServerInterceptorFactoryProtocol? { get }
 
-  /// Params returns the total set of minting parameters.
+  /// Params defines a gRPC query method that returns the tokenfactory module's
+  /// parameters.
   func params(request: Osmosis_Tokenfactory_V1beta1_QueryParamsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Tokenfactory_V1beta1_QueryParamsResponse>
 
+  /// DenomAuthorityMetadata defines a gRPC query method for fetching
+  /// DenomAuthorityMetadata for a particular denom.
   func denomAuthorityMetadata(request: Osmosis_Tokenfactory_V1beta1_QueryDenomAuthorityMetadataRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Tokenfactory_V1beta1_QueryDenomAuthorityMetadataResponse>
 
+  /// DenomsFromCreator defines a gRPC query method for fetching all
+  /// denominations created by a specific admin/creator.
   func denomsFromCreator(request: Osmosis_Tokenfactory_V1beta1_QueryDenomsFromCreatorRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Tokenfactory_V1beta1_QueryDenomsFromCreatorResponse>
 }
 

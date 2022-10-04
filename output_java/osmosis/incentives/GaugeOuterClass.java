@@ -20,7 +20,7 @@ public final class GaugeOuterClass {
 
     /**
      * <pre>
-     * unique ID of a Gauge
+     * id is the unique ID of a Gauge
      * </pre>
      *
      * <code>uint64 id = 1;</code>
@@ -30,8 +30,11 @@ public final class GaugeOuterClass {
 
     /**
      * <pre>
-     * flag to show if it's perpetual or multi-epoch
-     * distribution incentives by third party
+     * is_perpetual is a flag to show if it's a perpetual or non-perpetual gauge
+     * Non-perpetual gauges distribute their tokens equally per epoch while the
+     * gauge is in the active period. Perpetual gauges distribute all their tokens
+     * at a single time and only distribute their tokens again once the gauge is
+     * refilled, Intended for use with incentives that get refilled daily.
      * </pre>
      *
      * <code>bool is_perpetual = 2;</code>
@@ -41,8 +44,8 @@ public final class GaugeOuterClass {
 
     /**
      * <pre>
-     * Rewards are distributed to lockups that are are returned by at least one of
-     * these queries
+     * distribute_to is where the gauge rewards are distributed to.
+     * This is queried via lock duration or by timestamp
      * </pre>
      *
      * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -51,8 +54,8 @@ public final class GaugeOuterClass {
     boolean hasDistributeTo();
     /**
      * <pre>
-     * Rewards are distributed to lockups that are are returned by at least one of
-     * these queries
+     * distribute_to is where the gauge rewards are distributed to.
+     * This is queried via lock duration or by timestamp
      * </pre>
      *
      * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -61,8 +64,8 @@ public final class GaugeOuterClass {
     osmosis.lockup.Lock.QueryCondition getDistributeTo();
     /**
      * <pre>
-     * Rewards are distributed to lockups that are are returned by at least one of
-     * these queries
+     * distribute_to is where the gauge rewards are distributed to.
+     * This is queried via lock duration or by timestamp
      * </pre>
      *
      * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -71,8 +74,8 @@ public final class GaugeOuterClass {
 
     /**
      * <pre>
-     * total amount of Coins that has been in the gauge.
-     * can distribute multiple coins
+     * coins is the total amount of coins that have been in the gauge
+     * Can distribute multiple coin denoms
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -81,8 +84,8 @@ public final class GaugeOuterClass {
         getCoinsList();
     /**
      * <pre>
-     * total amount of Coins that has been in the gauge.
-     * can distribute multiple coins
+     * coins is the total amount of coins that have been in the gauge
+     * Can distribute multiple coin denoms
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -90,8 +93,8 @@ public final class GaugeOuterClass {
     cosmos.base.v1beta1.CoinOuterClass.Coin getCoins(int index);
     /**
      * <pre>
-     * total amount of Coins that has been in the gauge.
-     * can distribute multiple coins
+     * coins is the total amount of coins that have been in the gauge
+     * Can distribute multiple coin denoms
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -99,8 +102,8 @@ public final class GaugeOuterClass {
     int getCoinsCount();
     /**
      * <pre>
-     * total amount of Coins that has been in the gauge.
-     * can distribute multiple coins
+     * coins is the total amount of coins that have been in the gauge
+     * Can distribute multiple coin denoms
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -109,8 +112,8 @@ public final class GaugeOuterClass {
         getCoinsOrBuilderList();
     /**
      * <pre>
-     * total amount of Coins that has been in the gauge.
-     * can distribute multiple coins
+     * coins is the total amount of coins that have been in the gauge
+     * Can distribute multiple coin denoms
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -120,7 +123,7 @@ public final class GaugeOuterClass {
 
     /**
      * <pre>
-     * distribution start time
+     * start_time is the distribution start time
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -129,7 +132,7 @@ public final class GaugeOuterClass {
     boolean hasStartTime();
     /**
      * <pre>
-     * distribution start time
+     * start_time is the distribution start time
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -138,7 +141,7 @@ public final class GaugeOuterClass {
     com.google.protobuf.Timestamp getStartTime();
     /**
      * <pre>
-     * distribution start time
+     * start_time is the distribution start time
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -147,7 +150,8 @@ public final class GaugeOuterClass {
 
     /**
      * <pre>
-     * number of epochs distribution will be done
+     * num_epochs_paid_over is the number of total epochs distribution will be
+     * completed over
      * </pre>
      *
      * <code>uint64 num_epochs_paid_over = 6;</code>
@@ -157,7 +161,8 @@ public final class GaugeOuterClass {
 
     /**
      * <pre>
-     * number of epochs distributed already
+     * filled_epochs is the number of epochs distribution has been completed on
+     * already
      * </pre>
      *
      * <code>uint64 filled_epochs = 7;</code>
@@ -167,7 +172,7 @@ public final class GaugeOuterClass {
 
     /**
      * <pre>
-     * already distributed coins
+     * distributed_coins are coins that have been distributed already
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin distributed_coins = 8 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -176,7 +181,7 @@ public final class GaugeOuterClass {
         getDistributedCoinsList();
     /**
      * <pre>
-     * already distributed coins
+     * distributed_coins are coins that have been distributed already
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin distributed_coins = 8 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -184,7 +189,7 @@ public final class GaugeOuterClass {
     cosmos.base.v1beta1.CoinOuterClass.Coin getDistributedCoins(int index);
     /**
      * <pre>
-     * already distributed coins
+     * distributed_coins are coins that have been distributed already
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin distributed_coins = 8 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -192,7 +197,7 @@ public final class GaugeOuterClass {
     int getDistributedCoinsCount();
     /**
      * <pre>
-     * already distributed coins
+     * distributed_coins are coins that have been distributed already
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin distributed_coins = 8 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -201,7 +206,7 @@ public final class GaugeOuterClass {
         getDistributedCoinsOrBuilderList();
     /**
      * <pre>
-     * already distributed coins
+     * distributed_coins are coins that have been distributed already
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin distributed_coins = 8 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -210,6 +215,12 @@ public final class GaugeOuterClass {
         int index);
   }
   /**
+   * <pre>
+   * Gauge is an object that stores and distributes yields to recipients who
+   * satisfy certain conditions. Currently gauges support conditions around the
+   * duration for which a given denom is locked.
+   * </pre>
+   *
    * Protobuf type {@code osmosis.incentives.Gauge}
    */
   public static final class Gauge extends
@@ -363,7 +374,7 @@ public final class GaugeOuterClass {
     private long id_;
     /**
      * <pre>
-     * unique ID of a Gauge
+     * id is the unique ID of a Gauge
      * </pre>
      *
      * <code>uint64 id = 1;</code>
@@ -378,8 +389,11 @@ public final class GaugeOuterClass {
     private boolean isPerpetual_;
     /**
      * <pre>
-     * flag to show if it's perpetual or multi-epoch
-     * distribution incentives by third party
+     * is_perpetual is a flag to show if it's a perpetual or non-perpetual gauge
+     * Non-perpetual gauges distribute their tokens equally per epoch while the
+     * gauge is in the active period. Perpetual gauges distribute all their tokens
+     * at a single time and only distribute their tokens again once the gauge is
+     * refilled, Intended for use with incentives that get refilled daily.
      * </pre>
      *
      * <code>bool is_perpetual = 2;</code>
@@ -394,8 +408,8 @@ public final class GaugeOuterClass {
     private osmosis.lockup.Lock.QueryCondition distributeTo_;
     /**
      * <pre>
-     * Rewards are distributed to lockups that are are returned by at least one of
-     * these queries
+     * distribute_to is where the gauge rewards are distributed to.
+     * This is queried via lock duration or by timestamp
      * </pre>
      *
      * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -407,8 +421,8 @@ public final class GaugeOuterClass {
     }
     /**
      * <pre>
-     * Rewards are distributed to lockups that are are returned by at least one of
-     * these queries
+     * distribute_to is where the gauge rewards are distributed to.
+     * This is queried via lock duration or by timestamp
      * </pre>
      *
      * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -420,8 +434,8 @@ public final class GaugeOuterClass {
     }
     /**
      * <pre>
-     * Rewards are distributed to lockups that are are returned by at least one of
-     * these queries
+     * distribute_to is where the gauge rewards are distributed to.
+     * This is queried via lock duration or by timestamp
      * </pre>
      *
      * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -435,8 +449,8 @@ public final class GaugeOuterClass {
     private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> coins_;
     /**
      * <pre>
-     * total amount of Coins that has been in the gauge.
-     * can distribute multiple coins
+     * coins is the total amount of coins that have been in the gauge
+     * Can distribute multiple coin denoms
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -447,8 +461,8 @@ public final class GaugeOuterClass {
     }
     /**
      * <pre>
-     * total amount of Coins that has been in the gauge.
-     * can distribute multiple coins
+     * coins is the total amount of coins that have been in the gauge
+     * Can distribute multiple coin denoms
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -460,8 +474,8 @@ public final class GaugeOuterClass {
     }
     /**
      * <pre>
-     * total amount of Coins that has been in the gauge.
-     * can distribute multiple coins
+     * coins is the total amount of coins that have been in the gauge
+     * Can distribute multiple coin denoms
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -472,8 +486,8 @@ public final class GaugeOuterClass {
     }
     /**
      * <pre>
-     * total amount of Coins that has been in the gauge.
-     * can distribute multiple coins
+     * coins is the total amount of coins that have been in the gauge
+     * Can distribute multiple coin denoms
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -484,8 +498,8 @@ public final class GaugeOuterClass {
     }
     /**
      * <pre>
-     * total amount of Coins that has been in the gauge.
-     * can distribute multiple coins
+     * coins is the total amount of coins that have been in the gauge
+     * Can distribute multiple coin denoms
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -500,7 +514,7 @@ public final class GaugeOuterClass {
     private com.google.protobuf.Timestamp startTime_;
     /**
      * <pre>
-     * distribution start time
+     * start_time is the distribution start time
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -512,7 +526,7 @@ public final class GaugeOuterClass {
     }
     /**
      * <pre>
-     * distribution start time
+     * start_time is the distribution start time
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -524,7 +538,7 @@ public final class GaugeOuterClass {
     }
     /**
      * <pre>
-     * distribution start time
+     * start_time is the distribution start time
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -538,7 +552,8 @@ public final class GaugeOuterClass {
     private long numEpochsPaidOver_;
     /**
      * <pre>
-     * number of epochs distribution will be done
+     * num_epochs_paid_over is the number of total epochs distribution will be
+     * completed over
      * </pre>
      *
      * <code>uint64 num_epochs_paid_over = 6;</code>
@@ -553,7 +568,8 @@ public final class GaugeOuterClass {
     private long filledEpochs_;
     /**
      * <pre>
-     * number of epochs distributed already
+     * filled_epochs is the number of epochs distribution has been completed on
+     * already
      * </pre>
      *
      * <code>uint64 filled_epochs = 7;</code>
@@ -568,7 +584,7 @@ public final class GaugeOuterClass {
     private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> distributedCoins_;
     /**
      * <pre>
-     * already distributed coins
+     * distributed_coins are coins that have been distributed already
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin distributed_coins = 8 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -579,7 +595,7 @@ public final class GaugeOuterClass {
     }
     /**
      * <pre>
-     * already distributed coins
+     * distributed_coins are coins that have been distributed already
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin distributed_coins = 8 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -591,7 +607,7 @@ public final class GaugeOuterClass {
     }
     /**
      * <pre>
-     * already distributed coins
+     * distributed_coins are coins that have been distributed already
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin distributed_coins = 8 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -602,7 +618,7 @@ public final class GaugeOuterClass {
     }
     /**
      * <pre>
-     * already distributed coins
+     * distributed_coins are coins that have been distributed already
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin distributed_coins = 8 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -613,7 +629,7 @@ public final class GaugeOuterClass {
     }
     /**
      * <pre>
-     * already distributed coins
+     * distributed_coins are coins that have been distributed already
      * </pre>
      *
      * <code>repeated .cosmos.base.v1beta1.Coin distributed_coins = 8 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -875,6 +891,12 @@ public final class GaugeOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Gauge is an object that stores and distributes yields to recipients who
+     * satisfy certain conditions. Currently gauges support conditions around the
+     * duration for which a given denom is locked.
+     * </pre>
+     *
      * Protobuf type {@code osmosis.incentives.Gauge}
      */
     public static final class Builder extends
@@ -1156,7 +1178,7 @@ public final class GaugeOuterClass {
       private long id_ ;
       /**
        * <pre>
-       * unique ID of a Gauge
+       * id is the unique ID of a Gauge
        * </pre>
        *
        * <code>uint64 id = 1;</code>
@@ -1168,7 +1190,7 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * unique ID of a Gauge
+       * id is the unique ID of a Gauge
        * </pre>
        *
        * <code>uint64 id = 1;</code>
@@ -1183,7 +1205,7 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * unique ID of a Gauge
+       * id is the unique ID of a Gauge
        * </pre>
        *
        * <code>uint64 id = 1;</code>
@@ -1199,8 +1221,11 @@ public final class GaugeOuterClass {
       private boolean isPerpetual_ ;
       /**
        * <pre>
-       * flag to show if it's perpetual or multi-epoch
-       * distribution incentives by third party
+       * is_perpetual is a flag to show if it's a perpetual or non-perpetual gauge
+       * Non-perpetual gauges distribute their tokens equally per epoch while the
+       * gauge is in the active period. Perpetual gauges distribute all their tokens
+       * at a single time and only distribute their tokens again once the gauge is
+       * refilled, Intended for use with incentives that get refilled daily.
        * </pre>
        *
        * <code>bool is_perpetual = 2;</code>
@@ -1212,8 +1237,11 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * flag to show if it's perpetual or multi-epoch
-       * distribution incentives by third party
+       * is_perpetual is a flag to show if it's a perpetual or non-perpetual gauge
+       * Non-perpetual gauges distribute their tokens equally per epoch while the
+       * gauge is in the active period. Perpetual gauges distribute all their tokens
+       * at a single time and only distribute their tokens again once the gauge is
+       * refilled, Intended for use with incentives that get refilled daily.
        * </pre>
        *
        * <code>bool is_perpetual = 2;</code>
@@ -1228,8 +1256,11 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * flag to show if it's perpetual or multi-epoch
-       * distribution incentives by third party
+       * is_perpetual is a flag to show if it's a perpetual or non-perpetual gauge
+       * Non-perpetual gauges distribute their tokens equally per epoch while the
+       * gauge is in the active period. Perpetual gauges distribute all their tokens
+       * at a single time and only distribute their tokens again once the gauge is
+       * refilled, Intended for use with incentives that get refilled daily.
        * </pre>
        *
        * <code>bool is_perpetual = 2;</code>
@@ -1247,8 +1278,8 @@ public final class GaugeOuterClass {
           osmosis.lockup.Lock.QueryCondition, osmosis.lockup.Lock.QueryCondition.Builder, osmosis.lockup.Lock.QueryConditionOrBuilder> distributeToBuilder_;
       /**
        * <pre>
-       * Rewards are distributed to lockups that are are returned by at least one of
-       * these queries
+       * distribute_to is where the gauge rewards are distributed to.
+       * This is queried via lock duration or by timestamp
        * </pre>
        *
        * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -1259,8 +1290,8 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * Rewards are distributed to lockups that are are returned by at least one of
-       * these queries
+       * distribute_to is where the gauge rewards are distributed to.
+       * This is queried via lock duration or by timestamp
        * </pre>
        *
        * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -1275,8 +1306,8 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * Rewards are distributed to lockups that are are returned by at least one of
-       * these queries
+       * distribute_to is where the gauge rewards are distributed to.
+       * This is queried via lock duration or by timestamp
        * </pre>
        *
        * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -1296,8 +1327,8 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * Rewards are distributed to lockups that are are returned by at least one of
-       * these queries
+       * distribute_to is where the gauge rewards are distributed to.
+       * This is queried via lock duration or by timestamp
        * </pre>
        *
        * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -1315,8 +1346,8 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * Rewards are distributed to lockups that are are returned by at least one of
-       * these queries
+       * distribute_to is where the gauge rewards are distributed to.
+       * This is queried via lock duration or by timestamp
        * </pre>
        *
        * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -1338,8 +1369,8 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * Rewards are distributed to lockups that are are returned by at least one of
-       * these queries
+       * distribute_to is where the gauge rewards are distributed to.
+       * This is queried via lock duration or by timestamp
        * </pre>
        *
        * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -1357,8 +1388,8 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * Rewards are distributed to lockups that are are returned by at least one of
-       * these queries
+       * distribute_to is where the gauge rewards are distributed to.
+       * This is queried via lock duration or by timestamp
        * </pre>
        *
        * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -1370,8 +1401,8 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * Rewards are distributed to lockups that are are returned by at least one of
-       * these queries
+       * distribute_to is where the gauge rewards are distributed to.
+       * This is queried via lock duration or by timestamp
        * </pre>
        *
        * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -1386,8 +1417,8 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * Rewards are distributed to lockups that are are returned by at least one of
-       * these queries
+       * distribute_to is where the gauge rewards are distributed to.
+       * This is queried via lock duration or by timestamp
        * </pre>
        *
        * <code>.osmosis.lockup.QueryCondition distribute_to = 3 [(.gogoproto.nullable) = false];</code>
@@ -1420,8 +1451,8 @@ public final class GaugeOuterClass {
 
       /**
        * <pre>
-       * total amount of Coins that has been in the gauge.
-       * can distribute multiple coins
+       * coins is the total amount of coins that have been in the gauge
+       * Can distribute multiple coin denoms
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1435,8 +1466,8 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * total amount of Coins that has been in the gauge.
-       * can distribute multiple coins
+       * coins is the total amount of coins that have been in the gauge
+       * Can distribute multiple coin denoms
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1450,8 +1481,8 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * total amount of Coins that has been in the gauge.
-       * can distribute multiple coins
+       * coins is the total amount of coins that have been in the gauge
+       * Can distribute multiple coin denoms
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1465,8 +1496,8 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * total amount of Coins that has been in the gauge.
-       * can distribute multiple coins
+       * coins is the total amount of coins that have been in the gauge
+       * Can distribute multiple coin denoms
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1487,8 +1518,8 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * total amount of Coins that has been in the gauge.
-       * can distribute multiple coins
+       * coins is the total amount of coins that have been in the gauge
+       * Can distribute multiple coin denoms
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1506,8 +1537,8 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * total amount of Coins that has been in the gauge.
-       * can distribute multiple coins
+       * coins is the total amount of coins that have been in the gauge
+       * Can distribute multiple coin denoms
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1527,8 +1558,8 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * total amount of Coins that has been in the gauge.
-       * can distribute multiple coins
+       * coins is the total amount of coins that have been in the gauge
+       * Can distribute multiple coin denoms
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1549,8 +1580,8 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * total amount of Coins that has been in the gauge.
-       * can distribute multiple coins
+       * coins is the total amount of coins that have been in the gauge
+       * Can distribute multiple coin denoms
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1568,8 +1599,8 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * total amount of Coins that has been in the gauge.
-       * can distribute multiple coins
+       * coins is the total amount of coins that have been in the gauge
+       * Can distribute multiple coin denoms
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1587,8 +1618,8 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * total amount of Coins that has been in the gauge.
-       * can distribute multiple coins
+       * coins is the total amount of coins that have been in the gauge
+       * Can distribute multiple coin denoms
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1607,8 +1638,8 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * total amount of Coins that has been in the gauge.
-       * can distribute multiple coins
+       * coins is the total amount of coins that have been in the gauge
+       * Can distribute multiple coin denoms
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1625,8 +1656,8 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * total amount of Coins that has been in the gauge.
-       * can distribute multiple coins
+       * coins is the total amount of coins that have been in the gauge
+       * Can distribute multiple coin denoms
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1643,8 +1674,8 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * total amount of Coins that has been in the gauge.
-       * can distribute multiple coins
+       * coins is the total amount of coins that have been in the gauge
+       * Can distribute multiple coin denoms
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1655,8 +1686,8 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * total amount of Coins that has been in the gauge.
-       * can distribute multiple coins
+       * coins is the total amount of coins that have been in the gauge
+       * Can distribute multiple coin denoms
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1670,8 +1701,8 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * total amount of Coins that has been in the gauge.
-       * can distribute multiple coins
+       * coins is the total amount of coins that have been in the gauge
+       * Can distribute multiple coin denoms
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1686,8 +1717,8 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * total amount of Coins that has been in the gauge.
-       * can distribute multiple coins
+       * coins is the total amount of coins that have been in the gauge
+       * Can distribute multiple coin denoms
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1698,8 +1729,8 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * total amount of Coins that has been in the gauge.
-       * can distribute multiple coins
+       * coins is the total amount of coins that have been in the gauge
+       * Can distribute multiple coin denoms
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1711,8 +1742,8 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * total amount of Coins that has been in the gauge.
-       * can distribute multiple coins
+       * coins is the total amount of coins that have been in the gauge
+       * Can distribute multiple coin denoms
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin coins = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -1741,7 +1772,7 @@ public final class GaugeOuterClass {
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> startTimeBuilder_;
       /**
        * <pre>
-       * distribution start time
+       * start_time is the distribution start time
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -1752,7 +1783,7 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * distribution start time
+       * start_time is the distribution start time
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -1767,7 +1798,7 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * distribution start time
+       * start_time is the distribution start time
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -1787,7 +1818,7 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * distribution start time
+       * start_time is the distribution start time
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -1805,7 +1836,7 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * distribution start time
+       * start_time is the distribution start time
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -1827,7 +1858,7 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * distribution start time
+       * start_time is the distribution start time
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -1845,7 +1876,7 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * distribution start time
+       * start_time is the distribution start time
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -1857,7 +1888,7 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * distribution start time
+       * start_time is the distribution start time
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -1872,7 +1903,7 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * distribution start time
+       * start_time is the distribution start time
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -1894,7 +1925,8 @@ public final class GaugeOuterClass {
       private long numEpochsPaidOver_ ;
       /**
        * <pre>
-       * number of epochs distribution will be done
+       * num_epochs_paid_over is the number of total epochs distribution will be
+       * completed over
        * </pre>
        *
        * <code>uint64 num_epochs_paid_over = 6;</code>
@@ -1906,7 +1938,8 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * number of epochs distribution will be done
+       * num_epochs_paid_over is the number of total epochs distribution will be
+       * completed over
        * </pre>
        *
        * <code>uint64 num_epochs_paid_over = 6;</code>
@@ -1921,7 +1954,8 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * number of epochs distribution will be done
+       * num_epochs_paid_over is the number of total epochs distribution will be
+       * completed over
        * </pre>
        *
        * <code>uint64 num_epochs_paid_over = 6;</code>
@@ -1937,7 +1971,8 @@ public final class GaugeOuterClass {
       private long filledEpochs_ ;
       /**
        * <pre>
-       * number of epochs distributed already
+       * filled_epochs is the number of epochs distribution has been completed on
+       * already
        * </pre>
        *
        * <code>uint64 filled_epochs = 7;</code>
@@ -1949,7 +1984,8 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * number of epochs distributed already
+       * filled_epochs is the number of epochs distribution has been completed on
+       * already
        * </pre>
        *
        * <code>uint64 filled_epochs = 7;</code>
@@ -1964,7 +2000,8 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * number of epochs distributed already
+       * filled_epochs is the number of epochs distribution has been completed on
+       * already
        * </pre>
        *
        * <code>uint64 filled_epochs = 7;</code>
@@ -1991,7 +2028,7 @@ public final class GaugeOuterClass {
 
       /**
        * <pre>
-       * already distributed coins
+       * distributed_coins are coins that have been distributed already
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin distributed_coins = 8 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -2005,7 +2042,7 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * already distributed coins
+       * distributed_coins are coins that have been distributed already
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin distributed_coins = 8 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -2019,7 +2056,7 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * already distributed coins
+       * distributed_coins are coins that have been distributed already
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin distributed_coins = 8 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -2033,7 +2070,7 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * already distributed coins
+       * distributed_coins are coins that have been distributed already
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin distributed_coins = 8 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -2054,7 +2091,7 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * already distributed coins
+       * distributed_coins are coins that have been distributed already
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin distributed_coins = 8 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -2072,7 +2109,7 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * already distributed coins
+       * distributed_coins are coins that have been distributed already
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin distributed_coins = 8 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -2092,7 +2129,7 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * already distributed coins
+       * distributed_coins are coins that have been distributed already
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin distributed_coins = 8 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -2113,7 +2150,7 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * already distributed coins
+       * distributed_coins are coins that have been distributed already
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin distributed_coins = 8 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -2131,7 +2168,7 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * already distributed coins
+       * distributed_coins are coins that have been distributed already
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin distributed_coins = 8 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -2149,7 +2186,7 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * already distributed coins
+       * distributed_coins are coins that have been distributed already
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin distributed_coins = 8 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -2168,7 +2205,7 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * already distributed coins
+       * distributed_coins are coins that have been distributed already
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin distributed_coins = 8 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -2185,7 +2222,7 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * already distributed coins
+       * distributed_coins are coins that have been distributed already
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin distributed_coins = 8 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -2202,7 +2239,7 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * already distributed coins
+       * distributed_coins are coins that have been distributed already
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin distributed_coins = 8 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -2213,7 +2250,7 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * already distributed coins
+       * distributed_coins are coins that have been distributed already
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin distributed_coins = 8 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -2227,7 +2264,7 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * already distributed coins
+       * distributed_coins are coins that have been distributed already
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin distributed_coins = 8 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -2242,7 +2279,7 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * already distributed coins
+       * distributed_coins are coins that have been distributed already
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin distributed_coins = 8 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -2253,7 +2290,7 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * already distributed coins
+       * distributed_coins are coins that have been distributed already
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin distributed_coins = 8 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -2265,7 +2302,7 @@ public final class GaugeOuterClass {
       }
       /**
        * <pre>
-       * already distributed coins
+       * distributed_coins are coins that have been distributed already
        * </pre>
        *
        * <code>repeated .cosmos.base.v1beta1.Coin distributed_coins = 8 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -2346,24 +2383,44 @@ public final class GaugeOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * List of incentivised durations that gauges will pay out to
+     * </pre>
+     *
      * <code>repeated .google.protobuf.Duration lockable_durations = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     java.util.List<com.google.protobuf.Duration> 
         getLockableDurationsList();
     /**
+     * <pre>
+     * List of incentivised durations that gauges will pay out to
+     * </pre>
+     *
      * <code>repeated .google.protobuf.Duration lockable_durations = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     com.google.protobuf.Duration getLockableDurations(int index);
     /**
+     * <pre>
+     * List of incentivised durations that gauges will pay out to
+     * </pre>
+     *
      * <code>repeated .google.protobuf.Duration lockable_durations = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     int getLockableDurationsCount();
     /**
+     * <pre>
+     * List of incentivised durations that gauges will pay out to
+     * </pre>
+     *
      * <code>repeated .google.protobuf.Duration lockable_durations = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     java.util.List<? extends com.google.protobuf.DurationOrBuilder> 
         getLockableDurationsOrBuilderList();
     /**
+     * <pre>
+     * List of incentivised durations that gauges will pay out to
+     * </pre>
+     *
      * <code>repeated .google.protobuf.Duration lockable_durations = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     com.google.protobuf.DurationOrBuilder getLockableDurationsOrBuilder(
@@ -2463,6 +2520,10 @@ public final class GaugeOuterClass {
     public static final int LOCKABLE_DURATIONS_FIELD_NUMBER = 1;
     private java.util.List<com.google.protobuf.Duration> lockableDurations_;
     /**
+     * <pre>
+     * List of incentivised durations that gauges will pay out to
+     * </pre>
+     *
      * <code>repeated .google.protobuf.Duration lockable_durations = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     @java.lang.Override
@@ -2470,6 +2531,10 @@ public final class GaugeOuterClass {
       return lockableDurations_;
     }
     /**
+     * <pre>
+     * List of incentivised durations that gauges will pay out to
+     * </pre>
+     *
      * <code>repeated .google.protobuf.Duration lockable_durations = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     @java.lang.Override
@@ -2478,6 +2543,10 @@ public final class GaugeOuterClass {
       return lockableDurations_;
     }
     /**
+     * <pre>
+     * List of incentivised durations that gauges will pay out to
+     * </pre>
+     *
      * <code>repeated .google.protobuf.Duration lockable_durations = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     @java.lang.Override
@@ -2485,6 +2554,10 @@ public final class GaugeOuterClass {
       return lockableDurations_.size();
     }
     /**
+     * <pre>
+     * List of incentivised durations that gauges will pay out to
+     * </pre>
+     *
      * <code>repeated .google.protobuf.Duration lockable_durations = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     @java.lang.Override
@@ -2492,6 +2565,10 @@ public final class GaugeOuterClass {
       return lockableDurations_.get(index);
     }
     /**
+     * <pre>
+     * List of incentivised durations that gauges will pay out to
+     * </pre>
+     *
      * <code>repeated .google.protobuf.Duration lockable_durations = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     @java.lang.Override
@@ -2855,6 +2932,10 @@ public final class GaugeOuterClass {
           com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> lockableDurationsBuilder_;
 
       /**
+       * <pre>
+       * List of incentivised durations that gauges will pay out to
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public java.util.List<com.google.protobuf.Duration> getLockableDurationsList() {
@@ -2865,6 +2946,10 @@ public final class GaugeOuterClass {
         }
       }
       /**
+       * <pre>
+       * List of incentivised durations that gauges will pay out to
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public int getLockableDurationsCount() {
@@ -2875,6 +2960,10 @@ public final class GaugeOuterClass {
         }
       }
       /**
+       * <pre>
+       * List of incentivised durations that gauges will pay out to
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public com.google.protobuf.Duration getLockableDurations(int index) {
@@ -2885,6 +2974,10 @@ public final class GaugeOuterClass {
         }
       }
       /**
+       * <pre>
+       * List of incentivised durations that gauges will pay out to
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder setLockableDurations(
@@ -2902,6 +2995,10 @@ public final class GaugeOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * List of incentivised durations that gauges will pay out to
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder setLockableDurations(
@@ -2916,6 +3013,10 @@ public final class GaugeOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * List of incentivised durations that gauges will pay out to
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder addLockableDurations(com.google.protobuf.Duration value) {
@@ -2932,6 +3033,10 @@ public final class GaugeOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * List of incentivised durations that gauges will pay out to
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder addLockableDurations(
@@ -2949,6 +3054,10 @@ public final class GaugeOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * List of incentivised durations that gauges will pay out to
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder addLockableDurations(
@@ -2963,6 +3072,10 @@ public final class GaugeOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * List of incentivised durations that gauges will pay out to
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder addLockableDurations(
@@ -2977,6 +3090,10 @@ public final class GaugeOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * List of incentivised durations that gauges will pay out to
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder addAllLockableDurations(
@@ -2992,6 +3109,10 @@ public final class GaugeOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * List of incentivised durations that gauges will pay out to
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder clearLockableDurations() {
@@ -3005,6 +3126,10 @@ public final class GaugeOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * List of incentivised durations that gauges will pay out to
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder removeLockableDurations(int index) {
@@ -3018,6 +3143,10 @@ public final class GaugeOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * List of incentivised durations that gauges will pay out to
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public com.google.protobuf.Duration.Builder getLockableDurationsBuilder(
@@ -3025,6 +3154,10 @@ public final class GaugeOuterClass {
         return getLockableDurationsFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * List of incentivised durations that gauges will pay out to
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public com.google.protobuf.DurationOrBuilder getLockableDurationsOrBuilder(
@@ -3035,6 +3168,10 @@ public final class GaugeOuterClass {
         }
       }
       /**
+       * <pre>
+       * List of incentivised durations that gauges will pay out to
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public java.util.List<? extends com.google.protobuf.DurationOrBuilder> 
@@ -3046,6 +3183,10 @@ public final class GaugeOuterClass {
         }
       }
       /**
+       * <pre>
+       * List of incentivised durations that gauges will pay out to
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public com.google.protobuf.Duration.Builder addLockableDurationsBuilder() {
@@ -3053,6 +3194,10 @@ public final class GaugeOuterClass {
             com.google.protobuf.Duration.getDefaultInstance());
       }
       /**
+       * <pre>
+       * List of incentivised durations that gauges will pay out to
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public com.google.protobuf.Duration.Builder addLockableDurationsBuilder(
@@ -3061,6 +3206,10 @@ public final class GaugeOuterClass {
             index, com.google.protobuf.Duration.getDefaultInstance());
       }
       /**
+       * <pre>
+       * List of incentivised durations that gauges will pay out to
+       * </pre>
+       *
        * <code>repeated .google.protobuf.Duration lockable_durations = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"lockable_durations&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public java.util.List<com.google.protobuf.Duration.Builder> 

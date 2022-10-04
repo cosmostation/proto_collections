@@ -20,13 +20,15 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-/// MsgCreateDenom is the sdk.Msg type for allowing an account to create
-/// a new denom. It requires a sender address and a subdenomination.
-/// The (sender_address, sub_denomination) pair must be unique and cannot be
-/// re-used. The resulting denom created is `factory/{creator
-/// address}/{subdenom}`. The resultant denom's admin is originally set to be the
-/// creator, but this can be changed later. The token denom does not indicate the
-/// current admin.
+/// MsgCreateDenom defines the message structure for the CreateDenom gRPC service
+/// method. It allows an account to create a new denom. It requires a sender
+/// address and a sub denomination. The (sender_address, sub_denomination) tuple
+/// must be unique and cannot be re-used.
+///
+/// The resulting denom created is defined as
+/// <factory/{creatorAddress}/{subdenom}>. The resulting denom's admin is
+/// originally set to be the creator, but this can be changed later. The token
+/// denom does not indicate the current admin.
 struct Osmosis_Tokenfactory_V1beta1_MsgCreateDenom {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -144,7 +146,46 @@ struct Osmosis_Tokenfactory_V1beta1_MsgChangeAdmin {
   init() {}
 }
 
+/// MsgChangeAdminResponse defines the response structure for an executed
+/// MsgChangeAdmin message.
 struct Osmosis_Tokenfactory_V1beta1_MsgChangeAdminResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+/// MsgSetDenomMetadata is the sdk.Msg type for allowing an admin account to set
+/// the denom's bank metadata
+struct Osmosis_Tokenfactory_V1beta1_MsgSetDenomMetadata {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var sender: String = String()
+
+  var metadata: Cosmos_Bank_V1beta1_Metadata {
+    get {return _metadata ?? Cosmos_Bank_V1beta1_Metadata()}
+    set {_metadata = newValue}
+  }
+  /// Returns true if `metadata` has been explicitly set.
+  var hasMetadata: Bool {return self._metadata != nil}
+  /// Clears the value of `metadata`. Subsequent reads from it will return its default value.
+  mutating func clearMetadata() {self._metadata = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _metadata: Cosmos_Bank_V1beta1_Metadata? = nil
+}
+
+/// MsgSetDenomMetadataResponse defines the response structure for an executed
+/// MsgSetDenomMetadata message.
+struct Osmosis_Tokenfactory_V1beta1_MsgSetDenomMetadataResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -400,6 +441,63 @@ extension Osmosis_Tokenfactory_V1beta1_MsgChangeAdminResponse: SwiftProtobuf.Mes
   }
 
   static func ==(lhs: Osmosis_Tokenfactory_V1beta1_MsgChangeAdminResponse, rhs: Osmosis_Tokenfactory_V1beta1_MsgChangeAdminResponse) -> Bool {
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Osmosis_Tokenfactory_V1beta1_MsgSetDenomMetadata: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".MsgSetDenomMetadata"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "sender"),
+    2: .same(proto: "metadata"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.sender) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._metadata) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.sender.isEmpty {
+      try visitor.visitSingularStringField(value: self.sender, fieldNumber: 1)
+    }
+    if let v = self._metadata {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Osmosis_Tokenfactory_V1beta1_MsgSetDenomMetadata, rhs: Osmosis_Tokenfactory_V1beta1_MsgSetDenomMetadata) -> Bool {
+    if lhs.sender != rhs.sender {return false}
+    if lhs._metadata != rhs._metadata {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Osmosis_Tokenfactory_V1beta1_MsgSetDenomMetadataResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".MsgSetDenomMetadataResponse"
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let _ = try decoder.nextFieldNumber() {
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Osmosis_Tokenfactory_V1beta1_MsgSetDenomMetadataResponse, rhs: Osmosis_Tokenfactory_V1beta1_MsgSetDenomMetadataResponse) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

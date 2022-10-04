@@ -20,8 +20,10 @@ public final class ParamsOuterClass {
 
     /**
      * <pre>
-     * the risk_factor is to be cut on OSMO equivalent value of lp tokens for
-     * superfluid staking, default: 5%
+     * minimum_risk_factor is to be cut on OSMO equivalent value of lp tokens for
+     * superfluid staking, default: 5%. The minimum risk factor works
+     * to counter-balance the staked amount on chain's exposure to various asset
+     * volatilities, and have base staking be 'resistant' to volatility.
      * </pre>
      *
      * <code>string minimum_risk_factor = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"minimum_risk_factor&#92;""];</code>
@@ -30,8 +32,10 @@ public final class ParamsOuterClass {
     java.lang.String getMinimumRiskFactor();
     /**
      * <pre>
-     * the risk_factor is to be cut on OSMO equivalent value of lp tokens for
-     * superfluid staking, default: 5%
+     * minimum_risk_factor is to be cut on OSMO equivalent value of lp tokens for
+     * superfluid staking, default: 5%. The minimum risk factor works
+     * to counter-balance the staked amount on chain's exposure to various asset
+     * volatilities, and have base staking be 'resistant' to volatility.
      * </pre>
      *
      * <code>string minimum_risk_factor = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"minimum_risk_factor&#92;""];</code>
@@ -132,8 +136,10 @@ public final class ParamsOuterClass {
     private volatile java.lang.Object minimumRiskFactor_;
     /**
      * <pre>
-     * the risk_factor is to be cut on OSMO equivalent value of lp tokens for
-     * superfluid staking, default: 5%
+     * minimum_risk_factor is to be cut on OSMO equivalent value of lp tokens for
+     * superfluid staking, default: 5%. The minimum risk factor works
+     * to counter-balance the staked amount on chain's exposure to various asset
+     * volatilities, and have base staking be 'resistant' to volatility.
      * </pre>
      *
      * <code>string minimum_risk_factor = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"minimum_risk_factor&#92;""];</code>
@@ -154,8 +160,10 @@ public final class ParamsOuterClass {
     }
     /**
      * <pre>
-     * the risk_factor is to be cut on OSMO equivalent value of lp tokens for
-     * superfluid staking, default: 5%
+     * minimum_risk_factor is to be cut on OSMO equivalent value of lp tokens for
+     * superfluid staking, default: 5%. The minimum risk factor works
+     * to counter-balance the staked amount on chain's exposure to various asset
+     * volatilities, and have base staking be 'resistant' to volatility.
      * </pre>
      *
      * <code>string minimum_risk_factor = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"minimum_risk_factor&#92;""];</code>
@@ -485,8 +493,10 @@ public final class ParamsOuterClass {
       private java.lang.Object minimumRiskFactor_ = "";
       /**
        * <pre>
-       * the risk_factor is to be cut on OSMO equivalent value of lp tokens for
-       * superfluid staking, default: 5%
+       * minimum_risk_factor is to be cut on OSMO equivalent value of lp tokens for
+       * superfluid staking, default: 5%. The minimum risk factor works
+       * to counter-balance the staked amount on chain's exposure to various asset
+       * volatilities, and have base staking be 'resistant' to volatility.
        * </pre>
        *
        * <code>string minimum_risk_factor = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"minimum_risk_factor&#92;""];</code>
@@ -506,8 +516,10 @@ public final class ParamsOuterClass {
       }
       /**
        * <pre>
-       * the risk_factor is to be cut on OSMO equivalent value of lp tokens for
-       * superfluid staking, default: 5%
+       * minimum_risk_factor is to be cut on OSMO equivalent value of lp tokens for
+       * superfluid staking, default: 5%. The minimum risk factor works
+       * to counter-balance the staked amount on chain's exposure to various asset
+       * volatilities, and have base staking be 'resistant' to volatility.
        * </pre>
        *
        * <code>string minimum_risk_factor = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"minimum_risk_factor&#92;""];</code>
@@ -528,8 +540,10 @@ public final class ParamsOuterClass {
       }
       /**
        * <pre>
-       * the risk_factor is to be cut on OSMO equivalent value of lp tokens for
-       * superfluid staking, default: 5%
+       * minimum_risk_factor is to be cut on OSMO equivalent value of lp tokens for
+       * superfluid staking, default: 5%. The minimum risk factor works
+       * to counter-balance the staked amount on chain's exposure to various asset
+       * volatilities, and have base staking be 'resistant' to volatility.
        * </pre>
        *
        * <code>string minimum_risk_factor = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"minimum_risk_factor&#92;""];</code>
@@ -548,8 +562,10 @@ public final class ParamsOuterClass {
       }
       /**
        * <pre>
-       * the risk_factor is to be cut on OSMO equivalent value of lp tokens for
-       * superfluid staking, default: 5%
+       * minimum_risk_factor is to be cut on OSMO equivalent value of lp tokens for
+       * superfluid staking, default: 5%. The minimum risk factor works
+       * to counter-balance the staked amount on chain's exposure to various asset
+       * volatilities, and have base staking be 'resistant' to volatility.
        * </pre>
        *
        * <code>string minimum_risk_factor = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"minimum_risk_factor&#92;""];</code>
@@ -563,8 +579,10 @@ public final class ParamsOuterClass {
       }
       /**
        * <pre>
-       * the risk_factor is to be cut on OSMO equivalent value of lp tokens for
-       * superfluid staking, default: 5%
+       * minimum_risk_factor is to be cut on OSMO equivalent value of lp tokens for
+       * superfluid staking, default: 5%. The minimum risk factor works
+       * to counter-balance the staked amount on chain's exposure to various asset
+       * volatilities, and have base staking be 'resistant' to volatility.
        * </pre>
        *
        * <code>string minimum_risk_factor = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"minimum_risk_factor&#92;""];</code>

@@ -50,6 +50,11 @@ internal protocol Osmosis_Gamm_V1beta1_QueryClientProtocol: GRPCClient {
     callOptions: CallOptions?
   ) -> UnaryCall<Osmosis_Gamm_V1beta1_QueryPoolRequest, Osmosis_Gamm_V1beta1_QueryPoolResponse>
 
+  func poolType(
+    _ request: Osmosis_Gamm_V1beta1_QueryPoolTypeRequest,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Osmosis_Gamm_V1beta1_QueryPoolTypeRequest, Osmosis_Gamm_V1beta1_QueryPoolTypeResponse>
+
   func poolParams(
     _ request: Osmosis_Gamm_V1beta1_QueryPoolParamsRequest,
     callOptions: CallOptions?
@@ -155,6 +160,26 @@ extension Osmosis_Gamm_V1beta1_QueryClientProtocol {
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makePoolInterceptors() ?? []
+    )
+  }
+
+  /// PoolType returns the type of the pool.
+  /// Returns "Balancer" as a string literal when the pool is a balancer pool.
+  /// Errors if the pool is failed to be type caseted.
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to PoolType.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func poolType(
+    _ request: Osmosis_Gamm_V1beta1_QueryPoolTypeRequest,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Osmosis_Gamm_V1beta1_QueryPoolTypeRequest, Osmosis_Gamm_V1beta1_QueryPoolTypeResponse> {
+    return self.makeUnaryCall(
+      path: "/osmosis.gamm.v1beta1.Query/PoolType",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makePoolTypeInterceptors() ?? []
     )
   }
 
@@ -282,6 +307,9 @@ internal protocol Osmosis_Gamm_V1beta1_QueryClientInterceptorFactoryProtocol {
   /// - Returns: Interceptors to use when invoking 'pool'.
   func makePoolInterceptors() -> [ClientInterceptor<Osmosis_Gamm_V1beta1_QueryPoolRequest, Osmosis_Gamm_V1beta1_QueryPoolResponse>]
 
+  /// - Returns: Interceptors to use when invoking 'poolType'.
+  func makePoolTypeInterceptors() -> [ClientInterceptor<Osmosis_Gamm_V1beta1_QueryPoolTypeRequest, Osmosis_Gamm_V1beta1_QueryPoolTypeResponse>]
+
   /// - Returns: Interceptors to use when invoking 'poolParams'.
   func makePoolParamsInterceptors() -> [ClientInterceptor<Osmosis_Gamm_V1beta1_QueryPoolParamsRequest, Osmosis_Gamm_V1beta1_QueryPoolParamsResponse>]
 
@@ -335,6 +363,11 @@ internal protocol Osmosis_Gamm_V1beta1_QueryProvider: CallHandlerProvider {
 
   /// Per Pool gRPC Endpoints
   func pool(request: Osmosis_Gamm_V1beta1_QueryPoolRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Gamm_V1beta1_QueryPoolResponse>
+
+  /// PoolType returns the type of the pool.
+  /// Returns "Balancer" as a string literal when the pool is a balancer pool.
+  /// Errors if the pool is failed to be type caseted.
+  func poolType(request: Osmosis_Gamm_V1beta1_QueryPoolTypeRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Gamm_V1beta1_QueryPoolTypeResponse>
 
   func poolParams(request: Osmosis_Gamm_V1beta1_QueryPoolParamsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Gamm_V1beta1_QueryPoolParamsResponse>
 
@@ -396,6 +429,15 @@ extension Osmosis_Gamm_V1beta1_QueryProvider {
         responseSerializer: ProtobufSerializer<Osmosis_Gamm_V1beta1_QueryPoolResponse>(),
         interceptors: self.interceptors?.makePoolInterceptors() ?? [],
         userFunction: self.pool(request:context:)
+      )
+
+    case "PoolType":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Osmosis_Gamm_V1beta1_QueryPoolTypeRequest>(),
+        responseSerializer: ProtobufSerializer<Osmosis_Gamm_V1beta1_QueryPoolTypeResponse>(),
+        interceptors: self.interceptors?.makePoolTypeInterceptors() ?? [],
+        userFunction: self.poolType(request:context:)
       )
 
     case "PoolParams":
@@ -475,6 +517,10 @@ internal protocol Osmosis_Gamm_V1beta1_QueryServerInterceptorFactoryProtocol {
   /// - Returns: Interceptors to use when handling 'pool'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makePoolInterceptors() -> [ServerInterceptor<Osmosis_Gamm_V1beta1_QueryPoolRequest, Osmosis_Gamm_V1beta1_QueryPoolResponse>]
+
+  /// - Returns: Interceptors to use when handling 'poolType'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makePoolTypeInterceptors() -> [ServerInterceptor<Osmosis_Gamm_V1beta1_QueryPoolTypeRequest, Osmosis_Gamm_V1beta1_QueryPoolTypeResponse>]
 
   /// - Returns: Interceptors to use when handling 'poolParams'.
   ///   Defaults to calling `self.makeInterceptors()`.

@@ -35,28 +35,7 @@ struct Osmosis_Incentives_ModuleToDistributeCoinsResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var coins: [Cosmos_Base_V1beta1_Coin] = []
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-}
-
-struct Osmosis_Incentives_ModuleDistributedCoinsRequest {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-}
-
-struct Osmosis_Incentives_ModuleDistributedCoinsResponse {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
+  /// Coins that have yet to be distributed
   var coins: [Cosmos_Base_V1beta1_Coin] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -69,6 +48,7 @@ struct Osmosis_Incentives_GaugeByIDRequest {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// Gague ID being queried
   var id: UInt64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -81,6 +61,7 @@ struct Osmosis_Incentives_GaugeByIDResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// Gauge that corresponds to provided gague ID
   var gauge: Osmosis_Incentives_Gauge {
     get {return _gauge ?? Osmosis_Incentives_Gauge()}
     set {_gauge = newValue}
@@ -102,7 +83,7 @@ struct Osmosis_Incentives_GaugesRequest {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  /// pagination defines an pagination for the request.
+  /// Pagination defines pagination for the request
   var pagination: Cosmos_Base_Query_V1beta1_PageRequest {
     get {return _pagination ?? Cosmos_Base_Query_V1beta1_PageRequest()}
     set {_pagination = newValue}
@@ -124,9 +105,10 @@ struct Osmosis_Incentives_GaugesResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// Upcoming and active gauges
   var data: [Osmosis_Incentives_Gauge] = []
 
-  /// pagination defines an pagination for the response.
+  /// Pagination defines pagination for the response
   var pagination: Cosmos_Base_Query_V1beta1_PageResponse {
     get {return _pagination ?? Cosmos_Base_Query_V1beta1_PageResponse()}
     set {_pagination = newValue}
@@ -148,7 +130,7 @@ struct Osmosis_Incentives_ActiveGaugesRequest {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  /// pagination defines an pagination for the request.
+  /// Pagination defines pagination for the request
   var pagination: Cosmos_Base_Query_V1beta1_PageRequest {
     get {return _pagination ?? Cosmos_Base_Query_V1beta1_PageRequest()}
     set {_pagination = newValue}
@@ -170,9 +152,10 @@ struct Osmosis_Incentives_ActiveGaugesResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// Active gagues only
   var data: [Osmosis_Incentives_Gauge] = []
 
-  /// pagination defines an pagination for the response.
+  /// Pagination defines pagination for the response
   var pagination: Cosmos_Base_Query_V1beta1_PageResponse {
     get {return _pagination ?? Cosmos_Base_Query_V1beta1_PageResponse()}
     set {_pagination = newValue}
@@ -194,9 +177,10 @@ struct Osmosis_Incentives_ActiveGaugesPerDenomRequest {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// Desired denom when querying active gagues
   var denom: String = String()
 
-  /// pagination defines an pagination for the request.
+  /// Pagination defines pagination for the request
   var pagination: Cosmos_Base_Query_V1beta1_PageRequest {
     get {return _pagination ?? Cosmos_Base_Query_V1beta1_PageRequest()}
     set {_pagination = newValue}
@@ -218,9 +202,10 @@ struct Osmosis_Incentives_ActiveGaugesPerDenomResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// Active gagues that match denom in query
   var data: [Osmosis_Incentives_Gauge] = []
 
-  /// pagination defines an pagination for the response.
+  /// Pagination defines pagination for the response
   var pagination: Cosmos_Base_Query_V1beta1_PageResponse {
     get {return _pagination ?? Cosmos_Base_Query_V1beta1_PageResponse()}
     set {_pagination = newValue}
@@ -242,7 +227,7 @@ struct Osmosis_Incentives_UpcomingGaugesRequest {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  /// pagination defines an pagination for the request.
+  /// Pagination defines pagination for the request
   var pagination: Cosmos_Base_Query_V1beta1_PageRequest {
     get {return _pagination ?? Cosmos_Base_Query_V1beta1_PageRequest()}
     set {_pagination = newValue}
@@ -264,9 +249,10 @@ struct Osmosis_Incentives_UpcomingGaugesResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// Gauges whose distribution is upcoming
   var data: [Osmosis_Incentives_Gauge] = []
 
-  /// pagination defines an pagination for the response.
+  /// Pagination defines pagination for the response
   var pagination: Cosmos_Base_Query_V1beta1_PageResponse {
     get {return _pagination ?? Cosmos_Base_Query_V1beta1_PageResponse()}
     set {_pagination = newValue}
@@ -288,8 +274,10 @@ struct Osmosis_Incentives_UpcomingGaugesPerDenomRequest {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// Filter for upcoming gagues that match specific denom
   var denom: String = String()
 
+  /// Pagination defines pagination for the request
   var pagination: Cosmos_Base_Query_V1beta1_PageRequest {
     get {return _pagination ?? Cosmos_Base_Query_V1beta1_PageRequest()}
     set {_pagination = newValue}
@@ -311,8 +299,10 @@ struct Osmosis_Incentives_UpcomingGaugesPerDenomResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// Upcoming gagues that match denom in query
   var upcomingGauges: [Osmosis_Incentives_Gauge] = []
 
+  /// Pagination defines pagination for the response
   var pagination: Cosmos_Base_Query_V1beta1_PageResponse {
     get {return _pagination ?? Cosmos_Base_Query_V1beta1_PageResponse()}
     set {_pagination = newValue}
@@ -334,10 +324,14 @@ struct Osmosis_Incentives_RewardsEstRequest {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// Address that is being queried for future estimated rewards
   var owner: String = String()
 
+  /// Lock IDs included in future reward estimation
   var lockIds: [UInt64] = []
 
+  /// Upper time limit of reward estimation
+  /// Lower limit is current epoch
   var endEpoch: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -350,6 +344,8 @@ struct Osmosis_Incentives_RewardsEstResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// Estimated coin rewards that will be recieved at provided address
+  /// from specified locks between current time and end epoch
   var coins: [Cosmos_Base_V1beta1_Coin] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -372,6 +368,7 @@ struct Osmosis_Incentives_QueryLockableDurationsResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// Time durations that users can lock coins for in order to recieve rewards
   var lockableDurations: [SwiftProtobuf.Google_Protobuf_Duration] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -428,57 +425,6 @@ extension Osmosis_Incentives_ModuleToDistributeCoinsResponse: SwiftProtobuf.Mess
   }
 
   static func ==(lhs: Osmosis_Incentives_ModuleToDistributeCoinsResponse, rhs: Osmosis_Incentives_ModuleToDistributeCoinsResponse) -> Bool {
-    if lhs.coins != rhs.coins {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension Osmosis_Incentives_ModuleDistributedCoinsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ModuleDistributedCoinsRequest"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let _ = try decoder.nextFieldNumber() {
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: Osmosis_Incentives_ModuleDistributedCoinsRequest, rhs: Osmosis_Incentives_ModuleDistributedCoinsRequest) -> Bool {
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension Osmosis_Incentives_ModuleDistributedCoinsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ModuleDistributedCoinsResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "coins"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeRepeatedMessageField(value: &self.coins) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.coins.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.coins, fieldNumber: 1)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: Osmosis_Incentives_ModuleDistributedCoinsResponse, rhs: Osmosis_Incentives_ModuleDistributedCoinsResponse) -> Bool {
     if lhs.coins != rhs.coins {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

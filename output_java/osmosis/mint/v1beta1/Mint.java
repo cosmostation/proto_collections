@@ -20,7 +20,7 @@ public final class Mint {
 
     /**
      * <pre>
-     * current epoch provisions
+     * epoch_provisions represent rewards for the current epoch.
      * </pre>
      *
      * <code>string epoch_provisions = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"epoch_provisions&#92;""];</code>
@@ -29,7 +29,7 @@ public final class Mint {
     java.lang.String getEpochProvisions();
     /**
      * <pre>
-     * current epoch provisions
+     * epoch_provisions represent rewards for the current epoch.
      * </pre>
      *
      * <code>string epoch_provisions = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"epoch_provisions&#92;""];</code>
@@ -130,7 +130,7 @@ public final class Mint {
     private volatile java.lang.Object epochProvisions_;
     /**
      * <pre>
-     * current epoch provisions
+     * epoch_provisions represent rewards for the current epoch.
      * </pre>
      *
      * <code>string epoch_provisions = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"epoch_provisions&#92;""];</code>
@@ -151,7 +151,7 @@ public final class Mint {
     }
     /**
      * <pre>
-     * current epoch provisions
+     * epoch_provisions represent rewards for the current epoch.
      * </pre>
      *
      * <code>string epoch_provisions = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"epoch_provisions&#92;""];</code>
@@ -481,7 +481,7 @@ public final class Mint {
       private java.lang.Object epochProvisions_ = "";
       /**
        * <pre>
-       * current epoch provisions
+       * epoch_provisions represent rewards for the current epoch.
        * </pre>
        *
        * <code>string epoch_provisions = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"epoch_provisions&#92;""];</code>
@@ -501,7 +501,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * current epoch provisions
+       * epoch_provisions represent rewards for the current epoch.
        * </pre>
        *
        * <code>string epoch_provisions = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"epoch_provisions&#92;""];</code>
@@ -522,7 +522,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * current epoch provisions
+       * epoch_provisions represent rewards for the current epoch.
        * </pre>
        *
        * <code>string epoch_provisions = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"epoch_provisions&#92;""];</code>
@@ -541,7 +541,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * current epoch provisions
+       * epoch_provisions represent rewards for the current epoch.
        * </pre>
        *
        * <code>string epoch_provisions = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"epoch_provisions&#92;""];</code>
@@ -555,7 +555,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * current epoch provisions
+       * epoch_provisions represent rewards for the current epoch.
        * </pre>
        *
        * <code>string epoch_provisions = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"epoch_provisions&#92;""];</code>
@@ -655,6 +655,12 @@ public final class Mint {
         getWeightBytes();
   }
   /**
+   * <pre>
+   * WeightedAddress represents an address with a weight assigned to it.
+   * The weight is used to determine the proportion of the total minted
+   * tokens to be minted to the address.
+   * </pre>
+   *
    * Protobuf type {@code osmosis.mint.v1beta1.WeightedAddress}
    */
   public static final class WeightedAddress extends
@@ -986,6 +992,12 @@ public final class Mint {
       return builder;
     }
     /**
+     * <pre>
+     * WeightedAddress represents an address with a weight assigned to it.
+     * The weight is used to determine the proportion of the total minted
+     * tokens to be minted to the address.
+     * </pre>
+     *
      * Protobuf type {@code osmosis.mint.v1beta1.WeightedAddress}
      */
     public static final class Builder extends
@@ -1350,7 +1362,7 @@ public final class Mint {
 
     /**
      * <pre>
-     * staking defines the proportion of the minted minted_denom that is to be
+     * staking defines the proportion of the minted mint_denom that is to be
      * allocated as staking rewards.
      * </pre>
      *
@@ -1360,7 +1372,7 @@ public final class Mint {
     java.lang.String getStaking();
     /**
      * <pre>
-     * staking defines the proportion of the minted minted_denom that is to be
+     * staking defines the proportion of the minted mint_denom that is to be
      * allocated as staking rewards.
      * </pre>
      *
@@ -1372,7 +1384,7 @@ public final class Mint {
 
     /**
      * <pre>
-     * pool_incentives defines the proportion of the minted minted_denom that is
+     * pool_incentives defines the proportion of the minted mint_denom that is
      * to be allocated as pool incentives.
      * </pre>
      *
@@ -1382,7 +1394,7 @@ public final class Mint {
     java.lang.String getPoolIncentives();
     /**
      * <pre>
-     * pool_incentives defines the proportion of the minted minted_denom that is
+     * pool_incentives defines the proportion of the minted mint_denom that is
      * to be allocated as pool incentives.
      * </pre>
      *
@@ -1394,7 +1406,7 @@ public final class Mint {
 
     /**
      * <pre>
-     * developer_rewards defines the proportion of the minted minted_denom that is
+     * developer_rewards defines the proportion of the minted mint_denom that is
      * to be allocated to developer rewards address.
      * </pre>
      *
@@ -1404,7 +1416,7 @@ public final class Mint {
     java.lang.String getDeveloperRewards();
     /**
      * <pre>
-     * developer_rewards defines the proportion of the minted minted_denom that is
+     * developer_rewards defines the proportion of the minted mint_denom that is
      * to be allocated to developer rewards address.
      * </pre>
      *
@@ -1416,7 +1428,7 @@ public final class Mint {
 
     /**
      * <pre>
-     * community_pool defines the proportion of the minted minted_denom that is
+     * community_pool defines the proportion of the minted mint_denom that is
      * to be allocated to the community pool.
      * </pre>
      *
@@ -1426,7 +1438,7 @@ public final class Mint {
     java.lang.String getCommunityPool();
     /**
      * <pre>
-     * community_pool defines the proportion of the minted minted_denom that is
+     * community_pool defines the proportion of the minted mint_denom that is
      * to be allocated to the community pool.
      * </pre>
      *
@@ -1437,6 +1449,12 @@ public final class Mint {
         getCommunityPoolBytes();
   }
   /**
+   * <pre>
+   * DistributionProportions defines the distribution proportions of the minted
+   * denom. In other words, defines which stakeholders will receive the minted
+   * denoms and how much.
+   * </pre>
+   *
    * Protobuf type {@code osmosis.mint.v1beta1.DistributionProportions}
    */
   public static final class DistributionProportions extends
@@ -1545,7 +1563,7 @@ public final class Mint {
     private volatile java.lang.Object staking_;
     /**
      * <pre>
-     * staking defines the proportion of the minted minted_denom that is to be
+     * staking defines the proportion of the minted mint_denom that is to be
      * allocated as staking rewards.
      * </pre>
      *
@@ -1567,7 +1585,7 @@ public final class Mint {
     }
     /**
      * <pre>
-     * staking defines the proportion of the minted minted_denom that is to be
+     * staking defines the proportion of the minted mint_denom that is to be
      * allocated as staking rewards.
      * </pre>
      *
@@ -1593,7 +1611,7 @@ public final class Mint {
     private volatile java.lang.Object poolIncentives_;
     /**
      * <pre>
-     * pool_incentives defines the proportion of the minted minted_denom that is
+     * pool_incentives defines the proportion of the minted mint_denom that is
      * to be allocated as pool incentives.
      * </pre>
      *
@@ -1615,7 +1633,7 @@ public final class Mint {
     }
     /**
      * <pre>
-     * pool_incentives defines the proportion of the minted minted_denom that is
+     * pool_incentives defines the proportion of the minted mint_denom that is
      * to be allocated as pool incentives.
      * </pre>
      *
@@ -1641,7 +1659,7 @@ public final class Mint {
     private volatile java.lang.Object developerRewards_;
     /**
      * <pre>
-     * developer_rewards defines the proportion of the minted minted_denom that is
+     * developer_rewards defines the proportion of the minted mint_denom that is
      * to be allocated to developer rewards address.
      * </pre>
      *
@@ -1663,7 +1681,7 @@ public final class Mint {
     }
     /**
      * <pre>
-     * developer_rewards defines the proportion of the minted minted_denom that is
+     * developer_rewards defines the proportion of the minted mint_denom that is
      * to be allocated to developer rewards address.
      * </pre>
      *
@@ -1689,7 +1707,7 @@ public final class Mint {
     private volatile java.lang.Object communityPool_;
     /**
      * <pre>
-     * community_pool defines the proportion of the minted minted_denom that is
+     * community_pool defines the proportion of the minted mint_denom that is
      * to be allocated to the community pool.
      * </pre>
      *
@@ -1711,7 +1729,7 @@ public final class Mint {
     }
     /**
      * <pre>
-     * community_pool defines the proportion of the minted minted_denom that is
+     * community_pool defines the proportion of the minted mint_denom that is
      * to be allocated to the community pool.
      * </pre>
      *
@@ -1918,6 +1936,12 @@ public final class Mint {
       return builder;
     }
     /**
+     * <pre>
+     * DistributionProportions defines the distribution proportions of the minted
+     * denom. In other words, defines which stakeholders will receive the minted
+     * denoms and how much.
+     * </pre>
+     *
      * Protobuf type {@code osmosis.mint.v1beta1.DistributionProportions}
      */
     public static final class Builder extends
@@ -2089,7 +2113,7 @@ public final class Mint {
       private java.lang.Object staking_ = "";
       /**
        * <pre>
-       * staking defines the proportion of the minted minted_denom that is to be
+       * staking defines the proportion of the minted mint_denom that is to be
        * allocated as staking rewards.
        * </pre>
        *
@@ -2110,7 +2134,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * staking defines the proportion of the minted minted_denom that is to be
+       * staking defines the proportion of the minted mint_denom that is to be
        * allocated as staking rewards.
        * </pre>
        *
@@ -2132,7 +2156,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * staking defines the proportion of the minted minted_denom that is to be
+       * staking defines the proportion of the minted mint_denom that is to be
        * allocated as staking rewards.
        * </pre>
        *
@@ -2152,7 +2176,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * staking defines the proportion of the minted minted_denom that is to be
+       * staking defines the proportion of the minted mint_denom that is to be
        * allocated as staking rewards.
        * </pre>
        *
@@ -2167,7 +2191,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * staking defines the proportion of the minted minted_denom that is to be
+       * staking defines the proportion of the minted mint_denom that is to be
        * allocated as staking rewards.
        * </pre>
        *
@@ -2190,7 +2214,7 @@ public final class Mint {
       private java.lang.Object poolIncentives_ = "";
       /**
        * <pre>
-       * pool_incentives defines the proportion of the minted minted_denom that is
+       * pool_incentives defines the proportion of the minted mint_denom that is
        * to be allocated as pool incentives.
        * </pre>
        *
@@ -2211,7 +2235,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * pool_incentives defines the proportion of the minted minted_denom that is
+       * pool_incentives defines the proportion of the minted mint_denom that is
        * to be allocated as pool incentives.
        * </pre>
        *
@@ -2233,7 +2257,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * pool_incentives defines the proportion of the minted minted_denom that is
+       * pool_incentives defines the proportion of the minted mint_denom that is
        * to be allocated as pool incentives.
        * </pre>
        *
@@ -2253,7 +2277,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * pool_incentives defines the proportion of the minted minted_denom that is
+       * pool_incentives defines the proportion of the minted mint_denom that is
        * to be allocated as pool incentives.
        * </pre>
        *
@@ -2268,7 +2292,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * pool_incentives defines the proportion of the minted minted_denom that is
+       * pool_incentives defines the proportion of the minted mint_denom that is
        * to be allocated as pool incentives.
        * </pre>
        *
@@ -2291,7 +2315,7 @@ public final class Mint {
       private java.lang.Object developerRewards_ = "";
       /**
        * <pre>
-       * developer_rewards defines the proportion of the minted minted_denom that is
+       * developer_rewards defines the proportion of the minted mint_denom that is
        * to be allocated to developer rewards address.
        * </pre>
        *
@@ -2312,7 +2336,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * developer_rewards defines the proportion of the minted minted_denom that is
+       * developer_rewards defines the proportion of the minted mint_denom that is
        * to be allocated to developer rewards address.
        * </pre>
        *
@@ -2334,7 +2358,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * developer_rewards defines the proportion of the minted minted_denom that is
+       * developer_rewards defines the proportion of the minted mint_denom that is
        * to be allocated to developer rewards address.
        * </pre>
        *
@@ -2354,7 +2378,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * developer_rewards defines the proportion of the minted minted_denom that is
+       * developer_rewards defines the proportion of the minted mint_denom that is
        * to be allocated to developer rewards address.
        * </pre>
        *
@@ -2369,7 +2393,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * developer_rewards defines the proportion of the minted minted_denom that is
+       * developer_rewards defines the proportion of the minted mint_denom that is
        * to be allocated to developer rewards address.
        * </pre>
        *
@@ -2392,7 +2416,7 @@ public final class Mint {
       private java.lang.Object communityPool_ = "";
       /**
        * <pre>
-       * community_pool defines the proportion of the minted minted_denom that is
+       * community_pool defines the proportion of the minted mint_denom that is
        * to be allocated to the community pool.
        * </pre>
        *
@@ -2413,7 +2437,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * community_pool defines the proportion of the minted minted_denom that is
+       * community_pool defines the proportion of the minted mint_denom that is
        * to be allocated to the community pool.
        * </pre>
        *
@@ -2435,7 +2459,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * community_pool defines the proportion of the minted minted_denom that is
+       * community_pool defines the proportion of the minted mint_denom that is
        * to be allocated to the community pool.
        * </pre>
        *
@@ -2455,7 +2479,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * community_pool defines the proportion of the minted minted_denom that is
+       * community_pool defines the proportion of the minted mint_denom that is
        * to be allocated to the community pool.
        * </pre>
        *
@@ -2470,7 +2494,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * community_pool defines the proportion of the minted minted_denom that is
+       * community_pool defines the proportion of the minted mint_denom that is
        * to be allocated to the community pool.
        * </pre>
        *
@@ -2548,7 +2572,7 @@ public final class Mint {
 
     /**
      * <pre>
-     * type of coin to mint
+     * mint_denom is the denom of the coin to mint.
      * </pre>
      *
      * <code>string mint_denom = 1;</code>
@@ -2557,7 +2581,7 @@ public final class Mint {
     java.lang.String getMintDenom();
     /**
      * <pre>
-     * type of coin to mint
+     * mint_denom is the denom of the coin to mint.
      * </pre>
      *
      * <code>string mint_denom = 1;</code>
@@ -2568,7 +2592,7 @@ public final class Mint {
 
     /**
      * <pre>
-     * epoch provisions from the first epoch
+     * genesis_epoch_provisions epoch provisions from the first epoch.
      * </pre>
      *
      * <code>string genesis_epoch_provisions = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"genesis_epoch_provisions&#92;""];</code>
@@ -2577,7 +2601,7 @@ public final class Mint {
     java.lang.String getGenesisEpochProvisions();
     /**
      * <pre>
-     * epoch provisions from the first epoch
+     * genesis_epoch_provisions epoch provisions from the first epoch.
      * </pre>
      *
      * <code>string genesis_epoch_provisions = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"genesis_epoch_provisions&#92;""];</code>
@@ -2588,7 +2612,7 @@ public final class Mint {
 
     /**
      * <pre>
-     * mint epoch identifier
+     * epoch_identifier mint epoch identifier e.g. (day, week).
      * </pre>
      *
      * <code>string epoch_identifier = 3 [(.gogoproto.moretags) = "yaml:&#92;"epoch_identifier&#92;""];</code>
@@ -2597,7 +2621,7 @@ public final class Mint {
     java.lang.String getEpochIdentifier();
     /**
      * <pre>
-     * mint epoch identifier
+     * epoch_identifier mint epoch identifier e.g. (day, week).
      * </pre>
      *
      * <code>string epoch_identifier = 3 [(.gogoproto.moretags) = "yaml:&#92;"epoch_identifier&#92;""];</code>
@@ -2608,7 +2632,8 @@ public final class Mint {
 
     /**
      * <pre>
-     * number of epochs take to reduce rewards
+     * reduction_period_in_epochs the number of epochs it takes
+     * to reduce the rewards.
      * </pre>
      *
      * <code>int64 reduction_period_in_epochs = 4 [(.gogoproto.moretags) = "yaml:&#92;"reduction_period_in_epochs&#92;""];</code>
@@ -2618,7 +2643,8 @@ public final class Mint {
 
     /**
      * <pre>
-     * reduction multiplier to execute on each period
+     * reduction_factor is the reduction multiplier to execute
+     * at the end of each period set by reduction_period_in_epochs.
      * </pre>
      *
      * <code>string reduction_factor = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"reduction_factor&#92;""];</code>
@@ -2627,7 +2653,8 @@ public final class Mint {
     java.lang.String getReductionFactor();
     /**
      * <pre>
-     * reduction multiplier to execute on each period
+     * reduction_factor is the reduction multiplier to execute
+     * at the end of each period set by reduction_period_in_epochs.
      * </pre>
      *
      * <code>string reduction_factor = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"reduction_factor&#92;""];</code>
@@ -2638,7 +2665,9 @@ public final class Mint {
 
     /**
      * <pre>
-     * distribution_proportions defines the proportion of the minted denom
+     * distribution_proportions defines the distribution proportions of the minted
+     * denom. In other words, defines which stakeholders will receive the minted
+     * denoms and how much.
      * </pre>
      *
      * <code>.osmosis.mint.v1beta1.DistributionProportions distribution_proportions = 6 [(.gogoproto.nullable) = false];</code>
@@ -2647,7 +2676,9 @@ public final class Mint {
     boolean hasDistributionProportions();
     /**
      * <pre>
-     * distribution_proportions defines the proportion of the minted denom
+     * distribution_proportions defines the distribution proportions of the minted
+     * denom. In other words, defines which stakeholders will receive the minted
+     * denoms and how much.
      * </pre>
      *
      * <code>.osmosis.mint.v1beta1.DistributionProportions distribution_proportions = 6 [(.gogoproto.nullable) = false];</code>
@@ -2656,7 +2687,9 @@ public final class Mint {
     osmosis.mint.v1beta1.Mint.DistributionProportions getDistributionProportions();
     /**
      * <pre>
-     * distribution_proportions defines the proportion of the minted denom
+     * distribution_proportions defines the distribution proportions of the minted
+     * denom. In other words, defines which stakeholders will receive the minted
+     * denoms and how much.
      * </pre>
      *
      * <code>.osmosis.mint.v1beta1.DistributionProportions distribution_proportions = 6 [(.gogoproto.nullable) = false];</code>
@@ -2665,7 +2698,10 @@ public final class Mint {
 
     /**
      * <pre>
-     * address to receive developer rewards
+     * weighted_developer_rewards_receivers is the address to receive developer
+     * rewards with weights assignedt to each address. The final amount that each
+     * address receives is: epoch_provisions *
+     * distribution_proportions.developer_rewards * Address's Weight.
      * </pre>
      *
      * <code>repeated .osmosis.mint.v1beta1.WeightedAddress weighted_developer_rewards_receivers = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"developer_rewards_receiver&#92;""];</code>
@@ -2674,7 +2710,10 @@ public final class Mint {
         getWeightedDeveloperRewardsReceiversList();
     /**
      * <pre>
-     * address to receive developer rewards
+     * weighted_developer_rewards_receivers is the address to receive developer
+     * rewards with weights assignedt to each address. The final amount that each
+     * address receives is: epoch_provisions *
+     * distribution_proportions.developer_rewards * Address's Weight.
      * </pre>
      *
      * <code>repeated .osmosis.mint.v1beta1.WeightedAddress weighted_developer_rewards_receivers = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"developer_rewards_receiver&#92;""];</code>
@@ -2682,7 +2721,10 @@ public final class Mint {
     osmosis.mint.v1beta1.Mint.WeightedAddress getWeightedDeveloperRewardsReceivers(int index);
     /**
      * <pre>
-     * address to receive developer rewards
+     * weighted_developer_rewards_receivers is the address to receive developer
+     * rewards with weights assignedt to each address. The final amount that each
+     * address receives is: epoch_provisions *
+     * distribution_proportions.developer_rewards * Address's Weight.
      * </pre>
      *
      * <code>repeated .osmosis.mint.v1beta1.WeightedAddress weighted_developer_rewards_receivers = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"developer_rewards_receiver&#92;""];</code>
@@ -2690,7 +2732,10 @@ public final class Mint {
     int getWeightedDeveloperRewardsReceiversCount();
     /**
      * <pre>
-     * address to receive developer rewards
+     * weighted_developer_rewards_receivers is the address to receive developer
+     * rewards with weights assignedt to each address. The final amount that each
+     * address receives is: epoch_provisions *
+     * distribution_proportions.developer_rewards * Address's Weight.
      * </pre>
      *
      * <code>repeated .osmosis.mint.v1beta1.WeightedAddress weighted_developer_rewards_receivers = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"developer_rewards_receiver&#92;""];</code>
@@ -2699,7 +2744,10 @@ public final class Mint {
         getWeightedDeveloperRewardsReceiversOrBuilderList();
     /**
      * <pre>
-     * address to receive developer rewards
+     * weighted_developer_rewards_receivers is the address to receive developer
+     * rewards with weights assignedt to each address. The final amount that each
+     * address receives is: epoch_provisions *
+     * distribution_proportions.developer_rewards * Address's Weight.
      * </pre>
      *
      * <code>repeated .osmosis.mint.v1beta1.WeightedAddress weighted_developer_rewards_receivers = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"developer_rewards_receiver&#92;""];</code>
@@ -2709,7 +2757,8 @@ public final class Mint {
 
     /**
      * <pre>
-     * start epoch to distribute minting rewards
+     * minting_rewards_distribution_start_epoch start epoch to distribute minting
+     * rewards
      * </pre>
      *
      * <code>int64 minting_rewards_distribution_start_epoch = 8 [(.gogoproto.moretags) = "yaml:&#92;"minting_rewards_distribution_start_epoch&#92;""];</code>
@@ -2719,7 +2768,7 @@ public final class Mint {
   }
   /**
    * <pre>
-   * Params holds parameters for the mint module.
+   * Params holds parameters for the x/mint module.
    * </pre>
    *
    * Protobuf type {@code osmosis.mint.v1beta1.Params}
@@ -2867,7 +2916,7 @@ public final class Mint {
     private volatile java.lang.Object mintDenom_;
     /**
      * <pre>
-     * type of coin to mint
+     * mint_denom is the denom of the coin to mint.
      * </pre>
      *
      * <code>string mint_denom = 1;</code>
@@ -2888,7 +2937,7 @@ public final class Mint {
     }
     /**
      * <pre>
-     * type of coin to mint
+     * mint_denom is the denom of the coin to mint.
      * </pre>
      *
      * <code>string mint_denom = 1;</code>
@@ -2913,7 +2962,7 @@ public final class Mint {
     private volatile java.lang.Object genesisEpochProvisions_;
     /**
      * <pre>
-     * epoch provisions from the first epoch
+     * genesis_epoch_provisions epoch provisions from the first epoch.
      * </pre>
      *
      * <code>string genesis_epoch_provisions = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"genesis_epoch_provisions&#92;""];</code>
@@ -2934,7 +2983,7 @@ public final class Mint {
     }
     /**
      * <pre>
-     * epoch provisions from the first epoch
+     * genesis_epoch_provisions epoch provisions from the first epoch.
      * </pre>
      *
      * <code>string genesis_epoch_provisions = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"genesis_epoch_provisions&#92;""];</code>
@@ -2959,7 +3008,7 @@ public final class Mint {
     private volatile java.lang.Object epochIdentifier_;
     /**
      * <pre>
-     * mint epoch identifier
+     * epoch_identifier mint epoch identifier e.g. (day, week).
      * </pre>
      *
      * <code>string epoch_identifier = 3 [(.gogoproto.moretags) = "yaml:&#92;"epoch_identifier&#92;""];</code>
@@ -2980,7 +3029,7 @@ public final class Mint {
     }
     /**
      * <pre>
-     * mint epoch identifier
+     * epoch_identifier mint epoch identifier e.g. (day, week).
      * </pre>
      *
      * <code>string epoch_identifier = 3 [(.gogoproto.moretags) = "yaml:&#92;"epoch_identifier&#92;""];</code>
@@ -3005,7 +3054,8 @@ public final class Mint {
     private long reductionPeriodInEpochs_;
     /**
      * <pre>
-     * number of epochs take to reduce rewards
+     * reduction_period_in_epochs the number of epochs it takes
+     * to reduce the rewards.
      * </pre>
      *
      * <code>int64 reduction_period_in_epochs = 4 [(.gogoproto.moretags) = "yaml:&#92;"reduction_period_in_epochs&#92;""];</code>
@@ -3020,7 +3070,8 @@ public final class Mint {
     private volatile java.lang.Object reductionFactor_;
     /**
      * <pre>
-     * reduction multiplier to execute on each period
+     * reduction_factor is the reduction multiplier to execute
+     * at the end of each period set by reduction_period_in_epochs.
      * </pre>
      *
      * <code>string reduction_factor = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"reduction_factor&#92;""];</code>
@@ -3041,7 +3092,8 @@ public final class Mint {
     }
     /**
      * <pre>
-     * reduction multiplier to execute on each period
+     * reduction_factor is the reduction multiplier to execute
+     * at the end of each period set by reduction_period_in_epochs.
      * </pre>
      *
      * <code>string reduction_factor = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"reduction_factor&#92;""];</code>
@@ -3066,7 +3118,9 @@ public final class Mint {
     private osmosis.mint.v1beta1.Mint.DistributionProportions distributionProportions_;
     /**
      * <pre>
-     * distribution_proportions defines the proportion of the minted denom
+     * distribution_proportions defines the distribution proportions of the minted
+     * denom. In other words, defines which stakeholders will receive the minted
+     * denoms and how much.
      * </pre>
      *
      * <code>.osmosis.mint.v1beta1.DistributionProportions distribution_proportions = 6 [(.gogoproto.nullable) = false];</code>
@@ -3078,7 +3132,9 @@ public final class Mint {
     }
     /**
      * <pre>
-     * distribution_proportions defines the proportion of the minted denom
+     * distribution_proportions defines the distribution proportions of the minted
+     * denom. In other words, defines which stakeholders will receive the minted
+     * denoms and how much.
      * </pre>
      *
      * <code>.osmosis.mint.v1beta1.DistributionProportions distribution_proportions = 6 [(.gogoproto.nullable) = false];</code>
@@ -3090,7 +3146,9 @@ public final class Mint {
     }
     /**
      * <pre>
-     * distribution_proportions defines the proportion of the minted denom
+     * distribution_proportions defines the distribution proportions of the minted
+     * denom. In other words, defines which stakeholders will receive the minted
+     * denoms and how much.
      * </pre>
      *
      * <code>.osmosis.mint.v1beta1.DistributionProportions distribution_proportions = 6 [(.gogoproto.nullable) = false];</code>
@@ -3104,7 +3162,10 @@ public final class Mint {
     private java.util.List<osmosis.mint.v1beta1.Mint.WeightedAddress> weightedDeveloperRewardsReceivers_;
     /**
      * <pre>
-     * address to receive developer rewards
+     * weighted_developer_rewards_receivers is the address to receive developer
+     * rewards with weights assignedt to each address. The final amount that each
+     * address receives is: epoch_provisions *
+     * distribution_proportions.developer_rewards * Address's Weight.
      * </pre>
      *
      * <code>repeated .osmosis.mint.v1beta1.WeightedAddress weighted_developer_rewards_receivers = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"developer_rewards_receiver&#92;""];</code>
@@ -3115,7 +3176,10 @@ public final class Mint {
     }
     /**
      * <pre>
-     * address to receive developer rewards
+     * weighted_developer_rewards_receivers is the address to receive developer
+     * rewards with weights assignedt to each address. The final amount that each
+     * address receives is: epoch_provisions *
+     * distribution_proportions.developer_rewards * Address's Weight.
      * </pre>
      *
      * <code>repeated .osmosis.mint.v1beta1.WeightedAddress weighted_developer_rewards_receivers = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"developer_rewards_receiver&#92;""];</code>
@@ -3127,7 +3191,10 @@ public final class Mint {
     }
     /**
      * <pre>
-     * address to receive developer rewards
+     * weighted_developer_rewards_receivers is the address to receive developer
+     * rewards with weights assignedt to each address. The final amount that each
+     * address receives is: epoch_provisions *
+     * distribution_proportions.developer_rewards * Address's Weight.
      * </pre>
      *
      * <code>repeated .osmosis.mint.v1beta1.WeightedAddress weighted_developer_rewards_receivers = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"developer_rewards_receiver&#92;""];</code>
@@ -3138,7 +3205,10 @@ public final class Mint {
     }
     /**
      * <pre>
-     * address to receive developer rewards
+     * weighted_developer_rewards_receivers is the address to receive developer
+     * rewards with weights assignedt to each address. The final amount that each
+     * address receives is: epoch_provisions *
+     * distribution_proportions.developer_rewards * Address's Weight.
      * </pre>
      *
      * <code>repeated .osmosis.mint.v1beta1.WeightedAddress weighted_developer_rewards_receivers = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"developer_rewards_receiver&#92;""];</code>
@@ -3149,7 +3219,10 @@ public final class Mint {
     }
     /**
      * <pre>
-     * address to receive developer rewards
+     * weighted_developer_rewards_receivers is the address to receive developer
+     * rewards with weights assignedt to each address. The final amount that each
+     * address receives is: epoch_provisions *
+     * distribution_proportions.developer_rewards * Address's Weight.
      * </pre>
      *
      * <code>repeated .osmosis.mint.v1beta1.WeightedAddress weighted_developer_rewards_receivers = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"developer_rewards_receiver&#92;""];</code>
@@ -3164,7 +3237,8 @@ public final class Mint {
     private long mintingRewardsDistributionStartEpoch_;
     /**
      * <pre>
-     * start epoch to distribute minting rewards
+     * minting_rewards_distribution_start_epoch start epoch to distribute minting
+     * rewards
      * </pre>
      *
      * <code>int64 minting_rewards_distribution_start_epoch = 8 [(.gogoproto.moretags) = "yaml:&#92;"minting_rewards_distribution_start_epoch&#92;""];</code>
@@ -3414,7 +3488,7 @@ public final class Mint {
     }
     /**
      * <pre>
-     * Params holds parameters for the mint module.
+     * Params holds parameters for the x/mint module.
      * </pre>
      *
      * Protobuf type {@code osmosis.mint.v1beta1.Params}
@@ -3658,7 +3732,7 @@ public final class Mint {
       private java.lang.Object mintDenom_ = "";
       /**
        * <pre>
-       * type of coin to mint
+       * mint_denom is the denom of the coin to mint.
        * </pre>
        *
        * <code>string mint_denom = 1;</code>
@@ -3678,7 +3752,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * type of coin to mint
+       * mint_denom is the denom of the coin to mint.
        * </pre>
        *
        * <code>string mint_denom = 1;</code>
@@ -3699,7 +3773,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * type of coin to mint
+       * mint_denom is the denom of the coin to mint.
        * </pre>
        *
        * <code>string mint_denom = 1;</code>
@@ -3718,7 +3792,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * type of coin to mint
+       * mint_denom is the denom of the coin to mint.
        * </pre>
        *
        * <code>string mint_denom = 1;</code>
@@ -3732,7 +3806,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * type of coin to mint
+       * mint_denom is the denom of the coin to mint.
        * </pre>
        *
        * <code>string mint_denom = 1;</code>
@@ -3754,7 +3828,7 @@ public final class Mint {
       private java.lang.Object genesisEpochProvisions_ = "";
       /**
        * <pre>
-       * epoch provisions from the first epoch
+       * genesis_epoch_provisions epoch provisions from the first epoch.
        * </pre>
        *
        * <code>string genesis_epoch_provisions = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"genesis_epoch_provisions&#92;""];</code>
@@ -3774,7 +3848,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * epoch provisions from the first epoch
+       * genesis_epoch_provisions epoch provisions from the first epoch.
        * </pre>
        *
        * <code>string genesis_epoch_provisions = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"genesis_epoch_provisions&#92;""];</code>
@@ -3795,7 +3869,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * epoch provisions from the first epoch
+       * genesis_epoch_provisions epoch provisions from the first epoch.
        * </pre>
        *
        * <code>string genesis_epoch_provisions = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"genesis_epoch_provisions&#92;""];</code>
@@ -3814,7 +3888,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * epoch provisions from the first epoch
+       * genesis_epoch_provisions epoch provisions from the first epoch.
        * </pre>
        *
        * <code>string genesis_epoch_provisions = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"genesis_epoch_provisions&#92;""];</code>
@@ -3828,7 +3902,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * epoch provisions from the first epoch
+       * genesis_epoch_provisions epoch provisions from the first epoch.
        * </pre>
        *
        * <code>string genesis_epoch_provisions = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"genesis_epoch_provisions&#92;""];</code>
@@ -3850,7 +3924,7 @@ public final class Mint {
       private java.lang.Object epochIdentifier_ = "";
       /**
        * <pre>
-       * mint epoch identifier
+       * epoch_identifier mint epoch identifier e.g. (day, week).
        * </pre>
        *
        * <code>string epoch_identifier = 3 [(.gogoproto.moretags) = "yaml:&#92;"epoch_identifier&#92;""];</code>
@@ -3870,7 +3944,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * mint epoch identifier
+       * epoch_identifier mint epoch identifier e.g. (day, week).
        * </pre>
        *
        * <code>string epoch_identifier = 3 [(.gogoproto.moretags) = "yaml:&#92;"epoch_identifier&#92;""];</code>
@@ -3891,7 +3965,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * mint epoch identifier
+       * epoch_identifier mint epoch identifier e.g. (day, week).
        * </pre>
        *
        * <code>string epoch_identifier = 3 [(.gogoproto.moretags) = "yaml:&#92;"epoch_identifier&#92;""];</code>
@@ -3910,7 +3984,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * mint epoch identifier
+       * epoch_identifier mint epoch identifier e.g. (day, week).
        * </pre>
        *
        * <code>string epoch_identifier = 3 [(.gogoproto.moretags) = "yaml:&#92;"epoch_identifier&#92;""];</code>
@@ -3924,7 +3998,7 @@ public final class Mint {
       }
       /**
        * <pre>
-       * mint epoch identifier
+       * epoch_identifier mint epoch identifier e.g. (day, week).
        * </pre>
        *
        * <code>string epoch_identifier = 3 [(.gogoproto.moretags) = "yaml:&#92;"epoch_identifier&#92;""];</code>
@@ -3946,7 +4020,8 @@ public final class Mint {
       private long reductionPeriodInEpochs_ ;
       /**
        * <pre>
-       * number of epochs take to reduce rewards
+       * reduction_period_in_epochs the number of epochs it takes
+       * to reduce the rewards.
        * </pre>
        *
        * <code>int64 reduction_period_in_epochs = 4 [(.gogoproto.moretags) = "yaml:&#92;"reduction_period_in_epochs&#92;""];</code>
@@ -3958,7 +4033,8 @@ public final class Mint {
       }
       /**
        * <pre>
-       * number of epochs take to reduce rewards
+       * reduction_period_in_epochs the number of epochs it takes
+       * to reduce the rewards.
        * </pre>
        *
        * <code>int64 reduction_period_in_epochs = 4 [(.gogoproto.moretags) = "yaml:&#92;"reduction_period_in_epochs&#92;""];</code>
@@ -3973,7 +4049,8 @@ public final class Mint {
       }
       /**
        * <pre>
-       * number of epochs take to reduce rewards
+       * reduction_period_in_epochs the number of epochs it takes
+       * to reduce the rewards.
        * </pre>
        *
        * <code>int64 reduction_period_in_epochs = 4 [(.gogoproto.moretags) = "yaml:&#92;"reduction_period_in_epochs&#92;""];</code>
@@ -3989,7 +4066,8 @@ public final class Mint {
       private java.lang.Object reductionFactor_ = "";
       /**
        * <pre>
-       * reduction multiplier to execute on each period
+       * reduction_factor is the reduction multiplier to execute
+       * at the end of each period set by reduction_period_in_epochs.
        * </pre>
        *
        * <code>string reduction_factor = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"reduction_factor&#92;""];</code>
@@ -4009,7 +4087,8 @@ public final class Mint {
       }
       /**
        * <pre>
-       * reduction multiplier to execute on each period
+       * reduction_factor is the reduction multiplier to execute
+       * at the end of each period set by reduction_period_in_epochs.
        * </pre>
        *
        * <code>string reduction_factor = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"reduction_factor&#92;""];</code>
@@ -4030,7 +4109,8 @@ public final class Mint {
       }
       /**
        * <pre>
-       * reduction multiplier to execute on each period
+       * reduction_factor is the reduction multiplier to execute
+       * at the end of each period set by reduction_period_in_epochs.
        * </pre>
        *
        * <code>string reduction_factor = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"reduction_factor&#92;""];</code>
@@ -4049,7 +4129,8 @@ public final class Mint {
       }
       /**
        * <pre>
-       * reduction multiplier to execute on each period
+       * reduction_factor is the reduction multiplier to execute
+       * at the end of each period set by reduction_period_in_epochs.
        * </pre>
        *
        * <code>string reduction_factor = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"reduction_factor&#92;""];</code>
@@ -4063,7 +4144,8 @@ public final class Mint {
       }
       /**
        * <pre>
-       * reduction multiplier to execute on each period
+       * reduction_factor is the reduction multiplier to execute
+       * at the end of each period set by reduction_period_in_epochs.
        * </pre>
        *
        * <code>string reduction_factor = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"reduction_factor&#92;""];</code>
@@ -4087,7 +4169,9 @@ public final class Mint {
           osmosis.mint.v1beta1.Mint.DistributionProportions, osmosis.mint.v1beta1.Mint.DistributionProportions.Builder, osmosis.mint.v1beta1.Mint.DistributionProportionsOrBuilder> distributionProportionsBuilder_;
       /**
        * <pre>
-       * distribution_proportions defines the proportion of the minted denom
+       * distribution_proportions defines the distribution proportions of the minted
+       * denom. In other words, defines which stakeholders will receive the minted
+       * denoms and how much.
        * </pre>
        *
        * <code>.osmosis.mint.v1beta1.DistributionProportions distribution_proportions = 6 [(.gogoproto.nullable) = false];</code>
@@ -4098,7 +4182,9 @@ public final class Mint {
       }
       /**
        * <pre>
-       * distribution_proportions defines the proportion of the minted denom
+       * distribution_proportions defines the distribution proportions of the minted
+       * denom. In other words, defines which stakeholders will receive the minted
+       * denoms and how much.
        * </pre>
        *
        * <code>.osmosis.mint.v1beta1.DistributionProportions distribution_proportions = 6 [(.gogoproto.nullable) = false];</code>
@@ -4113,7 +4199,9 @@ public final class Mint {
       }
       /**
        * <pre>
-       * distribution_proportions defines the proportion of the minted denom
+       * distribution_proportions defines the distribution proportions of the minted
+       * denom. In other words, defines which stakeholders will receive the minted
+       * denoms and how much.
        * </pre>
        *
        * <code>.osmosis.mint.v1beta1.DistributionProportions distribution_proportions = 6 [(.gogoproto.nullable) = false];</code>
@@ -4133,7 +4221,9 @@ public final class Mint {
       }
       /**
        * <pre>
-       * distribution_proportions defines the proportion of the minted denom
+       * distribution_proportions defines the distribution proportions of the minted
+       * denom. In other words, defines which stakeholders will receive the minted
+       * denoms and how much.
        * </pre>
        *
        * <code>.osmosis.mint.v1beta1.DistributionProportions distribution_proportions = 6 [(.gogoproto.nullable) = false];</code>
@@ -4151,7 +4241,9 @@ public final class Mint {
       }
       /**
        * <pre>
-       * distribution_proportions defines the proportion of the minted denom
+       * distribution_proportions defines the distribution proportions of the minted
+       * denom. In other words, defines which stakeholders will receive the minted
+       * denoms and how much.
        * </pre>
        *
        * <code>.osmosis.mint.v1beta1.DistributionProportions distribution_proportions = 6 [(.gogoproto.nullable) = false];</code>
@@ -4173,7 +4265,9 @@ public final class Mint {
       }
       /**
        * <pre>
-       * distribution_proportions defines the proportion of the minted denom
+       * distribution_proportions defines the distribution proportions of the minted
+       * denom. In other words, defines which stakeholders will receive the minted
+       * denoms and how much.
        * </pre>
        *
        * <code>.osmosis.mint.v1beta1.DistributionProportions distribution_proportions = 6 [(.gogoproto.nullable) = false];</code>
@@ -4191,7 +4285,9 @@ public final class Mint {
       }
       /**
        * <pre>
-       * distribution_proportions defines the proportion of the minted denom
+       * distribution_proportions defines the distribution proportions of the minted
+       * denom. In other words, defines which stakeholders will receive the minted
+       * denoms and how much.
        * </pre>
        *
        * <code>.osmosis.mint.v1beta1.DistributionProportions distribution_proportions = 6 [(.gogoproto.nullable) = false];</code>
@@ -4203,7 +4299,9 @@ public final class Mint {
       }
       /**
        * <pre>
-       * distribution_proportions defines the proportion of the minted denom
+       * distribution_proportions defines the distribution proportions of the minted
+       * denom. In other words, defines which stakeholders will receive the minted
+       * denoms and how much.
        * </pre>
        *
        * <code>.osmosis.mint.v1beta1.DistributionProportions distribution_proportions = 6 [(.gogoproto.nullable) = false];</code>
@@ -4218,7 +4316,9 @@ public final class Mint {
       }
       /**
        * <pre>
-       * distribution_proportions defines the proportion of the minted denom
+       * distribution_proportions defines the distribution proportions of the minted
+       * denom. In other words, defines which stakeholders will receive the minted
+       * denoms and how much.
        * </pre>
        *
        * <code>.osmosis.mint.v1beta1.DistributionProportions distribution_proportions = 6 [(.gogoproto.nullable) = false];</code>
@@ -4251,7 +4351,10 @@ public final class Mint {
 
       /**
        * <pre>
-       * address to receive developer rewards
+       * weighted_developer_rewards_receivers is the address to receive developer
+       * rewards with weights assignedt to each address. The final amount that each
+       * address receives is: epoch_provisions *
+       * distribution_proportions.developer_rewards * Address's Weight.
        * </pre>
        *
        * <code>repeated .osmosis.mint.v1beta1.WeightedAddress weighted_developer_rewards_receivers = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"developer_rewards_receiver&#92;""];</code>
@@ -4265,7 +4368,10 @@ public final class Mint {
       }
       /**
        * <pre>
-       * address to receive developer rewards
+       * weighted_developer_rewards_receivers is the address to receive developer
+       * rewards with weights assignedt to each address. The final amount that each
+       * address receives is: epoch_provisions *
+       * distribution_proportions.developer_rewards * Address's Weight.
        * </pre>
        *
        * <code>repeated .osmosis.mint.v1beta1.WeightedAddress weighted_developer_rewards_receivers = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"developer_rewards_receiver&#92;""];</code>
@@ -4279,7 +4385,10 @@ public final class Mint {
       }
       /**
        * <pre>
-       * address to receive developer rewards
+       * weighted_developer_rewards_receivers is the address to receive developer
+       * rewards with weights assignedt to each address. The final amount that each
+       * address receives is: epoch_provisions *
+       * distribution_proportions.developer_rewards * Address's Weight.
        * </pre>
        *
        * <code>repeated .osmosis.mint.v1beta1.WeightedAddress weighted_developer_rewards_receivers = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"developer_rewards_receiver&#92;""];</code>
@@ -4293,7 +4402,10 @@ public final class Mint {
       }
       /**
        * <pre>
-       * address to receive developer rewards
+       * weighted_developer_rewards_receivers is the address to receive developer
+       * rewards with weights assignedt to each address. The final amount that each
+       * address receives is: epoch_provisions *
+       * distribution_proportions.developer_rewards * Address's Weight.
        * </pre>
        *
        * <code>repeated .osmosis.mint.v1beta1.WeightedAddress weighted_developer_rewards_receivers = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"developer_rewards_receiver&#92;""];</code>
@@ -4314,7 +4426,10 @@ public final class Mint {
       }
       /**
        * <pre>
-       * address to receive developer rewards
+       * weighted_developer_rewards_receivers is the address to receive developer
+       * rewards with weights assignedt to each address. The final amount that each
+       * address receives is: epoch_provisions *
+       * distribution_proportions.developer_rewards * Address's Weight.
        * </pre>
        *
        * <code>repeated .osmosis.mint.v1beta1.WeightedAddress weighted_developer_rewards_receivers = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"developer_rewards_receiver&#92;""];</code>
@@ -4332,7 +4447,10 @@ public final class Mint {
       }
       /**
        * <pre>
-       * address to receive developer rewards
+       * weighted_developer_rewards_receivers is the address to receive developer
+       * rewards with weights assignedt to each address. The final amount that each
+       * address receives is: epoch_provisions *
+       * distribution_proportions.developer_rewards * Address's Weight.
        * </pre>
        *
        * <code>repeated .osmosis.mint.v1beta1.WeightedAddress weighted_developer_rewards_receivers = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"developer_rewards_receiver&#92;""];</code>
@@ -4352,7 +4470,10 @@ public final class Mint {
       }
       /**
        * <pre>
-       * address to receive developer rewards
+       * weighted_developer_rewards_receivers is the address to receive developer
+       * rewards with weights assignedt to each address. The final amount that each
+       * address receives is: epoch_provisions *
+       * distribution_proportions.developer_rewards * Address's Weight.
        * </pre>
        *
        * <code>repeated .osmosis.mint.v1beta1.WeightedAddress weighted_developer_rewards_receivers = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"developer_rewards_receiver&#92;""];</code>
@@ -4373,7 +4494,10 @@ public final class Mint {
       }
       /**
        * <pre>
-       * address to receive developer rewards
+       * weighted_developer_rewards_receivers is the address to receive developer
+       * rewards with weights assignedt to each address. The final amount that each
+       * address receives is: epoch_provisions *
+       * distribution_proportions.developer_rewards * Address's Weight.
        * </pre>
        *
        * <code>repeated .osmosis.mint.v1beta1.WeightedAddress weighted_developer_rewards_receivers = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"developer_rewards_receiver&#92;""];</code>
@@ -4391,7 +4515,10 @@ public final class Mint {
       }
       /**
        * <pre>
-       * address to receive developer rewards
+       * weighted_developer_rewards_receivers is the address to receive developer
+       * rewards with weights assignedt to each address. The final amount that each
+       * address receives is: epoch_provisions *
+       * distribution_proportions.developer_rewards * Address's Weight.
        * </pre>
        *
        * <code>repeated .osmosis.mint.v1beta1.WeightedAddress weighted_developer_rewards_receivers = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"developer_rewards_receiver&#92;""];</code>
@@ -4409,7 +4536,10 @@ public final class Mint {
       }
       /**
        * <pre>
-       * address to receive developer rewards
+       * weighted_developer_rewards_receivers is the address to receive developer
+       * rewards with weights assignedt to each address. The final amount that each
+       * address receives is: epoch_provisions *
+       * distribution_proportions.developer_rewards * Address's Weight.
        * </pre>
        *
        * <code>repeated .osmosis.mint.v1beta1.WeightedAddress weighted_developer_rewards_receivers = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"developer_rewards_receiver&#92;""];</code>
@@ -4428,7 +4558,10 @@ public final class Mint {
       }
       /**
        * <pre>
-       * address to receive developer rewards
+       * weighted_developer_rewards_receivers is the address to receive developer
+       * rewards with weights assignedt to each address. The final amount that each
+       * address receives is: epoch_provisions *
+       * distribution_proportions.developer_rewards * Address's Weight.
        * </pre>
        *
        * <code>repeated .osmosis.mint.v1beta1.WeightedAddress weighted_developer_rewards_receivers = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"developer_rewards_receiver&#92;""];</code>
@@ -4445,7 +4578,10 @@ public final class Mint {
       }
       /**
        * <pre>
-       * address to receive developer rewards
+       * weighted_developer_rewards_receivers is the address to receive developer
+       * rewards with weights assignedt to each address. The final amount that each
+       * address receives is: epoch_provisions *
+       * distribution_proportions.developer_rewards * Address's Weight.
        * </pre>
        *
        * <code>repeated .osmosis.mint.v1beta1.WeightedAddress weighted_developer_rewards_receivers = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"developer_rewards_receiver&#92;""];</code>
@@ -4462,7 +4598,10 @@ public final class Mint {
       }
       /**
        * <pre>
-       * address to receive developer rewards
+       * weighted_developer_rewards_receivers is the address to receive developer
+       * rewards with weights assignedt to each address. The final amount that each
+       * address receives is: epoch_provisions *
+       * distribution_proportions.developer_rewards * Address's Weight.
        * </pre>
        *
        * <code>repeated .osmosis.mint.v1beta1.WeightedAddress weighted_developer_rewards_receivers = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"developer_rewards_receiver&#92;""];</code>
@@ -4473,7 +4612,10 @@ public final class Mint {
       }
       /**
        * <pre>
-       * address to receive developer rewards
+       * weighted_developer_rewards_receivers is the address to receive developer
+       * rewards with weights assignedt to each address. The final amount that each
+       * address receives is: epoch_provisions *
+       * distribution_proportions.developer_rewards * Address's Weight.
        * </pre>
        *
        * <code>repeated .osmosis.mint.v1beta1.WeightedAddress weighted_developer_rewards_receivers = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"developer_rewards_receiver&#92;""];</code>
@@ -4487,7 +4629,10 @@ public final class Mint {
       }
       /**
        * <pre>
-       * address to receive developer rewards
+       * weighted_developer_rewards_receivers is the address to receive developer
+       * rewards with weights assignedt to each address. The final amount that each
+       * address receives is: epoch_provisions *
+       * distribution_proportions.developer_rewards * Address's Weight.
        * </pre>
        *
        * <code>repeated .osmosis.mint.v1beta1.WeightedAddress weighted_developer_rewards_receivers = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"developer_rewards_receiver&#92;""];</code>
@@ -4502,7 +4647,10 @@ public final class Mint {
       }
       /**
        * <pre>
-       * address to receive developer rewards
+       * weighted_developer_rewards_receivers is the address to receive developer
+       * rewards with weights assignedt to each address. The final amount that each
+       * address receives is: epoch_provisions *
+       * distribution_proportions.developer_rewards * Address's Weight.
        * </pre>
        *
        * <code>repeated .osmosis.mint.v1beta1.WeightedAddress weighted_developer_rewards_receivers = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"developer_rewards_receiver&#92;""];</code>
@@ -4513,7 +4661,10 @@ public final class Mint {
       }
       /**
        * <pre>
-       * address to receive developer rewards
+       * weighted_developer_rewards_receivers is the address to receive developer
+       * rewards with weights assignedt to each address. The final amount that each
+       * address receives is: epoch_provisions *
+       * distribution_proportions.developer_rewards * Address's Weight.
        * </pre>
        *
        * <code>repeated .osmosis.mint.v1beta1.WeightedAddress weighted_developer_rewards_receivers = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"developer_rewards_receiver&#92;""];</code>
@@ -4525,7 +4676,10 @@ public final class Mint {
       }
       /**
        * <pre>
-       * address to receive developer rewards
+       * weighted_developer_rewards_receivers is the address to receive developer
+       * rewards with weights assignedt to each address. The final amount that each
+       * address receives is: epoch_provisions *
+       * distribution_proportions.developer_rewards * Address's Weight.
        * </pre>
        *
        * <code>repeated .osmosis.mint.v1beta1.WeightedAddress weighted_developer_rewards_receivers = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"developer_rewards_receiver&#92;""];</code>
@@ -4552,7 +4706,8 @@ public final class Mint {
       private long mintingRewardsDistributionStartEpoch_ ;
       /**
        * <pre>
-       * start epoch to distribute minting rewards
+       * minting_rewards_distribution_start_epoch start epoch to distribute minting
+       * rewards
        * </pre>
        *
        * <code>int64 minting_rewards_distribution_start_epoch = 8 [(.gogoproto.moretags) = "yaml:&#92;"minting_rewards_distribution_start_epoch&#92;""];</code>
@@ -4564,7 +4719,8 @@ public final class Mint {
       }
       /**
        * <pre>
-       * start epoch to distribute minting rewards
+       * minting_rewards_distribution_start_epoch start epoch to distribute minting
+       * rewards
        * </pre>
        *
        * <code>int64 minting_rewards_distribution_start_epoch = 8 [(.gogoproto.moretags) = "yaml:&#92;"minting_rewards_distribution_start_epoch&#92;""];</code>
@@ -4579,7 +4735,8 @@ public final class Mint {
       }
       /**
        * <pre>
-       * start epoch to distribute minting rewards
+       * minting_rewards_distribution_start_epoch start epoch to distribute minting
+       * rewards
        * </pre>
        *
        * <code>int64 minting_rewards_distribution_start_epoch = 8 [(.gogoproto.moretags) = "yaml:&#92;"minting_rewards_distribution_start_epoch&#92;""];</code>

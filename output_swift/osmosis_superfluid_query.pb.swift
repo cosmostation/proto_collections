@@ -395,6 +395,45 @@ struct Osmosis_Superfluid_EstimateSuperfluidDelegatedAmountByValidatorDenomRespo
   init() {}
 }
 
+struct Osmosis_Superfluid_QueryTotalDelegationByDelegatorRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var delegatorAddress: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct Osmosis_Superfluid_QueryTotalDelegationByDelegatorResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var superfluidDelegationRecords: [Osmosis_Superfluid_SuperfluidDelegationRecord] = []
+
+  var delegationResponse: [Cosmos_Staking_V1beta1_DelegationResponse] = []
+
+  var totalDelegatedCoins: [Cosmos_Base_V1beta1_Coin] = []
+
+  var totalEquivalentStakedAmount: Cosmos_Base_V1beta1_Coin {
+    get {return _totalEquivalentStakedAmount ?? Cosmos_Base_V1beta1_Coin()}
+    set {_totalEquivalentStakedAmount = newValue}
+  }
+  /// Returns true if `totalEquivalentStakedAmount` has been explicitly set.
+  var hasTotalEquivalentStakedAmount: Bool {return self._totalEquivalentStakedAmount != nil}
+  /// Clears the value of `totalEquivalentStakedAmount`. Subsequent reads from it will return its default value.
+  mutating func clearTotalEquivalentStakedAmount() {self._totalEquivalentStakedAmount = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _totalEquivalentStakedAmount: Cosmos_Base_V1beta1_Coin? = nil
+}
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "osmosis.superfluid"
@@ -1233,6 +1272,88 @@ extension Osmosis_Superfluid_EstimateSuperfluidDelegatedAmountByValidatorDenomRe
 
   static func ==(lhs: Osmosis_Superfluid_EstimateSuperfluidDelegatedAmountByValidatorDenomResponse, rhs: Osmosis_Superfluid_EstimateSuperfluidDelegatedAmountByValidatorDenomResponse) -> Bool {
     if lhs.totalDelegatedCoins != rhs.totalDelegatedCoins {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Osmosis_Superfluid_QueryTotalDelegationByDelegatorRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QueryTotalDelegationByDelegatorRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "delegator_address"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.delegatorAddress) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.delegatorAddress.isEmpty {
+      try visitor.visitSingularStringField(value: self.delegatorAddress, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Osmosis_Superfluid_QueryTotalDelegationByDelegatorRequest, rhs: Osmosis_Superfluid_QueryTotalDelegationByDelegatorRequest) -> Bool {
+    if lhs.delegatorAddress != rhs.delegatorAddress {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Osmosis_Superfluid_QueryTotalDelegationByDelegatorResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QueryTotalDelegationByDelegatorResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "superfluid_delegation_records"),
+    2: .standard(proto: "delegation_response"),
+    3: .standard(proto: "total_delegated_coins"),
+    4: .standard(proto: "total_equivalent_staked_amount"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeRepeatedMessageField(value: &self.superfluidDelegationRecords) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.delegationResponse) }()
+      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.totalDelegatedCoins) }()
+      case 4: try { try decoder.decodeSingularMessageField(value: &self._totalEquivalentStakedAmount) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.superfluidDelegationRecords.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.superfluidDelegationRecords, fieldNumber: 1)
+    }
+    if !self.delegationResponse.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.delegationResponse, fieldNumber: 2)
+    }
+    if !self.totalDelegatedCoins.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.totalDelegatedCoins, fieldNumber: 3)
+    }
+    if let v = self._totalEquivalentStakedAmount {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Osmosis_Superfluid_QueryTotalDelegationByDelegatorResponse, rhs: Osmosis_Superfluid_QueryTotalDelegationByDelegatorResponse) -> Bool {
+    if lhs.superfluidDelegationRecords != rhs.superfluidDelegationRecords {return false}
+    if lhs.delegationResponse != rhs.delegationResponse {return false}
+    if lhs.totalDelegatedCoins != rhs.totalDelegatedCoins {return false}
+    if lhs._totalEquivalentStakedAmount != rhs._totalEquivalentStakedAmount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

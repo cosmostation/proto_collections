@@ -57,6 +57,8 @@ struct Osmosis_Poolincentives_V1beta1_QueryGaugeIdsResponse {
     /// Clears the value of `duration`. Subsequent reads from it will return its default value.
     mutating func clearDuration() {self._duration = nil}
 
+    var gaugeIncentivePercentage: String = String()
+
     var unknownFields = SwiftProtobuf.UnknownStorage()
 
     init() {}
@@ -293,6 +295,7 @@ extension Osmosis_Poolincentives_V1beta1_QueryGaugeIdsResponse.GaugeIdWithDurati
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "gauge_id"),
     2: .same(proto: "duration"),
+    3: .standard(proto: "gauge_incentive_percentage"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -303,6 +306,7 @@ extension Osmosis_Poolincentives_V1beta1_QueryGaugeIdsResponse.GaugeIdWithDurati
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularUInt64Field(value: &self.gaugeID) }()
       case 2: try { try decoder.decodeSingularMessageField(value: &self._duration) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.gaugeIncentivePercentage) }()
       default: break
       }
     }
@@ -315,12 +319,16 @@ extension Osmosis_Poolincentives_V1beta1_QueryGaugeIdsResponse.GaugeIdWithDurati
     if let v = self._duration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
     }
+    if !self.gaugeIncentivePercentage.isEmpty {
+      try visitor.visitSingularStringField(value: self.gaugeIncentivePercentage, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: Osmosis_Poolincentives_V1beta1_QueryGaugeIdsResponse.GaugeIdWithDuration, rhs: Osmosis_Poolincentives_V1beta1_QueryGaugeIdsResponse.GaugeIdWithDuration) -> Bool {
     if lhs.gaugeID != rhs.gaugeID {return false}
     if lhs._duration != rhs._duration {return false}
+    if lhs.gaugeIncentivePercentage != rhs.gaugeIncentivePercentage {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

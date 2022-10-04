@@ -19,11 +19,19 @@ public final class Genesis {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * identifier is a unique reference to this particular timer.
+     * </pre>
+     *
      * <code>string identifier = 1;</code>
      * @return The identifier.
      */
     java.lang.String getIdentifier();
     /**
+     * <pre>
+     * identifier is a unique reference to this particular timer.
+     * </pre>
+     *
      * <code>string identifier = 1;</code>
      * @return The bytes for identifier.
      */
@@ -31,69 +39,187 @@ public final class Genesis {
         getIdentifierBytes();
 
     /**
+     * <pre>
+     * start_time is the time at which the timer first ever ticks.
+     * If start_time is in the future, the epoch will not begin until the start
+     * time.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp start_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return Whether the startTime field is set.
      */
     boolean hasStartTime();
     /**
+     * <pre>
+     * start_time is the time at which the timer first ever ticks.
+     * If start_time is in the future, the epoch will not begin until the start
+     * time.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp start_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return The startTime.
      */
     com.google.protobuf.Timestamp getStartTime();
     /**
+     * <pre>
+     * start_time is the time at which the timer first ever ticks.
+     * If start_time is in the future, the epoch will not begin until the start
+     * time.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp start_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
     com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 
     /**
+     * <pre>
+     * duration is the time in between epoch ticks.
+     * In order for intended behavior to be met, duration should
+     * be greater than the chains expected block time.
+     * Duration must be non-zero.
+     * </pre>
+     *
      * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
      * @return Whether the duration field is set.
      */
     boolean hasDuration();
     /**
+     * <pre>
+     * duration is the time in between epoch ticks.
+     * In order for intended behavior to be met, duration should
+     * be greater than the chains expected block time.
+     * Duration must be non-zero.
+     * </pre>
+     *
      * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
      * @return The duration.
      */
     com.google.protobuf.Duration getDuration();
     /**
+     * <pre>
+     * duration is the time in between epoch ticks.
+     * In order for intended behavior to be met, duration should
+     * be greater than the chains expected block time.
+     * Duration must be non-zero.
+     * </pre>
+     *
      * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     com.google.protobuf.DurationOrBuilder getDurationOrBuilder();
 
     /**
+     * <pre>
+     * current_epoch is the current epoch number, or in other words,
+     * how many times has the timer 'ticked'.
+     * The first tick (current_epoch=1) is defined as
+     * the first block whose blocktime is greater than the EpochInfo start_time.
+     * </pre>
+     *
      * <code>int64 current_epoch = 4;</code>
      * @return The currentEpoch.
      */
     long getCurrentEpoch();
 
     /**
+     * <pre>
+     * current_epoch_start_time describes the start time of the current timer
+     * interval. The interval is (current_epoch_start_time,
+     * current_epoch_start_time + duration] When the timer ticks, this is set to
+     * current_epoch_start_time = last_epoch_start_time + duration only one timer
+     * tick for a given identifier can occur per block.
+     * NOTE! The current_epoch_start_time may diverge significantly from the
+     * wall-clock time the epoch began at. Wall-clock time of epoch start may be
+     * &gt;&gt; current_epoch_start_time. Suppose current_epoch_start_time = 10,
+     * duration = 5. Suppose the chain goes offline at t=14, and comes back online
+     * at t=30, and produces blocks at every successive time. (t=31, 32, etc.)
+     * * The t=30 block will start the epoch for (10, 15]
+     * * The t=31 block will start the epoch for (15, 20]
+     * * The t=32 block will start the epoch for (20, 25]
+     * * The t=33 block will start the epoch for (25, 30]
+     * * The t=34 block will start the epoch for (30, 35]
+     * * The **t=36** block will start the epoch for (35, 40]
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp current_epoch_start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"current_epoch_start_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return Whether the currentEpochStartTime field is set.
      */
     boolean hasCurrentEpochStartTime();
     /**
+     * <pre>
+     * current_epoch_start_time describes the start time of the current timer
+     * interval. The interval is (current_epoch_start_time,
+     * current_epoch_start_time + duration] When the timer ticks, this is set to
+     * current_epoch_start_time = last_epoch_start_time + duration only one timer
+     * tick for a given identifier can occur per block.
+     * NOTE! The current_epoch_start_time may diverge significantly from the
+     * wall-clock time the epoch began at. Wall-clock time of epoch start may be
+     * &gt;&gt; current_epoch_start_time. Suppose current_epoch_start_time = 10,
+     * duration = 5. Suppose the chain goes offline at t=14, and comes back online
+     * at t=30, and produces blocks at every successive time. (t=31, 32, etc.)
+     * * The t=30 block will start the epoch for (10, 15]
+     * * The t=31 block will start the epoch for (15, 20]
+     * * The t=32 block will start the epoch for (20, 25]
+     * * The t=33 block will start the epoch for (25, 30]
+     * * The t=34 block will start the epoch for (30, 35]
+     * * The **t=36** block will start the epoch for (35, 40]
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp current_epoch_start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"current_epoch_start_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return The currentEpochStartTime.
      */
     com.google.protobuf.Timestamp getCurrentEpochStartTime();
     /**
+     * <pre>
+     * current_epoch_start_time describes the start time of the current timer
+     * interval. The interval is (current_epoch_start_time,
+     * current_epoch_start_time + duration] When the timer ticks, this is set to
+     * current_epoch_start_time = last_epoch_start_time + duration only one timer
+     * tick for a given identifier can occur per block.
+     * NOTE! The current_epoch_start_time may diverge significantly from the
+     * wall-clock time the epoch began at. Wall-clock time of epoch start may be
+     * &gt;&gt; current_epoch_start_time. Suppose current_epoch_start_time = 10,
+     * duration = 5. Suppose the chain goes offline at t=14, and comes back online
+     * at t=30, and produces blocks at every successive time. (t=31, 32, etc.)
+     * * The t=30 block will start the epoch for (10, 15]
+     * * The t=31 block will start the epoch for (15, 20]
+     * * The t=32 block will start the epoch for (20, 25]
+     * * The t=33 block will start the epoch for (25, 30]
+     * * The t=34 block will start the epoch for (30, 35]
+     * * The **t=36** block will start the epoch for (35, 40]
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp current_epoch_start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"current_epoch_start_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
     com.google.protobuf.TimestampOrBuilder getCurrentEpochStartTimeOrBuilder();
 
     /**
+     * <pre>
+     * epoch_counting_started is a boolean, that indicates whether this
+     * epoch timer has began yet.
+     * </pre>
+     *
      * <code>bool epoch_counting_started = 6;</code>
      * @return The epochCountingStarted.
      */
     boolean getEpochCountingStarted();
 
     /**
+     * <pre>
+     * current_epoch_start_height is the block height at which the current epoch
+     * started. (The block height at which the timer last ticked)
+     * </pre>
+     *
      * <code>int64 current_epoch_start_height = 8;</code>
      * @return The currentEpochStartHeight.
      */
     long getCurrentEpochStartHeight();
   }
   /**
+   * <pre>
+   * EpochInfo is a struct that describes the data going into
+   * a timer defined by the x/epochs module.
+   * </pre>
+   *
    * Protobuf type {@code osmosis.epochs.v1beta1.EpochInfo}
    */
   public static final class EpochInfo extends
@@ -234,6 +360,10 @@ public final class Genesis {
     public static final int IDENTIFIER_FIELD_NUMBER = 1;
     private volatile java.lang.Object identifier_;
     /**
+     * <pre>
+     * identifier is a unique reference to this particular timer.
+     * </pre>
+     *
      * <code>string identifier = 1;</code>
      * @return The identifier.
      */
@@ -251,6 +381,10 @@ public final class Genesis {
       }
     }
     /**
+     * <pre>
+     * identifier is a unique reference to this particular timer.
+     * </pre>
+     *
      * <code>string identifier = 1;</code>
      * @return The bytes for identifier.
      */
@@ -272,6 +406,12 @@ public final class Genesis {
     public static final int START_TIME_FIELD_NUMBER = 2;
     private com.google.protobuf.Timestamp startTime_;
     /**
+     * <pre>
+     * start_time is the time at which the timer first ever ticks.
+     * If start_time is in the future, the epoch will not begin until the start
+     * time.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp start_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return Whether the startTime field is set.
      */
@@ -280,6 +420,12 @@ public final class Genesis {
       return startTime_ != null;
     }
     /**
+     * <pre>
+     * start_time is the time at which the timer first ever ticks.
+     * If start_time is in the future, the epoch will not begin until the start
+     * time.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp start_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return The startTime.
      */
@@ -288,6 +434,12 @@ public final class Genesis {
       return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
     }
     /**
+     * <pre>
+     * start_time is the time at which the timer first ever ticks.
+     * If start_time is in the future, the epoch will not begin until the start
+     * time.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp start_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
@@ -298,6 +450,13 @@ public final class Genesis {
     public static final int DURATION_FIELD_NUMBER = 3;
     private com.google.protobuf.Duration duration_;
     /**
+     * <pre>
+     * duration is the time in between epoch ticks.
+     * In order for intended behavior to be met, duration should
+     * be greater than the chains expected block time.
+     * Duration must be non-zero.
+     * </pre>
+     *
      * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
      * @return Whether the duration field is set.
      */
@@ -306,6 +465,13 @@ public final class Genesis {
       return duration_ != null;
     }
     /**
+     * <pre>
+     * duration is the time in between epoch ticks.
+     * In order for intended behavior to be met, duration should
+     * be greater than the chains expected block time.
+     * Duration must be non-zero.
+     * </pre>
+     *
      * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
      * @return The duration.
      */
@@ -314,6 +480,13 @@ public final class Genesis {
       return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
     }
     /**
+     * <pre>
+     * duration is the time in between epoch ticks.
+     * In order for intended behavior to be met, duration should
+     * be greater than the chains expected block time.
+     * Duration must be non-zero.
+     * </pre>
+     *
      * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     @java.lang.Override
@@ -324,6 +497,13 @@ public final class Genesis {
     public static final int CURRENT_EPOCH_FIELD_NUMBER = 4;
     private long currentEpoch_;
     /**
+     * <pre>
+     * current_epoch is the current epoch number, or in other words,
+     * how many times has the timer 'ticked'.
+     * The first tick (current_epoch=1) is defined as
+     * the first block whose blocktime is greater than the EpochInfo start_time.
+     * </pre>
+     *
      * <code>int64 current_epoch = 4;</code>
      * @return The currentEpoch.
      */
@@ -335,6 +515,25 @@ public final class Genesis {
     public static final int CURRENT_EPOCH_START_TIME_FIELD_NUMBER = 5;
     private com.google.protobuf.Timestamp currentEpochStartTime_;
     /**
+     * <pre>
+     * current_epoch_start_time describes the start time of the current timer
+     * interval. The interval is (current_epoch_start_time,
+     * current_epoch_start_time + duration] When the timer ticks, this is set to
+     * current_epoch_start_time = last_epoch_start_time + duration only one timer
+     * tick for a given identifier can occur per block.
+     * NOTE! The current_epoch_start_time may diverge significantly from the
+     * wall-clock time the epoch began at. Wall-clock time of epoch start may be
+     * &gt;&gt; current_epoch_start_time. Suppose current_epoch_start_time = 10,
+     * duration = 5. Suppose the chain goes offline at t=14, and comes back online
+     * at t=30, and produces blocks at every successive time. (t=31, 32, etc.)
+     * * The t=30 block will start the epoch for (10, 15]
+     * * The t=31 block will start the epoch for (15, 20]
+     * * The t=32 block will start the epoch for (20, 25]
+     * * The t=33 block will start the epoch for (25, 30]
+     * * The t=34 block will start the epoch for (30, 35]
+     * * The **t=36** block will start the epoch for (35, 40]
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp current_epoch_start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"current_epoch_start_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return Whether the currentEpochStartTime field is set.
      */
@@ -343,6 +542,25 @@ public final class Genesis {
       return currentEpochStartTime_ != null;
     }
     /**
+     * <pre>
+     * current_epoch_start_time describes the start time of the current timer
+     * interval. The interval is (current_epoch_start_time,
+     * current_epoch_start_time + duration] When the timer ticks, this is set to
+     * current_epoch_start_time = last_epoch_start_time + duration only one timer
+     * tick for a given identifier can occur per block.
+     * NOTE! The current_epoch_start_time may diverge significantly from the
+     * wall-clock time the epoch began at. Wall-clock time of epoch start may be
+     * &gt;&gt; current_epoch_start_time. Suppose current_epoch_start_time = 10,
+     * duration = 5. Suppose the chain goes offline at t=14, and comes back online
+     * at t=30, and produces blocks at every successive time. (t=31, 32, etc.)
+     * * The t=30 block will start the epoch for (10, 15]
+     * * The t=31 block will start the epoch for (15, 20]
+     * * The t=32 block will start the epoch for (20, 25]
+     * * The t=33 block will start the epoch for (25, 30]
+     * * The t=34 block will start the epoch for (30, 35]
+     * * The **t=36** block will start the epoch for (35, 40]
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp current_epoch_start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"current_epoch_start_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return The currentEpochStartTime.
      */
@@ -351,6 +569,25 @@ public final class Genesis {
       return currentEpochStartTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : currentEpochStartTime_;
     }
     /**
+     * <pre>
+     * current_epoch_start_time describes the start time of the current timer
+     * interval. The interval is (current_epoch_start_time,
+     * current_epoch_start_time + duration] When the timer ticks, this is set to
+     * current_epoch_start_time = last_epoch_start_time + duration only one timer
+     * tick for a given identifier can occur per block.
+     * NOTE! The current_epoch_start_time may diverge significantly from the
+     * wall-clock time the epoch began at. Wall-clock time of epoch start may be
+     * &gt;&gt; current_epoch_start_time. Suppose current_epoch_start_time = 10,
+     * duration = 5. Suppose the chain goes offline at t=14, and comes back online
+     * at t=30, and produces blocks at every successive time. (t=31, 32, etc.)
+     * * The t=30 block will start the epoch for (10, 15]
+     * * The t=31 block will start the epoch for (15, 20]
+     * * The t=32 block will start the epoch for (20, 25]
+     * * The t=33 block will start the epoch for (25, 30]
+     * * The t=34 block will start the epoch for (30, 35]
+     * * The **t=36** block will start the epoch for (35, 40]
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp current_epoch_start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"current_epoch_start_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
@@ -361,6 +598,11 @@ public final class Genesis {
     public static final int EPOCH_COUNTING_STARTED_FIELD_NUMBER = 6;
     private boolean epochCountingStarted_;
     /**
+     * <pre>
+     * epoch_counting_started is a boolean, that indicates whether this
+     * epoch timer has began yet.
+     * </pre>
+     *
      * <code>bool epoch_counting_started = 6;</code>
      * @return The epochCountingStarted.
      */
@@ -372,6 +614,11 @@ public final class Genesis {
     public static final int CURRENT_EPOCH_START_HEIGHT_FIELD_NUMBER = 8;
     private long currentEpochStartHeight_;
     /**
+     * <pre>
+     * current_epoch_start_height is the block height at which the current epoch
+     * started. (The block height at which the timer last ticked)
+     * </pre>
+     *
      * <code>int64 current_epoch_start_height = 8;</code>
      * @return The currentEpochStartHeight.
      */
@@ -619,6 +866,11 @@ public final class Genesis {
       return builder;
     }
     /**
+     * <pre>
+     * EpochInfo is a struct that describes the data going into
+     * a timer defined by the x/epochs module.
+     * </pre>
+     *
      * Protobuf type {@code osmosis.epochs.v1beta1.EpochInfo}
      */
     public static final class Builder extends
@@ -828,6 +1080,10 @@ public final class Genesis {
 
       private java.lang.Object identifier_ = "";
       /**
+       * <pre>
+       * identifier is a unique reference to this particular timer.
+       * </pre>
+       *
        * <code>string identifier = 1;</code>
        * @return The identifier.
        */
@@ -844,6 +1100,10 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * identifier is a unique reference to this particular timer.
+       * </pre>
+       *
        * <code>string identifier = 1;</code>
        * @return The bytes for identifier.
        */
@@ -861,6 +1121,10 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * identifier is a unique reference to this particular timer.
+       * </pre>
+       *
        * <code>string identifier = 1;</code>
        * @param value The identifier to set.
        * @return This builder for chaining.
@@ -876,6 +1140,10 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * identifier is a unique reference to this particular timer.
+       * </pre>
+       *
        * <code>string identifier = 1;</code>
        * @return This builder for chaining.
        */
@@ -886,6 +1154,10 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * identifier is a unique reference to this particular timer.
+       * </pre>
+       *
        * <code>string identifier = 1;</code>
        * @param value The bytes for identifier to set.
        * @return This builder for chaining.
@@ -906,6 +1178,12 @@ public final class Genesis {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> startTimeBuilder_;
       /**
+       * <pre>
+       * start_time is the time at which the timer first ever ticks.
+       * If start_time is in the future, the epoch will not begin until the start
+       * time.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp start_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
        * @return Whether the startTime field is set.
        */
@@ -913,6 +1191,12 @@ public final class Genesis {
         return startTimeBuilder_ != null || startTime_ != null;
       }
       /**
+       * <pre>
+       * start_time is the time at which the timer first ever ticks.
+       * If start_time is in the future, the epoch will not begin until the start
+       * time.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp start_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
        * @return The startTime.
        */
@@ -924,6 +1208,12 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * start_time is the time at which the timer first ever ticks.
+       * If start_time is in the future, the epoch will not begin until the start
+       * time.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp start_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder setStartTime(com.google.protobuf.Timestamp value) {
@@ -940,6 +1230,12 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * start_time is the time at which the timer first ever ticks.
+       * If start_time is in the future, the epoch will not begin until the start
+       * time.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp start_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder setStartTime(
@@ -954,6 +1250,12 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * start_time is the time at which the timer first ever ticks.
+       * If start_time is in the future, the epoch will not begin until the start
+       * time.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp start_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
@@ -972,6 +1274,12 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * start_time is the time at which the timer first ever ticks.
+       * If start_time is in the future, the epoch will not begin until the start
+       * time.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp start_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder clearStartTime() {
@@ -986,6 +1294,12 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * start_time is the time at which the timer first ever ticks.
+       * If start_time is in the future, the epoch will not begin until the start
+       * time.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp start_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
@@ -994,6 +1308,12 @@ public final class Genesis {
         return getStartTimeFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * start_time is the time at which the timer first ever ticks.
+       * If start_time is in the future, the epoch will not begin until the start
+       * time.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp start_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
@@ -1005,6 +1325,12 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * start_time is the time at which the timer first ever ticks.
+       * If start_time is in the future, the epoch will not begin until the start
+       * time.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp start_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"start_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1025,6 +1351,13 @@ public final class Genesis {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> durationBuilder_;
       /**
+       * <pre>
+       * duration is the time in between epoch ticks.
+       * In order for intended behavior to be met, duration should
+       * be greater than the chains expected block time.
+       * Duration must be non-zero.
+       * </pre>
+       *
        * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
        * @return Whether the duration field is set.
        */
@@ -1032,6 +1365,13 @@ public final class Genesis {
         return durationBuilder_ != null || duration_ != null;
       }
       /**
+       * <pre>
+       * duration is the time in between epoch ticks.
+       * In order for intended behavior to be met, duration should
+       * be greater than the chains expected block time.
+       * Duration must be non-zero.
+       * </pre>
+       *
        * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
        * @return The duration.
        */
@@ -1043,6 +1383,13 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * duration is the time in between epoch ticks.
+       * In order for intended behavior to be met, duration should
+       * be greater than the chains expected block time.
+       * Duration must be non-zero.
+       * </pre>
+       *
        * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder setDuration(com.google.protobuf.Duration value) {
@@ -1059,6 +1406,13 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * duration is the time in between epoch ticks.
+       * In order for intended behavior to be met, duration should
+       * be greater than the chains expected block time.
+       * Duration must be non-zero.
+       * </pre>
+       *
        * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder setDuration(
@@ -1073,6 +1427,13 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * duration is the time in between epoch ticks.
+       * In order for intended behavior to be met, duration should
+       * be greater than the chains expected block time.
+       * Duration must be non-zero.
+       * </pre>
+       *
        * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder mergeDuration(com.google.protobuf.Duration value) {
@@ -1091,6 +1452,13 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * duration is the time in between epoch ticks.
+       * In order for intended behavior to be met, duration should
+       * be greater than the chains expected block time.
+       * Duration must be non-zero.
+       * </pre>
+       *
        * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder clearDuration() {
@@ -1105,6 +1473,13 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * duration is the time in between epoch ticks.
+       * In order for intended behavior to be met, duration should
+       * be greater than the chains expected block time.
+       * Duration must be non-zero.
+       * </pre>
+       *
        * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public com.google.protobuf.Duration.Builder getDurationBuilder() {
@@ -1113,6 +1488,13 @@ public final class Genesis {
         return getDurationFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * duration is the time in between epoch ticks.
+       * In order for intended behavior to be met, duration should
+       * be greater than the chains expected block time.
+       * Duration must be non-zero.
+       * </pre>
+       *
        * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
@@ -1124,6 +1506,13 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * duration is the time in between epoch ticks.
+       * In order for intended behavior to be met, duration should
+       * be greater than the chains expected block time.
+       * Duration must be non-zero.
+       * </pre>
+       *
        * <code>.google.protobuf.Duration duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "duration,omitempty", (.gogoproto.moretags) = "yaml:&#92;"duration&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1142,6 +1531,13 @@ public final class Genesis {
 
       private long currentEpoch_ ;
       /**
+       * <pre>
+       * current_epoch is the current epoch number, or in other words,
+       * how many times has the timer 'ticked'.
+       * The first tick (current_epoch=1) is defined as
+       * the first block whose blocktime is greater than the EpochInfo start_time.
+       * </pre>
+       *
        * <code>int64 current_epoch = 4;</code>
        * @return The currentEpoch.
        */
@@ -1150,6 +1546,13 @@ public final class Genesis {
         return currentEpoch_;
       }
       /**
+       * <pre>
+       * current_epoch is the current epoch number, or in other words,
+       * how many times has the timer 'ticked'.
+       * The first tick (current_epoch=1) is defined as
+       * the first block whose blocktime is greater than the EpochInfo start_time.
+       * </pre>
+       *
        * <code>int64 current_epoch = 4;</code>
        * @param value The currentEpoch to set.
        * @return This builder for chaining.
@@ -1161,6 +1564,13 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * current_epoch is the current epoch number, or in other words,
+       * how many times has the timer 'ticked'.
+       * The first tick (current_epoch=1) is defined as
+       * the first block whose blocktime is greater than the EpochInfo start_time.
+       * </pre>
+       *
        * <code>int64 current_epoch = 4;</code>
        * @return This builder for chaining.
        */
@@ -1175,6 +1585,25 @@ public final class Genesis {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> currentEpochStartTimeBuilder_;
       /**
+       * <pre>
+       * current_epoch_start_time describes the start time of the current timer
+       * interval. The interval is (current_epoch_start_time,
+       * current_epoch_start_time + duration] When the timer ticks, this is set to
+       * current_epoch_start_time = last_epoch_start_time + duration only one timer
+       * tick for a given identifier can occur per block.
+       * NOTE! The current_epoch_start_time may diverge significantly from the
+       * wall-clock time the epoch began at. Wall-clock time of epoch start may be
+       * &gt;&gt; current_epoch_start_time. Suppose current_epoch_start_time = 10,
+       * duration = 5. Suppose the chain goes offline at t=14, and comes back online
+       * at t=30, and produces blocks at every successive time. (t=31, 32, etc.)
+       * * The t=30 block will start the epoch for (10, 15]
+       * * The t=31 block will start the epoch for (15, 20]
+       * * The t=32 block will start the epoch for (20, 25]
+       * * The t=33 block will start the epoch for (25, 30]
+       * * The t=34 block will start the epoch for (30, 35]
+       * * The **t=36** block will start the epoch for (35, 40]
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp current_epoch_start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"current_epoch_start_time&#92;"", (.gogoproto.stdtime) = true];</code>
        * @return Whether the currentEpochStartTime field is set.
        */
@@ -1182,6 +1611,25 @@ public final class Genesis {
         return currentEpochStartTimeBuilder_ != null || currentEpochStartTime_ != null;
       }
       /**
+       * <pre>
+       * current_epoch_start_time describes the start time of the current timer
+       * interval. The interval is (current_epoch_start_time,
+       * current_epoch_start_time + duration] When the timer ticks, this is set to
+       * current_epoch_start_time = last_epoch_start_time + duration only one timer
+       * tick for a given identifier can occur per block.
+       * NOTE! The current_epoch_start_time may diverge significantly from the
+       * wall-clock time the epoch began at. Wall-clock time of epoch start may be
+       * &gt;&gt; current_epoch_start_time. Suppose current_epoch_start_time = 10,
+       * duration = 5. Suppose the chain goes offline at t=14, and comes back online
+       * at t=30, and produces blocks at every successive time. (t=31, 32, etc.)
+       * * The t=30 block will start the epoch for (10, 15]
+       * * The t=31 block will start the epoch for (15, 20]
+       * * The t=32 block will start the epoch for (20, 25]
+       * * The t=33 block will start the epoch for (25, 30]
+       * * The t=34 block will start the epoch for (30, 35]
+       * * The **t=36** block will start the epoch for (35, 40]
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp current_epoch_start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"current_epoch_start_time&#92;"", (.gogoproto.stdtime) = true];</code>
        * @return The currentEpochStartTime.
        */
@@ -1193,6 +1641,25 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * current_epoch_start_time describes the start time of the current timer
+       * interval. The interval is (current_epoch_start_time,
+       * current_epoch_start_time + duration] When the timer ticks, this is set to
+       * current_epoch_start_time = last_epoch_start_time + duration only one timer
+       * tick for a given identifier can occur per block.
+       * NOTE! The current_epoch_start_time may diverge significantly from the
+       * wall-clock time the epoch began at. Wall-clock time of epoch start may be
+       * &gt;&gt; current_epoch_start_time. Suppose current_epoch_start_time = 10,
+       * duration = 5. Suppose the chain goes offline at t=14, and comes back online
+       * at t=30, and produces blocks at every successive time. (t=31, 32, etc.)
+       * * The t=30 block will start the epoch for (10, 15]
+       * * The t=31 block will start the epoch for (15, 20]
+       * * The t=32 block will start the epoch for (20, 25]
+       * * The t=33 block will start the epoch for (25, 30]
+       * * The t=34 block will start the epoch for (30, 35]
+       * * The **t=36** block will start the epoch for (35, 40]
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp current_epoch_start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"current_epoch_start_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder setCurrentEpochStartTime(com.google.protobuf.Timestamp value) {
@@ -1209,6 +1676,25 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * current_epoch_start_time describes the start time of the current timer
+       * interval. The interval is (current_epoch_start_time,
+       * current_epoch_start_time + duration] When the timer ticks, this is set to
+       * current_epoch_start_time = last_epoch_start_time + duration only one timer
+       * tick for a given identifier can occur per block.
+       * NOTE! The current_epoch_start_time may diverge significantly from the
+       * wall-clock time the epoch began at. Wall-clock time of epoch start may be
+       * &gt;&gt; current_epoch_start_time. Suppose current_epoch_start_time = 10,
+       * duration = 5. Suppose the chain goes offline at t=14, and comes back online
+       * at t=30, and produces blocks at every successive time. (t=31, 32, etc.)
+       * * The t=30 block will start the epoch for (10, 15]
+       * * The t=31 block will start the epoch for (15, 20]
+       * * The t=32 block will start the epoch for (20, 25]
+       * * The t=33 block will start the epoch for (25, 30]
+       * * The t=34 block will start the epoch for (30, 35]
+       * * The **t=36** block will start the epoch for (35, 40]
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp current_epoch_start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"current_epoch_start_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder setCurrentEpochStartTime(
@@ -1223,6 +1709,25 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * current_epoch_start_time describes the start time of the current timer
+       * interval. The interval is (current_epoch_start_time,
+       * current_epoch_start_time + duration] When the timer ticks, this is set to
+       * current_epoch_start_time = last_epoch_start_time + duration only one timer
+       * tick for a given identifier can occur per block.
+       * NOTE! The current_epoch_start_time may diverge significantly from the
+       * wall-clock time the epoch began at. Wall-clock time of epoch start may be
+       * &gt;&gt; current_epoch_start_time. Suppose current_epoch_start_time = 10,
+       * duration = 5. Suppose the chain goes offline at t=14, and comes back online
+       * at t=30, and produces blocks at every successive time. (t=31, 32, etc.)
+       * * The t=30 block will start the epoch for (10, 15]
+       * * The t=31 block will start the epoch for (15, 20]
+       * * The t=32 block will start the epoch for (20, 25]
+       * * The t=33 block will start the epoch for (25, 30]
+       * * The t=34 block will start the epoch for (30, 35]
+       * * The **t=36** block will start the epoch for (35, 40]
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp current_epoch_start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"current_epoch_start_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder mergeCurrentEpochStartTime(com.google.protobuf.Timestamp value) {
@@ -1241,6 +1746,25 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * current_epoch_start_time describes the start time of the current timer
+       * interval. The interval is (current_epoch_start_time,
+       * current_epoch_start_time + duration] When the timer ticks, this is set to
+       * current_epoch_start_time = last_epoch_start_time + duration only one timer
+       * tick for a given identifier can occur per block.
+       * NOTE! The current_epoch_start_time may diverge significantly from the
+       * wall-clock time the epoch began at. Wall-clock time of epoch start may be
+       * &gt;&gt; current_epoch_start_time. Suppose current_epoch_start_time = 10,
+       * duration = 5. Suppose the chain goes offline at t=14, and comes back online
+       * at t=30, and produces blocks at every successive time. (t=31, 32, etc.)
+       * * The t=30 block will start the epoch for (10, 15]
+       * * The t=31 block will start the epoch for (15, 20]
+       * * The t=32 block will start the epoch for (20, 25]
+       * * The t=33 block will start the epoch for (25, 30]
+       * * The t=34 block will start the epoch for (30, 35]
+       * * The **t=36** block will start the epoch for (35, 40]
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp current_epoch_start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"current_epoch_start_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder clearCurrentEpochStartTime() {
@@ -1255,6 +1779,25 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * current_epoch_start_time describes the start time of the current timer
+       * interval. The interval is (current_epoch_start_time,
+       * current_epoch_start_time + duration] When the timer ticks, this is set to
+       * current_epoch_start_time = last_epoch_start_time + duration only one timer
+       * tick for a given identifier can occur per block.
+       * NOTE! The current_epoch_start_time may diverge significantly from the
+       * wall-clock time the epoch began at. Wall-clock time of epoch start may be
+       * &gt;&gt; current_epoch_start_time. Suppose current_epoch_start_time = 10,
+       * duration = 5. Suppose the chain goes offline at t=14, and comes back online
+       * at t=30, and produces blocks at every successive time. (t=31, 32, etc.)
+       * * The t=30 block will start the epoch for (10, 15]
+       * * The t=31 block will start the epoch for (15, 20]
+       * * The t=32 block will start the epoch for (20, 25]
+       * * The t=33 block will start the epoch for (25, 30]
+       * * The t=34 block will start the epoch for (30, 35]
+       * * The **t=36** block will start the epoch for (35, 40]
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp current_epoch_start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"current_epoch_start_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public com.google.protobuf.Timestamp.Builder getCurrentEpochStartTimeBuilder() {
@@ -1263,6 +1806,25 @@ public final class Genesis {
         return getCurrentEpochStartTimeFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * current_epoch_start_time describes the start time of the current timer
+       * interval. The interval is (current_epoch_start_time,
+       * current_epoch_start_time + duration] When the timer ticks, this is set to
+       * current_epoch_start_time = last_epoch_start_time + duration only one timer
+       * tick for a given identifier can occur per block.
+       * NOTE! The current_epoch_start_time may diverge significantly from the
+       * wall-clock time the epoch began at. Wall-clock time of epoch start may be
+       * &gt;&gt; current_epoch_start_time. Suppose current_epoch_start_time = 10,
+       * duration = 5. Suppose the chain goes offline at t=14, and comes back online
+       * at t=30, and produces blocks at every successive time. (t=31, 32, etc.)
+       * * The t=30 block will start the epoch for (10, 15]
+       * * The t=31 block will start the epoch for (15, 20]
+       * * The t=32 block will start the epoch for (20, 25]
+       * * The t=33 block will start the epoch for (25, 30]
+       * * The t=34 block will start the epoch for (30, 35]
+       * * The **t=36** block will start the epoch for (35, 40]
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp current_epoch_start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"current_epoch_start_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public com.google.protobuf.TimestampOrBuilder getCurrentEpochStartTimeOrBuilder() {
@@ -1274,6 +1836,25 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * current_epoch_start_time describes the start time of the current timer
+       * interval. The interval is (current_epoch_start_time,
+       * current_epoch_start_time + duration] When the timer ticks, this is set to
+       * current_epoch_start_time = last_epoch_start_time + duration only one timer
+       * tick for a given identifier can occur per block.
+       * NOTE! The current_epoch_start_time may diverge significantly from the
+       * wall-clock time the epoch began at. Wall-clock time of epoch start may be
+       * &gt;&gt; current_epoch_start_time. Suppose current_epoch_start_time = 10,
+       * duration = 5. Suppose the chain goes offline at t=14, and comes back online
+       * at t=30, and produces blocks at every successive time. (t=31, 32, etc.)
+       * * The t=30 block will start the epoch for (10, 15]
+       * * The t=31 block will start the epoch for (15, 20]
+       * * The t=32 block will start the epoch for (20, 25]
+       * * The t=33 block will start the epoch for (25, 30]
+       * * The t=34 block will start the epoch for (30, 35]
+       * * The **t=36** block will start the epoch for (35, 40]
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp current_epoch_start_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"current_epoch_start_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1292,6 +1873,11 @@ public final class Genesis {
 
       private boolean epochCountingStarted_ ;
       /**
+       * <pre>
+       * epoch_counting_started is a boolean, that indicates whether this
+       * epoch timer has began yet.
+       * </pre>
+       *
        * <code>bool epoch_counting_started = 6;</code>
        * @return The epochCountingStarted.
        */
@@ -1300,6 +1886,11 @@ public final class Genesis {
         return epochCountingStarted_;
       }
       /**
+       * <pre>
+       * epoch_counting_started is a boolean, that indicates whether this
+       * epoch timer has began yet.
+       * </pre>
+       *
        * <code>bool epoch_counting_started = 6;</code>
        * @param value The epochCountingStarted to set.
        * @return This builder for chaining.
@@ -1311,6 +1902,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * epoch_counting_started is a boolean, that indicates whether this
+       * epoch timer has began yet.
+       * </pre>
+       *
        * <code>bool epoch_counting_started = 6;</code>
        * @return This builder for chaining.
        */
@@ -1323,6 +1919,11 @@ public final class Genesis {
 
       private long currentEpochStartHeight_ ;
       /**
+       * <pre>
+       * current_epoch_start_height is the block height at which the current epoch
+       * started. (The block height at which the timer last ticked)
+       * </pre>
+       *
        * <code>int64 current_epoch_start_height = 8;</code>
        * @return The currentEpochStartHeight.
        */
@@ -1331,6 +1932,11 @@ public final class Genesis {
         return currentEpochStartHeight_;
       }
       /**
+       * <pre>
+       * current_epoch_start_height is the block height at which the current epoch
+       * started. (The block height at which the timer last ticked)
+       * </pre>
+       *
        * <code>int64 current_epoch_start_height = 8;</code>
        * @param value The currentEpochStartHeight to set.
        * @return This builder for chaining.
@@ -1342,6 +1948,11 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * current_epoch_start_height is the block height at which the current epoch
+       * started. (The block height at which the timer last ticked)
+       * </pre>
+       *
        * <code>int64 current_epoch_start_height = 8;</code>
        * @return This builder for chaining.
        */
