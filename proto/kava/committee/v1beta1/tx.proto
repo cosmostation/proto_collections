@@ -21,8 +21,8 @@ service Msg {
 // MsgSubmitProposal is used by committee members to create a new proposal that they can vote on.
 message MsgSubmitProposal {
   google.protobuf2.Any pub_proposal = 1 [(cosmos_proto.accepts_interface) = "cosmos.gov.v1beta1.Content"];
-  string              proposer     = 2;
-  uint64              committee_id = 3 [(gogoproto.customname) = "CommitteeID"];
+  string              proposer      = 2;
+  uint64              committee_id  = 3 [(gogoproto.customname) = "CommitteeID"];
 }
 
 // MsgSubmitProposalResponse defines the SubmitProposal response type
