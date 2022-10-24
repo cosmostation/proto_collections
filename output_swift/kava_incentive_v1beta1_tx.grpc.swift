@@ -56,6 +56,11 @@ internal protocol Kava_Incentive_V1beta1_MsgClientProtocol: GRPCClient {
     _ request: Kava_Incentive_V1beta1_MsgClaimSavingsReward,
     callOptions: CallOptions?
   ) -> UnaryCall<Kava_Incentive_V1beta1_MsgClaimSavingsReward, Kava_Incentive_V1beta1_MsgClaimSavingsRewardResponse>
+
+  func claimEarnReward(
+    _ request: Kava_Incentive_V1beta1_MsgClaimEarnReward,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Kava_Incentive_V1beta1_MsgClaimEarnReward, Kava_Incentive_V1beta1_MsgClaimEarnRewardResponse>
 }
 
 extension Kava_Incentive_V1beta1_MsgClientProtocol {
@@ -117,7 +122,7 @@ extension Kava_Incentive_V1beta1_MsgClientProtocol {
     )
   }
 
-  /// ClaimSwapReward is a message type used to claim delegator rewards
+  /// ClaimSwapReward is a message type used to claim swap rewards
   ///
   /// - Parameters:
   ///   - request: Request to send to ClaimSwapReward.
@@ -152,6 +157,24 @@ extension Kava_Incentive_V1beta1_MsgClientProtocol {
       interceptors: self.interceptors?.makeClaimSavingsRewardInterceptors() ?? []
     )
   }
+
+  /// ClaimEarnReward is a message type used to claim earn rewards
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to ClaimEarnReward.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func claimEarnReward(
+    _ request: Kava_Incentive_V1beta1_MsgClaimEarnReward,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Kava_Incentive_V1beta1_MsgClaimEarnReward, Kava_Incentive_V1beta1_MsgClaimEarnRewardResponse> {
+    return self.makeUnaryCall(
+      path: "/kava.incentive.v1beta1.Msg/ClaimEarnReward",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeClaimEarnRewardInterceptors() ?? []
+    )
+  }
 }
 
 internal protocol Kava_Incentive_V1beta1_MsgClientInterceptorFactoryProtocol {
@@ -170,6 +193,9 @@ internal protocol Kava_Incentive_V1beta1_MsgClientInterceptorFactoryProtocol {
 
   /// - Returns: Interceptors to use when invoking 'claimSavingsReward'.
   func makeClaimSavingsRewardInterceptors() -> [ClientInterceptor<Kava_Incentive_V1beta1_MsgClaimSavingsReward, Kava_Incentive_V1beta1_MsgClaimSavingsRewardResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'claimEarnReward'.
+  func makeClaimEarnRewardInterceptors() -> [ClientInterceptor<Kava_Incentive_V1beta1_MsgClaimEarnReward, Kava_Incentive_V1beta1_MsgClaimEarnRewardResponse>]
 }
 
 internal final class Kava_Incentive_V1beta1_MsgClient: Kava_Incentive_V1beta1_MsgClientProtocol {
@@ -209,11 +235,14 @@ internal protocol Kava_Incentive_V1beta1_MsgProvider: CallHandlerProvider {
   /// ClaimDelegatorReward is a message type used to claim delegator rewards
   func claimDelegatorReward(request: Kava_Incentive_V1beta1_MsgClaimDelegatorReward, context: StatusOnlyCallContext) -> EventLoopFuture<Kava_Incentive_V1beta1_MsgClaimDelegatorRewardResponse>
 
-  /// ClaimSwapReward is a message type used to claim delegator rewards
+  /// ClaimSwapReward is a message type used to claim swap rewards
   func claimSwapReward(request: Kava_Incentive_V1beta1_MsgClaimSwapReward, context: StatusOnlyCallContext) -> EventLoopFuture<Kava_Incentive_V1beta1_MsgClaimSwapRewardResponse>
 
   /// ClaimSavingsReward is a message type used to claim savings rewards
   func claimSavingsReward(request: Kava_Incentive_V1beta1_MsgClaimSavingsReward, context: StatusOnlyCallContext) -> EventLoopFuture<Kava_Incentive_V1beta1_MsgClaimSavingsRewardResponse>
+
+  /// ClaimEarnReward is a message type used to claim earn rewards
+  func claimEarnReward(request: Kava_Incentive_V1beta1_MsgClaimEarnReward, context: StatusOnlyCallContext) -> EventLoopFuture<Kava_Incentive_V1beta1_MsgClaimEarnRewardResponse>
 }
 
 extension Kava_Incentive_V1beta1_MsgProvider {
@@ -271,6 +300,15 @@ extension Kava_Incentive_V1beta1_MsgProvider {
         userFunction: self.claimSavingsReward(request:context:)
       )
 
+    case "ClaimEarnReward":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Kava_Incentive_V1beta1_MsgClaimEarnReward>(),
+        responseSerializer: ProtobufSerializer<Kava_Incentive_V1beta1_MsgClaimEarnRewardResponse>(),
+        interceptors: self.interceptors?.makeClaimEarnRewardInterceptors() ?? [],
+        userFunction: self.claimEarnReward(request:context:)
+      )
+
     default:
       return nil
     }
@@ -298,4 +336,8 @@ internal protocol Kava_Incentive_V1beta1_MsgServerInterceptorFactoryProtocol {
   /// - Returns: Interceptors to use when handling 'claimSavingsReward'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeClaimSavingsRewardInterceptors() -> [ServerInterceptor<Kava_Incentive_V1beta1_MsgClaimSavingsReward, Kava_Incentive_V1beta1_MsgClaimSavingsRewardResponse>]
+
+  /// - Returns: Interceptors to use when handling 'claimEarnReward'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeClaimEarnRewardInterceptors() -> [ServerInterceptor<Kava_Incentive_V1beta1_MsgClaimEarnReward, Kava_Incentive_V1beta1_MsgClaimEarnRewardResponse>]
 }

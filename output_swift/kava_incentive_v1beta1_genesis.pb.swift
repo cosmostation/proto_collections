@@ -153,6 +153,20 @@ struct Kava_Incentive_V1beta1_GenesisState {
     set {_uniqueStorage()._savingsClaims = newValue}
   }
 
+  var earnRewardState: Kava_Incentive_V1beta1_GenesisRewardState {
+    get {return _storage._earnRewardState ?? Kava_Incentive_V1beta1_GenesisRewardState()}
+    set {_uniqueStorage()._earnRewardState = newValue}
+  }
+  /// Returns true if `earnRewardState` has been explicitly set.
+  var hasEarnRewardState: Bool {return _storage._earnRewardState != nil}
+  /// Clears the value of `earnRewardState`. Subsequent reads from it will return its default value.
+  mutating func clearEarnRewardState() {_uniqueStorage()._earnRewardState = nil}
+
+  var earnClaims: [Kava_Incentive_V1beta1_EarnClaim] {
+    get {return _storage._earnClaims}
+    set {_uniqueStorage()._earnClaims = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -255,6 +269,8 @@ extension Kava_Incentive_V1beta1_GenesisState: SwiftProtobuf.Message, SwiftProto
     10: .standard(proto: "swap_claims"),
     11: .standard(proto: "savings_reward_state"),
     12: .standard(proto: "savings_claims"),
+    13: .standard(proto: "earn_reward_state"),
+    14: .standard(proto: "earn_claims"),
   ]
 
   fileprivate class _StorageClass {
@@ -270,6 +286,8 @@ extension Kava_Incentive_V1beta1_GenesisState: SwiftProtobuf.Message, SwiftProto
     var _swapClaims: [Kava_Incentive_V1beta1_SwapClaim] = []
     var _savingsRewardState: Kava_Incentive_V1beta1_GenesisRewardState? = nil
     var _savingsClaims: [Kava_Incentive_V1beta1_SavingsClaim] = []
+    var _earnRewardState: Kava_Incentive_V1beta1_GenesisRewardState? = nil
+    var _earnClaims: [Kava_Incentive_V1beta1_EarnClaim] = []
 
     static let defaultInstance = _StorageClass()
 
@@ -288,6 +306,8 @@ extension Kava_Incentive_V1beta1_GenesisState: SwiftProtobuf.Message, SwiftProto
       _swapClaims = source._swapClaims
       _savingsRewardState = source._savingsRewardState
       _savingsClaims = source._savingsClaims
+      _earnRewardState = source._earnRewardState
+      _earnClaims = source._earnClaims
     }
   }
 
@@ -318,6 +338,8 @@ extension Kava_Incentive_V1beta1_GenesisState: SwiftProtobuf.Message, SwiftProto
         case 10: try { try decoder.decodeRepeatedMessageField(value: &_storage._swapClaims) }()
         case 11: try { try decoder.decodeSingularMessageField(value: &_storage._savingsRewardState) }()
         case 12: try { try decoder.decodeRepeatedMessageField(value: &_storage._savingsClaims) }()
+        case 13: try { try decoder.decodeSingularMessageField(value: &_storage._earnRewardState) }()
+        case 14: try { try decoder.decodeRepeatedMessageField(value: &_storage._earnClaims) }()
         default: break
         }
       }
@@ -362,6 +384,12 @@ extension Kava_Incentive_V1beta1_GenesisState: SwiftProtobuf.Message, SwiftProto
       if !_storage._savingsClaims.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._savingsClaims, fieldNumber: 12)
       }
+      if let v = _storage._earnRewardState {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 13)
+      }
+      if !_storage._earnClaims.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._earnClaims, fieldNumber: 14)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -383,6 +411,8 @@ extension Kava_Incentive_V1beta1_GenesisState: SwiftProtobuf.Message, SwiftProto
         if _storage._swapClaims != rhs_storage._swapClaims {return false}
         if _storage._savingsRewardState != rhs_storage._savingsRewardState {return false}
         if _storage._savingsClaims != rhs_storage._savingsClaims {return false}
+        if _storage._earnRewardState != rhs_storage._earnRewardState {return false}
+        if _storage._earnClaims != rhs_storage._earnClaims {return false}
         return true
       }
       if !storagesAreEqual {return false}
