@@ -1708,16 +1708,10 @@ public final class Cdp {
     long getCdpId();
 
     /**
-     * <code>string depositor = 2 [(.gogoproto.casttype) = "github.com/cosmos/cosmos-sdk/types.AccAddress", (.cosmos_proto.scalar) = "cosmos.AddressBytes"];</code>
+     * <code>bytes depositor = 2 [(.gogoproto.casttype) = "github.com/cosmos/cosmos-sdk/types.AccAddress", (.cosmos_proto.scalar) = "cosmos.AddressBytes"];</code>
      * @return The depositor.
      */
-    java.lang.String getDepositor();
-    /**
-     * <code>string depositor = 2 [(.gogoproto.casttype) = "github.com/cosmos/cosmos-sdk/types.AccAddress", (.cosmos_proto.scalar) = "cosmos.AddressBytes"];</code>
-     * @return The bytes for depositor.
-     */
-    com.google.protobuf.ByteString
-        getDepositorBytes();
+    com.google.protobuf.ByteString getDepositor();
 
     /**
      * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
@@ -1751,7 +1745,7 @@ public final class Cdp {
       super(builder);
     }
     private Deposit() {
-      depositor_ = "";
+      depositor_ = com.google.protobuf.ByteString.EMPTY;
     }
 
     @java.lang.Override
@@ -1790,9 +1784,8 @@ public final class Cdp {
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
 
-              depositor_ = s;
+              depositor_ = input.readBytes();
               break;
             }
             case 26: {
@@ -1852,41 +1845,14 @@ public final class Cdp {
     }
 
     public static final int DEPOSITOR_FIELD_NUMBER = 2;
-    private volatile java.lang.Object depositor_;
+    private com.google.protobuf.ByteString depositor_;
     /**
-     * <code>string depositor = 2 [(.gogoproto.casttype) = "github.com/cosmos/cosmos-sdk/types.AccAddress", (.cosmos_proto.scalar) = "cosmos.AddressBytes"];</code>
+     * <code>bytes depositor = 2 [(.gogoproto.casttype) = "github.com/cosmos/cosmos-sdk/types.AccAddress", (.cosmos_proto.scalar) = "cosmos.AddressBytes"];</code>
      * @return The depositor.
      */
     @java.lang.Override
-    public java.lang.String getDepositor() {
-      java.lang.Object ref = depositor_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        depositor_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string depositor = 2 [(.gogoproto.casttype) = "github.com/cosmos/cosmos-sdk/types.AccAddress", (.cosmos_proto.scalar) = "cosmos.AddressBytes"];</code>
-     * @return The bytes for depositor.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getDepositorBytes() {
-      java.lang.Object ref = depositor_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        depositor_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.google.protobuf.ByteString getDepositor() {
+      return depositor_;
     }
 
     public static final int AMOUNT_FIELD_NUMBER = 3;
@@ -1932,8 +1898,8 @@ public final class Cdp {
       if (cdpId_ != 0L) {
         output.writeUInt64(1, cdpId_);
       }
-      if (!getDepositorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, depositor_);
+      if (!depositor_.isEmpty()) {
+        output.writeBytes(2, depositor_);
       }
       if (amount_ != null) {
         output.writeMessage(3, getAmount());
@@ -1951,8 +1917,9 @@ public final class Cdp {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(1, cdpId_);
       }
-      if (!getDepositorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, depositor_);
+      if (!depositor_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, depositor_);
       }
       if (amount_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -2141,7 +2108,7 @@ public final class Cdp {
         super.clear();
         cdpId_ = 0L;
 
-        depositor_ = "";
+        depositor_ = com.google.protobuf.ByteString.EMPTY;
 
         if (amountBuilder_ == null) {
           amount_ = null;
@@ -2233,9 +2200,8 @@ public final class Cdp {
         if (other.getCdpId() != 0L) {
           setCdpId(other.getCdpId());
         }
-        if (!other.getDepositor().isEmpty()) {
-          depositor_ = other.depositor_;
-          onChanged();
+        if (other.getDepositor() != com.google.protobuf.ByteString.EMPTY) {
+          setDepositor(other.getDepositor());
         }
         if (other.hasAmount()) {
           mergeAmount(other.getAmount());
@@ -2300,47 +2266,21 @@ public final class Cdp {
         return this;
       }
 
-      private java.lang.Object depositor_ = "";
+      private com.google.protobuf.ByteString depositor_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>string depositor = 2 [(.gogoproto.casttype) = "github.com/cosmos/cosmos-sdk/types.AccAddress", (.cosmos_proto.scalar) = "cosmos.AddressBytes"];</code>
+       * <code>bytes depositor = 2 [(.gogoproto.casttype) = "github.com/cosmos/cosmos-sdk/types.AccAddress", (.cosmos_proto.scalar) = "cosmos.AddressBytes"];</code>
        * @return The depositor.
        */
-      public java.lang.String getDepositor() {
-        java.lang.Object ref = depositor_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          depositor_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public com.google.protobuf.ByteString getDepositor() {
+        return depositor_;
       }
       /**
-       * <code>string depositor = 2 [(.gogoproto.casttype) = "github.com/cosmos/cosmos-sdk/types.AccAddress", (.cosmos_proto.scalar) = "cosmos.AddressBytes"];</code>
-       * @return The bytes for depositor.
-       */
-      public com.google.protobuf.ByteString
-          getDepositorBytes() {
-        java.lang.Object ref = depositor_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          depositor_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string depositor = 2 [(.gogoproto.casttype) = "github.com/cosmos/cosmos-sdk/types.AccAddress", (.cosmos_proto.scalar) = "cosmos.AddressBytes"];</code>
+       * <code>bytes depositor = 2 [(.gogoproto.casttype) = "github.com/cosmos/cosmos-sdk/types.AccAddress", (.cosmos_proto.scalar) = "cosmos.AddressBytes"];</code>
        * @param value The depositor to set.
        * @return This builder for chaining.
        */
-      public Builder setDepositor(
-          java.lang.String value) {
+      public Builder setDepositor(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2350,28 +2290,12 @@ public final class Cdp {
         return this;
       }
       /**
-       * <code>string depositor = 2 [(.gogoproto.casttype) = "github.com/cosmos/cosmos-sdk/types.AccAddress", (.cosmos_proto.scalar) = "cosmos.AddressBytes"];</code>
+       * <code>bytes depositor = 2 [(.gogoproto.casttype) = "github.com/cosmos/cosmos-sdk/types.AccAddress", (.cosmos_proto.scalar) = "cosmos.AddressBytes"];</code>
        * @return This builder for chaining.
        */
       public Builder clearDepositor() {
         
         depositor_ = getDefaultInstance().getDepositor();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string depositor = 2 [(.gogoproto.casttype) = "github.com/cosmos/cosmos-sdk/types.AccAddress", (.cosmos_proto.scalar) = "cosmos.AddressBytes"];</code>
-       * @param value The bytes for depositor to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDepositorBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        depositor_ = value;
         onChanged();
         return this;
       }
@@ -4778,7 +4702,7 @@ public final class Cdp {
       "nterest_factor\030\010 \001(\tB<\322\264-\ncosmos.Dec\332\336\037&" +
       "github.com/cosmos/cosmos-sdk/types.Dec\310\336" +
       "\037\000\"\262\001\n\007Deposit\022\031\n\006cdp_id\030\001 \001(\004B\t\342\336\037\005CdpI" +
-      "D\022[\n\tdepositor\030\002 \001(\tBH\322\264-\023cosmos.Address" +
+      "D\022[\n\tdepositor\030\002 \001(\014BH\322\264-\023cosmos.Address" +
       "Bytes\372\336\037-github.com/cosmos/cosmos-sdk/ty" +
       "pes.AccAddress\022/\n\006amount\030\003 \001(\0132\031.cosmos." +
       "base.v1beta1.CoinB\004\310\336\037\000\"Z\n\016TotalPrincipa" +

@@ -31,7 +31,7 @@ message CDP {
 // Deposit defines an amount of coins deposited by an account to a cdp
 message Deposit {
   uint64 cdp_id    = 1 [(gogoproto.customname) = "CdpID"];
-  string depositor = 2 [
+  bytes  depositor = 2 [
     (cosmos_proto.scalar) = "cosmos.AddressBytes",
     (gogoproto.casttype)  = "github.com/cosmos/cosmos-sdk/types.AccAddress"
   ];
