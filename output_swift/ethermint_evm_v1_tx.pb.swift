@@ -27,8 +27,8 @@ struct Ethermint_Evm_V1_MsgEthereumTx {
   // methods supported on all messages.
 
   /// inner transaction data
-  var data: SwiftProtobuf.Google_Protobuf_Any {
-    get {return _data ?? SwiftProtobuf.Google_Protobuf_Any()}
+  var data: Google_Protobuf2_Any {
+    get {return _data ?? Google_Protobuf2_Any()}
     set {_data = newValue}
   }
   /// Returns true if `data` has been explicitly set.
@@ -51,7 +51,7 @@ struct Ethermint_Evm_V1_MsgEthereumTx {
 
   init() {}
 
-  fileprivate var _data: SwiftProtobuf.Google_Protobuf_Any? = nil
+  fileprivate var _data: Google_Protobuf2_Any? = nil
 }
 
 /// LegacyTx is the transaction data of regular Ethereum transactions.
