@@ -36,11 +36,7 @@ struct Ethermint_Feemarket_V1_GenesisState {
   /// Clears the value of `params`. Subsequent reads from it will return its default value.
   mutating func clearParams() {self._params = nil}
 
-  /// base fee is the exported value from previous software version.
-  /// Zero by default.
-  var baseFee: String = String()
-
-  /// block gas is the amount of gas used on the last block before the upgrade.
+  /// block gas is the amount of gas wanted on the last block before the upgrade.
   /// Zero by default.
   var blockGas: UInt64 = 0
 
@@ -59,7 +55,6 @@ extension Ethermint_Feemarket_V1_GenesisState: SwiftProtobuf.Message, SwiftProto
   static let protoMessageName: String = _protobuf_package + ".GenesisState"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "params"),
-    2: .standard(proto: "base_fee"),
     3: .standard(proto: "block_gas"),
   ]
 
@@ -70,7 +65,6 @@ extension Ethermint_Feemarket_V1_GenesisState: SwiftProtobuf.Message, SwiftProto
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._params) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.baseFee) }()
       case 3: try { try decoder.decodeSingularUInt64Field(value: &self.blockGas) }()
       default: break
       }
@@ -81,9 +75,6 @@ extension Ethermint_Feemarket_V1_GenesisState: SwiftProtobuf.Message, SwiftProto
     if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     }
-    if !self.baseFee.isEmpty {
-      try visitor.visitSingularStringField(value: self.baseFee, fieldNumber: 2)
-    }
     if self.blockGas != 0 {
       try visitor.visitSingularUInt64Field(value: self.blockGas, fieldNumber: 3)
     }
@@ -92,7 +83,6 @@ extension Ethermint_Feemarket_V1_GenesisState: SwiftProtobuf.Message, SwiftProto
 
   static func ==(lhs: Ethermint_Feemarket_V1_GenesisState, rhs: Ethermint_Feemarket_V1_GenesisState) -> Bool {
     if lhs._params != rhs._params {return false}
-    if lhs.baseFee != rhs.baseFee {return false}
     if lhs.blockGas != rhs.blockGas {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

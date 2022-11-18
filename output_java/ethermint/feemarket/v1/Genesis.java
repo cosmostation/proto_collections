@@ -47,29 +47,7 @@ public final class Genesis {
 
     /**
      * <pre>
-     * base fee is the exported value from previous software version.
-     * Zero by default.
-     * </pre>
-     *
-     * <code>string base_fee = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
-     * @return The baseFee.
-     */
-    java.lang.String getBaseFee();
-    /**
-     * <pre>
-     * base fee is the exported value from previous software version.
-     * Zero by default.
-     * </pre>
-     *
-     * <code>string base_fee = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
-     * @return The bytes for baseFee.
-     */
-    com.google.protobuf.ByteString
-        getBaseFeeBytes();
-
-    /**
-     * <pre>
-     * block gas is the amount of gas used on the last block before the upgrade.
+     * block gas is the amount of gas wanted on the last block before the upgrade.
      * Zero by default.
      * </pre>
      *
@@ -95,7 +73,6 @@ public final class Genesis {
       super(builder);
     }
     private GenesisState() {
-      baseFee_ = "";
     }
 
     @java.lang.Override
@@ -139,12 +116,6 @@ public final class Genesis {
                 params_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              baseFee_ = s;
               break;
             }
             case 24: {
@@ -222,59 +193,11 @@ public final class Genesis {
       return getParams();
     }
 
-    public static final int BASE_FEE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object baseFee_;
-    /**
-     * <pre>
-     * base fee is the exported value from previous software version.
-     * Zero by default.
-     * </pre>
-     *
-     * <code>string base_fee = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
-     * @return The baseFee.
-     */
-    @java.lang.Override
-    public java.lang.String getBaseFee() {
-      java.lang.Object ref = baseFee_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        baseFee_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * base fee is the exported value from previous software version.
-     * Zero by default.
-     * </pre>
-     *
-     * <code>string base_fee = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
-     * @return The bytes for baseFee.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getBaseFeeBytes() {
-      java.lang.Object ref = baseFee_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        baseFee_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     public static final int BLOCK_GAS_FIELD_NUMBER = 3;
     private long blockGas_;
     /**
      * <pre>
-     * block gas is the amount of gas used on the last block before the upgrade.
+     * block gas is the amount of gas wanted on the last block before the upgrade.
      * Zero by default.
      * </pre>
      *
@@ -303,9 +226,6 @@ public final class Genesis {
       if (params_ != null) {
         output.writeMessage(1, getParams());
       }
-      if (!getBaseFeeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, baseFee_);
-      }
       if (blockGas_ != 0L) {
         output.writeUInt64(3, blockGas_);
       }
@@ -321,9 +241,6 @@ public final class Genesis {
       if (params_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getParams());
-      }
-      if (!getBaseFeeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, baseFee_);
       }
       if (blockGas_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -349,8 +266,6 @@ public final class Genesis {
         if (!getParams()
             .equals(other.getParams())) return false;
       }
-      if (!getBaseFee()
-          .equals(other.getBaseFee())) return false;
       if (getBlockGas()
           != other.getBlockGas()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -368,8 +283,6 @@ public final class Genesis {
         hash = (37 * hash) + PARAMS_FIELD_NUMBER;
         hash = (53 * hash) + getParams().hashCode();
       }
-      hash = (37 * hash) + BASE_FEE_FIELD_NUMBER;
-      hash = (53 * hash) + getBaseFee().hashCode();
       hash = (37 * hash) + BLOCK_GAS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getBlockGas());
@@ -516,8 +429,6 @@ public final class Genesis {
           params_ = null;
           paramsBuilder_ = null;
         }
-        baseFee_ = "";
-
         blockGas_ = 0L;
 
         return this;
@@ -551,7 +462,6 @@ public final class Genesis {
         } else {
           result.params_ = paramsBuilder_.build();
         }
-        result.baseFee_ = baseFee_;
         result.blockGas_ = blockGas_;
         onBuilt();
         return result;
@@ -603,10 +513,6 @@ public final class Genesis {
         if (other == ethermint.feemarket.v1.Genesis.GenesisState.getDefaultInstance()) return this;
         if (other.hasParams()) {
           mergeParams(other.getParams());
-        }
-        if (!other.getBaseFee().isEmpty()) {
-          baseFee_ = other.baseFee_;
-          onChanged();
         }
         if (other.getBlockGas() != 0L) {
           setBlockGas(other.getBlockGas());
@@ -795,111 +701,10 @@ public final class Genesis {
         return paramsBuilder_;
       }
 
-      private java.lang.Object baseFee_ = "";
-      /**
-       * <pre>
-       * base fee is the exported value from previous software version.
-       * Zero by default.
-       * </pre>
-       *
-       * <code>string base_fee = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
-       * @return The baseFee.
-       */
-      public java.lang.String getBaseFee() {
-        java.lang.Object ref = baseFee_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          baseFee_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * base fee is the exported value from previous software version.
-       * Zero by default.
-       * </pre>
-       *
-       * <code>string base_fee = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
-       * @return The bytes for baseFee.
-       */
-      public com.google.protobuf.ByteString
-          getBaseFeeBytes() {
-        java.lang.Object ref = baseFee_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          baseFee_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * base fee is the exported value from previous software version.
-       * Zero by default.
-       * </pre>
-       *
-       * <code>string base_fee = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
-       * @param value The baseFee to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBaseFee(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        baseFee_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * base fee is the exported value from previous software version.
-       * Zero by default.
-       * </pre>
-       *
-       * <code>string base_fee = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBaseFee() {
-        
-        baseFee_ = getDefaultInstance().getBaseFee();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * base fee is the exported value from previous software version.
-       * Zero by default.
-       * </pre>
-       *
-       * <code>string base_fee = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int"];</code>
-       * @param value The bytes for baseFee to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBaseFeeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        baseFee_ = value;
-        onChanged();
-        return this;
-      }
-
       private long blockGas_ ;
       /**
        * <pre>
-       * block gas is the amount of gas used on the last block before the upgrade.
+       * block gas is the amount of gas wanted on the last block before the upgrade.
        * Zero by default.
        * </pre>
        *
@@ -912,7 +717,7 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * block gas is the amount of gas used on the last block before the upgrade.
+       * block gas is the amount of gas wanted on the last block before the upgrade.
        * Zero by default.
        * </pre>
        *
@@ -928,7 +733,7 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * block gas is the amount of gas used on the last block before the upgrade.
+       * block gas is the amount of gas wanted on the last block before the upgrade.
        * Zero by default.
        * </pre>
        *
@@ -1011,12 +816,11 @@ public final class Genesis {
       "\n$ethermint/feemarket/v1/genesis.proto\022\026" +
       "ethermint.feemarket.v1\032\024gogoproto/gogo.p" +
       "roto\032&ethermint/feemarket/v1/feemarket.p" +
-      "roto\"\231\001\n\014GenesisState\0224\n\006params\030\001 \001(\0132\036." +
-      "ethermint.feemarket.v1.ParamsB\004\310\336\037\000\022@\n\010b" +
-      "ase_fee\030\002 \001(\tB.\332\336\037&github.com/cosmos/cos" +
-      "mos-sdk/types.Int\310\336\037\000\022\021\n\tblock_gas\030\003 \001(\004" +
-      "B0Z.github.com/tharsis/ethermint/x/feema" +
-      "rket/typesb\006proto3"
+      "roto\"g\n\014GenesisState\0224\n\006params\030\001 \001(\0132\036.e" +
+      "thermint.feemarket.v1.ParamsB\004\310\336\037\000\022\021\n\tbl" +
+      "ock_gas\030\003 \001(\004J\004\010\002\020\003R\010base_feeB.Z,github." +
+      "com/evmos/ethermint/x/feemarket/typesb\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1029,10 +833,9 @@ public final class Genesis {
     internal_static_ethermint_feemarket_v1_GenesisState_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ethermint_feemarket_v1_GenesisState_descriptor,
-        new java.lang.String[] { "Params", "BaseFee", "BlockGas", });
+        new java.lang.String[] { "Params", "BlockGas", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf2.GoGoProtos.customtype);
     registry.add(com.google.protobuf2.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);

@@ -23,7 +23,7 @@ public final class Tx {
      * inner transaction data
      * </pre>
      *
-     * <code>.google.protobuf2.Any data = 1;</code>
+     * <code>.google.protobuf.Any data = 1;</code>
      * @return Whether the data field is set.
      */
     boolean hasData();
@@ -32,22 +32,22 @@ public final class Tx {
      * inner transaction data
      * </pre>
      *
-     * <code>.google.protobuf2.Any data = 1;</code>
+     * <code>.google.protobuf.Any data = 1;</code>
      * @return The data.
      */
-    com.google.protobuf2.Any getData();
+    com.google.protobuf.Any getData();
     /**
      * <pre>
      * inner transaction data
      * </pre>
      *
-     * <code>.google.protobuf2.Any data = 1;</code>
+     * <code>.google.protobuf.Any data = 1;</code>
      */
-    com.google.protobuf2.AnyOrBuilder getDataOrBuilder();
+    com.google.protobuf.AnyOrBuilder getDataOrBuilder();
 
     /**
      * <pre>
-     * encoded storage size of the transaction
+     * DEPRECATED: encoded storage size of the transaction
      * </pre>
      *
      * <code>double size = 2 [(.gogoproto.jsontag) = "-"];</code>
@@ -151,11 +151,11 @@ public final class Tx {
               done = true;
               break;
             case 10: {
-              com.google.protobuf2.Any.Builder subBuilder = null;
+              com.google.protobuf.Any.Builder subBuilder = null;
               if (data_ != null) {
                 subBuilder = data_.toBuilder();
               }
-              data_ = input.readMessage(com.google.protobuf2.Any.parser(), extensionRegistry);
+              data_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(data_);
                 data_ = subBuilder.buildPartial();
@@ -213,13 +213,13 @@ public final class Tx {
     }
 
     public static final int DATA_FIELD_NUMBER = 1;
-    private com.google.protobuf2.Any data_;
+    private com.google.protobuf.Any data_;
     /**
      * <pre>
      * inner transaction data
      * </pre>
      *
-     * <code>.google.protobuf2.Any data = 1;</code>
+     * <code>.google.protobuf.Any data = 1;</code>
      * @return Whether the data field is set.
      */
     @java.lang.Override
@@ -231,22 +231,22 @@ public final class Tx {
      * inner transaction data
      * </pre>
      *
-     * <code>.google.protobuf2.Any data = 1;</code>
+     * <code>.google.protobuf.Any data = 1;</code>
      * @return The data.
      */
     @java.lang.Override
-    public com.google.protobuf2.Any getData() {
-      return data_ == null ? com.google.protobuf2.Any.getDefaultInstance() : data_;
+    public com.google.protobuf.Any getData() {
+      return data_ == null ? com.google.protobuf.Any.getDefaultInstance() : data_;
     }
     /**
      * <pre>
      * inner transaction data
      * </pre>
      *
-     * <code>.google.protobuf2.Any data = 1;</code>
+     * <code>.google.protobuf.Any data = 1;</code>
      */
     @java.lang.Override
-    public com.google.protobuf2.AnyOrBuilder getDataOrBuilder() {
+    public com.google.protobuf.AnyOrBuilder getDataOrBuilder() {
       return getData();
     }
 
@@ -254,7 +254,7 @@ public final class Tx {
     private double size_;
     /**
      * <pre>
-     * encoded storage size of the transaction
+     * DEPRECATED: encoded storage size of the transaction
      * </pre>
      *
      * <code>double size = 2 [(.gogoproto.jsontag) = "-"];</code>
@@ -733,15 +733,15 @@ public final class Tx {
         return this;
       }
 
-      private com.google.protobuf2.Any data_;
+      private com.google.protobuf.Any data_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf2.Any, com.google.protobuf2.Any.Builder, com.google.protobuf2.AnyOrBuilder> dataBuilder_;
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> dataBuilder_;
       /**
        * <pre>
        * inner transaction data
        * </pre>
        *
-       * <code>.google.protobuf2.Any data = 1;</code>
+       * <code>.google.protobuf.Any data = 1;</code>
        * @return Whether the data field is set.
        */
       public boolean hasData() {
@@ -752,12 +752,12 @@ public final class Tx {
        * inner transaction data
        * </pre>
        *
-       * <code>.google.protobuf2.Any data = 1;</code>
+       * <code>.google.protobuf.Any data = 1;</code>
        * @return The data.
        */
-      public com.google.protobuf2.Any getData() {
+      public com.google.protobuf.Any getData() {
         if (dataBuilder_ == null) {
-          return data_ == null ? com.google.protobuf2.Any.getDefaultInstance() : data_;
+          return data_ == null ? com.google.protobuf.Any.getDefaultInstance() : data_;
         } else {
           return dataBuilder_.getMessage();
         }
@@ -767,9 +767,9 @@ public final class Tx {
        * inner transaction data
        * </pre>
        *
-       * <code>.google.protobuf2.Any data = 1;</code>
+       * <code>.google.protobuf.Any data = 1;</code>
        */
-      public Builder setData(com.google.protobuf2.Any value) {
+      public Builder setData(com.google.protobuf.Any value) {
         if (dataBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -787,10 +787,10 @@ public final class Tx {
        * inner transaction data
        * </pre>
        *
-       * <code>.google.protobuf2.Any data = 1;</code>
+       * <code>.google.protobuf.Any data = 1;</code>
        */
       public Builder setData(
-          com.google.protobuf2.Any.Builder builderForValue) {
+          com.google.protobuf.Any.Builder builderForValue) {
         if (dataBuilder_ == null) {
           data_ = builderForValue.build();
           onChanged();
@@ -805,13 +805,13 @@ public final class Tx {
        * inner transaction data
        * </pre>
        *
-       * <code>.google.protobuf2.Any data = 1;</code>
+       * <code>.google.protobuf.Any data = 1;</code>
        */
-      public Builder mergeData(com.google.protobuf2.Any value) {
+      public Builder mergeData(com.google.protobuf.Any value) {
         if (dataBuilder_ == null) {
           if (data_ != null) {
             data_ =
-              com.google.protobuf2.Any.newBuilder(data_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Any.newBuilder(data_).mergeFrom(value).buildPartial();
           } else {
             data_ = value;
           }
@@ -827,7 +827,7 @@ public final class Tx {
        * inner transaction data
        * </pre>
        *
-       * <code>.google.protobuf2.Any data = 1;</code>
+       * <code>.google.protobuf.Any data = 1;</code>
        */
       public Builder clearData() {
         if (dataBuilder_ == null) {
@@ -845,9 +845,9 @@ public final class Tx {
        * inner transaction data
        * </pre>
        *
-       * <code>.google.protobuf2.Any data = 1;</code>
+       * <code>.google.protobuf.Any data = 1;</code>
        */
-      public com.google.protobuf2.Any.Builder getDataBuilder() {
+      public com.google.protobuf.Any.Builder getDataBuilder() {
         
         onChanged();
         return getDataFieldBuilder().getBuilder();
@@ -857,14 +857,14 @@ public final class Tx {
        * inner transaction data
        * </pre>
        *
-       * <code>.google.protobuf2.Any data = 1;</code>
+       * <code>.google.protobuf.Any data = 1;</code>
        */
-      public com.google.protobuf2.AnyOrBuilder getDataOrBuilder() {
+      public com.google.protobuf.AnyOrBuilder getDataOrBuilder() {
         if (dataBuilder_ != null) {
           return dataBuilder_.getMessageOrBuilder();
         } else {
           return data_ == null ?
-              com.google.protobuf2.Any.getDefaultInstance() : data_;
+              com.google.protobuf.Any.getDefaultInstance() : data_;
         }
       }
       /**
@@ -872,14 +872,14 @@ public final class Tx {
        * inner transaction data
        * </pre>
        *
-       * <code>.google.protobuf2.Any data = 1;</code>
+       * <code>.google.protobuf.Any data = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf2.Any, com.google.protobuf2.Any.Builder, com.google.protobuf2.AnyOrBuilder> 
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
           getDataFieldBuilder() {
         if (dataBuilder_ == null) {
           dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf2.Any, com.google.protobuf2.Any.Builder, com.google.protobuf2.AnyOrBuilder>(
+              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
                   getData(),
                   getParentForChildren(),
                   isClean());
@@ -891,7 +891,7 @@ public final class Tx {
       private double size_ ;
       /**
        * <pre>
-       * encoded storage size of the transaction
+       * DEPRECATED: encoded storage size of the transaction
        * </pre>
        *
        * <code>double size = 2 [(.gogoproto.jsontag) = "-"];</code>
@@ -903,7 +903,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * encoded storage size of the transaction
+       * DEPRECATED: encoded storage size of the transaction
        * </pre>
        *
        * <code>double size = 2 [(.gogoproto.jsontag) = "-"];</code>
@@ -918,7 +918,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * encoded storage size of the transaction
+       * DEPRECATED: encoded storage size of the transaction
        * </pre>
        *
        * <code>double size = 2 [(.gogoproto.jsontag) = "-"];</code>
@@ -1312,6 +1312,8 @@ public final class Tx {
   /**
    * <pre>
    * LegacyTx is the transaction data of regular Ethereum transactions.
+   * NOTE: All non-protected transactions (i.e non EIP155 signed) will fail if the
+   * AllowUnprotectedTxs parameter is disabled.
    * </pre>
    *
    * Protobuf type {@code ethermint.evm.v1.LegacyTx}
@@ -1918,6 +1920,8 @@ public final class Tx {
     /**
      * <pre>
      * LegacyTx is the transaction data of regular Ethereum transactions.
+     * NOTE: All non-protected transactions (i.e non EIP155 signed) will fail if the
+     * AllowUnprotectedTxs parameter is disabled.
      * </pre>
      *
      * Protobuf type {@code ethermint.evm.v1.LegacyTx}
@@ -9098,56 +9102,59 @@ public final class Tx {
   static {
     java.lang.String[] descriptorData = {
       "\n\031ethermint/evm/v1/tx.proto\022\020ethermint.e" +
-      "vm.v1\032\024gogoproto/gogo.proto\032\032google/prot" +
-      "obuf2/any.proto\032\031cosmos_proto/cosmos.pro" +
-      "to\032\032ethermint/evm/v1/evm.proto\"x\n\rMsgEth" +
-      "ereumTx\022#\n\004data\030\001 \001(\0132\025.google.protobuf2" +
-      ".Any\022\023\n\004size\030\002 \001(\001B\005\352\336\037\001-\022\031\n\004hash\030\003 \001(\tB" +
-      "\013\362\336\037\007rlp:\"-\"\022\014\n\004from\030\004 \001(\t:\004\210\240\037\000\"\203\002\n\010Leg" +
-      "acyTx\022\r\n\005nonce\030\001 \001(\004\022=\n\tgas_price\030\002 \001(\tB" +
-      "*\332\336\037&github.com/cosmos/cosmos-sdk/types." +
-      "Int\022\031\n\003gas\030\003 \001(\004B\014\342\336\037\010GasLimit\022\n\n\002to\030\004 \001" +
-      "(\t\022C\n\005value\030\005 \001(\tB4\332\336\037&github.com/cosmos" +
-      "/cosmos-sdk/types.Int\342\336\037\006Amount\022\014\n\004data\030" +
-      "\006 \001(\014\022\t\n\001v\030\007 \001(\014\022\t\n\001r\030\010 \001(\014\022\t\n\001s\030\t \001(\014:\016" +
-      "\210\240\037\000\312\264-\006TxData\"\256\003\n\014AccessListTx\022R\n\010chain" +
-      "_id\030\001 \001(\tB@\332\336\037&github.com/cosmos/cosmos-" +
-      "sdk/types.Int\342\336\037\007ChainID\352\336\037\007chainID\022\r\n\005n" +
-      "once\030\002 \001(\004\022=\n\tgas_price\030\003 \001(\tB*\332\336\037&githu" +
-      "b.com/cosmos/cosmos-sdk/types.Int\022\031\n\003gas" +
-      "\030\004 \001(\004B\014\342\336\037\010GasLimit\022\n\n\002to\030\005 \001(\t\022C\n\005valu" +
-      "e\030\006 \001(\tB4\332\336\037&github.com/cosmos/cosmos-sd" +
-      "k/types.Int\342\336\037\006Amount\022\014\n\004data\030\007 \001(\014\022Q\n\010a" +
-      "ccesses\030\010 \003(\0132\035.ethermint.evm.v1.AccessT" +
-      "upleB \252\337\037\nAccessList\352\336\037\naccessList\310\336\037\000\022\t" +
-      "\n\001v\030\t \001(\014\022\t\n\001r\030\n \001(\014\022\t\n\001s\030\013 \001(\014:\016\210\240\037\000\312\264-" +
-      "\006TxData\"\361\003\n\014DynamicFeeTx\022R\n\010chain_id\030\001 \001" +
-      "(\tB@\332\336\037&github.com/cosmos/cosmos-sdk/typ" +
-      "es.Int\342\336\037\007ChainID\352\336\037\007chainID\022\r\n\005nonce\030\002 " +
-      "\001(\004\022?\n\013gas_tip_cap\030\003 \001(\tB*\332\336\037&github.com" +
-      "/cosmos/cosmos-sdk/types.Int\022?\n\013gas_fee_" +
-      "cap\030\004 \001(\tB*\332\336\037&github.com/cosmos/cosmos-" +
-      "sdk/types.Int\022\031\n\003gas\030\005 \001(\004B\014\342\336\037\010GasLimit" +
-      "\022\n\n\002to\030\006 \001(\t\022C\n\005value\030\007 \001(\tB4\332\336\037&github." +
-      "com/cosmos/cosmos-sdk/types.Int\342\336\037\006Amoun" +
-      "t\022\014\n\004data\030\010 \001(\014\022Q\n\010accesses\030\t \003(\0132\035.ethe" +
-      "rmint.evm.v1.AccessTupleB \252\337\037\nAccessList" +
-      "\352\336\037\naccessList\310\336\037\000\022\t\n\001v\030\n \001(\014\022\t\n\001r\030\013 \001(\014" +
-      "\022\t\n\001s\030\014 \001(\014:\016\210\240\037\000\312\264-\006TxData\"\"\n\032Extension" +
-      "OptionsEthereumTx:\004\210\240\037\000\"\201\001\n\025MsgEthereumT" +
-      "xResponse\022\014\n\004hash\030\001 \001(\t\022#\n\004logs\030\002 \003(\0132\025." +
-      "ethermint.evm.v1.Log\022\013\n\003ret\030\003 \001(\014\022\020\n\010vm_" +
-      "error\030\004 \001(\t\022\020\n\010gas_used\030\005 \001(\004:\004\210\240\037\0002]\n\003M" +
-      "sg\022V\n\nEthereumTx\022\037.ethermint.evm.v1.MsgE" +
-      "thereumTx\032\'.ethermint.evm.v1.MsgEthereum" +
-      "TxResponseB*Z(github.com/tharsis/ethermi" +
-      "nt/x/evm/typesb\006proto3"
+      "vm.v1\032\024gogoproto/gogo.proto\032\034google/api/" +
+      "annotations.proto\032\031google/protobuf/any.p" +
+      "roto\032\031cosmos_proto/cosmos.proto\032\032ethermi" +
+      "nt/evm/v1/evm.proto\"w\n\rMsgEthereumTx\022\"\n\004" +
+      "data\030\001 \001(\0132\024.google.protobuf.Any\022\023\n\004size" +
+      "\030\002 \001(\001B\005\352\336\037\001-\022\031\n\004hash\030\003 \001(\tB\013\362\336\037\007rlp:\"-\"" +
+      "\022\014\n\004from\030\004 \001(\t:\004\210\240\037\000\"\203\002\n\010LegacyTx\022\r\n\005non" +
+      "ce\030\001 \001(\004\022=\n\tgas_price\030\002 \001(\tB*\332\336\037&github." +
+      "com/cosmos/cosmos-sdk/types.Int\022\031\n\003gas\030\003" +
+      " \001(\004B\014\342\336\037\010GasLimit\022\n\n\002to\030\004 \001(\t\022C\n\005value\030" +
+      "\005 \001(\tB4\332\336\037&github.com/cosmos/cosmos-sdk/" +
+      "types.Int\342\336\037\006Amount\022\014\n\004data\030\006 \001(\014\022\t\n\001v\030\007" +
+      " \001(\014\022\t\n\001r\030\010 \001(\014\022\t\n\001s\030\t \001(\014:\016\210\240\037\000\312\264-\006TxDa" +
+      "ta\"\256\003\n\014AccessListTx\022R\n\010chain_id\030\001 \001(\tB@\332" +
+      "\336\037&github.com/cosmos/cosmos-sdk/types.In" +
+      "t\342\336\037\007ChainID\352\336\037\007chainID\022\r\n\005nonce\030\002 \001(\004\022=" +
+      "\n\tgas_price\030\003 \001(\tB*\332\336\037&github.com/cosmos" +
+      "/cosmos-sdk/types.Int\022\031\n\003gas\030\004 \001(\004B\014\342\336\037\010" +
+      "GasLimit\022\n\n\002to\030\005 \001(\t\022C\n\005value\030\006 \001(\tB4\332\336\037" +
+      "&github.com/cosmos/cosmos-sdk/types.Int\342" +
+      "\336\037\006Amount\022\014\n\004data\030\007 \001(\014\022Q\n\010accesses\030\010 \003(" +
+      "\0132\035.ethermint.evm.v1.AccessTupleB \252\337\037\nAc" +
+      "cessList\352\336\037\naccessList\310\336\037\000\022\t\n\001v\030\t \001(\014\022\t\n" +
+      "\001r\030\n \001(\014\022\t\n\001s\030\013 \001(\014:\016\210\240\037\000\312\264-\006TxData\"\361\003\n\014" +
+      "DynamicFeeTx\022R\n\010chain_id\030\001 \001(\tB@\332\336\037&gith" +
+      "ub.com/cosmos/cosmos-sdk/types.Int\342\336\037\007Ch" +
+      "ainID\352\336\037\007chainID\022\r\n\005nonce\030\002 \001(\004\022?\n\013gas_t" +
+      "ip_cap\030\003 \001(\tB*\332\336\037&github.com/cosmos/cosm" +
+      "os-sdk/types.Int\022?\n\013gas_fee_cap\030\004 \001(\tB*\332" +
+      "\336\037&github.com/cosmos/cosmos-sdk/types.In" +
+      "t\022\031\n\003gas\030\005 \001(\004B\014\342\336\037\010GasLimit\022\n\n\002to\030\006 \001(\t" +
+      "\022C\n\005value\030\007 \001(\tB4\332\336\037&github.com/cosmos/c" +
+      "osmos-sdk/types.Int\342\336\037\006Amount\022\014\n\004data\030\010 " +
+      "\001(\014\022Q\n\010accesses\030\t \003(\0132\035.ethermint.evm.v1" +
+      ".AccessTupleB \252\337\037\nAccessList\352\336\037\naccessLi" +
+      "st\310\336\037\000\022\t\n\001v\030\n \001(\014\022\t\n\001r\030\013 \001(\014\022\t\n\001s\030\014 \001(\014:" +
+      "\016\210\240\037\000\312\264-\006TxData\"\"\n\032ExtensionOptionsEther" +
+      "eumTx:\004\210\240\037\000\"\201\001\n\025MsgEthereumTxResponse\022\014\n" +
+      "\004hash\030\001 \001(\t\022#\n\004logs\030\002 \003(\0132\025.ethermint.ev" +
+      "m.v1.Log\022\013\n\003ret\030\003 \001(\014\022\020\n\010vm_error\030\004 \001(\t\022" +
+      "\020\n\010gas_used\030\005 \001(\004:\004\210\240\037\0002\204\001\n\003Msg\022}\n\nEther" +
+      "eumTx\022\037.ethermint.evm.v1.MsgEthereumTx\032\'" +
+      ".ethermint.evm.v1.MsgEthereumTxResponse\"" +
+      "%\202\323\344\223\002\037\"\035/ethermint/evm/v1/ethereum_txB(" +
+      "Z&github.com/evmos/ethermint/x/evm/types" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf2.GoGoProtos.getDescriptor(),
-          com.google.protobuf2.AnyProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.protobuf.AnyProto.getDescriptor(),
           cosmos_proto.Cosmos.getDescriptor(),
           ethermint.evm.v1.Evm.getDescriptor(),
         });
@@ -9197,10 +9204,12 @@ public final class Tx {
     registry.add(com.google.protobuf2.GoGoProtos.jsontag);
     registry.add(com.google.protobuf2.GoGoProtos.moretags);
     registry.add(com.google.protobuf2.GoGoProtos.nullable);
+    registry.add(com.google.api.AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf2.GoGoProtos.getDescriptor();
-    com.google.protobuf2.AnyProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
+    com.google.protobuf.AnyProto.getDescriptor();
     cosmos_proto.Cosmos.getDescriptor();
     ethermint.evm.v1.Evm.getDescriptor();
   }

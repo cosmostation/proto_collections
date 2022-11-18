@@ -29,7 +29,7 @@ struct Ethermint_Evm_V1_GenesisState {
   /// accounts is an array containing the ethereum genesis accounts.
   var accounts: [Ethermint_Evm_V1_GenesisAccount] = []
 
-  /// params defines all the paramaters of the module.
+  /// params defines all the parameters of the module.
   var params: Ethermint_Evm_V1_Params {
     get {return _params ?? Ethermint_Evm_V1_Params()}
     set {_params = newValue}
@@ -38,8 +38,6 @@ struct Ethermint_Evm_V1_GenesisState {
   var hasParams: Bool {return self._params != nil}
   /// Clears the value of `params`. Subsequent reads from it will return its default value.
   mutating func clearParams() {self._params = nil}
-
-  var txsLogs: [Ethermint_Evm_V1_TransactionLogs] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -78,8 +76,7 @@ extension Ethermint_Evm_V1_GenesisState: SwiftProtobuf.Message, SwiftProtobuf._M
   static let protoMessageName: String = _protobuf_package + ".GenesisState"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "accounts"),
-    3: .same(proto: "params"),
-    4: .standard(proto: "txs_logs"),
+    2: .same(proto: "params"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -89,8 +86,7 @@ extension Ethermint_Evm_V1_GenesisState: SwiftProtobuf.Message, SwiftProtobuf._M
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeRepeatedMessageField(value: &self.accounts) }()
-      case 3: try { try decoder.decodeSingularMessageField(value: &self._params) }()
-      case 4: try { try decoder.decodeRepeatedMessageField(value: &self.txsLogs) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._params) }()
       default: break
       }
     }
@@ -101,10 +97,7 @@ extension Ethermint_Evm_V1_GenesisState: SwiftProtobuf.Message, SwiftProtobuf._M
       try visitor.visitRepeatedMessageField(value: self.accounts, fieldNumber: 1)
     }
     if let v = self._params {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
-    if !self.txsLogs.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.txsLogs, fieldNumber: 4)
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -112,7 +105,6 @@ extension Ethermint_Evm_V1_GenesisState: SwiftProtobuf.Message, SwiftProtobuf._M
   static func ==(lhs: Ethermint_Evm_V1_GenesisState, rhs: Ethermint_Evm_V1_GenesisState) -> Bool {
     if lhs.accounts != rhs.accounts {return false}
     if lhs._params != rhs._params {return false}
-    if lhs.txsLogs != rhs.txsLogs {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

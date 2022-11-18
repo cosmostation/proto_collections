@@ -64,54 +64,30 @@ public final class Genesis {
 
     /**
      * <pre>
-     * params defines all the paramaters of the module.
+     * params defines all the parameters of the module.
      * </pre>
      *
-     * <code>.ethermint.evm.v1.Params params = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>.ethermint.evm.v1.Params params = 2 [(.gogoproto.nullable) = false];</code>
      * @return Whether the params field is set.
      */
     boolean hasParams();
     /**
      * <pre>
-     * params defines all the paramaters of the module.
+     * params defines all the parameters of the module.
      * </pre>
      *
-     * <code>.ethermint.evm.v1.Params params = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>.ethermint.evm.v1.Params params = 2 [(.gogoproto.nullable) = false];</code>
      * @return The params.
      */
     ethermint.evm.v1.Evm.Params getParams();
     /**
      * <pre>
-     * params defines all the paramaters of the module.
+     * params defines all the parameters of the module.
      * </pre>
      *
-     * <code>.ethermint.evm.v1.Params params = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>.ethermint.evm.v1.Params params = 2 [(.gogoproto.nullable) = false];</code>
      */
     ethermint.evm.v1.Evm.ParamsOrBuilder getParamsOrBuilder();
-
-    /**
-     * <code>repeated .ethermint.evm.v1.TransactionLogs txs_logs = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"txs_logs&#92;""];</code>
-     */
-    java.util.List<ethermint.evm.v1.Evm.TransactionLogs> 
-        getTxsLogsList();
-    /**
-     * <code>repeated .ethermint.evm.v1.TransactionLogs txs_logs = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"txs_logs&#92;""];</code>
-     */
-    ethermint.evm.v1.Evm.TransactionLogs getTxsLogs(int index);
-    /**
-     * <code>repeated .ethermint.evm.v1.TransactionLogs txs_logs = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"txs_logs&#92;""];</code>
-     */
-    int getTxsLogsCount();
-    /**
-     * <code>repeated .ethermint.evm.v1.TransactionLogs txs_logs = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"txs_logs&#92;""];</code>
-     */
-    java.util.List<? extends ethermint.evm.v1.Evm.TransactionLogsOrBuilder> 
-        getTxsLogsOrBuilderList();
-    /**
-     * <code>repeated .ethermint.evm.v1.TransactionLogs txs_logs = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"txs_logs&#92;""];</code>
-     */
-    ethermint.evm.v1.Evm.TransactionLogsOrBuilder getTxsLogsOrBuilder(
-        int index);
   }
   /**
    * <pre>
@@ -131,7 +107,6 @@ public final class Genesis {
     }
     private GenesisState() {
       accounts_ = java.util.Collections.emptyList();
-      txsLogs_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -174,7 +149,7 @@ public final class Genesis {
                   input.readMessage(ethermint.evm.v1.Genesis.GenesisAccount.parser(), extensionRegistry));
               break;
             }
-            case 26: {
+            case 18: {
               ethermint.evm.v1.Evm.Params.Builder subBuilder = null;
               if (params_ != null) {
                 subBuilder = params_.toBuilder();
@@ -185,15 +160,6 @@ public final class Genesis {
                 params_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                txsLogs_ = new java.util.ArrayList<ethermint.evm.v1.Evm.TransactionLogs>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              txsLogs_.add(
-                  input.readMessage(ethermint.evm.v1.Evm.TransactionLogs.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -213,9 +179,6 @@ public final class Genesis {
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           accounts_ = java.util.Collections.unmodifiableList(accounts_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          txsLogs_ = java.util.Collections.unmodifiableList(txsLogs_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -294,14 +257,14 @@ public final class Genesis {
       return accounts_.get(index);
     }
 
-    public static final int PARAMS_FIELD_NUMBER = 3;
+    public static final int PARAMS_FIELD_NUMBER = 2;
     private ethermint.evm.v1.Evm.Params params_;
     /**
      * <pre>
-     * params defines all the paramaters of the module.
+     * params defines all the parameters of the module.
      * </pre>
      *
-     * <code>.ethermint.evm.v1.Params params = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>.ethermint.evm.v1.Params params = 2 [(.gogoproto.nullable) = false];</code>
      * @return Whether the params field is set.
      */
     @java.lang.Override
@@ -310,10 +273,10 @@ public final class Genesis {
     }
     /**
      * <pre>
-     * params defines all the paramaters of the module.
+     * params defines all the parameters of the module.
      * </pre>
      *
-     * <code>.ethermint.evm.v1.Params params = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>.ethermint.evm.v1.Params params = 2 [(.gogoproto.nullable) = false];</code>
      * @return The params.
      */
     @java.lang.Override
@@ -322,54 +285,14 @@ public final class Genesis {
     }
     /**
      * <pre>
-     * params defines all the paramaters of the module.
+     * params defines all the parameters of the module.
      * </pre>
      *
-     * <code>.ethermint.evm.v1.Params params = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>.ethermint.evm.v1.Params params = 2 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public ethermint.evm.v1.Evm.ParamsOrBuilder getParamsOrBuilder() {
       return getParams();
-    }
-
-    public static final int TXS_LOGS_FIELD_NUMBER = 4;
-    private java.util.List<ethermint.evm.v1.Evm.TransactionLogs> txsLogs_;
-    /**
-     * <code>repeated .ethermint.evm.v1.TransactionLogs txs_logs = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"txs_logs&#92;""];</code>
-     */
-    @java.lang.Override
-    public java.util.List<ethermint.evm.v1.Evm.TransactionLogs> getTxsLogsList() {
-      return txsLogs_;
-    }
-    /**
-     * <code>repeated .ethermint.evm.v1.TransactionLogs txs_logs = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"txs_logs&#92;""];</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends ethermint.evm.v1.Evm.TransactionLogsOrBuilder> 
-        getTxsLogsOrBuilderList() {
-      return txsLogs_;
-    }
-    /**
-     * <code>repeated .ethermint.evm.v1.TransactionLogs txs_logs = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"txs_logs&#92;""];</code>
-     */
-    @java.lang.Override
-    public int getTxsLogsCount() {
-      return txsLogs_.size();
-    }
-    /**
-     * <code>repeated .ethermint.evm.v1.TransactionLogs txs_logs = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"txs_logs&#92;""];</code>
-     */
-    @java.lang.Override
-    public ethermint.evm.v1.Evm.TransactionLogs getTxsLogs(int index) {
-      return txsLogs_.get(index);
-    }
-    /**
-     * <code>repeated .ethermint.evm.v1.TransactionLogs txs_logs = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"txs_logs&#92;""];</code>
-     */
-    @java.lang.Override
-    public ethermint.evm.v1.Evm.TransactionLogsOrBuilder getTxsLogsOrBuilder(
-        int index) {
-      return txsLogs_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -390,10 +313,7 @@ public final class Genesis {
         output.writeMessage(1, accounts_.get(i));
       }
       if (params_ != null) {
-        output.writeMessage(3, getParams());
-      }
-      for (int i = 0; i < txsLogs_.size(); i++) {
-        output.writeMessage(4, txsLogs_.get(i));
+        output.writeMessage(2, getParams());
       }
       unknownFields.writeTo(output);
     }
@@ -410,11 +330,7 @@ public final class Genesis {
       }
       if (params_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getParams());
-      }
-      for (int i = 0; i < txsLogs_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, txsLogs_.get(i));
+          .computeMessageSize(2, getParams());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -438,8 +354,6 @@ public final class Genesis {
         if (!getParams()
             .equals(other.getParams())) return false;
       }
-      if (!getTxsLogsList()
-          .equals(other.getTxsLogsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -458,10 +372,6 @@ public final class Genesis {
       if (hasParams()) {
         hash = (37 * hash) + PARAMS_FIELD_NUMBER;
         hash = (53 * hash) + getParams().hashCode();
-      }
-      if (getTxsLogsCount() > 0) {
-        hash = (37 * hash) + TXS_LOGS_FIELD_NUMBER;
-        hash = (53 * hash) + getTxsLogsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -596,7 +506,6 @@ public final class Genesis {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getAccountsFieldBuilder();
-          getTxsLogsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -613,12 +522,6 @@ public final class Genesis {
         } else {
           params_ = null;
           paramsBuilder_ = null;
-        }
-        if (txsLogsBuilder_ == null) {
-          txsLogs_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          txsLogsBuilder_.clear();
         }
         return this;
       }
@@ -660,15 +563,6 @@ public final class Genesis {
           result.params_ = params_;
         } else {
           result.params_ = paramsBuilder_.build();
-        }
-        if (txsLogsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
-            txsLogs_ = java.util.Collections.unmodifiableList(txsLogs_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.txsLogs_ = txsLogs_;
-        } else {
-          result.txsLogs_ = txsLogsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -746,32 +640,6 @@ public final class Genesis {
         }
         if (other.hasParams()) {
           mergeParams(other.getParams());
-        }
-        if (txsLogsBuilder_ == null) {
-          if (!other.txsLogs_.isEmpty()) {
-            if (txsLogs_.isEmpty()) {
-              txsLogs_ = other.txsLogs_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensureTxsLogsIsMutable();
-              txsLogs_.addAll(other.txsLogs_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.txsLogs_.isEmpty()) {
-            if (txsLogsBuilder_.isEmpty()) {
-              txsLogsBuilder_.dispose();
-              txsLogsBuilder_ = null;
-              txsLogs_ = other.txsLogs_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              txsLogsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getTxsLogsFieldBuilder() : null;
-            } else {
-              txsLogsBuilder_.addAllMessages(other.txsLogs_);
-            }
-          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1120,10 +988,10 @@ public final class Genesis {
           ethermint.evm.v1.Evm.Params, ethermint.evm.v1.Evm.Params.Builder, ethermint.evm.v1.Evm.ParamsOrBuilder> paramsBuilder_;
       /**
        * <pre>
-       * params defines all the paramaters of the module.
+       * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.ethermint.evm.v1.Params params = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.ethermint.evm.v1.Params params = 2 [(.gogoproto.nullable) = false];</code>
        * @return Whether the params field is set.
        */
       public boolean hasParams() {
@@ -1131,10 +999,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of the module.
+       * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.ethermint.evm.v1.Params params = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.ethermint.evm.v1.Params params = 2 [(.gogoproto.nullable) = false];</code>
        * @return The params.
        */
       public ethermint.evm.v1.Evm.Params getParams() {
@@ -1146,10 +1014,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of the module.
+       * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.ethermint.evm.v1.Params params = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.ethermint.evm.v1.Params params = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setParams(ethermint.evm.v1.Evm.Params value) {
         if (paramsBuilder_ == null) {
@@ -1166,10 +1034,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of the module.
+       * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.ethermint.evm.v1.Params params = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.ethermint.evm.v1.Params params = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setParams(
           ethermint.evm.v1.Evm.Params.Builder builderForValue) {
@@ -1184,10 +1052,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of the module.
+       * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.ethermint.evm.v1.Params params = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.ethermint.evm.v1.Params params = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder mergeParams(ethermint.evm.v1.Evm.Params value) {
         if (paramsBuilder_ == null) {
@@ -1206,10 +1074,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of the module.
+       * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.ethermint.evm.v1.Params params = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.ethermint.evm.v1.Params params = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearParams() {
         if (paramsBuilder_ == null) {
@@ -1224,10 +1092,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of the module.
+       * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.ethermint.evm.v1.Params params = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.ethermint.evm.v1.Params params = 2 [(.gogoproto.nullable) = false];</code>
        */
       public ethermint.evm.v1.Evm.Params.Builder getParamsBuilder() {
         
@@ -1236,10 +1104,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of the module.
+       * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.ethermint.evm.v1.Params params = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.ethermint.evm.v1.Params params = 2 [(.gogoproto.nullable) = false];</code>
        */
       public ethermint.evm.v1.Evm.ParamsOrBuilder getParamsOrBuilder() {
         if (paramsBuilder_ != null) {
@@ -1251,10 +1119,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of the module.
+       * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.ethermint.evm.v1.Params params = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.ethermint.evm.v1.Params params = 2 [(.gogoproto.nullable) = false];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ethermint.evm.v1.Evm.Params, ethermint.evm.v1.Evm.Params.Builder, ethermint.evm.v1.Evm.ParamsOrBuilder> 
@@ -1268,246 +1136,6 @@ public final class Genesis {
           params_ = null;
         }
         return paramsBuilder_;
-      }
-
-      private java.util.List<ethermint.evm.v1.Evm.TransactionLogs> txsLogs_ =
-        java.util.Collections.emptyList();
-      private void ensureTxsLogsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          txsLogs_ = new java.util.ArrayList<ethermint.evm.v1.Evm.TransactionLogs>(txsLogs_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          ethermint.evm.v1.Evm.TransactionLogs, ethermint.evm.v1.Evm.TransactionLogs.Builder, ethermint.evm.v1.Evm.TransactionLogsOrBuilder> txsLogsBuilder_;
-
-      /**
-       * <code>repeated .ethermint.evm.v1.TransactionLogs txs_logs = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"txs_logs&#92;""];</code>
-       */
-      public java.util.List<ethermint.evm.v1.Evm.TransactionLogs> getTxsLogsList() {
-        if (txsLogsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(txsLogs_);
-        } else {
-          return txsLogsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .ethermint.evm.v1.TransactionLogs txs_logs = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"txs_logs&#92;""];</code>
-       */
-      public int getTxsLogsCount() {
-        if (txsLogsBuilder_ == null) {
-          return txsLogs_.size();
-        } else {
-          return txsLogsBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .ethermint.evm.v1.TransactionLogs txs_logs = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"txs_logs&#92;""];</code>
-       */
-      public ethermint.evm.v1.Evm.TransactionLogs getTxsLogs(int index) {
-        if (txsLogsBuilder_ == null) {
-          return txsLogs_.get(index);
-        } else {
-          return txsLogsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .ethermint.evm.v1.TransactionLogs txs_logs = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"txs_logs&#92;""];</code>
-       */
-      public Builder setTxsLogs(
-          int index, ethermint.evm.v1.Evm.TransactionLogs value) {
-        if (txsLogsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureTxsLogsIsMutable();
-          txsLogs_.set(index, value);
-          onChanged();
-        } else {
-          txsLogsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ethermint.evm.v1.TransactionLogs txs_logs = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"txs_logs&#92;""];</code>
-       */
-      public Builder setTxsLogs(
-          int index, ethermint.evm.v1.Evm.TransactionLogs.Builder builderForValue) {
-        if (txsLogsBuilder_ == null) {
-          ensureTxsLogsIsMutable();
-          txsLogs_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          txsLogsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ethermint.evm.v1.TransactionLogs txs_logs = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"txs_logs&#92;""];</code>
-       */
-      public Builder addTxsLogs(ethermint.evm.v1.Evm.TransactionLogs value) {
-        if (txsLogsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureTxsLogsIsMutable();
-          txsLogs_.add(value);
-          onChanged();
-        } else {
-          txsLogsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ethermint.evm.v1.TransactionLogs txs_logs = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"txs_logs&#92;""];</code>
-       */
-      public Builder addTxsLogs(
-          int index, ethermint.evm.v1.Evm.TransactionLogs value) {
-        if (txsLogsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureTxsLogsIsMutable();
-          txsLogs_.add(index, value);
-          onChanged();
-        } else {
-          txsLogsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ethermint.evm.v1.TransactionLogs txs_logs = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"txs_logs&#92;""];</code>
-       */
-      public Builder addTxsLogs(
-          ethermint.evm.v1.Evm.TransactionLogs.Builder builderForValue) {
-        if (txsLogsBuilder_ == null) {
-          ensureTxsLogsIsMutable();
-          txsLogs_.add(builderForValue.build());
-          onChanged();
-        } else {
-          txsLogsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ethermint.evm.v1.TransactionLogs txs_logs = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"txs_logs&#92;""];</code>
-       */
-      public Builder addTxsLogs(
-          int index, ethermint.evm.v1.Evm.TransactionLogs.Builder builderForValue) {
-        if (txsLogsBuilder_ == null) {
-          ensureTxsLogsIsMutable();
-          txsLogs_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          txsLogsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ethermint.evm.v1.TransactionLogs txs_logs = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"txs_logs&#92;""];</code>
-       */
-      public Builder addAllTxsLogs(
-          java.lang.Iterable<? extends ethermint.evm.v1.Evm.TransactionLogs> values) {
-        if (txsLogsBuilder_ == null) {
-          ensureTxsLogsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, txsLogs_);
-          onChanged();
-        } else {
-          txsLogsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ethermint.evm.v1.TransactionLogs txs_logs = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"txs_logs&#92;""];</code>
-       */
-      public Builder clearTxsLogs() {
-        if (txsLogsBuilder_ == null) {
-          txsLogs_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          txsLogsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ethermint.evm.v1.TransactionLogs txs_logs = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"txs_logs&#92;""];</code>
-       */
-      public Builder removeTxsLogs(int index) {
-        if (txsLogsBuilder_ == null) {
-          ensureTxsLogsIsMutable();
-          txsLogs_.remove(index);
-          onChanged();
-        } else {
-          txsLogsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ethermint.evm.v1.TransactionLogs txs_logs = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"txs_logs&#92;""];</code>
-       */
-      public ethermint.evm.v1.Evm.TransactionLogs.Builder getTxsLogsBuilder(
-          int index) {
-        return getTxsLogsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .ethermint.evm.v1.TransactionLogs txs_logs = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"txs_logs&#92;""];</code>
-       */
-      public ethermint.evm.v1.Evm.TransactionLogsOrBuilder getTxsLogsOrBuilder(
-          int index) {
-        if (txsLogsBuilder_ == null) {
-          return txsLogs_.get(index);  } else {
-          return txsLogsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .ethermint.evm.v1.TransactionLogs txs_logs = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"txs_logs&#92;""];</code>
-       */
-      public java.util.List<? extends ethermint.evm.v1.Evm.TransactionLogsOrBuilder> 
-           getTxsLogsOrBuilderList() {
-        if (txsLogsBuilder_ != null) {
-          return txsLogsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(txsLogs_);
-        }
-      }
-      /**
-       * <code>repeated .ethermint.evm.v1.TransactionLogs txs_logs = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"txs_logs&#92;""];</code>
-       */
-      public ethermint.evm.v1.Evm.TransactionLogs.Builder addTxsLogsBuilder() {
-        return getTxsLogsFieldBuilder().addBuilder(
-            ethermint.evm.v1.Evm.TransactionLogs.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .ethermint.evm.v1.TransactionLogs txs_logs = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"txs_logs&#92;""];</code>
-       */
-      public ethermint.evm.v1.Evm.TransactionLogs.Builder addTxsLogsBuilder(
-          int index) {
-        return getTxsLogsFieldBuilder().addBuilder(
-            index, ethermint.evm.v1.Evm.TransactionLogs.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .ethermint.evm.v1.TransactionLogs txs_logs = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"txs_logs&#92;""];</code>
-       */
-      public java.util.List<ethermint.evm.v1.Evm.TransactionLogs.Builder> 
-           getTxsLogsBuilderList() {
-        return getTxsLogsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          ethermint.evm.v1.Evm.TransactionLogs, ethermint.evm.v1.Evm.TransactionLogs.Builder, ethermint.evm.v1.Evm.TransactionLogsOrBuilder> 
-          getTxsLogsFieldBuilder() {
-        if (txsLogsBuilder_ == null) {
-          txsLogsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              ethermint.evm.v1.Evm.TransactionLogs, ethermint.evm.v1.Evm.TransactionLogs.Builder, ethermint.evm.v1.Evm.TransactionLogsOrBuilder>(
-                  txsLogs_,
-                  ((bitField0_ & 0x00000002) != 0),
-                  getParentForChildren(),
-                  isClean());
-          txsLogs_ = null;
-        }
-        return txsLogsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -2872,16 +2500,14 @@ public final class Genesis {
     java.lang.String[] descriptorData = {
       "\n\036ethermint/evm/v1/genesis.proto\022\020etherm" +
       "int.evm.v1\032\024gogoproto/gogo.proto\032\032etherm" +
-      "int/evm/v1/evm.proto\"\306\001\n\014GenesisState\0228\n" +
-      "\010accounts\030\001 \003(\0132 .ethermint.evm.v1.Genes" +
-      "isAccountB\004\310\336\037\000\022.\n\006params\030\003 \001(\0132\030.etherm" +
-      "int.evm.v1.ParamsB\004\310\336\037\000\022L\n\010txs_logs\030\004 \003(" +
-      "\0132!.ethermint.evm.v1.TransactionLogsB\027\362\336" +
-      "\037\017yaml:\"txs_logs\"\310\336\037\000\"j\n\016GenesisAccount\022" +
-      "\017\n\007address\030\001 \001(\t\022\014\n\004code\030\002 \001(\t\0229\n\007storag" +
-      "e\030\003 \003(\0132\027.ethermint.evm.v1.StateB\017\310\336\037\000\252\337" +
-      "\037\007StorageB*Z(github.com/tharsis/ethermin" +
-      "t/x/evm/typesb\006proto3"
+      "int/evm/v1/evm.proto\"x\n\014GenesisState\0228\n\010" +
+      "accounts\030\001 \003(\0132 .ethermint.evm.v1.Genesi" +
+      "sAccountB\004\310\336\037\000\022.\n\006params\030\002 \001(\0132\030.ethermi" +
+      "nt.evm.v1.ParamsB\004\310\336\037\000\"j\n\016GenesisAccount" +
+      "\022\017\n\007address\030\001 \001(\t\022\014\n\004code\030\002 \001(\t\0229\n\007stora" +
+      "ge\030\003 \003(\0132\027.ethermint.evm.v1.StateB\017\310\336\037\000\252" +
+      "\337\037\007StorageB(Z&github.com/evmos/ethermint" +
+      "/x/evm/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2894,7 +2520,7 @@ public final class Genesis {
     internal_static_ethermint_evm_v1_GenesisState_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ethermint_evm_v1_GenesisState_descriptor,
-        new java.lang.String[] { "Accounts", "Params", "TxsLogs", });
+        new java.lang.String[] { "Accounts", "Params", });
     internal_static_ethermint_evm_v1_GenesisAccount_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ethermint_evm_v1_GenesisAccount_fieldAccessorTable = new
@@ -2904,7 +2530,6 @@ public final class Genesis {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.protobuf2.GoGoProtos.castrepeated);
-    registry.add(com.google.protobuf2.GoGoProtos.moretags);
     registry.add(com.google.protobuf2.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
