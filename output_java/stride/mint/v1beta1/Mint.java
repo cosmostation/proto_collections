@@ -3472,45 +3472,42 @@ public final class Mint {
   static {
     java.lang.String[] descriptorData = {
       "\n\036stride/mint/v1beta1/mint.proto\022\023stride" +
-      ".mint.v1beta1\032\024gogoproto/gogo.proto\032\037goo" +
-      "gle/protobuf/timestamp.proto\032\036google/pro" +
-      "tobuf/duration.proto\"m\n\006Minter\022c\n\020epoch_" +
-      "provisions\030\001 \001(\tBI\362\336\037\027yaml:\"epoch_provis" +
-      "ions\"\332\336\037&github.com/cosmos/cosmos-sdk/ty" +
-      "pes.Dec\310\336\037\000\"\251\003\n\027DistributionProportions\022" +
-      "Q\n\007staking\030\001 \001(\tB@\332\336\037&github.com/cosmos/" +
-      "cosmos-sdk/types.Dec\362\336\037\016yaml:\"staking\"\310\336" +
-      "\037\000\022f\n\025community_pool_growth\030\002 \001(\tBG\332\336\037&g" +
-      "ithub.com/cosmos/cosmos-sdk/types.Dec\362\336\037" +
-      "\025yaml:\"community_pool\"\310\336\037\000\022o\n\036community_" +
-      "pool_security_budget\030\003 \001(\tBG\332\336\037&github.c" +
-      "om/cosmos/cosmos-sdk/types.Dec\362\336\037\025yaml:\"" +
-      "community_pool\"\310\336\037\000\022b\n\021strategic_reserve" +
-      "\030\004 \001(\tBG\332\336\037&github.com/cosmos/cosmos-sdk" +
-      "/types.Dec\362\336\037\025yaml:\"community_pool\"\310\336\037\000\"" +
-      "\273\004\n\006Params\022\022\n\nmint_denom\030\001 \001(\t\022s\n\030genesi" +
-      "s_epoch_provisions\030\002 \001(\tBQ\362\336\037\037yaml:\"gene" +
-      "sis_epoch_provisions\"\332\336\037&github.com/cosm" +
-      "os/cosmos-sdk/types.Dec\310\336\037\000\0225\n\020epoch_ide" +
-      "ntifier\030\003 \001(\tB\033\362\336\037\027yaml:\"epoch_identifie" +
-      "r\"\022I\n\032reduction_period_in_epochs\030\004 \001(\003B%" +
-      "\362\336\037!yaml:\"reduction_period_in_epochs\"\022c\n" +
-      "\020reduction_factor\030\005 \001(\tBI\362\336\037\027yaml:\"reduc" +
-      "tion_factor\"\332\336\037&github.com/cosmos/cosmos" +
-      "-sdk/types.Dec\310\336\037\000\022T\n\030distribution_propo" +
-      "rtions\030\006 \001(\0132,.stride.mint.v1beta1.Distr" +
-      "ibutionProportionsB\004\310\336\037\000\022e\n(minting_rewa" +
-      "rds_distribution_start_epoch\030\007 \001(\003B3\362\336\037/" +
-      "yaml:\"minting_rewards_distribution_start" +
-      "_epoch\":\004\230\240\037\000B,Z*github.com/Stride-Labs/" +
-      "stride/x/mint/typesb\006proto3"
+      ".mint.v1beta1\032\024gogoproto/gogo.proto\"m\n\006M" +
+      "inter\022c\n\020epoch_provisions\030\001 \001(\tBI\362\336\037\027yam" +
+      "l:\"epoch_provisions\"\332\336\037&github.com/cosmo" +
+      "s/cosmos-sdk/types.Dec\310\336\037\000\"\251\003\n\027Distribut" +
+      "ionProportions\022Q\n\007staking\030\001 \001(\tB@\332\336\037&git" +
+      "hub.com/cosmos/cosmos-sdk/types.Dec\362\336\037\016y" +
+      "aml:\"staking\"\310\336\037\000\022f\n\025community_pool_grow" +
+      "th\030\002 \001(\tBG\332\336\037&github.com/cosmos/cosmos-s" +
+      "dk/types.Dec\362\336\037\025yaml:\"community_pool\"\310\336\037" +
+      "\000\022o\n\036community_pool_security_budget\030\003 \001(" +
+      "\tBG\332\336\037&github.com/cosmos/cosmos-sdk/type" +
+      "s.Dec\362\336\037\025yaml:\"community_pool\"\310\336\037\000\022b\n\021st" +
+      "rategic_reserve\030\004 \001(\tBG\332\336\037&github.com/co" +
+      "smos/cosmos-sdk/types.Dec\362\336\037\025yaml:\"commu" +
+      "nity_pool\"\310\336\037\000\"\273\004\n\006Params\022\022\n\nmint_denom\030" +
+      "\001 \001(\t\022s\n\030genesis_epoch_provisions\030\002 \001(\tB" +
+      "Q\362\336\037\037yaml:\"genesis_epoch_provisions\"\332\336\037&" +
+      "github.com/cosmos/cosmos-sdk/types.Dec\310\336" +
+      "\037\000\0225\n\020epoch_identifier\030\003 \001(\tB\033\362\336\037\027yaml:\"" +
+      "epoch_identifier\"\022I\n\032reduction_period_in" +
+      "_epochs\030\004 \001(\003B%\362\336\037!yaml:\"reduction_perio" +
+      "d_in_epochs\"\022c\n\020reduction_factor\030\005 \001(\tBI" +
+      "\362\336\037\027yaml:\"reduction_factor\"\332\336\037&github.co" +
+      "m/cosmos/cosmos-sdk/types.Dec\310\336\037\000\022T\n\030dis" +
+      "tribution_proportions\030\006 \001(\0132,.stride.min" +
+      "t.v1beta1.DistributionProportionsB\004\310\336\037\000\022" +
+      "e\n(minting_rewards_distribution_start_ep" +
+      "och\030\007 \001(\003B3\362\336\037/yaml:\"minting_rewards_dis" +
+      "tribution_start_epoch\":\004\230\240\037\000B/Z-github.c" +
+      "om/Stride-Labs/stride/v3/x/mint/typesb\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf2.GoGoProtos.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
-          com.google.protobuf.DurationProto.getDescriptor(),
         });
     internal_static_stride_mint_v1beta1_Minter_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -3539,8 +3536,6 @@ public final class Mint {
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf2.GoGoProtos.getDescriptor();
-    com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.protobuf.DurationProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

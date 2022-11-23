@@ -21,7 +21,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// MsgSubmitQueryResponse represents a message type to fulfil a query request.
-struct Stride_Interchainquery_MsgSubmitQueryResponse {
+struct Stride_Interchainquery_V1_MsgSubmitQueryResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -54,7 +54,7 @@ struct Stride_Interchainquery_MsgSubmitQueryResponse {
 
 /// MsgSubmitQueryResponseResponse defines the MsgSubmitQueryResponse response
 /// type.
-struct Stride_Interchainquery_MsgSubmitQueryResponseResponse {
+struct Stride_Interchainquery_V1_MsgSubmitQueryResponseResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -66,9 +66,9 @@ struct Stride_Interchainquery_MsgSubmitQueryResponseResponse {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "stride.interchainquery"
+fileprivate let _protobuf_package = "stride.interchainquery.v1"
 
-extension Stride_Interchainquery_MsgSubmitQueryResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Interchainquery_V1_MsgSubmitQueryResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgSubmitQueryResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "chain_id"),
@@ -118,7 +118,7 @@ extension Stride_Interchainquery_MsgSubmitQueryResponse: SwiftProtobuf.Message, 
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stride_Interchainquery_MsgSubmitQueryResponse, rhs: Stride_Interchainquery_MsgSubmitQueryResponse) -> Bool {
+  static func ==(lhs: Stride_Interchainquery_V1_MsgSubmitQueryResponse, rhs: Stride_Interchainquery_V1_MsgSubmitQueryResponse) -> Bool {
     if lhs.chainID != rhs.chainID {return false}
     if lhs.queryID != rhs.queryID {return false}
     if lhs.result != rhs.result {return false}
@@ -130,7 +130,7 @@ extension Stride_Interchainquery_MsgSubmitQueryResponse: SwiftProtobuf.Message, 
   }
 }
 
-extension Stride_Interchainquery_MsgSubmitQueryResponseResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Interchainquery_V1_MsgSubmitQueryResponseResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgSubmitQueryResponseResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -143,7 +143,7 @@ extension Stride_Interchainquery_MsgSubmitQueryResponseResponse: SwiftProtobuf.M
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stride_Interchainquery_MsgSubmitQueryResponseResponse, rhs: Stride_Interchainquery_MsgSubmitQueryResponseResponse) -> Bool {
+  static func ==(lhs: Stride_Interchainquery_V1_MsgSubmitQueryResponseResponse, rhs: Stride_Interchainquery_V1_MsgSubmitQueryResponseResponse) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

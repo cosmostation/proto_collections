@@ -27,60 +27,60 @@ import SwiftProtobuf
 
 /// Query defines the gRPC querier service.
 ///
-/// Usage: instantiate `Stridelabs_Stride_Stakeibc_QueryClient`, then call methods of this protocol to make API calls.
-internal protocol Stridelabs_Stride_Stakeibc_QueryClientProtocol: GRPCClient {
+/// Usage: instantiate `Stride_Stakeibc_QueryClient`, then call methods of this protocol to make API calls.
+internal protocol Stride_Stakeibc_QueryClientProtocol: GRPCClient {
   var serviceName: String { get }
-  var interceptors: Stridelabs_Stride_Stakeibc_QueryClientInterceptorFactoryProtocol? { get }
+  var interceptors: Stride_Stakeibc_QueryClientInterceptorFactoryProtocol? { get }
 
   func params(
-    _ request: Stridelabs_Stride_Stakeibc_QueryParamsRequest,
+    _ request: Stride_Stakeibc_QueryParamsRequest,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_QueryParamsRequest, Stridelabs_Stride_Stakeibc_QueryParamsResponse>
+  ) -> UnaryCall<Stride_Stakeibc_QueryParamsRequest, Stride_Stakeibc_QueryParamsResponse>
 
   func validators(
-    _ request: Stridelabs_Stride_Stakeibc_QueryGetValidatorsRequest,
+    _ request: Stride_Stakeibc_QueryGetValidatorsRequest,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_QueryGetValidatorsRequest, Stridelabs_Stride_Stakeibc_QueryGetValidatorsResponse>
+  ) -> UnaryCall<Stride_Stakeibc_QueryGetValidatorsRequest, Stride_Stakeibc_QueryGetValidatorsResponse>
 
   func iCAAccount(
-    _ request: Stridelabs_Stride_Stakeibc_QueryGetICAAccountRequest,
+    _ request: Stride_Stakeibc_QueryGetICAAccountRequest,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_QueryGetICAAccountRequest, Stridelabs_Stride_Stakeibc_QueryGetICAAccountResponse>
+  ) -> UnaryCall<Stride_Stakeibc_QueryGetICAAccountRequest, Stride_Stakeibc_QueryGetICAAccountResponse>
 
   func hostZone(
-    _ request: Stridelabs_Stride_Stakeibc_QueryGetHostZoneRequest,
+    _ request: Stride_Stakeibc_QueryGetHostZoneRequest,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_QueryGetHostZoneRequest, Stridelabs_Stride_Stakeibc_QueryGetHostZoneResponse>
+  ) -> UnaryCall<Stride_Stakeibc_QueryGetHostZoneRequest, Stride_Stakeibc_QueryGetHostZoneResponse>
 
   func hostZoneAll(
-    _ request: Stridelabs_Stride_Stakeibc_QueryAllHostZoneRequest,
+    _ request: Stride_Stakeibc_QueryAllHostZoneRequest,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_QueryAllHostZoneRequest, Stridelabs_Stride_Stakeibc_QueryAllHostZoneResponse>
+  ) -> UnaryCall<Stride_Stakeibc_QueryAllHostZoneRequest, Stride_Stakeibc_QueryAllHostZoneResponse>
 
   func moduleAddress(
-    _ request: Stridelabs_Stride_Stakeibc_QueryModuleAddressRequest,
+    _ request: Stride_Stakeibc_QueryModuleAddressRequest,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_QueryModuleAddressRequest, Stridelabs_Stride_Stakeibc_QueryModuleAddressResponse>
+  ) -> UnaryCall<Stride_Stakeibc_QueryModuleAddressRequest, Stride_Stakeibc_QueryModuleAddressResponse>
 
   func interchainAccountFromAddress(
-    _ request: Stridelabs_Stride_Stakeibc_QueryInterchainAccountFromAddressRequest,
+    _ request: Stride_Stakeibc_QueryInterchainAccountFromAddressRequest,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_QueryInterchainAccountFromAddressRequest, Stridelabs_Stride_Stakeibc_QueryInterchainAccountFromAddressResponse>
+  ) -> UnaryCall<Stride_Stakeibc_QueryInterchainAccountFromAddressRequest, Stride_Stakeibc_QueryInterchainAccountFromAddressResponse>
 
   func epochTracker(
-    _ request: Stridelabs_Stride_Stakeibc_QueryGetEpochTrackerRequest,
+    _ request: Stride_Stakeibc_QueryGetEpochTrackerRequest,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_QueryGetEpochTrackerRequest, Stridelabs_Stride_Stakeibc_QueryGetEpochTrackerResponse>
+  ) -> UnaryCall<Stride_Stakeibc_QueryGetEpochTrackerRequest, Stride_Stakeibc_QueryGetEpochTrackerResponse>
 
   func epochTrackerAll(
-    _ request: Stridelabs_Stride_Stakeibc_QueryAllEpochTrackerRequest,
+    _ request: Stride_Stakeibc_QueryAllEpochTrackerRequest,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_QueryAllEpochTrackerRequest, Stridelabs_Stride_Stakeibc_QueryAllEpochTrackerResponse>
+  ) -> UnaryCall<Stride_Stakeibc_QueryAllEpochTrackerRequest, Stride_Stakeibc_QueryAllEpochTrackerResponse>
 }
 
-extension Stridelabs_Stride_Stakeibc_QueryClientProtocol {
+extension Stride_Stakeibc_QueryClientProtocol {
   internal var serviceName: String {
-    return "Stridelabs.stride.stakeibc.Query"
+    return "stride.stakeibc.Query"
   }
 
   /// Parameters queries the parameters of the module.
@@ -90,11 +90,11 @@ extension Stridelabs_Stride_Stakeibc_QueryClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func params(
-    _ request: Stridelabs_Stride_Stakeibc_QueryParamsRequest,
+    _ request: Stride_Stakeibc_QueryParamsRequest,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_QueryParamsRequest, Stridelabs_Stride_Stakeibc_QueryParamsResponse> {
+  ) -> UnaryCall<Stride_Stakeibc_QueryParamsRequest, Stride_Stakeibc_QueryParamsResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.stakeibc.Query/Params",
+      path: "/stride.stakeibc.Query/Params",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeParamsInterceptors() ?? []
@@ -108,11 +108,11 @@ extension Stridelabs_Stride_Stakeibc_QueryClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func validators(
-    _ request: Stridelabs_Stride_Stakeibc_QueryGetValidatorsRequest,
+    _ request: Stride_Stakeibc_QueryGetValidatorsRequest,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_QueryGetValidatorsRequest, Stridelabs_Stride_Stakeibc_QueryGetValidatorsResponse> {
+  ) -> UnaryCall<Stride_Stakeibc_QueryGetValidatorsRequest, Stride_Stakeibc_QueryGetValidatorsResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.stakeibc.Query/Validators",
+      path: "/stride.stakeibc.Query/Validators",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeValidatorsInterceptors() ?? []
@@ -126,11 +126,11 @@ extension Stridelabs_Stride_Stakeibc_QueryClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func iCAAccount(
-    _ request: Stridelabs_Stride_Stakeibc_QueryGetICAAccountRequest,
+    _ request: Stride_Stakeibc_QueryGetICAAccountRequest,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_QueryGetICAAccountRequest, Stridelabs_Stride_Stakeibc_QueryGetICAAccountResponse> {
+  ) -> UnaryCall<Stride_Stakeibc_QueryGetICAAccountRequest, Stride_Stakeibc_QueryGetICAAccountResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.stakeibc.Query/ICAAccount",
+      path: "/stride.stakeibc.Query/ICAAccount",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeICAAccountInterceptors() ?? []
@@ -144,11 +144,11 @@ extension Stridelabs_Stride_Stakeibc_QueryClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func hostZone(
-    _ request: Stridelabs_Stride_Stakeibc_QueryGetHostZoneRequest,
+    _ request: Stride_Stakeibc_QueryGetHostZoneRequest,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_QueryGetHostZoneRequest, Stridelabs_Stride_Stakeibc_QueryGetHostZoneResponse> {
+  ) -> UnaryCall<Stride_Stakeibc_QueryGetHostZoneRequest, Stride_Stakeibc_QueryGetHostZoneResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.stakeibc.Query/HostZone",
+      path: "/stride.stakeibc.Query/HostZone",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeHostZoneInterceptors() ?? []
@@ -162,11 +162,11 @@ extension Stridelabs_Stride_Stakeibc_QueryClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func hostZoneAll(
-    _ request: Stridelabs_Stride_Stakeibc_QueryAllHostZoneRequest,
+    _ request: Stride_Stakeibc_QueryAllHostZoneRequest,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_QueryAllHostZoneRequest, Stridelabs_Stride_Stakeibc_QueryAllHostZoneResponse> {
+  ) -> UnaryCall<Stride_Stakeibc_QueryAllHostZoneRequest, Stride_Stakeibc_QueryAllHostZoneResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.stakeibc.Query/HostZoneAll",
+      path: "/stride.stakeibc.Query/HostZoneAll",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeHostZoneAllInterceptors() ?? []
@@ -180,29 +180,30 @@ extension Stridelabs_Stride_Stakeibc_QueryClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func moduleAddress(
-    _ request: Stridelabs_Stride_Stakeibc_QueryModuleAddressRequest,
+    _ request: Stride_Stakeibc_QueryModuleAddressRequest,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_QueryModuleAddressRequest, Stridelabs_Stride_Stakeibc_QueryModuleAddressResponse> {
+  ) -> UnaryCall<Stride_Stakeibc_QueryModuleAddressRequest, Stride_Stakeibc_QueryModuleAddressResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.stakeibc.Query/ModuleAddress",
+      path: "/stride.stakeibc.Query/ModuleAddress",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeModuleAddressInterceptors() ?? []
     )
   }
 
-  /// QueryInterchainAccountFromAddress returns the interchain account for given owner address on a given connection pair
+  /// QueryInterchainAccountFromAddress returns the interchain account for given
+  /// owner address on a given connection pair
   ///
   /// - Parameters:
   ///   - request: Request to send to InterchainAccountFromAddress.
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func interchainAccountFromAddress(
-    _ request: Stridelabs_Stride_Stakeibc_QueryInterchainAccountFromAddressRequest,
+    _ request: Stride_Stakeibc_QueryInterchainAccountFromAddressRequest,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_QueryInterchainAccountFromAddressRequest, Stridelabs_Stride_Stakeibc_QueryInterchainAccountFromAddressResponse> {
+  ) -> UnaryCall<Stride_Stakeibc_QueryInterchainAccountFromAddressRequest, Stride_Stakeibc_QueryInterchainAccountFromAddressResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.stakeibc.Query/InterchainAccountFromAddress",
+      path: "/stride.stakeibc.Query/InterchainAccountFromAddress",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeInterchainAccountFromAddressInterceptors() ?? []
@@ -216,11 +217,11 @@ extension Stridelabs_Stride_Stakeibc_QueryClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func epochTracker(
-    _ request: Stridelabs_Stride_Stakeibc_QueryGetEpochTrackerRequest,
+    _ request: Stride_Stakeibc_QueryGetEpochTrackerRequest,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_QueryGetEpochTrackerRequest, Stridelabs_Stride_Stakeibc_QueryGetEpochTrackerResponse> {
+  ) -> UnaryCall<Stride_Stakeibc_QueryGetEpochTrackerRequest, Stride_Stakeibc_QueryGetEpochTrackerResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.stakeibc.Query/EpochTracker",
+      path: "/stride.stakeibc.Query/EpochTracker",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeEpochTrackerInterceptors() ?? []
@@ -234,11 +235,11 @@ extension Stridelabs_Stride_Stakeibc_QueryClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func epochTrackerAll(
-    _ request: Stridelabs_Stride_Stakeibc_QueryAllEpochTrackerRequest,
+    _ request: Stride_Stakeibc_QueryAllEpochTrackerRequest,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_QueryAllEpochTrackerRequest, Stridelabs_Stride_Stakeibc_QueryAllEpochTrackerResponse> {
+  ) -> UnaryCall<Stride_Stakeibc_QueryAllEpochTrackerRequest, Stride_Stakeibc_QueryAllEpochTrackerResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.stakeibc.Query/EpochTrackerAll",
+      path: "/stride.stakeibc.Query/EpochTrackerAll",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeEpochTrackerAllInterceptors() ?? []
@@ -246,42 +247,42 @@ extension Stridelabs_Stride_Stakeibc_QueryClientProtocol {
   }
 }
 
-internal protocol Stridelabs_Stride_Stakeibc_QueryClientInterceptorFactoryProtocol {
+internal protocol Stride_Stakeibc_QueryClientInterceptorFactoryProtocol {
 
   /// - Returns: Interceptors to use when invoking 'params'.
-  func makeParamsInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Stakeibc_QueryParamsRequest, Stridelabs_Stride_Stakeibc_QueryParamsResponse>]
+  func makeParamsInterceptors() -> [ClientInterceptor<Stride_Stakeibc_QueryParamsRequest, Stride_Stakeibc_QueryParamsResponse>]
 
   /// - Returns: Interceptors to use when invoking 'validators'.
-  func makeValidatorsInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Stakeibc_QueryGetValidatorsRequest, Stridelabs_Stride_Stakeibc_QueryGetValidatorsResponse>]
+  func makeValidatorsInterceptors() -> [ClientInterceptor<Stride_Stakeibc_QueryGetValidatorsRequest, Stride_Stakeibc_QueryGetValidatorsResponse>]
 
   /// - Returns: Interceptors to use when invoking 'iCAAccount'.
-  func makeICAAccountInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Stakeibc_QueryGetICAAccountRequest, Stridelabs_Stride_Stakeibc_QueryGetICAAccountResponse>]
+  func makeICAAccountInterceptors() -> [ClientInterceptor<Stride_Stakeibc_QueryGetICAAccountRequest, Stride_Stakeibc_QueryGetICAAccountResponse>]
 
   /// - Returns: Interceptors to use when invoking 'hostZone'.
-  func makeHostZoneInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Stakeibc_QueryGetHostZoneRequest, Stridelabs_Stride_Stakeibc_QueryGetHostZoneResponse>]
+  func makeHostZoneInterceptors() -> [ClientInterceptor<Stride_Stakeibc_QueryGetHostZoneRequest, Stride_Stakeibc_QueryGetHostZoneResponse>]
 
   /// - Returns: Interceptors to use when invoking 'hostZoneAll'.
-  func makeHostZoneAllInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Stakeibc_QueryAllHostZoneRequest, Stridelabs_Stride_Stakeibc_QueryAllHostZoneResponse>]
+  func makeHostZoneAllInterceptors() -> [ClientInterceptor<Stride_Stakeibc_QueryAllHostZoneRequest, Stride_Stakeibc_QueryAllHostZoneResponse>]
 
   /// - Returns: Interceptors to use when invoking 'moduleAddress'.
-  func makeModuleAddressInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Stakeibc_QueryModuleAddressRequest, Stridelabs_Stride_Stakeibc_QueryModuleAddressResponse>]
+  func makeModuleAddressInterceptors() -> [ClientInterceptor<Stride_Stakeibc_QueryModuleAddressRequest, Stride_Stakeibc_QueryModuleAddressResponse>]
 
   /// - Returns: Interceptors to use when invoking 'interchainAccountFromAddress'.
-  func makeInterchainAccountFromAddressInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Stakeibc_QueryInterchainAccountFromAddressRequest, Stridelabs_Stride_Stakeibc_QueryInterchainAccountFromAddressResponse>]
+  func makeInterchainAccountFromAddressInterceptors() -> [ClientInterceptor<Stride_Stakeibc_QueryInterchainAccountFromAddressRequest, Stride_Stakeibc_QueryInterchainAccountFromAddressResponse>]
 
   /// - Returns: Interceptors to use when invoking 'epochTracker'.
-  func makeEpochTrackerInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Stakeibc_QueryGetEpochTrackerRequest, Stridelabs_Stride_Stakeibc_QueryGetEpochTrackerResponse>]
+  func makeEpochTrackerInterceptors() -> [ClientInterceptor<Stride_Stakeibc_QueryGetEpochTrackerRequest, Stride_Stakeibc_QueryGetEpochTrackerResponse>]
 
   /// - Returns: Interceptors to use when invoking 'epochTrackerAll'.
-  func makeEpochTrackerAllInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Stakeibc_QueryAllEpochTrackerRequest, Stridelabs_Stride_Stakeibc_QueryAllEpochTrackerResponse>]
+  func makeEpochTrackerAllInterceptors() -> [ClientInterceptor<Stride_Stakeibc_QueryAllEpochTrackerRequest, Stride_Stakeibc_QueryAllEpochTrackerResponse>]
 }
 
-internal final class Stridelabs_Stride_Stakeibc_QueryClient: Stridelabs_Stride_Stakeibc_QueryClientProtocol {
+internal final class Stride_Stakeibc_QueryClient: Stride_Stakeibc_QueryClientProtocol {
   internal let channel: GRPCChannel
   internal var defaultCallOptions: CallOptions
-  internal var interceptors: Stridelabs_Stride_Stakeibc_QueryClientInterceptorFactoryProtocol?
+  internal var interceptors: Stride_Stakeibc_QueryClientInterceptorFactoryProtocol?
 
-  /// Creates a client for the Stridelabs.stride.stakeibc.Query service.
+  /// Creates a client for the stride.stakeibc.Query service.
   ///
   /// - Parameters:
   ///   - channel: `GRPCChannel` to the service host.
@@ -290,7 +291,7 @@ internal final class Stridelabs_Stride_Stakeibc_QueryClient: Stridelabs_Stride_S
   internal init(
     channel: GRPCChannel,
     defaultCallOptions: CallOptions = CallOptions(),
-    interceptors: Stridelabs_Stride_Stakeibc_QueryClientInterceptorFactoryProtocol? = nil
+    interceptors: Stride_Stakeibc_QueryClientInterceptorFactoryProtocol? = nil
   ) {
     self.channel = channel
     self.defaultCallOptions = defaultCallOptions
@@ -301,39 +302,40 @@ internal final class Stridelabs_Stride_Stakeibc_QueryClient: Stridelabs_Stride_S
 /// Query defines the gRPC querier service.
 ///
 /// To build a server, implement a class that conforms to this protocol.
-internal protocol Stridelabs_Stride_Stakeibc_QueryProvider: CallHandlerProvider {
-  var interceptors: Stridelabs_Stride_Stakeibc_QueryServerInterceptorFactoryProtocol? { get }
+internal protocol Stride_Stakeibc_QueryProvider: CallHandlerProvider {
+  var interceptors: Stride_Stakeibc_QueryServerInterceptorFactoryProtocol? { get }
 
   /// Parameters queries the parameters of the module.
-  func params(request: Stridelabs_Stride_Stakeibc_QueryParamsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Stakeibc_QueryParamsResponse>
+  func params(request: Stride_Stakeibc_QueryParamsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Stakeibc_QueryParamsResponse>
 
   /// Queries a Validator by host zone.
-  func validators(request: Stridelabs_Stride_Stakeibc_QueryGetValidatorsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Stakeibc_QueryGetValidatorsResponse>
+  func validators(request: Stride_Stakeibc_QueryGetValidatorsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Stakeibc_QueryGetValidatorsResponse>
 
   /// Queries a ICAAccount by index.
-  func iCAAccount(request: Stridelabs_Stride_Stakeibc_QueryGetICAAccountRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Stakeibc_QueryGetICAAccountResponse>
+  func iCAAccount(request: Stride_Stakeibc_QueryGetICAAccountRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Stakeibc_QueryGetICAAccountResponse>
 
   /// Queries a HostZone by id.
-  func hostZone(request: Stridelabs_Stride_Stakeibc_QueryGetHostZoneRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Stakeibc_QueryGetHostZoneResponse>
+  func hostZone(request: Stride_Stakeibc_QueryGetHostZoneRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Stakeibc_QueryGetHostZoneResponse>
 
   /// Queries a list of HostZone items.
-  func hostZoneAll(request: Stridelabs_Stride_Stakeibc_QueryAllHostZoneRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Stakeibc_QueryAllHostZoneResponse>
+  func hostZoneAll(request: Stride_Stakeibc_QueryAllHostZoneRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Stakeibc_QueryAllHostZoneResponse>
 
   /// Queries a list of ModuleAddress items.
-  func moduleAddress(request: Stridelabs_Stride_Stakeibc_QueryModuleAddressRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Stakeibc_QueryModuleAddressResponse>
+  func moduleAddress(request: Stride_Stakeibc_QueryModuleAddressRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Stakeibc_QueryModuleAddressResponse>
 
-  /// QueryInterchainAccountFromAddress returns the interchain account for given owner address on a given connection pair
-  func interchainAccountFromAddress(request: Stridelabs_Stride_Stakeibc_QueryInterchainAccountFromAddressRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Stakeibc_QueryInterchainAccountFromAddressResponse>
+  /// QueryInterchainAccountFromAddress returns the interchain account for given
+  /// owner address on a given connection pair
+  func interchainAccountFromAddress(request: Stride_Stakeibc_QueryInterchainAccountFromAddressRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Stakeibc_QueryInterchainAccountFromAddressResponse>
 
   /// Queries a EpochTracker by index.
-  func epochTracker(request: Stridelabs_Stride_Stakeibc_QueryGetEpochTrackerRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Stakeibc_QueryGetEpochTrackerResponse>
+  func epochTracker(request: Stride_Stakeibc_QueryGetEpochTrackerRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Stakeibc_QueryGetEpochTrackerResponse>
 
   /// Queries a list of EpochTracker items.
-  func epochTrackerAll(request: Stridelabs_Stride_Stakeibc_QueryAllEpochTrackerRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Stakeibc_QueryAllEpochTrackerResponse>
+  func epochTrackerAll(request: Stride_Stakeibc_QueryAllEpochTrackerRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Stakeibc_QueryAllEpochTrackerResponse>
 }
 
-extension Stridelabs_Stride_Stakeibc_QueryProvider {
-  internal var serviceName: Substring { return "Stridelabs.stride.stakeibc.Query" }
+extension Stride_Stakeibc_QueryProvider {
+  internal var serviceName: Substring { return "stride.stakeibc.Query" }
 
   /// Determines, calls and returns the appropriate request handler, depending on the request's method.
   /// Returns nil for methods not handled by this service.
@@ -345,8 +347,8 @@ extension Stridelabs_Stride_Stakeibc_QueryProvider {
     case "Params":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Stakeibc_QueryParamsRequest>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Stakeibc_QueryParamsResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Stakeibc_QueryParamsRequest>(),
+        responseSerializer: ProtobufSerializer<Stride_Stakeibc_QueryParamsResponse>(),
         interceptors: self.interceptors?.makeParamsInterceptors() ?? [],
         userFunction: self.params(request:context:)
       )
@@ -354,8 +356,8 @@ extension Stridelabs_Stride_Stakeibc_QueryProvider {
     case "Validators":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Stakeibc_QueryGetValidatorsRequest>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Stakeibc_QueryGetValidatorsResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Stakeibc_QueryGetValidatorsRequest>(),
+        responseSerializer: ProtobufSerializer<Stride_Stakeibc_QueryGetValidatorsResponse>(),
         interceptors: self.interceptors?.makeValidatorsInterceptors() ?? [],
         userFunction: self.validators(request:context:)
       )
@@ -363,8 +365,8 @@ extension Stridelabs_Stride_Stakeibc_QueryProvider {
     case "ICAAccount":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Stakeibc_QueryGetICAAccountRequest>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Stakeibc_QueryGetICAAccountResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Stakeibc_QueryGetICAAccountRequest>(),
+        responseSerializer: ProtobufSerializer<Stride_Stakeibc_QueryGetICAAccountResponse>(),
         interceptors: self.interceptors?.makeICAAccountInterceptors() ?? [],
         userFunction: self.iCAAccount(request:context:)
       )
@@ -372,8 +374,8 @@ extension Stridelabs_Stride_Stakeibc_QueryProvider {
     case "HostZone":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Stakeibc_QueryGetHostZoneRequest>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Stakeibc_QueryGetHostZoneResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Stakeibc_QueryGetHostZoneRequest>(),
+        responseSerializer: ProtobufSerializer<Stride_Stakeibc_QueryGetHostZoneResponse>(),
         interceptors: self.interceptors?.makeHostZoneInterceptors() ?? [],
         userFunction: self.hostZone(request:context:)
       )
@@ -381,8 +383,8 @@ extension Stridelabs_Stride_Stakeibc_QueryProvider {
     case "HostZoneAll":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Stakeibc_QueryAllHostZoneRequest>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Stakeibc_QueryAllHostZoneResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Stakeibc_QueryAllHostZoneRequest>(),
+        responseSerializer: ProtobufSerializer<Stride_Stakeibc_QueryAllHostZoneResponse>(),
         interceptors: self.interceptors?.makeHostZoneAllInterceptors() ?? [],
         userFunction: self.hostZoneAll(request:context:)
       )
@@ -390,8 +392,8 @@ extension Stridelabs_Stride_Stakeibc_QueryProvider {
     case "ModuleAddress":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Stakeibc_QueryModuleAddressRequest>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Stakeibc_QueryModuleAddressResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Stakeibc_QueryModuleAddressRequest>(),
+        responseSerializer: ProtobufSerializer<Stride_Stakeibc_QueryModuleAddressResponse>(),
         interceptors: self.interceptors?.makeModuleAddressInterceptors() ?? [],
         userFunction: self.moduleAddress(request:context:)
       )
@@ -399,8 +401,8 @@ extension Stridelabs_Stride_Stakeibc_QueryProvider {
     case "InterchainAccountFromAddress":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Stakeibc_QueryInterchainAccountFromAddressRequest>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Stakeibc_QueryInterchainAccountFromAddressResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Stakeibc_QueryInterchainAccountFromAddressRequest>(),
+        responseSerializer: ProtobufSerializer<Stride_Stakeibc_QueryInterchainAccountFromAddressResponse>(),
         interceptors: self.interceptors?.makeInterchainAccountFromAddressInterceptors() ?? [],
         userFunction: self.interchainAccountFromAddress(request:context:)
       )
@@ -408,8 +410,8 @@ extension Stridelabs_Stride_Stakeibc_QueryProvider {
     case "EpochTracker":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Stakeibc_QueryGetEpochTrackerRequest>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Stakeibc_QueryGetEpochTrackerResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Stakeibc_QueryGetEpochTrackerRequest>(),
+        responseSerializer: ProtobufSerializer<Stride_Stakeibc_QueryGetEpochTrackerResponse>(),
         interceptors: self.interceptors?.makeEpochTrackerInterceptors() ?? [],
         userFunction: self.epochTracker(request:context:)
       )
@@ -417,8 +419,8 @@ extension Stridelabs_Stride_Stakeibc_QueryProvider {
     case "EpochTrackerAll":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Stakeibc_QueryAllEpochTrackerRequest>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Stakeibc_QueryAllEpochTrackerResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Stakeibc_QueryAllEpochTrackerRequest>(),
+        responseSerializer: ProtobufSerializer<Stride_Stakeibc_QueryAllEpochTrackerResponse>(),
         interceptors: self.interceptors?.makeEpochTrackerAllInterceptors() ?? [],
         userFunction: self.epochTrackerAll(request:context:)
       )
@@ -429,41 +431,41 @@ extension Stridelabs_Stride_Stakeibc_QueryProvider {
   }
 }
 
-internal protocol Stridelabs_Stride_Stakeibc_QueryServerInterceptorFactoryProtocol {
+internal protocol Stride_Stakeibc_QueryServerInterceptorFactoryProtocol {
 
   /// - Returns: Interceptors to use when handling 'params'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeParamsInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Stakeibc_QueryParamsRequest, Stridelabs_Stride_Stakeibc_QueryParamsResponse>]
+  func makeParamsInterceptors() -> [ServerInterceptor<Stride_Stakeibc_QueryParamsRequest, Stride_Stakeibc_QueryParamsResponse>]
 
   /// - Returns: Interceptors to use when handling 'validators'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeValidatorsInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Stakeibc_QueryGetValidatorsRequest, Stridelabs_Stride_Stakeibc_QueryGetValidatorsResponse>]
+  func makeValidatorsInterceptors() -> [ServerInterceptor<Stride_Stakeibc_QueryGetValidatorsRequest, Stride_Stakeibc_QueryGetValidatorsResponse>]
 
   /// - Returns: Interceptors to use when handling 'iCAAccount'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeICAAccountInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Stakeibc_QueryGetICAAccountRequest, Stridelabs_Stride_Stakeibc_QueryGetICAAccountResponse>]
+  func makeICAAccountInterceptors() -> [ServerInterceptor<Stride_Stakeibc_QueryGetICAAccountRequest, Stride_Stakeibc_QueryGetICAAccountResponse>]
 
   /// - Returns: Interceptors to use when handling 'hostZone'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeHostZoneInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Stakeibc_QueryGetHostZoneRequest, Stridelabs_Stride_Stakeibc_QueryGetHostZoneResponse>]
+  func makeHostZoneInterceptors() -> [ServerInterceptor<Stride_Stakeibc_QueryGetHostZoneRequest, Stride_Stakeibc_QueryGetHostZoneResponse>]
 
   /// - Returns: Interceptors to use when handling 'hostZoneAll'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeHostZoneAllInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Stakeibc_QueryAllHostZoneRequest, Stridelabs_Stride_Stakeibc_QueryAllHostZoneResponse>]
+  func makeHostZoneAllInterceptors() -> [ServerInterceptor<Stride_Stakeibc_QueryAllHostZoneRequest, Stride_Stakeibc_QueryAllHostZoneResponse>]
 
   /// - Returns: Interceptors to use when handling 'moduleAddress'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeModuleAddressInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Stakeibc_QueryModuleAddressRequest, Stridelabs_Stride_Stakeibc_QueryModuleAddressResponse>]
+  func makeModuleAddressInterceptors() -> [ServerInterceptor<Stride_Stakeibc_QueryModuleAddressRequest, Stride_Stakeibc_QueryModuleAddressResponse>]
 
   /// - Returns: Interceptors to use when handling 'interchainAccountFromAddress'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeInterchainAccountFromAddressInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Stakeibc_QueryInterchainAccountFromAddressRequest, Stridelabs_Stride_Stakeibc_QueryInterchainAccountFromAddressResponse>]
+  func makeInterchainAccountFromAddressInterceptors() -> [ServerInterceptor<Stride_Stakeibc_QueryInterchainAccountFromAddressRequest, Stride_Stakeibc_QueryInterchainAccountFromAddressResponse>]
 
   /// - Returns: Interceptors to use when handling 'epochTracker'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeEpochTrackerInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Stakeibc_QueryGetEpochTrackerRequest, Stridelabs_Stride_Stakeibc_QueryGetEpochTrackerResponse>]
+  func makeEpochTrackerInterceptors() -> [ServerInterceptor<Stride_Stakeibc_QueryGetEpochTrackerRequest, Stride_Stakeibc_QueryGetEpochTrackerResponse>]
 
   /// - Returns: Interceptors to use when handling 'epochTrackerAll'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeEpochTrackerAllInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Stakeibc_QueryAllEpochTrackerRequest, Stridelabs_Stride_Stakeibc_QueryAllEpochTrackerResponse>]
+  func makeEpochTrackerAllInterceptors() -> [ServerInterceptor<Stride_Stakeibc_QueryAllEpochTrackerRequest, Stride_Stakeibc_QueryAllEpochTrackerResponse>]
 }

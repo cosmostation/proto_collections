@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-enum Stridelabs_Stride_Stakeibc_ICAAccountType: SwiftProtobuf.Enum {
+enum Stride_Stakeibc_ICAAccountType: SwiftProtobuf.Enum {
   typealias RawValue = Int
   case delegation // = 0
   case fee // = 1
@@ -56,9 +56,9 @@ enum Stridelabs_Stride_Stakeibc_ICAAccountType: SwiftProtobuf.Enum {
 
 #if swift(>=4.2)
 
-extension Stridelabs_Stride_Stakeibc_ICAAccountType: CaseIterable {
+extension Stride_Stakeibc_ICAAccountType: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [Stridelabs_Stride_Stakeibc_ICAAccountType] = [
+  static var allCases: [Stride_Stakeibc_ICAAccountType] = [
     .delegation,
     .fee,
     .withdrawal,
@@ -68,17 +68,18 @@ extension Stridelabs_Stride_Stakeibc_ICAAccountType: CaseIterable {
 
 #endif  // swift(>=4.2)
 
-/// TODO(TEST-XX): Update these fields to be more useful (e.g. balances should be coins, maybe store port name directly)
-struct Stridelabs_Stride_Stakeibc_ICAAccount {
+/// TODO(TEST-XX): Update these fields to be more useful (e.g. balances should be
+/// coins, maybe store port name directly)
+struct Stride_Stakeibc_ICAAccount {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var address: String = String()
 
-  var delegations: [Stridelabs_Stride_Stakeibc_Delegation] = []
+  var delegations: [Stride_Stakeibc_Delegation] = []
 
-  var target: Stridelabs_Stride_Stakeibc_ICAAccountType = .delegation
+  var target: Stride_Stakeibc_ICAAccountType = .delegation
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -87,9 +88,9 @@ struct Stridelabs_Stride_Stakeibc_ICAAccount {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "Stridelabs.stride.stakeibc"
+fileprivate let _protobuf_package = "stride.stakeibc"
 
-extension Stridelabs_Stride_Stakeibc_ICAAccountType: SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_ICAAccountType: SwiftProtobuf._ProtoNameProviding {
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "DELEGATION"),
     1: .same(proto: "FEE"),
@@ -98,7 +99,7 @@ extension Stridelabs_Stride_Stakeibc_ICAAccountType: SwiftProtobuf._ProtoNamePro
   ]
 }
 
-extension Stridelabs_Stride_Stakeibc_ICAAccount: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_ICAAccount: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ICAAccount"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "address"),
@@ -133,7 +134,7 @@ extension Stridelabs_Stride_Stakeibc_ICAAccount: SwiftProtobuf.Message, SwiftPro
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_ICAAccount, rhs: Stridelabs_Stride_Stakeibc_ICAAccount) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_ICAAccount, rhs: Stride_Stakeibc_ICAAccount) -> Bool {
     if lhs.address != rhs.address {return false}
     if lhs.delegations != rhs.delegations {return false}
     if lhs.target != rhs.target {return false}

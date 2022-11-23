@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Stridelabs_Stride_Stakeibc_ValidatorExchangeRate {
+struct Stride_Stakeibc_ValidatorExchangeRate {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -34,7 +34,7 @@ struct Stridelabs_Stride_Stakeibc_ValidatorExchangeRate {
   init() {}
 }
 
-struct Stridelabs_Stride_Stakeibc_Validator {
+struct Stride_Stakeibc_Validator {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -43,7 +43,7 @@ struct Stridelabs_Stride_Stakeibc_Validator {
 
   var address: String = String()
 
-  var status: Stridelabs_Stride_Stakeibc_Validator.ValidatorStatus = .active
+  var status: Stride_Stakeibc_Validator.ValidatorStatus = .active
 
   var commissionRate: UInt64 = 0
 
@@ -51,8 +51,8 @@ struct Stridelabs_Stride_Stakeibc_Validator {
 
   var weight: UInt64 = 0
 
-  var internalExchangeRate: Stridelabs_Stride_Stakeibc_ValidatorExchangeRate {
-    get {return _internalExchangeRate ?? Stridelabs_Stride_Stakeibc_ValidatorExchangeRate()}
+  var internalExchangeRate: Stride_Stakeibc_ValidatorExchangeRate {
+    get {return _internalExchangeRate ?? Stride_Stakeibc_ValidatorExchangeRate()}
     set {_internalExchangeRate = newValue}
   }
   /// Returns true if `internalExchangeRate` has been explicitly set.
@@ -92,14 +92,14 @@ struct Stridelabs_Stride_Stakeibc_Validator {
 
   init() {}
 
-  fileprivate var _internalExchangeRate: Stridelabs_Stride_Stakeibc_ValidatorExchangeRate? = nil
+  fileprivate var _internalExchangeRate: Stride_Stakeibc_ValidatorExchangeRate? = nil
 }
 
 #if swift(>=4.2)
 
-extension Stridelabs_Stride_Stakeibc_Validator.ValidatorStatus: CaseIterable {
+extension Stride_Stakeibc_Validator.ValidatorStatus: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [Stridelabs_Stride_Stakeibc_Validator.ValidatorStatus] = [
+  static var allCases: [Stride_Stakeibc_Validator.ValidatorStatus] = [
     .active,
     .inactive,
   ]
@@ -109,13 +109,13 @@ extension Stridelabs_Stride_Stakeibc_Validator.ValidatorStatus: CaseIterable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "Stridelabs.stride.stakeibc"
+fileprivate let _protobuf_package = "stride.stakeibc"
 
-extension Stridelabs_Stride_Stakeibc_ValidatorExchangeRate: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_ValidatorExchangeRate: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ValidatorExchangeRate"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "internalTokensToSharesRate"),
-    2: .same(proto: "epochNumber"),
+    1: .standard(proto: "internal_tokens_to_shares_rate"),
+    2: .standard(proto: "epoch_number"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -141,7 +141,7 @@ extension Stridelabs_Stride_Stakeibc_ValidatorExchangeRate: SwiftProtobuf.Messag
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_ValidatorExchangeRate, rhs: Stridelabs_Stride_Stakeibc_ValidatorExchangeRate) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_ValidatorExchangeRate, rhs: Stride_Stakeibc_ValidatorExchangeRate) -> Bool {
     if lhs.internalTokensToSharesRate != rhs.internalTokensToSharesRate {return false}
     if lhs.epochNumber != rhs.epochNumber {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -149,16 +149,16 @@ extension Stridelabs_Stride_Stakeibc_ValidatorExchangeRate: SwiftProtobuf.Messag
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_Validator: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_Validator: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Validator"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
     2: .same(proto: "address"),
     3: .same(proto: "status"),
-    4: .same(proto: "commissionRate"),
-    5: .same(proto: "delegationAmt"),
+    4: .standard(proto: "commission_rate"),
+    5: .standard(proto: "delegation_amt"),
     6: .same(proto: "weight"),
-    7: .same(proto: "internalExchangeRate"),
+    7: .standard(proto: "internal_exchange_rate"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -204,7 +204,7 @@ extension Stridelabs_Stride_Stakeibc_Validator: SwiftProtobuf.Message, SwiftProt
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_Validator, rhs: Stridelabs_Stride_Stakeibc_Validator) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_Validator, rhs: Stride_Stakeibc_Validator) -> Bool {
     if lhs.name != rhs.name {return false}
     if lhs.address != rhs.address {return false}
     if lhs.status != rhs.status {return false}
@@ -217,9 +217,9 @@ extension Stridelabs_Stride_Stakeibc_Validator: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_Validator.ValidatorStatus: SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_Validator.ValidatorStatus: SwiftProtobuf._ProtoNameProviding {
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "Active"),
-    1: .same(proto: "Inactive"),
+    0: .same(proto: "ACTIVE"),
+    1: .same(proto: "INACTIVE"),
   ]
 }

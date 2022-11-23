@@ -21,7 +21,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// ---------------------- Transfer Callback ---------------------- //
-struct Stridelabs_Stride_Records_TransferCallback {
+struct Stride_Records_TransferCallback {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -35,12 +35,12 @@ struct Stridelabs_Stride_Records_TransferCallback {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "Stridelabs.stride.records"
+fileprivate let _protobuf_package = "stride.records"
 
-extension Stridelabs_Stride_Records_TransferCallback: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Records_TransferCallback: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".TransferCallback"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "depositRecordId"),
+    1: .standard(proto: "deposit_record_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -62,7 +62,7 @@ extension Stridelabs_Stride_Records_TransferCallback: SwiftProtobuf.Message, Swi
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Records_TransferCallback, rhs: Stridelabs_Stride_Records_TransferCallback) -> Bool {
+  static func ==(lhs: Stride_Records_TransferCallback, rhs: Stride_Records_TransferCallback) -> Bool {
     if lhs.depositRecordID != rhs.depositRecordID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

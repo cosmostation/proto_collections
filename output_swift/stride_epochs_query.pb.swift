@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Stridelabs_Stride_Epochs_QueryEpochsInfoRequest {
+struct Stride_Epochs_QueryEpochsInfoRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -41,12 +41,12 @@ struct Stridelabs_Stride_Epochs_QueryEpochsInfoRequest {
   fileprivate var _pagination: Cosmos_Base_Query_V1beta1_PageRequest? = nil
 }
 
-struct Stridelabs_Stride_Epochs_QueryEpochsInfoResponse {
+struct Stride_Epochs_QueryEpochsInfoResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var epochs: [Stridelabs_Stride_Epochs_EpochInfo] = []
+  var epochs: [Stride_Epochs_EpochInfo] = []
 
   var pagination: Cosmos_Base_Query_V1beta1_PageResponse {
     get {return _pagination ?? Cosmos_Base_Query_V1beta1_PageResponse()}
@@ -64,7 +64,7 @@ struct Stridelabs_Stride_Epochs_QueryEpochsInfoResponse {
   fileprivate var _pagination: Cosmos_Base_Query_V1beta1_PageResponse? = nil
 }
 
-struct Stridelabs_Stride_Epochs_QueryCurrentEpochRequest {
+struct Stride_Epochs_QueryCurrentEpochRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -76,7 +76,7 @@ struct Stridelabs_Stride_Epochs_QueryCurrentEpochRequest {
   init() {}
 }
 
-struct Stridelabs_Stride_Epochs_QueryCurrentEpochResponse {
+struct Stride_Epochs_QueryCurrentEpochResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -88,7 +88,7 @@ struct Stridelabs_Stride_Epochs_QueryCurrentEpochResponse {
   init() {}
 }
 
-struct Stridelabs_Stride_Epochs_QueryEpochInfoRequest {
+struct Stride_Epochs_QueryEpochInfoRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -100,13 +100,13 @@ struct Stridelabs_Stride_Epochs_QueryEpochInfoRequest {
   init() {}
 }
 
-struct Stridelabs_Stride_Epochs_QueryEpochInfoResponse {
+struct Stride_Epochs_QueryEpochInfoResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var epoch: Stridelabs_Stride_Epochs_EpochInfo {
-    get {return _epoch ?? Stridelabs_Stride_Epochs_EpochInfo()}
+  var epoch: Stride_Epochs_EpochInfo {
+    get {return _epoch ?? Stride_Epochs_EpochInfo()}
     set {_epoch = newValue}
   }
   /// Returns true if `epoch` has been explicitly set.
@@ -118,14 +118,14 @@ struct Stridelabs_Stride_Epochs_QueryEpochInfoResponse {
 
   init() {}
 
-  fileprivate var _epoch: Stridelabs_Stride_Epochs_EpochInfo? = nil
+  fileprivate var _epoch: Stride_Epochs_EpochInfo? = nil
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "Stridelabs.stride.epochs"
+fileprivate let _protobuf_package = "stride.epochs"
 
-extension Stridelabs_Stride_Epochs_QueryEpochsInfoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Epochs_QueryEpochsInfoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryEpochsInfoRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "pagination"),
@@ -150,14 +150,14 @@ extension Stridelabs_Stride_Epochs_QueryEpochsInfoRequest: SwiftProtobuf.Message
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Epochs_QueryEpochsInfoRequest, rhs: Stridelabs_Stride_Epochs_QueryEpochsInfoRequest) -> Bool {
+  static func ==(lhs: Stride_Epochs_QueryEpochsInfoRequest, rhs: Stride_Epochs_QueryEpochsInfoRequest) -> Bool {
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Epochs_QueryEpochsInfoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Epochs_QueryEpochsInfoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryEpochsInfoResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "epochs"),
@@ -187,7 +187,7 @@ extension Stridelabs_Stride_Epochs_QueryEpochsInfoResponse: SwiftProtobuf.Messag
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Epochs_QueryEpochsInfoResponse, rhs: Stridelabs_Stride_Epochs_QueryEpochsInfoResponse) -> Bool {
+  static func ==(lhs: Stride_Epochs_QueryEpochsInfoResponse, rhs: Stride_Epochs_QueryEpochsInfoResponse) -> Bool {
     if lhs.epochs != rhs.epochs {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -195,7 +195,7 @@ extension Stridelabs_Stride_Epochs_QueryEpochsInfoResponse: SwiftProtobuf.Messag
   }
 }
 
-extension Stridelabs_Stride_Epochs_QueryCurrentEpochRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Epochs_QueryCurrentEpochRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryCurrentEpochRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "identifier"),
@@ -220,14 +220,14 @@ extension Stridelabs_Stride_Epochs_QueryCurrentEpochRequest: SwiftProtobuf.Messa
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Epochs_QueryCurrentEpochRequest, rhs: Stridelabs_Stride_Epochs_QueryCurrentEpochRequest) -> Bool {
+  static func ==(lhs: Stride_Epochs_QueryCurrentEpochRequest, rhs: Stride_Epochs_QueryCurrentEpochRequest) -> Bool {
     if lhs.identifier != rhs.identifier {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Epochs_QueryCurrentEpochResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Epochs_QueryCurrentEpochResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryCurrentEpochResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "current_epoch"),
@@ -252,14 +252,14 @@ extension Stridelabs_Stride_Epochs_QueryCurrentEpochResponse: SwiftProtobuf.Mess
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Epochs_QueryCurrentEpochResponse, rhs: Stridelabs_Stride_Epochs_QueryCurrentEpochResponse) -> Bool {
+  static func ==(lhs: Stride_Epochs_QueryCurrentEpochResponse, rhs: Stride_Epochs_QueryCurrentEpochResponse) -> Bool {
     if lhs.currentEpoch != rhs.currentEpoch {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Epochs_QueryEpochInfoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Epochs_QueryEpochInfoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryEpochInfoRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "identifier"),
@@ -284,14 +284,14 @@ extension Stridelabs_Stride_Epochs_QueryEpochInfoRequest: SwiftProtobuf.Message,
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Epochs_QueryEpochInfoRequest, rhs: Stridelabs_Stride_Epochs_QueryEpochInfoRequest) -> Bool {
+  static func ==(lhs: Stride_Epochs_QueryEpochInfoRequest, rhs: Stride_Epochs_QueryEpochInfoRequest) -> Bool {
     if lhs.identifier != rhs.identifier {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Epochs_QueryEpochInfoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Epochs_QueryEpochInfoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryEpochInfoResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "epoch"),
@@ -316,7 +316,7 @@ extension Stridelabs_Stride_Epochs_QueryEpochInfoResponse: SwiftProtobuf.Message
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Epochs_QueryEpochInfoResponse, rhs: Stridelabs_Stride_Epochs_QueryEpochInfoResponse) -> Bool {
+  static func ==(lhs: Stride_Epochs_QueryEpochInfoResponse, rhs: Stride_Epochs_QueryEpochInfoResponse) -> Bool {
     if lhs._epoch != rhs._epoch {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

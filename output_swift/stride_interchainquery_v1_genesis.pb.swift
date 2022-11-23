@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Stride_Interchainquery_Query {
+struct Stride_Interchainquery_V1_Query {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -50,7 +50,7 @@ struct Stride_Interchainquery_Query {
   init() {}
 }
 
-struct Stride_Interchainquery_DataPoint {
+struct Stride_Interchainquery_V1_DataPoint {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -69,12 +69,12 @@ struct Stride_Interchainquery_DataPoint {
 }
 
 /// GenesisState defines the epochs module's genesis state.
-struct Stride_Interchainquery_GenesisState {
+struct Stride_Interchainquery_V1_GenesisState {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var queries: [Stride_Interchainquery_Query] = []
+  var queries: [Stride_Interchainquery_V1_Query] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -83,9 +83,9 @@ struct Stride_Interchainquery_GenesisState {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "stride.interchainquery"
+fileprivate let _protobuf_package = "stride.interchainquery.v1"
 
-extension Stride_Interchainquery_Query: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Interchainquery_V1_Query: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Query"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "id"),
@@ -155,7 +155,7 @@ extension Stride_Interchainquery_Query: SwiftProtobuf.Message, SwiftProtobuf._Me
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stride_Interchainquery_Query, rhs: Stride_Interchainquery_Query) -> Bool {
+  static func ==(lhs: Stride_Interchainquery_V1_Query, rhs: Stride_Interchainquery_V1_Query) -> Bool {
     if lhs.id != rhs.id {return false}
     if lhs.connectionID != rhs.connectionID {return false}
     if lhs.chainID != rhs.chainID {return false}
@@ -171,7 +171,7 @@ extension Stride_Interchainquery_Query: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension Stride_Interchainquery_DataPoint: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Interchainquery_V1_DataPoint: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DataPoint"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "id"),
@@ -211,7 +211,7 @@ extension Stride_Interchainquery_DataPoint: SwiftProtobuf.Message, SwiftProtobuf
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stride_Interchainquery_DataPoint, rhs: Stride_Interchainquery_DataPoint) -> Bool {
+  static func ==(lhs: Stride_Interchainquery_V1_DataPoint, rhs: Stride_Interchainquery_V1_DataPoint) -> Bool {
     if lhs.id != rhs.id {return false}
     if lhs.remoteHeight != rhs.remoteHeight {return false}
     if lhs.localHeight != rhs.localHeight {return false}
@@ -221,7 +221,7 @@ extension Stride_Interchainquery_DataPoint: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension Stride_Interchainquery_GenesisState: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Interchainquery_V1_GenesisState: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GenesisState"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "queries"),
@@ -246,7 +246,7 @@ extension Stride_Interchainquery_GenesisState: SwiftProtobuf.Message, SwiftProto
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stride_Interchainquery_GenesisState, rhs: Stride_Interchainquery_GenesisState) -> Bool {
+  static func ==(lhs: Stride_Interchainquery_V1_GenesisState, rhs: Stride_Interchainquery_V1_GenesisState) -> Bool {
     if lhs.queries != rhs.queries {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

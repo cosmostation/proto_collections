@@ -27,70 +27,70 @@ import SwiftProtobuf
 
 /// Msg defines the Msg service.
 ///
-/// Usage: instantiate `Stridelabs_Stride_Stakeibc_MsgClient`, then call methods of this protocol to make API calls.
-internal protocol Stridelabs_Stride_Stakeibc_MsgClientProtocol: GRPCClient {
+/// Usage: instantiate `Stride_Stakeibc_MsgClient`, then call methods of this protocol to make API calls.
+internal protocol Stride_Stakeibc_MsgClientProtocol: GRPCClient {
   var serviceName: String { get }
-  var interceptors: Stridelabs_Stride_Stakeibc_MsgClientInterceptorFactoryProtocol? { get }
+  var interceptors: Stride_Stakeibc_MsgClientInterceptorFactoryProtocol? { get }
 
   func liquidStake(
-    _ request: Stridelabs_Stride_Stakeibc_MsgLiquidStake,
+    _ request: Stride_Stakeibc_MsgLiquidStake,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_MsgLiquidStake, Stridelabs_Stride_Stakeibc_MsgLiquidStakeResponse>
+  ) -> UnaryCall<Stride_Stakeibc_MsgLiquidStake, Stride_Stakeibc_MsgLiquidStakeResponse>
 
   func redeemStake(
-    _ request: Stridelabs_Stride_Stakeibc_MsgRedeemStake,
+    _ request: Stride_Stakeibc_MsgRedeemStake,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_MsgRedeemStake, Stridelabs_Stride_Stakeibc_MsgRedeemStakeResponse>
+  ) -> UnaryCall<Stride_Stakeibc_MsgRedeemStake, Stride_Stakeibc_MsgRedeemStakeResponse>
 
   func registerHostZone(
-    _ request: Stridelabs_Stride_Stakeibc_MsgRegisterHostZone,
+    _ request: Stride_Stakeibc_MsgRegisterHostZone,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_MsgRegisterHostZone, Stridelabs_Stride_Stakeibc_MsgRegisterHostZoneResponse>
+  ) -> UnaryCall<Stride_Stakeibc_MsgRegisterHostZone, Stride_Stakeibc_MsgRegisterHostZoneResponse>
 
   func claimUndelegatedTokens(
-    _ request: Stridelabs_Stride_Stakeibc_MsgClaimUndelegatedTokens,
+    _ request: Stride_Stakeibc_MsgClaimUndelegatedTokens,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_MsgClaimUndelegatedTokens, Stridelabs_Stride_Stakeibc_MsgClaimUndelegatedTokensResponse>
+  ) -> UnaryCall<Stride_Stakeibc_MsgClaimUndelegatedTokens, Stride_Stakeibc_MsgClaimUndelegatedTokensResponse>
 
   func rebalanceValidators(
-    _ request: Stridelabs_Stride_Stakeibc_MsgRebalanceValidators,
+    _ request: Stride_Stakeibc_MsgRebalanceValidators,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_MsgRebalanceValidators, Stridelabs_Stride_Stakeibc_MsgRebalanceValidatorsResponse>
+  ) -> UnaryCall<Stride_Stakeibc_MsgRebalanceValidators, Stride_Stakeibc_MsgRebalanceValidatorsResponse>
 
   func addValidator(
-    _ request: Stridelabs_Stride_Stakeibc_MsgAddValidator,
+    _ request: Stride_Stakeibc_MsgAddValidator,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_MsgAddValidator, Stridelabs_Stride_Stakeibc_MsgAddValidatorResponse>
+  ) -> UnaryCall<Stride_Stakeibc_MsgAddValidator, Stride_Stakeibc_MsgAddValidatorResponse>
 
   func changeValidatorWeight(
-    _ request: Stridelabs_Stride_Stakeibc_MsgChangeValidatorWeight,
+    _ request: Stride_Stakeibc_MsgChangeValidatorWeight,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_MsgChangeValidatorWeight, Stridelabs_Stride_Stakeibc_MsgChangeValidatorWeightResponse>
+  ) -> UnaryCall<Stride_Stakeibc_MsgChangeValidatorWeight, Stride_Stakeibc_MsgChangeValidatorWeightResponse>
 
   func deleteValidator(
-    _ request: Stridelabs_Stride_Stakeibc_MsgDeleteValidator,
+    _ request: Stride_Stakeibc_MsgDeleteValidator,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_MsgDeleteValidator, Stridelabs_Stride_Stakeibc_MsgDeleteValidatorResponse>
+  ) -> UnaryCall<Stride_Stakeibc_MsgDeleteValidator, Stride_Stakeibc_MsgDeleteValidatorResponse>
 
   func restoreInterchainAccount(
-    _ request: Stridelabs_Stride_Stakeibc_MsgRestoreInterchainAccount,
+    _ request: Stride_Stakeibc_MsgRestoreInterchainAccount,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_MsgRestoreInterchainAccount, Stridelabs_Stride_Stakeibc_MsgRestoreInterchainAccountResponse>
+  ) -> UnaryCall<Stride_Stakeibc_MsgRestoreInterchainAccount, Stride_Stakeibc_MsgRestoreInterchainAccountResponse>
 
   func updateValidatorSharesExchRate(
-    _ request: Stridelabs_Stride_Stakeibc_MsgUpdateValidatorSharesExchRate,
+    _ request: Stride_Stakeibc_MsgUpdateValidatorSharesExchRate,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_MsgUpdateValidatorSharesExchRate, Stridelabs_Stride_Stakeibc_MsgUpdateValidatorSharesExchRateResponse>
+  ) -> UnaryCall<Stride_Stakeibc_MsgUpdateValidatorSharesExchRate, Stride_Stakeibc_MsgUpdateValidatorSharesExchRateResponse>
 
   func clearBalance(
-    _ request: Stridelabs_Stride_Stakeibc_MsgClearBalance,
+    _ request: Stride_Stakeibc_MsgClearBalance,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_MsgClearBalance, Stridelabs_Stride_Stakeibc_MsgClearBalanceResponse>
+  ) -> UnaryCall<Stride_Stakeibc_MsgClearBalance, Stride_Stakeibc_MsgClearBalanceResponse>
 }
 
-extension Stridelabs_Stride_Stakeibc_MsgClientProtocol {
+extension Stride_Stakeibc_MsgClientProtocol {
   internal var serviceName: String {
-    return "Stridelabs.stride.stakeibc.Msg"
+    return "stride.stakeibc.Msg"
   }
 
   /// Unary call to LiquidStake
@@ -100,11 +100,11 @@ extension Stridelabs_Stride_Stakeibc_MsgClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func liquidStake(
-    _ request: Stridelabs_Stride_Stakeibc_MsgLiquidStake,
+    _ request: Stride_Stakeibc_MsgLiquidStake,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_MsgLiquidStake, Stridelabs_Stride_Stakeibc_MsgLiquidStakeResponse> {
+  ) -> UnaryCall<Stride_Stakeibc_MsgLiquidStake, Stride_Stakeibc_MsgLiquidStakeResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.stakeibc.Msg/LiquidStake",
+      path: "/stride.stakeibc.Msg/LiquidStake",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeLiquidStakeInterceptors() ?? []
@@ -118,29 +118,30 @@ extension Stridelabs_Stride_Stakeibc_MsgClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func redeemStake(
-    _ request: Stridelabs_Stride_Stakeibc_MsgRedeemStake,
+    _ request: Stride_Stakeibc_MsgRedeemStake,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_MsgRedeemStake, Stridelabs_Stride_Stakeibc_MsgRedeemStakeResponse> {
+  ) -> UnaryCall<Stride_Stakeibc_MsgRedeemStake, Stride_Stakeibc_MsgRedeemStakeResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.stakeibc.Msg/RedeemStake",
+      path: "/stride.stakeibc.Msg/RedeemStake",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeRedeemStakeInterceptors() ?? []
     )
   }
 
-  /// TODO(TEST-53): Remove this pre-launch (no need for clients to create / interact with ICAs)
+  /// TODO(TEST-53): Remove this pre-launch (no need for clients to create /
+  /// interact with ICAs)
   ///
   /// - Parameters:
   ///   - request: Request to send to RegisterHostZone.
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func registerHostZone(
-    _ request: Stridelabs_Stride_Stakeibc_MsgRegisterHostZone,
+    _ request: Stride_Stakeibc_MsgRegisterHostZone,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_MsgRegisterHostZone, Stridelabs_Stride_Stakeibc_MsgRegisterHostZoneResponse> {
+  ) -> UnaryCall<Stride_Stakeibc_MsgRegisterHostZone, Stride_Stakeibc_MsgRegisterHostZoneResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.stakeibc.Msg/RegisterHostZone",
+      path: "/stride.stakeibc.Msg/RegisterHostZone",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeRegisterHostZoneInterceptors() ?? []
@@ -154,11 +155,11 @@ extension Stridelabs_Stride_Stakeibc_MsgClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func claimUndelegatedTokens(
-    _ request: Stridelabs_Stride_Stakeibc_MsgClaimUndelegatedTokens,
+    _ request: Stride_Stakeibc_MsgClaimUndelegatedTokens,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_MsgClaimUndelegatedTokens, Stridelabs_Stride_Stakeibc_MsgClaimUndelegatedTokensResponse> {
+  ) -> UnaryCall<Stride_Stakeibc_MsgClaimUndelegatedTokens, Stride_Stakeibc_MsgClaimUndelegatedTokensResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.stakeibc.Msg/ClaimUndelegatedTokens",
+      path: "/stride.stakeibc.Msg/ClaimUndelegatedTokens",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeClaimUndelegatedTokensInterceptors() ?? []
@@ -172,11 +173,11 @@ extension Stridelabs_Stride_Stakeibc_MsgClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func rebalanceValidators(
-    _ request: Stridelabs_Stride_Stakeibc_MsgRebalanceValidators,
+    _ request: Stride_Stakeibc_MsgRebalanceValidators,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_MsgRebalanceValidators, Stridelabs_Stride_Stakeibc_MsgRebalanceValidatorsResponse> {
+  ) -> UnaryCall<Stride_Stakeibc_MsgRebalanceValidators, Stride_Stakeibc_MsgRebalanceValidatorsResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.stakeibc.Msg/RebalanceValidators",
+      path: "/stride.stakeibc.Msg/RebalanceValidators",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeRebalanceValidatorsInterceptors() ?? []
@@ -190,11 +191,11 @@ extension Stridelabs_Stride_Stakeibc_MsgClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func addValidator(
-    _ request: Stridelabs_Stride_Stakeibc_MsgAddValidator,
+    _ request: Stride_Stakeibc_MsgAddValidator,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_MsgAddValidator, Stridelabs_Stride_Stakeibc_MsgAddValidatorResponse> {
+  ) -> UnaryCall<Stride_Stakeibc_MsgAddValidator, Stride_Stakeibc_MsgAddValidatorResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.stakeibc.Msg/AddValidator",
+      path: "/stride.stakeibc.Msg/AddValidator",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeAddValidatorInterceptors() ?? []
@@ -208,11 +209,11 @@ extension Stridelabs_Stride_Stakeibc_MsgClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func changeValidatorWeight(
-    _ request: Stridelabs_Stride_Stakeibc_MsgChangeValidatorWeight,
+    _ request: Stride_Stakeibc_MsgChangeValidatorWeight,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_MsgChangeValidatorWeight, Stridelabs_Stride_Stakeibc_MsgChangeValidatorWeightResponse> {
+  ) -> UnaryCall<Stride_Stakeibc_MsgChangeValidatorWeight, Stride_Stakeibc_MsgChangeValidatorWeightResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.stakeibc.Msg/ChangeValidatorWeight",
+      path: "/stride.stakeibc.Msg/ChangeValidatorWeight",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeChangeValidatorWeightInterceptors() ?? []
@@ -226,11 +227,11 @@ extension Stridelabs_Stride_Stakeibc_MsgClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func deleteValidator(
-    _ request: Stridelabs_Stride_Stakeibc_MsgDeleteValidator,
+    _ request: Stride_Stakeibc_MsgDeleteValidator,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_MsgDeleteValidator, Stridelabs_Stride_Stakeibc_MsgDeleteValidatorResponse> {
+  ) -> UnaryCall<Stride_Stakeibc_MsgDeleteValidator, Stride_Stakeibc_MsgDeleteValidatorResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.stakeibc.Msg/DeleteValidator",
+      path: "/stride.stakeibc.Msg/DeleteValidator",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeDeleteValidatorInterceptors() ?? []
@@ -244,11 +245,11 @@ extension Stridelabs_Stride_Stakeibc_MsgClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func restoreInterchainAccount(
-    _ request: Stridelabs_Stride_Stakeibc_MsgRestoreInterchainAccount,
+    _ request: Stride_Stakeibc_MsgRestoreInterchainAccount,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_MsgRestoreInterchainAccount, Stridelabs_Stride_Stakeibc_MsgRestoreInterchainAccountResponse> {
+  ) -> UnaryCall<Stride_Stakeibc_MsgRestoreInterchainAccount, Stride_Stakeibc_MsgRestoreInterchainAccountResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.stakeibc.Msg/RestoreInterchainAccount",
+      path: "/stride.stakeibc.Msg/RestoreInterchainAccount",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeRestoreInterchainAccountInterceptors() ?? []
@@ -262,11 +263,11 @@ extension Stridelabs_Stride_Stakeibc_MsgClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func updateValidatorSharesExchRate(
-    _ request: Stridelabs_Stride_Stakeibc_MsgUpdateValidatorSharesExchRate,
+    _ request: Stride_Stakeibc_MsgUpdateValidatorSharesExchRate,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_MsgUpdateValidatorSharesExchRate, Stridelabs_Stride_Stakeibc_MsgUpdateValidatorSharesExchRateResponse> {
+  ) -> UnaryCall<Stride_Stakeibc_MsgUpdateValidatorSharesExchRate, Stride_Stakeibc_MsgUpdateValidatorSharesExchRateResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.stakeibc.Msg/UpdateValidatorSharesExchRate",
+      path: "/stride.stakeibc.Msg/UpdateValidatorSharesExchRate",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeUpdateValidatorSharesExchRateInterceptors() ?? []
@@ -280,11 +281,11 @@ extension Stridelabs_Stride_Stakeibc_MsgClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func clearBalance(
-    _ request: Stridelabs_Stride_Stakeibc_MsgClearBalance,
+    _ request: Stride_Stakeibc_MsgClearBalance,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Stakeibc_MsgClearBalance, Stridelabs_Stride_Stakeibc_MsgClearBalanceResponse> {
+  ) -> UnaryCall<Stride_Stakeibc_MsgClearBalance, Stride_Stakeibc_MsgClearBalanceResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.stakeibc.Msg/ClearBalance",
+      path: "/stride.stakeibc.Msg/ClearBalance",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeClearBalanceInterceptors() ?? []
@@ -292,48 +293,48 @@ extension Stridelabs_Stride_Stakeibc_MsgClientProtocol {
   }
 }
 
-internal protocol Stridelabs_Stride_Stakeibc_MsgClientInterceptorFactoryProtocol {
+internal protocol Stride_Stakeibc_MsgClientInterceptorFactoryProtocol {
 
   /// - Returns: Interceptors to use when invoking 'liquidStake'.
-  func makeLiquidStakeInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Stakeibc_MsgLiquidStake, Stridelabs_Stride_Stakeibc_MsgLiquidStakeResponse>]
+  func makeLiquidStakeInterceptors() -> [ClientInterceptor<Stride_Stakeibc_MsgLiquidStake, Stride_Stakeibc_MsgLiquidStakeResponse>]
 
   /// - Returns: Interceptors to use when invoking 'redeemStake'.
-  func makeRedeemStakeInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Stakeibc_MsgRedeemStake, Stridelabs_Stride_Stakeibc_MsgRedeemStakeResponse>]
+  func makeRedeemStakeInterceptors() -> [ClientInterceptor<Stride_Stakeibc_MsgRedeemStake, Stride_Stakeibc_MsgRedeemStakeResponse>]
 
   /// - Returns: Interceptors to use when invoking 'registerHostZone'.
-  func makeRegisterHostZoneInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Stakeibc_MsgRegisterHostZone, Stridelabs_Stride_Stakeibc_MsgRegisterHostZoneResponse>]
+  func makeRegisterHostZoneInterceptors() -> [ClientInterceptor<Stride_Stakeibc_MsgRegisterHostZone, Stride_Stakeibc_MsgRegisterHostZoneResponse>]
 
   /// - Returns: Interceptors to use when invoking 'claimUndelegatedTokens'.
-  func makeClaimUndelegatedTokensInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Stakeibc_MsgClaimUndelegatedTokens, Stridelabs_Stride_Stakeibc_MsgClaimUndelegatedTokensResponse>]
+  func makeClaimUndelegatedTokensInterceptors() -> [ClientInterceptor<Stride_Stakeibc_MsgClaimUndelegatedTokens, Stride_Stakeibc_MsgClaimUndelegatedTokensResponse>]
 
   /// - Returns: Interceptors to use when invoking 'rebalanceValidators'.
-  func makeRebalanceValidatorsInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Stakeibc_MsgRebalanceValidators, Stridelabs_Stride_Stakeibc_MsgRebalanceValidatorsResponse>]
+  func makeRebalanceValidatorsInterceptors() -> [ClientInterceptor<Stride_Stakeibc_MsgRebalanceValidators, Stride_Stakeibc_MsgRebalanceValidatorsResponse>]
 
   /// - Returns: Interceptors to use when invoking 'addValidator'.
-  func makeAddValidatorInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Stakeibc_MsgAddValidator, Stridelabs_Stride_Stakeibc_MsgAddValidatorResponse>]
+  func makeAddValidatorInterceptors() -> [ClientInterceptor<Stride_Stakeibc_MsgAddValidator, Stride_Stakeibc_MsgAddValidatorResponse>]
 
   /// - Returns: Interceptors to use when invoking 'changeValidatorWeight'.
-  func makeChangeValidatorWeightInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Stakeibc_MsgChangeValidatorWeight, Stridelabs_Stride_Stakeibc_MsgChangeValidatorWeightResponse>]
+  func makeChangeValidatorWeightInterceptors() -> [ClientInterceptor<Stride_Stakeibc_MsgChangeValidatorWeight, Stride_Stakeibc_MsgChangeValidatorWeightResponse>]
 
   /// - Returns: Interceptors to use when invoking 'deleteValidator'.
-  func makeDeleteValidatorInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Stakeibc_MsgDeleteValidator, Stridelabs_Stride_Stakeibc_MsgDeleteValidatorResponse>]
+  func makeDeleteValidatorInterceptors() -> [ClientInterceptor<Stride_Stakeibc_MsgDeleteValidator, Stride_Stakeibc_MsgDeleteValidatorResponse>]
 
   /// - Returns: Interceptors to use when invoking 'restoreInterchainAccount'.
-  func makeRestoreInterchainAccountInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Stakeibc_MsgRestoreInterchainAccount, Stridelabs_Stride_Stakeibc_MsgRestoreInterchainAccountResponse>]
+  func makeRestoreInterchainAccountInterceptors() -> [ClientInterceptor<Stride_Stakeibc_MsgRestoreInterchainAccount, Stride_Stakeibc_MsgRestoreInterchainAccountResponse>]
 
   /// - Returns: Interceptors to use when invoking 'updateValidatorSharesExchRate'.
-  func makeUpdateValidatorSharesExchRateInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Stakeibc_MsgUpdateValidatorSharesExchRate, Stridelabs_Stride_Stakeibc_MsgUpdateValidatorSharesExchRateResponse>]
+  func makeUpdateValidatorSharesExchRateInterceptors() -> [ClientInterceptor<Stride_Stakeibc_MsgUpdateValidatorSharesExchRate, Stride_Stakeibc_MsgUpdateValidatorSharesExchRateResponse>]
 
   /// - Returns: Interceptors to use when invoking 'clearBalance'.
-  func makeClearBalanceInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Stakeibc_MsgClearBalance, Stridelabs_Stride_Stakeibc_MsgClearBalanceResponse>]
+  func makeClearBalanceInterceptors() -> [ClientInterceptor<Stride_Stakeibc_MsgClearBalance, Stride_Stakeibc_MsgClearBalanceResponse>]
 }
 
-internal final class Stridelabs_Stride_Stakeibc_MsgClient: Stridelabs_Stride_Stakeibc_MsgClientProtocol {
+internal final class Stride_Stakeibc_MsgClient: Stride_Stakeibc_MsgClientProtocol {
   internal let channel: GRPCChannel
   internal var defaultCallOptions: CallOptions
-  internal var interceptors: Stridelabs_Stride_Stakeibc_MsgClientInterceptorFactoryProtocol?
+  internal var interceptors: Stride_Stakeibc_MsgClientInterceptorFactoryProtocol?
 
-  /// Creates a client for the Stridelabs.stride.stakeibc.Msg service.
+  /// Creates a client for the stride.stakeibc.Msg service.
   ///
   /// - Parameters:
   ///   - channel: `GRPCChannel` to the service host.
@@ -342,7 +343,7 @@ internal final class Stridelabs_Stride_Stakeibc_MsgClient: Stridelabs_Stride_Sta
   internal init(
     channel: GRPCChannel,
     defaultCallOptions: CallOptions = CallOptions(),
-    interceptors: Stridelabs_Stride_Stakeibc_MsgClientInterceptorFactoryProtocol? = nil
+    interceptors: Stride_Stakeibc_MsgClientInterceptorFactoryProtocol? = nil
   ) {
     self.channel = channel
     self.defaultCallOptions = defaultCallOptions
@@ -353,36 +354,37 @@ internal final class Stridelabs_Stride_Stakeibc_MsgClient: Stridelabs_Stride_Sta
 /// Msg defines the Msg service.
 ///
 /// To build a server, implement a class that conforms to this protocol.
-internal protocol Stridelabs_Stride_Stakeibc_MsgProvider: CallHandlerProvider {
-  var interceptors: Stridelabs_Stride_Stakeibc_MsgServerInterceptorFactoryProtocol? { get }
+internal protocol Stride_Stakeibc_MsgProvider: CallHandlerProvider {
+  var interceptors: Stride_Stakeibc_MsgServerInterceptorFactoryProtocol? { get }
 
-  func liquidStake(request: Stridelabs_Stride_Stakeibc_MsgLiquidStake, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Stakeibc_MsgLiquidStakeResponse>
+  func liquidStake(request: Stride_Stakeibc_MsgLiquidStake, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Stakeibc_MsgLiquidStakeResponse>
 
-  func redeemStake(request: Stridelabs_Stride_Stakeibc_MsgRedeemStake, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Stakeibc_MsgRedeemStakeResponse>
+  func redeemStake(request: Stride_Stakeibc_MsgRedeemStake, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Stakeibc_MsgRedeemStakeResponse>
 
-  /// TODO(TEST-53): Remove this pre-launch (no need for clients to create / interact with ICAs)
-  func registerHostZone(request: Stridelabs_Stride_Stakeibc_MsgRegisterHostZone, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Stakeibc_MsgRegisterHostZoneResponse>
+  /// TODO(TEST-53): Remove this pre-launch (no need for clients to create /
+  /// interact with ICAs)
+  func registerHostZone(request: Stride_Stakeibc_MsgRegisterHostZone, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Stakeibc_MsgRegisterHostZoneResponse>
 
-  func claimUndelegatedTokens(request: Stridelabs_Stride_Stakeibc_MsgClaimUndelegatedTokens, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Stakeibc_MsgClaimUndelegatedTokensResponse>
+  func claimUndelegatedTokens(request: Stride_Stakeibc_MsgClaimUndelegatedTokens, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Stakeibc_MsgClaimUndelegatedTokensResponse>
 
-  func rebalanceValidators(request: Stridelabs_Stride_Stakeibc_MsgRebalanceValidators, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Stakeibc_MsgRebalanceValidatorsResponse>
+  func rebalanceValidators(request: Stride_Stakeibc_MsgRebalanceValidators, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Stakeibc_MsgRebalanceValidatorsResponse>
 
-  func addValidator(request: Stridelabs_Stride_Stakeibc_MsgAddValidator, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Stakeibc_MsgAddValidatorResponse>
+  func addValidator(request: Stride_Stakeibc_MsgAddValidator, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Stakeibc_MsgAddValidatorResponse>
 
-  func changeValidatorWeight(request: Stridelabs_Stride_Stakeibc_MsgChangeValidatorWeight, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Stakeibc_MsgChangeValidatorWeightResponse>
+  func changeValidatorWeight(request: Stride_Stakeibc_MsgChangeValidatorWeight, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Stakeibc_MsgChangeValidatorWeightResponse>
 
-  func deleteValidator(request: Stridelabs_Stride_Stakeibc_MsgDeleteValidator, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Stakeibc_MsgDeleteValidatorResponse>
+  func deleteValidator(request: Stride_Stakeibc_MsgDeleteValidator, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Stakeibc_MsgDeleteValidatorResponse>
 
-  func restoreInterchainAccount(request: Stridelabs_Stride_Stakeibc_MsgRestoreInterchainAccount, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Stakeibc_MsgRestoreInterchainAccountResponse>
+  func restoreInterchainAccount(request: Stride_Stakeibc_MsgRestoreInterchainAccount, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Stakeibc_MsgRestoreInterchainAccountResponse>
 
-  func updateValidatorSharesExchRate(request: Stridelabs_Stride_Stakeibc_MsgUpdateValidatorSharesExchRate, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Stakeibc_MsgUpdateValidatorSharesExchRateResponse>
+  func updateValidatorSharesExchRate(request: Stride_Stakeibc_MsgUpdateValidatorSharesExchRate, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Stakeibc_MsgUpdateValidatorSharesExchRateResponse>
 
   /// this line is used by starport scaffolding # proto/tx/rpc
-  func clearBalance(request: Stridelabs_Stride_Stakeibc_MsgClearBalance, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Stakeibc_MsgClearBalanceResponse>
+  func clearBalance(request: Stride_Stakeibc_MsgClearBalance, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Stakeibc_MsgClearBalanceResponse>
 }
 
-extension Stridelabs_Stride_Stakeibc_MsgProvider {
-  internal var serviceName: Substring { return "Stridelabs.stride.stakeibc.Msg" }
+extension Stride_Stakeibc_MsgProvider {
+  internal var serviceName: Substring { return "stride.stakeibc.Msg" }
 
   /// Determines, calls and returns the appropriate request handler, depending on the request's method.
   /// Returns nil for methods not handled by this service.
@@ -394,8 +396,8 @@ extension Stridelabs_Stride_Stakeibc_MsgProvider {
     case "LiquidStake":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Stakeibc_MsgLiquidStake>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Stakeibc_MsgLiquidStakeResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Stakeibc_MsgLiquidStake>(),
+        responseSerializer: ProtobufSerializer<Stride_Stakeibc_MsgLiquidStakeResponse>(),
         interceptors: self.interceptors?.makeLiquidStakeInterceptors() ?? [],
         userFunction: self.liquidStake(request:context:)
       )
@@ -403,8 +405,8 @@ extension Stridelabs_Stride_Stakeibc_MsgProvider {
     case "RedeemStake":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Stakeibc_MsgRedeemStake>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Stakeibc_MsgRedeemStakeResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Stakeibc_MsgRedeemStake>(),
+        responseSerializer: ProtobufSerializer<Stride_Stakeibc_MsgRedeemStakeResponse>(),
         interceptors: self.interceptors?.makeRedeemStakeInterceptors() ?? [],
         userFunction: self.redeemStake(request:context:)
       )
@@ -412,8 +414,8 @@ extension Stridelabs_Stride_Stakeibc_MsgProvider {
     case "RegisterHostZone":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Stakeibc_MsgRegisterHostZone>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Stakeibc_MsgRegisterHostZoneResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Stakeibc_MsgRegisterHostZone>(),
+        responseSerializer: ProtobufSerializer<Stride_Stakeibc_MsgRegisterHostZoneResponse>(),
         interceptors: self.interceptors?.makeRegisterHostZoneInterceptors() ?? [],
         userFunction: self.registerHostZone(request:context:)
       )
@@ -421,8 +423,8 @@ extension Stridelabs_Stride_Stakeibc_MsgProvider {
     case "ClaimUndelegatedTokens":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Stakeibc_MsgClaimUndelegatedTokens>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Stakeibc_MsgClaimUndelegatedTokensResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Stakeibc_MsgClaimUndelegatedTokens>(),
+        responseSerializer: ProtobufSerializer<Stride_Stakeibc_MsgClaimUndelegatedTokensResponse>(),
         interceptors: self.interceptors?.makeClaimUndelegatedTokensInterceptors() ?? [],
         userFunction: self.claimUndelegatedTokens(request:context:)
       )
@@ -430,8 +432,8 @@ extension Stridelabs_Stride_Stakeibc_MsgProvider {
     case "RebalanceValidators":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Stakeibc_MsgRebalanceValidators>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Stakeibc_MsgRebalanceValidatorsResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Stakeibc_MsgRebalanceValidators>(),
+        responseSerializer: ProtobufSerializer<Stride_Stakeibc_MsgRebalanceValidatorsResponse>(),
         interceptors: self.interceptors?.makeRebalanceValidatorsInterceptors() ?? [],
         userFunction: self.rebalanceValidators(request:context:)
       )
@@ -439,8 +441,8 @@ extension Stridelabs_Stride_Stakeibc_MsgProvider {
     case "AddValidator":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Stakeibc_MsgAddValidator>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Stakeibc_MsgAddValidatorResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Stakeibc_MsgAddValidator>(),
+        responseSerializer: ProtobufSerializer<Stride_Stakeibc_MsgAddValidatorResponse>(),
         interceptors: self.interceptors?.makeAddValidatorInterceptors() ?? [],
         userFunction: self.addValidator(request:context:)
       )
@@ -448,8 +450,8 @@ extension Stridelabs_Stride_Stakeibc_MsgProvider {
     case "ChangeValidatorWeight":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Stakeibc_MsgChangeValidatorWeight>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Stakeibc_MsgChangeValidatorWeightResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Stakeibc_MsgChangeValidatorWeight>(),
+        responseSerializer: ProtobufSerializer<Stride_Stakeibc_MsgChangeValidatorWeightResponse>(),
         interceptors: self.interceptors?.makeChangeValidatorWeightInterceptors() ?? [],
         userFunction: self.changeValidatorWeight(request:context:)
       )
@@ -457,8 +459,8 @@ extension Stridelabs_Stride_Stakeibc_MsgProvider {
     case "DeleteValidator":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Stakeibc_MsgDeleteValidator>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Stakeibc_MsgDeleteValidatorResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Stakeibc_MsgDeleteValidator>(),
+        responseSerializer: ProtobufSerializer<Stride_Stakeibc_MsgDeleteValidatorResponse>(),
         interceptors: self.interceptors?.makeDeleteValidatorInterceptors() ?? [],
         userFunction: self.deleteValidator(request:context:)
       )
@@ -466,8 +468,8 @@ extension Stridelabs_Stride_Stakeibc_MsgProvider {
     case "RestoreInterchainAccount":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Stakeibc_MsgRestoreInterchainAccount>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Stakeibc_MsgRestoreInterchainAccountResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Stakeibc_MsgRestoreInterchainAccount>(),
+        responseSerializer: ProtobufSerializer<Stride_Stakeibc_MsgRestoreInterchainAccountResponse>(),
         interceptors: self.interceptors?.makeRestoreInterchainAccountInterceptors() ?? [],
         userFunction: self.restoreInterchainAccount(request:context:)
       )
@@ -475,8 +477,8 @@ extension Stridelabs_Stride_Stakeibc_MsgProvider {
     case "UpdateValidatorSharesExchRate":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Stakeibc_MsgUpdateValidatorSharesExchRate>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Stakeibc_MsgUpdateValidatorSharesExchRateResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Stakeibc_MsgUpdateValidatorSharesExchRate>(),
+        responseSerializer: ProtobufSerializer<Stride_Stakeibc_MsgUpdateValidatorSharesExchRateResponse>(),
         interceptors: self.interceptors?.makeUpdateValidatorSharesExchRateInterceptors() ?? [],
         userFunction: self.updateValidatorSharesExchRate(request:context:)
       )
@@ -484,8 +486,8 @@ extension Stridelabs_Stride_Stakeibc_MsgProvider {
     case "ClearBalance":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Stakeibc_MsgClearBalance>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Stakeibc_MsgClearBalanceResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Stakeibc_MsgClearBalance>(),
+        responseSerializer: ProtobufSerializer<Stride_Stakeibc_MsgClearBalanceResponse>(),
         interceptors: self.interceptors?.makeClearBalanceInterceptors() ?? [],
         userFunction: self.clearBalance(request:context:)
       )
@@ -496,49 +498,49 @@ extension Stridelabs_Stride_Stakeibc_MsgProvider {
   }
 }
 
-internal protocol Stridelabs_Stride_Stakeibc_MsgServerInterceptorFactoryProtocol {
+internal protocol Stride_Stakeibc_MsgServerInterceptorFactoryProtocol {
 
   /// - Returns: Interceptors to use when handling 'liquidStake'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeLiquidStakeInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Stakeibc_MsgLiquidStake, Stridelabs_Stride_Stakeibc_MsgLiquidStakeResponse>]
+  func makeLiquidStakeInterceptors() -> [ServerInterceptor<Stride_Stakeibc_MsgLiquidStake, Stride_Stakeibc_MsgLiquidStakeResponse>]
 
   /// - Returns: Interceptors to use when handling 'redeemStake'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeRedeemStakeInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Stakeibc_MsgRedeemStake, Stridelabs_Stride_Stakeibc_MsgRedeemStakeResponse>]
+  func makeRedeemStakeInterceptors() -> [ServerInterceptor<Stride_Stakeibc_MsgRedeemStake, Stride_Stakeibc_MsgRedeemStakeResponse>]
 
   /// - Returns: Interceptors to use when handling 'registerHostZone'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeRegisterHostZoneInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Stakeibc_MsgRegisterHostZone, Stridelabs_Stride_Stakeibc_MsgRegisterHostZoneResponse>]
+  func makeRegisterHostZoneInterceptors() -> [ServerInterceptor<Stride_Stakeibc_MsgRegisterHostZone, Stride_Stakeibc_MsgRegisterHostZoneResponse>]
 
   /// - Returns: Interceptors to use when handling 'claimUndelegatedTokens'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeClaimUndelegatedTokensInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Stakeibc_MsgClaimUndelegatedTokens, Stridelabs_Stride_Stakeibc_MsgClaimUndelegatedTokensResponse>]
+  func makeClaimUndelegatedTokensInterceptors() -> [ServerInterceptor<Stride_Stakeibc_MsgClaimUndelegatedTokens, Stride_Stakeibc_MsgClaimUndelegatedTokensResponse>]
 
   /// - Returns: Interceptors to use when handling 'rebalanceValidators'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeRebalanceValidatorsInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Stakeibc_MsgRebalanceValidators, Stridelabs_Stride_Stakeibc_MsgRebalanceValidatorsResponse>]
+  func makeRebalanceValidatorsInterceptors() -> [ServerInterceptor<Stride_Stakeibc_MsgRebalanceValidators, Stride_Stakeibc_MsgRebalanceValidatorsResponse>]
 
   /// - Returns: Interceptors to use when handling 'addValidator'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeAddValidatorInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Stakeibc_MsgAddValidator, Stridelabs_Stride_Stakeibc_MsgAddValidatorResponse>]
+  func makeAddValidatorInterceptors() -> [ServerInterceptor<Stride_Stakeibc_MsgAddValidator, Stride_Stakeibc_MsgAddValidatorResponse>]
 
   /// - Returns: Interceptors to use when handling 'changeValidatorWeight'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeChangeValidatorWeightInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Stakeibc_MsgChangeValidatorWeight, Stridelabs_Stride_Stakeibc_MsgChangeValidatorWeightResponse>]
+  func makeChangeValidatorWeightInterceptors() -> [ServerInterceptor<Stride_Stakeibc_MsgChangeValidatorWeight, Stride_Stakeibc_MsgChangeValidatorWeightResponse>]
 
   /// - Returns: Interceptors to use when handling 'deleteValidator'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeDeleteValidatorInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Stakeibc_MsgDeleteValidator, Stridelabs_Stride_Stakeibc_MsgDeleteValidatorResponse>]
+  func makeDeleteValidatorInterceptors() -> [ServerInterceptor<Stride_Stakeibc_MsgDeleteValidator, Stride_Stakeibc_MsgDeleteValidatorResponse>]
 
   /// - Returns: Interceptors to use when handling 'restoreInterchainAccount'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeRestoreInterchainAccountInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Stakeibc_MsgRestoreInterchainAccount, Stridelabs_Stride_Stakeibc_MsgRestoreInterchainAccountResponse>]
+  func makeRestoreInterchainAccountInterceptors() -> [ServerInterceptor<Stride_Stakeibc_MsgRestoreInterchainAccount, Stride_Stakeibc_MsgRestoreInterchainAccountResponse>]
 
   /// - Returns: Interceptors to use when handling 'updateValidatorSharesExchRate'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeUpdateValidatorSharesExchRateInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Stakeibc_MsgUpdateValidatorSharesExchRate, Stridelabs_Stride_Stakeibc_MsgUpdateValidatorSharesExchRateResponse>]
+  func makeUpdateValidatorSharesExchRateInterceptors() -> [ServerInterceptor<Stride_Stakeibc_MsgUpdateValidatorSharesExchRate, Stride_Stakeibc_MsgUpdateValidatorSharesExchRateResponse>]
 
   /// - Returns: Interceptors to use when handling 'clearBalance'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeClearBalanceInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Stakeibc_MsgClearBalance, Stridelabs_Stride_Stakeibc_MsgClearBalanceResponse>]
+  func makeClearBalanceInterceptors() -> [ServerInterceptor<Stride_Stakeibc_MsgClearBalance, Stride_Stakeibc_MsgClearBalanceResponse>]
 }

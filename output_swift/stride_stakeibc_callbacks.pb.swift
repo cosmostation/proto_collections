@@ -21,7 +21,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// ---------------------- Delegation Callbacks ---------------------- //
-struct Stridelabs_Stride_Stakeibc_SplitDelegation {
+struct Stride_Stakeibc_SplitDelegation {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -35,7 +35,7 @@ struct Stridelabs_Stride_Stakeibc_SplitDelegation {
   init() {}
 }
 
-struct Stridelabs_Stride_Stakeibc_DelegateCallback {
+struct Stride_Stakeibc_DelegateCallback {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -44,14 +44,14 @@ struct Stridelabs_Stride_Stakeibc_DelegateCallback {
 
   var depositRecordID: UInt64 = 0
 
-  var splitDelegations: [Stridelabs_Stride_Stakeibc_SplitDelegation] = []
+  var splitDelegations: [Stride_Stakeibc_SplitDelegation] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 }
 
-struct Stridelabs_Stride_Stakeibc_ClaimCallback {
+struct Stride_Stakeibc_ClaimCallback {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -68,7 +68,7 @@ struct Stridelabs_Stride_Stakeibc_ClaimCallback {
 }
 
 /// ---------------------- Reinvest Callback ---------------------- //
-struct Stridelabs_Stride_Stakeibc_ReinvestCallback {
+struct Stride_Stakeibc_ReinvestCallback {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -92,14 +92,14 @@ struct Stridelabs_Stride_Stakeibc_ReinvestCallback {
 }
 
 /// ---------------------- Undelegation Callbacks ---------------------- //
-struct Stridelabs_Stride_Stakeibc_UndelegateCallback {
+struct Stride_Stakeibc_UndelegateCallback {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var hostZoneID: String = String()
 
-  var splitDelegations: [Stridelabs_Stride_Stakeibc_SplitDelegation] = []
+  var splitDelegations: [Stride_Stakeibc_SplitDelegation] = []
 
   var epochUnbondingRecordIds: [UInt64] = []
 
@@ -109,7 +109,7 @@ struct Stridelabs_Stride_Stakeibc_UndelegateCallback {
 }
 
 /// ---------------------- Redemption Callbacks ---------------------- //
-struct Stridelabs_Stride_Stakeibc_RedemptionCallback {
+struct Stride_Stakeibc_RedemptionCallback {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -123,11 +123,41 @@ struct Stridelabs_Stride_Stakeibc_RedemptionCallback {
   init() {}
 }
 
+struct Stride_Stakeibc_Rebalancing {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var srcValidator: String = String()
+
+  var dstValidator: String = String()
+
+  var amt: UInt64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct Stride_Stakeibc_RebalanceCallback {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var hostZoneID: String = String()
+
+  var rebalancings: [Stride_Stakeibc_Rebalancing] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "Stridelabs.stride.stakeibc"
+fileprivate let _protobuf_package = "stride.stakeibc"
 
-extension Stridelabs_Stride_Stakeibc_SplitDelegation: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_SplitDelegation: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".SplitDelegation"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "validator"),
@@ -157,7 +187,7 @@ extension Stridelabs_Stride_Stakeibc_SplitDelegation: SwiftProtobuf.Message, Swi
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_SplitDelegation, rhs: Stridelabs_Stride_Stakeibc_SplitDelegation) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_SplitDelegation, rhs: Stride_Stakeibc_SplitDelegation) -> Bool {
     if lhs.validator != rhs.validator {return false}
     if lhs.amount != rhs.amount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -165,12 +195,12 @@ extension Stridelabs_Stride_Stakeibc_SplitDelegation: SwiftProtobuf.Message, Swi
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_DelegateCallback: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_DelegateCallback: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DelegateCallback"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "hostZoneId"),
-    2: .same(proto: "depositRecordId"),
-    3: .same(proto: "splitDelegations"),
+    1: .standard(proto: "host_zone_id"),
+    2: .standard(proto: "deposit_record_id"),
+    3: .standard(proto: "split_delegations"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -200,7 +230,7 @@ extension Stridelabs_Stride_Stakeibc_DelegateCallback: SwiftProtobuf.Message, Sw
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_DelegateCallback, rhs: Stridelabs_Stride_Stakeibc_DelegateCallback) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_DelegateCallback, rhs: Stride_Stakeibc_DelegateCallback) -> Bool {
     if lhs.hostZoneID != rhs.hostZoneID {return false}
     if lhs.depositRecordID != rhs.depositRecordID {return false}
     if lhs.splitDelegations != rhs.splitDelegations {return false}
@@ -209,12 +239,12 @@ extension Stridelabs_Stride_Stakeibc_DelegateCallback: SwiftProtobuf.Message, Sw
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_ClaimCallback: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_ClaimCallback: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ClaimCallback"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "userRedemptionRecordId"),
-    2: .same(proto: "chainId"),
-    3: .same(proto: "epochNumber"),
+    1: .standard(proto: "user_redemption_record_id"),
+    2: .standard(proto: "chain_id"),
+    3: .standard(proto: "epoch_number"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -244,7 +274,7 @@ extension Stridelabs_Stride_Stakeibc_ClaimCallback: SwiftProtobuf.Message, Swift
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_ClaimCallback, rhs: Stridelabs_Stride_Stakeibc_ClaimCallback) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_ClaimCallback, rhs: Stride_Stakeibc_ClaimCallback) -> Bool {
     if lhs.userRedemptionRecordID != rhs.userRedemptionRecordID {return false}
     if lhs.chainID != rhs.chainID {return false}
     if lhs.epochNumber != rhs.epochNumber {return false}
@@ -253,11 +283,11 @@ extension Stridelabs_Stride_Stakeibc_ClaimCallback: SwiftProtobuf.Message, Swift
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_ReinvestCallback: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_ReinvestCallback: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ReinvestCallback"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "reinvestAmount"),
-    3: .same(proto: "hostZoneId"),
+    1: .standard(proto: "reinvest_amount"),
+    3: .standard(proto: "host_zone_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -283,7 +313,7 @@ extension Stridelabs_Stride_Stakeibc_ReinvestCallback: SwiftProtobuf.Message, Sw
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_ReinvestCallback, rhs: Stridelabs_Stride_Stakeibc_ReinvestCallback) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_ReinvestCallback, rhs: Stride_Stakeibc_ReinvestCallback) -> Bool {
     if lhs._reinvestAmount != rhs._reinvestAmount {return false}
     if lhs.hostZoneID != rhs.hostZoneID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -291,12 +321,12 @@ extension Stridelabs_Stride_Stakeibc_ReinvestCallback: SwiftProtobuf.Message, Sw
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_UndelegateCallback: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_UndelegateCallback: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UndelegateCallback"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "hostZoneId"),
-    2: .same(proto: "splitDelegations"),
-    3: .same(proto: "epochUnbondingRecordIds"),
+    1: .standard(proto: "host_zone_id"),
+    2: .standard(proto: "split_delegations"),
+    3: .standard(proto: "epoch_unbonding_record_ids"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -326,7 +356,7 @@ extension Stridelabs_Stride_Stakeibc_UndelegateCallback: SwiftProtobuf.Message, 
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_UndelegateCallback, rhs: Stridelabs_Stride_Stakeibc_UndelegateCallback) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_UndelegateCallback, rhs: Stride_Stakeibc_UndelegateCallback) -> Bool {
     if lhs.hostZoneID != rhs.hostZoneID {return false}
     if lhs.splitDelegations != rhs.splitDelegations {return false}
     if lhs.epochUnbondingRecordIds != rhs.epochUnbondingRecordIds {return false}
@@ -335,11 +365,11 @@ extension Stridelabs_Stride_Stakeibc_UndelegateCallback: SwiftProtobuf.Message, 
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_RedemptionCallback: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_RedemptionCallback: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".RedemptionCallback"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "hostZoneId"),
-    2: .same(proto: "epochUnbondingRecordIds"),
+    1: .standard(proto: "host_zone_id"),
+    2: .standard(proto: "epoch_unbonding_record_ids"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -365,9 +395,91 @@ extension Stridelabs_Stride_Stakeibc_RedemptionCallback: SwiftProtobuf.Message, 
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_RedemptionCallback, rhs: Stridelabs_Stride_Stakeibc_RedemptionCallback) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_RedemptionCallback, rhs: Stride_Stakeibc_RedemptionCallback) -> Bool {
     if lhs.hostZoneID != rhs.hostZoneID {return false}
     if lhs.epochUnbondingRecordIds != rhs.epochUnbondingRecordIds {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Stride_Stakeibc_Rebalancing: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".Rebalancing"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "src_validator"),
+    2: .standard(proto: "dst_validator"),
+    3: .same(proto: "amt"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.srcValidator) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.dstValidator) }()
+      case 3: try { try decoder.decodeSingularUInt64Field(value: &self.amt) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.srcValidator.isEmpty {
+      try visitor.visitSingularStringField(value: self.srcValidator, fieldNumber: 1)
+    }
+    if !self.dstValidator.isEmpty {
+      try visitor.visitSingularStringField(value: self.dstValidator, fieldNumber: 2)
+    }
+    if self.amt != 0 {
+      try visitor.visitSingularUInt64Field(value: self.amt, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Stride_Stakeibc_Rebalancing, rhs: Stride_Stakeibc_Rebalancing) -> Bool {
+    if lhs.srcValidator != rhs.srcValidator {return false}
+    if lhs.dstValidator != rhs.dstValidator {return false}
+    if lhs.amt != rhs.amt {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Stride_Stakeibc_RebalanceCallback: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".RebalanceCallback"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "host_zone_id"),
+    2: .same(proto: "rebalancings"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.hostZoneID) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.rebalancings) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.hostZoneID.isEmpty {
+      try visitor.visitSingularStringField(value: self.hostZoneID, fieldNumber: 1)
+    }
+    if !self.rebalancings.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.rebalancings, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Stride_Stakeibc_RebalanceCallback, rhs: Stride_Stakeibc_RebalanceCallback) -> Bool {
+    if lhs.hostZoneID != rhs.hostZoneID {return false}
+    if lhs.rebalancings != rhs.rebalancings {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

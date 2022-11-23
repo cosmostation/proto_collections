@@ -21,13 +21,13 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// GenesisState defines the icacallbacks module's genesis state.
-struct Stridelabs_Stride_Icacallbacks_GenesisState {
+struct Stride_Icacallbacks_GenesisState {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var params: Stridelabs_Stride_Icacallbacks_Params {
-    get {return _params ?? Stridelabs_Stride_Icacallbacks_Params()}
+  var params: Stride_Icacallbacks_Params {
+    get {return _params ?? Stride_Icacallbacks_Params()}
     set {_params = newValue}
   }
   /// Returns true if `params` has been explicitly set.
@@ -38,25 +38,25 @@ struct Stridelabs_Stride_Icacallbacks_GenesisState {
   var portID: String = String()
 
   /// this line is used by starport scaffolding # genesis/proto/state
-  var callbackDataList: [Stridelabs_Stride_Icacallbacks_CallbackData] = []
+  var callbackDataList: [Stride_Icacallbacks_CallbackData] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _params: Stridelabs_Stride_Icacallbacks_Params? = nil
+  fileprivate var _params: Stride_Icacallbacks_Params? = nil
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "stridelabs.stride.icacallbacks"
+fileprivate let _protobuf_package = "stride.icacallbacks"
 
-extension Stridelabs_Stride_Icacallbacks_GenesisState: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Icacallbacks_GenesisState: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GenesisState"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "params"),
     2: .standard(proto: "port_id"),
-    3: .same(proto: "callbackDataList"),
+    3: .standard(proto: "callback_data_list"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -86,7 +86,7 @@ extension Stridelabs_Stride_Icacallbacks_GenesisState: SwiftProtobuf.Message, Sw
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Icacallbacks_GenesisState, rhs: Stridelabs_Stride_Icacallbacks_GenesisState) -> Bool {
+  static func ==(lhs: Stride_Icacallbacks_GenesisState, rhs: Stride_Icacallbacks_GenesisState) -> Bool {
     if lhs._params != rhs._params {return false}
     if lhs.portID != rhs.portID {return false}
     if lhs.callbackDataList != rhs.callbackDataList {return false}

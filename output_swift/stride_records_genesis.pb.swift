@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Stridelabs_Stride_Records_UserRedemptionRecord {
+struct Stride_Records_UserRedemptionRecord {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -48,7 +48,7 @@ struct Stridelabs_Stride_Records_UserRedemptionRecord {
 }
 
 /// Params defines the parameters for the module.
-struct Stridelabs_Stride_Records_Params {
+struct Stride_Records_Params {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -58,18 +58,18 @@ struct Stridelabs_Stride_Records_Params {
   init() {}
 }
 
-struct Stridelabs_Stride_Records_RecordsPacketData {
+struct Stride_Records_RecordsPacketData {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var packet: Stridelabs_Stride_Records_RecordsPacketData.OneOf_Packet? = nil
+  var packet: Stride_Records_RecordsPacketData.OneOf_Packet? = nil
 
   /// this line is used by starport scaffolding # ibc/packet/proto/field
-  var noData: Stridelabs_Stride_Records_NoData {
+  var noData: Stride_Records_NoData {
     get {
       if case .noData(let v)? = packet {return v}
-      return Stridelabs_Stride_Records_NoData()
+      return Stride_Records_NoData()
     }
     set {packet = .noData(newValue)}
   }
@@ -78,10 +78,10 @@ struct Stridelabs_Stride_Records_RecordsPacketData {
 
   enum OneOf_Packet: Equatable {
     /// this line is used by starport scaffolding # ibc/packet/proto/field
-    case noData(Stridelabs_Stride_Records_NoData)
+    case noData(Stride_Records_NoData)
 
   #if !swift(>=4.1)
-    static func ==(lhs: Stridelabs_Stride_Records_RecordsPacketData.OneOf_Packet, rhs: Stridelabs_Stride_Records_RecordsPacketData.OneOf_Packet) -> Bool {
+    static func ==(lhs: Stride_Records_RecordsPacketData.OneOf_Packet, rhs: Stride_Records_RecordsPacketData.OneOf_Packet) -> Bool {
       // The use of inline closures is to circumvent an issue where the compiler
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
@@ -98,7 +98,7 @@ struct Stridelabs_Stride_Records_RecordsPacketData {
   init() {}
 }
 
-struct Stridelabs_Stride_Records_NoData {
+struct Stride_Records_NoData {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -108,7 +108,7 @@ struct Stridelabs_Stride_Records_NoData {
   init() {}
 }
 
-struct Stridelabs_Stride_Records_DepositRecord {
+struct Stride_Records_DepositRecord {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -121,40 +121,50 @@ struct Stridelabs_Stride_Records_DepositRecord {
 
   var hostZoneID: String = String()
 
-  var status: Stridelabs_Stride_Records_DepositRecord.Status = .transfer
+  var status: Stride_Records_DepositRecord.Status = .transferQueue
 
   var depositEpochNumber: UInt64 = 0
 
-  var source: Stridelabs_Stride_Records_DepositRecord.Source = .stride
+  var source: Stride_Records_DepositRecord.Source = .stride
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   enum Status: SwiftProtobuf.Enum {
     typealias RawValue = Int
 
-    /// pending transfer to delegate account
-    case transfer // = 0
+    /// in transfer queue to be sent to the delegation ICA
+    case transferQueue // = 0
 
-    /// pending staking on delegate account
-    case stake // = 1
+    /// transfer in progress (IBC packet sent, ack not received)
+    case transferInProgress // = 2
+
+    /// in staking queue on delegation ICA
+    case delegationQueue // = 1
+
+    /// staking in progress (ICA packet sent, ack not received)
+    case delegationInProgress // = 3
     case UNRECOGNIZED(Int)
 
     init() {
-      self = .transfer
+      self = .transferQueue
     }
 
     init?(rawValue: Int) {
       switch rawValue {
-      case 0: self = .transfer
-      case 1: self = .stake
+      case 0: self = .transferQueue
+      case 1: self = .delegationQueue
+      case 2: self = .transferInProgress
+      case 3: self = .delegationInProgress
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
 
     var rawValue: Int {
       switch self {
-      case .transfer: return 0
-      case .stake: return 1
+      case .transferQueue: return 0
+      case .delegationQueue: return 1
+      case .transferInProgress: return 2
+      case .delegationInProgress: return 3
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -194,17 +204,19 @@ struct Stridelabs_Stride_Records_DepositRecord {
 
 #if swift(>=4.2)
 
-extension Stridelabs_Stride_Records_DepositRecord.Status: CaseIterable {
+extension Stride_Records_DepositRecord.Status: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [Stridelabs_Stride_Records_DepositRecord.Status] = [
-    .transfer,
-    .stake,
+  static var allCases: [Stride_Records_DepositRecord.Status] = [
+    .transferQueue,
+    .transferInProgress,
+    .delegationQueue,
+    .delegationInProgress,
   ]
 }
 
-extension Stridelabs_Stride_Records_DepositRecord.Source: CaseIterable {
+extension Stride_Records_DepositRecord.Source: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [Stridelabs_Stride_Records_DepositRecord.Source] = [
+  static var allCases: [Stride_Records_DepositRecord.Source] = [
     .stride,
     .withdrawalIca,
   ]
@@ -212,7 +224,7 @@ extension Stridelabs_Stride_Records_DepositRecord.Source: CaseIterable {
 
 #endif  // swift(>=4.2)
 
-struct Stridelabs_Stride_Records_HostZoneUnbonding {
+struct Stride_Records_HostZoneUnbonding {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -227,7 +239,7 @@ struct Stridelabs_Stride_Records_HostZoneUnbonding {
 
   var unbondingTime: UInt64 = 0
 
-  var status: Stridelabs_Stride_Records_HostZoneUnbonding.Status = .bonded
+  var status: Stride_Records_HostZoneUnbonding.Status = .unbondingQueue
 
   var userRedemptionRecords: [String] = []
 
@@ -237,33 +249,39 @@ struct Stridelabs_Stride_Records_HostZoneUnbonding {
     typealias RawValue = Int
 
     /// tokens bonded on delegate account
-    case bonded // = 0
+    case unbondingQueue // = 0
+    case unbondingInProgress // = 3
 
     /// unbonding completed on delegate account
-    case unbonded // = 1
+    case exitTransferQueue // = 1
+    case exitTransferInProgress // = 4
 
     /// transfer success
-    case transferred // = 2
+    case claimable // = 2
     case UNRECOGNIZED(Int)
 
     init() {
-      self = .bonded
+      self = .unbondingQueue
     }
 
     init?(rawValue: Int) {
       switch rawValue {
-      case 0: self = .bonded
-      case 1: self = .unbonded
-      case 2: self = .transferred
+      case 0: self = .unbondingQueue
+      case 1: self = .exitTransferQueue
+      case 2: self = .claimable
+      case 3: self = .unbondingInProgress
+      case 4: self = .exitTransferInProgress
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
 
     var rawValue: Int {
       switch self {
-      case .bonded: return 0
-      case .unbonded: return 1
-      case .transferred: return 2
+      case .unbondingQueue: return 0
+      case .exitTransferQueue: return 1
+      case .claimable: return 2
+      case .unbondingInProgress: return 3
+      case .exitTransferInProgress: return 4
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -275,25 +293,27 @@ struct Stridelabs_Stride_Records_HostZoneUnbonding {
 
 #if swift(>=4.2)
 
-extension Stridelabs_Stride_Records_HostZoneUnbonding.Status: CaseIterable {
+extension Stride_Records_HostZoneUnbonding.Status: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [Stridelabs_Stride_Records_HostZoneUnbonding.Status] = [
-    .bonded,
-    .unbonded,
-    .transferred,
+  static var allCases: [Stride_Records_HostZoneUnbonding.Status] = [
+    .unbondingQueue,
+    .unbondingInProgress,
+    .exitTransferQueue,
+    .exitTransferInProgress,
+    .claimable,
   ]
 }
 
 #endif  // swift(>=4.2)
 
-struct Stridelabs_Stride_Records_EpochUnbondingRecord {
+struct Stride_Records_EpochUnbondingRecord {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var epochNumber: UInt64 = 0
 
-  var hostZoneUnbondings: [Stridelabs_Stride_Records_HostZoneUnbonding] = []
+  var hostZoneUnbondings: [Stride_Records_HostZoneUnbonding] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -302,13 +322,13 @@ struct Stridelabs_Stride_Records_EpochUnbondingRecord {
 
 /// GenesisState defines the recordπs module's genesis state.
 /// next id: 9
-struct Stridelabs_Stride_Records_GenesisState {
+struct Stride_Records_GenesisState {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var params: Stridelabs_Stride_Records_Params {
-    get {return _params ?? Stridelabs_Stride_Records_Params()}
+  var params: Stride_Records_Params {
+    get {return _params ?? Stride_Records_Params()}
     set {_params = newValue}
   }
   /// Returns true if `params` has been explicitly set.
@@ -318,13 +338,13 @@ struct Stridelabs_Stride_Records_GenesisState {
 
   var portID: String = String()
 
-  var userRedemptionRecordList: [Stridelabs_Stride_Records_UserRedemptionRecord] = []
+  var userRedemptionRecordList: [Stride_Records_UserRedemptionRecord] = []
 
   var userRedemptionRecordCount: UInt64 = 0
 
-  var epochUnbondingRecordList: [Stridelabs_Stride_Records_EpochUnbondingRecord] = []
+  var epochUnbondingRecordList: [Stride_Records_EpochUnbondingRecord] = []
 
-  var depositRecordList: [Stridelabs_Stride_Records_DepositRecord] = []
+  var depositRecordList: [Stride_Records_DepositRecord] = []
 
   /// this line is used by starport scaffolding # genesis/proto/state
   var depositRecordCount: UInt64 = 0
@@ -333,14 +353,14 @@ struct Stridelabs_Stride_Records_GenesisState {
 
   init() {}
 
-  fileprivate var _params: Stridelabs_Stride_Records_Params? = nil
+  fileprivate var _params: Stride_Records_Params? = nil
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "Stridelabs.stride.records"
+fileprivate let _protobuf_package = "stride.records"
 
-extension Stridelabs_Stride_Records_UserRedemptionRecord: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Records_UserRedemptionRecord: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UserRedemptionRecord"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "id"),
@@ -348,9 +368,9 @@ extension Stridelabs_Stride_Records_UserRedemptionRecord: SwiftProtobuf.Message,
     3: .same(proto: "receiver"),
     4: .same(proto: "amount"),
     5: .same(proto: "denom"),
-    6: .same(proto: "hostZoneId"),
-    7: .same(proto: "epochNumber"),
-    8: .same(proto: "claimIsPending"),
+    6: .standard(proto: "host_zone_id"),
+    7: .standard(proto: "epoch_number"),
+    8: .standard(proto: "claim_is_pending"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -400,7 +420,7 @@ extension Stridelabs_Stride_Records_UserRedemptionRecord: SwiftProtobuf.Message,
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Records_UserRedemptionRecord, rhs: Stridelabs_Stride_Records_UserRedemptionRecord) -> Bool {
+  static func ==(lhs: Stride_Records_UserRedemptionRecord, rhs: Stride_Records_UserRedemptionRecord) -> Bool {
     if lhs.id != rhs.id {return false}
     if lhs.sender != rhs.sender {return false}
     if lhs.receiver != rhs.receiver {return false}
@@ -414,7 +434,7 @@ extension Stridelabs_Stride_Records_UserRedemptionRecord: SwiftProtobuf.Message,
   }
 }
 
-extension Stridelabs_Stride_Records_Params: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Records_Params: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Params"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -427,16 +447,16 @@ extension Stridelabs_Stride_Records_Params: SwiftProtobuf.Message, SwiftProtobuf
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Records_Params, rhs: Stridelabs_Stride_Records_Params) -> Bool {
+  static func ==(lhs: Stride_Records_Params, rhs: Stride_Records_Params) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Records_RecordsPacketData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Records_RecordsPacketData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".RecordsPacketData"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "noData"),
+    1: .standard(proto: "no_data"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -446,7 +466,7 @@ extension Stridelabs_Stride_Records_RecordsPacketData: SwiftProtobuf.Message, Sw
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try {
-        var v: Stridelabs_Stride_Records_NoData?
+        var v: Stride_Records_NoData?
         var hadOneofValue = false
         if let current = self.packet {
           hadOneofValue = true
@@ -470,14 +490,14 @@ extension Stridelabs_Stride_Records_RecordsPacketData: SwiftProtobuf.Message, Sw
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Records_RecordsPacketData, rhs: Stridelabs_Stride_Records_RecordsPacketData) -> Bool {
+  static func ==(lhs: Stride_Records_RecordsPacketData, rhs: Stride_Records_RecordsPacketData) -> Bool {
     if lhs.packet != rhs.packet {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Records_NoData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Records_NoData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".NoData"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -490,21 +510,21 @@ extension Stridelabs_Stride_Records_NoData: SwiftProtobuf.Message, SwiftProtobuf
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Records_NoData, rhs: Stridelabs_Stride_Records_NoData) -> Bool {
+  static func ==(lhs: Stride_Records_NoData, rhs: Stride_Records_NoData) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Records_DepositRecord: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Records_DepositRecord: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DepositRecord"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "id"),
     2: .same(proto: "amount"),
     3: .same(proto: "denom"),
-    4: .same(proto: "hostZoneId"),
+    4: .standard(proto: "host_zone_id"),
     6: .same(proto: "status"),
-    7: .same(proto: "depositEpochNumber"),
+    7: .standard(proto: "deposit_epoch_number"),
     8: .same(proto: "source"),
   ]
 
@@ -539,7 +559,7 @@ extension Stridelabs_Stride_Records_DepositRecord: SwiftProtobuf.Message, SwiftP
     if !self.hostZoneID.isEmpty {
       try visitor.visitSingularStringField(value: self.hostZoneID, fieldNumber: 4)
     }
-    if self.status != .transfer {
+    if self.status != .transferQueue {
       try visitor.visitSingularEnumField(value: self.status, fieldNumber: 6)
     }
     if self.depositEpochNumber != 0 {
@@ -551,7 +571,7 @@ extension Stridelabs_Stride_Records_DepositRecord: SwiftProtobuf.Message, SwiftP
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Records_DepositRecord, rhs: Stridelabs_Stride_Records_DepositRecord) -> Bool {
+  static func ==(lhs: Stride_Records_DepositRecord, rhs: Stride_Records_DepositRecord) -> Bool {
     if lhs.id != rhs.id {return false}
     if lhs.amount != rhs.amount {return false}
     if lhs.denom != rhs.denom {return false}
@@ -564,30 +584,32 @@ extension Stridelabs_Stride_Records_DepositRecord: SwiftProtobuf.Message, SwiftP
   }
 }
 
-extension Stridelabs_Stride_Records_DepositRecord.Status: SwiftProtobuf._ProtoNameProviding {
+extension Stride_Records_DepositRecord.Status: SwiftProtobuf._ProtoNameProviding {
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "TRANSFER"),
-    1: .same(proto: "STAKE"),
+    0: .same(proto: "TRANSFER_QUEUE"),
+    1: .same(proto: "DELEGATION_QUEUE"),
+    2: .same(proto: "TRANSFER_IN_PROGRESS"),
+    3: .same(proto: "DELEGATION_IN_PROGRESS"),
   ]
 }
 
-extension Stridelabs_Stride_Records_DepositRecord.Source: SwiftProtobuf._ProtoNameProviding {
+extension Stride_Records_DepositRecord.Source: SwiftProtobuf._ProtoNameProviding {
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "STRIDE"),
     1: .same(proto: "WITHDRAWAL_ICA"),
   ]
 }
 
-extension Stridelabs_Stride_Records_HostZoneUnbonding: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Records_HostZoneUnbonding: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".HostZoneUnbonding"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "stTokenAmount"),
-    2: .same(proto: "nativeTokenAmount"),
+    1: .standard(proto: "st_token_amount"),
+    2: .standard(proto: "native_token_amount"),
     3: .same(proto: "denom"),
-    4: .same(proto: "hostZoneId"),
-    5: .same(proto: "unbondingTime"),
+    4: .standard(proto: "host_zone_id"),
+    5: .standard(proto: "unbonding_time"),
     6: .same(proto: "status"),
-    7: .same(proto: "userRedemptionRecords"),
+    7: .standard(proto: "user_redemption_records"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -624,7 +646,7 @@ extension Stridelabs_Stride_Records_HostZoneUnbonding: SwiftProtobuf.Message, Sw
     if self.unbondingTime != 0 {
       try visitor.visitSingularUInt64Field(value: self.unbondingTime, fieldNumber: 5)
     }
-    if self.status != .bonded {
+    if self.status != .unbondingQueue {
       try visitor.visitSingularEnumField(value: self.status, fieldNumber: 6)
     }
     if !self.userRedemptionRecords.isEmpty {
@@ -633,7 +655,7 @@ extension Stridelabs_Stride_Records_HostZoneUnbonding: SwiftProtobuf.Message, Sw
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Records_HostZoneUnbonding, rhs: Stridelabs_Stride_Records_HostZoneUnbonding) -> Bool {
+  static func ==(lhs: Stride_Records_HostZoneUnbonding, rhs: Stride_Records_HostZoneUnbonding) -> Bool {
     if lhs.stTokenAmount != rhs.stTokenAmount {return false}
     if lhs.nativeTokenAmount != rhs.nativeTokenAmount {return false}
     if lhs.denom != rhs.denom {return false}
@@ -646,19 +668,21 @@ extension Stridelabs_Stride_Records_HostZoneUnbonding: SwiftProtobuf.Message, Sw
   }
 }
 
-extension Stridelabs_Stride_Records_HostZoneUnbonding.Status: SwiftProtobuf._ProtoNameProviding {
+extension Stride_Records_HostZoneUnbonding.Status: SwiftProtobuf._ProtoNameProviding {
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "BONDED"),
-    1: .same(proto: "UNBONDED"),
-    2: .same(proto: "TRANSFERRED"),
+    0: .same(proto: "UNBONDING_QUEUE"),
+    1: .same(proto: "EXIT_TRANSFER_QUEUE"),
+    2: .same(proto: "CLAIMABLE"),
+    3: .same(proto: "UNBONDING_IN_PROGRESS"),
+    4: .same(proto: "EXIT_TRANSFER_IN_PROGRESS"),
   ]
 }
 
-extension Stridelabs_Stride_Records_EpochUnbondingRecord: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Records_EpochUnbondingRecord: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".EpochUnbondingRecord"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "epochNumber"),
-    3: .same(proto: "hostZoneUnbondings"),
+    1: .standard(proto: "epoch_number"),
+    3: .standard(proto: "host_zone_unbondings"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -684,7 +708,7 @@ extension Stridelabs_Stride_Records_EpochUnbondingRecord: SwiftProtobuf.Message,
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Records_EpochUnbondingRecord, rhs: Stridelabs_Stride_Records_EpochUnbondingRecord) -> Bool {
+  static func ==(lhs: Stride_Records_EpochUnbondingRecord, rhs: Stride_Records_EpochUnbondingRecord) -> Bool {
     if lhs.epochNumber != rhs.epochNumber {return false}
     if lhs.hostZoneUnbondings != rhs.hostZoneUnbondings {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -692,16 +716,16 @@ extension Stridelabs_Stride_Records_EpochUnbondingRecord: SwiftProtobuf.Message,
   }
 }
 
-extension Stridelabs_Stride_Records_GenesisState: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Records_GenesisState: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GenesisState"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "params"),
     2: .standard(proto: "port_id"),
-    3: .same(proto: "userRedemptionRecordList"),
-    4: .same(proto: "userRedemptionRecordCount"),
-    5: .same(proto: "epochUnbondingRecordList"),
-    7: .same(proto: "depositRecordList"),
-    8: .same(proto: "depositRecordCount"),
+    3: .standard(proto: "user_redemption_record_list"),
+    4: .standard(proto: "user_redemption_record_count"),
+    5: .standard(proto: "epoch_unbonding_record_list"),
+    7: .standard(proto: "deposit_record_list"),
+    8: .standard(proto: "deposit_record_count"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -747,7 +771,7 @@ extension Stridelabs_Stride_Records_GenesisState: SwiftProtobuf.Message, SwiftPr
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Records_GenesisState, rhs: Stridelabs_Stride_Records_GenesisState) -> Bool {
+  static func ==(lhs: Stride_Records_GenesisState, rhs: Stride_Records_GenesisState) -> Bool {
     if lhs._params != rhs._params {return false}
     if lhs.portID != rhs.portID {return false}
     if lhs.userRedemptionRecordList != rhs.userRedemptionRecordList {return false}

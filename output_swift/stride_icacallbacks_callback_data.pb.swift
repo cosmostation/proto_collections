@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Stridelabs_Stride_Icacallbacks_CallbackData {
+struct Stride_Icacallbacks_CallbackData {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -44,17 +44,17 @@ struct Stridelabs_Stride_Icacallbacks_CallbackData {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "stridelabs.stride.icacallbacks"
+fileprivate let _protobuf_package = "stride.icacallbacks"
 
-extension Stridelabs_Stride_Icacallbacks_CallbackData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Icacallbacks_CallbackData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CallbackData"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "callbackKey"),
-    2: .same(proto: "portId"),
-    3: .same(proto: "channelId"),
+    1: .standard(proto: "callback_key"),
+    2: .standard(proto: "port_id"),
+    3: .standard(proto: "channel_id"),
     4: .same(proto: "sequence"),
-    5: .same(proto: "callbackId"),
-    6: .same(proto: "callbackArgs"),
+    5: .standard(proto: "callback_id"),
+    6: .standard(proto: "callback_args"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -96,7 +96,7 @@ extension Stridelabs_Stride_Icacallbacks_CallbackData: SwiftProtobuf.Message, Sw
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Icacallbacks_CallbackData, rhs: Stridelabs_Stride_Icacallbacks_CallbackData) -> Bool {
+  static func ==(lhs: Stride_Icacallbacks_CallbackData, rhs: Stride_Icacallbacks_CallbackData) -> Bool {
     if lhs.callbackKey != rhs.callbackKey {return false}
     if lhs.portID != rhs.portID {return false}
     if lhs.channelID != rhs.channelID {return false}

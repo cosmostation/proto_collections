@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Stridelabs_Stride_Stakeibc_MsgLiquidStake {
+struct Stride_Stakeibc_MsgLiquidStake {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -37,7 +37,7 @@ struct Stridelabs_Stride_Stakeibc_MsgLiquidStake {
   init() {}
 }
 
-struct Stridelabs_Stride_Stakeibc_MsgLiquidStakeResponse {
+struct Stride_Stakeibc_MsgLiquidStakeResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -47,7 +47,7 @@ struct Stridelabs_Stride_Stakeibc_MsgLiquidStakeResponse {
   init() {}
 }
 
-struct Stridelabs_Stride_Stakeibc_MsgClearBalance {
+struct Stride_Stakeibc_MsgClearBalance {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -65,7 +65,7 @@ struct Stridelabs_Stride_Stakeibc_MsgClearBalance {
   init() {}
 }
 
-struct Stridelabs_Stride_Stakeibc_MsgClearBalanceResponse {
+struct Stride_Stakeibc_MsgClearBalanceResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -75,7 +75,7 @@ struct Stridelabs_Stride_Stakeibc_MsgClearBalanceResponse {
   init() {}
 }
 
-struct Stridelabs_Stride_Stakeibc_MsgRedeemStake {
+struct Stride_Stakeibc_MsgRedeemStake {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -93,7 +93,7 @@ struct Stridelabs_Stride_Stakeibc_MsgRedeemStake {
   init() {}
 }
 
-struct Stridelabs_Stride_Stakeibc_MsgRedeemStakeResponse {
+struct Stride_Stakeibc_MsgRedeemStakeResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -104,7 +104,7 @@ struct Stridelabs_Stride_Stakeibc_MsgRedeemStakeResponse {
 }
 
 /// next: 13
-struct Stridelabs_Stride_Stakeibc_MsgRegisterHostZone {
+struct Stride_Stakeibc_MsgRegisterHostZone {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -128,8 +128,9 @@ struct Stridelabs_Stride_Stakeibc_MsgRegisterHostZone {
   init() {}
 }
 
-/// TODO(TEST-53): Remove this pre-launch (no need for clients to create / interact with ICAs)
-struct Stridelabs_Stride_Stakeibc_MsgRegisterHostZoneResponse {
+/// TODO(TEST-53): Remove this pre-launch (no need for clients to create /
+/// interact with ICAs)
+struct Stride_Stakeibc_MsgRegisterHostZoneResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -139,7 +140,7 @@ struct Stridelabs_Stride_Stakeibc_MsgRegisterHostZoneResponse {
   init() {}
 }
 
-struct Stridelabs_Stride_Stakeibc_MsgClaimUndelegatedTokens {
+struct Stride_Stakeibc_MsgClaimUndelegatedTokens {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -158,7 +159,7 @@ struct Stridelabs_Stride_Stakeibc_MsgClaimUndelegatedTokens {
   init() {}
 }
 
-struct Stridelabs_Stride_Stakeibc_MsgClaimUndelegatedTokensResponse {
+struct Stride_Stakeibc_MsgClaimUndelegatedTokensResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -168,7 +169,7 @@ struct Stridelabs_Stride_Stakeibc_MsgClaimUndelegatedTokensResponse {
   init() {}
 }
 
-struct Stridelabs_Stride_Stakeibc_MsgRebalanceValidators {
+struct Stride_Stakeibc_MsgRebalanceValidators {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -184,7 +185,7 @@ struct Stridelabs_Stride_Stakeibc_MsgRebalanceValidators {
   init() {}
 }
 
-struct Stridelabs_Stride_Stakeibc_MsgRebalanceValidatorsResponse {
+struct Stride_Stakeibc_MsgRebalanceValidatorsResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -194,7 +195,7 @@ struct Stridelabs_Stride_Stakeibc_MsgRebalanceValidatorsResponse {
   init() {}
 }
 
-struct Stridelabs_Stride_Stakeibc_MsgAddValidator {
+struct Stride_Stakeibc_MsgAddValidator {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -216,7 +217,7 @@ struct Stridelabs_Stride_Stakeibc_MsgAddValidator {
   init() {}
 }
 
-struct Stridelabs_Stride_Stakeibc_MsgAddValidatorResponse {
+struct Stride_Stakeibc_MsgAddValidatorResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -226,7 +227,7 @@ struct Stridelabs_Stride_Stakeibc_MsgAddValidatorResponse {
   init() {}
 }
 
-struct Stridelabs_Stride_Stakeibc_MsgChangeValidatorWeight {
+struct Stride_Stakeibc_MsgChangeValidatorWeight {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -244,7 +245,7 @@ struct Stridelabs_Stride_Stakeibc_MsgChangeValidatorWeight {
   init() {}
 }
 
-struct Stridelabs_Stride_Stakeibc_MsgChangeValidatorWeightResponse {
+struct Stride_Stakeibc_MsgChangeValidatorWeightResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -254,7 +255,7 @@ struct Stridelabs_Stride_Stakeibc_MsgChangeValidatorWeightResponse {
   init() {}
 }
 
-struct Stridelabs_Stride_Stakeibc_MsgDeleteValidator {
+struct Stride_Stakeibc_MsgDeleteValidator {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -270,7 +271,7 @@ struct Stridelabs_Stride_Stakeibc_MsgDeleteValidator {
   init() {}
 }
 
-struct Stridelabs_Stride_Stakeibc_MsgDeleteValidatorResponse {
+struct Stride_Stakeibc_MsgDeleteValidatorResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -280,7 +281,7 @@ struct Stridelabs_Stride_Stakeibc_MsgDeleteValidatorResponse {
   init() {}
 }
 
-struct Stridelabs_Stride_Stakeibc_MsgRestoreInterchainAccount {
+struct Stride_Stakeibc_MsgRestoreInterchainAccount {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -289,14 +290,14 @@ struct Stridelabs_Stride_Stakeibc_MsgRestoreInterchainAccount {
 
   var chainID: String = String()
 
-  var accountType: Stridelabs_Stride_Stakeibc_ICAAccountType = .delegation
+  var accountType: Stride_Stakeibc_ICAAccountType = .delegation
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 }
 
-struct Stridelabs_Stride_Stakeibc_MsgRestoreInterchainAccountResponse {
+struct Stride_Stakeibc_MsgRestoreInterchainAccountResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -306,7 +307,7 @@ struct Stridelabs_Stride_Stakeibc_MsgRestoreInterchainAccountResponse {
   init() {}
 }
 
-struct Stridelabs_Stride_Stakeibc_MsgUpdateValidatorSharesExchRate {
+struct Stride_Stakeibc_MsgUpdateValidatorSharesExchRate {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -322,7 +323,7 @@ struct Stridelabs_Stride_Stakeibc_MsgUpdateValidatorSharesExchRate {
   init() {}
 }
 
-struct Stridelabs_Stride_Stakeibc_MsgUpdateValidatorSharesExchRateResponse {
+struct Stride_Stakeibc_MsgUpdateValidatorSharesExchRateResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -334,9 +335,9 @@ struct Stridelabs_Stride_Stakeibc_MsgUpdateValidatorSharesExchRateResponse {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "Stridelabs.stride.stakeibc"
+fileprivate let _protobuf_package = "stride.stakeibc"
 
-extension Stridelabs_Stride_Stakeibc_MsgLiquidStake: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_MsgLiquidStake: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgLiquidStake"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "creator"),
@@ -371,7 +372,7 @@ extension Stridelabs_Stride_Stakeibc_MsgLiquidStake: SwiftProtobuf.Message, Swif
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_MsgLiquidStake, rhs: Stridelabs_Stride_Stakeibc_MsgLiquidStake) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_MsgLiquidStake, rhs: Stride_Stakeibc_MsgLiquidStake) -> Bool {
     if lhs.creator != rhs.creator {return false}
     if lhs.amount != rhs.amount {return false}
     if lhs.hostDenom != rhs.hostDenom {return false}
@@ -380,7 +381,7 @@ extension Stridelabs_Stride_Stakeibc_MsgLiquidStake: SwiftProtobuf.Message, Swif
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_MsgLiquidStakeResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_MsgLiquidStakeResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgLiquidStakeResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -393,13 +394,13 @@ extension Stridelabs_Stride_Stakeibc_MsgLiquidStakeResponse: SwiftProtobuf.Messa
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_MsgLiquidStakeResponse, rhs: Stridelabs_Stride_Stakeibc_MsgLiquidStakeResponse) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_MsgLiquidStakeResponse, rhs: Stride_Stakeibc_MsgLiquidStakeResponse) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_MsgClearBalance: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_MsgClearBalance: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgClearBalance"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "creator"),
@@ -439,7 +440,7 @@ extension Stridelabs_Stride_Stakeibc_MsgClearBalance: SwiftProtobuf.Message, Swi
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_MsgClearBalance, rhs: Stridelabs_Stride_Stakeibc_MsgClearBalance) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_MsgClearBalance, rhs: Stride_Stakeibc_MsgClearBalance) -> Bool {
     if lhs.creator != rhs.creator {return false}
     if lhs.chainID != rhs.chainID {return false}
     if lhs.amount != rhs.amount {return false}
@@ -449,7 +450,7 @@ extension Stridelabs_Stride_Stakeibc_MsgClearBalance: SwiftProtobuf.Message, Swi
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_MsgClearBalanceResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_MsgClearBalanceResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgClearBalanceResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -462,18 +463,18 @@ extension Stridelabs_Stride_Stakeibc_MsgClearBalanceResponse: SwiftProtobuf.Mess
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_MsgClearBalanceResponse, rhs: Stridelabs_Stride_Stakeibc_MsgClearBalanceResponse) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_MsgClearBalanceResponse, rhs: Stride_Stakeibc_MsgClearBalanceResponse) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_MsgRedeemStake: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_MsgRedeemStake: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgRedeemStake"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "creator"),
     2: .same(proto: "amount"),
-    3: .same(proto: "hostZone"),
+    3: .standard(proto: "host_zone"),
     4: .same(proto: "receiver"),
   ]
 
@@ -508,7 +509,7 @@ extension Stridelabs_Stride_Stakeibc_MsgRedeemStake: SwiftProtobuf.Message, Swif
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_MsgRedeemStake, rhs: Stridelabs_Stride_Stakeibc_MsgRedeemStake) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_MsgRedeemStake, rhs: Stride_Stakeibc_MsgRedeemStake) -> Bool {
     if lhs.creator != rhs.creator {return false}
     if lhs.amount != rhs.amount {return false}
     if lhs.hostZone != rhs.hostZone {return false}
@@ -518,7 +519,7 @@ extension Stridelabs_Stride_Stakeibc_MsgRedeemStake: SwiftProtobuf.Message, Swif
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_MsgRedeemStakeResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_MsgRedeemStakeResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgRedeemStakeResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -531,13 +532,13 @@ extension Stridelabs_Stride_Stakeibc_MsgRedeemStakeResponse: SwiftProtobuf.Messa
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_MsgRedeemStakeResponse, rhs: Stridelabs_Stride_Stakeibc_MsgRedeemStakeResponse) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_MsgRedeemStakeResponse, rhs: Stride_Stakeibc_MsgRedeemStakeResponse) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_MsgRegisterHostZone: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_MsgRegisterHostZone: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgRegisterHostZone"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .standard(proto: "connection_id"),
@@ -592,7 +593,7 @@ extension Stridelabs_Stride_Stakeibc_MsgRegisterHostZone: SwiftProtobuf.Message,
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_MsgRegisterHostZone, rhs: Stridelabs_Stride_Stakeibc_MsgRegisterHostZone) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_MsgRegisterHostZone, rhs: Stride_Stakeibc_MsgRegisterHostZone) -> Bool {
     if lhs.connectionID != rhs.connectionID {return false}
     if lhs.bech32Prefix != rhs.bech32Prefix {return false}
     if lhs.hostDenom != rhs.hostDenom {return false}
@@ -605,7 +606,7 @@ extension Stridelabs_Stride_Stakeibc_MsgRegisterHostZone: SwiftProtobuf.Message,
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_MsgRegisterHostZoneResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_MsgRegisterHostZoneResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgRegisterHostZoneResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -618,17 +619,17 @@ extension Stridelabs_Stride_Stakeibc_MsgRegisterHostZoneResponse: SwiftProtobuf.
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_MsgRegisterHostZoneResponse, rhs: Stridelabs_Stride_Stakeibc_MsgRegisterHostZoneResponse) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_MsgRegisterHostZoneResponse, rhs: Stride_Stakeibc_MsgRegisterHostZoneResponse) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_MsgClaimUndelegatedTokens: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_MsgClaimUndelegatedTokens: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgClaimUndelegatedTokens"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "creator"),
-    2: .same(proto: "hostZoneId"),
+    2: .standard(proto: "host_zone_id"),
     3: .same(proto: "epoch"),
     4: .same(proto: "sender"),
   ]
@@ -664,7 +665,7 @@ extension Stridelabs_Stride_Stakeibc_MsgClaimUndelegatedTokens: SwiftProtobuf.Me
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_MsgClaimUndelegatedTokens, rhs: Stridelabs_Stride_Stakeibc_MsgClaimUndelegatedTokens) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_MsgClaimUndelegatedTokens, rhs: Stride_Stakeibc_MsgClaimUndelegatedTokens) -> Bool {
     if lhs.creator != rhs.creator {return false}
     if lhs.hostZoneID != rhs.hostZoneID {return false}
     if lhs.epoch != rhs.epoch {return false}
@@ -674,7 +675,7 @@ extension Stridelabs_Stride_Stakeibc_MsgClaimUndelegatedTokens: SwiftProtobuf.Me
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_MsgClaimUndelegatedTokensResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_MsgClaimUndelegatedTokensResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgClaimUndelegatedTokensResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -687,18 +688,18 @@ extension Stridelabs_Stride_Stakeibc_MsgClaimUndelegatedTokensResponse: SwiftPro
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_MsgClaimUndelegatedTokensResponse, rhs: Stridelabs_Stride_Stakeibc_MsgClaimUndelegatedTokensResponse) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_MsgClaimUndelegatedTokensResponse, rhs: Stride_Stakeibc_MsgClaimUndelegatedTokensResponse) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_MsgRebalanceValidators: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_MsgRebalanceValidators: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgRebalanceValidators"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "creator"),
-    2: .same(proto: "hostZone"),
-    3: .same(proto: "numRebalance"),
+    2: .standard(proto: "host_zone"),
+    3: .standard(proto: "num_rebalance"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -728,7 +729,7 @@ extension Stridelabs_Stride_Stakeibc_MsgRebalanceValidators: SwiftProtobuf.Messa
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_MsgRebalanceValidators, rhs: Stridelabs_Stride_Stakeibc_MsgRebalanceValidators) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_MsgRebalanceValidators, rhs: Stride_Stakeibc_MsgRebalanceValidators) -> Bool {
     if lhs.creator != rhs.creator {return false}
     if lhs.hostZone != rhs.hostZone {return false}
     if lhs.numRebalance != rhs.numRebalance {return false}
@@ -737,7 +738,7 @@ extension Stridelabs_Stride_Stakeibc_MsgRebalanceValidators: SwiftProtobuf.Messa
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_MsgRebalanceValidatorsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_MsgRebalanceValidatorsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgRebalanceValidatorsResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -750,17 +751,17 @@ extension Stridelabs_Stride_Stakeibc_MsgRebalanceValidatorsResponse: SwiftProtob
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_MsgRebalanceValidatorsResponse, rhs: Stridelabs_Stride_Stakeibc_MsgRebalanceValidatorsResponse) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_MsgRebalanceValidatorsResponse, rhs: Stride_Stakeibc_MsgRebalanceValidatorsResponse) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_MsgAddValidator: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_MsgAddValidator: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgAddValidator"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "creator"),
-    2: .same(proto: "hostZone"),
+    2: .standard(proto: "host_zone"),
     3: .same(proto: "name"),
     4: .same(proto: "address"),
     5: .same(proto: "commission"),
@@ -806,7 +807,7 @@ extension Stridelabs_Stride_Stakeibc_MsgAddValidator: SwiftProtobuf.Message, Swi
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_MsgAddValidator, rhs: Stridelabs_Stride_Stakeibc_MsgAddValidator) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_MsgAddValidator, rhs: Stride_Stakeibc_MsgAddValidator) -> Bool {
     if lhs.creator != rhs.creator {return false}
     if lhs.hostZone != rhs.hostZone {return false}
     if lhs.name != rhs.name {return false}
@@ -818,7 +819,7 @@ extension Stridelabs_Stride_Stakeibc_MsgAddValidator: SwiftProtobuf.Message, Swi
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_MsgAddValidatorResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_MsgAddValidatorResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgAddValidatorResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -831,18 +832,18 @@ extension Stridelabs_Stride_Stakeibc_MsgAddValidatorResponse: SwiftProtobuf.Mess
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_MsgAddValidatorResponse, rhs: Stridelabs_Stride_Stakeibc_MsgAddValidatorResponse) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_MsgAddValidatorResponse, rhs: Stride_Stakeibc_MsgAddValidatorResponse) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_MsgChangeValidatorWeight: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_MsgChangeValidatorWeight: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgChangeValidatorWeight"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "creator"),
-    2: .same(proto: "hostZone"),
-    3: .same(proto: "valAddr"),
+    2: .standard(proto: "host_zone"),
+    3: .standard(proto: "val_addr"),
     4: .same(proto: "weight"),
   ]
 
@@ -877,7 +878,7 @@ extension Stridelabs_Stride_Stakeibc_MsgChangeValidatorWeight: SwiftProtobuf.Mes
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_MsgChangeValidatorWeight, rhs: Stridelabs_Stride_Stakeibc_MsgChangeValidatorWeight) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_MsgChangeValidatorWeight, rhs: Stride_Stakeibc_MsgChangeValidatorWeight) -> Bool {
     if lhs.creator != rhs.creator {return false}
     if lhs.hostZone != rhs.hostZone {return false}
     if lhs.valAddr != rhs.valAddr {return false}
@@ -887,7 +888,7 @@ extension Stridelabs_Stride_Stakeibc_MsgChangeValidatorWeight: SwiftProtobuf.Mes
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_MsgChangeValidatorWeightResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_MsgChangeValidatorWeightResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgChangeValidatorWeightResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -900,18 +901,18 @@ extension Stridelabs_Stride_Stakeibc_MsgChangeValidatorWeightResponse: SwiftProt
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_MsgChangeValidatorWeightResponse, rhs: Stridelabs_Stride_Stakeibc_MsgChangeValidatorWeightResponse) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_MsgChangeValidatorWeightResponse, rhs: Stride_Stakeibc_MsgChangeValidatorWeightResponse) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_MsgDeleteValidator: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_MsgDeleteValidator: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgDeleteValidator"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "creator"),
-    2: .same(proto: "hostZone"),
-    3: .same(proto: "valAddr"),
+    2: .standard(proto: "host_zone"),
+    3: .standard(proto: "val_addr"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -941,7 +942,7 @@ extension Stridelabs_Stride_Stakeibc_MsgDeleteValidator: SwiftProtobuf.Message, 
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_MsgDeleteValidator, rhs: Stridelabs_Stride_Stakeibc_MsgDeleteValidator) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_MsgDeleteValidator, rhs: Stride_Stakeibc_MsgDeleteValidator) -> Bool {
     if lhs.creator != rhs.creator {return false}
     if lhs.hostZone != rhs.hostZone {return false}
     if lhs.valAddr != rhs.valAddr {return false}
@@ -950,7 +951,7 @@ extension Stridelabs_Stride_Stakeibc_MsgDeleteValidator: SwiftProtobuf.Message, 
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_MsgDeleteValidatorResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_MsgDeleteValidatorResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgDeleteValidatorResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -963,18 +964,18 @@ extension Stridelabs_Stride_Stakeibc_MsgDeleteValidatorResponse: SwiftProtobuf.M
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_MsgDeleteValidatorResponse, rhs: Stridelabs_Stride_Stakeibc_MsgDeleteValidatorResponse) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_MsgDeleteValidatorResponse, rhs: Stride_Stakeibc_MsgDeleteValidatorResponse) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_MsgRestoreInterchainAccount: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_MsgRestoreInterchainAccount: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgRestoreInterchainAccount"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "creator"),
-    2: .same(proto: "chainId"),
-    3: .same(proto: "accountType"),
+    2: .standard(proto: "chain_id"),
+    3: .standard(proto: "account_type"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1004,7 +1005,7 @@ extension Stridelabs_Stride_Stakeibc_MsgRestoreInterchainAccount: SwiftProtobuf.
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_MsgRestoreInterchainAccount, rhs: Stridelabs_Stride_Stakeibc_MsgRestoreInterchainAccount) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_MsgRestoreInterchainAccount, rhs: Stride_Stakeibc_MsgRestoreInterchainAccount) -> Bool {
     if lhs.creator != rhs.creator {return false}
     if lhs.chainID != rhs.chainID {return false}
     if lhs.accountType != rhs.accountType {return false}
@@ -1013,7 +1014,7 @@ extension Stridelabs_Stride_Stakeibc_MsgRestoreInterchainAccount: SwiftProtobuf.
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_MsgRestoreInterchainAccountResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_MsgRestoreInterchainAccountResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgRestoreInterchainAccountResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -1026,17 +1027,17 @@ extension Stridelabs_Stride_Stakeibc_MsgRestoreInterchainAccountResponse: SwiftP
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_MsgRestoreInterchainAccountResponse, rhs: Stridelabs_Stride_Stakeibc_MsgRestoreInterchainAccountResponse) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_MsgRestoreInterchainAccountResponse, rhs: Stride_Stakeibc_MsgRestoreInterchainAccountResponse) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_MsgUpdateValidatorSharesExchRate: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_MsgUpdateValidatorSharesExchRate: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgUpdateValidatorSharesExchRate"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "creator"),
-    2: .same(proto: "chainId"),
+    2: .standard(proto: "chain_id"),
     3: .same(proto: "valoper"),
   ]
 
@@ -1067,7 +1068,7 @@ extension Stridelabs_Stride_Stakeibc_MsgUpdateValidatorSharesExchRate: SwiftProt
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_MsgUpdateValidatorSharesExchRate, rhs: Stridelabs_Stride_Stakeibc_MsgUpdateValidatorSharesExchRate) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_MsgUpdateValidatorSharesExchRate, rhs: Stride_Stakeibc_MsgUpdateValidatorSharesExchRate) -> Bool {
     if lhs.creator != rhs.creator {return false}
     if lhs.chainID != rhs.chainID {return false}
     if lhs.valoper != rhs.valoper {return false}
@@ -1076,7 +1077,7 @@ extension Stridelabs_Stride_Stakeibc_MsgUpdateValidatorSharesExchRate: SwiftProt
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_MsgUpdateValidatorSharesExchRateResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_MsgUpdateValidatorSharesExchRateResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgUpdateValidatorSharesExchRateResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -1089,7 +1090,7 @@ extension Stridelabs_Stride_Stakeibc_MsgUpdateValidatorSharesExchRateResponse: S
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_MsgUpdateValidatorSharesExchRateResponse, rhs: Stridelabs_Stride_Stakeibc_MsgUpdateValidatorSharesExchRateResponse) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_MsgUpdateValidatorSharesExchRateResponse, rhs: Stride_Stakeibc_MsgUpdateValidatorSharesExchRateResponse) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

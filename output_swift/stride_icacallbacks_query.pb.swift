@@ -21,7 +21,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// QueryParamsRequest is request type for the Query/Params RPC method.
-struct Stridelabs_Stride_Icacallbacks_QueryParamsRequest {
+struct Stride_Icacallbacks_QueryParamsRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -32,14 +32,14 @@ struct Stridelabs_Stride_Icacallbacks_QueryParamsRequest {
 }
 
 /// QueryParamsResponse is response type for the Query/Params RPC method.
-struct Stridelabs_Stride_Icacallbacks_QueryParamsResponse {
+struct Stride_Icacallbacks_QueryParamsResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   /// params holds all the parameters of this module.
-  var params: Stridelabs_Stride_Icacallbacks_Params {
-    get {return _params ?? Stridelabs_Stride_Icacallbacks_Params()}
+  var params: Stride_Icacallbacks_Params {
+    get {return _params ?? Stride_Icacallbacks_Params()}
     set {_params = newValue}
   }
   /// Returns true if `params` has been explicitly set.
@@ -51,10 +51,10 @@ struct Stridelabs_Stride_Icacallbacks_QueryParamsResponse {
 
   init() {}
 
-  fileprivate var _params: Stridelabs_Stride_Icacallbacks_Params? = nil
+  fileprivate var _params: Stride_Icacallbacks_Params? = nil
 }
 
-struct Stridelabs_Stride_Icacallbacks_QueryGetCallbackDataRequest {
+struct Stride_Icacallbacks_QueryGetCallbackDataRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -66,13 +66,13 @@ struct Stridelabs_Stride_Icacallbacks_QueryGetCallbackDataRequest {
   init() {}
 }
 
-struct Stridelabs_Stride_Icacallbacks_QueryGetCallbackDataResponse {
+struct Stride_Icacallbacks_QueryGetCallbackDataResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var callbackData: Stridelabs_Stride_Icacallbacks_CallbackData {
-    get {return _callbackData ?? Stridelabs_Stride_Icacallbacks_CallbackData()}
+  var callbackData: Stride_Icacallbacks_CallbackData {
+    get {return _callbackData ?? Stride_Icacallbacks_CallbackData()}
     set {_callbackData = newValue}
   }
   /// Returns true if `callbackData` has been explicitly set.
@@ -84,10 +84,10 @@ struct Stridelabs_Stride_Icacallbacks_QueryGetCallbackDataResponse {
 
   init() {}
 
-  fileprivate var _callbackData: Stridelabs_Stride_Icacallbacks_CallbackData? = nil
+  fileprivate var _callbackData: Stride_Icacallbacks_CallbackData? = nil
 }
 
-struct Stridelabs_Stride_Icacallbacks_QueryAllCallbackDataRequest {
+struct Stride_Icacallbacks_QueryAllCallbackDataRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -108,12 +108,12 @@ struct Stridelabs_Stride_Icacallbacks_QueryAllCallbackDataRequest {
   fileprivate var _pagination: Cosmos_Base_Query_V1beta1_PageRequest? = nil
 }
 
-struct Stridelabs_Stride_Icacallbacks_QueryAllCallbackDataResponse {
+struct Stride_Icacallbacks_QueryAllCallbackDataResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var callbackData: [Stridelabs_Stride_Icacallbacks_CallbackData] = []
+  var callbackData: [Stride_Icacallbacks_CallbackData] = []
 
   var pagination: Cosmos_Base_Query_V1beta1_PageResponse {
     get {return _pagination ?? Cosmos_Base_Query_V1beta1_PageResponse()}
@@ -133,9 +133,9 @@ struct Stridelabs_Stride_Icacallbacks_QueryAllCallbackDataResponse {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "stridelabs.stride.icacallbacks"
+fileprivate let _protobuf_package = "stride.icacallbacks"
 
-extension Stridelabs_Stride_Icacallbacks_QueryParamsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Icacallbacks_QueryParamsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryParamsRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -148,13 +148,13 @@ extension Stridelabs_Stride_Icacallbacks_QueryParamsRequest: SwiftProtobuf.Messa
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Icacallbacks_QueryParamsRequest, rhs: Stridelabs_Stride_Icacallbacks_QueryParamsRequest) -> Bool {
+  static func ==(lhs: Stride_Icacallbacks_QueryParamsRequest, rhs: Stride_Icacallbacks_QueryParamsRequest) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Icacallbacks_QueryParamsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Icacallbacks_QueryParamsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryParamsResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "params"),
@@ -179,17 +179,17 @@ extension Stridelabs_Stride_Icacallbacks_QueryParamsResponse: SwiftProtobuf.Mess
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Icacallbacks_QueryParamsResponse, rhs: Stridelabs_Stride_Icacallbacks_QueryParamsResponse) -> Bool {
+  static func ==(lhs: Stride_Icacallbacks_QueryParamsResponse, rhs: Stride_Icacallbacks_QueryParamsResponse) -> Bool {
     if lhs._params != rhs._params {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Icacallbacks_QueryGetCallbackDataRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Icacallbacks_QueryGetCallbackDataRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryGetCallbackDataRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "callbackKey"),
+    1: .standard(proto: "callback_key"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -211,17 +211,17 @@ extension Stridelabs_Stride_Icacallbacks_QueryGetCallbackDataRequest: SwiftProto
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Icacallbacks_QueryGetCallbackDataRequest, rhs: Stridelabs_Stride_Icacallbacks_QueryGetCallbackDataRequest) -> Bool {
+  static func ==(lhs: Stride_Icacallbacks_QueryGetCallbackDataRequest, rhs: Stride_Icacallbacks_QueryGetCallbackDataRequest) -> Bool {
     if lhs.callbackKey != rhs.callbackKey {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Icacallbacks_QueryGetCallbackDataResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Icacallbacks_QueryGetCallbackDataResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryGetCallbackDataResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "callbackData"),
+    1: .standard(proto: "callback_data"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -243,14 +243,14 @@ extension Stridelabs_Stride_Icacallbacks_QueryGetCallbackDataResponse: SwiftProt
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Icacallbacks_QueryGetCallbackDataResponse, rhs: Stridelabs_Stride_Icacallbacks_QueryGetCallbackDataResponse) -> Bool {
+  static func ==(lhs: Stride_Icacallbacks_QueryGetCallbackDataResponse, rhs: Stride_Icacallbacks_QueryGetCallbackDataResponse) -> Bool {
     if lhs._callbackData != rhs._callbackData {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Icacallbacks_QueryAllCallbackDataRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Icacallbacks_QueryAllCallbackDataRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryAllCallbackDataRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "pagination"),
@@ -275,17 +275,17 @@ extension Stridelabs_Stride_Icacallbacks_QueryAllCallbackDataRequest: SwiftProto
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Icacallbacks_QueryAllCallbackDataRequest, rhs: Stridelabs_Stride_Icacallbacks_QueryAllCallbackDataRequest) -> Bool {
+  static func ==(lhs: Stride_Icacallbacks_QueryAllCallbackDataRequest, rhs: Stride_Icacallbacks_QueryAllCallbackDataRequest) -> Bool {
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Icacallbacks_QueryAllCallbackDataResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Icacallbacks_QueryAllCallbackDataResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryAllCallbackDataResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "callbackData"),
+    1: .standard(proto: "callback_data"),
     2: .same(proto: "pagination"),
   ]
 
@@ -312,7 +312,7 @@ extension Stridelabs_Stride_Icacallbacks_QueryAllCallbackDataResponse: SwiftProt
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Icacallbacks_QueryAllCallbackDataResponse, rhs: Stridelabs_Stride_Icacallbacks_QueryAllCallbackDataResponse) -> Bool {
+  static func ==(lhs: Stride_Icacallbacks_QueryAllCallbackDataResponse, rhs: Stride_Icacallbacks_QueryAllCallbackDataResponse) -> Bool {
     if lhs.callbackData != rhs.callbackData {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

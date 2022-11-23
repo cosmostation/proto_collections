@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Stridelabs_Stride_Stakeibc_EpochTracker {
+struct Stride_Stakeibc_EpochTracker {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -40,14 +40,14 @@ struct Stridelabs_Stride_Stakeibc_EpochTracker {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "Stridelabs.stride.stakeibc"
+fileprivate let _protobuf_package = "stride.stakeibc"
 
-extension Stridelabs_Stride_Stakeibc_EpochTracker: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_EpochTracker: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".EpochTracker"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "epochIdentifier"),
-    2: .same(proto: "epochNumber"),
-    3: .same(proto: "nextEpochStartTime"),
+    1: .standard(proto: "epoch_identifier"),
+    2: .standard(proto: "epoch_number"),
+    3: .standard(proto: "next_epoch_start_time"),
     4: .same(proto: "duration"),
   ]
 
@@ -82,7 +82,7 @@ extension Stridelabs_Stride_Stakeibc_EpochTracker: SwiftProtobuf.Message, SwiftP
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_EpochTracker, rhs: Stridelabs_Stride_Stakeibc_EpochTracker) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_EpochTracker, rhs: Stride_Stakeibc_EpochTracker) -> Bool {
     if lhs.epochIdentifier != rhs.epochIdentifier {return false}
     if lhs.epochNumber != rhs.epochNumber {return false}
     if lhs.nextEpochStartTime != rhs.nextEpochStartTime {return false}

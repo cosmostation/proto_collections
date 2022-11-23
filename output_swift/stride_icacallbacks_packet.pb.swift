@@ -20,18 +20,18 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Stridelabs_Stride_Icacallbacks_IcacallbacksPacketData {
+struct Stride_Icacallbacks_IcacallbacksPacketData {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var packet: Stridelabs_Stride_Icacallbacks_IcacallbacksPacketData.OneOf_Packet? = nil
+  var packet: Stride_Icacallbacks_IcacallbacksPacketData.OneOf_Packet? = nil
 
   /// this line is used by starport scaffolding # ibc/packet/proto/field
-  var noData: Stridelabs_Stride_Icacallbacks_NoData {
+  var noData: Stride_Icacallbacks_NoData {
     get {
       if case .noData(let v)? = packet {return v}
-      return Stridelabs_Stride_Icacallbacks_NoData()
+      return Stride_Icacallbacks_NoData()
     }
     set {packet = .noData(newValue)}
   }
@@ -40,10 +40,10 @@ struct Stridelabs_Stride_Icacallbacks_IcacallbacksPacketData {
 
   enum OneOf_Packet: Equatable {
     /// this line is used by starport scaffolding # ibc/packet/proto/field
-    case noData(Stridelabs_Stride_Icacallbacks_NoData)
+    case noData(Stride_Icacallbacks_NoData)
 
   #if !swift(>=4.1)
-    static func ==(lhs: Stridelabs_Stride_Icacallbacks_IcacallbacksPacketData.OneOf_Packet, rhs: Stridelabs_Stride_Icacallbacks_IcacallbacksPacketData.OneOf_Packet) -> Bool {
+    static func ==(lhs: Stride_Icacallbacks_IcacallbacksPacketData.OneOf_Packet, rhs: Stride_Icacallbacks_IcacallbacksPacketData.OneOf_Packet) -> Bool {
       // The use of inline closures is to circumvent an issue where the compiler
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
@@ -60,7 +60,7 @@ struct Stridelabs_Stride_Icacallbacks_IcacallbacksPacketData {
   init() {}
 }
 
-struct Stridelabs_Stride_Icacallbacks_NoData {
+struct Stride_Icacallbacks_NoData {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -72,12 +72,12 @@ struct Stridelabs_Stride_Icacallbacks_NoData {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "stridelabs.stride.icacallbacks"
+fileprivate let _protobuf_package = "stride.icacallbacks"
 
-extension Stridelabs_Stride_Icacallbacks_IcacallbacksPacketData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Icacallbacks_IcacallbacksPacketData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".IcacallbacksPacketData"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "noData"),
+    1: .standard(proto: "no_data"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -87,7 +87,7 @@ extension Stridelabs_Stride_Icacallbacks_IcacallbacksPacketData: SwiftProtobuf.M
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try {
-        var v: Stridelabs_Stride_Icacallbacks_NoData?
+        var v: Stride_Icacallbacks_NoData?
         var hadOneofValue = false
         if let current = self.packet {
           hadOneofValue = true
@@ -111,14 +111,14 @@ extension Stridelabs_Stride_Icacallbacks_IcacallbacksPacketData: SwiftProtobuf.M
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Icacallbacks_IcacallbacksPacketData, rhs: Stridelabs_Stride_Icacallbacks_IcacallbacksPacketData) -> Bool {
+  static func ==(lhs: Stride_Icacallbacks_IcacallbacksPacketData, rhs: Stride_Icacallbacks_IcacallbacksPacketData) -> Bool {
     if lhs.packet != rhs.packet {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Icacallbacks_NoData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Icacallbacks_NoData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".NoData"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -131,7 +131,7 @@ extension Stridelabs_Stride_Icacallbacks_NoData: SwiftProtobuf.Message, SwiftPro
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Icacallbacks_NoData, rhs: Stridelabs_Stride_Icacallbacks_NoData) -> Bool {
+  static func ==(lhs: Stride_Icacallbacks_NoData, rhs: Stride_Icacallbacks_NoData) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

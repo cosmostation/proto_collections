@@ -21,59 +21,114 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// Params defines the parameters for the module.
-/// next id: 16
-struct Stridelabs_Stride_Stakeibc_Params {
+/// next id: 18
+struct Stride_Stakeibc_Params {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   /// define epoch lengths, in stride_epochs
-  var rewardsInterval: UInt64 = 0
+  var rewardsInterval: UInt64 {
+    get {return _storage._rewardsInterval}
+    set {_uniqueStorage()._rewardsInterval = newValue}
+  }
 
-  var delegateInterval: UInt64 = 0
+  var delegateInterval: UInt64 {
+    get {return _storage._delegateInterval}
+    set {_uniqueStorage()._delegateInterval = newValue}
+  }
 
-  var depositInterval: UInt64 = 0
+  var depositInterval: UInt64 {
+    get {return _storage._depositInterval}
+    set {_uniqueStorage()._depositInterval = newValue}
+  }
 
-  var redemptionRateInterval: UInt64 = 0
+  var redemptionRateInterval: UInt64 {
+    get {return _storage._redemptionRateInterval}
+    set {_uniqueStorage()._redemptionRateInterval = newValue}
+  }
 
-  var strideCommission: UInt64 = 0
+  var strideCommission: UInt64 {
+    get {return _storage._strideCommission}
+    set {_uniqueStorage()._strideCommission = newValue}
+  }
 
-  /// zone_com_address stores which addresses to 
+  /// zone_com_address stores which addresses to
   /// send the Stride commission too, as well as what portion
   /// of the fee each address is entitled to
-  /// TODO implement this 
-  var zoneComAddress: Dictionary<String,String> = [:]
+  /// TODO implement this
+  var zoneComAddress: Dictionary<String,String> {
+    get {return _storage._zoneComAddress}
+    set {_uniqueStorage()._zoneComAddress = newValue}
+  }
 
-  var reinvestInterval: UInt64 = 0
+  var reinvestInterval: UInt64 {
+    get {return _storage._reinvestInterval}
+    set {_uniqueStorage()._reinvestInterval = newValue}
+  }
 
-  var validatorRebalancingThreshold: UInt64 = 0
+  var validatorRebalancingThreshold: UInt64 {
+    get {return _storage._validatorRebalancingThreshold}
+    set {_uniqueStorage()._validatorRebalancingThreshold = newValue}
+  }
 
-  var icaTimeoutNanos: UInt64 = 0
+  var icaTimeoutNanos: UInt64 {
+    get {return _storage._icaTimeoutNanos}
+    set {_uniqueStorage()._icaTimeoutNanos = newValue}
+  }
 
-  var bufferSize: UInt64 = 0
+  var bufferSize: UInt64 {
+    get {return _storage._bufferSize}
+    set {_uniqueStorage()._bufferSize = newValue}
+  }
 
-  var ibcTimeoutBlocks: UInt64 = 0
+  var ibcTimeoutBlocks: UInt64 {
+    get {return _storage._ibcTimeoutBlocks}
+    set {_uniqueStorage()._ibcTimeoutBlocks = newValue}
+  }
 
-  var feeTransferTimeoutNanos: UInt64 = 0
+  var feeTransferTimeoutNanos: UInt64 {
+    get {return _storage._feeTransferTimeoutNanos}
+    set {_uniqueStorage()._feeTransferTimeoutNanos = newValue}
+  }
 
-  var maxStakeIcaCallsPerEpoch: UInt64 = 0
+  var maxStakeIcaCallsPerEpoch: UInt64 {
+    get {return _storage._maxStakeIcaCallsPerEpoch}
+    set {_uniqueStorage()._maxStakeIcaCallsPerEpoch = newValue}
+  }
 
-  var safetyMinRedemptionRateThreshold: UInt64 = 0
+  var safetyMinRedemptionRateThreshold: UInt64 {
+    get {return _storage._safetyMinRedemptionRateThreshold}
+    set {_uniqueStorage()._safetyMinRedemptionRateThreshold = newValue}
+  }
 
-  var safetyMaxRedemptionRateThreshold: UInt64 = 0
+  var safetyMaxRedemptionRateThreshold: UInt64 {
+    get {return _storage._safetyMaxRedemptionRateThreshold}
+    set {_uniqueStorage()._safetyMaxRedemptionRateThreshold = newValue}
+  }
 
-  var ibcTransferTimeoutNanos: UInt64 = 0
+  var ibcTransferTimeoutNanos: UInt64 {
+    get {return _storage._ibcTransferTimeoutNanos}
+    set {_uniqueStorage()._ibcTransferTimeoutNanos = newValue}
+  }
+
+  var safetyNumValidators: UInt64 {
+    get {return _storage._safetyNumValidators}
+    set {_uniqueStorage()._safetyNumValidators = newValue}
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "Stridelabs.stride.stakeibc"
+fileprivate let _protobuf_package = "stride.stakeibc"
 
-extension Stridelabs_Stride_Stakeibc_Params: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_Params: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Params"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "rewards_interval"),
@@ -92,104 +147,174 @@ extension Stridelabs_Stride_Stakeibc_Params: SwiftProtobuf.Message, SwiftProtobu
     14: .standard(proto: "safety_min_redemption_rate_threshold"),
     15: .standard(proto: "safety_max_redemption_rate_threshold"),
     16: .standard(proto: "ibc_transfer_timeout_nanos"),
+    17: .standard(proto: "safety_num_validators"),
   ]
 
+  fileprivate class _StorageClass {
+    var _rewardsInterval: UInt64 = 0
+    var _delegateInterval: UInt64 = 0
+    var _depositInterval: UInt64 = 0
+    var _redemptionRateInterval: UInt64 = 0
+    var _strideCommission: UInt64 = 0
+    var _zoneComAddress: Dictionary<String,String> = [:]
+    var _reinvestInterval: UInt64 = 0
+    var _validatorRebalancingThreshold: UInt64 = 0
+    var _icaTimeoutNanos: UInt64 = 0
+    var _bufferSize: UInt64 = 0
+    var _ibcTimeoutBlocks: UInt64 = 0
+    var _feeTransferTimeoutNanos: UInt64 = 0
+    var _maxStakeIcaCallsPerEpoch: UInt64 = 0
+    var _safetyMinRedemptionRateThreshold: UInt64 = 0
+    var _safetyMaxRedemptionRateThreshold: UInt64 = 0
+    var _ibcTransferTimeoutNanos: UInt64 = 0
+    var _safetyNumValidators: UInt64 = 0
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _rewardsInterval = source._rewardsInterval
+      _delegateInterval = source._delegateInterval
+      _depositInterval = source._depositInterval
+      _redemptionRateInterval = source._redemptionRateInterval
+      _strideCommission = source._strideCommission
+      _zoneComAddress = source._zoneComAddress
+      _reinvestInterval = source._reinvestInterval
+      _validatorRebalancingThreshold = source._validatorRebalancingThreshold
+      _icaTimeoutNanos = source._icaTimeoutNanos
+      _bufferSize = source._bufferSize
+      _ibcTimeoutBlocks = source._ibcTimeoutBlocks
+      _feeTransferTimeoutNanos = source._feeTransferTimeoutNanos
+      _maxStakeIcaCallsPerEpoch = source._maxStakeIcaCallsPerEpoch
+      _safetyMinRedemptionRateThreshold = source._safetyMinRedemptionRateThreshold
+      _safetyMaxRedemptionRateThreshold = source._safetyMaxRedemptionRateThreshold
+      _ibcTransferTimeoutNanos = source._ibcTransferTimeoutNanos
+      _safetyNumValidators = source._safetyNumValidators
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularUInt64Field(value: &self.rewardsInterval) }()
-      case 2: try { try decoder.decodeSingularUInt64Field(value: &self.depositInterval) }()
-      case 3: try { try decoder.decodeSingularUInt64Field(value: &self.redemptionRateInterval) }()
-      case 4: try { try decoder.decodeSingularUInt64Field(value: &self.strideCommission) }()
-      case 5: try { try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMap<SwiftProtobuf.ProtobufString,SwiftProtobuf.ProtobufString>.self, value: &self.zoneComAddress) }()
-      case 6: try { try decoder.decodeSingularUInt64Field(value: &self.delegateInterval) }()
-      case 7: try { try decoder.decodeSingularUInt64Field(value: &self.reinvestInterval) }()
-      case 8: try { try decoder.decodeSingularUInt64Field(value: &self.validatorRebalancingThreshold) }()
-      case 9: try { try decoder.decodeSingularUInt64Field(value: &self.icaTimeoutNanos) }()
-      case 10: try { try decoder.decodeSingularUInt64Field(value: &self.bufferSize) }()
-      case 11: try { try decoder.decodeSingularUInt64Field(value: &self.ibcTimeoutBlocks) }()
-      case 12: try { try decoder.decodeSingularUInt64Field(value: &self.feeTransferTimeoutNanos) }()
-      case 13: try { try decoder.decodeSingularUInt64Field(value: &self.maxStakeIcaCallsPerEpoch) }()
-      case 14: try { try decoder.decodeSingularUInt64Field(value: &self.safetyMinRedemptionRateThreshold) }()
-      case 15: try { try decoder.decodeSingularUInt64Field(value: &self.safetyMaxRedemptionRateThreshold) }()
-      case 16: try { try decoder.decodeSingularUInt64Field(value: &self.ibcTransferTimeoutNanos) }()
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularUInt64Field(value: &_storage._rewardsInterval) }()
+        case 2: try { try decoder.decodeSingularUInt64Field(value: &_storage._depositInterval) }()
+        case 3: try { try decoder.decodeSingularUInt64Field(value: &_storage._redemptionRateInterval) }()
+        case 4: try { try decoder.decodeSingularUInt64Field(value: &_storage._strideCommission) }()
+        case 5: try { try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMap<SwiftProtobuf.ProtobufString,SwiftProtobuf.ProtobufString>.self, value: &_storage._zoneComAddress) }()
+        case 6: try { try decoder.decodeSingularUInt64Field(value: &_storage._delegateInterval) }()
+        case 7: try { try decoder.decodeSingularUInt64Field(value: &_storage._reinvestInterval) }()
+        case 8: try { try decoder.decodeSingularUInt64Field(value: &_storage._validatorRebalancingThreshold) }()
+        case 9: try { try decoder.decodeSingularUInt64Field(value: &_storage._icaTimeoutNanos) }()
+        case 10: try { try decoder.decodeSingularUInt64Field(value: &_storage._bufferSize) }()
+        case 11: try { try decoder.decodeSingularUInt64Field(value: &_storage._ibcTimeoutBlocks) }()
+        case 12: try { try decoder.decodeSingularUInt64Field(value: &_storage._feeTransferTimeoutNanos) }()
+        case 13: try { try decoder.decodeSingularUInt64Field(value: &_storage._maxStakeIcaCallsPerEpoch) }()
+        case 14: try { try decoder.decodeSingularUInt64Field(value: &_storage._safetyMinRedemptionRateThreshold) }()
+        case 15: try { try decoder.decodeSingularUInt64Field(value: &_storage._safetyMaxRedemptionRateThreshold) }()
+        case 16: try { try decoder.decodeSingularUInt64Field(value: &_storage._ibcTransferTimeoutNanos) }()
+        case 17: try { try decoder.decodeSingularUInt64Field(value: &_storage._safetyNumValidators) }()
+        default: break
+        }
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.rewardsInterval != 0 {
-      try visitor.visitSingularUInt64Field(value: self.rewardsInterval, fieldNumber: 1)
-    }
-    if self.depositInterval != 0 {
-      try visitor.visitSingularUInt64Field(value: self.depositInterval, fieldNumber: 2)
-    }
-    if self.redemptionRateInterval != 0 {
-      try visitor.visitSingularUInt64Field(value: self.redemptionRateInterval, fieldNumber: 3)
-    }
-    if self.strideCommission != 0 {
-      try visitor.visitSingularUInt64Field(value: self.strideCommission, fieldNumber: 4)
-    }
-    if !self.zoneComAddress.isEmpty {
-      try visitor.visitMapField(fieldType: SwiftProtobuf._ProtobufMap<SwiftProtobuf.ProtobufString,SwiftProtobuf.ProtobufString>.self, value: self.zoneComAddress, fieldNumber: 5)
-    }
-    if self.delegateInterval != 0 {
-      try visitor.visitSingularUInt64Field(value: self.delegateInterval, fieldNumber: 6)
-    }
-    if self.reinvestInterval != 0 {
-      try visitor.visitSingularUInt64Field(value: self.reinvestInterval, fieldNumber: 7)
-    }
-    if self.validatorRebalancingThreshold != 0 {
-      try visitor.visitSingularUInt64Field(value: self.validatorRebalancingThreshold, fieldNumber: 8)
-    }
-    if self.icaTimeoutNanos != 0 {
-      try visitor.visitSingularUInt64Field(value: self.icaTimeoutNanos, fieldNumber: 9)
-    }
-    if self.bufferSize != 0 {
-      try visitor.visitSingularUInt64Field(value: self.bufferSize, fieldNumber: 10)
-    }
-    if self.ibcTimeoutBlocks != 0 {
-      try visitor.visitSingularUInt64Field(value: self.ibcTimeoutBlocks, fieldNumber: 11)
-    }
-    if self.feeTransferTimeoutNanos != 0 {
-      try visitor.visitSingularUInt64Field(value: self.feeTransferTimeoutNanos, fieldNumber: 12)
-    }
-    if self.maxStakeIcaCallsPerEpoch != 0 {
-      try visitor.visitSingularUInt64Field(value: self.maxStakeIcaCallsPerEpoch, fieldNumber: 13)
-    }
-    if self.safetyMinRedemptionRateThreshold != 0 {
-      try visitor.visitSingularUInt64Field(value: self.safetyMinRedemptionRateThreshold, fieldNumber: 14)
-    }
-    if self.safetyMaxRedemptionRateThreshold != 0 {
-      try visitor.visitSingularUInt64Field(value: self.safetyMaxRedemptionRateThreshold, fieldNumber: 15)
-    }
-    if self.ibcTransferTimeoutNanos != 0 {
-      try visitor.visitSingularUInt64Field(value: self.ibcTransferTimeoutNanos, fieldNumber: 16)
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if _storage._rewardsInterval != 0 {
+        try visitor.visitSingularUInt64Field(value: _storage._rewardsInterval, fieldNumber: 1)
+      }
+      if _storage._depositInterval != 0 {
+        try visitor.visitSingularUInt64Field(value: _storage._depositInterval, fieldNumber: 2)
+      }
+      if _storage._redemptionRateInterval != 0 {
+        try visitor.visitSingularUInt64Field(value: _storage._redemptionRateInterval, fieldNumber: 3)
+      }
+      if _storage._strideCommission != 0 {
+        try visitor.visitSingularUInt64Field(value: _storage._strideCommission, fieldNumber: 4)
+      }
+      if !_storage._zoneComAddress.isEmpty {
+        try visitor.visitMapField(fieldType: SwiftProtobuf._ProtobufMap<SwiftProtobuf.ProtobufString,SwiftProtobuf.ProtobufString>.self, value: _storage._zoneComAddress, fieldNumber: 5)
+      }
+      if _storage._delegateInterval != 0 {
+        try visitor.visitSingularUInt64Field(value: _storage._delegateInterval, fieldNumber: 6)
+      }
+      if _storage._reinvestInterval != 0 {
+        try visitor.visitSingularUInt64Field(value: _storage._reinvestInterval, fieldNumber: 7)
+      }
+      if _storage._validatorRebalancingThreshold != 0 {
+        try visitor.visitSingularUInt64Field(value: _storage._validatorRebalancingThreshold, fieldNumber: 8)
+      }
+      if _storage._icaTimeoutNanos != 0 {
+        try visitor.visitSingularUInt64Field(value: _storage._icaTimeoutNanos, fieldNumber: 9)
+      }
+      if _storage._bufferSize != 0 {
+        try visitor.visitSingularUInt64Field(value: _storage._bufferSize, fieldNumber: 10)
+      }
+      if _storage._ibcTimeoutBlocks != 0 {
+        try visitor.visitSingularUInt64Field(value: _storage._ibcTimeoutBlocks, fieldNumber: 11)
+      }
+      if _storage._feeTransferTimeoutNanos != 0 {
+        try visitor.visitSingularUInt64Field(value: _storage._feeTransferTimeoutNanos, fieldNumber: 12)
+      }
+      if _storage._maxStakeIcaCallsPerEpoch != 0 {
+        try visitor.visitSingularUInt64Field(value: _storage._maxStakeIcaCallsPerEpoch, fieldNumber: 13)
+      }
+      if _storage._safetyMinRedemptionRateThreshold != 0 {
+        try visitor.visitSingularUInt64Field(value: _storage._safetyMinRedemptionRateThreshold, fieldNumber: 14)
+      }
+      if _storage._safetyMaxRedemptionRateThreshold != 0 {
+        try visitor.visitSingularUInt64Field(value: _storage._safetyMaxRedemptionRateThreshold, fieldNumber: 15)
+      }
+      if _storage._ibcTransferTimeoutNanos != 0 {
+        try visitor.visitSingularUInt64Field(value: _storage._ibcTransferTimeoutNanos, fieldNumber: 16)
+      }
+      if _storage._safetyNumValidators != 0 {
+        try visitor.visitSingularUInt64Field(value: _storage._safetyNumValidators, fieldNumber: 17)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_Params, rhs: Stridelabs_Stride_Stakeibc_Params) -> Bool {
-    if lhs.rewardsInterval != rhs.rewardsInterval {return false}
-    if lhs.delegateInterval != rhs.delegateInterval {return false}
-    if lhs.depositInterval != rhs.depositInterval {return false}
-    if lhs.redemptionRateInterval != rhs.redemptionRateInterval {return false}
-    if lhs.strideCommission != rhs.strideCommission {return false}
-    if lhs.zoneComAddress != rhs.zoneComAddress {return false}
-    if lhs.reinvestInterval != rhs.reinvestInterval {return false}
-    if lhs.validatorRebalancingThreshold != rhs.validatorRebalancingThreshold {return false}
-    if lhs.icaTimeoutNanos != rhs.icaTimeoutNanos {return false}
-    if lhs.bufferSize != rhs.bufferSize {return false}
-    if lhs.ibcTimeoutBlocks != rhs.ibcTimeoutBlocks {return false}
-    if lhs.feeTransferTimeoutNanos != rhs.feeTransferTimeoutNanos {return false}
-    if lhs.maxStakeIcaCallsPerEpoch != rhs.maxStakeIcaCallsPerEpoch {return false}
-    if lhs.safetyMinRedemptionRateThreshold != rhs.safetyMinRedemptionRateThreshold {return false}
-    if lhs.safetyMaxRedemptionRateThreshold != rhs.safetyMaxRedemptionRateThreshold {return false}
-    if lhs.ibcTransferTimeoutNanos != rhs.ibcTransferTimeoutNanos {return false}
+  static func ==(lhs: Stride_Stakeibc_Params, rhs: Stride_Stakeibc_Params) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._rewardsInterval != rhs_storage._rewardsInterval {return false}
+        if _storage._delegateInterval != rhs_storage._delegateInterval {return false}
+        if _storage._depositInterval != rhs_storage._depositInterval {return false}
+        if _storage._redemptionRateInterval != rhs_storage._redemptionRateInterval {return false}
+        if _storage._strideCommission != rhs_storage._strideCommission {return false}
+        if _storage._zoneComAddress != rhs_storage._zoneComAddress {return false}
+        if _storage._reinvestInterval != rhs_storage._reinvestInterval {return false}
+        if _storage._validatorRebalancingThreshold != rhs_storage._validatorRebalancingThreshold {return false}
+        if _storage._icaTimeoutNanos != rhs_storage._icaTimeoutNanos {return false}
+        if _storage._bufferSize != rhs_storage._bufferSize {return false}
+        if _storage._ibcTimeoutBlocks != rhs_storage._ibcTimeoutBlocks {return false}
+        if _storage._feeTransferTimeoutNanos != rhs_storage._feeTransferTimeoutNanos {return false}
+        if _storage._maxStakeIcaCallsPerEpoch != rhs_storage._maxStakeIcaCallsPerEpoch {return false}
+        if _storage._safetyMinRedemptionRateThreshold != rhs_storage._safetyMinRedemptionRateThreshold {return false}
+        if _storage._safetyMaxRedemptionRateThreshold != rhs_storage._safetyMaxRedemptionRateThreshold {return false}
+        if _storage._ibcTransferTimeoutNanos != rhs_storage._ibcTransferTimeoutNanos {return false}
+        if _storage._safetyNumValidators != rhs_storage._safetyNumValidators {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

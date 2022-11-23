@@ -27,27 +27,27 @@ import SwiftProtobuf
 
 /// Msg defines the Msg service.
 ///
-/// Usage: instantiate `Stridelabs_Stride_Records_MsgClient`, then call methods of this protocol to make API calls.
-internal protocol Stridelabs_Stride_Records_MsgClientProtocol: GRPCClient {
+/// Usage: instantiate `Stride_Records_MsgClient`, then call methods of this protocol to make API calls.
+internal protocol Stride_Records_MsgClientProtocol: GRPCClient {
   var serviceName: String { get }
-  var interceptors: Stridelabs_Stride_Records_MsgClientInterceptorFactoryProtocol? { get }
+  var interceptors: Stride_Records_MsgClientInterceptorFactoryProtocol? { get }
 }
 
-extension Stridelabs_Stride_Records_MsgClientProtocol {
+extension Stride_Records_MsgClientProtocol {
   internal var serviceName: String {
-    return "Stridelabs.stride.records.Msg"
+    return "stride.records.Msg"
   }
 }
 
-internal protocol Stridelabs_Stride_Records_MsgClientInterceptorFactoryProtocol {
+internal protocol Stride_Records_MsgClientInterceptorFactoryProtocol {
 }
 
-internal final class Stridelabs_Stride_Records_MsgClient: Stridelabs_Stride_Records_MsgClientProtocol {
+internal final class Stride_Records_MsgClient: Stride_Records_MsgClientProtocol {
   internal let channel: GRPCChannel
   internal var defaultCallOptions: CallOptions
-  internal var interceptors: Stridelabs_Stride_Records_MsgClientInterceptorFactoryProtocol?
+  internal var interceptors: Stride_Records_MsgClientInterceptorFactoryProtocol?
 
-  /// Creates a client for the Stridelabs.stride.records.Msg service.
+  /// Creates a client for the stride.records.Msg service.
   ///
   /// - Parameters:
   ///   - channel: `GRPCChannel` to the service host.
@@ -56,7 +56,7 @@ internal final class Stridelabs_Stride_Records_MsgClient: Stridelabs_Stride_Reco
   internal init(
     channel: GRPCChannel,
     defaultCallOptions: CallOptions = CallOptions(),
-    interceptors: Stridelabs_Stride_Records_MsgClientInterceptorFactoryProtocol? = nil
+    interceptors: Stride_Records_MsgClientInterceptorFactoryProtocol? = nil
   ) {
     self.channel = channel
     self.defaultCallOptions = defaultCallOptions
@@ -67,12 +67,12 @@ internal final class Stridelabs_Stride_Records_MsgClient: Stridelabs_Stride_Reco
 /// Msg defines the Msg service.
 ///
 /// To build a server, implement a class that conforms to this protocol.
-internal protocol Stridelabs_Stride_Records_MsgProvider: CallHandlerProvider {
-  var interceptors: Stridelabs_Stride_Records_MsgServerInterceptorFactoryProtocol? { get }
+internal protocol Stride_Records_MsgProvider: CallHandlerProvider {
+  var interceptors: Stride_Records_MsgServerInterceptorFactoryProtocol? { get }
 }
 
-extension Stridelabs_Stride_Records_MsgProvider {
-  internal var serviceName: Substring { return "Stridelabs.stride.records.Msg" }
+extension Stride_Records_MsgProvider {
+  internal var serviceName: Substring { return "stride.records.Msg" }
 
   /// Determines, calls and returns the appropriate request handler, depending on the request's method.
   /// Returns nil for methods not handled by this service.
@@ -87,5 +87,5 @@ extension Stridelabs_Stride_Records_MsgProvider {
   }
 }
 
-internal protocol Stridelabs_Stride_Records_MsgServerInterceptorFactoryProtocol {
+internal protocol Stride_Records_MsgServerInterceptorFactoryProtocol {
 }

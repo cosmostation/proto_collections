@@ -1,12 +1,12 @@
 syntax = "proto3";
-package Stridelabs.stride.stakeibc;
+package stride.stakeibc;
 
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/Stride-Labs/stride/x/stakeibc/types";
+option go_package = "github.com/Stride-Labs/stride/v3/x/stakeibc/types";
 
 // Params defines the parameters for the module.
-// next id: 16
+// next id: 18
 message Params {
   option (gogoproto.goproto_stringer) = false;
 
@@ -17,10 +17,10 @@ message Params {
   uint64 redemption_rate_interval = 3;
 
   uint64 stride_commission = 4;
-  // zone_com_address stores which addresses to 
+  // zone_com_address stores which addresses to
   // send the Stride commission too, as well as what portion
   // of the fee each address is entitled to
-  // TODO implement this 
+  // TODO implement this
   map<string, string> zone_com_address = 5;
   uint64 reinvest_interval = 7;
   uint64 validator_rebalancing_threshold = 8;
@@ -32,4 +32,5 @@ message Params {
   uint64 safety_min_redemption_rate_threshold = 14;
   uint64 safety_max_redemption_rate_threshold = 15;
   uint64 ibc_transfer_timeout_nanos = 16;
+  uint64 safety_num_validators = 17;
 }

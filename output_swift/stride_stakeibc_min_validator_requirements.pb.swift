@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Stridelabs_Stride_Stakeibc_MinValidatorRequirements {
+struct Stride_Stakeibc_MinValidatorRequirements {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -36,12 +36,12 @@ struct Stridelabs_Stride_Stakeibc_MinValidatorRequirements {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "Stridelabs.stride.stakeibc"
+fileprivate let _protobuf_package = "stride.stakeibc"
 
-extension Stridelabs_Stride_Stakeibc_MinValidatorRequirements: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_MinValidatorRequirements: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MinValidatorRequirements"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "commissionRate"),
+    1: .standard(proto: "commission_rate"),
     2: .same(proto: "uptime"),
   ]
 
@@ -68,7 +68,7 @@ extension Stridelabs_Stride_Stakeibc_MinValidatorRequirements: SwiftProtobuf.Mes
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_MinValidatorRequirements, rhs: Stridelabs_Stride_Stakeibc_MinValidatorRequirements) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_MinValidatorRequirements, rhs: Stride_Stakeibc_MinValidatorRequirements) -> Bool {
     if lhs.commissionRate != rhs.commissionRate {return false}
     if lhs.uptime != rhs.uptime {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

@@ -27,20 +27,20 @@ import SwiftProtobuf
 
 /// Msg defines the interchainquery Msg service.
 ///
-/// Usage: instantiate `Stride_Interchainquery_MsgClient`, then call methods of this protocol to make API calls.
-internal protocol Stride_Interchainquery_MsgClientProtocol: GRPCClient {
+/// Usage: instantiate `Stride_Interchainquery_V1_MsgClient`, then call methods of this protocol to make API calls.
+internal protocol Stride_Interchainquery_V1_MsgClientProtocol: GRPCClient {
   var serviceName: String { get }
-  var interceptors: Stride_Interchainquery_MsgClientInterceptorFactoryProtocol? { get }
+  var interceptors: Stride_Interchainquery_V1_MsgClientInterceptorFactoryProtocol? { get }
 
   func submitQueryResponse(
-    _ request: Stride_Interchainquery_MsgSubmitQueryResponse,
+    _ request: Stride_Interchainquery_V1_MsgSubmitQueryResponse,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stride_Interchainquery_MsgSubmitQueryResponse, Stride_Interchainquery_MsgSubmitQueryResponseResponse>
+  ) -> UnaryCall<Stride_Interchainquery_V1_MsgSubmitQueryResponse, Stride_Interchainquery_V1_MsgSubmitQueryResponseResponse>
 }
 
-extension Stride_Interchainquery_MsgClientProtocol {
+extension Stride_Interchainquery_V1_MsgClientProtocol {
   internal var serviceName: String {
-    return "stride.interchainquery.Msg"
+    return "stride.interchainquery.v1.Msg"
   }
 
   /// SubmitQueryResponse defines a method for submit query responses.
@@ -50,11 +50,11 @@ extension Stride_Interchainquery_MsgClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func submitQueryResponse(
-    _ request: Stride_Interchainquery_MsgSubmitQueryResponse,
+    _ request: Stride_Interchainquery_V1_MsgSubmitQueryResponse,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stride_Interchainquery_MsgSubmitQueryResponse, Stride_Interchainquery_MsgSubmitQueryResponseResponse> {
+  ) -> UnaryCall<Stride_Interchainquery_V1_MsgSubmitQueryResponse, Stride_Interchainquery_V1_MsgSubmitQueryResponseResponse> {
     return self.makeUnaryCall(
-      path: "/stride.interchainquery.Msg/SubmitQueryResponse",
+      path: "/stride.interchainquery.v1.Msg/SubmitQueryResponse",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeSubmitQueryResponseInterceptors() ?? []
@@ -62,18 +62,18 @@ extension Stride_Interchainquery_MsgClientProtocol {
   }
 }
 
-internal protocol Stride_Interchainquery_MsgClientInterceptorFactoryProtocol {
+internal protocol Stride_Interchainquery_V1_MsgClientInterceptorFactoryProtocol {
 
   /// - Returns: Interceptors to use when invoking 'submitQueryResponse'.
-  func makeSubmitQueryResponseInterceptors() -> [ClientInterceptor<Stride_Interchainquery_MsgSubmitQueryResponse, Stride_Interchainquery_MsgSubmitQueryResponseResponse>]
+  func makeSubmitQueryResponseInterceptors() -> [ClientInterceptor<Stride_Interchainquery_V1_MsgSubmitQueryResponse, Stride_Interchainquery_V1_MsgSubmitQueryResponseResponse>]
 }
 
-internal final class Stride_Interchainquery_MsgClient: Stride_Interchainquery_MsgClientProtocol {
+internal final class Stride_Interchainquery_V1_MsgClient: Stride_Interchainquery_V1_MsgClientProtocol {
   internal let channel: GRPCChannel
   internal var defaultCallOptions: CallOptions
-  internal var interceptors: Stride_Interchainquery_MsgClientInterceptorFactoryProtocol?
+  internal var interceptors: Stride_Interchainquery_V1_MsgClientInterceptorFactoryProtocol?
 
-  /// Creates a client for the stride.interchainquery.Msg service.
+  /// Creates a client for the stride.interchainquery.v1.Msg service.
   ///
   /// - Parameters:
   ///   - channel: `GRPCChannel` to the service host.
@@ -82,7 +82,7 @@ internal final class Stride_Interchainquery_MsgClient: Stride_Interchainquery_Ms
   internal init(
     channel: GRPCChannel,
     defaultCallOptions: CallOptions = CallOptions(),
-    interceptors: Stride_Interchainquery_MsgClientInterceptorFactoryProtocol? = nil
+    interceptors: Stride_Interchainquery_V1_MsgClientInterceptorFactoryProtocol? = nil
   ) {
     self.channel = channel
     self.defaultCallOptions = defaultCallOptions
@@ -93,15 +93,15 @@ internal final class Stride_Interchainquery_MsgClient: Stride_Interchainquery_Ms
 /// Msg defines the interchainquery Msg service.
 ///
 /// To build a server, implement a class that conforms to this protocol.
-internal protocol Stride_Interchainquery_MsgProvider: CallHandlerProvider {
-  var interceptors: Stride_Interchainquery_MsgServerInterceptorFactoryProtocol? { get }
+internal protocol Stride_Interchainquery_V1_MsgProvider: CallHandlerProvider {
+  var interceptors: Stride_Interchainquery_V1_MsgServerInterceptorFactoryProtocol? { get }
 
   /// SubmitQueryResponse defines a method for submit query responses.
-  func submitQueryResponse(request: Stride_Interchainquery_MsgSubmitQueryResponse, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Interchainquery_MsgSubmitQueryResponseResponse>
+  func submitQueryResponse(request: Stride_Interchainquery_V1_MsgSubmitQueryResponse, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Interchainquery_V1_MsgSubmitQueryResponseResponse>
 }
 
-extension Stride_Interchainquery_MsgProvider {
-  internal var serviceName: Substring { return "stride.interchainquery.Msg" }
+extension Stride_Interchainquery_V1_MsgProvider {
+  internal var serviceName: Substring { return "stride.interchainquery.v1.Msg" }
 
   /// Determines, calls and returns the appropriate request handler, depending on the request's method.
   /// Returns nil for methods not handled by this service.
@@ -113,8 +113,8 @@ extension Stride_Interchainquery_MsgProvider {
     case "SubmitQueryResponse":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stride_Interchainquery_MsgSubmitQueryResponse>(),
-        responseSerializer: ProtobufSerializer<Stride_Interchainquery_MsgSubmitQueryResponseResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Interchainquery_V1_MsgSubmitQueryResponse>(),
+        responseSerializer: ProtobufSerializer<Stride_Interchainquery_V1_MsgSubmitQueryResponseResponse>(),
         interceptors: self.interceptors?.makeSubmitQueryResponseInterceptors() ?? [],
         userFunction: self.submitQueryResponse(request:context:)
       )
@@ -125,9 +125,9 @@ extension Stride_Interchainquery_MsgProvider {
   }
 }
 
-internal protocol Stride_Interchainquery_MsgServerInterceptorFactoryProtocol {
+internal protocol Stride_Interchainquery_V1_MsgServerInterceptorFactoryProtocol {
 
   /// - Returns: Interceptors to use when handling 'submitQueryResponse'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeSubmitQueryResponseInterceptors() -> [ServerInterceptor<Stride_Interchainquery_MsgSubmitQueryResponse, Stride_Interchainquery_MsgSubmitQueryResponseResponse>]
+  func makeSubmitQueryResponseInterceptors() -> [ServerInterceptor<Stride_Interchainquery_V1_MsgSubmitQueryResponse, Stride_Interchainquery_V1_MsgSubmitQueryResponseResponse>]
 }

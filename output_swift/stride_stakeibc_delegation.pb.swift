@@ -20,15 +20,15 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Stridelabs_Stride_Stakeibc_Delegation {
+struct Stride_Stakeibc_Delegation {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var delegateAcctAddress: String = String()
 
-  var validator: Stridelabs_Stride_Stakeibc_Validator {
-    get {return _validator ?? Stridelabs_Stride_Stakeibc_Validator()}
+  var validator: Stride_Stakeibc_Validator {
+    get {return _validator ?? Stride_Stakeibc_Validator()}
     set {_validator = newValue}
   }
   /// Returns true if `validator` has been explicitly set.
@@ -42,17 +42,17 @@ struct Stridelabs_Stride_Stakeibc_Delegation {
 
   init() {}
 
-  fileprivate var _validator: Stridelabs_Stride_Stakeibc_Validator? = nil
+  fileprivate var _validator: Stride_Stakeibc_Validator? = nil
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "Stridelabs.stride.stakeibc"
+fileprivate let _protobuf_package = "stride.stakeibc"
 
-extension Stridelabs_Stride_Stakeibc_Delegation: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_Delegation: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Delegation"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "delegateAcctAddress"),
+    1: .standard(proto: "delegate_acct_address"),
     2: .same(proto: "validator"),
     3: .same(proto: "amt"),
   ]
@@ -84,7 +84,7 @@ extension Stridelabs_Stride_Stakeibc_Delegation: SwiftProtobuf.Message, SwiftPro
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_Delegation, rhs: Stridelabs_Stride_Stakeibc_Delegation) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_Delegation, rhs: Stride_Stakeibc_Delegation) -> Bool {
     if lhs.delegateAcctAddress != rhs.delegateAcctAddress {return false}
     if lhs._validator != rhs._validator {return false}
     if lhs.amt != rhs.amt {return false}

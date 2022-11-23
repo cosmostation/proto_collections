@@ -1,11 +1,9 @@
 syntax = "proto3";
 package stride.mint.v1beta1;
 
-option go_package = "github.com/Stride-Labs/stride/x/mint/types";
+option go_package = "github.com/Stride-Labs/stride/v3/x/mint/types";
 
 import "gogoproto/gogo.proto";
-import "google/protobuf/timestamp.proto";
-import "google/protobuf/duration.proto";
 
 // Minter represents the minting state.
 message Minter {
@@ -40,7 +38,7 @@ message DistributionProportions {
     (gogoproto.moretags) = "yaml:\"community_pool\"",
     (gogoproto.nullable) = false
   ];
-   // strategic_reserve defines the proportion of the minted mint_denom that is
+  // strategic_reserve defines the proportion of the minted mint_denom that is
   // to be allocated to the pool: strategic reserve.
   string strategic_reserve = 4 [
     (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
@@ -77,7 +75,7 @@ message Params {
   DistributionProportions distribution_proportions = 6
       [ (gogoproto.nullable) = false ];
 
-      // start epoch to distribute minting rewards
+  // start epoch to distribute minting rewards
   int64 minting_rewards_distribution_start_epoch = 7
       [ (gogoproto.moretags) =
             "yaml:\"minting_rewards_distribution_start_epoch\"" ];

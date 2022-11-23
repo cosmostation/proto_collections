@@ -21,174 +21,116 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// GenesisState defines the stakeibc module's genesis state.
-struct Stridelabs_Stride_Stakeibc_GenesisState {
+struct Stride_Stakeibc_GenesisState {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var params: Stridelabs_Stride_Stakeibc_Params {
-    get {return _storage._params ?? Stridelabs_Stride_Stakeibc_Params()}
-    set {_uniqueStorage()._params = newValue}
+  var params: Stride_Stakeibc_Params {
+    get {return _params ?? Stride_Stakeibc_Params()}
+    set {_params = newValue}
   }
   /// Returns true if `params` has been explicitly set.
-  var hasParams: Bool {return _storage._params != nil}
+  var hasParams: Bool {return self._params != nil}
   /// Clears the value of `params`. Subsequent reads from it will return its default value.
-  mutating func clearParams() {_uniqueStorage()._params = nil}
+  mutating func clearParams() {self._params = nil}
 
-  var portID: String {
-    get {return _storage._portID}
-    set {_uniqueStorage()._portID = newValue}
-  }
+  var portID: String = String()
 
   /// list of zones that are registered by the protocol
-  var iCaaccount: Stridelabs_Stride_Stakeibc_ICAAccount {
-    get {return _storage._iCaaccount ?? Stridelabs_Stride_Stakeibc_ICAAccount()}
-    set {_uniqueStorage()._iCaaccount = newValue}
+  var icaAccount: Stride_Stakeibc_ICAAccount {
+    get {return _icaAccount ?? Stride_Stakeibc_ICAAccount()}
+    set {_icaAccount = newValue}
   }
-  /// Returns true if `iCaaccount` has been explicitly set.
-  var hasICaaccount: Bool {return _storage._iCaaccount != nil}
-  /// Clears the value of `iCaaccount`. Subsequent reads from it will return its default value.
-  mutating func clearICaaccount() {_uniqueStorage()._iCaaccount = nil}
+  /// Returns true if `icaAccount` has been explicitly set.
+  var hasIcaAccount: Bool {return self._icaAccount != nil}
+  /// Clears the value of `icaAccount`. Subsequent reads from it will return its default value.
+  mutating func clearIcaAccount() {self._icaAccount = nil}
 
-  var hostZoneList: [Stridelabs_Stride_Stakeibc_HostZone] {
-    get {return _storage._hostZoneList}
-    set {_uniqueStorage()._hostZoneList = newValue}
-  }
+  var hostZoneList: [Stride_Stakeibc_HostZone] = []
 
-  var hostZoneCount: UInt64 {
-    get {return _storage._hostZoneCount}
-    set {_uniqueStorage()._hostZoneCount = newValue}
-  }
+  var hostZoneCount: UInt64 = 0
 
   /// stores a map from hostZone base denom to hostZone
-  var denomToHostZone: Dictionary<String,String> {
-    get {return _storage._denomToHostZone}
-    set {_uniqueStorage()._denomToHostZone = newValue}
-  }
+  var denomToHostZone: Dictionary<String,String> = [:]
 
-  var epochTrackerList: [Stridelabs_Stride_Stakeibc_EpochTracker] {
-    get {return _storage._epochTrackerList}
-    set {_uniqueStorage()._epochTrackerList = newValue}
-  }
+  var epochTrackerList: [Stride_Stakeibc_EpochTracker] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _storage = _StorageClass.defaultInstance
+  fileprivate var _params: Stride_Stakeibc_Params? = nil
+  fileprivate var _icaAccount: Stride_Stakeibc_ICAAccount? = nil
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "Stridelabs.stride.stakeibc"
+fileprivate let _protobuf_package = "stride.stakeibc"
 
-extension Stridelabs_Stride_Stakeibc_GenesisState: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_GenesisState: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GenesisState"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "params"),
     2: .standard(proto: "port_id"),
-    4: .same(proto: "iCAAccount"),
-    5: .same(proto: "hostZoneList"),
-    6: .same(proto: "hostZoneCount"),
-    9: .same(proto: "denomToHostZone"),
-    10: .same(proto: "epochTrackerList"),
+    4: .standard(proto: "ica_account"),
+    5: .standard(proto: "host_zone_list"),
+    6: .standard(proto: "host_zone_count"),
+    9: .standard(proto: "denom_to_host_zone"),
+    10: .standard(proto: "epoch_tracker_list"),
   ]
 
-  fileprivate class _StorageClass {
-    var _params: Stridelabs_Stride_Stakeibc_Params? = nil
-    var _portID: String = String()
-    var _iCaaccount: Stridelabs_Stride_Stakeibc_ICAAccount? = nil
-    var _hostZoneList: [Stridelabs_Stride_Stakeibc_HostZone] = []
-    var _hostZoneCount: UInt64 = 0
-    var _denomToHostZone: Dictionary<String,String> = [:]
-    var _epochTrackerList: [Stridelabs_Stride_Stakeibc_EpochTracker] = []
-
-    static let defaultInstance = _StorageClass()
-
-    private init() {}
-
-    init(copying source: _StorageClass) {
-      _params = source._params
-      _portID = source._portID
-      _iCaaccount = source._iCaaccount
-      _hostZoneList = source._hostZoneList
-      _hostZoneCount = source._hostZoneCount
-      _denomToHostZone = source._denomToHostZone
-      _epochTrackerList = source._epochTrackerList
-    }
-  }
-
-  fileprivate mutating func _uniqueStorage() -> _StorageClass {
-    if !isKnownUniquelyReferenced(&_storage) {
-      _storage = _StorageClass(copying: _storage)
-    }
-    return _storage
-  }
-
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        // The use of inline closures is to circumvent an issue where the compiler
-        // allocates stack space for every case branch when no optimizations are
-        // enabled. https://github.com/apple/swift-protobuf/issues/1034
-        switch fieldNumber {
-        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._params) }()
-        case 2: try { try decoder.decodeSingularStringField(value: &_storage._portID) }()
-        case 4: try { try decoder.decodeSingularMessageField(value: &_storage._iCaaccount) }()
-        case 5: try { try decoder.decodeRepeatedMessageField(value: &_storage._hostZoneList) }()
-        case 6: try { try decoder.decodeSingularUInt64Field(value: &_storage._hostZoneCount) }()
-        case 9: try { try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMap<SwiftProtobuf.ProtobufString,SwiftProtobuf.ProtobufString>.self, value: &_storage._denomToHostZone) }()
-        case 10: try { try decoder.decodeRepeatedMessageField(value: &_storage._epochTrackerList) }()
-        default: break
-        }
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._params) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.portID) }()
+      case 4: try { try decoder.decodeSingularMessageField(value: &self._icaAccount) }()
+      case 5: try { try decoder.decodeRepeatedMessageField(value: &self.hostZoneList) }()
+      case 6: try { try decoder.decodeSingularUInt64Field(value: &self.hostZoneCount) }()
+      case 9: try { try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMap<SwiftProtobuf.ProtobufString,SwiftProtobuf.ProtobufString>.self, value: &self.denomToHostZone) }()
+      case 10: try { try decoder.decodeRepeatedMessageField(value: &self.epochTrackerList) }()
+      default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._params {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      }
-      if !_storage._portID.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._portID, fieldNumber: 2)
-      }
-      if let v = _storage._iCaaccount {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-      }
-      if !_storage._hostZoneList.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._hostZoneList, fieldNumber: 5)
-      }
-      if _storage._hostZoneCount != 0 {
-        try visitor.visitSingularUInt64Field(value: _storage._hostZoneCount, fieldNumber: 6)
-      }
-      if !_storage._denomToHostZone.isEmpty {
-        try visitor.visitMapField(fieldType: SwiftProtobuf._ProtobufMap<SwiftProtobuf.ProtobufString,SwiftProtobuf.ProtobufString>.self, value: _storage._denomToHostZone, fieldNumber: 9)
-      }
-      if !_storage._epochTrackerList.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._epochTrackerList, fieldNumber: 10)
-      }
+    if let v = self._params {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    }
+    if !self.portID.isEmpty {
+      try visitor.visitSingularStringField(value: self.portID, fieldNumber: 2)
+    }
+    if let v = self._icaAccount {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
+    }
+    if !self.hostZoneList.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.hostZoneList, fieldNumber: 5)
+    }
+    if self.hostZoneCount != 0 {
+      try visitor.visitSingularUInt64Field(value: self.hostZoneCount, fieldNumber: 6)
+    }
+    if !self.denomToHostZone.isEmpty {
+      try visitor.visitMapField(fieldType: SwiftProtobuf._ProtobufMap<SwiftProtobuf.ProtobufString,SwiftProtobuf.ProtobufString>.self, value: self.denomToHostZone, fieldNumber: 9)
+    }
+    if !self.epochTrackerList.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.epochTrackerList, fieldNumber: 10)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_GenesisState, rhs: Stridelabs_Stride_Stakeibc_GenesisState) -> Bool {
-    if lhs._storage !== rhs._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
-        let _storage = _args.0
-        let rhs_storage = _args.1
-        if _storage._params != rhs_storage._params {return false}
-        if _storage._portID != rhs_storage._portID {return false}
-        if _storage._iCaaccount != rhs_storage._iCaaccount {return false}
-        if _storage._hostZoneList != rhs_storage._hostZoneList {return false}
-        if _storage._hostZoneCount != rhs_storage._hostZoneCount {return false}
-        if _storage._denomToHostZone != rhs_storage._denomToHostZone {return false}
-        if _storage._epochTrackerList != rhs_storage._epochTrackerList {return false}
-        return true
-      }
-      if !storagesAreEqual {return false}
-    }
+  static func ==(lhs: Stride_Stakeibc_GenesisState, rhs: Stride_Stakeibc_GenesisState) -> Bool {
+    if lhs._params != rhs._params {return false}
+    if lhs.portID != rhs.portID {return false}
+    if lhs._icaAccount != rhs._icaAccount {return false}
+    if lhs.hostZoneList != rhs.hostZoneList {return false}
+    if lhs.hostZoneCount != rhs.hostZoneCount {return false}
+    if lhs.denomToHostZone != rhs.denomToHostZone {return false}
+    if lhs.epochTrackerList != rhs.epochTrackerList {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -27,55 +27,55 @@ import SwiftProtobuf
 
 /// Query defines the gRPC querier service.
 ///
-/// Usage: instantiate `Stridelabs_Stride_Records_QueryClient`, then call methods of this protocol to make API calls.
-internal protocol Stridelabs_Stride_Records_QueryClientProtocol: GRPCClient {
+/// Usage: instantiate `Stride_Records_QueryClient`, then call methods of this protocol to make API calls.
+internal protocol Stride_Records_QueryClientProtocol: GRPCClient {
   var serviceName: String { get }
-  var interceptors: Stridelabs_Stride_Records_QueryClientInterceptorFactoryProtocol? { get }
+  var interceptors: Stride_Records_QueryClientInterceptorFactoryProtocol? { get }
 
   func params(
-    _ request: Stridelabs_Stride_Records_QueryParamsRequest,
+    _ request: Stride_Records_QueryParamsRequest,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Records_QueryParamsRequest, Stridelabs_Stride_Records_QueryParamsResponse>
+  ) -> UnaryCall<Stride_Records_QueryParamsRequest, Stride_Records_QueryParamsResponse>
 
   func userRedemptionRecord(
-    _ request: Stridelabs_Stride_Records_QueryGetUserRedemptionRecordRequest,
+    _ request: Stride_Records_QueryGetUserRedemptionRecordRequest,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Records_QueryGetUserRedemptionRecordRequest, Stridelabs_Stride_Records_QueryGetUserRedemptionRecordResponse>
+  ) -> UnaryCall<Stride_Records_QueryGetUserRedemptionRecordRequest, Stride_Records_QueryGetUserRedemptionRecordResponse>
 
   func userRedemptionRecordAll(
-    _ request: Stridelabs_Stride_Records_QueryAllUserRedemptionRecordRequest,
+    _ request: Stride_Records_QueryAllUserRedemptionRecordRequest,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Records_QueryAllUserRedemptionRecordRequest, Stridelabs_Stride_Records_QueryAllUserRedemptionRecordResponse>
+  ) -> UnaryCall<Stride_Records_QueryAllUserRedemptionRecordRequest, Stride_Records_QueryAllUserRedemptionRecordResponse>
 
   func userRedemptionRecordForUser(
-    _ request: Stridelabs_Stride_Records_QueryAllUserRedemptionRecordForUserRequest,
+    _ request: Stride_Records_QueryAllUserRedemptionRecordForUserRequest,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Records_QueryAllUserRedemptionRecordForUserRequest, Stridelabs_Stride_Records_QueryAllUserRedemptionRecordForUserResponse>
+  ) -> UnaryCall<Stride_Records_QueryAllUserRedemptionRecordForUserRequest, Stride_Records_QueryAllUserRedemptionRecordForUserResponse>
 
   func epochUnbondingRecord(
-    _ request: Stridelabs_Stride_Records_QueryGetEpochUnbondingRecordRequest,
+    _ request: Stride_Records_QueryGetEpochUnbondingRecordRequest,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Records_QueryGetEpochUnbondingRecordRequest, Stridelabs_Stride_Records_QueryGetEpochUnbondingRecordResponse>
+  ) -> UnaryCall<Stride_Records_QueryGetEpochUnbondingRecordRequest, Stride_Records_QueryGetEpochUnbondingRecordResponse>
 
   func epochUnbondingRecordAll(
-    _ request: Stridelabs_Stride_Records_QueryAllEpochUnbondingRecordRequest,
+    _ request: Stride_Records_QueryAllEpochUnbondingRecordRequest,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Records_QueryAllEpochUnbondingRecordRequest, Stridelabs_Stride_Records_QueryAllEpochUnbondingRecordResponse>
+  ) -> UnaryCall<Stride_Records_QueryAllEpochUnbondingRecordRequest, Stride_Records_QueryAllEpochUnbondingRecordResponse>
 
   func depositRecord(
-    _ request: Stridelabs_Stride_Records_QueryGetDepositRecordRequest,
+    _ request: Stride_Records_QueryGetDepositRecordRequest,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Records_QueryGetDepositRecordRequest, Stridelabs_Stride_Records_QueryGetDepositRecordResponse>
+  ) -> UnaryCall<Stride_Records_QueryGetDepositRecordRequest, Stride_Records_QueryGetDepositRecordResponse>
 
   func depositRecordAll(
-    _ request: Stridelabs_Stride_Records_QueryAllDepositRecordRequest,
+    _ request: Stride_Records_QueryAllDepositRecordRequest,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Records_QueryAllDepositRecordRequest, Stridelabs_Stride_Records_QueryAllDepositRecordResponse>
+  ) -> UnaryCall<Stride_Records_QueryAllDepositRecordRequest, Stride_Records_QueryAllDepositRecordResponse>
 }
 
-extension Stridelabs_Stride_Records_QueryClientProtocol {
+extension Stride_Records_QueryClientProtocol {
   internal var serviceName: String {
-    return "Stridelabs.stride.records.Query"
+    return "stride.records.Query"
   }
 
   /// Parameters queries the parameters of the module.
@@ -85,11 +85,11 @@ extension Stridelabs_Stride_Records_QueryClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func params(
-    _ request: Stridelabs_Stride_Records_QueryParamsRequest,
+    _ request: Stride_Records_QueryParamsRequest,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Records_QueryParamsRequest, Stridelabs_Stride_Records_QueryParamsResponse> {
+  ) -> UnaryCall<Stride_Records_QueryParamsRequest, Stride_Records_QueryParamsResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.records.Query/Params",
+      path: "/stride.records.Query/Params",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeParamsInterceptors() ?? []
@@ -103,11 +103,11 @@ extension Stridelabs_Stride_Records_QueryClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func userRedemptionRecord(
-    _ request: Stridelabs_Stride_Records_QueryGetUserRedemptionRecordRequest,
+    _ request: Stride_Records_QueryGetUserRedemptionRecordRequest,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Records_QueryGetUserRedemptionRecordRequest, Stridelabs_Stride_Records_QueryGetUserRedemptionRecordResponse> {
+  ) -> UnaryCall<Stride_Records_QueryGetUserRedemptionRecordRequest, Stride_Records_QueryGetUserRedemptionRecordResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.records.Query/UserRedemptionRecord",
+      path: "/stride.records.Query/UserRedemptionRecord",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeUserRedemptionRecordInterceptors() ?? []
@@ -121,11 +121,11 @@ extension Stridelabs_Stride_Records_QueryClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func userRedemptionRecordAll(
-    _ request: Stridelabs_Stride_Records_QueryAllUserRedemptionRecordRequest,
+    _ request: Stride_Records_QueryAllUserRedemptionRecordRequest,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Records_QueryAllUserRedemptionRecordRequest, Stridelabs_Stride_Records_QueryAllUserRedemptionRecordResponse> {
+  ) -> UnaryCall<Stride_Records_QueryAllUserRedemptionRecordRequest, Stride_Records_QueryAllUserRedemptionRecordResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.records.Query/UserRedemptionRecordAll",
+      path: "/stride.records.Query/UserRedemptionRecordAll",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeUserRedemptionRecordAllInterceptors() ?? []
@@ -139,11 +139,11 @@ extension Stridelabs_Stride_Records_QueryClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func userRedemptionRecordForUser(
-    _ request: Stridelabs_Stride_Records_QueryAllUserRedemptionRecordForUserRequest,
+    _ request: Stride_Records_QueryAllUserRedemptionRecordForUserRequest,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Records_QueryAllUserRedemptionRecordForUserRequest, Stridelabs_Stride_Records_QueryAllUserRedemptionRecordForUserResponse> {
+  ) -> UnaryCall<Stride_Records_QueryAllUserRedemptionRecordForUserRequest, Stride_Records_QueryAllUserRedemptionRecordForUserResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.records.Query/UserRedemptionRecordForUser",
+      path: "/stride.records.Query/UserRedemptionRecordForUser",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeUserRedemptionRecordForUserInterceptors() ?? []
@@ -157,11 +157,11 @@ extension Stridelabs_Stride_Records_QueryClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func epochUnbondingRecord(
-    _ request: Stridelabs_Stride_Records_QueryGetEpochUnbondingRecordRequest,
+    _ request: Stride_Records_QueryGetEpochUnbondingRecordRequest,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Records_QueryGetEpochUnbondingRecordRequest, Stridelabs_Stride_Records_QueryGetEpochUnbondingRecordResponse> {
+  ) -> UnaryCall<Stride_Records_QueryGetEpochUnbondingRecordRequest, Stride_Records_QueryGetEpochUnbondingRecordResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.records.Query/EpochUnbondingRecord",
+      path: "/stride.records.Query/EpochUnbondingRecord",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeEpochUnbondingRecordInterceptors() ?? []
@@ -175,11 +175,11 @@ extension Stridelabs_Stride_Records_QueryClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func epochUnbondingRecordAll(
-    _ request: Stridelabs_Stride_Records_QueryAllEpochUnbondingRecordRequest,
+    _ request: Stride_Records_QueryAllEpochUnbondingRecordRequest,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Records_QueryAllEpochUnbondingRecordRequest, Stridelabs_Stride_Records_QueryAllEpochUnbondingRecordResponse> {
+  ) -> UnaryCall<Stride_Records_QueryAllEpochUnbondingRecordRequest, Stride_Records_QueryAllEpochUnbondingRecordResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.records.Query/EpochUnbondingRecordAll",
+      path: "/stride.records.Query/EpochUnbondingRecordAll",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeEpochUnbondingRecordAllInterceptors() ?? []
@@ -193,11 +193,11 @@ extension Stridelabs_Stride_Records_QueryClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func depositRecord(
-    _ request: Stridelabs_Stride_Records_QueryGetDepositRecordRequest,
+    _ request: Stride_Records_QueryGetDepositRecordRequest,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Records_QueryGetDepositRecordRequest, Stridelabs_Stride_Records_QueryGetDepositRecordResponse> {
+  ) -> UnaryCall<Stride_Records_QueryGetDepositRecordRequest, Stride_Records_QueryGetDepositRecordResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.records.Query/DepositRecord",
+      path: "/stride.records.Query/DepositRecord",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeDepositRecordInterceptors() ?? []
@@ -211,11 +211,11 @@ extension Stridelabs_Stride_Records_QueryClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func depositRecordAll(
-    _ request: Stridelabs_Stride_Records_QueryAllDepositRecordRequest,
+    _ request: Stride_Records_QueryAllDepositRecordRequest,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Records_QueryAllDepositRecordRequest, Stridelabs_Stride_Records_QueryAllDepositRecordResponse> {
+  ) -> UnaryCall<Stride_Records_QueryAllDepositRecordRequest, Stride_Records_QueryAllDepositRecordResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.records.Query/DepositRecordAll",
+      path: "/stride.records.Query/DepositRecordAll",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeDepositRecordAllInterceptors() ?? []
@@ -223,39 +223,39 @@ extension Stridelabs_Stride_Records_QueryClientProtocol {
   }
 }
 
-internal protocol Stridelabs_Stride_Records_QueryClientInterceptorFactoryProtocol {
+internal protocol Stride_Records_QueryClientInterceptorFactoryProtocol {
 
   /// - Returns: Interceptors to use when invoking 'params'.
-  func makeParamsInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Records_QueryParamsRequest, Stridelabs_Stride_Records_QueryParamsResponse>]
+  func makeParamsInterceptors() -> [ClientInterceptor<Stride_Records_QueryParamsRequest, Stride_Records_QueryParamsResponse>]
 
   /// - Returns: Interceptors to use when invoking 'userRedemptionRecord'.
-  func makeUserRedemptionRecordInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Records_QueryGetUserRedemptionRecordRequest, Stridelabs_Stride_Records_QueryGetUserRedemptionRecordResponse>]
+  func makeUserRedemptionRecordInterceptors() -> [ClientInterceptor<Stride_Records_QueryGetUserRedemptionRecordRequest, Stride_Records_QueryGetUserRedemptionRecordResponse>]
 
   /// - Returns: Interceptors to use when invoking 'userRedemptionRecordAll'.
-  func makeUserRedemptionRecordAllInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Records_QueryAllUserRedemptionRecordRequest, Stridelabs_Stride_Records_QueryAllUserRedemptionRecordResponse>]
+  func makeUserRedemptionRecordAllInterceptors() -> [ClientInterceptor<Stride_Records_QueryAllUserRedemptionRecordRequest, Stride_Records_QueryAllUserRedemptionRecordResponse>]
 
   /// - Returns: Interceptors to use when invoking 'userRedemptionRecordForUser'.
-  func makeUserRedemptionRecordForUserInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Records_QueryAllUserRedemptionRecordForUserRequest, Stridelabs_Stride_Records_QueryAllUserRedemptionRecordForUserResponse>]
+  func makeUserRedemptionRecordForUserInterceptors() -> [ClientInterceptor<Stride_Records_QueryAllUserRedemptionRecordForUserRequest, Stride_Records_QueryAllUserRedemptionRecordForUserResponse>]
 
   /// - Returns: Interceptors to use when invoking 'epochUnbondingRecord'.
-  func makeEpochUnbondingRecordInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Records_QueryGetEpochUnbondingRecordRequest, Stridelabs_Stride_Records_QueryGetEpochUnbondingRecordResponse>]
+  func makeEpochUnbondingRecordInterceptors() -> [ClientInterceptor<Stride_Records_QueryGetEpochUnbondingRecordRequest, Stride_Records_QueryGetEpochUnbondingRecordResponse>]
 
   /// - Returns: Interceptors to use when invoking 'epochUnbondingRecordAll'.
-  func makeEpochUnbondingRecordAllInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Records_QueryAllEpochUnbondingRecordRequest, Stridelabs_Stride_Records_QueryAllEpochUnbondingRecordResponse>]
+  func makeEpochUnbondingRecordAllInterceptors() -> [ClientInterceptor<Stride_Records_QueryAllEpochUnbondingRecordRequest, Stride_Records_QueryAllEpochUnbondingRecordResponse>]
 
   /// - Returns: Interceptors to use when invoking 'depositRecord'.
-  func makeDepositRecordInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Records_QueryGetDepositRecordRequest, Stridelabs_Stride_Records_QueryGetDepositRecordResponse>]
+  func makeDepositRecordInterceptors() -> [ClientInterceptor<Stride_Records_QueryGetDepositRecordRequest, Stride_Records_QueryGetDepositRecordResponse>]
 
   /// - Returns: Interceptors to use when invoking 'depositRecordAll'.
-  func makeDepositRecordAllInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Records_QueryAllDepositRecordRequest, Stridelabs_Stride_Records_QueryAllDepositRecordResponse>]
+  func makeDepositRecordAllInterceptors() -> [ClientInterceptor<Stride_Records_QueryAllDepositRecordRequest, Stride_Records_QueryAllDepositRecordResponse>]
 }
 
-internal final class Stridelabs_Stride_Records_QueryClient: Stridelabs_Stride_Records_QueryClientProtocol {
+internal final class Stride_Records_QueryClient: Stride_Records_QueryClientProtocol {
   internal let channel: GRPCChannel
   internal var defaultCallOptions: CallOptions
-  internal var interceptors: Stridelabs_Stride_Records_QueryClientInterceptorFactoryProtocol?
+  internal var interceptors: Stride_Records_QueryClientInterceptorFactoryProtocol?
 
-  /// Creates a client for the Stridelabs.stride.records.Query service.
+  /// Creates a client for the stride.records.Query service.
   ///
   /// - Parameters:
   ///   - channel: `GRPCChannel` to the service host.
@@ -264,7 +264,7 @@ internal final class Stridelabs_Stride_Records_QueryClient: Stridelabs_Stride_Re
   internal init(
     channel: GRPCChannel,
     defaultCallOptions: CallOptions = CallOptions(),
-    interceptors: Stridelabs_Stride_Records_QueryClientInterceptorFactoryProtocol? = nil
+    interceptors: Stride_Records_QueryClientInterceptorFactoryProtocol? = nil
   ) {
     self.channel = channel
     self.defaultCallOptions = defaultCallOptions
@@ -275,36 +275,36 @@ internal final class Stridelabs_Stride_Records_QueryClient: Stridelabs_Stride_Re
 /// Query defines the gRPC querier service.
 ///
 /// To build a server, implement a class that conforms to this protocol.
-internal protocol Stridelabs_Stride_Records_QueryProvider: CallHandlerProvider {
-  var interceptors: Stridelabs_Stride_Records_QueryServerInterceptorFactoryProtocol? { get }
+internal protocol Stride_Records_QueryProvider: CallHandlerProvider {
+  var interceptors: Stride_Records_QueryServerInterceptorFactoryProtocol? { get }
 
   /// Parameters queries the parameters of the module.
-  func params(request: Stridelabs_Stride_Records_QueryParamsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Records_QueryParamsResponse>
+  func params(request: Stride_Records_QueryParamsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Records_QueryParamsResponse>
 
   /// Queries a UserRedemptionRecord by id.
-  func userRedemptionRecord(request: Stridelabs_Stride_Records_QueryGetUserRedemptionRecordRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Records_QueryGetUserRedemptionRecordResponse>
+  func userRedemptionRecord(request: Stride_Records_QueryGetUserRedemptionRecordRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Records_QueryGetUserRedemptionRecordResponse>
 
   /// Queries a list of UserRedemptionRecord items.
-  func userRedemptionRecordAll(request: Stridelabs_Stride_Records_QueryAllUserRedemptionRecordRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Records_QueryAllUserRedemptionRecordResponse>
+  func userRedemptionRecordAll(request: Stride_Records_QueryAllUserRedemptionRecordRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Records_QueryAllUserRedemptionRecordResponse>
 
   /// Queries a list of UserRedemptionRecord items by chainId / userId pair.
-  func userRedemptionRecordForUser(request: Stridelabs_Stride_Records_QueryAllUserRedemptionRecordForUserRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Records_QueryAllUserRedemptionRecordForUserResponse>
+  func userRedemptionRecordForUser(request: Stride_Records_QueryAllUserRedemptionRecordForUserRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Records_QueryAllUserRedemptionRecordForUserResponse>
 
   /// Queries a EpochUnbondingRecord by id.
-  func epochUnbondingRecord(request: Stridelabs_Stride_Records_QueryGetEpochUnbondingRecordRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Records_QueryGetEpochUnbondingRecordResponse>
+  func epochUnbondingRecord(request: Stride_Records_QueryGetEpochUnbondingRecordRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Records_QueryGetEpochUnbondingRecordResponse>
 
   /// Queries a list of EpochUnbondingRecord items.
-  func epochUnbondingRecordAll(request: Stridelabs_Stride_Records_QueryAllEpochUnbondingRecordRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Records_QueryAllEpochUnbondingRecordResponse>
+  func epochUnbondingRecordAll(request: Stride_Records_QueryAllEpochUnbondingRecordRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Records_QueryAllEpochUnbondingRecordResponse>
 
   /// Queries a DepositRecord by id.
-  func depositRecord(request: Stridelabs_Stride_Records_QueryGetDepositRecordRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Records_QueryGetDepositRecordResponse>
+  func depositRecord(request: Stride_Records_QueryGetDepositRecordRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Records_QueryGetDepositRecordResponse>
 
   /// Queries a list of DepositRecord items.
-  func depositRecordAll(request: Stridelabs_Stride_Records_QueryAllDepositRecordRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Records_QueryAllDepositRecordResponse>
+  func depositRecordAll(request: Stride_Records_QueryAllDepositRecordRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Records_QueryAllDepositRecordResponse>
 }
 
-extension Stridelabs_Stride_Records_QueryProvider {
-  internal var serviceName: Substring { return "Stridelabs.stride.records.Query" }
+extension Stride_Records_QueryProvider {
+  internal var serviceName: Substring { return "stride.records.Query" }
 
   /// Determines, calls and returns the appropriate request handler, depending on the request's method.
   /// Returns nil for methods not handled by this service.
@@ -316,8 +316,8 @@ extension Stridelabs_Stride_Records_QueryProvider {
     case "Params":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Records_QueryParamsRequest>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Records_QueryParamsResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Records_QueryParamsRequest>(),
+        responseSerializer: ProtobufSerializer<Stride_Records_QueryParamsResponse>(),
         interceptors: self.interceptors?.makeParamsInterceptors() ?? [],
         userFunction: self.params(request:context:)
       )
@@ -325,8 +325,8 @@ extension Stridelabs_Stride_Records_QueryProvider {
     case "UserRedemptionRecord":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Records_QueryGetUserRedemptionRecordRequest>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Records_QueryGetUserRedemptionRecordResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Records_QueryGetUserRedemptionRecordRequest>(),
+        responseSerializer: ProtobufSerializer<Stride_Records_QueryGetUserRedemptionRecordResponse>(),
         interceptors: self.interceptors?.makeUserRedemptionRecordInterceptors() ?? [],
         userFunction: self.userRedemptionRecord(request:context:)
       )
@@ -334,8 +334,8 @@ extension Stridelabs_Stride_Records_QueryProvider {
     case "UserRedemptionRecordAll":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Records_QueryAllUserRedemptionRecordRequest>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Records_QueryAllUserRedemptionRecordResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Records_QueryAllUserRedemptionRecordRequest>(),
+        responseSerializer: ProtobufSerializer<Stride_Records_QueryAllUserRedemptionRecordResponse>(),
         interceptors: self.interceptors?.makeUserRedemptionRecordAllInterceptors() ?? [],
         userFunction: self.userRedemptionRecordAll(request:context:)
       )
@@ -343,8 +343,8 @@ extension Stridelabs_Stride_Records_QueryProvider {
     case "UserRedemptionRecordForUser":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Records_QueryAllUserRedemptionRecordForUserRequest>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Records_QueryAllUserRedemptionRecordForUserResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Records_QueryAllUserRedemptionRecordForUserRequest>(),
+        responseSerializer: ProtobufSerializer<Stride_Records_QueryAllUserRedemptionRecordForUserResponse>(),
         interceptors: self.interceptors?.makeUserRedemptionRecordForUserInterceptors() ?? [],
         userFunction: self.userRedemptionRecordForUser(request:context:)
       )
@@ -352,8 +352,8 @@ extension Stridelabs_Stride_Records_QueryProvider {
     case "EpochUnbondingRecord":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Records_QueryGetEpochUnbondingRecordRequest>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Records_QueryGetEpochUnbondingRecordResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Records_QueryGetEpochUnbondingRecordRequest>(),
+        responseSerializer: ProtobufSerializer<Stride_Records_QueryGetEpochUnbondingRecordResponse>(),
         interceptors: self.interceptors?.makeEpochUnbondingRecordInterceptors() ?? [],
         userFunction: self.epochUnbondingRecord(request:context:)
       )
@@ -361,8 +361,8 @@ extension Stridelabs_Stride_Records_QueryProvider {
     case "EpochUnbondingRecordAll":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Records_QueryAllEpochUnbondingRecordRequest>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Records_QueryAllEpochUnbondingRecordResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Records_QueryAllEpochUnbondingRecordRequest>(),
+        responseSerializer: ProtobufSerializer<Stride_Records_QueryAllEpochUnbondingRecordResponse>(),
         interceptors: self.interceptors?.makeEpochUnbondingRecordAllInterceptors() ?? [],
         userFunction: self.epochUnbondingRecordAll(request:context:)
       )
@@ -370,8 +370,8 @@ extension Stridelabs_Stride_Records_QueryProvider {
     case "DepositRecord":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Records_QueryGetDepositRecordRequest>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Records_QueryGetDepositRecordResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Records_QueryGetDepositRecordRequest>(),
+        responseSerializer: ProtobufSerializer<Stride_Records_QueryGetDepositRecordResponse>(),
         interceptors: self.interceptors?.makeDepositRecordInterceptors() ?? [],
         userFunction: self.depositRecord(request:context:)
       )
@@ -379,8 +379,8 @@ extension Stridelabs_Stride_Records_QueryProvider {
     case "DepositRecordAll":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Records_QueryAllDepositRecordRequest>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Records_QueryAllDepositRecordResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Records_QueryAllDepositRecordRequest>(),
+        responseSerializer: ProtobufSerializer<Stride_Records_QueryAllDepositRecordResponse>(),
         interceptors: self.interceptors?.makeDepositRecordAllInterceptors() ?? [],
         userFunction: self.depositRecordAll(request:context:)
       )
@@ -391,37 +391,37 @@ extension Stridelabs_Stride_Records_QueryProvider {
   }
 }
 
-internal protocol Stridelabs_Stride_Records_QueryServerInterceptorFactoryProtocol {
+internal protocol Stride_Records_QueryServerInterceptorFactoryProtocol {
 
   /// - Returns: Interceptors to use when handling 'params'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeParamsInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Records_QueryParamsRequest, Stridelabs_Stride_Records_QueryParamsResponse>]
+  func makeParamsInterceptors() -> [ServerInterceptor<Stride_Records_QueryParamsRequest, Stride_Records_QueryParamsResponse>]
 
   /// - Returns: Interceptors to use when handling 'userRedemptionRecord'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeUserRedemptionRecordInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Records_QueryGetUserRedemptionRecordRequest, Stridelabs_Stride_Records_QueryGetUserRedemptionRecordResponse>]
+  func makeUserRedemptionRecordInterceptors() -> [ServerInterceptor<Stride_Records_QueryGetUserRedemptionRecordRequest, Stride_Records_QueryGetUserRedemptionRecordResponse>]
 
   /// - Returns: Interceptors to use when handling 'userRedemptionRecordAll'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeUserRedemptionRecordAllInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Records_QueryAllUserRedemptionRecordRequest, Stridelabs_Stride_Records_QueryAllUserRedemptionRecordResponse>]
+  func makeUserRedemptionRecordAllInterceptors() -> [ServerInterceptor<Stride_Records_QueryAllUserRedemptionRecordRequest, Stride_Records_QueryAllUserRedemptionRecordResponse>]
 
   /// - Returns: Interceptors to use when handling 'userRedemptionRecordForUser'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeUserRedemptionRecordForUserInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Records_QueryAllUserRedemptionRecordForUserRequest, Stridelabs_Stride_Records_QueryAllUserRedemptionRecordForUserResponse>]
+  func makeUserRedemptionRecordForUserInterceptors() -> [ServerInterceptor<Stride_Records_QueryAllUserRedemptionRecordForUserRequest, Stride_Records_QueryAllUserRedemptionRecordForUserResponse>]
 
   /// - Returns: Interceptors to use when handling 'epochUnbondingRecord'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeEpochUnbondingRecordInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Records_QueryGetEpochUnbondingRecordRequest, Stridelabs_Stride_Records_QueryGetEpochUnbondingRecordResponse>]
+  func makeEpochUnbondingRecordInterceptors() -> [ServerInterceptor<Stride_Records_QueryGetEpochUnbondingRecordRequest, Stride_Records_QueryGetEpochUnbondingRecordResponse>]
 
   /// - Returns: Interceptors to use when handling 'epochUnbondingRecordAll'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeEpochUnbondingRecordAllInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Records_QueryAllEpochUnbondingRecordRequest, Stridelabs_Stride_Records_QueryAllEpochUnbondingRecordResponse>]
+  func makeEpochUnbondingRecordAllInterceptors() -> [ServerInterceptor<Stride_Records_QueryAllEpochUnbondingRecordRequest, Stride_Records_QueryAllEpochUnbondingRecordResponse>]
 
   /// - Returns: Interceptors to use when handling 'depositRecord'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeDepositRecordInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Records_QueryGetDepositRecordRequest, Stridelabs_Stride_Records_QueryGetDepositRecordResponse>]
+  func makeDepositRecordInterceptors() -> [ServerInterceptor<Stride_Records_QueryGetDepositRecordRequest, Stride_Records_QueryGetDepositRecordResponse>]
 
   /// - Returns: Interceptors to use when handling 'depositRecordAll'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeDepositRecordAllInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Records_QueryAllDepositRecordRequest, Stridelabs_Stride_Records_QueryAllDepositRecordResponse>]
+  func makeDepositRecordAllInterceptors() -> [ServerInterceptor<Stride_Records_QueryAllDepositRecordRequest, Stride_Records_QueryAllDepositRecordResponse>]
 }

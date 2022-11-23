@@ -21,7 +21,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// next id: 19
-struct Stridelabs_Stride_Stakeibc_HostZone {
+struct Stride_Stakeibc_HostZone {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -46,18 +46,18 @@ struct Stridelabs_Stride_Stakeibc_HostZone {
     set {_uniqueStorage()._transferChannelID = newValue}
   }
 
-  var validators: [Stridelabs_Stride_Stakeibc_Validator] {
+  var validators: [Stride_Stakeibc_Validator] {
     get {return _storage._validators}
     set {_uniqueStorage()._validators = newValue}
   }
 
-  var blacklistedValidators: [Stridelabs_Stride_Stakeibc_Validator] {
+  var blacklistedValidators: [Stride_Stakeibc_Validator] {
     get {return _storage._blacklistedValidators}
     set {_uniqueStorage()._blacklistedValidators = newValue}
   }
 
-  var withdrawalAccount: Stridelabs_Stride_Stakeibc_ICAAccount {
-    get {return _storage._withdrawalAccount ?? Stridelabs_Stride_Stakeibc_ICAAccount()}
+  var withdrawalAccount: Stride_Stakeibc_ICAAccount {
+    get {return _storage._withdrawalAccount ?? Stride_Stakeibc_ICAAccount()}
     set {_uniqueStorage()._withdrawalAccount = newValue}
   }
   /// Returns true if `withdrawalAccount` has been explicitly set.
@@ -65,8 +65,8 @@ struct Stridelabs_Stride_Stakeibc_HostZone {
   /// Clears the value of `withdrawalAccount`. Subsequent reads from it will return its default value.
   mutating func clearWithdrawalAccount() {_uniqueStorage()._withdrawalAccount = nil}
 
-  var feeAccount: Stridelabs_Stride_Stakeibc_ICAAccount {
-    get {return _storage._feeAccount ?? Stridelabs_Stride_Stakeibc_ICAAccount()}
+  var feeAccount: Stride_Stakeibc_ICAAccount {
+    get {return _storage._feeAccount ?? Stride_Stakeibc_ICAAccount()}
     set {_uniqueStorage()._feeAccount = newValue}
   }
   /// Returns true if `feeAccount` has been explicitly set.
@@ -74,8 +74,8 @@ struct Stridelabs_Stride_Stakeibc_HostZone {
   /// Clears the value of `feeAccount`. Subsequent reads from it will return its default value.
   mutating func clearFeeAccount() {_uniqueStorage()._feeAccount = nil}
 
-  var delegationAccount: Stridelabs_Stride_Stakeibc_ICAAccount {
-    get {return _storage._delegationAccount ?? Stridelabs_Stride_Stakeibc_ICAAccount()}
+  var delegationAccount: Stride_Stakeibc_ICAAccount {
+    get {return _storage._delegationAccount ?? Stride_Stakeibc_ICAAccount()}
     set {_uniqueStorage()._delegationAccount = newValue}
   }
   /// Returns true if `delegationAccount` has been explicitly set.
@@ -83,8 +83,8 @@ struct Stridelabs_Stride_Stakeibc_HostZone {
   /// Clears the value of `delegationAccount`. Subsequent reads from it will return its default value.
   mutating func clearDelegationAccount() {_uniqueStorage()._delegationAccount = nil}
 
-  var redemptionAccount: Stridelabs_Stride_Stakeibc_ICAAccount {
-    get {return _storage._redemptionAccount ?? Stridelabs_Stride_Stakeibc_ICAAccount()}
+  var redemptionAccount: Stride_Stakeibc_ICAAccount {
+    get {return _storage._redemptionAccount ?? Stride_Stakeibc_ICAAccount()}
     set {_uniqueStorage()._redemptionAccount = newValue}
   }
   /// Returns true if `redemptionAccount` has been explicitly set.
@@ -93,9 +93,9 @@ struct Stridelabs_Stride_Stakeibc_HostZone {
   mutating func clearRedemptionAccount() {_uniqueStorage()._redemptionAccount = nil}
 
   /// ibc denom on stride
-  var ibcdenom: String {
-    get {return _storage._ibcdenom}
-    set {_uniqueStorage()._ibcdenom = newValue}
+  var ibcDenom: String {
+    get {return _storage._ibcDenom}
+    set {_uniqueStorage()._ibcDenom = newValue}
   }
 
   /// native denom on host zone
@@ -104,8 +104,8 @@ struct Stridelabs_Stride_Stakeibc_HostZone {
     set {_uniqueStorage()._hostDenom = newValue}
   }
 
-  /// TODO(TEST-68): Should we make this an array and store the last n redemption rates
-  /// then calculate a TWARR?
+  /// TODO(TEST-68): Should we make this an array and store the last n redemption
+  /// rates then calculate a TWARR?
   var lastRedemptionRate: String {
     get {return _storage._lastRedemptionRate}
     set {_uniqueStorage()._lastRedemptionRate = newValue}
@@ -122,7 +122,7 @@ struct Stridelabs_Stride_Stakeibc_HostZone {
     set {_uniqueStorage()._unbondingFrequency = newValue}
   }
 
-  ///TODO(TEST-101) int to dec
+  /// TODO(TEST-101) int to dec
   var stakedBal: UInt64 {
     get {return _storage._stakedBal}
     set {_uniqueStorage()._stakedBal = newValue}
@@ -142,27 +142,27 @@ struct Stridelabs_Stride_Stakeibc_HostZone {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "Stridelabs.stride.stakeibc"
+fileprivate let _protobuf_package = "stride.stakeibc"
 
-extension Stridelabs_Stride_Stakeibc_HostZone: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_HostZone: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".HostZone"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "chainId"),
-    2: .same(proto: "connectionId"),
+    1: .standard(proto: "chain_id"),
+    2: .standard(proto: "connection_id"),
     17: .same(proto: "bech32prefix"),
-    12: .same(proto: "transferChannelId"),
+    12: .standard(proto: "transfer_channel_id"),
     3: .same(proto: "validators"),
-    4: .same(proto: "blacklistedValidators"),
-    5: .same(proto: "withdrawalAccount"),
-    6: .same(proto: "feeAccount"),
-    7: .same(proto: "delegationAccount"),
-    16: .same(proto: "redemptionAccount"),
-    8: .same(proto: "IBCDenom"),
-    9: .same(proto: "HostDenom"),
-    10: .same(proto: "LastRedemptionRate"),
-    11: .same(proto: "RedemptionRate"),
-    14: .same(proto: "unbondingFrequency"),
-    13: .same(proto: "stakedBal"),
+    4: .standard(proto: "blacklisted_validators"),
+    5: .standard(proto: "withdrawal_account"),
+    6: .standard(proto: "fee_account"),
+    7: .standard(proto: "delegation_account"),
+    16: .standard(proto: "redemption_account"),
+    8: .standard(proto: "ibc_denom"),
+    9: .standard(proto: "host_denom"),
+    10: .standard(proto: "last_redemption_rate"),
+    11: .standard(proto: "redemption_rate"),
+    14: .standard(proto: "unbonding_frequency"),
+    13: .standard(proto: "staked_bal"),
     18: .same(proto: "address"),
   ]
 
@@ -171,13 +171,13 @@ extension Stridelabs_Stride_Stakeibc_HostZone: SwiftProtobuf.Message, SwiftProto
     var _connectionID: String = String()
     var _bech32Prefix: String = String()
     var _transferChannelID: String = String()
-    var _validators: [Stridelabs_Stride_Stakeibc_Validator] = []
-    var _blacklistedValidators: [Stridelabs_Stride_Stakeibc_Validator] = []
-    var _withdrawalAccount: Stridelabs_Stride_Stakeibc_ICAAccount? = nil
-    var _feeAccount: Stridelabs_Stride_Stakeibc_ICAAccount? = nil
-    var _delegationAccount: Stridelabs_Stride_Stakeibc_ICAAccount? = nil
-    var _redemptionAccount: Stridelabs_Stride_Stakeibc_ICAAccount? = nil
-    var _ibcdenom: String = String()
+    var _validators: [Stride_Stakeibc_Validator] = []
+    var _blacklistedValidators: [Stride_Stakeibc_Validator] = []
+    var _withdrawalAccount: Stride_Stakeibc_ICAAccount? = nil
+    var _feeAccount: Stride_Stakeibc_ICAAccount? = nil
+    var _delegationAccount: Stride_Stakeibc_ICAAccount? = nil
+    var _redemptionAccount: Stride_Stakeibc_ICAAccount? = nil
+    var _ibcDenom: String = String()
     var _hostDenom: String = String()
     var _lastRedemptionRate: String = String()
     var _redemptionRate: String = String()
@@ -200,7 +200,7 @@ extension Stridelabs_Stride_Stakeibc_HostZone: SwiftProtobuf.Message, SwiftProto
       _feeAccount = source._feeAccount
       _delegationAccount = source._delegationAccount
       _redemptionAccount = source._redemptionAccount
-      _ibcdenom = source._ibcdenom
+      _ibcDenom = source._ibcDenom
       _hostDenom = source._hostDenom
       _lastRedemptionRate = source._lastRedemptionRate
       _redemptionRate = source._redemptionRate
@@ -232,7 +232,7 @@ extension Stridelabs_Stride_Stakeibc_HostZone: SwiftProtobuf.Message, SwiftProto
         case 5: try { try decoder.decodeSingularMessageField(value: &_storage._withdrawalAccount) }()
         case 6: try { try decoder.decodeSingularMessageField(value: &_storage._feeAccount) }()
         case 7: try { try decoder.decodeSingularMessageField(value: &_storage._delegationAccount) }()
-        case 8: try { try decoder.decodeSingularStringField(value: &_storage._ibcdenom) }()
+        case 8: try { try decoder.decodeSingularStringField(value: &_storage._ibcDenom) }()
         case 9: try { try decoder.decodeSingularStringField(value: &_storage._hostDenom) }()
         case 10: try { try decoder.decodeSingularStringField(value: &_storage._lastRedemptionRate) }()
         case 11: try { try decoder.decodeSingularStringField(value: &_storage._redemptionRate) }()
@@ -271,8 +271,8 @@ extension Stridelabs_Stride_Stakeibc_HostZone: SwiftProtobuf.Message, SwiftProto
       if let v = _storage._delegationAccount {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
       }
-      if !_storage._ibcdenom.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._ibcdenom, fieldNumber: 8)
+      if !_storage._ibcDenom.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._ibcDenom, fieldNumber: 8)
       }
       if !_storage._hostDenom.isEmpty {
         try visitor.visitSingularStringField(value: _storage._hostDenom, fieldNumber: 9)
@@ -305,7 +305,7 @@ extension Stridelabs_Stride_Stakeibc_HostZone: SwiftProtobuf.Message, SwiftProto
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_HostZone, rhs: Stridelabs_Stride_Stakeibc_HostZone) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_HostZone, rhs: Stride_Stakeibc_HostZone) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -320,7 +320,7 @@ extension Stridelabs_Stride_Stakeibc_HostZone: SwiftProtobuf.Message, SwiftProto
         if _storage._feeAccount != rhs_storage._feeAccount {return false}
         if _storage._delegationAccount != rhs_storage._delegationAccount {return false}
         if _storage._redemptionAccount != rhs_storage._redemptionAccount {return false}
-        if _storage._ibcdenom != rhs_storage._ibcdenom {return false}
+        if _storage._ibcDenom != rhs_storage._ibcDenom {return false}
         if _storage._hostDenom != rhs_storage._hostDenom {return false}
         if _storage._lastRedemptionRate != rhs_storage._lastRedemptionRate {return false}
         if _storage._redemptionRate != rhs_storage._redemptionRate {return false}

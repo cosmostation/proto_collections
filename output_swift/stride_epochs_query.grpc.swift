@@ -27,30 +27,30 @@ import SwiftProtobuf
 
 /// Query defines the gRPC querier service.
 ///
-/// Usage: instantiate `Stridelabs_Stride_Epochs_QueryClient`, then call methods of this protocol to make API calls.
-internal protocol Stridelabs_Stride_Epochs_QueryClientProtocol: GRPCClient {
+/// Usage: instantiate `Stride_Epochs_QueryClient`, then call methods of this protocol to make API calls.
+internal protocol Stride_Epochs_QueryClientProtocol: GRPCClient {
   var serviceName: String { get }
-  var interceptors: Stridelabs_Stride_Epochs_QueryClientInterceptorFactoryProtocol? { get }
+  var interceptors: Stride_Epochs_QueryClientInterceptorFactoryProtocol? { get }
 
   func epochInfos(
-    _ request: Stridelabs_Stride_Epochs_QueryEpochsInfoRequest,
+    _ request: Stride_Epochs_QueryEpochsInfoRequest,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Epochs_QueryEpochsInfoRequest, Stridelabs_Stride_Epochs_QueryEpochsInfoResponse>
+  ) -> UnaryCall<Stride_Epochs_QueryEpochsInfoRequest, Stride_Epochs_QueryEpochsInfoResponse>
 
   func currentEpoch(
-    _ request: Stridelabs_Stride_Epochs_QueryCurrentEpochRequest,
+    _ request: Stride_Epochs_QueryCurrentEpochRequest,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Epochs_QueryCurrentEpochRequest, Stridelabs_Stride_Epochs_QueryCurrentEpochResponse>
+  ) -> UnaryCall<Stride_Epochs_QueryCurrentEpochRequest, Stride_Epochs_QueryCurrentEpochResponse>
 
   func epochInfo(
-    _ request: Stridelabs_Stride_Epochs_QueryEpochInfoRequest,
+    _ request: Stride_Epochs_QueryEpochInfoRequest,
     callOptions: CallOptions?
-  ) -> UnaryCall<Stridelabs_Stride_Epochs_QueryEpochInfoRequest, Stridelabs_Stride_Epochs_QueryEpochInfoResponse>
+  ) -> UnaryCall<Stride_Epochs_QueryEpochInfoRequest, Stride_Epochs_QueryEpochInfoResponse>
 }
 
-extension Stridelabs_Stride_Epochs_QueryClientProtocol {
+extension Stride_Epochs_QueryClientProtocol {
   internal var serviceName: String {
-    return "Stridelabs.stride.epochs.Query"
+    return "stride.epochs.Query"
   }
 
   /// EpochInfos provide running epochInfos
@@ -60,11 +60,11 @@ extension Stridelabs_Stride_Epochs_QueryClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func epochInfos(
-    _ request: Stridelabs_Stride_Epochs_QueryEpochsInfoRequest,
+    _ request: Stride_Epochs_QueryEpochsInfoRequest,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Epochs_QueryEpochsInfoRequest, Stridelabs_Stride_Epochs_QueryEpochsInfoResponse> {
+  ) -> UnaryCall<Stride_Epochs_QueryEpochsInfoRequest, Stride_Epochs_QueryEpochsInfoResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.epochs.Query/EpochInfos",
+      path: "/stride.epochs.Query/EpochInfos",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeEpochInfosInterceptors() ?? []
@@ -78,11 +78,11 @@ extension Stridelabs_Stride_Epochs_QueryClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func currentEpoch(
-    _ request: Stridelabs_Stride_Epochs_QueryCurrentEpochRequest,
+    _ request: Stride_Epochs_QueryCurrentEpochRequest,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Epochs_QueryCurrentEpochRequest, Stridelabs_Stride_Epochs_QueryCurrentEpochResponse> {
+  ) -> UnaryCall<Stride_Epochs_QueryCurrentEpochRequest, Stride_Epochs_QueryCurrentEpochResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.epochs.Query/CurrentEpoch",
+      path: "/stride.epochs.Query/CurrentEpoch",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeCurrentEpochInterceptors() ?? []
@@ -96,11 +96,11 @@ extension Stridelabs_Stride_Epochs_QueryClientProtocol {
   ///   - callOptions: Call options.
   /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
   internal func epochInfo(
-    _ request: Stridelabs_Stride_Epochs_QueryEpochInfoRequest,
+    _ request: Stride_Epochs_QueryEpochInfoRequest,
     callOptions: CallOptions? = nil
-  ) -> UnaryCall<Stridelabs_Stride_Epochs_QueryEpochInfoRequest, Stridelabs_Stride_Epochs_QueryEpochInfoResponse> {
+  ) -> UnaryCall<Stride_Epochs_QueryEpochInfoRequest, Stride_Epochs_QueryEpochInfoResponse> {
     return self.makeUnaryCall(
-      path: "/Stridelabs.stride.epochs.Query/EpochInfo",
+      path: "/stride.epochs.Query/EpochInfo",
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeEpochInfoInterceptors() ?? []
@@ -108,24 +108,24 @@ extension Stridelabs_Stride_Epochs_QueryClientProtocol {
   }
 }
 
-internal protocol Stridelabs_Stride_Epochs_QueryClientInterceptorFactoryProtocol {
+internal protocol Stride_Epochs_QueryClientInterceptorFactoryProtocol {
 
   /// - Returns: Interceptors to use when invoking 'epochInfos'.
-  func makeEpochInfosInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Epochs_QueryEpochsInfoRequest, Stridelabs_Stride_Epochs_QueryEpochsInfoResponse>]
+  func makeEpochInfosInterceptors() -> [ClientInterceptor<Stride_Epochs_QueryEpochsInfoRequest, Stride_Epochs_QueryEpochsInfoResponse>]
 
   /// - Returns: Interceptors to use when invoking 'currentEpoch'.
-  func makeCurrentEpochInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Epochs_QueryCurrentEpochRequest, Stridelabs_Stride_Epochs_QueryCurrentEpochResponse>]
+  func makeCurrentEpochInterceptors() -> [ClientInterceptor<Stride_Epochs_QueryCurrentEpochRequest, Stride_Epochs_QueryCurrentEpochResponse>]
 
   /// - Returns: Interceptors to use when invoking 'epochInfo'.
-  func makeEpochInfoInterceptors() -> [ClientInterceptor<Stridelabs_Stride_Epochs_QueryEpochInfoRequest, Stridelabs_Stride_Epochs_QueryEpochInfoResponse>]
+  func makeEpochInfoInterceptors() -> [ClientInterceptor<Stride_Epochs_QueryEpochInfoRequest, Stride_Epochs_QueryEpochInfoResponse>]
 }
 
-internal final class Stridelabs_Stride_Epochs_QueryClient: Stridelabs_Stride_Epochs_QueryClientProtocol {
+internal final class Stride_Epochs_QueryClient: Stride_Epochs_QueryClientProtocol {
   internal let channel: GRPCChannel
   internal var defaultCallOptions: CallOptions
-  internal var interceptors: Stridelabs_Stride_Epochs_QueryClientInterceptorFactoryProtocol?
+  internal var interceptors: Stride_Epochs_QueryClientInterceptorFactoryProtocol?
 
-  /// Creates a client for the Stridelabs.stride.epochs.Query service.
+  /// Creates a client for the stride.epochs.Query service.
   ///
   /// - Parameters:
   ///   - channel: `GRPCChannel` to the service host.
@@ -134,7 +134,7 @@ internal final class Stridelabs_Stride_Epochs_QueryClient: Stridelabs_Stride_Epo
   internal init(
     channel: GRPCChannel,
     defaultCallOptions: CallOptions = CallOptions(),
-    interceptors: Stridelabs_Stride_Epochs_QueryClientInterceptorFactoryProtocol? = nil
+    interceptors: Stride_Epochs_QueryClientInterceptorFactoryProtocol? = nil
   ) {
     self.channel = channel
     self.defaultCallOptions = defaultCallOptions
@@ -145,21 +145,21 @@ internal final class Stridelabs_Stride_Epochs_QueryClient: Stridelabs_Stride_Epo
 /// Query defines the gRPC querier service.
 ///
 /// To build a server, implement a class that conforms to this protocol.
-internal protocol Stridelabs_Stride_Epochs_QueryProvider: CallHandlerProvider {
-  var interceptors: Stridelabs_Stride_Epochs_QueryServerInterceptorFactoryProtocol? { get }
+internal protocol Stride_Epochs_QueryProvider: CallHandlerProvider {
+  var interceptors: Stride_Epochs_QueryServerInterceptorFactoryProtocol? { get }
 
   /// EpochInfos provide running epochInfos
-  func epochInfos(request: Stridelabs_Stride_Epochs_QueryEpochsInfoRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Epochs_QueryEpochsInfoResponse>
+  func epochInfos(request: Stride_Epochs_QueryEpochsInfoRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Epochs_QueryEpochsInfoResponse>
 
   /// CurrentEpoch provide current epoch of specified identifier
-  func currentEpoch(request: Stridelabs_Stride_Epochs_QueryCurrentEpochRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Epochs_QueryCurrentEpochResponse>
+  func currentEpoch(request: Stride_Epochs_QueryCurrentEpochRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Epochs_QueryCurrentEpochResponse>
 
   /// CurrentEpoch provide current epoch of specified identifier
-  func epochInfo(request: Stridelabs_Stride_Epochs_QueryEpochInfoRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stridelabs_Stride_Epochs_QueryEpochInfoResponse>
+  func epochInfo(request: Stride_Epochs_QueryEpochInfoRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stride_Epochs_QueryEpochInfoResponse>
 }
 
-extension Stridelabs_Stride_Epochs_QueryProvider {
-  internal var serviceName: Substring { return "Stridelabs.stride.epochs.Query" }
+extension Stride_Epochs_QueryProvider {
+  internal var serviceName: Substring { return "stride.epochs.Query" }
 
   /// Determines, calls and returns the appropriate request handler, depending on the request's method.
   /// Returns nil for methods not handled by this service.
@@ -171,8 +171,8 @@ extension Stridelabs_Stride_Epochs_QueryProvider {
     case "EpochInfos":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Epochs_QueryEpochsInfoRequest>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Epochs_QueryEpochsInfoResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Epochs_QueryEpochsInfoRequest>(),
+        responseSerializer: ProtobufSerializer<Stride_Epochs_QueryEpochsInfoResponse>(),
         interceptors: self.interceptors?.makeEpochInfosInterceptors() ?? [],
         userFunction: self.epochInfos(request:context:)
       )
@@ -180,8 +180,8 @@ extension Stridelabs_Stride_Epochs_QueryProvider {
     case "CurrentEpoch":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Epochs_QueryCurrentEpochRequest>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Epochs_QueryCurrentEpochResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Epochs_QueryCurrentEpochRequest>(),
+        responseSerializer: ProtobufSerializer<Stride_Epochs_QueryCurrentEpochResponse>(),
         interceptors: self.interceptors?.makeCurrentEpochInterceptors() ?? [],
         userFunction: self.currentEpoch(request:context:)
       )
@@ -189,8 +189,8 @@ extension Stridelabs_Stride_Epochs_QueryProvider {
     case "EpochInfo":
       return UnaryServerHandler(
         context: context,
-        requestDeserializer: ProtobufDeserializer<Stridelabs_Stride_Epochs_QueryEpochInfoRequest>(),
-        responseSerializer: ProtobufSerializer<Stridelabs_Stride_Epochs_QueryEpochInfoResponse>(),
+        requestDeserializer: ProtobufDeserializer<Stride_Epochs_QueryEpochInfoRequest>(),
+        responseSerializer: ProtobufSerializer<Stride_Epochs_QueryEpochInfoResponse>(),
         interceptors: self.interceptors?.makeEpochInfoInterceptors() ?? [],
         userFunction: self.epochInfo(request:context:)
       )
@@ -201,17 +201,17 @@ extension Stridelabs_Stride_Epochs_QueryProvider {
   }
 }
 
-internal protocol Stridelabs_Stride_Epochs_QueryServerInterceptorFactoryProtocol {
+internal protocol Stride_Epochs_QueryServerInterceptorFactoryProtocol {
 
   /// - Returns: Interceptors to use when handling 'epochInfos'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeEpochInfosInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Epochs_QueryEpochsInfoRequest, Stridelabs_Stride_Epochs_QueryEpochsInfoResponse>]
+  func makeEpochInfosInterceptors() -> [ServerInterceptor<Stride_Epochs_QueryEpochsInfoRequest, Stride_Epochs_QueryEpochsInfoResponse>]
 
   /// - Returns: Interceptors to use when handling 'currentEpoch'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeCurrentEpochInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Epochs_QueryCurrentEpochRequest, Stridelabs_Stride_Epochs_QueryCurrentEpochResponse>]
+  func makeCurrentEpochInterceptors() -> [ServerInterceptor<Stride_Epochs_QueryCurrentEpochRequest, Stride_Epochs_QueryCurrentEpochResponse>]
 
   /// - Returns: Interceptors to use when handling 'epochInfo'.
   ///   Defaults to calling `self.makeInterceptors()`.
-  func makeEpochInfoInterceptors() -> [ServerInterceptor<Stridelabs_Stride_Epochs_QueryEpochInfoRequest, Stridelabs_Stride_Epochs_QueryEpochInfoResponse>]
+  func makeEpochInfoInterceptors() -> [ServerInterceptor<Stride_Epochs_QueryEpochInfoRequest, Stride_Epochs_QueryEpochInfoResponse>]
 }

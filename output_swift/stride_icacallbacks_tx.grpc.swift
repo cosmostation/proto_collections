@@ -27,27 +27,27 @@ import SwiftProtobuf
 
 /// Msg defines the Msg service.
 ///
-/// Usage: instantiate `Stridelabs_Stride_Icacallbacks_MsgClient`, then call methods of this protocol to make API calls.
-internal protocol Stridelabs_Stride_Icacallbacks_MsgClientProtocol: GRPCClient {
+/// Usage: instantiate `Stride_Icacallbacks_MsgClient`, then call methods of this protocol to make API calls.
+internal protocol Stride_Icacallbacks_MsgClientProtocol: GRPCClient {
   var serviceName: String { get }
-  var interceptors: Stridelabs_Stride_Icacallbacks_MsgClientInterceptorFactoryProtocol? { get }
+  var interceptors: Stride_Icacallbacks_MsgClientInterceptorFactoryProtocol? { get }
 }
 
-extension Stridelabs_Stride_Icacallbacks_MsgClientProtocol {
+extension Stride_Icacallbacks_MsgClientProtocol {
   internal var serviceName: String {
-    return "stridelabs.stride.icacallbacks.Msg"
+    return "stride.icacallbacks.Msg"
   }
 }
 
-internal protocol Stridelabs_Stride_Icacallbacks_MsgClientInterceptorFactoryProtocol {
+internal protocol Stride_Icacallbacks_MsgClientInterceptorFactoryProtocol {
 }
 
-internal final class Stridelabs_Stride_Icacallbacks_MsgClient: Stridelabs_Stride_Icacallbacks_MsgClientProtocol {
+internal final class Stride_Icacallbacks_MsgClient: Stride_Icacallbacks_MsgClientProtocol {
   internal let channel: GRPCChannel
   internal var defaultCallOptions: CallOptions
-  internal var interceptors: Stridelabs_Stride_Icacallbacks_MsgClientInterceptorFactoryProtocol?
+  internal var interceptors: Stride_Icacallbacks_MsgClientInterceptorFactoryProtocol?
 
-  /// Creates a client for the stridelabs.stride.icacallbacks.Msg service.
+  /// Creates a client for the stride.icacallbacks.Msg service.
   ///
   /// - Parameters:
   ///   - channel: `GRPCChannel` to the service host.
@@ -56,7 +56,7 @@ internal final class Stridelabs_Stride_Icacallbacks_MsgClient: Stridelabs_Stride
   internal init(
     channel: GRPCChannel,
     defaultCallOptions: CallOptions = CallOptions(),
-    interceptors: Stridelabs_Stride_Icacallbacks_MsgClientInterceptorFactoryProtocol? = nil
+    interceptors: Stride_Icacallbacks_MsgClientInterceptorFactoryProtocol? = nil
   ) {
     self.channel = channel
     self.defaultCallOptions = defaultCallOptions
@@ -67,12 +67,12 @@ internal final class Stridelabs_Stride_Icacallbacks_MsgClient: Stridelabs_Stride
 /// Msg defines the Msg service.
 ///
 /// To build a server, implement a class that conforms to this protocol.
-internal protocol Stridelabs_Stride_Icacallbacks_MsgProvider: CallHandlerProvider {
-  var interceptors: Stridelabs_Stride_Icacallbacks_MsgServerInterceptorFactoryProtocol? { get }
+internal protocol Stride_Icacallbacks_MsgProvider: CallHandlerProvider {
+  var interceptors: Stride_Icacallbacks_MsgServerInterceptorFactoryProtocol? { get }
 }
 
-extension Stridelabs_Stride_Icacallbacks_MsgProvider {
-  internal var serviceName: Substring { return "stridelabs.stride.icacallbacks.Msg" }
+extension Stride_Icacallbacks_MsgProvider {
+  internal var serviceName: Substring { return "stride.icacallbacks.Msg" }
 
   /// Determines, calls and returns the appropriate request handler, depending on the request's method.
   /// Returns nil for methods not handled by this service.
@@ -87,5 +87,5 @@ extension Stridelabs_Stride_Icacallbacks_MsgProvider {
   }
 }
 
-internal protocol Stridelabs_Stride_Icacallbacks_MsgServerInterceptorFactoryProtocol {
+internal protocol Stride_Icacallbacks_MsgServerInterceptorFactoryProtocol {
 }

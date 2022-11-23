@@ -21,7 +21,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// Params defines the parameters for the module.
-struct Stridelabs_Stride_Icacallbacks_Params {
+struct Stride_Icacallbacks_Params {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -33,9 +33,9 @@ struct Stridelabs_Stride_Icacallbacks_Params {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "stridelabs.stride.icacallbacks"
+fileprivate let _protobuf_package = "stride.icacallbacks"
 
-extension Stridelabs_Stride_Icacallbacks_Params: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Icacallbacks_Params: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Params"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -48,7 +48,7 @@ extension Stridelabs_Stride_Icacallbacks_Params: SwiftProtobuf.Message, SwiftPro
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Icacallbacks_Params, rhs: Stridelabs_Stride_Icacallbacks_Params) -> Bool {
+  static func ==(lhs: Stride_Icacallbacks_Params, rhs: Stride_Icacallbacks_Params) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

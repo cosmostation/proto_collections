@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Stridelabs_Stride_Epochs_EpochInfo {
+struct Stride_Epochs_EpochInfo {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -70,12 +70,12 @@ struct Stridelabs_Stride_Epochs_EpochInfo {
 }
 
 /// GenesisState defines the epochs module's genesis state.
-struct Stridelabs_Stride_Epochs_GenesisState {
+struct Stride_Epochs_GenesisState {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var epochs: [Stridelabs_Stride_Epochs_EpochInfo] = []
+  var epochs: [Stride_Epochs_EpochInfo] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -84,9 +84,9 @@ struct Stridelabs_Stride_Epochs_GenesisState {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "Stridelabs.stride.epochs"
+fileprivate let _protobuf_package = "stride.epochs"
 
-extension Stridelabs_Stride_Epochs_EpochInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Epochs_EpochInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".EpochInfo"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "identifier"),
@@ -141,7 +141,7 @@ extension Stridelabs_Stride_Epochs_EpochInfo: SwiftProtobuf.Message, SwiftProtob
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Epochs_EpochInfo, rhs: Stridelabs_Stride_Epochs_EpochInfo) -> Bool {
+  static func ==(lhs: Stride_Epochs_EpochInfo, rhs: Stride_Epochs_EpochInfo) -> Bool {
     if lhs.identifier != rhs.identifier {return false}
     if lhs._startTime != rhs._startTime {return false}
     if lhs._duration != rhs._duration {return false}
@@ -154,7 +154,7 @@ extension Stridelabs_Stride_Epochs_EpochInfo: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension Stridelabs_Stride_Epochs_GenesisState: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Epochs_GenesisState: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GenesisState"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "epochs"),
@@ -179,7 +179,7 @@ extension Stridelabs_Stride_Epochs_GenesisState: SwiftProtobuf.Message, SwiftPro
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Epochs_GenesisState, rhs: Stridelabs_Stride_Epochs_GenesisState) -> Bool {
+  static func ==(lhs: Stride_Epochs_GenesisState, rhs: Stride_Epochs_GenesisState) -> Bool {
     if lhs.epochs != rhs.epochs {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

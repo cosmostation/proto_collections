@@ -21,7 +21,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// QueryParamsRequest is request type for the Query/Params RPC method.
-struct Stridelabs_Stride_Records_QueryParamsRequest {
+struct Stride_Records_QueryParamsRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -32,14 +32,14 @@ struct Stridelabs_Stride_Records_QueryParamsRequest {
 }
 
 /// QueryParamsResponse is response type for the Query/Params RPC method.
-struct Stridelabs_Stride_Records_QueryParamsResponse {
+struct Stride_Records_QueryParamsResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   /// params holds all the parameters of this module.
-  var params: Stridelabs_Stride_Records_Params {
-    get {return _params ?? Stridelabs_Stride_Records_Params()}
+  var params: Stride_Records_Params {
+    get {return _params ?? Stride_Records_Params()}
     set {_params = newValue}
   }
   /// Returns true if `params` has been explicitly set.
@@ -51,10 +51,10 @@ struct Stridelabs_Stride_Records_QueryParamsResponse {
 
   init() {}
 
-  fileprivate var _params: Stridelabs_Stride_Records_Params? = nil
+  fileprivate var _params: Stride_Records_Params? = nil
 }
 
-struct Stridelabs_Stride_Records_QueryGetDepositRecordRequest {
+struct Stride_Records_QueryGetDepositRecordRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -66,13 +66,13 @@ struct Stridelabs_Stride_Records_QueryGetDepositRecordRequest {
   init() {}
 }
 
-struct Stridelabs_Stride_Records_QueryGetDepositRecordResponse {
+struct Stride_Records_QueryGetDepositRecordResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var depositRecord: Stridelabs_Stride_Records_DepositRecord {
-    get {return _depositRecord ?? Stridelabs_Stride_Records_DepositRecord()}
+  var depositRecord: Stride_Records_DepositRecord {
+    get {return _depositRecord ?? Stride_Records_DepositRecord()}
     set {_depositRecord = newValue}
   }
   /// Returns true if `depositRecord` has been explicitly set.
@@ -84,10 +84,10 @@ struct Stridelabs_Stride_Records_QueryGetDepositRecordResponse {
 
   init() {}
 
-  fileprivate var _depositRecord: Stridelabs_Stride_Records_DepositRecord? = nil
+  fileprivate var _depositRecord: Stride_Records_DepositRecord? = nil
 }
 
-struct Stridelabs_Stride_Records_QueryAllDepositRecordRequest {
+struct Stride_Records_QueryAllDepositRecordRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -108,12 +108,12 @@ struct Stridelabs_Stride_Records_QueryAllDepositRecordRequest {
   fileprivate var _pagination: Cosmos_Base_Query_V1beta1_PageRequest? = nil
 }
 
-struct Stridelabs_Stride_Records_QueryAllDepositRecordResponse {
+struct Stride_Records_QueryAllDepositRecordResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var depositRecord: [Stridelabs_Stride_Records_DepositRecord] = []
+  var depositRecord: [Stride_Records_DepositRecord] = []
 
   var pagination: Cosmos_Base_Query_V1beta1_PageResponse {
     get {return _pagination ?? Cosmos_Base_Query_V1beta1_PageResponse()}
@@ -131,7 +131,7 @@ struct Stridelabs_Stride_Records_QueryAllDepositRecordResponse {
   fileprivate var _pagination: Cosmos_Base_Query_V1beta1_PageResponse? = nil
 }
 
-struct Stridelabs_Stride_Records_QueryGetUserRedemptionRecordRequest {
+struct Stride_Records_QueryGetUserRedemptionRecordRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -143,13 +143,13 @@ struct Stridelabs_Stride_Records_QueryGetUserRedemptionRecordRequest {
   init() {}
 }
 
-struct Stridelabs_Stride_Records_QueryGetUserRedemptionRecordResponse {
+struct Stride_Records_QueryGetUserRedemptionRecordResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var userRedemptionRecord: Stridelabs_Stride_Records_UserRedemptionRecord {
-    get {return _userRedemptionRecord ?? Stridelabs_Stride_Records_UserRedemptionRecord()}
+  var userRedemptionRecord: Stride_Records_UserRedemptionRecord {
+    get {return _userRedemptionRecord ?? Stride_Records_UserRedemptionRecord()}
     set {_userRedemptionRecord = newValue}
   }
   /// Returns true if `userRedemptionRecord` has been explicitly set.
@@ -161,10 +161,10 @@ struct Stridelabs_Stride_Records_QueryGetUserRedemptionRecordResponse {
 
   init() {}
 
-  fileprivate var _userRedemptionRecord: Stridelabs_Stride_Records_UserRedemptionRecord? = nil
+  fileprivate var _userRedemptionRecord: Stride_Records_UserRedemptionRecord? = nil
 }
 
-struct Stridelabs_Stride_Records_QueryAllUserRedemptionRecordRequest {
+struct Stride_Records_QueryAllUserRedemptionRecordRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -185,12 +185,12 @@ struct Stridelabs_Stride_Records_QueryAllUserRedemptionRecordRequest {
   fileprivate var _pagination: Cosmos_Base_Query_V1beta1_PageRequest? = nil
 }
 
-struct Stridelabs_Stride_Records_QueryAllUserRedemptionRecordResponse {
+struct Stride_Records_QueryAllUserRedemptionRecordResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var userRedemptionRecord: [Stridelabs_Stride_Records_UserRedemptionRecord] = []
+  var userRedemptionRecord: [Stride_Records_UserRedemptionRecord] = []
 
   var pagination: Cosmos_Base_Query_V1beta1_PageResponse {
     get {return _pagination ?? Cosmos_Base_Query_V1beta1_PageResponse()}
@@ -209,7 +209,7 @@ struct Stridelabs_Stride_Records_QueryAllUserRedemptionRecordResponse {
 }
 
 /// Query UserRedemptionRecords by chainId / userId pair
-struct Stridelabs_Stride_Records_QueryAllUserRedemptionRecordForUserRequest {
+struct Stride_Records_QueryAllUserRedemptionRecordForUserRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -238,12 +238,12 @@ struct Stridelabs_Stride_Records_QueryAllUserRedemptionRecordForUserRequest {
   fileprivate var _pagination: Cosmos_Base_Query_V1beta1_PageRequest? = nil
 }
 
-struct Stridelabs_Stride_Records_QueryAllUserRedemptionRecordForUserResponse {
+struct Stride_Records_QueryAllUserRedemptionRecordForUserResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var userRedemptionRecord: [Stridelabs_Stride_Records_UserRedemptionRecord] = []
+  var userRedemptionRecord: [Stride_Records_UserRedemptionRecord] = []
 
   var pagination: Cosmos_Base_Query_V1beta1_PageResponse {
     get {return _pagination ?? Cosmos_Base_Query_V1beta1_PageResponse()}
@@ -261,7 +261,7 @@ struct Stridelabs_Stride_Records_QueryAllUserRedemptionRecordForUserResponse {
   fileprivate var _pagination: Cosmos_Base_Query_V1beta1_PageResponse? = nil
 }
 
-struct Stridelabs_Stride_Records_QueryGetEpochUnbondingRecordRequest {
+struct Stride_Records_QueryGetEpochUnbondingRecordRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -273,13 +273,13 @@ struct Stridelabs_Stride_Records_QueryGetEpochUnbondingRecordRequest {
   init() {}
 }
 
-struct Stridelabs_Stride_Records_QueryGetEpochUnbondingRecordResponse {
+struct Stride_Records_QueryGetEpochUnbondingRecordResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var epochUnbondingRecord: Stridelabs_Stride_Records_EpochUnbondingRecord {
-    get {return _epochUnbondingRecord ?? Stridelabs_Stride_Records_EpochUnbondingRecord()}
+  var epochUnbondingRecord: Stride_Records_EpochUnbondingRecord {
+    get {return _epochUnbondingRecord ?? Stride_Records_EpochUnbondingRecord()}
     set {_epochUnbondingRecord = newValue}
   }
   /// Returns true if `epochUnbondingRecord` has been explicitly set.
@@ -291,10 +291,10 @@ struct Stridelabs_Stride_Records_QueryGetEpochUnbondingRecordResponse {
 
   init() {}
 
-  fileprivate var _epochUnbondingRecord: Stridelabs_Stride_Records_EpochUnbondingRecord? = nil
+  fileprivate var _epochUnbondingRecord: Stride_Records_EpochUnbondingRecord? = nil
 }
 
-struct Stridelabs_Stride_Records_QueryAllEpochUnbondingRecordRequest {
+struct Stride_Records_QueryAllEpochUnbondingRecordRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -315,12 +315,12 @@ struct Stridelabs_Stride_Records_QueryAllEpochUnbondingRecordRequest {
   fileprivate var _pagination: Cosmos_Base_Query_V1beta1_PageRequest? = nil
 }
 
-struct Stridelabs_Stride_Records_QueryAllEpochUnbondingRecordResponse {
+struct Stride_Records_QueryAllEpochUnbondingRecordResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var epochUnbondingRecord: [Stridelabs_Stride_Records_EpochUnbondingRecord] = []
+  var epochUnbondingRecord: [Stride_Records_EpochUnbondingRecord] = []
 
   var pagination: Cosmos_Base_Query_V1beta1_PageResponse {
     get {return _pagination ?? Cosmos_Base_Query_V1beta1_PageResponse()}
@@ -340,9 +340,9 @@ struct Stridelabs_Stride_Records_QueryAllEpochUnbondingRecordResponse {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "Stridelabs.stride.records"
+fileprivate let _protobuf_package = "stride.records"
 
-extension Stridelabs_Stride_Records_QueryParamsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Records_QueryParamsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryParamsRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -355,13 +355,13 @@ extension Stridelabs_Stride_Records_QueryParamsRequest: SwiftProtobuf.Message, S
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Records_QueryParamsRequest, rhs: Stridelabs_Stride_Records_QueryParamsRequest) -> Bool {
+  static func ==(lhs: Stride_Records_QueryParamsRequest, rhs: Stride_Records_QueryParamsRequest) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Records_QueryParamsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Records_QueryParamsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryParamsResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "params"),
@@ -386,14 +386,14 @@ extension Stridelabs_Stride_Records_QueryParamsResponse: SwiftProtobuf.Message, 
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Records_QueryParamsResponse, rhs: Stridelabs_Stride_Records_QueryParamsResponse) -> Bool {
+  static func ==(lhs: Stride_Records_QueryParamsResponse, rhs: Stride_Records_QueryParamsResponse) -> Bool {
     if lhs._params != rhs._params {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Records_QueryGetDepositRecordRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Records_QueryGetDepositRecordRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryGetDepositRecordRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "id"),
@@ -418,17 +418,17 @@ extension Stridelabs_Stride_Records_QueryGetDepositRecordRequest: SwiftProtobuf.
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Records_QueryGetDepositRecordRequest, rhs: Stridelabs_Stride_Records_QueryGetDepositRecordRequest) -> Bool {
+  static func ==(lhs: Stride_Records_QueryGetDepositRecordRequest, rhs: Stride_Records_QueryGetDepositRecordRequest) -> Bool {
     if lhs.id != rhs.id {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Records_QueryGetDepositRecordResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Records_QueryGetDepositRecordResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryGetDepositRecordResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "DepositRecord"),
+    1: .standard(proto: "deposit_record"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -450,14 +450,14 @@ extension Stridelabs_Stride_Records_QueryGetDepositRecordResponse: SwiftProtobuf
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Records_QueryGetDepositRecordResponse, rhs: Stridelabs_Stride_Records_QueryGetDepositRecordResponse) -> Bool {
+  static func ==(lhs: Stride_Records_QueryGetDepositRecordResponse, rhs: Stride_Records_QueryGetDepositRecordResponse) -> Bool {
     if lhs._depositRecord != rhs._depositRecord {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Records_QueryAllDepositRecordRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Records_QueryAllDepositRecordRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryAllDepositRecordRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "pagination"),
@@ -482,17 +482,17 @@ extension Stridelabs_Stride_Records_QueryAllDepositRecordRequest: SwiftProtobuf.
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Records_QueryAllDepositRecordRequest, rhs: Stridelabs_Stride_Records_QueryAllDepositRecordRequest) -> Bool {
+  static func ==(lhs: Stride_Records_QueryAllDepositRecordRequest, rhs: Stride_Records_QueryAllDepositRecordRequest) -> Bool {
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Records_QueryAllDepositRecordResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Records_QueryAllDepositRecordResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryAllDepositRecordResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "DepositRecord"),
+    1: .standard(proto: "deposit_record"),
     2: .same(proto: "pagination"),
   ]
 
@@ -519,7 +519,7 @@ extension Stridelabs_Stride_Records_QueryAllDepositRecordResponse: SwiftProtobuf
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Records_QueryAllDepositRecordResponse, rhs: Stridelabs_Stride_Records_QueryAllDepositRecordResponse) -> Bool {
+  static func ==(lhs: Stride_Records_QueryAllDepositRecordResponse, rhs: Stride_Records_QueryAllDepositRecordResponse) -> Bool {
     if lhs.depositRecord != rhs.depositRecord {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -527,7 +527,7 @@ extension Stridelabs_Stride_Records_QueryAllDepositRecordResponse: SwiftProtobuf
   }
 }
 
-extension Stridelabs_Stride_Records_QueryGetUserRedemptionRecordRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Records_QueryGetUserRedemptionRecordRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryGetUserRedemptionRecordRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "id"),
@@ -552,17 +552,17 @@ extension Stridelabs_Stride_Records_QueryGetUserRedemptionRecordRequest: SwiftPr
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Records_QueryGetUserRedemptionRecordRequest, rhs: Stridelabs_Stride_Records_QueryGetUserRedemptionRecordRequest) -> Bool {
+  static func ==(lhs: Stride_Records_QueryGetUserRedemptionRecordRequest, rhs: Stride_Records_QueryGetUserRedemptionRecordRequest) -> Bool {
     if lhs.id != rhs.id {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Records_QueryGetUserRedemptionRecordResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Records_QueryGetUserRedemptionRecordResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryGetUserRedemptionRecordResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "UserRedemptionRecord"),
+    1: .standard(proto: "user_redemption_record"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -584,14 +584,14 @@ extension Stridelabs_Stride_Records_QueryGetUserRedemptionRecordResponse: SwiftP
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Records_QueryGetUserRedemptionRecordResponse, rhs: Stridelabs_Stride_Records_QueryGetUserRedemptionRecordResponse) -> Bool {
+  static func ==(lhs: Stride_Records_QueryGetUserRedemptionRecordResponse, rhs: Stride_Records_QueryGetUserRedemptionRecordResponse) -> Bool {
     if lhs._userRedemptionRecord != rhs._userRedemptionRecord {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Records_QueryAllUserRedemptionRecordRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Records_QueryAllUserRedemptionRecordRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryAllUserRedemptionRecordRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "pagination"),
@@ -616,17 +616,17 @@ extension Stridelabs_Stride_Records_QueryAllUserRedemptionRecordRequest: SwiftPr
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Records_QueryAllUserRedemptionRecordRequest, rhs: Stridelabs_Stride_Records_QueryAllUserRedemptionRecordRequest) -> Bool {
+  static func ==(lhs: Stride_Records_QueryAllUserRedemptionRecordRequest, rhs: Stride_Records_QueryAllUserRedemptionRecordRequest) -> Bool {
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Records_QueryAllUserRedemptionRecordResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Records_QueryAllUserRedemptionRecordResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryAllUserRedemptionRecordResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "UserRedemptionRecord"),
+    1: .standard(proto: "user_redemption_record"),
     2: .same(proto: "pagination"),
   ]
 
@@ -653,7 +653,7 @@ extension Stridelabs_Stride_Records_QueryAllUserRedemptionRecordResponse: SwiftP
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Records_QueryAllUserRedemptionRecordResponse, rhs: Stridelabs_Stride_Records_QueryAllUserRedemptionRecordResponse) -> Bool {
+  static func ==(lhs: Stride_Records_QueryAllUserRedemptionRecordResponse, rhs: Stride_Records_QueryAllUserRedemptionRecordResponse) -> Bool {
     if lhs.userRedemptionRecord != rhs.userRedemptionRecord {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -661,10 +661,10 @@ extension Stridelabs_Stride_Records_QueryAllUserRedemptionRecordResponse: SwiftP
   }
 }
 
-extension Stridelabs_Stride_Records_QueryAllUserRedemptionRecordForUserRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Records_QueryAllUserRedemptionRecordForUserRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryAllUserRedemptionRecordForUserRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "chainId"),
+    1: .standard(proto: "chain_id"),
     2: .same(proto: "day"),
     3: .same(proto: "address"),
     4: .same(proto: "limit"),
@@ -706,7 +706,7 @@ extension Stridelabs_Stride_Records_QueryAllUserRedemptionRecordForUserRequest: 
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Records_QueryAllUserRedemptionRecordForUserRequest, rhs: Stridelabs_Stride_Records_QueryAllUserRedemptionRecordForUserRequest) -> Bool {
+  static func ==(lhs: Stride_Records_QueryAllUserRedemptionRecordForUserRequest, rhs: Stride_Records_QueryAllUserRedemptionRecordForUserRequest) -> Bool {
     if lhs.chainID != rhs.chainID {return false}
     if lhs.day != rhs.day {return false}
     if lhs.address != rhs.address {return false}
@@ -717,10 +717,10 @@ extension Stridelabs_Stride_Records_QueryAllUserRedemptionRecordForUserRequest: 
   }
 }
 
-extension Stridelabs_Stride_Records_QueryAllUserRedemptionRecordForUserResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Records_QueryAllUserRedemptionRecordForUserResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryAllUserRedemptionRecordForUserResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "UserRedemptionRecord"),
+    1: .standard(proto: "user_redemption_record"),
     2: .same(proto: "pagination"),
   ]
 
@@ -747,7 +747,7 @@ extension Stridelabs_Stride_Records_QueryAllUserRedemptionRecordForUserResponse:
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Records_QueryAllUserRedemptionRecordForUserResponse, rhs: Stridelabs_Stride_Records_QueryAllUserRedemptionRecordForUserResponse) -> Bool {
+  static func ==(lhs: Stride_Records_QueryAllUserRedemptionRecordForUserResponse, rhs: Stride_Records_QueryAllUserRedemptionRecordForUserResponse) -> Bool {
     if lhs.userRedemptionRecord != rhs.userRedemptionRecord {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -755,10 +755,10 @@ extension Stridelabs_Stride_Records_QueryAllUserRedemptionRecordForUserResponse:
   }
 }
 
-extension Stridelabs_Stride_Records_QueryGetEpochUnbondingRecordRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Records_QueryGetEpochUnbondingRecordRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryGetEpochUnbondingRecordRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "epochNumber"),
+    1: .standard(proto: "epoch_number"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -780,17 +780,17 @@ extension Stridelabs_Stride_Records_QueryGetEpochUnbondingRecordRequest: SwiftPr
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Records_QueryGetEpochUnbondingRecordRequest, rhs: Stridelabs_Stride_Records_QueryGetEpochUnbondingRecordRequest) -> Bool {
+  static func ==(lhs: Stride_Records_QueryGetEpochUnbondingRecordRequest, rhs: Stride_Records_QueryGetEpochUnbondingRecordRequest) -> Bool {
     if lhs.epochNumber != rhs.epochNumber {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Records_QueryGetEpochUnbondingRecordResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Records_QueryGetEpochUnbondingRecordResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryGetEpochUnbondingRecordResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "EpochUnbondingRecord"),
+    1: .standard(proto: "epoch_unbonding_record"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -812,14 +812,14 @@ extension Stridelabs_Stride_Records_QueryGetEpochUnbondingRecordResponse: SwiftP
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Records_QueryGetEpochUnbondingRecordResponse, rhs: Stridelabs_Stride_Records_QueryGetEpochUnbondingRecordResponse) -> Bool {
+  static func ==(lhs: Stride_Records_QueryGetEpochUnbondingRecordResponse, rhs: Stride_Records_QueryGetEpochUnbondingRecordResponse) -> Bool {
     if lhs._epochUnbondingRecord != rhs._epochUnbondingRecord {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Records_QueryAllEpochUnbondingRecordRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Records_QueryAllEpochUnbondingRecordRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryAllEpochUnbondingRecordRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "pagination"),
@@ -844,17 +844,17 @@ extension Stridelabs_Stride_Records_QueryAllEpochUnbondingRecordRequest: SwiftPr
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Records_QueryAllEpochUnbondingRecordRequest, rhs: Stridelabs_Stride_Records_QueryAllEpochUnbondingRecordRequest) -> Bool {
+  static func ==(lhs: Stride_Records_QueryAllEpochUnbondingRecordRequest, rhs: Stride_Records_QueryAllEpochUnbondingRecordRequest) -> Bool {
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Records_QueryAllEpochUnbondingRecordResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Records_QueryAllEpochUnbondingRecordResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryAllEpochUnbondingRecordResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "EpochUnbondingRecord"),
+    1: .standard(proto: "epoch_unbonding_record"),
     2: .same(proto: "pagination"),
   ]
 
@@ -881,7 +881,7 @@ extension Stridelabs_Stride_Records_QueryAllEpochUnbondingRecordResponse: SwiftP
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Records_QueryAllEpochUnbondingRecordResponse, rhs: Stridelabs_Stride_Records_QueryAllEpochUnbondingRecordResponse) -> Bool {
+  static func ==(lhs: Stride_Records_QueryAllEpochUnbondingRecordResponse, rhs: Stride_Records_QueryAllEpochUnbondingRecordResponse) -> Bool {
     if lhs.epochUnbondingRecord != rhs.epochUnbondingRecord {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

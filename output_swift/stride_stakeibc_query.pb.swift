@@ -20,8 +20,9 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-/// QueryInterchainAccountFromAddressRequest is the request type for the Query/InterchainAccountAddress RPC
-struct Stridelabs_Stride_Stakeibc_QueryInterchainAccountFromAddressRequest {
+/// QueryInterchainAccountFromAddressRequest is the request type for the
+/// Query/InterchainAccountAddress RPC
+struct Stride_Stakeibc_QueryInterchainAccountFromAddressRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -35,8 +36,9 @@ struct Stridelabs_Stride_Stakeibc_QueryInterchainAccountFromAddressRequest {
   init() {}
 }
 
-/// QueryInterchainAccountFromAddressResponse the response type for the Query/InterchainAccountAddress RPC
-struct Stridelabs_Stride_Stakeibc_QueryInterchainAccountFromAddressResponse {
+/// QueryInterchainAccountFromAddressResponse the response type for the
+/// Query/InterchainAccountAddress RPC
+struct Stride_Stakeibc_QueryInterchainAccountFromAddressResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -49,7 +51,7 @@ struct Stridelabs_Stride_Stakeibc_QueryInterchainAccountFromAddressResponse {
 }
 
 /// QueryParamsRequest is request type for the Query/Params RPC method.
-struct Stridelabs_Stride_Stakeibc_QueryParamsRequest {
+struct Stride_Stakeibc_QueryParamsRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -60,14 +62,14 @@ struct Stridelabs_Stride_Stakeibc_QueryParamsRequest {
 }
 
 /// QueryParamsResponse is response type for the Query/Params RPC method.
-struct Stridelabs_Stride_Stakeibc_QueryParamsResponse {
+struct Stride_Stakeibc_QueryParamsResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   /// params holds all the parameters of this module.
-  var params: Stridelabs_Stride_Stakeibc_Params {
-    get {return _params ?? Stridelabs_Stride_Stakeibc_Params()}
+  var params: Stride_Stakeibc_Params {
+    get {return _params ?? Stride_Stakeibc_Params()}
     set {_params = newValue}
   }
   /// Returns true if `params` has been explicitly set.
@@ -79,10 +81,10 @@ struct Stridelabs_Stride_Stakeibc_QueryParamsResponse {
 
   init() {}
 
-  fileprivate var _params: Stridelabs_Stride_Stakeibc_Params? = nil
+  fileprivate var _params: Stride_Stakeibc_Params? = nil
 }
 
-struct Stridelabs_Stride_Stakeibc_QueryGetValidatorsRequest {
+struct Stride_Stakeibc_QueryGetValidatorsRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -94,19 +96,19 @@ struct Stridelabs_Stride_Stakeibc_QueryGetValidatorsRequest {
   init() {}
 }
 
-struct Stridelabs_Stride_Stakeibc_QueryGetValidatorsResponse {
+struct Stride_Stakeibc_QueryGetValidatorsResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var validators: [Stridelabs_Stride_Stakeibc_Validator] = []
+  var validators: [Stride_Stakeibc_Validator] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 }
 
-struct Stridelabs_Stride_Stakeibc_QueryGetICAAccountRequest {
+struct Stride_Stakeibc_QueryGetICAAccountRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -116,28 +118,28 @@ struct Stridelabs_Stride_Stakeibc_QueryGetICAAccountRequest {
   init() {}
 }
 
-struct Stridelabs_Stride_Stakeibc_QueryGetICAAccountResponse {
+struct Stride_Stakeibc_QueryGetICAAccountResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var icaaccount: Stridelabs_Stride_Stakeibc_ICAAccount {
-    get {return _icaaccount ?? Stridelabs_Stride_Stakeibc_ICAAccount()}
-    set {_icaaccount = newValue}
+  var icaAccount: Stride_Stakeibc_ICAAccount {
+    get {return _icaAccount ?? Stride_Stakeibc_ICAAccount()}
+    set {_icaAccount = newValue}
   }
-  /// Returns true if `icaaccount` has been explicitly set.
-  var hasIcaaccount: Bool {return self._icaaccount != nil}
-  /// Clears the value of `icaaccount`. Subsequent reads from it will return its default value.
-  mutating func clearIcaaccount() {self._icaaccount = nil}
+  /// Returns true if `icaAccount` has been explicitly set.
+  var hasIcaAccount: Bool {return self._icaAccount != nil}
+  /// Clears the value of `icaAccount`. Subsequent reads from it will return its default value.
+  mutating func clearIcaAccount() {self._icaAccount = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _icaaccount: Stridelabs_Stride_Stakeibc_ICAAccount? = nil
+  fileprivate var _icaAccount: Stride_Stakeibc_ICAAccount? = nil
 }
 
-struct Stridelabs_Stride_Stakeibc_QueryGetHostZoneRequest {
+struct Stride_Stakeibc_QueryGetHostZoneRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -149,13 +151,13 @@ struct Stridelabs_Stride_Stakeibc_QueryGetHostZoneRequest {
   init() {}
 }
 
-struct Stridelabs_Stride_Stakeibc_QueryGetHostZoneResponse {
+struct Stride_Stakeibc_QueryGetHostZoneResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var hostZone: Stridelabs_Stride_Stakeibc_HostZone {
-    get {return _hostZone ?? Stridelabs_Stride_Stakeibc_HostZone()}
+  var hostZone: Stride_Stakeibc_HostZone {
+    get {return _hostZone ?? Stride_Stakeibc_HostZone()}
     set {_hostZone = newValue}
   }
   /// Returns true if `hostZone` has been explicitly set.
@@ -167,10 +169,10 @@ struct Stridelabs_Stride_Stakeibc_QueryGetHostZoneResponse {
 
   init() {}
 
-  fileprivate var _hostZone: Stridelabs_Stride_Stakeibc_HostZone? = nil
+  fileprivate var _hostZone: Stride_Stakeibc_HostZone? = nil
 }
 
-struct Stridelabs_Stride_Stakeibc_QueryAllHostZoneRequest {
+struct Stride_Stakeibc_QueryAllHostZoneRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -191,12 +193,12 @@ struct Stridelabs_Stride_Stakeibc_QueryAllHostZoneRequest {
   fileprivate var _pagination: Cosmos_Base_Query_V1beta1_PageRequest? = nil
 }
 
-struct Stridelabs_Stride_Stakeibc_QueryAllHostZoneResponse {
+struct Stride_Stakeibc_QueryAllHostZoneResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var hostZone: [Stridelabs_Stride_Stakeibc_HostZone] = []
+  var hostZone: [Stride_Stakeibc_HostZone] = []
 
   var pagination: Cosmos_Base_Query_V1beta1_PageResponse {
     get {return _pagination ?? Cosmos_Base_Query_V1beta1_PageResponse()}
@@ -214,7 +216,7 @@ struct Stridelabs_Stride_Stakeibc_QueryAllHostZoneResponse {
   fileprivate var _pagination: Cosmos_Base_Query_V1beta1_PageResponse? = nil
 }
 
-struct Stridelabs_Stride_Stakeibc_QueryModuleAddressRequest {
+struct Stride_Stakeibc_QueryModuleAddressRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -226,7 +228,7 @@ struct Stridelabs_Stride_Stakeibc_QueryModuleAddressRequest {
   init() {}
 }
 
-struct Stridelabs_Stride_Stakeibc_QueryModuleAddressResponse {
+struct Stride_Stakeibc_QueryModuleAddressResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -238,7 +240,7 @@ struct Stridelabs_Stride_Stakeibc_QueryModuleAddressResponse {
   init() {}
 }
 
-struct Stridelabs_Stride_Stakeibc_QueryGetEpochTrackerRequest {
+struct Stride_Stakeibc_QueryGetEpochTrackerRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -250,13 +252,13 @@ struct Stridelabs_Stride_Stakeibc_QueryGetEpochTrackerRequest {
   init() {}
 }
 
-struct Stridelabs_Stride_Stakeibc_QueryGetEpochTrackerResponse {
+struct Stride_Stakeibc_QueryGetEpochTrackerResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var epochTracker: Stridelabs_Stride_Stakeibc_EpochTracker {
-    get {return _epochTracker ?? Stridelabs_Stride_Stakeibc_EpochTracker()}
+  var epochTracker: Stride_Stakeibc_EpochTracker {
+    get {return _epochTracker ?? Stride_Stakeibc_EpochTracker()}
     set {_epochTracker = newValue}
   }
   /// Returns true if `epochTracker` has been explicitly set.
@@ -268,10 +270,10 @@ struct Stridelabs_Stride_Stakeibc_QueryGetEpochTrackerResponse {
 
   init() {}
 
-  fileprivate var _epochTracker: Stridelabs_Stride_Stakeibc_EpochTracker? = nil
+  fileprivate var _epochTracker: Stride_Stakeibc_EpochTracker? = nil
 }
 
-struct Stridelabs_Stride_Stakeibc_QueryAllEpochTrackerRequest {
+struct Stride_Stakeibc_QueryAllEpochTrackerRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -292,12 +294,12 @@ struct Stridelabs_Stride_Stakeibc_QueryAllEpochTrackerRequest {
   fileprivate var _pagination: Cosmos_Base_Query_V1beta1_PageRequest? = nil
 }
 
-struct Stridelabs_Stride_Stakeibc_QueryAllEpochTrackerResponse {
+struct Stride_Stakeibc_QueryAllEpochTrackerResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var epochTracker: [Stridelabs_Stride_Stakeibc_EpochTracker] = []
+  var epochTracker: [Stride_Stakeibc_EpochTracker] = []
 
   var pagination: Cosmos_Base_Query_V1beta1_PageResponse {
     get {return _pagination ?? Cosmos_Base_Query_V1beta1_PageResponse()}
@@ -317,9 +319,9 @@ struct Stridelabs_Stride_Stakeibc_QueryAllEpochTrackerResponse {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "Stridelabs.stride.stakeibc"
+fileprivate let _protobuf_package = "stride.stakeibc"
 
-extension Stridelabs_Stride_Stakeibc_QueryInterchainAccountFromAddressRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_QueryInterchainAccountFromAddressRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryInterchainAccountFromAddressRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "owner"),
@@ -349,7 +351,7 @@ extension Stridelabs_Stride_Stakeibc_QueryInterchainAccountFromAddressRequest: S
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_QueryInterchainAccountFromAddressRequest, rhs: Stridelabs_Stride_Stakeibc_QueryInterchainAccountFromAddressRequest) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_QueryInterchainAccountFromAddressRequest, rhs: Stride_Stakeibc_QueryInterchainAccountFromAddressRequest) -> Bool {
     if lhs.owner != rhs.owner {return false}
     if lhs.connectionID != rhs.connectionID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -357,7 +359,7 @@ extension Stridelabs_Stride_Stakeibc_QueryInterchainAccountFromAddressRequest: S
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_QueryInterchainAccountFromAddressResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_QueryInterchainAccountFromAddressResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryInterchainAccountFromAddressResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "interchain_account_address"),
@@ -382,14 +384,14 @@ extension Stridelabs_Stride_Stakeibc_QueryInterchainAccountFromAddressResponse: 
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_QueryInterchainAccountFromAddressResponse, rhs: Stridelabs_Stride_Stakeibc_QueryInterchainAccountFromAddressResponse) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_QueryInterchainAccountFromAddressResponse, rhs: Stride_Stakeibc_QueryInterchainAccountFromAddressResponse) -> Bool {
     if lhs.interchainAccountAddress != rhs.interchainAccountAddress {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_QueryParamsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_QueryParamsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryParamsRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -402,13 +404,13 @@ extension Stridelabs_Stride_Stakeibc_QueryParamsRequest: SwiftProtobuf.Message, 
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_QueryParamsRequest, rhs: Stridelabs_Stride_Stakeibc_QueryParamsRequest) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_QueryParamsRequest, rhs: Stride_Stakeibc_QueryParamsRequest) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_QueryParamsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_QueryParamsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryParamsResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "params"),
@@ -433,14 +435,14 @@ extension Stridelabs_Stride_Stakeibc_QueryParamsResponse: SwiftProtobuf.Message,
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_QueryParamsResponse, rhs: Stridelabs_Stride_Stakeibc_QueryParamsResponse) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_QueryParamsResponse, rhs: Stride_Stakeibc_QueryParamsResponse) -> Bool {
     if lhs._params != rhs._params {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_QueryGetValidatorsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_QueryGetValidatorsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryGetValidatorsRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "chain_id"),
@@ -465,14 +467,14 @@ extension Stridelabs_Stride_Stakeibc_QueryGetValidatorsRequest: SwiftProtobuf.Me
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_QueryGetValidatorsRequest, rhs: Stridelabs_Stride_Stakeibc_QueryGetValidatorsRequest) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_QueryGetValidatorsRequest, rhs: Stride_Stakeibc_QueryGetValidatorsRequest) -> Bool {
     if lhs.chainID != rhs.chainID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_QueryGetValidatorsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_QueryGetValidatorsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryGetValidatorsResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "validators"),
@@ -497,14 +499,14 @@ extension Stridelabs_Stride_Stakeibc_QueryGetValidatorsResponse: SwiftProtobuf.M
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_QueryGetValidatorsResponse, rhs: Stridelabs_Stride_Stakeibc_QueryGetValidatorsResponse) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_QueryGetValidatorsResponse, rhs: Stride_Stakeibc_QueryGetValidatorsResponse) -> Bool {
     if lhs.validators != rhs.validators {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_QueryGetICAAccountRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_QueryGetICAAccountRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryGetICAAccountRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -517,16 +519,16 @@ extension Stridelabs_Stride_Stakeibc_QueryGetICAAccountRequest: SwiftProtobuf.Me
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_QueryGetICAAccountRequest, rhs: Stridelabs_Stride_Stakeibc_QueryGetICAAccountRequest) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_QueryGetICAAccountRequest, rhs: Stride_Stakeibc_QueryGetICAAccountRequest) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_QueryGetICAAccountResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_QueryGetICAAccountResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryGetICAAccountResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "ICAAccount"),
+    1: .standard(proto: "ica_account"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -535,27 +537,27 @@ extension Stridelabs_Stride_Stakeibc_QueryGetICAAccountResponse: SwiftProtobuf.M
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._icaaccount) }()
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._icaAccount) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._icaaccount {
+    if let v = self._icaAccount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_QueryGetICAAccountResponse, rhs: Stridelabs_Stride_Stakeibc_QueryGetICAAccountResponse) -> Bool {
-    if lhs._icaaccount != rhs._icaaccount {return false}
+  static func ==(lhs: Stride_Stakeibc_QueryGetICAAccountResponse, rhs: Stride_Stakeibc_QueryGetICAAccountResponse) -> Bool {
+    if lhs._icaAccount != rhs._icaAccount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_QueryGetHostZoneRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_QueryGetHostZoneRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryGetHostZoneRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "chain_id"),
@@ -580,17 +582,17 @@ extension Stridelabs_Stride_Stakeibc_QueryGetHostZoneRequest: SwiftProtobuf.Mess
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_QueryGetHostZoneRequest, rhs: Stridelabs_Stride_Stakeibc_QueryGetHostZoneRequest) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_QueryGetHostZoneRequest, rhs: Stride_Stakeibc_QueryGetHostZoneRequest) -> Bool {
     if lhs.chainID != rhs.chainID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_QueryGetHostZoneResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_QueryGetHostZoneResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryGetHostZoneResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "HostZone"),
+    1: .standard(proto: "host_zone"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -612,14 +614,14 @@ extension Stridelabs_Stride_Stakeibc_QueryGetHostZoneResponse: SwiftProtobuf.Mes
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_QueryGetHostZoneResponse, rhs: Stridelabs_Stride_Stakeibc_QueryGetHostZoneResponse) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_QueryGetHostZoneResponse, rhs: Stride_Stakeibc_QueryGetHostZoneResponse) -> Bool {
     if lhs._hostZone != rhs._hostZone {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_QueryAllHostZoneRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_QueryAllHostZoneRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryAllHostZoneRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "pagination"),
@@ -644,17 +646,17 @@ extension Stridelabs_Stride_Stakeibc_QueryAllHostZoneRequest: SwiftProtobuf.Mess
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_QueryAllHostZoneRequest, rhs: Stridelabs_Stride_Stakeibc_QueryAllHostZoneRequest) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_QueryAllHostZoneRequest, rhs: Stride_Stakeibc_QueryAllHostZoneRequest) -> Bool {
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_QueryAllHostZoneResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_QueryAllHostZoneResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryAllHostZoneResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "HostZone"),
+    1: .standard(proto: "host_zone"),
     2: .same(proto: "pagination"),
   ]
 
@@ -681,7 +683,7 @@ extension Stridelabs_Stride_Stakeibc_QueryAllHostZoneResponse: SwiftProtobuf.Mes
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_QueryAllHostZoneResponse, rhs: Stridelabs_Stride_Stakeibc_QueryAllHostZoneResponse) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_QueryAllHostZoneResponse, rhs: Stride_Stakeibc_QueryAllHostZoneResponse) -> Bool {
     if lhs.hostZone != rhs.hostZone {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -689,7 +691,7 @@ extension Stridelabs_Stride_Stakeibc_QueryAllHostZoneResponse: SwiftProtobuf.Mes
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_QueryModuleAddressRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_QueryModuleAddressRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryModuleAddressRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
@@ -714,14 +716,14 @@ extension Stridelabs_Stride_Stakeibc_QueryModuleAddressRequest: SwiftProtobuf.Me
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_QueryModuleAddressRequest, rhs: Stridelabs_Stride_Stakeibc_QueryModuleAddressRequest) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_QueryModuleAddressRequest, rhs: Stride_Stakeibc_QueryModuleAddressRequest) -> Bool {
     if lhs.name != rhs.name {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_QueryModuleAddressResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_QueryModuleAddressResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryModuleAddressResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "addr"),
@@ -746,17 +748,17 @@ extension Stridelabs_Stride_Stakeibc_QueryModuleAddressResponse: SwiftProtobuf.M
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_QueryModuleAddressResponse, rhs: Stridelabs_Stride_Stakeibc_QueryModuleAddressResponse) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_QueryModuleAddressResponse, rhs: Stride_Stakeibc_QueryModuleAddressResponse) -> Bool {
     if lhs.addr != rhs.addr {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_QueryGetEpochTrackerRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_QueryGetEpochTrackerRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryGetEpochTrackerRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "epochIdentifier"),
+    1: .standard(proto: "epoch_identifier"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -778,17 +780,17 @@ extension Stridelabs_Stride_Stakeibc_QueryGetEpochTrackerRequest: SwiftProtobuf.
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_QueryGetEpochTrackerRequest, rhs: Stridelabs_Stride_Stakeibc_QueryGetEpochTrackerRequest) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_QueryGetEpochTrackerRequest, rhs: Stride_Stakeibc_QueryGetEpochTrackerRequest) -> Bool {
     if lhs.epochIdentifier != rhs.epochIdentifier {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_QueryGetEpochTrackerResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_QueryGetEpochTrackerResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryGetEpochTrackerResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "epochTracker"),
+    1: .standard(proto: "epoch_tracker"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -810,14 +812,14 @@ extension Stridelabs_Stride_Stakeibc_QueryGetEpochTrackerResponse: SwiftProtobuf
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_QueryGetEpochTrackerResponse, rhs: Stridelabs_Stride_Stakeibc_QueryGetEpochTrackerResponse) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_QueryGetEpochTrackerResponse, rhs: Stride_Stakeibc_QueryGetEpochTrackerResponse) -> Bool {
     if lhs._epochTracker != rhs._epochTracker {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_QueryAllEpochTrackerRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_QueryAllEpochTrackerRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryAllEpochTrackerRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "pagination"),
@@ -842,17 +844,17 @@ extension Stridelabs_Stride_Stakeibc_QueryAllEpochTrackerRequest: SwiftProtobuf.
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_QueryAllEpochTrackerRequest, rhs: Stridelabs_Stride_Stakeibc_QueryAllEpochTrackerRequest) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_QueryAllEpochTrackerRequest, rhs: Stride_Stakeibc_QueryAllEpochTrackerRequest) -> Bool {
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Stridelabs_Stride_Stakeibc_QueryAllEpochTrackerResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Stride_Stakeibc_QueryAllEpochTrackerResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryAllEpochTrackerResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "epochTracker"),
+    1: .standard(proto: "epoch_tracker"),
     2: .same(proto: "pagination"),
   ]
 
@@ -879,7 +881,7 @@ extension Stridelabs_Stride_Stakeibc_QueryAllEpochTrackerResponse: SwiftProtobuf
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Stridelabs_Stride_Stakeibc_QueryAllEpochTrackerResponse, rhs: Stridelabs_Stride_Stakeibc_QueryAllEpochTrackerResponse) -> Bool {
+  static func ==(lhs: Stride_Stakeibc_QueryAllEpochTrackerResponse, rhs: Stride_Stakeibc_QueryAllEpochTrackerResponse) -> Bool {
     if lhs.epochTracker != rhs.epochTracker {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

@@ -2124,8 +2124,9 @@ public final class QueryOuterClass {
       "ions\0220.stride.mint.v1beta1.QueryEpochPro" +
       "visionsRequest\0321.stride.mint.v1beta1.Que" +
       "ryEpochProvisionsResponse\"&\202\323\344\223\002 \022\036/mint" +
-      "/v1beta1/epoch_provisionsB,Z*github.com/" +
-      "Stride-Labs/stride/x/mint/typesb\006proto3"
+      "/v1beta1/epoch_provisionsB/Z-github.com/" +
+      "Stride-Labs/stride/v3/x/mint/typesb\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
