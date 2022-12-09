@@ -81,7 +81,7 @@ struct Osmosis_Gamm_Poolmodels_Stableswap_V1beta1_Pool {
   var poolLiquidity: [Cosmos_Base_V1beta1_Coin] = []
 
   /// for calculation amognst assets with different precisions
-  var scalingFactor: [UInt64] = []
+  var scalingFactors: [UInt64] = []
 
   /// scaling_factor_controller is the address can adjust pool scaling factors
   var scalingFactorController: String = String()
@@ -93,6 +93,11 @@ struct Osmosis_Gamm_Poolmodels_Stableswap_V1beta1_Pool {
   fileprivate var _poolParams: Osmosis_Gamm_Poolmodels_Stableswap_V1beta1_PoolParams? = nil
   fileprivate var _totalShares: Cosmos_Base_V1beta1_Coin? = nil
 }
+
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Osmosis_Gamm_Poolmodels_Stableswap_V1beta1_PoolParams: @unchecked Sendable {}
+extension Osmosis_Gamm_Poolmodels_Stableswap_V1beta1_Pool: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
@@ -145,7 +150,7 @@ extension Osmosis_Gamm_Poolmodels_Stableswap_V1beta1_Pool: SwiftProtobuf.Message
     4: .standard(proto: "future_pool_governor"),
     5: .standard(proto: "total_shares"),
     6: .standard(proto: "pool_liquidity"),
-    7: .standard(proto: "scaling_factor"),
+    7: .standard(proto: "scaling_factors"),
     8: .standard(proto: "scaling_factor_controller"),
   ]
 
@@ -161,7 +166,7 @@ extension Osmosis_Gamm_Poolmodels_Stableswap_V1beta1_Pool: SwiftProtobuf.Message
       case 4: try { try decoder.decodeSingularStringField(value: &self.futurePoolGovernor) }()
       case 5: try { try decoder.decodeSingularMessageField(value: &self._totalShares) }()
       case 6: try { try decoder.decodeRepeatedMessageField(value: &self.poolLiquidity) }()
-      case 7: try { try decoder.decodeRepeatedUInt64Field(value: &self.scalingFactor) }()
+      case 7: try { try decoder.decodeRepeatedUInt64Field(value: &self.scalingFactors) }()
       case 8: try { try decoder.decodeSingularStringField(value: &self.scalingFactorController) }()
       default: break
       }
@@ -169,26 +174,30 @@ extension Osmosis_Gamm_Poolmodels_Stableswap_V1beta1_Pool: SwiftProtobuf.Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.address.isEmpty {
       try visitor.visitSingularStringField(value: self.address, fieldNumber: 1)
     }
     if self.id != 0 {
       try visitor.visitSingularUInt64Field(value: self.id, fieldNumber: 2)
     }
-    if let v = self._poolParams {
+    try { if let v = self._poolParams {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if !self.futurePoolGovernor.isEmpty {
       try visitor.visitSingularStringField(value: self.futurePoolGovernor, fieldNumber: 4)
     }
-    if let v = self._totalShares {
+    try { if let v = self._totalShares {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    }
+    } }()
     if !self.poolLiquidity.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.poolLiquidity, fieldNumber: 6)
     }
-    if !self.scalingFactor.isEmpty {
-      try visitor.visitPackedUInt64Field(value: self.scalingFactor, fieldNumber: 7)
+    if !self.scalingFactors.isEmpty {
+      try visitor.visitPackedUInt64Field(value: self.scalingFactors, fieldNumber: 7)
     }
     if !self.scalingFactorController.isEmpty {
       try visitor.visitSingularStringField(value: self.scalingFactorController, fieldNumber: 8)
@@ -203,7 +212,7 @@ extension Osmosis_Gamm_Poolmodels_Stableswap_V1beta1_Pool: SwiftProtobuf.Message
     if lhs.futurePoolGovernor != rhs.futurePoolGovernor {return false}
     if lhs._totalShares != rhs._totalShares {return false}
     if lhs.poolLiquidity != rhs.poolLiquidity {return false}
-    if lhs.scalingFactor != rhs.scalingFactor {return false}
+    if lhs.scalingFactors != rhs.scalingFactors {return false}
     if lhs.scalingFactorController != rhs.scalingFactorController {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

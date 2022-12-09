@@ -91,6 +91,13 @@ struct Cosmos_Feegrant_V1beta1_MsgRevokeAllowanceResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Cosmos_Feegrant_V1beta1_MsgGrantAllowance: @unchecked Sendable {}
+extension Cosmos_Feegrant_V1beta1_MsgGrantAllowanceResponse: @unchecked Sendable {}
+extension Cosmos_Feegrant_V1beta1_MsgRevokeAllowance: @unchecked Sendable {}
+extension Cosmos_Feegrant_V1beta1_MsgRevokeAllowanceResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.feegrant.v1beta1"
@@ -118,15 +125,19 @@ extension Cosmos_Feegrant_V1beta1_MsgGrantAllowance: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.granter.isEmpty {
       try visitor.visitSingularStringField(value: self.granter, fieldNumber: 1)
     }
     if !self.grantee.isEmpty {
       try visitor.visitSingularStringField(value: self.grantee, fieldNumber: 2)
     }
-    if let v = self._allowance {
+    try { if let v = self._allowance {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

@@ -95,6 +95,13 @@ struct Cork_V1_MsgScheduleCorkResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Cork_V1_MsgSubmitCorkRequest: @unchecked Sendable {}
+extension Cork_V1_MsgSubmitCorkResponse: @unchecked Sendable {}
+extension Cork_V1_MsgScheduleCorkRequest: @unchecked Sendable {}
+extension Cork_V1_MsgScheduleCorkResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cork.v1"
@@ -120,9 +127,13 @@ extension Cork_V1_MsgSubmitCorkRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._cork {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._cork {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.signer.isEmpty {
       try visitor.visitSingularStringField(value: self.signer, fieldNumber: 2)
     }
@@ -179,9 +190,13 @@ extension Cork_V1_MsgScheduleCorkRequest: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._cork {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._cork {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if self.blockHeight != 0 {
       try visitor.visitSingularUInt64Field(value: self.blockHeight, fieldNumber: 2)
     }

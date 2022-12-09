@@ -155,6 +155,13 @@ struct Kava_Committee_V1beta1_TokenCommittee {
   fileprivate var _baseCommittee: Kava_Committee_V1beta1_BaseCommittee? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Kava_Committee_V1beta1_TallyOption: @unchecked Sendable {}
+extension Kava_Committee_V1beta1_BaseCommittee: @unchecked Sendable {}
+extension Kava_Committee_V1beta1_MemberCommittee: @unchecked Sendable {}
+extension Kava_Committee_V1beta1_TokenCommittee: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kava.committee.v1beta1"
@@ -198,6 +205,10 @@ extension Kava_Committee_V1beta1_BaseCommittee: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.id != 0 {
       try visitor.visitSingularUInt64Field(value: self.id, fieldNumber: 1)
     }
@@ -213,9 +224,9 @@ extension Kava_Committee_V1beta1_BaseCommittee: SwiftProtobuf.Message, SwiftProt
     if !self.voteThreshold.isEmpty {
       try visitor.visitSingularStringField(value: self.voteThreshold, fieldNumber: 5)
     }
-    if let v = self._proposalDuration {
+    try { if let v = self._proposalDuration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    }
+    } }()
     if self.tallyOption != .unspecified {
       try visitor.visitSingularEnumField(value: self.tallyOption, fieldNumber: 7)
     }
@@ -254,9 +265,13 @@ extension Kava_Committee_V1beta1_MemberCommittee: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._baseCommittee {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseCommittee {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -290,9 +305,13 @@ extension Kava_Committee_V1beta1_TokenCommittee: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._baseCommittee {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseCommittee {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.quorum.isEmpty {
       try visitor.visitSingularStringField(value: self.quorum, fieldNumber: 2)
     }

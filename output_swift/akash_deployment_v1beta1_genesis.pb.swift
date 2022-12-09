@@ -68,6 +68,11 @@ struct Akash_Deployment_V1beta1_GenesisState {
   fileprivate var _params: Akash_Deployment_V1beta1_Params? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Akash_Deployment_V1beta1_GenesisDeployment: @unchecked Sendable {}
+extension Akash_Deployment_V1beta1_GenesisState: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "akash.deployment.v1beta1"
@@ -93,9 +98,13 @@ extension Akash_Deployment_V1beta1_GenesisDeployment: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._deployment {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._deployment {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.groups.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.groups, fieldNumber: 2)
     }
@@ -131,12 +140,16 @@ extension Akash_Deployment_V1beta1_GenesisState: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.deployments.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.deployments, fieldNumber: 1)
     }
-    if let v = self._params {
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

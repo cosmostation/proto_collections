@@ -66,6 +66,13 @@ struct Osmosis_Epochs_V1beta1_QueryCurrentEpochResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Osmosis_Epochs_V1beta1_QueryEpochsInfoRequest: @unchecked Sendable {}
+extension Osmosis_Epochs_V1beta1_QueryEpochsInfoResponse: @unchecked Sendable {}
+extension Osmosis_Epochs_V1beta1_QueryCurrentEpochRequest: @unchecked Sendable {}
+extension Osmosis_Epochs_V1beta1_QueryCurrentEpochResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "osmosis.epochs.v1beta1"

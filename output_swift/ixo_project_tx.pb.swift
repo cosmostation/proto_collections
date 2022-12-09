@@ -312,6 +312,25 @@ struct Project_MsgUpdateProjectDocResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Project_MsgCreateProject: @unchecked Sendable {}
+extension Project_MsgCreateProjectResponse: @unchecked Sendable {}
+extension Project_MsgUpdateProjectStatus: @unchecked Sendable {}
+extension Project_MsgUpdateProjectStatusResponse: @unchecked Sendable {}
+extension Project_MsgCreateAgent: @unchecked Sendable {}
+extension Project_MsgCreateAgentResponse: @unchecked Sendable {}
+extension Project_MsgUpdateAgent: @unchecked Sendable {}
+extension Project_MsgUpdateAgentResponse: @unchecked Sendable {}
+extension Project_MsgCreateClaim: @unchecked Sendable {}
+extension Project_MsgCreateClaimResponse: @unchecked Sendable {}
+extension Project_MsgCreateEvaluation: @unchecked Sendable {}
+extension Project_MsgCreateEvaluationResponse: @unchecked Sendable {}
+extension Project_MsgWithdrawFunds: @unchecked Sendable {}
+extension Project_MsgWithdrawFundsResponse: @unchecked Sendable {}
+extension Project_MsgUpdateProjectDoc: @unchecked Sendable {}
+extension Project_MsgUpdateProjectDocResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "project"
@@ -416,6 +435,10 @@ extension Project_MsgUpdateProjectStatus: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.txHash.isEmpty {
       try visitor.visitSingularStringField(value: self.txHash, fieldNumber: 1)
     }
@@ -425,9 +448,9 @@ extension Project_MsgUpdateProjectStatus: SwiftProtobuf.Message, SwiftProtobuf._
     if !self.projectDid.isEmpty {
       try visitor.visitSingularStringField(value: self.projectDid, fieldNumber: 3)
     }
-    if let v = self._data {
+    try { if let v = self._data {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -485,6 +508,10 @@ extension Project_MsgCreateAgent: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.txHash.isEmpty {
       try visitor.visitSingularStringField(value: self.txHash, fieldNumber: 1)
     }
@@ -494,9 +521,9 @@ extension Project_MsgCreateAgent: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     if !self.projectDid.isEmpty {
       try visitor.visitSingularStringField(value: self.projectDid, fieldNumber: 3)
     }
-    if let v = self._data {
+    try { if let v = self._data {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -554,6 +581,10 @@ extension Project_MsgUpdateAgent: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.txHash.isEmpty {
       try visitor.visitSingularStringField(value: self.txHash, fieldNumber: 1)
     }
@@ -563,9 +594,9 @@ extension Project_MsgUpdateAgent: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     if !self.projectDid.isEmpty {
       try visitor.visitSingularStringField(value: self.projectDid, fieldNumber: 3)
     }
-    if let v = self._data {
+    try { if let v = self._data {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -623,6 +654,10 @@ extension Project_MsgCreateClaim: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.txHash.isEmpty {
       try visitor.visitSingularStringField(value: self.txHash, fieldNumber: 1)
     }
@@ -632,9 +667,9 @@ extension Project_MsgCreateClaim: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     if !self.projectDid.isEmpty {
       try visitor.visitSingularStringField(value: self.projectDid, fieldNumber: 3)
     }
-    if let v = self._data {
+    try { if let v = self._data {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -692,6 +727,10 @@ extension Project_MsgCreateEvaluation: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.txHash.isEmpty {
       try visitor.visitSingularStringField(value: self.txHash, fieldNumber: 1)
     }
@@ -701,9 +740,9 @@ extension Project_MsgCreateEvaluation: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if !self.projectDid.isEmpty {
       try visitor.visitSingularStringField(value: self.projectDid, fieldNumber: 3)
     }
-    if let v = self._data {
+    try { if let v = self._data {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -757,12 +796,16 @@ extension Project_MsgWithdrawFunds: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.senderDid.isEmpty {
       try visitor.visitSingularStringField(value: self.senderDid, fieldNumber: 1)
     }
-    if let v = self._data {
+    try { if let v = self._data {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

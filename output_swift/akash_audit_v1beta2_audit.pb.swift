@@ -138,6 +138,17 @@ struct Akash_Audit_V1beta2_MsgDeleteProviderAttributesResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Akash_Audit_V1beta2_Provider: @unchecked Sendable {}
+extension Akash_Audit_V1beta2_AuditedAttributes: @unchecked Sendable {}
+extension Akash_Audit_V1beta2_AttributesResponse: @unchecked Sendable {}
+extension Akash_Audit_V1beta2_AttributesFilters: @unchecked Sendable {}
+extension Akash_Audit_V1beta2_MsgSignProviderAttributes: @unchecked Sendable {}
+extension Akash_Audit_V1beta2_MsgSignProviderAttributesResponse: @unchecked Sendable {}
+extension Akash_Audit_V1beta2_MsgDeleteProviderAttributes: @unchecked Sendable {}
+extension Akash_Audit_V1beta2_MsgDeleteProviderAttributesResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "akash.audit.v1beta2"

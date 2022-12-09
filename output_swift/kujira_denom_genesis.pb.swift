@@ -68,6 +68,11 @@ struct Kujira_Denom_GenesisDenom {
   fileprivate var _authorityMetadata: Kujira_Denom_DenomAuthorityMetadata? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Kujira_Denom_GenesisState: @unchecked Sendable {}
+extension Kujira_Denom_GenesisDenom: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kujira.denom"
@@ -93,9 +98,13 @@ extension Kujira_Denom_GenesisState: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._params {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.factoryDenoms.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.factoryDenoms, fieldNumber: 2)
     }
@@ -131,12 +140,16 @@ extension Kujira_Denom_GenesisDenom: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.denom.isEmpty {
       try visitor.visitSingularStringField(value: self.denom, fieldNumber: 1)
     }
-    if let v = self._authorityMetadata {
+    try { if let v = self._authorityMetadata {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

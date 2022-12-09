@@ -219,123 +219,6 @@ public final class Acm {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Account(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-
-              address_ = input.readBytes();
-              break;
-            }
-            case 18: {
-              shentu.burrow.v1alpha1.Crypto.PublicKey.Builder subBuilder = null;
-              if (publicKey_ != null) {
-                subBuilder = publicKey_.toBuilder();
-              }
-              publicKey_ = input.readMessage(shentu.burrow.v1alpha1.Crypto.PublicKey.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(publicKey_);
-                publicKey_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 24: {
-
-              sequence_ = input.readUInt64();
-              break;
-            }
-            case 32: {
-
-              balance_ = input.readUInt64();
-              break;
-            }
-            case 42: {
-
-              eVMCode_ = input.readBytes();
-              break;
-            }
-            case 50: {
-              shentu.burrow.v1alpha1.Permission.AccountPermissions.Builder subBuilder = null;
-              if (permissions_ != null) {
-                subBuilder = permissions_.toBuilder();
-              }
-              permissions_ = input.readMessage(shentu.burrow.v1alpha1.Permission.AccountPermissions.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(permissions_);
-                permissions_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 58: {
-
-              wASMCode_ = input.readBytes();
-              break;
-            }
-            case 66: {
-
-              codeHash_ = input.readBytes();
-              break;
-            }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                contractMeta_ = new java.util.ArrayList<shentu.burrow.v1alpha1.Acm.ContractMeta>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              contractMeta_.add(
-                  input.readMessage(shentu.burrow.v1alpha1.Acm.ContractMeta.parser(), extensionRegistry));
-              break;
-            }
-            case 82: {
-
-              forebear_ = input.readBytes();
-              break;
-            }
-            case 90: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nativeName_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          contractMeta_ = java.util.Collections.unmodifiableList(contractMeta_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return shentu.burrow.v1alpha1.Acm.internal_static_acm_Account_descriptor;
@@ -659,10 +542,10 @@ public final class Acm {
       if (!forebear_.isEmpty()) {
         output.writeBytes(10, forebear_);
       }
-      if (!getNativeNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nativeName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, nativeName_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -711,10 +594,10 @@ public final class Acm {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(10, forebear_);
       }
-      if (!getNativeNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nativeName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, nativeName_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -757,7 +640,7 @@ public final class Acm {
           .equals(other.getContractMetaList())) return false;
       if (!getForebear()
           .equals(other.getForebear())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -798,7 +681,7 @@ public final class Acm {
       }
       hash = (37 * hash) + FOREBEAR_FIELD_NUMBER;
       hash = (53 * hash) + getForebear().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -915,19 +798,13 @@ public final class Acm {
 
       // Construct using shentu.burrow.v1alpha1.Acm.Account.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getContractMetaFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -960,10 +837,11 @@ public final class Acm {
 
         if (contractMetaBuilder_ == null) {
           contractMeta_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          contractMeta_ = null;
           contractMetaBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         forebear_ = com.google.protobuf.ByteString.EMPTY;
 
         return this;
@@ -1125,7 +1003,7 @@ public final class Acm {
         if (other.getForebear() != com.google.protobuf.ByteString.EMPTY) {
           setForebear(other.getForebear());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1140,17 +1018,97 @@ public final class Acm {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        shentu.burrow.v1alpha1.Acm.Account parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                address_ = input.readBytes();
+
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getPublicKeyFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 18
+              case 24: {
+                sequence_ = input.readUInt64();
+
+                break;
+              } // case 24
+              case 32: {
+                balance_ = input.readUInt64();
+
+                break;
+              } // case 32
+              case 42: {
+                eVMCode_ = input.readBytes();
+
+                break;
+              } // case 42
+              case 50: {
+                input.readMessage(
+                    getPermissionsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 50
+              case 58: {
+                wASMCode_ = input.readBytes();
+
+                break;
+              } // case 58
+              case 66: {
+                codeHash_ = input.readBytes();
+
+                break;
+              } // case 66
+              case 74: {
+                shentu.burrow.v1alpha1.Acm.ContractMeta m =
+                    input.readMessage(
+                        shentu.burrow.v1alpha1.Acm.ContractMeta.parser(),
+                        extensionRegistry);
+                if (contractMetaBuilder_ == null) {
+                  ensureContractMetaIsMutable();
+                  contractMeta_.add(m);
+                } else {
+                  contractMetaBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+              case 82: {
+                forebear_ = input.readBytes();
+
+                break;
+              } // case 82
+              case 90: {
+                nativeName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 90
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (shentu.burrow.v1alpha1.Acm.Account) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -2156,7 +2114,18 @@ public final class Acm {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Account(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2241,59 +2210,6 @@ public final class Acm {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private ContractMeta(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-
-              codeHash_ = input.readBytes();
-              break;
-            }
-            case 18: {
-
-              metadataHash_ = input.readBytes();
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              metadata_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -2396,10 +2312,10 @@ public final class Acm {
       if (!metadataHash_.isEmpty()) {
         output.writeBytes(2, metadataHash_);
       }
-      if (!getMetadataBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadata_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, metadata_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2416,10 +2332,10 @@ public final class Acm {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, metadataHash_);
       }
-      if (!getMetadataBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadata_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, metadata_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2440,7 +2356,7 @@ public final class Acm {
           .equals(other.getMetadataHash())) return false;
       if (!getMetadata()
           .equals(other.getMetadata())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2457,7 +2373,7 @@ public final class Acm {
       hash = (53 * hash) + getMetadataHash().hashCode();
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2574,18 +2490,13 @@ public final class Acm {
 
       // Construct using shentu.burrow.v1alpha1.Acm.ContractMeta.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -2683,7 +2594,7 @@ public final class Acm {
           metadata_ = other.metadata_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2698,17 +2609,45 @@ public final class Acm {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        shentu.burrow.v1alpha1.Acm.ContractMeta parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                codeHash_ = input.readBytes();
+
+                break;
+              } // case 10
+              case 18: {
+                metadataHash_ = input.readBytes();
+
+                break;
+              } // case 18
+              case 26: {
+                metadata_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (shentu.burrow.v1alpha1.Acm.ContractMeta) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2908,7 +2847,18 @@ public final class Acm {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ContractMeta(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

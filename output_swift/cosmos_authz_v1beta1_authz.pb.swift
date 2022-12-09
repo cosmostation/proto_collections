@@ -124,6 +124,13 @@ struct Cosmos_Authz_V1beta1_GrantQueueItem {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Cosmos_Authz_V1beta1_GenericAuthorization: @unchecked Sendable {}
+extension Cosmos_Authz_V1beta1_Grant: @unchecked Sendable {}
+extension Cosmos_Authz_V1beta1_GrantAuthorization: @unchecked Sendable {}
+extension Cosmos_Authz_V1beta1_GrantQueueItem: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.authz.v1beta1"
@@ -181,12 +188,16 @@ extension Cosmos_Authz_V1beta1_Grant: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._authorization {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._authorization {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
-    if let v = self._expiration {
+    } }()
+    try { if let v = self._expiration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -223,18 +234,22 @@ extension Cosmos_Authz_V1beta1_GrantAuthorization: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.granter.isEmpty {
       try visitor.visitSingularStringField(value: self.granter, fieldNumber: 1)
     }
     if !self.grantee.isEmpty {
       try visitor.visitSingularStringField(value: self.grantee, fieldNumber: 2)
     }
-    if let v = self._authorization {
+    try { if let v = self._authorization {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
-    if let v = self._expiration {
+    } }()
+    try { if let v = self._expiration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

@@ -35,154 +35,6 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private Contract(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10: {
-            io.provenance.metadata.v1.p8e.DefinitionSpec.Builder subBuilder = null;
-            if (definition_ != null) {
-              subBuilder = definition_.toBuilder();
-            }
-            definition_ = input.readMessage(io.provenance.metadata.v1.p8e.DefinitionSpec.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(definition_);
-              definition_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 18: {
-            io.provenance.metadata.v1.p8e.Fact.Builder subBuilder = null;
-            if (spec_ != null) {
-              subBuilder = spec_.toBuilder();
-            }
-            spec_ = input.readMessage(io.provenance.metadata.v1.p8e.Fact.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(spec_);
-              spec_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 26: {
-            io.provenance.metadata.v1.p8e.SigningAndEncryptionPublicKeys.Builder subBuilder = null;
-            if (invoker_ != null) {
-              subBuilder = invoker_.toBuilder();
-            }
-            invoker_ = input.readMessage(io.provenance.metadata.v1.p8e.SigningAndEncryptionPublicKeys.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(invoker_);
-              invoker_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 34: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              inputs_ = new java.util.ArrayList<io.provenance.metadata.v1.p8e.Fact>();
-              mutable_bitField0_ |= 0x00000001;
-            }
-            inputs_.add(
-                input.readMessage(io.provenance.metadata.v1.p8e.Fact.parser(), extensionRegistry));
-            break;
-          }
-          case 42: {
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-              conditions_ = new java.util.ArrayList<io.provenance.metadata.v1.p8e.Condition>();
-              mutable_bitField0_ |= 0x00000002;
-            }
-            conditions_.add(
-                input.readMessage(io.provenance.metadata.v1.p8e.Condition.parser(), extensionRegistry));
-            break;
-          }
-          case 50: {
-            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-              considerations_ = new java.util.ArrayList<io.provenance.metadata.v1.p8e.Consideration>();
-              mutable_bitField0_ |= 0x00000004;
-            }
-            considerations_.add(
-                input.readMessage(io.provenance.metadata.v1.p8e.Consideration.parser(), extensionRegistry));
-            break;
-          }
-          case 58: {
-            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-              recitals_ = new java.util.ArrayList<io.provenance.metadata.v1.p8e.Recital>();
-              mutable_bitField0_ |= 0x00000008;
-            }
-            recitals_.add(
-                input.readMessage(io.provenance.metadata.v1.p8e.Recital.parser(), extensionRegistry));
-            break;
-          }
-          case 64: {
-
-            timesExecuted_ = input.readInt32();
-            break;
-          }
-          case 74: {
-            io.provenance.metadata.v1.p8e.Timestamp.Builder subBuilder = null;
-            if (startTime_ != null) {
-              subBuilder = startTime_.toBuilder();
-            }
-            startTime_ = input.readMessage(io.provenance.metadata.v1.p8e.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(startTime_);
-              startTime_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 82: {
-
-            context_ = input.readBytes();
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        inputs_ = java.util.Collections.unmodifiableList(inputs_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        conditions_ = java.util.Collections.unmodifiableList(conditions_);
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        considerations_ = java.util.Collections.unmodifiableList(considerations_);
-      }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
-        recitals_ = java.util.Collections.unmodifiableList(recitals_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return io.provenance.metadata.v1.p8e.P8E.internal_static_provenance_metadata_v1_p8e_Contract_descriptor;
@@ -607,7 +459,7 @@ private static final long serialVersionUID = 0L;
     if (!context_.isEmpty()) {
       output.writeBytes(10, context_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -656,7 +508,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(10, context_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -703,7 +555,7 @@ private static final long serialVersionUID = 0L;
     }
     if (!getContext()
         .equals(other.getContext())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -750,7 +602,7 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + CONTEXT_FIELD_NUMBER;
     hash = (53 * hash) + getContext().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -867,22 +719,13 @@ private static final long serialVersionUID = 0L;
 
     // Construct using io.provenance.metadata.v1.p8e.Contract.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-        getInputsFieldBuilder();
-        getConditionsFieldBuilder();
-        getConsiderationsFieldBuilder();
-        getRecitalsFieldBuilder();
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
@@ -907,28 +750,32 @@ private static final long serialVersionUID = 0L;
       }
       if (inputsBuilder_ == null) {
         inputs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        inputs_ = null;
         inputsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (conditionsBuilder_ == null) {
         conditions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        conditions_ = null;
         conditionsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (considerationsBuilder_ == null) {
         considerations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
+        considerations_ = null;
         considerationsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (recitalsBuilder_ == null) {
         recitals_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
+        recitals_ = null;
         recitalsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000008);
       timesExecuted_ = 0;
 
       if (startTimeBuilder_ == null) {
@@ -1194,7 +1041,7 @@ private static final long serialVersionUID = 0L;
       if (other.getContext() != com.google.protobuf.ByteString.EMPTY) {
         setContext(other.getContext());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1209,17 +1056,120 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.provenance.metadata.v1.p8e.Contract parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              input.readMessage(
+                  getDefinitionFieldBuilder().getBuilder(),
+                  extensionRegistry);
+
+              break;
+            } // case 10
+            case 18: {
+              input.readMessage(
+                  getSpecFieldBuilder().getBuilder(),
+                  extensionRegistry);
+
+              break;
+            } // case 18
+            case 26: {
+              input.readMessage(
+                  getInvokerFieldBuilder().getBuilder(),
+                  extensionRegistry);
+
+              break;
+            } // case 26
+            case 34: {
+              io.provenance.metadata.v1.p8e.Fact m =
+                  input.readMessage(
+                      io.provenance.metadata.v1.p8e.Fact.parser(),
+                      extensionRegistry);
+              if (inputsBuilder_ == null) {
+                ensureInputsIsMutable();
+                inputs_.add(m);
+              } else {
+                inputsBuilder_.addMessage(m);
+              }
+              break;
+            } // case 34
+            case 42: {
+              io.provenance.metadata.v1.p8e.Condition m =
+                  input.readMessage(
+                      io.provenance.metadata.v1.p8e.Condition.parser(),
+                      extensionRegistry);
+              if (conditionsBuilder_ == null) {
+                ensureConditionsIsMutable();
+                conditions_.add(m);
+              } else {
+                conditionsBuilder_.addMessage(m);
+              }
+              break;
+            } // case 42
+            case 50: {
+              io.provenance.metadata.v1.p8e.Consideration m =
+                  input.readMessage(
+                      io.provenance.metadata.v1.p8e.Consideration.parser(),
+                      extensionRegistry);
+              if (considerationsBuilder_ == null) {
+                ensureConsiderationsIsMutable();
+                considerations_.add(m);
+              } else {
+                considerationsBuilder_.addMessage(m);
+              }
+              break;
+            } // case 50
+            case 58: {
+              io.provenance.metadata.v1.p8e.Recital m =
+                  input.readMessage(
+                      io.provenance.metadata.v1.p8e.Recital.parser(),
+                      extensionRegistry);
+              if (recitalsBuilder_ == null) {
+                ensureRecitalsIsMutable();
+                recitals_.add(m);
+              } else {
+                recitalsBuilder_.addMessage(m);
+              }
+              break;
+            } // case 58
+            case 64: {
+              timesExecuted_ = input.readInt32();
+
+              break;
+            } // case 64
+            case 74: {
+              input.readMessage(
+                  getStartTimeFieldBuilder().getBuilder(),
+                  extensionRegistry);
+
+              break;
+            } // case 74
+            case 82: {
+              context_ = input.readBytes();
+
+              break;
+            } // case 82
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.provenance.metadata.v1.p8e.Contract) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
     private int bitField0_;
@@ -3027,7 +2977,18 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Contract(input, extensionRegistry);
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
     }
   };
 

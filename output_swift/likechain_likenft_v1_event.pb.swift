@@ -374,6 +374,30 @@ struct Likechain_Likenft_V1_EventDeleteRoyaltyConfig {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Likechain_Likenft_V1_EventNewClass: @unchecked Sendable {}
+extension Likechain_Likenft_V1_EventUpdateClass: @unchecked Sendable {}
+extension Likechain_Likenft_V1_EventRevealClass: @unchecked Sendable {}
+extension Likechain_Likenft_V1_EventMintNFT: @unchecked Sendable {}
+extension Likechain_Likenft_V1_EventBurnNFT: @unchecked Sendable {}
+extension Likechain_Likenft_V1_EventCreateBlindBoxContent: @unchecked Sendable {}
+extension Likechain_Likenft_V1_EventUpdateBlindBoxContent: @unchecked Sendable {}
+extension Likechain_Likenft_V1_EventDeleteBlindBoxContent: @unchecked Sendable {}
+extension Likechain_Likenft_V1_EventCreateOffer: @unchecked Sendable {}
+extension Likechain_Likenft_V1_EventUpdateOffer: @unchecked Sendable {}
+extension Likechain_Likenft_V1_EventDeleteOffer: @unchecked Sendable {}
+extension Likechain_Likenft_V1_EventCreateListing: @unchecked Sendable {}
+extension Likechain_Likenft_V1_EventUpdateListing: @unchecked Sendable {}
+extension Likechain_Likenft_V1_EventDeleteListing: @unchecked Sendable {}
+extension Likechain_Likenft_V1_EventSellNFT: @unchecked Sendable {}
+extension Likechain_Likenft_V1_EventBuyNFT: @unchecked Sendable {}
+extension Likechain_Likenft_V1_EventExpireOffer: @unchecked Sendable {}
+extension Likechain_Likenft_V1_EventExpireListing: @unchecked Sendable {}
+extension Likechain_Likenft_V1_EventCreateRoyaltyConfig: @unchecked Sendable {}
+extension Likechain_Likenft_V1_EventUpdateRoyaltyConfig: @unchecked Sendable {}
+extension Likechain_Likenft_V1_EventDeleteRoyaltyConfig: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "likechain.likenft.v1"

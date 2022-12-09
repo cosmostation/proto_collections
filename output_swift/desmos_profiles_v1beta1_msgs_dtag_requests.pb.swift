@@ -146,6 +146,17 @@ struct Desmos_Profiles_V1beta1_MsgRefuseDTagTransferRequestResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Desmos_Profiles_V1beta1_MsgRequestDTagTransfer: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_MsgRequestDTagTransferResponse: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_MsgCancelDTagTransferRequest: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_MsgCancelDTagTransferRequestResponse: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_MsgAcceptDTagTransferRequest: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_MsgAcceptDTagTransferRequestResponse: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_MsgRefuseDTagTransferRequest: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_MsgRefuseDTagTransferRequestResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "desmos.profiles.v1beta1"

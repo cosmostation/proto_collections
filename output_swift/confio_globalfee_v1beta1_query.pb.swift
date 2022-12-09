@@ -46,6 +46,11 @@ struct Confio_Globalfee_V1beta1_QueryMinimumGasPricesResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Confio_Globalfee_V1beta1_QueryMinimumGasPricesRequest: @unchecked Sendable {}
+extension Confio_Globalfee_V1beta1_QueryMinimumGasPricesResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "confio.globalfee.v1beta1"

@@ -512,6 +512,74 @@ struct Osmosis_Lockup_AccountLockedLongerDurationDenomResponse {
   init() {}
 }
 
+struct Osmosis_Lockup_QueryParamsRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct Osmosis_Lockup_QueryParamsResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var params: Osmosis_Lockup_Params {
+    get {return _params ?? Osmosis_Lockup_Params()}
+    set {_params = newValue}
+  }
+  /// Returns true if `params` has been explicitly set.
+  var hasParams: Bool {return self._params != nil}
+  /// Clears the value of `params`. Subsequent reads from it will return its default value.
+  mutating func clearParams() {self._params = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _params: Osmosis_Lockup_Params? = nil
+}
+
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Osmosis_Lockup_ModuleBalanceRequest: @unchecked Sendable {}
+extension Osmosis_Lockup_ModuleBalanceResponse: @unchecked Sendable {}
+extension Osmosis_Lockup_ModuleLockedAmountRequest: @unchecked Sendable {}
+extension Osmosis_Lockup_ModuleLockedAmountResponse: @unchecked Sendable {}
+extension Osmosis_Lockup_AccountUnlockableCoinsRequest: @unchecked Sendable {}
+extension Osmosis_Lockup_AccountUnlockableCoinsResponse: @unchecked Sendable {}
+extension Osmosis_Lockup_AccountUnlockingCoinsRequest: @unchecked Sendable {}
+extension Osmosis_Lockup_AccountUnlockingCoinsResponse: @unchecked Sendable {}
+extension Osmosis_Lockup_AccountLockedCoinsRequest: @unchecked Sendable {}
+extension Osmosis_Lockup_AccountLockedCoinsResponse: @unchecked Sendable {}
+extension Osmosis_Lockup_AccountLockedPastTimeRequest: @unchecked Sendable {}
+extension Osmosis_Lockup_AccountLockedPastTimeResponse: @unchecked Sendable {}
+extension Osmosis_Lockup_AccountLockedPastTimeNotUnlockingOnlyRequest: @unchecked Sendable {}
+extension Osmosis_Lockup_AccountLockedPastTimeNotUnlockingOnlyResponse: @unchecked Sendable {}
+extension Osmosis_Lockup_AccountUnlockedBeforeTimeRequest: @unchecked Sendable {}
+extension Osmosis_Lockup_AccountUnlockedBeforeTimeResponse: @unchecked Sendable {}
+extension Osmosis_Lockup_AccountLockedPastTimeDenomRequest: @unchecked Sendable {}
+extension Osmosis_Lockup_AccountLockedPastTimeDenomResponse: @unchecked Sendable {}
+extension Osmosis_Lockup_LockedDenomRequest: @unchecked Sendable {}
+extension Osmosis_Lockup_LockedDenomResponse: @unchecked Sendable {}
+extension Osmosis_Lockup_LockedRequest: @unchecked Sendable {}
+extension Osmosis_Lockup_LockedResponse: @unchecked Sendable {}
+extension Osmosis_Lockup_SyntheticLockupsByLockupIDRequest: @unchecked Sendable {}
+extension Osmosis_Lockup_SyntheticLockupsByLockupIDResponse: @unchecked Sendable {}
+extension Osmosis_Lockup_AccountLockedLongerDurationRequest: @unchecked Sendable {}
+extension Osmosis_Lockup_AccountLockedLongerDurationResponse: @unchecked Sendable {}
+extension Osmosis_Lockup_AccountLockedDurationRequest: @unchecked Sendable {}
+extension Osmosis_Lockup_AccountLockedDurationResponse: @unchecked Sendable {}
+extension Osmosis_Lockup_AccountLockedLongerDurationNotUnlockingOnlyRequest: @unchecked Sendable {}
+extension Osmosis_Lockup_AccountLockedLongerDurationNotUnlockingOnlyResponse: @unchecked Sendable {}
+extension Osmosis_Lockup_AccountLockedLongerDurationDenomRequest: @unchecked Sendable {}
+extension Osmosis_Lockup_AccountLockedLongerDurationDenomResponse: @unchecked Sendable {}
+extension Osmosis_Lockup_QueryParamsRequest: @unchecked Sendable {}
+extension Osmosis_Lockup_QueryParamsResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "osmosis.lockup"
@@ -831,12 +899,16 @@ extension Osmosis_Lockup_AccountLockedPastTimeRequest: SwiftProtobuf.Message, Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.owner.isEmpty {
       try visitor.visitSingularStringField(value: self.owner, fieldNumber: 1)
     }
-    if let v = self._timestamp {
+    try { if let v = self._timestamp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -901,12 +973,16 @@ extension Osmosis_Lockup_AccountLockedPastTimeNotUnlockingOnlyRequest: SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.owner.isEmpty {
       try visitor.visitSingularStringField(value: self.owner, fieldNumber: 1)
     }
-    if let v = self._timestamp {
+    try { if let v = self._timestamp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -971,12 +1047,16 @@ extension Osmosis_Lockup_AccountUnlockedBeforeTimeRequest: SwiftProtobuf.Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.owner.isEmpty {
       try visitor.visitSingularStringField(value: self.owner, fieldNumber: 1)
     }
-    if let v = self._timestamp {
+    try { if let v = self._timestamp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1043,12 +1123,16 @@ extension Osmosis_Lockup_AccountLockedPastTimeDenomRequest: SwiftProtobuf.Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.owner.isEmpty {
       try visitor.visitSingularStringField(value: self.owner, fieldNumber: 1)
     }
-    if let v = self._timestamp {
+    try { if let v = self._timestamp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if !self.denom.isEmpty {
       try visitor.visitSingularStringField(value: self.denom, fieldNumber: 3)
     }
@@ -1117,12 +1201,16 @@ extension Osmosis_Lockup_LockedDenomRequest: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.denom.isEmpty {
       try visitor.visitSingularStringField(value: self.denom, fieldNumber: 1)
     }
-    if let v = self._duration {
+    try { if let v = self._duration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1217,9 +1305,13 @@ extension Osmosis_Lockup_LockedResponse: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._lock {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._lock {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1315,12 +1407,16 @@ extension Osmosis_Lockup_AccountLockedLongerDurationRequest: SwiftProtobuf.Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.owner.isEmpty {
       try visitor.visitSingularStringField(value: self.owner, fieldNumber: 1)
     }
-    if let v = self._duration {
+    try { if let v = self._duration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1385,12 +1481,16 @@ extension Osmosis_Lockup_AccountLockedDurationRequest: SwiftProtobuf.Message, Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.owner.isEmpty {
       try visitor.visitSingularStringField(value: self.owner, fieldNumber: 1)
     }
-    if let v = self._duration {
+    try { if let v = self._duration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1455,12 +1555,16 @@ extension Osmosis_Lockup_AccountLockedLongerDurationNotUnlockingOnlyRequest: Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.owner.isEmpty {
       try visitor.visitSingularStringField(value: self.owner, fieldNumber: 1)
     }
-    if let v = self._duration {
+    try { if let v = self._duration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1527,12 +1631,16 @@ extension Osmosis_Lockup_AccountLockedLongerDurationDenomRequest: SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.owner.isEmpty {
       try visitor.visitSingularStringField(value: self.owner, fieldNumber: 1)
     }
-    if let v = self._duration {
+    try { if let v = self._duration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if !self.denom.isEmpty {
       try visitor.visitSingularStringField(value: self.denom, fieldNumber: 3)
     }
@@ -1575,6 +1683,61 @@ extension Osmosis_Lockup_AccountLockedLongerDurationDenomResponse: SwiftProtobuf
 
   static func ==(lhs: Osmosis_Lockup_AccountLockedLongerDurationDenomResponse, rhs: Osmosis_Lockup_AccountLockedLongerDurationDenomResponse) -> Bool {
     if lhs.locks != rhs.locks {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Osmosis_Lockup_QueryParamsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QueryParamsRequest"
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let _ = try decoder.nextFieldNumber() {
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Osmosis_Lockup_QueryParamsRequest, rhs: Osmosis_Lockup_QueryParamsRequest) -> Bool {
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Osmosis_Lockup_QueryParamsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QueryParamsResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "params"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._params) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._params {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Osmosis_Lockup_QueryParamsResponse, rhs: Osmosis_Lockup_QueryParamsResponse) -> Bool {
+    if lhs._params != rhs._params {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

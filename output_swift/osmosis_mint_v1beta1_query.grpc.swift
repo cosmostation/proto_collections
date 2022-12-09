@@ -66,7 +66,7 @@ extension Osmosis_Mint_V1beta1_QueryClientProtocol {
     )
   }
 
-  /// EpochProvisions current minting epoch provisions value.
+  /// EpochProvisions returns the current minting epoch provisions value.
   ///
   /// - Parameters:
   ///   - request: Request to send to EpochProvisions.
@@ -125,7 +125,7 @@ internal protocol Osmosis_Mint_V1beta1_QueryProvider: CallHandlerProvider {
   /// Params returns the total set of minting parameters.
   func params(request: Osmosis_Mint_V1beta1_QueryParamsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Mint_V1beta1_QueryParamsResponse>
 
-  /// EpochProvisions current minting epoch provisions value.
+  /// EpochProvisions returns the current minting epoch provisions value.
   func epochProvisions(request: Osmosis_Mint_V1beta1_QueryEpochProvisionsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Mint_V1beta1_QueryEpochProvisionsResponse>
 }
 

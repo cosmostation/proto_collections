@@ -241,6 +241,25 @@ struct Shentu_Oracle_V1alpha1_MsgDeleteTaskResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Shentu_Oracle_V1alpha1_MsgCreateOperator: @unchecked Sendable {}
+extension Shentu_Oracle_V1alpha1_MsgCreateOperatorResponse: @unchecked Sendable {}
+extension Shentu_Oracle_V1alpha1_MsgRemoveOperator: @unchecked Sendable {}
+extension Shentu_Oracle_V1alpha1_MsgRemoveOperatorResponse: @unchecked Sendable {}
+extension Shentu_Oracle_V1alpha1_MsgAddCollateral: @unchecked Sendable {}
+extension Shentu_Oracle_V1alpha1_MsgAddCollateralResponse: @unchecked Sendable {}
+extension Shentu_Oracle_V1alpha1_MsgReduceCollateral: @unchecked Sendable {}
+extension Shentu_Oracle_V1alpha1_MsgReduceCollateralResponse: @unchecked Sendable {}
+extension Shentu_Oracle_V1alpha1_MsgWithdrawReward: @unchecked Sendable {}
+extension Shentu_Oracle_V1alpha1_MsgWithdrawRewardResponse: @unchecked Sendable {}
+extension Shentu_Oracle_V1alpha1_MsgCreateTask: @unchecked Sendable {}
+extension Shentu_Oracle_V1alpha1_MsgCreateTaskResponse: @unchecked Sendable {}
+extension Shentu_Oracle_V1alpha1_MsgTaskResponse: @unchecked Sendable {}
+extension Shentu_Oracle_V1alpha1_MsgTaskResponseResponse: @unchecked Sendable {}
+extension Shentu_Oracle_V1alpha1_MsgDeleteTask: @unchecked Sendable {}
+extension Shentu_Oracle_V1alpha1_MsgDeleteTaskResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "shentu.oracle.v1alpha1"
@@ -567,6 +586,10 @@ extension Shentu_Oracle_V1alpha1_MsgCreateTask: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.contract.isEmpty {
       try visitor.visitSingularStringField(value: self.contract, fieldNumber: 1)
     }
@@ -585,9 +608,9 @@ extension Shentu_Oracle_V1alpha1_MsgCreateTask: SwiftProtobuf.Message, SwiftProt
     if self.wait != 0 {
       try visitor.visitSingularInt64Field(value: self.wait, fieldNumber: 6)
     }
-    if let v = self._validDuration {
+    try { if let v = self._validDuration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

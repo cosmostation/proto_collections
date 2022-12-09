@@ -75,69 +75,6 @@ public final class Tofnd {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private RecoverRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              axelar.tss.tofnd.v1beta1.Tofnd.KeygenInit.Builder subBuilder = null;
-              if (keygenInit_ != null) {
-                subBuilder = keygenInit_.toBuilder();
-              }
-              keygenInit_ = input.readMessage(axelar.tss.tofnd.v1beta1.Tofnd.KeygenInit.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(keygenInit_);
-                keygenInit_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              axelar.tss.tofnd.v1beta1.Tofnd.KeygenOutput.Builder subBuilder = null;
-              if (keygenOutput_ != null) {
-                subBuilder = keygenOutput_.toBuilder();
-              }
-              keygenOutput_ = input.readMessage(axelar.tss.tofnd.v1beta1.Tofnd.KeygenOutput.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(keygenOutput_);
-                keygenOutput_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return axelar.tss.tofnd.v1beta1.Tofnd.internal_static_axelar_tss_tofnd_v1beta1_RecoverRequest_descriptor;
@@ -223,7 +160,7 @@ public final class Tofnd {
       if (keygenOutput_ != null) {
         output.writeMessage(2, getKeygenOutput());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -240,7 +177,7 @@ public final class Tofnd {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getKeygenOutput());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -265,7 +202,7 @@ public final class Tofnd {
         if (!getKeygenOutput()
             .equals(other.getKeygenOutput())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -284,7 +221,7 @@ public final class Tofnd {
         hash = (37 * hash) + KEYGEN_OUTPUT_FIELD_NUMBER;
         hash = (53 * hash) + getKeygenOutput().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -401,18 +338,13 @@ public final class Tofnd {
 
       // Construct using axelar.tss.tofnd.v1beta1.Tofnd.RecoverRequest.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -519,7 +451,7 @@ public final class Tofnd {
         if (other.hasKeygenOutput()) {
           mergeKeygenOutput(other.getKeygenOutput());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -534,17 +466,44 @@ public final class Tofnd {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        axelar.tss.tofnd.v1beta1.Tofnd.RecoverRequest parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getKeygenInitFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getKeygenOutputFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (axelar.tss.tofnd.v1beta1.Tofnd.RecoverRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -818,7 +777,18 @@ public final class Tofnd {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RecoverRequest(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -880,49 +850,6 @@ public final class Tofnd {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private RecoverResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              int rawValue = input.readEnum();
-
-              response_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -1090,7 +1017,7 @@ public final class Tofnd {
       if (response_ != axelar.tss.tofnd.v1beta1.Tofnd.RecoverResponse.Response.RESPONSE_UNSPECIFIED.getNumber()) {
         output.writeEnum(1, response_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1103,7 +1030,7 @@ public final class Tofnd {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, response_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1119,7 +1046,7 @@ public final class Tofnd {
       axelar.tss.tofnd.v1beta1.Tofnd.RecoverResponse other = (axelar.tss.tofnd.v1beta1.Tofnd.RecoverResponse) obj;
 
       if (response_ != other.response_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1132,7 +1059,7 @@ public final class Tofnd {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
       hash = (53 * hash) + response_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1249,18 +1176,13 @@ public final class Tofnd {
 
       // Construct using axelar.tss.tofnd.v1beta1.Tofnd.RecoverResponse.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -1345,7 +1267,7 @@ public final class Tofnd {
         if (other.response_ != 0) {
           setResponseValue(other.getResponseValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1360,17 +1282,35 @@ public final class Tofnd {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        axelar.tss.tofnd.v1beta1.Tofnd.RecoverResponse parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                response_ = input.readEnum();
+
+                break;
+              } // case 8
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (axelar.tss.tofnd.v1beta1.Tofnd.RecoverResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1460,7 +1400,18 @@ public final class Tofnd {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RecoverResponse(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1548,58 +1499,6 @@ public final class Tofnd {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private KeygenOutput(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-
-              pubKey_ = input.readBytes();
-              break;
-            }
-            case 18: {
-
-              groupRecoverInfo_ = input.readBytes();
-              break;
-            }
-            case 26: {
-
-              privateRecoverInfo_ = input.readBytes();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return axelar.tss.tofnd.v1beta1.Tofnd.internal_static_axelar_tss_tofnd_v1beta1_KeygenOutput_descriptor;
@@ -1681,7 +1580,7 @@ public final class Tofnd {
       if (!privateRecoverInfo_.isEmpty()) {
         output.writeBytes(3, privateRecoverInfo_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1702,7 +1601,7 @@ public final class Tofnd {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(3, privateRecoverInfo_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1723,7 +1622,7 @@ public final class Tofnd {
           .equals(other.getGroupRecoverInfo())) return false;
       if (!getPrivateRecoverInfo()
           .equals(other.getPrivateRecoverInfo())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1740,7 +1639,7 @@ public final class Tofnd {
       hash = (53 * hash) + getGroupRecoverInfo().hashCode();
       hash = (37 * hash) + PRIVATE_RECOVER_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getPrivateRecoverInfo().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1861,18 +1760,13 @@ public final class Tofnd {
 
       // Construct using axelar.tss.tofnd.v1beta1.Tofnd.KeygenOutput.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -1969,7 +1863,7 @@ public final class Tofnd {
         if (other.getPrivateRecoverInfo() != com.google.protobuf.ByteString.EMPTY) {
           setPrivateRecoverInfo(other.getPrivateRecoverInfo());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1984,17 +1878,45 @@ public final class Tofnd {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        axelar.tss.tofnd.v1beta1.Tofnd.KeygenOutput parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                pubKey_ = input.readBytes();
+
+                break;
+              } // case 10
+              case 18: {
+                groupRecoverInfo_ = input.readBytes();
+
+                break;
+              } // case 18
+              case 26: {
+                privateRecoverInfo_ = input.readBytes();
+
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (axelar.tss.tofnd.v1beta1.Tofnd.KeygenOutput) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2168,7 +2090,18 @@ public final class Tofnd {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new KeygenOutput(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2320,90 +2253,6 @@ public final class Tofnd {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private MessageIn(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              axelar.tss.tofnd.v1beta1.Tofnd.KeygenInit.Builder subBuilder = null;
-              if (dataCase_ == 1) {
-                subBuilder = ((axelar.tss.tofnd.v1beta1.Tofnd.KeygenInit) data_).toBuilder();
-              }
-              data_ =
-                  input.readMessage(axelar.tss.tofnd.v1beta1.Tofnd.KeygenInit.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((axelar.tss.tofnd.v1beta1.Tofnd.KeygenInit) data_);
-                data_ = subBuilder.buildPartial();
-              }
-              dataCase_ = 1;
-              break;
-            }
-            case 18: {
-              axelar.tss.tofnd.v1beta1.Tofnd.SignInit.Builder subBuilder = null;
-              if (dataCase_ == 2) {
-                subBuilder = ((axelar.tss.tofnd.v1beta1.Tofnd.SignInit) data_).toBuilder();
-              }
-              data_ =
-                  input.readMessage(axelar.tss.tofnd.v1beta1.Tofnd.SignInit.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((axelar.tss.tofnd.v1beta1.Tofnd.SignInit) data_);
-                data_ = subBuilder.buildPartial();
-              }
-              dataCase_ = 2;
-              break;
-            }
-            case 26: {
-              axelar.tss.tofnd.v1beta1.Tofnd.TrafficIn.Builder subBuilder = null;
-              if (dataCase_ == 3) {
-                subBuilder = ((axelar.tss.tofnd.v1beta1.Tofnd.TrafficIn) data_).toBuilder();
-              }
-              data_ =
-                  input.readMessage(axelar.tss.tofnd.v1beta1.Tofnd.TrafficIn.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((axelar.tss.tofnd.v1beta1.Tofnd.TrafficIn) data_);
-                data_ = subBuilder.buildPartial();
-              }
-              dataCase_ = 3;
-              break;
-            }
-            case 32: {
-              dataCase_ = 4;
-              data_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -2648,7 +2497,7 @@ public final class Tofnd {
         output.writeBool(
             4, (boolean)((java.lang.Boolean) data_));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2674,7 +2523,7 @@ public final class Tofnd {
           .computeBoolSize(
               4, (boolean)((java.lang.Boolean) data_));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2710,7 +2559,7 @@ public final class Tofnd {
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2742,7 +2591,7 @@ public final class Tofnd {
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2859,22 +2708,26 @@ public final class Tofnd {
 
       // Construct using axelar.tss.tofnd.v1beta1.Tofnd.MessageIn.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (keygenInitBuilder_ != null) {
+          keygenInitBuilder_.clear();
+        }
+        if (signInitBuilder_ != null) {
+          signInitBuilder_.clear();
+        }
+        if (trafficBuilder_ != null) {
+          trafficBuilder_.clear();
+        }
         dataCase_ = 0;
         data_ = null;
         return this;
@@ -2997,7 +2850,7 @@ public final class Tofnd {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3012,17 +2865,56 @@ public final class Tofnd {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        axelar.tss.tofnd.v1beta1.Tofnd.MessageIn parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getKeygenInitFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                dataCase_ = 1;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getSignInitFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                dataCase_ = 2;
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getTrafficFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                dataCase_ = 3;
+                break;
+              } // case 26
+              case 32: {
+                data_ = input.readBool();
+                dataCase_ = 4;
+                break;
+              } // case 32
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (axelar.tss.tofnd.v1beta1.Tofnd.MessageIn) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int dataCase_ = 0;
@@ -3135,8 +3027,9 @@ public final class Tofnd {
         } else {
           if (dataCase_ == 1) {
             keygenInitBuilder_.mergeFrom(value);
+          } else {
+            keygenInitBuilder_.setMessage(value);
           }
-          keygenInitBuilder_.setMessage(value);
         }
         dataCase_ = 1;
         return this;
@@ -3312,8 +3205,9 @@ public final class Tofnd {
         } else {
           if (dataCase_ == 2) {
             signInitBuilder_.mergeFrom(value);
+          } else {
+            signInitBuilder_.setMessage(value);
           }
-          signInitBuilder_.setMessage(value);
         }
         dataCase_ = 2;
         return this;
@@ -3489,8 +3383,9 @@ public final class Tofnd {
         } else {
           if (dataCase_ == 3) {
             trafficBuilder_.mergeFrom(value);
+          } else {
+            trafficBuilder_.setMessage(value);
           }
-          trafficBuilder_.setMessage(value);
         }
         dataCase_ = 3;
         return this;
@@ -3661,7 +3556,18 @@ public final class Tofnd {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MessageIn(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -3814,90 +3720,6 @@ public final class Tofnd {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MessageOut(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              axelar.tss.tofnd.v1beta1.Tofnd.TrafficOut.Builder subBuilder = null;
-              if (dataCase_ == 1) {
-                subBuilder = ((axelar.tss.tofnd.v1beta1.Tofnd.TrafficOut) data_).toBuilder();
-              }
-              data_ =
-                  input.readMessage(axelar.tss.tofnd.v1beta1.Tofnd.TrafficOut.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((axelar.tss.tofnd.v1beta1.Tofnd.TrafficOut) data_);
-                data_ = subBuilder.buildPartial();
-              }
-              dataCase_ = 1;
-              break;
-            }
-            case 18: {
-              axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.KeygenResult.Builder subBuilder = null;
-              if (dataCase_ == 2) {
-                subBuilder = ((axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.KeygenResult) data_).toBuilder();
-              }
-              data_ =
-                  input.readMessage(axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.KeygenResult.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.KeygenResult) data_);
-                data_ = subBuilder.buildPartial();
-              }
-              dataCase_ = 2;
-              break;
-            }
-            case 26: {
-              axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.SignResult.Builder subBuilder = null;
-              if (dataCase_ == 3) {
-                subBuilder = ((axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.SignResult) data_).toBuilder();
-              }
-              data_ =
-                  input.readMessage(axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.SignResult.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.SignResult) data_);
-                data_ = subBuilder.buildPartial();
-              }
-              dataCase_ = 3;
-              break;
-            }
-            case 32: {
-              dataCase_ = 4;
-              data_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return axelar.tss.tofnd.v1beta1.Tofnd.internal_static_axelar_tss_tofnd_v1beta1_MessageOut_descriptor;
@@ -4001,71 +3823,6 @@ public final class Tofnd {
       public final com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
         return this.unknownFields;
-      }
-      private KeygenResult(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                axelar.tss.tofnd.v1beta1.Tofnd.KeygenOutput.Builder subBuilder = null;
-                if (keygenResultDataCase_ == 1) {
-                  subBuilder = ((axelar.tss.tofnd.v1beta1.Tofnd.KeygenOutput) keygenResultData_).toBuilder();
-                }
-                keygenResultData_ =
-                    input.readMessage(axelar.tss.tofnd.v1beta1.Tofnd.KeygenOutput.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom((axelar.tss.tofnd.v1beta1.Tofnd.KeygenOutput) keygenResultData_);
-                  keygenResultData_ = subBuilder.buildPartial();
-                }
-                keygenResultDataCase_ = 1;
-                break;
-              }
-              case 18: {
-                axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.CriminalList.Builder subBuilder = null;
-                if (keygenResultDataCase_ == 2) {
-                  subBuilder = ((axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.CriminalList) keygenResultData_).toBuilder();
-                }
-                keygenResultData_ =
-                    input.readMessage(axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.CriminalList.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom((axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.CriminalList) keygenResultData_);
-                  keygenResultData_ = subBuilder.buildPartial();
-                }
-                keygenResultDataCase_ = 2;
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
@@ -4227,7 +3984,7 @@ public final class Tofnd {
         if (keygenResultDataCase_ == 2) {
           output.writeMessage(2, (axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.CriminalList) keygenResultData_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -4244,7 +4001,7 @@ public final class Tofnd {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(2, (axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.CriminalList) keygenResultData_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -4272,7 +4029,7 @@ public final class Tofnd {
           case 0:
           default:
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -4295,7 +4052,7 @@ public final class Tofnd {
           case 0:
           default:
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -4416,22 +4173,23 @@ public final class Tofnd {
 
         // Construct using axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.KeygenResult.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+
         }
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          if (dataBuilder_ != null) {
+            dataBuilder_.clear();
+          }
+          if (criminalsBuilder_ != null) {
+            criminalsBuilder_.clear();
+          }
           keygenResultDataCase_ = 0;
           keygenResultData_ = null;
           return this;
@@ -4536,7 +4294,7 @@ public final class Tofnd {
               break;
             }
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -4551,17 +4309,44 @@ public final class Tofnd {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.KeygenResult parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10: {
+                  input.readMessage(
+                      getDataFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  keygenResultDataCase_ = 1;
+                  break;
+                } // case 10
+                case 18: {
+                  input.readMessage(
+                      getCriminalsFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  keygenResultDataCase_ = 2;
+                  break;
+                } // case 18
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.KeygenResult) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int keygenResultDataCase_ = 0;
@@ -4674,8 +4459,9 @@ public final class Tofnd {
           } else {
             if (keygenResultDataCase_ == 1) {
               dataBuilder_.mergeFrom(value);
+            } else {
+              dataBuilder_.setMessage(value);
             }
-            dataBuilder_.setMessage(value);
           }
           keygenResultDataCase_ = 1;
           return this;
@@ -4851,8 +4637,9 @@ public final class Tofnd {
           } else {
             if (keygenResultDataCase_ == 2) {
               criminalsBuilder_.mergeFrom(value);
+            } else {
+              criminalsBuilder_.setMessage(value);
             }
-            criminalsBuilder_.setMessage(value);
           }
           keygenResultDataCase_ = 2;
           return this;
@@ -4966,7 +4753,18 @@ public final class Tofnd {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new KeygenResult(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -5068,62 +4866,6 @@ public final class Tofnd {
       public final com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
         return this.unknownFields;
-      }
-      private SignResult(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                signResultDataCase_ = 1;
-                signResultData_ = input.readBytes();
-                break;
-              }
-              case 18: {
-                axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.CriminalList.Builder subBuilder = null;
-                if (signResultDataCase_ == 2) {
-                  subBuilder = ((axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.CriminalList) signResultData_).toBuilder();
-                }
-                signResultData_ =
-                    input.readMessage(axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.CriminalList.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom((axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.CriminalList) signResultData_);
-                  signResultData_ = subBuilder.buildPartial();
-                }
-                signResultDataCase_ = 2;
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
@@ -5272,7 +5014,7 @@ public final class Tofnd {
         if (signResultDataCase_ == 2) {
           output.writeMessage(2, (axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.CriminalList) signResultData_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -5290,7 +5032,7 @@ public final class Tofnd {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(2, (axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.CriminalList) signResultData_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -5318,7 +5060,7 @@ public final class Tofnd {
           case 0:
           default:
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -5341,7 +5083,7 @@ public final class Tofnd {
           case 0:
           default:
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -5462,22 +5204,20 @@ public final class Tofnd {
 
         // Construct using axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.SignResult.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+
         }
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          if (criminalsBuilder_ != null) {
+            criminalsBuilder_.clear();
+          }
           signResultDataCase_ = 0;
           signResultData_ = null;
           return this;
@@ -5578,7 +5318,7 @@ public final class Tofnd {
               break;
             }
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -5593,17 +5333,42 @@ public final class Tofnd {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.SignResult parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10: {
+                  signResultData_ = input.readBytes();
+                  signResultDataCase_ = 1;
+                  break;
+                } // case 10
+                case 18: {
+                  input.readMessage(
+                      getCriminalsFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  signResultDataCase_ = 2;
+                  break;
+                } // case 18
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.SignResult) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int signResultDataCase_ = 0;
@@ -5776,8 +5541,9 @@ public final class Tofnd {
           } else {
             if (signResultDataCase_ == 2) {
               criminalsBuilder_.mergeFrom(value);
+            } else {
+              criminalsBuilder_.setMessage(value);
             }
-            criminalsBuilder_.setMessage(value);
           }
           signResultDataCase_ = 2;
           return this;
@@ -5891,7 +5657,18 @@ public final class Tofnd {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SignResult(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -5971,56 +5748,6 @@ public final class Tofnd {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private CriminalList(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  criminals_ = new java.util.ArrayList<axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.CriminalList.Criminal>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                criminals_.add(
-                    input.readMessage(axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.CriminalList.Criminal.parser(), extensionRegistry));
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000001) != 0)) {
-            criminals_ = java.util.Collections.unmodifiableList(criminals_);
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return axelar.tss.tofnd.v1beta1.Tofnd.internal_static_axelar_tss_tofnd_v1beta1_MessageOut_CriminalList_descriptor;
@@ -6089,55 +5816,6 @@ public final class Tofnd {
         public final com.google.protobuf.UnknownFieldSet
         getUnknownFields() {
           return this.unknownFields;
-        }
-        private Criminal(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          this();
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
-          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder();
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                case 10: {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  partyUid_ = s;
-                  break;
-                }
-                case 16: {
-                  int rawValue = input.readEnum();
-
-                  crimeType_ = rawValue;
-                  break;
-                }
-                default: {
-                  if (!parseUnknownField(
-                      input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(this);
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(
-                e).setUnfinishedMessage(this);
-          } finally {
-            this.unknownFields = unknownFields.build();
-            makeExtensionsImmutable();
-          }
         }
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
@@ -6340,13 +6018,13 @@ public final class Tofnd {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output)
                             throws java.io.IOException {
-          if (!getPartyUidBytes().isEmpty()) {
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(partyUid_)) {
             com.google.protobuf.GeneratedMessageV3.writeString(output, 1, partyUid_);
           }
           if (crimeType_ != axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.CriminalList.Criminal.CrimeType.CRIME_TYPE_UNSPECIFIED.getNumber()) {
             output.writeEnum(2, crimeType_);
           }
-          unknownFields.writeTo(output);
+          getUnknownFields().writeTo(output);
         }
 
         @java.lang.Override
@@ -6355,14 +6033,14 @@ public final class Tofnd {
           if (size != -1) return size;
 
           size = 0;
-          if (!getPartyUidBytes().isEmpty()) {
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(partyUid_)) {
             size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, partyUid_);
           }
           if (crimeType_ != axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.CriminalList.Criminal.CrimeType.CRIME_TYPE_UNSPECIFIED.getNumber()) {
             size += com.google.protobuf.CodedOutputStream
               .computeEnumSize(2, crimeType_);
           }
-          size += unknownFields.getSerializedSize();
+          size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
           return size;
         }
@@ -6380,7 +6058,7 @@ public final class Tofnd {
           if (!getPartyUid()
               .equals(other.getPartyUid())) return false;
           if (crimeType_ != other.crimeType_) return false;
-          if (!unknownFields.equals(other.unknownFields)) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
 
@@ -6395,7 +6073,7 @@ public final class Tofnd {
           hash = (53 * hash) + getPartyUid().hashCode();
           hash = (37 * hash) + CRIME_TYPE_FIELD_NUMBER;
           hash = (53 * hash) + crimeType_;
-          hash = (29 * hash) + unknownFields.hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
           return hash;
         }
@@ -6512,18 +6190,13 @@ public final class Tofnd {
 
           // Construct using axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.CriminalList.Criminal.newBuilder()
           private Builder() {
-            maybeForceBuilderInitialization();
+
           }
 
           private Builder(
               com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
             super(parent);
-            maybeForceBuilderInitialization();
-          }
-          private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessageV3
-                    .alwaysUseFieldBuilders) {
-            }
+
           }
           @java.lang.Override
           public Builder clear() {
@@ -6615,7 +6288,7 @@ public final class Tofnd {
             if (other.crimeType_ != 0) {
               setCrimeTypeValue(other.getCrimeTypeValue());
             }
-            this.mergeUnknownFields(other.unknownFields);
+            this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
             return this;
           }
@@ -6630,17 +6303,40 @@ public final class Tofnd {
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-            axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.CriminalList.Criminal parsedMessage = null;
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
             try {
-              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10: {
+                    partyUid_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 10
+                  case 16: {
+                    crimeType_ = input.readEnum();
+
+                    break;
+                  } // case 16
+                  default: {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+                } // switch (tag)
+              } // while (!done)
             } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              parsedMessage = (axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.CriminalList.Criminal) e.getUnfinishedMessage();
               throw e.unwrapIOException();
             } finally {
-              if (parsedMessage != null) {
-                mergeFrom(parsedMessage);
-              }
-            }
+              onChanged();
+            } // finally
             return this;
           }
 
@@ -6806,7 +6502,18 @@ public final class Tofnd {
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Criminal(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -6883,7 +6590,7 @@ public final class Tofnd {
         for (int i = 0; i < criminals_.size(); i++) {
           output.writeMessage(1, criminals_.get(i));
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -6896,7 +6603,7 @@ public final class Tofnd {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(1, criminals_.get(i));
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -6913,7 +6620,7 @@ public final class Tofnd {
 
         if (!getCriminalsList()
             .equals(other.getCriminalsList())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -6928,7 +6635,7 @@ public final class Tofnd {
           hash = (37 * hash) + CRIMINALS_FIELD_NUMBER;
           hash = (53 * hash) + getCriminalsList().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -7049,29 +6756,24 @@ public final class Tofnd {
 
         // Construct using axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.CriminalList.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-            getCriminalsFieldBuilder();
-          }
+
         }
         @java.lang.Override
         public Builder clear() {
           super.clear();
           if (criminalsBuilder_ == null) {
             criminals_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
+            criminals_ = null;
             criminalsBuilder_.clear();
           }
+          bitField0_ = (bitField0_ & ~0x00000001);
           return this;
         }
 
@@ -7182,7 +6884,7 @@ public final class Tofnd {
               }
             }
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -7197,17 +6899,43 @@ public final class Tofnd {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.CriminalList parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10: {
+                  axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.CriminalList.Criminal m =
+                      input.readMessage(
+                          axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.CriminalList.Criminal.parser(),
+                          extensionRegistry);
+                  if (criminalsBuilder_ == null) {
+                    ensureCriminalsIsMutable();
+                    criminals_.add(m);
+                  } else {
+                    criminalsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.CriminalList) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -7484,7 +7212,18 @@ public final class Tofnd {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CriminalList(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -7734,7 +7473,7 @@ public final class Tofnd {
         output.writeBool(
             4, (boolean)((java.lang.Boolean) data_));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -7760,7 +7499,7 @@ public final class Tofnd {
           .computeBoolSize(
               4, (boolean)((java.lang.Boolean) data_));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -7796,7 +7535,7 @@ public final class Tofnd {
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -7828,7 +7567,7 @@ public final class Tofnd {
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -7945,22 +7684,26 @@ public final class Tofnd {
 
       // Construct using axelar.tss.tofnd.v1beta1.Tofnd.MessageOut.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (trafficBuilder_ != null) {
+          trafficBuilder_.clear();
+        }
+        if (keygenResultBuilder_ != null) {
+          keygenResultBuilder_.clear();
+        }
+        if (signResultBuilder_ != null) {
+          signResultBuilder_.clear();
+        }
         dataCase_ = 0;
         data_ = null;
         return this;
@@ -8083,7 +7826,7 @@ public final class Tofnd {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -8098,17 +7841,56 @@ public final class Tofnd {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        axelar.tss.tofnd.v1beta1.Tofnd.MessageOut parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getTrafficFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                dataCase_ = 1;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getKeygenResultFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                dataCase_ = 2;
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getSignResultFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                dataCase_ = 3;
+                break;
+              } // case 26
+              case 32: {
+                data_ = input.readBool();
+                dataCase_ = 4;
+                break;
+              } // case 32
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (axelar.tss.tofnd.v1beta1.Tofnd.MessageOut) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int dataCase_ = 0;
@@ -8221,8 +8003,9 @@ public final class Tofnd {
         } else {
           if (dataCase_ == 1) {
             trafficBuilder_.mergeFrom(value);
+          } else {
+            trafficBuilder_.setMessage(value);
           }
-          trafficBuilder_.setMessage(value);
         }
         dataCase_ = 1;
         return this;
@@ -8398,8 +8181,9 @@ public final class Tofnd {
         } else {
           if (dataCase_ == 2) {
             keygenResultBuilder_.mergeFrom(value);
+          } else {
+            keygenResultBuilder_.setMessage(value);
           }
-          keygenResultBuilder_.setMessage(value);
         }
         dataCase_ = 2;
         return this;
@@ -8575,8 +8359,9 @@ public final class Tofnd {
         } else {
           if (dataCase_ == 3) {
             signResultBuilder_.mergeFrom(value);
+          } else {
+            signResultBuilder_.setMessage(value);
           }
-          signResultBuilder_.setMessage(value);
         }
         dataCase_ = 3;
         return this;
@@ -8747,7 +8532,18 @@ public final class Tofnd {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MessageOut(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -8823,59 +8619,6 @@ public final class Tofnd {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private TrafficIn(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              fromPartyUid_ = s;
-              break;
-            }
-            case 18: {
-
-              payload_ = input.readBytes();
-              break;
-            }
-            case 24: {
-
-              isBroadcast_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -8964,7 +8707,7 @@ public final class Tofnd {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getFromPartyUidBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fromPartyUid_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fromPartyUid_);
       }
       if (!payload_.isEmpty()) {
@@ -8973,7 +8716,7 @@ public final class Tofnd {
       if (isBroadcast_ != false) {
         output.writeBool(3, isBroadcast_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -8982,7 +8725,7 @@ public final class Tofnd {
       if (size != -1) return size;
 
       size = 0;
-      if (!getFromPartyUidBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fromPartyUid_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fromPartyUid_);
       }
       if (!payload_.isEmpty()) {
@@ -8993,7 +8736,7 @@ public final class Tofnd {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(3, isBroadcast_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -9014,7 +8757,7 @@ public final class Tofnd {
           .equals(other.getPayload())) return false;
       if (getIsBroadcast()
           != other.getIsBroadcast()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -9032,7 +8775,7 @@ public final class Tofnd {
       hash = (37 * hash) + IS_BROADCAST_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsBroadcast());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -9149,18 +8892,13 @@ public final class Tofnd {
 
       // Construct using axelar.tss.tofnd.v1beta1.Tofnd.TrafficIn.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -9258,7 +8996,7 @@ public final class Tofnd {
         if (other.getIsBroadcast() != false) {
           setIsBroadcast(other.getIsBroadcast());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -9273,17 +9011,45 @@ public final class Tofnd {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        axelar.tss.tofnd.v1beta1.Tofnd.TrafficIn parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                fromPartyUid_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                payload_ = input.readBytes();
+
+                break;
+              } // case 18
+              case 24: {
+                isBroadcast_ = input.readBool();
+
+                break;
+              } // case 24
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (axelar.tss.tofnd.v1beta1.Tofnd.TrafficIn) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -9460,7 +9226,18 @@ public final class Tofnd {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TrafficIn(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -9536,59 +9313,6 @@ public final class Tofnd {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private TrafficOut(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              toPartyUid_ = s;
-              break;
-            }
-            case 18: {
-
-              payload_ = input.readBytes();
-              break;
-            }
-            case 24: {
-
-              isBroadcast_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -9677,7 +9401,7 @@ public final class Tofnd {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getToPartyUidBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(toPartyUid_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, toPartyUid_);
       }
       if (!payload_.isEmpty()) {
@@ -9686,7 +9410,7 @@ public final class Tofnd {
       if (isBroadcast_ != false) {
         output.writeBool(3, isBroadcast_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -9695,7 +9419,7 @@ public final class Tofnd {
       if (size != -1) return size;
 
       size = 0;
-      if (!getToPartyUidBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(toPartyUid_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, toPartyUid_);
       }
       if (!payload_.isEmpty()) {
@@ -9706,7 +9430,7 @@ public final class Tofnd {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(3, isBroadcast_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -9727,7 +9451,7 @@ public final class Tofnd {
           .equals(other.getPayload())) return false;
       if (getIsBroadcast()
           != other.getIsBroadcast()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -9745,7 +9469,7 @@ public final class Tofnd {
       hash = (37 * hash) + IS_BROADCAST_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsBroadcast());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -9862,18 +9586,13 @@ public final class Tofnd {
 
       // Construct using axelar.tss.tofnd.v1beta1.Tofnd.TrafficOut.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -9971,7 +9690,7 @@ public final class Tofnd {
         if (other.getIsBroadcast() != false) {
           setIsBroadcast(other.getIsBroadcast());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -9986,17 +9705,45 @@ public final class Tofnd {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        axelar.tss.tofnd.v1beta1.Tofnd.TrafficOut parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                toPartyUid_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                payload_ = input.readBytes();
+
+                break;
+              } // case 18
+              case 24: {
+                isBroadcast_ = input.readBool();
+
+                break;
+              } // case 24
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (axelar.tss.tofnd.v1beta1.Tofnd.TrafficOut) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -10173,7 +9920,18 @@ public final class Tofnd {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TrafficOut(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -10296,96 +10054,6 @@ public final class Tofnd {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private KeygenInit(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              newKeyUid_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                partyUids_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              partyUids_.add(s);
-              break;
-            }
-            case 24: {
-
-              myPartyIndex_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              threshold_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                partyShareCounts_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              partyShareCounts_.addInt(input.readUInt32());
-              break;
-            }
-            case 42: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                partyShareCounts_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                partyShareCounts_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          partyUids_ = partyUids_.getUnmodifiableView();
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          partyShareCounts_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -10542,7 +10210,7 @@ public final class Tofnd {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (!getNewKeyUidBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(newKeyUid_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, newKeyUid_);
       }
       for (int i = 0; i < partyUids_.size(); i++) {
@@ -10561,7 +10229,7 @@ public final class Tofnd {
       for (int i = 0; i < partyShareCounts_.size(); i++) {
         output.writeUInt32NoTag(partyShareCounts_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -10570,7 +10238,7 @@ public final class Tofnd {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNewKeyUidBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(newKeyUid_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, newKeyUid_);
       }
       {
@@ -10603,7 +10271,7 @@ public final class Tofnd {
         }
         partyShareCountsMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -10628,7 +10296,7 @@ public final class Tofnd {
           != other.getMyPartyIndex()) return false;
       if (getThreshold()
           != other.getThreshold()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -10653,7 +10321,7 @@ public final class Tofnd {
       hash = (53 * hash) + getMyPartyIndex();
       hash = (37 * hash) + THRESHOLD_FIELD_NUMBER;
       hash = (53 * hash) + getThreshold();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -10770,18 +10438,13 @@ public final class Tofnd {
 
       // Construct using axelar.tss.tofnd.v1beta1.Tofnd.KeygenInit.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -10914,7 +10577,7 @@ public final class Tofnd {
         if (other.getThreshold() != 0) {
           setThreshold(other.getThreshold());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -10929,17 +10592,67 @@ public final class Tofnd {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        axelar.tss.tofnd.v1beta1.Tofnd.KeygenInit parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                newKeyUid_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensurePartyUidsIsMutable();
+                partyUids_.add(s);
+                break;
+              } // case 18
+              case 24: {
+                myPartyIndex_ = input.readUInt32();
+
+                break;
+              } // case 24
+              case 32: {
+                threshold_ = input.readUInt32();
+
+                break;
+              } // case 32
+              case 40: {
+                int v = input.readUInt32();
+                ensurePartyShareCountsIsMutable();
+                partyShareCounts_.addInt(v);
+                break;
+              } // case 40
+              case 42: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensurePartyShareCountsIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  partyShareCounts_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 42
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (axelar.tss.tofnd.v1beta1.Tofnd.KeygenInit) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -11315,7 +11028,18 @@ public final class Tofnd {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new KeygenInit(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -11440,73 +11164,6 @@ public final class Tofnd {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private SignInit(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              newSigUid_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              keyUid_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                partyUids_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              partyUids_.add(s);
-              break;
-            }
-            case 34: {
-
-              messageToSign_ = input.readBytes();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          partyUids_ = partyUids_.getUnmodifiableView();
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -11673,10 +11330,10 @@ public final class Tofnd {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNewSigUidBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(newSigUid_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, newSigUid_);
       }
-      if (!getKeyUidBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyUid_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, keyUid_);
       }
       for (int i = 0; i < partyUids_.size(); i++) {
@@ -11685,7 +11342,7 @@ public final class Tofnd {
       if (!messageToSign_.isEmpty()) {
         output.writeBytes(4, messageToSign_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -11694,10 +11351,10 @@ public final class Tofnd {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNewSigUidBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(newSigUid_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, newSigUid_);
       }
-      if (!getKeyUidBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyUid_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, keyUid_);
       }
       {
@@ -11712,7 +11369,7 @@ public final class Tofnd {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(4, messageToSign_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -11735,7 +11392,7 @@ public final class Tofnd {
           .equals(other.getPartyUidsList())) return false;
       if (!getMessageToSign()
           .equals(other.getMessageToSign())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -11756,7 +11413,7 @@ public final class Tofnd {
       }
       hash = (37 * hash) + MESSAGE_TO_SIGN_FIELD_NUMBER;
       hash = (53 * hash) + getMessageToSign().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -11873,18 +11530,13 @@ public final class Tofnd {
 
       // Construct using axelar.tss.tofnd.v1beta1.Tofnd.SignInit.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -12001,7 +11653,7 @@ public final class Tofnd {
         if (other.getMessageToSign() != com.google.protobuf.ByteString.EMPTY) {
           setMessageToSign(other.getMessageToSign());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -12016,17 +11668,51 @@ public final class Tofnd {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        axelar.tss.tofnd.v1beta1.Tofnd.SignInit parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                newSigUid_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                keyUid_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              case 26: {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensurePartyUidsIsMutable();
+                partyUids_.add(s);
+                break;
+              } // case 26
+              case 34: {
+                messageToSign_ = input.readBytes();
+
+                break;
+              } // case 34
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (axelar.tss.tofnd.v1beta1.Tofnd.SignInit) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -12395,7 +12081,18 @@ public final class Tofnd {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SignInit(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

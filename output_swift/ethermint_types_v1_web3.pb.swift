@@ -42,6 +42,10 @@ struct Ethermint_Types_V1_ExtensionOptionsWeb3Tx {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Ethermint_Types_V1_ExtensionOptionsWeb3Tx: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "ethermint.types.v1"

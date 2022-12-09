@@ -97,6 +97,11 @@ struct Evmos_Claims_V1_Params {
   fileprivate var _durationOfDecay: SwiftProtobuf.Google_Protobuf_Duration? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Evmos_Claims_V1_GenesisState: @unchecked Sendable {}
+extension Evmos_Claims_V1_Params: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "evmos.claims.v1"
@@ -122,9 +127,13 @@ extension Evmos_Claims_V1_GenesisState: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._params {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.claimsRecords.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.claimsRecords, fieldNumber: 2)
     }
@@ -166,18 +175,22 @@ extension Evmos_Claims_V1_Params: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.enableClaims != false {
       try visitor.visitSingularBoolField(value: self.enableClaims, fieldNumber: 1)
     }
-    if let v = self._airdropStartTime {
+    try { if let v = self._airdropStartTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
-    if let v = self._durationUntilDecay {
+    } }()
+    try { if let v = self._durationUntilDecay {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
-    if let v = self._durationOfDecay {
+    } }()
+    try { if let v = self._durationOfDecay {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     if !self.claimsDenom.isEmpty {
       try visitor.visitSingularStringField(value: self.claimsDenom, fieldNumber: 5)
     }

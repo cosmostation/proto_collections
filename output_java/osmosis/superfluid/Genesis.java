@@ -239,105 +239,6 @@ public final class Genesis {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GenesisState(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              osmosis.superfluid.ParamsOuterClass.Params.Builder subBuilder = null;
-              if (params_ != null) {
-                subBuilder = params_.toBuilder();
-              }
-              params_ = input.readMessage(osmosis.superfluid.ParamsOuterClass.Params.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(params_);
-                params_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                superfluidAssets_ = new java.util.ArrayList<osmosis.superfluid.Superfluid.SuperfluidAsset>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              superfluidAssets_.add(
-                  input.readMessage(osmosis.superfluid.Superfluid.SuperfluidAsset.parser(), extensionRegistry));
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                osmoEquivalentMultipliers_ = new java.util.ArrayList<osmosis.superfluid.Superfluid.OsmoEquivalentMultiplierRecord>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              osmoEquivalentMultipliers_.add(
-                  input.readMessage(osmosis.superfluid.Superfluid.OsmoEquivalentMultiplierRecord.parser(), extensionRegistry));
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                intermediaryAccounts_ = new java.util.ArrayList<osmosis.superfluid.Superfluid.SuperfluidIntermediaryAccount>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              intermediaryAccounts_.add(
-                  input.readMessage(osmosis.superfluid.Superfluid.SuperfluidIntermediaryAccount.parser(), extensionRegistry));
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                intemediaryAccountConnections_ = new java.util.ArrayList<osmosis.superfluid.Superfluid.LockIdIntermediaryAccountConnection>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              intemediaryAccountConnections_.add(
-                  input.readMessage(osmosis.superfluid.Superfluid.LockIdIntermediaryAccountConnection.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          superfluidAssets_ = java.util.Collections.unmodifiableList(superfluidAssets_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          osmoEquivalentMultipliers_ = java.util.Collections.unmodifiableList(osmoEquivalentMultipliers_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          intermediaryAccounts_ = java.util.Collections.unmodifiableList(intermediaryAccounts_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          intemediaryAccountConnections_ = java.util.Collections.unmodifiableList(intemediaryAccountConnections_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return osmosis.superfluid.Genesis.internal_static_osmosis_superfluid_GenesisState_descriptor;
@@ -641,7 +542,7 @@ public final class Genesis {
       for (int i = 0; i < intemediaryAccountConnections_.size(); i++) {
         output.writeMessage(5, intemediaryAccountConnections_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -670,7 +571,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, intemediaryAccountConnections_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -698,7 +599,7 @@ public final class Genesis {
           .equals(other.getIntermediaryAccountsList())) return false;
       if (!getIntemediaryAccountConnectionsList()
           .equals(other.getIntemediaryAccountConnectionsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -729,7 +630,7 @@ public final class Genesis {
         hash = (37 * hash) + INTEMEDIARY_ACCOUNT_CONNECTIONS_FIELD_NUMBER;
         hash = (53 * hash) + getIntemediaryAccountConnectionsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -850,22 +751,13 @@ public final class Genesis {
 
       // Construct using osmosis.superfluid.Genesis.GenesisState.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getSuperfluidAssetsFieldBuilder();
-          getOsmoEquivalentMultipliersFieldBuilder();
-          getIntermediaryAccountsFieldBuilder();
-          getIntemediaryAccountConnectionsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -878,28 +770,32 @@ public final class Genesis {
         }
         if (superfluidAssetsBuilder_ == null) {
           superfluidAssets_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          superfluidAssets_ = null;
           superfluidAssetsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (osmoEquivalentMultipliersBuilder_ == null) {
           osmoEquivalentMultipliers_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          osmoEquivalentMultipliers_ = null;
           osmoEquivalentMultipliersBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (intermediaryAccountsBuilder_ == null) {
           intermediaryAccounts_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          intermediaryAccounts_ = null;
           intermediaryAccountsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (intemediaryAccountConnectionsBuilder_ == null) {
           intemediaryAccountConnections_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
+          intemediaryAccountConnections_ = null;
           intemediaryAccountConnectionsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -1123,7 +1019,7 @@ public final class Genesis {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1138,17 +1034,89 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        osmosis.superfluid.Genesis.GenesisState parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getParamsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 10
+              case 18: {
+                osmosis.superfluid.Superfluid.SuperfluidAsset m =
+                    input.readMessage(
+                        osmosis.superfluid.Superfluid.SuperfluidAsset.parser(),
+                        extensionRegistry);
+                if (superfluidAssetsBuilder_ == null) {
+                  ensureSuperfluidAssetsIsMutable();
+                  superfluidAssets_.add(m);
+                } else {
+                  superfluidAssetsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              case 26: {
+                osmosis.superfluid.Superfluid.OsmoEquivalentMultiplierRecord m =
+                    input.readMessage(
+                        osmosis.superfluid.Superfluid.OsmoEquivalentMultiplierRecord.parser(),
+                        extensionRegistry);
+                if (osmoEquivalentMultipliersBuilder_ == null) {
+                  ensureOsmoEquivalentMultipliersIsMutable();
+                  osmoEquivalentMultipliers_.add(m);
+                } else {
+                  osmoEquivalentMultipliersBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 34: {
+                osmosis.superfluid.Superfluid.SuperfluidIntermediaryAccount m =
+                    input.readMessage(
+                        osmosis.superfluid.Superfluid.SuperfluidIntermediaryAccount.parser(),
+                        extensionRegistry);
+                if (intermediaryAccountsBuilder_ == null) {
+                  ensureIntermediaryAccountsIsMutable();
+                  intermediaryAccounts_.add(m);
+                } else {
+                  intermediaryAccountsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+              case 42: {
+                osmosis.superfluid.Superfluid.LockIdIntermediaryAccountConnection m =
+                    input.readMessage(
+                        osmosis.superfluid.Superfluid.LockIdIntermediaryAccountConnection.parser(),
+                        extensionRegistry);
+                if (intemediaryAccountConnectionsBuilder_ == null) {
+                  ensureIntemediaryAccountConnectionsIsMutable();
+                  intemediaryAccountConnections_.add(m);
+                } else {
+                  intemediaryAccountConnectionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (osmosis.superfluid.Genesis.GenesisState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -2534,7 +2502,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GenesisState(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2582,8 +2561,8 @@ public final class Genesis {
       "dIntermediaryAccountB\004\310\336\037\000\022f\n\037intemediar" +
       "y_account_connections\030\005 \003(\01327.osmosis.su" +
       "perfluid.LockIdIntermediaryAccountConnec" +
-      "tionB\004\310\336\037\000B7Z5github.com/osmosis-labs/os" +
-      "mosis/v7/x/superfluid/typesb\006proto3"
+      "tionB\004\310\336\037\000B8Z6github.com/osmosis-labs/os" +
+      "mosis/v13/x/superfluid/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

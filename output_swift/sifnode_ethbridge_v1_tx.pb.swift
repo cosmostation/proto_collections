@@ -218,6 +218,23 @@ struct Sifnode_Ethbridge_V1_MsgSetBlacklistResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Sifnode_Ethbridge_V1_MsgLock: @unchecked Sendable {}
+extension Sifnode_Ethbridge_V1_MsgLockResponse: @unchecked Sendable {}
+extension Sifnode_Ethbridge_V1_MsgBurn: @unchecked Sendable {}
+extension Sifnode_Ethbridge_V1_MsgBurnResponse: @unchecked Sendable {}
+extension Sifnode_Ethbridge_V1_MsgCreateEthBridgeClaim: @unchecked Sendable {}
+extension Sifnode_Ethbridge_V1_MsgCreateEthBridgeClaimResponse: @unchecked Sendable {}
+extension Sifnode_Ethbridge_V1_MsgUpdateWhiteListValidator: @unchecked Sendable {}
+extension Sifnode_Ethbridge_V1_MsgUpdateWhiteListValidatorResponse: @unchecked Sendable {}
+extension Sifnode_Ethbridge_V1_MsgUpdateCethReceiverAccount: @unchecked Sendable {}
+extension Sifnode_Ethbridge_V1_MsgUpdateCethReceiverAccountResponse: @unchecked Sendable {}
+extension Sifnode_Ethbridge_V1_MsgRescueCeth: @unchecked Sendable {}
+extension Sifnode_Ethbridge_V1_MsgRescueCethResponse: @unchecked Sendable {}
+extension Sifnode_Ethbridge_V1_MsgSetBlacklist: @unchecked Sendable {}
+extension Sifnode_Ethbridge_V1_MsgSetBlacklistResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "sifnode.ethbridge.v1"
@@ -403,9 +420,13 @@ extension Sifnode_Ethbridge_V1_MsgCreateEthBridgeClaim: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._ethBridgeClaim {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._ethBridgeClaim {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

@@ -218,6 +218,21 @@ struct Irismod_Nft_MsgTransferDenomResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Irismod_Nft_MsgIssueDenom: @unchecked Sendable {}
+extension Irismod_Nft_MsgIssueDenomResponse: @unchecked Sendable {}
+extension Irismod_Nft_MsgTransferNFT: @unchecked Sendable {}
+extension Irismod_Nft_MsgTransferNFTResponse: @unchecked Sendable {}
+extension Irismod_Nft_MsgEditNFT: @unchecked Sendable {}
+extension Irismod_Nft_MsgEditNFTResponse: @unchecked Sendable {}
+extension Irismod_Nft_MsgMintNFT: @unchecked Sendable {}
+extension Irismod_Nft_MsgMintNFTResponse: @unchecked Sendable {}
+extension Irismod_Nft_MsgBurnNFT: @unchecked Sendable {}
+extension Irismod_Nft_MsgBurnNFTResponse: @unchecked Sendable {}
+extension Irismod_Nft_MsgTransferDenom: @unchecked Sendable {}
+extension Irismod_Nft_MsgTransferDenomResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "irismod.nft"

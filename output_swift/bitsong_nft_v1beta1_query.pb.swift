@@ -321,6 +321,23 @@ struct Bitsong_Nft_V1beta1_QueryNFTResponse {
   fileprivate var _nft: Bitsong_Nft_V1beta1_BaseNFT? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Bitsong_Nft_V1beta1_QuerySupplyRequest: @unchecked Sendable {}
+extension Bitsong_Nft_V1beta1_QuerySupplyResponse: @unchecked Sendable {}
+extension Bitsong_Nft_V1beta1_QueryOwnerRequest: @unchecked Sendable {}
+extension Bitsong_Nft_V1beta1_QueryOwnerResponse: @unchecked Sendable {}
+extension Bitsong_Nft_V1beta1_QueryCollectionRequest: @unchecked Sendable {}
+extension Bitsong_Nft_V1beta1_QueryCollectionResponse: @unchecked Sendable {}
+extension Bitsong_Nft_V1beta1_QueryDenomRequest: @unchecked Sendable {}
+extension Bitsong_Nft_V1beta1_QueryDenomResponse: @unchecked Sendable {}
+extension Bitsong_Nft_V1beta1_QueryDenomByNameRequest: @unchecked Sendable {}
+extension Bitsong_Nft_V1beta1_QueryDenomByNameResponse: @unchecked Sendable {}
+extension Bitsong_Nft_V1beta1_QueryDenomsRequest: @unchecked Sendable {}
+extension Bitsong_Nft_V1beta1_QueryDenomsResponse: @unchecked Sendable {}
+extension Bitsong_Nft_V1beta1_QueryNFTRequest: @unchecked Sendable {}
+extension Bitsong_Nft_V1beta1_QueryNFTResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "bitsong.nft.v1beta1"
@@ -418,15 +435,19 @@ extension Bitsong_Nft_V1beta1_QueryOwnerRequest: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.denomID.isEmpty {
       try visitor.visitSingularStringField(value: self.denomID, fieldNumber: 1)
     }
     if !self.owner.isEmpty {
       try visitor.visitSingularStringField(value: self.owner, fieldNumber: 2)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -460,12 +481,16 @@ extension Bitsong_Nft_V1beta1_QueryOwnerResponse: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._owner {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._owner {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
-    if let v = self._pagination {
+    } }()
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -498,12 +523,16 @@ extension Bitsong_Nft_V1beta1_QueryCollectionRequest: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.denomID.isEmpty {
       try visitor.visitSingularStringField(value: self.denomID, fieldNumber: 1)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -536,12 +565,16 @@ extension Bitsong_Nft_V1beta1_QueryCollectionResponse: SwiftProtobuf.Message, Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._collection {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._collection {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
-    if let v = self._pagination {
+    } }()
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -604,9 +637,13 @@ extension Bitsong_Nft_V1beta1_QueryDenomResponse: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._denom {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._denom {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -668,9 +705,13 @@ extension Bitsong_Nft_V1beta1_QueryDenomByNameResponse: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._denom {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._denom {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -700,9 +741,13 @@ extension Bitsong_Nft_V1beta1_QueryDenomsRequest: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._pagination {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -734,12 +779,16 @@ extension Bitsong_Nft_V1beta1_QueryDenomsResponse: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.denoms.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.denoms, fieldNumber: 1)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -808,9 +857,13 @@ extension Bitsong_Nft_V1beta1_QueryNFTResponse: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._nft {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._nft {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

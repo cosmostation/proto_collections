@@ -743,6 +743,34 @@ struct Stafihub_Stafihub_Ledger_IcaPoolDetail {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Stafihub_Stafihub_Ledger_PoolStatus: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_PoolBondState: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_BondAction: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_LiquidityBondState: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_OriginalTxType: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_IcaPoolStatus: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_InterchainTxStatus: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_ChainEra: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_Pool: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_BondPipeline: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_EraSnapshot: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_EraUnbondLimit: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_PoolDetail: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_LinkChunk: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_BondSnapshot: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_ExchangeRate: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_TotalProtocolFee: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_EraExchangeRate: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_UnbondRelayFee: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_Unbonding: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_BondRecord: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_Signature: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_RParams: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_IcaAccount: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_IcaPoolDetail: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stafihub.stafihub.ledger"
@@ -914,15 +942,19 @@ extension Stafihub_Stafihub_Ledger_BondPipeline: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.denom.isEmpty {
       try visitor.visitSingularStringField(value: self.denom, fieldNumber: 1)
     }
     if !self.pool.isEmpty {
       try visitor.visitSingularStringField(value: self.pool, fieldNumber: 2)
     }
-    if let v = self._chunk {
+    try { if let v = self._chunk {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1138,6 +1170,10 @@ extension Stafihub_Stafihub_Ledger_BondSnapshot: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.denom.isEmpty {
       try visitor.visitSingularStringField(value: self.denom, fieldNumber: 1)
     }
@@ -1147,9 +1183,9 @@ extension Stafihub_Stafihub_Ledger_BondSnapshot: SwiftProtobuf.Message, SwiftPro
     if self.era != 0 {
       try visitor.visitSingularUInt32Field(value: self.era, fieldNumber: 3)
     }
-    if let v = self._chunk {
+    try { if let v = self._chunk {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     if self.bondState != .eraUpdated {
       try visitor.visitSingularEnumField(value: self.bondState, fieldNumber: 6)
     }
@@ -1308,12 +1344,16 @@ extension Stafihub_Stafihub_Ledger_UnbondRelayFee: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.denom.isEmpty {
       try visitor.visitSingularStringField(value: self.denom, fieldNumber: 1)
     }
-    if let v = self._value {
+    try { if let v = self._value {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1687,6 +1727,10 @@ extension Stafihub_Stafihub_Ledger_IcaPoolDetail: SwiftProtobuf.Message, SwiftPr
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
       if !_storage._denom.isEmpty {
         try visitor.visitSingularStringField(value: _storage._denom, fieldNumber: 1)
       }
@@ -1696,12 +1740,12 @@ extension Stafihub_Stafihub_Ledger_IcaPoolDetail: SwiftProtobuf.Message, SwiftPr
       if _storage._status != .unspecified {
         try visitor.visitSingularEnumField(value: _storage._status, fieldNumber: 3)
       }
-      if let v = _storage._delegationAccount {
+      try { if let v = _storage._delegationAccount {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-      }
-      if let v = _storage._withdrawalAccount {
+      } }()
+      try { if let v = _storage._withdrawalAccount {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-      }
+      } }()
     }
     try unknownFields.traverse(visitor: &visitor)
   }

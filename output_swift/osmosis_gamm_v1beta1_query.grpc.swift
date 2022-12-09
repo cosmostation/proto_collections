@@ -45,6 +45,11 @@ internal protocol Osmosis_Gamm_V1beta1_QueryClientProtocol: GRPCClient {
     callOptions: CallOptions?
   ) -> UnaryCall<Osmosis_Gamm_V1beta1_QueryTotalLiquidityRequest, Osmosis_Gamm_V1beta1_QueryTotalLiquidityResponse>
 
+  func poolsWithFilter(
+    _ request: Osmosis_Gamm_V1beta1_QueryPoolsWithFilterRequest,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Osmosis_Gamm_V1beta1_QueryPoolsWithFilterRequest, Osmosis_Gamm_V1beta1_QueryPoolsWithFilterResponse>
+
   func pool(
     _ request: Osmosis_Gamm_V1beta1_QueryPoolRequest,
     callOptions: CallOptions?
@@ -54,6 +59,21 @@ internal protocol Osmosis_Gamm_V1beta1_QueryClientProtocol: GRPCClient {
     _ request: Osmosis_Gamm_V1beta1_QueryPoolTypeRequest,
     callOptions: CallOptions?
   ) -> UnaryCall<Osmosis_Gamm_V1beta1_QueryPoolTypeRequest, Osmosis_Gamm_V1beta1_QueryPoolTypeResponse>
+
+  func calcJoinPoolNoSwapShares(
+    _ request: Osmosis_Gamm_V1beta1_QueryCalcJoinPoolNoSwapSharesRequest,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Osmosis_Gamm_V1beta1_QueryCalcJoinPoolNoSwapSharesRequest, Osmosis_Gamm_V1beta1_QueryCalcJoinPoolNoSwapSharesResponse>
+
+  func calcJoinPoolShares(
+    _ request: Osmosis_Gamm_V1beta1_QueryCalcJoinPoolSharesRequest,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Osmosis_Gamm_V1beta1_QueryCalcJoinPoolSharesRequest, Osmosis_Gamm_V1beta1_QueryCalcJoinPoolSharesResponse>
+
+  func calcExitPoolCoinsFromShares(
+    _ request: Osmosis_Gamm_V1beta1_QueryCalcExitPoolCoinsFromSharesRequest,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Osmosis_Gamm_V1beta1_QueryCalcExitPoolCoinsFromSharesRequest, Osmosis_Gamm_V1beta1_QueryCalcExitPoolCoinsFromSharesResponse>
 
   func poolParams(
     _ request: Osmosis_Gamm_V1beta1_QueryPoolParamsRequest,
@@ -145,6 +165,25 @@ extension Osmosis_Gamm_V1beta1_QueryClientProtocol {
     )
   }
 
+  /// PoolsWithFilter allows you to query specific pools with requested
+  /// parameters
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to PoolsWithFilter.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func poolsWithFilter(
+    _ request: Osmosis_Gamm_V1beta1_QueryPoolsWithFilterRequest,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Osmosis_Gamm_V1beta1_QueryPoolsWithFilterRequest, Osmosis_Gamm_V1beta1_QueryPoolsWithFilterResponse> {
+    return self.makeUnaryCall(
+      path: "/osmosis.gamm.v1beta1.Query/PoolsWithFilter",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makePoolsWithFilterInterceptors() ?? []
+    )
+  }
+
   /// Per Pool gRPC Endpoints
   ///
   /// - Parameters:
@@ -180,6 +219,61 @@ extension Osmosis_Gamm_V1beta1_QueryClientProtocol {
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makePoolTypeInterceptors() ?? []
+    )
+  }
+
+  /// Simulates joining pool without a swap. Returns the amount of shares you'd
+  /// get and tokens needed to provide
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to CalcJoinPoolNoSwapShares.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func calcJoinPoolNoSwapShares(
+    _ request: Osmosis_Gamm_V1beta1_QueryCalcJoinPoolNoSwapSharesRequest,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Osmosis_Gamm_V1beta1_QueryCalcJoinPoolNoSwapSharesRequest, Osmosis_Gamm_V1beta1_QueryCalcJoinPoolNoSwapSharesResponse> {
+    return self.makeUnaryCall(
+      path: "/osmosis.gamm.v1beta1.Query/CalcJoinPoolNoSwapShares",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeCalcJoinPoolNoSwapSharesInterceptors() ?? []
+    )
+  }
+
+  /// Unary call to CalcJoinPoolShares
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to CalcJoinPoolShares.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func calcJoinPoolShares(
+    _ request: Osmosis_Gamm_V1beta1_QueryCalcJoinPoolSharesRequest,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Osmosis_Gamm_V1beta1_QueryCalcJoinPoolSharesRequest, Osmosis_Gamm_V1beta1_QueryCalcJoinPoolSharesResponse> {
+    return self.makeUnaryCall(
+      path: "/osmosis.gamm.v1beta1.Query/CalcJoinPoolShares",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeCalcJoinPoolSharesInterceptors() ?? []
+    )
+  }
+
+  /// Unary call to CalcExitPoolCoinsFromShares
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to CalcExitPoolCoinsFromShares.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func calcExitPoolCoinsFromShares(
+    _ request: Osmosis_Gamm_V1beta1_QueryCalcExitPoolCoinsFromSharesRequest,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Osmosis_Gamm_V1beta1_QueryCalcExitPoolCoinsFromSharesRequest, Osmosis_Gamm_V1beta1_QueryCalcExitPoolCoinsFromSharesResponse> {
+    return self.makeUnaryCall(
+      path: "/osmosis.gamm.v1beta1.Query/CalcExitPoolCoinsFromShares",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeCalcExitPoolCoinsFromSharesInterceptors() ?? []
     )
   }
 
@@ -304,11 +398,23 @@ internal protocol Osmosis_Gamm_V1beta1_QueryClientInterceptorFactoryProtocol {
   /// - Returns: Interceptors to use when invoking 'totalLiquidity'.
   func makeTotalLiquidityInterceptors() -> [ClientInterceptor<Osmosis_Gamm_V1beta1_QueryTotalLiquidityRequest, Osmosis_Gamm_V1beta1_QueryTotalLiquidityResponse>]
 
+  /// - Returns: Interceptors to use when invoking 'poolsWithFilter'.
+  func makePoolsWithFilterInterceptors() -> [ClientInterceptor<Osmosis_Gamm_V1beta1_QueryPoolsWithFilterRequest, Osmosis_Gamm_V1beta1_QueryPoolsWithFilterResponse>]
+
   /// - Returns: Interceptors to use when invoking 'pool'.
   func makePoolInterceptors() -> [ClientInterceptor<Osmosis_Gamm_V1beta1_QueryPoolRequest, Osmosis_Gamm_V1beta1_QueryPoolResponse>]
 
   /// - Returns: Interceptors to use when invoking 'poolType'.
   func makePoolTypeInterceptors() -> [ClientInterceptor<Osmosis_Gamm_V1beta1_QueryPoolTypeRequest, Osmosis_Gamm_V1beta1_QueryPoolTypeResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'calcJoinPoolNoSwapShares'.
+  func makeCalcJoinPoolNoSwapSharesInterceptors() -> [ClientInterceptor<Osmosis_Gamm_V1beta1_QueryCalcJoinPoolNoSwapSharesRequest, Osmosis_Gamm_V1beta1_QueryCalcJoinPoolNoSwapSharesResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'calcJoinPoolShares'.
+  func makeCalcJoinPoolSharesInterceptors() -> [ClientInterceptor<Osmosis_Gamm_V1beta1_QueryCalcJoinPoolSharesRequest, Osmosis_Gamm_V1beta1_QueryCalcJoinPoolSharesResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'calcExitPoolCoinsFromShares'.
+  func makeCalcExitPoolCoinsFromSharesInterceptors() -> [ClientInterceptor<Osmosis_Gamm_V1beta1_QueryCalcExitPoolCoinsFromSharesRequest, Osmosis_Gamm_V1beta1_QueryCalcExitPoolCoinsFromSharesResponse>]
 
   /// - Returns: Interceptors to use when invoking 'poolParams'.
   func makePoolParamsInterceptors() -> [ClientInterceptor<Osmosis_Gamm_V1beta1_QueryPoolParamsRequest, Osmosis_Gamm_V1beta1_QueryPoolParamsResponse>]
@@ -361,6 +467,10 @@ internal protocol Osmosis_Gamm_V1beta1_QueryProvider: CallHandlerProvider {
 
   func totalLiquidity(request: Osmosis_Gamm_V1beta1_QueryTotalLiquidityRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Gamm_V1beta1_QueryTotalLiquidityResponse>
 
+  /// PoolsWithFilter allows you to query specific pools with requested
+  /// parameters
+  func poolsWithFilter(request: Osmosis_Gamm_V1beta1_QueryPoolsWithFilterRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Gamm_V1beta1_QueryPoolsWithFilterResponse>
+
   /// Per Pool gRPC Endpoints
   func pool(request: Osmosis_Gamm_V1beta1_QueryPoolRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Gamm_V1beta1_QueryPoolResponse>
 
@@ -368,6 +478,14 @@ internal protocol Osmosis_Gamm_V1beta1_QueryProvider: CallHandlerProvider {
   /// Returns "Balancer" as a string literal when the pool is a balancer pool.
   /// Errors if the pool is failed to be type caseted.
   func poolType(request: Osmosis_Gamm_V1beta1_QueryPoolTypeRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Gamm_V1beta1_QueryPoolTypeResponse>
+
+  /// Simulates joining pool without a swap. Returns the amount of shares you'd
+  /// get and tokens needed to provide
+  func calcJoinPoolNoSwapShares(request: Osmosis_Gamm_V1beta1_QueryCalcJoinPoolNoSwapSharesRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Gamm_V1beta1_QueryCalcJoinPoolNoSwapSharesResponse>
+
+  func calcJoinPoolShares(request: Osmosis_Gamm_V1beta1_QueryCalcJoinPoolSharesRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Gamm_V1beta1_QueryCalcJoinPoolSharesResponse>
+
+  func calcExitPoolCoinsFromShares(request: Osmosis_Gamm_V1beta1_QueryCalcExitPoolCoinsFromSharesRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Gamm_V1beta1_QueryCalcExitPoolCoinsFromSharesResponse>
 
   func poolParams(request: Osmosis_Gamm_V1beta1_QueryPoolParamsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Gamm_V1beta1_QueryPoolParamsResponse>
 
@@ -422,6 +540,15 @@ extension Osmosis_Gamm_V1beta1_QueryProvider {
         userFunction: self.totalLiquidity(request:context:)
       )
 
+    case "PoolsWithFilter":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Osmosis_Gamm_V1beta1_QueryPoolsWithFilterRequest>(),
+        responseSerializer: ProtobufSerializer<Osmosis_Gamm_V1beta1_QueryPoolsWithFilterResponse>(),
+        interceptors: self.interceptors?.makePoolsWithFilterInterceptors() ?? [],
+        userFunction: self.poolsWithFilter(request:context:)
+      )
+
     case "Pool":
       return UnaryServerHandler(
         context: context,
@@ -438,6 +565,33 @@ extension Osmosis_Gamm_V1beta1_QueryProvider {
         responseSerializer: ProtobufSerializer<Osmosis_Gamm_V1beta1_QueryPoolTypeResponse>(),
         interceptors: self.interceptors?.makePoolTypeInterceptors() ?? [],
         userFunction: self.poolType(request:context:)
+      )
+
+    case "CalcJoinPoolNoSwapShares":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Osmosis_Gamm_V1beta1_QueryCalcJoinPoolNoSwapSharesRequest>(),
+        responseSerializer: ProtobufSerializer<Osmosis_Gamm_V1beta1_QueryCalcJoinPoolNoSwapSharesResponse>(),
+        interceptors: self.interceptors?.makeCalcJoinPoolNoSwapSharesInterceptors() ?? [],
+        userFunction: self.calcJoinPoolNoSwapShares(request:context:)
+      )
+
+    case "CalcJoinPoolShares":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Osmosis_Gamm_V1beta1_QueryCalcJoinPoolSharesRequest>(),
+        responseSerializer: ProtobufSerializer<Osmosis_Gamm_V1beta1_QueryCalcJoinPoolSharesResponse>(),
+        interceptors: self.interceptors?.makeCalcJoinPoolSharesInterceptors() ?? [],
+        userFunction: self.calcJoinPoolShares(request:context:)
+      )
+
+    case "CalcExitPoolCoinsFromShares":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Osmosis_Gamm_V1beta1_QueryCalcExitPoolCoinsFromSharesRequest>(),
+        responseSerializer: ProtobufSerializer<Osmosis_Gamm_V1beta1_QueryCalcExitPoolCoinsFromSharesResponse>(),
+        interceptors: self.interceptors?.makeCalcExitPoolCoinsFromSharesInterceptors() ?? [],
+        userFunction: self.calcExitPoolCoinsFromShares(request:context:)
       )
 
     case "PoolParams":
@@ -514,6 +668,10 @@ internal protocol Osmosis_Gamm_V1beta1_QueryServerInterceptorFactoryProtocol {
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeTotalLiquidityInterceptors() -> [ServerInterceptor<Osmosis_Gamm_V1beta1_QueryTotalLiquidityRequest, Osmosis_Gamm_V1beta1_QueryTotalLiquidityResponse>]
 
+  /// - Returns: Interceptors to use when handling 'poolsWithFilter'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makePoolsWithFilterInterceptors() -> [ServerInterceptor<Osmosis_Gamm_V1beta1_QueryPoolsWithFilterRequest, Osmosis_Gamm_V1beta1_QueryPoolsWithFilterResponse>]
+
   /// - Returns: Interceptors to use when handling 'pool'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makePoolInterceptors() -> [ServerInterceptor<Osmosis_Gamm_V1beta1_QueryPoolRequest, Osmosis_Gamm_V1beta1_QueryPoolResponse>]
@@ -521,6 +679,18 @@ internal protocol Osmosis_Gamm_V1beta1_QueryServerInterceptorFactoryProtocol {
   /// - Returns: Interceptors to use when handling 'poolType'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makePoolTypeInterceptors() -> [ServerInterceptor<Osmosis_Gamm_V1beta1_QueryPoolTypeRequest, Osmosis_Gamm_V1beta1_QueryPoolTypeResponse>]
+
+  /// - Returns: Interceptors to use when handling 'calcJoinPoolNoSwapShares'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeCalcJoinPoolNoSwapSharesInterceptors() -> [ServerInterceptor<Osmosis_Gamm_V1beta1_QueryCalcJoinPoolNoSwapSharesRequest, Osmosis_Gamm_V1beta1_QueryCalcJoinPoolNoSwapSharesResponse>]
+
+  /// - Returns: Interceptors to use when handling 'calcJoinPoolShares'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeCalcJoinPoolSharesInterceptors() -> [ServerInterceptor<Osmosis_Gamm_V1beta1_QueryCalcJoinPoolSharesRequest, Osmosis_Gamm_V1beta1_QueryCalcJoinPoolSharesResponse>]
+
+  /// - Returns: Interceptors to use when handling 'calcExitPoolCoinsFromShares'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeCalcExitPoolCoinsFromSharesInterceptors() -> [ServerInterceptor<Osmosis_Gamm_V1beta1_QueryCalcExitPoolCoinsFromSharesRequest, Osmosis_Gamm_V1beta1_QueryCalcExitPoolCoinsFromSharesResponse>]
 
   /// - Returns: Interceptors to use when handling 'poolParams'.
   ///   Defaults to calling `self.makeInterceptors()`.

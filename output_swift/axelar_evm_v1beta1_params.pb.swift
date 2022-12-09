@@ -96,6 +96,11 @@ struct Axelar_Evm_V1beta1_PendingChain {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Axelar_Evm_V1beta1_Params: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_PendingChain: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "axelar.evm.v1beta1"
@@ -143,6 +148,10 @@ extension Axelar_Evm_V1beta1_Params: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.chain.isEmpty {
       try visitor.visitSingularStringField(value: self.chain, fieldNumber: 1)
     }
@@ -167,9 +176,9 @@ extension Axelar_Evm_V1beta1_Params: SwiftProtobuf.Message, SwiftProtobuf._Messa
     if !self.networks.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.networks, fieldNumber: 8)
     }
-    if let v = self._votingThreshold {
+    try { if let v = self._votingThreshold {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
-    }
+    } }()
     if self.minVoterCount != 0 {
       try visitor.visitSingularInt64Field(value: self.minVoterCount, fieldNumber: 10)
     }
@@ -250,12 +259,16 @@ extension Axelar_Evm_V1beta1_PendingChain: SwiftProtobuf.Message, SwiftProtobuf.
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._params {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      try { if let v = _storage._params {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      }
-      if let v = _storage._chain {
+      } }()
+      try { if let v = _storage._chain {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      }
+      } }()
     }
     try unknownFields.traverse(visitor: &visitor)
   }

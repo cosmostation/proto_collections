@@ -93,55 +93,6 @@ public final class Genesis {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DelegatorWithdrawInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              delegatorAddress_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              withdrawAddress_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return cosmos.distribution.v1beta1.Genesis.internal_static_cosmos_distribution_v1beta1_DelegatorWithdrawInfo_descriptor;
@@ -261,13 +212,13 @@ public final class Genesis {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getDelegatorAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(delegatorAddress_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, delegatorAddress_);
       }
-      if (!getWithdrawAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(withdrawAddress_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, withdrawAddress_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -276,13 +227,13 @@ public final class Genesis {
       if (size != -1) return size;
 
       size = 0;
-      if (!getDelegatorAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(delegatorAddress_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, delegatorAddress_);
       }
-      if (!getWithdrawAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(withdrawAddress_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, withdrawAddress_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -301,7 +252,7 @@ public final class Genesis {
           .equals(other.getDelegatorAddress())) return false;
       if (!getWithdrawAddress()
           .equals(other.getWithdrawAddress())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -316,7 +267,7 @@ public final class Genesis {
       hash = (53 * hash) + getDelegatorAddress().hashCode();
       hash = (37 * hash) + WITHDRAW_ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getWithdrawAddress().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -439,18 +390,13 @@ public final class Genesis {
 
       // Construct using cosmos.distribution.v1beta1.Genesis.DelegatorWithdrawInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -543,7 +489,7 @@ public final class Genesis {
           withdrawAddress_ = other.withdrawAddress_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -558,17 +504,40 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        cosmos.distribution.v1beta1.Genesis.DelegatorWithdrawInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                delegatorAddress_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                withdrawAddress_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (cosmos.distribution.v1beta1.Genesis.DelegatorWithdrawInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -796,7 +765,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DelegatorWithdrawInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -916,62 +896,6 @@ public final class Genesis {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private ValidatorOutstandingRewardsRecord(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              validatorAddress_ = s;
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                outstandingRewards_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.DecCoin>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              outstandingRewards_.add(
-                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.DecCoin.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          outstandingRewards_ = java.util.Collections.unmodifiableList(outstandingRewards_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -1106,13 +1030,13 @@ public final class Genesis {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getValidatorAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validatorAddress_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, validatorAddress_);
       }
       for (int i = 0; i < outstandingRewards_.size(); i++) {
         output.writeMessage(2, outstandingRewards_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1121,14 +1045,14 @@ public final class Genesis {
       if (size != -1) return size;
 
       size = 0;
-      if (!getValidatorAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validatorAddress_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, validatorAddress_);
       }
       for (int i = 0; i < outstandingRewards_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, outstandingRewards_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1147,7 +1071,7 @@ public final class Genesis {
           .equals(other.getValidatorAddress())) return false;
       if (!getOutstandingRewardsList()
           .equals(other.getOutstandingRewardsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1164,7 +1088,7 @@ public final class Genesis {
         hash = (37 * hash) + OUTSTANDING_REWARDS_FIELD_NUMBER;
         hash = (53 * hash) + getOutstandingRewardsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1285,19 +1209,13 @@ public final class Genesis {
 
       // Construct using cosmos.distribution.v1beta1.Genesis.ValidatorOutstandingRewardsRecord.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getOutstandingRewardsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -1306,10 +1224,11 @@ public final class Genesis {
 
         if (outstandingRewardsBuilder_ == null) {
           outstandingRewards_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          outstandingRewards_ = null;
           outstandingRewardsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -1425,7 +1344,7 @@ public final class Genesis {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1440,17 +1359,48 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        cosmos.distribution.v1beta1.Genesis.ValidatorOutstandingRewardsRecord parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                validatorAddress_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                cosmos.base.v1beta1.CoinOuterClass.DecCoin m =
+                    input.readMessage(
+                        cosmos.base.v1beta1.CoinOuterClass.DecCoin.parser(),
+                        extensionRegistry);
+                if (outstandingRewardsBuilder_ == null) {
+                  ensureOutstandingRewardsIsMutable();
+                  outstandingRewards_.add(m);
+                } else {
+                  outstandingRewardsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (cosmos.distribution.v1beta1.Genesis.ValidatorOutstandingRewardsRecord) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1895,7 +1845,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ValidatorOutstandingRewardsRecord(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1998,62 +1959,6 @@ public final class Genesis {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private ValidatorAccumulatedCommissionRecord(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              validatorAddress_ = s;
-              break;
-            }
-            case 18: {
-              cosmos.distribution.v1beta1.Distribution.ValidatorAccumulatedCommission.Builder subBuilder = null;
-              if (accumulated_ != null) {
-                subBuilder = accumulated_.toBuilder();
-              }
-              accumulated_ = input.readMessage(cosmos.distribution.v1beta1.Distribution.ValidatorAccumulatedCommission.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(accumulated_);
-                accumulated_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -2166,13 +2071,13 @@ public final class Genesis {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getValidatorAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validatorAddress_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, validatorAddress_);
       }
       if (accumulated_ != null) {
         output.writeMessage(2, getAccumulated());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2181,14 +2086,14 @@ public final class Genesis {
       if (size != -1) return size;
 
       size = 0;
-      if (!getValidatorAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validatorAddress_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, validatorAddress_);
       }
       if (accumulated_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getAccumulated());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2210,7 +2115,7 @@ public final class Genesis {
         if (!getAccumulated()
             .equals(other.getAccumulated())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2227,7 +2132,7 @@ public final class Genesis {
         hash = (37 * hash) + ACCUMULATED_FIELD_NUMBER;
         hash = (53 * hash) + getAccumulated().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2349,18 +2254,13 @@ public final class Genesis {
 
       // Construct using cosmos.distribution.v1beta1.Genesis.ValidatorAccumulatedCommissionRecord.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -2460,7 +2360,7 @@ public final class Genesis {
         if (other.hasAccumulated()) {
           mergeAccumulated(other.getAccumulated());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2475,17 +2375,42 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        cosmos.distribution.v1beta1.Genesis.ValidatorAccumulatedCommissionRecord parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                validatorAddress_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getAccumulatedFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (cosmos.distribution.v1beta1.Genesis.ValidatorAccumulatedCommissionRecord) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2772,7 +2697,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ValidatorAccumulatedCommissionRecord(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2885,67 +2821,6 @@ public final class Genesis {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private ValidatorHistoricalRewardsRecord(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              validatorAddress_ = s;
-              break;
-            }
-            case 16: {
-
-              period_ = input.readUInt64();
-              break;
-            }
-            case 26: {
-              cosmos.distribution.v1beta1.Distribution.ValidatorHistoricalRewards.Builder subBuilder = null;
-              if (rewards_ != null) {
-                subBuilder = rewards_.toBuilder();
-              }
-              rewards_ = input.readMessage(cosmos.distribution.v1beta1.Distribution.ValidatorHistoricalRewards.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(rewards_);
-                rewards_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -3073,7 +2948,7 @@ public final class Genesis {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getValidatorAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validatorAddress_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, validatorAddress_);
       }
       if (period_ != 0L) {
@@ -3082,7 +2957,7 @@ public final class Genesis {
       if (rewards_ != null) {
         output.writeMessage(3, getRewards());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -3091,7 +2966,7 @@ public final class Genesis {
       if (size != -1) return size;
 
       size = 0;
-      if (!getValidatorAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validatorAddress_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, validatorAddress_);
       }
       if (period_ != 0L) {
@@ -3102,7 +2977,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getRewards());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3126,7 +3001,7 @@ public final class Genesis {
         if (!getRewards()
             .equals(other.getRewards())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3146,7 +3021,7 @@ public final class Genesis {
         hash = (37 * hash) + REWARDS_FIELD_NUMBER;
         hash = (53 * hash) + getRewards().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3268,18 +3143,13 @@ public final class Genesis {
 
       // Construct using cosmos.distribution.v1beta1.Genesis.ValidatorHistoricalRewardsRecord.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -3385,7 +3255,7 @@ public final class Genesis {
         if (other.hasRewards()) {
           mergeRewards(other.getRewards());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3400,17 +3270,47 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        cosmos.distribution.v1beta1.Genesis.ValidatorHistoricalRewardsRecord parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                validatorAddress_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 16: {
+                period_ = input.readUInt64();
+
+                break;
+              } // case 16
+              case 26: {
+                input.readMessage(
+                    getRewardsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (cosmos.distribution.v1beta1.Genesis.ValidatorHistoricalRewardsRecord) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -3740,7 +3640,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ValidatorHistoricalRewardsRecord(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -3842,62 +3753,6 @@ public final class Genesis {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private ValidatorCurrentRewardsRecord(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              validatorAddress_ = s;
-              break;
-            }
-            case 18: {
-              cosmos.distribution.v1beta1.Distribution.ValidatorCurrentRewards.Builder subBuilder = null;
-              if (rewards_ != null) {
-                subBuilder = rewards_.toBuilder();
-              }
-              rewards_ = input.readMessage(cosmos.distribution.v1beta1.Distribution.ValidatorCurrentRewards.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(rewards_);
-                rewards_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -4010,13 +3865,13 @@ public final class Genesis {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getValidatorAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validatorAddress_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, validatorAddress_);
       }
       if (rewards_ != null) {
         output.writeMessage(2, getRewards());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -4025,14 +3880,14 @@ public final class Genesis {
       if (size != -1) return size;
 
       size = 0;
-      if (!getValidatorAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validatorAddress_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, validatorAddress_);
       }
       if (rewards_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getRewards());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4054,7 +3909,7 @@ public final class Genesis {
         if (!getRewards()
             .equals(other.getRewards())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -4071,7 +3926,7 @@ public final class Genesis {
         hash = (37 * hash) + REWARDS_FIELD_NUMBER;
         hash = (53 * hash) + getRewards().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4192,18 +4047,13 @@ public final class Genesis {
 
       // Construct using cosmos.distribution.v1beta1.Genesis.ValidatorCurrentRewardsRecord.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -4303,7 +4153,7 @@ public final class Genesis {
         if (other.hasRewards()) {
           mergeRewards(other.getRewards());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -4318,17 +4168,42 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        cosmos.distribution.v1beta1.Genesis.ValidatorCurrentRewardsRecord parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                validatorAddress_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getRewardsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (cosmos.distribution.v1beta1.Genesis.ValidatorCurrentRewardsRecord) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -4615,7 +4490,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ValidatorCurrentRewardsRecord(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -4738,68 +4624,6 @@ public final class Genesis {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private DelegatorStartingInfoRecord(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              delegatorAddress_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              validatorAddress_ = s;
-              break;
-            }
-            case 26: {
-              cosmos.distribution.v1beta1.Distribution.DelegatorStartingInfo.Builder subBuilder = null;
-              if (startingInfo_ != null) {
-                subBuilder = startingInfo_.toBuilder();
-              }
-              startingInfo_ = input.readMessage(cosmos.distribution.v1beta1.Distribution.DelegatorStartingInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(startingInfo_);
-                startingInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -4958,16 +4782,16 @@ public final class Genesis {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getDelegatorAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(delegatorAddress_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, delegatorAddress_);
       }
-      if (!getValidatorAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validatorAddress_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, validatorAddress_);
       }
       if (startingInfo_ != null) {
         output.writeMessage(3, getStartingInfo());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -4976,17 +4800,17 @@ public final class Genesis {
       if (size != -1) return size;
 
       size = 0;
-      if (!getDelegatorAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(delegatorAddress_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, delegatorAddress_);
       }
-      if (!getValidatorAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validatorAddress_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, validatorAddress_);
       }
       if (startingInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getStartingInfo());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5010,7 +4834,7 @@ public final class Genesis {
         if (!getStartingInfo()
             .equals(other.getStartingInfo())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -5029,7 +4853,7 @@ public final class Genesis {
         hash = (37 * hash) + STARTING_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getStartingInfo().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5150,18 +4974,13 @@ public final class Genesis {
 
       // Construct using cosmos.distribution.v1beta1.Genesis.DelegatorStartingInfoRecord.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -5268,7 +5087,7 @@ public final class Genesis {
         if (other.hasStartingInfo()) {
           mergeStartingInfo(other.getStartingInfo());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -5283,17 +5102,47 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        cosmos.distribution.v1beta1.Genesis.DelegatorStartingInfoRecord parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                delegatorAddress_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                validatorAddress_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getStartingInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (cosmos.distribution.v1beta1.Genesis.DelegatorStartingInfoRecord) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -5676,7 +5525,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DelegatorStartingInfoRecord(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -5798,72 +5658,6 @@ public final class Genesis {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private ValidatorSlashEventRecord(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              validatorAddress_ = s;
-              break;
-            }
-            case 16: {
-
-              height_ = input.readUInt64();
-              break;
-            }
-            case 24: {
-
-              period_ = input.readUInt64();
-              break;
-            }
-            case 34: {
-              cosmos.distribution.v1beta1.Distribution.ValidatorSlashEvent.Builder subBuilder = null;
-              if (validatorSlashEvent_ != null) {
-                subBuilder = validatorSlashEvent_.toBuilder();
-              }
-              validatorSlashEvent_ = input.readMessage(cosmos.distribution.v1beta1.Distribution.ValidatorSlashEvent.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(validatorSlashEvent_);
-                validatorSlashEvent_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -6006,7 +5800,7 @@ public final class Genesis {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getValidatorAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validatorAddress_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, validatorAddress_);
       }
       if (height_ != 0L) {
@@ -6018,7 +5812,7 @@ public final class Genesis {
       if (validatorSlashEvent_ != null) {
         output.writeMessage(4, getValidatorSlashEvent());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -6027,7 +5821,7 @@ public final class Genesis {
       if (size != -1) return size;
 
       size = 0;
-      if (!getValidatorAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validatorAddress_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, validatorAddress_);
       }
       if (height_ != 0L) {
@@ -6042,7 +5836,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getValidatorSlashEvent());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -6068,7 +5862,7 @@ public final class Genesis {
         if (!getValidatorSlashEvent()
             .equals(other.getValidatorSlashEvent())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -6091,7 +5885,7 @@ public final class Genesis {
         hash = (37 * hash) + VALIDATOR_SLASH_EVENT_FIELD_NUMBER;
         hash = (53 * hash) + getValidatorSlashEvent().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -6212,18 +6006,13 @@ public final class Genesis {
 
       // Construct using cosmos.distribution.v1beta1.Genesis.ValidatorSlashEventRecord.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -6335,7 +6124,7 @@ public final class Genesis {
         if (other.hasValidatorSlashEvent()) {
           mergeValidatorSlashEvent(other.getValidatorSlashEvent());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -6350,17 +6139,52 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        cosmos.distribution.v1beta1.Genesis.ValidatorSlashEventRecord parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                validatorAddress_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 16: {
+                height_ = input.readUInt64();
+
+                break;
+              } // case 16
+              case 24: {
+                period_ = input.readUInt64();
+
+                break;
+              } // case 24
+              case 34: {
+                input.readMessage(
+                    getValidatorSlashEventFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 34
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (cosmos.distribution.v1beta1.Genesis.ValidatorSlashEventRecord) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -6733,7 +6557,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ValidatorSlashEventRecord(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -7177,160 +7012,6 @@ public final class Genesis {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private GenesisState(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              cosmos.distribution.v1beta1.Distribution.Params.Builder subBuilder = null;
-              if (params_ != null) {
-                subBuilder = params_.toBuilder();
-              }
-              params_ = input.readMessage(cosmos.distribution.v1beta1.Distribution.Params.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(params_);
-                params_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              cosmos.distribution.v1beta1.Distribution.FeePool.Builder subBuilder = null;
-              if (feePool_ != null) {
-                subBuilder = feePool_.toBuilder();
-              }
-              feePool_ = input.readMessage(cosmos.distribution.v1beta1.Distribution.FeePool.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(feePool_);
-                feePool_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                delegatorWithdrawInfos_ = new java.util.ArrayList<cosmos.distribution.v1beta1.Genesis.DelegatorWithdrawInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              delegatorWithdrawInfos_.add(
-                  input.readMessage(cosmos.distribution.v1beta1.Genesis.DelegatorWithdrawInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              previousProposer_ = s;
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                outstandingRewards_ = new java.util.ArrayList<cosmos.distribution.v1beta1.Genesis.ValidatorOutstandingRewardsRecord>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              outstandingRewards_.add(
-                  input.readMessage(cosmos.distribution.v1beta1.Genesis.ValidatorOutstandingRewardsRecord.parser(), extensionRegistry));
-              break;
-            }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                validatorAccumulatedCommissions_ = new java.util.ArrayList<cosmos.distribution.v1beta1.Genesis.ValidatorAccumulatedCommissionRecord>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              validatorAccumulatedCommissions_.add(
-                  input.readMessage(cosmos.distribution.v1beta1.Genesis.ValidatorAccumulatedCommissionRecord.parser(), extensionRegistry));
-              break;
-            }
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                validatorHistoricalRewards_ = new java.util.ArrayList<cosmos.distribution.v1beta1.Genesis.ValidatorHistoricalRewardsRecord>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              validatorHistoricalRewards_.add(
-                  input.readMessage(cosmos.distribution.v1beta1.Genesis.ValidatorHistoricalRewardsRecord.parser(), extensionRegistry));
-              break;
-            }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                validatorCurrentRewards_ = new java.util.ArrayList<cosmos.distribution.v1beta1.Genesis.ValidatorCurrentRewardsRecord>();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              validatorCurrentRewards_.add(
-                  input.readMessage(cosmos.distribution.v1beta1.Genesis.ValidatorCurrentRewardsRecord.parser(), extensionRegistry));
-              break;
-            }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                delegatorStartingInfos_ = new java.util.ArrayList<cosmos.distribution.v1beta1.Genesis.DelegatorStartingInfoRecord>();
-                mutable_bitField0_ |= 0x00000020;
-              }
-              delegatorStartingInfos_.add(
-                  input.readMessage(cosmos.distribution.v1beta1.Genesis.DelegatorStartingInfoRecord.parser(), extensionRegistry));
-              break;
-            }
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
-                validatorSlashEvents_ = new java.util.ArrayList<cosmos.distribution.v1beta1.Genesis.ValidatorSlashEventRecord>();
-                mutable_bitField0_ |= 0x00000040;
-              }
-              validatorSlashEvents_.add(
-                  input.readMessage(cosmos.distribution.v1beta1.Genesis.ValidatorSlashEventRecord.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          delegatorWithdrawInfos_ = java.util.Collections.unmodifiableList(delegatorWithdrawInfos_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          outstandingRewards_ = java.util.Collections.unmodifiableList(outstandingRewards_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          validatorAccumulatedCommissions_ = java.util.Collections.unmodifiableList(validatorAccumulatedCommissions_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          validatorHistoricalRewards_ = java.util.Collections.unmodifiableList(validatorHistoricalRewards_);
-        }
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
-          validatorCurrentRewards_ = java.util.Collections.unmodifiableList(validatorCurrentRewards_);
-        }
-        if (((mutable_bitField0_ & 0x00000020) != 0)) {
-          delegatorStartingInfos_ = java.util.Collections.unmodifiableList(delegatorStartingInfos_);
-        }
-        if (((mutable_bitField0_ & 0x00000040) != 0)) {
-          validatorSlashEvents_ = java.util.Collections.unmodifiableList(validatorSlashEvents_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -7910,7 +7591,7 @@ public final class Genesis {
       for (int i = 0; i < delegatorWithdrawInfos_.size(); i++) {
         output.writeMessage(3, delegatorWithdrawInfos_.get(i));
       }
-      if (!getPreviousProposerBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(previousProposer_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, previousProposer_);
       }
       for (int i = 0; i < outstandingRewards_.size(); i++) {
@@ -7931,7 +7612,7 @@ public final class Genesis {
       for (int i = 0; i < validatorSlashEvents_.size(); i++) {
         output.writeMessage(10, validatorSlashEvents_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -7952,7 +7633,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, delegatorWithdrawInfos_.get(i));
       }
-      if (!getPreviousProposerBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(previousProposer_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, previousProposer_);
       }
       for (int i = 0; i < outstandingRewards_.size(); i++) {
@@ -7979,7 +7660,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, validatorSlashEvents_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -8020,7 +7701,7 @@ public final class Genesis {
           .equals(other.getDelegatorStartingInfosList())) return false;
       if (!getValidatorSlashEventsList()
           .equals(other.getValidatorSlashEventsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -8069,7 +7750,7 @@ public final class Genesis {
         hash = (37 * hash) + VALIDATOR_SLASH_EVENTS_FIELD_NUMBER;
         hash = (53 * hash) + getValidatorSlashEventsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -8190,25 +7871,13 @@ public final class Genesis {
 
       // Construct using cosmos.distribution.v1beta1.Genesis.GenesisState.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getDelegatorWithdrawInfosFieldBuilder();
-          getOutstandingRewardsFieldBuilder();
-          getValidatorAccumulatedCommissionsFieldBuilder();
-          getValidatorHistoricalRewardsFieldBuilder();
-          getValidatorCurrentRewardsFieldBuilder();
-          getDelegatorStartingInfosFieldBuilder();
-          getValidatorSlashEventsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -8227,48 +7896,55 @@ public final class Genesis {
         }
         if (delegatorWithdrawInfosBuilder_ == null) {
           delegatorWithdrawInfos_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          delegatorWithdrawInfos_ = null;
           delegatorWithdrawInfosBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         previousProposer_ = "";
 
         if (outstandingRewardsBuilder_ == null) {
           outstandingRewards_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          outstandingRewards_ = null;
           outstandingRewardsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (validatorAccumulatedCommissionsBuilder_ == null) {
           validatorAccumulatedCommissions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          validatorAccumulatedCommissions_ = null;
           validatorAccumulatedCommissionsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (validatorHistoricalRewardsBuilder_ == null) {
           validatorHistoricalRewards_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
+          validatorHistoricalRewards_ = null;
           validatorHistoricalRewardsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         if (validatorCurrentRewardsBuilder_ == null) {
           validatorCurrentRewards_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
+          validatorCurrentRewards_ = null;
           validatorCurrentRewardsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000010);
         if (delegatorStartingInfosBuilder_ == null) {
           delegatorStartingInfos_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
+          delegatorStartingInfos_ = null;
           delegatorStartingInfosBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000020);
         if (validatorSlashEventsBuilder_ == null) {
           validatorSlashEvents_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
+          validatorSlashEvents_ = null;
           validatorSlashEventsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -8610,7 +8286,7 @@ public final class Genesis {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -8625,17 +8301,140 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        cosmos.distribution.v1beta1.Genesis.GenesisState parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getParamsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getFeePoolFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 18
+              case 26: {
+                cosmos.distribution.v1beta1.Genesis.DelegatorWithdrawInfo m =
+                    input.readMessage(
+                        cosmos.distribution.v1beta1.Genesis.DelegatorWithdrawInfo.parser(),
+                        extensionRegistry);
+                if (delegatorWithdrawInfosBuilder_ == null) {
+                  ensureDelegatorWithdrawInfosIsMutable();
+                  delegatorWithdrawInfos_.add(m);
+                } else {
+                  delegatorWithdrawInfosBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 34: {
+                previousProposer_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+              case 42: {
+                cosmos.distribution.v1beta1.Genesis.ValidatorOutstandingRewardsRecord m =
+                    input.readMessage(
+                        cosmos.distribution.v1beta1.Genesis.ValidatorOutstandingRewardsRecord.parser(),
+                        extensionRegistry);
+                if (outstandingRewardsBuilder_ == null) {
+                  ensureOutstandingRewardsIsMutable();
+                  outstandingRewards_.add(m);
+                } else {
+                  outstandingRewardsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+              case 50: {
+                cosmos.distribution.v1beta1.Genesis.ValidatorAccumulatedCommissionRecord m =
+                    input.readMessage(
+                        cosmos.distribution.v1beta1.Genesis.ValidatorAccumulatedCommissionRecord.parser(),
+                        extensionRegistry);
+                if (validatorAccumulatedCommissionsBuilder_ == null) {
+                  ensureValidatorAccumulatedCommissionsIsMutable();
+                  validatorAccumulatedCommissions_.add(m);
+                } else {
+                  validatorAccumulatedCommissionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+              case 58: {
+                cosmos.distribution.v1beta1.Genesis.ValidatorHistoricalRewardsRecord m =
+                    input.readMessage(
+                        cosmos.distribution.v1beta1.Genesis.ValidatorHistoricalRewardsRecord.parser(),
+                        extensionRegistry);
+                if (validatorHistoricalRewardsBuilder_ == null) {
+                  ensureValidatorHistoricalRewardsIsMutable();
+                  validatorHistoricalRewards_.add(m);
+                } else {
+                  validatorHistoricalRewardsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 58
+              case 66: {
+                cosmos.distribution.v1beta1.Genesis.ValidatorCurrentRewardsRecord m =
+                    input.readMessage(
+                        cosmos.distribution.v1beta1.Genesis.ValidatorCurrentRewardsRecord.parser(),
+                        extensionRegistry);
+                if (validatorCurrentRewardsBuilder_ == null) {
+                  ensureValidatorCurrentRewardsIsMutable();
+                  validatorCurrentRewards_.add(m);
+                } else {
+                  validatorCurrentRewardsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+              case 74: {
+                cosmos.distribution.v1beta1.Genesis.DelegatorStartingInfoRecord m =
+                    input.readMessage(
+                        cosmos.distribution.v1beta1.Genesis.DelegatorStartingInfoRecord.parser(),
+                        extensionRegistry);
+                if (delegatorStartingInfosBuilder_ == null) {
+                  ensureDelegatorStartingInfosIsMutable();
+                  delegatorStartingInfos_.add(m);
+                } else {
+                  delegatorStartingInfosBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+              case 82: {
+                cosmos.distribution.v1beta1.Genesis.ValidatorSlashEventRecord m =
+                    input.readMessage(
+                        cosmos.distribution.v1beta1.Genesis.ValidatorSlashEventRecord.parser(),
+                        extensionRegistry);
+                if (validatorSlashEventsBuilder_ == null) {
+                  ensureValidatorSlashEventsIsMutable();
+                  validatorSlashEvents_.add(m);
+                } else {
+                  validatorSlashEventsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (cosmos.distribution.v1beta1.Genesis.GenesisState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -11262,7 +11061,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GenesisState(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

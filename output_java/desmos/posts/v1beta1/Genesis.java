@@ -189,117 +189,6 @@ public final class Genesis {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GenesisState(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                posts_ = new java.util.ArrayList<desmos.posts.v1beta1.Posts.Post>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              posts_.add(
-                  input.readMessage(desmos.posts.v1beta1.Posts.Post.parser(), extensionRegistry));
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                usersPollAnswers_ = new java.util.ArrayList<desmos.posts.v1beta1.Polls.UserAnswer>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              usersPollAnswers_.add(
-                  input.readMessage(desmos.posts.v1beta1.Polls.UserAnswer.parser(), extensionRegistry));
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                postsReactions_ = new java.util.ArrayList<desmos.posts.v1beta1.Reactions.PostReaction>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              postsReactions_.add(
-                  input.readMessage(desmos.posts.v1beta1.Reactions.PostReaction.parser(), extensionRegistry));
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                registeredReactions_ = new java.util.ArrayList<desmos.posts.v1beta1.Reactions.RegisteredReaction>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              registeredReactions_.add(
-                  input.readMessage(desmos.posts.v1beta1.Reactions.RegisteredReaction.parser(), extensionRegistry));
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                reports_ = new java.util.ArrayList<desmos.posts.v1beta1.ReportOuterClass.Report>();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              reports_.add(
-                  input.readMessage(desmos.posts.v1beta1.ReportOuterClass.Report.parser(), extensionRegistry));
-              break;
-            }
-            case 50: {
-              desmos.posts.v1beta1.ParamsOuterClass.Params.Builder subBuilder = null;
-              if (params_ != null) {
-                subBuilder = params_.toBuilder();
-              }
-              params_ = input.readMessage(desmos.posts.v1beta1.ParamsOuterClass.Params.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(params_);
-                params_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          posts_ = java.util.Collections.unmodifiableList(posts_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          usersPollAnswers_ = java.util.Collections.unmodifiableList(usersPollAnswers_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          postsReactions_ = java.util.Collections.unmodifiableList(postsReactions_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          registeredReactions_ = java.util.Collections.unmodifiableList(registeredReactions_);
-        }
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
-          reports_ = java.util.Collections.unmodifiableList(reports_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return desmos.posts.v1beta1.Genesis.internal_static_desmos_posts_v1beta1_GenesisState_descriptor;
@@ -571,7 +460,7 @@ public final class Genesis {
       if (params_ != null) {
         output.writeMessage(6, getParams());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -604,7 +493,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, getParams());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -634,7 +523,7 @@ public final class Genesis {
         if (!getParams()
             .equals(other.getParams())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -669,7 +558,7 @@ public final class Genesis {
         hash = (37 * hash) + PARAMS_FIELD_NUMBER;
         hash = (53 * hash) + getParams().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -790,57 +679,52 @@ public final class Genesis {
 
       // Construct using desmos.posts.v1beta1.Genesis.GenesisState.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getPostsFieldBuilder();
-          getUsersPollAnswersFieldBuilder();
-          getPostsReactionsFieldBuilder();
-          getRegisteredReactionsFieldBuilder();
-          getReportsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
         if (postsBuilder_ == null) {
           posts_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          posts_ = null;
           postsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (usersPollAnswersBuilder_ == null) {
           usersPollAnswers_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          usersPollAnswers_ = null;
           usersPollAnswersBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (postsReactionsBuilder_ == null) {
           postsReactions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          postsReactions_ = null;
           postsReactionsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (registeredReactionsBuilder_ == null) {
           registeredReactions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
+          registeredReactions_ = null;
           registeredReactionsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         if (reportsBuilder_ == null) {
           reports_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
+          reports_ = null;
           reportsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000010);
         if (paramsBuilder_ == null) {
           params_ = null;
         } else {
@@ -1105,7 +989,7 @@ public final class Genesis {
         if (other.hasParams()) {
           mergeParams(other.getParams());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1120,17 +1004,102 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        desmos.posts.v1beta1.Genesis.GenesisState parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                desmos.posts.v1beta1.Posts.Post m =
+                    input.readMessage(
+                        desmos.posts.v1beta1.Posts.Post.parser(),
+                        extensionRegistry);
+                if (postsBuilder_ == null) {
+                  ensurePostsIsMutable();
+                  posts_.add(m);
+                } else {
+                  postsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              case 18: {
+                desmos.posts.v1beta1.Polls.UserAnswer m =
+                    input.readMessage(
+                        desmos.posts.v1beta1.Polls.UserAnswer.parser(),
+                        extensionRegistry);
+                if (usersPollAnswersBuilder_ == null) {
+                  ensureUsersPollAnswersIsMutable();
+                  usersPollAnswers_.add(m);
+                } else {
+                  usersPollAnswersBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              case 26: {
+                desmos.posts.v1beta1.Reactions.PostReaction m =
+                    input.readMessage(
+                        desmos.posts.v1beta1.Reactions.PostReaction.parser(),
+                        extensionRegistry);
+                if (postsReactionsBuilder_ == null) {
+                  ensurePostsReactionsIsMutable();
+                  postsReactions_.add(m);
+                } else {
+                  postsReactionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 34: {
+                desmos.posts.v1beta1.Reactions.RegisteredReaction m =
+                    input.readMessage(
+                        desmos.posts.v1beta1.Reactions.RegisteredReaction.parser(),
+                        extensionRegistry);
+                if (registeredReactionsBuilder_ == null) {
+                  ensureRegisteredReactionsIsMutable();
+                  registeredReactions_.add(m);
+                } else {
+                  registeredReactionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+              case 42: {
+                desmos.posts.v1beta1.ReportOuterClass.Report m =
+                    input.readMessage(
+                        desmos.posts.v1beta1.ReportOuterClass.Report.parser(),
+                        extensionRegistry);
+                if (reportsBuilder_ == null) {
+                  ensureReportsIsMutable();
+                  reports_.add(m);
+                } else {
+                  reportsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+              case 50: {
+                input.readMessage(
+                    getParamsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 50
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (desmos.posts.v1beta1.Genesis.GenesisState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -2486,7 +2455,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GenesisState(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

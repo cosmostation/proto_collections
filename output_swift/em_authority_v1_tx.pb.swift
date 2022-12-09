@@ -196,6 +196,22 @@ struct Em_Authority_V1_MsgSetParametersResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Em_Authority_V1_MsgCreateIssuer: @unchecked Sendable {}
+extension Em_Authority_V1_Denomination: @unchecked Sendable {}
+extension Em_Authority_V1_MsgCreateIssuerResponse: @unchecked Sendable {}
+extension Em_Authority_V1_MsgDestroyIssuer: @unchecked Sendable {}
+extension Em_Authority_V1_MsgDestroyIssuerResponse: @unchecked Sendable {}
+extension Em_Authority_V1_MsgSetGasPrices: @unchecked Sendable {}
+extension Em_Authority_V1_MsgSetGasPricesResponse: @unchecked Sendable {}
+extension Em_Authority_V1_MsgReplaceAuthority: @unchecked Sendable {}
+extension Em_Authority_V1_MsgReplaceAuthorityResponse: @unchecked Sendable {}
+extension Em_Authority_V1_MsgScheduleUpgrade: @unchecked Sendable {}
+extension Em_Authority_V1_MsgScheduleUpgradeResponse: @unchecked Sendable {}
+extension Em_Authority_V1_MsgSetParameters: @unchecked Sendable {}
+extension Em_Authority_V1_MsgSetParametersResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "em.authority.v1"
@@ -512,12 +528,16 @@ extension Em_Authority_V1_MsgScheduleUpgrade: SwiftProtobuf.Message, SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.authority.isEmpty {
       try visitor.visitSingularStringField(value: self.authority, fieldNumber: 1)
     }
-    if let v = self._plan {
+    try { if let v = self._plan {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

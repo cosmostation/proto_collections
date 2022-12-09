@@ -215,6 +215,17 @@ struct Panacea_Did_V2_DataWithSeq {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Panacea_Did_V2_Strings: @unchecked Sendable {}
+extension Panacea_Did_V2_DIDDocument: @unchecked Sendable {}
+extension Panacea_Did_V2_VerificationMethod: @unchecked Sendable {}
+extension Panacea_Did_V2_VerificationRelationship: @unchecked Sendable {}
+extension Panacea_Did_V2_VerificationRelationship.OneOf_Content: @unchecked Sendable {}
+extension Panacea_Did_V2_Service: @unchecked Sendable {}
+extension Panacea_Did_V2_DIDDocumentWithSeq: @unchecked Sendable {}
+extension Panacea_Did_V2_DataWithSeq: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "panacea.did.v2"
@@ -288,15 +299,19 @@ extension Panacea_Did_V2_DIDDocument: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._contexts {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._contexts {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.id.isEmpty {
       try visitor.visitSingularStringField(value: self.id, fieldNumber: 2)
     }
-    if let v = self._controller {
+    try { if let v = self._controller {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if !self.verificationMethods.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.verificationMethods, fieldNumber: 4)
     }
@@ -428,8 +443,9 @@ extension Panacea_Did_V2_VerificationRelationship: SwiftProtobuf.Message, SwiftP
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every case branch when no optimizations are
-    // enabled. https://github.com/apple/swift-protobuf/issues/1034
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     switch self.content {
     case .verificationMethodID?: try {
       guard case .verificationMethodID(let v)? = self.content else { preconditionFailure() }
@@ -516,9 +532,13 @@ extension Panacea_Did_V2_DIDDocumentWithSeq: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._document {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._document {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if self.sequence != 0 {
       try visitor.visitSingularUInt64Field(value: self.sequence, fieldNumber: 2)
     }

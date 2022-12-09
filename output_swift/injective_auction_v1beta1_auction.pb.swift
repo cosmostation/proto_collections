@@ -107,6 +107,14 @@ struct Injective_Auction_V1beta1_EventAuctionStart {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Injective_Auction_V1beta1_Params: @unchecked Sendable {}
+extension Injective_Auction_V1beta1_Bid: @unchecked Sendable {}
+extension Injective_Auction_V1beta1_EventBid: @unchecked Sendable {}
+extension Injective_Auction_V1beta1_EventAuctionResult: @unchecked Sendable {}
+extension Injective_Auction_V1beta1_EventAuctionStart: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "injective.auction.v1beta1"

@@ -486,6 +486,23 @@ struct Cosmos_Tx_V1beta1_AuxSignerData {
   fileprivate var _signDoc: Cosmos_Tx_V1beta1_SignDocDirectAux? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Cosmos_Tx_V1beta1_Tx: @unchecked Sendable {}
+extension Cosmos_Tx_V1beta1_TxRaw: @unchecked Sendable {}
+extension Cosmos_Tx_V1beta1_SignDoc: @unchecked Sendable {}
+extension Cosmos_Tx_V1beta1_SignDocDirectAux: @unchecked Sendable {}
+extension Cosmos_Tx_V1beta1_TxBody: @unchecked Sendable {}
+extension Cosmos_Tx_V1beta1_AuthInfo: @unchecked Sendable {}
+extension Cosmos_Tx_V1beta1_SignerInfo: @unchecked Sendable {}
+extension Cosmos_Tx_V1beta1_ModeInfo: @unchecked Sendable {}
+extension Cosmos_Tx_V1beta1_ModeInfo.OneOf_Sum: @unchecked Sendable {}
+extension Cosmos_Tx_V1beta1_ModeInfo.Single: @unchecked Sendable {}
+extension Cosmos_Tx_V1beta1_ModeInfo.Multi: @unchecked Sendable {}
+extension Cosmos_Tx_V1beta1_Fee: @unchecked Sendable {}
+extension Cosmos_Tx_V1beta1_Tip: @unchecked Sendable {}
+extension Cosmos_Tx_V1beta1_AuxSignerData: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.tx.v1beta1"
@@ -513,12 +530,16 @@ extension Cosmos_Tx_V1beta1_Tx: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._body {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._body {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
-    if let v = self._authInfo {
+    } }()
+    try { if let v = self._authInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if !self.signatures.isEmpty {
       try visitor.visitRepeatedBytesField(value: self.signatures, fieldNumber: 3)
     }
@@ -657,12 +678,16 @@ extension Cosmos_Tx_V1beta1_SignDocDirectAux: SwiftProtobuf.Message, SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.bodyBytes.isEmpty {
       try visitor.visitSingularBytesField(value: self.bodyBytes, fieldNumber: 1)
     }
-    if let v = self._publicKey {
+    try { if let v = self._publicKey {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if !self.chainID.isEmpty {
       try visitor.visitSingularStringField(value: self.chainID, fieldNumber: 3)
     }
@@ -672,9 +697,9 @@ extension Cosmos_Tx_V1beta1_SignDocDirectAux: SwiftProtobuf.Message, SwiftProtob
     if self.sequence != 0 {
       try visitor.visitSingularUInt64Field(value: self.sequence, fieldNumber: 5)
     }
-    if let v = self._tip {
+    try { if let v = self._tip {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -769,15 +794,19 @@ extension Cosmos_Tx_V1beta1_AuthInfo: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.signerInfos.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.signerInfos, fieldNumber: 1)
     }
-    if let v = self._fee {
+    try { if let v = self._fee {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
-    if let v = self._tip {
+    } }()
+    try { if let v = self._tip {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -813,12 +842,16 @@ extension Cosmos_Tx_V1beta1_SignerInfo: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._publicKey {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._publicKey {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
-    if let v = self._modeInfo {
+    } }()
+    try { if let v = self._modeInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if self.sequence != 0 {
       try visitor.visitSingularUInt64Field(value: self.sequence, fieldNumber: 3)
     }
@@ -880,8 +913,9 @@ extension Cosmos_Tx_V1beta1_ModeInfo: SwiftProtobuf.Message, SwiftProtobuf._Mess
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every case branch when no optimizations are
-    // enabled. https://github.com/apple/swift-protobuf/issues/1034
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     switch self.sum {
     case .single?: try {
       guard case .single(let v)? = self.sum else { preconditionFailure() }
@@ -956,9 +990,13 @@ extension Cosmos_Tx_V1beta1_ModeInfo.Multi: SwiftProtobuf.Message, SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._bitarray {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._bitarray {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.modeInfos.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.modeInfos, fieldNumber: 2)
     }
@@ -1086,12 +1124,16 @@ extension Cosmos_Tx_V1beta1_AuxSignerData: SwiftProtobuf.Message, SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.address.isEmpty {
       try visitor.visitSingularStringField(value: self.address, fieldNumber: 1)
     }
-    if let v = self._signDoc {
+    try { if let v = self._signDoc {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if self.mode != .unspecified {
       try visitor.visitSingularEnumField(value: self.mode, fieldNumber: 3)
     }

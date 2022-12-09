@@ -255,6 +255,25 @@ struct Axelar_Bitcoin_V1beta1_SignTxResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Axelar_Bitcoin_V1beta1_ConfirmOutpointRequest: @unchecked Sendable {}
+extension Axelar_Bitcoin_V1beta1_ConfirmOutpointResponse: @unchecked Sendable {}
+extension Axelar_Bitcoin_V1beta1_LinkRequest: @unchecked Sendable {}
+extension Axelar_Bitcoin_V1beta1_LinkResponse: @unchecked Sendable {}
+extension Axelar_Bitcoin_V1beta1_CreatePendingTransfersTxRequest: @unchecked Sendable {}
+extension Axelar_Bitcoin_V1beta1_CreatePendingTransfersTxResponse: @unchecked Sendable {}
+extension Axelar_Bitcoin_V1beta1_VoteConfirmOutpointRequest: @unchecked Sendable {}
+extension Axelar_Bitcoin_V1beta1_VoteConfirmOutpointResponse: @unchecked Sendable {}
+extension Axelar_Bitcoin_V1beta1_SubmitExternalSignatureRequest: @unchecked Sendable {}
+extension Axelar_Bitcoin_V1beta1_SubmitExternalSignatureResponse: @unchecked Sendable {}
+extension Axelar_Bitcoin_V1beta1_CreateMasterTxRequest: @unchecked Sendable {}
+extension Axelar_Bitcoin_V1beta1_CreateRescueTxResponse: @unchecked Sendable {}
+extension Axelar_Bitcoin_V1beta1_CreateRescueTxRequest: @unchecked Sendable {}
+extension Axelar_Bitcoin_V1beta1_CreateMasterTxResponse: @unchecked Sendable {}
+extension Axelar_Bitcoin_V1beta1_SignTxRequest: @unchecked Sendable {}
+extension Axelar_Bitcoin_V1beta1_SignTxResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "axelar.bitcoin.v1beta1"
@@ -280,12 +299,16 @@ extension Axelar_Bitcoin_V1beta1_ConfirmOutpointRequest: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularBytesField(value: self.sender, fieldNumber: 1)
     }
-    if let v = self._outPointInfo {
+    try { if let v = self._outPointInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -480,12 +503,16 @@ extension Axelar_Bitcoin_V1beta1_VoteConfirmOutpointRequest: SwiftProtobuf.Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularBytesField(value: self.sender, fieldNumber: 1)
     }
-    if let v = self._pollKey {
+    try { if let v = self._pollKey {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if !self.outPoint.isEmpty {
       try visitor.visitSingularStringField(value: self.outPoint, fieldNumber: 3)
     }

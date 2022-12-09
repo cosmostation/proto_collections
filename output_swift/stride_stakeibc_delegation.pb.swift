@@ -45,6 +45,10 @@ struct Stride_Stakeibc_Delegation {
   fileprivate var _validator: Stride_Stakeibc_Validator? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Stride_Stakeibc_Delegation: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stride.stakeibc"
@@ -72,12 +76,16 @@ extension Stride_Stakeibc_Delegation: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.delegateAcctAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.delegateAcctAddress, fieldNumber: 1)
     }
-    if let v = self._validator {
+    try { if let v = self._validator {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if self.amt != 0 {
       try visitor.visitSingularInt64Field(value: self.amt, fieldNumber: 3)
     }

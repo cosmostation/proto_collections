@@ -202,7 +202,7 @@ public final class QueryGrpc {
     /**
      * <pre>
      * FeeTokens returns a list of all the whitelisted fee tokens and their
-     * corresponding pools It does not include the BaseDenom, which has its own
+     * corresponding pools. It does not include the BaseDenom, which has its own
      * query endpoint
      * </pre>
      */
@@ -292,7 +292,7 @@ public final class QueryGrpc {
     /**
      * <pre>
      * FeeTokens returns a list of all the whitelisted fee tokens and their
-     * corresponding pools It does not include the BaseDenom, which has its own
+     * corresponding pools. It does not include the BaseDenom, which has its own
      * query endpoint
      * </pre>
      */
@@ -353,7 +353,7 @@ public final class QueryGrpc {
     /**
      * <pre>
      * FeeTokens returns a list of all the whitelisted fee tokens and their
-     * corresponding pools It does not include the BaseDenom, which has its own
+     * corresponding pools. It does not include the BaseDenom, which has its own
      * query endpoint
      * </pre>
      */
@@ -410,7 +410,7 @@ public final class QueryGrpc {
     /**
      * <pre>
      * FeeTokens returns a list of all the whitelisted fee tokens and their
-     * corresponding pools It does not include the BaseDenom, which has its own
+     * corresponding pools. It does not include the BaseDenom, which has its own
      * query endpoint
      * </pre>
      */

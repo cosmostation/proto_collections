@@ -73,6 +73,10 @@ extension Kava_Earn_V1beta1_StrategyType: CaseIterable {
 
 #endif  // swift(>=4.2)
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Kava_Earn_V1beta1_StrategyType: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension Kava_Earn_V1beta1_StrategyType: SwiftProtobuf._ProtoNameProviding {

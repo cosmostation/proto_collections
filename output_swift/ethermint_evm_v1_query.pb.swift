@@ -512,6 +512,33 @@ struct Ethermint_Evm_V1_QueryBaseFeeResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Ethermint_Evm_V1_QueryAccountRequest: @unchecked Sendable {}
+extension Ethermint_Evm_V1_QueryAccountResponse: @unchecked Sendable {}
+extension Ethermint_Evm_V1_QueryCosmosAccountRequest: @unchecked Sendable {}
+extension Ethermint_Evm_V1_QueryCosmosAccountResponse: @unchecked Sendable {}
+extension Ethermint_Evm_V1_QueryValidatorAccountRequest: @unchecked Sendable {}
+extension Ethermint_Evm_V1_QueryValidatorAccountResponse: @unchecked Sendable {}
+extension Ethermint_Evm_V1_QueryBalanceRequest: @unchecked Sendable {}
+extension Ethermint_Evm_V1_QueryBalanceResponse: @unchecked Sendable {}
+extension Ethermint_Evm_V1_QueryStorageRequest: @unchecked Sendable {}
+extension Ethermint_Evm_V1_QueryStorageResponse: @unchecked Sendable {}
+extension Ethermint_Evm_V1_QueryCodeRequest: @unchecked Sendable {}
+extension Ethermint_Evm_V1_QueryCodeResponse: @unchecked Sendable {}
+extension Ethermint_Evm_V1_QueryTxLogsRequest: @unchecked Sendable {}
+extension Ethermint_Evm_V1_QueryTxLogsResponse: @unchecked Sendable {}
+extension Ethermint_Evm_V1_QueryParamsRequest: @unchecked Sendable {}
+extension Ethermint_Evm_V1_QueryParamsResponse: @unchecked Sendable {}
+extension Ethermint_Evm_V1_EthCallRequest: @unchecked Sendable {}
+extension Ethermint_Evm_V1_EstimateGasResponse: @unchecked Sendable {}
+extension Ethermint_Evm_V1_QueryTraceTxRequest: @unchecked Sendable {}
+extension Ethermint_Evm_V1_QueryTraceTxResponse: @unchecked Sendable {}
+extension Ethermint_Evm_V1_QueryTraceBlockRequest: @unchecked Sendable {}
+extension Ethermint_Evm_V1_QueryTraceBlockResponse: @unchecked Sendable {}
+extension Ethermint_Evm_V1_QueryBaseFeeRequest: @unchecked Sendable {}
+extension Ethermint_Evm_V1_QueryBaseFeeResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "ethermint.evm.v1"
@@ -963,12 +990,16 @@ extension Ethermint_Evm_V1_QueryTxLogsRequest: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.hash.isEmpty {
       try visitor.visitSingularStringField(value: self.hash, fieldNumber: 1)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1001,12 +1032,16 @@ extension Ethermint_Evm_V1_QueryTxLogsResponse: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.logs.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.logs, fieldNumber: 1)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1056,9 +1091,13 @@ extension Ethermint_Evm_V1_QueryParamsResponse: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._params {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1211,12 +1250,16 @@ extension Ethermint_Evm_V1_QueryTraceTxRequest: SwiftProtobuf.Message, SwiftProt
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._msg {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      try { if let v = _storage._msg {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      }
-      if let v = _storage._traceConfig {
+      } }()
+      try { if let v = _storage._traceConfig {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-      }
+      } }()
       if !_storage._predecessors.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._predecessors, fieldNumber: 4)
       }
@@ -1226,9 +1269,9 @@ extension Ethermint_Evm_V1_QueryTraceTxRequest: SwiftProtobuf.Message, SwiftProt
       if !_storage._blockHash.isEmpty {
         try visitor.visitSingularStringField(value: _storage._blockHash, fieldNumber: 6)
       }
-      if let v = _storage._blockTime {
+      try { if let v = _storage._blockTime {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-      }
+      } }()
       if !_storage._proposerAddress.isEmpty {
         try visitor.visitSingularBytesField(value: _storage._proposerAddress, fieldNumber: 8)
       }
@@ -1351,21 +1394,25 @@ extension Ethermint_Evm_V1_QueryTraceBlockRequest: SwiftProtobuf.Message, SwiftP
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
       if !_storage._txs.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._txs, fieldNumber: 1)
       }
-      if let v = _storage._traceConfig {
+      try { if let v = _storage._traceConfig {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-      }
+      } }()
       if _storage._blockNumber != 0 {
         try visitor.visitSingularInt64Field(value: _storage._blockNumber, fieldNumber: 5)
       }
       if !_storage._blockHash.isEmpty {
         try visitor.visitSingularStringField(value: _storage._blockHash, fieldNumber: 6)
       }
-      if let v = _storage._blockTime {
+      try { if let v = _storage._blockTime {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-      }
+      } }()
       if !_storage._proposerAddress.isEmpty {
         try visitor.visitSingularBytesField(value: _storage._proposerAddress, fieldNumber: 8)
       }

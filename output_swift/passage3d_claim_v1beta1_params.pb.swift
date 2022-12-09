@@ -68,6 +68,10 @@ struct Passage3d_Claim_V1beta1_Params {
   fileprivate var _durationOfDecay: SwiftProtobuf.Google_Protobuf_Duration? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Passage3d_Claim_V1beta1_Params: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "passage3d.claim.v1beta1"
@@ -99,18 +103,22 @@ extension Passage3d_Claim_V1beta1_Params: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.airdropEnabled != false {
       try visitor.visitSingularBoolField(value: self.airdropEnabled, fieldNumber: 1)
     }
-    if let v = self._airdropStartTime {
+    try { if let v = self._airdropStartTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
-    if let v = self._durationUntilDecay {
+    } }()
+    try { if let v = self._durationUntilDecay {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
-    if let v = self._durationOfDecay {
+    } }()
+    try { if let v = self._durationOfDecay {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     if !self.claimDenom.isEmpty {
       try visitor.visitSingularStringField(value: self.claimDenom, fieldNumber: 5)
     }

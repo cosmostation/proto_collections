@@ -192,6 +192,13 @@ struct Osmosis_Gamm_V1beta1_Pool {
   fileprivate var _totalShares: Cosmos_Base_V1beta1_Coin? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Osmosis_Gamm_V1beta1_SmoothWeightChangeParams: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_PoolParams: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_PoolAsset: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_Pool: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "osmosis.gamm.v1beta1"
@@ -221,12 +228,16 @@ extension Osmosis_Gamm_V1beta1_SmoothWeightChangeParams: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._startTime {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._startTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
-    if let v = self._duration {
+    } }()
+    try { if let v = self._duration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if !self.initialPoolWeights.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.initialPoolWeights, fieldNumber: 3)
     }
@@ -269,15 +280,19 @@ extension Osmosis_Gamm_V1beta1_PoolParams: SwiftProtobuf.Message, SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.swapFee.isEmpty {
       try visitor.visitSingularStringField(value: self.swapFee, fieldNumber: 1)
     }
     if !self.exitFee.isEmpty {
       try visitor.visitSingularStringField(value: self.exitFee, fieldNumber: 2)
     }
-    if let v = self._smoothWeightChangeParams {
+    try { if let v = self._smoothWeightChangeParams {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -311,9 +326,13 @@ extension Osmosis_Gamm_V1beta1_PoolAsset: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._token {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._token {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.weight.isEmpty {
       try visitor.visitSingularStringField(value: self.weight, fieldNumber: 2)
     }
@@ -359,21 +378,25 @@ extension Osmosis_Gamm_V1beta1_Pool: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.address.isEmpty {
       try visitor.visitSingularStringField(value: self.address, fieldNumber: 1)
     }
     if self.id != 0 {
       try visitor.visitSingularUInt64Field(value: self.id, fieldNumber: 2)
     }
-    if let v = self._poolParams {
+    try { if let v = self._poolParams {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if !self.futurePoolGovernor.isEmpty {
       try visitor.visitSingularStringField(value: self.futurePoolGovernor, fieldNumber: 4)
     }
-    if let v = self._totalShares {
+    try { if let v = self._totalShares {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    }
+    } }()
     if !self.poolAssets.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.poolAssets, fieldNumber: 6)
     }

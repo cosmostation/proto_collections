@@ -114,6 +114,13 @@ struct Desmos_Profiles_V1beta1_MsgUnlinkChainAccountResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Desmos_Profiles_V1beta1_MsgLinkChainAccount: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_MsgLinkChainAccountResponse: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_MsgUnlinkChainAccount: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_MsgUnlinkChainAccountResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "desmos.profiles.v1beta1"
@@ -143,15 +150,19 @@ extension Desmos_Profiles_V1beta1_MsgLinkChainAccount: SwiftProtobuf.Message, Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._chainAddress {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._chainAddress {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
-    if let v = self._proof {
+    } }()
+    try { if let v = self._proof {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
-    if let v = self._chainConfig {
+    } }()
+    try { if let v = self._chainConfig {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if !self.signer.isEmpty {
       try visitor.visitSingularStringField(value: self.signer, fieldNumber: 4)
     }

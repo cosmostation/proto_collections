@@ -151,6 +151,17 @@ struct Kujira_Denom_MsgChangeAdminResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Kujira_Denom_MsgCreateDenom: @unchecked Sendable {}
+extension Kujira_Denom_MsgCreateDenomResponse: @unchecked Sendable {}
+extension Kujira_Denom_MsgMint: @unchecked Sendable {}
+extension Kujira_Denom_MsgMintResponse: @unchecked Sendable {}
+extension Kujira_Denom_MsgBurn: @unchecked Sendable {}
+extension Kujira_Denom_MsgBurnResponse: @unchecked Sendable {}
+extension Kujira_Denom_MsgChangeAdmin: @unchecked Sendable {}
+extension Kujira_Denom_MsgChangeAdminResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kujira.denom"
@@ -248,12 +259,16 @@ extension Kujira_Denom_MsgMint: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularStringField(value: self.sender, fieldNumber: 1)
     }
-    if let v = self._amount {
+    try { if let v = self._amount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if !self.recipient.isEmpty {
       try visitor.visitSingularStringField(value: self.recipient, fieldNumber: 3)
     }
@@ -309,12 +324,16 @@ extension Kujira_Denom_MsgBurn: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularStringField(value: self.sender, fieldNumber: 1)
     }
-    if let v = self._amount {
+    try { if let v = self._amount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

@@ -454,6 +454,32 @@ struct Regen_Group_V1alpha1_MsgExecResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Regen_Group_V1alpha1_Exec: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_MsgCreateGroup: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_MsgCreateGroupResponse: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_MsgUpdateGroupMembers: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_MsgUpdateGroupMembersResponse: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_MsgUpdateGroupAdmin: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_MsgUpdateGroupAdminResponse: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_MsgUpdateGroupMetadata: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_MsgUpdateGroupMetadataResponse: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_MsgCreateGroupAccount: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_MsgCreateGroupAccountResponse: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_MsgUpdateGroupAccountAdmin: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_MsgUpdateGroupAccountAdminResponse: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_MsgUpdateGroupAccountDecisionPolicy: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_MsgUpdateGroupAccountDecisionPolicyResponse: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_MsgUpdateGroupAccountMetadata: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_MsgUpdateGroupAccountMetadataResponse: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_MsgCreateProposal: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_MsgCreateProposalResponse: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_MsgVote: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_MsgVoteResponse: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_MsgExec: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_MsgExecResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "regen.group.v1alpha1"
@@ -755,6 +781,10 @@ extension Regen_Group_V1alpha1_MsgCreateGroupAccount: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.admin.isEmpty {
       try visitor.visitSingularStringField(value: self.admin, fieldNumber: 1)
     }
@@ -764,9 +794,9 @@ extension Regen_Group_V1alpha1_MsgCreateGroupAccount: SwiftProtobuf.Message, Swi
     if !self.metadata.isEmpty {
       try visitor.visitSingularBytesField(value: self.metadata, fieldNumber: 3)
     }
-    if let v = self._decisionPolicy {
+    try { if let v = self._decisionPolicy {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -898,15 +928,19 @@ extension Regen_Group_V1alpha1_MsgUpdateGroupAccountDecisionPolicy: SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.admin.isEmpty {
       try visitor.visitSingularStringField(value: self.admin, fieldNumber: 1)
     }
     if !self.address.isEmpty {
       try visitor.visitSingularStringField(value: self.address, fieldNumber: 2)
     }
-    if let v = self._decisionPolicy {
+    try { if let v = self._decisionPolicy {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

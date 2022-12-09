@@ -78,6 +78,13 @@ struct Desmos_Profiles_V1beta1_MsgDeleteProfileResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Desmos_Profiles_V1beta1_MsgSaveProfile: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_MsgSaveProfileResponse: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_MsgDeleteProfile: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_MsgDeleteProfileResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "desmos.profiles.v1beta1"

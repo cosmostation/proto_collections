@@ -155,7 +155,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * EpochProvisions current minting epoch provisions value.
+     * EpochProvisions returns the current minting epoch provisions value.
      * </pre>
      */
     public void epochProvisions(osmosis.mint.v1beta1.QueryOuterClass.QueryEpochProvisionsRequest request,
@@ -213,7 +213,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * EpochProvisions current minting epoch provisions value.
+     * EpochProvisions returns the current minting epoch provisions value.
      * </pre>
      */
     public void epochProvisions(osmosis.mint.v1beta1.QueryOuterClass.QueryEpochProvisionsRequest request,
@@ -252,7 +252,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * EpochProvisions current minting epoch provisions value.
+     * EpochProvisions returns the current minting epoch provisions value.
      * </pre>
      */
     public osmosis.mint.v1beta1.QueryOuterClass.QueryEpochProvisionsResponse epochProvisions(osmosis.mint.v1beta1.QueryOuterClass.QueryEpochProvisionsRequest request) {
@@ -291,7 +291,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * EpochProvisions current minting epoch provisions value.
+     * EpochProvisions returns the current minting epoch provisions value.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<osmosis.mint.v1beta1.QueryOuterClass.QueryEpochProvisionsResponse> epochProvisions(

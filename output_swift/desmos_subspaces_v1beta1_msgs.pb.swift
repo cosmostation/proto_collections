@@ -256,6 +256,25 @@ struct Desmos_Subspaces_V1beta1_MsgUnbanUserResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Desmos_Subspaces_V1beta1_MsgCreateSubspace: @unchecked Sendable {}
+extension Desmos_Subspaces_V1beta1_MsgCreateSubspaceResponse: @unchecked Sendable {}
+extension Desmos_Subspaces_V1beta1_MsgEditSubspace: @unchecked Sendable {}
+extension Desmos_Subspaces_V1beta1_MsgEditSubspaceResponse: @unchecked Sendable {}
+extension Desmos_Subspaces_V1beta1_MsgAddAdmin: @unchecked Sendable {}
+extension Desmos_Subspaces_V1beta1_MsgAddAdminResponse: @unchecked Sendable {}
+extension Desmos_Subspaces_V1beta1_MsgRemoveAdmin: @unchecked Sendable {}
+extension Desmos_Subspaces_V1beta1_MsgRemoveAdminResponse: @unchecked Sendable {}
+extension Desmos_Subspaces_V1beta1_MsgRegisterUser: @unchecked Sendable {}
+extension Desmos_Subspaces_V1beta1_MsgRegisterUserResponse: @unchecked Sendable {}
+extension Desmos_Subspaces_V1beta1_MsgUnregisterUser: @unchecked Sendable {}
+extension Desmos_Subspaces_V1beta1_MsgUnregisterUserResponse: @unchecked Sendable {}
+extension Desmos_Subspaces_V1beta1_MsgBanUser: @unchecked Sendable {}
+extension Desmos_Subspaces_V1beta1_MsgBanUserResponse: @unchecked Sendable {}
+extension Desmos_Subspaces_V1beta1_MsgUnbanUser: @unchecked Sendable {}
+extension Desmos_Subspaces_V1beta1_MsgUnbanUserResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "desmos.subspaces.v1beta1"

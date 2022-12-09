@@ -142,6 +142,16 @@ struct Likechain_Iscn_MsgChangeIscnRecordOwnershipResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Likechain_Iscn_IscnRecord: @unchecked Sendable {}
+extension Likechain_Iscn_MsgCreateIscnRecord: @unchecked Sendable {}
+extension Likechain_Iscn_MsgCreateIscnRecordResponse: @unchecked Sendable {}
+extension Likechain_Iscn_MsgUpdateIscnRecord: @unchecked Sendable {}
+extension Likechain_Iscn_MsgUpdateIscnRecordResponse: @unchecked Sendable {}
+extension Likechain_Iscn_MsgChangeIscnRecordOwnership: @unchecked Sendable {}
+extension Likechain_Iscn_MsgChangeIscnRecordOwnershipResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "likechain.iscn"
@@ -217,12 +227,16 @@ extension Likechain_Iscn_MsgCreateIscnRecord: SwiftProtobuf.Message, SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.from.isEmpty {
       try visitor.visitSingularStringField(value: self.from, fieldNumber: 1)
     }
-    if let v = self._record {
+    try { if let v = self._record {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -295,15 +309,19 @@ extension Likechain_Iscn_MsgUpdateIscnRecord: SwiftProtobuf.Message, SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.from.isEmpty {
       try visitor.visitSingularStringField(value: self.from, fieldNumber: 1)
     }
     if !self.iscnID.isEmpty {
       try visitor.visitSingularStringField(value: self.iscnID, fieldNumber: 2)
     }
-    if let v = self._record {
+    try { if let v = self._record {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

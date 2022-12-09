@@ -54,6 +54,10 @@ struct Lum_Network_Airdrop_GenesisState {
   fileprivate var _params: Lum_Network_Airdrop_Params? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Lum_Network_Airdrop_GenesisState: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "lum.network.airdrop"
@@ -81,12 +85,16 @@ extension Lum_Network_Airdrop_GenesisState: SwiftProtobuf.Message, SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._moduleAccountBalance {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._moduleAccountBalance {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
-    if let v = self._params {
+    } }()
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if !self.claimRecords.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.claimRecords, fieldNumber: 3)
     }

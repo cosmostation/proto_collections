@@ -37,6 +37,10 @@ struct Akash_Deployment_V1beta2_GroupID {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Akash_Deployment_V1beta2_GroupID: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "akash.deployment.v1beta2"

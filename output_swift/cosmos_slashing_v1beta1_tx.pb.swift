@@ -44,6 +44,11 @@ struct Cosmos_Slashing_V1beta1_MsgUnjailResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Cosmos_Slashing_V1beta1_MsgUnjail: @unchecked Sendable {}
+extension Cosmos_Slashing_V1beta1_MsgUnjailResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.slashing.v1beta1"

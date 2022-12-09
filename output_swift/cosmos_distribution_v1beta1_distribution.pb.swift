@@ -235,6 +235,21 @@ struct Cosmos_Distribution_V1beta1_CommunityPoolSpendProposalWithDeposit {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Cosmos_Distribution_V1beta1_Params: @unchecked Sendable {}
+extension Cosmos_Distribution_V1beta1_ValidatorHistoricalRewards: @unchecked Sendable {}
+extension Cosmos_Distribution_V1beta1_ValidatorCurrentRewards: @unchecked Sendable {}
+extension Cosmos_Distribution_V1beta1_ValidatorAccumulatedCommission: @unchecked Sendable {}
+extension Cosmos_Distribution_V1beta1_ValidatorOutstandingRewards: @unchecked Sendable {}
+extension Cosmos_Distribution_V1beta1_ValidatorSlashEvent: @unchecked Sendable {}
+extension Cosmos_Distribution_V1beta1_ValidatorSlashEvents: @unchecked Sendable {}
+extension Cosmos_Distribution_V1beta1_FeePool: @unchecked Sendable {}
+extension Cosmos_Distribution_V1beta1_CommunityPoolSpendProposal: @unchecked Sendable {}
+extension Cosmos_Distribution_V1beta1_DelegatorStartingInfo: @unchecked Sendable {}
+extension Cosmos_Distribution_V1beta1_DelegationDelegatorReward: @unchecked Sendable {}
+extension Cosmos_Distribution_V1beta1_CommunityPoolSpendProposalWithDeposit: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.distribution.v1beta1"

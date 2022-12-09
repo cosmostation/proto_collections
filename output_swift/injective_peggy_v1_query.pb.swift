@@ -580,6 +580,49 @@ struct Injective_Peggy_V1_QueryModuleStateResponse {
   fileprivate var _state: Injective_Peggy_V1_GenesisState? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Injective_Peggy_V1_QueryParamsRequest: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryParamsResponse: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryCurrentValsetRequest: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryCurrentValsetResponse: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryValsetRequestRequest: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryValsetRequestResponse: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryValsetConfirmRequest: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryValsetConfirmResponse: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryValsetConfirmsByNonceRequest: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryValsetConfirmsByNonceResponse: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryLastValsetRequestsRequest: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryLastValsetRequestsResponse: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryLastPendingValsetRequestByAddrRequest: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryLastPendingValsetRequestByAddrResponse: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryBatchFeeRequest: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryBatchFeeResponse: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryLastPendingBatchRequestByAddrRequest: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryLastPendingBatchRequestByAddrResponse: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryOutgoingTxBatchesRequest: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryOutgoingTxBatchesResponse: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryBatchRequestByNonceRequest: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryBatchRequestByNonceResponse: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryBatchConfirmsRequest: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryBatchConfirmsResponse: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryLastEventByAddrRequest: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryLastEventByAddrResponse: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryERC20ToDenomRequest: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryERC20ToDenomResponse: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryDenomToERC20Request: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryDenomToERC20Response: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryDelegateKeysByValidatorAddress: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryDelegateKeysByValidatorAddressResponse: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryDelegateKeysByEthAddress: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryDelegateKeysByEthAddressResponse: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryDelegateKeysByOrchestratorAddress: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryDelegateKeysByOrchestratorAddressResponse: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryPendingSendToEth: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryPendingSendToEthResponse: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryModuleStateRequest: @unchecked Sendable {}
+extension Injective_Peggy_V1_QueryModuleStateResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "injective.peggy.v1"
@@ -622,9 +665,13 @@ extension Injective_Peggy_V1_QueryParamsResponse: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._params {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -673,9 +720,13 @@ extension Injective_Peggy_V1_QueryCurrentValsetResponse: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._valset {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._valset {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -737,9 +788,13 @@ extension Injective_Peggy_V1_QueryValsetRequestResponse: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._valset {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._valset {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -807,9 +862,13 @@ extension Injective_Peggy_V1_QueryValsetConfirmResponse: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._confirm {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._confirm {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1101,9 +1160,13 @@ extension Injective_Peggy_V1_QueryLastPendingBatchRequestByAddrResponse: SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._batch {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._batch {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1222,9 +1285,13 @@ extension Injective_Peggy_V1_QueryBatchRequestByNonceResponse: SwiftProtobuf.Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._batch {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._batch {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1356,9 +1423,13 @@ extension Injective_Peggy_V1_QueryLastEventByAddrResponse: SwiftProtobuf.Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._lastClaimEvent {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._lastClaimEvent {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1827,9 +1898,13 @@ extension Injective_Peggy_V1_QueryModuleStateResponse: SwiftProtobuf.Message, Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._state {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._state {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

@@ -99,6 +99,11 @@ struct Acm_ContractMeta {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Acm_Account: @unchecked Sendable {}
+extension Acm_ContractMeta: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "acm"
@@ -142,12 +147,16 @@ extension Acm_Account: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementati
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.address.isEmpty {
       try visitor.visitSingularBytesField(value: self.address, fieldNumber: 1)
     }
-    if let v = self._publicKey {
+    try { if let v = self._publicKey {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if self.sequence != 0 {
       try visitor.visitSingularUInt64Field(value: self.sequence, fieldNumber: 3)
     }
@@ -157,9 +166,9 @@ extension Acm_Account: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementati
     if !self.evmcode.isEmpty {
       try visitor.visitSingularBytesField(value: self.evmcode, fieldNumber: 5)
     }
-    if let v = self._permissions {
+    try { if let v = self._permissions {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    }
+    } }()
     if !self.wasmcode.isEmpty {
       try visitor.visitSingularBytesField(value: self.wasmcode, fieldNumber: 7)
     }

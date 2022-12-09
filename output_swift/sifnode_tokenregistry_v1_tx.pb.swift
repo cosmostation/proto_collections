@@ -113,6 +113,15 @@ struct Sifnode_Tokenregistry_V1_MsgDeregisterResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Sifnode_Tokenregistry_V1_MsgRegister: @unchecked Sendable {}
+extension Sifnode_Tokenregistry_V1_MsgRegisterResponse: @unchecked Sendable {}
+extension Sifnode_Tokenregistry_V1_MsgSetRegistry: @unchecked Sendable {}
+extension Sifnode_Tokenregistry_V1_MsgSetRegistryResponse: @unchecked Sendable {}
+extension Sifnode_Tokenregistry_V1_MsgDeregister: @unchecked Sendable {}
+extension Sifnode_Tokenregistry_V1_MsgDeregisterResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "sifnode.tokenregistry.v1"
@@ -163,12 +172,16 @@ extension Sifnode_Tokenregistry_V1_MsgRegister: SwiftProtobuf.Message, SwiftProt
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
       if !_storage._from.isEmpty {
         try visitor.visitSingularStringField(value: _storage._from, fieldNumber: 1)
       }
-      if let v = _storage._entry {
+      try { if let v = _storage._entry {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      }
+      } }()
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -229,12 +242,16 @@ extension Sifnode_Tokenregistry_V1_MsgSetRegistry: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.from.isEmpty {
       try visitor.visitSingularStringField(value: self.from, fieldNumber: 1)
     }
-    if let v = self._registry {
+    try { if let v = self._registry {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

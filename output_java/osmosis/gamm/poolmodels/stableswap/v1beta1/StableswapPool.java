@@ -78,55 +78,6 @@ public final class StableswapPool {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PoolParams(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              swapFee_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              exitFee_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return osmosis.gamm.poolmodels.stableswap.v1beta1.StableswapPool.internal_static_osmosis_gamm_poolmodels_stableswap_v1beta1_PoolParams_descriptor;
@@ -230,13 +181,13 @@ public final class StableswapPool {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSwapFeeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(swapFee_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, swapFee_);
       }
-      if (!getExitFeeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(exitFee_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, exitFee_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -245,13 +196,13 @@ public final class StableswapPool {
       if (size != -1) return size;
 
       size = 0;
-      if (!getSwapFeeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(swapFee_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, swapFee_);
       }
-      if (!getExitFeeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(exitFee_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, exitFee_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -270,7 +221,7 @@ public final class StableswapPool {
           .equals(other.getSwapFee())) return false;
       if (!getExitFee()
           .equals(other.getExitFee())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -285,7 +236,7 @@ public final class StableswapPool {
       hash = (53 * hash) + getSwapFee().hashCode();
       hash = (37 * hash) + EXIT_FEE_FIELD_NUMBER;
       hash = (53 * hash) + getExitFee().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -409,18 +360,13 @@ public final class StableswapPool {
 
       // Construct using osmosis.gamm.poolmodels.stableswap.v1beta1.StableswapPool.PoolParams.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -513,7 +459,7 @@ public final class StableswapPool {
           exitFee_ = other.exitFee_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -528,17 +474,40 @@ public final class StableswapPool {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        osmosis.gamm.poolmodels.stableswap.v1beta1.StableswapPool.PoolParams parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                swapFee_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                exitFee_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (osmosis.gamm.poolmodels.stableswap.v1beta1.StableswapPool.PoolParams) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -726,7 +695,18 @@ public final class StableswapPool {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PoolParams(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -893,29 +873,29 @@ public final class StableswapPool {
      * for calculation amognst assets with different precisions
      * </pre>
      *
-     * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
-     * @return A list containing the scalingFactor.
+     * <code>repeated uint64 scaling_factors = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factors&#92;""];</code>
+     * @return A list containing the scalingFactors.
      */
-    java.util.List<java.lang.Long> getScalingFactorList();
+    java.util.List<java.lang.Long> getScalingFactorsList();
     /**
      * <pre>
      * for calculation amognst assets with different precisions
      * </pre>
      *
-     * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
-     * @return The count of scalingFactor.
+     * <code>repeated uint64 scaling_factors = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factors&#92;""];</code>
+     * @return The count of scalingFactors.
      */
-    int getScalingFactorCount();
+    int getScalingFactorsCount();
     /**
      * <pre>
      * for calculation amognst assets with different precisions
      * </pre>
      *
-     * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+     * <code>repeated uint64 scaling_factors = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factors&#92;""];</code>
      * @param index The index of the element to return.
-     * @return The scalingFactor at the given index.
+     * @return The scalingFactors at the given index.
      */
-    long getScalingFactor(int index);
+    long getScalingFactors(int index);
 
     /**
      * <pre>
@@ -957,7 +937,7 @@ public final class StableswapPool {
       address_ = "";
       futurePoolGovernor_ = "";
       poolLiquidity_ = java.util.Collections.emptyList();
-      scalingFactor_ = emptyLongList();
+      scalingFactors_ = emptyLongList();
       scalingFactorController_ = "";
     }
 
@@ -972,129 +952,6 @@ public final class StableswapPool {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private Pool(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              address_ = s;
-              break;
-            }
-            case 16: {
-
-              id_ = input.readUInt64();
-              break;
-            }
-            case 26: {
-              osmosis.gamm.poolmodels.stableswap.v1beta1.StableswapPool.PoolParams.Builder subBuilder = null;
-              if (poolParams_ != null) {
-                subBuilder = poolParams_.toBuilder();
-              }
-              poolParams_ = input.readMessage(osmosis.gamm.poolmodels.stableswap.v1beta1.StableswapPool.PoolParams.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(poolParams_);
-                poolParams_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              futurePoolGovernor_ = s;
-              break;
-            }
-            case 42: {
-              cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
-              if (totalShares_ != null) {
-                subBuilder = totalShares_.toBuilder();
-              }
-              totalShares_ = input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(totalShares_);
-                totalShares_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                poolLiquidity_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              poolLiquidity_.add(
-                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
-              break;
-            }
-            case 56: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                scalingFactor_ = newLongList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              scalingFactor_.addLong(input.readUInt64());
-              break;
-            }
-            case 58: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                scalingFactor_ = newLongList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                scalingFactor_.addLong(input.readUInt64());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              scalingFactorController_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          poolLiquidity_ = java.util.Collections.unmodifiableList(poolLiquidity_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          scalingFactor_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -1342,45 +1199,45 @@ public final class StableswapPool {
       return poolLiquidity_.get(index);
     }
 
-    public static final int SCALING_FACTOR_FIELD_NUMBER = 7;
-    private com.google.protobuf.Internal.LongList scalingFactor_;
+    public static final int SCALING_FACTORS_FIELD_NUMBER = 7;
+    private com.google.protobuf.Internal.LongList scalingFactors_;
     /**
      * <pre>
      * for calculation amognst assets with different precisions
      * </pre>
      *
-     * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
-     * @return A list containing the scalingFactor.
+     * <code>repeated uint64 scaling_factors = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factors&#92;""];</code>
+     * @return A list containing the scalingFactors.
      */
     @java.lang.Override
     public java.util.List<java.lang.Long>
-        getScalingFactorList() {
-      return scalingFactor_;
+        getScalingFactorsList() {
+      return scalingFactors_;
     }
     /**
      * <pre>
      * for calculation amognst assets with different precisions
      * </pre>
      *
-     * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
-     * @return The count of scalingFactor.
+     * <code>repeated uint64 scaling_factors = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factors&#92;""];</code>
+     * @return The count of scalingFactors.
      */
-    public int getScalingFactorCount() {
-      return scalingFactor_.size();
+    public int getScalingFactorsCount() {
+      return scalingFactors_.size();
     }
     /**
      * <pre>
      * for calculation amognst assets with different precisions
      * </pre>
      *
-     * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+     * <code>repeated uint64 scaling_factors = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factors&#92;""];</code>
      * @param index The index of the element to return.
-     * @return The scalingFactor at the given index.
+     * @return The scalingFactors at the given index.
      */
-    public long getScalingFactor(int index) {
-      return scalingFactor_.getLong(index);
+    public long getScalingFactors(int index) {
+      return scalingFactors_.getLong(index);
     }
-    private int scalingFactorMemoizedSerializedSize = -1;
+    private int scalingFactorsMemoizedSerializedSize = -1;
 
     public static final int SCALING_FACTOR_CONTROLLER_FIELD_NUMBER = 8;
     private volatile java.lang.Object scalingFactorController_;
@@ -1443,7 +1300,7 @@ public final class StableswapPool {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (!getAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, address_);
       }
       if (id_ != 0L) {
@@ -1452,7 +1309,7 @@ public final class StableswapPool {
       if (poolParams_ != null) {
         output.writeMessage(3, getPoolParams());
       }
-      if (!getFuturePoolGovernorBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(futurePoolGovernor_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, futurePoolGovernor_);
       }
       if (totalShares_ != null) {
@@ -1461,17 +1318,17 @@ public final class StableswapPool {
       for (int i = 0; i < poolLiquidity_.size(); i++) {
         output.writeMessage(6, poolLiquidity_.get(i));
       }
-      if (getScalingFactorList().size() > 0) {
+      if (getScalingFactorsList().size() > 0) {
         output.writeUInt32NoTag(58);
-        output.writeUInt32NoTag(scalingFactorMemoizedSerializedSize);
+        output.writeUInt32NoTag(scalingFactorsMemoizedSerializedSize);
       }
-      for (int i = 0; i < scalingFactor_.size(); i++) {
-        output.writeUInt64NoTag(scalingFactor_.getLong(i));
+      for (int i = 0; i < scalingFactors_.size(); i++) {
+        output.writeUInt64NoTag(scalingFactors_.getLong(i));
       }
-      if (!getScalingFactorControllerBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(scalingFactorController_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, scalingFactorController_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1480,7 +1337,7 @@ public final class StableswapPool {
       if (size != -1) return size;
 
       size = 0;
-      if (!getAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, address_);
       }
       if (id_ != 0L) {
@@ -1491,7 +1348,7 @@ public final class StableswapPool {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getPoolParams());
       }
-      if (!getFuturePoolGovernorBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(futurePoolGovernor_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, futurePoolGovernor_);
       }
       if (totalShares_ != null) {
@@ -1504,22 +1361,22 @@ public final class StableswapPool {
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < scalingFactor_.size(); i++) {
+        for (int i = 0; i < scalingFactors_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt64SizeNoTag(scalingFactor_.getLong(i));
+            .computeUInt64SizeNoTag(scalingFactors_.getLong(i));
         }
         size += dataSize;
-        if (!getScalingFactorList().isEmpty()) {
+        if (!getScalingFactorsList().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
-        scalingFactorMemoizedSerializedSize = dataSize;
+        scalingFactorsMemoizedSerializedSize = dataSize;
       }
-      if (!getScalingFactorControllerBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(scalingFactorController_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, scalingFactorController_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1552,11 +1409,11 @@ public final class StableswapPool {
       }
       if (!getPoolLiquidityList()
           .equals(other.getPoolLiquidityList())) return false;
-      if (!getScalingFactorList()
-          .equals(other.getScalingFactorList())) return false;
+      if (!getScalingFactorsList()
+          .equals(other.getScalingFactorsList())) return false;
       if (!getScalingFactorController()
           .equals(other.getScalingFactorController())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1586,13 +1443,13 @@ public final class StableswapPool {
         hash = (37 * hash) + POOL_LIQUIDITY_FIELD_NUMBER;
         hash = (53 * hash) + getPoolLiquidityList().hashCode();
       }
-      if (getScalingFactorCount() > 0) {
-        hash = (37 * hash) + SCALING_FACTOR_FIELD_NUMBER;
-        hash = (53 * hash) + getScalingFactorList().hashCode();
+      if (getScalingFactorsCount() > 0) {
+        hash = (37 * hash) + SCALING_FACTORS_FIELD_NUMBER;
+        hash = (53 * hash) + getScalingFactorsList().hashCode();
       }
       hash = (37 * hash) + SCALING_FACTOR_CONTROLLER_FIELD_NUMBER;
       hash = (53 * hash) + getScalingFactorController().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1713,19 +1570,13 @@ public final class StableswapPool {
 
       // Construct using osmosis.gamm.poolmodels.stableswap.v1beta1.StableswapPool.Pool.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getPoolLiquidityFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -1750,11 +1601,12 @@ public final class StableswapPool {
         }
         if (poolLiquidityBuilder_ == null) {
           poolLiquidity_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          poolLiquidity_ = null;
           poolLiquidityBuilder_.clear();
         }
-        scalingFactor_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        scalingFactors_ = emptyLongList();
         bitField0_ = (bitField0_ & ~0x00000002);
         scalingFactorController_ = "";
 
@@ -1808,10 +1660,10 @@ public final class StableswapPool {
           result.poolLiquidity_ = poolLiquidityBuilder_.build();
         }
         if (((bitField0_ & 0x00000002) != 0)) {
-          scalingFactor_.makeImmutable();
+          scalingFactors_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000002);
         }
-        result.scalingFactor_ = scalingFactor_;
+        result.scalingFactors_ = scalingFactors_;
         result.scalingFactorController_ = scalingFactorController_;
         onBuilt();
         return result;
@@ -1904,13 +1756,13 @@ public final class StableswapPool {
             }
           }
         }
-        if (!other.scalingFactor_.isEmpty()) {
-          if (scalingFactor_.isEmpty()) {
-            scalingFactor_ = other.scalingFactor_;
+        if (!other.scalingFactors_.isEmpty()) {
+          if (scalingFactors_.isEmpty()) {
+            scalingFactors_ = other.scalingFactors_;
             bitField0_ = (bitField0_ & ~0x00000002);
           } else {
-            ensureScalingFactorIsMutable();
-            scalingFactor_.addAll(other.scalingFactor_);
+            ensureScalingFactorsIsMutable();
+            scalingFactors_.addAll(other.scalingFactors_);
           }
           onChanged();
         }
@@ -1918,7 +1770,7 @@ public final class StableswapPool {
           scalingFactorController_ = other.scalingFactorController_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1933,17 +1785,93 @@ public final class StableswapPool {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        osmosis.gamm.poolmodels.stableswap.v1beta1.StableswapPool.Pool parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                address_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 16: {
+                id_ = input.readUInt64();
+
+                break;
+              } // case 16
+              case 26: {
+                input.readMessage(
+                    getPoolParamsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 26
+              case 34: {
+                futurePoolGovernor_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+              case 42: {
+                input.readMessage(
+                    getTotalSharesFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 42
+              case 50: {
+                cosmos.base.v1beta1.CoinOuterClass.Coin m =
+                    input.readMessage(
+                        cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
+                        extensionRegistry);
+                if (poolLiquidityBuilder_ == null) {
+                  ensurePoolLiquidityIsMutable();
+                  poolLiquidity_.add(m);
+                } else {
+                  poolLiquidityBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+              case 56: {
+                long v = input.readUInt64();
+                ensureScalingFactorsIsMutable();
+                scalingFactors_.addLong(v);
+                break;
+              } // case 56
+              case 58: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureScalingFactorsIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  scalingFactors_.addLong(input.readUInt64());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 58
+              case 66: {
+                scalingFactorController_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 66
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (osmosis.gamm.poolmodels.stableswap.v1beta1.StableswapPool.Pool) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -2772,10 +2700,10 @@ public final class StableswapPool {
         return poolLiquidityBuilder_;
       }
 
-      private com.google.protobuf.Internal.LongList scalingFactor_ = emptyLongList();
-      private void ensureScalingFactorIsMutable() {
+      private com.google.protobuf.Internal.LongList scalingFactors_ = emptyLongList();
+      private void ensureScalingFactorsIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
-          scalingFactor_ = mutableCopy(scalingFactor_);
+          scalingFactors_ = mutableCopy(scalingFactors_);
           bitField0_ |= 0x00000002;
          }
       }
@@ -2784,51 +2712,51 @@ public final class StableswapPool {
        * for calculation amognst assets with different precisions
        * </pre>
        *
-       * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
-       * @return A list containing the scalingFactor.
+       * <code>repeated uint64 scaling_factors = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factors&#92;""];</code>
+       * @return A list containing the scalingFactors.
        */
       public java.util.List<java.lang.Long>
-          getScalingFactorList() {
+          getScalingFactorsList() {
         return ((bitField0_ & 0x00000002) != 0) ?
-                 java.util.Collections.unmodifiableList(scalingFactor_) : scalingFactor_;
+                 java.util.Collections.unmodifiableList(scalingFactors_) : scalingFactors_;
       }
       /**
        * <pre>
        * for calculation amognst assets with different precisions
        * </pre>
        *
-       * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
-       * @return The count of scalingFactor.
+       * <code>repeated uint64 scaling_factors = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factors&#92;""];</code>
+       * @return The count of scalingFactors.
        */
-      public int getScalingFactorCount() {
-        return scalingFactor_.size();
+      public int getScalingFactorsCount() {
+        return scalingFactors_.size();
       }
       /**
        * <pre>
        * for calculation amognst assets with different precisions
        * </pre>
        *
-       * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+       * <code>repeated uint64 scaling_factors = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factors&#92;""];</code>
        * @param index The index of the element to return.
-       * @return The scalingFactor at the given index.
+       * @return The scalingFactors at the given index.
        */
-      public long getScalingFactor(int index) {
-        return scalingFactor_.getLong(index);
+      public long getScalingFactors(int index) {
+        return scalingFactors_.getLong(index);
       }
       /**
        * <pre>
        * for calculation amognst assets with different precisions
        * </pre>
        *
-       * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+       * <code>repeated uint64 scaling_factors = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factors&#92;""];</code>
        * @param index The index to set the value at.
-       * @param value The scalingFactor to set.
+       * @param value The scalingFactors to set.
        * @return This builder for chaining.
        */
-      public Builder setScalingFactor(
+      public Builder setScalingFactors(
           int index, long value) {
-        ensureScalingFactorIsMutable();
-        scalingFactor_.setLong(index, value);
+        ensureScalingFactorsIsMutable();
+        scalingFactors_.setLong(index, value);
         onChanged();
         return this;
       }
@@ -2837,13 +2765,13 @@ public final class StableswapPool {
        * for calculation amognst assets with different precisions
        * </pre>
        *
-       * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
-       * @param value The scalingFactor to add.
+       * <code>repeated uint64 scaling_factors = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factors&#92;""];</code>
+       * @param value The scalingFactors to add.
        * @return This builder for chaining.
        */
-      public Builder addScalingFactor(long value) {
-        ensureScalingFactorIsMutable();
-        scalingFactor_.addLong(value);
+      public Builder addScalingFactors(long value) {
+        ensureScalingFactorsIsMutable();
+        scalingFactors_.addLong(value);
         onChanged();
         return this;
       }
@@ -2852,15 +2780,15 @@ public final class StableswapPool {
        * for calculation amognst assets with different precisions
        * </pre>
        *
-       * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
-       * @param values The scalingFactor to add.
+       * <code>repeated uint64 scaling_factors = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factors&#92;""];</code>
+       * @param values The scalingFactors to add.
        * @return This builder for chaining.
        */
-      public Builder addAllScalingFactor(
+      public Builder addAllScalingFactors(
           java.lang.Iterable<? extends java.lang.Long> values) {
-        ensureScalingFactorIsMutable();
+        ensureScalingFactorsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, scalingFactor_);
+            values, scalingFactors_);
         onChanged();
         return this;
       }
@@ -2869,11 +2797,11 @@ public final class StableswapPool {
        * for calculation amognst assets with different precisions
        * </pre>
        *
-       * <code>repeated uint64 scaling_factor = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factor&#92;""];</code>
+       * <code>repeated uint64 scaling_factors = 7 [(.gogoproto.moretags) = "yaml:&#92;"stableswap_scaling_factors&#92;""];</code>
        * @return This builder for chaining.
        */
-      public Builder clearScalingFactor() {
-        scalingFactor_ = emptyLongList();
+      public Builder clearScalingFactors() {
+        scalingFactors_ = emptyLongList();
         bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
@@ -3007,7 +2935,18 @@ public final class StableswapPool {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Pool(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -3057,7 +2996,7 @@ public final class StableswapPool {
       "github.com/cosmos/cosmos-sdk/types.Dec\362\336" +
       "\037\017yaml:\"swap_fee\"\310\336\037\000\022S\n\010exit_fee\030\002 \001(\tB" +
       "A\332\336\037&github.com/cosmos/cosmos-sdk/types." +
-      "Dec\362\336\037\017yaml:\"exit_fee\"\310\336\037\000\"\267\004\n\004Pool\022#\n\007a" +
+      "Dec\362\336\037\017yaml:\"exit_fee\"\310\336\037\000\"\271\004\n\004Pool\022#\n\007a" +
       "ddress\030\001 \001(\tB\022\362\336\037\016yaml:\"address\"\022\n\n\002id\030\002" +
       " \001(\004\022r\n\013pool_params\030\003 \001(\01326.osmosis.gamm" +
       ".poolmodels.stableswap.v1beta1.PoolParam" +
@@ -3068,12 +3007,12 @@ public final class StableswapPool {
       "ml:\"total_shares\"\310\336\037\000\022c\n\016pool_liquidity\030" +
       "\006 \003(\0132\031.cosmos.base.v1beta1.CoinB0\310\336\037\000\252\337" +
       "\037(github.com/cosmos/cosmos-sdk/types.Coi" +
-      "ns\022<\n\016scaling_factor\030\007 \003(\004B$\362\336\037 yaml:\"st" +
-      "ableswap_scaling_factor\"\022G\n\031scaling_fact" +
-      "or_controller\030\010 \001(\tB$\362\336\037 yaml:\"scaling_f" +
-      "actor_controller\":\021\210\240\037\000\230\240\037\000\312\264-\005PoolIBBZ@" +
-      "github.com/osmosis-labs/osmosis/v7/x/gam" +
-      "m/pool-models/stableswapb\006proto3"
+      "ns\022>\n\017scaling_factors\030\007 \003(\004B%\362\336\037!yaml:\"s" +
+      "tableswap_scaling_factors\"\022G\n\031scaling_fa" +
+      "ctor_controller\030\010 \001(\tB$\362\336\037 yaml:\"scaling" +
+      "_factor_controller\":\021\210\240\037\000\230\240\037\000\312\264-\005PoolIBC" +
+      "ZAgithub.com/osmosis-labs/osmosis/v13/x/" +
+      "gamm/pool-models/stableswapb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3096,7 +3035,7 @@ public final class StableswapPool {
     internal_static_osmosis_gamm_poolmodels_stableswap_v1beta1_Pool_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_osmosis_gamm_poolmodels_stableswap_v1beta1_Pool_descriptor,
-        new java.lang.String[] { "Address", "Id", "PoolParams", "FuturePoolGovernor", "TotalShares", "PoolLiquidity", "ScalingFactor", "ScalingFactorController", });
+        new java.lang.String[] { "Address", "Id", "PoolParams", "FuturePoolGovernor", "TotalShares", "PoolLiquidity", "ScalingFactors", "ScalingFactorController", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(cosmos_proto.Cosmos.implementsInterface);

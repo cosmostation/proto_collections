@@ -152,6 +152,15 @@ struct Injective_Insurance_V1beta1_MsgRequestRedemptionResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Injective_Insurance_V1beta1_MsgCreateInsuranceFund: @unchecked Sendable {}
+extension Injective_Insurance_V1beta1_MsgCreateInsuranceFundResponse: @unchecked Sendable {}
+extension Injective_Insurance_V1beta1_MsgUnderwrite: @unchecked Sendable {}
+extension Injective_Insurance_V1beta1_MsgUnderwriteResponse: @unchecked Sendable {}
+extension Injective_Insurance_V1beta1_MsgRequestRedemption: @unchecked Sendable {}
+extension Injective_Insurance_V1beta1_MsgRequestRedemptionResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "injective.insurance.v1beta1"
@@ -189,6 +198,10 @@ extension Injective_Insurance_V1beta1_MsgCreateInsuranceFund: SwiftProtobuf.Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularStringField(value: self.sender, fieldNumber: 1)
     }
@@ -210,9 +223,9 @@ extension Injective_Insurance_V1beta1_MsgCreateInsuranceFund: SwiftProtobuf.Mess
     if self.expiry != 0 {
       try visitor.visitSingularInt64Field(value: self.expiry, fieldNumber: 7)
     }
-    if let v = self._initialDeposit {
+    try { if let v = self._initialDeposit {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -272,15 +285,19 @@ extension Injective_Insurance_V1beta1_MsgUnderwrite: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularStringField(value: self.sender, fieldNumber: 1)
     }
     if !self.marketID.isEmpty {
       try visitor.visitSingularStringField(value: self.marketID, fieldNumber: 2)
     }
-    if let v = self._deposit {
+    try { if let v = self._deposit {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -335,15 +352,19 @@ extension Injective_Insurance_V1beta1_MsgRequestRedemption: SwiftProtobuf.Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularStringField(value: self.sender, fieldNumber: 1)
     }
     if !self.marketID.isEmpty {
       try visitor.visitSingularStringField(value: self.marketID, fieldNumber: 2)
     }
-    if let v = self._amount {
+    try { if let v = self._amount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

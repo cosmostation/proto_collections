@@ -107,6 +107,15 @@ struct Kujira_Oracle_MsgDelegateFeedConsentResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Kujira_Oracle_MsgAggregateExchangeRatePrevote: @unchecked Sendable {}
+extension Kujira_Oracle_MsgAggregateExchangeRatePrevoteResponse: @unchecked Sendable {}
+extension Kujira_Oracle_MsgAggregateExchangeRateVote: @unchecked Sendable {}
+extension Kujira_Oracle_MsgAggregateExchangeRateVoteResponse: @unchecked Sendable {}
+extension Kujira_Oracle_MsgDelegateFeedConsent: @unchecked Sendable {}
+extension Kujira_Oracle_MsgDelegateFeedConsentResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kujira.oracle"

@@ -31,9 +31,11 @@ public interface GenesisStateOrBuilder extends
    * <code>map&lt;string, .panacea.did.v2.DIDDocumentWithSeq&gt; documents = 1;</code>
    */
 
-  panacea.did.v2.DIDDocumentWithSeq getDocumentsOrDefault(
+  /* nullable */
+panacea.did.v2.DIDDocumentWithSeq getDocumentsOrDefault(
       java.lang.String key,
-      panacea.did.v2.DIDDocumentWithSeq defaultValue);
+      /* nullable */
+panacea.did.v2.DIDDocumentWithSeq defaultValue);
   /**
    * <code>map&lt;string, .panacea.did.v2.DIDDocumentWithSeq&gt; documents = 1;</code>
    */

@@ -57,7 +57,7 @@ extension Osmosis_Txfees_V1beta1_QueryClientProtocol {
   }
 
   /// FeeTokens returns a list of all the whitelisted fee tokens and their
-  /// corresponding pools It does not include the BaseDenom, which has its own
+  /// corresponding pools. It does not include the BaseDenom, which has its own
   /// query endpoint
   ///
   /// - Parameters:
@@ -173,7 +173,7 @@ internal protocol Osmosis_Txfees_V1beta1_QueryProvider: CallHandlerProvider {
   var interceptors: Osmosis_Txfees_V1beta1_QueryServerInterceptorFactoryProtocol? { get }
 
   /// FeeTokens returns a list of all the whitelisted fee tokens and their
-  /// corresponding pools It does not include the BaseDenom, which has its own
+  /// corresponding pools. It does not include the BaseDenom, which has its own
   /// query endpoint
   func feeTokens(request: Osmosis_Txfees_V1beta1_QueryFeeTokensRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Txfees_V1beta1_QueryFeeTokensResponse>
 

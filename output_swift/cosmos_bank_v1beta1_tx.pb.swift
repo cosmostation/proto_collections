@@ -74,6 +74,13 @@ struct Cosmos_Bank_V1beta1_MsgMultiSendResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Cosmos_Bank_V1beta1_MsgSend: @unchecked Sendable {}
+extension Cosmos_Bank_V1beta1_MsgSendResponse: @unchecked Sendable {}
+extension Cosmos_Bank_V1beta1_MsgMultiSend: @unchecked Sendable {}
+extension Cosmos_Bank_V1beta1_MsgMultiSendResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.bank.v1beta1"

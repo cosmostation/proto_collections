@@ -511,6 +511,37 @@ struct Kava_Hard_V1beta1_InterestFactor {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Kava_Hard_V1beta1_QueryParamsRequest: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_QueryParamsResponse: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_QueryAccountsRequest: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_QueryAccountsResponse: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_QueryDepositsRequest: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_QueryDepositsResponse: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_QueryUnsyncedDepositsRequest: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_QueryUnsyncedDepositsResponse: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_QueryTotalDepositedRequest: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_QueryTotalDepositedResponse: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_QueryBorrowsRequest: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_QueryBorrowsResponse: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_QueryUnsyncedBorrowsRequest: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_QueryUnsyncedBorrowsResponse: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_QueryTotalBorrowedRequest: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_QueryTotalBorrowedResponse: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_QueryInterestRateRequest: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_QueryInterestRateResponse: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_QueryReservesRequest: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_QueryReservesResponse: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_QueryInterestFactorsRequest: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_QueryInterestFactorsResponse: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_DepositResponse: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_SupplyInterestFactorResponse: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_BorrowResponse: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_BorrowInterestFactorResponse: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_MoneyMarketInterestRate: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_InterestFactor: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kava.hard.v1beta1"
@@ -553,9 +584,13 @@ extension Kava_Hard_V1beta1_QueryParamsResponse: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._params {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -640,15 +675,19 @@ extension Kava_Hard_V1beta1_QueryDepositsRequest: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.denom.isEmpty {
       try visitor.visitSingularStringField(value: self.denom, fieldNumber: 1)
     }
     if !self.owner.isEmpty {
       try visitor.visitSingularStringField(value: self.owner, fieldNumber: 2)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -682,12 +721,16 @@ extension Kava_Hard_V1beta1_QueryDepositsResponse: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.deposits.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.deposits, fieldNumber: 1)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -722,15 +765,19 @@ extension Kava_Hard_V1beta1_QueryUnsyncedDepositsRequest: SwiftProtobuf.Message,
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.denom.isEmpty {
       try visitor.visitSingularStringField(value: self.denom, fieldNumber: 1)
     }
     if !self.owner.isEmpty {
       try visitor.visitSingularStringField(value: self.owner, fieldNumber: 2)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -764,12 +811,16 @@ extension Kava_Hard_V1beta1_QueryUnsyncedDepositsResponse: SwiftProtobuf.Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.deposits.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.deposits, fieldNumber: 1)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -868,15 +919,19 @@ extension Kava_Hard_V1beta1_QueryBorrowsRequest: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.denom.isEmpty {
       try visitor.visitSingularStringField(value: self.denom, fieldNumber: 1)
     }
     if !self.owner.isEmpty {
       try visitor.visitSingularStringField(value: self.owner, fieldNumber: 2)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -910,12 +965,16 @@ extension Kava_Hard_V1beta1_QueryBorrowsResponse: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.borrows.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.borrows, fieldNumber: 1)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -950,15 +1009,19 @@ extension Kava_Hard_V1beta1_QueryUnsyncedBorrowsRequest: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.denom.isEmpty {
       try visitor.visitSingularStringField(value: self.denom, fieldNumber: 1)
     }
     if !self.owner.isEmpty {
       try visitor.visitSingularStringField(value: self.owner, fieldNumber: 2)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -992,12 +1055,16 @@ extension Kava_Hard_V1beta1_QueryUnsyncedBorrowsResponse: SwiftProtobuf.Message,
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.borrows.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.borrows, fieldNumber: 1)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

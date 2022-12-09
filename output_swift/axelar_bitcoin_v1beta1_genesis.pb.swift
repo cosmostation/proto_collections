@@ -41,6 +41,10 @@ struct Axelar_Bitcoin_V1beta1_GenesisState {
   fileprivate var _params: Axelar_Bitcoin_V1beta1_Params? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Axelar_Bitcoin_V1beta1_GenesisState: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "axelar.bitcoin.v1beta1"
@@ -64,9 +68,13 @@ extension Axelar_Bitcoin_V1beta1_GenesisState: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._params {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

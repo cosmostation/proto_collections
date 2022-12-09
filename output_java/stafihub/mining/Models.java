@@ -150,90 +150,6 @@ public final class Models {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private StakePool(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              index_ = input.readUInt32();
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              stakeTokenDenom_ = s;
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                rewardPools_ = new java.util.ArrayList<stafihub.mining.Models.RewardPool>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              rewardPools_.add(
-                  input.readMessage(stafihub.mining.Models.RewardPool.parser(), extensionRegistry));
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              totalStakedAmount_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              totalStakedPower_ = s;
-              break;
-            }
-            case 48: {
-
-              emergencySwitch_ = input.readBool();
-              break;
-            }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              creator_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          rewardPools_ = java.util.Collections.unmodifiableList(rewardPools_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return stafihub.mining.Models.internal_static_stafihub_stafihub_mining_StakePool_descriptor;
@@ -494,25 +410,25 @@ public final class Models {
       if (index_ != 0) {
         output.writeUInt32(1, index_);
       }
-      if (!getStakeTokenDenomBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stakeTokenDenom_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, stakeTokenDenom_);
       }
       for (int i = 0; i < rewardPools_.size(); i++) {
         output.writeMessage(3, rewardPools_.get(i));
       }
-      if (!getTotalStakedAmountBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(totalStakedAmount_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, totalStakedAmount_);
       }
-      if (!getTotalStakedPowerBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(totalStakedPower_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, totalStakedPower_);
       }
       if (emergencySwitch_ != false) {
         output.writeBool(6, emergencySwitch_);
       }
-      if (!getCreatorBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creator_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, creator_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -525,27 +441,27 @@ public final class Models {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, index_);
       }
-      if (!getStakeTokenDenomBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stakeTokenDenom_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, stakeTokenDenom_);
       }
       for (int i = 0; i < rewardPools_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, rewardPools_.get(i));
       }
-      if (!getTotalStakedAmountBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(totalStakedAmount_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, totalStakedAmount_);
       }
-      if (!getTotalStakedPowerBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(totalStakedPower_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, totalStakedPower_);
       }
       if (emergencySwitch_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(6, emergencySwitch_);
       }
-      if (!getCreatorBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creator_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, creator_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -574,7 +490,7 @@ public final class Models {
           != other.getEmergencySwitch()) return false;
       if (!getCreator()
           .equals(other.getCreator())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -602,7 +518,7 @@ public final class Models {
           getEmergencySwitch());
       hash = (37 * hash) + CREATOR_FIELD_NUMBER;
       hash = (53 * hash) + getCreator().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -719,19 +635,13 @@ public final class Models {
 
       // Construct using stafihub.mining.Models.StakePool.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getRewardPoolsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -742,10 +652,11 @@ public final class Models {
 
         if (rewardPoolsBuilder_ == null) {
           rewardPools_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          rewardPools_ = null;
           rewardPoolsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         totalStakedAmount_ = "";
 
         totalStakedPower_ = "";
@@ -892,7 +803,7 @@ public final class Models {
           creator_ = other.creator_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -907,17 +818,73 @@ public final class Models {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        stafihub.mining.Models.StakePool parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                index_ = input.readUInt32();
+
+                break;
+              } // case 8
+              case 18: {
+                stakeTokenDenom_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              case 26: {
+                stafihub.mining.Models.RewardPool m =
+                    input.readMessage(
+                        stafihub.mining.Models.RewardPool.parser(),
+                        extensionRegistry);
+                if (rewardPoolsBuilder_ == null) {
+                  ensureRewardPoolsIsMutable();
+                  rewardPools_.add(m);
+                } else {
+                  rewardPoolsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 34: {
+                totalStakedAmount_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+              case 42: {
+                totalStakedPower_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+              case 48: {
+                emergencySwitch_ = input.readBool();
+
+                break;
+              } // case 48
+              case 58: {
+                creator_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 58
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (stafihub.mining.Models.StakePool) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1600,7 +1567,18 @@ public final class Models {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new StakePool(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1759,100 +1737,6 @@ public final class Models {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private RewardPool(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              index_ = input.readUInt32();
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              rewardTokenDenom_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              totalRewardAmount_ = s;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              leftRewardAmount_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              rewardPerSecond_ = s;
-              break;
-            }
-            case 48: {
-
-              startTimestamp_ = input.readUInt64();
-              break;
-            }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              rewardPerPower_ = s;
-              break;
-            }
-            case 64: {
-
-              lastRewardTimestamp_ = input.readUInt64();
-              break;
-            }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              creator_ = s;
-              break;
-            }
-            case 82: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              totalClaimedAmount_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -2183,34 +2067,34 @@ public final class Models {
       if (index_ != 0) {
         output.writeUInt32(1, index_);
       }
-      if (!getRewardTokenDenomBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rewardTokenDenom_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, rewardTokenDenom_);
       }
-      if (!getTotalRewardAmountBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(totalRewardAmount_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, totalRewardAmount_);
       }
-      if (!getLeftRewardAmountBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(leftRewardAmount_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, leftRewardAmount_);
       }
-      if (!getRewardPerSecondBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rewardPerSecond_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, rewardPerSecond_);
       }
       if (startTimestamp_ != 0L) {
         output.writeUInt64(6, startTimestamp_);
       }
-      if (!getRewardPerPowerBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rewardPerPower_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, rewardPerPower_);
       }
       if (lastRewardTimestamp_ != 0L) {
         output.writeUInt64(8, lastRewardTimestamp_);
       }
-      if (!getCreatorBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creator_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, creator_);
       }
-      if (!getTotalClaimedAmountBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(totalClaimedAmount_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, totalClaimedAmount_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2223,36 +2107,36 @@ public final class Models {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, index_);
       }
-      if (!getRewardTokenDenomBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rewardTokenDenom_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, rewardTokenDenom_);
       }
-      if (!getTotalRewardAmountBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(totalRewardAmount_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, totalRewardAmount_);
       }
-      if (!getLeftRewardAmountBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(leftRewardAmount_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, leftRewardAmount_);
       }
-      if (!getRewardPerSecondBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rewardPerSecond_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, rewardPerSecond_);
       }
       if (startTimestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(6, startTimestamp_);
       }
-      if (!getRewardPerPowerBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rewardPerPower_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, rewardPerPower_);
       }
       if (lastRewardTimestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(8, lastRewardTimestamp_);
       }
-      if (!getCreatorBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creator_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, creator_);
       }
-      if (!getTotalClaimedAmountBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(totalClaimedAmount_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, totalClaimedAmount_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2287,7 +2171,7 @@ public final class Models {
           .equals(other.getCreator())) return false;
       if (!getTotalClaimedAmount()
           .equals(other.getTotalClaimedAmount())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2320,7 +2204,7 @@ public final class Models {
       hash = (53 * hash) + getCreator().hashCode();
       hash = (37 * hash) + TOTALCLAIMEDAMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + getTotalClaimedAmount().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2437,18 +2321,13 @@ public final class Models {
 
       // Construct using stafihub.mining.Models.RewardPool.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -2594,7 +2473,7 @@ public final class Models {
           totalClaimedAmount_ = other.totalClaimedAmount_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2609,17 +2488,80 @@ public final class Models {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        stafihub.mining.Models.RewardPool parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                index_ = input.readUInt32();
+
+                break;
+              } // case 8
+              case 18: {
+                rewardTokenDenom_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              case 26: {
+                totalRewardAmount_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+              case 34: {
+                leftRewardAmount_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+              case 42: {
+                rewardPerSecond_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+              case 48: {
+                startTimestamp_ = input.readUInt64();
+
+                break;
+              } // case 48
+              case 58: {
+                rewardPerPower_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 58
+              case 64: {
+                lastRewardTimestamp_ = input.readUInt64();
+
+                break;
+              } // case 64
+              case 74: {
+                creator_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 74
+              case 82: {
+                totalClaimedAmount_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 82
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (stafihub.mining.Models.RewardPool) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -3280,7 +3222,18 @@ public final class Models {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RewardPool(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -3432,99 +3385,6 @@ public final class Models {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private UserStakeRecord(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              userAddress_ = s;
-              break;
-            }
-            case 16: {
-
-              stakePoolIndex_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              index_ = input.readUInt32();
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              stakedAmount_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              stakedPower_ = s;
-              break;
-            }
-            case 48: {
-
-              startTimestamp_ = input.readUInt64();
-              break;
-            }
-            case 56: {
-
-              lockEndTimestamp_ = input.readUInt64();
-              break;
-            }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                userRewardInfos_ = new java.util.ArrayList<stafihub.mining.Models.UserRewardInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              userRewardInfos_.add(
-                  input.readMessage(stafihub.mining.Models.UserRewardInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 72: {
-
-              stakeItemIndex_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          userRewardInfos_ = java.util.Collections.unmodifiableList(userRewardInfos_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -3770,7 +3630,7 @@ public final class Models {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getUserAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userAddress_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userAddress_);
       }
       if (stakePoolIndex_ != 0) {
@@ -3779,10 +3639,10 @@ public final class Models {
       if (index_ != 0) {
         output.writeUInt32(3, index_);
       }
-      if (!getStakedAmountBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stakedAmount_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, stakedAmount_);
       }
-      if (!getStakedPowerBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stakedPower_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, stakedPower_);
       }
       if (startTimestamp_ != 0L) {
@@ -3797,7 +3657,7 @@ public final class Models {
       if (stakeItemIndex_ != 0) {
         output.writeUInt32(9, stakeItemIndex_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -3806,7 +3666,7 @@ public final class Models {
       if (size != -1) return size;
 
       size = 0;
-      if (!getUserAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userAddress_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userAddress_);
       }
       if (stakePoolIndex_ != 0) {
@@ -3817,10 +3677,10 @@ public final class Models {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(3, index_);
       }
-      if (!getStakedAmountBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stakedAmount_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, stakedAmount_);
       }
-      if (!getStakedPowerBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stakedPower_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, stakedPower_);
       }
       if (startTimestamp_ != 0L) {
@@ -3839,7 +3699,7 @@ public final class Models {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(9, stakeItemIndex_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3872,7 +3732,7 @@ public final class Models {
           .equals(other.getUserRewardInfosList())) return false;
       if (getStakeItemIndex()
           != other.getStakeItemIndex()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3905,7 +3765,7 @@ public final class Models {
       }
       hash = (37 * hash) + STAKEITEMINDEX_FIELD_NUMBER;
       hash = (53 * hash) + getStakeItemIndex();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4022,19 +3882,13 @@ public final class Models {
 
       // Construct using stafihub.mining.Models.UserStakeRecord.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getUserRewardInfosFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -4055,10 +3909,11 @@ public final class Models {
 
         if (userRewardInfosBuilder_ == null) {
           userRewardInfos_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          userRewardInfos_ = null;
           userRewardInfosBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         stakeItemIndex_ = 0;
 
         return this;
@@ -4206,7 +4061,7 @@ public final class Models {
         if (other.getStakeItemIndex() != 0) {
           setStakeItemIndex(other.getStakeItemIndex());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -4221,17 +4076,83 @@ public final class Models {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        stafihub.mining.Models.UserStakeRecord parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                userAddress_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 16: {
+                stakePoolIndex_ = input.readUInt32();
+
+                break;
+              } // case 16
+              case 24: {
+                index_ = input.readUInt32();
+
+                break;
+              } // case 24
+              case 34: {
+                stakedAmount_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+              case 42: {
+                stakedPower_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+              case 48: {
+                startTimestamp_ = input.readUInt64();
+
+                break;
+              } // case 48
+              case 56: {
+                lockEndTimestamp_ = input.readUInt64();
+
+                break;
+              } // case 56
+              case 66: {
+                stafihub.mining.Models.UserRewardInfo m =
+                    input.readMessage(
+                        stafihub.mining.Models.UserRewardInfo.parser(),
+                        extensionRegistry);
+                if (userRewardInfosBuilder_ == null) {
+                  ensureUserRewardInfosIsMutable();
+                  userRewardInfos_.add(m);
+                } else {
+                  userRewardInfosBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+              case 72: {
+                stakeItemIndex_ = input.readUInt32();
+
+                break;
+              } // case 72
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (stafihub.mining.Models.UserStakeRecord) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -4915,7 +4836,18 @@ public final class Models {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UserStakeRecord(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -5010,66 +4942,6 @@ public final class Models {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private UserRewardInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              rewardPoolIndex_ = input.readUInt32();
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              rewardTokenDenom_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              rewardDebt_ = s;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              claimedAmount_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -5226,16 +5098,16 @@ public final class Models {
       if (rewardPoolIndex_ != 0) {
         output.writeUInt32(1, rewardPoolIndex_);
       }
-      if (!getRewardTokenDenomBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rewardTokenDenom_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, rewardTokenDenom_);
       }
-      if (!getRewardDebtBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rewardDebt_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, rewardDebt_);
       }
-      if (!getClaimedAmountBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(claimedAmount_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, claimedAmount_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -5248,16 +5120,16 @@ public final class Models {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, rewardPoolIndex_);
       }
-      if (!getRewardTokenDenomBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rewardTokenDenom_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, rewardTokenDenom_);
       }
-      if (!getRewardDebtBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rewardDebt_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, rewardDebt_);
       }
-      if (!getClaimedAmountBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(claimedAmount_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, claimedAmount_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5280,7 +5152,7 @@ public final class Models {
           .equals(other.getRewardDebt())) return false;
       if (!getClaimedAmount()
           .equals(other.getClaimedAmount())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -5299,7 +5171,7 @@ public final class Models {
       hash = (53 * hash) + getRewardDebt().hashCode();
       hash = (37 * hash) + CLAIMEDAMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + getClaimedAmount().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5416,18 +5288,13 @@ public final class Models {
 
       // Construct using stafihub.mining.Models.UserRewardInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -5533,7 +5400,7 @@ public final class Models {
           claimedAmount_ = other.claimedAmount_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -5548,17 +5415,50 @@ public final class Models {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        stafihub.mining.Models.UserRewardInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                rewardPoolIndex_ = input.readUInt32();
+
+                break;
+              } // case 8
+              case 18: {
+                rewardTokenDenom_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              case 26: {
+                rewardDebt_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+              case 34: {
+                claimedAmount_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (stafihub.mining.Models.UserRewardInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -5853,7 +5753,18 @@ public final class Models {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UserRewardInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -5942,61 +5853,6 @@ public final class Models {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private RewardToken(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              rewardTokenDenom_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              minTotalRewardAmount_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              minRewardPerSecond_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -6139,16 +5995,16 @@ public final class Models {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getRewardTokenDenomBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rewardTokenDenom_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, rewardTokenDenom_);
       }
-      if (!getMinTotalRewardAmountBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(minTotalRewardAmount_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, minTotalRewardAmount_);
       }
-      if (!getMinRewardPerSecondBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(minRewardPerSecond_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, minRewardPerSecond_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -6157,16 +6013,16 @@ public final class Models {
       if (size != -1) return size;
 
       size = 0;
-      if (!getRewardTokenDenomBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rewardTokenDenom_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, rewardTokenDenom_);
       }
-      if (!getMinTotalRewardAmountBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(minTotalRewardAmount_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, minTotalRewardAmount_);
       }
-      if (!getMinRewardPerSecondBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(minRewardPerSecond_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, minRewardPerSecond_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -6187,7 +6043,7 @@ public final class Models {
           .equals(other.getMinTotalRewardAmount())) return false;
       if (!getMinRewardPerSecond()
           .equals(other.getMinRewardPerSecond())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -6204,7 +6060,7 @@ public final class Models {
       hash = (53 * hash) + getMinTotalRewardAmount().hashCode();
       hash = (37 * hash) + MINREWARDPERSECOND_FIELD_NUMBER;
       hash = (53 * hash) + getMinRewardPerSecond().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -6321,18 +6177,13 @@ public final class Models {
 
       // Construct using stafihub.mining.Models.RewardToken.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -6432,7 +6283,7 @@ public final class Models {
           minRewardPerSecond_ = other.minRewardPerSecond_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -6447,17 +6298,45 @@ public final class Models {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        stafihub.mining.Models.RewardToken parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                rewardTokenDenom_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                minTotalRewardAmount_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              case 26: {
+                minRewardPerSecond_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (stafihub.mining.Models.RewardToken) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -6721,7 +6600,18 @@ public final class Models {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RewardToken(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -6816,69 +6706,6 @@ public final class Models {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private StakeItem(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              index_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              stakePoolIndex_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              lockSecond_ = input.readUInt64();
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              powerRewardRate_ = s;
-              break;
-            }
-            case 40: {
-
-              enable_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -7006,13 +6833,13 @@ public final class Models {
       if (lockSecond_ != 0L) {
         output.writeUInt64(3, lockSecond_);
       }
-      if (!getPowerRewardRateBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(powerRewardRate_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, powerRewardRate_);
       }
       if (enable_ != false) {
         output.writeBool(5, enable_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -7033,14 +6860,14 @@ public final class Models {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(3, lockSecond_);
       }
-      if (!getPowerRewardRateBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(powerRewardRate_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, powerRewardRate_);
       }
       if (enable_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(5, enable_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -7065,7 +6892,7 @@ public final class Models {
           .equals(other.getPowerRewardRate())) return false;
       if (getEnable()
           != other.getEnable()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -7088,7 +6915,7 @@ public final class Models {
       hash = (37 * hash) + ENABLE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getEnable());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -7205,18 +7032,13 @@ public final class Models {
 
       // Construct using stafihub.mining.Models.StakeItem.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -7326,7 +7148,7 @@ public final class Models {
         if (other.getEnable() != false) {
           setEnable(other.getEnable());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -7341,17 +7163,55 @@ public final class Models {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        stafihub.mining.Models.StakeItem parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                index_ = input.readUInt32();
+
+                break;
+              } // case 8
+              case 16: {
+                stakePoolIndex_ = input.readUInt32();
+
+                break;
+              } // case 16
+              case 24: {
+                lockSecond_ = input.readUInt64();
+
+                break;
+              } // case 24
+              case 34: {
+                powerRewardRate_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+              case 40: {
+                enable_ = input.readBool();
+
+                break;
+              } // case 40
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (stafihub.mining.Models.StakeItem) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -7607,7 +7467,18 @@ public final class Models {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new StakeItem(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -7676,54 +7547,6 @@ public final class Models {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private StakeItemLimit(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              maxPowerRewardRate_ = s;
-              break;
-            }
-            case 16: {
-
-              maxLockSecond_ = input.readUInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -7801,13 +7624,13 @@ public final class Models {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getMaxPowerRewardRateBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(maxPowerRewardRate_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, maxPowerRewardRate_);
       }
       if (maxLockSecond_ != 0L) {
         output.writeUInt64(2, maxLockSecond_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -7816,14 +7639,14 @@ public final class Models {
       if (size != -1) return size;
 
       size = 0;
-      if (!getMaxPowerRewardRateBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(maxPowerRewardRate_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, maxPowerRewardRate_);
       }
       if (maxLockSecond_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(2, maxLockSecond_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -7842,7 +7665,7 @@ public final class Models {
           .equals(other.getMaxPowerRewardRate())) return false;
       if (getMaxLockSecond()
           != other.getMaxLockSecond()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -7858,7 +7681,7 @@ public final class Models {
       hash = (37 * hash) + MAXLOCKSECOND_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMaxLockSecond());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -7975,18 +7798,13 @@ public final class Models {
 
       // Construct using stafihub.mining.Models.StakeItemLimit.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -8078,7 +7896,7 @@ public final class Models {
         if (other.getMaxLockSecond() != 0L) {
           setMaxLockSecond(other.getMaxLockSecond());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -8093,17 +7911,40 @@ public final class Models {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        stafihub.mining.Models.StakeItemLimit parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                maxPowerRewardRate_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 16: {
+                maxLockSecond_ = input.readUInt64();
+
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (stafihub.mining.Models.StakeItemLimit) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -8246,7 +8087,18 @@ public final class Models {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new StakeItemLimit(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

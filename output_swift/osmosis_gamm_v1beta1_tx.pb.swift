@@ -344,6 +344,27 @@ struct Osmosis_Gamm_V1beta1_MsgExitSwapExternAmountOutResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Osmosis_Gamm_V1beta1_MsgJoinPool: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_MsgJoinPoolResponse: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_MsgExitPool: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_MsgExitPoolResponse: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_SwapAmountInRoute: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_MsgSwapExactAmountIn: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_MsgSwapExactAmountInResponse: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_SwapAmountOutRoute: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_MsgSwapExactAmountOut: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_MsgSwapExactAmountOutResponse: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_MsgJoinSwapExternAmountIn: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_MsgJoinSwapExternAmountInResponse: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_MsgJoinSwapShareAmountOut: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_MsgJoinSwapShareAmountOutResponse: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_MsgExitSwapShareAmountIn: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_MsgExitSwapShareAmountInResponse: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_MsgExitSwapExternAmountOut: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_MsgExitSwapExternAmountOutResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "osmosis.gamm.v1beta1"
@@ -581,15 +602,19 @@ extension Osmosis_Gamm_V1beta1_MsgSwapExactAmountIn: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularStringField(value: self.sender, fieldNumber: 1)
     }
     if !self.routes.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.routes, fieldNumber: 2)
     }
-    if let v = self._tokenIn {
+    try { if let v = self._tokenIn {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if !self.tokenOutMinAmount.isEmpty {
       try visitor.visitSingularStringField(value: self.tokenOutMinAmount, fieldNumber: 4)
     }
@@ -701,6 +726,10 @@ extension Osmosis_Gamm_V1beta1_MsgSwapExactAmountOut: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularStringField(value: self.sender, fieldNumber: 1)
     }
@@ -710,9 +739,9 @@ extension Osmosis_Gamm_V1beta1_MsgSwapExactAmountOut: SwiftProtobuf.Message, Swi
     if !self.tokenInMaxAmount.isEmpty {
       try visitor.visitSingularStringField(value: self.tokenInMaxAmount, fieldNumber: 3)
     }
-    if let v = self._tokenOut {
+    try { if let v = self._tokenOut {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -783,15 +812,19 @@ extension Osmosis_Gamm_V1beta1_MsgJoinSwapExternAmountIn: SwiftProtobuf.Message,
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularStringField(value: self.sender, fieldNumber: 1)
     }
     if self.poolID != 0 {
       try visitor.visitSingularUInt64Field(value: self.poolID, fieldNumber: 2)
     }
-    if let v = self._tokenIn {
+    try { if let v = self._tokenIn {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if !self.shareOutMinAmount.isEmpty {
       try visitor.visitSingularStringField(value: self.shareOutMinAmount, fieldNumber: 4)
     }
@@ -1041,15 +1074,19 @@ extension Osmosis_Gamm_V1beta1_MsgExitSwapExternAmountOut: SwiftProtobuf.Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularStringField(value: self.sender, fieldNumber: 1)
     }
     if self.poolID != 0 {
       try visitor.visitSingularUInt64Field(value: self.poolID, fieldNumber: 2)
     }
-    if let v = self._tokenOut {
+    try { if let v = self._tokenOut {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if !self.shareInMaxAmount.isEmpty {
       try visitor.visitSingularStringField(value: self.shareInMaxAmount, fieldNumber: 4)
     }

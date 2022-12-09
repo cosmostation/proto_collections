@@ -128,6 +128,12 @@ struct Stafihub_Stafihub_Rvalidator_UpdateRValidatorReportProposal {
   fileprivate var _cycle: Stafihub_Stafihub_Rvalidator_Cycle? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Stafihub_Stafihub_Rvalidator_UpdateRValidatorStatus: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rvalidator_UpdateRValidatorProposal: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rvalidator_UpdateRValidatorReportProposal: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stafihub.stafihub.rvalidator"
@@ -171,6 +177,10 @@ extension Stafihub_Stafihub_Rvalidator_UpdateRValidatorProposal: SwiftProtobuf.M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.creator.isEmpty {
       try visitor.visitSingularStringField(value: self.creator, fieldNumber: 1)
     }
@@ -189,9 +199,9 @@ extension Stafihub_Stafihub_Rvalidator_UpdateRValidatorProposal: SwiftProtobuf.M
     if !self.propID.isEmpty {
       try visitor.visitSingularStringField(value: self.propID, fieldNumber: 6)
     }
-    if let v = self._cycle {
+    try { if let v = self._cycle {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -237,6 +247,10 @@ extension Stafihub_Stafihub_Rvalidator_UpdateRValidatorReportProposal: SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.creator.isEmpty {
       try visitor.visitSingularStringField(value: self.creator, fieldNumber: 1)
     }
@@ -249,9 +263,9 @@ extension Stafihub_Stafihub_Rvalidator_UpdateRValidatorReportProposal: SwiftProt
     if !self.propID.isEmpty {
       try visitor.visitSingularStringField(value: self.propID, fieldNumber: 4)
     }
-    if let v = self._cycle {
+    try { if let v = self._cycle {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    }
+    } }()
     if self.status != .unspecified {
       try visitor.visitSingularEnumField(value: self.status, fieldNumber: 6)
     }

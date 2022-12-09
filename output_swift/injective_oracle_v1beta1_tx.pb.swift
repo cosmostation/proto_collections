@@ -133,6 +133,17 @@ struct Injective_Oracle_V1beta1_MsgRequestBandIBCRatesResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Injective_Oracle_V1beta1_MsgRelayPriceFeedPrice: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_MsgRelayPriceFeedPriceResponse: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_MsgRelayBandRates: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_MsgRelayBandRatesResponse: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_MsgRelayCoinbaseMessages: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_MsgRelayCoinbaseMessagesResponse: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_MsgRequestBandIBCRates: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_MsgRequestBandIBCRatesResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "injective.oracle.v1beta1"

@@ -440,6 +440,30 @@ struct Axelar_Tss_V1beta1_QueryNextKeyIDResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Axelar_Tss_V1beta1_VoteStatus: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_QuerySignatureResponse: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_QuerySignatureResponse.OneOf_Sig: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_QuerySignatureResponse.Signature: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_QuerySignatureResponse.ThresholdSignature: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_QuerySignatureResponse.MultisigSignature: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_QueryKeyResponse: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_QueryKeyResponse.OneOf_PublicKey: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_QueryKeyResponse.Key: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_QueryKeyResponse.ECDSAKey: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_QueryKeyResponse.MultisigKey: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_QueryRecoveryResponse: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_QueryKeyShareResponse: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_QueryKeyShareResponse.ShareInfo: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_QueryDeactivatedOperatorsResponse: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_QueryActiveOldKeysValidatorResponse: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_QueryActiveOldKeysValidatorResponse.KeyInfo: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_QueryActiveOldKeysResponse: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_QueryExternalKeyIDResponse: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_QueryNextKeyIDRequest: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_QueryNextKeyIDResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "axelar.tss.v1beta1"
@@ -499,8 +523,9 @@ extension Axelar_Tss_V1beta1_QuerySignatureResponse: SwiftProtobuf.Message, Swif
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every case branch when no optimizations are
-    // enabled. https://github.com/apple/swift-protobuf/issues/1034
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     switch self.sig {
     case .thresholdSignature?: try {
       guard case .thresholdSignature(let v)? = self.sig else { preconditionFailure() }
@@ -581,12 +606,16 @@ extension Axelar_Tss_V1beta1_QuerySignatureResponse.ThresholdSignature: SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.voteStatus != .unspecified {
       try visitor.visitSingularEnumField(value: self.voteStatus, fieldNumber: 1)
     }
-    if let v = self._signature {
+    try { if let v = self._signature {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -686,8 +715,9 @@ extension Axelar_Tss_V1beta1_QueryKeyResponse: SwiftProtobuf.Message, SwiftProto
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every case branch when no optimizations are
-    // enabled. https://github.com/apple/swift-protobuf/issues/1034
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     switch self.publicKey {
     case .ecdsaKey?: try {
       guard case .ecdsaKey(let v)? = self.publicKey else { preconditionFailure() }
@@ -702,9 +732,9 @@ extension Axelar_Tss_V1beta1_QueryKeyResponse: SwiftProtobuf.Message, SwiftProto
     if self.role != .unspecified {
       try visitor.visitSingularEnumField(value: self.role, fieldNumber: 3)
     }
-    if let v = self._rotatedAt {
+    try { if let v = self._rotatedAt {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -776,12 +806,16 @@ extension Axelar_Tss_V1beta1_QueryKeyResponse.ECDSAKey: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.voteStatus != .unspecified {
       try visitor.visitSingularEnumField(value: self.voteStatus, fieldNumber: 1)
     }
-    if let v = self._key {
+    try { if let v = self._key {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -856,6 +890,10 @@ extension Axelar_Tss_V1beta1_QueryRecoveryResponse: SwiftProtobuf.Message, Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.partyUids.isEmpty {
       try visitor.visitRepeatedStringField(value: self.partyUids, fieldNumber: 1)
     }
@@ -865,9 +903,9 @@ extension Axelar_Tss_V1beta1_QueryRecoveryResponse: SwiftProtobuf.Message, Swift
     if self.threshold != 0 {
       try visitor.visitSingularUInt32Field(value: self.threshold, fieldNumber: 3)
     }
-    if let v = self._keygenOutput {
+    try { if let v = self._keygenOutput {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

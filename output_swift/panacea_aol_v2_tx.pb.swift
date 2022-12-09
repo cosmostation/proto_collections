@@ -148,6 +148,17 @@ struct Panacea_Aol_V2_MsgAddRecordResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Panacea_Aol_V2_MsgCreateTopic: @unchecked Sendable {}
+extension Panacea_Aol_V2_MsgCreateTopicResponse: @unchecked Sendable {}
+extension Panacea_Aol_V2_MsgAddWriter: @unchecked Sendable {}
+extension Panacea_Aol_V2_MsgAddWriterResponse: @unchecked Sendable {}
+extension Panacea_Aol_V2_MsgDeleteWriter: @unchecked Sendable {}
+extension Panacea_Aol_V2_MsgDeleteWriterResponse: @unchecked Sendable {}
+extension Panacea_Aol_V2_MsgAddRecord: @unchecked Sendable {}
+extension Panacea_Aol_V2_MsgAddRecordResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "panacea.aol.v2"

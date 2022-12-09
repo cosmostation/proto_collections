@@ -394,6 +394,25 @@ struct Cosmos_Gov_V1beta2_QueryTallyResultResponse {
   fileprivate var _tally: Cosmos_Gov_V1beta2_TallyResult? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Cosmos_Gov_V1beta2_QueryProposalRequest: @unchecked Sendable {}
+extension Cosmos_Gov_V1beta2_QueryProposalResponse: @unchecked Sendable {}
+extension Cosmos_Gov_V1beta2_QueryProposalsRequest: @unchecked Sendable {}
+extension Cosmos_Gov_V1beta2_QueryProposalsResponse: @unchecked Sendable {}
+extension Cosmos_Gov_V1beta2_QueryVoteRequest: @unchecked Sendable {}
+extension Cosmos_Gov_V1beta2_QueryVoteResponse: @unchecked Sendable {}
+extension Cosmos_Gov_V1beta2_QueryVotesRequest: @unchecked Sendable {}
+extension Cosmos_Gov_V1beta2_QueryVotesResponse: @unchecked Sendable {}
+extension Cosmos_Gov_V1beta2_QueryParamsRequest: @unchecked Sendable {}
+extension Cosmos_Gov_V1beta2_QueryParamsResponse: @unchecked Sendable {}
+extension Cosmos_Gov_V1beta2_QueryDepositRequest: @unchecked Sendable {}
+extension Cosmos_Gov_V1beta2_QueryDepositResponse: @unchecked Sendable {}
+extension Cosmos_Gov_V1beta2_QueryDepositsRequest: @unchecked Sendable {}
+extension Cosmos_Gov_V1beta2_QueryDepositsResponse: @unchecked Sendable {}
+extension Cosmos_Gov_V1beta2_QueryTallyResultRequest: @unchecked Sendable {}
+extension Cosmos_Gov_V1beta2_QueryTallyResultResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.gov.v1beta2"
@@ -449,9 +468,13 @@ extension Cosmos_Gov_V1beta2_QueryProposalResponse: SwiftProtobuf.Message, Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._proposal {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._proposal {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -487,6 +510,10 @@ extension Cosmos_Gov_V1beta2_QueryProposalsRequest: SwiftProtobuf.Message, Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.proposalStatus != .unspecified {
       try visitor.visitSingularEnumField(value: self.proposalStatus, fieldNumber: 1)
     }
@@ -496,9 +523,9 @@ extension Cosmos_Gov_V1beta2_QueryProposalsRequest: SwiftProtobuf.Message, Swift
     if !self.depositor.isEmpty {
       try visitor.visitSingularStringField(value: self.depositor, fieldNumber: 3)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -533,12 +560,16 @@ extension Cosmos_Gov_V1beta2_QueryProposalsResponse: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.proposals.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.proposals, fieldNumber: 1)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -607,9 +638,13 @@ extension Cosmos_Gov_V1beta2_QueryVoteResponse: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._vote {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._vote {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -641,12 +676,16 @@ extension Cosmos_Gov_V1beta2_QueryVotesRequest: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.proposalID != 0 {
       try visitor.visitSingularUInt64Field(value: self.proposalID, fieldNumber: 1)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -679,12 +718,16 @@ extension Cosmos_Gov_V1beta2_QueryVotesResponse: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.votes.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.votes, fieldNumber: 1)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -751,15 +794,19 @@ extension Cosmos_Gov_V1beta2_QueryParamsResponse: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._votingParams {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._votingParams {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
-    if let v = self._depositParams {
+    } }()
+    try { if let v = self._depositParams {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
-    if let v = self._tallyParams {
+    } }()
+    try { if let v = self._tallyParams {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -829,9 +876,13 @@ extension Cosmos_Gov_V1beta2_QueryDepositResponse: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._deposit {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._deposit {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -863,12 +914,16 @@ extension Cosmos_Gov_V1beta2_QueryDepositsRequest: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.proposalID != 0 {
       try visitor.visitSingularUInt64Field(value: self.proposalID, fieldNumber: 1)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -901,12 +956,16 @@ extension Cosmos_Gov_V1beta2_QueryDepositsResponse: SwiftProtobuf.Message, Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.deposits.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.deposits, fieldNumber: 1)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -969,9 +1028,13 @@ extension Cosmos_Gov_V1beta2_QueryTallyResultResponse: SwiftProtobuf.Message, Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._tally {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._tally {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

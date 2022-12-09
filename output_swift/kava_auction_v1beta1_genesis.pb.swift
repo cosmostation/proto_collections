@@ -95,6 +95,11 @@ struct Kava_Auction_V1beta1_Params {
   fileprivate var _reverseBidDuration: SwiftProtobuf.Google_Protobuf_Duration? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Kava_Auction_V1beta1_GenesisState: @unchecked Sendable {}
+extension Kava_Auction_V1beta1_Params: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kava.auction.v1beta1"
@@ -122,12 +127,16 @@ extension Kava_Auction_V1beta1_GenesisState: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.nextAuctionID != 0 {
       try visitor.visitSingularUInt64Field(value: self.nextAuctionID, fieldNumber: 1)
     }
-    if let v = self._params {
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if !self.auctions.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.auctions, fieldNumber: 3)
     }
@@ -172,9 +181,13 @@ extension Kava_Auction_V1beta1_Params: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._maxAuctionDuration {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._maxAuctionDuration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.incrementSurplus.isEmpty {
       try visitor.visitSingularBytesField(value: self.incrementSurplus, fieldNumber: 3)
     }
@@ -184,12 +197,12 @@ extension Kava_Auction_V1beta1_Params: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if !self.incrementCollateral.isEmpty {
       try visitor.visitSingularBytesField(value: self.incrementCollateral, fieldNumber: 5)
     }
-    if let v = self._forwardBidDuration {
+    try { if let v = self._forwardBidDuration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    }
-    if let v = self._reverseBidDuration {
+    } }()
+    try { if let v = self._reverseBidDuration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

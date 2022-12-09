@@ -71,6 +71,11 @@ struct Cosmos_Bank_V1beta1_Balance {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Cosmos_Bank_V1beta1_GenesisState: @unchecked Sendable {}
+extension Cosmos_Bank_V1beta1_Balance: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.bank.v1beta1"
@@ -100,9 +105,13 @@ extension Cosmos_Bank_V1beta1_GenesisState: SwiftProtobuf.Message, SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._params {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.balances.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.balances, fieldNumber: 2)
     }

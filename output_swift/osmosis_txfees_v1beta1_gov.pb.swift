@@ -50,6 +50,10 @@ struct Osmosis_Txfees_V1beta1_UpdateFeeTokenProposal {
   fileprivate var _feetoken: Osmosis_Txfees_V1beta1_FeeToken? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Osmosis_Txfees_V1beta1_UpdateFeeTokenProposal: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "osmosis.txfees.v1beta1"
@@ -77,15 +81,19 @@ extension Osmosis_Txfees_V1beta1_UpdateFeeTokenProposal: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.title.isEmpty {
       try visitor.visitSingularStringField(value: self.title, fieldNumber: 1)
     }
     if !self.description_p.isEmpty {
       try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 2)
     }
-    if let v = self._feetoken {
+    try { if let v = self._feetoken {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

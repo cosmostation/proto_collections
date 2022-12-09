@@ -53,6 +53,10 @@ struct Secret_Registration_V1beta1_GenesisState {
   fileprivate var _ioMasterCertificate: Secret_Registration_V1beta1_MasterCertificate? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Secret_Registration_V1beta1_GenesisState: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "secret.registration.v1beta1"
@@ -80,15 +84,19 @@ extension Secret_Registration_V1beta1_GenesisState: SwiftProtobuf.Message, Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.registration.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.registration, fieldNumber: 1)
     }
-    if let v = self._nodeExchMasterCertificate {
+    try { if let v = self._nodeExchMasterCertificate {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
-    if let v = self._ioMasterCertificate {
+    } }()
+    try { if let v = self._ioMasterCertificate {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

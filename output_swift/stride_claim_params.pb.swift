@@ -77,6 +77,11 @@ struct Stride_Claim_Airdrop {
   fileprivate var _airdropDuration: SwiftProtobuf.Google_Protobuf_Duration? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Stride_Claim_Params: @unchecked Sendable {}
+extension Stride_Claim_Airdrop: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stride.claim"
@@ -142,15 +147,19 @@ extension Stride_Claim_Airdrop: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.airdropIdentifier.isEmpty {
       try visitor.visitSingularStringField(value: self.airdropIdentifier, fieldNumber: 1)
     }
-    if let v = self._airdropStartTime {
+    try { if let v = self._airdropStartTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
-    if let v = self._airdropDuration {
+    } }()
+    try { if let v = self._airdropDuration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if !self.claimDenom.isEmpty {
       try visitor.visitSingularStringField(value: self.claimDenom, fieldNumber: 4)
     }

@@ -100,6 +100,15 @@ struct Sifnode_Dispensation_V1_MsgRunDistribution {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Sifnode_Dispensation_V1_MsgCreateDistribution: @unchecked Sendable {}
+extension Sifnode_Dispensation_V1_MsgCreateDistributionResponse: @unchecked Sendable {}
+extension Sifnode_Dispensation_V1_MsgCreateClaimResponse: @unchecked Sendable {}
+extension Sifnode_Dispensation_V1_MsgRunDistributionResponse: @unchecked Sendable {}
+extension Sifnode_Dispensation_V1_MsgCreateUserClaim: @unchecked Sendable {}
+extension Sifnode_Dispensation_V1_MsgRunDistribution: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "sifnode.dispensation.v1"

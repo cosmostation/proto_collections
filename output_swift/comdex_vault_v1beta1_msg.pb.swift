@@ -176,6 +176,21 @@ struct Comdex_Vault_V1beta1_MsgCloseResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Comdex_Vault_V1beta1_MsgCreateRequest: @unchecked Sendable {}
+extension Comdex_Vault_V1beta1_MsgCreateResponse: @unchecked Sendable {}
+extension Comdex_Vault_V1beta1_MsgDepositRequest: @unchecked Sendable {}
+extension Comdex_Vault_V1beta1_MsgDepositResponse: @unchecked Sendable {}
+extension Comdex_Vault_V1beta1_MsgWithdrawRequest: @unchecked Sendable {}
+extension Comdex_Vault_V1beta1_MsgWithdrawResponse: @unchecked Sendable {}
+extension Comdex_Vault_V1beta1_MsgDrawRequest: @unchecked Sendable {}
+extension Comdex_Vault_V1beta1_MsgDrawResponse: @unchecked Sendable {}
+extension Comdex_Vault_V1beta1_MsgRepayRequest: @unchecked Sendable {}
+extension Comdex_Vault_V1beta1_MsgRepayResponse: @unchecked Sendable {}
+extension Comdex_Vault_V1beta1_MsgCloseRequest: @unchecked Sendable {}
+extension Comdex_Vault_V1beta1_MsgCloseResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "comdex.vault.v1beta1"

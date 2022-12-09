@@ -535,6 +535,35 @@ struct Cosmos_Base_Reflection_V2alpha1_QueryMethodDescriptor {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Cosmos_Base_Reflection_V2alpha1_AppDescriptor: @unchecked Sendable {}
+extension Cosmos_Base_Reflection_V2alpha1_TxDescriptor: @unchecked Sendable {}
+extension Cosmos_Base_Reflection_V2alpha1_AuthnDescriptor: @unchecked Sendable {}
+extension Cosmos_Base_Reflection_V2alpha1_SigningModeDescriptor: @unchecked Sendable {}
+extension Cosmos_Base_Reflection_V2alpha1_ChainDescriptor: @unchecked Sendable {}
+extension Cosmos_Base_Reflection_V2alpha1_CodecDescriptor: @unchecked Sendable {}
+extension Cosmos_Base_Reflection_V2alpha1_InterfaceDescriptor: @unchecked Sendable {}
+extension Cosmos_Base_Reflection_V2alpha1_InterfaceImplementerDescriptor: @unchecked Sendable {}
+extension Cosmos_Base_Reflection_V2alpha1_InterfaceAcceptingMessageDescriptor: @unchecked Sendable {}
+extension Cosmos_Base_Reflection_V2alpha1_ConfigurationDescriptor: @unchecked Sendable {}
+extension Cosmos_Base_Reflection_V2alpha1_MsgDescriptor: @unchecked Sendable {}
+extension Cosmos_Base_Reflection_V2alpha1_GetAuthnDescriptorRequest: @unchecked Sendable {}
+extension Cosmos_Base_Reflection_V2alpha1_GetAuthnDescriptorResponse: @unchecked Sendable {}
+extension Cosmos_Base_Reflection_V2alpha1_GetChainDescriptorRequest: @unchecked Sendable {}
+extension Cosmos_Base_Reflection_V2alpha1_GetChainDescriptorResponse: @unchecked Sendable {}
+extension Cosmos_Base_Reflection_V2alpha1_GetCodecDescriptorRequest: @unchecked Sendable {}
+extension Cosmos_Base_Reflection_V2alpha1_GetCodecDescriptorResponse: @unchecked Sendable {}
+extension Cosmos_Base_Reflection_V2alpha1_GetConfigurationDescriptorRequest: @unchecked Sendable {}
+extension Cosmos_Base_Reflection_V2alpha1_GetConfigurationDescriptorResponse: @unchecked Sendable {}
+extension Cosmos_Base_Reflection_V2alpha1_GetQueryServicesDescriptorRequest: @unchecked Sendable {}
+extension Cosmos_Base_Reflection_V2alpha1_GetQueryServicesDescriptorResponse: @unchecked Sendable {}
+extension Cosmos_Base_Reflection_V2alpha1_GetTxDescriptorRequest: @unchecked Sendable {}
+extension Cosmos_Base_Reflection_V2alpha1_GetTxDescriptorResponse: @unchecked Sendable {}
+extension Cosmos_Base_Reflection_V2alpha1_QueryServicesDescriptor: @unchecked Sendable {}
+extension Cosmos_Base_Reflection_V2alpha1_QueryServiceDescriptor: @unchecked Sendable {}
+extension Cosmos_Base_Reflection_V2alpha1_QueryMethodDescriptor: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.base.reflection.v2alpha1"
@@ -568,24 +597,28 @@ extension Cosmos_Base_Reflection_V2alpha1_AppDescriptor: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._authn {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._authn {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
-    if let v = self._chain {
+    } }()
+    try { if let v = self._chain {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
-    if let v = self._codec {
+    } }()
+    try { if let v = self._codec {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
-    if let v = self._configuration {
+    } }()
+    try { if let v = self._configuration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
-    if let v = self._queryServices {
+    } }()
+    try { if let v = self._queryServices {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    }
-    if let v = self._tx {
+    } }()
+    try { if let v = self._tx {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1001,9 +1034,13 @@ extension Cosmos_Base_Reflection_V2alpha1_GetAuthnDescriptorResponse: SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._authn {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._authn {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1052,9 +1089,13 @@ extension Cosmos_Base_Reflection_V2alpha1_GetChainDescriptorResponse: SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._chain {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._chain {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1103,9 +1144,13 @@ extension Cosmos_Base_Reflection_V2alpha1_GetCodecDescriptorResponse: SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._codec {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._codec {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1154,9 +1199,13 @@ extension Cosmos_Base_Reflection_V2alpha1_GetConfigurationDescriptorResponse: Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._config {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._config {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1205,9 +1254,13 @@ extension Cosmos_Base_Reflection_V2alpha1_GetQueryServicesDescriptorResponse: Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._queries {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._queries {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1256,9 +1309,13 @@ extension Cosmos_Base_Reflection_V2alpha1_GetTxDescriptorResponse: SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._tx {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._tx {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

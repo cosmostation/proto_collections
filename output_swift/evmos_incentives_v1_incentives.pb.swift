@@ -122,6 +122,13 @@ struct Evmos_Incentives_V1_CancelIncentiveProposal {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Evmos_Incentives_V1_Incentive: @unchecked Sendable {}
+extension Evmos_Incentives_V1_GasMeter: @unchecked Sendable {}
+extension Evmos_Incentives_V1_RegisterIncentiveProposal: @unchecked Sendable {}
+extension Evmos_Incentives_V1_CancelIncentiveProposal: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "evmos.incentives.v1"
@@ -153,6 +160,10 @@ extension Evmos_Incentives_V1_Incentive: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.contract.isEmpty {
       try visitor.visitSingularStringField(value: self.contract, fieldNumber: 1)
     }
@@ -162,9 +173,9 @@ extension Evmos_Incentives_V1_Incentive: SwiftProtobuf.Message, SwiftProtobuf._M
     if self.epochs != 0 {
       try visitor.visitSingularUInt32Field(value: self.epochs, fieldNumber: 3)
     }
-    if let v = self._startTime {
+    try { if let v = self._startTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     if self.totalGas != 0 {
       try visitor.visitSingularUInt64Field(value: self.totalGas, fieldNumber: 5)
     }

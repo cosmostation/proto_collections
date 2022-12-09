@@ -75,55 +75,6 @@ public final class Bonds {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private FunctionParam(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              param_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              value_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ixo.bonds.Bonds.internal_static_bonds_FunctionParam_descriptor;
@@ -227,13 +178,13 @@ public final class Bonds {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getParamBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(param_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, param_);
       }
-      if (!getValueBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -242,13 +193,13 @@ public final class Bonds {
       if (size != -1) return size;
 
       size = 0;
-      if (!getParamBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(param_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, param_);
       }
-      if (!getValueBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -267,7 +218,7 @@ public final class Bonds {
           .equals(other.getParam())) return false;
       if (!getValue()
           .equals(other.getValue())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -282,7 +233,7 @@ public final class Bonds {
       hash = (53 * hash) + getParam().hashCode();
       hash = (37 * hash) + VALUE_FIELD_NUMBER;
       hash = (53 * hash) + getValue().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -403,18 +354,13 @@ public final class Bonds {
 
       // Construct using ixo.bonds.Bonds.FunctionParam.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -507,7 +453,7 @@ public final class Bonds {
           value_ = other.value_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -522,17 +468,40 @@ public final class Bonds {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ixo.bonds.Bonds.FunctionParam parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                param_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                value_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ixo.bonds.Bonds.FunctionParam) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -720,7 +689,18 @@ public final class Bonds {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FunctionParam(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -852,87 +832,6 @@ public final class Bonds {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private BondDetails(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              bondDid_ = s;
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                spotPrice_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.DecCoin>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              spotPrice_.add(
-                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.DecCoin.parser(), extensionRegistry));
-              break;
-            }
-            case 26: {
-              cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
-              if (supply_ != null) {
-                subBuilder = supply_.toBuilder();
-              }
-              supply_ = input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(supply_);
-                supply_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                reserve_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              reserve_.add(
-                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          spotPrice_ = java.util.Collections.unmodifiableList(spotPrice_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          reserve_ = java.util.Collections.unmodifiableList(reserve_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -1105,7 +1004,7 @@ public final class Bonds {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getBondDidBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bondDid_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, bondDid_);
       }
       for (int i = 0; i < spotPrice_.size(); i++) {
@@ -1117,7 +1016,7 @@ public final class Bonds {
       for (int i = 0; i < reserve_.size(); i++) {
         output.writeMessage(4, reserve_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1126,7 +1025,7 @@ public final class Bonds {
       if (size != -1) return size;
 
       size = 0;
-      if (!getBondDidBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bondDid_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, bondDid_);
       }
       for (int i = 0; i < spotPrice_.size(); i++) {
@@ -1141,7 +1040,7 @@ public final class Bonds {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, reserve_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1167,7 +1066,7 @@ public final class Bonds {
       }
       if (!getReserveList()
           .equals(other.getReserveList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1192,7 +1091,7 @@ public final class Bonds {
         hash = (37 * hash) + RESERVE_FIELD_NUMBER;
         hash = (53 * hash) + getReserveList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1313,20 +1212,13 @@ public final class Bonds {
 
       // Construct using ixo.bonds.Bonds.BondDetails.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getSpotPriceFieldBuilder();
-          getReserveFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -1335,10 +1227,11 @@ public final class Bonds {
 
         if (spotPriceBuilder_ == null) {
           spotPrice_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          spotPrice_ = null;
           spotPriceBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (supplyBuilder_ == null) {
           supply_ = null;
         } else {
@@ -1347,10 +1240,11 @@ public final class Bonds {
         }
         if (reserveBuilder_ == null) {
           reserve_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          reserve_ = null;
           reserveBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -1509,7 +1403,7 @@ public final class Bonds {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1524,17 +1418,68 @@ public final class Bonds {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ixo.bonds.Bonds.BondDetails parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                bondDid_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                cosmos.base.v1beta1.CoinOuterClass.DecCoin m =
+                    input.readMessage(
+                        cosmos.base.v1beta1.CoinOuterClass.DecCoin.parser(),
+                        extensionRegistry);
+                if (spotPriceBuilder_ == null) {
+                  ensureSpotPriceIsMutable();
+                  spotPrice_.add(m);
+                } else {
+                  spotPriceBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getSupplyFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 26
+              case 34: {
+                cosmos.base.v1beta1.CoinOuterClass.Coin m =
+                    input.readMessage(
+                        cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
+                        extensionRegistry);
+                if (reserveBuilder_ == null) {
+                  ensureReserveIsMutable();
+                  reserve_.add(m);
+                } else {
+                  reserveBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ixo.bonds.Bonds.BondDetails) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -2246,7 +2191,18 @@ public final class Bonds {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BondDetails(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2707,253 +2663,6 @@ public final class Bonds {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private Bond(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              token_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              creatorDid_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              controllerDid_ = s;
-              break;
-            }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              functionType_ = s;
-              break;
-            }
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                functionParameters_ = new java.util.ArrayList<ixo.bonds.Bonds.FunctionParam>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              functionParameters_.add(
-                  input.readMessage(ixo.bonds.Bonds.FunctionParam.parser(), extensionRegistry));
-              break;
-            }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                reserveTokens_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              reserveTokens_.add(s);
-              break;
-            }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              txFeePercentage_ = s;
-              break;
-            }
-            case 82: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              exitFeePercentage_ = s;
-              break;
-            }
-            case 90: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              feeAddress_ = s;
-              break;
-            }
-            case 98: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              reserveWithdrawalAddress_ = s;
-              break;
-            }
-            case 106: {
-              cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
-              if (maxSupply_ != null) {
-                subBuilder = maxSupply_.toBuilder();
-              }
-              maxSupply_ = input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(maxSupply_);
-                maxSupply_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 114: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                orderQuantityLimits_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              orderQuantityLimits_.add(
-                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
-              break;
-            }
-            case 122: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sanityRate_ = s;
-              break;
-            }
-            case 130: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sanityMarginPercentage_ = s;
-              break;
-            }
-            case 138: {
-              cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
-              if (currentSupply_ != null) {
-                subBuilder = currentSupply_.toBuilder();
-              }
-              currentSupply_ = input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(currentSupply_);
-                currentSupply_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 146: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                currentReserve_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              currentReserve_.add(
-                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
-              break;
-            }
-            case 154: {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                availableReserve_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              availableReserve_.add(
-                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
-              break;
-            }
-            case 162: {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                currentOutcomePaymentReserve_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
-                mutable_bitField0_ |= 0x00000020;
-              }
-              currentOutcomePaymentReserve_.add(
-                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
-              break;
-            }
-            case 168: {
-
-              allowSells_ = input.readBool();
-              break;
-            }
-            case 176: {
-
-              allowReserveWithdrawals_ = input.readBool();
-              break;
-            }
-            case 184: {
-
-              alphaBond_ = input.readBool();
-              break;
-            }
-            case 194: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              batchBlocks_ = s;
-              break;
-            }
-            case 202: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              outcomePayment_ = s;
-              break;
-            }
-            case 210: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              state_ = s;
-              break;
-            }
-            case 218: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              bondDid_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          functionParameters_ = java.util.Collections.unmodifiableList(functionParameters_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          reserveTokens_ = reserveTokens_.getUnmodifiableView();
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          orderQuantityLimits_ = java.util.Collections.unmodifiableList(orderQuantityLimits_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          currentReserve_ = java.util.Collections.unmodifiableList(currentReserve_);
-        }
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
-          availableReserve_ = java.util.Collections.unmodifiableList(availableReserve_);
-        }
-        if (((mutable_bitField0_ & 0x00000020) != 0)) {
-          currentOutcomePaymentReserve_ = java.util.Collections.unmodifiableList(currentOutcomePaymentReserve_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -3910,22 +3619,22 @@ public final class Bonds {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getTokenBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(token_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
       }
-      if (!getDescriptionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
       }
-      if (!getCreatorDidBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creatorDid_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, creatorDid_);
       }
-      if (!getControllerDidBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(controllerDid_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, controllerDid_);
       }
-      if (!getFunctionTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(functionType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, functionType_);
       }
       for (int i = 0; i < functionParameters_.size(); i++) {
@@ -3934,16 +3643,16 @@ public final class Bonds {
       for (int i = 0; i < reserveTokens_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, reserveTokens_.getRaw(i));
       }
-      if (!getTxFeePercentageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(txFeePercentage_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, txFeePercentage_);
       }
-      if (!getExitFeePercentageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(exitFeePercentage_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, exitFeePercentage_);
       }
-      if (!getFeeAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(feeAddress_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, feeAddress_);
       }
-      if (!getReserveWithdrawalAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reserveWithdrawalAddress_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, reserveWithdrawalAddress_);
       }
       if (maxSupply_ != null) {
@@ -3952,10 +3661,10 @@ public final class Bonds {
       for (int i = 0; i < orderQuantityLimits_.size(); i++) {
         output.writeMessage(14, orderQuantityLimits_.get(i));
       }
-      if (!getSanityRateBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sanityRate_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 15, sanityRate_);
       }
-      if (!getSanityMarginPercentageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sanityMarginPercentage_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 16, sanityMarginPercentage_);
       }
       if (currentSupply_ != null) {
@@ -3979,19 +3688,19 @@ public final class Bonds {
       if (alphaBond_ != false) {
         output.writeBool(23, alphaBond_);
       }
-      if (!getBatchBlocksBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(batchBlocks_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 24, batchBlocks_);
       }
-      if (!getOutcomePaymentBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outcomePayment_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 25, outcomePayment_);
       }
-      if (!getStateBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(state_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 26, state_);
       }
-      if (!getBondDidBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bondDid_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 27, bondDid_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -4000,22 +3709,22 @@ public final class Bonds {
       if (size != -1) return size;
 
       size = 0;
-      if (!getTokenBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(token_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
       }
-      if (!getDescriptionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
       }
-      if (!getCreatorDidBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creatorDid_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, creatorDid_);
       }
-      if (!getControllerDidBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(controllerDid_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, controllerDid_);
       }
-      if (!getFunctionTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(functionType_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, functionType_);
       }
       for (int i = 0; i < functionParameters_.size(); i++) {
@@ -4030,16 +3739,16 @@ public final class Bonds {
         size += dataSize;
         size += 1 * getReserveTokensList().size();
       }
-      if (!getTxFeePercentageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(txFeePercentage_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, txFeePercentage_);
       }
-      if (!getExitFeePercentageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(exitFeePercentage_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, exitFeePercentage_);
       }
-      if (!getFeeAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(feeAddress_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, feeAddress_);
       }
-      if (!getReserveWithdrawalAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reserveWithdrawalAddress_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, reserveWithdrawalAddress_);
       }
       if (maxSupply_ != null) {
@@ -4050,10 +3759,10 @@ public final class Bonds {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, orderQuantityLimits_.get(i));
       }
-      if (!getSanityRateBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sanityRate_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, sanityRate_);
       }
-      if (!getSanityMarginPercentageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sanityMarginPercentage_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, sanityMarginPercentage_);
       }
       if (currentSupply_ != null) {
@@ -4084,19 +3793,19 @@ public final class Bonds {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(23, alphaBond_);
       }
-      if (!getBatchBlocksBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(batchBlocks_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, batchBlocks_);
       }
-      if (!getOutcomePaymentBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outcomePayment_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, outcomePayment_);
       }
-      if (!getStateBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(state_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(26, state_);
       }
-      if (!getBondDidBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bondDid_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(27, bondDid_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4171,7 +3880,7 @@ public final class Bonds {
           .equals(other.getState())) return false;
       if (!getBondDid()
           .equals(other.getBondDid())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -4255,7 +3964,7 @@ public final class Bonds {
       hash = (53 * hash) + getState().hashCode();
       hash = (37 * hash) + BOND_DID_FIELD_NUMBER;
       hash = (53 * hash) + getBondDid().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4376,23 +4085,13 @@ public final class Bonds {
 
       // Construct using ixo.bonds.Bonds.Bond.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getFunctionParametersFieldBuilder();
-          getOrderQuantityLimitsFieldBuilder();
-          getCurrentReserveFieldBuilder();
-          getAvailableReserveFieldBuilder();
-          getCurrentOutcomePaymentReserveFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -4411,10 +4110,11 @@ public final class Bonds {
 
         if (functionParametersBuilder_ == null) {
           functionParameters_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          functionParameters_ = null;
           functionParametersBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         reserveTokens_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
         txFeePercentage_ = "";
@@ -4433,10 +4133,11 @@ public final class Bonds {
         }
         if (orderQuantityLimitsBuilder_ == null) {
           orderQuantityLimits_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          orderQuantityLimits_ = null;
           orderQuantityLimitsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         sanityRate_ = "";
 
         sanityMarginPercentage_ = "";
@@ -4449,22 +4150,25 @@ public final class Bonds {
         }
         if (currentReserveBuilder_ == null) {
           currentReserve_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
+          currentReserve_ = null;
           currentReserveBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         if (availableReserveBuilder_ == null) {
           availableReserve_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
+          availableReserve_ = null;
           availableReserveBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000010);
         if (currentOutcomePaymentReserveBuilder_ == null) {
           currentOutcomePaymentReserve_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
+          currentOutcomePaymentReserve_ = null;
           currentOutcomePaymentReserveBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000020);
         allowSells_ = false;
 
         allowReserveWithdrawals_ = false;
@@ -4852,7 +4556,7 @@ public final class Bonds {
           bondDid_ = other.bondDid_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -4867,17 +4571,210 @@ public final class Bonds {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ixo.bonds.Bonds.Bond parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                token_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              case 26: {
+                description_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+              case 34: {
+                creatorDid_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+              case 42: {
+                controllerDid_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+              case 50: {
+                functionType_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
+              case 58: {
+                ixo.bonds.Bonds.FunctionParam m =
+                    input.readMessage(
+                        ixo.bonds.Bonds.FunctionParam.parser(),
+                        extensionRegistry);
+                if (functionParametersBuilder_ == null) {
+                  ensureFunctionParametersIsMutable();
+                  functionParameters_.add(m);
+                } else {
+                  functionParametersBuilder_.addMessage(m);
+                }
+                break;
+              } // case 58
+              case 66: {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureReserveTokensIsMutable();
+                reserveTokens_.add(s);
+                break;
+              } // case 66
+              case 74: {
+                txFeePercentage_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 74
+              case 82: {
+                exitFeePercentage_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 82
+              case 90: {
+                feeAddress_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 90
+              case 98: {
+                reserveWithdrawalAddress_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 98
+              case 106: {
+                input.readMessage(
+                    getMaxSupplyFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 106
+              case 114: {
+                cosmos.base.v1beta1.CoinOuterClass.Coin m =
+                    input.readMessage(
+                        cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
+                        extensionRegistry);
+                if (orderQuantityLimitsBuilder_ == null) {
+                  ensureOrderQuantityLimitsIsMutable();
+                  orderQuantityLimits_.add(m);
+                } else {
+                  orderQuantityLimitsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 114
+              case 122: {
+                sanityRate_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 122
+              case 130: {
+                sanityMarginPercentage_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 130
+              case 138: {
+                input.readMessage(
+                    getCurrentSupplyFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 138
+              case 146: {
+                cosmos.base.v1beta1.CoinOuterClass.Coin m =
+                    input.readMessage(
+                        cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
+                        extensionRegistry);
+                if (currentReserveBuilder_ == null) {
+                  ensureCurrentReserveIsMutable();
+                  currentReserve_.add(m);
+                } else {
+                  currentReserveBuilder_.addMessage(m);
+                }
+                break;
+              } // case 146
+              case 154: {
+                cosmos.base.v1beta1.CoinOuterClass.Coin m =
+                    input.readMessage(
+                        cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
+                        extensionRegistry);
+                if (availableReserveBuilder_ == null) {
+                  ensureAvailableReserveIsMutable();
+                  availableReserve_.add(m);
+                } else {
+                  availableReserveBuilder_.addMessage(m);
+                }
+                break;
+              } // case 154
+              case 162: {
+                cosmos.base.v1beta1.CoinOuterClass.Coin m =
+                    input.readMessage(
+                        cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
+                        extensionRegistry);
+                if (currentOutcomePaymentReserveBuilder_ == null) {
+                  ensureCurrentOutcomePaymentReserveIsMutable();
+                  currentOutcomePaymentReserve_.add(m);
+                } else {
+                  currentOutcomePaymentReserveBuilder_.addMessage(m);
+                }
+                break;
+              } // case 162
+              case 168: {
+                allowSells_ = input.readBool();
+
+                break;
+              } // case 168
+              case 176: {
+                allowReserveWithdrawals_ = input.readBool();
+
+                break;
+              } // case 176
+              case 184: {
+                alphaBond_ = input.readBool();
+
+                break;
+              } // case 184
+              case 194: {
+                batchBlocks_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 194
+              case 202: {
+                outcomePayment_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 202
+              case 210: {
+                state_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 210
+              case 218: {
+                bondDid_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 218
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ixo.bonds.Bonds.Bond) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -7771,7 +7668,18 @@ public final class Bonds {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Bond(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -7873,73 +7781,6 @@ public final class Bonds {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private BaseOrder(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              accountDid_ = s;
-              break;
-            }
-            case 18: {
-              cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
-              if (amount_ != null) {
-                subBuilder = amount_.toBuilder();
-              }
-              amount_ = input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(amount_);
-                amount_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 24: {
-
-              cancelled_ = input.readBool();
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              cancelReason_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -8081,7 +7922,7 @@ public final class Bonds {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getAccountDidBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accountDid_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, accountDid_);
       }
       if (amount_ != null) {
@@ -8090,10 +7931,10 @@ public final class Bonds {
       if (cancelled_ != false) {
         output.writeBool(3, cancelled_);
       }
-      if (!getCancelReasonBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cancelReason_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, cancelReason_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -8102,7 +7943,7 @@ public final class Bonds {
       if (size != -1) return size;
 
       size = 0;
-      if (!getAccountDidBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accountDid_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, accountDid_);
       }
       if (amount_ != null) {
@@ -8113,10 +7954,10 @@ public final class Bonds {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(3, cancelled_);
       }
-      if (!getCancelReasonBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cancelReason_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, cancelReason_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -8142,7 +7983,7 @@ public final class Bonds {
           != other.getCancelled()) return false;
       if (!getCancelReason()
           .equals(other.getCancelReason())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -8164,7 +8005,7 @@ public final class Bonds {
           getCancelled());
       hash = (37 * hash) + CANCEL_REASON_FIELD_NUMBER;
       hash = (53 * hash) + getCancelReason().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -8286,18 +8127,13 @@ public final class Bonds {
 
       // Construct using ixo.bonds.Bonds.BaseOrder.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -8410,7 +8246,7 @@ public final class Bonds {
           cancelReason_ = other.cancelReason_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -8425,17 +8261,52 @@ public final class Bonds {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ixo.bonds.Bonds.BaseOrder parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                accountDid_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getAmountFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 18
+              case 24: {
+                cancelled_ = input.readBool();
+
+                break;
+              } // case 24
+              case 34: {
+                cancelReason_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ixo.bonds.Bonds.BaseOrder) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -8773,7 +8644,18 @@ public final class Bonds {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BaseOrder(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -8868,69 +8750,6 @@ public final class Bonds {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private BuyOrder(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              ixo.bonds.Bonds.BaseOrder.Builder subBuilder = null;
-              if (baseOrder_ != null) {
-                subBuilder = baseOrder_.toBuilder();
-              }
-              baseOrder_ = input.readMessage(ixo.bonds.Bonds.BaseOrder.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(baseOrder_);
-                baseOrder_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                maxPrices_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              maxPrices_.add(
-                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          maxPrices_ = java.util.Collections.unmodifiableList(maxPrices_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -9031,7 +8850,7 @@ public final class Bonds {
       for (int i = 0; i < maxPrices_.size(); i++) {
         output.writeMessage(2, maxPrices_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -9048,7 +8867,7 @@ public final class Bonds {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, maxPrices_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -9070,7 +8889,7 @@ public final class Bonds {
       }
       if (!getMaxPricesList()
           .equals(other.getMaxPricesList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -9089,7 +8908,7 @@ public final class Bonds {
         hash = (37 * hash) + MAX_PRICES_FIELD_NUMBER;
         hash = (53 * hash) + getMaxPricesList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -9211,19 +9030,13 @@ public final class Bonds {
 
       // Construct using ixo.bonds.Bonds.BuyOrder.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getMaxPricesFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -9236,10 +9049,11 @@ public final class Bonds {
         }
         if (maxPricesBuilder_ == null) {
           maxPrices_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          maxPrices_ = null;
           maxPricesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -9358,7 +9172,7 @@ public final class Bonds {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -9373,17 +9187,50 @@ public final class Bonds {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ixo.bonds.Bonds.BuyOrder parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getBaseOrderFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 10
+              case 18: {
+                cosmos.base.v1beta1.CoinOuterClass.Coin m =
+                    input.readMessage(
+                        cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
+                        extensionRegistry);
+                if (maxPricesBuilder_ == null) {
+                  ensureMaxPricesIsMutable();
+                  maxPrices_.add(m);
+                } else {
+                  maxPricesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ixo.bonds.Bonds.BuyOrder) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -9779,7 +9626,18 @@ public final class Bonds {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BuyOrder(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -9849,56 +9707,6 @@ public final class Bonds {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SellOrder(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              ixo.bonds.Bonds.BaseOrder.Builder subBuilder = null;
-              if (baseOrder_ != null) {
-                subBuilder = baseOrder_.toBuilder();
-              }
-              baseOrder_ = input.readMessage(ixo.bonds.Bonds.BaseOrder.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(baseOrder_);
-                baseOrder_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ixo.bonds.Bonds.internal_static_bonds_SellOrder_descriptor;
@@ -9955,7 +9763,7 @@ public final class Bonds {
       if (baseOrder_ != null) {
         output.writeMessage(1, getBaseOrder());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -9968,7 +9776,7 @@ public final class Bonds {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getBaseOrder());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -9988,7 +9796,7 @@ public final class Bonds {
         if (!getBaseOrder()
             .equals(other.getBaseOrder())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -10003,7 +9811,7 @@ public final class Bonds {
         hash = (37 * hash) + BASE_ORDER_FIELD_NUMBER;
         hash = (53 * hash) + getBaseOrder().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -10124,18 +9932,13 @@ public final class Bonds {
 
       // Construct using ixo.bonds.Bonds.SellOrder.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -10228,7 +10031,7 @@ public final class Bonds {
         if (other.hasBaseOrder()) {
           mergeBaseOrder(other.getBaseOrder());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -10243,17 +10046,37 @@ public final class Bonds {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ixo.bonds.Bonds.SellOrder parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getBaseOrderFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ixo.bonds.Bonds.SellOrder) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -10408,7 +10231,18 @@ public final class Bonds {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SellOrder(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -10490,62 +10324,6 @@ public final class Bonds {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private SwapOrder(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              ixo.bonds.Bonds.BaseOrder.Builder subBuilder = null;
-              if (baseOrder_ != null) {
-                subBuilder = baseOrder_.toBuilder();
-              }
-              baseOrder_ = input.readMessage(ixo.bonds.Bonds.BaseOrder.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(baseOrder_);
-                baseOrder_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              toToken_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -10641,10 +10419,10 @@ public final class Bonds {
       if (baseOrder_ != null) {
         output.writeMessage(1, getBaseOrder());
       }
-      if (!getToTokenBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(toToken_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, toToken_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -10657,10 +10435,10 @@ public final class Bonds {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getBaseOrder());
       }
-      if (!getToTokenBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(toToken_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, toToken_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -10682,7 +10460,7 @@ public final class Bonds {
       }
       if (!getToToken()
           .equals(other.getToToken())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -10699,7 +10477,7 @@ public final class Bonds {
       }
       hash = (37 * hash) + TO_TOKEN_FIELD_NUMBER;
       hash = (53 * hash) + getToToken().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -10820,18 +10598,13 @@ public final class Bonds {
 
       // Construct using ixo.bonds.Bonds.SwapOrder.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -10931,7 +10704,7 @@ public final class Bonds {
           toToken_ = other.toToken_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -10946,17 +10719,42 @@ public final class Bonds {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ixo.bonds.Bonds.SwapOrder parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getBaseOrderFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 10
+              case 18: {
+                toToken_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ixo.bonds.Bonds.SwapOrder) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -11187,7 +10985,18 @@ public final class Bonds {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SwapOrder(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -11435,148 +11244,6 @@ public final class Bonds {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private Batch(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              bondDid_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              blocksRemaining_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nextPublicAlpha_ = s;
-              break;
-            }
-            case 34: {
-              cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
-              if (totalBuyAmount_ != null) {
-                subBuilder = totalBuyAmount_.toBuilder();
-              }
-              totalBuyAmount_ = input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(totalBuyAmount_);
-                totalBuyAmount_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 42: {
-              cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
-              if (totalSellAmount_ != null) {
-                subBuilder = totalSellAmount_.toBuilder();
-              }
-              totalSellAmount_ = input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(totalSellAmount_);
-                totalSellAmount_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                buyPrices_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.DecCoin>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              buyPrices_.add(
-                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.DecCoin.parser(), extensionRegistry));
-              break;
-            }
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                sellPrices_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.DecCoin>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              sellPrices_.add(
-                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.DecCoin.parser(), extensionRegistry));
-              break;
-            }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                buys_ = new java.util.ArrayList<ixo.bonds.Bonds.BuyOrder>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              buys_.add(
-                  input.readMessage(ixo.bonds.Bonds.BuyOrder.parser(), extensionRegistry));
-              break;
-            }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                sells_ = new java.util.ArrayList<ixo.bonds.Bonds.SellOrder>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              sells_.add(
-                  input.readMessage(ixo.bonds.Bonds.SellOrder.parser(), extensionRegistry));
-              break;
-            }
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                swaps_ = new java.util.ArrayList<ixo.bonds.Bonds.SwapOrder>();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              swaps_.add(
-                  input.readMessage(ixo.bonds.Bonds.SwapOrder.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          buyPrices_ = java.util.Collections.unmodifiableList(buyPrices_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          sellPrices_ = java.util.Collections.unmodifiableList(sellPrices_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          buys_ = java.util.Collections.unmodifiableList(buys_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          sells_ = java.util.Collections.unmodifiableList(sells_);
-        }
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
-          swaps_ = java.util.Collections.unmodifiableList(swaps_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -11971,13 +11638,13 @@ public final class Bonds {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getBondDidBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bondDid_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, bondDid_);
       }
-      if (!getBlocksRemainingBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(blocksRemaining_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, blocksRemaining_);
       }
-      if (!getNextPublicAlphaBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPublicAlpha_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nextPublicAlpha_);
       }
       if (totalBuyAmount_ != null) {
@@ -12001,7 +11668,7 @@ public final class Bonds {
       for (int i = 0; i < swaps_.size(); i++) {
         output.writeMessage(10, swaps_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -12010,13 +11677,13 @@ public final class Bonds {
       if (size != -1) return size;
 
       size = 0;
-      if (!getBondDidBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bondDid_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, bondDid_);
       }
-      if (!getBlocksRemainingBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(blocksRemaining_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, blocksRemaining_);
       }
-      if (!getNextPublicAlphaBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPublicAlpha_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nextPublicAlpha_);
       }
       if (totalBuyAmount_ != null) {
@@ -12047,7 +11714,7 @@ public final class Bonds {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, swaps_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -12088,7 +11755,7 @@ public final class Bonds {
           .equals(other.getSellsList())) return false;
       if (!getSwapsList()
           .equals(other.getSwapsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -12133,7 +11800,7 @@ public final class Bonds {
         hash = (37 * hash) + SWAPS_FIELD_NUMBER;
         hash = (53 * hash) + getSwapsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -12254,23 +11921,13 @@ public final class Bonds {
 
       // Construct using ixo.bonds.Bonds.Batch.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getBuyPricesFieldBuilder();
-          getSellPricesFieldBuilder();
-          getBuysFieldBuilder();
-          getSellsFieldBuilder();
-          getSwapsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -12295,34 +11952,39 @@ public final class Bonds {
         }
         if (buyPricesBuilder_ == null) {
           buyPrices_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          buyPrices_ = null;
           buyPricesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (sellPricesBuilder_ == null) {
           sellPrices_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          sellPrices_ = null;
           sellPricesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (buysBuilder_ == null) {
           buys_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          buys_ = null;
           buysBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (sellsBuilder_ == null) {
           sells_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
+          sells_ = null;
           sellsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         if (swapsBuilder_ == null) {
           swaps_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
+          swaps_ = null;
           swapsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -12604,7 +12266,7 @@ public final class Bonds {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -12619,17 +12281,124 @@ public final class Bonds {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ixo.bonds.Bonds.Batch parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                bondDid_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                blocksRemaining_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              case 26: {
+                nextPublicAlpha_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+              case 34: {
+                input.readMessage(
+                    getTotalBuyAmountFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 34
+              case 42: {
+                input.readMessage(
+                    getTotalSellAmountFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 42
+              case 50: {
+                cosmos.base.v1beta1.CoinOuterClass.DecCoin m =
+                    input.readMessage(
+                        cosmos.base.v1beta1.CoinOuterClass.DecCoin.parser(),
+                        extensionRegistry);
+                if (buyPricesBuilder_ == null) {
+                  ensureBuyPricesIsMutable();
+                  buyPrices_.add(m);
+                } else {
+                  buyPricesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+              case 58: {
+                cosmos.base.v1beta1.CoinOuterClass.DecCoin m =
+                    input.readMessage(
+                        cosmos.base.v1beta1.CoinOuterClass.DecCoin.parser(),
+                        extensionRegistry);
+                if (sellPricesBuilder_ == null) {
+                  ensureSellPricesIsMutable();
+                  sellPrices_.add(m);
+                } else {
+                  sellPricesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 58
+              case 66: {
+                ixo.bonds.Bonds.BuyOrder m =
+                    input.readMessage(
+                        ixo.bonds.Bonds.BuyOrder.parser(),
+                        extensionRegistry);
+                if (buysBuilder_ == null) {
+                  ensureBuysIsMutable();
+                  buys_.add(m);
+                } else {
+                  buysBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+              case 74: {
+                ixo.bonds.Bonds.SellOrder m =
+                    input.readMessage(
+                        ixo.bonds.Bonds.SellOrder.parser(),
+                        extensionRegistry);
+                if (sellsBuilder_ == null) {
+                  ensureSellsIsMutable();
+                  sells_.add(m);
+                } else {
+                  sellsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+              case 82: {
+                ixo.bonds.Bonds.SwapOrder m =
+                    input.readMessage(
+                        ixo.bonds.Bonds.SwapOrder.parser(),
+                        extensionRegistry);
+                if (swapsBuilder_ == null) {
+                  ensureSwapsIsMutable();
+                  swaps_.add(m);
+                } else {
+                  swapsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ixo.bonds.Bonds.Batch) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -14332,7 +14101,18 @@ public final class Bonds {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Batch(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -14413,56 +14193,6 @@ public final class Bonds {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Params(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                reservedBondTokens_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              reservedBondTokens_.add(s);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          reservedBondTokens_ = reservedBondTokens_.getUnmodifiableView();
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ixo.bonds.Bonds.internal_static_bonds_Params_descriptor;
@@ -14528,7 +14258,7 @@ public final class Bonds {
       for (int i = 0; i < reservedBondTokens_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, reservedBondTokens_.getRaw(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -14545,7 +14275,7 @@ public final class Bonds {
         size += dataSize;
         size += 1 * getReservedBondTokensList().size();
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -14562,7 +14292,7 @@ public final class Bonds {
 
       if (!getReservedBondTokensList()
           .equals(other.getReservedBondTokensList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -14577,7 +14307,7 @@ public final class Bonds {
         hash = (37 * hash) + RESERVED_BOND_TOKENS_FIELD_NUMBER;
         hash = (53 * hash) + getReservedBondTokensList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -14698,18 +14428,13 @@ public final class Bonds {
 
       // Construct using ixo.bonds.Bonds.Params.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -14806,7 +14531,7 @@ public final class Bonds {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -14821,17 +14546,36 @@ public final class Bonds {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ixo.bonds.Bonds.Params parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureReservedBondTokensIsMutable();
+                reservedBondTokens_.add(s);
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ixo.bonds.Bonds.Params) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -14978,7 +14722,18 @@ public final class Bonds {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Params(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

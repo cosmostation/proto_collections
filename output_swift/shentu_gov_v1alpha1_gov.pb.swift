@@ -379,6 +379,16 @@ struct Shentu_Gov_V1alpha1_Vote {
   fileprivate var _deposit: Cosmos_Gov_V1beta1_Vote? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Shentu_Gov_V1alpha1_ProposalStatus: @unchecked Sendable {}
+extension Shentu_Gov_V1alpha1_GenesisState: @unchecked Sendable {}
+extension Shentu_Gov_V1alpha1_Deposit: @unchecked Sendable {}
+extension Shentu_Gov_V1alpha1_DepositParams: @unchecked Sendable {}
+extension Shentu_Gov_V1alpha1_TallyParams: @unchecked Sendable {}
+extension Shentu_Gov_V1alpha1_Proposal: @unchecked Sendable {}
+extension Shentu_Gov_V1alpha1_Vote: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "shentu.gov.v1alpha1"
@@ -461,6 +471,10 @@ extension Shentu_Gov_V1alpha1_GenesisState: SwiftProtobuf.Message, SwiftProtobuf
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
       if _storage._startingProposalID != 0 {
         try visitor.visitSingularUInt64Field(value: _storage._startingProposalID, fieldNumber: 1)
       }
@@ -473,15 +487,15 @@ extension Shentu_Gov_V1alpha1_GenesisState: SwiftProtobuf.Message, SwiftProtobuf
       if !_storage._proposals.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._proposals, fieldNumber: 4)
       }
-      if let v = _storage._depositParams {
+      try { if let v = _storage._depositParams {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-      }
-      if let v = _storage._votingParams {
+      } }()
+      try { if let v = _storage._votingParams {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-      }
-      if let v = _storage._tallyParams {
+      } }()
+      try { if let v = _storage._tallyParams {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-      }
+      } }()
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -528,9 +542,13 @@ extension Shentu_Gov_V1alpha1_Deposit: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._deposit {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._deposit {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.txHash.isEmpty {
       try visitor.visitSingularStringField(value: self.txHash, fieldNumber: 2)
     }
@@ -568,15 +586,19 @@ extension Shentu_Gov_V1alpha1_DepositParams: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.minInitialDeposit.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.minInitialDeposit, fieldNumber: 1)
     }
     if !self.minDeposit.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.minDeposit, fieldNumber: 2)
     }
-    if let v = self._maxDepositPeriod {
+    try { if let v = self._maxDepositPeriod {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -612,15 +634,19 @@ extension Shentu_Gov_V1alpha1_TallyParams: SwiftProtobuf.Message, SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._defaultTally {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._defaultTally {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
-    if let v = self._certifierUpdateSecurityVoteTally {
+    } }()
+    try { if let v = self._certifierUpdateSecurityVoteTally {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
-    if let v = self._certifierUpdateStakeVoteTally {
+    } }()
+    try { if let v = self._certifierUpdateStakeVoteTally {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -715,9 +741,13 @@ extension Shentu_Gov_V1alpha1_Proposal: SwiftProtobuf.Message, SwiftProtobuf._Me
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._content {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      try { if let v = _storage._content {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      }
+      } }()
       if _storage._proposalID != 0 {
         try visitor.visitSingularUInt64Field(value: _storage._proposalID, fieldNumber: 2)
       }
@@ -730,24 +760,24 @@ extension Shentu_Gov_V1alpha1_Proposal: SwiftProtobuf.Message, SwiftProtobuf._Me
       if !_storage._proposerAddress.isEmpty {
         try visitor.visitSingularStringField(value: _storage._proposerAddress, fieldNumber: 5)
       }
-      if let v = _storage._finalTallyResult {
+      try { if let v = _storage._finalTallyResult {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-      }
-      if let v = _storage._submitTime {
+      } }()
+      try { if let v = _storage._submitTime {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-      }
-      if let v = _storage._depositEndTime {
+      } }()
+      try { if let v = _storage._depositEndTime {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
-      }
+      } }()
       if !_storage._totalDeposit.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._totalDeposit, fieldNumber: 9)
       }
-      if let v = _storage._votingStartTime {
+      try { if let v = _storage._votingStartTime {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
-      }
-      if let v = _storage._votingEndTime {
+      } }()
+      try { if let v = _storage._votingEndTime {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
-      }
+      } }()
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -798,9 +828,13 @@ extension Shentu_Gov_V1alpha1_Vote: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._deposit {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._deposit {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.txHash.isEmpty {
       try visitor.visitSingularStringField(value: self.txHash, fieldNumber: 2)
     }

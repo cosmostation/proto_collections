@@ -154,6 +154,37 @@ public final class MsgGrpc {
     return getExtendLockupMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<osmosis.lockup.Tx.MsgForceUnlock,
+      osmosis.lockup.Tx.MsgForceUnlockResponse> getForceUnlockMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ForceUnlock",
+      requestType = osmosis.lockup.Tx.MsgForceUnlock.class,
+      responseType = osmosis.lockup.Tx.MsgForceUnlockResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<osmosis.lockup.Tx.MsgForceUnlock,
+      osmosis.lockup.Tx.MsgForceUnlockResponse> getForceUnlockMethod() {
+    io.grpc.MethodDescriptor<osmosis.lockup.Tx.MsgForceUnlock, osmosis.lockup.Tx.MsgForceUnlockResponse> getForceUnlockMethod;
+    if ((getForceUnlockMethod = MsgGrpc.getForceUnlockMethod) == null) {
+      synchronized (MsgGrpc.class) {
+        if ((getForceUnlockMethod = MsgGrpc.getForceUnlockMethod) == null) {
+          MsgGrpc.getForceUnlockMethod = getForceUnlockMethod =
+              io.grpc.MethodDescriptor.<osmosis.lockup.Tx.MsgForceUnlock, osmosis.lockup.Tx.MsgForceUnlockResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ForceUnlock"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  osmosis.lockup.Tx.MsgForceUnlock.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  osmosis.lockup.Tx.MsgForceUnlockResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MsgMethodDescriptorSupplier("ForceUnlock"))
+              .build();
+        }
+      }
+    }
+    return getForceUnlockMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -245,6 +276,13 @@ public final class MsgGrpc {
       asyncUnimplementedUnaryCall(getExtendLockupMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void forceUnlock(osmosis.lockup.Tx.MsgForceUnlock request,
+        io.grpc.stub.StreamObserver<osmosis.lockup.Tx.MsgForceUnlockResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getForceUnlockMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -275,6 +313,13 @@ public final class MsgGrpc {
                 osmosis.lockup.Tx.MsgExtendLockup,
                 osmosis.lockup.Tx.MsgExtendLockupResponse>(
                   this, METHODID_EXTEND_LOCKUP)))
+          .addMethod(
+            getForceUnlockMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                osmosis.lockup.Tx.MsgForceUnlock,
+                osmosis.lockup.Tx.MsgForceUnlockResponse>(
+                  this, METHODID_FORCE_UNLOCK)))
           .build();
     }
   }
@@ -339,6 +384,14 @@ public final class MsgGrpc {
       asyncUnaryCall(
           getChannel().newCall(getExtendLockupMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void forceUnlock(osmosis.lockup.Tx.MsgForceUnlock request,
+        io.grpc.stub.StreamObserver<osmosis.lockup.Tx.MsgForceUnlockResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getForceUnlockMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -396,6 +449,13 @@ public final class MsgGrpc {
     public osmosis.lockup.Tx.MsgExtendLockupResponse extendLockup(osmosis.lockup.Tx.MsgExtendLockup request) {
       return blockingUnaryCall(
           getChannel(), getExtendLockupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public osmosis.lockup.Tx.MsgForceUnlockResponse forceUnlock(osmosis.lockup.Tx.MsgForceUnlock request) {
+      return blockingUnaryCall(
+          getChannel(), getForceUnlockMethod(), getCallOptions(), request);
     }
   }
 
@@ -459,12 +519,21 @@ public final class MsgGrpc {
       return futureUnaryCall(
           getChannel().newCall(getExtendLockupMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<osmosis.lockup.Tx.MsgForceUnlockResponse> forceUnlock(
+        osmosis.lockup.Tx.MsgForceUnlock request) {
+      return futureUnaryCall(
+          getChannel().newCall(getForceUnlockMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LOCK_TOKENS = 0;
   private static final int METHODID_BEGIN_UNLOCKING_ALL = 1;
   private static final int METHODID_BEGIN_UNLOCKING = 2;
   private static final int METHODID_EXTEND_LOCKUP = 3;
+  private static final int METHODID_FORCE_UNLOCK = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -498,6 +567,10 @@ public final class MsgGrpc {
         case METHODID_EXTEND_LOCKUP:
           serviceImpl.extendLockup((osmosis.lockup.Tx.MsgExtendLockup) request,
               (io.grpc.stub.StreamObserver<osmosis.lockup.Tx.MsgExtendLockupResponse>) responseObserver);
+          break;
+        case METHODID_FORCE_UNLOCK:
+          serviceImpl.forceUnlock((osmosis.lockup.Tx.MsgForceUnlock) request,
+              (io.grpc.stub.StreamObserver<osmosis.lockup.Tx.MsgForceUnlockResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -564,6 +637,7 @@ public final class MsgGrpc {
               .addMethod(getBeginUnlockingAllMethod())
               .addMethod(getBeginUnlockingMethod())
               .addMethod(getExtendLockupMethod())
+              .addMethod(getForceUnlockMethod())
               .build();
         }
       }

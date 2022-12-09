@@ -363,6 +363,17 @@ struct Ethermint_Evm_V1_TraceConfig {
   fileprivate var _overrides: Ethermint_Evm_V1_ChainConfig? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Ethermint_Evm_V1_Params: @unchecked Sendable {}
+extension Ethermint_Evm_V1_ChainConfig: @unchecked Sendable {}
+extension Ethermint_Evm_V1_State: @unchecked Sendable {}
+extension Ethermint_Evm_V1_TransactionLogs: @unchecked Sendable {}
+extension Ethermint_Evm_V1_Log: @unchecked Sendable {}
+extension Ethermint_Evm_V1_TxResult: @unchecked Sendable {}
+extension Ethermint_Evm_V1_AccessTuple: @unchecked Sendable {}
+extension Ethermint_Evm_V1_TraceConfig: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "ethermint.evm.v1"
@@ -396,6 +407,10 @@ extension Ethermint_Evm_V1_Params: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.evmDenom.isEmpty {
       try visitor.visitSingularStringField(value: self.evmDenom, fieldNumber: 1)
     }
@@ -408,9 +423,9 @@ extension Ethermint_Evm_V1_Params: SwiftProtobuf.Message, SwiftProtobuf._Message
     if !self.extraEips.isEmpty {
       try visitor.visitPackedInt64Field(value: self.extraEips, fieldNumber: 4)
     }
-    if let v = self._chainConfig {
+    try { if let v = self._chainConfig {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    }
+    } }()
     if self.allowUnprotectedTxs != false {
       try visitor.visitSingularBoolField(value: self.allowUnprotectedTxs, fieldNumber: 6)
     }
@@ -806,15 +821,19 @@ extension Ethermint_Evm_V1_TxResult: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.contractAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.contractAddress, fieldNumber: 1)
     }
     if !self.bloom.isEmpty {
       try visitor.visitSingularBytesField(value: self.bloom, fieldNumber: 2)
     }
-    if let v = self._txLogs {
+    try { if let v = self._txLogs {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if !self.ret.isEmpty {
       try visitor.visitSingularBytesField(value: self.ret, fieldNumber: 4)
     }
@@ -916,6 +935,10 @@ extension Ethermint_Evm_V1_TraceConfig: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.tracer.isEmpty {
       try visitor.visitSingularStringField(value: self.tracer, fieldNumber: 1)
     }
@@ -937,9 +960,9 @@ extension Ethermint_Evm_V1_TraceConfig: SwiftProtobuf.Message, SwiftProtobuf._Me
     if self.limit != 0 {
       try visitor.visitSingularInt32Field(value: self.limit, fieldNumber: 9)
     }
-    if let v = self._overrides {
+    try { if let v = self._overrides {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
-    }
+    } }()
     if self.enableMemory != false {
       try visitor.visitSingularBoolField(value: self.enableMemory, fieldNumber: 11)
     }

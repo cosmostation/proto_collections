@@ -304,176 +304,6 @@ public final class Genesis {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GenesisState(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              injective.oracle.v1beta1.Oracle.Params.Builder subBuilder = null;
-              if (params_ != null) {
-                subBuilder = params_.toBuilder();
-              }
-              params_ = input.readMessage(injective.oracle.v1beta1.Oracle.Params.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(params_);
-                params_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                bandRelayers_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              bandRelayers_.add(s);
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                bandPriceStates_ = new java.util.ArrayList<injective.oracle.v1beta1.Oracle.BandPriceState>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              bandPriceStates_.add(
-                  input.readMessage(injective.oracle.v1beta1.Oracle.BandPriceState.parser(), extensionRegistry));
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                priceFeedPriceStates_ = new java.util.ArrayList<injective.oracle.v1beta1.Oracle.PriceFeedState>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              priceFeedPriceStates_.add(
-                  input.readMessage(injective.oracle.v1beta1.Oracle.PriceFeedState.parser(), extensionRegistry));
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                coinbasePriceStates_ = new java.util.ArrayList<injective.oracle.v1beta1.Oracle.CoinbasePriceState>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              coinbasePriceStates_.add(
-                  input.readMessage(injective.oracle.v1beta1.Oracle.CoinbasePriceState.parser(), extensionRegistry));
-              break;
-            }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                bandIbcPriceStates_ = new java.util.ArrayList<injective.oracle.v1beta1.Oracle.BandPriceState>();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              bandIbcPriceStates_.add(
-                  input.readMessage(injective.oracle.v1beta1.Oracle.BandPriceState.parser(), extensionRegistry));
-              break;
-            }
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                bandIbcOracleRequests_ = new java.util.ArrayList<injective.oracle.v1beta1.Oracle.BandOracleRequest>();
-                mutable_bitField0_ |= 0x00000020;
-              }
-              bandIbcOracleRequests_.add(
-                  input.readMessage(injective.oracle.v1beta1.Oracle.BandOracleRequest.parser(), extensionRegistry));
-              break;
-            }
-            case 66: {
-              injective.oracle.v1beta1.Oracle.BandIBCParams.Builder subBuilder = null;
-              if (bandIbcParams_ != null) {
-                subBuilder = bandIbcParams_.toBuilder();
-              }
-              bandIbcParams_ = input.readMessage(injective.oracle.v1beta1.Oracle.BandIBCParams.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(bandIbcParams_);
-                bandIbcParams_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 72: {
-
-              bandIbcLatestClientId_ = input.readUInt64();
-              break;
-            }
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
-                calldataRecords_ = new java.util.ArrayList<injective.oracle.v1beta1.Genesis.CalldataRecord>();
-                mutable_bitField0_ |= 0x00000040;
-              }
-              calldataRecords_.add(
-                  input.readMessage(injective.oracle.v1beta1.Genesis.CalldataRecord.parser(), extensionRegistry));
-              break;
-            }
-            case 88: {
-
-              bandIbcLatestRequestId_ = input.readUInt64();
-              break;
-            }
-            case 98: {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
-                chainlinkPriceStates_ = new java.util.ArrayList<injective.oracle.v1beta1.Oracle.ChainlinkPriceState>();
-                mutable_bitField0_ |= 0x00000080;
-              }
-              chainlinkPriceStates_.add(
-                  input.readMessage(injective.oracle.v1beta1.Oracle.ChainlinkPriceState.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          bandRelayers_ = bandRelayers_.getUnmodifiableView();
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          bandPriceStates_ = java.util.Collections.unmodifiableList(bandPriceStates_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          priceFeedPriceStates_ = java.util.Collections.unmodifiableList(priceFeedPriceStates_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          coinbasePriceStates_ = java.util.Collections.unmodifiableList(coinbasePriceStates_);
-        }
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
-          bandIbcPriceStates_ = java.util.Collections.unmodifiableList(bandIbcPriceStates_);
-        }
-        if (((mutable_bitField0_ & 0x00000020) != 0)) {
-          bandIbcOracleRequests_ = java.util.Collections.unmodifiableList(bandIbcOracleRequests_);
-        }
-        if (((mutable_bitField0_ & 0x00000040) != 0)) {
-          calldataRecords_ = java.util.Collections.unmodifiableList(calldataRecords_);
-        }
-        if (((mutable_bitField0_ & 0x00000080) != 0)) {
-          chainlinkPriceStates_ = java.util.Collections.unmodifiableList(chainlinkPriceStates_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return injective.oracle.v1beta1.Genesis.internal_static_injective_oracle_v1beta1_GenesisState_descriptor;
@@ -938,7 +768,7 @@ public final class Genesis {
       for (int i = 0; i < chainlinkPriceStates_.size(); i++) {
         output.writeMessage(12, chainlinkPriceStates_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -999,7 +829,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, chainlinkPriceStates_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1044,7 +874,7 @@ public final class Genesis {
           != other.getBandIbcLatestRequestId()) return false;
       if (!getChainlinkPriceStatesList()
           .equals(other.getChainlinkPriceStatesList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1101,7 +931,7 @@ public final class Genesis {
         hash = (37 * hash) + CHAINLINK_PRICE_STATES_FIELD_NUMBER;
         hash = (53 * hash) + getChainlinkPriceStatesList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1222,25 +1052,13 @@ public final class Genesis {
 
       // Construct using injective.oracle.v1beta1.Genesis.GenesisState.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getBandPriceStatesFieldBuilder();
-          getPriceFeedPriceStatesFieldBuilder();
-          getCoinbasePriceStatesFieldBuilder();
-          getBandIbcPriceStatesFieldBuilder();
-          getBandIbcOracleRequestsFieldBuilder();
-          getCalldataRecordsFieldBuilder();
-          getChainlinkPriceStatesFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -1255,34 +1073,39 @@ public final class Genesis {
         bitField0_ = (bitField0_ & ~0x00000001);
         if (bandPriceStatesBuilder_ == null) {
           bandPriceStates_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          bandPriceStates_ = null;
           bandPriceStatesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (priceFeedPriceStatesBuilder_ == null) {
           priceFeedPriceStates_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          priceFeedPriceStates_ = null;
           priceFeedPriceStatesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (coinbasePriceStatesBuilder_ == null) {
           coinbasePriceStates_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
+          coinbasePriceStates_ = null;
           coinbasePriceStatesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         if (bandIbcPriceStatesBuilder_ == null) {
           bandIbcPriceStates_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
+          bandIbcPriceStates_ = null;
           bandIbcPriceStatesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000010);
         if (bandIbcOracleRequestsBuilder_ == null) {
           bandIbcOracleRequests_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
+          bandIbcOracleRequests_ = null;
           bandIbcOracleRequestsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000020);
         if (bandIbcParamsBuilder_ == null) {
           bandIbcParams_ = null;
         } else {
@@ -1293,18 +1116,20 @@ public final class Genesis {
 
         if (calldataRecordsBuilder_ == null) {
           calldataRecords_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
+          calldataRecords_ = null;
           calldataRecordsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000040);
         bandIbcLatestRequestId_ = 0L;
 
         if (chainlinkPriceStatesBuilder_ == null) {
           chainlinkPriceStates_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
+          chainlinkPriceStates_ = null;
           chainlinkPriceStatesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000080);
         return this;
       }
 
@@ -1664,7 +1489,7 @@ public final class Genesis {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1679,17 +1504,151 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        injective.oracle.v1beta1.Genesis.GenesisState parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getParamsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 10
+              case 18: {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureBandRelayersIsMutable();
+                bandRelayers_.add(s);
+                break;
+              } // case 18
+              case 26: {
+                injective.oracle.v1beta1.Oracle.BandPriceState m =
+                    input.readMessage(
+                        injective.oracle.v1beta1.Oracle.BandPriceState.parser(),
+                        extensionRegistry);
+                if (bandPriceStatesBuilder_ == null) {
+                  ensureBandPriceStatesIsMutable();
+                  bandPriceStates_.add(m);
+                } else {
+                  bandPriceStatesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 34: {
+                injective.oracle.v1beta1.Oracle.PriceFeedState m =
+                    input.readMessage(
+                        injective.oracle.v1beta1.Oracle.PriceFeedState.parser(),
+                        extensionRegistry);
+                if (priceFeedPriceStatesBuilder_ == null) {
+                  ensurePriceFeedPriceStatesIsMutable();
+                  priceFeedPriceStates_.add(m);
+                } else {
+                  priceFeedPriceStatesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+              case 42: {
+                injective.oracle.v1beta1.Oracle.CoinbasePriceState m =
+                    input.readMessage(
+                        injective.oracle.v1beta1.Oracle.CoinbasePriceState.parser(),
+                        extensionRegistry);
+                if (coinbasePriceStatesBuilder_ == null) {
+                  ensureCoinbasePriceStatesIsMutable();
+                  coinbasePriceStates_.add(m);
+                } else {
+                  coinbasePriceStatesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+              case 50: {
+                injective.oracle.v1beta1.Oracle.BandPriceState m =
+                    input.readMessage(
+                        injective.oracle.v1beta1.Oracle.BandPriceState.parser(),
+                        extensionRegistry);
+                if (bandIbcPriceStatesBuilder_ == null) {
+                  ensureBandIbcPriceStatesIsMutable();
+                  bandIbcPriceStates_.add(m);
+                } else {
+                  bandIbcPriceStatesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+              case 58: {
+                injective.oracle.v1beta1.Oracle.BandOracleRequest m =
+                    input.readMessage(
+                        injective.oracle.v1beta1.Oracle.BandOracleRequest.parser(),
+                        extensionRegistry);
+                if (bandIbcOracleRequestsBuilder_ == null) {
+                  ensureBandIbcOracleRequestsIsMutable();
+                  bandIbcOracleRequests_.add(m);
+                } else {
+                  bandIbcOracleRequestsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 58
+              case 66: {
+                input.readMessage(
+                    getBandIbcParamsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 66
+              case 72: {
+                bandIbcLatestClientId_ = input.readUInt64();
+
+                break;
+              } // case 72
+              case 82: {
+                injective.oracle.v1beta1.Genesis.CalldataRecord m =
+                    input.readMessage(
+                        injective.oracle.v1beta1.Genesis.CalldataRecord.parser(),
+                        extensionRegistry);
+                if (calldataRecordsBuilder_ == null) {
+                  ensureCalldataRecordsIsMutable();
+                  calldataRecords_.add(m);
+                } else {
+                  calldataRecordsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
+              case 88: {
+                bandIbcLatestRequestId_ = input.readUInt64();
+
+                break;
+              } // case 88
+              case 98: {
+                injective.oracle.v1beta1.Oracle.ChainlinkPriceState m =
+                    input.readMessage(
+                        injective.oracle.v1beta1.Oracle.ChainlinkPriceState.parser(),
+                        extensionRegistry);
+                if (chainlinkPriceStatesBuilder_ == null) {
+                  ensureChainlinkPriceStatesIsMutable();
+                  chainlinkPriceStates_.add(m);
+                } else {
+                  chainlinkPriceStatesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 98
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (injective.oracle.v1beta1.Genesis.GenesisState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -3852,7 +3811,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GenesisState(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -3916,53 +3886,6 @@ public final class Genesis {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CalldataRecord(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              clientId_ = input.readUInt64();
-              break;
-            }
-            case 18: {
-
-              calldata_ = input.readBytes();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return injective.oracle.v1beta1.Genesis.internal_static_injective_oracle_v1beta1_CalldataRecord_descriptor;
@@ -4018,7 +3941,7 @@ public final class Genesis {
       if (!calldata_.isEmpty()) {
         output.writeBytes(2, calldata_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -4035,7 +3958,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, calldata_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4054,7 +3977,7 @@ public final class Genesis {
           != other.getClientId()) return false;
       if (!getCalldata()
           .equals(other.getCalldata())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -4070,7 +3993,7 @@ public final class Genesis {
           getClientId());
       hash = (37 * hash) + CALLDATA_FIELD_NUMBER;
       hash = (53 * hash) + getCalldata().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4187,18 +4110,13 @@ public final class Genesis {
 
       // Construct using injective.oracle.v1beta1.Genesis.CalldataRecord.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -4289,7 +4207,7 @@ public final class Genesis {
         if (other.getCalldata() != com.google.protobuf.ByteString.EMPTY) {
           setCalldata(other.getCalldata());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -4304,17 +4222,40 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        injective.oracle.v1beta1.Genesis.CalldataRecord parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                clientId_ = input.readUInt64();
+
+                break;
+              } // case 8
+              case 18: {
+                calldata_ = input.readBytes();
+
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (injective.oracle.v1beta1.Genesis.CalldataRecord) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -4415,7 +4356,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CalldataRecord(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

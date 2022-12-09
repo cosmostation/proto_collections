@@ -115,78 +115,6 @@ public final class Genesis {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GenesisState(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                bitcannaidList_ = new java.util.ArrayList<BitCannaGlobal.bcna.bcna.BitcannaidOuterClass.Bitcannaid>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              bitcannaidList_.add(
-                  input.readMessage(BitCannaGlobal.bcna.bcna.BitcannaidOuterClass.Bitcannaid.parser(), extensionRegistry));
-              break;
-            }
-            case 16: {
-
-              bitcannaidCount_ = input.readUInt64();
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                supplychainList_ = new java.util.ArrayList<BitCannaGlobal.bcna.bcna.SupplychainOuterClass.Supplychain>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              supplychainList_.add(
-                  input.readMessage(BitCannaGlobal.bcna.bcna.SupplychainOuterClass.Supplychain.parser(), extensionRegistry));
-              break;
-            }
-            case 32: {
-
-              supplychainCount_ = input.readUInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          bitcannaidList_ = java.util.Collections.unmodifiableList(bitcannaidList_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          supplychainList_ = java.util.Collections.unmodifiableList(supplychainList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return BitCannaGlobal.bcna.bcna.Genesis.internal_static_BitCannaGlobal_bcna_bcna_GenesisState_descriptor;
@@ -332,7 +260,7 @@ public final class Genesis {
       if (supplychainCount_ != 0L) {
         output.writeUInt64(4, supplychainCount_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -357,7 +285,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(4, supplychainCount_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -380,7 +308,7 @@ public final class Genesis {
           .equals(other.getSupplychainListList())) return false;
       if (getSupplychainCount()
           != other.getSupplychainCount()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -405,7 +333,7 @@ public final class Genesis {
       hash = (37 * hash) + SUPPLYCHAINCOUNT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSupplychainCount());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -526,38 +454,33 @@ public final class Genesis {
 
       // Construct using BitCannaGlobal.bcna.bcna.Genesis.GenesisState.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getBitcannaidListFieldBuilder();
-          getSupplychainListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
         if (bitcannaidListBuilder_ == null) {
           bitcannaidList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          bitcannaidList_ = null;
           bitcannaidListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         bitcannaidCount_ = 0L;
 
         if (supplychainListBuilder_ == null) {
           supplychainList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          supplychainList_ = null;
           supplychainListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         supplychainCount_ = 0L;
 
         return this;
@@ -713,7 +636,7 @@ public final class Genesis {
         if (other.getSupplychainCount() != 0L) {
           setSupplychainCount(other.getSupplychainCount());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -728,17 +651,66 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        BitCannaGlobal.bcna.bcna.Genesis.GenesisState parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                BitCannaGlobal.bcna.bcna.BitcannaidOuterClass.Bitcannaid m =
+                    input.readMessage(
+                        BitCannaGlobal.bcna.bcna.BitcannaidOuterClass.Bitcannaid.parser(),
+                        extensionRegistry);
+                if (bitcannaidListBuilder_ == null) {
+                  ensureBitcannaidListIsMutable();
+                  bitcannaidList_.add(m);
+                } else {
+                  bitcannaidListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              case 16: {
+                bitcannaidCount_ = input.readUInt64();
+
+                break;
+              } // case 16
+              case 26: {
+                BitCannaGlobal.bcna.bcna.SupplychainOuterClass.Supplychain m =
+                    input.readMessage(
+                        BitCannaGlobal.bcna.bcna.SupplychainOuterClass.Supplychain.parser(),
+                        extensionRegistry);
+                if (supplychainListBuilder_ == null) {
+                  ensureSupplychainListIsMutable();
+                  supplychainList_.add(m);
+                } else {
+                  supplychainListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 32: {
+                supplychainCount_ = input.readUInt64();
+
+                break;
+              } // case 32
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (BitCannaGlobal.bcna.bcna.Genesis.GenesisState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1329,7 +1301,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GenesisState(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

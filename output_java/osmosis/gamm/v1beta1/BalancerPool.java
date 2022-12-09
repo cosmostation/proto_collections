@@ -244,94 +244,6 @@ public final class BalancerPool {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SmoothWeightChangeParams(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (startTime_ != null) {
-                subBuilder = startTime_.toBuilder();
-              }
-              startTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(startTime_);
-                startTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              com.google.protobuf.Duration.Builder subBuilder = null;
-              if (duration_ != null) {
-                subBuilder = duration_.toBuilder();
-              }
-              duration_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(duration_);
-                duration_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                initialPoolWeights_ = new java.util.ArrayList<osmosis.gamm.v1beta1.BalancerPool.PoolAsset>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              initialPoolWeights_.add(
-                  input.readMessage(osmosis.gamm.v1beta1.BalancerPool.PoolAsset.parser(), extensionRegistry));
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                targetPoolWeights_ = new java.util.ArrayList<osmosis.gamm.v1beta1.BalancerPool.PoolAsset>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              targetPoolWeights_.add(
-                  input.readMessage(osmosis.gamm.v1beta1.BalancerPool.PoolAsset.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          initialPoolWeights_ = java.util.Collections.unmodifiableList(initialPoolWeights_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          targetPoolWeights_ = java.util.Collections.unmodifiableList(targetPoolWeights_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return osmosis.gamm.v1beta1.BalancerPool.internal_static_osmosis_gamm_v1beta1_SmoothWeightChangeParams_descriptor;
@@ -608,7 +520,7 @@ public final class BalancerPool {
       for (int i = 0; i < targetPoolWeights_.size(); i++) {
         output.writeMessage(4, targetPoolWeights_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -633,7 +545,7 @@ public final class BalancerPool {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, targetPoolWeights_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -662,7 +574,7 @@ public final class BalancerPool {
           .equals(other.getInitialPoolWeightsList())) return false;
       if (!getTargetPoolWeightsList()
           .equals(other.getTargetPoolWeightsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -689,7 +601,7 @@ public final class BalancerPool {
         hash = (37 * hash) + TARGET_POOL_WEIGHTS_FIELD_NUMBER;
         hash = (53 * hash) + getTargetPoolWeightsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -820,20 +732,13 @@ public final class BalancerPool {
 
       // Construct using osmosis.gamm.v1beta1.BalancerPool.SmoothWeightChangeParams.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getInitialPoolWeightsFieldBuilder();
-          getTargetPoolWeightsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -852,16 +757,18 @@ public final class BalancerPool {
         }
         if (initialPoolWeightsBuilder_ == null) {
           initialPoolWeights_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          initialPoolWeights_ = null;
           initialPoolWeightsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (targetPoolWeightsBuilder_ == null) {
           targetPoolWeights_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          targetPoolWeights_ = null;
           targetPoolWeightsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -1023,7 +930,7 @@ public final class BalancerPool {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1038,17 +945,70 @@ public final class BalancerPool {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        osmosis.gamm.v1beta1.BalancerPool.SmoothWeightChangeParams parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getStartTimeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getDurationFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 18
+              case 26: {
+                osmosis.gamm.v1beta1.BalancerPool.PoolAsset m =
+                    input.readMessage(
+                        osmosis.gamm.v1beta1.BalancerPool.PoolAsset.parser(),
+                        extensionRegistry);
+                if (initialPoolWeightsBuilder_ == null) {
+                  ensureInitialPoolWeightsIsMutable();
+                  initialPoolWeights_.add(m);
+                } else {
+                  initialPoolWeightsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 34: {
+                osmosis.gamm.v1beta1.BalancerPool.PoolAsset m =
+                    input.readMessage(
+                        osmosis.gamm.v1beta1.BalancerPool.PoolAsset.parser(),
+                        extensionRegistry);
+                if (targetPoolWeightsBuilder_ == null) {
+                  ensureTargetPoolWeightsIsMutable();
+                  targetPoolWeights_.add(m);
+                } else {
+                  targetPoolWeightsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (osmosis.gamm.v1beta1.BalancerPool.SmoothWeightChangeParams) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -2163,7 +2123,18 @@ public final class BalancerPool {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SmoothWeightChangeParams(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2261,68 +2232,6 @@ public final class BalancerPool {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private PoolParams(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              swapFee_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              exitFee_ = s;
-              break;
-            }
-            case 26: {
-              osmosis.gamm.v1beta1.BalancerPool.SmoothWeightChangeParams.Builder subBuilder = null;
-              if (smoothWeightChangeParams_ != null) {
-                subBuilder = smoothWeightChangeParams_.toBuilder();
-              }
-              smoothWeightChangeParams_ = input.readMessage(osmosis.gamm.v1beta1.BalancerPool.SmoothWeightChangeParams.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(smoothWeightChangeParams_);
-                smoothWeightChangeParams_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -2453,16 +2362,16 @@ public final class BalancerPool {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSwapFeeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(swapFee_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, swapFee_);
       }
-      if (!getExitFeeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(exitFee_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, exitFee_);
       }
       if (smoothWeightChangeParams_ != null) {
         output.writeMessage(3, getSmoothWeightChangeParams());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2471,17 +2380,17 @@ public final class BalancerPool {
       if (size != -1) return size;
 
       size = 0;
-      if (!getSwapFeeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(swapFee_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, swapFee_);
       }
-      if (!getExitFeeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(exitFee_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, exitFee_);
       }
       if (smoothWeightChangeParams_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getSmoothWeightChangeParams());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2505,7 +2414,7 @@ public final class BalancerPool {
         if (!getSmoothWeightChangeParams()
             .equals(other.getSmoothWeightChangeParams())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2524,7 +2433,7 @@ public final class BalancerPool {
         hash = (37 * hash) + SMOOTH_WEIGHT_CHANGE_PARAMS_FIELD_NUMBER;
         hash = (53 * hash) + getSmoothWeightChangeParams().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2648,18 +2557,13 @@ public final class BalancerPool {
 
       // Construct using osmosis.gamm.v1beta1.BalancerPool.PoolParams.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -2766,7 +2670,7 @@ public final class BalancerPool {
         if (other.hasSmoothWeightChangeParams()) {
           mergeSmoothWeightChangeParams(other.getSmoothWeightChangeParams());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2781,17 +2685,47 @@ public final class BalancerPool {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        osmosis.gamm.v1beta1.BalancerPool.PoolParams parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                swapFee_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                exitFee_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getSmoothWeightChangeParamsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (osmosis.gamm.v1beta1.BalancerPool.PoolParams) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -3098,7 +3032,18 @@ public final class BalancerPool {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PoolParams(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -3206,62 +3151,6 @@ public final class BalancerPool {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private PoolAsset(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
-              if (token_ != null) {
-                subBuilder = token_.toBuilder();
-              }
-              token_ = input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(token_);
-                token_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              weight_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -3380,10 +3269,10 @@ public final class BalancerPool {
       if (token_ != null) {
         output.writeMessage(1, getToken());
       }
-      if (!getWeightBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(weight_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, weight_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -3396,10 +3285,10 @@ public final class BalancerPool {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getToken());
       }
-      if (!getWeightBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(weight_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, weight_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3421,7 +3310,7 @@ public final class BalancerPool {
       }
       if (!getWeight()
           .equals(other.getWeight())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3438,7 +3327,7 @@ public final class BalancerPool {
       }
       hash = (37 * hash) + WEIGHT_FIELD_NUMBER;
       hash = (53 * hash) + getWeight().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3562,18 +3451,13 @@ public final class BalancerPool {
 
       // Construct using osmosis.gamm.v1beta1.BalancerPool.PoolAsset.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -3673,7 +3557,7 @@ public final class BalancerPool {
           weight_ = other.weight_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3688,17 +3572,42 @@ public final class BalancerPool {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        osmosis.gamm.v1beta1.BalancerPool.PoolAsset parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getTokenFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 10
+              case 18: {
+                weight_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (osmosis.gamm.v1beta1.BalancerPool.PoolAsset) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -3994,7 +3903,18 @@ public final class BalancerPool {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PoolAsset(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -4213,105 +4133,6 @@ public final class BalancerPool {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private Pool(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              address_ = s;
-              break;
-            }
-            case 16: {
-
-              id_ = input.readUInt64();
-              break;
-            }
-            case 26: {
-              osmosis.gamm.v1beta1.BalancerPool.PoolParams.Builder subBuilder = null;
-              if (poolParams_ != null) {
-                subBuilder = poolParams_.toBuilder();
-              }
-              poolParams_ = input.readMessage(osmosis.gamm.v1beta1.BalancerPool.PoolParams.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(poolParams_);
-                poolParams_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              futurePoolGovernor_ = s;
-              break;
-            }
-            case 42: {
-              cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
-              if (totalShares_ != null) {
-                subBuilder = totalShares_.toBuilder();
-              }
-              totalShares_ = input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(totalShares_);
-                totalShares_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                poolAssets_ = new java.util.ArrayList<osmosis.gamm.v1beta1.BalancerPool.PoolAsset>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              poolAssets_.add(
-                  input.readMessage(osmosis.gamm.v1beta1.BalancerPool.PoolAsset.parser(), extensionRegistry));
-              break;
-            }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              totalWeight_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          poolAssets_ = java.util.Collections.unmodifiableList(poolAssets_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -4626,7 +4447,7 @@ public final class BalancerPool {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, address_);
       }
       if (id_ != 0L) {
@@ -4635,7 +4456,7 @@ public final class BalancerPool {
       if (poolParams_ != null) {
         output.writeMessage(3, getPoolParams());
       }
-      if (!getFuturePoolGovernorBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(futurePoolGovernor_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, futurePoolGovernor_);
       }
       if (totalShares_ != null) {
@@ -4644,10 +4465,10 @@ public final class BalancerPool {
       for (int i = 0; i < poolAssets_.size(); i++) {
         output.writeMessage(6, poolAssets_.get(i));
       }
-      if (!getTotalWeightBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(totalWeight_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, totalWeight_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -4656,7 +4477,7 @@ public final class BalancerPool {
       if (size != -1) return size;
 
       size = 0;
-      if (!getAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, address_);
       }
       if (id_ != 0L) {
@@ -4667,7 +4488,7 @@ public final class BalancerPool {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getPoolParams());
       }
-      if (!getFuturePoolGovernorBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(futurePoolGovernor_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, futurePoolGovernor_);
       }
       if (totalShares_ != null) {
@@ -4678,10 +4499,10 @@ public final class BalancerPool {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, poolAssets_.get(i));
       }
-      if (!getTotalWeightBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(totalWeight_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, totalWeight_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4716,7 +4537,7 @@ public final class BalancerPool {
           .equals(other.getPoolAssetsList())) return false;
       if (!getTotalWeight()
           .equals(other.getTotalWeight())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -4748,7 +4569,7 @@ public final class BalancerPool {
       }
       hash = (37 * hash) + TOTAL_WEIGHT_FIELD_NUMBER;
       hash = (53 * hash) + getTotalWeight().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4865,19 +4686,13 @@ public final class BalancerPool {
 
       // Construct using osmosis.gamm.v1beta1.BalancerPool.Pool.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getPoolAssetsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -4902,10 +4717,11 @@ public final class BalancerPool {
         }
         if (poolAssetsBuilder_ == null) {
           poolAssets_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          poolAssets_ = null;
           poolAssetsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         totalWeight_ = "";
 
         return this;
@@ -5053,7 +4869,7 @@ public final class BalancerPool {
           totalWeight_ = other.totalWeight_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -5068,17 +4884,77 @@ public final class BalancerPool {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        osmosis.gamm.v1beta1.BalancerPool.Pool parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                address_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 16: {
+                id_ = input.readUInt64();
+
+                break;
+              } // case 16
+              case 26: {
+                input.readMessage(
+                    getPoolParamsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 26
+              case 34: {
+                futurePoolGovernor_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+              case 42: {
+                input.readMessage(
+                    getTotalSharesFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 42
+              case 50: {
+                osmosis.gamm.v1beta1.BalancerPool.PoolAsset m =
+                    input.readMessage(
+                        osmosis.gamm.v1beta1.BalancerPool.PoolAsset.parser(),
+                        extensionRegistry);
+                if (poolAssetsBuilder_ == null) {
+                  ensurePoolAssetsIsMutable();
+                  poolAssets_.add(m);
+                } else {
+                  poolAssetsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+              case 58: {
+                totalWeight_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 58
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (osmosis.gamm.v1beta1.BalancerPool.Pool) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -6058,7 +5934,18 @@ public final class BalancerPool {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Pool(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -6147,9 +6034,9 @@ public final class BalancerPool {
       "yaml:\"pool_assets\"\310\336\037\000\022[\n\014total_weight\030\007" +
       " \001(\tBE\332\336\037&github.com/cosmos/cosmos-sdk/t" +
       "ypes.Int\362\336\037\023yaml:\"total_weight\"\310\336\037\000:\021\210\240\037" +
-      "\000\230\240\037\000\312\264-\005PoolIB@Z>github.com/osmosis-lab" +
-      "s/osmosis/v7/x/gamm/pool-models/balancer" +
-      "b\006proto3"
+      "\000\230\240\037\000\312\264-\005PoolIBAZ?github.com/osmosis-lab" +
+      "s/osmosis/v13/x/gamm/pool-models/balance" +
+      "rb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

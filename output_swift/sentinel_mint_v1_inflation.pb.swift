@@ -47,6 +47,10 @@ struct Sentinel_Mint_V1_Inflation {
   fileprivate var _timestamp: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Sentinel_Mint_V1_Inflation: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "sentinel.mint.v1"
@@ -76,6 +80,10 @@ extension Sentinel_Mint_V1_Inflation: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.max.isEmpty {
       try visitor.visitSingularStringField(value: self.max, fieldNumber: 1)
     }
@@ -85,9 +93,9 @@ extension Sentinel_Mint_V1_Inflation: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if !self.rateChange.isEmpty {
       try visitor.visitSingularStringField(value: self.rateChange, fieldNumber: 3)
     }
-    if let v = self._timestamp {
+    try { if let v = self._timestamp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

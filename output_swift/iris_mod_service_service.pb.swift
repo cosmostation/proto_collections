@@ -466,6 +466,21 @@ struct Irismod_Service_Params {
   fileprivate var _arbitrationTimeLimit: SwiftProtobuf.Google_Protobuf_Duration? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Irismod_Service_RequestContextBatchState: @unchecked Sendable {}
+extension Irismod_Service_RequestContextState: @unchecked Sendable {}
+extension Irismod_Service_ServiceDefinition: @unchecked Sendable {}
+extension Irismod_Service_ServiceBinding: @unchecked Sendable {}
+extension Irismod_Service_RequestContext: @unchecked Sendable {}
+extension Irismod_Service_Request: @unchecked Sendable {}
+extension Irismod_Service_CompactRequest: @unchecked Sendable {}
+extension Irismod_Service_Response: @unchecked Sendable {}
+extension Irismod_Service_Pricing: @unchecked Sendable {}
+extension Irismod_Service_PromotionByTime: @unchecked Sendable {}
+extension Irismod_Service_PromotionByVolume: @unchecked Sendable {}
+extension Irismod_Service_Params: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "irismod.service"
@@ -582,6 +597,10 @@ extension Irismod_Service_ServiceBinding: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.serviceName.isEmpty {
       try visitor.visitSingularStringField(value: self.serviceName, fieldNumber: 1)
     }
@@ -603,9 +622,9 @@ extension Irismod_Service_ServiceBinding: SwiftProtobuf.Message, SwiftProtobuf._
     if self.available != false {
       try visitor.visitSingularBoolField(value: self.available, fieldNumber: 7)
     }
-    if let v = self._disabledTime {
+    try { if let v = self._disabledTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
-    }
+    } }()
     if !self.owner.isEmpty {
       try visitor.visitSingularStringField(value: self.owner, fieldNumber: 9)
     }
@@ -1096,12 +1115,16 @@ extension Irismod_Service_PromotionByTime: SwiftProtobuf.Message, SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._startTime {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._startTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
-    if let v = self._endTime {
+    } }()
+    try { if let v = self._endTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if !self.discount.isEmpty {
       try visitor.visitSingularStringField(value: self.discount, fieldNumber: 3)
     }
@@ -1192,6 +1215,10 @@ extension Irismod_Service_Params: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.maxRequestTimeout != 0 {
       try visitor.visitSingularInt64Field(value: self.maxRequestTimeout, fieldNumber: 1)
     }
@@ -1207,12 +1234,12 @@ extension Irismod_Service_Params: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     if !self.slashFraction.isEmpty {
       try visitor.visitSingularStringField(value: self.slashFraction, fieldNumber: 5)
     }
-    if let v = self._complaintRetrospect {
+    try { if let v = self._complaintRetrospect {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    }
-    if let v = self._arbitrationTimeLimit {
+    } }()
+    try { if let v = self._arbitrationTimeLimit {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-    }
+    } }()
     if self.txSizeLimit != 0 {
       try visitor.visitSingularUInt64Field(value: self.txSizeLimit, fieldNumber: 8)
     }

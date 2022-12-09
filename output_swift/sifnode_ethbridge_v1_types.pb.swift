@@ -135,6 +135,13 @@ struct Sifnode_Ethbridge_V1_GenesisState {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Sifnode_Ethbridge_V1_ClaimType: @unchecked Sendable {}
+extension Sifnode_Ethbridge_V1_EthBridgeClaim: @unchecked Sendable {}
+extension Sifnode_Ethbridge_V1_PeggyTokens: @unchecked Sendable {}
+extension Sifnode_Ethbridge_V1_GenesisState: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "sifnode.ethbridge.v1"

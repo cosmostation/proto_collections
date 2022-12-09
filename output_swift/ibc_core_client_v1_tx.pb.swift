@@ -211,6 +211,17 @@ struct Ibc_Core_Client_V1_MsgSubmitMisbehaviourResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Ibc_Core_Client_V1_MsgCreateClient: @unchecked Sendable {}
+extension Ibc_Core_Client_V1_MsgCreateClientResponse: @unchecked Sendable {}
+extension Ibc_Core_Client_V1_MsgUpdateClient: @unchecked Sendable {}
+extension Ibc_Core_Client_V1_MsgUpdateClientResponse: @unchecked Sendable {}
+extension Ibc_Core_Client_V1_MsgUpgradeClient: @unchecked Sendable {}
+extension Ibc_Core_Client_V1_MsgUpgradeClientResponse: @unchecked Sendable {}
+extension Ibc_Core_Client_V1_MsgSubmitMisbehaviour: @unchecked Sendable {}
+extension Ibc_Core_Client_V1_MsgSubmitMisbehaviourResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "ibc.core.client.v1"
@@ -238,12 +249,16 @@ extension Ibc_Core_Client_V1_MsgCreateClient: SwiftProtobuf.Message, SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._clientState {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._clientState {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
-    if let v = self._consensusState {
+    } }()
+    try { if let v = self._consensusState {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if !self.signer.isEmpty {
       try visitor.visitSingularStringField(value: self.signer, fieldNumber: 3)
     }
@@ -301,12 +316,16 @@ extension Ibc_Core_Client_V1_MsgUpdateClient: SwiftProtobuf.Message, SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.clientID.isEmpty {
       try visitor.visitSingularStringField(value: self.clientID, fieldNumber: 1)
     }
-    if let v = self._header {
+    try { if let v = self._header {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if !self.signer.isEmpty {
       try visitor.visitSingularStringField(value: self.signer, fieldNumber: 3)
     }
@@ -370,15 +389,19 @@ extension Ibc_Core_Client_V1_MsgUpgradeClient: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.clientID.isEmpty {
       try visitor.visitSingularStringField(value: self.clientID, fieldNumber: 1)
     }
-    if let v = self._clientState {
+    try { if let v = self._clientState {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
-    if let v = self._consensusState {
+    } }()
+    try { if let v = self._consensusState {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if !self.proofUpgradeClient.isEmpty {
       try visitor.visitSingularBytesField(value: self.proofUpgradeClient, fieldNumber: 4)
     }
@@ -445,12 +468,16 @@ extension Ibc_Core_Client_V1_MsgSubmitMisbehaviour: SwiftProtobuf.Message, Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.clientID.isEmpty {
       try visitor.visitSingularStringField(value: self.clientID, fieldNumber: 1)
     }
-    if let v = self._misbehaviour {
+    try { if let v = self._misbehaviour {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if !self.signer.isEmpty {
       try visitor.visitSingularStringField(value: self.signer, fieldNumber: 3)
     }

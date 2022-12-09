@@ -575,6 +575,22 @@ struct Regen_Group_V1alpha1_Vote {
   fileprivate var _submittedAt: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Regen_Group_V1alpha1_Choice: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_Member: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_Members: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_ThresholdDecisionPolicy: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_GroupInfo: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_GroupMember: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_GroupAccountInfo: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_Proposal: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_Proposal.Status: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_Proposal.Result: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_Proposal.ExecutorResult: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_Tally: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_Vote: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "regen.group.v1alpha1"
@@ -686,12 +702,16 @@ extension Regen_Group_V1alpha1_ThresholdDecisionPolicy: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.threshold.isEmpty {
       try visitor.visitSingularStringField(value: self.threshold, fieldNumber: 1)
     }
-    if let v = self._timeout {
+    try { if let v = self._timeout {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -780,12 +800,16 @@ extension Regen_Group_V1alpha1_GroupMember: SwiftProtobuf.Message, SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.groupID != 0 {
       try visitor.visitSingularUInt64Field(value: self.groupID, fieldNumber: 1)
     }
-    if let v = self._member {
+    try { if let v = self._member {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -828,6 +852,10 @@ extension Regen_Group_V1alpha1_GroupAccountInfo: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.address.isEmpty {
       try visitor.visitSingularStringField(value: self.address, fieldNumber: 1)
     }
@@ -843,9 +871,9 @@ extension Regen_Group_V1alpha1_GroupAccountInfo: SwiftProtobuf.Message, SwiftPro
     if self.version != 0 {
       try visitor.visitSingularUInt64Field(value: self.version, fieldNumber: 5)
     }
-    if let v = self._decisionPolicy {
+    try { if let v = self._decisionPolicy {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    }
+    } }()
     if !self.derivationKey.isEmpty {
       try visitor.visitSingularBytesField(value: self.derivationKey, fieldNumber: 7)
     }
@@ -955,6 +983,10 @@ extension Regen_Group_V1alpha1_Proposal: SwiftProtobuf.Message, SwiftProtobuf._M
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
       if _storage._proposalID != 0 {
         try visitor.visitSingularUInt64Field(value: _storage._proposalID, fieldNumber: 1)
       }
@@ -967,9 +999,9 @@ extension Regen_Group_V1alpha1_Proposal: SwiftProtobuf.Message, SwiftProtobuf._M
       if !_storage._proposers.isEmpty {
         try visitor.visitRepeatedStringField(value: _storage._proposers, fieldNumber: 4)
       }
-      if let v = _storage._submittedAt {
+      try { if let v = _storage._submittedAt {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-      }
+      } }()
       if _storage._groupVersion != 0 {
         try visitor.visitSingularUInt64Field(value: _storage._groupVersion, fieldNumber: 6)
       }
@@ -982,12 +1014,12 @@ extension Regen_Group_V1alpha1_Proposal: SwiftProtobuf.Message, SwiftProtobuf._M
       if _storage._result != .unspecified {
         try visitor.visitSingularEnumField(value: _storage._result, fieldNumber: 9)
       }
-      if let v = _storage._voteState {
+      try { if let v = _storage._voteState {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
-      }
-      if let v = _storage._timeout {
+      } }()
+      try { if let v = _storage._timeout {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
-      }
+      } }()
       if _storage._executorResult != .unspecified {
         try visitor.visitSingularEnumField(value: _storage._executorResult, fieldNumber: 12)
       }
@@ -1129,6 +1161,10 @@ extension Regen_Group_V1alpha1_Vote: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.proposalID != 0 {
       try visitor.visitSingularUInt64Field(value: self.proposalID, fieldNumber: 1)
     }
@@ -1141,9 +1177,9 @@ extension Regen_Group_V1alpha1_Vote: SwiftProtobuf.Message, SwiftProtobuf._Messa
     if !self.metadata.isEmpty {
       try visitor.visitSingularBytesField(value: self.metadata, fieldNumber: 4)
     }
-    if let v = self._submittedAt {
+    try { if let v = self._submittedAt {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

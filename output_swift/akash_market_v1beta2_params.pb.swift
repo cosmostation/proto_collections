@@ -44,6 +44,10 @@ struct Akash_Market_V1beta2_Params {
   fileprivate var _bidMinDeposit: Cosmos_Base_V1beta1_Coin? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Akash_Market_V1beta2_Params: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "akash.market.v1beta2"
@@ -69,9 +73,13 @@ extension Akash_Market_V1beta2_Params: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._bidMinDeposit {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._bidMinDeposit {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if self.orderMaxBids != 0 {
       try visitor.visitSingularUInt32Field(value: self.orderMaxBids, fieldNumber: 2)
     }

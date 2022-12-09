@@ -76,6 +76,13 @@ struct Confio_Twasm_V1beta1_QueryContractsByPrivilegeTypeResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Confio_Twasm_V1beta1_QueryPrivilegedContractsRequest: @unchecked Sendable {}
+extension Confio_Twasm_V1beta1_QueryPrivilegedContractsResponse: @unchecked Sendable {}
+extension Confio_Twasm_V1beta1_QueryContractsByPrivilegeTypeRequest: @unchecked Sendable {}
+extension Confio_Twasm_V1beta1_QueryContractsByPrivilegeTypeResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "confio.twasm.v1beta1"

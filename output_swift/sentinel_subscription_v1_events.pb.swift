@@ -78,6 +78,13 @@ struct Sentinel_Subscription_V1_EventUpdateQuota {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Sentinel_Subscription_V1_EventSubscribe: @unchecked Sendable {}
+extension Sentinel_Subscription_V1_EventSetStatus: @unchecked Sendable {}
+extension Sentinel_Subscription_V1_EventAddQuota: @unchecked Sendable {}
+extension Sentinel_Subscription_V1_EventUpdateQuota: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "sentinel.subscription.v1"

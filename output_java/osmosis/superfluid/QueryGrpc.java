@@ -216,6 +216,37 @@ public final class QueryGrpc {
     return getConnectedIntermediaryAccountMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByValidatorForDenomRequest,
+      osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByValidatorForDenomResponse> getTotalDelegationByValidatorForDenomMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TotalDelegationByValidatorForDenom",
+      requestType = osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByValidatorForDenomRequest.class,
+      responseType = osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByValidatorForDenomResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByValidatorForDenomRequest,
+      osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByValidatorForDenomResponse> getTotalDelegationByValidatorForDenomMethod() {
+    io.grpc.MethodDescriptor<osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByValidatorForDenomRequest, osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByValidatorForDenomResponse> getTotalDelegationByValidatorForDenomMethod;
+    if ((getTotalDelegationByValidatorForDenomMethod = QueryGrpc.getTotalDelegationByValidatorForDenomMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getTotalDelegationByValidatorForDenomMethod = QueryGrpc.getTotalDelegationByValidatorForDenomMethod) == null) {
+          QueryGrpc.getTotalDelegationByValidatorForDenomMethod = getTotalDelegationByValidatorForDenomMethod =
+              io.grpc.MethodDescriptor.<osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByValidatorForDenomRequest, osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByValidatorForDenomResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TotalDelegationByValidatorForDenom"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByValidatorForDenomRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByValidatorForDenomResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("TotalDelegationByValidatorForDenom"))
+              .build();
+        }
+      }
+    }
+    return getTotalDelegationByValidatorForDenomMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<osmosis.superfluid.QueryOuterClass.TotalSuperfluidDelegationsRequest,
       osmosis.superfluid.QueryOuterClass.TotalSuperfluidDelegationsResponse> getTotalSuperfluidDelegationsMethod;
 
@@ -433,6 +464,37 @@ public final class QueryGrpc {
     return getTotalDelegationByDelegatorMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<osmosis.superfluid.QueryOuterClass.QueryUnpoolWhitelistRequest,
+      osmosis.superfluid.QueryOuterClass.QueryUnpoolWhitelistResponse> getUnpoolWhitelistMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UnpoolWhitelist",
+      requestType = osmosis.superfluid.QueryOuterClass.QueryUnpoolWhitelistRequest.class,
+      responseType = osmosis.superfluid.QueryOuterClass.QueryUnpoolWhitelistResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<osmosis.superfluid.QueryOuterClass.QueryUnpoolWhitelistRequest,
+      osmosis.superfluid.QueryOuterClass.QueryUnpoolWhitelistResponse> getUnpoolWhitelistMethod() {
+    io.grpc.MethodDescriptor<osmosis.superfluid.QueryOuterClass.QueryUnpoolWhitelistRequest, osmosis.superfluid.QueryOuterClass.QueryUnpoolWhitelistResponse> getUnpoolWhitelistMethod;
+    if ((getUnpoolWhitelistMethod = QueryGrpc.getUnpoolWhitelistMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getUnpoolWhitelistMethod = QueryGrpc.getUnpoolWhitelistMethod) == null) {
+          QueryGrpc.getUnpoolWhitelistMethod = getUnpoolWhitelistMethod =
+              io.grpc.MethodDescriptor.<osmosis.superfluid.QueryOuterClass.QueryUnpoolWhitelistRequest, osmosis.superfluid.QueryOuterClass.QueryUnpoolWhitelistResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UnpoolWhitelist"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  osmosis.superfluid.QueryOuterClass.QueryUnpoolWhitelistRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  osmosis.superfluid.QueryOuterClass.QueryUnpoolWhitelistResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("UnpoolWhitelist"))
+              .build();
+        }
+      }
+    }
+    return getUnpoolWhitelistMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -547,6 +609,16 @@ public final class QueryGrpc {
 
     /**
      * <pre>
+     * Returns the amount of delegations of specific denom for all validators
+     * </pre>
+     */
+    public void totalDelegationByValidatorForDenom(osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByValidatorForDenomRequest request,
+        io.grpc.stub.StreamObserver<osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByValidatorForDenomResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getTotalDelegationByValidatorForDenomMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Returns the total amount of osmo superfluidly staked.
      * Response is denominated in uosmo.
      * </pre>
@@ -620,6 +692,16 @@ public final class QueryGrpc {
       asyncUnimplementedUnaryCall(getTotalDelegationByDelegatorMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * Returns a list of whitelisted pool ids to unpool.
+     * </pre>
+     */
+    public void unpoolWhitelist(osmosis.superfluid.QueryOuterClass.QueryUnpoolWhitelistRequest request,
+        io.grpc.stub.StreamObserver<osmosis.superfluid.QueryOuterClass.QueryUnpoolWhitelistResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getUnpoolWhitelistMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -664,6 +746,13 @@ public final class QueryGrpc {
                 osmosis.superfluid.QueryOuterClass.ConnectedIntermediaryAccountRequest,
                 osmosis.superfluid.QueryOuterClass.ConnectedIntermediaryAccountResponse>(
                   this, METHODID_CONNECTED_INTERMEDIARY_ACCOUNT)))
+          .addMethod(
+            getTotalDelegationByValidatorForDenomMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByValidatorForDenomRequest,
+                osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByValidatorForDenomResponse>(
+                  this, METHODID_TOTAL_DELEGATION_BY_VALIDATOR_FOR_DENOM)))
           .addMethod(
             getTotalSuperfluidDelegationsMethod(),
             asyncUnaryCall(
@@ -713,6 +802,13 @@ public final class QueryGrpc {
                 osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorRequest,
                 osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorResponse>(
                   this, METHODID_TOTAL_DELEGATION_BY_DELEGATOR)))
+          .addMethod(
+            getUnpoolWhitelistMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                osmosis.superfluid.QueryOuterClass.QueryUnpoolWhitelistRequest,
+                osmosis.superfluid.QueryOuterClass.QueryUnpoolWhitelistResponse>(
+                  this, METHODID_UNPOOL_WHITELIST)))
           .build();
     }
   }
@@ -803,6 +899,17 @@ public final class QueryGrpc {
 
     /**
      * <pre>
+     * Returns the amount of delegations of specific denom for all validators
+     * </pre>
+     */
+    public void totalDelegationByValidatorForDenom(osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByValidatorForDenomRequest request,
+        io.grpc.stub.StreamObserver<osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByValidatorForDenomResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getTotalDelegationByValidatorForDenomMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Returns the total amount of osmo superfluidly staked.
      * Response is denominated in uosmo.
      * </pre>
@@ -881,6 +988,17 @@ public final class QueryGrpc {
         io.grpc.stub.StreamObserver<osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getTotalDelegationByDelegatorMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Returns a list of whitelisted pool ids to unpool.
+     * </pre>
+     */
+    public void unpoolWhitelist(osmosis.superfluid.QueryOuterClass.QueryUnpoolWhitelistRequest request,
+        io.grpc.stub.StreamObserver<osmosis.superfluid.QueryOuterClass.QueryUnpoolWhitelistResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getUnpoolWhitelistMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -964,6 +1082,16 @@ public final class QueryGrpc {
 
     /**
      * <pre>
+     * Returns the amount of delegations of specific denom for all validators
+     * </pre>
+     */
+    public osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByValidatorForDenomResponse totalDelegationByValidatorForDenom(osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByValidatorForDenomRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getTotalDelegationByValidatorForDenomMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * Returns the total amount of osmo superfluidly staked.
      * Response is denominated in uosmo.
      * </pre>
@@ -1035,6 +1163,16 @@ public final class QueryGrpc {
     public osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorResponse totalDelegationByDelegator(osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorRequest request) {
       return blockingUnaryCall(
           getChannel(), getTotalDelegationByDelegatorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Returns a list of whitelisted pool ids to unpool.
+     * </pre>
+     */
+    public osmosis.superfluid.QueryOuterClass.QueryUnpoolWhitelistResponse unpoolWhitelist(osmosis.superfluid.QueryOuterClass.QueryUnpoolWhitelistRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getUnpoolWhitelistMethod(), getCallOptions(), request);
     }
   }
 
@@ -1124,6 +1262,17 @@ public final class QueryGrpc {
 
     /**
      * <pre>
+     * Returns the amount of delegations of specific denom for all validators
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByValidatorForDenomResponse> totalDelegationByValidatorForDenom(
+        osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByValidatorForDenomRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getTotalDelegationByValidatorForDenomMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Returns the total amount of osmo superfluidly staked.
      * Response is denominated in uosmo.
      * </pre>
@@ -1203,6 +1352,17 @@ public final class QueryGrpc {
       return futureUnaryCall(
           getChannel().newCall(getTotalDelegationByDelegatorMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Returns a list of whitelisted pool ids to unpool.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<osmosis.superfluid.QueryOuterClass.QueryUnpoolWhitelistResponse> unpoolWhitelist(
+        osmosis.superfluid.QueryOuterClass.QueryUnpoolWhitelistRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getUnpoolWhitelistMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_PARAMS = 0;
@@ -1211,13 +1371,15 @@ public final class QueryGrpc {
   private static final int METHODID_ASSET_MULTIPLIER = 3;
   private static final int METHODID_ALL_INTERMEDIARY_ACCOUNTS = 4;
   private static final int METHODID_CONNECTED_INTERMEDIARY_ACCOUNT = 5;
-  private static final int METHODID_TOTAL_SUPERFLUID_DELEGATIONS = 6;
-  private static final int METHODID_SUPERFLUID_DELEGATION_AMOUNT = 7;
-  private static final int METHODID_SUPERFLUID_DELEGATIONS_BY_DELEGATOR = 8;
-  private static final int METHODID_SUPERFLUID_UNDELEGATIONS_BY_DELEGATOR = 9;
-  private static final int METHODID_SUPERFLUID_DELEGATIONS_BY_VALIDATOR_DENOM = 10;
-  private static final int METHODID_ESTIMATE_SUPERFLUID_DELEGATED_AMOUNT_BY_VALIDATOR_DENOM = 11;
-  private static final int METHODID_TOTAL_DELEGATION_BY_DELEGATOR = 12;
+  private static final int METHODID_TOTAL_DELEGATION_BY_VALIDATOR_FOR_DENOM = 6;
+  private static final int METHODID_TOTAL_SUPERFLUID_DELEGATIONS = 7;
+  private static final int METHODID_SUPERFLUID_DELEGATION_AMOUNT = 8;
+  private static final int METHODID_SUPERFLUID_DELEGATIONS_BY_DELEGATOR = 9;
+  private static final int METHODID_SUPERFLUID_UNDELEGATIONS_BY_DELEGATOR = 10;
+  private static final int METHODID_SUPERFLUID_DELEGATIONS_BY_VALIDATOR_DENOM = 11;
+  private static final int METHODID_ESTIMATE_SUPERFLUID_DELEGATED_AMOUNT_BY_VALIDATOR_DENOM = 12;
+  private static final int METHODID_TOTAL_DELEGATION_BY_DELEGATOR = 13;
+  private static final int METHODID_UNPOOL_WHITELIST = 14;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1260,6 +1422,10 @@ public final class QueryGrpc {
           serviceImpl.connectedIntermediaryAccount((osmosis.superfluid.QueryOuterClass.ConnectedIntermediaryAccountRequest) request,
               (io.grpc.stub.StreamObserver<osmosis.superfluid.QueryOuterClass.ConnectedIntermediaryAccountResponse>) responseObserver);
           break;
+        case METHODID_TOTAL_DELEGATION_BY_VALIDATOR_FOR_DENOM:
+          serviceImpl.totalDelegationByValidatorForDenom((osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByValidatorForDenomRequest) request,
+              (io.grpc.stub.StreamObserver<osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByValidatorForDenomResponse>) responseObserver);
+          break;
         case METHODID_TOTAL_SUPERFLUID_DELEGATIONS:
           serviceImpl.totalSuperfluidDelegations((osmosis.superfluid.QueryOuterClass.TotalSuperfluidDelegationsRequest) request,
               (io.grpc.stub.StreamObserver<osmosis.superfluid.QueryOuterClass.TotalSuperfluidDelegationsResponse>) responseObserver);
@@ -1287,6 +1453,10 @@ public final class QueryGrpc {
         case METHODID_TOTAL_DELEGATION_BY_DELEGATOR:
           serviceImpl.totalDelegationByDelegator((osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorRequest) request,
               (io.grpc.stub.StreamObserver<osmosis.superfluid.QueryOuterClass.QueryTotalDelegationByDelegatorResponse>) responseObserver);
+          break;
+        case METHODID_UNPOOL_WHITELIST:
+          serviceImpl.unpoolWhitelist((osmosis.superfluid.QueryOuterClass.QueryUnpoolWhitelistRequest) request,
+              (io.grpc.stub.StreamObserver<osmosis.superfluid.QueryOuterClass.QueryUnpoolWhitelistResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1355,6 +1525,7 @@ public final class QueryGrpc {
               .addMethod(getAssetMultiplierMethod())
               .addMethod(getAllIntermediaryAccountsMethod())
               .addMethod(getConnectedIntermediaryAccountMethod())
+              .addMethod(getTotalDelegationByValidatorForDenomMethod())
               .addMethod(getTotalSuperfluidDelegationsMethod())
               .addMethod(getSuperfluidDelegationAmountMethod())
               .addMethod(getSuperfluidDelegationsByDelegatorMethod())
@@ -1362,6 +1533,7 @@ public final class QueryGrpc {
               .addMethod(getSuperfluidDelegationsByValidatorDenomMethod())
               .addMethod(getEstimateSuperfluidDelegatedAmountByValidatorDenomMethod())
               .addMethod(getTotalDelegationByDelegatorMethod())
+              .addMethod(getUnpoolWhitelistMethod())
               .build();
         }
       }

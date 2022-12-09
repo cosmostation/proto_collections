@@ -77,62 +77,6 @@ public final class Genesis {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AccumulationTime(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              collateralType_ = s;
-              break;
-            }
-            case 18: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (previousAccumulationTime_ != null) {
-                subBuilder = previousAccumulationTime_.toBuilder();
-              }
-              previousAccumulationTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(previousAccumulationTime_);
-                previousAccumulationTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return kava.incentive.v1beta1.Genesis.internal_static_kava_incentive_v1beta1_AccumulationTime_descriptor;
@@ -224,13 +168,13 @@ public final class Genesis {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getCollateralTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(collateralType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, collateralType_);
       }
       if (previousAccumulationTime_ != null) {
         output.writeMessage(2, getPreviousAccumulationTime());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -239,14 +183,14 @@ public final class Genesis {
       if (size != -1) return size;
 
       size = 0;
-      if (!getCollateralTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(collateralType_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, collateralType_);
       }
       if (previousAccumulationTime_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getPreviousAccumulationTime());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -268,7 +212,7 @@ public final class Genesis {
         if (!getPreviousAccumulationTime()
             .equals(other.getPreviousAccumulationTime())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -285,7 +229,7 @@ public final class Genesis {
         hash = (37 * hash) + PREVIOUS_ACCUMULATION_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getPreviousAccumulationTime().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -406,18 +350,13 @@ public final class Genesis {
 
       // Construct using kava.incentive.v1beta1.Genesis.AccumulationTime.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -517,7 +456,7 @@ public final class Genesis {
         if (other.hasPreviousAccumulationTime()) {
           mergePreviousAccumulationTime(other.getPreviousAccumulationTime());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -532,17 +471,42 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        kava.incentive.v1beta1.Genesis.AccumulationTime parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                collateralType_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getPreviousAccumulationTimeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (kava.incentive.v1beta1.Genesis.AccumulationTime) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -773,7 +737,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AccumulationTime(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -877,68 +852,6 @@ public final class Genesis {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private GenesisRewardState(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                accumulationTimes_ = new java.util.ArrayList<kava.incentive.v1beta1.Genesis.AccumulationTime>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              accumulationTimes_.add(
-                  input.readMessage(kava.incentive.v1beta1.Genesis.AccumulationTime.parser(), extensionRegistry));
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                multiRewardIndexes_ = new java.util.ArrayList<kava.incentive.v1beta1.Claims.MultiRewardIndex>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              multiRewardIndexes_.add(
-                  input.readMessage(kava.incentive.v1beta1.Claims.MultiRewardIndex.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          accumulationTimes_ = java.util.Collections.unmodifiableList(accumulationTimes_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          multiRewardIndexes_ = java.util.Collections.unmodifiableList(multiRewardIndexes_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -1053,7 +966,7 @@ public final class Genesis {
       for (int i = 0; i < multiRewardIndexes_.size(); i++) {
         output.writeMessage(2, multiRewardIndexes_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1070,7 +983,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, multiRewardIndexes_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1089,7 +1002,7 @@ public final class Genesis {
           .equals(other.getAccumulationTimesList())) return false;
       if (!getMultiRewardIndexesList()
           .equals(other.getMultiRewardIndexesList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1108,7 +1021,7 @@ public final class Genesis {
         hash = (37 * hash) + MULTI_REWARD_INDEXES_FIELD_NUMBER;
         hash = (53 * hash) + getMultiRewardIndexesList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1229,36 +1142,31 @@ public final class Genesis {
 
       // Construct using kava.incentive.v1beta1.Genesis.GenesisRewardState.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getAccumulationTimesFieldBuilder();
-          getMultiRewardIndexesFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
         if (accumulationTimesBuilder_ == null) {
           accumulationTimes_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          accumulationTimes_ = null;
           accumulationTimesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (multiRewardIndexesBuilder_ == null) {
           multiRewardIndexes_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          multiRewardIndexes_ = null;
           multiRewardIndexesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -1404,7 +1312,7 @@ public final class Genesis {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1419,17 +1327,56 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        kava.incentive.v1beta1.Genesis.GenesisRewardState parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                kava.incentive.v1beta1.Genesis.AccumulationTime m =
+                    input.readMessage(
+                        kava.incentive.v1beta1.Genesis.AccumulationTime.parser(),
+                        extensionRegistry);
+                if (accumulationTimesBuilder_ == null) {
+                  ensureAccumulationTimesIsMutable();
+                  accumulationTimes_.add(m);
+                } else {
+                  accumulationTimesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              case 18: {
+                kava.incentive.v1beta1.Claims.MultiRewardIndex m =
+                    input.readMessage(
+                        kava.incentive.v1beta1.Claims.MultiRewardIndex.parser(),
+                        extensionRegistry);
+                if (multiRewardIndexesBuilder_ == null) {
+                  ensureMultiRewardIndexesIsMutable();
+                  multiRewardIndexes_.add(m);
+                } else {
+                  multiRewardIndexesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (kava.incentive.v1beta1.Genesis.GenesisRewardState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1946,7 +1893,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GenesisRewardState(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2270,220 +2228,6 @@ public final class Genesis {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private GenesisState(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              kava.incentive.v1beta1.ParamsOuterClass.Params.Builder subBuilder = null;
-              if (params_ != null) {
-                subBuilder = params_.toBuilder();
-              }
-              params_ = input.readMessage(kava.incentive.v1beta1.ParamsOuterClass.Params.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(params_);
-                params_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              kava.incentive.v1beta1.Genesis.GenesisRewardState.Builder subBuilder = null;
-              if (usdxRewardState_ != null) {
-                subBuilder = usdxRewardState_.toBuilder();
-              }
-              usdxRewardState_ = input.readMessage(kava.incentive.v1beta1.Genesis.GenesisRewardState.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(usdxRewardState_);
-                usdxRewardState_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 26: {
-              kava.incentive.v1beta1.Genesis.GenesisRewardState.Builder subBuilder = null;
-              if (hardSupplyRewardState_ != null) {
-                subBuilder = hardSupplyRewardState_.toBuilder();
-              }
-              hardSupplyRewardState_ = input.readMessage(kava.incentive.v1beta1.Genesis.GenesisRewardState.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(hardSupplyRewardState_);
-                hardSupplyRewardState_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 34: {
-              kava.incentive.v1beta1.Genesis.GenesisRewardState.Builder subBuilder = null;
-              if (hardBorrowRewardState_ != null) {
-                subBuilder = hardBorrowRewardState_.toBuilder();
-              }
-              hardBorrowRewardState_ = input.readMessage(kava.incentive.v1beta1.Genesis.GenesisRewardState.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(hardBorrowRewardState_);
-                hardBorrowRewardState_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 42: {
-              kava.incentive.v1beta1.Genesis.GenesisRewardState.Builder subBuilder = null;
-              if (delegatorRewardState_ != null) {
-                subBuilder = delegatorRewardState_.toBuilder();
-              }
-              delegatorRewardState_ = input.readMessage(kava.incentive.v1beta1.Genesis.GenesisRewardState.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(delegatorRewardState_);
-                delegatorRewardState_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 50: {
-              kava.incentive.v1beta1.Genesis.GenesisRewardState.Builder subBuilder = null;
-              if (swapRewardState_ != null) {
-                subBuilder = swapRewardState_.toBuilder();
-              }
-              swapRewardState_ = input.readMessage(kava.incentive.v1beta1.Genesis.GenesisRewardState.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(swapRewardState_);
-                swapRewardState_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                usdxMintingClaims_ = new java.util.ArrayList<kava.incentive.v1beta1.Claims.USDXMintingClaim>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              usdxMintingClaims_.add(
-                  input.readMessage(kava.incentive.v1beta1.Claims.USDXMintingClaim.parser(), extensionRegistry));
-              break;
-            }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                hardLiquidityProviderClaims_ = new java.util.ArrayList<kava.incentive.v1beta1.Claims.HardLiquidityProviderClaim>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              hardLiquidityProviderClaims_.add(
-                  input.readMessage(kava.incentive.v1beta1.Claims.HardLiquidityProviderClaim.parser(), extensionRegistry));
-              break;
-            }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                delegatorClaims_ = new java.util.ArrayList<kava.incentive.v1beta1.Claims.DelegatorClaim>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              delegatorClaims_.add(
-                  input.readMessage(kava.incentive.v1beta1.Claims.DelegatorClaim.parser(), extensionRegistry));
-              break;
-            }
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                swapClaims_ = new java.util.ArrayList<kava.incentive.v1beta1.Claims.SwapClaim>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              swapClaims_.add(
-                  input.readMessage(kava.incentive.v1beta1.Claims.SwapClaim.parser(), extensionRegistry));
-              break;
-            }
-            case 90: {
-              kava.incentive.v1beta1.Genesis.GenesisRewardState.Builder subBuilder = null;
-              if (savingsRewardState_ != null) {
-                subBuilder = savingsRewardState_.toBuilder();
-              }
-              savingsRewardState_ = input.readMessage(kava.incentive.v1beta1.Genesis.GenesisRewardState.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(savingsRewardState_);
-                savingsRewardState_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 98: {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                savingsClaims_ = new java.util.ArrayList<kava.incentive.v1beta1.Claims.SavingsClaim>();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              savingsClaims_.add(
-                  input.readMessage(kava.incentive.v1beta1.Claims.SavingsClaim.parser(), extensionRegistry));
-              break;
-            }
-            case 106: {
-              kava.incentive.v1beta1.Genesis.GenesisRewardState.Builder subBuilder = null;
-              if (earnRewardState_ != null) {
-                subBuilder = earnRewardState_.toBuilder();
-              }
-              earnRewardState_ = input.readMessage(kava.incentive.v1beta1.Genesis.GenesisRewardState.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(earnRewardState_);
-                earnRewardState_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 114: {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                earnClaims_ = new java.util.ArrayList<kava.incentive.v1beta1.Claims.EarnClaim>();
-                mutable_bitField0_ |= 0x00000020;
-              }
-              earnClaims_.add(
-                  input.readMessage(kava.incentive.v1beta1.Claims.EarnClaim.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          usdxMintingClaims_ = java.util.Collections.unmodifiableList(usdxMintingClaims_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          hardLiquidityProviderClaims_ = java.util.Collections.unmodifiableList(hardLiquidityProviderClaims_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          delegatorClaims_ = java.util.Collections.unmodifiableList(delegatorClaims_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          swapClaims_ = java.util.Collections.unmodifiableList(swapClaims_);
-        }
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
-          savingsClaims_ = java.util.Collections.unmodifiableList(savingsClaims_);
-        }
-        if (((mutable_bitField0_ & 0x00000020) != 0)) {
-          earnClaims_ = java.util.Collections.unmodifiableList(earnClaims_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -3002,7 +2746,7 @@ public final class Genesis {
       for (int i = 0; i < earnClaims_.size(); i++) {
         output.writeMessage(14, earnClaims_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -3067,7 +2811,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, earnClaims_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3134,7 +2878,7 @@ public final class Genesis {
       }
       if (!getEarnClaimsList()
           .equals(other.getEarnClaimsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3201,7 +2945,7 @@ public final class Genesis {
         hash = (37 * hash) + EARN_CLAIMS_FIELD_NUMBER;
         hash = (53 * hash) + getEarnClaimsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3322,24 +3066,13 @@ public final class Genesis {
 
       // Construct using kava.incentive.v1beta1.Genesis.GenesisState.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getUsdxMintingClaimsFieldBuilder();
-          getHardLiquidityProviderClaimsFieldBuilder();
-          getDelegatorClaimsFieldBuilder();
-          getSwapClaimsFieldBuilder();
-          getSavingsClaimsFieldBuilder();
-          getEarnClaimsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -3382,28 +3115,32 @@ public final class Genesis {
         }
         if (usdxMintingClaimsBuilder_ == null) {
           usdxMintingClaims_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          usdxMintingClaims_ = null;
           usdxMintingClaimsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (hardLiquidityProviderClaimsBuilder_ == null) {
           hardLiquidityProviderClaims_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          hardLiquidityProviderClaims_ = null;
           hardLiquidityProviderClaimsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (delegatorClaimsBuilder_ == null) {
           delegatorClaims_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          delegatorClaims_ = null;
           delegatorClaimsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (swapClaimsBuilder_ == null) {
           swapClaims_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
+          swapClaims_ = null;
           swapClaimsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         if (savingsRewardStateBuilder_ == null) {
           savingsRewardState_ = null;
         } else {
@@ -3412,10 +3149,11 @@ public final class Genesis {
         }
         if (savingsClaimsBuilder_ == null) {
           savingsClaims_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
+          savingsClaims_ = null;
           savingsClaimsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000010);
         if (earnRewardStateBuilder_ == null) {
           earnRewardState_ = null;
         } else {
@@ -3424,10 +3162,11 @@ public final class Genesis {
         }
         if (earnClaimsBuilder_ == null) {
           earnClaims_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
+          earnClaims_ = null;
           earnClaimsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -3777,7 +3516,7 @@ public final class Genesis {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3792,17 +3531,164 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        kava.incentive.v1beta1.Genesis.GenesisState parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getParamsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getUsdxRewardStateFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getHardSupplyRewardStateFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 26
+              case 34: {
+                input.readMessage(
+                    getHardBorrowRewardStateFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 34
+              case 42: {
+                input.readMessage(
+                    getDelegatorRewardStateFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 42
+              case 50: {
+                input.readMessage(
+                    getSwapRewardStateFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 50
+              case 58: {
+                kava.incentive.v1beta1.Claims.USDXMintingClaim m =
+                    input.readMessage(
+                        kava.incentive.v1beta1.Claims.USDXMintingClaim.parser(),
+                        extensionRegistry);
+                if (usdxMintingClaimsBuilder_ == null) {
+                  ensureUsdxMintingClaimsIsMutable();
+                  usdxMintingClaims_.add(m);
+                } else {
+                  usdxMintingClaimsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 58
+              case 66: {
+                kava.incentive.v1beta1.Claims.HardLiquidityProviderClaim m =
+                    input.readMessage(
+                        kava.incentive.v1beta1.Claims.HardLiquidityProviderClaim.parser(),
+                        extensionRegistry);
+                if (hardLiquidityProviderClaimsBuilder_ == null) {
+                  ensureHardLiquidityProviderClaimsIsMutable();
+                  hardLiquidityProviderClaims_.add(m);
+                } else {
+                  hardLiquidityProviderClaimsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+              case 74: {
+                kava.incentive.v1beta1.Claims.DelegatorClaim m =
+                    input.readMessage(
+                        kava.incentive.v1beta1.Claims.DelegatorClaim.parser(),
+                        extensionRegistry);
+                if (delegatorClaimsBuilder_ == null) {
+                  ensureDelegatorClaimsIsMutable();
+                  delegatorClaims_.add(m);
+                } else {
+                  delegatorClaimsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+              case 82: {
+                kava.incentive.v1beta1.Claims.SwapClaim m =
+                    input.readMessage(
+                        kava.incentive.v1beta1.Claims.SwapClaim.parser(),
+                        extensionRegistry);
+                if (swapClaimsBuilder_ == null) {
+                  ensureSwapClaimsIsMutable();
+                  swapClaims_.add(m);
+                } else {
+                  swapClaimsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
+              case 90: {
+                input.readMessage(
+                    getSavingsRewardStateFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 90
+              case 98: {
+                kava.incentive.v1beta1.Claims.SavingsClaim m =
+                    input.readMessage(
+                        kava.incentive.v1beta1.Claims.SavingsClaim.parser(),
+                        extensionRegistry);
+                if (savingsClaimsBuilder_ == null) {
+                  ensureSavingsClaimsIsMutable();
+                  savingsClaims_.add(m);
+                } else {
+                  savingsClaimsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 98
+              case 106: {
+                input.readMessage(
+                    getEarnRewardStateFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 106
+              case 114: {
+                kava.incentive.v1beta1.Claims.EarnClaim m =
+                    input.readMessage(
+                        kava.incentive.v1beta1.Claims.EarnClaim.parser(),
+                        extensionRegistry);
+                if (earnClaimsBuilder_ == null) {
+                  ensureEarnClaimsIsMutable();
+                  earnClaims_.add(m);
+                } else {
+                  earnClaimsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 114
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (kava.incentive.v1beta1.Genesis.GenesisState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -6231,7 +6117,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GenesisState(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

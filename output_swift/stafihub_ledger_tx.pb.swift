@@ -668,6 +668,55 @@ struct Stafihub_Stafihub_Ledger_MsgSetPoolStatusResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Stafihub_Stafihub_Ledger_MsgSetEraUnbondLimit: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgSetEraUnbondLimitResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgSetPoolDetail: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgSetPoolDetailResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgSetLeastBond: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgSetLeastBondResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgClearCurrentEraSnapShots: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgClearCurrentEraSnapShotsResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgSetStakingRewardCommission: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgSetStakingRewardCommissionResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgSetProtocolFeeReceiver: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgSetProtocolFeeReceiverResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgSetUnbondRelayFee: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgSetUnbondRelayFeeResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgLiquidityUnbond: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgLiquidityUnbondResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgSetUnbondCommission: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgSetUnbondCommissionResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgSubmitSignature: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgSubmitSignatureResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgSetRParams: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgSetRParamsResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgSetRelayFeeReceiver: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgSetRelayFeeReceiverResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgSetRelayGasPrice: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgSetRelayGasPriceResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgSetEraSeconds: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgSetEraSecondsResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgRmBondedPool: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgRmBondedPoolResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgMigrateInit: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgMigrateInitResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgMigrateUnbondings: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgMigrateUnbondingsResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgToggleUnbondSwitch: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgToggleUnbondSwitchResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgUnsealMigrateInit: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgUnsealMigrateInitResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgRegisterIcaPool: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgRegisterIcaPoolResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgSetWithdrawalAddr: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgSetWithdrawalAddrResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgInitPool: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgInitPoolResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgSetPoolStatus: @unchecked Sendable {}
+extension Stafihub_Stafihub_Ledger_MsgSetPoolStatusResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stafihub.stafihub.ledger"
@@ -1073,15 +1122,19 @@ extension Stafihub_Stafihub_Ledger_MsgSetUnbondRelayFee: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.creator.isEmpty {
       try visitor.visitSingularStringField(value: self.creator, fieldNumber: 1)
     }
     if !self.denom.isEmpty {
       try visitor.visitSingularStringField(value: self.denom, fieldNumber: 2)
     }
-    if let v = self._value {
+    try { if let v = self._value {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1138,15 +1191,19 @@ extension Stafihub_Stafihub_Ledger_MsgLiquidityUnbond: SwiftProtobuf.Message, Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.creator.isEmpty {
       try visitor.visitSingularStringField(value: self.creator, fieldNumber: 1)
     }
     if !self.pool.isEmpty {
       try visitor.visitSingularStringField(value: self.pool, fieldNumber: 2)
     }
-    if let v = self._value {
+    try { if let v = self._value {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if !self.recipient.isEmpty {
       try visitor.visitSingularStringField(value: self.recipient, fieldNumber: 4)
     }

@@ -270,6 +270,19 @@ struct Cosmos_Staking_V1beta1_MsgUndelegateResponse {
   fileprivate var _completionTime: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Cosmos_Staking_V1beta1_MsgCreateValidator: @unchecked Sendable {}
+extension Cosmos_Staking_V1beta1_MsgCreateValidatorResponse: @unchecked Sendable {}
+extension Cosmos_Staking_V1beta1_MsgEditValidator: @unchecked Sendable {}
+extension Cosmos_Staking_V1beta1_MsgEditValidatorResponse: @unchecked Sendable {}
+extension Cosmos_Staking_V1beta1_MsgDelegate: @unchecked Sendable {}
+extension Cosmos_Staking_V1beta1_MsgDelegateResponse: @unchecked Sendable {}
+extension Cosmos_Staking_V1beta1_MsgBeginRedelegate: @unchecked Sendable {}
+extension Cosmos_Staking_V1beta1_MsgBeginRedelegateResponse: @unchecked Sendable {}
+extension Cosmos_Staking_V1beta1_MsgUndelegate: @unchecked Sendable {}
+extension Cosmos_Staking_V1beta1_MsgUndelegateResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.staking.v1beta1"
@@ -305,12 +318,16 @@ extension Cosmos_Staking_V1beta1_MsgCreateValidator: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._description_p {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._description_p {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
-    if let v = self._commission {
+    } }()
+    try { if let v = self._commission {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if !self.minSelfDelegation.isEmpty {
       try visitor.visitSingularStringField(value: self.minSelfDelegation, fieldNumber: 3)
     }
@@ -320,12 +337,12 @@ extension Cosmos_Staking_V1beta1_MsgCreateValidator: SwiftProtobuf.Message, Swif
     if !self.validatorAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.validatorAddress, fieldNumber: 5)
     }
-    if let v = self._pubkey {
+    try { if let v = self._pubkey {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    }
-    if let v = self._value {
+    } }()
+    try { if let v = self._value {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -386,9 +403,13 @@ extension Cosmos_Staking_V1beta1_MsgEditValidator: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._description_p {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._description_p {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.validatorAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.validatorAddress, fieldNumber: 2)
     }
@@ -453,15 +474,19 @@ extension Cosmos_Staking_V1beta1_MsgDelegate: SwiftProtobuf.Message, SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.delegatorAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.delegatorAddress, fieldNumber: 1)
     }
     if !self.validatorAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.validatorAddress, fieldNumber: 2)
     }
-    if let v = self._amount {
+    try { if let v = self._amount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -518,6 +543,10 @@ extension Cosmos_Staking_V1beta1_MsgBeginRedelegate: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.delegatorAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.delegatorAddress, fieldNumber: 1)
     }
@@ -527,9 +556,9 @@ extension Cosmos_Staking_V1beta1_MsgBeginRedelegate: SwiftProtobuf.Message, Swif
     if !self.validatorDstAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.validatorDstAddress, fieldNumber: 3)
     }
-    if let v = self._amount {
+    try { if let v = self._amount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -562,9 +591,13 @@ extension Cosmos_Staking_V1beta1_MsgBeginRedelegateResponse: SwiftProtobuf.Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._completionTime {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._completionTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -598,15 +631,19 @@ extension Cosmos_Staking_V1beta1_MsgUndelegate: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.delegatorAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.delegatorAddress, fieldNumber: 1)
     }
     if !self.validatorAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.validatorAddress, fieldNumber: 2)
     }
-    if let v = self._amount {
+    try { if let v = self._amount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -638,9 +675,13 @@ extension Cosmos_Staking_V1beta1_MsgUndelegateResponse: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._completionTime {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._completionTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

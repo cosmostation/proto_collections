@@ -108,6 +108,13 @@ struct Cork_V1_RemoveManagedCellarIDsProposalWithDeposit {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Cork_V1_AddManagedCellarIDsProposal: @unchecked Sendable {}
+extension Cork_V1_AddManagedCellarIDsProposalWithDeposit: @unchecked Sendable {}
+extension Cork_V1_RemoveManagedCellarIDsProposal: @unchecked Sendable {}
+extension Cork_V1_RemoveManagedCellarIDsProposalWithDeposit: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cork.v1"
@@ -135,15 +142,19 @@ extension Cork_V1_AddManagedCellarIDsProposal: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.title.isEmpty {
       try visitor.visitSingularStringField(value: self.title, fieldNumber: 1)
     }
     if !self.description_p.isEmpty {
       try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 2)
     }
-    if let v = self._cellarIds {
+    try { if let v = self._cellarIds {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -229,15 +240,19 @@ extension Cork_V1_RemoveManagedCellarIDsProposal: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.title.isEmpty {
       try visitor.visitSingularStringField(value: self.title, fieldNumber: 1)
     }
     if !self.description_p.isEmpty {
       try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 2)
     }
-    if let v = self._cellarIds {
+    try { if let v = self._cellarIds {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

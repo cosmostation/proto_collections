@@ -78,6 +78,11 @@ struct Likechain_Likenft_V1_OfferStoreRecord {
   fileprivate var _expiration: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Likechain_Likenft_V1_Offer: @unchecked Sendable {}
+extension Likechain_Likenft_V1_OfferStoreRecord: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "likechain.likenft.v1"
@@ -109,6 +114,10 @@ extension Likechain_Likenft_V1_Offer: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.classID.isEmpty {
       try visitor.visitSingularStringField(value: self.classID, fieldNumber: 1)
     }
@@ -121,9 +130,9 @@ extension Likechain_Likenft_V1_Offer: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if self.price != 0 {
       try visitor.visitSingularUInt64Field(value: self.price, fieldNumber: 4)
     }
-    if let v = self._expiration {
+    try { if let v = self._expiration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -165,6 +174,10 @@ extension Likechain_Likenft_V1_OfferStoreRecord: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.classID.isEmpty {
       try visitor.visitSingularStringField(value: self.classID, fieldNumber: 1)
     }
@@ -177,9 +190,9 @@ extension Likechain_Likenft_V1_OfferStoreRecord: SwiftProtobuf.Message, SwiftPro
     if self.price != 0 {
       try visitor.visitSingularUInt64Field(value: self.price, fieldNumber: 4)
     }
-    if let v = self._expiration {
+    try { if let v = self._expiration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

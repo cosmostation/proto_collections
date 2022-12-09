@@ -94,6 +94,13 @@ struct Evmos_Vesting_V1_MsgClawbackResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Evmos_Vesting_V1_MsgCreateClawbackVestingAccount: @unchecked Sendable {}
+extension Evmos_Vesting_V1_MsgCreateClawbackVestingAccountResponse: @unchecked Sendable {}
+extension Evmos_Vesting_V1_MsgClawback: @unchecked Sendable {}
+extension Evmos_Vesting_V1_MsgClawbackResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "evmos.vesting.v1"

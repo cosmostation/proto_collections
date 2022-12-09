@@ -118,6 +118,16 @@ struct Regen_Group_V1alpha1_EventExec {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Regen_Group_V1alpha1_EventCreateGroup: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_EventUpdateGroup: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_EventCreateGroupAccount: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_EventUpdateGroupAccount: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_EventCreateProposal: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_EventVote: @unchecked Sendable {}
+extension Regen_Group_V1alpha1_EventExec: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "regen.group.v1alpha1"

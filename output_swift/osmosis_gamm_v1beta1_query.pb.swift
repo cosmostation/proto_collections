@@ -149,6 +149,62 @@ struct Osmosis_Gamm_V1beta1_QueryPoolTypeResponse {
   init() {}
 }
 
+///=============================== CalcJoinPoolShares
+struct Osmosis_Gamm_V1beta1_QueryCalcJoinPoolSharesRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var poolID: UInt64 = 0
+
+  var tokensIn: [Cosmos_Base_V1beta1_Coin] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct Osmosis_Gamm_V1beta1_QueryCalcJoinPoolSharesResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var shareOutAmount: String = String()
+
+  var tokensOut: [Cosmos_Base_V1beta1_Coin] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+///=============================== CalcExitPoolCoinsFromShares
+struct Osmosis_Gamm_V1beta1_QueryCalcExitPoolCoinsFromSharesRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var poolID: UInt64 = 0
+
+  var shareInAmount: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct Osmosis_Gamm_V1beta1_QueryCalcExitPoolCoinsFromSharesResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var tokensOut: [Cosmos_Base_V1beta1_Coin] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 ///=============================== PoolParams
 struct Osmosis_Gamm_V1beta1_QueryPoolParamsRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
@@ -242,6 +298,35 @@ struct Osmosis_Gamm_V1beta1_QueryTotalSharesResponse {
   fileprivate var _totalShares: Cosmos_Base_V1beta1_Coin? = nil
 }
 
+///=============================== CalcJoinPoolNoSwapShares
+struct Osmosis_Gamm_V1beta1_QueryCalcJoinPoolNoSwapSharesRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var poolID: UInt64 = 0
+
+  var tokensIn: [Cosmos_Base_V1beta1_Coin] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct Osmosis_Gamm_V1beta1_QueryCalcJoinPoolNoSwapSharesResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var tokensOut: [Cosmos_Base_V1beta1_Coin] = []
+
+  var sharesOut: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 /// QuerySpotPriceRequest defines the gRPC request structure for a SpotPrice
 /// query.
 struct Osmosis_Gamm_V1beta1_QuerySpotPriceRequest {
@@ -258,6 +343,55 @@ struct Osmosis_Gamm_V1beta1_QuerySpotPriceRequest {
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+}
+
+struct Osmosis_Gamm_V1beta1_QueryPoolsWithFilterRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var minLiquidity: [Cosmos_Base_V1beta1_Coin] = []
+
+  var poolType: String = String()
+
+  var pagination: Cosmos_Base_Query_V1beta1_PageRequest {
+    get {return _pagination ?? Cosmos_Base_Query_V1beta1_PageRequest()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _pagination: Cosmos_Base_Query_V1beta1_PageRequest? = nil
+}
+
+struct Osmosis_Gamm_V1beta1_QueryPoolsWithFilterResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var pools: [Google_Protobuf2_Any] = []
+
+  /// pagination defines the pagination in the response.
+  var pagination: Cosmos_Base_Query_V1beta1_PageResponse {
+    get {return _pagination ?? Cosmos_Base_Query_V1beta1_PageResponse()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _pagination: Cosmos_Base_Query_V1beta1_PageResponse? = nil
 }
 
 /// QuerySpotPriceResponse defines the gRPC response structure for a SpotPrice
@@ -281,6 +415,7 @@ struct Osmosis_Gamm_V1beta1_QuerySwapExactAmountInRequest {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// TODO: CHANGE THIS TO RESERVED IN A PATCH RELEASE
   var sender: String = String()
 
   var poolID: UInt64 = 0
@@ -312,6 +447,7 @@ struct Osmosis_Gamm_V1beta1_QuerySwapExactAmountOutRequest {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// TODO: CHANGE THIS TO RESERVED IN A PATCH RELEASE
   var sender: String = String()
 
   var poolID: UInt64 = 0
@@ -358,6 +494,39 @@ struct Osmosis_Gamm_V1beta1_QueryTotalLiquidityResponse {
 
   init() {}
 }
+
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Osmosis_Gamm_V1beta1_QueryPoolRequest: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_QueryPoolResponse: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_QueryPoolsRequest: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_QueryPoolsResponse: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_QueryNumPoolsRequest: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_QueryNumPoolsResponse: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_QueryPoolTypeRequest: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_QueryPoolTypeResponse: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_QueryCalcJoinPoolSharesRequest: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_QueryCalcJoinPoolSharesResponse: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_QueryCalcExitPoolCoinsFromSharesRequest: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_QueryCalcExitPoolCoinsFromSharesResponse: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_QueryPoolParamsRequest: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_QueryPoolParamsResponse: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_QueryTotalPoolLiquidityRequest: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_QueryTotalPoolLiquidityResponse: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_QueryTotalSharesRequest: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_QueryTotalSharesResponse: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_QueryCalcJoinPoolNoSwapSharesRequest: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_QueryCalcJoinPoolNoSwapSharesResponse: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_QuerySpotPriceRequest: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_QueryPoolsWithFilterRequest: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_QueryPoolsWithFilterResponse: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_QuerySpotPriceResponse: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_QuerySwapExactAmountInRequest: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_QuerySwapExactAmountInResponse: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_QuerySwapExactAmountOutRequest: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_QuerySwapExactAmountOutResponse: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_QueryTotalLiquidityRequest: @unchecked Sendable {}
+extension Osmosis_Gamm_V1beta1_QueryTotalLiquidityResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
@@ -414,9 +583,13 @@ extension Osmosis_Gamm_V1beta1_QueryPoolResponse: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._pool {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._pool {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -446,9 +619,13 @@ extension Osmosis_Gamm_V1beta1_QueryPoolsRequest: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._pagination {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -480,12 +657,16 @@ extension Osmosis_Gamm_V1beta1_QueryPoolsResponse: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.pools.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.pools, fieldNumber: 1)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -612,6 +793,152 @@ extension Osmosis_Gamm_V1beta1_QueryPoolTypeResponse: SwiftProtobuf.Message, Swi
   }
 }
 
+extension Osmosis_Gamm_V1beta1_QueryCalcJoinPoolSharesRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QueryCalcJoinPoolSharesRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "pool_id"),
+    2: .standard(proto: "tokens_in"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularUInt64Field(value: &self.poolID) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.tokensIn) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.poolID != 0 {
+      try visitor.visitSingularUInt64Field(value: self.poolID, fieldNumber: 1)
+    }
+    if !self.tokensIn.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.tokensIn, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Osmosis_Gamm_V1beta1_QueryCalcJoinPoolSharesRequest, rhs: Osmosis_Gamm_V1beta1_QueryCalcJoinPoolSharesRequest) -> Bool {
+    if lhs.poolID != rhs.poolID {return false}
+    if lhs.tokensIn != rhs.tokensIn {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Osmosis_Gamm_V1beta1_QueryCalcJoinPoolSharesResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QueryCalcJoinPoolSharesResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "share_out_amount"),
+    2: .standard(proto: "tokens_out"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.shareOutAmount) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.tokensOut) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.shareOutAmount.isEmpty {
+      try visitor.visitSingularStringField(value: self.shareOutAmount, fieldNumber: 1)
+    }
+    if !self.tokensOut.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.tokensOut, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Osmosis_Gamm_V1beta1_QueryCalcJoinPoolSharesResponse, rhs: Osmosis_Gamm_V1beta1_QueryCalcJoinPoolSharesResponse) -> Bool {
+    if lhs.shareOutAmount != rhs.shareOutAmount {return false}
+    if lhs.tokensOut != rhs.tokensOut {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Osmosis_Gamm_V1beta1_QueryCalcExitPoolCoinsFromSharesRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QueryCalcExitPoolCoinsFromSharesRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "pool_id"),
+    2: .standard(proto: "share_in_amount"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularUInt64Field(value: &self.poolID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.shareInAmount) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.poolID != 0 {
+      try visitor.visitSingularUInt64Field(value: self.poolID, fieldNumber: 1)
+    }
+    if !self.shareInAmount.isEmpty {
+      try visitor.visitSingularStringField(value: self.shareInAmount, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Osmosis_Gamm_V1beta1_QueryCalcExitPoolCoinsFromSharesRequest, rhs: Osmosis_Gamm_V1beta1_QueryCalcExitPoolCoinsFromSharesRequest) -> Bool {
+    if lhs.poolID != rhs.poolID {return false}
+    if lhs.shareInAmount != rhs.shareInAmount {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Osmosis_Gamm_V1beta1_QueryCalcExitPoolCoinsFromSharesResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QueryCalcExitPoolCoinsFromSharesResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "tokens_out"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeRepeatedMessageField(value: &self.tokensOut) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.tokensOut.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.tokensOut, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Osmosis_Gamm_V1beta1_QueryCalcExitPoolCoinsFromSharesResponse, rhs: Osmosis_Gamm_V1beta1_QueryCalcExitPoolCoinsFromSharesResponse) -> Bool {
+    if lhs.tokensOut != rhs.tokensOut {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
 extension Osmosis_Gamm_V1beta1_QueryPoolParamsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryPoolParamsRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
@@ -663,9 +990,13 @@ extension Osmosis_Gamm_V1beta1_QueryPoolParamsResponse: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._params {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -791,14 +1122,94 @@ extension Osmosis_Gamm_V1beta1_QueryTotalSharesResponse: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._totalShares {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._totalShares {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: Osmosis_Gamm_V1beta1_QueryTotalSharesResponse, rhs: Osmosis_Gamm_V1beta1_QueryTotalSharesResponse) -> Bool {
     if lhs._totalShares != rhs._totalShares {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Osmosis_Gamm_V1beta1_QueryCalcJoinPoolNoSwapSharesRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QueryCalcJoinPoolNoSwapSharesRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "pool_id"),
+    2: .standard(proto: "tokens_in"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularUInt64Field(value: &self.poolID) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.tokensIn) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.poolID != 0 {
+      try visitor.visitSingularUInt64Field(value: self.poolID, fieldNumber: 1)
+    }
+    if !self.tokensIn.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.tokensIn, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Osmosis_Gamm_V1beta1_QueryCalcJoinPoolNoSwapSharesRequest, rhs: Osmosis_Gamm_V1beta1_QueryCalcJoinPoolNoSwapSharesRequest) -> Bool {
+    if lhs.poolID != rhs.poolID {return false}
+    if lhs.tokensIn != rhs.tokensIn {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Osmosis_Gamm_V1beta1_QueryCalcJoinPoolNoSwapSharesResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QueryCalcJoinPoolNoSwapSharesResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "tokens_out"),
+    2: .standard(proto: "shares_out"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeRepeatedMessageField(value: &self.tokensOut) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.sharesOut) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.tokensOut.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.tokensOut, fieldNumber: 1)
+    }
+    if !self.sharesOut.isEmpty {
+      try visitor.visitSingularStringField(value: self.sharesOut, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Osmosis_Gamm_V1beta1_QueryCalcJoinPoolNoSwapSharesResponse, rhs: Osmosis_Gamm_V1beta1_QueryCalcJoinPoolNoSwapSharesResponse) -> Bool {
+    if lhs.tokensOut != rhs.tokensOut {return false}
+    if lhs.sharesOut != rhs.sharesOut {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -843,6 +1254,96 @@ extension Osmosis_Gamm_V1beta1_QuerySpotPriceRequest: SwiftProtobuf.Message, Swi
     if lhs.poolID != rhs.poolID {return false}
     if lhs.baseAssetDenom != rhs.baseAssetDenom {return false}
     if lhs.quoteAssetDenom != rhs.quoteAssetDenom {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Osmosis_Gamm_V1beta1_QueryPoolsWithFilterRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QueryPoolsWithFilterRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "min_liquidity"),
+    2: .standard(proto: "pool_type"),
+    3: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeRepeatedMessageField(value: &self.minLiquidity) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.poolType) }()
+      case 3: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    if !self.minLiquidity.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.minLiquidity, fieldNumber: 1)
+    }
+    if !self.poolType.isEmpty {
+      try visitor.visitSingularStringField(value: self.poolType, fieldNumber: 2)
+    }
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Osmosis_Gamm_V1beta1_QueryPoolsWithFilterRequest, rhs: Osmosis_Gamm_V1beta1_QueryPoolsWithFilterRequest) -> Bool {
+    if lhs.minLiquidity != rhs.minLiquidity {return false}
+    if lhs.poolType != rhs.poolType {return false}
+    if lhs._pagination != rhs._pagination {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Osmosis_Gamm_V1beta1_QueryPoolsWithFilterResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QueryPoolsWithFilterResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "pools"),
+    2: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeRepeatedMessageField(value: &self.pools) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    if !self.pools.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.pools, fieldNumber: 1)
+    }
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Osmosis_Gamm_V1beta1_QueryPoolsWithFilterResponse, rhs: Osmosis_Gamm_V1beta1_QueryPoolsWithFilterResponse) -> Bool {
+    if lhs.pools != rhs.pools {return false}
+    if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

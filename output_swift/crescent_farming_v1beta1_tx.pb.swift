@@ -276,6 +276,23 @@ struct Crescent_Farming_V1beta1_MsgAdvanceEpochResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Crescent_Farming_V1beta1_MsgCreateFixedAmountPlan: @unchecked Sendable {}
+extension Crescent_Farming_V1beta1_MsgCreateFixedAmountPlanResponse: @unchecked Sendable {}
+extension Crescent_Farming_V1beta1_MsgCreateRatioPlan: @unchecked Sendable {}
+extension Crescent_Farming_V1beta1_MsgCreateRatioPlanResponse: @unchecked Sendable {}
+extension Crescent_Farming_V1beta1_MsgStake: @unchecked Sendable {}
+extension Crescent_Farming_V1beta1_MsgStakeResponse: @unchecked Sendable {}
+extension Crescent_Farming_V1beta1_MsgUnstake: @unchecked Sendable {}
+extension Crescent_Farming_V1beta1_MsgUnstakeResponse: @unchecked Sendable {}
+extension Crescent_Farming_V1beta1_MsgHarvest: @unchecked Sendable {}
+extension Crescent_Farming_V1beta1_MsgHarvestResponse: @unchecked Sendable {}
+extension Crescent_Farming_V1beta1_MsgRemovePlan: @unchecked Sendable {}
+extension Crescent_Farming_V1beta1_MsgRemovePlanResponse: @unchecked Sendable {}
+extension Crescent_Farming_V1beta1_MsgAdvanceEpoch: @unchecked Sendable {}
+extension Crescent_Farming_V1beta1_MsgAdvanceEpochResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "crescent.farming.v1beta1"
@@ -309,6 +326,10 @@ extension Crescent_Farming_V1beta1_MsgCreateFixedAmountPlan: SwiftProtobuf.Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
     }
@@ -318,12 +339,12 @@ extension Crescent_Farming_V1beta1_MsgCreateFixedAmountPlan: SwiftProtobuf.Messa
     if !self.stakingCoinWeights.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.stakingCoinWeights, fieldNumber: 3)
     }
-    if let v = self._startTime {
+    try { if let v = self._startTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
-    if let v = self._endTime {
+    } }()
+    try { if let v = self._endTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    }
+    } }()
     if !self.epochAmount.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.epochAmount, fieldNumber: 6)
     }
@@ -390,6 +411,10 @@ extension Crescent_Farming_V1beta1_MsgCreateRatioPlan: SwiftProtobuf.Message, Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
     }
@@ -399,12 +424,12 @@ extension Crescent_Farming_V1beta1_MsgCreateRatioPlan: SwiftProtobuf.Message, Sw
     if !self.stakingCoinWeights.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.stakingCoinWeights, fieldNumber: 3)
     }
-    if let v = self._startTime {
+    try { if let v = self._startTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
-    if let v = self._endTime {
+    } }()
+    try { if let v = self._endTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    }
+    } }()
     if !self.epochRatio.isEmpty {
       try visitor.visitSingularStringField(value: self.epochRatio, fieldNumber: 6)
     }

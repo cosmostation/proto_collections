@@ -322,6 +322,27 @@ struct Stafihub_Stafihub_Rdex_MsgRmPoolCreatorResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Stafihub_Stafihub_Rdex_MsgCreatePool: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rdex_MsgCreatePoolResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rdex_MsgAddLiquidity: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rdex_MsgAddLiquidityResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rdex_MsgSwap: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rdex_MsgSwapResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rdex_MsgRemoveLiquidity: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rdex_MsgRemoveLiquidityResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rdex_MsgToggleProviderSwitch: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rdex_MsgToggleProviderSwitchResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rdex_MsgAddProvider: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rdex_MsgAddProviderResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rdex_MsgRmProvider: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rdex_MsgRmProviderResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rdex_MsgAddPoolCreator: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rdex_MsgAddPoolCreatorResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rdex_MsgRmPoolCreator: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rdex_MsgRmPoolCreatorResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stafihub.stafihub.rdex"
@@ -349,15 +370,19 @@ extension Stafihub_Stafihub_Rdex_MsgCreatePool: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.creator.isEmpty {
       try visitor.visitSingularStringField(value: self.creator, fieldNumber: 1)
     }
-    if let v = self._token0 {
+    try { if let v = self._token0 {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
-    if let v = self._token1 {
+    } }()
+    try { if let v = self._token1 {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -414,18 +439,22 @@ extension Stafihub_Stafihub_Rdex_MsgAddLiquidity: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.creator.isEmpty {
       try visitor.visitSingularStringField(value: self.creator, fieldNumber: 1)
     }
     if self.swapPoolIndex != 0 {
       try visitor.visitSingularUInt32Field(value: self.swapPoolIndex, fieldNumber: 2)
     }
-    if let v = self._token0 {
+    try { if let v = self._token0 {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
-    if let v = self._token1 {
+    } }()
+    try { if let v = self._token1 {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -483,18 +512,22 @@ extension Stafihub_Stafihub_Rdex_MsgSwap: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.creator.isEmpty {
       try visitor.visitSingularStringField(value: self.creator, fieldNumber: 1)
     }
     if self.swapPoolIndex != 0 {
       try visitor.visitSingularUInt32Field(value: self.swapPoolIndex, fieldNumber: 2)
     }
-    if let v = self._inputToken {
+    try { if let v = self._inputToken {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
-    if let v = self._minOutToken {
+    } }()
+    try { if let v = self._minOutToken {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -558,6 +591,10 @@ extension Stafihub_Stafihub_Rdex_MsgRemoveLiquidity: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.creator.isEmpty {
       try visitor.visitSingularStringField(value: self.creator, fieldNumber: 1)
     }
@@ -570,12 +607,12 @@ extension Stafihub_Stafihub_Rdex_MsgRemoveLiquidity: SwiftProtobuf.Message, Swif
     if !self.swapUnit.isEmpty {
       try visitor.visitSingularStringField(value: self.swapUnit, fieldNumber: 4)
     }
-    if let v = self._minOutToken0 {
+    try { if let v = self._minOutToken0 {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    }
-    if let v = self._minOutToken1 {
+    } }()
+    try { if let v = self._minOutToken1 {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    }
+    } }()
     if !self.inputTokenDenom.isEmpty {
       try visitor.visitSingularStringField(value: self.inputTokenDenom, fieldNumber: 7)
     }

@@ -66,6 +66,11 @@ struct Osmosis_Poolincentives_V1beta1_UpdatePoolIncentivesProposal {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Osmosis_Poolincentives_V1beta1_ReplacePoolIncentivesProposal: @unchecked Sendable {}
+extension Osmosis_Poolincentives_V1beta1_UpdatePoolIncentivesProposal: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "osmosis.poolincentives.v1beta1"

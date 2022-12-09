@@ -613,6 +613,35 @@ struct Injective_Oracle_V1beta1_BandIBCParams {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Injective_Oracle_V1beta1_OracleType: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_Params: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_ChainlinkPriceState: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_BandPriceState: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_SetBandPriceEvent: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_SetBandIBCPriceEvent: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_EventBandIBCAckSuccess: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_EventBandIBCAckError: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_EventBandIBCResponseTimeout: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_GetReferenceData: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_GrantBandOraclePrivilegeProposal: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_RevokeBandOraclePrivilegeProposal: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_GrantPriceFeederPrivilegeProposal: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_RevokePriceFeederPrivilegeProposal: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_PriceFeedState: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_PriceFeedInfo: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_PriceFeedPrice: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_SetPriceFeedPriceEvent: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_CoinbasePriceState: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_SetCoinbasePriceEvent: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_PriceState: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_AuthorizeBandOracleRequestProposal: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_UpdateBandOracleRequestProposal: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_EnableBandIBCProposal: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_BandOracleRequest: @unchecked Sendable {}
+extension Injective_Oracle_V1beta1_BandIBCParams: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "injective.oracle.v1beta1"
@@ -677,6 +706,10 @@ extension Injective_Oracle_V1beta1_ChainlinkPriceState: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.feedID.isEmpty {
       try visitor.visitSingularStringField(value: self.feedID, fieldNumber: 1)
     }
@@ -686,9 +719,9 @@ extension Injective_Oracle_V1beta1_ChainlinkPriceState: SwiftProtobuf.Message, S
     if self.timestamp != 0 {
       try visitor.visitSingularUInt64Field(value: self.timestamp, fieldNumber: 3)
     }
-    if let v = self._priceState {
+    try { if let v = self._priceState {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -729,6 +762,10 @@ extension Injective_Oracle_V1beta1_BandPriceState: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.symbol.isEmpty {
       try visitor.visitSingularStringField(value: self.symbol, fieldNumber: 1)
     }
@@ -741,9 +778,9 @@ extension Injective_Oracle_V1beta1_BandPriceState: SwiftProtobuf.Message, SwiftP
     if self.requestID != 0 {
       try visitor.visitSingularUInt64Field(value: self.requestID, fieldNumber: 4)
     }
-    if let v = self._priceState {
+    try { if let v = self._priceState {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1259,15 +1296,19 @@ extension Injective_Oracle_V1beta1_PriceFeedState: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.base.isEmpty {
       try visitor.visitSingularStringField(value: self.base, fieldNumber: 1)
     }
     if !self.quote.isEmpty {
       try visitor.visitSingularStringField(value: self.quote, fieldNumber: 2)
     }
-    if let v = self._priceState {
+    try { if let v = self._priceState {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if !self.relayers.isEmpty {
       try visitor.visitRepeatedStringField(value: self.relayers, fieldNumber: 4)
     }
@@ -1431,6 +1472,10 @@ extension Injective_Oracle_V1beta1_CoinbasePriceState: SwiftProtobuf.Message, Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.kind.isEmpty {
       try visitor.visitSingularStringField(value: self.kind, fieldNumber: 1)
     }
@@ -1443,9 +1488,9 @@ extension Injective_Oracle_V1beta1_CoinbasePriceState: SwiftProtobuf.Message, Sw
     if self.value != 0 {
       try visitor.visitSingularUInt64Field(value: self.value, fieldNumber: 4)
     }
-    if let v = self._priceState {
+    try { if let v = self._priceState {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1571,15 +1616,19 @@ extension Injective_Oracle_V1beta1_AuthorizeBandOracleRequestProposal: SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.title.isEmpty {
       try visitor.visitSingularStringField(value: self.title, fieldNumber: 1)
     }
     if !self.description_p.isEmpty {
       try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 2)
     }
-    if let v = self._request {
+    try { if let v = self._request {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1617,6 +1666,10 @@ extension Injective_Oracle_V1beta1_UpdateBandOracleRequestProposal: SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.title.isEmpty {
       try visitor.visitSingularStringField(value: self.title, fieldNumber: 1)
     }
@@ -1626,9 +1679,9 @@ extension Injective_Oracle_V1beta1_UpdateBandOracleRequestProposal: SwiftProtobu
     if self.deleteRequestID != 0 {
       try visitor.visitSingularUInt64Field(value: self.deleteRequestID, fieldNumber: 3)
     }
-    if let v = self._updateOracleRequest {
+    try { if let v = self._updateOracleRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1665,15 +1718,19 @@ extension Injective_Oracle_V1beta1_EnableBandIBCProposal: SwiftProtobuf.Message,
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.title.isEmpty {
       try visitor.visitSingularStringField(value: self.title, fieldNumber: 1)
     }
     if !self.description_p.isEmpty {
       try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 2)
     }
-    if let v = self._bandIbcParams {
+    try { if let v = self._bandIbcParams {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

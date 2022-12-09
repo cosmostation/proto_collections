@@ -43,6 +43,10 @@ struct Likechain_Likenft_V1_ListingExpireQueueEntry {
   fileprivate var _expireTime: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Likechain_Likenft_V1_ListingExpireQueueEntry: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "likechain.likenft.v1"
@@ -68,9 +72,13 @@ extension Likechain_Likenft_V1_ListingExpireQueueEntry: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._expireTime {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._expireTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.listingKey.isEmpty {
       try visitor.visitSingularBytesField(value: self.listingKey, fieldNumber: 2)
     }

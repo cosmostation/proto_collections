@@ -519,6 +519,35 @@ struct Irismod_Service_QueryParamsResponse {
   fileprivate var _res: Cosmos_Base_Query_V1beta1_PageResponse? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Irismod_Service_QueryDefinitionRequest: @unchecked Sendable {}
+extension Irismod_Service_QueryDefinitionResponse: @unchecked Sendable {}
+extension Irismod_Service_QueryBindingRequest: @unchecked Sendable {}
+extension Irismod_Service_QueryBindingResponse: @unchecked Sendable {}
+extension Irismod_Service_QueryBindingsRequest: @unchecked Sendable {}
+extension Irismod_Service_QueryBindingsResponse: @unchecked Sendable {}
+extension Irismod_Service_QueryWithdrawAddressRequest: @unchecked Sendable {}
+extension Irismod_Service_QueryWithdrawAddressResponse: @unchecked Sendable {}
+extension Irismod_Service_QueryRequestContextRequest: @unchecked Sendable {}
+extension Irismod_Service_QueryRequestContextResponse: @unchecked Sendable {}
+extension Irismod_Service_QueryRequestRequest: @unchecked Sendable {}
+extension Irismod_Service_QueryRequestResponse: @unchecked Sendable {}
+extension Irismod_Service_QueryRequestsRequest: @unchecked Sendable {}
+extension Irismod_Service_QueryRequestsResponse: @unchecked Sendable {}
+extension Irismod_Service_QueryRequestsByReqCtxRequest: @unchecked Sendable {}
+extension Irismod_Service_QueryRequestsByReqCtxResponse: @unchecked Sendable {}
+extension Irismod_Service_QueryResponseRequest: @unchecked Sendable {}
+extension Irismod_Service_QueryResponseResponse: @unchecked Sendable {}
+extension Irismod_Service_QueryResponsesRequest: @unchecked Sendable {}
+extension Irismod_Service_QueryResponsesResponse: @unchecked Sendable {}
+extension Irismod_Service_QueryEarnedFeesRequest: @unchecked Sendable {}
+extension Irismod_Service_QueryEarnedFeesResponse: @unchecked Sendable {}
+extension Irismod_Service_QuerySchemaRequest: @unchecked Sendable {}
+extension Irismod_Service_QuerySchemaResponse: @unchecked Sendable {}
+extension Irismod_Service_QueryParamsRequest: @unchecked Sendable {}
+extension Irismod_Service_QueryParamsResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "irismod.service"
@@ -574,9 +603,13 @@ extension Irismod_Service_QueryDefinitionResponse: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._serviceDefinition {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._serviceDefinition {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -644,9 +677,13 @@ extension Irismod_Service_QueryBindingResponse: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._serviceBinding {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._serviceBinding {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -680,15 +717,19 @@ extension Irismod_Service_QueryBindingsRequest: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.serviceName.isEmpty {
       try visitor.visitSingularStringField(value: self.serviceName, fieldNumber: 1)
     }
     if !self.owner.isEmpty {
       try visitor.visitSingularStringField(value: self.owner, fieldNumber: 2)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -722,12 +763,16 @@ extension Irismod_Service_QueryBindingsResponse: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.serviceBindings.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.serviceBindings, fieldNumber: 1)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -854,9 +899,13 @@ extension Irismod_Service_QueryRequestContextResponse: SwiftProtobuf.Message, Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._requestContext {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._requestContext {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -918,9 +967,13 @@ extension Irismod_Service_QueryRequestResponse: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._request {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._request {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -954,15 +1007,19 @@ extension Irismod_Service_QueryRequestsRequest: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.serviceName.isEmpty {
       try visitor.visitSingularStringField(value: self.serviceName, fieldNumber: 1)
     }
     if !self.provider.isEmpty {
       try visitor.visitSingularStringField(value: self.provider, fieldNumber: 2)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -996,12 +1053,16 @@ extension Irismod_Service_QueryRequestsResponse: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.requests.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.requests, fieldNumber: 1)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1036,15 +1097,19 @@ extension Irismod_Service_QueryRequestsByReqCtxRequest: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.requestContextID.isEmpty {
       try visitor.visitSingularStringField(value: self.requestContextID, fieldNumber: 1)
     }
     if self.batchCounter != 0 {
       try visitor.visitSingularUInt64Field(value: self.batchCounter, fieldNumber: 2)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1078,12 +1143,16 @@ extension Irismod_Service_QueryRequestsByReqCtxResponse: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.requests.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.requests, fieldNumber: 1)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1146,9 +1215,13 @@ extension Irismod_Service_QueryResponseResponse: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._response {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._response {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1182,15 +1255,19 @@ extension Irismod_Service_QueryResponsesRequest: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.requestContextID.isEmpty {
       try visitor.visitSingularStringField(value: self.requestContextID, fieldNumber: 1)
     }
     if self.batchCounter != 0 {
       try visitor.visitSingularUInt64Field(value: self.batchCounter, fieldNumber: 2)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1224,12 +1301,16 @@ extension Irismod_Service_QueryResponsesResponse: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.responses.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.responses, fieldNumber: 1)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1409,12 +1490,16 @@ extension Irismod_Service_QueryParamsResponse: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._params {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
-    if let v = self._res {
+    } }()
+    try { if let v = self._res {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

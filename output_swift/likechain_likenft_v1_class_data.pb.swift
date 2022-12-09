@@ -212,6 +212,16 @@ struct Likechain_Likenft_V1_BlindBoxState {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Likechain_Likenft_V1_ClassParentType: @unchecked Sendable {}
+extension Likechain_Likenft_V1_ClassData: @unchecked Sendable {}
+extension Likechain_Likenft_V1_ClassParent: @unchecked Sendable {}
+extension Likechain_Likenft_V1_MintPeriod: @unchecked Sendable {}
+extension Likechain_Likenft_V1_ClassConfig: @unchecked Sendable {}
+extension Likechain_Likenft_V1_BlindBoxConfig: @unchecked Sendable {}
+extension Likechain_Likenft_V1_BlindBoxState: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "likechain.likenft.v1"
@@ -249,18 +259,22 @@ extension Likechain_Likenft_V1_ClassData: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.metadata.isEmpty {
       try visitor.visitSingularBytesField(value: self.metadata, fieldNumber: 1)
     }
-    if let v = self._parent {
+    try { if let v = self._parent {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
-    if let v = self._config {
+    } }()
+    try { if let v = self._config {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
-    if let v = self._blindBoxState {
+    } }()
+    try { if let v = self._blindBoxState {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -347,9 +361,13 @@ extension Likechain_Likenft_V1_MintPeriod: SwiftProtobuf.Message, SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._startTime {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._startTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.allowedAddresses.isEmpty {
       try visitor.visitRepeatedStringField(value: self.allowedAddresses, fieldNumber: 2)
     }
@@ -391,15 +409,19 @@ extension Likechain_Likenft_V1_ClassConfig: SwiftProtobuf.Message, SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.burnable != false {
       try visitor.visitSingularBoolField(value: self.burnable, fieldNumber: 1)
     }
     if self.maxSupply != 0 {
       try visitor.visitSingularUInt64Field(value: self.maxSupply, fieldNumber: 2)
     }
-    if let v = self._blindBoxConfig {
+    try { if let v = self._blindBoxConfig {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -433,12 +455,16 @@ extension Likechain_Likenft_V1_BlindBoxConfig: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.mintPeriods.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.mintPeriods, fieldNumber: 1)
     }
-    if let v = self._revealTime {
+    try { if let v = self._revealTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

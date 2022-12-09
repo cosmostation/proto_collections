@@ -119,6 +119,16 @@ struct Em_Queries_V1_MissedBlocksInfo {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Em_Queries_V1_QueryCirculatingRequest: @unchecked Sendable {}
+extension Em_Queries_V1_QueryCirculatingResponse: @unchecked Sendable {}
+extension Em_Queries_V1_QuerySpendableRequest: @unchecked Sendable {}
+extension Em_Queries_V1_QuerySpendableResponse: @unchecked Sendable {}
+extension Em_Queries_V1_QueryMissedBlocksRequest: @unchecked Sendable {}
+extension Em_Queries_V1_QueryMissedBlocksResponse: @unchecked Sendable {}
+extension Em_Queries_V1_MissedBlocksInfo: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "em.queries.v1"
@@ -289,9 +299,13 @@ extension Em_Queries_V1_QueryMissedBlocksResponse: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._missedBlocksInfo {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._missedBlocksInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

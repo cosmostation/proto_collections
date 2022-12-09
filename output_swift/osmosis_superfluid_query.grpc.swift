@@ -62,6 +62,11 @@ internal protocol Osmosis_Superfluid_QueryClientProtocol: GRPCClient {
     callOptions: CallOptions?
   ) -> UnaryCall<Osmosis_Superfluid_ConnectedIntermediaryAccountRequest, Osmosis_Superfluid_ConnectedIntermediaryAccountResponse>
 
+  func totalDelegationByValidatorForDenom(
+    _ request: Osmosis_Superfluid_QueryTotalDelegationByValidatorForDenomRequest,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Osmosis_Superfluid_QueryTotalDelegationByValidatorForDenomRequest, Osmosis_Superfluid_QueryTotalDelegationByValidatorForDenomResponse>
+
   func totalSuperfluidDelegations(
     _ request: Osmosis_Superfluid_TotalSuperfluidDelegationsRequest,
     callOptions: CallOptions?
@@ -96,6 +101,11 @@ internal protocol Osmosis_Superfluid_QueryClientProtocol: GRPCClient {
     _ request: Osmosis_Superfluid_QueryTotalDelegationByDelegatorRequest,
     callOptions: CallOptions?
   ) -> UnaryCall<Osmosis_Superfluid_QueryTotalDelegationByDelegatorRequest, Osmosis_Superfluid_QueryTotalDelegationByDelegatorResponse>
+
+  func unpoolWhitelist(
+    _ request: Osmosis_Superfluid_QueryUnpoolWhitelistRequest,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Osmosis_Superfluid_QueryUnpoolWhitelistRequest, Osmosis_Superfluid_QueryUnpoolWhitelistResponse>
 }
 
 extension Osmosis_Superfluid_QueryClientProtocol {
@@ -209,6 +219,24 @@ extension Osmosis_Superfluid_QueryClientProtocol {
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeConnectedIntermediaryAccountInterceptors() ?? []
+    )
+  }
+
+  /// Returns the amount of delegations of specific denom for all validators
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to TotalDelegationByValidatorForDenom.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func totalDelegationByValidatorForDenom(
+    _ request: Osmosis_Superfluid_QueryTotalDelegationByValidatorForDenomRequest,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Osmosis_Superfluid_QueryTotalDelegationByValidatorForDenomRequest, Osmosis_Superfluid_QueryTotalDelegationByValidatorForDenomResponse> {
+    return self.makeUnaryCall(
+      path: "/osmosis.superfluid.Query/TotalDelegationByValidatorForDenom",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeTotalDelegationByValidatorForDenomInterceptors() ?? []
     )
   }
 
@@ -342,6 +370,24 @@ extension Osmosis_Superfluid_QueryClientProtocol {
       interceptors: self.interceptors?.makeTotalDelegationByDelegatorInterceptors() ?? []
     )
   }
+
+  /// Returns a list of whitelisted pool ids to unpool.
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to UnpoolWhitelist.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func unpoolWhitelist(
+    _ request: Osmosis_Superfluid_QueryUnpoolWhitelistRequest,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Osmosis_Superfluid_QueryUnpoolWhitelistRequest, Osmosis_Superfluid_QueryUnpoolWhitelistResponse> {
+    return self.makeUnaryCall(
+      path: "/osmosis.superfluid.Query/UnpoolWhitelist",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeUnpoolWhitelistInterceptors() ?? []
+    )
+  }
 }
 
 internal protocol Osmosis_Superfluid_QueryClientInterceptorFactoryProtocol {
@@ -364,6 +410,9 @@ internal protocol Osmosis_Superfluid_QueryClientInterceptorFactoryProtocol {
   /// - Returns: Interceptors to use when invoking 'connectedIntermediaryAccount'.
   func makeConnectedIntermediaryAccountInterceptors() -> [ClientInterceptor<Osmosis_Superfluid_ConnectedIntermediaryAccountRequest, Osmosis_Superfluid_ConnectedIntermediaryAccountResponse>]
 
+  /// - Returns: Interceptors to use when invoking 'totalDelegationByValidatorForDenom'.
+  func makeTotalDelegationByValidatorForDenomInterceptors() -> [ClientInterceptor<Osmosis_Superfluid_QueryTotalDelegationByValidatorForDenomRequest, Osmosis_Superfluid_QueryTotalDelegationByValidatorForDenomResponse>]
+
   /// - Returns: Interceptors to use when invoking 'totalSuperfluidDelegations'.
   func makeTotalSuperfluidDelegationsInterceptors() -> [ClientInterceptor<Osmosis_Superfluid_TotalSuperfluidDelegationsRequest, Osmosis_Superfluid_TotalSuperfluidDelegationsResponse>]
 
@@ -384,6 +433,9 @@ internal protocol Osmosis_Superfluid_QueryClientInterceptorFactoryProtocol {
 
   /// - Returns: Interceptors to use when invoking 'totalDelegationByDelegator'.
   func makeTotalDelegationByDelegatorInterceptors() -> [ClientInterceptor<Osmosis_Superfluid_QueryTotalDelegationByDelegatorRequest, Osmosis_Superfluid_QueryTotalDelegationByDelegatorResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'unpoolWhitelist'.
+  func makeUnpoolWhitelistInterceptors() -> [ClientInterceptor<Osmosis_Superfluid_QueryUnpoolWhitelistRequest, Osmosis_Superfluid_QueryUnpoolWhitelistResponse>]
 }
 
 internal final class Osmosis_Superfluid_QueryClient: Osmosis_Superfluid_QueryClientProtocol {
@@ -433,6 +485,9 @@ internal protocol Osmosis_Superfluid_QueryProvider: CallHandlerProvider {
   /// Returns intermediary account connected to a superfluid staked lock by id
   func connectedIntermediaryAccount(request: Osmosis_Superfluid_ConnectedIntermediaryAccountRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Superfluid_ConnectedIntermediaryAccountResponse>
 
+  /// Returns the amount of delegations of specific denom for all validators
+  func totalDelegationByValidatorForDenom(request: Osmosis_Superfluid_QueryTotalDelegationByValidatorForDenomRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Superfluid_QueryTotalDelegationByValidatorForDenomResponse>
+
   /// Returns the total amount of osmo superfluidly staked.
   /// Response is denominated in uosmo.
   func totalSuperfluidDelegations(request: Osmosis_Superfluid_TotalSuperfluidDelegationsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Superfluid_TotalSuperfluidDelegationsResponse>
@@ -458,6 +513,9 @@ internal protocol Osmosis_Superfluid_QueryProvider: CallHandlerProvider {
 
   /// Returns the specified delegations for a specific delegator
   func totalDelegationByDelegator(request: Osmosis_Superfluid_QueryTotalDelegationByDelegatorRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Superfluid_QueryTotalDelegationByDelegatorResponse>
+
+  /// Returns a list of whitelisted pool ids to unpool.
+  func unpoolWhitelist(request: Osmosis_Superfluid_QueryUnpoolWhitelistRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Superfluid_QueryUnpoolWhitelistResponse>
 }
 
 extension Osmosis_Superfluid_QueryProvider {
@@ -524,6 +582,15 @@ extension Osmosis_Superfluid_QueryProvider {
         userFunction: self.connectedIntermediaryAccount(request:context:)
       )
 
+    case "TotalDelegationByValidatorForDenom":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Osmosis_Superfluid_QueryTotalDelegationByValidatorForDenomRequest>(),
+        responseSerializer: ProtobufSerializer<Osmosis_Superfluid_QueryTotalDelegationByValidatorForDenomResponse>(),
+        interceptors: self.interceptors?.makeTotalDelegationByValidatorForDenomInterceptors() ?? [],
+        userFunction: self.totalDelegationByValidatorForDenom(request:context:)
+      )
+
     case "TotalSuperfluidDelegations":
       return UnaryServerHandler(
         context: context,
@@ -587,6 +654,15 @@ extension Osmosis_Superfluid_QueryProvider {
         userFunction: self.totalDelegationByDelegator(request:context:)
       )
 
+    case "UnpoolWhitelist":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Osmosis_Superfluid_QueryUnpoolWhitelistRequest>(),
+        responseSerializer: ProtobufSerializer<Osmosis_Superfluid_QueryUnpoolWhitelistResponse>(),
+        interceptors: self.interceptors?.makeUnpoolWhitelistInterceptors() ?? [],
+        userFunction: self.unpoolWhitelist(request:context:)
+      )
+
     default:
       return nil
     }
@@ -619,6 +695,10 @@ internal protocol Osmosis_Superfluid_QueryServerInterceptorFactoryProtocol {
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeConnectedIntermediaryAccountInterceptors() -> [ServerInterceptor<Osmosis_Superfluid_ConnectedIntermediaryAccountRequest, Osmosis_Superfluid_ConnectedIntermediaryAccountResponse>]
 
+  /// - Returns: Interceptors to use when handling 'totalDelegationByValidatorForDenom'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeTotalDelegationByValidatorForDenomInterceptors() -> [ServerInterceptor<Osmosis_Superfluid_QueryTotalDelegationByValidatorForDenomRequest, Osmosis_Superfluid_QueryTotalDelegationByValidatorForDenomResponse>]
+
   /// - Returns: Interceptors to use when handling 'totalSuperfluidDelegations'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeTotalSuperfluidDelegationsInterceptors() -> [ServerInterceptor<Osmosis_Superfluid_TotalSuperfluidDelegationsRequest, Osmosis_Superfluid_TotalSuperfluidDelegationsResponse>]
@@ -646,4 +726,8 @@ internal protocol Osmosis_Superfluid_QueryServerInterceptorFactoryProtocol {
   /// - Returns: Interceptors to use when handling 'totalDelegationByDelegator'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeTotalDelegationByDelegatorInterceptors() -> [ServerInterceptor<Osmosis_Superfluid_QueryTotalDelegationByDelegatorRequest, Osmosis_Superfluid_QueryTotalDelegationByDelegatorResponse>]
+
+  /// - Returns: Interceptors to use when handling 'unpoolWhitelist'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeUnpoolWhitelistInterceptors() -> [ServerInterceptor<Osmosis_Superfluid_QueryUnpoolWhitelistRequest, Osmosis_Superfluid_QueryUnpoolWhitelistResponse>]
 }

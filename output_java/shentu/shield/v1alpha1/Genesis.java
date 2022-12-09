@@ -402,245 +402,6 @@ public final class Genesis {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GenesisState(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              shieldAdmin_ = s;
-              break;
-            }
-            case 16: {
-
-              nextPoolId_ = input.readUInt64();
-              break;
-            }
-            case 24: {
-
-              nextPurchaseId_ = input.readUInt64();
-              break;
-            }
-            case 34: {
-              shentu.shield.v1alpha1.Genesis.PoolParams.Builder subBuilder = null;
-              if (poolParams_ != null) {
-                subBuilder = poolParams_.toBuilder();
-              }
-              poolParams_ = input.readMessage(shentu.shield.v1alpha1.Genesis.PoolParams.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(poolParams_);
-                poolParams_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 42: {
-              shentu.shield.v1alpha1.Genesis.ClaimProposalParams.Builder subBuilder = null;
-              if (claimProposalParams_ != null) {
-                subBuilder = claimProposalParams_.toBuilder();
-              }
-              claimProposalParams_ = input.readMessage(shentu.shield.v1alpha1.Genesis.ClaimProposalParams.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(claimProposalParams_);
-                claimProposalParams_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              totalCollateral_ = s;
-              break;
-            }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              totalWithdrawing_ = s;
-              break;
-            }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              totalShield_ = s;
-              break;
-            }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              totalClaimed_ = s;
-              break;
-            }
-            case 82: {
-              shentu.shield.v1alpha1.Shield.MixedDecCoins.Builder subBuilder = null;
-              if (serviceFees_ != null) {
-                subBuilder = serviceFees_.toBuilder();
-              }
-              serviceFees_ = input.readMessage(shentu.shield.v1alpha1.Shield.MixedDecCoins.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(serviceFees_);
-                serviceFees_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 90: {
-              shentu.shield.v1alpha1.Shield.MixedDecCoins.Builder subBuilder = null;
-              if (remainingServiceFees_ != null) {
-                subBuilder = remainingServiceFees_.toBuilder();
-              }
-              remainingServiceFees_ = input.readMessage(shentu.shield.v1alpha1.Shield.MixedDecCoins.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(remainingServiceFees_);
-                remainingServiceFees_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 98: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                pools_ = new java.util.ArrayList<shentu.shield.v1alpha1.Shield.Pool>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              pools_.add(
-                  input.readMessage(shentu.shield.v1alpha1.Shield.Pool.parser(), extensionRegistry));
-              break;
-            }
-            case 106: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                providers_ = new java.util.ArrayList<shentu.shield.v1alpha1.Shield.Provider>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              providers_.add(
-                  input.readMessage(shentu.shield.v1alpha1.Shield.Provider.parser(), extensionRegistry));
-              break;
-            }
-            case 114: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                purchaseLists_ = new java.util.ArrayList<shentu.shield.v1alpha1.Shield.PurchaseList>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              purchaseLists_.add(
-                  input.readMessage(shentu.shield.v1alpha1.Shield.PurchaseList.parser(), extensionRegistry));
-              break;
-            }
-            case 122: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                withdraws_ = new java.util.ArrayList<shentu.shield.v1alpha1.Shield.Withdraw>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              withdraws_.add(
-                  input.readMessage(shentu.shield.v1alpha1.Shield.Withdraw.parser(), extensionRegistry));
-              break;
-            }
-            case 130: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (lastUpdateTime_ != null) {
-                subBuilder = lastUpdateTime_.toBuilder();
-              }
-              lastUpdateTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(lastUpdateTime_);
-                lastUpdateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 138: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              shieldStakingRate_ = s;
-              break;
-            }
-            case 146: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              globalStakingPool_ = s;
-              break;
-            }
-            case 154: {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                stakeForShields_ = new java.util.ArrayList<shentu.shield.v1alpha1.Shield.ShieldStaking>();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              stakeForShields_.add(
-                  input.readMessage(shentu.shield.v1alpha1.Shield.ShieldStaking.parser(), extensionRegistry));
-              break;
-            }
-            case 162: {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                originalStakings_ = new java.util.ArrayList<shentu.shield.v1alpha1.Genesis.OriginalStaking>();
-                mutable_bitField0_ |= 0x00000020;
-              }
-              originalStakings_.add(
-                  input.readMessage(shentu.shield.v1alpha1.Genesis.OriginalStaking.parser(), extensionRegistry));
-              break;
-            }
-            case 170: {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
-                proposalIDReimbursementPairs_ = new java.util.ArrayList<shentu.shield.v1alpha1.Genesis.ProposalIDReimbursementPair>();
-                mutable_bitField0_ |= 0x00000040;
-              }
-              proposalIDReimbursementPairs_.add(
-                  input.readMessage(shentu.shield.v1alpha1.Genesis.ProposalIDReimbursementPair.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          pools_ = java.util.Collections.unmodifiableList(pools_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          providers_ = java.util.Collections.unmodifiableList(providers_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          purchaseLists_ = java.util.Collections.unmodifiableList(purchaseLists_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          withdraws_ = java.util.Collections.unmodifiableList(withdraws_);
-        }
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
-          stakeForShields_ = java.util.Collections.unmodifiableList(stakeForShields_);
-        }
-        if (((mutable_bitField0_ & 0x00000020) != 0)) {
-          originalStakings_ = java.util.Collections.unmodifiableList(originalStakings_);
-        }
-        if (((mutable_bitField0_ & 0x00000040) != 0)) {
-          proposalIDReimbursementPairs_ = java.util.Collections.unmodifiableList(proposalIDReimbursementPairs_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return shentu.shield.v1alpha1.Genesis.internal_static_shentu_shield_v1alpha1_GenesisState_descriptor;
@@ -1366,7 +1127,7 @@ public final class Genesis {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getShieldAdminBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shieldAdmin_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, shieldAdmin_);
       }
       if (nextPoolId_ != 0L) {
@@ -1381,16 +1142,16 @@ public final class Genesis {
       if (claimProposalParams_ != null) {
         output.writeMessage(5, getClaimProposalParams());
       }
-      if (!getTotalCollateralBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(totalCollateral_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, totalCollateral_);
       }
-      if (!getTotalWithdrawingBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(totalWithdrawing_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, totalWithdrawing_);
       }
-      if (!getTotalShieldBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(totalShield_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, totalShield_);
       }
-      if (!getTotalClaimedBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(totalClaimed_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, totalClaimed_);
       }
       if (serviceFees_ != null) {
@@ -1414,10 +1175,10 @@ public final class Genesis {
       if (lastUpdateTime_ != null) {
         output.writeMessage(16, getLastUpdateTime());
       }
-      if (!getShieldStakingRateBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shieldStakingRate_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 17, shieldStakingRate_);
       }
-      if (!getGlobalStakingPoolBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(globalStakingPool_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 18, globalStakingPool_);
       }
       for (int i = 0; i < stakeForShields_.size(); i++) {
@@ -1429,7 +1190,7 @@ public final class Genesis {
       for (int i = 0; i < proposalIDReimbursementPairs_.size(); i++) {
         output.writeMessage(21, proposalIDReimbursementPairs_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1438,7 +1199,7 @@ public final class Genesis {
       if (size != -1) return size;
 
       size = 0;
-      if (!getShieldAdminBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shieldAdmin_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, shieldAdmin_);
       }
       if (nextPoolId_ != 0L) {
@@ -1457,16 +1218,16 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getClaimProposalParams());
       }
-      if (!getTotalCollateralBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(totalCollateral_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, totalCollateral_);
       }
-      if (!getTotalWithdrawingBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(totalWithdrawing_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, totalWithdrawing_);
       }
-      if (!getTotalShieldBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(totalShield_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, totalShield_);
       }
-      if (!getTotalClaimedBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(totalClaimed_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, totalClaimed_);
       }
       if (serviceFees_ != null) {
@@ -1497,10 +1258,10 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(16, getLastUpdateTime());
       }
-      if (!getShieldStakingRateBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shieldStakingRate_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, shieldStakingRate_);
       }
-      if (!getGlobalStakingPoolBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(globalStakingPool_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, globalStakingPool_);
       }
       for (int i = 0; i < stakeForShields_.size(); i++) {
@@ -1515,7 +1276,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(21, proposalIDReimbursementPairs_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1587,7 +1348,7 @@ public final class Genesis {
           .equals(other.getOriginalStakingsList())) return false;
       if (!getProposalIDReimbursementPairsList()
           .equals(other.getProposalIDReimbursementPairsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1666,7 +1427,7 @@ public final class Genesis {
         hash = (37 * hash) + PROPOSALID_REIMBURSEMENT_PAIRS_FIELD_NUMBER;
         hash = (53 * hash) + getProposalIDReimbursementPairsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1787,25 +1548,13 @@ public final class Genesis {
 
       // Construct using shentu.shield.v1alpha1.Genesis.GenesisState.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getPoolsFieldBuilder();
-          getProvidersFieldBuilder();
-          getPurchaseListsFieldBuilder();
-          getWithdrawsFieldBuilder();
-          getStakeForShieldsFieldBuilder();
-          getOriginalStakingsFieldBuilder();
-          getProposalIDReimbursementPairsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -1850,28 +1599,32 @@ public final class Genesis {
         }
         if (poolsBuilder_ == null) {
           pools_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          pools_ = null;
           poolsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (providersBuilder_ == null) {
           providers_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          providers_ = null;
           providersBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (purchaseListsBuilder_ == null) {
           purchaseLists_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          purchaseLists_ = null;
           purchaseListsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (withdrawsBuilder_ == null) {
           withdraws_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
+          withdraws_ = null;
           withdrawsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         if (lastUpdateTimeBuilder_ == null) {
           lastUpdateTime_ = null;
         } else {
@@ -1884,22 +1637,25 @@ public final class Genesis {
 
         if (stakeForShieldsBuilder_ == null) {
           stakeForShields_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
+          stakeForShields_ = null;
           stakeForShieldsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000010);
         if (originalStakingsBuilder_ == null) {
           originalStakings_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
+          originalStakings_ = null;
           originalStakingsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000020);
         if (proposalIDReimbursementPairsBuilder_ == null) {
           proposalIDReimbursementPairs_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
+          proposalIDReimbursementPairs_ = null;
           proposalIDReimbursementPairsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -2303,7 +2059,7 @@ public final class Genesis {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2318,17 +2074,201 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        shentu.shield.v1alpha1.Genesis.GenesisState parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                shieldAdmin_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 16: {
+                nextPoolId_ = input.readUInt64();
+
+                break;
+              } // case 16
+              case 24: {
+                nextPurchaseId_ = input.readUInt64();
+
+                break;
+              } // case 24
+              case 34: {
+                input.readMessage(
+                    getPoolParamsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 34
+              case 42: {
+                input.readMessage(
+                    getClaimProposalParamsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 42
+              case 50: {
+                totalCollateral_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
+              case 58: {
+                totalWithdrawing_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 58
+              case 66: {
+                totalShield_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 66
+              case 74: {
+                totalClaimed_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 74
+              case 82: {
+                input.readMessage(
+                    getServiceFeesFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 82
+              case 90: {
+                input.readMessage(
+                    getRemainingServiceFeesFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 90
+              case 98: {
+                shentu.shield.v1alpha1.Shield.Pool m =
+                    input.readMessage(
+                        shentu.shield.v1alpha1.Shield.Pool.parser(),
+                        extensionRegistry);
+                if (poolsBuilder_ == null) {
+                  ensurePoolsIsMutable();
+                  pools_.add(m);
+                } else {
+                  poolsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 98
+              case 106: {
+                shentu.shield.v1alpha1.Shield.Provider m =
+                    input.readMessage(
+                        shentu.shield.v1alpha1.Shield.Provider.parser(),
+                        extensionRegistry);
+                if (providersBuilder_ == null) {
+                  ensureProvidersIsMutable();
+                  providers_.add(m);
+                } else {
+                  providersBuilder_.addMessage(m);
+                }
+                break;
+              } // case 106
+              case 114: {
+                shentu.shield.v1alpha1.Shield.PurchaseList m =
+                    input.readMessage(
+                        shentu.shield.v1alpha1.Shield.PurchaseList.parser(),
+                        extensionRegistry);
+                if (purchaseListsBuilder_ == null) {
+                  ensurePurchaseListsIsMutable();
+                  purchaseLists_.add(m);
+                } else {
+                  purchaseListsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 114
+              case 122: {
+                shentu.shield.v1alpha1.Shield.Withdraw m =
+                    input.readMessage(
+                        shentu.shield.v1alpha1.Shield.Withdraw.parser(),
+                        extensionRegistry);
+                if (withdrawsBuilder_ == null) {
+                  ensureWithdrawsIsMutable();
+                  withdraws_.add(m);
+                } else {
+                  withdrawsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 122
+              case 130: {
+                input.readMessage(
+                    getLastUpdateTimeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 130
+              case 138: {
+                shieldStakingRate_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 138
+              case 146: {
+                globalStakingPool_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 146
+              case 154: {
+                shentu.shield.v1alpha1.Shield.ShieldStaking m =
+                    input.readMessage(
+                        shentu.shield.v1alpha1.Shield.ShieldStaking.parser(),
+                        extensionRegistry);
+                if (stakeForShieldsBuilder_ == null) {
+                  ensureStakeForShieldsIsMutable();
+                  stakeForShields_.add(m);
+                } else {
+                  stakeForShieldsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 154
+              case 162: {
+                shentu.shield.v1alpha1.Genesis.OriginalStaking m =
+                    input.readMessage(
+                        shentu.shield.v1alpha1.Genesis.OriginalStaking.parser(),
+                        extensionRegistry);
+                if (originalStakingsBuilder_ == null) {
+                  ensureOriginalStakingsIsMutable();
+                  originalStakings_.add(m);
+                } else {
+                  originalStakingsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 162
+              case 170: {
+                shentu.shield.v1alpha1.Genesis.ProposalIDReimbursementPair m =
+                    input.readMessage(
+                        shentu.shield.v1alpha1.Genesis.ProposalIDReimbursementPair.parser(),
+                        extensionRegistry);
+                if (proposalIDReimbursementPairsBuilder_ == null) {
+                  ensureProposalIDReimbursementPairsIsMutable();
+                  proposalIDReimbursementPairs_.add(m);
+                } else {
+                  proposalIDReimbursementPairsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 170
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (shentu.shield.v1alpha1.Genesis.GenesisState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -5234,7 +5174,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GenesisState(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -5303,54 +5254,6 @@ public final class Genesis {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private OriginalStaking(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              purchaseId_ = input.readUInt64();
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              amount_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -5431,10 +5334,10 @@ public final class Genesis {
       if (purchaseId_ != 0L) {
         output.writeUInt64(1, purchaseId_);
       }
-      if (!getAmountBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(amount_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, amount_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -5447,10 +5350,10 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(1, purchaseId_);
       }
-      if (!getAmountBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(amount_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, amount_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5469,7 +5372,7 @@ public final class Genesis {
           != other.getPurchaseId()) return false;
       if (!getAmount()
           .equals(other.getAmount())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -5485,7 +5388,7 @@ public final class Genesis {
           getPurchaseId());
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + getAmount().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5602,18 +5505,13 @@ public final class Genesis {
 
       // Construct using shentu.shield.v1alpha1.Genesis.OriginalStaking.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -5705,7 +5603,7 @@ public final class Genesis {
           amount_ = other.amount_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -5720,17 +5618,40 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        shentu.shield.v1alpha1.Genesis.OriginalStaking parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                purchaseId_ = input.readUInt64();
+
+                break;
+              } // case 8
+              case 18: {
+                amount_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (shentu.shield.v1alpha1.Genesis.OriginalStaking) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -5873,7 +5794,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new OriginalStaking(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -5945,61 +5877,6 @@ public final class Genesis {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ProposalIDReimbursementPair(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              proposalId_ = input.readUInt64();
-              break;
-            }
-            case 18: {
-              shentu.shield.v1alpha1.Genesis.Reimbursement.Builder subBuilder = null;
-              if (reimbursement_ != null) {
-                subBuilder = reimbursement_.toBuilder();
-              }
-              reimbursement_ = input.readMessage(shentu.shield.v1alpha1.Genesis.Reimbursement.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(reimbursement_);
-                reimbursement_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return shentu.shield.v1alpha1.Genesis.internal_static_shentu_shield_v1alpha1_ProposalIDReimbursementPair_descriptor;
@@ -6070,7 +5947,7 @@ public final class Genesis {
       if (reimbursement_ != null) {
         output.writeMessage(2, getReimbursement());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -6087,7 +5964,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getReimbursement());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -6109,7 +5986,7 @@ public final class Genesis {
         if (!getReimbursement()
             .equals(other.getReimbursement())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -6127,7 +6004,7 @@ public final class Genesis {
         hash = (37 * hash) + REIMBURSEMENT_FIELD_NUMBER;
         hash = (53 * hash) + getReimbursement().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -6244,18 +6121,13 @@ public final class Genesis {
 
       // Construct using shentu.shield.v1alpha1.Genesis.ProposalIDReimbursementPair.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -6354,7 +6226,7 @@ public final class Genesis {
         if (other.hasReimbursement()) {
           mergeReimbursement(other.getReimbursement());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -6369,17 +6241,42 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        shentu.shield.v1alpha1.Genesis.ProposalIDReimbursementPair parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                proposalId_ = input.readUInt64();
+
+                break;
+              } // case 8
+              case 18: {
+                input.readMessage(
+                    getReimbursementFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (shentu.shield.v1alpha1.Genesis.ProposalIDReimbursementPair) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -6565,7 +6462,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ProposalIDReimbursementPair(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -6668,75 +6576,6 @@ public final class Genesis {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private Reimbursement(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                amount_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              amount_.add(
-                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              beneficiary_ = s;
-              break;
-            }
-            case 26: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (payoutTime_ != null) {
-                subBuilder = payoutTime_.toBuilder();
-              }
-              payoutTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(payoutTime_);
-                payoutTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          amount_ = java.util.Collections.unmodifiableList(amount_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -6872,13 +6711,13 @@ public final class Genesis {
       for (int i = 0; i < amount_.size(); i++) {
         output.writeMessage(1, amount_.get(i));
       }
-      if (!getBeneficiaryBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(beneficiary_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, beneficiary_);
       }
       if (payoutTime_ != null) {
         output.writeMessage(3, getPayoutTime());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -6891,14 +6730,14 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, amount_.get(i));
       }
-      if (!getBeneficiaryBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(beneficiary_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, beneficiary_);
       }
       if (payoutTime_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getPayoutTime());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -6922,7 +6761,7 @@ public final class Genesis {
         if (!getPayoutTime()
             .equals(other.getPayoutTime())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -6943,7 +6782,7 @@ public final class Genesis {
         hash = (37 * hash) + PAYOUT_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getPayoutTime().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -7060,29 +6899,24 @@ public final class Genesis {
 
       // Construct using shentu.shield.v1alpha1.Genesis.Reimbursement.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getAmountFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
         if (amountBuilder_ == null) {
           amount_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          amount_ = null;
           amountBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         beneficiary_ = "";
 
         if (payoutTimeBuilder_ == null) {
@@ -7214,7 +7048,7 @@ public final class Genesis {
         if (other.hasPayoutTime()) {
           mergePayoutTime(other.getPayoutTime());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -7229,17 +7063,55 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        shentu.shield.v1alpha1.Genesis.Reimbursement parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                cosmos.base.v1beta1.CoinOuterClass.Coin m =
+                    input.readMessage(
+                        cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
+                        extensionRegistry);
+                if (amountBuilder_ == null) {
+                  ensureAmountIsMutable();
+                  amount_.add(m);
+                } else {
+                  amountBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              case 18: {
+                beneficiary_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getPayoutTimeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (shentu.shield.v1alpha1.Genesis.Reimbursement) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -7711,7 +7583,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Reimbursement(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -7846,94 +7729,6 @@ public final class Genesis {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private PoolParams(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.Duration.Builder subBuilder = null;
-              if (protectionPeriod_ != null) {
-                subBuilder = protectionPeriod_.toBuilder();
-              }
-              protectionPeriod_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(protectionPeriod_);
-                protectionPeriod_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              shieldFeesRate_ = s;
-              break;
-            }
-            case 26: {
-              com.google.protobuf.Duration.Builder subBuilder = null;
-              if (withdrawPeriod_ != null) {
-                subBuilder = withdrawPeriod_.toBuilder();
-              }
-              withdrawPeriod_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(withdrawPeriod_);
-                withdrawPeriod_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              poolShieldLimit_ = s;
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                minShieldPurchase_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              minShieldPurchase_.add(
-                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          minShieldPurchase_ = java.util.Collections.unmodifiableList(minShieldPurchase_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -8133,19 +7928,19 @@ public final class Genesis {
       if (protectionPeriod_ != null) {
         output.writeMessage(1, getProtectionPeriod());
       }
-      if (!getShieldFeesRateBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shieldFeesRate_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, shieldFeesRate_);
       }
       if (withdrawPeriod_ != null) {
         output.writeMessage(3, getWithdrawPeriod());
       }
-      if (!getPoolShieldLimitBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(poolShieldLimit_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, poolShieldLimit_);
       }
       for (int i = 0; i < minShieldPurchase_.size(); i++) {
         output.writeMessage(5, minShieldPurchase_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -8158,21 +7953,21 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getProtectionPeriod());
       }
-      if (!getShieldFeesRateBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shieldFeesRate_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, shieldFeesRate_);
       }
       if (withdrawPeriod_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getWithdrawPeriod());
       }
-      if (!getPoolShieldLimitBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(poolShieldLimit_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, poolShieldLimit_);
       }
       for (int i = 0; i < minShieldPurchase_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, minShieldPurchase_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -8203,7 +7998,7 @@ public final class Genesis {
           .equals(other.getPoolShieldLimit())) return false;
       if (!getMinShieldPurchaseList()
           .equals(other.getMinShieldPurchaseList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -8230,7 +8025,7 @@ public final class Genesis {
         hash = (37 * hash) + MIN_SHIELD_PURCHASE_FIELD_NUMBER;
         hash = (53 * hash) + getMinShieldPurchaseList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -8351,19 +8146,13 @@ public final class Genesis {
 
       // Construct using shentu.shield.v1alpha1.Genesis.PoolParams.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getMinShieldPurchaseFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -8386,10 +8175,11 @@ public final class Genesis {
 
         if (minShieldPurchaseBuilder_ == null) {
           minShieldPurchase_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          minShieldPurchase_ = null;
           minShieldPurchaseBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -8526,7 +8316,7 @@ public final class Genesis {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -8541,17 +8331,67 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        shentu.shield.v1alpha1.Genesis.PoolParams parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getProtectionPeriodFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 10
+              case 18: {
+                shieldFeesRate_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getWithdrawPeriodFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 26
+              case 34: {
+                poolShieldLimit_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+              case 42: {
+                cosmos.base.v1beta1.CoinOuterClass.Coin m =
+                    input.readMessage(
+                        cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
+                        extensionRegistry);
+                if (minShieldPurchaseBuilder_ == null) {
+                  ensureMinShieldPurchaseIsMutable();
+                  minShieldPurchase_.add(m);
+                } else {
+                  minShieldPurchaseBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (shentu.shield.v1alpha1.Genesis.PoolParams) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -9218,7 +9058,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PoolParams(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -9353,94 +9204,6 @@ public final class Genesis {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private ClaimProposalParams(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.Duration.Builder subBuilder = null;
-              if (claimPeriod_ != null) {
-                subBuilder = claimPeriod_.toBuilder();
-              }
-              claimPeriod_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(claimPeriod_);
-                claimPeriod_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              com.google.protobuf.Duration.Builder subBuilder = null;
-              if (payoutPeriod_ != null) {
-                subBuilder = payoutPeriod_.toBuilder();
-              }
-              payoutPeriod_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(payoutPeriod_);
-                payoutPeriod_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                minDeposit_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              minDeposit_.add(
-                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              depositRate_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              feesRate_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          minDeposit_ = java.util.Collections.unmodifiableList(minDeposit_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -9646,13 +9409,13 @@ public final class Genesis {
       for (int i = 0; i < minDeposit_.size(); i++) {
         output.writeMessage(3, minDeposit_.get(i));
       }
-      if (!getDepositRateBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(depositRate_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, depositRate_);
       }
-      if (!getFeesRateBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(feesRate_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, feesRate_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -9673,13 +9436,13 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, minDeposit_.get(i));
       }
-      if (!getDepositRateBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(depositRate_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, depositRate_);
       }
-      if (!getFeesRateBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(feesRate_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, feesRate_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -9710,7 +9473,7 @@ public final class Genesis {
           .equals(other.getDepositRate())) return false;
       if (!getFeesRate()
           .equals(other.getFeesRate())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -9737,7 +9500,7 @@ public final class Genesis {
       hash = (53 * hash) + getDepositRate().hashCode();
       hash = (37 * hash) + FEES_RATE_FIELD_NUMBER;
       hash = (53 * hash) + getFeesRate().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -9858,19 +9621,13 @@ public final class Genesis {
 
       // Construct using shentu.shield.v1alpha1.Genesis.ClaimProposalParams.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getMinDepositFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -9889,10 +9646,11 @@ public final class Genesis {
         }
         if (minDepositBuilder_ == null) {
           minDeposit_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          minDeposit_ = null;
           minDepositBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         depositRate_ = "";
 
         feesRate_ = "";
@@ -10033,7 +9791,7 @@ public final class Genesis {
           feesRate_ = other.feesRate_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -10048,17 +9806,67 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        shentu.shield.v1alpha1.Genesis.ClaimProposalParams parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getClaimPeriodFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getPayoutPeriodFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 18
+              case 26: {
+                cosmos.base.v1beta1.CoinOuterClass.Coin m =
+                    input.readMessage(
+                        cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
+                        extensionRegistry);
+                if (minDepositBuilder_ == null) {
+                  ensureMinDepositIsMutable();
+                  minDeposit_.add(m);
+                } else {
+                  minDepositBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 34: {
+                depositRate_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+              case 42: {
+                feesRate_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (shentu.shield.v1alpha1.Genesis.ClaimProposalParams) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -10725,7 +10533,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ClaimProposalParams(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

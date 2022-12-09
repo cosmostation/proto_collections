@@ -36,94 +36,6 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private SessionsResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10: {
-            io.provenance.metadata.v1.ScopeWrapper.Builder subBuilder = null;
-            if (scope_ != null) {
-              subBuilder = scope_.toBuilder();
-            }
-            scope_ = input.readMessage(io.provenance.metadata.v1.ScopeWrapper.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(scope_);
-              scope_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 18: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              sessions_ = new java.util.ArrayList<io.provenance.metadata.v1.SessionWrapper>();
-              mutable_bitField0_ |= 0x00000001;
-            }
-            sessions_.add(
-                input.readMessage(io.provenance.metadata.v1.SessionWrapper.parser(), extensionRegistry));
-            break;
-          }
-          case 26: {
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-              records_ = new java.util.ArrayList<io.provenance.metadata.v1.RecordWrapper>();
-              mutable_bitField0_ |= 0x00000002;
-            }
-            records_.add(
-                input.readMessage(io.provenance.metadata.v1.RecordWrapper.parser(), extensionRegistry));
-            break;
-          }
-          case 786: {
-            io.provenance.metadata.v1.SessionsRequest.Builder subBuilder = null;
-            if (request_ != null) {
-              subBuilder = request_.toBuilder();
-            }
-            request_ = input.readMessage(io.provenance.metadata.v1.SessionsRequest.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(request_);
-              request_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        sessions_ = java.util.Collections.unmodifiableList(sessions_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        records_ = java.util.Collections.unmodifiableList(records_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return io.provenance.metadata.v1.QueryOuterClass.internal_static_provenance_metadata_v1_SessionsResponse_descriptor;
@@ -359,7 +271,7 @@ private static final long serialVersionUID = 0L;
     if (request_ != null) {
       output.writeMessage(98, getRequest());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -384,7 +296,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(98, getRequest());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -413,7 +325,7 @@ private static final long serialVersionUID = 0L;
       if (!getRequest()
           .equals(other.getRequest())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -440,7 +352,7 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getRequest().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -561,20 +473,13 @@ private static final long serialVersionUID = 0L;
 
     // Construct using io.provenance.metadata.v1.SessionsResponse.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-        getSessionsFieldBuilder();
-        getRecordsFieldBuilder();
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
@@ -587,16 +492,18 @@ private static final long serialVersionUID = 0L;
       }
       if (sessionsBuilder_ == null) {
         sessions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        sessions_ = null;
         sessionsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (recordsBuilder_ == null) {
         records_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        records_ = null;
         recordsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (requestBuilder_ == null) {
         request_ = null;
       } else {
@@ -764,7 +671,7 @@ private static final long serialVersionUID = 0L;
       if (other.hasRequest()) {
         mergeRequest(other.getRequest());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -779,17 +686,70 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.provenance.metadata.v1.SessionsResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              input.readMessage(
+                  getScopeFieldBuilder().getBuilder(),
+                  extensionRegistry);
+
+              break;
+            } // case 10
+            case 18: {
+              io.provenance.metadata.v1.SessionWrapper m =
+                  input.readMessage(
+                      io.provenance.metadata.v1.SessionWrapper.parser(),
+                      extensionRegistry);
+              if (sessionsBuilder_ == null) {
+                ensureSessionsIsMutable();
+                sessions_.add(m);
+              } else {
+                sessionsBuilder_.addMessage(m);
+              }
+              break;
+            } // case 18
+            case 26: {
+              io.provenance.metadata.v1.RecordWrapper m =
+                  input.readMessage(
+                      io.provenance.metadata.v1.RecordWrapper.parser(),
+                      extensionRegistry);
+              if (recordsBuilder_ == null) {
+                ensureRecordsIsMutable();
+                records_.add(m);
+              } else {
+                recordsBuilder_.addMessage(m);
+              }
+              break;
+            } // case 26
+            case 786: {
+              input.readMessage(
+                  getRequestFieldBuilder().getBuilder(),
+                  extensionRegistry);
+
+              break;
+            } // case 786
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.provenance.metadata.v1.SessionsResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
     private int bitField0_;
@@ -1760,7 +1720,18 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new SessionsResponse(input, extensionRegistry);
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
     }
   };
 

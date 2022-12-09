@@ -175,118 +175,6 @@ public final class Genesis {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GenesisState(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                operators_ = new java.util.ArrayList<shentu.oracle.v1alpha1.Oracle.Operator>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              operators_.add(
-                  input.readMessage(shentu.oracle.v1alpha1.Oracle.Operator.parser(), extensionRegistry));
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                totalCollateral_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              totalCollateral_.add(
-                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
-              break;
-            }
-            case 26: {
-              shentu.oracle.v1alpha1.Oracle.LockedPoolParams.Builder subBuilder = null;
-              if (poolParams_ != null) {
-                subBuilder = poolParams_.toBuilder();
-              }
-              poolParams_ = input.readMessage(shentu.oracle.v1alpha1.Oracle.LockedPoolParams.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(poolParams_);
-                poolParams_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 34: {
-              shentu.oracle.v1alpha1.Oracle.TaskParams.Builder subBuilder = null;
-              if (taskParams_ != null) {
-                subBuilder = taskParams_.toBuilder();
-              }
-              taskParams_ = input.readMessage(shentu.oracle.v1alpha1.Oracle.TaskParams.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(taskParams_);
-                taskParams_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                withdraws_ = new java.util.ArrayList<shentu.oracle.v1alpha1.Oracle.Withdraw>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              withdraws_.add(
-                  input.readMessage(shentu.oracle.v1alpha1.Oracle.Withdraw.parser(), extensionRegistry));
-              break;
-            }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                tasks_ = new java.util.ArrayList<shentu.oracle.v1alpha1.Oracle.Task>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              tasks_.add(
-                  input.readMessage(shentu.oracle.v1alpha1.Oracle.Task.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          operators_ = java.util.Collections.unmodifiableList(operators_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          totalCollateral_ = java.util.Collections.unmodifiableList(totalCollateral_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          withdraws_ = java.util.Collections.unmodifiableList(withdraws_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          tasks_ = java.util.Collections.unmodifiableList(tasks_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return shentu.oracle.v1alpha1.Genesis.internal_static_shentu_oracle_v1alpha1_GenesisState_descriptor;
@@ -544,7 +432,7 @@ public final class Genesis {
       for (int i = 0; i < tasks_.size(); i++) {
         output.writeMessage(6, tasks_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -577,7 +465,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, tasks_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -610,7 +498,7 @@ public final class Genesis {
           .equals(other.getWithdrawsList())) return false;
       if (!getTasksList()
           .equals(other.getTasksList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -645,7 +533,7 @@ public final class Genesis {
         hash = (37 * hash) + TASKS_FIELD_NUMBER;
         hash = (53 * hash) + getTasksList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -762,38 +650,31 @@ public final class Genesis {
 
       // Construct using shentu.oracle.v1alpha1.Genesis.GenesisState.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getOperatorsFieldBuilder();
-          getTotalCollateralFieldBuilder();
-          getWithdrawsFieldBuilder();
-          getTasksFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
         if (operatorsBuilder_ == null) {
           operators_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          operators_ = null;
           operatorsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (totalCollateralBuilder_ == null) {
           totalCollateral_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          totalCollateral_ = null;
           totalCollateralBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (poolParamsBuilder_ == null) {
           poolParams_ = null;
         } else {
@@ -808,16 +689,18 @@ public final class Genesis {
         }
         if (withdrawsBuilder_ == null) {
           withdraws_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          withdraws_ = null;
           withdrawsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (tasksBuilder_ == null) {
           tasks_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
+          tasks_ = null;
           tasksBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -1049,7 +932,7 @@ public final class Genesis {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1064,17 +947,96 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        shentu.oracle.v1alpha1.Genesis.GenesisState parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                shentu.oracle.v1alpha1.Oracle.Operator m =
+                    input.readMessage(
+                        shentu.oracle.v1alpha1.Oracle.Operator.parser(),
+                        extensionRegistry);
+                if (operatorsBuilder_ == null) {
+                  ensureOperatorsIsMutable();
+                  operators_.add(m);
+                } else {
+                  operatorsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              case 18: {
+                cosmos.base.v1beta1.CoinOuterClass.Coin m =
+                    input.readMessage(
+                        cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
+                        extensionRegistry);
+                if (totalCollateralBuilder_ == null) {
+                  ensureTotalCollateralIsMutable();
+                  totalCollateral_.add(m);
+                } else {
+                  totalCollateralBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getPoolParamsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 26
+              case 34: {
+                input.readMessage(
+                    getTaskParamsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 34
+              case 42: {
+                shentu.oracle.v1alpha1.Oracle.Withdraw m =
+                    input.readMessage(
+                        shentu.oracle.v1alpha1.Oracle.Withdraw.parser(),
+                        extensionRegistry);
+                if (withdrawsBuilder_ == null) {
+                  ensureWithdrawsIsMutable();
+                  withdraws_.add(m);
+                } else {
+                  withdrawsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+              case 50: {
+                shentu.oracle.v1alpha1.Oracle.Task m =
+                    input.readMessage(
+                        shentu.oracle.v1alpha1.Oracle.Task.parser(),
+                        extensionRegistry);
+                if (tasksBuilder_ == null) {
+                  ensureTasksIsMutable();
+                  tasks_.add(m);
+                } else {
+                  tasksBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (shentu.oracle.v1alpha1.Genesis.GenesisState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -2309,7 +2271,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GenesisState(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

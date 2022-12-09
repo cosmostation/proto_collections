@@ -81,6 +81,12 @@ struct Comdex_Oracle_V1beta1_Params {
   fileprivate var _oracle: Comdex_Oracle_V1beta1_OracleParams? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Comdex_Oracle_V1beta1_IBCParams: @unchecked Sendable {}
+extension Comdex_Oracle_V1beta1_OracleParams: @unchecked Sendable {}
+extension Comdex_Oracle_V1beta1_Params: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "comdex.oracle.v1beta1"
@@ -188,12 +194,16 @@ extension Comdex_Oracle_V1beta1_Params: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._ibc {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._ibc {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
-    if let v = self._oracle {
+    } }()
+    try { if let v = self._oracle {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

@@ -57,6 +57,11 @@ struct Em_Authority_V1_GasPrices {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Em_Authority_V1_Authority: @unchecked Sendable {}
+extension Em_Authority_V1_GasPrices: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "em.authority.v1"
@@ -84,15 +89,19 @@ extension Em_Authority_V1_Authority: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.address.isEmpty {
       try visitor.visitSingularStringField(value: self.address, fieldNumber: 1)
     }
     if !self.formerAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.formerAddress, fieldNumber: 2)
     }
-    if let v = self._lastModified {
+    try { if let v = self._lastModified {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

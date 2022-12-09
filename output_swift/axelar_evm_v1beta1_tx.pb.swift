@@ -623,6 +623,45 @@ struct Axelar_Evm_V1beta1_VoteConfirmGatewayDeploymentResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Axelar_Evm_V1beta1_ConfirmChainRequest: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_ConfirmChainResponse: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_ConfirmDepositRequest: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_ConfirmDepositResponse: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_ConfirmTokenRequest: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_ConfirmTokenResponse: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_ConfirmTransferKeyRequest: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_ConfirmTransferKeyResponse: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_LinkRequest: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_LinkResponse: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_CreateBurnTokensRequest: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_CreateBurnTokensResponse: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_CreateDeployTokenRequest: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_CreateDeployTokenResponse: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_CreatePendingTransfersRequest: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_CreatePendingTransfersResponse: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_VoteConfirmChainRequest: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_VoteConfirmChainResponse: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_VoteConfirmDepositRequest: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_VoteConfirmDepositResponse: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_VoteConfirmTokenRequest: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_VoteConfirmTokenResponse: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_VoteConfirmTransferKeyRequest: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_VoteConfirmTransferKeyResponse: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_CreateTransferOwnershipRequest: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_CreateTransferOwnershipResponse: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_CreateTransferOperatorshipRequest: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_CreateTransferOperatorshipResponse: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_SignCommandsRequest: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_SignCommandsResponse: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_AddChainRequest: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_AddChainResponse: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_ConfirmGatewayDeploymentRequest: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_ConfirmGatewayDeploymentResponse: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_VoteConfirmGatewayDeploymentRequest: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_VoteConfirmGatewayDeploymentResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "axelar.evm.v1beta1"
@@ -784,6 +823,10 @@ extension Axelar_Evm_V1beta1_ConfirmTokenRequest: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularBytesField(value: self.sender, fieldNumber: 1)
     }
@@ -793,9 +836,9 @@ extension Axelar_Evm_V1beta1_ConfirmTokenRequest: SwiftProtobuf.Message, SwiftPr
     if !self.txID.isEmpty {
       try visitor.visitSingularBytesField(value: self.txID, fieldNumber: 3)
     }
-    if let v = self._asset {
+    try { if let v = self._asset {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1077,18 +1120,22 @@ extension Axelar_Evm_V1beta1_CreateDeployTokenRequest: SwiftProtobuf.Message, Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularBytesField(value: self.sender, fieldNumber: 1)
     }
     if !self.chain.isEmpty {
       try visitor.visitSingularStringField(value: self.chain, fieldNumber: 2)
     }
-    if let v = self._asset {
+    try { if let v = self._asset {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
-    if let v = self._tokenDetails {
+    } }()
+    try { if let v = self._tokenDetails {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     if !self.minAmount.isEmpty {
       try visitor.visitSingularBytesField(value: self.minAmount, fieldNumber: 5)
     }
@@ -1211,15 +1258,19 @@ extension Axelar_Evm_V1beta1_VoteConfirmChainRequest: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularBytesField(value: self.sender, fieldNumber: 1)
     }
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 2)
     }
-    if let v = self._pollKey {
+    try { if let v = self._pollKey {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if self.confirmed != false {
       try visitor.visitSingularBoolField(value: self.confirmed, fieldNumber: 4)
     }
@@ -1297,15 +1348,19 @@ extension Axelar_Evm_V1beta1_VoteConfirmDepositRequest: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularBytesField(value: self.sender, fieldNumber: 1)
     }
     if !self.chain.isEmpty {
       try visitor.visitSingularStringField(value: self.chain, fieldNumber: 2)
     }
-    if let v = self._pollKey {
+    try { if let v = self._pollKey {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if !self.txID.isEmpty {
       try visitor.visitSingularBytesField(value: self.txID, fieldNumber: 4)
     }
@@ -1391,15 +1446,19 @@ extension Axelar_Evm_V1beta1_VoteConfirmTokenRequest: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularBytesField(value: self.sender, fieldNumber: 1)
     }
     if !self.chain.isEmpty {
       try visitor.visitSingularStringField(value: self.chain, fieldNumber: 2)
     }
-    if let v = self._pollKey {
+    try { if let v = self._pollKey {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if !self.txID.isEmpty {
       try visitor.visitSingularBytesField(value: self.txID, fieldNumber: 4)
     }
@@ -1481,15 +1540,19 @@ extension Axelar_Evm_V1beta1_VoteConfirmTransferKeyRequest: SwiftProtobuf.Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularBytesField(value: self.sender, fieldNumber: 1)
     }
     if !self.chain.isEmpty {
       try visitor.visitSingularStringField(value: self.chain, fieldNumber: 2)
     }
-    if let v = self._pollKey {
+    try { if let v = self._pollKey {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if self.confirmed != false {
       try visitor.visitSingularBoolField(value: self.confirmed, fieldNumber: 4)
     }
@@ -1909,12 +1972,16 @@ extension Axelar_Evm_V1beta1_VoteConfirmGatewayDeploymentRequest: SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularBytesField(value: self.sender, fieldNumber: 1)
     }
-    if let v = self._pollKey {
+    try { if let v = self._pollKey {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if !self.chain.isEmpty {
       try visitor.visitSingularStringField(value: self.chain, fieldNumber: 3)
     }

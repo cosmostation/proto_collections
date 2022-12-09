@@ -271,6 +271,23 @@ struct Cosmos_Nft_V1beta1_QueryClassesResponse {
   fileprivate var _pagination: Cosmos_Base_Query_V1beta1_PageResponse? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Cosmos_Nft_V1beta1_QueryBalanceRequest: @unchecked Sendable {}
+extension Cosmos_Nft_V1beta1_QueryBalanceResponse: @unchecked Sendable {}
+extension Cosmos_Nft_V1beta1_QueryOwnerRequest: @unchecked Sendable {}
+extension Cosmos_Nft_V1beta1_QueryOwnerResponse: @unchecked Sendable {}
+extension Cosmos_Nft_V1beta1_QuerySupplyRequest: @unchecked Sendable {}
+extension Cosmos_Nft_V1beta1_QuerySupplyResponse: @unchecked Sendable {}
+extension Cosmos_Nft_V1beta1_QueryNFTsRequest: @unchecked Sendable {}
+extension Cosmos_Nft_V1beta1_QueryNFTsResponse: @unchecked Sendable {}
+extension Cosmos_Nft_V1beta1_QueryNFTRequest: @unchecked Sendable {}
+extension Cosmos_Nft_V1beta1_QueryNFTResponse: @unchecked Sendable {}
+extension Cosmos_Nft_V1beta1_QueryClassRequest: @unchecked Sendable {}
+extension Cosmos_Nft_V1beta1_QueryClassResponse: @unchecked Sendable {}
+extension Cosmos_Nft_V1beta1_QueryClassesRequest: @unchecked Sendable {}
+extension Cosmos_Nft_V1beta1_QueryClassesResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.nft.v1beta1"
@@ -502,15 +519,19 @@ extension Cosmos_Nft_V1beta1_QueryNFTsRequest: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.classID.isEmpty {
       try visitor.visitSingularStringField(value: self.classID, fieldNumber: 1)
     }
     if !self.owner.isEmpty {
       try visitor.visitSingularStringField(value: self.owner, fieldNumber: 2)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -544,12 +565,16 @@ extension Cosmos_Nft_V1beta1_QueryNFTsResponse: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.nfts.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.nfts, fieldNumber: 1)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -618,9 +643,13 @@ extension Cosmos_Nft_V1beta1_QueryNFTResponse: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._nft {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._nft {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -682,9 +711,13 @@ extension Cosmos_Nft_V1beta1_QueryClassResponse: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._class {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._class {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -714,9 +747,13 @@ extension Cosmos_Nft_V1beta1_QueryClassesRequest: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._pagination {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -748,12 +785,16 @@ extension Cosmos_Nft_V1beta1_QueryClassesResponse: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.classes.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.classes, fieldNumber: 1)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

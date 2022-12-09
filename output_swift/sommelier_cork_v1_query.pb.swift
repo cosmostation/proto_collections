@@ -208,6 +208,23 @@ struct Cork_V1_QueryScheduledCorksByBlockHeightResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Cork_V1_QueryParamsRequest: @unchecked Sendable {}
+extension Cork_V1_QueryParamsResponse: @unchecked Sendable {}
+extension Cork_V1_QuerySubmittedCorksRequest: @unchecked Sendable {}
+extension Cork_V1_QuerySubmittedCorksResponse: @unchecked Sendable {}
+extension Cork_V1_QueryCommitPeriodRequest: @unchecked Sendable {}
+extension Cork_V1_QueryCommitPeriodResponse: @unchecked Sendable {}
+extension Cork_V1_QueryCellarIDsRequest: @unchecked Sendable {}
+extension Cork_V1_QueryCellarIDsResponse: @unchecked Sendable {}
+extension Cork_V1_QueryScheduledCorksRequest: @unchecked Sendable {}
+extension Cork_V1_QueryScheduledCorksResponse: @unchecked Sendable {}
+extension Cork_V1_QueryScheduledBlockHeightsRequest: @unchecked Sendable {}
+extension Cork_V1_QueryScheduledBlockHeightsResponse: @unchecked Sendable {}
+extension Cork_V1_QueryScheduledCorksByBlockHeightRequest: @unchecked Sendable {}
+extension Cork_V1_QueryScheduledCorksByBlockHeightResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cork.v1"
@@ -250,9 +267,13 @@ extension Cork_V1_QueryParamsResponse: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._params {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

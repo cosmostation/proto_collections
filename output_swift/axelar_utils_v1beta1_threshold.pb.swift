@@ -36,6 +36,10 @@ struct Axelar_Utils_V1beta1_Threshold {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Axelar_Utils_V1beta1_Threshold: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "axelar.utils.v1beta1"

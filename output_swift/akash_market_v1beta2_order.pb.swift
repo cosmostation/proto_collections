@@ -153,6 +153,13 @@ struct Akash_Market_V1beta2_OrderFilters {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Akash_Market_V1beta2_OrderID: @unchecked Sendable {}
+extension Akash_Market_V1beta2_Order: @unchecked Sendable {}
+extension Akash_Market_V1beta2_Order.State: @unchecked Sendable {}
+extension Akash_Market_V1beta2_OrderFilters: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "akash.market.v1beta2"
@@ -232,15 +239,19 @@ extension Akash_Market_V1beta2_Order: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._orderID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._orderID {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if self.state != .invalid {
       try visitor.visitSingularEnumField(value: self.state, fieldNumber: 2)
     }
-    if let v = self._spec {
+    try { if let v = self._spec {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if self.createdAt != 0 {
       try visitor.visitSingularInt64Field(value: self.createdAt, fieldNumber: 4)
     }

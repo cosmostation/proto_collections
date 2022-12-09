@@ -295,6 +295,20 @@ struct Akash_Deployment_V1beta1_Resource {
   fileprivate var _price: Cosmos_Base_V1beta1_Coin? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Akash_Deployment_V1beta1_MsgCloseGroup: @unchecked Sendable {}
+extension Akash_Deployment_V1beta1_MsgCloseGroupResponse: @unchecked Sendable {}
+extension Akash_Deployment_V1beta1_MsgPauseGroup: @unchecked Sendable {}
+extension Akash_Deployment_V1beta1_MsgPauseGroupResponse: @unchecked Sendable {}
+extension Akash_Deployment_V1beta1_MsgStartGroup: @unchecked Sendable {}
+extension Akash_Deployment_V1beta1_MsgStartGroupResponse: @unchecked Sendable {}
+extension Akash_Deployment_V1beta1_GroupID: @unchecked Sendable {}
+extension Akash_Deployment_V1beta1_GroupSpec: @unchecked Sendable {}
+extension Akash_Deployment_V1beta1_Group: @unchecked Sendable {}
+extension Akash_Deployment_V1beta1_Group.State: @unchecked Sendable {}
+extension Akash_Deployment_V1beta1_Resource: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "akash.deployment.v1beta1"
@@ -318,9 +332,13 @@ extension Akash_Deployment_V1beta1_MsgCloseGroup: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._id {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._id {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -369,9 +387,13 @@ extension Akash_Deployment_V1beta1_MsgPauseGroup: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._id {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._id {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -420,9 +442,13 @@ extension Akash_Deployment_V1beta1_MsgStartGroup: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._id {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._id {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -519,12 +545,16 @@ extension Akash_Deployment_V1beta1_GroupSpec: SwiftProtobuf.Message, SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
     }
-    if let v = self._requirements {
+    try { if let v = self._requirements {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if !self.resources.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.resources, fieldNumber: 3)
     }
@@ -565,15 +595,19 @@ extension Akash_Deployment_V1beta1_Group: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._groupID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._groupID {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if self.state != .invalid {
       try visitor.visitSingularEnumField(value: self.state, fieldNumber: 2)
     }
-    if let v = self._groupSpec {
+    try { if let v = self._groupSpec {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if self.createdAt != 0 {
       try visitor.visitSingularInt64Field(value: self.createdAt, fieldNumber: 4)
     }
@@ -623,15 +657,19 @@ extension Akash_Deployment_V1beta1_Resource: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._resources {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._resources {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if self.count != 0 {
       try visitor.visitSingularUInt32Field(value: self.count, fieldNumber: 2)
     }
-    if let v = self._price {
+    try { if let v = self._price {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

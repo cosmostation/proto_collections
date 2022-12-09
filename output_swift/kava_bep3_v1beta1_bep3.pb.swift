@@ -338,6 +338,16 @@ struct Kava_Bep3_V1beta1_AssetSupply {
   fileprivate var _timeElapsed: SwiftProtobuf.Google_Protobuf_Duration? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Kava_Bep3_V1beta1_SwapStatus: @unchecked Sendable {}
+extension Kava_Bep3_V1beta1_SwapDirection: @unchecked Sendable {}
+extension Kava_Bep3_V1beta1_Params: @unchecked Sendable {}
+extension Kava_Bep3_V1beta1_AssetParam: @unchecked Sendable {}
+extension Kava_Bep3_V1beta1_SupplyLimit: @unchecked Sendable {}
+extension Kava_Bep3_V1beta1_AtomicSwap: @unchecked Sendable {}
+extension Kava_Bep3_V1beta1_AssetSupply: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kava.bep3.v1beta1"
@@ -428,15 +438,19 @@ extension Kava_Bep3_V1beta1_AssetParam: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.denom.isEmpty {
       try visitor.visitSingularStringField(value: self.denom, fieldNumber: 1)
     }
     if self.coinID != 0 {
       try visitor.visitSingularInt64Field(value: self.coinID, fieldNumber: 2)
     }
-    if let v = self._supplyLimit {
+    try { if let v = self._supplyLimit {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if self.active != false {
       try visitor.visitSingularBoolField(value: self.active, fieldNumber: 4)
     }
@@ -502,15 +516,19 @@ extension Kava_Bep3_V1beta1_SupplyLimit: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.limit.isEmpty {
       try visitor.visitSingularStringField(value: self.limit, fieldNumber: 1)
     }
     if self.timeLimited != false {
       try visitor.visitSingularBoolField(value: self.timeLimited, fieldNumber: 2)
     }
-    if let v = self._timePeriod {
+    try { if let v = self._timePeriod {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if !self.timeBasedLimit.isEmpty {
       try visitor.visitSingularStringField(value: self.timeBasedLimit, fieldNumber: 4)
     }
@@ -652,21 +670,25 @@ extension Kava_Bep3_V1beta1_AssetSupply: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._incomingSupply {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._incomingSupply {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
-    if let v = self._outgoingSupply {
+    } }()
+    try { if let v = self._outgoingSupply {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
-    if let v = self._currentSupply {
+    } }()
+    try { if let v = self._currentSupply {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
-    if let v = self._timeLimitedCurrentSupply {
+    } }()
+    try { if let v = self._timeLimitedCurrentSupply {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
-    if let v = self._timeElapsed {
+    } }()
+    try { if let v = self._timeElapsed {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

@@ -450,6 +450,37 @@ struct Irismod_Service_MsgWithdrawEarnedFeesResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Irismod_Service_MsgDefineService: @unchecked Sendable {}
+extension Irismod_Service_MsgDefineServiceResponse: @unchecked Sendable {}
+extension Irismod_Service_MsgBindService: @unchecked Sendable {}
+extension Irismod_Service_MsgBindServiceResponse: @unchecked Sendable {}
+extension Irismod_Service_MsgUpdateServiceBinding: @unchecked Sendable {}
+extension Irismod_Service_MsgUpdateServiceBindingResponse: @unchecked Sendable {}
+extension Irismod_Service_MsgSetWithdrawAddress: @unchecked Sendable {}
+extension Irismod_Service_MsgSetWithdrawAddressResponse: @unchecked Sendable {}
+extension Irismod_Service_MsgDisableServiceBinding: @unchecked Sendable {}
+extension Irismod_Service_MsgDisableServiceBindingResponse: @unchecked Sendable {}
+extension Irismod_Service_MsgEnableServiceBinding: @unchecked Sendable {}
+extension Irismod_Service_MsgEnableServiceBindingResponse: @unchecked Sendable {}
+extension Irismod_Service_MsgRefundServiceDeposit: @unchecked Sendable {}
+extension Irismod_Service_MsgRefundServiceDepositResponse: @unchecked Sendable {}
+extension Irismod_Service_MsgCallService: @unchecked Sendable {}
+extension Irismod_Service_MsgCallServiceResponse: @unchecked Sendable {}
+extension Irismod_Service_MsgRespondService: @unchecked Sendable {}
+extension Irismod_Service_MsgRespondServiceResponse: @unchecked Sendable {}
+extension Irismod_Service_MsgPauseRequestContext: @unchecked Sendable {}
+extension Irismod_Service_MsgPauseRequestContextResponse: @unchecked Sendable {}
+extension Irismod_Service_MsgStartRequestContext: @unchecked Sendable {}
+extension Irismod_Service_MsgStartRequestContextResponse: @unchecked Sendable {}
+extension Irismod_Service_MsgKillRequestContext: @unchecked Sendable {}
+extension Irismod_Service_MsgKillRequestContextResponse: @unchecked Sendable {}
+extension Irismod_Service_MsgUpdateRequestContext: @unchecked Sendable {}
+extension Irismod_Service_MsgUpdateRequestContextResponse: @unchecked Sendable {}
+extension Irismod_Service_MsgWithdrawEarnedFees: @unchecked Sendable {}
+extension Irismod_Service_MsgWithdrawEarnedFeesResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "irismod.service"

@@ -60,6 +60,12 @@ struct Comdex_Oracle_V1beta1_Result {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Comdex_Oracle_V1beta1_Market: @unchecked Sendable {}
+extension Comdex_Oracle_V1beta1_Calldata: @unchecked Sendable {}
+extension Comdex_Oracle_V1beta1_Result: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "comdex.oracle.v1beta1"

@@ -58,6 +58,11 @@ struct Passage3d_Claim_V1beta1_MsgClaimResponse {
   fileprivate var _claimedAmount: Cosmos_Base_V1beta1_Coin? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Passage3d_Claim_V1beta1_MsgClaim: @unchecked Sendable {}
+extension Passage3d_Claim_V1beta1_MsgClaimResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "passage3d.claim.v1beta1"
@@ -119,9 +124,13 @@ extension Passage3d_Claim_V1beta1_MsgClaimResponse: SwiftProtobuf.Message, Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._claimedAmount {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._claimedAmount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

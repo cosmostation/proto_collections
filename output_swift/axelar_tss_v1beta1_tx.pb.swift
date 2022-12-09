@@ -366,6 +366,30 @@ struct Axelar_Tss_V1beta1_SubmitMultisigSignaturesResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Axelar_Tss_V1beta1_StartKeygenRequest: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_StartKeygenResponse: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_RotateKeyRequest: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_RotateKeyResponse: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_ProcessKeygenTrafficRequest: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_ProcessKeygenTrafficResponse: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_ProcessSignTrafficRequest: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_ProcessSignTrafficResponse: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_VotePubKeyRequest: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_VotePubKeyResponse: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_VoteSigRequest: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_VoteSigResponse: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_HeartBeatRequest: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_HeartBeatResponse: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_RegisterExternalKeysRequest: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_RegisterExternalKeysRequest.ExternalKey: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_RegisterExternalKeysResponse: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_SubmitMultisigPubKeysRequest: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_SubmitMultisigPubKeysResponse: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_SubmitMultisigSignaturesRequest: @unchecked Sendable {}
+extension Axelar_Tss_V1beta1_SubmitMultisigSignaturesResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "axelar.tss.v1beta1"
@@ -391,12 +415,16 @@ extension Axelar_Tss_V1beta1_StartKeygenRequest: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularStringField(value: self.sender, fieldNumber: 1)
     }
-    if let v = self._keyInfo {
+    try { if let v = self._keyInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -519,15 +547,19 @@ extension Axelar_Tss_V1beta1_ProcessKeygenTrafficRequest: SwiftProtobuf.Message,
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularBytesField(value: self.sender, fieldNumber: 1)
     }
     if !self.sessionID.isEmpty {
       try visitor.visitSingularStringField(value: self.sessionID, fieldNumber: 2)
     }
-    if let v = self._payload {
+    try { if let v = self._payload {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -582,15 +614,19 @@ extension Axelar_Tss_V1beta1_ProcessSignTrafficRequest: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularBytesField(value: self.sender, fieldNumber: 1)
     }
     if !self.sessionID.isEmpty {
       try visitor.visitSingularStringField(value: self.sessionID, fieldNumber: 2)
     }
-    if let v = self._payload {
+    try { if let v = self._payload {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -645,15 +681,19 @@ extension Axelar_Tss_V1beta1_VotePubKeyRequest: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularBytesField(value: self.sender, fieldNumber: 1)
     }
-    if let v = self._pollKey {
+    try { if let v = self._pollKey {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
-    if let v = self._result {
+    } }()
+    try { if let v = self._result {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -721,15 +761,19 @@ extension Axelar_Tss_V1beta1_VoteSigRequest: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularBytesField(value: self.sender, fieldNumber: 1)
     }
-    if let v = self._pollKey {
+    try { if let v = self._pollKey {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
-    if let v = self._result {
+    } }()
+    try { if let v = self._result {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

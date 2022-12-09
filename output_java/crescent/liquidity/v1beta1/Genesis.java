@@ -201,127 +201,6 @@ public final class Genesis {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GenesisState(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              crescent.liquidity.v1beta1.Liquidity.Params.Builder subBuilder = null;
-              if (params_ != null) {
-                subBuilder = params_.toBuilder();
-              }
-              params_ = input.readMessage(crescent.liquidity.v1beta1.Liquidity.Params.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(params_);
-                params_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 16: {
-
-              lastPairId_ = input.readUInt64();
-              break;
-            }
-            case 24: {
-
-              lastPoolId_ = input.readUInt64();
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                pairs_ = new java.util.ArrayList<crescent.liquidity.v1beta1.Liquidity.Pair>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              pairs_.add(
-                  input.readMessage(crescent.liquidity.v1beta1.Liquidity.Pair.parser(), extensionRegistry));
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                pools_ = new java.util.ArrayList<crescent.liquidity.v1beta1.Liquidity.Pool>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              pools_.add(
-                  input.readMessage(crescent.liquidity.v1beta1.Liquidity.Pool.parser(), extensionRegistry));
-              break;
-            }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                depositRequests_ = new java.util.ArrayList<crescent.liquidity.v1beta1.Liquidity.DepositRequest>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              depositRequests_.add(
-                  input.readMessage(crescent.liquidity.v1beta1.Liquidity.DepositRequest.parser(), extensionRegistry));
-              break;
-            }
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                withdrawRequests_ = new java.util.ArrayList<crescent.liquidity.v1beta1.Liquidity.WithdrawRequest>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              withdrawRequests_.add(
-                  input.readMessage(crescent.liquidity.v1beta1.Liquidity.WithdrawRequest.parser(), extensionRegistry));
-              break;
-            }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                orders_ = new java.util.ArrayList<crescent.liquidity.v1beta1.Liquidity.Order>();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              orders_.add(
-                  input.readMessage(crescent.liquidity.v1beta1.Liquidity.Order.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          pairs_ = java.util.Collections.unmodifiableList(pairs_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          pools_ = java.util.Collections.unmodifiableList(pools_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          depositRequests_ = java.util.Collections.unmodifiableList(depositRequests_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          withdrawRequests_ = java.util.Collections.unmodifiableList(withdrawRequests_);
-        }
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
-          orders_ = java.util.Collections.unmodifiableList(orders_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return crescent.liquidity.v1beta1.Genesis.internal_static_crescent_liquidity_v1beta1_GenesisState_descriptor;
@@ -621,7 +500,7 @@ public final class Genesis {
       for (int i = 0; i < orders_.size(); i++) {
         output.writeMessage(8, orders_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -662,7 +541,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, orders_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -696,7 +575,7 @@ public final class Genesis {
           .equals(other.getWithdrawRequestsList())) return false;
       if (!getOrdersList()
           .equals(other.getOrdersList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -737,7 +616,7 @@ public final class Genesis {
         hash = (37 * hash) + ORDERS_FIELD_NUMBER;
         hash = (53 * hash) + getOrdersList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -858,23 +737,13 @@ public final class Genesis {
 
       // Construct using crescent.liquidity.v1beta1.Genesis.GenesisState.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getPairsFieldBuilder();
-          getPoolsFieldBuilder();
-          getDepositRequestsFieldBuilder();
-          getWithdrawRequestsFieldBuilder();
-          getOrdersFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -891,34 +760,39 @@ public final class Genesis {
 
         if (pairsBuilder_ == null) {
           pairs_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          pairs_ = null;
           pairsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (poolsBuilder_ == null) {
           pools_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          pools_ = null;
           poolsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (depositRequestsBuilder_ == null) {
           depositRequests_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          depositRequests_ = null;
           depositRequestsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (withdrawRequestsBuilder_ == null) {
           withdrawRequests_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
+          withdrawRequests_ = null;
           withdrawRequestsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         if (ordersBuilder_ == null) {
           orders_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
+          orders_ = null;
           ordersBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -1185,7 +1059,7 @@ public final class Genesis {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1200,17 +1074,112 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        crescent.liquidity.v1beta1.Genesis.GenesisState parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getParamsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 10
+              case 16: {
+                lastPairId_ = input.readUInt64();
+
+                break;
+              } // case 16
+              case 24: {
+                lastPoolId_ = input.readUInt64();
+
+                break;
+              } // case 24
+              case 34: {
+                crescent.liquidity.v1beta1.Liquidity.Pair m =
+                    input.readMessage(
+                        crescent.liquidity.v1beta1.Liquidity.Pair.parser(),
+                        extensionRegistry);
+                if (pairsBuilder_ == null) {
+                  ensurePairsIsMutable();
+                  pairs_.add(m);
+                } else {
+                  pairsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+              case 42: {
+                crescent.liquidity.v1beta1.Liquidity.Pool m =
+                    input.readMessage(
+                        crescent.liquidity.v1beta1.Liquidity.Pool.parser(),
+                        extensionRegistry);
+                if (poolsBuilder_ == null) {
+                  ensurePoolsIsMutable();
+                  pools_.add(m);
+                } else {
+                  poolsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+              case 50: {
+                crescent.liquidity.v1beta1.Liquidity.DepositRequest m =
+                    input.readMessage(
+                        crescent.liquidity.v1beta1.Liquidity.DepositRequest.parser(),
+                        extensionRegistry);
+                if (depositRequestsBuilder_ == null) {
+                  ensureDepositRequestsIsMutable();
+                  depositRequests_.add(m);
+                } else {
+                  depositRequestsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+              case 58: {
+                crescent.liquidity.v1beta1.Liquidity.WithdrawRequest m =
+                    input.readMessage(
+                        crescent.liquidity.v1beta1.Liquidity.WithdrawRequest.parser(),
+                        extensionRegistry);
+                if (withdrawRequestsBuilder_ == null) {
+                  ensureWithdrawRequestsIsMutable();
+                  withdrawRequests_.add(m);
+                } else {
+                  withdrawRequestsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 58
+              case 66: {
+                crescent.liquidity.v1beta1.Liquidity.Order m =
+                    input.readMessage(
+                        crescent.liquidity.v1beta1.Liquidity.Order.parser(),
+                        extensionRegistry);
+                if (ordersBuilder_ == null) {
+                  ensureOrdersIsMutable();
+                  orders_.add(m);
+                } else {
+                  ordersBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (crescent.liquidity.v1beta1.Genesis.GenesisState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -2628,7 +2597,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GenesisState(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

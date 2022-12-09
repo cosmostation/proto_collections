@@ -552,6 +552,30 @@ struct Injective_Ocr_V1beta1_EventConfigSet {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Injective_Ocr_V1beta1_Params: @unchecked Sendable {}
+extension Injective_Ocr_V1beta1_FeedConfig: @unchecked Sendable {}
+extension Injective_Ocr_V1beta1_FeedConfigInfo: @unchecked Sendable {}
+extension Injective_Ocr_V1beta1_ModuleParams: @unchecked Sendable {}
+extension Injective_Ocr_V1beta1_ContractConfig: @unchecked Sendable {}
+extension Injective_Ocr_V1beta1_SetConfigProposal: @unchecked Sendable {}
+extension Injective_Ocr_V1beta1_FeedProperties: @unchecked Sendable {}
+extension Injective_Ocr_V1beta1_SetBatchConfigProposal: @unchecked Sendable {}
+extension Injective_Ocr_V1beta1_OracleObservationsCounts: @unchecked Sendable {}
+extension Injective_Ocr_V1beta1_GasReimbursements: @unchecked Sendable {}
+extension Injective_Ocr_V1beta1_Payee: @unchecked Sendable {}
+extension Injective_Ocr_V1beta1_Transmission: @unchecked Sendable {}
+extension Injective_Ocr_V1beta1_EpochAndRound: @unchecked Sendable {}
+extension Injective_Ocr_V1beta1_Report: @unchecked Sendable {}
+extension Injective_Ocr_V1beta1_ReportToSign: @unchecked Sendable {}
+extension Injective_Ocr_V1beta1_EventOraclePaid: @unchecked Sendable {}
+extension Injective_Ocr_V1beta1_EventAnswerUpdated: @unchecked Sendable {}
+extension Injective_Ocr_V1beta1_EventNewRound: @unchecked Sendable {}
+extension Injective_Ocr_V1beta1_EventTransmitted: @unchecked Sendable {}
+extension Injective_Ocr_V1beta1_EventNewTransmission: @unchecked Sendable {}
+extension Injective_Ocr_V1beta1_EventConfigSet: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "injective.ocr.v1beta1"
@@ -631,6 +655,10 @@ extension Injective_Ocr_V1beta1_FeedConfig: SwiftProtobuf.Message, SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.signers.isEmpty {
       try visitor.visitRepeatedStringField(value: self.signers, fieldNumber: 1)
     }
@@ -649,9 +677,9 @@ extension Injective_Ocr_V1beta1_FeedConfig: SwiftProtobuf.Message, SwiftProtobuf
     if !self.offchainConfig.isEmpty {
       try visitor.visitSingularBytesField(value: self.offchainConfig, fieldNumber: 6)
     }
-    if let v = self._moduleParams {
+    try { if let v = self._moduleParams {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -928,15 +956,19 @@ extension Injective_Ocr_V1beta1_SetConfigProposal: SwiftProtobuf.Message, SwiftP
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
       if !_storage._title.isEmpty {
         try visitor.visitSingularStringField(value: _storage._title, fieldNumber: 1)
       }
       if !_storage._description_p.isEmpty {
         try visitor.visitSingularStringField(value: _storage._description_p, fieldNumber: 2)
       }
-      if let v = _storage._config {
+      try { if let v = _storage._config {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-      }
+      } }()
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1419,15 +1451,19 @@ extension Injective_Ocr_V1beta1_EventOraclePaid: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.transmitterAddr.isEmpty {
       try visitor.visitSingularStringField(value: self.transmitterAddr, fieldNumber: 1)
     }
     if !self.payeeAddr.isEmpty {
       try visitor.visitSingularStringField(value: self.payeeAddr, fieldNumber: 2)
     }
-    if let v = self._amount {
+    try { if let v = self._amount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1463,15 +1499,19 @@ extension Injective_Ocr_V1beta1_EventAnswerUpdated: SwiftProtobuf.Message, Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.current.isEmpty {
       try visitor.visitSingularStringField(value: self.current, fieldNumber: 1)
     }
     if !self.roundID.isEmpty {
       try visitor.visitSingularStringField(value: self.roundID, fieldNumber: 2)
     }
-    if let v = self._updatedAt {
+    try { if let v = self._updatedAt {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1507,15 +1547,19 @@ extension Injective_Ocr_V1beta1_EventNewRound: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.roundID.isEmpty {
       try visitor.visitSingularStringField(value: self.roundID, fieldNumber: 1)
     }
     if !self.startedBy.isEmpty {
       try visitor.visitSingularStringField(value: self.startedBy, fieldNumber: 2)
     }
-    if let v = self._startedAt {
+    try { if let v = self._startedAt {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1601,6 +1645,10 @@ extension Injective_Ocr_V1beta1_EventNewTransmission: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.feedID.isEmpty {
       try visitor.visitSingularStringField(value: self.feedID, fieldNumber: 1)
     }
@@ -1625,9 +1673,9 @@ extension Injective_Ocr_V1beta1_EventNewTransmission: SwiftProtobuf.Message, Swi
     if !self.configDigest.isEmpty {
       try visitor.visitSingularBytesField(value: self.configDigest, fieldNumber: 8)
     }
-    if let v = self._epochAndRound {
+    try { if let v = self._epochAndRound {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1700,18 +1748,22 @@ extension Injective_Ocr_V1beta1_EventConfigSet: SwiftProtobuf.Message, SwiftProt
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
       if !_storage._configDigest.isEmpty {
         try visitor.visitSingularBytesField(value: _storage._configDigest, fieldNumber: 1)
       }
       if _storage._previousConfigBlockNumber != 0 {
         try visitor.visitSingularInt64Field(value: _storage._previousConfigBlockNumber, fieldNumber: 2)
       }
-      if let v = _storage._config {
+      try { if let v = _storage._config {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-      }
-      if let v = _storage._configInfo {
+      } }()
+      try { if let v = _storage._configInfo {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-      }
+      } }()
     }
     try unknownFields.traverse(visitor: &visitor)
   }

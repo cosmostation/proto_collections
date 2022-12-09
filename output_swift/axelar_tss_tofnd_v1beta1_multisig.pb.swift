@@ -167,6 +167,15 @@ struct Axelar_Tss_Tofnd_V1beta1_SignResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Axelar_Tss_Tofnd_V1beta1_KeygenRequest: @unchecked Sendable {}
+extension Axelar_Tss_Tofnd_V1beta1_KeygenResponse: @unchecked Sendable {}
+extension Axelar_Tss_Tofnd_V1beta1_KeygenResponse.OneOf_KeygenResponse: @unchecked Sendable {}
+extension Axelar_Tss_Tofnd_V1beta1_SignRequest: @unchecked Sendable {}
+extension Axelar_Tss_Tofnd_V1beta1_SignResponse: @unchecked Sendable {}
+extension Axelar_Tss_Tofnd_V1beta1_SignResponse.OneOf_SignResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "axelar.tss.tofnd.v1beta1"
@@ -245,8 +254,9 @@ extension Axelar_Tss_Tofnd_V1beta1_KeygenResponse: SwiftProtobuf.Message, SwiftP
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every case branch when no optimizations are
-    // enabled. https://github.com/apple/swift-protobuf/issues/1034
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     switch self.keygenResponse {
     case .pubKey?: try {
       guard case .pubKey(let v)? = self.keygenResponse else { preconditionFailure() }
@@ -348,8 +358,9 @@ extension Axelar_Tss_Tofnd_V1beta1_SignResponse: SwiftProtobuf.Message, SwiftPro
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every case branch when no optimizations are
-    // enabled. https://github.com/apple/swift-protobuf/issues/1034
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     switch self.signResponse {
     case .signature?: try {
       guard case .signature(let v)? = self.signResponse else { preconditionFailure() }

@@ -44,6 +44,11 @@ struct Stafihub_Stafihub_Sudo_MsgUpdateAdminResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Stafihub_Stafihub_Sudo_MsgUpdateAdmin: @unchecked Sendable {}
+extension Stafihub_Stafihub_Sudo_MsgUpdateAdminResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stafihub.stafihub.sudo"

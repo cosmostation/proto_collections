@@ -443,6 +443,13 @@ struct Google_Api_CustomHttpPattern {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Google_Api_Http: @unchecked Sendable {}
+extension Google_Api_HttpRule: @unchecked Sendable {}
+extension Google_Api_HttpRule.OneOf_Pattern: @unchecked Sendable {}
+extension Google_Api_CustomHttpPattern: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "google.api"
@@ -569,12 +576,13 @@ extension Google_Api_HttpRule: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.selector.isEmpty {
       try visitor.visitSingularStringField(value: self.selector, fieldNumber: 1)
     }
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every case branch when no optimizations are
-    // enabled. https://github.com/apple/swift-protobuf/issues/1034
     switch self.pattern {
     case .get?: try {
       guard case .get(let v)? = self.pattern else { preconditionFailure() }
@@ -601,9 +609,9 @@ extension Google_Api_HttpRule: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if !self.body.isEmpty {
       try visitor.visitSingularStringField(value: self.body, fieldNumber: 7)
     }
-    if case .custom(let v)? = self.pattern {
+    try { if case .custom(let v)? = self.pattern {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
-    }
+    } }()
     if !self.additionalBindings.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.additionalBindings, fieldNumber: 11)
     }

@@ -119,6 +119,13 @@ struct Desmos_Profiles_V1beta1_MsgUnlinkApplicationResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Desmos_Profiles_V1beta1_MsgLinkApplication: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_MsgLinkApplicationResponse: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_MsgUnlinkApplication: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_MsgUnlinkApplicationResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "desmos.profiles.v1beta1"
@@ -154,12 +161,16 @@ extension Desmos_Profiles_V1beta1_MsgLinkApplication: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularStringField(value: self.sender, fieldNumber: 1)
     }
-    if let v = self._linkData {
+    try { if let v = self._linkData {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if !self.callData.isEmpty {
       try visitor.visitSingularStringField(value: self.callData, fieldNumber: 3)
     }
@@ -169,9 +180,9 @@ extension Desmos_Profiles_V1beta1_MsgLinkApplication: SwiftProtobuf.Message, Swi
     if !self.sourceChannel.isEmpty {
       try visitor.visitSingularStringField(value: self.sourceChannel, fieldNumber: 5)
     }
-    if let v = self._timeoutHeight {
+    try { if let v = self._timeoutHeight {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    }
+    } }()
     if self.timeoutTimestamp != 0 {
       try visitor.visitSingularUInt64Field(value: self.timeoutTimestamp, fieldNumber: 7)
     }

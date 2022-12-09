@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-/// Params defines the parameters for the ibc-rate-limiting module.
+/// Params defines the parameters for the ibc-rate-limit module.
 struct Osmosis_Ibcratelimit_V1beta1_Params {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -32,6 +32,10 @@ struct Osmosis_Ibcratelimit_V1beta1_Params {
 
   init() {}
 }
+
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Osmosis_Ibcratelimit_V1beta1_Params: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

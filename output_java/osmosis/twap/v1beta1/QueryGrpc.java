@@ -184,6 +184,7 @@ public final class QueryGrpc {
 
     /**
      */
+    @java.lang.Deprecated
     public void arithmeticTwapToNow(osmosis.twap.v1beta1.QueryOuterClass.ArithmeticTwapToNowRequest request,
         io.grpc.stub.StreamObserver<osmosis.twap.v1beta1.QueryOuterClass.ArithmeticTwapToNowResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getArithmeticTwapToNowMethod(), responseObserver);
@@ -248,6 +249,7 @@ public final class QueryGrpc {
 
     /**
      */
+    @java.lang.Deprecated
     public void arithmeticTwapToNow(osmosis.twap.v1beta1.QueryOuterClass.ArithmeticTwapToNowRequest request,
         io.grpc.stub.StreamObserver<osmosis.twap.v1beta1.QueryOuterClass.ArithmeticTwapToNowResponse> responseObserver) {
       asyncUnaryCall(
@@ -285,6 +287,7 @@ public final class QueryGrpc {
 
     /**
      */
+    @java.lang.Deprecated
     public osmosis.twap.v1beta1.QueryOuterClass.ArithmeticTwapToNowResponse arithmeticTwapToNow(osmosis.twap.v1beta1.QueryOuterClass.ArithmeticTwapToNowRequest request) {
       return blockingUnaryCall(
           getChannel(), getArithmeticTwapToNowMethod(), getCallOptions(), request);
@@ -323,6 +326,7 @@ public final class QueryGrpc {
 
     /**
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<osmosis.twap.v1beta1.QueryOuterClass.ArithmeticTwapToNowResponse> arithmeticTwapToNow(
         osmosis.twap.v1beta1.QueryOuterClass.ArithmeticTwapToNowRequest request) {
       return futureUnaryCall(

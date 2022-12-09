@@ -620,6 +620,25 @@ struct Confio_Poe_V1beta1_ArbiterPoolContractConfig {
   fileprivate var _waitingPeriod: SwiftProtobuf.Google_Protobuf_Duration? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Confio_Poe_V1beta1_GenesisState: @unchecked Sendable {}
+extension Confio_Poe_V1beta1_GenesisState.OneOf_SetupMode: @unchecked Sendable {}
+extension Confio_Poe_V1beta1_ImportDump: @unchecked Sendable {}
+extension Confio_Poe_V1beta1_SeedContracts: @unchecked Sendable {}
+extension Confio_Poe_V1beta1_MixerContractConfig: @unchecked Sendable {}
+extension Confio_Poe_V1beta1_MixerContractConfig.Sigmoid: @unchecked Sendable {}
+extension Confio_Poe_V1beta1_StakeContractConfig: @unchecked Sendable {}
+extension Confio_Poe_V1beta1_ValsetContractConfig: @unchecked Sendable {}
+extension Confio_Poe_V1beta1_EngagementContractConfig: @unchecked Sendable {}
+extension Confio_Poe_V1beta1_OversightCommitteeContractConfig: @unchecked Sendable {}
+extension Confio_Poe_V1beta1_CommunityPoolContractConfig: @unchecked Sendable {}
+extension Confio_Poe_V1beta1_ValidatorVotingContractConfig: @unchecked Sendable {}
+extension Confio_Poe_V1beta1_PoEContract: @unchecked Sendable {}
+extension Confio_Poe_V1beta1_TG4Member: @unchecked Sendable {}
+extension Confio_Poe_V1beta1_VotingRules: @unchecked Sendable {}
+extension Confio_Poe_V1beta1_ArbiterPoolContractConfig: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "confio.poe.v1beta1"
@@ -671,12 +690,13 @@ extension Confio_Poe_V1beta1_GenesisState: SwiftProtobuf.Message, SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._params {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
     // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every case branch when no optimizations are
-    // enabled. https://github.com/apple/swift-protobuf/issues/1034
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._params {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
     switch self.setupMode {
     case .seedContracts?: try {
       guard case .seedContracts(let v)? = self.setupMode else { preconditionFailure() }
@@ -825,6 +845,10 @@ extension Confio_Poe_V1beta1_SeedContracts: SwiftProtobuf.Message, SwiftProtobuf
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
       if !_storage._genTxs.isEmpty {
         try visitor.visitRepeatedBytesField(value: _storage._genTxs, fieldNumber: 1)
       }
@@ -834,39 +858,39 @@ extension Confio_Poe_V1beta1_SeedContracts: SwiftProtobuf.Message, SwiftProtobuf
       if !_storage._engagement.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._engagement, fieldNumber: 3)
       }
-      if let v = _storage._stakeContractConfig {
+      try { if let v = _storage._stakeContractConfig {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-      }
-      if let v = _storage._valsetContractConfig {
+      } }()
+      try { if let v = _storage._valsetContractConfig {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-      }
-      if let v = _storage._engagementContractConfig {
+      } }()
+      try { if let v = _storage._engagementContractConfig {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-      }
+      } }()
       if !_storage._bondDenom.isEmpty {
         try visitor.visitSingularStringField(value: _storage._bondDenom, fieldNumber: 7)
       }
-      if let v = _storage._oversightCommitteeContractConfig {
+      try { if let v = _storage._oversightCommitteeContractConfig {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
-      }
-      if let v = _storage._communityPoolContractConfig {
+      } }()
+      try { if let v = _storage._communityPoolContractConfig {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
-      }
-      if let v = _storage._validatorVotingContractConfig {
+      } }()
+      try { if let v = _storage._validatorVotingContractConfig {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
-      }
+      } }()
       if !_storage._oversightCommunityMembers.isEmpty {
         try visitor.visitRepeatedStringField(value: _storage._oversightCommunityMembers, fieldNumber: 11)
       }
       if !_storage._arbiterPoolMembers.isEmpty {
         try visitor.visitRepeatedStringField(value: _storage._arbiterPoolMembers, fieldNumber: 12)
       }
-      if let v = _storage._arbiterPoolContractConfig {
+      try { if let v = _storage._arbiterPoolContractConfig {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 13)
-      }
-      if let v = _storage._mixerContractConfig {
+      } }()
+      try { if let v = _storage._mixerContractConfig {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 14)
-      }
+      } }()
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -918,9 +942,13 @@ extension Confio_Poe_V1beta1_MixerContractConfig: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._sigmoid {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._sigmoid {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1000,15 +1028,19 @@ extension Confio_Poe_V1beta1_StakeContractConfig: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.minBond != 0 {
       try visitor.visitSingularUInt64Field(value: self.minBond, fieldNumber: 1)
     }
     if self.tokensPerPoint != 0 {
       try visitor.visitSingularUInt64Field(value: self.tokensPerPoint, fieldNumber: 2)
     }
-    if let v = self._unbondingPeriod {
+    try { if let v = self._unbondingPeriod {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if self.claimAutoreturnLimit != 0 {
       try visitor.visitSingularUInt32Field(value: self.claimAutoreturnLimit, fieldNumber: 4)
     }
@@ -1068,18 +1100,22 @@ extension Confio_Poe_V1beta1_ValsetContractConfig: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.minPoints != 0 {
       try visitor.visitSingularUInt64Field(value: self.minPoints, fieldNumber: 1)
     }
     if self.maxValidators != 0 {
       try visitor.visitSingularUInt32Field(value: self.maxValidators, fieldNumber: 2)
     }
-    if let v = self._epochLength {
+    try { if let v = self._epochLength {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
-    if let v = self._epochReward {
+    } }()
+    try { if let v = self._epochReward {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     if self.scaling != 0 {
       try visitor.visitSingularUInt32Field(value: self.scaling, fieldNumber: 5)
     }
@@ -1104,9 +1140,9 @@ extension Confio_Poe_V1beta1_ValsetContractConfig: SwiftProtobuf.Message, SwiftP
     if self.verifyValidators != false {
       try visitor.visitSingularBoolField(value: self.verifyValidators, fieldNumber: 12)
     }
-    if let v = self._offlineJailDuration {
+    try { if let v = self._offlineJailDuration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 13)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1148,9 +1184,13 @@ extension Confio_Poe_V1beta1_EngagementContractConfig: SwiftProtobuf.Message, Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._halflife {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._halflife {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1186,15 +1226,19 @@ extension Confio_Poe_V1beta1_OversightCommitteeContractConfig: SwiftProtobuf.Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
     }
-    if let v = self._escrowAmount {
+    try { if let v = self._escrowAmount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
-    if let v = self._votingRules {
+    } }()
+    try { if let v = self._votingRules {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if !self.denyListContractAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.denyListContractAddress, fieldNumber: 4)
     }
@@ -1230,9 +1274,13 @@ extension Confio_Poe_V1beta1_CommunityPoolContractConfig: SwiftProtobuf.Message,
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._votingRules {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._votingRules {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1262,9 +1310,13 @@ extension Confio_Poe_V1beta1_ValidatorVotingContractConfig: SwiftProtobuf.Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._votingRules {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._votingRules {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1430,24 +1482,28 @@ extension Confio_Poe_V1beta1_ArbiterPoolContractConfig: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
     }
-    if let v = self._escrowAmount {
+    try { if let v = self._escrowAmount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
-    if let v = self._votingRules {
+    } }()
+    try { if let v = self._votingRules {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if !self.denyListContractAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.denyListContractAddress, fieldNumber: 4)
     }
-    if let v = self._disputeCost {
+    try { if let v = self._disputeCost {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    }
-    if let v = self._waitingPeriod {
+    } }()
+    try { if let v = self._waitingPeriod {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

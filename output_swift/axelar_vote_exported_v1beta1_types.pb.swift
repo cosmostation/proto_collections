@@ -163,6 +163,13 @@ struct Axelar_Vote_Exported_V1beta1_PollMetadata {
   fileprivate var _votingThreshold: Axelar_Utils_V1beta1_Threshold? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Axelar_Vote_Exported_V1beta1_PollState: @unchecked Sendable {}
+extension Axelar_Vote_Exported_V1beta1_PollKey: @unchecked Sendable {}
+extension Axelar_Vote_Exported_V1beta1_Voter: @unchecked Sendable {}
+extension Axelar_Vote_Exported_V1beta1_PollMetadata: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "axelar.vote.exported.v1beta1"
@@ -289,18 +296,22 @@ extension Axelar_Vote_Exported_V1beta1_PollMetadata: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._key {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._key {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if self.expiresAt != 0 {
       try visitor.visitSingularInt64Field(value: self.expiresAt, fieldNumber: 3)
     }
-    if let v = self._result {
+    try { if let v = self._result {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
-    if let v = self._votingThreshold {
+    } }()
+    try { if let v = self._votingThreshold {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    }
+    } }()
     if self.state != .unspecified {
       try visitor.visitSingularEnumField(value: self.state, fieldNumber: 6)
     }

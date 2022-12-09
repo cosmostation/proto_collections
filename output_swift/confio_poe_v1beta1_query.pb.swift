@@ -215,6 +215,19 @@ struct Confio_Poe_V1beta1_QueryValidatorOutstandingRewardResponse {
   fileprivate var _reward: Cosmos_Base_V1beta1_DecCoin? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Confio_Poe_V1beta1_QueryContractAddressRequest: @unchecked Sendable {}
+extension Confio_Poe_V1beta1_QueryContractAddressResponse: @unchecked Sendable {}
+extension Confio_Poe_V1beta1_QueryUnbondingPeriodRequest: @unchecked Sendable {}
+extension Confio_Poe_V1beta1_QueryUnbondingPeriodResponse: @unchecked Sendable {}
+extension Confio_Poe_V1beta1_QueryValidatorDelegationRequest: @unchecked Sendable {}
+extension Confio_Poe_V1beta1_QueryValidatorDelegationResponse: @unchecked Sendable {}
+extension Confio_Poe_V1beta1_QueryValidatorUnbondingDelegationsRequest: @unchecked Sendable {}
+extension Confio_Poe_V1beta1_QueryValidatorUnbondingDelegationsResponse: @unchecked Sendable {}
+extension Confio_Poe_V1beta1_QueryValidatorOutstandingRewardRequest: @unchecked Sendable {}
+extension Confio_Poe_V1beta1_QueryValidatorOutstandingRewardResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "confio.poe.v1beta1"
@@ -321,9 +334,13 @@ extension Confio_Poe_V1beta1_QueryUnbondingPeriodResponse: SwiftProtobuf.Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._time {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._time {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -385,9 +402,13 @@ extension Confio_Poe_V1beta1_QueryValidatorDelegationResponse: SwiftProtobuf.Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._balance {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._balance {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -419,12 +440,16 @@ extension Confio_Poe_V1beta1_QueryValidatorUnbondingDelegationsRequest: SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.validatorAddr.isEmpty {
       try visitor.visitSingularStringField(value: self.validatorAddr, fieldNumber: 1)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -457,12 +482,16 @@ extension Confio_Poe_V1beta1_QueryValidatorUnbondingDelegationsResponse: SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.entries.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.entries, fieldNumber: 1)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -525,9 +554,13 @@ extension Confio_Poe_V1beta1_QueryValidatorOutstandingRewardResponse: SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._reward {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._reward {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

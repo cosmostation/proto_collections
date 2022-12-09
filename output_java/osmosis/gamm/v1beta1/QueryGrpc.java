@@ -120,6 +120,37 @@ public final class QueryGrpc {
     return getTotalLiquidityMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolsWithFilterRequest,
+      osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolsWithFilterResponse> getPoolsWithFilterMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PoolsWithFilter",
+      requestType = osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolsWithFilterRequest.class,
+      responseType = osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolsWithFilterResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolsWithFilterRequest,
+      osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolsWithFilterResponse> getPoolsWithFilterMethod() {
+    io.grpc.MethodDescriptor<osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolsWithFilterRequest, osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolsWithFilterResponse> getPoolsWithFilterMethod;
+    if ((getPoolsWithFilterMethod = QueryGrpc.getPoolsWithFilterMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getPoolsWithFilterMethod = QueryGrpc.getPoolsWithFilterMethod) == null) {
+          QueryGrpc.getPoolsWithFilterMethod = getPoolsWithFilterMethod =
+              io.grpc.MethodDescriptor.<osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolsWithFilterRequest, osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolsWithFilterResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PoolsWithFilter"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolsWithFilterRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolsWithFilterResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("PoolsWithFilter"))
+              .build();
+        }
+      }
+    }
+    return getPoolsWithFilterMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolRequest,
       osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolResponse> getPoolMethod;
 
@@ -180,6 +211,99 @@ public final class QueryGrpc {
       }
     }
     return getPoolTypeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolNoSwapSharesRequest,
+      osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolNoSwapSharesResponse> getCalcJoinPoolNoSwapSharesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CalcJoinPoolNoSwapShares",
+      requestType = osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolNoSwapSharesRequest.class,
+      responseType = osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolNoSwapSharesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolNoSwapSharesRequest,
+      osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolNoSwapSharesResponse> getCalcJoinPoolNoSwapSharesMethod() {
+    io.grpc.MethodDescriptor<osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolNoSwapSharesRequest, osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolNoSwapSharesResponse> getCalcJoinPoolNoSwapSharesMethod;
+    if ((getCalcJoinPoolNoSwapSharesMethod = QueryGrpc.getCalcJoinPoolNoSwapSharesMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getCalcJoinPoolNoSwapSharesMethod = QueryGrpc.getCalcJoinPoolNoSwapSharesMethod) == null) {
+          QueryGrpc.getCalcJoinPoolNoSwapSharesMethod = getCalcJoinPoolNoSwapSharesMethod =
+              io.grpc.MethodDescriptor.<osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolNoSwapSharesRequest, osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolNoSwapSharesResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CalcJoinPoolNoSwapShares"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolNoSwapSharesRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolNoSwapSharesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("CalcJoinPoolNoSwapShares"))
+              .build();
+        }
+      }
+    }
+    return getCalcJoinPoolNoSwapSharesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolSharesRequest,
+      osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolSharesResponse> getCalcJoinPoolSharesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CalcJoinPoolShares",
+      requestType = osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolSharesRequest.class,
+      responseType = osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolSharesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolSharesRequest,
+      osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolSharesResponse> getCalcJoinPoolSharesMethod() {
+    io.grpc.MethodDescriptor<osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolSharesRequest, osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolSharesResponse> getCalcJoinPoolSharesMethod;
+    if ((getCalcJoinPoolSharesMethod = QueryGrpc.getCalcJoinPoolSharesMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getCalcJoinPoolSharesMethod = QueryGrpc.getCalcJoinPoolSharesMethod) == null) {
+          QueryGrpc.getCalcJoinPoolSharesMethod = getCalcJoinPoolSharesMethod =
+              io.grpc.MethodDescriptor.<osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolSharesRequest, osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolSharesResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CalcJoinPoolShares"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolSharesRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolSharesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("CalcJoinPoolShares"))
+              .build();
+        }
+      }
+    }
+    return getCalcJoinPoolSharesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcExitPoolCoinsFromSharesRequest,
+      osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcExitPoolCoinsFromSharesResponse> getCalcExitPoolCoinsFromSharesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CalcExitPoolCoinsFromShares",
+      requestType = osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcExitPoolCoinsFromSharesRequest.class,
+      responseType = osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcExitPoolCoinsFromSharesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcExitPoolCoinsFromSharesRequest,
+      osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcExitPoolCoinsFromSharesResponse> getCalcExitPoolCoinsFromSharesMethod() {
+    io.grpc.MethodDescriptor<osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcExitPoolCoinsFromSharesRequest, osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcExitPoolCoinsFromSharesResponse> getCalcExitPoolCoinsFromSharesMethod;
+    if ((getCalcExitPoolCoinsFromSharesMethod = QueryGrpc.getCalcExitPoolCoinsFromSharesMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getCalcExitPoolCoinsFromSharesMethod = QueryGrpc.getCalcExitPoolCoinsFromSharesMethod) == null) {
+          QueryGrpc.getCalcExitPoolCoinsFromSharesMethod = getCalcExitPoolCoinsFromSharesMethod =
+              io.grpc.MethodDescriptor.<osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcExitPoolCoinsFromSharesRequest, osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcExitPoolCoinsFromSharesResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CalcExitPoolCoinsFromShares"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcExitPoolCoinsFromSharesRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcExitPoolCoinsFromSharesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("CalcExitPoolCoinsFromShares"))
+              .build();
+        }
+      }
+    }
+    return getCalcExitPoolCoinsFromSharesMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolParamsRequest,
@@ -439,6 +563,17 @@ public final class QueryGrpc {
 
     /**
      * <pre>
+     * PoolsWithFilter allows you to query specific pools with requested
+     * parameters
+     * </pre>
+     */
+    public void poolsWithFilter(osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolsWithFilterRequest request,
+        io.grpc.stub.StreamObserver<osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolsWithFilterResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPoolsWithFilterMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Per Pool gRPC Endpoints
      * </pre>
      */
@@ -457,6 +592,31 @@ public final class QueryGrpc {
     public void poolType(osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeRequest request,
         io.grpc.stub.StreamObserver<osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getPoolTypeMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Simulates joining pool without a swap. Returns the amount of shares you'd
+     * get and tokens needed to provide
+     * </pre>
+     */
+    public void calcJoinPoolNoSwapShares(osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolNoSwapSharesRequest request,
+        io.grpc.stub.StreamObserver<osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolNoSwapSharesResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getCalcJoinPoolNoSwapSharesMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void calcJoinPoolShares(osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolSharesRequest request,
+        io.grpc.stub.StreamObserver<osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolSharesResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getCalcJoinPoolSharesMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void calcExitPoolCoinsFromShares(osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcExitPoolCoinsFromSharesRequest request,
+        io.grpc.stub.StreamObserver<osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcExitPoolCoinsFromSharesResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getCalcExitPoolCoinsFromSharesMethod(), responseObserver);
     }
 
     /**
@@ -486,6 +646,7 @@ public final class QueryGrpc {
      * a base denomination and a quote denomination.
      * </pre>
      */
+    @java.lang.Deprecated
     public void spotPrice(osmosis.gamm.v1beta1.QueryOuterClass.QuerySpotPriceRequest request,
         io.grpc.stub.StreamObserver<osmosis.gamm.v1beta1.QueryOuterClass.QuerySpotPriceResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getSpotPriceMethod(), responseObserver);
@@ -532,6 +693,13 @@ public final class QueryGrpc {
                 osmosis.gamm.v1beta1.QueryOuterClass.QueryTotalLiquidityResponse>(
                   this, METHODID_TOTAL_LIQUIDITY)))
           .addMethod(
+            getPoolsWithFilterMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolsWithFilterRequest,
+                osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolsWithFilterResponse>(
+                  this, METHODID_POOLS_WITH_FILTER)))
+          .addMethod(
             getPoolMethod(),
             asyncUnaryCall(
               new MethodHandlers<
@@ -545,6 +713,27 @@ public final class QueryGrpc {
                 osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeRequest,
                 osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeResponse>(
                   this, METHODID_POOL_TYPE)))
+          .addMethod(
+            getCalcJoinPoolNoSwapSharesMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolNoSwapSharesRequest,
+                osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolNoSwapSharesResponse>(
+                  this, METHODID_CALC_JOIN_POOL_NO_SWAP_SHARES)))
+          .addMethod(
+            getCalcJoinPoolSharesMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolSharesRequest,
+                osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolSharesResponse>(
+                  this, METHODID_CALC_JOIN_POOL_SHARES)))
+          .addMethod(
+            getCalcExitPoolCoinsFromSharesMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcExitPoolCoinsFromSharesRequest,
+                osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcExitPoolCoinsFromSharesResponse>(
+                  this, METHODID_CALC_EXIT_POOL_COINS_FROM_SHARES)))
           .addMethod(
             getPoolParamsMethod(),
             asyncUnaryCall(
@@ -631,6 +820,18 @@ public final class QueryGrpc {
 
     /**
      * <pre>
+     * PoolsWithFilter allows you to query specific pools with requested
+     * parameters
+     * </pre>
+     */
+    public void poolsWithFilter(osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolsWithFilterRequest request,
+        io.grpc.stub.StreamObserver<osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolsWithFilterResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPoolsWithFilterMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Per Pool gRPC Endpoints
      * </pre>
      */
@@ -651,6 +852,34 @@ public final class QueryGrpc {
         io.grpc.stub.StreamObserver<osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getPoolTypeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Simulates joining pool without a swap. Returns the amount of shares you'd
+     * get and tokens needed to provide
+     * </pre>
+     */
+    public void calcJoinPoolNoSwapShares(osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolNoSwapSharesRequest request,
+        io.grpc.stub.StreamObserver<osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolNoSwapSharesResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCalcJoinPoolNoSwapSharesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void calcJoinPoolShares(osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolSharesRequest request,
+        io.grpc.stub.StreamObserver<osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolSharesResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCalcJoinPoolSharesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void calcExitPoolCoinsFromShares(osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcExitPoolCoinsFromSharesRequest request,
+        io.grpc.stub.StreamObserver<osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcExitPoolCoinsFromSharesResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCalcExitPoolCoinsFromSharesMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -683,6 +912,7 @@ public final class QueryGrpc {
      * a base denomination and a quote denomination.
      * </pre>
      */
+    @java.lang.Deprecated
     public void spotPrice(osmosis.gamm.v1beta1.QueryOuterClass.QuerySpotPriceRequest request,
         io.grpc.stub.StreamObserver<osmosis.gamm.v1beta1.QueryOuterClass.QuerySpotPriceResponse> responseObserver) {
       asyncUnaryCall(
@@ -746,6 +976,17 @@ public final class QueryGrpc {
 
     /**
      * <pre>
+     * PoolsWithFilter allows you to query specific pools with requested
+     * parameters
+     * </pre>
+     */
+    public osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolsWithFilterResponse poolsWithFilter(osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolsWithFilterRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPoolsWithFilterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * Per Pool gRPC Endpoints
      * </pre>
      */
@@ -764,6 +1005,31 @@ public final class QueryGrpc {
     public osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeResponse poolType(osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeRequest request) {
       return blockingUnaryCall(
           getChannel(), getPoolTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Simulates joining pool without a swap. Returns the amount of shares you'd
+     * get and tokens needed to provide
+     * </pre>
+     */
+    public osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolNoSwapSharesResponse calcJoinPoolNoSwapShares(osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolNoSwapSharesRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getCalcJoinPoolNoSwapSharesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolSharesResponse calcJoinPoolShares(osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolSharesRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getCalcJoinPoolSharesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcExitPoolCoinsFromSharesResponse calcExitPoolCoinsFromShares(osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcExitPoolCoinsFromSharesRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getCalcExitPoolCoinsFromSharesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -793,6 +1059,7 @@ public final class QueryGrpc {
      * a base denomination and a quote denomination.
      * </pre>
      */
+    @java.lang.Deprecated
     public osmosis.gamm.v1beta1.QueryOuterClass.QuerySpotPriceResponse spotPrice(osmosis.gamm.v1beta1.QueryOuterClass.QuerySpotPriceRequest request) {
       return blockingUnaryCall(
           getChannel(), getSpotPriceMethod(), getCallOptions(), request);
@@ -856,6 +1123,18 @@ public final class QueryGrpc {
 
     /**
      * <pre>
+     * PoolsWithFilter allows you to query specific pools with requested
+     * parameters
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolsWithFilterResponse> poolsWithFilter(
+        osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolsWithFilterRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPoolsWithFilterMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Per Pool gRPC Endpoints
      * </pre>
      */
@@ -876,6 +1155,34 @@ public final class QueryGrpc {
         osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getPoolTypeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Simulates joining pool without a swap. Returns the amount of shares you'd
+     * get and tokens needed to provide
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolNoSwapSharesResponse> calcJoinPoolNoSwapShares(
+        osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolNoSwapSharesRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCalcJoinPoolNoSwapSharesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolSharesResponse> calcJoinPoolShares(
+        osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolSharesRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCalcJoinPoolSharesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcExitPoolCoinsFromSharesResponse> calcExitPoolCoinsFromShares(
+        osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcExitPoolCoinsFromSharesRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCalcExitPoolCoinsFromSharesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -908,6 +1215,7 @@ public final class QueryGrpc {
      * a base denomination and a quote denomination.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<osmosis.gamm.v1beta1.QueryOuterClass.QuerySpotPriceResponse> spotPrice(
         osmosis.gamm.v1beta1.QueryOuterClass.QuerySpotPriceRequest request) {
       return futureUnaryCall(
@@ -937,14 +1245,18 @@ public final class QueryGrpc {
   private static final int METHODID_POOLS = 0;
   private static final int METHODID_NUM_POOLS = 1;
   private static final int METHODID_TOTAL_LIQUIDITY = 2;
-  private static final int METHODID_POOL = 3;
-  private static final int METHODID_POOL_TYPE = 4;
-  private static final int METHODID_POOL_PARAMS = 5;
-  private static final int METHODID_TOTAL_POOL_LIQUIDITY = 6;
-  private static final int METHODID_TOTAL_SHARES = 7;
-  private static final int METHODID_SPOT_PRICE = 8;
-  private static final int METHODID_ESTIMATE_SWAP_EXACT_AMOUNT_IN = 9;
-  private static final int METHODID_ESTIMATE_SWAP_EXACT_AMOUNT_OUT = 10;
+  private static final int METHODID_POOLS_WITH_FILTER = 3;
+  private static final int METHODID_POOL = 4;
+  private static final int METHODID_POOL_TYPE = 5;
+  private static final int METHODID_CALC_JOIN_POOL_NO_SWAP_SHARES = 6;
+  private static final int METHODID_CALC_JOIN_POOL_SHARES = 7;
+  private static final int METHODID_CALC_EXIT_POOL_COINS_FROM_SHARES = 8;
+  private static final int METHODID_POOL_PARAMS = 9;
+  private static final int METHODID_TOTAL_POOL_LIQUIDITY = 10;
+  private static final int METHODID_TOTAL_SHARES = 11;
+  private static final int METHODID_SPOT_PRICE = 12;
+  private static final int METHODID_ESTIMATE_SWAP_EXACT_AMOUNT_IN = 13;
+  private static final int METHODID_ESTIMATE_SWAP_EXACT_AMOUNT_OUT = 14;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -975,6 +1287,10 @@ public final class QueryGrpc {
           serviceImpl.totalLiquidity((osmosis.gamm.v1beta1.QueryOuterClass.QueryTotalLiquidityRequest) request,
               (io.grpc.stub.StreamObserver<osmosis.gamm.v1beta1.QueryOuterClass.QueryTotalLiquidityResponse>) responseObserver);
           break;
+        case METHODID_POOLS_WITH_FILTER:
+          serviceImpl.poolsWithFilter((osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolsWithFilterRequest) request,
+              (io.grpc.stub.StreamObserver<osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolsWithFilterResponse>) responseObserver);
+          break;
         case METHODID_POOL:
           serviceImpl.pool((osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolRequest) request,
               (io.grpc.stub.StreamObserver<osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolResponse>) responseObserver);
@@ -982,6 +1298,18 @@ public final class QueryGrpc {
         case METHODID_POOL_TYPE:
           serviceImpl.poolType((osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeRequest) request,
               (io.grpc.stub.StreamObserver<osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolTypeResponse>) responseObserver);
+          break;
+        case METHODID_CALC_JOIN_POOL_NO_SWAP_SHARES:
+          serviceImpl.calcJoinPoolNoSwapShares((osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolNoSwapSharesRequest) request,
+              (io.grpc.stub.StreamObserver<osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolNoSwapSharesResponse>) responseObserver);
+          break;
+        case METHODID_CALC_JOIN_POOL_SHARES:
+          serviceImpl.calcJoinPoolShares((osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolSharesRequest) request,
+              (io.grpc.stub.StreamObserver<osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcJoinPoolSharesResponse>) responseObserver);
+          break;
+        case METHODID_CALC_EXIT_POOL_COINS_FROM_SHARES:
+          serviceImpl.calcExitPoolCoinsFromShares((osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcExitPoolCoinsFromSharesRequest) request,
+              (io.grpc.stub.StreamObserver<osmosis.gamm.v1beta1.QueryOuterClass.QueryCalcExitPoolCoinsFromSharesResponse>) responseObserver);
           break;
         case METHODID_POOL_PARAMS:
           serviceImpl.poolParams((osmosis.gamm.v1beta1.QueryOuterClass.QueryPoolParamsRequest) request,
@@ -1071,8 +1399,12 @@ public final class QueryGrpc {
               .addMethod(getPoolsMethod())
               .addMethod(getNumPoolsMethod())
               .addMethod(getTotalLiquidityMethod())
+              .addMethod(getPoolsWithFilterMethod())
               .addMethod(getPoolMethod())
               .addMethod(getPoolTypeMethod())
+              .addMethod(getCalcJoinPoolNoSwapSharesMethod())
+              .addMethod(getCalcJoinPoolSharesMethod())
+              .addMethod(getCalcExitPoolCoinsFromSharesMethod())
               .addMethod(getPoolParamsMethod())
               .addMethod(getTotalPoolLiquidityMethod())
               .addMethod(getTotalSharesMethod())

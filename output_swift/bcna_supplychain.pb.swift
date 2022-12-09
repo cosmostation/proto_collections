@@ -40,6 +40,10 @@ struct BitCannaGlobal_Bcna_Bcna_Supplychain {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension BitCannaGlobal_Bcna_Bcna_Supplychain: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "BitCannaGlobal.bcna.bcna"

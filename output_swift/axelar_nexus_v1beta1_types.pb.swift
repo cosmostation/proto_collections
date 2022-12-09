@@ -79,6 +79,11 @@ struct Axelar_Nexus_V1beta1_LinkedAddresses {
   fileprivate var _recipientAddress: Axelar_Nexus_Exported_V1beta1_CrossChainAddress? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Axelar_Nexus_V1beta1_ChainState: @unchecked Sendable {}
+extension Axelar_Nexus_V1beta1_LinkedAddresses: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "axelar.nexus.v1beta1"
@@ -108,9 +113,13 @@ extension Axelar_Nexus_V1beta1_ChainState: SwiftProtobuf.Message, SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._chain {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._chain {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.maintainers.isEmpty {
       try visitor.visitRepeatedBytesField(value: self.maintainers, fieldNumber: 2)
     }
@@ -154,12 +163,16 @@ extension Axelar_Nexus_V1beta1_LinkedAddresses: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._depositAddress {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._depositAddress {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
-    if let v = self._recipientAddress {
+    } }()
+    try { if let v = self._recipientAddress {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

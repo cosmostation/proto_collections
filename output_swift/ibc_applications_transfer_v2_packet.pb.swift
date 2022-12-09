@@ -45,6 +45,10 @@ struct Ibc_Applications_Transfer_V2_FungibleTokenPacketData {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Ibc_Applications_Transfer_V2_FungibleTokenPacketData: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "ibc.applications.transfer.v2"

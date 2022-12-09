@@ -74,56 +74,6 @@ public final class Genesis {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GenesisState(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                chains_ = new java.util.ArrayList<axelar.evm.v1beta1.Genesis.GenesisState.Chain>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              chains_.add(
-                  input.readMessage(axelar.evm.v1beta1.Genesis.GenesisState.Chain.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          chains_ = java.util.Collections.unmodifiableList(chains_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return axelar.evm.v1beta1.Genesis.internal_static_axelar_evm_v1beta1_GenesisState_descriptor;
@@ -204,9 +154,11 @@ public final class Genesis {
        * <code>map&lt;string, .axelar.evm.v1beta1.Command&gt; command_queue = 3 [(.gogoproto.nullable) = false];</code>
        */
 
-      axelar.evm.v1beta1.Types.Command getCommandQueueOrDefault(
+      /* nullable */
+axelar.evm.v1beta1.Types.Command getCommandQueueOrDefault(
           java.lang.String key,
-          axelar.evm.v1beta1.Types.Command defaultValue);
+          /* nullable */
+axelar.evm.v1beta1.Types.Command defaultValue);
       /**
        * <code>map&lt;string, .axelar.evm.v1beta1.Command&gt; command_queue = 3 [(.gogoproto.nullable) = false];</code>
        */
@@ -357,143 +309,6 @@ public final class Genesis {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private Chain(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                axelar.evm.v1beta1.ParamsOuterClass.Params.Builder subBuilder = null;
-                if (params_ != null) {
-                  subBuilder = params_.toBuilder();
-                }
-                params_ = input.readMessage(axelar.evm.v1beta1.ParamsOuterClass.Params.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(params_);
-                  params_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-              case 18: {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  burnerInfos_ = new java.util.ArrayList<axelar.evm.v1beta1.Types.BurnerInfo>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                burnerInfos_.add(
-                    input.readMessage(axelar.evm.v1beta1.Types.BurnerInfo.parser(), extensionRegistry));
-                break;
-              }
-              case 26: {
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                  commandQueue_ = com.google.protobuf.MapField.newMapField(
-                      CommandQueueDefaultEntryHolder.defaultEntry);
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                com.google.protobuf.MapEntry<java.lang.String, axelar.evm.v1beta1.Types.Command>
-                commandQueue__ = input.readMessage(
-                    CommandQueueDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                commandQueue_.getMutableMap().put(
-                    commandQueue__.getKey(), commandQueue__.getValue());
-                break;
-              }
-              case 34: {
-                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                  confirmedDeposits_ = new java.util.ArrayList<axelar.evm.v1beta1.Types.ERC20Deposit>();
-                  mutable_bitField0_ |= 0x00000004;
-                }
-                confirmedDeposits_.add(
-                    input.readMessage(axelar.evm.v1beta1.Types.ERC20Deposit.parser(), extensionRegistry));
-                break;
-              }
-              case 42: {
-                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                  burnedDeposits_ = new java.util.ArrayList<axelar.evm.v1beta1.Types.ERC20Deposit>();
-                  mutable_bitField0_ |= 0x00000008;
-                }
-                burnedDeposits_.add(
-                    input.readMessage(axelar.evm.v1beta1.Types.ERC20Deposit.parser(), extensionRegistry));
-                break;
-              }
-              case 66: {
-                if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                  commandBatches_ = new java.util.ArrayList<axelar.evm.v1beta1.Types.CommandBatchMetadata>();
-                  mutable_bitField0_ |= 0x00000010;
-                }
-                commandBatches_.add(
-                    input.readMessage(axelar.evm.v1beta1.Types.CommandBatchMetadata.parser(), extensionRegistry));
-                break;
-              }
-              case 74: {
-                axelar.evm.v1beta1.Types.Gateway.Builder subBuilder = null;
-                if (gateway_ != null) {
-                  subBuilder = gateway_.toBuilder();
-                }
-                gateway_ = input.readMessage(axelar.evm.v1beta1.Types.Gateway.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(gateway_);
-                  gateway_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-              case 82: {
-                if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                  tokens_ = new java.util.ArrayList<axelar.evm.v1beta1.Types.ERC20TokenMetadata>();
-                  mutable_bitField0_ |= 0x00000020;
-                }
-                tokens_.add(
-                    input.readMessage(axelar.evm.v1beta1.Types.ERC20TokenMetadata.parser(), extensionRegistry));
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000001) != 0)) {
-            burnerInfos_ = java.util.Collections.unmodifiableList(burnerInfos_);
-          }
-          if (((mutable_bitField0_ & 0x00000004) != 0)) {
-            confirmedDeposits_ = java.util.Collections.unmodifiableList(confirmedDeposits_);
-          }
-          if (((mutable_bitField0_ & 0x00000008) != 0)) {
-            burnedDeposits_ = java.util.Collections.unmodifiableList(burnedDeposits_);
-          }
-          if (((mutable_bitField0_ & 0x00000010) != 0)) {
-            commandBatches_ = java.util.Collections.unmodifiableList(commandBatches_);
-          }
-          if (((mutable_bitField0_ & 0x00000020) != 0)) {
-            tokens_ = java.util.Collections.unmodifiableList(tokens_);
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return axelar.evm.v1beta1.Genesis.internal_static_axelar_evm_v1beta1_GenesisState_Chain_descriptor;
@@ -618,7 +433,7 @@ public final class Genesis {
       @java.lang.Override
       public boolean containsCommandQueue(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         return internalGetCommandQueue().getMap().containsKey(key);
       }
       /**
@@ -645,7 +460,7 @@ public final class Genesis {
       public axelar.evm.v1beta1.Types.Command getCommandQueueOrDefault(
           java.lang.String key,
           axelar.evm.v1beta1.Types.Command defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         java.util.Map<java.lang.String, axelar.evm.v1beta1.Types.Command> map =
             internalGetCommandQueue().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -657,7 +472,7 @@ public final class Genesis {
 
       public axelar.evm.v1beta1.Types.Command getCommandQueueOrThrow(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         java.util.Map<java.lang.String, axelar.evm.v1beta1.Types.Command> map =
             internalGetCommandQueue().getMap();
         if (!map.containsKey(key)) {
@@ -893,7 +708,7 @@ public final class Genesis {
         for (int i = 0; i < tokens_.size(); i++) {
           output.writeMessage(10, tokens_.get(i));
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -940,7 +755,7 @@ public final class Genesis {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(10, tokens_.get(i));
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -977,7 +792,7 @@ public final class Genesis {
         }
         if (!getTokensList()
             .equals(other.getTokensList())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -1020,7 +835,7 @@ public final class Genesis {
           hash = (37 * hash) + TOKENS_FIELD_NUMBER;
           hash = (53 * hash) + getTokensList().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -1159,23 +974,13 @@ public final class Genesis {
 
         // Construct using axelar.evm.v1beta1.Genesis.GenesisState.Chain.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-            getBurnerInfosFieldBuilder();
-            getConfirmedDepositsFieldBuilder();
-            getBurnedDepositsFieldBuilder();
-            getCommandBatchesFieldBuilder();
-            getTokensFieldBuilder();
-          }
+
         }
         @java.lang.Override
         public Builder clear() {
@@ -1188,29 +993,33 @@ public final class Genesis {
           }
           if (burnerInfosBuilder_ == null) {
             burnerInfos_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
+            burnerInfos_ = null;
             burnerInfosBuilder_.clear();
           }
+          bitField0_ = (bitField0_ & ~0x00000001);
           internalGetMutableCommandQueue().clear();
           if (confirmedDepositsBuilder_ == null) {
             confirmedDeposits_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
+            confirmedDeposits_ = null;
             confirmedDepositsBuilder_.clear();
           }
+          bitField0_ = (bitField0_ & ~0x00000004);
           if (burnedDepositsBuilder_ == null) {
             burnedDeposits_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
+            burnedDeposits_ = null;
             burnedDepositsBuilder_.clear();
           }
+          bitField0_ = (bitField0_ & ~0x00000008);
           if (commandBatchesBuilder_ == null) {
             commandBatches_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
+            commandBatches_ = null;
             commandBatchesBuilder_.clear();
           }
+          bitField0_ = (bitField0_ & ~0x00000010);
           if (gatewayBuilder_ == null) {
             gateway_ = null;
           } else {
@@ -1219,10 +1028,11 @@ public final class Genesis {
           }
           if (tokensBuilder_ == null) {
             tokens_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
+            tokens_ = null;
             tokensBuilder_.clear();
           }
+          bitField0_ = (bitField0_ & ~0x00000020);
           return this;
         }
 
@@ -1493,7 +1303,7 @@ public final class Genesis {
               }
             }
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -1508,17 +1318,117 @@ public final class Genesis {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          axelar.evm.v1beta1.Genesis.GenesisState.Chain parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10: {
+                  input.readMessage(
+                      getParamsFieldBuilder().getBuilder(),
+                      extensionRegistry);
+
+                  break;
+                } // case 10
+                case 18: {
+                  axelar.evm.v1beta1.Types.BurnerInfo m =
+                      input.readMessage(
+                          axelar.evm.v1beta1.Types.BurnerInfo.parser(),
+                          extensionRegistry);
+                  if (burnerInfosBuilder_ == null) {
+                    ensureBurnerInfosIsMutable();
+                    burnerInfos_.add(m);
+                  } else {
+                    burnerInfosBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
+                case 26: {
+                  com.google.protobuf.MapEntry<java.lang.String, axelar.evm.v1beta1.Types.Command>
+                  commandQueue__ = input.readMessage(
+                      CommandQueueDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                  internalGetMutableCommandQueue().getMutableMap().put(
+                      commandQueue__.getKey(), commandQueue__.getValue());
+                  break;
+                } // case 26
+                case 34: {
+                  axelar.evm.v1beta1.Types.ERC20Deposit m =
+                      input.readMessage(
+                          axelar.evm.v1beta1.Types.ERC20Deposit.parser(),
+                          extensionRegistry);
+                  if (confirmedDepositsBuilder_ == null) {
+                    ensureConfirmedDepositsIsMutable();
+                    confirmedDeposits_.add(m);
+                  } else {
+                    confirmedDepositsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 34
+                case 42: {
+                  axelar.evm.v1beta1.Types.ERC20Deposit m =
+                      input.readMessage(
+                          axelar.evm.v1beta1.Types.ERC20Deposit.parser(),
+                          extensionRegistry);
+                  if (burnedDepositsBuilder_ == null) {
+                    ensureBurnedDepositsIsMutable();
+                    burnedDeposits_.add(m);
+                  } else {
+                    burnedDepositsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 42
+                case 66: {
+                  axelar.evm.v1beta1.Types.CommandBatchMetadata m =
+                      input.readMessage(
+                          axelar.evm.v1beta1.Types.CommandBatchMetadata.parser(),
+                          extensionRegistry);
+                  if (commandBatchesBuilder_ == null) {
+                    ensureCommandBatchesIsMutable();
+                    commandBatches_.add(m);
+                  } else {
+                    commandBatchesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 66
+                case 74: {
+                  input.readMessage(
+                      getGatewayFieldBuilder().getBuilder(),
+                      extensionRegistry);
+
+                  break;
+                } // case 74
+                case 82: {
+                  axelar.evm.v1beta1.Types.ERC20TokenMetadata m =
+                      input.readMessage(
+                          axelar.evm.v1beta1.Types.ERC20TokenMetadata.parser(),
+                          extensionRegistry);
+                  if (tokensBuilder_ == null) {
+                    ensureTokensIsMutable();
+                    tokens_.add(m);
+                  } else {
+                    tokensBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 82
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (axelar.evm.v1beta1.Genesis.GenesisState.Chain) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -1915,7 +1825,7 @@ public final class Genesis {
         @java.lang.Override
         public boolean containsCommandQueue(
             java.lang.String key) {
-          if (key == null) { throw new java.lang.NullPointerException(); }
+          if (key == null) { throw new NullPointerException("map key"); }
           return internalGetCommandQueue().getMap().containsKey(key);
         }
         /**
@@ -1942,7 +1852,7 @@ public final class Genesis {
         public axelar.evm.v1beta1.Types.Command getCommandQueueOrDefault(
             java.lang.String key,
             axelar.evm.v1beta1.Types.Command defaultValue) {
-          if (key == null) { throw new java.lang.NullPointerException(); }
+          if (key == null) { throw new NullPointerException("map key"); }
           java.util.Map<java.lang.String, axelar.evm.v1beta1.Types.Command> map =
               internalGetCommandQueue().getMap();
           return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1954,7 +1864,7 @@ public final class Genesis {
 
         public axelar.evm.v1beta1.Types.Command getCommandQueueOrThrow(
             java.lang.String key) {
-          if (key == null) { throw new java.lang.NullPointerException(); }
+          if (key == null) { throw new NullPointerException("map key"); }
           java.util.Map<java.lang.String, axelar.evm.v1beta1.Types.Command> map =
               internalGetCommandQueue().getMap();
           if (!map.containsKey(key)) {
@@ -1974,7 +1884,7 @@ public final class Genesis {
 
         public Builder removeCommandQueue(
             java.lang.String key) {
-          if (key == null) { throw new java.lang.NullPointerException(); }
+          if (key == null) { throw new NullPointerException("map key"); }
           internalGetMutableCommandQueue().getMutableMap()
               .remove(key);
           return this;
@@ -1993,8 +1903,11 @@ public final class Genesis {
         public Builder putCommandQueue(
             java.lang.String key,
             axelar.evm.v1beta1.Types.Command value) {
-          if (key == null) { throw new java.lang.NullPointerException(); }
-          if (value == null) { throw new java.lang.NullPointerException(); }
+          if (key == null) { throw new NullPointerException("map key"); }
+          if (value == null) {
+  throw new NullPointerException("map value");
+}
+
           internalGetMutableCommandQueue().getMutableMap()
               .put(key, value);
           return this;
@@ -3121,7 +3034,18 @@ public final class Genesis {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Chain(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -3198,7 +3122,7 @@ public final class Genesis {
       for (int i = 0; i < chains_.size(); i++) {
         output.writeMessage(3, chains_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -3211,7 +3135,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, chains_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3228,7 +3152,7 @@ public final class Genesis {
 
       if (!getChainsList()
           .equals(other.getChainsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3243,7 +3167,7 @@ public final class Genesis {
         hash = (37 * hash) + CHAINS_FIELD_NUMBER;
         hash = (53 * hash) + getChainsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3364,29 +3288,24 @@ public final class Genesis {
 
       // Construct using axelar.evm.v1beta1.Genesis.GenesisState.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getChainsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
         if (chainsBuilder_ == null) {
           chains_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          chains_ = null;
           chainsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -3497,7 +3416,7 @@ public final class Genesis {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3512,17 +3431,43 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        axelar.evm.v1beta1.Genesis.GenesisState parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 26: {
+                axelar.evm.v1beta1.Genesis.GenesisState.Chain m =
+                    input.readMessage(
+                        axelar.evm.v1beta1.Genesis.GenesisState.Chain.parser(),
+                        extensionRegistry);
+                if (chainsBuilder_ == null) {
+                  ensureChainsIsMutable();
+                  chains_.add(m);
+                } else {
+                  chainsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (axelar.evm.v1beta1.Genesis.GenesisState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -3799,7 +3744,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GenesisState(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

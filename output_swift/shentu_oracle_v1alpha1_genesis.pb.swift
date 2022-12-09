@@ -59,6 +59,10 @@ struct Shentu_Oracle_V1alpha1_GenesisState {
   fileprivate var _taskParams: Shentu_Oracle_V1alpha1_TaskParams? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Shentu_Oracle_V1alpha1_GenesisState: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "shentu.oracle.v1alpha1"
@@ -92,18 +96,22 @@ extension Shentu_Oracle_V1alpha1_GenesisState: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.operators.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.operators, fieldNumber: 1)
     }
     if !self.totalCollateral.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.totalCollateral, fieldNumber: 2)
     }
-    if let v = self._poolParams {
+    try { if let v = self._poolParams {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
-    if let v = self._taskParams {
+    } }()
+    try { if let v = self._taskParams {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     if !self.withdraws.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.withdraws, fieldNumber: 5)
     }

@@ -151,6 +151,50 @@ struct Osmosis_Lockup_MsgExtendLockupResponse {
   init() {}
 }
 
+/// MsgForceUnlock unlocks locks immediately for
+/// addresses registered via governance.
+struct Osmosis_Lockup_MsgForceUnlock {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var owner: String = String()
+
+  var id: UInt64 = 0
+
+  /// Amount of unlocking coins. Unlock all if not set.
+  var coins: [Cosmos_Base_V1beta1_Coin] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct Osmosis_Lockup_MsgForceUnlockResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var success: Bool = false
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Osmosis_Lockup_MsgLockTokens: @unchecked Sendable {}
+extension Osmosis_Lockup_MsgLockTokensResponse: @unchecked Sendable {}
+extension Osmosis_Lockup_MsgBeginUnlockingAll: @unchecked Sendable {}
+extension Osmosis_Lockup_MsgBeginUnlockingAllResponse: @unchecked Sendable {}
+extension Osmosis_Lockup_MsgBeginUnlocking: @unchecked Sendable {}
+extension Osmosis_Lockup_MsgBeginUnlockingResponse: @unchecked Sendable {}
+extension Osmosis_Lockup_MsgExtendLockup: @unchecked Sendable {}
+extension Osmosis_Lockup_MsgExtendLockupResponse: @unchecked Sendable {}
+extension Osmosis_Lockup_MsgForceUnlock: @unchecked Sendable {}
+extension Osmosis_Lockup_MsgForceUnlockResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "osmosis.lockup"
@@ -178,12 +222,16 @@ extension Osmosis_Lockup_MsgLockTokens: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.owner.isEmpty {
       try visitor.visitSingularStringField(value: self.owner, fieldNumber: 1)
     }
-    if let v = self._duration {
+    try { if let v = self._duration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if !self.coins.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.coins, fieldNumber: 3)
     }
@@ -394,15 +442,19 @@ extension Osmosis_Lockup_MsgExtendLockup: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.owner.isEmpty {
       try visitor.visitSingularStringField(value: self.owner, fieldNumber: 1)
     }
     if self.id != 0 {
       try visitor.visitSingularUInt64Field(value: self.id, fieldNumber: 2)
     }
-    if let v = self._duration {
+    try { if let v = self._duration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -441,6 +493,82 @@ extension Osmosis_Lockup_MsgExtendLockupResponse: SwiftProtobuf.Message, SwiftPr
   }
 
   static func ==(lhs: Osmosis_Lockup_MsgExtendLockupResponse, rhs: Osmosis_Lockup_MsgExtendLockupResponse) -> Bool {
+    if lhs.success != rhs.success {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Osmosis_Lockup_MsgForceUnlock: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".MsgForceUnlock"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "owner"),
+    2: .same(proto: "ID"),
+    3: .same(proto: "coins"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.owner) }()
+      case 2: try { try decoder.decodeSingularUInt64Field(value: &self.id) }()
+      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.coins) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.owner.isEmpty {
+      try visitor.visitSingularStringField(value: self.owner, fieldNumber: 1)
+    }
+    if self.id != 0 {
+      try visitor.visitSingularUInt64Field(value: self.id, fieldNumber: 2)
+    }
+    if !self.coins.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.coins, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Osmosis_Lockup_MsgForceUnlock, rhs: Osmosis_Lockup_MsgForceUnlock) -> Bool {
+    if lhs.owner != rhs.owner {return false}
+    if lhs.id != rhs.id {return false}
+    if lhs.coins != rhs.coins {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Osmosis_Lockup_MsgForceUnlockResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".MsgForceUnlockResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "success"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularBoolField(value: &self.success) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.success != false {
+      try visitor.visitSingularBoolField(value: self.success, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Osmosis_Lockup_MsgForceUnlockResponse, rhs: Osmosis_Lockup_MsgForceUnlockResponse) -> Bool {
     if lhs.success != rhs.success {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

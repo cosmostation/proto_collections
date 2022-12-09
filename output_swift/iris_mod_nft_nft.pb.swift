@@ -120,6 +120,14 @@ struct Irismod_Nft_Collection {
   fileprivate var _denom: Irismod_Nft_Denom? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Irismod_Nft_BaseNFT: @unchecked Sendable {}
+extension Irismod_Nft_Denom: @unchecked Sendable {}
+extension Irismod_Nft_IDCollection: @unchecked Sendable {}
+extension Irismod_Nft_Owner: @unchecked Sendable {}
+extension Irismod_Nft_Collection: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "irismod.nft"
@@ -345,9 +353,13 @@ extension Irismod_Nft_Collection: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._denom {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._denom {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.nfts.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.nfts, fieldNumber: 2)
     }

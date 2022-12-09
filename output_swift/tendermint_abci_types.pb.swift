@@ -1540,6 +1540,59 @@ struct Tendermint_Abci_Snapshot {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Tendermint_Abci_CheckTxType: @unchecked Sendable {}
+extension Tendermint_Abci_EvidenceType: @unchecked Sendable {}
+extension Tendermint_Abci_Request: @unchecked Sendable {}
+extension Tendermint_Abci_Request.OneOf_Value: @unchecked Sendable {}
+extension Tendermint_Abci_RequestEcho: @unchecked Sendable {}
+extension Tendermint_Abci_RequestFlush: @unchecked Sendable {}
+extension Tendermint_Abci_RequestInfo: @unchecked Sendable {}
+extension Tendermint_Abci_RequestSetOption: @unchecked Sendable {}
+extension Tendermint_Abci_RequestInitChain: @unchecked Sendable {}
+extension Tendermint_Abci_RequestQuery: @unchecked Sendable {}
+extension Tendermint_Abci_RequestBeginBlock: @unchecked Sendable {}
+extension Tendermint_Abci_RequestCheckTx: @unchecked Sendable {}
+extension Tendermint_Abci_RequestDeliverTx: @unchecked Sendable {}
+extension Tendermint_Abci_RequestEndBlock: @unchecked Sendable {}
+extension Tendermint_Abci_RequestCommit: @unchecked Sendable {}
+extension Tendermint_Abci_RequestListSnapshots: @unchecked Sendable {}
+extension Tendermint_Abci_RequestOfferSnapshot: @unchecked Sendable {}
+extension Tendermint_Abci_RequestLoadSnapshotChunk: @unchecked Sendable {}
+extension Tendermint_Abci_RequestApplySnapshotChunk: @unchecked Sendable {}
+extension Tendermint_Abci_Response: @unchecked Sendable {}
+extension Tendermint_Abci_Response.OneOf_Value: @unchecked Sendable {}
+extension Tendermint_Abci_ResponseException: @unchecked Sendable {}
+extension Tendermint_Abci_ResponseEcho: @unchecked Sendable {}
+extension Tendermint_Abci_ResponseFlush: @unchecked Sendable {}
+extension Tendermint_Abci_ResponseInfo: @unchecked Sendable {}
+extension Tendermint_Abci_ResponseSetOption: @unchecked Sendable {}
+extension Tendermint_Abci_ResponseInitChain: @unchecked Sendable {}
+extension Tendermint_Abci_ResponseQuery: @unchecked Sendable {}
+extension Tendermint_Abci_ResponseBeginBlock: @unchecked Sendable {}
+extension Tendermint_Abci_ResponseCheckTx: @unchecked Sendable {}
+extension Tendermint_Abci_ResponseDeliverTx: @unchecked Sendable {}
+extension Tendermint_Abci_ResponseEndBlock: @unchecked Sendable {}
+extension Tendermint_Abci_ResponseCommit: @unchecked Sendable {}
+extension Tendermint_Abci_ResponseListSnapshots: @unchecked Sendable {}
+extension Tendermint_Abci_ResponseOfferSnapshot: @unchecked Sendable {}
+extension Tendermint_Abci_ResponseOfferSnapshot.Result: @unchecked Sendable {}
+extension Tendermint_Abci_ResponseLoadSnapshotChunk: @unchecked Sendable {}
+extension Tendermint_Abci_ResponseApplySnapshotChunk: @unchecked Sendable {}
+extension Tendermint_Abci_ResponseApplySnapshotChunk.Result: @unchecked Sendable {}
+extension Tendermint_Abci_ConsensusParams: @unchecked Sendable {}
+extension Tendermint_Abci_BlockParams: @unchecked Sendable {}
+extension Tendermint_Abci_LastCommitInfo: @unchecked Sendable {}
+extension Tendermint_Abci_Event: @unchecked Sendable {}
+extension Tendermint_Abci_EventAttribute: @unchecked Sendable {}
+extension Tendermint_Abci_TxResult: @unchecked Sendable {}
+extension Tendermint_Abci_Validator: @unchecked Sendable {}
+extension Tendermint_Abci_ValidatorUpdate: @unchecked Sendable {}
+extension Tendermint_Abci_VoteInfo: @unchecked Sendable {}
+extension Tendermint_Abci_Evidence: @unchecked Sendable {}
+extension Tendermint_Abci_Snapshot: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "tendermint.abci"
@@ -1787,8 +1840,9 @@ extension Tendermint_Abci_Request: SwiftProtobuf.Message, SwiftProtobuf._Message
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every case branch when no optimizations are
-    // enabled. https://github.com/apple/swift-protobuf/issues/1034
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     switch self.value {
     case .echo?: try {
       guard case .echo(let v)? = self.value else { preconditionFailure() }
@@ -2024,15 +2078,19 @@ extension Tendermint_Abci_RequestInitChain: SwiftProtobuf.Message, SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._time {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._time {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.chainID.isEmpty {
       try visitor.visitSingularStringField(value: self.chainID, fieldNumber: 2)
     }
-    if let v = self._consensusParams {
+    try { if let v = self._consensusParams {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if !self.validators.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.validators, fieldNumber: 4)
     }
@@ -2132,15 +2190,19 @@ extension Tendermint_Abci_RequestBeginBlock: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.hash.isEmpty {
       try visitor.visitSingularBytesField(value: self.hash, fieldNumber: 1)
     }
-    if let v = self._header {
+    try { if let v = self._header {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
-    if let v = self._lastCommitInfo {
+    } }()
+    try { if let v = self._lastCommitInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if !self.byzantineValidators.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.byzantineValidators, fieldNumber: 4)
     }
@@ -2318,9 +2380,13 @@ extension Tendermint_Abci_RequestOfferSnapshot: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._snapshot {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._snapshot {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.appHash.isEmpty {
       try visitor.visitSingularBytesField(value: self.appHash, fieldNumber: 2)
     }
@@ -2665,8 +2731,9 @@ extension Tendermint_Abci_Response: SwiftProtobuf.Message, SwiftProtobuf._Messag
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every case branch when no optimizations are
-    // enabled. https://github.com/apple/swift-protobuf/issues/1034
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     switch self.value {
     case .exception?: try {
       guard case .exception(let v)? = self.value else { preconditionFailure() }
@@ -2950,9 +3017,13 @@ extension Tendermint_Abci_ResponseInitChain: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._consensusParams {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._consensusParams {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.validators.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.validators, fieldNumber: 2)
     }
@@ -3006,6 +3077,10 @@ extension Tendermint_Abci_ResponseQuery: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.code != 0 {
       try visitor.visitSingularUInt32Field(value: self.code, fieldNumber: 1)
     }
@@ -3024,9 +3099,9 @@ extension Tendermint_Abci_ResponseQuery: SwiftProtobuf.Message, SwiftProtobuf._M
     if !self.value.isEmpty {
       try visitor.visitSingularBytesField(value: self.value, fieldNumber: 7)
     }
-    if let v = self._proofOps {
+    try { if let v = self._proofOps {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
-    }
+    } }()
     if self.height != 0 {
       try visitor.visitSingularInt64Field(value: self.height, fieldNumber: 9)
     }
@@ -3254,12 +3329,16 @@ extension Tendermint_Abci_ResponseEndBlock: SwiftProtobuf.Message, SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.validatorUpdates.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.validatorUpdates, fieldNumber: 1)
     }
-    if let v = self._consensusParamUpdates {
+    try { if let v = self._consensusParamUpdates {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if !self.events.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.events, fieldNumber: 3)
     }
@@ -3500,18 +3579,22 @@ extension Tendermint_Abci_ConsensusParams: SwiftProtobuf.Message, SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._block {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._block {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
-    if let v = self._evidence {
+    } }()
+    try { if let v = self._evidence {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
-    if let v = self._validator {
+    } }()
+    try { if let v = self._validator {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
-    if let v = self._version {
+    } }()
+    try { if let v = self._version {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -3708,6 +3791,10 @@ extension Tendermint_Abci_TxResult: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.height != 0 {
       try visitor.visitSingularInt64Field(value: self.height, fieldNumber: 1)
     }
@@ -3717,9 +3804,9 @@ extension Tendermint_Abci_TxResult: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if !self.tx.isEmpty {
       try visitor.visitSingularBytesField(value: self.tx, fieldNumber: 3)
     }
-    if let v = self._result {
+    try { if let v = self._result {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -3792,9 +3879,13 @@ extension Tendermint_Abci_ValidatorUpdate: SwiftProtobuf.Message, SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._pubKey {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._pubKey {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if self.power != 0 {
       try visitor.visitSingularInt64Field(value: self.power, fieldNumber: 2)
     }
@@ -3830,9 +3921,13 @@ extension Tendermint_Abci_VoteInfo: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._validator {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._validator {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if self.signedLastBlock != false {
       try visitor.visitSingularBoolField(value: self.signedLastBlock, fieldNumber: 2)
     }
@@ -3874,18 +3969,22 @@ extension Tendermint_Abci_Evidence: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.type != .unknown {
       try visitor.visitSingularEnumField(value: self.type, fieldNumber: 1)
     }
-    if let v = self._validator {
+    try { if let v = self._validator {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if self.height != 0 {
       try visitor.visitSingularInt64Field(value: self.height, fieldNumber: 3)
     }
-    if let v = self._time {
+    try { if let v = self._time {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     if self.totalVotingPower != 0 {
       try visitor.visitSingularInt64Field(value: self.totalVotingPower, fieldNumber: 5)
     }

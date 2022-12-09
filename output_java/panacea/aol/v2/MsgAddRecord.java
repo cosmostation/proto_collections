@@ -40,77 +40,6 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private MsgAddRecord(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            topicName_ = s;
-            break;
-          }
-          case 18: {
-
-            key_ = input.readBytes();
-            break;
-          }
-          case 26: {
-
-            value_ = input.readBytes();
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            writerAddress_ = s;
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            ownerAddress_ = s;
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            feePayerAddress_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return panacea.aol.v2.Tx.internal_static_panacea_aol_v2_MsgAddRecord_descriptor;
@@ -312,7 +241,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getTopicNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topicName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, topicName_);
     }
     if (!key_.isEmpty()) {
@@ -321,16 +250,16 @@ private static final long serialVersionUID = 0L;
     if (!value_.isEmpty()) {
       output.writeBytes(3, value_);
     }
-    if (!getWriterAddressBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(writerAddress_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, writerAddress_);
     }
-    if (!getOwnerAddressBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ownerAddress_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, ownerAddress_);
     }
-    if (!getFeePayerAddressBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(feePayerAddress_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, feePayerAddress_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -339,7 +268,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getTopicNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topicName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, topicName_);
     }
     if (!key_.isEmpty()) {
@@ -350,16 +279,16 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(3, value_);
     }
-    if (!getWriterAddressBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(writerAddress_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, writerAddress_);
     }
-    if (!getOwnerAddressBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ownerAddress_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, ownerAddress_);
     }
-    if (!getFeePayerAddressBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(feePayerAddress_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, feePayerAddress_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -386,7 +315,7 @@ private static final long serialVersionUID = 0L;
         .equals(other.getOwnerAddress())) return false;
     if (!getFeePayerAddress()
         .equals(other.getFeePayerAddress())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -409,7 +338,7 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getOwnerAddress().hashCode();
     hash = (37 * hash) + FEE_PAYER_ADDRESS_FIELD_NUMBER;
     hash = (53 * hash) + getFeePayerAddress().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -530,18 +459,13 @@ private static final long serialVersionUID = 0L;
 
     // Construct using panacea.aol.v2.MsgAddRecord.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
@@ -660,7 +584,7 @@ private static final long serialVersionUID = 0L;
         feePayerAddress_ = other.feePayerAddress_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -675,17 +599,60 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      panacea.aol.v2.MsgAddRecord parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              topicName_ = input.readStringRequireUtf8();
+
+              break;
+            } // case 10
+            case 18: {
+              key_ = input.readBytes();
+
+              break;
+            } // case 18
+            case 26: {
+              value_ = input.readBytes();
+
+              break;
+            } // case 26
+            case 34: {
+              writerAddress_ = input.readStringRequireUtf8();
+
+              break;
+            } // case 34
+            case 42: {
+              ownerAddress_ = input.readStringRequireUtf8();
+
+              break;
+            } // case 42
+            case 50: {
+              feePayerAddress_ = input.readStringRequireUtf8();
+
+              break;
+            } // case 50
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (panacea.aol.v2.MsgAddRecord) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1093,7 +1060,18 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new MsgAddRecord(input, extensionRegistry);
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
     }
   };
 

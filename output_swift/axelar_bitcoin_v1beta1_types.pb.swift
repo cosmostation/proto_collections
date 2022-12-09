@@ -402,6 +402,22 @@ struct Axelar_Bitcoin_V1beta1_Network {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Axelar_Bitcoin_V1beta1_TxStatus: @unchecked Sendable {}
+extension Axelar_Bitcoin_V1beta1_TxType: @unchecked Sendable {}
+extension Axelar_Bitcoin_V1beta1_OutPointState: @unchecked Sendable {}
+extension Axelar_Bitcoin_V1beta1_AddressRole: @unchecked Sendable {}
+extension Axelar_Bitcoin_V1beta1_UnsignedTx: @unchecked Sendable {}
+extension Axelar_Bitcoin_V1beta1_UnsignedTx.Info: @unchecked Sendable {}
+extension Axelar_Bitcoin_V1beta1_UnsignedTx.Info.InputInfo: @unchecked Sendable {}
+extension Axelar_Bitcoin_V1beta1_UnsignedTx.Info.InputInfo.SigRequirement: @unchecked Sendable {}
+extension Axelar_Bitcoin_V1beta1_SignedTx: @unchecked Sendable {}
+extension Axelar_Bitcoin_V1beta1_OutPointInfo: @unchecked Sendable {}
+extension Axelar_Bitcoin_V1beta1_AddressInfo: @unchecked Sendable {}
+extension Axelar_Bitcoin_V1beta1_AddressInfo.SpendingCondition: @unchecked Sendable {}
+extension Axelar_Bitcoin_V1beta1_Network: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "axelar.bitcoin.v1beta1"
@@ -475,15 +491,19 @@ extension Axelar_Bitcoin_V1beta1_UnsignedTx: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.type != .unspecified {
       try visitor.visitSingularEnumField(value: self.type, fieldNumber: 1)
     }
     if !self.tx.isEmpty {
       try visitor.visitSingularBytesField(value: self.tx, fieldNumber: 2)
     }
-    if let v = self._info {
+    try { if let v = self._info {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if self.status != .unspecified {
       try visitor.visitSingularEnumField(value: self.status, fieldNumber: 4)
     }
@@ -753,6 +773,10 @@ extension Axelar_Bitcoin_V1beta1_AddressInfo: SwiftProtobuf.Message, SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.address.isEmpty {
       try visitor.visitSingularStringField(value: self.address, fieldNumber: 1)
     }
@@ -768,9 +792,9 @@ extension Axelar_Bitcoin_V1beta1_AddressInfo: SwiftProtobuf.Message, SwiftProtob
     if self.maxSigCount != 0 {
       try visitor.visitSingularUInt32Field(value: self.maxSigCount, fieldNumber: 5)
     }
-    if let v = self._spendingCondition {
+    try { if let v = self._spendingCondition {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -811,6 +835,10 @@ extension Axelar_Bitcoin_V1beta1_AddressInfo.SpendingCondition: SwiftProtobuf.Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.internalKeyIds.isEmpty {
       try visitor.visitRepeatedStringField(value: self.internalKeyIds, fieldNumber: 1)
     }
@@ -820,9 +848,9 @@ extension Axelar_Bitcoin_V1beta1_AddressInfo.SpendingCondition: SwiftProtobuf.Me
     if self.externalMultisigThreshold != 0 {
       try visitor.visitSingularInt64Field(value: self.externalMultisigThreshold, fieldNumber: 3)
     }
-    if let v = self._lockTime {
+    try { if let v = self._lockTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

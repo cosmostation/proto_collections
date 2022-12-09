@@ -195,6 +195,16 @@ struct Stafihub_Stafihub_Bridge_ResourceIdToDenom {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Stafihub_Stafihub_Bridge_DenomType: @unchecked Sendable {}
+extension Stafihub_Stafihub_Bridge_GenesisState: @unchecked Sendable {}
+extension Stafihub_Stafihub_Bridge_DepositCount: @unchecked Sendable {}
+extension Stafihub_Stafihub_Bridge_GenesisProposal: @unchecked Sendable {}
+extension Stafihub_Stafihub_Bridge_RelayFee: @unchecked Sendable {}
+extension Stafihub_Stafihub_Bridge_BannedDenom: @unchecked Sendable {}
+extension Stafihub_Stafihub_Bridge_ResourceIdToDenom: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stafihub.stafihub.bridge"
@@ -240,9 +250,13 @@ extension Stafihub_Stafihub_Bridge_GenesisState: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._params {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.depositCountList.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.depositCountList, fieldNumber: 2)
     }
@@ -344,6 +358,10 @@ extension Stafihub_Stafihub_Bridge_GenesisProposal: SwiftProtobuf.Message, Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.chainID != 0 {
       try visitor.visitSingularUInt32Field(value: self.chainID, fieldNumber: 1)
     }
@@ -353,9 +371,9 @@ extension Stafihub_Stafihub_Bridge_GenesisProposal: SwiftProtobuf.Message, Swift
     if !self.resourceID.isEmpty {
       try visitor.visitSingularStringField(value: self.resourceID, fieldNumber: 3)
     }
-    if let v = self._proposal {
+    try { if let v = self._proposal {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -390,12 +408,16 @@ extension Stafihub_Stafihub_Bridge_RelayFee: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.chainID != 0 {
       try visitor.visitSingularUInt32Field(value: self.chainID, fieldNumber: 1)
     }
-    if let v = self._value {
+    try { if let v = self._value {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

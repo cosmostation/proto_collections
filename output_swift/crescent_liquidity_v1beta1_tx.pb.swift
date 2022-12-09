@@ -334,6 +334,25 @@ struct Crescent_Liquidity_V1beta1_MsgCancelAllOrdersResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Crescent_Liquidity_V1beta1_MsgCreatePair: @unchecked Sendable {}
+extension Crescent_Liquidity_V1beta1_MsgCreatePairResponse: @unchecked Sendable {}
+extension Crescent_Liquidity_V1beta1_MsgCreatePool: @unchecked Sendable {}
+extension Crescent_Liquidity_V1beta1_MsgCreatePoolResponse: @unchecked Sendable {}
+extension Crescent_Liquidity_V1beta1_MsgDeposit: @unchecked Sendable {}
+extension Crescent_Liquidity_V1beta1_MsgDepositResponse: @unchecked Sendable {}
+extension Crescent_Liquidity_V1beta1_MsgWithdraw: @unchecked Sendable {}
+extension Crescent_Liquidity_V1beta1_MsgWithdrawResponse: @unchecked Sendable {}
+extension Crescent_Liquidity_V1beta1_MsgLimitOrder: @unchecked Sendable {}
+extension Crescent_Liquidity_V1beta1_MsgLimitOrderResponse: @unchecked Sendable {}
+extension Crescent_Liquidity_V1beta1_MsgMarketOrder: @unchecked Sendable {}
+extension Crescent_Liquidity_V1beta1_MsgMarketOrderResponse: @unchecked Sendable {}
+extension Crescent_Liquidity_V1beta1_MsgCancelOrder: @unchecked Sendable {}
+extension Crescent_Liquidity_V1beta1_MsgCancelOrderResponse: @unchecked Sendable {}
+extension Crescent_Liquidity_V1beta1_MsgCancelAllOrders: @unchecked Sendable {}
+extension Crescent_Liquidity_V1beta1_MsgCancelAllOrdersResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "crescent.liquidity.v1beta1"
@@ -550,15 +569,19 @@ extension Crescent_Liquidity_V1beta1_MsgWithdraw: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.withdrawer.isEmpty {
       try visitor.visitSingularStringField(value: self.withdrawer, fieldNumber: 1)
     }
     if self.poolID != 0 {
       try visitor.visitSingularUInt64Field(value: self.poolID, fieldNumber: 2)
     }
-    if let v = self._poolCoin {
+    try { if let v = self._poolCoin {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -623,6 +646,10 @@ extension Crescent_Liquidity_V1beta1_MsgLimitOrder: SwiftProtobuf.Message, Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.orderer.isEmpty {
       try visitor.visitSingularStringField(value: self.orderer, fieldNumber: 1)
     }
@@ -632,9 +659,9 @@ extension Crescent_Liquidity_V1beta1_MsgLimitOrder: SwiftProtobuf.Message, Swift
     if self.direction != .unspecified {
       try visitor.visitSingularEnumField(value: self.direction, fieldNumber: 3)
     }
-    if let v = self._offerCoin {
+    try { if let v = self._offerCoin {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     if !self.demandCoinDenom.isEmpty {
       try visitor.visitSingularStringField(value: self.demandCoinDenom, fieldNumber: 5)
     }
@@ -644,9 +671,9 @@ extension Crescent_Liquidity_V1beta1_MsgLimitOrder: SwiftProtobuf.Message, Swift
     if !self.amount.isEmpty {
       try visitor.visitSingularStringField(value: self.amount, fieldNumber: 7)
     }
-    if let v = self._orderLifespan {
+    try { if let v = self._orderLifespan {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -714,6 +741,10 @@ extension Crescent_Liquidity_V1beta1_MsgMarketOrder: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.orderer.isEmpty {
       try visitor.visitSingularStringField(value: self.orderer, fieldNumber: 1)
     }
@@ -723,18 +754,18 @@ extension Crescent_Liquidity_V1beta1_MsgMarketOrder: SwiftProtobuf.Message, Swif
     if self.direction != .unspecified {
       try visitor.visitSingularEnumField(value: self.direction, fieldNumber: 3)
     }
-    if let v = self._offerCoin {
+    try { if let v = self._offerCoin {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     if !self.demandCoinDenom.isEmpty {
       try visitor.visitSingularStringField(value: self.demandCoinDenom, fieldNumber: 5)
     }
     if !self.amount.isEmpty {
       try visitor.visitSingularStringField(value: self.amount, fieldNumber: 6)
     }
-    if let v = self._orderLifespan {
+    try { if let v = self._orderLifespan {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

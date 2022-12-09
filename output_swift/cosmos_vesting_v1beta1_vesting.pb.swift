@@ -168,6 +168,15 @@ struct Cosmos_Vesting_V1beta1_PermanentLockedAccount {
   fileprivate var _baseVestingAccount: Cosmos_Vesting_V1beta1_BaseVestingAccount? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Cosmos_Vesting_V1beta1_BaseVestingAccount: @unchecked Sendable {}
+extension Cosmos_Vesting_V1beta1_ContinuousVestingAccount: @unchecked Sendable {}
+extension Cosmos_Vesting_V1beta1_DelayedVestingAccount: @unchecked Sendable {}
+extension Cosmos_Vesting_V1beta1_Period: @unchecked Sendable {}
+extension Cosmos_Vesting_V1beta1_PeriodicVestingAccount: @unchecked Sendable {}
+extension Cosmos_Vesting_V1beta1_PermanentLockedAccount: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.vesting.v1beta1"
@@ -199,9 +208,13 @@ extension Cosmos_Vesting_V1beta1_BaseVestingAccount: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._baseAccount {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseAccount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.originalVesting.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.originalVesting, fieldNumber: 2)
     }
@@ -249,9 +262,13 @@ extension Cosmos_Vesting_V1beta1_ContinuousVestingAccount: SwiftProtobuf.Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._baseVestingAccount {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseVestingAccount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if self.startTime != 0 {
       try visitor.visitSingularInt64Field(value: self.startTime, fieldNumber: 2)
     }
@@ -285,9 +302,13 @@ extension Cosmos_Vesting_V1beta1_DelayedVestingAccount: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._baseVestingAccount {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseVestingAccount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -359,9 +380,13 @@ extension Cosmos_Vesting_V1beta1_PeriodicVestingAccount: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._baseVestingAccount {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseVestingAccount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if self.startTime != 0 {
       try visitor.visitSingularInt64Field(value: self.startTime, fieldNumber: 2)
     }
@@ -399,9 +424,13 @@ extension Cosmos_Vesting_V1beta1_PermanentLockedAccount: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._baseVestingAccount {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseVestingAccount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

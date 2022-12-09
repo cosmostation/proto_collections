@@ -142,9 +142,11 @@ public final class Genesis {
      * <code>map&lt;string, string&gt; denom_to_host_zone = 9;</code>
      */
 
-    java.lang.String getDenomToHostZoneOrDefault(
+    /* nullable */
+java.lang.String getDenomToHostZoneOrDefault(
         java.lang.String key,
-        java.lang.String defaultValue);
+        /* nullable */
+java.lang.String defaultValue);
     /**
      * <pre>
      * stores a map from hostZone base denom to hostZone
@@ -213,118 +215,6 @@ public final class Genesis {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private GenesisState(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              stride.stakeibc.ParamsOuterClass.Params.Builder subBuilder = null;
-              if (params_ != null) {
-                subBuilder = params_.toBuilder();
-              }
-              params_ = input.readMessage(stride.stakeibc.ParamsOuterClass.Params.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(params_);
-                params_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              portId_ = s;
-              break;
-            }
-            case 34: {
-              stride.stakeibc.IcaAccount.ICAAccount.Builder subBuilder = null;
-              if (icaAccount_ != null) {
-                subBuilder = icaAccount_.toBuilder();
-              }
-              icaAccount_ = input.readMessage(stride.stakeibc.IcaAccount.ICAAccount.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(icaAccount_);
-                icaAccount_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                hostZoneList_ = new java.util.ArrayList<stride.stakeibc.HostZoneOuterClass.HostZone>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              hostZoneList_.add(
-                  input.readMessage(stride.stakeibc.HostZoneOuterClass.HostZone.parser(), extensionRegistry));
-              break;
-            }
-            case 48: {
-
-              hostZoneCount_ = input.readUInt64();
-              break;
-            }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                denomToHostZone_ = com.google.protobuf.MapField.newMapField(
-                    DenomToHostZoneDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              denomToHostZone__ = input.readMessage(
-                  DenomToHostZoneDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              denomToHostZone_.getMutableMap().put(
-                  denomToHostZone__.getKey(), denomToHostZone__.getValue());
-              break;
-            }
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                epochTrackerList_ = new java.util.ArrayList<stride.stakeibc.EpochTrackerOuterClass.EpochTracker>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              epochTrackerList_.add(
-                  input.readMessage(stride.stakeibc.EpochTrackerOuterClass.EpochTracker.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          hostZoneList_ = java.util.Collections.unmodifiableList(hostZoneList_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          epochTrackerList_ = java.util.Collections.unmodifiableList(epochTrackerList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -541,7 +431,7 @@ public final class Genesis {
     @java.lang.Override
     public boolean containsDenomToHostZone(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       return internalGetDenomToHostZone().getMap().containsKey(key);
     }
     /**
@@ -576,7 +466,7 @@ public final class Genesis {
     public java.lang.String getDenomToHostZoneOrDefault(
         java.lang.String key,
         java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetDenomToHostZone().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -592,7 +482,7 @@ public final class Genesis {
 
     public java.lang.String getDenomToHostZoneOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetDenomToHostZone().getMap();
       if (!map.containsKey(key)) {
@@ -658,7 +548,7 @@ public final class Genesis {
       if (params_ != null) {
         output.writeMessage(1, getParams());
       }
-      if (!getPortIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(portId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, portId_);
       }
       if (icaAccount_ != null) {
@@ -679,7 +569,7 @@ public final class Genesis {
       for (int i = 0; i < epochTrackerList_.size(); i++) {
         output.writeMessage(10, epochTrackerList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -692,7 +582,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getParams());
       }
-      if (!getPortIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(portId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, portId_);
       }
       if (icaAccount_ != null) {
@@ -721,7 +611,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, epochTrackerList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -756,7 +646,7 @@ public final class Genesis {
           other.internalGetDenomToHostZone())) return false;
       if (!getEpochTrackerListList()
           .equals(other.getEpochTrackerListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -792,7 +682,7 @@ public final class Genesis {
         hash = (37 * hash) + EPOCH_TRACKER_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getEpochTrackerListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -935,20 +825,13 @@ public final class Genesis {
 
       // Construct using stride.stakeibc.Genesis.GenesisState.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getHostZoneListFieldBuilder();
-          getEpochTrackerListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -969,19 +852,21 @@ public final class Genesis {
         }
         if (hostZoneListBuilder_ == null) {
           hostZoneList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          hostZoneList_ = null;
           hostZoneListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         hostZoneCount_ = 0L;
 
         internalGetMutableDenomToHostZone().clear();
         if (epochTrackerListBuilder_ == null) {
           epochTrackerList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          epochTrackerList_ = null;
           epochTrackerListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -1156,7 +1041,7 @@ public final class Genesis {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1171,17 +1056,88 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        stride.stakeibc.Genesis.GenesisState parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getParamsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 10
+              case 18: {
+                portId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              case 34: {
+                input.readMessage(
+                    getIcaAccountFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 34
+              case 42: {
+                stride.stakeibc.HostZoneOuterClass.HostZone m =
+                    input.readMessage(
+                        stride.stakeibc.HostZoneOuterClass.HostZone.parser(),
+                        extensionRegistry);
+                if (hostZoneListBuilder_ == null) {
+                  ensureHostZoneListIsMutable();
+                  hostZoneList_.add(m);
+                } else {
+                  hostZoneListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+              case 48: {
+                hostZoneCount_ = input.readUInt64();
+
+                break;
+              } // case 48
+              case 74: {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                denomToHostZone__ = input.readMessage(
+                    DenomToHostZoneDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableDenomToHostZone().getMutableMap().put(
+                    denomToHostZone__.getKey(), denomToHostZone__.getValue());
+                break;
+              } // case 74
+              case 82: {
+                stride.stakeibc.EpochTrackerOuterClass.EpochTracker m =
+                    input.readMessage(
+                        stride.stakeibc.EpochTrackerOuterClass.EpochTracker.parser(),
+                        extensionRegistry);
+                if (epochTrackerListBuilder_ == null) {
+                  ensureEpochTrackerListIsMutable();
+                  epochTrackerList_.add(m);
+                } else {
+                  epochTrackerListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (stride.stakeibc.Genesis.GenesisState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1844,7 +1800,7 @@ public final class Genesis {
       @java.lang.Override
       public boolean containsDenomToHostZone(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         return internalGetDenomToHostZone().getMap().containsKey(key);
       }
       /**
@@ -1879,7 +1835,7 @@ public final class Genesis {
       public java.lang.String getDenomToHostZoneOrDefault(
           java.lang.String key,
           java.lang.String defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         java.util.Map<java.lang.String, java.lang.String> map =
             internalGetDenomToHostZone().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1895,7 +1851,7 @@ public final class Genesis {
 
       public java.lang.String getDenomToHostZoneOrThrow(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         java.util.Map<java.lang.String, java.lang.String> map =
             internalGetDenomToHostZone().getMap();
         if (!map.containsKey(key)) {
@@ -1919,7 +1875,7 @@ public final class Genesis {
 
       public Builder removeDenomToHostZone(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         internalGetMutableDenomToHostZone().getMutableMap()
             .remove(key);
         return this;
@@ -1942,8 +1898,11 @@ public final class Genesis {
       public Builder putDenomToHostZone(
           java.lang.String key,
           java.lang.String value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
+        if (value == null) {
+  throw new NullPointerException("map value");
+}
+
         internalGetMutableDenomToHostZone().getMutableMap()
             .put(key, value);
         return this;
@@ -2235,7 +2194,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GenesisState(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

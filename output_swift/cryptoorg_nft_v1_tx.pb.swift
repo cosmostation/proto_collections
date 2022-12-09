@@ -181,6 +181,19 @@ struct Chainmain_Nft_V1_MsgBurnNFTResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Chainmain_Nft_V1_MsgIssueDenom: @unchecked Sendable {}
+extension Chainmain_Nft_V1_MsgIssueDenomResponse: @unchecked Sendable {}
+extension Chainmain_Nft_V1_MsgTransferNFT: @unchecked Sendable {}
+extension Chainmain_Nft_V1_MsgTransferNFTResponse: @unchecked Sendable {}
+extension Chainmain_Nft_V1_MsgEditNFT: @unchecked Sendable {}
+extension Chainmain_Nft_V1_MsgEditNFTResponse: @unchecked Sendable {}
+extension Chainmain_Nft_V1_MsgMintNFT: @unchecked Sendable {}
+extension Chainmain_Nft_V1_MsgMintNFTResponse: @unchecked Sendable {}
+extension Chainmain_Nft_V1_MsgBurnNFT: @unchecked Sendable {}
+extension Chainmain_Nft_V1_MsgBurnNFTResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "chainmain.nft.v1"

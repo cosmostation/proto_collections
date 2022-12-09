@@ -123,6 +123,15 @@ struct Injective_Auction_V1beta1_QueryModuleStateResponse {
   fileprivate var _state: Injective_Auction_V1beta1_GenesisState? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Injective_Auction_V1beta1_QueryAuctionParamsRequest: @unchecked Sendable {}
+extension Injective_Auction_V1beta1_QueryAuctionParamsResponse: @unchecked Sendable {}
+extension Injective_Auction_V1beta1_QueryCurrentAuctionBasketRequest: @unchecked Sendable {}
+extension Injective_Auction_V1beta1_QueryCurrentAuctionBasketResponse: @unchecked Sendable {}
+extension Injective_Auction_V1beta1_QueryModuleStateRequest: @unchecked Sendable {}
+extension Injective_Auction_V1beta1_QueryModuleStateResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "injective.auction.v1beta1"
@@ -165,9 +174,13 @@ extension Injective_Auction_V1beta1_QueryAuctionParamsResponse: SwiftProtobuf.Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._params {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -291,9 +304,13 @@ extension Injective_Auction_V1beta1_QueryModuleStateResponse: SwiftProtobuf.Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._state {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._state {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

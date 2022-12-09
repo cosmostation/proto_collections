@@ -167,6 +167,14 @@ struct Kava_Cdp_V1beta1_OwnerCDPIndex {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Kava_Cdp_V1beta1_CDP: @unchecked Sendable {}
+extension Kava_Cdp_V1beta1_Deposit: @unchecked Sendable {}
+extension Kava_Cdp_V1beta1_TotalPrincipal: @unchecked Sendable {}
+extension Kava_Cdp_V1beta1_TotalCollateral: @unchecked Sendable {}
+extension Kava_Cdp_V1beta1_OwnerCDPIndex: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kava.cdp.v1beta1"
@@ -204,6 +212,10 @@ extension Kava_Cdp_V1beta1_CDP: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.id != 0 {
       try visitor.visitSingularUInt64Field(value: self.id, fieldNumber: 1)
     }
@@ -213,18 +225,18 @@ extension Kava_Cdp_V1beta1_CDP: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if !self.type.isEmpty {
       try visitor.visitSingularStringField(value: self.type, fieldNumber: 3)
     }
-    if let v = self._collateral {
+    try { if let v = self._collateral {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
-    if let v = self._principal {
+    } }()
+    try { if let v = self._principal {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    }
-    if let v = self._accumulatedFees {
+    } }()
+    try { if let v = self._accumulatedFees {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    }
-    if let v = self._feesUpdated {
+    } }()
+    try { if let v = self._feesUpdated {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-    }
+    } }()
     if !self.interestFactor.isEmpty {
       try visitor.visitSingularStringField(value: self.interestFactor, fieldNumber: 8)
     }
@@ -268,15 +280,19 @@ extension Kava_Cdp_V1beta1_Deposit: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.cdpID != 0 {
       try visitor.visitSingularUInt64Field(value: self.cdpID, fieldNumber: 1)
     }
     if !self.depositor.isEmpty {
       try visitor.visitSingularBytesField(value: self.depositor, fieldNumber: 2)
     }
-    if let v = self._amount {
+    try { if let v = self._amount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -310,12 +326,16 @@ extension Kava_Cdp_V1beta1_TotalPrincipal: SwiftProtobuf.Message, SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.collateralType.isEmpty {
       try visitor.visitSingularStringField(value: self.collateralType, fieldNumber: 1)
     }
-    if let v = self._amount {
+    try { if let v = self._amount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -348,12 +368,16 @@ extension Kava_Cdp_V1beta1_TotalCollateral: SwiftProtobuf.Message, SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.collateralType.isEmpty {
       try visitor.visitSingularStringField(value: self.collateralType, fieldNumber: 1)
     }
-    if let v = self._amount {
+    try { if let v = self._amount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

@@ -139,6 +139,12 @@ struct Axelar_Snapshot_Exported_V1beta1_Snapshot {
   fileprivate var _timestamp: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Axelar_Snapshot_Exported_V1beta1_ValidatorIllegibility: @unchecked Sendable {}
+extension Axelar_Snapshot_Exported_V1beta1_Validator: @unchecked Sendable {}
+extension Axelar_Snapshot_Exported_V1beta1_Snapshot: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "axelar.snapshot.exported.v1beta1"
@@ -176,9 +182,13 @@ extension Axelar_Snapshot_Exported_V1beta1_Validator: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._sdkValidator {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._sdkValidator {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if self.shareCount != 0 {
       try visitor.visitSingularInt64Field(value: self.shareCount, fieldNumber: 2)
     }
@@ -224,12 +234,16 @@ extension Axelar_Snapshot_Exported_V1beta1_Snapshot: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.validators.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.validators, fieldNumber: 1)
     }
-    if let v = self._timestamp {
+    try { if let v = self._timestamp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if self.height != 0 {
       try visitor.visitSingularInt64Field(value: self.height, fieldNumber: 3)
     }

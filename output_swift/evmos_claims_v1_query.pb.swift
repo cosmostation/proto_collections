@@ -162,6 +162,17 @@ struct Evmos_Claims_V1_QueryClaimsRecordResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Evmos_Claims_V1_QueryTotalUnclaimedRequest: @unchecked Sendable {}
+extension Evmos_Claims_V1_QueryTotalUnclaimedResponse: @unchecked Sendable {}
+extension Evmos_Claims_V1_QueryParamsRequest: @unchecked Sendable {}
+extension Evmos_Claims_V1_QueryParamsResponse: @unchecked Sendable {}
+extension Evmos_Claims_V1_QueryClaimsRecordsRequest: @unchecked Sendable {}
+extension Evmos_Claims_V1_QueryClaimsRecordsResponse: @unchecked Sendable {}
+extension Evmos_Claims_V1_QueryClaimsRecordRequest: @unchecked Sendable {}
+extension Evmos_Claims_V1_QueryClaimsRecordResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "evmos.claims.v1"
@@ -255,9 +266,13 @@ extension Evmos_Claims_V1_QueryParamsResponse: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._params {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -287,9 +302,13 @@ extension Evmos_Claims_V1_QueryClaimsRecordsRequest: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._pagination {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -321,12 +340,16 @@ extension Evmos_Claims_V1_QueryClaimsRecordsResponse: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.claims.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.claims, fieldNumber: 1)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

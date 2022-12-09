@@ -47,6 +47,10 @@ struct Cosmos_Crypto_Hd_V1_BIP44Params {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Cosmos_Crypto_Hd_V1_BIP44Params: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.crypto.hd.v1"

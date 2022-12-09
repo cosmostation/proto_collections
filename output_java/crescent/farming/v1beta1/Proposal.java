@@ -229,92 +229,6 @@ public final class Proposal {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PublicPlanProposal(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              title_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                addPlanRequests_ = new java.util.ArrayList<crescent.farming.v1beta1.Proposal.AddPlanRequest>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              addPlanRequests_.add(
-                  input.readMessage(crescent.farming.v1beta1.Proposal.AddPlanRequest.parser(), extensionRegistry));
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                modifyPlanRequests_ = new java.util.ArrayList<crescent.farming.v1beta1.Proposal.ModifyPlanRequest>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              modifyPlanRequests_.add(
-                  input.readMessage(crescent.farming.v1beta1.Proposal.ModifyPlanRequest.parser(), extensionRegistry));
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                deletePlanRequests_ = new java.util.ArrayList<crescent.farming.v1beta1.Proposal.DeletePlanRequest>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              deletePlanRequests_.add(
-                  input.readMessage(crescent.farming.v1beta1.Proposal.DeletePlanRequest.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          addPlanRequests_ = java.util.Collections.unmodifiableList(addPlanRequests_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          modifyPlanRequests_ = java.util.Collections.unmodifiableList(modifyPlanRequests_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          deletePlanRequests_ = java.util.Collections.unmodifiableList(deletePlanRequests_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return crescent.farming.v1beta1.Proposal.internal_static_crescent_farming_v1beta1_PublicPlanProposal_descriptor;
@@ -614,10 +528,10 @@ public final class Proposal {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getTitleBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, title_);
       }
-      if (!getDescriptionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
       }
       for (int i = 0; i < addPlanRequests_.size(); i++) {
@@ -629,7 +543,7 @@ public final class Proposal {
       for (int i = 0; i < deletePlanRequests_.size(); i++) {
         output.writeMessage(5, deletePlanRequests_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -638,10 +552,10 @@ public final class Proposal {
       if (size != -1) return size;
 
       size = 0;
-      if (!getTitleBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, title_);
       }
-      if (!getDescriptionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
       }
       for (int i = 0; i < addPlanRequests_.size(); i++) {
@@ -656,7 +570,7 @@ public final class Proposal {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, deletePlanRequests_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -681,7 +595,7 @@ public final class Proposal {
           .equals(other.getModifyPlanRequestsList())) return false;
       if (!getDeletePlanRequestsList()
           .equals(other.getDeletePlanRequestsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -708,7 +622,7 @@ public final class Proposal {
         hash = (37 * hash) + DELETE_PLAN_REQUESTS_FIELD_NUMBER;
         hash = (53 * hash) + getDeletePlanRequestsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -832,21 +746,13 @@ public final class Proposal {
 
       // Construct using crescent.farming.v1beta1.Proposal.PublicPlanProposal.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getAddPlanRequestsFieldBuilder();
-          getModifyPlanRequestsFieldBuilder();
-          getDeletePlanRequestsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -857,22 +763,25 @@ public final class Proposal {
 
         if (addPlanRequestsBuilder_ == null) {
           addPlanRequests_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          addPlanRequests_ = null;
           addPlanRequestsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (modifyPlanRequestsBuilder_ == null) {
           modifyPlanRequests_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          modifyPlanRequests_ = null;
           modifyPlanRequestsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (deletePlanRequestsBuilder_ == null) {
           deletePlanRequests_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          deletePlanRequests_ = null;
           deletePlanRequestsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -1063,7 +972,7 @@ public final class Proposal {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1078,17 +987,79 @@ public final class Proposal {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        crescent.farming.v1beta1.Proposal.PublicPlanProposal parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                title_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                description_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              case 26: {
+                crescent.farming.v1beta1.Proposal.AddPlanRequest m =
+                    input.readMessage(
+                        crescent.farming.v1beta1.Proposal.AddPlanRequest.parser(),
+                        extensionRegistry);
+                if (addPlanRequestsBuilder_ == null) {
+                  ensureAddPlanRequestsIsMutable();
+                  addPlanRequests_.add(m);
+                } else {
+                  addPlanRequestsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 34: {
+                crescent.farming.v1beta1.Proposal.ModifyPlanRequest m =
+                    input.readMessage(
+                        crescent.farming.v1beta1.Proposal.ModifyPlanRequest.parser(),
+                        extensionRegistry);
+                if (modifyPlanRequestsBuilder_ == null) {
+                  ensureModifyPlanRequestsIsMutable();
+                  modifyPlanRequests_.add(m);
+                } else {
+                  modifyPlanRequestsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+              case 42: {
+                crescent.farming.v1beta1.Proposal.DeletePlanRequest m =
+                    input.readMessage(
+                        crescent.farming.v1beta1.Proposal.DeletePlanRequest.parser(),
+                        extensionRegistry);
+                if (deletePlanRequestsBuilder_ == null) {
+                  ensureDeletePlanRequestsIsMutable();
+                  deletePlanRequests_.add(m);
+                } else {
+                  deletePlanRequestsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (crescent.farming.v1beta1.Proposal.PublicPlanProposal) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -2253,7 +2224,18 @@ public final class Proposal {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PublicPlanProposal(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2539,118 +2521,6 @@ public final class Proposal {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private AddPlanRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              farmingPoolAddress_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              terminationAddress_ = s;
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                stakingCoinWeights_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.DecCoin>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              stakingCoinWeights_.add(
-                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.DecCoin.parser(), extensionRegistry));
-              break;
-            }
-            case 42: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (startTime_ != null) {
-                subBuilder = startTime_.toBuilder();
-              }
-              startTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(startTime_);
-                startTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 50: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (endTime_ != null) {
-                subBuilder = endTime_.toBuilder();
-              }
-              endTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(endTime_);
-                endTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                epochAmount_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              epochAmount_.add(
-                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
-              break;
-            }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              epochRatio_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          stakingCoinWeights_ = java.util.Collections.unmodifiableList(stakingCoinWeights_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          epochAmount_ = java.util.Collections.unmodifiableList(epochAmount_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -3063,13 +2933,13 @@ public final class Proposal {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (!getFarmingPoolAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(farmingPoolAddress_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, farmingPoolAddress_);
       }
-      if (!getTerminationAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(terminationAddress_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, terminationAddress_);
       }
       for (int i = 0; i < stakingCoinWeights_.size(); i++) {
@@ -3084,10 +2954,10 @@ public final class Proposal {
       for (int i = 0; i < epochAmount_.size(); i++) {
         output.writeMessage(7, epochAmount_.get(i));
       }
-      if (!getEpochRatioBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(epochRatio_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, epochRatio_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -3096,13 +2966,13 @@ public final class Proposal {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (!getFarmingPoolAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(farmingPoolAddress_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, farmingPoolAddress_);
       }
-      if (!getTerminationAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(terminationAddress_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, terminationAddress_);
       }
       for (int i = 0; i < stakingCoinWeights_.size(); i++) {
@@ -3121,10 +2991,10 @@ public final class Proposal {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, epochAmount_.get(i));
       }
-      if (!getEpochRatioBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(epochRatio_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, epochRatio_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3161,7 +3031,7 @@ public final class Proposal {
           .equals(other.getEpochAmountList())) return false;
       if (!getEpochRatio()
           .equals(other.getEpochRatio())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3196,7 +3066,7 @@ public final class Proposal {
       }
       hash = (37 * hash) + EPOCH_RATIO_FIELD_NUMBER;
       hash = (53 * hash) + getEpochRatio().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3317,20 +3187,13 @@ public final class Proposal {
 
       // Construct using crescent.farming.v1beta1.Proposal.AddPlanRequest.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getStakingCoinWeightsFieldBuilder();
-          getEpochAmountFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -3343,10 +3206,11 @@ public final class Proposal {
 
         if (stakingCoinWeightsBuilder_ == null) {
           stakingCoinWeights_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          stakingCoinWeights_ = null;
           stakingCoinWeightsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (startTimeBuilder_ == null) {
           startTime_ = null;
         } else {
@@ -3361,10 +3225,11 @@ public final class Proposal {
         }
         if (epochAmountBuilder_ == null) {
           epochAmount_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          epochAmount_ = null;
           epochAmountBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         epochRatio_ = "";
 
         return this;
@@ -3548,7 +3413,7 @@ public final class Proposal {
           epochRatio_ = other.epochRatio_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3563,17 +3428,90 @@ public final class Proposal {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        crescent.farming.v1beta1.Proposal.AddPlanRequest parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                farmingPoolAddress_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              case 26: {
+                terminationAddress_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+              case 34: {
+                cosmos.base.v1beta1.CoinOuterClass.DecCoin m =
+                    input.readMessage(
+                        cosmos.base.v1beta1.CoinOuterClass.DecCoin.parser(),
+                        extensionRegistry);
+                if (stakingCoinWeightsBuilder_ == null) {
+                  ensureStakingCoinWeightsIsMutable();
+                  stakingCoinWeights_.add(m);
+                } else {
+                  stakingCoinWeightsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+              case 42: {
+                input.readMessage(
+                    getStartTimeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 42
+              case 50: {
+                input.readMessage(
+                    getEndTimeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 50
+              case 58: {
+                cosmos.base.v1beta1.CoinOuterClass.Coin m =
+                    input.readMessage(
+                        cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
+                        extensionRegistry);
+                if (epochAmountBuilder_ == null) {
+                  ensureEpochAmountIsMutable();
+                  epochAmount_.add(m);
+                } else {
+                  epochAmountBuilder_.addMessage(m);
+                }
+                break;
+              } // case 58
+              case 66: {
+                epochRatio_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 66
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (crescent.farming.v1beta1.Proposal.AddPlanRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -4938,7 +4876,18 @@ public final class Proposal {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AddPlanRequest(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -5234,123 +5183,6 @@ public final class Proposal {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private ModifyPlanRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              planId_ = input.readUInt64();
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              farmingPoolAddress_ = s;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              terminationAddress_ = s;
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                stakingCoinWeights_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.DecCoin>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              stakingCoinWeights_.add(
-                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.DecCoin.parser(), extensionRegistry));
-              break;
-            }
-            case 50: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (startTime_ != null) {
-                subBuilder = startTime_.toBuilder();
-              }
-              startTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(startTime_);
-                startTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 58: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (endTime_ != null) {
-                subBuilder = endTime_.toBuilder();
-              }
-              endTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(endTime_);
-                endTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                epochAmount_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              epochAmount_.add(
-                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
-              break;
-            }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              epochRatio_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          stakingCoinWeights_ = java.util.Collections.unmodifiableList(stakingCoinWeights_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          epochAmount_ = java.util.Collections.unmodifiableList(epochAmount_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -5781,13 +5613,13 @@ public final class Proposal {
       if (planId_ != 0L) {
         output.writeUInt64(1, planId_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
       }
-      if (!getFarmingPoolAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(farmingPoolAddress_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, farmingPoolAddress_);
       }
-      if (!getTerminationAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(terminationAddress_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, terminationAddress_);
       }
       for (int i = 0; i < stakingCoinWeights_.size(); i++) {
@@ -5802,10 +5634,10 @@ public final class Proposal {
       for (int i = 0; i < epochAmount_.size(); i++) {
         output.writeMessage(8, epochAmount_.get(i));
       }
-      if (!getEpochRatioBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(epochRatio_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, epochRatio_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -5818,13 +5650,13 @@ public final class Proposal {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(1, planId_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
       }
-      if (!getFarmingPoolAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(farmingPoolAddress_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, farmingPoolAddress_);
       }
-      if (!getTerminationAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(terminationAddress_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, terminationAddress_);
       }
       for (int i = 0; i < stakingCoinWeights_.size(); i++) {
@@ -5843,10 +5675,10 @@ public final class Proposal {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, epochAmount_.get(i));
       }
-      if (!getEpochRatioBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(epochRatio_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, epochRatio_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5885,7 +5717,7 @@ public final class Proposal {
           .equals(other.getEpochAmountList())) return false;
       if (!getEpochRatio()
           .equals(other.getEpochRatio())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -5923,7 +5755,7 @@ public final class Proposal {
       }
       hash = (37 * hash) + EPOCH_RATIO_FIELD_NUMBER;
       hash = (53 * hash) + getEpochRatio().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -6044,20 +5876,13 @@ public final class Proposal {
 
       // Construct using crescent.farming.v1beta1.Proposal.ModifyPlanRequest.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getStakingCoinWeightsFieldBuilder();
-          getEpochAmountFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -6072,10 +5897,11 @@ public final class Proposal {
 
         if (stakingCoinWeightsBuilder_ == null) {
           stakingCoinWeights_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          stakingCoinWeights_ = null;
           stakingCoinWeightsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (startTimeBuilder_ == null) {
           startTime_ = null;
         } else {
@@ -6090,10 +5916,11 @@ public final class Proposal {
         }
         if (epochAmountBuilder_ == null) {
           epochAmount_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          epochAmount_ = null;
           epochAmountBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         epochRatio_ = "";
 
         return this;
@@ -6281,7 +6108,7 @@ public final class Proposal {
           epochRatio_ = other.epochRatio_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -6296,17 +6123,95 @@ public final class Proposal {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        crescent.farming.v1beta1.Proposal.ModifyPlanRequest parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                planId_ = input.readUInt64();
+
+                break;
+              } // case 8
+              case 18: {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              case 26: {
+                farmingPoolAddress_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+              case 34: {
+                terminationAddress_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+              case 42: {
+                cosmos.base.v1beta1.CoinOuterClass.DecCoin m =
+                    input.readMessage(
+                        cosmos.base.v1beta1.CoinOuterClass.DecCoin.parser(),
+                        extensionRegistry);
+                if (stakingCoinWeightsBuilder_ == null) {
+                  ensureStakingCoinWeightsIsMutable();
+                  stakingCoinWeights_.add(m);
+                } else {
+                  stakingCoinWeightsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+              case 50: {
+                input.readMessage(
+                    getStartTimeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 50
+              case 58: {
+                input.readMessage(
+                    getEndTimeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 58
+              case 66: {
+                cosmos.base.v1beta1.CoinOuterClass.Coin m =
+                    input.readMessage(
+                        cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
+                        extensionRegistry);
+                if (epochAmountBuilder_ == null) {
+                  ensureEpochAmountIsMutable();
+                  epochAmount_.add(m);
+                } else {
+                  epochAmountBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+              case 74: {
+                epochRatio_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 74
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (crescent.farming.v1beta1.Proposal.ModifyPlanRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -7714,7 +7619,18 @@ public final class Proposal {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ModifyPlanRequest(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -7779,48 +7695,6 @@ public final class Proposal {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DeletePlanRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              planId_ = input.readUInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return crescent.farming.v1beta1.Proposal.internal_static_crescent_farming_v1beta1_DeletePlanRequest_descriptor;
@@ -7866,7 +7740,7 @@ public final class Proposal {
       if (planId_ != 0L) {
         output.writeUInt64(1, planId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -7879,7 +7753,7 @@ public final class Proposal {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(1, planId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -7896,7 +7770,7 @@ public final class Proposal {
 
       if (getPlanId()
           != other.getPlanId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -7910,7 +7784,7 @@ public final class Proposal {
       hash = (37 * hash) + PLAN_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getPlanId());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -8031,18 +7905,13 @@ public final class Proposal {
 
       // Construct using crescent.farming.v1beta1.Proposal.DeletePlanRequest.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -8127,7 +7996,7 @@ public final class Proposal {
         if (other.getPlanId() != 0L) {
           setPlanId(other.getPlanId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -8142,17 +8011,35 @@ public final class Proposal {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        crescent.farming.v1beta1.Proposal.DeletePlanRequest parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                planId_ = input.readUInt64();
+
+                break;
+              } // case 8
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (crescent.farming.v1beta1.Proposal.DeletePlanRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -8231,7 +8118,18 @@ public final class Proposal {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DeletePlanRequest(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

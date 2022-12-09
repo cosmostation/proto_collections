@@ -216,121 +216,6 @@ public final class Genesis {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Params(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              gravityId_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              contractSourceHash_ = s;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              bridgeEthereumAddress_ = s;
-              break;
-            }
-            case 40: {
-
-              bridgeChainId_ = input.readUInt64();
-              break;
-            }
-            case 48: {
-
-              signedSignerSetTxsWindow_ = input.readUInt64();
-              break;
-            }
-            case 56: {
-
-              signedBatchesWindow_ = input.readUInt64();
-              break;
-            }
-            case 64: {
-
-              ethereumSignaturesWindow_ = input.readUInt64();
-              break;
-            }
-            case 80: {
-
-              targetEthTxTimeout_ = input.readUInt64();
-              break;
-            }
-            case 88: {
-
-              averageBlockTime_ = input.readUInt64();
-              break;
-            }
-            case 96: {
-
-              averageEthereumBlockTime_ = input.readUInt64();
-              break;
-            }
-            case 106: {
-
-              slashFractionSignerSetTx_ = input.readBytes();
-              break;
-            }
-            case 114: {
-
-              slashFractionBatch_ = input.readBytes();
-              break;
-            }
-            case 122: {
-
-              slashFractionEthereumSignature_ = input.readBytes();
-              break;
-            }
-            case 130: {
-
-              slashFractionConflictingEthereumSignature_ = input.readBytes();
-              break;
-            }
-            case 136: {
-
-              unbondSlashingSignerSetTxsWindow_ = input.readUInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return gravity.v1.Genesis.internal_static_gravity_v1_Params_descriptor;
@@ -608,13 +493,13 @@ public final class Genesis {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getGravityIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gravityId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, gravityId_);
       }
-      if (!getContractSourceHashBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(contractSourceHash_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, contractSourceHash_);
       }
-      if (!getBridgeEthereumAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bridgeEthereumAddress_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, bridgeEthereumAddress_);
       }
       if (bridgeChainId_ != 0L) {
@@ -653,7 +538,7 @@ public final class Genesis {
       if (unbondSlashingSignerSetTxsWindow_ != 0L) {
         output.writeUInt64(17, unbondSlashingSignerSetTxsWindow_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -662,13 +547,13 @@ public final class Genesis {
       if (size != -1) return size;
 
       size = 0;
-      if (!getGravityIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gravityId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, gravityId_);
       }
-      if (!getContractSourceHashBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(contractSourceHash_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, contractSourceHash_);
       }
-      if (!getBridgeEthereumAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bridgeEthereumAddress_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, bridgeEthereumAddress_);
       }
       if (bridgeChainId_ != 0L) {
@@ -719,7 +604,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(17, unbondSlashingSignerSetTxsWindow_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -764,7 +649,7 @@ public final class Genesis {
           .equals(other.getSlashFractionConflictingEthereumSignature())) return false;
       if (getUnbondSlashingSignerSetTxsWindow()
           != other.getUnbondSlashingSignerSetTxsWindow()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -813,7 +698,7 @@ public final class Genesis {
       hash = (37 * hash) + UNBOND_SLASHING_SIGNER_SET_TXS_WINDOW_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUnbondSlashingSignerSetTxsWindow());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -982,18 +867,13 @@ public final class Genesis {
 
       // Construct using gravity.v1.Genesis.Params.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -1165,7 +1045,7 @@ public final class Genesis {
         if (other.getUnbondSlashingSignerSetTxsWindow() != 0L) {
           setUnbondSlashingSignerSetTxsWindow(other.getUnbondSlashingSignerSetTxsWindow());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1180,17 +1060,105 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        gravity.v1.Genesis.Params parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                gravityId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                contractSourceHash_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              case 34: {
+                bridgeEthereumAddress_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+              case 40: {
+                bridgeChainId_ = input.readUInt64();
+
+                break;
+              } // case 40
+              case 48: {
+                signedSignerSetTxsWindow_ = input.readUInt64();
+
+                break;
+              } // case 48
+              case 56: {
+                signedBatchesWindow_ = input.readUInt64();
+
+                break;
+              } // case 56
+              case 64: {
+                ethereumSignaturesWindow_ = input.readUInt64();
+
+                break;
+              } // case 64
+              case 80: {
+                targetEthTxTimeout_ = input.readUInt64();
+
+                break;
+              } // case 80
+              case 88: {
+                averageBlockTime_ = input.readUInt64();
+
+                break;
+              } // case 88
+              case 96: {
+                averageEthereumBlockTime_ = input.readUInt64();
+
+                break;
+              } // case 96
+              case 106: {
+                slashFractionSignerSetTx_ = input.readBytes();
+
+                break;
+              } // case 106
+              case 114: {
+                slashFractionBatch_ = input.readBytes();
+
+                break;
+              } // case 114
+              case 122: {
+                slashFractionEthereumSignature_ = input.readBytes();
+
+                break;
+              } // case 122
+              case 130: {
+                slashFractionConflictingEthereumSignature_ = input.readBytes();
+
+                break;
+              } // case 130
+              case 136: {
+                unbondSlashingSignerSetTxsWindow_ = input.readUInt64();
+
+                break;
+              } // case 136
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (gravity.v1.Genesis.Params) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1850,7 +1818,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Params(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2077,134 +2056,6 @@ public final class Genesis {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private GenesisState(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              gravity.v1.Genesis.Params.Builder subBuilder = null;
-              if (params_ != null) {
-                subBuilder = params_.toBuilder();
-              }
-              params_ = input.readMessage(gravity.v1.Genesis.Params.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(params_);
-                params_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 16: {
-
-              lastObservedEventNonce_ = input.readUInt64();
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                outgoingTxs_ = new java.util.ArrayList<com.google.protobuf2.Any>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              outgoingTxs_.add(
-                  input.readMessage(com.google.protobuf2.Any.parser(), extensionRegistry));
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                confirmations_ = new java.util.ArrayList<com.google.protobuf2.Any>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              confirmations_.add(
-                  input.readMessage(com.google.protobuf2.Any.parser(), extensionRegistry));
-              break;
-            }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                ethereumEventVoteRecords_ = new java.util.ArrayList<gravity.v1.Gravity.EthereumEventVoteRecord>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              ethereumEventVoteRecords_.add(
-                  input.readMessage(gravity.v1.Gravity.EthereumEventVoteRecord.parser(), extensionRegistry));
-              break;
-            }
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                delegateKeys_ = new java.util.ArrayList<gravity.v1.Msgs.MsgDelegateKeys>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              delegateKeys_.add(
-                  input.readMessage(gravity.v1.Msgs.MsgDelegateKeys.parser(), extensionRegistry));
-              break;
-            }
-            case 90: {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                erc20ToDenoms_ = new java.util.ArrayList<gravity.v1.Genesis.ERC20ToDenom>();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              erc20ToDenoms_.add(
-                  input.readMessage(gravity.v1.Genesis.ERC20ToDenom.parser(), extensionRegistry));
-              break;
-            }
-            case 98: {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                unbatchedSendToEthereumTxs_ = new java.util.ArrayList<gravity.v1.Gravity.SendToEthereum>();
-                mutable_bitField0_ |= 0x00000020;
-              }
-              unbatchedSendToEthereumTxs_.add(
-                  input.readMessage(gravity.v1.Gravity.SendToEthereum.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          outgoingTxs_ = java.util.Collections.unmodifiableList(outgoingTxs_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          confirmations_ = java.util.Collections.unmodifiableList(confirmations_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          ethereumEventVoteRecords_ = java.util.Collections.unmodifiableList(ethereumEventVoteRecords_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          delegateKeys_ = java.util.Collections.unmodifiableList(delegateKeys_);
-        }
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
-          erc20ToDenoms_ = java.util.Collections.unmodifiableList(erc20ToDenoms_);
-        }
-        if (((mutable_bitField0_ & 0x00000020) != 0)) {
-          unbatchedSendToEthereumTxs_ = java.util.Collections.unmodifiableList(unbatchedSendToEthereumTxs_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -2534,7 +2385,7 @@ public final class Genesis {
       for (int i = 0; i < unbatchedSendToEthereumTxs_.size(); i++) {
         output.writeMessage(12, unbatchedSendToEthereumTxs_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2575,7 +2426,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, unbatchedSendToEthereumTxs_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2609,7 +2460,7 @@ public final class Genesis {
           .equals(other.getErc20ToDenomsList())) return false;
       if (!getUnbatchedSendToEthereumTxsList()
           .equals(other.getUnbatchedSendToEthereumTxsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2651,7 +2502,7 @@ public final class Genesis {
         hash = (37 * hash) + UNBATCHED_SEND_TO_ETHEREUM_TXS_FIELD_NUMBER;
         hash = (53 * hash) + getUnbatchedSendToEthereumTxsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2774,24 +2625,13 @@ public final class Genesis {
 
       // Construct using gravity.v1.Genesis.GenesisState.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getOutgoingTxsFieldBuilder();
-          getConfirmationsFieldBuilder();
-          getEthereumEventVoteRecordsFieldBuilder();
-          getDelegateKeysFieldBuilder();
-          getErc20ToDenomsFieldBuilder();
-          getUnbatchedSendToEthereumTxsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -2806,40 +2646,46 @@ public final class Genesis {
 
         if (outgoingTxsBuilder_ == null) {
           outgoingTxs_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          outgoingTxs_ = null;
           outgoingTxsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (confirmationsBuilder_ == null) {
           confirmations_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          confirmations_ = null;
           confirmationsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (ethereumEventVoteRecordsBuilder_ == null) {
           ethereumEventVoteRecords_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          ethereumEventVoteRecords_ = null;
           ethereumEventVoteRecordsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (delegateKeysBuilder_ == null) {
           delegateKeys_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
+          delegateKeys_ = null;
           delegateKeysBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         if (erc20ToDenomsBuilder_ == null) {
           erc20ToDenoms_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
+          erc20ToDenoms_ = null;
           erc20ToDenomsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000010);
         if (unbatchedSendToEthereumTxsBuilder_ == null) {
           unbatchedSendToEthereumTxs_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
+          unbatchedSendToEthereumTxs_ = null;
           unbatchedSendToEthereumTxsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -3137,7 +2983,7 @@ public final class Genesis {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3152,17 +2998,120 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        gravity.v1.Genesis.GenesisState parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getParamsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 10
+              case 16: {
+                lastObservedEventNonce_ = input.readUInt64();
+
+                break;
+              } // case 16
+              case 26: {
+                com.google.protobuf2.Any m =
+                    input.readMessage(
+                        com.google.protobuf2.Any.parser(),
+                        extensionRegistry);
+                if (outgoingTxsBuilder_ == null) {
+                  ensureOutgoingTxsIsMutable();
+                  outgoingTxs_.add(m);
+                } else {
+                  outgoingTxsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 34: {
+                com.google.protobuf2.Any m =
+                    input.readMessage(
+                        com.google.protobuf2.Any.parser(),
+                        extensionRegistry);
+                if (confirmationsBuilder_ == null) {
+                  ensureConfirmationsIsMutable();
+                  confirmations_.add(m);
+                } else {
+                  confirmationsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+              case 74: {
+                gravity.v1.Gravity.EthereumEventVoteRecord m =
+                    input.readMessage(
+                        gravity.v1.Gravity.EthereumEventVoteRecord.parser(),
+                        extensionRegistry);
+                if (ethereumEventVoteRecordsBuilder_ == null) {
+                  ensureEthereumEventVoteRecordsIsMutable();
+                  ethereumEventVoteRecords_.add(m);
+                } else {
+                  ethereumEventVoteRecordsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+              case 82: {
+                gravity.v1.Msgs.MsgDelegateKeys m =
+                    input.readMessage(
+                        gravity.v1.Msgs.MsgDelegateKeys.parser(),
+                        extensionRegistry);
+                if (delegateKeysBuilder_ == null) {
+                  ensureDelegateKeysIsMutable();
+                  delegateKeys_.add(m);
+                } else {
+                  delegateKeysBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
+              case 90: {
+                gravity.v1.Genesis.ERC20ToDenom m =
+                    input.readMessage(
+                        gravity.v1.Genesis.ERC20ToDenom.parser(),
+                        extensionRegistry);
+                if (erc20ToDenomsBuilder_ == null) {
+                  ensureErc20ToDenomsIsMutable();
+                  erc20ToDenoms_.add(m);
+                } else {
+                  erc20ToDenomsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
+              case 98: {
+                gravity.v1.Gravity.SendToEthereum m =
+                    input.readMessage(
+                        gravity.v1.Gravity.SendToEthereum.parser(),
+                        extensionRegistry);
+                if (unbatchedSendToEthereumTxsBuilder_ == null) {
+                  ensureUnbatchedSendToEthereumTxsIsMutable();
+                  unbatchedSendToEthereumTxs_.add(m);
+                } else {
+                  unbatchedSendToEthereumTxsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 98
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (gravity.v1.Genesis.GenesisState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -4789,7 +4738,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GenesisState(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -4870,55 +4830,6 @@ public final class Genesis {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private ERC20ToDenom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              erc20_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              denom_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -5023,13 +4934,13 @@ public final class Genesis {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getErc20Bytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(erc20_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, erc20_);
       }
-      if (!getDenomBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(denom_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, denom_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -5038,13 +4949,13 @@ public final class Genesis {
       if (size != -1) return size;
 
       size = 0;
-      if (!getErc20Bytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(erc20_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, erc20_);
       }
-      if (!getDenomBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(denom_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, denom_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5063,7 +4974,7 @@ public final class Genesis {
           .equals(other.getErc20())) return false;
       if (!getDenom()
           .equals(other.getDenom())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -5078,7 +4989,7 @@ public final class Genesis {
       hash = (53 * hash) + getErc20().hashCode();
       hash = (37 * hash) + DENOM_FIELD_NUMBER;
       hash = (53 * hash) + getDenom().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5200,18 +5111,13 @@ public final class Genesis {
 
       // Construct using gravity.v1.Genesis.ERC20ToDenom.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -5304,7 +5210,7 @@ public final class Genesis {
           denom_ = other.denom_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -5319,17 +5225,40 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        gravity.v1.Genesis.ERC20ToDenom parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                erc20_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                denom_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (gravity.v1.Genesis.ERC20ToDenom) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -5517,7 +5446,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ERC20ToDenom(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

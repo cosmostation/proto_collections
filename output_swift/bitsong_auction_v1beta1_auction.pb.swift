@@ -82,6 +82,11 @@ struct Bitsong_Auction_V1beta1_Bid {
   fileprivate var _bidAmount: Cosmos_Base_V1beta1_Coin? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Bitsong_Auction_V1beta1_Auction: @unchecked Sendable {}
+extension Bitsong_Auction_V1beta1_Bid: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "bitsong.auction.v1beta1"
@@ -119,6 +124,10 @@ extension Bitsong_Auction_V1beta1_Auction: SwiftProtobuf.Message, SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.id != 0 {
       try visitor.visitSingularUInt64Field(value: self.id, fieldNumber: 1)
     }
@@ -134,9 +143,9 @@ extension Bitsong_Auction_V1beta1_Auction: SwiftProtobuf.Message, SwiftProtobuf.
     if self.duration != 0 {
       try visitor.visitSingularUInt64Field(value: self.duration, fieldNumber: 5)
     }
-    if let v = self._minAmount {
+    try { if let v = self._minAmount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    }
+    } }()
     if !self.owner.isEmpty {
       try visitor.visitSingularStringField(value: self.owner, fieldNumber: 7)
     }
@@ -183,15 +192,19 @@ extension Bitsong_Auction_V1beta1_Bid: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.auctionID != 0 {
       try visitor.visitSingularUInt64Field(value: self.auctionID, fieldNumber: 1)
     }
     if !self.bidder.isEmpty {
       try visitor.visitSingularStringField(value: self.bidder, fieldNumber: 2)
     }
-    if let v = self._bidAmount {
+    try { if let v = self._bidAmount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

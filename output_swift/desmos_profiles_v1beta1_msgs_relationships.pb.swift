@@ -139,6 +139,17 @@ struct Desmos_Profiles_V1beta1_MsgUnblockUserResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Desmos_Profiles_V1beta1_MsgCreateRelationship: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_MsgCreateRelationshipResponse: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_MsgDeleteRelationship: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_MsgDeleteRelationshipResponse: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_MsgBlockUser: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_MsgBlockUserResponse: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_MsgUnblockUser: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_MsgUnblockUserResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "desmos.profiles.v1beta1"

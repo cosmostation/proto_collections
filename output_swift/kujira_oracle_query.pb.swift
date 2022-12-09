@@ -348,6 +348,31 @@ struct Kujira_Oracle_QueryParamsResponse {
   fileprivate var _params: Kujira_Oracle_Params? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Kujira_Oracle_QueryExchangeRateRequest: @unchecked Sendable {}
+extension Kujira_Oracle_QueryExchangeRateResponse: @unchecked Sendable {}
+extension Kujira_Oracle_QueryExchangeRatesRequest: @unchecked Sendable {}
+extension Kujira_Oracle_QueryExchangeRatesResponse: @unchecked Sendable {}
+extension Kujira_Oracle_QueryActivesRequest: @unchecked Sendable {}
+extension Kujira_Oracle_QueryActivesResponse: @unchecked Sendable {}
+extension Kujira_Oracle_QueryVoteTargetsRequest: @unchecked Sendable {}
+extension Kujira_Oracle_QueryVoteTargetsResponse: @unchecked Sendable {}
+extension Kujira_Oracle_QueryFeederDelegationRequest: @unchecked Sendable {}
+extension Kujira_Oracle_QueryFeederDelegationResponse: @unchecked Sendable {}
+extension Kujira_Oracle_QueryMissCounterRequest: @unchecked Sendable {}
+extension Kujira_Oracle_QueryMissCounterResponse: @unchecked Sendable {}
+extension Kujira_Oracle_QueryAggregatePrevoteRequest: @unchecked Sendable {}
+extension Kujira_Oracle_QueryAggregatePrevoteResponse: @unchecked Sendable {}
+extension Kujira_Oracle_QueryAggregatePrevotesRequest: @unchecked Sendable {}
+extension Kujira_Oracle_QueryAggregatePrevotesResponse: @unchecked Sendable {}
+extension Kujira_Oracle_QueryAggregateVoteRequest: @unchecked Sendable {}
+extension Kujira_Oracle_QueryAggregateVoteResponse: @unchecked Sendable {}
+extension Kujira_Oracle_QueryAggregateVotesRequest: @unchecked Sendable {}
+extension Kujira_Oracle_QueryAggregateVotesResponse: @unchecked Sendable {}
+extension Kujira_Oracle_QueryParamsRequest: @unchecked Sendable {}
+extension Kujira_Oracle_QueryParamsResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kujira.oracle"
@@ -748,9 +773,13 @@ extension Kujira_Oracle_QueryAggregatePrevoteResponse: SwiftProtobuf.Message, Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._aggregatePrevote {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._aggregatePrevote {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -863,9 +892,13 @@ extension Kujira_Oracle_QueryAggregateVoteResponse: SwiftProtobuf.Message, Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._aggregateVote {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._aggregateVote {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -965,9 +998,13 @@ extension Kujira_Oracle_QueryParamsResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._params {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

@@ -239,6 +239,23 @@ struct Stafihub_Stafihub_Rmintreward_QueryClaimInfoDetailResponse {
   fileprivate var _claimInfo: Stafihub_Stafihub_Rmintreward_UserClaimInfo? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Stafihub_Stafihub_Rmintreward_QueryParamsRequest: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rmintreward_QueryParamsResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rmintreward_QueryActLatestCycleRequest: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rmintreward_QueryActLatestCycleResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rmintreward_QueryActDetailRequest: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rmintreward_QueryActDetailResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rmintreward_QueryUserMintCountRequest: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rmintreward_QueryUserMintCountResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rmintreward_QueryUserActsRequest: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rmintreward_QueryUserActsResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rmintreward_QueryActCurrentCycleRequest: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rmintreward_QueryActCurrentCycleResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rmintreward_QueryClaimInfoDetailRequest: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rmintreward_QueryClaimInfoDetailResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stafihub.stafihub.rmintreward"
@@ -281,9 +298,13 @@ extension Stafihub_Stafihub_Rmintreward_QueryParamsResponse: SwiftProtobuf.Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._params {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -415,9 +436,13 @@ extension Stafihub_Stafihub_Rmintreward_QueryActDetailResponse: SwiftProtobuf.Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._act {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._act {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -561,9 +586,13 @@ extension Stafihub_Stafihub_Rmintreward_QueryUserActsResponse: SwiftProtobuf.Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._acts {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._acts {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -707,9 +736,13 @@ extension Stafihub_Stafihub_Rmintreward_QueryClaimInfoDetailResponse: SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._claimInfo {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._claimInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

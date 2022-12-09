@@ -226,6 +226,46 @@ struct Osmosis_Superfluid_ConnectedIntermediaryAccountResponse {
   fileprivate var _account: Osmosis_Superfluid_SuperfluidIntermediaryAccountInfo? = nil
 }
 
+struct Osmosis_Superfluid_QueryTotalDelegationByValidatorForDenomRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var denom: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct Osmosis_Superfluid_QueryTotalDelegationByValidatorForDenomResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var assets: [Osmosis_Superfluid_Delegations] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct Osmosis_Superfluid_Delegations {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var valAddr: String = String()
+
+  var amountSfsd: String = String()
+
+  var osmoEquivalent: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 struct Osmosis_Superfluid_TotalSuperfluidDelegationsRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -434,6 +474,63 @@ struct Osmosis_Superfluid_QueryTotalDelegationByDelegatorResponse {
   fileprivate var _totalEquivalentStakedAmount: Cosmos_Base_V1beta1_Coin? = nil
 }
 
+struct Osmosis_Superfluid_QueryUnpoolWhitelistRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct Osmosis_Superfluid_QueryUnpoolWhitelistResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var poolIds: [UInt64] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Osmosis_Superfluid_QueryParamsRequest: @unchecked Sendable {}
+extension Osmosis_Superfluid_QueryParamsResponse: @unchecked Sendable {}
+extension Osmosis_Superfluid_AssetTypeRequest: @unchecked Sendable {}
+extension Osmosis_Superfluid_AssetTypeResponse: @unchecked Sendable {}
+extension Osmosis_Superfluid_AllAssetsRequest: @unchecked Sendable {}
+extension Osmosis_Superfluid_AllAssetsResponse: @unchecked Sendable {}
+extension Osmosis_Superfluid_AssetMultiplierRequest: @unchecked Sendable {}
+extension Osmosis_Superfluid_AssetMultiplierResponse: @unchecked Sendable {}
+extension Osmosis_Superfluid_SuperfluidIntermediaryAccountInfo: @unchecked Sendable {}
+extension Osmosis_Superfluid_AllIntermediaryAccountsRequest: @unchecked Sendable {}
+extension Osmosis_Superfluid_AllIntermediaryAccountsResponse: @unchecked Sendable {}
+extension Osmosis_Superfluid_ConnectedIntermediaryAccountRequest: @unchecked Sendable {}
+extension Osmosis_Superfluid_ConnectedIntermediaryAccountResponse: @unchecked Sendable {}
+extension Osmosis_Superfluid_QueryTotalDelegationByValidatorForDenomRequest: @unchecked Sendable {}
+extension Osmosis_Superfluid_QueryTotalDelegationByValidatorForDenomResponse: @unchecked Sendable {}
+extension Osmosis_Superfluid_Delegations: @unchecked Sendable {}
+extension Osmosis_Superfluid_TotalSuperfluidDelegationsRequest: @unchecked Sendable {}
+extension Osmosis_Superfluid_TotalSuperfluidDelegationsResponse: @unchecked Sendable {}
+extension Osmosis_Superfluid_SuperfluidDelegationAmountRequest: @unchecked Sendable {}
+extension Osmosis_Superfluid_SuperfluidDelegationAmountResponse: @unchecked Sendable {}
+extension Osmosis_Superfluid_SuperfluidDelegationsByDelegatorRequest: @unchecked Sendable {}
+extension Osmosis_Superfluid_SuperfluidDelegationsByDelegatorResponse: @unchecked Sendable {}
+extension Osmosis_Superfluid_SuperfluidUndelegationsByDelegatorRequest: @unchecked Sendable {}
+extension Osmosis_Superfluid_SuperfluidUndelegationsByDelegatorResponse: @unchecked Sendable {}
+extension Osmosis_Superfluid_SuperfluidDelegationsByValidatorDenomRequest: @unchecked Sendable {}
+extension Osmosis_Superfluid_SuperfluidDelegationsByValidatorDenomResponse: @unchecked Sendable {}
+extension Osmosis_Superfluid_EstimateSuperfluidDelegatedAmountByValidatorDenomRequest: @unchecked Sendable {}
+extension Osmosis_Superfluid_EstimateSuperfluidDelegatedAmountByValidatorDenomResponse: @unchecked Sendable {}
+extension Osmosis_Superfluid_QueryTotalDelegationByDelegatorRequest: @unchecked Sendable {}
+extension Osmosis_Superfluid_QueryTotalDelegationByDelegatorResponse: @unchecked Sendable {}
+extension Osmosis_Superfluid_QueryUnpoolWhitelistRequest: @unchecked Sendable {}
+extension Osmosis_Superfluid_QueryUnpoolWhitelistResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "osmosis.superfluid"
@@ -476,9 +573,13 @@ extension Osmosis_Superfluid_QueryParamsResponse: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._params {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -655,9 +756,13 @@ extension Osmosis_Superfluid_AssetMultiplierResponse: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._osmoEquivalentMultiplier {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._osmoEquivalentMultiplier {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -737,9 +842,13 @@ extension Osmosis_Superfluid_AllIntermediaryAccountsRequest: SwiftProtobuf.Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._pagination {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -771,12 +880,16 @@ extension Osmosis_Superfluid_AllIntermediaryAccountsResponse: SwiftProtobuf.Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.accounts.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.accounts, fieldNumber: 1)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -839,14 +952,126 @@ extension Osmosis_Superfluid_ConnectedIntermediaryAccountResponse: SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._account {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._account {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: Osmosis_Superfluid_ConnectedIntermediaryAccountResponse, rhs: Osmosis_Superfluid_ConnectedIntermediaryAccountResponse) -> Bool {
     if lhs._account != rhs._account {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Osmosis_Superfluid_QueryTotalDelegationByValidatorForDenomRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QueryTotalDelegationByValidatorForDenomRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "denom"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.denom) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.denom.isEmpty {
+      try visitor.visitSingularStringField(value: self.denom, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Osmosis_Superfluid_QueryTotalDelegationByValidatorForDenomRequest, rhs: Osmosis_Superfluid_QueryTotalDelegationByValidatorForDenomRequest) -> Bool {
+    if lhs.denom != rhs.denom {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Osmosis_Superfluid_QueryTotalDelegationByValidatorForDenomResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QueryTotalDelegationByValidatorForDenomResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "assets"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeRepeatedMessageField(value: &self.assets) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.assets.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.assets, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Osmosis_Superfluid_QueryTotalDelegationByValidatorForDenomResponse, rhs: Osmosis_Superfluid_QueryTotalDelegationByValidatorForDenomResponse) -> Bool {
+    if lhs.assets != rhs.assets {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Osmosis_Superfluid_Delegations: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".Delegations"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "val_addr"),
+    2: .standard(proto: "amount_sfsd"),
+    3: .standard(proto: "osmo_equivalent"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.valAddr) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.amountSfsd) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.osmoEquivalent) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.valAddr.isEmpty {
+      try visitor.visitSingularStringField(value: self.valAddr, fieldNumber: 1)
+    }
+    if !self.amountSfsd.isEmpty {
+      try visitor.visitSingularStringField(value: self.amountSfsd, fieldNumber: 2)
+    }
+    if !self.osmoEquivalent.isEmpty {
+      try visitor.visitSingularStringField(value: self.osmoEquivalent, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Osmosis_Superfluid_Delegations, rhs: Osmosis_Superfluid_Delegations) -> Bool {
+    if lhs.valAddr != rhs.valAddr {return false}
+    if lhs.amountSfsd != rhs.amountSfsd {return false}
+    if lhs.osmoEquivalent != rhs.osmoEquivalent {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1034,15 +1259,19 @@ extension Osmosis_Superfluid_SuperfluidDelegationsByDelegatorResponse: SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.superfluidDelegationRecords.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.superfluidDelegationRecords, fieldNumber: 1)
     }
     if !self.totalDelegatedCoins.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.totalDelegatedCoins, fieldNumber: 2)
     }
-    if let v = self._totalEquivalentStakedAmount {
+    try { if let v = self._totalEquivalentStakedAmount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1334,6 +1563,10 @@ extension Osmosis_Superfluid_QueryTotalDelegationByDelegatorResponse: SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.superfluidDelegationRecords.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.superfluidDelegationRecords, fieldNumber: 1)
     }
@@ -1343,9 +1576,9 @@ extension Osmosis_Superfluid_QueryTotalDelegationByDelegatorResponse: SwiftProto
     if !self.totalDelegatedCoins.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.totalDelegatedCoins, fieldNumber: 3)
     }
-    if let v = self._totalEquivalentStakedAmount {
+    try { if let v = self._totalEquivalentStakedAmount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1354,6 +1587,57 @@ extension Osmosis_Superfluid_QueryTotalDelegationByDelegatorResponse: SwiftProto
     if lhs.delegationResponse != rhs.delegationResponse {return false}
     if lhs.totalDelegatedCoins != rhs.totalDelegatedCoins {return false}
     if lhs._totalEquivalentStakedAmount != rhs._totalEquivalentStakedAmount {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Osmosis_Superfluid_QueryUnpoolWhitelistRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QueryUnpoolWhitelistRequest"
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let _ = try decoder.nextFieldNumber() {
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Osmosis_Superfluid_QueryUnpoolWhitelistRequest, rhs: Osmosis_Superfluid_QueryUnpoolWhitelistRequest) -> Bool {
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Osmosis_Superfluid_QueryUnpoolWhitelistResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QueryUnpoolWhitelistResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "pool_ids"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeRepeatedUInt64Field(value: &self.poolIds) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.poolIds.isEmpty {
+      try visitor.visitPackedUInt64Field(value: self.poolIds, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Osmosis_Superfluid_QueryUnpoolWhitelistResponse, rhs: Osmosis_Superfluid_QueryUnpoolWhitelistResponse) -> Bool {
+    if lhs.poolIds != rhs.poolIds {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -88,6 +88,13 @@ struct Evmos_Epochs_V1_QueryCurrentEpochResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Evmos_Epochs_V1_QueryEpochsInfoRequest: @unchecked Sendable {}
+extension Evmos_Epochs_V1_QueryEpochsInfoResponse: @unchecked Sendable {}
+extension Evmos_Epochs_V1_QueryCurrentEpochRequest: @unchecked Sendable {}
+extension Evmos_Epochs_V1_QueryCurrentEpochResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "evmos.epochs.v1"
@@ -111,9 +118,13 @@ extension Evmos_Epochs_V1_QueryEpochsInfoRequest: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._pagination {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -145,12 +156,16 @@ extension Evmos_Epochs_V1_QueryEpochsInfoResponse: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.epochs.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.epochs, fieldNumber: 1)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

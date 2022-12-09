@@ -31,9 +31,11 @@ public interface GenesisStateOrBuilder extends
    * <code>map&lt;string, .panacea.aol.v2.Owner&gt; owners = 1;</code>
    */
 
-  panacea.aol.v2.Owner getOwnersOrDefault(
+  /* nullable */
+panacea.aol.v2.Owner getOwnersOrDefault(
       java.lang.String key,
-      panacea.aol.v2.Owner defaultValue);
+      /* nullable */
+panacea.aol.v2.Owner defaultValue);
   /**
    * <code>map&lt;string, .panacea.aol.v2.Owner&gt; owners = 1;</code>
    */
@@ -65,9 +67,11 @@ public interface GenesisStateOrBuilder extends
    * <code>map&lt;string, .panacea.aol.v2.Topic&gt; topics = 2;</code>
    */
 
-  panacea.aol.v2.Topic getTopicsOrDefault(
+  /* nullable */
+panacea.aol.v2.Topic getTopicsOrDefault(
       java.lang.String key,
-      panacea.aol.v2.Topic defaultValue);
+      /* nullable */
+panacea.aol.v2.Topic defaultValue);
   /**
    * <code>map&lt;string, .panacea.aol.v2.Topic&gt; topics = 2;</code>
    */
@@ -99,9 +103,11 @@ public interface GenesisStateOrBuilder extends
    * <code>map&lt;string, .panacea.aol.v2.Writer&gt; writers = 3;</code>
    */
 
-  panacea.aol.v2.Writer getWritersOrDefault(
+  /* nullable */
+panacea.aol.v2.Writer getWritersOrDefault(
       java.lang.String key,
-      panacea.aol.v2.Writer defaultValue);
+      /* nullable */
+panacea.aol.v2.Writer defaultValue);
   /**
    * <code>map&lt;string, .panacea.aol.v2.Writer&gt; writers = 3;</code>
    */
@@ -133,9 +139,11 @@ public interface GenesisStateOrBuilder extends
    * <code>map&lt;string, .panacea.aol.v2.Record&gt; records = 4;</code>
    */
 
-  panacea.aol.v2.Record getRecordsOrDefault(
+  /* nullable */
+panacea.aol.v2.Record getRecordsOrDefault(
       java.lang.String key,
-      panacea.aol.v2.Record defaultValue);
+      /* nullable */
+panacea.aol.v2.Record defaultValue);
   /**
    * <code>map&lt;string, .panacea.aol.v2.Record&gt; records = 4;</code>
    */

@@ -470,6 +470,40 @@ struct Shentu_Shield_V1alpha1_QueryReimbursementsResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Shentu_Shield_V1alpha1_QueryPoolRequest: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QueryPoolResponse: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QuerySponsorRequest: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QuerySponsorResponse: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QueryPoolsRequest: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QueryPoolsResponse: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QueryPoolPurchaseListsRequest: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QueryPurchaseListsRequest: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QueryPurchaseListsResponse: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QueryPurchaseListRequest: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QueryPurchaseListResponse: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QueryPurchasesRequest: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QueryPurchasesResponse: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QueryProviderRequest: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QueryProviderResponse: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QueryProvidersRequest: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QueryProvidersResponse: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QueryPoolParamsRequest: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QueryPoolParamsResponse: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QueryClaimParamsRequest: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QueryClaimParamsResponse: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QueryShieldStatusRequest: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QueryShieldStatusResponse: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QueryShieldStakingRequest: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QueryShieldStakingResponse: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QueryShieldStakingRateRequest: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QueryShieldStakingRateResponse: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QueryReimbursementRequest: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QueryReimbursementResponse: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QueryReimbursementsRequest: @unchecked Sendable {}
+extension Shentu_Shield_V1alpha1_QueryReimbursementsResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "shentu.shield.v1alpha1"
@@ -525,9 +559,13 @@ extension Shentu_Shield_V1alpha1_QueryPoolResponse: SwiftProtobuf.Message, Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._pool {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._pool {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -806,9 +844,13 @@ extension Shentu_Shield_V1alpha1_QueryPurchaseListResponse: SwiftProtobuf.Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._purchaseList {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._purchaseList {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -921,9 +963,13 @@ extension Shentu_Shield_V1alpha1_QueryProviderResponse: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._provider {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._provider {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1023,9 +1069,13 @@ extension Shentu_Shield_V1alpha1_QueryPoolParamsResponse: SwiftProtobuf.Message,
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._params {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1074,9 +1124,13 @@ extension Shentu_Shield_V1alpha1_QueryClaimParamsResponse: SwiftProtobuf.Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._params {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1135,6 +1189,10 @@ extension Shentu_Shield_V1alpha1_QueryShieldStatusResponse: SwiftProtobuf.Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.totalCollateral.isEmpty {
       try visitor.visitSingularStringField(value: self.totalCollateral, fieldNumber: 1)
     }
@@ -1144,12 +1202,12 @@ extension Shentu_Shield_V1alpha1_QueryShieldStatusResponse: SwiftProtobuf.Messag
     if !self.totalWithdrawing.isEmpty {
       try visitor.visitSingularStringField(value: self.totalWithdrawing, fieldNumber: 3)
     }
-    if let v = self._currentServiceFees {
+    try { if let v = self._currentServiceFees {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
-    if let v = self._remainingServiceFees {
+    } }()
+    try { if let v = self._remainingServiceFees {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    }
+    } }()
     if !self.globalShieldStakingPool.isEmpty {
       try visitor.visitSingularStringField(value: self.globalShieldStakingPool, fieldNumber: 6)
     }
@@ -1225,9 +1283,13 @@ extension Shentu_Shield_V1alpha1_QueryShieldStakingResponse: SwiftProtobuf.Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._shieldStaking {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._shieldStaking {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1340,9 +1402,13 @@ extension Shentu_Shield_V1alpha1_QueryReimbursementResponse: SwiftProtobuf.Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._reimbursement {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._reimbursement {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

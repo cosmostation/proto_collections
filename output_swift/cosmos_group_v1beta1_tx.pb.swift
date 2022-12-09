@@ -454,6 +454,32 @@ struct Cosmos_Group_V1beta1_MsgExecResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Cosmos_Group_V1beta1_Exec: @unchecked Sendable {}
+extension Cosmos_Group_V1beta1_MsgCreateGroupRequest: @unchecked Sendable {}
+extension Cosmos_Group_V1beta1_MsgCreateGroupResponse: @unchecked Sendable {}
+extension Cosmos_Group_V1beta1_MsgUpdateGroupMembersRequest: @unchecked Sendable {}
+extension Cosmos_Group_V1beta1_MsgUpdateGroupMembersResponse: @unchecked Sendable {}
+extension Cosmos_Group_V1beta1_MsgUpdateGroupAdminRequest: @unchecked Sendable {}
+extension Cosmos_Group_V1beta1_MsgUpdateGroupAdminResponse: @unchecked Sendable {}
+extension Cosmos_Group_V1beta1_MsgUpdateGroupMetadataRequest: @unchecked Sendable {}
+extension Cosmos_Group_V1beta1_MsgUpdateGroupMetadataResponse: @unchecked Sendable {}
+extension Cosmos_Group_V1beta1_MsgCreateGroupAccountRequest: @unchecked Sendable {}
+extension Cosmos_Group_V1beta1_MsgCreateGroupAccountResponse: @unchecked Sendable {}
+extension Cosmos_Group_V1beta1_MsgUpdateGroupAccountAdminRequest: @unchecked Sendable {}
+extension Cosmos_Group_V1beta1_MsgUpdateGroupAccountAdminResponse: @unchecked Sendable {}
+extension Cosmos_Group_V1beta1_MsgUpdateGroupAccountDecisionPolicyRequest: @unchecked Sendable {}
+extension Cosmos_Group_V1beta1_MsgUpdateGroupAccountDecisionPolicyResponse: @unchecked Sendable {}
+extension Cosmos_Group_V1beta1_MsgUpdateGroupAccountMetadataRequest: @unchecked Sendable {}
+extension Cosmos_Group_V1beta1_MsgUpdateGroupAccountMetadataResponse: @unchecked Sendable {}
+extension Cosmos_Group_V1beta1_MsgCreateProposalRequest: @unchecked Sendable {}
+extension Cosmos_Group_V1beta1_MsgCreateProposalResponse: @unchecked Sendable {}
+extension Cosmos_Group_V1beta1_MsgVoteRequest: @unchecked Sendable {}
+extension Cosmos_Group_V1beta1_MsgVoteResponse: @unchecked Sendable {}
+extension Cosmos_Group_V1beta1_MsgExecRequest: @unchecked Sendable {}
+extension Cosmos_Group_V1beta1_MsgExecResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.group.v1beta1"
@@ -755,6 +781,10 @@ extension Cosmos_Group_V1beta1_MsgCreateGroupAccountRequest: SwiftProtobuf.Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.admin.isEmpty {
       try visitor.visitSingularStringField(value: self.admin, fieldNumber: 1)
     }
@@ -764,9 +794,9 @@ extension Cosmos_Group_V1beta1_MsgCreateGroupAccountRequest: SwiftProtobuf.Messa
     if !self.metadata.isEmpty {
       try visitor.visitSingularBytesField(value: self.metadata, fieldNumber: 3)
     }
-    if let v = self._decisionPolicy {
+    try { if let v = self._decisionPolicy {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -898,15 +928,19 @@ extension Cosmos_Group_V1beta1_MsgUpdateGroupAccountDecisionPolicyRequest: Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.admin.isEmpty {
       try visitor.visitSingularStringField(value: self.admin, fieldNumber: 1)
     }
     if !self.address.isEmpty {
       try visitor.visitSingularStringField(value: self.address, fieldNumber: 2)
     }
-    if let v = self._decisionPolicy {
+    try { if let v = self._decisionPolicy {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

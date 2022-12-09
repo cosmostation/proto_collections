@@ -51,6 +51,11 @@ internal protocol Osmosis_Lockup_MsgClientProtocol: GRPCClient {
     _ request: Osmosis_Lockup_MsgExtendLockup,
     callOptions: CallOptions?
   ) -> UnaryCall<Osmosis_Lockup_MsgExtendLockup, Osmosis_Lockup_MsgExtendLockupResponse>
+
+  func forceUnlock(
+    _ request: Osmosis_Lockup_MsgForceUnlock,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Osmosis_Lockup_MsgForceUnlock, Osmosis_Lockup_MsgForceUnlockResponse>
 }
 
 extension Osmosis_Lockup_MsgClientProtocol {
@@ -129,6 +134,24 @@ extension Osmosis_Lockup_MsgClientProtocol {
       interceptors: self.interceptors?.makeExtendLockupInterceptors() ?? []
     )
   }
+
+  /// Unary call to ForceUnlock
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to ForceUnlock.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func forceUnlock(
+    _ request: Osmosis_Lockup_MsgForceUnlock,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Osmosis_Lockup_MsgForceUnlock, Osmosis_Lockup_MsgForceUnlockResponse> {
+    return self.makeUnaryCall(
+      path: "/osmosis.lockup.Msg/ForceUnlock",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeForceUnlockInterceptors() ?? []
+    )
+  }
 }
 
 internal protocol Osmosis_Lockup_MsgClientInterceptorFactoryProtocol {
@@ -144,6 +167,9 @@ internal protocol Osmosis_Lockup_MsgClientInterceptorFactoryProtocol {
 
   /// - Returns: Interceptors to use when invoking 'extendLockup'.
   func makeExtendLockupInterceptors() -> [ClientInterceptor<Osmosis_Lockup_MsgExtendLockup, Osmosis_Lockup_MsgExtendLockupResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'forceUnlock'.
+  func makeForceUnlockInterceptors() -> [ClientInterceptor<Osmosis_Lockup_MsgForceUnlock, Osmosis_Lockup_MsgForceUnlockResponse>]
 }
 
 internal final class Osmosis_Lockup_MsgClient: Osmosis_Lockup_MsgClientProtocol {
@@ -185,6 +211,8 @@ internal protocol Osmosis_Lockup_MsgProvider: CallHandlerProvider {
 
   /// MsgEditLockup edits the existing lockups by lock ID
   func extendLockup(request: Osmosis_Lockup_MsgExtendLockup, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Lockup_MsgExtendLockupResponse>
+
+  func forceUnlock(request: Osmosis_Lockup_MsgForceUnlock, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Lockup_MsgForceUnlockResponse>
 }
 
 extension Osmosis_Lockup_MsgProvider {
@@ -233,6 +261,15 @@ extension Osmosis_Lockup_MsgProvider {
         userFunction: self.extendLockup(request:context:)
       )
 
+    case "ForceUnlock":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Osmosis_Lockup_MsgForceUnlock>(),
+        responseSerializer: ProtobufSerializer<Osmosis_Lockup_MsgForceUnlockResponse>(),
+        interceptors: self.interceptors?.makeForceUnlockInterceptors() ?? [],
+        userFunction: self.forceUnlock(request:context:)
+      )
+
     default:
       return nil
     }
@@ -256,4 +293,8 @@ internal protocol Osmosis_Lockup_MsgServerInterceptorFactoryProtocol {
   /// - Returns: Interceptors to use when handling 'extendLockup'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeExtendLockupInterceptors() -> [ServerInterceptor<Osmosis_Lockup_MsgExtendLockup, Osmosis_Lockup_MsgExtendLockupResponse>]
+
+  /// - Returns: Interceptors to use when handling 'forceUnlock'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeForceUnlockInterceptors() -> [ServerInterceptor<Osmosis_Lockup_MsgForceUnlock, Osmosis_Lockup_MsgForceUnlockResponse>]
 }

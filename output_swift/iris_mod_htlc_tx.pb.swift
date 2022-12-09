@@ -90,6 +90,13 @@ struct Irismod_Htlc_MsgClaimHTLCResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Irismod_Htlc_MsgCreateHTLC: @unchecked Sendable {}
+extension Irismod_Htlc_MsgCreateHTLCResponse: @unchecked Sendable {}
+extension Irismod_Htlc_MsgClaimHTLC: @unchecked Sendable {}
+extension Irismod_Htlc_MsgClaimHTLCResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "irismod.htlc"

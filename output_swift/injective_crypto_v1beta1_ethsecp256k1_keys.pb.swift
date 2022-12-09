@@ -49,6 +49,11 @@ struct Injective_Crypto_V1beta1_Ethsecp256k1_PrivKey {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Injective_Crypto_V1beta1_Ethsecp256k1_PubKey: @unchecked Sendable {}
+extension Injective_Crypto_V1beta1_Ethsecp256k1_PrivKey: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "injective.crypto.v1beta1.ethsecp256k1"

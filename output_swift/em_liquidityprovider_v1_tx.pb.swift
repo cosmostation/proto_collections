@@ -68,6 +68,13 @@ struct Em_Liquidityprovider_V1_MsgBurnTokensResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Em_Liquidityprovider_V1_MsgMintTokens: @unchecked Sendable {}
+extension Em_Liquidityprovider_V1_MsgMintTokensResponse: @unchecked Sendable {}
+extension Em_Liquidityprovider_V1_MsgBurnTokens: @unchecked Sendable {}
+extension Em_Liquidityprovider_V1_MsgBurnTokensResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "em.liquidityprovider.v1"

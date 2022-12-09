@@ -59,6 +59,11 @@ struct Cosmwasm_Wasm_V1_MsgIBCCloseChannel {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Cosmwasm_Wasm_V1_MsgIBCSend: @unchecked Sendable {}
+extension Cosmwasm_Wasm_V1_MsgIBCCloseChannel: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmwasm.wasm.v1"

@@ -70,6 +70,12 @@ struct Stride_Icacallbacks_NoData {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Stride_Icacallbacks_IcacallbacksPacketData: @unchecked Sendable {}
+extension Stride_Icacallbacks_IcacallbacksPacketData.OneOf_Packet: @unchecked Sendable {}
+extension Stride_Icacallbacks_NoData: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stride.icacallbacks"
@@ -105,9 +111,13 @@ extension Stride_Icacallbacks_IcacallbacksPacketData: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if case .noData(let v)? = self.packet {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if case .noData(let v)? = self.packet {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

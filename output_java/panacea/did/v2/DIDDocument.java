@@ -44,160 +44,6 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private DIDDocument(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10: {
-            panacea.did.v2.Strings.Builder subBuilder = null;
-            if (contexts_ != null) {
-              subBuilder = contexts_.toBuilder();
-            }
-            contexts_ = input.readMessage(panacea.did.v2.Strings.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(contexts_);
-              contexts_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            id_ = s;
-            break;
-          }
-          case 26: {
-            panacea.did.v2.Strings.Builder subBuilder = null;
-            if (controller_ != null) {
-              subBuilder = controller_.toBuilder();
-            }
-            controller_ = input.readMessage(panacea.did.v2.Strings.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(controller_);
-              controller_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 34: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              verificationMethods_ = new java.util.ArrayList<panacea.did.v2.VerificationMethod>();
-              mutable_bitField0_ |= 0x00000001;
-            }
-            verificationMethods_.add(
-                input.readMessage(panacea.did.v2.VerificationMethod.parser(), extensionRegistry));
-            break;
-          }
-          case 42: {
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-              authentications_ = new java.util.ArrayList<panacea.did.v2.VerificationRelationship>();
-              mutable_bitField0_ |= 0x00000002;
-            }
-            authentications_.add(
-                input.readMessage(panacea.did.v2.VerificationRelationship.parser(), extensionRegistry));
-            break;
-          }
-          case 50: {
-            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-              assertionMethods_ = new java.util.ArrayList<panacea.did.v2.VerificationRelationship>();
-              mutable_bitField0_ |= 0x00000004;
-            }
-            assertionMethods_.add(
-                input.readMessage(panacea.did.v2.VerificationRelationship.parser(), extensionRegistry));
-            break;
-          }
-          case 58: {
-            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-              keyAgreements_ = new java.util.ArrayList<panacea.did.v2.VerificationRelationship>();
-              mutable_bitField0_ |= 0x00000008;
-            }
-            keyAgreements_.add(
-                input.readMessage(panacea.did.v2.VerificationRelationship.parser(), extensionRegistry));
-            break;
-          }
-          case 66: {
-            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-              capabilityInvocations_ = new java.util.ArrayList<panacea.did.v2.VerificationRelationship>();
-              mutable_bitField0_ |= 0x00000010;
-            }
-            capabilityInvocations_.add(
-                input.readMessage(panacea.did.v2.VerificationRelationship.parser(), extensionRegistry));
-            break;
-          }
-          case 74: {
-            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-              capabilityDelegations_ = new java.util.ArrayList<panacea.did.v2.VerificationRelationship>();
-              mutable_bitField0_ |= 0x00000020;
-            }
-            capabilityDelegations_.add(
-                input.readMessage(panacea.did.v2.VerificationRelationship.parser(), extensionRegistry));
-            break;
-          }
-          case 82: {
-            if (!((mutable_bitField0_ & 0x00000040) != 0)) {
-              services_ = new java.util.ArrayList<panacea.did.v2.Service>();
-              mutable_bitField0_ |= 0x00000040;
-            }
-            services_.add(
-                input.readMessage(panacea.did.v2.Service.parser(), extensionRegistry));
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        verificationMethods_ = java.util.Collections.unmodifiableList(verificationMethods_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        authentications_ = java.util.Collections.unmodifiableList(authentications_);
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        assertionMethods_ = java.util.Collections.unmodifiableList(assertionMethods_);
-      }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
-        keyAgreements_ = java.util.Collections.unmodifiableList(keyAgreements_);
-      }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
-        capabilityInvocations_ = java.util.Collections.unmodifiableList(capabilityInvocations_);
-      }
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
-        capabilityDelegations_ = java.util.Collections.unmodifiableList(capabilityDelegations_);
-      }
-      if (((mutable_bitField0_ & 0x00000040) != 0)) {
-        services_ = java.util.Collections.unmodifiableList(services_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return panacea.did.v2.Did.internal_static_panacea_did_v2_DIDDocument_descriptor;
@@ -618,7 +464,7 @@ private static final long serialVersionUID = 0L;
     if (contexts_ != null) {
       output.writeMessage(1, getContexts());
     }
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
     }
     if (controller_ != null) {
@@ -645,7 +491,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < services_.size(); i++) {
       output.writeMessage(10, services_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -658,7 +504,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getContexts());
     }
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
     }
     if (controller_ != null) {
@@ -693,7 +539,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, services_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -734,7 +580,7 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCapabilityDelegationsList())) return false;
     if (!getServicesList()
         .equals(other.getServicesList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -783,7 +629,7 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SERVICES_FIELD_NUMBER;
       hash = (53 * hash) + getServicesList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -906,25 +752,13 @@ private static final long serialVersionUID = 0L;
 
     // Construct using panacea.did.v2.DIDDocument.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-        getVerificationMethodsFieldBuilder();
-        getAuthenticationsFieldBuilder();
-        getAssertionMethodsFieldBuilder();
-        getKeyAgreementsFieldBuilder();
-        getCapabilityInvocationsFieldBuilder();
-        getCapabilityDelegationsFieldBuilder();
-        getServicesFieldBuilder();
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
@@ -945,46 +779,53 @@ private static final long serialVersionUID = 0L;
       }
       if (verificationMethodsBuilder_ == null) {
         verificationMethods_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        verificationMethods_ = null;
         verificationMethodsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (authenticationsBuilder_ == null) {
         authentications_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        authentications_ = null;
         authenticationsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (assertionMethodsBuilder_ == null) {
         assertionMethods_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
+        assertionMethods_ = null;
         assertionMethodsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (keyAgreementsBuilder_ == null) {
         keyAgreements_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
+        keyAgreements_ = null;
         keyAgreementsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (capabilityInvocationsBuilder_ == null) {
         capabilityInvocations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
       } else {
+        capabilityInvocations_ = null;
         capabilityInvocationsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000010);
       if (capabilityDelegationsBuilder_ == null) {
         capabilityDelegations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
       } else {
+        capabilityDelegations_ = null;
         capabilityDelegationsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000020);
       if (servicesBuilder_ == null) {
         services_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
       } else {
+        services_ = null;
         servicesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -1326,7 +1167,7 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1341,17 +1182,140 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      panacea.did.v2.DIDDocument parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              input.readMessage(
+                  getContextsFieldBuilder().getBuilder(),
+                  extensionRegistry);
+
+              break;
+            } // case 10
+            case 18: {
+              id_ = input.readStringRequireUtf8();
+
+              break;
+            } // case 18
+            case 26: {
+              input.readMessage(
+                  getControllerFieldBuilder().getBuilder(),
+                  extensionRegistry);
+
+              break;
+            } // case 26
+            case 34: {
+              panacea.did.v2.VerificationMethod m =
+                  input.readMessage(
+                      panacea.did.v2.VerificationMethod.parser(),
+                      extensionRegistry);
+              if (verificationMethodsBuilder_ == null) {
+                ensureVerificationMethodsIsMutable();
+                verificationMethods_.add(m);
+              } else {
+                verificationMethodsBuilder_.addMessage(m);
+              }
+              break;
+            } // case 34
+            case 42: {
+              panacea.did.v2.VerificationRelationship m =
+                  input.readMessage(
+                      panacea.did.v2.VerificationRelationship.parser(),
+                      extensionRegistry);
+              if (authenticationsBuilder_ == null) {
+                ensureAuthenticationsIsMutable();
+                authentications_.add(m);
+              } else {
+                authenticationsBuilder_.addMessage(m);
+              }
+              break;
+            } // case 42
+            case 50: {
+              panacea.did.v2.VerificationRelationship m =
+                  input.readMessage(
+                      panacea.did.v2.VerificationRelationship.parser(),
+                      extensionRegistry);
+              if (assertionMethodsBuilder_ == null) {
+                ensureAssertionMethodsIsMutable();
+                assertionMethods_.add(m);
+              } else {
+                assertionMethodsBuilder_.addMessage(m);
+              }
+              break;
+            } // case 50
+            case 58: {
+              panacea.did.v2.VerificationRelationship m =
+                  input.readMessage(
+                      panacea.did.v2.VerificationRelationship.parser(),
+                      extensionRegistry);
+              if (keyAgreementsBuilder_ == null) {
+                ensureKeyAgreementsIsMutable();
+                keyAgreements_.add(m);
+              } else {
+                keyAgreementsBuilder_.addMessage(m);
+              }
+              break;
+            } // case 58
+            case 66: {
+              panacea.did.v2.VerificationRelationship m =
+                  input.readMessage(
+                      panacea.did.v2.VerificationRelationship.parser(),
+                      extensionRegistry);
+              if (capabilityInvocationsBuilder_ == null) {
+                ensureCapabilityInvocationsIsMutable();
+                capabilityInvocations_.add(m);
+              } else {
+                capabilityInvocationsBuilder_.addMessage(m);
+              }
+              break;
+            } // case 66
+            case 74: {
+              panacea.did.v2.VerificationRelationship m =
+                  input.readMessage(
+                      panacea.did.v2.VerificationRelationship.parser(),
+                      extensionRegistry);
+              if (capabilityDelegationsBuilder_ == null) {
+                ensureCapabilityDelegationsIsMutable();
+                capabilityDelegations_.add(m);
+              } else {
+                capabilityDelegationsBuilder_.addMessage(m);
+              }
+              break;
+            } // case 74
+            case 82: {
+              panacea.did.v2.Service m =
+                  input.readMessage(
+                      panacea.did.v2.Service.parser(),
+                      extensionRegistry);
+              if (servicesBuilder_ == null) {
+                ensureServicesIsMutable();
+                services_.add(m);
+              } else {
+                servicesBuilder_.addMessage(m);
+              }
+              break;
+            } // case 82
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (panacea.did.v2.DIDDocument) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
     private int bitField0_;
@@ -3454,7 +3418,18 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new DIDDocument(input, extensionRegistry);
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
     }
   };
 

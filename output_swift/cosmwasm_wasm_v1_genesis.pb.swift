@@ -189,6 +189,15 @@ struct Cosmwasm_Wasm_V1_Sequence {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Cosmwasm_Wasm_V1_GenesisState: @unchecked Sendable {}
+extension Cosmwasm_Wasm_V1_GenesisState.GenMsgs: @unchecked Sendable {}
+extension Cosmwasm_Wasm_V1_GenesisState.GenMsgs.OneOf_Sum: @unchecked Sendable {}
+extension Cosmwasm_Wasm_V1_Code: @unchecked Sendable {}
+extension Cosmwasm_Wasm_V1_Contract: @unchecked Sendable {}
+extension Cosmwasm_Wasm_V1_Sequence: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmwasm.wasm.v1"
@@ -220,9 +229,13 @@ extension Cosmwasm_Wasm_V1_GenesisState: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._params {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.codes.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.codes, fieldNumber: 2)
     }
@@ -309,8 +322,9 @@ extension Cosmwasm_Wasm_V1_GenesisState.GenMsgs: SwiftProtobuf.Message, SwiftPro
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every case branch when no optimizations are
-    // enabled. https://github.com/apple/swift-protobuf/issues/1034
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     switch self.sum {
     case .storeCode?: try {
       guard case .storeCode(let v)? = self.sum else { preconditionFailure() }
@@ -361,12 +375,16 @@ extension Cosmwasm_Wasm_V1_Code: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.codeID != 0 {
       try visitor.visitSingularUInt64Field(value: self.codeID, fieldNumber: 1)
     }
-    if let v = self._codeInfo {
+    try { if let v = self._codeInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if !self.codeBytes.isEmpty {
       try visitor.visitSingularBytesField(value: self.codeBytes, fieldNumber: 3)
     }
@@ -409,12 +427,16 @@ extension Cosmwasm_Wasm_V1_Contract: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.contractAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.contractAddress, fieldNumber: 1)
     }
-    if let v = self._contractInfo {
+    try { if let v = self._contractInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if !self.contractState.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.contractState, fieldNumber: 3)
     }

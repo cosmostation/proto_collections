@@ -113,93 +113,6 @@ public final class ParamsOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private RewardPeriod(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              active_ = input.readBool();
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              collateralType_ = s;
-              break;
-            }
-            case 26: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (start_ != null) {
-                subBuilder = start_.toBuilder();
-              }
-              start_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(start_);
-                start_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 34: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (end_ != null) {
-                subBuilder = end_.toBuilder();
-              }
-              end_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(end_);
-                end_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 42: {
-              cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
-              if (rewardsPerSecond_ != null) {
-                subBuilder = rewardsPerSecond_.toBuilder();
-              }
-              rewardsPerSecond_ = input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(rewardsPerSecond_);
-                rewardsPerSecond_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return kava.incentive.v1beta1.ParamsOuterClass.internal_static_kava_incentive_v1beta1_RewardPeriod_descriptor;
@@ -357,7 +270,7 @@ public final class ParamsOuterClass {
       if (active_ != false) {
         output.writeBool(1, active_);
       }
-      if (!getCollateralTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(collateralType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, collateralType_);
       }
       if (start_ != null) {
@@ -369,7 +282,7 @@ public final class ParamsOuterClass {
       if (rewardsPerSecond_ != null) {
         output.writeMessage(5, getRewardsPerSecond());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -382,7 +295,7 @@ public final class ParamsOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(1, active_);
       }
-      if (!getCollateralTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(collateralType_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, collateralType_);
       }
       if (start_ != null) {
@@ -397,7 +310,7 @@ public final class ParamsOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getRewardsPerSecond());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -431,7 +344,7 @@ public final class ParamsOuterClass {
         if (!getRewardsPerSecond()
             .equals(other.getRewardsPerSecond())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -459,7 +372,7 @@ public final class ParamsOuterClass {
         hash = (37 * hash) + REWARDS_PER_SECOND_FIELD_NUMBER;
         hash = (53 * hash) + getRewardsPerSecond().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -580,18 +493,13 @@ public final class ParamsOuterClass {
 
       // Construct using kava.incentive.v1beta1.ParamsOuterClass.RewardPeriod.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -725,7 +633,7 @@ public final class ParamsOuterClass {
         if (other.hasRewardsPerSecond()) {
           mergeRewardsPerSecond(other.getRewardsPerSecond());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -740,17 +648,61 @@ public final class ParamsOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        kava.incentive.v1beta1.ParamsOuterClass.RewardPeriod parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                active_ = input.readBool();
+
+                break;
+              } // case 8
+              case 18: {
+                collateralType_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getStartFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 26
+              case 34: {
+                input.readMessage(
+                    getEndFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 34
+              case 42: {
+                input.readMessage(
+                    getRewardsPerSecondFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 42
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (kava.incentive.v1beta1.ParamsOuterClass.RewardPeriod) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1250,7 +1202,18 @@ public final class ParamsOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RewardPeriod(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1378,93 +1341,6 @@ public final class ParamsOuterClass {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private MultiRewardPeriod(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              active_ = input.readBool();
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              collateralType_ = s;
-              break;
-            }
-            case 26: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (start_ != null) {
-                subBuilder = start_.toBuilder();
-              }
-              start_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(start_);
-                start_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 34: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (end_ != null) {
-                subBuilder = end_.toBuilder();
-              }
-              end_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(end_);
-                end_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                rewardsPerSecond_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              rewardsPerSecond_.add(
-                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          rewardsPerSecond_ = java.util.Collections.unmodifiableList(rewardsPerSecond_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -1637,7 +1513,7 @@ public final class ParamsOuterClass {
       if (active_ != false) {
         output.writeBool(1, active_);
       }
-      if (!getCollateralTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(collateralType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, collateralType_);
       }
       if (start_ != null) {
@@ -1649,7 +1525,7 @@ public final class ParamsOuterClass {
       for (int i = 0; i < rewardsPerSecond_.size(); i++) {
         output.writeMessage(5, rewardsPerSecond_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1662,7 +1538,7 @@ public final class ParamsOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(1, active_);
       }
-      if (!getCollateralTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(collateralType_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, collateralType_);
       }
       if (start_ != null) {
@@ -1677,7 +1553,7 @@ public final class ParamsOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, rewardsPerSecond_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1708,7 +1584,7 @@ public final class ParamsOuterClass {
       }
       if (!getRewardsPerSecondList()
           .equals(other.getRewardsPerSecondList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1736,7 +1612,7 @@ public final class ParamsOuterClass {
         hash = (37 * hash) + REWARDS_PER_SECOND_FIELD_NUMBER;
         hash = (53 * hash) + getRewardsPerSecondList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1857,19 +1733,13 @@ public final class ParamsOuterClass {
 
       // Construct using kava.incentive.v1beta1.ParamsOuterClass.MultiRewardPeriod.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getRewardsPerSecondFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -1892,10 +1762,11 @@ public final class ParamsOuterClass {
         }
         if (rewardsPerSecondBuilder_ == null) {
           rewardsPerSecond_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          rewardsPerSecond_ = null;
           rewardsPerSecondBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -2031,7 +1902,7 @@ public final class ParamsOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2046,17 +1917,67 @@ public final class ParamsOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        kava.incentive.v1beta1.ParamsOuterClass.MultiRewardPeriod parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                active_ = input.readBool();
+
+                break;
+              } // case 8
+              case 18: {
+                collateralType_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getStartFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 26
+              case 34: {
+                input.readMessage(
+                    getEndFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 34
+              case 42: {
+                cosmos.base.v1beta1.CoinOuterClass.Coin m =
+                    input.readMessage(
+                        cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
+                        extensionRegistry);
+                if (rewardsPerSecondBuilder_ == null) {
+                  ensureRewardsPerSecondIsMutable();
+                  rewardsPerSecond_.add(m);
+                } else {
+                  rewardsPerSecondBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (kava.incentive.v1beta1.ParamsOuterClass.MultiRewardPeriod) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -2678,7 +2599,18 @@ public final class ParamsOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MultiRewardPeriod(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2758,59 +2690,6 @@ public final class ParamsOuterClass {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private Multiplier(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-            case 16: {
-
-              monthsLockup_ = input.readInt64();
-              break;
-            }
-            case 26: {
-
-              factor_ = input.readBytes();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -2899,7 +2778,7 @@ public final class ParamsOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
       if (monthsLockup_ != 0L) {
@@ -2908,7 +2787,7 @@ public final class ParamsOuterClass {
       if (!factor_.isEmpty()) {
         output.writeBytes(3, factor_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2917,7 +2796,7 @@ public final class ParamsOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
       if (monthsLockup_ != 0L) {
@@ -2928,7 +2807,7 @@ public final class ParamsOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(3, factor_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2949,7 +2828,7 @@ public final class ParamsOuterClass {
           != other.getMonthsLockup()) return false;
       if (!getFactor()
           .equals(other.getFactor())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2967,7 +2846,7 @@ public final class ParamsOuterClass {
           getMonthsLockup());
       hash = (37 * hash) + FACTOR_FIELD_NUMBER;
       hash = (53 * hash) + getFactor().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3088,18 +2967,13 @@ public final class ParamsOuterClass {
 
       // Construct using kava.incentive.v1beta1.ParamsOuterClass.Multiplier.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -3197,7 +3071,7 @@ public final class ParamsOuterClass {
         if (other.getFactor() != com.google.protobuf.ByteString.EMPTY) {
           setFactor(other.getFactor());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3212,17 +3086,45 @@ public final class ParamsOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        kava.incentive.v1beta1.ParamsOuterClass.Multiplier parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 16: {
+                monthsLockup_ = input.readInt64();
+
+                break;
+              } // case 16
+              case 26: {
+                factor_ = input.readBytes();
+
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (kava.incentive.v1beta1.ParamsOuterClass.Multiplier) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -3399,7 +3301,18 @@ public final class ParamsOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Multiplier(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -3491,62 +3404,6 @@ public final class ParamsOuterClass {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private MultipliersPerDenom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              denom_ = s;
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                multipliers_ = new java.util.ArrayList<kava.incentive.v1beta1.ParamsOuterClass.Multiplier>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              multipliers_.add(
-                  input.readMessage(kava.incentive.v1beta1.ParamsOuterClass.Multiplier.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          multipliers_ = java.util.Collections.unmodifiableList(multipliers_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -3653,13 +3510,13 @@ public final class ParamsOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getDenomBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(denom_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, denom_);
       }
       for (int i = 0; i < multipliers_.size(); i++) {
         output.writeMessage(2, multipliers_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -3668,14 +3525,14 @@ public final class ParamsOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getDenomBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(denom_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, denom_);
       }
       for (int i = 0; i < multipliers_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, multipliers_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3694,7 +3551,7 @@ public final class ParamsOuterClass {
           .equals(other.getDenom())) return false;
       if (!getMultipliersList()
           .equals(other.getMultipliersList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3711,7 +3568,7 @@ public final class ParamsOuterClass {
         hash = (37 * hash) + MULTIPLIERS_FIELD_NUMBER;
         hash = (53 * hash) + getMultipliersList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3832,19 +3689,13 @@ public final class ParamsOuterClass {
 
       // Construct using kava.incentive.v1beta1.ParamsOuterClass.MultipliersPerDenom.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getMultipliersFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -3853,10 +3704,11 @@ public final class ParamsOuterClass {
 
         if (multipliersBuilder_ == null) {
           multipliers_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          multipliers_ = null;
           multipliersBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -3972,7 +3824,7 @@ public final class ParamsOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3987,17 +3839,48 @@ public final class ParamsOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        kava.incentive.v1beta1.ParamsOuterClass.MultipliersPerDenom parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                denom_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                kava.incentive.v1beta1.ParamsOuterClass.Multiplier m =
+                    input.readMessage(
+                        kava.incentive.v1beta1.ParamsOuterClass.Multiplier.parser(),
+                        extensionRegistry);
+                if (multipliersBuilder_ == null) {
+                  ensureMultipliersIsMutable();
+                  multipliers_.add(m);
+                } else {
+                  multipliersBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (kava.incentive.v1beta1.ParamsOuterClass.MultipliersPerDenom) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -4350,7 +4233,18 @@ public final class ParamsOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MultipliersPerDenom(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -4619,153 +4513,6 @@ public final class ParamsOuterClass {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private Params(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                usdxMintingRewardPeriods_ = new java.util.ArrayList<kava.incentive.v1beta1.ParamsOuterClass.RewardPeriod>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              usdxMintingRewardPeriods_.add(
-                  input.readMessage(kava.incentive.v1beta1.ParamsOuterClass.RewardPeriod.parser(), extensionRegistry));
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                hardSupplyRewardPeriods_ = new java.util.ArrayList<kava.incentive.v1beta1.ParamsOuterClass.MultiRewardPeriod>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              hardSupplyRewardPeriods_.add(
-                  input.readMessage(kava.incentive.v1beta1.ParamsOuterClass.MultiRewardPeriod.parser(), extensionRegistry));
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                hardBorrowRewardPeriods_ = new java.util.ArrayList<kava.incentive.v1beta1.ParamsOuterClass.MultiRewardPeriod>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              hardBorrowRewardPeriods_.add(
-                  input.readMessage(kava.incentive.v1beta1.ParamsOuterClass.MultiRewardPeriod.parser(), extensionRegistry));
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                delegatorRewardPeriods_ = new java.util.ArrayList<kava.incentive.v1beta1.ParamsOuterClass.MultiRewardPeriod>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              delegatorRewardPeriods_.add(
-                  input.readMessage(kava.incentive.v1beta1.ParamsOuterClass.MultiRewardPeriod.parser(), extensionRegistry));
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                swapRewardPeriods_ = new java.util.ArrayList<kava.incentive.v1beta1.ParamsOuterClass.MultiRewardPeriod>();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              swapRewardPeriods_.add(
-                  input.readMessage(kava.incentive.v1beta1.ParamsOuterClass.MultiRewardPeriod.parser(), extensionRegistry));
-              break;
-            }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                claimMultipliers_ = new java.util.ArrayList<kava.incentive.v1beta1.ParamsOuterClass.MultipliersPerDenom>();
-                mutable_bitField0_ |= 0x00000020;
-              }
-              claimMultipliers_.add(
-                  input.readMessage(kava.incentive.v1beta1.ParamsOuterClass.MultipliersPerDenom.parser(), extensionRegistry));
-              break;
-            }
-            case 58: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (claimEnd_ != null) {
-                subBuilder = claimEnd_.toBuilder();
-              }
-              claimEnd_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(claimEnd_);
-                claimEnd_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
-                savingsRewardPeriods_ = new java.util.ArrayList<kava.incentive.v1beta1.ParamsOuterClass.MultiRewardPeriod>();
-                mutable_bitField0_ |= 0x00000040;
-              }
-              savingsRewardPeriods_.add(
-                  input.readMessage(kava.incentive.v1beta1.ParamsOuterClass.MultiRewardPeriod.parser(), extensionRegistry));
-              break;
-            }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
-                earnRewardPeriods_ = new java.util.ArrayList<kava.incentive.v1beta1.ParamsOuterClass.MultiRewardPeriod>();
-                mutable_bitField0_ |= 0x00000080;
-              }
-              earnRewardPeriods_.add(
-                  input.readMessage(kava.incentive.v1beta1.ParamsOuterClass.MultiRewardPeriod.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          usdxMintingRewardPeriods_ = java.util.Collections.unmodifiableList(usdxMintingRewardPeriods_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          hardSupplyRewardPeriods_ = java.util.Collections.unmodifiableList(hardSupplyRewardPeriods_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          hardBorrowRewardPeriods_ = java.util.Collections.unmodifiableList(hardBorrowRewardPeriods_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          delegatorRewardPeriods_ = java.util.Collections.unmodifiableList(delegatorRewardPeriods_);
-        }
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
-          swapRewardPeriods_ = java.util.Collections.unmodifiableList(swapRewardPeriods_);
-        }
-        if (((mutable_bitField0_ & 0x00000020) != 0)) {
-          claimMultipliers_ = java.util.Collections.unmodifiableList(claimMultipliers_);
-        }
-        if (((mutable_bitField0_ & 0x00000040) != 0)) {
-          savingsRewardPeriods_ = java.util.Collections.unmodifiableList(savingsRewardPeriods_);
-        }
-        if (((mutable_bitField0_ & 0x00000080) != 0)) {
-          earnRewardPeriods_ = java.util.Collections.unmodifiableList(earnRewardPeriods_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -5167,7 +4914,7 @@ public final class ParamsOuterClass {
       for (int i = 0; i < earnRewardPeriods_.size(); i++) {
         output.writeMessage(9, earnRewardPeriods_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -5212,7 +4959,7 @@ public final class ParamsOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, earnRewardPeriods_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5248,7 +4995,7 @@ public final class ParamsOuterClass {
           .equals(other.getSavingsRewardPeriodsList())) return false;
       if (!getEarnRewardPeriodsList()
           .equals(other.getEarnRewardPeriodsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -5295,7 +5042,7 @@ public final class ParamsOuterClass {
         hash = (37 * hash) + EARN_REWARD_PERIODS_FIELD_NUMBER;
         hash = (53 * hash) + getEarnRewardPeriodsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5416,66 +5163,59 @@ public final class ParamsOuterClass {
 
       // Construct using kava.incentive.v1beta1.ParamsOuterClass.Params.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getUsdxMintingRewardPeriodsFieldBuilder();
-          getHardSupplyRewardPeriodsFieldBuilder();
-          getHardBorrowRewardPeriodsFieldBuilder();
-          getDelegatorRewardPeriodsFieldBuilder();
-          getSwapRewardPeriodsFieldBuilder();
-          getClaimMultipliersFieldBuilder();
-          getSavingsRewardPeriodsFieldBuilder();
-          getEarnRewardPeriodsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
         if (usdxMintingRewardPeriodsBuilder_ == null) {
           usdxMintingRewardPeriods_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          usdxMintingRewardPeriods_ = null;
           usdxMintingRewardPeriodsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (hardSupplyRewardPeriodsBuilder_ == null) {
           hardSupplyRewardPeriods_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          hardSupplyRewardPeriods_ = null;
           hardSupplyRewardPeriodsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (hardBorrowRewardPeriodsBuilder_ == null) {
           hardBorrowRewardPeriods_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          hardBorrowRewardPeriods_ = null;
           hardBorrowRewardPeriodsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (delegatorRewardPeriodsBuilder_ == null) {
           delegatorRewardPeriods_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
+          delegatorRewardPeriods_ = null;
           delegatorRewardPeriodsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         if (swapRewardPeriodsBuilder_ == null) {
           swapRewardPeriods_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
+          swapRewardPeriods_ = null;
           swapRewardPeriodsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000010);
         if (claimMultipliersBuilder_ == null) {
           claimMultipliers_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
+          claimMultipliers_ = null;
           claimMultipliersBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000020);
         if (claimEndBuilder_ == null) {
           claimEnd_ = null;
         } else {
@@ -5484,16 +5224,18 @@ public final class ParamsOuterClass {
         }
         if (savingsRewardPeriodsBuilder_ == null) {
           savingsRewardPeriods_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
+          savingsRewardPeriods_ = null;
           savingsRewardPeriodsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000040);
         if (earnRewardPeriodsBuilder_ == null) {
           earnRewardPeriods_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
+          earnRewardPeriods_ = null;
           earnRewardPeriodsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000080);
         return this;
       }
 
@@ -5857,7 +5599,7 @@ public final class ParamsOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -5872,17 +5614,141 @@ public final class ParamsOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        kava.incentive.v1beta1.ParamsOuterClass.Params parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                kava.incentive.v1beta1.ParamsOuterClass.RewardPeriod m =
+                    input.readMessage(
+                        kava.incentive.v1beta1.ParamsOuterClass.RewardPeriod.parser(),
+                        extensionRegistry);
+                if (usdxMintingRewardPeriodsBuilder_ == null) {
+                  ensureUsdxMintingRewardPeriodsIsMutable();
+                  usdxMintingRewardPeriods_.add(m);
+                } else {
+                  usdxMintingRewardPeriodsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              case 18: {
+                kava.incentive.v1beta1.ParamsOuterClass.MultiRewardPeriod m =
+                    input.readMessage(
+                        kava.incentive.v1beta1.ParamsOuterClass.MultiRewardPeriod.parser(),
+                        extensionRegistry);
+                if (hardSupplyRewardPeriodsBuilder_ == null) {
+                  ensureHardSupplyRewardPeriodsIsMutable();
+                  hardSupplyRewardPeriods_.add(m);
+                } else {
+                  hardSupplyRewardPeriodsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              case 26: {
+                kava.incentive.v1beta1.ParamsOuterClass.MultiRewardPeriod m =
+                    input.readMessage(
+                        kava.incentive.v1beta1.ParamsOuterClass.MultiRewardPeriod.parser(),
+                        extensionRegistry);
+                if (hardBorrowRewardPeriodsBuilder_ == null) {
+                  ensureHardBorrowRewardPeriodsIsMutable();
+                  hardBorrowRewardPeriods_.add(m);
+                } else {
+                  hardBorrowRewardPeriodsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 34: {
+                kava.incentive.v1beta1.ParamsOuterClass.MultiRewardPeriod m =
+                    input.readMessage(
+                        kava.incentive.v1beta1.ParamsOuterClass.MultiRewardPeriod.parser(),
+                        extensionRegistry);
+                if (delegatorRewardPeriodsBuilder_ == null) {
+                  ensureDelegatorRewardPeriodsIsMutable();
+                  delegatorRewardPeriods_.add(m);
+                } else {
+                  delegatorRewardPeriodsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+              case 42: {
+                kava.incentive.v1beta1.ParamsOuterClass.MultiRewardPeriod m =
+                    input.readMessage(
+                        kava.incentive.v1beta1.ParamsOuterClass.MultiRewardPeriod.parser(),
+                        extensionRegistry);
+                if (swapRewardPeriodsBuilder_ == null) {
+                  ensureSwapRewardPeriodsIsMutable();
+                  swapRewardPeriods_.add(m);
+                } else {
+                  swapRewardPeriodsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+              case 50: {
+                kava.incentive.v1beta1.ParamsOuterClass.MultipliersPerDenom m =
+                    input.readMessage(
+                        kava.incentive.v1beta1.ParamsOuterClass.MultipliersPerDenom.parser(),
+                        extensionRegistry);
+                if (claimMultipliersBuilder_ == null) {
+                  ensureClaimMultipliersIsMutable();
+                  claimMultipliers_.add(m);
+                } else {
+                  claimMultipliersBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+              case 58: {
+                input.readMessage(
+                    getClaimEndFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 58
+              case 66: {
+                kava.incentive.v1beta1.ParamsOuterClass.MultiRewardPeriod m =
+                    input.readMessage(
+                        kava.incentive.v1beta1.ParamsOuterClass.MultiRewardPeriod.parser(),
+                        extensionRegistry);
+                if (savingsRewardPeriodsBuilder_ == null) {
+                  ensureSavingsRewardPeriodsIsMutable();
+                  savingsRewardPeriods_.add(m);
+                } else {
+                  savingsRewardPeriodsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+              case 74: {
+                kava.incentive.v1beta1.ParamsOuterClass.MultiRewardPeriod m =
+                    input.readMessage(
+                        kava.incentive.v1beta1.ParamsOuterClass.MultiRewardPeriod.parser(),
+                        extensionRegistry);
+                if (earnRewardPeriodsBuilder_ == null) {
+                  ensureEarnRewardPeriodsIsMutable();
+                  earnRewardPeriods_.add(m);
+                } else {
+                  earnRewardPeriodsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (kava.incentive.v1beta1.ParamsOuterClass.Params) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -7958,7 +7824,18 @@ public final class ParamsOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Params(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

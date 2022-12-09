@@ -122,6 +122,15 @@ struct Cosmos_Authz_V1beta1_MsgRevokeResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Cosmos_Authz_V1beta1_MsgGrant: @unchecked Sendable {}
+extension Cosmos_Authz_V1beta1_MsgExecResponse: @unchecked Sendable {}
+extension Cosmos_Authz_V1beta1_MsgExec: @unchecked Sendable {}
+extension Cosmos_Authz_V1beta1_MsgGrantResponse: @unchecked Sendable {}
+extension Cosmos_Authz_V1beta1_MsgRevoke: @unchecked Sendable {}
+extension Cosmos_Authz_V1beta1_MsgRevokeResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.authz.v1beta1"
@@ -149,15 +158,19 @@ extension Cosmos_Authz_V1beta1_MsgGrant: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.granter.isEmpty {
       try visitor.visitSingularStringField(value: self.granter, fieldNumber: 1)
     }
     if !self.grantee.isEmpty {
       try visitor.visitSingularStringField(value: self.grantee, fieldNumber: 2)
     }
-    if let v = self._grant {
+    try { if let v = self._grant {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

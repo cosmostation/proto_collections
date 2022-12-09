@@ -228,6 +228,25 @@ struct Stafihub_Stafihub_Rstaking_MsgRmDelegatorFromWhitelistResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Stafihub_Stafihub_Rstaking_MsgSetInflationBase: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rstaking_MsgSetInflationBaseResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rstaking_MsgAddValToWhitelist: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rstaking_MsgAddValToWhitelistResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rstaking_MsgToggleValidatorWhitelistSwitch: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rstaking_MsgToggleValidatorWhitelistSwitchResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rstaking_MsgWithdraw: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rstaking_MsgWithdrawResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rstaking_MsgAddDelegatorToWhitelist: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rstaking_MsgAddDelegatorToWhitelistResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rstaking_MsgToggleDelegatorWhitelistSwitch: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rstaking_MsgToggleDelegatorWhitelistSwitchResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rstaking_MsgProvideToken: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rstaking_MsgProvideTokenResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rstaking_MsgRmDelegatorFromWhitelist: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rstaking_MsgRmDelegatorFromWhitelistResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stafihub.stafihub.rstaking"
@@ -420,12 +439,16 @@ extension Stafihub_Stafihub_Rstaking_MsgWithdraw: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.creator.isEmpty {
       try visitor.visitSingularStringField(value: self.creator, fieldNumber: 1)
     }
-    if let v = self._amount {
+    try { if let v = self._amount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if !self.recipient.isEmpty {
       try visitor.visitSingularStringField(value: self.recipient, fieldNumber: 3)
     }
@@ -589,12 +612,16 @@ extension Stafihub_Stafihub_Rstaking_MsgProvideToken: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.creator.isEmpty {
       try visitor.visitSingularStringField(value: self.creator, fieldNumber: 1)
     }
-    if let v = self._token {
+    try { if let v = self._token {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

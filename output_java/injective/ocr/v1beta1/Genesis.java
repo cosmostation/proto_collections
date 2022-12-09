@@ -436,153 +436,6 @@ public final class Genesis {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GenesisState(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              injective.ocr.v1beta1.Ocr.Params.Builder subBuilder = null;
-              if (params_ != null) {
-                subBuilder = params_.toBuilder();
-              }
-              params_ = input.readMessage(injective.ocr.v1beta1.Ocr.Params.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(params_);
-                params_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                feedConfigs_ = new java.util.ArrayList<injective.ocr.v1beta1.Ocr.FeedConfig>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              feedConfigs_.add(
-                  input.readMessage(injective.ocr.v1beta1.Ocr.FeedConfig.parser(), extensionRegistry));
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                latestEpochAndRounds_ = new java.util.ArrayList<injective.ocr.v1beta1.Genesis.FeedEpochAndRound>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              latestEpochAndRounds_.add(
-                  input.readMessage(injective.ocr.v1beta1.Genesis.FeedEpochAndRound.parser(), extensionRegistry));
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                feedTransmissions_ = new java.util.ArrayList<injective.ocr.v1beta1.Genesis.FeedTransmission>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              feedTransmissions_.add(
-                  input.readMessage(injective.ocr.v1beta1.Genesis.FeedTransmission.parser(), extensionRegistry));
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                latestAggregatorRoundIds_ = new java.util.ArrayList<injective.ocr.v1beta1.Genesis.FeedLatestAggregatorRoundIDs>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              latestAggregatorRoundIds_.add(
-                  input.readMessage(injective.ocr.v1beta1.Genesis.FeedLatestAggregatorRoundIDs.parser(), extensionRegistry));
-              break;
-            }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                rewardPools_ = new java.util.ArrayList<injective.ocr.v1beta1.Genesis.RewardPool>();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              rewardPools_.add(
-                  input.readMessage(injective.ocr.v1beta1.Genesis.RewardPool.parser(), extensionRegistry));
-              break;
-            }
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                feedObservationCounts_ = new java.util.ArrayList<injective.ocr.v1beta1.Genesis.FeedCounts>();
-                mutable_bitField0_ |= 0x00000020;
-              }
-              feedObservationCounts_.add(
-                  input.readMessage(injective.ocr.v1beta1.Genesis.FeedCounts.parser(), extensionRegistry));
-              break;
-            }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
-                feedTransmissionCounts_ = new java.util.ArrayList<injective.ocr.v1beta1.Genesis.FeedCounts>();
-                mutable_bitField0_ |= 0x00000040;
-              }
-              feedTransmissionCounts_.add(
-                  input.readMessage(injective.ocr.v1beta1.Genesis.FeedCounts.parser(), extensionRegistry));
-              break;
-            }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
-                pendingPayeeships_ = new java.util.ArrayList<injective.ocr.v1beta1.Genesis.PendingPayeeship>();
-                mutable_bitField0_ |= 0x00000080;
-              }
-              pendingPayeeships_.add(
-                  input.readMessage(injective.ocr.v1beta1.Genesis.PendingPayeeship.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          feedConfigs_ = java.util.Collections.unmodifiableList(feedConfigs_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          latestEpochAndRounds_ = java.util.Collections.unmodifiableList(latestEpochAndRounds_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          feedTransmissions_ = java.util.Collections.unmodifiableList(feedTransmissions_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          latestAggregatorRoundIds_ = java.util.Collections.unmodifiableList(latestAggregatorRoundIds_);
-        }
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
-          rewardPools_ = java.util.Collections.unmodifiableList(rewardPools_);
-        }
-        if (((mutable_bitField0_ & 0x00000020) != 0)) {
-          feedObservationCounts_ = java.util.Collections.unmodifiableList(feedObservationCounts_);
-        }
-        if (((mutable_bitField0_ & 0x00000040) != 0)) {
-          feedTransmissionCounts_ = java.util.Collections.unmodifiableList(feedTransmissionCounts_);
-        }
-        if (((mutable_bitField0_ & 0x00000080) != 0)) {
-          pendingPayeeships_ = java.util.Collections.unmodifiableList(pendingPayeeships_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return injective.ocr.v1beta1.Genesis.internal_static_injective_ocr_v1beta1_GenesisState_descriptor;
@@ -1155,7 +1008,7 @@ public final class Genesis {
       for (int i = 0; i < pendingPayeeships_.size(); i++) {
         output.writeMessage(9, pendingPayeeships_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1200,7 +1053,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, pendingPayeeships_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1236,7 +1089,7 @@ public final class Genesis {
           .equals(other.getFeedTransmissionCountsList())) return false;
       if (!getPendingPayeeshipsList()
           .equals(other.getPendingPayeeshipsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1283,7 +1136,7 @@ public final class Genesis {
         hash = (37 * hash) + PENDING_PAYEESHIPS_FIELD_NUMBER;
         hash = (53 * hash) + getPendingPayeeshipsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1404,26 +1257,13 @@ public final class Genesis {
 
       // Construct using injective.ocr.v1beta1.Genesis.GenesisState.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getFeedConfigsFieldBuilder();
-          getLatestEpochAndRoundsFieldBuilder();
-          getFeedTransmissionsFieldBuilder();
-          getLatestAggregatorRoundIdsFieldBuilder();
-          getRewardPoolsFieldBuilder();
-          getFeedObservationCountsFieldBuilder();
-          getFeedTransmissionCountsFieldBuilder();
-          getPendingPayeeshipsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -1436,52 +1276,60 @@ public final class Genesis {
         }
         if (feedConfigsBuilder_ == null) {
           feedConfigs_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          feedConfigs_ = null;
           feedConfigsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (latestEpochAndRoundsBuilder_ == null) {
           latestEpochAndRounds_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          latestEpochAndRounds_ = null;
           latestEpochAndRoundsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (feedTransmissionsBuilder_ == null) {
           feedTransmissions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          feedTransmissions_ = null;
           feedTransmissionsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (latestAggregatorRoundIdsBuilder_ == null) {
           latestAggregatorRoundIds_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
+          latestAggregatorRoundIds_ = null;
           latestAggregatorRoundIdsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         if (rewardPoolsBuilder_ == null) {
           rewardPools_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
+          rewardPools_ = null;
           rewardPoolsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000010);
         if (feedObservationCountsBuilder_ == null) {
           feedObservationCounts_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
+          feedObservationCounts_ = null;
           feedObservationCountsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000020);
         if (feedTransmissionCountsBuilder_ == null) {
           feedTransmissionCounts_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
+          feedTransmissionCounts_ = null;
           feedTransmissionCountsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000040);
         if (pendingPayeeshipsBuilder_ == null) {
           pendingPayeeships_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
+          pendingPayeeships_ = null;
           pendingPayeeshipsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000080);
         return this;
       }
 
@@ -1845,7 +1693,7 @@ public final class Genesis {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1860,17 +1708,141 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        injective.ocr.v1beta1.Genesis.GenesisState parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getParamsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 10
+              case 18: {
+                injective.ocr.v1beta1.Ocr.FeedConfig m =
+                    input.readMessage(
+                        injective.ocr.v1beta1.Ocr.FeedConfig.parser(),
+                        extensionRegistry);
+                if (feedConfigsBuilder_ == null) {
+                  ensureFeedConfigsIsMutable();
+                  feedConfigs_.add(m);
+                } else {
+                  feedConfigsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              case 26: {
+                injective.ocr.v1beta1.Genesis.FeedEpochAndRound m =
+                    input.readMessage(
+                        injective.ocr.v1beta1.Genesis.FeedEpochAndRound.parser(),
+                        extensionRegistry);
+                if (latestEpochAndRoundsBuilder_ == null) {
+                  ensureLatestEpochAndRoundsIsMutable();
+                  latestEpochAndRounds_.add(m);
+                } else {
+                  latestEpochAndRoundsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 34: {
+                injective.ocr.v1beta1.Genesis.FeedTransmission m =
+                    input.readMessage(
+                        injective.ocr.v1beta1.Genesis.FeedTransmission.parser(),
+                        extensionRegistry);
+                if (feedTransmissionsBuilder_ == null) {
+                  ensureFeedTransmissionsIsMutable();
+                  feedTransmissions_.add(m);
+                } else {
+                  feedTransmissionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+              case 42: {
+                injective.ocr.v1beta1.Genesis.FeedLatestAggregatorRoundIDs m =
+                    input.readMessage(
+                        injective.ocr.v1beta1.Genesis.FeedLatestAggregatorRoundIDs.parser(),
+                        extensionRegistry);
+                if (latestAggregatorRoundIdsBuilder_ == null) {
+                  ensureLatestAggregatorRoundIdsIsMutable();
+                  latestAggregatorRoundIds_.add(m);
+                } else {
+                  latestAggregatorRoundIdsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+              case 50: {
+                injective.ocr.v1beta1.Genesis.RewardPool m =
+                    input.readMessage(
+                        injective.ocr.v1beta1.Genesis.RewardPool.parser(),
+                        extensionRegistry);
+                if (rewardPoolsBuilder_ == null) {
+                  ensureRewardPoolsIsMutable();
+                  rewardPools_.add(m);
+                } else {
+                  rewardPoolsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+              case 58: {
+                injective.ocr.v1beta1.Genesis.FeedCounts m =
+                    input.readMessage(
+                        injective.ocr.v1beta1.Genesis.FeedCounts.parser(),
+                        extensionRegistry);
+                if (feedObservationCountsBuilder_ == null) {
+                  ensureFeedObservationCountsIsMutable();
+                  feedObservationCounts_.add(m);
+                } else {
+                  feedObservationCountsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 58
+              case 66: {
+                injective.ocr.v1beta1.Genesis.FeedCounts m =
+                    input.readMessage(
+                        injective.ocr.v1beta1.Genesis.FeedCounts.parser(),
+                        extensionRegistry);
+                if (feedTransmissionCountsBuilder_ == null) {
+                  ensureFeedTransmissionCountsIsMutable();
+                  feedTransmissionCounts_.add(m);
+                } else {
+                  feedTransmissionCountsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+              case 74: {
+                injective.ocr.v1beta1.Genesis.PendingPayeeship m =
+                    input.readMessage(
+                        injective.ocr.v1beta1.Genesis.PendingPayeeship.parser(),
+                        extensionRegistry);
+                if (pendingPayeeshipsBuilder_ == null) {
+                  ensurePendingPayeeshipsIsMutable();
+                  pendingPayeeships_.add(m);
+                } else {
+                  pendingPayeeshipsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (injective.ocr.v1beta1.Genesis.GenesisState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -4558,7 +4530,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GenesisState(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -4636,62 +4619,6 @@ public final class Genesis {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private FeedTransmission(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              feedId_ = s;
-              break;
-            }
-            case 18: {
-              injective.ocr.v1beta1.Ocr.Transmission.Builder subBuilder = null;
-              if (transmission_ != null) {
-                subBuilder = transmission_.toBuilder();
-              }
-              transmission_ = input.readMessage(injective.ocr.v1beta1.Ocr.Transmission.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(transmission_);
-                transmission_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -4784,13 +4711,13 @@ public final class Genesis {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getFeedIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(feedId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, feedId_);
       }
       if (transmission_ != null) {
         output.writeMessage(2, getTransmission());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -4799,14 +4726,14 @@ public final class Genesis {
       if (size != -1) return size;
 
       size = 0;
-      if (!getFeedIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(feedId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, feedId_);
       }
       if (transmission_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getTransmission());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4828,7 +4755,7 @@ public final class Genesis {
         if (!getTransmission()
             .equals(other.getTransmission())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -4845,7 +4772,7 @@ public final class Genesis {
         hash = (37 * hash) + TRANSMISSION_FIELD_NUMBER;
         hash = (53 * hash) + getTransmission().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4962,18 +4889,13 @@ public final class Genesis {
 
       // Construct using injective.ocr.v1beta1.Genesis.FeedTransmission.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -5073,7 +4995,7 @@ public final class Genesis {
         if (other.hasTransmission()) {
           mergeTransmission(other.getTransmission());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -5088,17 +5010,42 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        injective.ocr.v1beta1.Genesis.FeedTransmission parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                feedId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getTransmissionFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (injective.ocr.v1beta1.Genesis.FeedTransmission) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -5329,7 +5276,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FeedTransmission(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -5407,62 +5365,6 @@ public final class Genesis {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private FeedEpochAndRound(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              feedId_ = s;
-              break;
-            }
-            case 18: {
-              injective.ocr.v1beta1.Ocr.EpochAndRound.Builder subBuilder = null;
-              if (epochAndRound_ != null) {
-                subBuilder = epochAndRound_.toBuilder();
-              }
-              epochAndRound_ = input.readMessage(injective.ocr.v1beta1.Ocr.EpochAndRound.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(epochAndRound_);
-                epochAndRound_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -5555,13 +5457,13 @@ public final class Genesis {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getFeedIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(feedId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, feedId_);
       }
       if (epochAndRound_ != null) {
         output.writeMessage(2, getEpochAndRound());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -5570,14 +5472,14 @@ public final class Genesis {
       if (size != -1) return size;
 
       size = 0;
-      if (!getFeedIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(feedId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, feedId_);
       }
       if (epochAndRound_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getEpochAndRound());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5599,7 +5501,7 @@ public final class Genesis {
         if (!getEpochAndRound()
             .equals(other.getEpochAndRound())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -5616,7 +5518,7 @@ public final class Genesis {
         hash = (37 * hash) + EPOCH_AND_ROUND_FIELD_NUMBER;
         hash = (53 * hash) + getEpochAndRound().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5733,18 +5635,13 @@ public final class Genesis {
 
       // Construct using injective.ocr.v1beta1.Genesis.FeedEpochAndRound.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -5844,7 +5741,7 @@ public final class Genesis {
         if (other.hasEpochAndRound()) {
           mergeEpochAndRound(other.getEpochAndRound());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -5859,17 +5756,42 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        injective.ocr.v1beta1.Genesis.FeedEpochAndRound parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                feedId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getEpochAndRoundFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (injective.ocr.v1beta1.Genesis.FeedEpochAndRound) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -6100,7 +6022,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FeedEpochAndRound(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -6169,54 +6102,6 @@ public final class Genesis {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private FeedLatestAggregatorRoundIDs(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              feedId_ = s;
-              break;
-            }
-            case 16: {
-
-              aggregatorRoundId_ = input.readUInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -6294,13 +6179,13 @@ public final class Genesis {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getFeedIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(feedId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, feedId_);
       }
       if (aggregatorRoundId_ != 0L) {
         output.writeUInt64(2, aggregatorRoundId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -6309,14 +6194,14 @@ public final class Genesis {
       if (size != -1) return size;
 
       size = 0;
-      if (!getFeedIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(feedId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, feedId_);
       }
       if (aggregatorRoundId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(2, aggregatorRoundId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -6335,7 +6220,7 @@ public final class Genesis {
           .equals(other.getFeedId())) return false;
       if (getAggregatorRoundId()
           != other.getAggregatorRoundId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -6351,7 +6236,7 @@ public final class Genesis {
       hash = (37 * hash) + AGGREGATOR_ROUND_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAggregatorRoundId());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -6468,18 +6353,13 @@ public final class Genesis {
 
       // Construct using injective.ocr.v1beta1.Genesis.FeedLatestAggregatorRoundIDs.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -6571,7 +6451,7 @@ public final class Genesis {
         if (other.getAggregatorRoundId() != 0L) {
           setAggregatorRoundId(other.getAggregatorRoundId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -6586,17 +6466,40 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        injective.ocr.v1beta1.Genesis.FeedLatestAggregatorRoundIDs parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                feedId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 16: {
+                aggregatorRoundId_ = input.readUInt64();
+
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (injective.ocr.v1beta1.Genesis.FeedLatestAggregatorRoundIDs) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -6739,7 +6642,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FeedLatestAggregatorRoundIDs(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -6817,62 +6731,6 @@ public final class Genesis {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private RewardPool(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              feedId_ = s;
-              break;
-            }
-            case 18: {
-              cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
-              if (amount_ != null) {
-                subBuilder = amount_.toBuilder();
-              }
-              amount_ = input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(amount_);
-                amount_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -6965,13 +6823,13 @@ public final class Genesis {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getFeedIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(feedId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, feedId_);
       }
       if (amount_ != null) {
         output.writeMessage(2, getAmount());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -6980,14 +6838,14 @@ public final class Genesis {
       if (size != -1) return size;
 
       size = 0;
-      if (!getFeedIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(feedId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, feedId_);
       }
       if (amount_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getAmount());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -7009,7 +6867,7 @@ public final class Genesis {
         if (!getAmount()
             .equals(other.getAmount())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -7026,7 +6884,7 @@ public final class Genesis {
         hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
         hash = (53 * hash) + getAmount().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -7143,18 +7001,13 @@ public final class Genesis {
 
       // Construct using injective.ocr.v1beta1.Genesis.RewardPool.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -7254,7 +7107,7 @@ public final class Genesis {
         if (other.hasAmount()) {
           mergeAmount(other.getAmount());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -7269,17 +7122,42 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        injective.ocr.v1beta1.Genesis.RewardPool parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                feedId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getAmountFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (injective.ocr.v1beta1.Genesis.RewardPool) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -7510,7 +7388,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RewardPool(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -7598,62 +7487,6 @@ public final class Genesis {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private FeedCounts(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              feedId_ = s;
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                counts_ = new java.util.ArrayList<injective.ocr.v1beta1.Genesis.Count>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              counts_.add(
-                  input.readMessage(injective.ocr.v1beta1.Genesis.Count.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          counts_ = java.util.Collections.unmodifiableList(counts_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -7760,13 +7593,13 @@ public final class Genesis {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getFeedIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(feedId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, feedId_);
       }
       for (int i = 0; i < counts_.size(); i++) {
         output.writeMessage(2, counts_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -7775,14 +7608,14 @@ public final class Genesis {
       if (size != -1) return size;
 
       size = 0;
-      if (!getFeedIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(feedId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, feedId_);
       }
       for (int i = 0; i < counts_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, counts_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -7801,7 +7634,7 @@ public final class Genesis {
           .equals(other.getFeedId())) return false;
       if (!getCountsList()
           .equals(other.getCountsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -7818,7 +7651,7 @@ public final class Genesis {
         hash = (37 * hash) + COUNTS_FIELD_NUMBER;
         hash = (53 * hash) + getCountsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -7935,19 +7768,13 @@ public final class Genesis {
 
       // Construct using injective.ocr.v1beta1.Genesis.FeedCounts.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getCountsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -7956,10 +7783,11 @@ public final class Genesis {
 
         if (countsBuilder_ == null) {
           counts_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          counts_ = null;
           countsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -8075,7 +7903,7 @@ public final class Genesis {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -8090,17 +7918,48 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        injective.ocr.v1beta1.Genesis.FeedCounts parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                feedId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                injective.ocr.v1beta1.Genesis.Count m =
+                    input.readMessage(
+                        injective.ocr.v1beta1.Genesis.Count.parser(),
+                        extensionRegistry);
+                if (countsBuilder_ == null) {
+                  ensureCountsIsMutable();
+                  counts_.add(m);
+                } else {
+                  countsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (injective.ocr.v1beta1.Genesis.FeedCounts) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -8453,7 +8312,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FeedCounts(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -8522,54 +8392,6 @@ public final class Genesis {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private Count(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              address_ = s;
-              break;
-            }
-            case 16: {
-
-              count_ = input.readUInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -8647,13 +8469,13 @@ public final class Genesis {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, address_);
       }
       if (count_ != 0L) {
         output.writeUInt64(2, count_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -8662,14 +8484,14 @@ public final class Genesis {
       if (size != -1) return size;
 
       size = 0;
-      if (!getAddressBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, address_);
       }
       if (count_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(2, count_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -8688,7 +8510,7 @@ public final class Genesis {
           .equals(other.getAddress())) return false;
       if (getCount()
           != other.getCount()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -8704,7 +8526,7 @@ public final class Genesis {
       hash = (37 * hash) + COUNT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCount());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -8821,18 +8643,13 @@ public final class Genesis {
 
       // Construct using injective.ocr.v1beta1.Genesis.Count.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -8924,7 +8741,7 @@ public final class Genesis {
         if (other.getCount() != 0L) {
           setCount(other.getCount());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -8939,17 +8756,40 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        injective.ocr.v1beta1.Genesis.Count parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                address_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 16: {
+                count_ = input.readUInt64();
+
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (injective.ocr.v1beta1.Genesis.Count) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -9092,7 +8932,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Count(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -9181,61 +9032,6 @@ public final class Genesis {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private PendingPayeeship(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              feedId_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              transmitter_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              proposedPayee_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -9378,16 +9174,16 @@ public final class Genesis {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getFeedIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(feedId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, feedId_);
       }
-      if (!getTransmitterBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(transmitter_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, transmitter_);
       }
-      if (!getProposedPayeeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(proposedPayee_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, proposedPayee_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -9396,16 +9192,16 @@ public final class Genesis {
       if (size != -1) return size;
 
       size = 0;
-      if (!getFeedIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(feedId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, feedId_);
       }
-      if (!getTransmitterBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(transmitter_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, transmitter_);
       }
-      if (!getProposedPayeeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(proposedPayee_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, proposedPayee_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -9426,7 +9222,7 @@ public final class Genesis {
           .equals(other.getTransmitter())) return false;
       if (!getProposedPayee()
           .equals(other.getProposedPayee())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -9443,7 +9239,7 @@ public final class Genesis {
       hash = (53 * hash) + getTransmitter().hashCode();
       hash = (37 * hash) + PROPOSED_PAYEE_FIELD_NUMBER;
       hash = (53 * hash) + getProposedPayee().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -9560,18 +9356,13 @@ public final class Genesis {
 
       // Construct using injective.ocr.v1beta1.Genesis.PendingPayeeship.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -9671,7 +9462,7 @@ public final class Genesis {
           proposedPayee_ = other.proposedPayee_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -9686,17 +9477,45 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        injective.ocr.v1beta1.Genesis.PendingPayeeship parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                feedId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                transmitter_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              case 26: {
+                proposedPayee_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (injective.ocr.v1beta1.Genesis.PendingPayeeship) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -9960,7 +9779,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PendingPayeeship(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

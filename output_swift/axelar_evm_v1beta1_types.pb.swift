@@ -532,6 +532,27 @@ extension Axelar_Evm_V1beta1_Gateway.Status: CaseIterable {
 
 #endif  // swift(>=4.2)
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Axelar_Evm_V1beta1_Status: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_BatchedCommandsStatus: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_TransferKeyType: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_SigType: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_DepositStatus: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_NetworkInfo: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_BurnerInfo: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_ERC20Deposit: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_ERC20TokenMetadata: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_TransactionMetadata: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_Command: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_CommandBatchMetadata: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_SigMetadata: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_TransferKey: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_Asset: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_TokenDetails: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_Gateway: @unchecked Sendable {}
+extension Axelar_Evm_V1beta1_Gateway.Status: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "axelar.evm.v1beta1"
@@ -768,15 +789,19 @@ extension Axelar_Evm_V1beta1_ERC20TokenMetadata: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.asset.isEmpty {
       try visitor.visitSingularStringField(value: self.asset, fieldNumber: 1)
     }
     if !self.chainID.isEmpty {
       try visitor.visitSingularBytesField(value: self.chainID, fieldNumber: 2)
     }
-    if let v = self._details {
+    try { if let v = self._details {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if !self.tokenAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.tokenAddress, fieldNumber: 4)
     }

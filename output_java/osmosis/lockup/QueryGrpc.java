@@ -526,6 +526,37 @@ public final class QueryGrpc {
     return getAccountLockedLongerDurationDenomMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<osmosis.lockup.QueryOuterClass.QueryParamsRequest,
+      osmosis.lockup.QueryOuterClass.QueryParamsResponse> getParamsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Params",
+      requestType = osmosis.lockup.QueryOuterClass.QueryParamsRequest.class,
+      responseType = osmosis.lockup.QueryOuterClass.QueryParamsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<osmosis.lockup.QueryOuterClass.QueryParamsRequest,
+      osmosis.lockup.QueryOuterClass.QueryParamsResponse> getParamsMethod() {
+    io.grpc.MethodDescriptor<osmosis.lockup.QueryOuterClass.QueryParamsRequest, osmosis.lockup.QueryOuterClass.QueryParamsResponse> getParamsMethod;
+    if ((getParamsMethod = QueryGrpc.getParamsMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getParamsMethod = QueryGrpc.getParamsMethod) == null) {
+          QueryGrpc.getParamsMethod = getParamsMethod =
+              io.grpc.MethodDescriptor.<osmosis.lockup.QueryOuterClass.QueryParamsRequest, osmosis.lockup.QueryOuterClass.QueryParamsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Params"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  osmosis.lockup.QueryOuterClass.QueryParamsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  osmosis.lockup.QueryOuterClass.QueryParamsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("Params"))
+              .build();
+        }
+      }
+    }
+    return getParamsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -739,6 +770,16 @@ public final class QueryGrpc {
       asyncUnimplementedUnaryCall(getAccountLockedLongerDurationDenomMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * Params returns lockup params.
+     * </pre>
+     */
+    public void params(osmosis.lockup.QueryOuterClass.QueryParamsRequest request,
+        io.grpc.stub.StreamObserver<osmosis.lockup.QueryOuterClass.QueryParamsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getParamsMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -853,6 +894,13 @@ public final class QueryGrpc {
                 osmosis.lockup.QueryOuterClass.AccountLockedLongerDurationDenomRequest,
                 osmosis.lockup.QueryOuterClass.AccountLockedLongerDurationDenomResponse>(
                   this, METHODID_ACCOUNT_LOCKED_LONGER_DURATION_DENOM)))
+          .addMethod(
+            getParamsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                osmosis.lockup.QueryOuterClass.QueryParamsRequest,
+                osmosis.lockup.QueryOuterClass.QueryParamsResponse>(
+                  this, METHODID_PARAMS)))
           .build();
     }
   }
@@ -1051,6 +1099,17 @@ public final class QueryGrpc {
       asyncUnaryCall(
           getChannel().newCall(getAccountLockedLongerDurationDenomMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Params returns lockup params.
+     * </pre>
+     */
+    public void params(osmosis.lockup.QueryOuterClass.QueryParamsRequest request,
+        io.grpc.stub.StreamObserver<osmosis.lockup.QueryOuterClass.QueryParamsResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getParamsMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -1230,6 +1289,16 @@ public final class QueryGrpc {
     public osmosis.lockup.QueryOuterClass.AccountLockedLongerDurationDenomResponse accountLockedLongerDurationDenom(osmosis.lockup.QueryOuterClass.AccountLockedLongerDurationDenomRequest request) {
       return blockingUnaryCall(
           getChannel(), getAccountLockedLongerDurationDenomMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Params returns lockup params.
+     * </pre>
+     */
+    public osmosis.lockup.QueryOuterClass.QueryParamsResponse params(osmosis.lockup.QueryOuterClass.QueryParamsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getParamsMethod(), getCallOptions(), request);
     }
   }
 
@@ -1427,6 +1496,17 @@ public final class QueryGrpc {
       return futureUnaryCall(
           getChannel().newCall(getAccountLockedLongerDurationDenomMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Params returns lockup params.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<osmosis.lockup.QueryOuterClass.QueryParamsResponse> params(
+        osmosis.lockup.QueryOuterClass.QueryParamsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getParamsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_MODULE_BALANCE = 0;
@@ -1445,6 +1525,7 @@ public final class QueryGrpc {
   private static final int METHODID_ACCOUNT_LOCKED_DURATION = 13;
   private static final int METHODID_ACCOUNT_LOCKED_LONGER_DURATION_NOT_UNLOCKING_ONLY = 14;
   private static final int METHODID_ACCOUNT_LOCKED_LONGER_DURATION_DENOM = 15;
+  private static final int METHODID_PARAMS = 16;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1527,6 +1608,10 @@ public final class QueryGrpc {
           serviceImpl.accountLockedLongerDurationDenom((osmosis.lockup.QueryOuterClass.AccountLockedLongerDurationDenomRequest) request,
               (io.grpc.stub.StreamObserver<osmosis.lockup.QueryOuterClass.AccountLockedLongerDurationDenomResponse>) responseObserver);
           break;
+        case METHODID_PARAMS:
+          serviceImpl.params((osmosis.lockup.QueryOuterClass.QueryParamsRequest) request,
+              (io.grpc.stub.StreamObserver<osmosis.lockup.QueryOuterClass.QueryParamsResponse>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -1604,6 +1689,7 @@ public final class QueryGrpc {
               .addMethod(getAccountLockedDurationMethod())
               .addMethod(getAccountLockedLongerDurationNotUnlockingOnlyMethod())
               .addMethod(getAccountLockedLongerDurationDenomMethod())
+              .addMethod(getParamsMethod())
               .build();
         }
       }

@@ -44,6 +44,10 @@ struct Lum_Network_Beam_GenesisState {
   fileprivate var _moduleAccountBalance: Cosmos_Base_V1beta1_Coin? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Lum_Network_Beam_GenesisState: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "lum.network.beam"
@@ -69,9 +73,13 @@ extension Lum_Network_Beam_GenesisState: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._moduleAccountBalance {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._moduleAccountBalance {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.beams.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.beams, fieldNumber: 2)
     }

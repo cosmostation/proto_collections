@@ -311,6 +311,18 @@ struct Desmos_Profiles_V1beta1_Result {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Desmos_Profiles_V1beta1_ApplicationLinkState: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_ApplicationLink: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_Data: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_OracleRequest: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_OracleRequest.CallData: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_Result: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_Result.OneOf_Sum: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_Result.Success: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_Result.Failed: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "desmos.profiles.v1beta1"
@@ -354,24 +366,28 @@ extension Desmos_Profiles_V1beta1_ApplicationLink: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.user.isEmpty {
       try visitor.visitSingularStringField(value: self.user, fieldNumber: 1)
     }
-    if let v = self._data {
+    try { if let v = self._data {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if self.state != .initializedUnspecified {
       try visitor.visitSingularEnumField(value: self.state, fieldNumber: 3)
     }
-    if let v = self._oracleRequest {
+    try { if let v = self._oracleRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
-    if let v = self._result {
+    } }()
+    try { if let v = self._result {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    }
-    if let v = self._creationTime {
+    } }()
+    try { if let v = self._creationTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -450,15 +466,19 @@ extension Desmos_Profiles_V1beta1_OracleRequest: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.id != 0 {
       try visitor.visitSingularUInt64Field(value: self.id, fieldNumber: 1)
     }
     if self.oracleScriptID != 0 {
       try visitor.visitSingularUInt64Field(value: self.oracleScriptID, fieldNumber: 2)
     }
-    if let v = self._callData {
+    try { if let v = self._callData {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if !self.clientID.isEmpty {
       try visitor.visitSingularStringField(value: self.clientID, fieldNumber: 4)
     }
@@ -559,8 +579,9 @@ extension Desmos_Profiles_V1beta1_Result: SwiftProtobuf.Message, SwiftProtobuf._
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every case branch when no optimizations are
-    // enabled. https://github.com/apple/swift-protobuf/issues/1034
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     switch self.sum {
     case .success?: try {
       guard case .success(let v)? = self.sum else { preconditionFailure() }

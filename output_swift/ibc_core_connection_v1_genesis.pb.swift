@@ -49,6 +49,10 @@ struct Ibc_Core_Connection_V1_GenesisState {
   fileprivate var _params: Ibc_Core_Connection_V1_Params? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Ibc_Core_Connection_V1_GenesisState: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "ibc.core.connection.v1"
@@ -78,6 +82,10 @@ extension Ibc_Core_Connection_V1_GenesisState: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.connections.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.connections, fieldNumber: 1)
     }
@@ -87,9 +95,9 @@ extension Ibc_Core_Connection_V1_GenesisState: SwiftProtobuf.Message, SwiftProto
     if self.nextConnectionSequence != 0 {
       try visitor.visitSingularUInt64Field(value: self.nextConnectionSequence, fieldNumber: 3)
     }
-    if let v = self._params {
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

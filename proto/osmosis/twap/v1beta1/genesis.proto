@@ -6,7 +6,7 @@ import "osmosis/twap/v1beta1/twap_record.proto";
 import "cosmos_proto/cosmos.proto";
 import "google/protobuf/duration.proto";
 
-option go_package = "github.com/osmosis-labs/osmosis/v7/x/twap/types";
+option go_package = "github.com/osmosis-labs/osmosis/v13/x/twap/types";
 
 // Params holds parameters for the twap module
 message Params {

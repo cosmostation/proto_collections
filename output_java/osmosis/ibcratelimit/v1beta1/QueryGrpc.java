@@ -1,4 +1,4 @@
-package osmosis.validatorpreference.v1beta1;
+package osmosis.ibcratelimit.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
@@ -22,43 +22,43 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.33.1)",
-    comments = "Source: osmosis/validator-preference/v1beta1/query.proto")
+    comments = "Source: osmosis/ibc-rate-limit/v1beta1/query.proto")
 public final class QueryGrpc {
 
   private QueryGrpc() {}
 
-  public static final String SERVICE_NAME = "osmosis.validatorpreference.v1beta1.Query";
+  public static final String SERVICE_NAME = "osmosis.ibcratelimit.v1beta1.Query";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<osmosis.validatorpreference.v1beta1.QueryOuterClass.QueryUserValidatorPreferences,
-      osmosis.validatorpreference.v1beta1.QueryOuterClass.QueryUserValidatorPreferenceResponse> getUserValidatorPreferencesMethod;
+  private static volatile io.grpc.MethodDescriptor<osmosis.ibcratelimit.v1beta1.QueryOuterClass.QueryParamsRequest,
+      osmosis.ibcratelimit.v1beta1.QueryOuterClass.QueryParamsResponse> getParamsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "UserValidatorPreferences",
-      requestType = osmosis.validatorpreference.v1beta1.QueryOuterClass.QueryUserValidatorPreferences.class,
-      responseType = osmosis.validatorpreference.v1beta1.QueryOuterClass.QueryUserValidatorPreferenceResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "Params",
+      requestType = osmosis.ibcratelimit.v1beta1.QueryOuterClass.QueryParamsRequest.class,
+      responseType = osmosis.ibcratelimit.v1beta1.QueryOuterClass.QueryParamsResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<osmosis.validatorpreference.v1beta1.QueryOuterClass.QueryUserValidatorPreferences,
-      osmosis.validatorpreference.v1beta1.QueryOuterClass.QueryUserValidatorPreferenceResponse> getUserValidatorPreferencesMethod() {
-    io.grpc.MethodDescriptor<osmosis.validatorpreference.v1beta1.QueryOuterClass.QueryUserValidatorPreferences, osmosis.validatorpreference.v1beta1.QueryOuterClass.QueryUserValidatorPreferenceResponse> getUserValidatorPreferencesMethod;
-    if ((getUserValidatorPreferencesMethod = QueryGrpc.getUserValidatorPreferencesMethod) == null) {
+  public static io.grpc.MethodDescriptor<osmosis.ibcratelimit.v1beta1.QueryOuterClass.QueryParamsRequest,
+      osmosis.ibcratelimit.v1beta1.QueryOuterClass.QueryParamsResponse> getParamsMethod() {
+    io.grpc.MethodDescriptor<osmosis.ibcratelimit.v1beta1.QueryOuterClass.QueryParamsRequest, osmosis.ibcratelimit.v1beta1.QueryOuterClass.QueryParamsResponse> getParamsMethod;
+    if ((getParamsMethod = QueryGrpc.getParamsMethod) == null) {
       synchronized (QueryGrpc.class) {
-        if ((getUserValidatorPreferencesMethod = QueryGrpc.getUserValidatorPreferencesMethod) == null) {
-          QueryGrpc.getUserValidatorPreferencesMethod = getUserValidatorPreferencesMethod =
-              io.grpc.MethodDescriptor.<osmosis.validatorpreference.v1beta1.QueryOuterClass.QueryUserValidatorPreferences, osmosis.validatorpreference.v1beta1.QueryOuterClass.QueryUserValidatorPreferenceResponse>newBuilder()
+        if ((getParamsMethod = QueryGrpc.getParamsMethod) == null) {
+          QueryGrpc.getParamsMethod = getParamsMethod =
+              io.grpc.MethodDescriptor.<osmosis.ibcratelimit.v1beta1.QueryOuterClass.QueryParamsRequest, osmosis.ibcratelimit.v1beta1.QueryOuterClass.QueryParamsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UserValidatorPreferences"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Params"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  osmosis.validatorpreference.v1beta1.QueryOuterClass.QueryUserValidatorPreferences.getDefaultInstance()))
+                  osmosis.ibcratelimit.v1beta1.QueryOuterClass.QueryParamsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  osmosis.validatorpreference.v1beta1.QueryOuterClass.QueryUserValidatorPreferenceResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("UserValidatorPreferences"))
+                  osmosis.ibcratelimit.v1beta1.QueryOuterClass.QueryParamsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("Params"))
               .build();
         }
       }
     }
-    return getUserValidatorPreferencesMethod;
+    return getParamsMethod;
   }
 
   /**
@@ -114,23 +114,24 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns the list of ValidatorPreferences for the user.
+     * Params defines a gRPC query method that returns the ibc-rate-limit module's
+     * parameters.
      * </pre>
      */
-    public void userValidatorPreferences(osmosis.validatorpreference.v1beta1.QueryOuterClass.QueryUserValidatorPreferences request,
-        io.grpc.stub.StreamObserver<osmosis.validatorpreference.v1beta1.QueryOuterClass.QueryUserValidatorPreferenceResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getUserValidatorPreferencesMethod(), responseObserver);
+    public void params(osmosis.ibcratelimit.v1beta1.QueryOuterClass.QueryParamsRequest request,
+        io.grpc.stub.StreamObserver<osmosis.ibcratelimit.v1beta1.QueryOuterClass.QueryParamsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getParamsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            getUserValidatorPreferencesMethod(),
+            getParamsMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                osmosis.validatorpreference.v1beta1.QueryOuterClass.QueryUserValidatorPreferences,
-                osmosis.validatorpreference.v1beta1.QueryOuterClass.QueryUserValidatorPreferenceResponse>(
-                  this, METHODID_USER_VALIDATOR_PREFERENCES)))
+                osmosis.ibcratelimit.v1beta1.QueryOuterClass.QueryParamsRequest,
+                osmosis.ibcratelimit.v1beta1.QueryOuterClass.QueryParamsResponse>(
+                  this, METHODID_PARAMS)))
           .build();
     }
   }
@@ -154,13 +155,14 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns the list of ValidatorPreferences for the user.
+     * Params defines a gRPC query method that returns the ibc-rate-limit module's
+     * parameters.
      * </pre>
      */
-    public void userValidatorPreferences(osmosis.validatorpreference.v1beta1.QueryOuterClass.QueryUserValidatorPreferences request,
-        io.grpc.stub.StreamObserver<osmosis.validatorpreference.v1beta1.QueryOuterClass.QueryUserValidatorPreferenceResponse> responseObserver) {
+    public void params(osmosis.ibcratelimit.v1beta1.QueryOuterClass.QueryParamsRequest request,
+        io.grpc.stub.StreamObserver<osmosis.ibcratelimit.v1beta1.QueryOuterClass.QueryParamsResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUserValidatorPreferencesMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getParamsMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -183,12 +185,13 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns the list of ValidatorPreferences for the user.
+     * Params defines a gRPC query method that returns the ibc-rate-limit module's
+     * parameters.
      * </pre>
      */
-    public osmosis.validatorpreference.v1beta1.QueryOuterClass.QueryUserValidatorPreferenceResponse userValidatorPreferences(osmosis.validatorpreference.v1beta1.QueryOuterClass.QueryUserValidatorPreferences request) {
+    public osmosis.ibcratelimit.v1beta1.QueryOuterClass.QueryParamsResponse params(osmosis.ibcratelimit.v1beta1.QueryOuterClass.QueryParamsRequest request) {
       return blockingUnaryCall(
-          getChannel(), getUserValidatorPreferencesMethod(), getCallOptions(), request);
+          getChannel(), getParamsMethod(), getCallOptions(), request);
     }
   }
 
@@ -211,17 +214,18 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Returns the list of ValidatorPreferences for the user.
+     * Params defines a gRPC query method that returns the ibc-rate-limit module's
+     * parameters.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<osmosis.validatorpreference.v1beta1.QueryOuterClass.QueryUserValidatorPreferenceResponse> userValidatorPreferences(
-        osmosis.validatorpreference.v1beta1.QueryOuterClass.QueryUserValidatorPreferences request) {
+    public com.google.common.util.concurrent.ListenableFuture<osmosis.ibcratelimit.v1beta1.QueryOuterClass.QueryParamsResponse> params(
+        osmosis.ibcratelimit.v1beta1.QueryOuterClass.QueryParamsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUserValidatorPreferencesMethod(), getCallOptions()), request);
+          getChannel().newCall(getParamsMethod(), getCallOptions()), request);
     }
   }
 
-  private static final int METHODID_USER_VALIDATOR_PREFERENCES = 0;
+  private static final int METHODID_PARAMS = 0;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -240,9 +244,9 @@ public final class QueryGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_USER_VALIDATOR_PREFERENCES:
-          serviceImpl.userValidatorPreferences((osmosis.validatorpreference.v1beta1.QueryOuterClass.QueryUserValidatorPreferences) request,
-              (io.grpc.stub.StreamObserver<osmosis.validatorpreference.v1beta1.QueryOuterClass.QueryUserValidatorPreferenceResponse>) responseObserver);
+        case METHODID_PARAMS:
+          serviceImpl.params((osmosis.ibcratelimit.v1beta1.QueryOuterClass.QueryParamsRequest) request,
+              (io.grpc.stub.StreamObserver<osmosis.ibcratelimit.v1beta1.QueryOuterClass.QueryParamsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -266,7 +270,7 @@ public final class QueryGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return osmosis.validatorpreference.v1beta1.QueryOuterClass.getDescriptor();
+      return osmosis.ibcratelimit.v1beta1.QueryOuterClass.getDescriptor();
     }
 
     @java.lang.Override
@@ -305,7 +309,7 @@ public final class QueryGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new QueryFileDescriptorSupplier())
-              .addMethod(getUserValidatorPreferencesMethod())
+              .addMethod(getParamsMethod())
               .build();
         }
       }

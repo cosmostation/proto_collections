@@ -412,6 +412,30 @@ struct Gravity_V1_SignerSetTxExecutedEvent {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Gravity_V1_MsgSendToEthereum: @unchecked Sendable {}
+extension Gravity_V1_MsgSendToEthereumResponse: @unchecked Sendable {}
+extension Gravity_V1_MsgCancelSendToEthereum: @unchecked Sendable {}
+extension Gravity_V1_MsgCancelSendToEthereumResponse: @unchecked Sendable {}
+extension Gravity_V1_MsgRequestBatchTx: @unchecked Sendable {}
+extension Gravity_V1_MsgRequestBatchTxResponse: @unchecked Sendable {}
+extension Gravity_V1_MsgSubmitEthereumTxConfirmation: @unchecked Sendable {}
+extension Gravity_V1_ContractCallTxConfirmation: @unchecked Sendable {}
+extension Gravity_V1_BatchTxConfirmation: @unchecked Sendable {}
+extension Gravity_V1_SignerSetTxConfirmation: @unchecked Sendable {}
+extension Gravity_V1_MsgSubmitEthereumTxConfirmationResponse: @unchecked Sendable {}
+extension Gravity_V1_MsgSubmitEthereumEvent: @unchecked Sendable {}
+extension Gravity_V1_MsgSubmitEthereumEventResponse: @unchecked Sendable {}
+extension Gravity_V1_MsgDelegateKeys: @unchecked Sendable {}
+extension Gravity_V1_MsgDelegateKeysResponse: @unchecked Sendable {}
+extension Gravity_V1_DelegateKeysSignMsg: @unchecked Sendable {}
+extension Gravity_V1_SendToCosmosEvent: @unchecked Sendable {}
+extension Gravity_V1_BatchExecutedEvent: @unchecked Sendable {}
+extension Gravity_V1_ContractCallExecutedEvent: @unchecked Sendable {}
+extension Gravity_V1_ERC20DeployedEvent: @unchecked Sendable {}
+extension Gravity_V1_SignerSetTxExecutedEvent: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "gravity.v1"
@@ -441,18 +465,22 @@ extension Gravity_V1_MsgSendToEthereum: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularStringField(value: self.sender, fieldNumber: 1)
     }
     if !self.ethereumRecipient.isEmpty {
       try visitor.visitSingularStringField(value: self.ethereumRecipient, fieldNumber: 2)
     }
-    if let v = self._amount {
+    try { if let v = self._amount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
-    if let v = self._bridgeFee {
+    } }()
+    try { if let v = self._bridgeFee {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -633,9 +661,13 @@ extension Gravity_V1_MsgSubmitEthereumTxConfirmation: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._confirmation {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._confirmation {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.signer.isEmpty {
       try visitor.visitSingularStringField(value: self.signer, fieldNumber: 2)
     }
@@ -834,9 +866,13 @@ extension Gravity_V1_MsgSubmitEthereumEvent: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._event {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._event {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.signer.isEmpty {
       try visitor.visitSingularStringField(value: self.signer, fieldNumber: 2)
     }

@@ -74,6 +74,13 @@ struct Cosmos_Base_Reflection_V1beta1_ListImplementationsResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Cosmos_Base_Reflection_V1beta1_ListAllInterfacesRequest: @unchecked Sendable {}
+extension Cosmos_Base_Reflection_V1beta1_ListAllInterfacesResponse: @unchecked Sendable {}
+extension Cosmos_Base_Reflection_V1beta1_ListImplementationsRequest: @unchecked Sendable {}
+extension Cosmos_Base_Reflection_V1beta1_ListImplementationsResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.base.reflection.v1beta1"

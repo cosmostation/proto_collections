@@ -169,6 +169,17 @@ struct Provenance_Attribute_V1_MsgDeleteDistinctAttributeResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Provenance_Attribute_V1_MsgAddAttributeRequest: @unchecked Sendable {}
+extension Provenance_Attribute_V1_MsgAddAttributeResponse: @unchecked Sendable {}
+extension Provenance_Attribute_V1_MsgUpdateAttributeRequest: @unchecked Sendable {}
+extension Provenance_Attribute_V1_MsgUpdateAttributeResponse: @unchecked Sendable {}
+extension Provenance_Attribute_V1_MsgDeleteAttributeRequest: @unchecked Sendable {}
+extension Provenance_Attribute_V1_MsgDeleteAttributeResponse: @unchecked Sendable {}
+extension Provenance_Attribute_V1_MsgDeleteDistinctAttributeRequest: @unchecked Sendable {}
+extension Provenance_Attribute_V1_MsgDeleteDistinctAttributeResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "provenance.attribute.v1"

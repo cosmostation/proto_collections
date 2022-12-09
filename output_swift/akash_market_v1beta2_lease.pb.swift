@@ -258,6 +258,19 @@ struct Akash_Market_V1beta2_MsgCloseLeaseResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Akash_Market_V1beta2_LeaseID: @unchecked Sendable {}
+extension Akash_Market_V1beta2_Lease: @unchecked Sendable {}
+extension Akash_Market_V1beta2_Lease.State: @unchecked Sendable {}
+extension Akash_Market_V1beta2_LeaseFilters: @unchecked Sendable {}
+extension Akash_Market_V1beta2_MsgCreateLease: @unchecked Sendable {}
+extension Akash_Market_V1beta2_MsgCreateLeaseResponse: @unchecked Sendable {}
+extension Akash_Market_V1beta2_MsgWithdrawLease: @unchecked Sendable {}
+extension Akash_Market_V1beta2_MsgWithdrawLeaseResponse: @unchecked Sendable {}
+extension Akash_Market_V1beta2_MsgCloseLease: @unchecked Sendable {}
+extension Akash_Market_V1beta2_MsgCloseLeaseResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "akash.market.v1beta2"
@@ -345,15 +358,19 @@ extension Akash_Market_V1beta2_Lease: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._leaseID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._leaseID {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if self.state != .invalid {
       try visitor.visitSingularEnumField(value: self.state, fieldNumber: 2)
     }
-    if let v = self._price {
+    try { if let v = self._price {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if self.createdAt != 0 {
       try visitor.visitSingularInt64Field(value: self.createdAt, fieldNumber: 4)
     }
@@ -464,9 +481,13 @@ extension Akash_Market_V1beta2_MsgCreateLease: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._bidID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._bidID {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -515,9 +536,13 @@ extension Akash_Market_V1beta2_MsgWithdrawLease: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._bidID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._bidID {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -566,9 +591,13 @@ extension Akash_Market_V1beta2_MsgCloseLease: SwiftProtobuf.Message, SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._leaseID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._leaseID {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

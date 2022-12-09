@@ -162,6 +162,19 @@ struct Lum_Network_Airdrop_QueryTotalClaimableResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Lum_Network_Airdrop_QueryModuleAccountBalanceRequest: @unchecked Sendable {}
+extension Lum_Network_Airdrop_QueryModuleAccountBalanceResponse: @unchecked Sendable {}
+extension Lum_Network_Airdrop_QueryParamsRequest: @unchecked Sendable {}
+extension Lum_Network_Airdrop_QueryParamsResponse: @unchecked Sendable {}
+extension Lum_Network_Airdrop_QueryClaimRecordRequest: @unchecked Sendable {}
+extension Lum_Network_Airdrop_QueryClaimRecordResponse: @unchecked Sendable {}
+extension Lum_Network_Airdrop_QueryClaimableForActionRequest: @unchecked Sendable {}
+extension Lum_Network_Airdrop_QueryClaimableForActionResponse: @unchecked Sendable {}
+extension Lum_Network_Airdrop_QueryTotalClaimableRequest: @unchecked Sendable {}
+extension Lum_Network_Airdrop_QueryTotalClaimableResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "lum.network.airdrop"
@@ -255,9 +268,13 @@ extension Lum_Network_Airdrop_QueryParamsResponse: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._params {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -319,9 +336,13 @@ extension Lum_Network_Airdrop_QueryClaimRecordResponse: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._claimRecord {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._claimRecord {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

@@ -199,6 +199,14 @@ struct Em_Market_V1_MarketData {
   fileprivate var _timestamp: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Em_Market_V1_TimeInForce: @unchecked Sendable {}
+extension Em_Market_V1_Instrument: @unchecked Sendable {}
+extension Em_Market_V1_Order: @unchecked Sendable {}
+extension Em_Market_V1_ExecutionPlan: @unchecked Sendable {}
+extension Em_Market_V1_MarketData: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "em.market.v1"
@@ -287,6 +295,10 @@ extension Em_Market_V1_Order: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.orderID != 0 {
       try visitor.visitSingularUInt64Field(value: self.orderID, fieldNumber: 1)
     }
@@ -299,24 +311,24 @@ extension Em_Market_V1_Order: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if !self.clientOrderID.isEmpty {
       try visitor.visitSingularStringField(value: self.clientOrderID, fieldNumber: 4)
     }
-    if let v = self._source {
+    try { if let v = self._source {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    }
+    } }()
     if !self.sourceRemaining.isEmpty {
       try visitor.visitSingularStringField(value: self.sourceRemaining, fieldNumber: 6)
     }
     if !self.sourceFilled.isEmpty {
       try visitor.visitSingularStringField(value: self.sourceFilled, fieldNumber: 7)
     }
-    if let v = self._destination {
+    try { if let v = self._destination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
-    }
+    } }()
     if !self.destinationFilled.isEmpty {
       try visitor.visitSingularStringField(value: self.destinationFilled, fieldNumber: 9)
     }
-    if let v = self._created {
+    try { if let v = self._created {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -386,15 +398,19 @@ extension Em_Market_V1_ExecutionPlan: SwiftProtobuf.Message, SwiftProtobuf._Mess
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
       if !_storage._price.isEmpty {
         try visitor.visitSingularStringField(value: _storage._price, fieldNumber: 1)
       }
-      if let v = _storage._firstOrder {
+      try { if let v = _storage._firstOrder {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      }
-      if let v = _storage._secondOrder {
+      } }()
+      try { if let v = _storage._secondOrder {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-      }
+      } }()
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -441,6 +457,10 @@ extension Em_Market_V1_MarketData: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.source.isEmpty {
       try visitor.visitSingularStringField(value: self.source, fieldNumber: 1)
     }
@@ -450,9 +470,9 @@ extension Em_Market_V1_MarketData: SwiftProtobuf.Message, SwiftProtobuf._Message
     if !self.lastPrice.isEmpty {
       try visitor.visitSingularStringField(value: self.lastPrice, fieldNumber: 3)
     }
-    if let v = self._timestamp {
+    try { if let v = self._timestamp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

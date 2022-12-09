@@ -149,6 +149,14 @@ struct Kava_Issuance_V1beta1_AssetSupply {
   fileprivate var _timeElapsed: SwiftProtobuf.Google_Protobuf_Duration? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Kava_Issuance_V1beta1_GenesisState: @unchecked Sendable {}
+extension Kava_Issuance_V1beta1_Params: @unchecked Sendable {}
+extension Kava_Issuance_V1beta1_Asset: @unchecked Sendable {}
+extension Kava_Issuance_V1beta1_RateLimit: @unchecked Sendable {}
+extension Kava_Issuance_V1beta1_AssetSupply: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kava.issuance.v1beta1"
@@ -174,9 +182,13 @@ extension Kava_Issuance_V1beta1_GenesisState: SwiftProtobuf.Message, SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._params {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.supplies.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.supplies, fieldNumber: 2)
     }
@@ -252,6 +264,10 @@ extension Kava_Issuance_V1beta1_Asset: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.owner.isEmpty {
       try visitor.visitSingularStringField(value: self.owner, fieldNumber: 1)
     }
@@ -267,9 +283,9 @@ extension Kava_Issuance_V1beta1_Asset: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if self.blockable != false {
       try visitor.visitSingularBoolField(value: self.blockable, fieldNumber: 5)
     }
-    if let v = self._rateLimit {
+    try { if let v = self._rateLimit {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -308,15 +324,19 @@ extension Kava_Issuance_V1beta1_RateLimit: SwiftProtobuf.Message, SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.active != false {
       try visitor.visitSingularBoolField(value: self.active, fieldNumber: 1)
     }
     if !self.limit.isEmpty {
       try visitor.visitSingularBytesField(value: self.limit, fieldNumber: 2)
     }
-    if let v = self._timePeriod {
+    try { if let v = self._timePeriod {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -350,12 +370,16 @@ extension Kava_Issuance_V1beta1_AssetSupply: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._currentSupply {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._currentSupply {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
-    if let v = self._timeElapsed {
+    } }()
+    try { if let v = self._timeElapsed {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

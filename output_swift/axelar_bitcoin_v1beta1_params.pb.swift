@@ -118,6 +118,10 @@ struct Axelar_Bitcoin_V1beta1_Params {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Axelar_Bitcoin_V1beta1_Params: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "axelar.bitcoin.v1beta1"
@@ -216,9 +220,13 @@ extension Axelar_Bitcoin_V1beta1_Params: SwiftProtobuf.Message, SwiftProtobuf._M
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._network {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      try { if let v = _storage._network {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      }
+      } }()
       if _storage._confirmationHeight != 0 {
         try visitor.visitSingularUInt64Field(value: _storage._confirmationHeight, fieldNumber: 2)
       }
@@ -228,15 +236,15 @@ extension Axelar_Bitcoin_V1beta1_Params: SwiftProtobuf.Message, SwiftProtobuf._M
       if _storage._sigCheckInterval != 0 {
         try visitor.visitSingularInt64Field(value: _storage._sigCheckInterval, fieldNumber: 4)
       }
-      if let v = _storage._minOutputAmount {
+      try { if let v = _storage._minOutputAmount {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-      }
+      } }()
       if _storage._maxInputCount != 0 {
         try visitor.visitSingularInt64Field(value: _storage._maxInputCount, fieldNumber: 6)
       }
-      if let v = _storage._maxSecondaryOutputAmount {
+      try { if let v = _storage._maxSecondaryOutputAmount {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-      }
+      } }()
       if _storage._masterKeyRetentionPeriod != 0 {
         try visitor.visitSingularInt64Field(value: _storage._masterKeyRetentionPeriod, fieldNumber: 8)
       }
@@ -246,9 +254,9 @@ extension Axelar_Bitcoin_V1beta1_Params: SwiftProtobuf.Message, SwiftProtobuf._M
       if _storage._masterAddressExternalKeyLockDuration != 0 {
         try visitor.visitSingularInt64Field(value: _storage._masterAddressExternalKeyLockDuration, fieldNumber: 10)
       }
-      if let v = _storage._votingThreshold {
+      try { if let v = _storage._votingThreshold {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
-      }
+      } }()
       if _storage._minVoterCount != 0 {
         try visitor.visitSingularInt64Field(value: _storage._minVoterCount, fieldNumber: 12)
       }

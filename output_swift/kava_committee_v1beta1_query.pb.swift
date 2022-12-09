@@ -326,6 +326,27 @@ struct Kava_Committee_V1beta1_QueryRawParamsResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Kava_Committee_V1beta1_QueryCommitteesRequest: @unchecked Sendable {}
+extension Kava_Committee_V1beta1_QueryCommitteesResponse: @unchecked Sendable {}
+extension Kava_Committee_V1beta1_QueryCommitteeRequest: @unchecked Sendable {}
+extension Kava_Committee_V1beta1_QueryCommitteeResponse: @unchecked Sendable {}
+extension Kava_Committee_V1beta1_QueryProposalsRequest: @unchecked Sendable {}
+extension Kava_Committee_V1beta1_QueryProposalsResponse: @unchecked Sendable {}
+extension Kava_Committee_V1beta1_QueryProposalRequest: @unchecked Sendable {}
+extension Kava_Committee_V1beta1_QueryProposalResponse: @unchecked Sendable {}
+extension Kava_Committee_V1beta1_QueryNextProposalIDRequest: @unchecked Sendable {}
+extension Kava_Committee_V1beta1_QueryNextProposalIDResponse: @unchecked Sendable {}
+extension Kava_Committee_V1beta1_QueryVotesRequest: @unchecked Sendable {}
+extension Kava_Committee_V1beta1_QueryVotesResponse: @unchecked Sendable {}
+extension Kava_Committee_V1beta1_QueryVoteRequest: @unchecked Sendable {}
+extension Kava_Committee_V1beta1_QueryVoteResponse: @unchecked Sendable {}
+extension Kava_Committee_V1beta1_QueryTallyRequest: @unchecked Sendable {}
+extension Kava_Committee_V1beta1_QueryTallyResponse: @unchecked Sendable {}
+extension Kava_Committee_V1beta1_QueryRawParamsRequest: @unchecked Sendable {}
+extension Kava_Committee_V1beta1_QueryRawParamsResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kava.committee.v1beta1"
@@ -432,9 +453,13 @@ extension Kava_Committee_V1beta1_QueryCommitteeResponse: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._committee {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._committee {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -566,18 +591,22 @@ extension Kava_Committee_V1beta1_QueryProposalResponse: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._pubProposal {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._pubProposal {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if self.id != 0 {
       try visitor.visitSingularUInt64Field(value: self.id, fieldNumber: 2)
     }
     if self.committeeID != 0 {
       try visitor.visitSingularUInt64Field(value: self.committeeID, fieldNumber: 3)
     }
-    if let v = self._deadline {
+    try { if let v = self._deadline {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -663,12 +692,16 @@ extension Kava_Committee_V1beta1_QueryVotesRequest: SwiftProtobuf.Message, Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.proposalID != 0 {
       try visitor.visitSingularUInt64Field(value: self.proposalID, fieldNumber: 1)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -701,12 +734,16 @@ extension Kava_Committee_V1beta1_QueryVotesResponse: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.votes.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.votes, fieldNumber: 1)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

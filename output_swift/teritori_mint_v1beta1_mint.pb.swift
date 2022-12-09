@@ -145,6 +145,14 @@ struct Teritori_Mint_V1beta1_Params {
   fileprivate var _distributionProportions: Teritori_Mint_V1beta1_DistributionProportions? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Teritori_Mint_V1beta1_Minter: @unchecked Sendable {}
+extension Teritori_Mint_V1beta1_TeamVestingMonthInfo: @unchecked Sendable {}
+extension Teritori_Mint_V1beta1_MonthlyVestingAddress: @unchecked Sendable {}
+extension Teritori_Mint_V1beta1_DistributionProportions: @unchecked Sendable {}
+extension Teritori_Mint_V1beta1_Params: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "teritori.mint.v1beta1"
@@ -356,6 +364,10 @@ extension Teritori_Mint_V1beta1_Params: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.mintDenom.isEmpty {
       try visitor.visitSingularStringField(value: self.mintDenom, fieldNumber: 1)
     }
@@ -368,9 +380,9 @@ extension Teritori_Mint_V1beta1_Params: SwiftProtobuf.Message, SwiftProtobuf._Me
     if !self.reductionFactor.isEmpty {
       try visitor.visitSingularStringField(value: self.reductionFactor, fieldNumber: 4)
     }
-    if let v = self._distributionProportions {
+    try { if let v = self._distributionProportions {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    }
+    } }()
     if !self.weightedDeveloperRewardsReceivers.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.weightedDeveloperRewardsReceivers, fieldNumber: 6)
     }

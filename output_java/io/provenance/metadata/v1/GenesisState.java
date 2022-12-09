@@ -41,154 +41,6 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private GenesisState(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10: {
-            io.provenance.metadata.v1.Params.Builder subBuilder = null;
-            if (params_ != null) {
-              subBuilder = params_.toBuilder();
-            }
-            params_ = input.readMessage(io.provenance.metadata.v1.Params.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(params_);
-              params_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 18: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              scopes_ = new java.util.ArrayList<io.provenance.metadata.v1.Scope>();
-              mutable_bitField0_ |= 0x00000001;
-            }
-            scopes_.add(
-                input.readMessage(io.provenance.metadata.v1.Scope.parser(), extensionRegistry));
-            break;
-          }
-          case 26: {
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-              sessions_ = new java.util.ArrayList<io.provenance.metadata.v1.Session>();
-              mutable_bitField0_ |= 0x00000002;
-            }
-            sessions_.add(
-                input.readMessage(io.provenance.metadata.v1.Session.parser(), extensionRegistry));
-            break;
-          }
-          case 34: {
-            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-              records_ = new java.util.ArrayList<io.provenance.metadata.v1.Record>();
-              mutable_bitField0_ |= 0x00000004;
-            }
-            records_.add(
-                input.readMessage(io.provenance.metadata.v1.Record.parser(), extensionRegistry));
-            break;
-          }
-          case 42: {
-            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-              scopeSpecifications_ = new java.util.ArrayList<io.provenance.metadata.v1.ScopeSpecification>();
-              mutable_bitField0_ |= 0x00000008;
-            }
-            scopeSpecifications_.add(
-                input.readMessage(io.provenance.metadata.v1.ScopeSpecification.parser(), extensionRegistry));
-            break;
-          }
-          case 50: {
-            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-              contractSpecifications_ = new java.util.ArrayList<io.provenance.metadata.v1.ContractSpecification>();
-              mutable_bitField0_ |= 0x00000010;
-            }
-            contractSpecifications_.add(
-                input.readMessage(io.provenance.metadata.v1.ContractSpecification.parser(), extensionRegistry));
-            break;
-          }
-          case 58: {
-            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-              recordSpecifications_ = new java.util.ArrayList<io.provenance.metadata.v1.RecordSpecification>();
-              mutable_bitField0_ |= 0x00000020;
-            }
-            recordSpecifications_.add(
-                input.readMessage(io.provenance.metadata.v1.RecordSpecification.parser(), extensionRegistry));
-            break;
-          }
-          case 66: {
-            io.provenance.metadata.v1.OSLocatorParams.Builder subBuilder = null;
-            if (oSLocatorParams_ != null) {
-              subBuilder = oSLocatorParams_.toBuilder();
-            }
-            oSLocatorParams_ = input.readMessage(io.provenance.metadata.v1.OSLocatorParams.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(oSLocatorParams_);
-              oSLocatorParams_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 74: {
-            if (!((mutable_bitField0_ & 0x00000040) != 0)) {
-              objectStoreLocators_ = new java.util.ArrayList<io.provenance.metadata.v1.ObjectStoreLocator>();
-              mutable_bitField0_ |= 0x00000040;
-            }
-            objectStoreLocators_.add(
-                input.readMessage(io.provenance.metadata.v1.ObjectStoreLocator.parser(), extensionRegistry));
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        scopes_ = java.util.Collections.unmodifiableList(scopes_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        sessions_ = java.util.Collections.unmodifiableList(sessions_);
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        records_ = java.util.Collections.unmodifiableList(records_);
-      }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
-        scopeSpecifications_ = java.util.Collections.unmodifiableList(scopeSpecifications_);
-      }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
-        contractSpecifications_ = java.util.Collections.unmodifiableList(contractSpecifications_);
-      }
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
-        recordSpecifications_ = java.util.Collections.unmodifiableList(recordSpecifications_);
-      }
-      if (((mutable_bitField0_ & 0x00000040) != 0)) {
-        objectStoreLocators_ = java.util.Collections.unmodifiableList(objectStoreLocators_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return io.provenance.metadata.v1.Genesis.internal_static_provenance_metadata_v1_GenesisState_descriptor;
@@ -607,7 +459,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < objectStoreLocators_.size(); i++) {
       output.writeMessage(9, objectStoreLocators_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -652,7 +504,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, objectStoreLocators_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -691,7 +543,7 @@ private static final long serialVersionUID = 0L;
     }
     if (!getObjectStoreLocatorsList()
         .equals(other.getObjectStoreLocatorsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -738,7 +590,7 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + OBJECT_STORE_LOCATORS_FIELD_NUMBER;
       hash = (53 * hash) + getObjectStoreLocatorsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -859,25 +711,13 @@ private static final long serialVersionUID = 0L;
 
     // Construct using io.provenance.metadata.v1.GenesisState.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-        getScopesFieldBuilder();
-        getSessionsFieldBuilder();
-        getRecordsFieldBuilder();
-        getScopeSpecificationsFieldBuilder();
-        getContractSpecificationsFieldBuilder();
-        getRecordSpecificationsFieldBuilder();
-        getObjectStoreLocatorsFieldBuilder();
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
@@ -890,40 +730,46 @@ private static final long serialVersionUID = 0L;
       }
       if (scopesBuilder_ == null) {
         scopes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        scopes_ = null;
         scopesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (sessionsBuilder_ == null) {
         sessions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        sessions_ = null;
         sessionsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (recordsBuilder_ == null) {
         records_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
+        records_ = null;
         recordsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (scopeSpecificationsBuilder_ == null) {
         scopeSpecifications_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
+        scopeSpecifications_ = null;
         scopeSpecificationsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (contractSpecificationsBuilder_ == null) {
         contractSpecifications_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
       } else {
+        contractSpecifications_ = null;
         contractSpecificationsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000010);
       if (recordSpecificationsBuilder_ == null) {
         recordSpecifications_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
       } else {
+        recordSpecifications_ = null;
         recordSpecificationsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000020);
       if (oSLocatorParamsBuilder_ == null) {
         oSLocatorParams_ = null;
       } else {
@@ -932,10 +778,11 @@ private static final long serialVersionUID = 0L;
       }
       if (objectStoreLocatorsBuilder_ == null) {
         objectStoreLocators_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
       } else {
+        objectStoreLocators_ = null;
         objectStoreLocatorsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -1272,7 +1119,7 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1287,17 +1134,135 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.provenance.metadata.v1.GenesisState parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              input.readMessage(
+                  getParamsFieldBuilder().getBuilder(),
+                  extensionRegistry);
+
+              break;
+            } // case 10
+            case 18: {
+              io.provenance.metadata.v1.Scope m =
+                  input.readMessage(
+                      io.provenance.metadata.v1.Scope.parser(),
+                      extensionRegistry);
+              if (scopesBuilder_ == null) {
+                ensureScopesIsMutable();
+                scopes_.add(m);
+              } else {
+                scopesBuilder_.addMessage(m);
+              }
+              break;
+            } // case 18
+            case 26: {
+              io.provenance.metadata.v1.Session m =
+                  input.readMessage(
+                      io.provenance.metadata.v1.Session.parser(),
+                      extensionRegistry);
+              if (sessionsBuilder_ == null) {
+                ensureSessionsIsMutable();
+                sessions_.add(m);
+              } else {
+                sessionsBuilder_.addMessage(m);
+              }
+              break;
+            } // case 26
+            case 34: {
+              io.provenance.metadata.v1.Record m =
+                  input.readMessage(
+                      io.provenance.metadata.v1.Record.parser(),
+                      extensionRegistry);
+              if (recordsBuilder_ == null) {
+                ensureRecordsIsMutable();
+                records_.add(m);
+              } else {
+                recordsBuilder_.addMessage(m);
+              }
+              break;
+            } // case 34
+            case 42: {
+              io.provenance.metadata.v1.ScopeSpecification m =
+                  input.readMessage(
+                      io.provenance.metadata.v1.ScopeSpecification.parser(),
+                      extensionRegistry);
+              if (scopeSpecificationsBuilder_ == null) {
+                ensureScopeSpecificationsIsMutable();
+                scopeSpecifications_.add(m);
+              } else {
+                scopeSpecificationsBuilder_.addMessage(m);
+              }
+              break;
+            } // case 42
+            case 50: {
+              io.provenance.metadata.v1.ContractSpecification m =
+                  input.readMessage(
+                      io.provenance.metadata.v1.ContractSpecification.parser(),
+                      extensionRegistry);
+              if (contractSpecificationsBuilder_ == null) {
+                ensureContractSpecificationsIsMutable();
+                contractSpecifications_.add(m);
+              } else {
+                contractSpecificationsBuilder_.addMessage(m);
+              }
+              break;
+            } // case 50
+            case 58: {
+              io.provenance.metadata.v1.RecordSpecification m =
+                  input.readMessage(
+                      io.provenance.metadata.v1.RecordSpecification.parser(),
+                      extensionRegistry);
+              if (recordSpecificationsBuilder_ == null) {
+                ensureRecordSpecificationsIsMutable();
+                recordSpecifications_.add(m);
+              } else {
+                recordSpecificationsBuilder_.addMessage(m);
+              }
+              break;
+            } // case 58
+            case 66: {
+              input.readMessage(
+                  getOSLocatorParamsFieldBuilder().getBuilder(),
+                  extensionRegistry);
+
+              break;
+            } // case 66
+            case 74: {
+              io.provenance.metadata.v1.ObjectStoreLocator m =
+                  input.readMessage(
+                      io.provenance.metadata.v1.ObjectStoreLocator.parser(),
+                      extensionRegistry);
+              if (objectStoreLocatorsBuilder_ == null) {
+                ensureObjectStoreLocatorsIsMutable();
+                objectStoreLocators_.add(m);
+              } else {
+                objectStoreLocatorsBuilder_.addMessage(m);
+              }
+              break;
+            } // case 74
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.provenance.metadata.v1.GenesisState) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
     private int bitField0_;
@@ -3360,7 +3325,18 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new GenesisState(input, extensionRegistry);
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
     }
   };
 

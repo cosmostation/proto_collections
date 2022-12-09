@@ -380,6 +380,21 @@ struct Injective_Exchange_V1beta1_PerpetualMarketFundingState {
   fileprivate var _funding: Injective_Exchange_V1beta1_PerpetualMarketFunding? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Injective_Exchange_V1beta1_GenesisState: @unchecked Sendable {}
+extension Injective_Exchange_V1beta1_FeeDiscountAccountTierTTL: @unchecked Sendable {}
+extension Injective_Exchange_V1beta1_FeeDiscountBucketFeesPaidAccounts: @unchecked Sendable {}
+extension Injective_Exchange_V1beta1_AccountFeesPaid: @unchecked Sendable {}
+extension Injective_Exchange_V1beta1_TradingRewardCampaignAccountPoints: @unchecked Sendable {}
+extension Injective_Exchange_V1beta1_SpotOrderBook: @unchecked Sendable {}
+extension Injective_Exchange_V1beta1_DerivativeOrderBook: @unchecked Sendable {}
+extension Injective_Exchange_V1beta1_Balance: @unchecked Sendable {}
+extension Injective_Exchange_V1beta1_DerivativePosition: @unchecked Sendable {}
+extension Injective_Exchange_V1beta1_SubaccountNonce: @unchecked Sendable {}
+extension Injective_Exchange_V1beta1_ExpiryFuturesMarketInfoState: @unchecked Sendable {}
+extension Injective_Exchange_V1beta1_PerpetualMarketFundingState: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "injective.exchange.v1beta1"
@@ -506,9 +521,13 @@ extension Injective_Exchange_V1beta1_GenesisState: SwiftProtobuf.Message, SwiftP
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._params {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      try { if let v = _storage._params {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      }
+      } }()
       if !_storage._spotMarkets.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._spotMarkets, fieldNumber: 2)
       }
@@ -548,18 +567,18 @@ extension Injective_Exchange_V1beta1_GenesisState: SwiftProtobuf.Message, SwiftP
       if _storage._isDerivativesExchangeEnabled != false {
         try visitor.visitSingularBoolField(value: _storage._isDerivativesExchangeEnabled, fieldNumber: 14)
       }
-      if let v = _storage._tradingRewardCampaignInfo {
+      try { if let v = _storage._tradingRewardCampaignInfo {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 15)
-      }
+      } }()
       if !_storage._tradingRewardPoolCampaignSchedule.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._tradingRewardPoolCampaignSchedule, fieldNumber: 16)
       }
       if !_storage._tradingRewardCampaignAccountPoints.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._tradingRewardCampaignAccountPoints, fieldNumber: 17)
       }
-      if let v = _storage._feeDiscountSchedule {
+      try { if let v = _storage._feeDiscountSchedule {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 18)
-      }
+      } }()
       if !_storage._feeDiscountAccountTierTtl.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._feeDiscountAccountTierTtl, fieldNumber: 19)
       }
@@ -629,12 +648,16 @@ extension Injective_Exchange_V1beta1_FeeDiscountAccountTierTTL: SwiftProtobuf.Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.account.isEmpty {
       try visitor.visitSingularStringField(value: self.account, fieldNumber: 1)
     }
-    if let v = self._tierTtl {
+    try { if let v = self._tierTtl {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -871,15 +894,19 @@ extension Injective_Exchange_V1beta1_Balance: SwiftProtobuf.Message, SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.subaccountID.isEmpty {
       try visitor.visitSingularStringField(value: self.subaccountID, fieldNumber: 1)
     }
     if !self.denom.isEmpty {
       try visitor.visitSingularStringField(value: self.denom, fieldNumber: 2)
     }
-    if let v = self._deposits {
+    try { if let v = self._deposits {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -915,15 +942,19 @@ extension Injective_Exchange_V1beta1_DerivativePosition: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.subaccountID.isEmpty {
       try visitor.visitSingularStringField(value: self.subaccountID, fieldNumber: 1)
     }
     if !self.marketID.isEmpty {
       try visitor.visitSingularStringField(value: self.marketID, fieldNumber: 2)
     }
-    if let v = self._position {
+    try { if let v = self._position {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -957,12 +988,16 @@ extension Injective_Exchange_V1beta1_SubaccountNonce: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.subaccountID.isEmpty {
       try visitor.visitSingularStringField(value: self.subaccountID, fieldNumber: 1)
     }
-    if let v = self._subaccountTradeNonce {
+    try { if let v = self._subaccountTradeNonce {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -995,12 +1030,16 @@ extension Injective_Exchange_V1beta1_ExpiryFuturesMarketInfoState: SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.marketID.isEmpty {
       try visitor.visitSingularStringField(value: self.marketID, fieldNumber: 1)
     }
-    if let v = self._marketInfo {
+    try { if let v = self._marketInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1033,12 +1072,16 @@ extension Injective_Exchange_V1beta1_PerpetualMarketFundingState: SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.marketID.isEmpty {
       try visitor.visitSingularStringField(value: self.marketID, fieldNumber: 1)
     }
-    if let v = self._funding {
+    try { if let v = self._funding {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

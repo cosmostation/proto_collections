@@ -194,6 +194,17 @@ struct Injective_Ocr_V1beta1_PendingPayeeship {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Injective_Ocr_V1beta1_GenesisState: @unchecked Sendable {}
+extension Injective_Ocr_V1beta1_FeedTransmission: @unchecked Sendable {}
+extension Injective_Ocr_V1beta1_FeedEpochAndRound: @unchecked Sendable {}
+extension Injective_Ocr_V1beta1_FeedLatestAggregatorRoundIDs: @unchecked Sendable {}
+extension Injective_Ocr_V1beta1_RewardPool: @unchecked Sendable {}
+extension Injective_Ocr_V1beta1_FeedCounts: @unchecked Sendable {}
+extension Injective_Ocr_V1beta1_Count: @unchecked Sendable {}
+extension Injective_Ocr_V1beta1_PendingPayeeship: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "injective.ocr.v1beta1"
@@ -233,9 +244,13 @@ extension Injective_Ocr_V1beta1_GenesisState: SwiftProtobuf.Message, SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._params {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.feedConfigs.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.feedConfigs, fieldNumber: 2)
     }
@@ -299,12 +314,16 @@ extension Injective_Ocr_V1beta1_FeedTransmission: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.feedID.isEmpty {
       try visitor.visitSingularStringField(value: self.feedID, fieldNumber: 1)
     }
-    if let v = self._transmission {
+    try { if let v = self._transmission {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -337,12 +356,16 @@ extension Injective_Ocr_V1beta1_FeedEpochAndRound: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.feedID.isEmpty {
       try visitor.visitSingularStringField(value: self.feedID, fieldNumber: 1)
     }
-    if let v = self._epochAndRound {
+    try { if let v = self._epochAndRound {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -413,12 +436,16 @@ extension Injective_Ocr_V1beta1_RewardPool: SwiftProtobuf.Message, SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.feedID.isEmpty {
       try visitor.visitSingularStringField(value: self.feedID, fieldNumber: 1)
     }
-    if let v = self._amount {
+    try { if let v = self._amount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

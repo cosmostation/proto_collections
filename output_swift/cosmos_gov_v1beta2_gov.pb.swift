@@ -374,6 +374,19 @@ struct Cosmos_Gov_V1beta2_TallyParams {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Cosmos_Gov_V1beta2_VoteOption: @unchecked Sendable {}
+extension Cosmos_Gov_V1beta2_ProposalStatus: @unchecked Sendable {}
+extension Cosmos_Gov_V1beta2_WeightedVoteOption: @unchecked Sendable {}
+extension Cosmos_Gov_V1beta2_Deposit: @unchecked Sendable {}
+extension Cosmos_Gov_V1beta2_Proposal: @unchecked Sendable {}
+extension Cosmos_Gov_V1beta2_TallyResult: @unchecked Sendable {}
+extension Cosmos_Gov_V1beta2_Vote: @unchecked Sendable {}
+extension Cosmos_Gov_V1beta2_DepositParams: @unchecked Sendable {}
+extension Cosmos_Gov_V1beta2_VotingParams: @unchecked Sendable {}
+extension Cosmos_Gov_V1beta2_TallyParams: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.gov.v1beta2"
@@ -516,6 +529,10 @@ extension Cosmos_Gov_V1beta2_Proposal: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.proposalID != 0 {
       try visitor.visitSingularUInt64Field(value: self.proposalID, fieldNumber: 1)
     }
@@ -525,24 +542,24 @@ extension Cosmos_Gov_V1beta2_Proposal: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if self.status != .unspecified {
       try visitor.visitSingularEnumField(value: self.status, fieldNumber: 3)
     }
-    if let v = self._finalTallyResult {
+    try { if let v = self._finalTallyResult {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
-    if let v = self._submitTime {
+    } }()
+    try { if let v = self._submitTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    }
-    if let v = self._depositEndTime {
+    } }()
+    try { if let v = self._depositEndTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    }
+    } }()
     if !self.totalDeposit.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.totalDeposit, fieldNumber: 7)
     }
-    if let v = self._votingStartTime {
+    try { if let v = self._votingStartTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
-    }
-    if let v = self._votingEndTime {
+    } }()
+    try { if let v = self._votingEndTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -682,12 +699,16 @@ extension Cosmos_Gov_V1beta2_DepositParams: SwiftProtobuf.Message, SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.minDeposit.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.minDeposit, fieldNumber: 1)
     }
-    if let v = self._maxDepositPeriod {
+    try { if let v = self._maxDepositPeriod {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -718,9 +739,13 @@ extension Cosmos_Gov_V1beta2_VotingParams: SwiftProtobuf.Message, SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._votingPeriod {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._votingPeriod {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

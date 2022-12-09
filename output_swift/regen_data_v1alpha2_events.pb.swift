@@ -65,6 +65,12 @@ struct Regen_Data_V1alpha2_EventStoreRawData {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Regen_Data_V1alpha2_EventAnchorData: @unchecked Sendable {}
+extension Regen_Data_V1alpha2_EventSignData: @unchecked Sendable {}
+extension Regen_Data_V1alpha2_EventStoreRawData: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "regen.data.v1alpha2"

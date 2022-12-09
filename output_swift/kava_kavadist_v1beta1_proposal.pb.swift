@@ -72,6 +72,12 @@ struct Kava_Kavadist_V1beta1_MultiSpendRecipient {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Kava_Kavadist_V1beta1_CommunityPoolMultiSpendProposal: @unchecked Sendable {}
+extension Kava_Kavadist_V1beta1_CommunityPoolMultiSpendProposalJSON: @unchecked Sendable {}
+extension Kava_Kavadist_V1beta1_MultiSpendRecipient: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kava.kavadist.v1beta1"

@@ -55,6 +55,11 @@ struct Cosmos_Auth_Module_V1_ModuleAccountPermission {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Cosmos_Auth_Module_V1_Module: @unchecked Sendable {}
+extension Cosmos_Auth_Module_V1_ModuleAccountPermission: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.auth.module.v1"

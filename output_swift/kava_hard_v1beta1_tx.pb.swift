@@ -152,6 +152,19 @@ struct Kava_Hard_V1beta1_MsgLiquidateResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Kava_Hard_V1beta1_MsgDeposit: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_MsgDepositResponse: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_MsgWithdraw: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_MsgWithdrawResponse: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_MsgBorrow: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_MsgBorrowResponse: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_MsgRepay: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_MsgRepayResponse: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_MsgLiquidate: @unchecked Sendable {}
+extension Kava_Hard_V1beta1_MsgLiquidateResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kava.hard.v1beta1"

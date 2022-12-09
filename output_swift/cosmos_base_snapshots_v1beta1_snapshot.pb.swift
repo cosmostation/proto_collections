@@ -64,6 +64,11 @@ struct Cosmos_Base_Snapshots_V1beta1_Metadata {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Cosmos_Base_Snapshots_V1beta1_Snapshot: @unchecked Sendable {}
+extension Cosmos_Base_Snapshots_V1beta1_Metadata: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.base.snapshots.v1beta1"
@@ -95,6 +100,10 @@ extension Cosmos_Base_Snapshots_V1beta1_Snapshot: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.height != 0 {
       try visitor.visitSingularUInt64Field(value: self.height, fieldNumber: 1)
     }
@@ -107,9 +116,9 @@ extension Cosmos_Base_Snapshots_V1beta1_Snapshot: SwiftProtobuf.Message, SwiftPr
     if !self.hash.isEmpty {
       try visitor.visitSingularBytesField(value: self.hash, fieldNumber: 4)
     }
-    if let v = self._metadata {
+    try { if let v = self._metadata {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

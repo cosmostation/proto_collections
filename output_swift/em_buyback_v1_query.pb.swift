@@ -83,6 +83,13 @@ struct Em_Buyback_V1_QueryBuybackTimeResponse {
   fileprivate var _nextRun: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Em_Buyback_V1_QueryBalanceRequest: @unchecked Sendable {}
+extension Em_Buyback_V1_QueryBalanceResponse: @unchecked Sendable {}
+extension Em_Buyback_V1_QueryBuybackTimeRequest: @unchecked Sendable {}
+extension Em_Buyback_V1_QueryBuybackTimeResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "em.buyback.v1"
@@ -178,12 +185,16 @@ extension Em_Buyback_V1_QueryBuybackTimeResponse: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._lastRun {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._lastRun {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
-    if let v = self._nextRun {
+    } }()
+    try { if let v = self._nextRun {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

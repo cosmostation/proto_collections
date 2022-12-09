@@ -639,6 +639,55 @@ struct Stafihub_Stafihub_Mining_MsgWithdrawRewardTokenResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Stafihub_Stafihub_Mining_MsgAddStakePool: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_CreateRewardPoolInfo: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_CreateStakeItemInfo: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgAddStakePoolResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgAddStakeItem: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgAddStakeItemResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgAddRewardPool: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgAddRewardPoolResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgStake: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgStakeResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgClaimReward: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgClaimRewardResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgWithdraw: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgWithdrawResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgUpdateStakeItem: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgUpdateStakeItemResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgAddMiningProvider: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgAddMiningProviderResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgRmMiningProvider: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgRmMiningProviderResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgAddRewardToken: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgAddRewardTokenResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgSetMaxRewardPoolNumber: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgSetMaxRewardPoolNumberResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgUpdateRewardPool: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgUpdateRewardPoolResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgToggleProviderSwitch: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgToggleProviderSwitchResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgSetMaxStakeItemNumber: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgSetMaxStakeItemNumberResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgAddReward: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgAddRewardResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgToggleEmergencySwitch: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgToggleEmergencySwitchResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgEmergencyWithdraw: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgEmergencyWithdrawResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgAddStakeToken: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgAddStakeTokenResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgRmRewardToken: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgRmRewardTokenResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgRmStakeToken: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgRmStakeTokenResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgSetStakeItemLimit: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgSetStakeItemLimitResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgWithdrawRewardToken: @unchecked Sendable {}
+extension Stafihub_Stafihub_Mining_MsgWithdrawRewardTokenResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stafihub.stafihub.mining"

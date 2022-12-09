@@ -324,6 +324,23 @@ struct Band_Oracle_V1_MsgActivateResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Band_Oracle_V1_MsgRequestData: @unchecked Sendable {}
+extension Band_Oracle_V1_MsgRequestDataResponse: @unchecked Sendable {}
+extension Band_Oracle_V1_MsgReportData: @unchecked Sendable {}
+extension Band_Oracle_V1_MsgReportDataResponse: @unchecked Sendable {}
+extension Band_Oracle_V1_MsgCreateDataSource: @unchecked Sendable {}
+extension Band_Oracle_V1_MsgCreateDataSourceResponse: @unchecked Sendable {}
+extension Band_Oracle_V1_MsgEditDataSource: @unchecked Sendable {}
+extension Band_Oracle_V1_MsgEditDataSourceResponse: @unchecked Sendable {}
+extension Band_Oracle_V1_MsgCreateOracleScript: @unchecked Sendable {}
+extension Band_Oracle_V1_MsgCreateOracleScriptResponse: @unchecked Sendable {}
+extension Band_Oracle_V1_MsgEditOracleScript: @unchecked Sendable {}
+extension Band_Oracle_V1_MsgEditOracleScriptResponse: @unchecked Sendable {}
+extension Band_Oracle_V1_MsgActivate: @unchecked Sendable {}
+extension Band_Oracle_V1_MsgActivateResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "band.oracle.v1"

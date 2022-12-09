@@ -66,6 +66,13 @@ struct Stafihub_Stafihub_Rvote_QueryGetProposalLifeResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Stafihub_Stafihub_Rvote_QueryGetProposalRequest: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rvote_QueryGetProposalResponse: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rvote_QueryGetProposalLifeRequest: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rvote_QueryGetProposalLifeResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stafihub.stafihub.rvote"

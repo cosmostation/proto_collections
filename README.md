@@ -12,6 +12,10 @@
 ### install protoc 
 http://google.github.io/proto-lens/installing-protoc.html
 
+```shell
+brew install swift-protobuf
+```
+
 ### simple convert for Java
 ```shell
 protoc --java_out=output_java  \

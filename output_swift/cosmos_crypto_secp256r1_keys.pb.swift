@@ -51,6 +51,11 @@ struct Cosmos_Crypto_Secp256r1_PrivKey {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Cosmos_Crypto_Secp256r1_PubKey: @unchecked Sendable {}
+extension Cosmos_Crypto_Secp256r1_PrivKey: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.crypto.secp256r1"

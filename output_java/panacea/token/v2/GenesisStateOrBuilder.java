@@ -31,9 +31,11 @@ public interface GenesisStateOrBuilder extends
    * <code>map&lt;string, .panacea.token.v2.Token&gt; tokens = 1;</code>
    */
 
-  panacea.token.v2.Token getTokensOrDefault(
+  /* nullable */
+panacea.token.v2.Token getTokensOrDefault(
       java.lang.String key,
-      panacea.token.v2.Token defaultValue);
+      /* nullable */
+panacea.token.v2.Token defaultValue);
   /**
    * <code>map&lt;string, .panacea.token.v2.Token&gt; tokens = 1;</code>
    */

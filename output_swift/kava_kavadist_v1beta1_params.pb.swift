@@ -140,6 +140,14 @@ struct Kava_Kavadist_V1beta1_Period {
   fileprivate var _end: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Kava_Kavadist_V1beta1_Params: @unchecked Sendable {}
+extension Kava_Kavadist_V1beta1_InfrastructureParams: @unchecked Sendable {}
+extension Kava_Kavadist_V1beta1_CoreReward: @unchecked Sendable {}
+extension Kava_Kavadist_V1beta1_PartnerReward: @unchecked Sendable {}
+extension Kava_Kavadist_V1beta1_Period: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kava.kavadist.v1beta1"
@@ -167,15 +175,19 @@ extension Kava_Kavadist_V1beta1_Params: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.active != false {
       try visitor.visitSingularBoolField(value: self.active, fieldNumber: 1)
     }
     if !self.periods.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.periods, fieldNumber: 3)
     }
-    if let v = self._infrastructureParams {
+    try { if let v = self._infrastructureParams {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -291,12 +303,16 @@ extension Kava_Kavadist_V1beta1_PartnerReward: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.address.isEmpty {
       try visitor.visitSingularBytesField(value: self.address, fieldNumber: 1)
     }
-    if let v = self._rewardsPerSecond {
+    try { if let v = self._rewardsPerSecond {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -331,12 +347,16 @@ extension Kava_Kavadist_V1beta1_Period: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._start {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._start {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
-    if let v = self._end {
+    } }()
+    try { if let v = self._end {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if !self.inflation.isEmpty {
       try visitor.visitSingularBytesField(value: self.inflation, fieldNumber: 3)
     }

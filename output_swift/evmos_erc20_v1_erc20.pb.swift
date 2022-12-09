@@ -190,6 +190,15 @@ struct Evmos_Erc20_V1_UpdateTokenPairERC20Proposal {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Evmos_Erc20_V1_Owner: @unchecked Sendable {}
+extension Evmos_Erc20_V1_TokenPair: @unchecked Sendable {}
+extension Evmos_Erc20_V1_RegisterCoinProposal: @unchecked Sendable {}
+extension Evmos_Erc20_V1_RegisterERC20Proposal: @unchecked Sendable {}
+extension Evmos_Erc20_V1_ToggleTokenRelayProposal: @unchecked Sendable {}
+extension Evmos_Erc20_V1_UpdateTokenPairERC20Proposal: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "evmos.erc20.v1"
@@ -275,15 +284,19 @@ extension Evmos_Erc20_V1_RegisterCoinProposal: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.title.isEmpty {
       try visitor.visitSingularStringField(value: self.title, fieldNumber: 1)
     }
     if !self.description_p.isEmpty {
       try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 2)
     }
-    if let v = self._metadata {
+    try { if let v = self._metadata {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

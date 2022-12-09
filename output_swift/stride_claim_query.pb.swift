@@ -198,6 +198,21 @@ struct Stride_Claim_QueryUserVestingsResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Stride_Claim_QueryDistributorAccountBalanceRequest: @unchecked Sendable {}
+extension Stride_Claim_QueryDistributorAccountBalanceResponse: @unchecked Sendable {}
+extension Stride_Claim_QueryParamsRequest: @unchecked Sendable {}
+extension Stride_Claim_QueryParamsResponse: @unchecked Sendable {}
+extension Stride_Claim_QueryClaimRecordRequest: @unchecked Sendable {}
+extension Stride_Claim_QueryClaimRecordResponse: @unchecked Sendable {}
+extension Stride_Claim_QueryClaimableForActionRequest: @unchecked Sendable {}
+extension Stride_Claim_QueryClaimableForActionResponse: @unchecked Sendable {}
+extension Stride_Claim_QueryTotalClaimableRequest: @unchecked Sendable {}
+extension Stride_Claim_QueryTotalClaimableResponse: @unchecked Sendable {}
+extension Stride_Claim_QueryUserVestingsRequest: @unchecked Sendable {}
+extension Stride_Claim_QueryUserVestingsResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stride.claim"
@@ -304,9 +319,13 @@ extension Stride_Claim_QueryParamsResponse: SwiftProtobuf.Message, SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._params {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -374,9 +393,13 @@ extension Stride_Claim_QueryClaimRecordResponse: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._claimRecord {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._claimRecord {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

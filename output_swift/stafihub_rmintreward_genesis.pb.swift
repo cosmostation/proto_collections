@@ -180,6 +180,16 @@ struct Stafihub_Stafihub_Rmintreward_UserMintCount {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Stafihub_Stafihub_Rmintreward_GenesisState: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rmintreward_ActLatestCycle: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rmintreward_ActCurrentCycle: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rmintreward_GenesisMintRewardAct: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rmintreward_GenesisUserClaimInfo: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rmintreward_GenesisUserAct: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rmintreward_UserMintCount: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stafihub.stafihub.rmintreward"
@@ -215,9 +225,13 @@ extension Stafihub_Stafihub_Rmintreward_GenesisState: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._params {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.actLatestCycleList.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.actLatestCycleList, fieldNumber: 2)
     }
@@ -351,15 +365,19 @@ extension Stafihub_Stafihub_Rmintreward_GenesisMintRewardAct: SwiftProtobuf.Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.denom.isEmpty {
       try visitor.visitSingularStringField(value: self.denom, fieldNumber: 1)
     }
     if self.cycle != 0 {
       try visitor.visitSingularUInt64Field(value: self.cycle, fieldNumber: 2)
     }
-    if let v = self._mintRewardAct {
+    try { if let v = self._mintRewardAct {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -399,6 +417,10 @@ extension Stafihub_Stafihub_Rmintreward_GenesisUserClaimInfo: SwiftProtobuf.Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.account.isEmpty {
       try visitor.visitSingularStringField(value: self.account, fieldNumber: 1)
     }
@@ -411,9 +433,9 @@ extension Stafihub_Stafihub_Rmintreward_GenesisUserClaimInfo: SwiftProtobuf.Mess
     if self.mintIndex != 0 {
       try visitor.visitSingularUInt64Field(value: self.mintIndex, fieldNumber: 4)
     }
-    if let v = self._userClaimInfo {
+    try { if let v = self._userClaimInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -451,15 +473,19 @@ extension Stafihub_Stafihub_Rmintreward_GenesisUserAct: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.account.isEmpty {
       try visitor.visitSingularStringField(value: self.account, fieldNumber: 1)
     }
     if !self.denom.isEmpty {
       try visitor.visitSingularStringField(value: self.denom, fieldNumber: 2)
     }
-    if let v = self._acts {
+    try { if let v = self._acts {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

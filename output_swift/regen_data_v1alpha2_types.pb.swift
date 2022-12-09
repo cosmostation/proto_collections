@@ -428,6 +428,18 @@ struct Regen_Data_V1alpha2_SignerEntry {
   fileprivate var _timestamp: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Regen_Data_V1alpha2_MediaType: @unchecked Sendable {}
+extension Regen_Data_V1alpha2_GraphCanonicalizationAlgorithm: @unchecked Sendable {}
+extension Regen_Data_V1alpha2_GraphMerkleTree: @unchecked Sendable {}
+extension Regen_Data_V1alpha2_DigestAlgorithm: @unchecked Sendable {}
+extension Regen_Data_V1alpha2_ContentHash: @unchecked Sendable {}
+extension Regen_Data_V1alpha2_ContentHash.OneOf_Sum: @unchecked Sendable {}
+extension Regen_Data_V1alpha2_ContentHash.Raw: @unchecked Sendable {}
+extension Regen_Data_V1alpha2_ContentHash.Graph: @unchecked Sendable {}
+extension Regen_Data_V1alpha2_SignerEntry: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "regen.data.v1alpha2"
@@ -521,8 +533,9 @@ extension Regen_Data_V1alpha2_ContentHash: SwiftProtobuf.Message, SwiftProtobuf.
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every case branch when no optimizations are
-    // enabled. https://github.com/apple/swift-protobuf/issues/1034
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     switch self.sum {
     case .raw?: try {
       guard case .raw(let v)? = self.sum else { preconditionFailure() }
@@ -659,12 +672,16 @@ extension Regen_Data_V1alpha2_SignerEntry: SwiftProtobuf.Message, SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.signer.isEmpty {
       try visitor.visitSingularStringField(value: self.signer, fieldNumber: 1)
     }
-    if let v = self._timestamp {
+    try { if let v = self._timestamp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

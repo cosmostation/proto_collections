@@ -146,6 +146,16 @@ struct Stafihub_Stafihub_Rmintreward_Acts {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Stafihub_Stafihub_Rmintreward_MintRewardAct: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rmintreward_MintRewardActPost: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rmintreward_TokenRewardInfo: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rmintreward_TokenRewardInfoPost: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rmintreward_UserClaimInfo: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rmintreward_TokenClaimInfo: @unchecked Sendable {}
+extension Stafihub_Stafihub_Rmintreward_Acts: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stafihub.stafihub.rmintreward"

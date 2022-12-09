@@ -142,6 +142,13 @@ struct Evmos_Claims_V1_ClaimsRecord {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Evmos_Claims_V1_Action: @unchecked Sendable {}
+extension Evmos_Claims_V1_Claim: @unchecked Sendable {}
+extension Evmos_Claims_V1_ClaimsRecordAddress: @unchecked Sendable {}
+extension Evmos_Claims_V1_ClaimsRecord: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "evmos.claims.v1"

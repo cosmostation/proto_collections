@@ -63,6 +63,11 @@ struct Desmos_Profiles_V1beta1_UserBlock {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Desmos_Profiles_V1beta1_Relationship: @unchecked Sendable {}
+extension Desmos_Profiles_V1beta1_UserBlock: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "desmos.profiles.v1beta1"

@@ -83,6 +83,12 @@ struct Desmos_Posts_V1beta1_UserAnswer {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Desmos_Posts_V1beta1_ProvidedAnswer: @unchecked Sendable {}
+extension Desmos_Posts_V1beta1_Poll: @unchecked Sendable {}
+extension Desmos_Posts_V1beta1_UserAnswer: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "desmos.posts.v1beta1"
@@ -152,15 +158,19 @@ extension Desmos_Posts_V1beta1_Poll: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.question.isEmpty {
       try visitor.visitSingularStringField(value: self.question, fieldNumber: 1)
     }
     if !self.providedAnswers.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.providedAnswers, fieldNumber: 2)
     }
-    if let v = self._endDate {
+    try { if let v = self._endDate {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if self.allowsMultipleAnswers != false {
       try visitor.visitSingularBoolField(value: self.allowsMultipleAnswers, fieldNumber: 4)
     }

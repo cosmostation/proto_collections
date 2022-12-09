@@ -202,123 +202,6 @@ public final class Genesis {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GenesisState(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                dtagTransferRequests_ = new java.util.ArrayList<desmos.profiles.v1beta1.ModelsDtagRequests.DTagTransferRequest>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              dtagTransferRequests_.add(
-                  input.readMessage(desmos.profiles.v1beta1.ModelsDtagRequests.DTagTransferRequest.parser(), extensionRegistry));
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                relationships_ = new java.util.ArrayList<desmos.profiles.v1beta1.ModelsRelationships.Relationship>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              relationships_.add(
-                  input.readMessage(desmos.profiles.v1beta1.ModelsRelationships.Relationship.parser(), extensionRegistry));
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                blocks_ = new java.util.ArrayList<desmos.profiles.v1beta1.ModelsRelationships.UserBlock>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              blocks_.add(
-                  input.readMessage(desmos.profiles.v1beta1.ModelsRelationships.UserBlock.parser(), extensionRegistry));
-              break;
-            }
-            case 34: {
-              desmos.profiles.v1beta1.ModelsParams.Params.Builder subBuilder = null;
-              if (params_ != null) {
-                subBuilder = params_.toBuilder();
-              }
-              params_ = input.readMessage(desmos.profiles.v1beta1.ModelsParams.Params.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(params_);
-                params_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              ibcPortId_ = s;
-              break;
-            }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                chainLinks_ = new java.util.ArrayList<desmos.profiles.v1beta1.ModelsChainLinks.ChainLink>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              chainLinks_.add(
-                  input.readMessage(desmos.profiles.v1beta1.ModelsChainLinks.ChainLink.parser(), extensionRegistry));
-              break;
-            }
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                applicationLinks_ = new java.util.ArrayList<desmos.profiles.v1beta1.ModelsAppLinks.ApplicationLink>();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              applicationLinks_.add(
-                  input.readMessage(desmos.profiles.v1beta1.ModelsAppLinks.ApplicationLink.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          dtagTransferRequests_ = java.util.Collections.unmodifiableList(dtagTransferRequests_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          relationships_ = java.util.Collections.unmodifiableList(relationships_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          blocks_ = java.util.Collections.unmodifiableList(blocks_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          chainLinks_ = java.util.Collections.unmodifiableList(chainLinks_);
-        }
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
-          applicationLinks_ = java.util.Collections.unmodifiableList(applicationLinks_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return desmos.profiles.v1beta1.Genesis.internal_static_desmos_profiles_v1beta1_GenesisState_descriptor;
@@ -622,7 +505,7 @@ public final class Genesis {
       if (params_ != null) {
         output.writeMessage(4, getParams());
       }
-      if (!getIbcPortIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ibcPortId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, ibcPortId_);
       }
       for (int i = 0; i < chainLinks_.size(); i++) {
@@ -631,7 +514,7 @@ public final class Genesis {
       for (int i = 0; i < applicationLinks_.size(); i++) {
         output.writeMessage(7, applicationLinks_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -656,7 +539,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getParams());
       }
-      if (!getIbcPortIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ibcPortId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, ibcPortId_);
       }
       for (int i = 0; i < chainLinks_.size(); i++) {
@@ -667,7 +550,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, applicationLinks_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -699,7 +582,7 @@ public final class Genesis {
           .equals(other.getChainLinksList())) return false;
       if (!getApplicationLinksList()
           .equals(other.getApplicationLinksList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -736,7 +619,7 @@ public final class Genesis {
         hash = (37 * hash) + APPLICATION_LINKS_FIELD_NUMBER;
         hash = (53 * hash) + getApplicationLinksList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -857,45 +740,38 @@ public final class Genesis {
 
       // Construct using desmos.profiles.v1beta1.Genesis.GenesisState.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getDtagTransferRequestsFieldBuilder();
-          getRelationshipsFieldBuilder();
-          getBlocksFieldBuilder();
-          getChainLinksFieldBuilder();
-          getApplicationLinksFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
         if (dtagTransferRequestsBuilder_ == null) {
           dtagTransferRequests_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          dtagTransferRequests_ = null;
           dtagTransferRequestsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (relationshipsBuilder_ == null) {
           relationships_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          relationships_ = null;
           relationshipsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (blocksBuilder_ == null) {
           blocks_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          blocks_ = null;
           blocksBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (paramsBuilder_ == null) {
           params_ = null;
         } else {
@@ -906,16 +782,18 @@ public final class Genesis {
 
         if (chainLinksBuilder_ == null) {
           chainLinks_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
+          chainLinks_ = null;
           chainLinksBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         if (applicationLinksBuilder_ == null) {
           applicationLinks_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
+          applicationLinks_ = null;
           applicationLinksBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -1179,7 +1057,7 @@ public final class Genesis {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1194,17 +1072,107 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        desmos.profiles.v1beta1.Genesis.GenesisState parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                desmos.profiles.v1beta1.ModelsDtagRequests.DTagTransferRequest m =
+                    input.readMessage(
+                        desmos.profiles.v1beta1.ModelsDtagRequests.DTagTransferRequest.parser(),
+                        extensionRegistry);
+                if (dtagTransferRequestsBuilder_ == null) {
+                  ensureDtagTransferRequestsIsMutable();
+                  dtagTransferRequests_.add(m);
+                } else {
+                  dtagTransferRequestsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              case 18: {
+                desmos.profiles.v1beta1.ModelsRelationships.Relationship m =
+                    input.readMessage(
+                        desmos.profiles.v1beta1.ModelsRelationships.Relationship.parser(),
+                        extensionRegistry);
+                if (relationshipsBuilder_ == null) {
+                  ensureRelationshipsIsMutable();
+                  relationships_.add(m);
+                } else {
+                  relationshipsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              case 26: {
+                desmos.profiles.v1beta1.ModelsRelationships.UserBlock m =
+                    input.readMessage(
+                        desmos.profiles.v1beta1.ModelsRelationships.UserBlock.parser(),
+                        extensionRegistry);
+                if (blocksBuilder_ == null) {
+                  ensureBlocksIsMutable();
+                  blocks_.add(m);
+                } else {
+                  blocksBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 34: {
+                input.readMessage(
+                    getParamsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 34
+              case 42: {
+                ibcPortId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+              case 50: {
+                desmos.profiles.v1beta1.ModelsChainLinks.ChainLink m =
+                    input.readMessage(
+                        desmos.profiles.v1beta1.ModelsChainLinks.ChainLink.parser(),
+                        extensionRegistry);
+                if (chainLinksBuilder_ == null) {
+                  ensureChainLinksIsMutable();
+                  chainLinks_.add(m);
+                } else {
+                  chainLinksBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+              case 58: {
+                desmos.profiles.v1beta1.ModelsAppLinks.ApplicationLink m =
+                    input.readMessage(
+                        desmos.profiles.v1beta1.ModelsAppLinks.ApplicationLink.parser(),
+                        extensionRegistry);
+                if (applicationLinksBuilder_ == null) {
+                  ensureApplicationLinksIsMutable();
+                  applicationLinks_.add(m);
+                } else {
+                  applicationLinksBuilder_.addMessage(m);
+                }
+                break;
+              } // case 58
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (desmos.profiles.v1beta1.Genesis.GenesisState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -2636,7 +2604,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GenesisState(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

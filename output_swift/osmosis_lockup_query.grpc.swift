@@ -111,6 +111,11 @@ internal protocol Osmosis_Lockup_QueryClientProtocol: GRPCClient {
     _ request: Osmosis_Lockup_AccountLockedLongerDurationDenomRequest,
     callOptions: CallOptions?
   ) -> UnaryCall<Osmosis_Lockup_AccountLockedLongerDurationDenomRequest, Osmosis_Lockup_AccountLockedLongerDurationDenomResponse>
+
+  func params(
+    _ request: Osmosis_Lockup_QueryParamsRequest,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Osmosis_Lockup_QueryParamsRequest, Osmosis_Lockup_QueryParamsResponse>
 }
 
 extension Osmosis_Lockup_QueryClientProtocol {
@@ -407,6 +412,24 @@ extension Osmosis_Lockup_QueryClientProtocol {
       interceptors: self.interceptors?.makeAccountLockedLongerDurationDenomInterceptors() ?? []
     )
   }
+
+  /// Params returns lockup params.
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to Params.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func params(
+    _ request: Osmosis_Lockup_QueryParamsRequest,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Osmosis_Lockup_QueryParamsRequest, Osmosis_Lockup_QueryParamsResponse> {
+    return self.makeUnaryCall(
+      path: "/osmosis.lockup.Query/Params",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeParamsInterceptors() ?? []
+    )
+  }
 }
 
 internal protocol Osmosis_Lockup_QueryClientInterceptorFactoryProtocol {
@@ -458,6 +481,9 @@ internal protocol Osmosis_Lockup_QueryClientInterceptorFactoryProtocol {
 
   /// - Returns: Interceptors to use when invoking 'accountLockedLongerDurationDenom'.
   func makeAccountLockedLongerDurationDenomInterceptors() -> [ClientInterceptor<Osmosis_Lockup_AccountLockedLongerDurationDenomRequest, Osmosis_Lockup_AccountLockedLongerDurationDenomResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'params'.
+  func makeParamsInterceptors() -> [ClientInterceptor<Osmosis_Lockup_QueryParamsRequest, Osmosis_Lockup_QueryParamsResponse>]
 }
 
 internal final class Osmosis_Lockup_QueryClient: Osmosis_Lockup_QueryClientProtocol {
@@ -537,6 +563,9 @@ internal protocol Osmosis_Lockup_QueryProvider: CallHandlerProvider {
 
   /// Returns account's locked records for a denom with longer duration
   func accountLockedLongerDurationDenom(request: Osmosis_Lockup_AccountLockedLongerDurationDenomRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Lockup_AccountLockedLongerDurationDenomResponse>
+
+  /// Params returns lockup params.
+  func params(request: Osmosis_Lockup_QueryParamsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Osmosis_Lockup_QueryParamsResponse>
 }
 
 extension Osmosis_Lockup_QueryProvider {
@@ -693,6 +722,15 @@ extension Osmosis_Lockup_QueryProvider {
         userFunction: self.accountLockedLongerDurationDenom(request:context:)
       )
 
+    case "Params":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Osmosis_Lockup_QueryParamsRequest>(),
+        responseSerializer: ProtobufSerializer<Osmosis_Lockup_QueryParamsResponse>(),
+        interceptors: self.interceptors?.makeParamsInterceptors() ?? [],
+        userFunction: self.params(request:context:)
+      )
+
     default:
       return nil
     }
@@ -764,4 +802,8 @@ internal protocol Osmosis_Lockup_QueryServerInterceptorFactoryProtocol {
   /// - Returns: Interceptors to use when handling 'accountLockedLongerDurationDenom'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeAccountLockedLongerDurationDenomInterceptors() -> [ServerInterceptor<Osmosis_Lockup_AccountLockedLongerDurationDenomRequest, Osmosis_Lockup_AccountLockedLongerDurationDenomResponse>]
+
+  /// - Returns: Interceptors to use when handling 'params'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeParamsInterceptors() -> [ServerInterceptor<Osmosis_Lockup_QueryParamsRequest, Osmosis_Lockup_QueryParamsResponse>]
 }

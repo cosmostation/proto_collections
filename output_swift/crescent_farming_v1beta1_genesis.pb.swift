@@ -271,6 +271,17 @@ struct Crescent_Farming_V1beta1_CurrentEpochRecord {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Crescent_Farming_V1beta1_GenesisState: @unchecked Sendable {}
+extension Crescent_Farming_V1beta1_PlanRecord: @unchecked Sendable {}
+extension Crescent_Farming_V1beta1_StakingRecord: @unchecked Sendable {}
+extension Crescent_Farming_V1beta1_QueuedStakingRecord: @unchecked Sendable {}
+extension Crescent_Farming_V1beta1_TotalStakingsRecord: @unchecked Sendable {}
+extension Crescent_Farming_V1beta1_HistoricalRewardsRecord: @unchecked Sendable {}
+extension Crescent_Farming_V1beta1_OutstandingRewardsRecord: @unchecked Sendable {}
+extension Crescent_Farming_V1beta1_CurrentEpochRecord: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "crescent.farming.v1beta1"
@@ -361,9 +372,13 @@ extension Crescent_Farming_V1beta1_GenesisState: SwiftProtobuf.Message, SwiftPro
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._params {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      try { if let v = _storage._params {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      }
+      } }()
       if _storage._globalPlanID != 0 {
         try visitor.visitSingularUInt64Field(value: _storage._globalPlanID, fieldNumber: 2)
       }
@@ -391,9 +406,9 @@ extension Crescent_Farming_V1beta1_GenesisState: SwiftProtobuf.Message, SwiftPro
       if !_storage._rewardPoolCoins.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._rewardPoolCoins, fieldNumber: 10)
       }
-      if let v = _storage._lastEpochTime {
+      try { if let v = _storage._lastEpochTime {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
-      }
+      } }()
       if _storage._currentEpochDays != 0 {
         try visitor.visitSingularUInt32Field(value: _storage._currentEpochDays, fieldNumber: 12)
       }
@@ -448,9 +463,13 @@ extension Crescent_Farming_V1beta1_PlanRecord: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._plan {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._plan {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.farmingPoolCoins.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.farmingPoolCoins, fieldNumber: 2)
     }
@@ -488,15 +507,19 @@ extension Crescent_Farming_V1beta1_StakingRecord: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.stakingCoinDenom.isEmpty {
       try visitor.visitSingularStringField(value: self.stakingCoinDenom, fieldNumber: 1)
     }
     if !self.farmer.isEmpty {
       try visitor.visitSingularStringField(value: self.farmer, fieldNumber: 2)
     }
-    if let v = self._staking {
+    try { if let v = self._staking {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -532,15 +555,19 @@ extension Crescent_Farming_V1beta1_QueuedStakingRecord: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.stakingCoinDenom.isEmpty {
       try visitor.visitSingularStringField(value: self.stakingCoinDenom, fieldNumber: 1)
     }
     if !self.farmer.isEmpty {
       try visitor.visitSingularStringField(value: self.farmer, fieldNumber: 2)
     }
-    if let v = self._queuedStaking {
+    try { if let v = self._queuedStaking {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -620,15 +647,19 @@ extension Crescent_Farming_V1beta1_HistoricalRewardsRecord: SwiftProtobuf.Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.stakingCoinDenom.isEmpty {
       try visitor.visitSingularStringField(value: self.stakingCoinDenom, fieldNumber: 1)
     }
     if self.epoch != 0 {
       try visitor.visitSingularUInt64Field(value: self.epoch, fieldNumber: 2)
     }
-    if let v = self._historicalRewards {
+    try { if let v = self._historicalRewards {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -662,12 +693,16 @@ extension Crescent_Farming_V1beta1_OutstandingRewardsRecord: SwiftProtobuf.Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.stakingCoinDenom.isEmpty {
       try visitor.visitSingularStringField(value: self.stakingCoinDenom, fieldNumber: 1)
     }
-    if let v = self._outstandingRewards {
+    try { if let v = self._outstandingRewards {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

@@ -95,6 +95,13 @@ struct Kava_Evmutil_V1beta1_MsgConvertERC20ToCoinResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Kava_Evmutil_V1beta1_MsgConvertCoinToERC20: @unchecked Sendable {}
+extension Kava_Evmutil_V1beta1_MsgConvertCoinToERC20Response: @unchecked Sendable {}
+extension Kava_Evmutil_V1beta1_MsgConvertERC20ToCoin: @unchecked Sendable {}
+extension Kava_Evmutil_V1beta1_MsgConvertERC20ToCoinResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kava.evmutil.v1beta1"
@@ -122,15 +129,19 @@ extension Kava_Evmutil_V1beta1_MsgConvertCoinToERC20: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.initiator.isEmpty {
       try visitor.visitSingularStringField(value: self.initiator, fieldNumber: 1)
     }
     if !self.receiver.isEmpty {
       try visitor.visitSingularStringField(value: self.receiver, fieldNumber: 2)
     }
-    if let v = self._amount {
+    try { if let v = self._amount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

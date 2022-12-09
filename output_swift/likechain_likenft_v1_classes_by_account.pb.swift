@@ -48,6 +48,11 @@ struct Likechain_Likenft_V1_ClassesByAccountStoreRecord {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Likechain_Likenft_V1_ClassesByAccount: @unchecked Sendable {}
+extension Likechain_Likenft_V1_ClassesByAccountStoreRecord: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "likechain.likenft.v1"

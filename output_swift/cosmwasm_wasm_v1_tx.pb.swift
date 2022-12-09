@@ -245,6 +245,21 @@ struct Cosmwasm_Wasm_V1_MsgClearAdminResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Cosmwasm_Wasm_V1_MsgStoreCode: @unchecked Sendable {}
+extension Cosmwasm_Wasm_V1_MsgStoreCodeResponse: @unchecked Sendable {}
+extension Cosmwasm_Wasm_V1_MsgInstantiateContract: @unchecked Sendable {}
+extension Cosmwasm_Wasm_V1_MsgInstantiateContractResponse: @unchecked Sendable {}
+extension Cosmwasm_Wasm_V1_MsgExecuteContract: @unchecked Sendable {}
+extension Cosmwasm_Wasm_V1_MsgExecuteContractResponse: @unchecked Sendable {}
+extension Cosmwasm_Wasm_V1_MsgMigrateContract: @unchecked Sendable {}
+extension Cosmwasm_Wasm_V1_MsgMigrateContractResponse: @unchecked Sendable {}
+extension Cosmwasm_Wasm_V1_MsgUpdateAdmin: @unchecked Sendable {}
+extension Cosmwasm_Wasm_V1_MsgUpdateAdminResponse: @unchecked Sendable {}
+extension Cosmwasm_Wasm_V1_MsgClearAdmin: @unchecked Sendable {}
+extension Cosmwasm_Wasm_V1_MsgClearAdminResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmwasm.wasm.v1"
@@ -272,15 +287,19 @@ extension Cosmwasm_Wasm_V1_MsgStoreCode: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularStringField(value: self.sender, fieldNumber: 1)
     }
     if !self.wasmByteCode.isEmpty {
       try visitor.visitSingularBytesField(value: self.wasmByteCode, fieldNumber: 2)
     }
-    if let v = self._instantiatePermission {
+    try { if let v = self._instantiatePermission {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

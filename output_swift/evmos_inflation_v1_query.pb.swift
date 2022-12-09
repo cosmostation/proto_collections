@@ -106,6 +106,15 @@ struct Evmos_Inflation_V1_QueryParamsResponse {
   fileprivate var _params: Evmos_Inflation_V1_Params? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Evmos_Inflation_V1_QueryPeriodRequest: @unchecked Sendable {}
+extension Evmos_Inflation_V1_QueryPeriodResponse: @unchecked Sendable {}
+extension Evmos_Inflation_V1_QueryEpochMintProvisionRequest: @unchecked Sendable {}
+extension Evmos_Inflation_V1_QueryEpochMintProvisionResponse: @unchecked Sendable {}
+extension Evmos_Inflation_V1_QueryParamsRequest: @unchecked Sendable {}
+extension Evmos_Inflation_V1_QueryParamsResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "evmos.inflation.v1"
@@ -250,9 +259,13 @@ extension Evmos_Inflation_V1_QueryParamsResponse: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._params {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

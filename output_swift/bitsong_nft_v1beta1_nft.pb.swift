@@ -122,6 +122,14 @@ struct Bitsong_Nft_V1beta1_Collection {
   fileprivate var _denom: Bitsong_Nft_V1beta1_Denom? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Bitsong_Nft_V1beta1_BaseNFT: @unchecked Sendable {}
+extension Bitsong_Nft_V1beta1_Denom: @unchecked Sendable {}
+extension Bitsong_Nft_V1beta1_IDCollection: @unchecked Sendable {}
+extension Bitsong_Nft_V1beta1_Owner: @unchecked Sendable {}
+extension Bitsong_Nft_V1beta1_Collection: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "bitsong.nft.v1beta1"
@@ -341,9 +349,13 @@ extension Bitsong_Nft_V1beta1_Collection: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._denom {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._denom {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.nfts.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.nfts, fieldNumber: 2)
     }

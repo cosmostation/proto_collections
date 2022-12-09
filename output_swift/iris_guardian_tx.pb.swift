@@ -74,6 +74,13 @@ struct Irishub_Guardian_MsgDeleteSuperResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Irishub_Guardian_MsgAddSuper: @unchecked Sendable {}
+extension Irishub_Guardian_MsgAddSuperResponse: @unchecked Sendable {}
+extension Irishub_Guardian_MsgDeleteSuper: @unchecked Sendable {}
+extension Irishub_Guardian_MsgDeleteSuperResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "irishub.guardian"

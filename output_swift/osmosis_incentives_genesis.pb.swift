@@ -27,7 +27,7 @@ struct Osmosis_Incentives_GenesisState {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  /// params defines all the parameters of the module
+  /// params are all the parameters of the module
   var params: Osmosis_Incentives_Params {
     get {return _params ?? Osmosis_Incentives_Params()}
     set {_params = newValue}
@@ -54,6 +54,10 @@ struct Osmosis_Incentives_GenesisState {
 
   fileprivate var _params: Osmosis_Incentives_Params? = nil
 }
+
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Osmosis_Incentives_GenesisState: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
@@ -84,9 +88,13 @@ extension Osmosis_Incentives_GenesisState: SwiftProtobuf.Message, SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._params {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.gauges.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.gauges, fieldNumber: 2)
     }

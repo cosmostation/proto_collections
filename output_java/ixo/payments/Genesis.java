@@ -124,80 +124,6 @@ public final class Genesis {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GenesisState(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                paymentTemplates_ = new java.util.ArrayList<ixo.payments.Payments.PaymentTemplate>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              paymentTemplates_.add(
-                  input.readMessage(ixo.payments.Payments.PaymentTemplate.parser(), extensionRegistry));
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                paymentContracts_ = new java.util.ArrayList<ixo.payments.Payments.PaymentContract>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              paymentContracts_.add(
-                  input.readMessage(ixo.payments.Payments.PaymentContract.parser(), extensionRegistry));
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                subscriptions_ = new java.util.ArrayList<ixo.payments.Payments.Subscription>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              subscriptions_.add(
-                  input.readMessage(ixo.payments.Payments.Subscription.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          paymentTemplates_ = java.util.Collections.unmodifiableList(paymentTemplates_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          paymentContracts_ = java.util.Collections.unmodifiableList(paymentContracts_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          subscriptions_ = java.util.Collections.unmodifiableList(subscriptions_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ixo.payments.Genesis.internal_static_payments_GenesisState_descriptor;
@@ -354,7 +280,7 @@ public final class Genesis {
       for (int i = 0; i < subscriptions_.size(); i++) {
         output.writeMessage(3, subscriptions_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -375,7 +301,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, subscriptions_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -396,7 +322,7 @@ public final class Genesis {
           .equals(other.getPaymentContractsList())) return false;
       if (!getSubscriptionsList()
           .equals(other.getSubscriptionsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -419,7 +345,7 @@ public final class Genesis {
         hash = (37 * hash) + SUBSCRIPTIONS_FIELD_NUMBER;
         hash = (53 * hash) + getSubscriptionsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -540,43 +466,38 @@ public final class Genesis {
 
       // Construct using ixo.payments.Genesis.GenesisState.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getPaymentTemplatesFieldBuilder();
-          getPaymentContractsFieldBuilder();
-          getSubscriptionsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
         if (paymentTemplatesBuilder_ == null) {
           paymentTemplates_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          paymentTemplates_ = null;
           paymentTemplatesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (paymentContractsBuilder_ == null) {
           paymentContracts_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          paymentContracts_ = null;
           paymentContractsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (subscriptionsBuilder_ == null) {
           subscriptions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          subscriptions_ = null;
           subscriptionsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -757,7 +678,7 @@ public final class Genesis {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -772,17 +693,69 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ixo.payments.Genesis.GenesisState parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                ixo.payments.Payments.PaymentTemplate m =
+                    input.readMessage(
+                        ixo.payments.Payments.PaymentTemplate.parser(),
+                        extensionRegistry);
+                if (paymentTemplatesBuilder_ == null) {
+                  ensurePaymentTemplatesIsMutable();
+                  paymentTemplates_.add(m);
+                } else {
+                  paymentTemplatesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              case 18: {
+                ixo.payments.Payments.PaymentContract m =
+                    input.readMessage(
+                        ixo.payments.Payments.PaymentContract.parser(),
+                        extensionRegistry);
+                if (paymentContractsBuilder_ == null) {
+                  ensurePaymentContractsIsMutable();
+                  paymentContracts_.add(m);
+                } else {
+                  paymentContractsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              case 26: {
+                ixo.payments.Payments.Subscription m =
+                    input.readMessage(
+                        ixo.payments.Payments.Subscription.parser(),
+                        extensionRegistry);
+                if (subscriptionsBuilder_ == null) {
+                  ensureSubscriptionsIsMutable();
+                  subscriptions_.add(m);
+                } else {
+                  subscriptionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ixo.payments.Genesis.GenesisState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1539,7 +1512,18 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GenesisState(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

@@ -89,6 +89,12 @@ struct Secret_Compute_V1beta1_MsgExecuteContract {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Secret_Compute_V1beta1_MsgStoreCode: @unchecked Sendable {}
+extension Secret_Compute_V1beta1_MsgInstantiateContract: @unchecked Sendable {}
+extension Secret_Compute_V1beta1_MsgExecuteContract: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "secret.compute.v1beta1"

@@ -109,6 +109,14 @@ struct Kujira_Oracle_ExchangeRateTuple {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Kujira_Oracle_Params: @unchecked Sendable {}
+extension Kujira_Oracle_Denom: @unchecked Sendable {}
+extension Kujira_Oracle_AggregateExchangeRatePrevote: @unchecked Sendable {}
+extension Kujira_Oracle_AggregateExchangeRateVote: @unchecked Sendable {}
+extension Kujira_Oracle_ExchangeRateTuple: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kujira.oracle"

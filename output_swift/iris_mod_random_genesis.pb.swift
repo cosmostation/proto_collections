@@ -46,6 +46,11 @@ struct Irismod_Random_Requests {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Irismod_Random_GenesisState: @unchecked Sendable {}
+extension Irismod_Random_Requests: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "irismod.random"

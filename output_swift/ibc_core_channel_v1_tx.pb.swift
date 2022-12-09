@@ -471,6 +471,29 @@ struct Ibc_Core_Channel_V1_MsgAcknowledgementResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Ibc_Core_Channel_V1_MsgChannelOpenInit: @unchecked Sendable {}
+extension Ibc_Core_Channel_V1_MsgChannelOpenInitResponse: @unchecked Sendable {}
+extension Ibc_Core_Channel_V1_MsgChannelOpenTry: @unchecked Sendable {}
+extension Ibc_Core_Channel_V1_MsgChannelOpenTryResponse: @unchecked Sendable {}
+extension Ibc_Core_Channel_V1_MsgChannelOpenAck: @unchecked Sendable {}
+extension Ibc_Core_Channel_V1_MsgChannelOpenAckResponse: @unchecked Sendable {}
+extension Ibc_Core_Channel_V1_MsgChannelOpenConfirm: @unchecked Sendable {}
+extension Ibc_Core_Channel_V1_MsgChannelOpenConfirmResponse: @unchecked Sendable {}
+extension Ibc_Core_Channel_V1_MsgChannelCloseInit: @unchecked Sendable {}
+extension Ibc_Core_Channel_V1_MsgChannelCloseInitResponse: @unchecked Sendable {}
+extension Ibc_Core_Channel_V1_MsgChannelCloseConfirm: @unchecked Sendable {}
+extension Ibc_Core_Channel_V1_MsgChannelCloseConfirmResponse: @unchecked Sendable {}
+extension Ibc_Core_Channel_V1_MsgRecvPacket: @unchecked Sendable {}
+extension Ibc_Core_Channel_V1_MsgRecvPacketResponse: @unchecked Sendable {}
+extension Ibc_Core_Channel_V1_MsgTimeout: @unchecked Sendable {}
+extension Ibc_Core_Channel_V1_MsgTimeoutResponse: @unchecked Sendable {}
+extension Ibc_Core_Channel_V1_MsgTimeoutOnClose: @unchecked Sendable {}
+extension Ibc_Core_Channel_V1_MsgTimeoutOnCloseResponse: @unchecked Sendable {}
+extension Ibc_Core_Channel_V1_MsgAcknowledgement: @unchecked Sendable {}
+extension Ibc_Core_Channel_V1_MsgAcknowledgementResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "ibc.core.channel.v1"
@@ -498,12 +521,16 @@ extension Ibc_Core_Channel_V1_MsgChannelOpenInit: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.portID.isEmpty {
       try visitor.visitSingularStringField(value: self.portID, fieldNumber: 1)
     }
-    if let v = self._channel {
+    try { if let v = self._channel {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if !self.signer.isEmpty {
       try visitor.visitSingularStringField(value: self.signer, fieldNumber: 3)
     }
@@ -569,24 +596,28 @@ extension Ibc_Core_Channel_V1_MsgChannelOpenTry: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.portID.isEmpty {
       try visitor.visitSingularStringField(value: self.portID, fieldNumber: 1)
     }
     if !self.previousChannelID.isEmpty {
       try visitor.visitSingularStringField(value: self.previousChannelID, fieldNumber: 2)
     }
-    if let v = self._channel {
+    try { if let v = self._channel {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if !self.counterpartyVersion.isEmpty {
       try visitor.visitSingularStringField(value: self.counterpartyVersion, fieldNumber: 4)
     }
     if !self.proofInit.isEmpty {
       try visitor.visitSingularBytesField(value: self.proofInit, fieldNumber: 5)
     }
-    if let v = self._proofHeight {
+    try { if let v = self._proofHeight {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    }
+    } }()
     if !self.signer.isEmpty {
       try visitor.visitSingularStringField(value: self.signer, fieldNumber: 7)
     }
@@ -656,6 +687,10 @@ extension Ibc_Core_Channel_V1_MsgChannelOpenAck: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.portID.isEmpty {
       try visitor.visitSingularStringField(value: self.portID, fieldNumber: 1)
     }
@@ -671,9 +706,9 @@ extension Ibc_Core_Channel_V1_MsgChannelOpenAck: SwiftProtobuf.Message, SwiftPro
     if !self.proofTry.isEmpty {
       try visitor.visitSingularBytesField(value: self.proofTry, fieldNumber: 5)
     }
-    if let v = self._proofHeight {
+    try { if let v = self._proofHeight {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    }
+    } }()
     if !self.signer.isEmpty {
       try visitor.visitSingularStringField(value: self.signer, fieldNumber: 7)
     }
@@ -739,6 +774,10 @@ extension Ibc_Core_Channel_V1_MsgChannelOpenConfirm: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.portID.isEmpty {
       try visitor.visitSingularStringField(value: self.portID, fieldNumber: 1)
     }
@@ -748,9 +787,9 @@ extension Ibc_Core_Channel_V1_MsgChannelOpenConfirm: SwiftProtobuf.Message, Swif
     if !self.proofAck.isEmpty {
       try visitor.visitSingularBytesField(value: self.proofAck, fieldNumber: 3)
     }
-    if let v = self._proofHeight {
+    try { if let v = self._proofHeight {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     if !self.signer.isEmpty {
       try visitor.visitSingularStringField(value: self.signer, fieldNumber: 5)
     }
@@ -877,6 +916,10 @@ extension Ibc_Core_Channel_V1_MsgChannelCloseConfirm: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.portID.isEmpty {
       try visitor.visitSingularStringField(value: self.portID, fieldNumber: 1)
     }
@@ -886,9 +929,9 @@ extension Ibc_Core_Channel_V1_MsgChannelCloseConfirm: SwiftProtobuf.Message, Swi
     if !self.proofInit.isEmpty {
       try visitor.visitSingularBytesField(value: self.proofInit, fieldNumber: 3)
     }
-    if let v = self._proofHeight {
+    try { if let v = self._proofHeight {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     if !self.signer.isEmpty {
       try visitor.visitSingularStringField(value: self.signer, fieldNumber: 5)
     }
@@ -950,15 +993,19 @@ extension Ibc_Core_Channel_V1_MsgRecvPacket: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._packet {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._packet {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.proofCommitment.isEmpty {
       try visitor.visitSingularBytesField(value: self.proofCommitment, fieldNumber: 2)
     }
-    if let v = self._proofHeight {
+    try { if let v = self._proofHeight {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if !self.signer.isEmpty {
       try visitor.visitSingularStringField(value: self.signer, fieldNumber: 4)
     }
@@ -1021,15 +1068,19 @@ extension Ibc_Core_Channel_V1_MsgTimeout: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._packet {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._packet {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.proofUnreceived.isEmpty {
       try visitor.visitSingularBytesField(value: self.proofUnreceived, fieldNumber: 2)
     }
-    if let v = self._proofHeight {
+    try { if let v = self._proofHeight {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if self.nextSequenceRecv != 0 {
       try visitor.visitSingularUInt64Field(value: self.nextSequenceRecv, fieldNumber: 4)
     }
@@ -1098,18 +1149,22 @@ extension Ibc_Core_Channel_V1_MsgTimeoutOnClose: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._packet {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._packet {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.proofUnreceived.isEmpty {
       try visitor.visitSingularBytesField(value: self.proofUnreceived, fieldNumber: 2)
     }
     if !self.proofClose.isEmpty {
       try visitor.visitSingularBytesField(value: self.proofClose, fieldNumber: 3)
     }
-    if let v = self._proofHeight {
+    try { if let v = self._proofHeight {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     if self.nextSequenceRecv != 0 {
       try visitor.visitSingularUInt64Field(value: self.nextSequenceRecv, fieldNumber: 5)
     }
@@ -1177,18 +1232,22 @@ extension Ibc_Core_Channel_V1_MsgAcknowledgement: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._packet {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._packet {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.acknowledgement.isEmpty {
       try visitor.visitSingularBytesField(value: self.acknowledgement, fieldNumber: 2)
     }
     if !self.proofAcked.isEmpty {
       try visitor.visitSingularBytesField(value: self.proofAcked, fieldNumber: 3)
     }
-    if let v = self._proofHeight {
+    try { if let v = self._proofHeight {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
+    } }()
     if !self.signer.isEmpty {
       try visitor.visitSingularStringField(value: self.signer, fieldNumber: 5)
     }

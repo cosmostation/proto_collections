@@ -927,6 +927,52 @@ struct Regen_Ecocredit_V1alpha2_MsgPickFromBasketResponse {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Regen_Ecocredit_V1alpha2_MsgCreateClass: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgCreateClassResponse: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgCreateProject: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgCreateProjectResponse: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgCreateBatch: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgCreateBatch.BatchIssuance: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgCreateBatchResponse: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgSend: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgSend.SendCredits: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgSendResponse: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgRetire: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgRetire.RetireCredits: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgRetireResponse: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgCancel: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgCancel.CancelCredits: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgCancelResponse: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgUpdateClassAdmin: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgUpdateClassAdminResponse: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgUpdateClassIssuers: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgUpdateClassIssuersResponse: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgUpdateClassMetadata: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgUpdateClassMetadataResponse: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgSell: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgSell.Order: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgSellResponse: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgUpdateSellOrders: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgUpdateSellOrders.Update: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgUpdateSellOrdersResponse: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgBuy: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgBuy.Order: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgBuy.Order.Selection: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgBuy.Order.Selection.OneOf_Sum: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgBuyResponse: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgAllowAskDenom: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgAllowAskDenomResponse: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgCreateBasket: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgCreateBasketResponse: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgAddToBasket: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgAddToBasketResponse: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgTakeFromBasket: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgTakeFromBasketResponse: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgPickFromBasket: @unchecked Sendable {}
+extension Regen_Ecocredit_V1alpha2_MsgPickFromBasketResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "regen.ecocredit.v1alpha2"
@@ -1130,6 +1176,10 @@ extension Regen_Ecocredit_V1alpha2_MsgCreateBatch: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.issuer.isEmpty {
       try visitor.visitSingularStringField(value: self.issuer, fieldNumber: 1)
     }
@@ -1142,12 +1192,12 @@ extension Regen_Ecocredit_V1alpha2_MsgCreateBatch: SwiftProtobuf.Message, SwiftP
     if !self.metadata.isEmpty {
       try visitor.visitSingularBytesField(value: self.metadata, fieldNumber: 4)
     }
-    if let v = self._startDate {
+    try { if let v = self._startDate {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    }
-    if let v = self._endDate {
+    } }()
+    try { if let v = self._endDate {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1806,15 +1856,19 @@ extension Regen_Ecocredit_V1alpha2_MsgSell.Order: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.batchDenom.isEmpty {
       try visitor.visitSingularStringField(value: self.batchDenom, fieldNumber: 1)
     }
     if !self.quantity.isEmpty {
       try visitor.visitSingularStringField(value: self.quantity, fieldNumber: 2)
     }
-    if let v = self._askPrice {
+    try { if let v = self._askPrice {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if self.disableAutoRetire != false {
       try visitor.visitSingularBoolField(value: self.disableAutoRetire, fieldNumber: 4)
     }
@@ -1926,15 +1980,19 @@ extension Regen_Ecocredit_V1alpha2_MsgUpdateSellOrders.Update: SwiftProtobuf.Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.sellOrderID != 0 {
       try visitor.visitSingularUInt64Field(value: self.sellOrderID, fieldNumber: 1)
     }
     if !self.newQuantity.isEmpty {
       try visitor.visitSingularStringField(value: self.newQuantity, fieldNumber: 2)
     }
-    if let v = self._newAskPrice {
+    try { if let v = self._newAskPrice {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if self.disableAutoRetire != false {
       try visitor.visitSingularBoolField(value: self.disableAutoRetire, fieldNumber: 4)
     }
@@ -2035,15 +2093,19 @@ extension Regen_Ecocredit_V1alpha2_MsgBuy.Order: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._selection {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._selection {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.quantity.isEmpty {
       try visitor.visitSingularStringField(value: self.quantity, fieldNumber: 2)
     }
-    if let v = self._bidPrice {
+    try { if let v = self._bidPrice {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     if self.disableAutoRetire != false {
       try visitor.visitSingularBoolField(value: self.disableAutoRetire, fieldNumber: 4)
     }
@@ -2090,9 +2152,13 @@ extension Regen_Ecocredit_V1alpha2_MsgBuy.Order.Selection: SwiftProtobuf.Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if case .sellOrderID(let v)? = self.sum {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if case .sellOrderID(let v)? = self.sum {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

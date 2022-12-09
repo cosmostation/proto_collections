@@ -344,6 +344,19 @@ struct Cosmos_Tx_V1beta1_GetTxResponse {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Cosmos_Tx_V1beta1_OrderBy: @unchecked Sendable {}
+extension Cosmos_Tx_V1beta1_BroadcastMode: @unchecked Sendable {}
+extension Cosmos_Tx_V1beta1_GetTxsEventRequest: @unchecked Sendable {}
+extension Cosmos_Tx_V1beta1_GetTxsEventResponse: @unchecked Sendable {}
+extension Cosmos_Tx_V1beta1_BroadcastTxRequest: @unchecked Sendable {}
+extension Cosmos_Tx_V1beta1_BroadcastTxResponse: @unchecked Sendable {}
+extension Cosmos_Tx_V1beta1_SimulateRequest: @unchecked Sendable {}
+extension Cosmos_Tx_V1beta1_SimulateResponse: @unchecked Sendable {}
+extension Cosmos_Tx_V1beta1_GetTxRequest: @unchecked Sendable {}
+extension Cosmos_Tx_V1beta1_GetTxResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.tx.v1beta1"
@@ -388,12 +401,16 @@ extension Cosmos_Tx_V1beta1_GetTxsEventRequest: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.events.isEmpty {
       try visitor.visitRepeatedStringField(value: self.events, fieldNumber: 1)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     if self.orderBy != .unspecified {
       try visitor.visitSingularEnumField(value: self.orderBy, fieldNumber: 3)
     }
@@ -432,15 +449,19 @@ extension Cosmos_Tx_V1beta1_GetTxsEventResponse: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.txs.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.txs, fieldNumber: 1)
     }
     if !self.txResponses.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.txResponses, fieldNumber: 2)
     }
-    if let v = self._pagination {
+    try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -510,9 +531,13 @@ extension Cosmos_Tx_V1beta1_BroadcastTxResponse: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._txResponse {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._txResponse {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -544,9 +569,13 @@ extension Cosmos_Tx_V1beta1_SimulateRequest: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._tx {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._tx {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.txBytes.isEmpty {
       try visitor.visitSingularBytesField(value: self.txBytes, fieldNumber: 2)
     }
@@ -582,12 +611,16 @@ extension Cosmos_Tx_V1beta1_SimulateResponse: SwiftProtobuf.Message, SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._gasInfo {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._gasInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
-    if let v = self._result {
+    } }()
+    try { if let v = self._result {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -677,12 +710,16 @@ extension Cosmos_Tx_V1beta1_GetTxResponse: SwiftProtobuf.Message, SwiftProtobuf.
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._tx {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      try { if let v = _storage._tx {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      }
-      if let v = _storage._txResponse {
+      } }()
+      try { if let v = _storage._txResponse {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      }
+      } }()
     }
     try unknownFields.traverse(visitor: &visitor)
   }
