@@ -496,6 +496,124 @@ public final class Gov {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GenesisState(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              startingProposalId_ = input.readUInt64();
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                deposits_ = new java.util.ArrayList<shentu.gov.v1alpha1.Gov.Deposit>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              deposits_.add(
+                  input.readMessage(shentu.gov.v1alpha1.Gov.Deposit.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                votes_ = new java.util.ArrayList<shentu.gov.v1alpha1.Gov.Vote>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              votes_.add(
+                  input.readMessage(shentu.gov.v1alpha1.Gov.Vote.parser(), extensionRegistry));
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                proposals_ = new java.util.ArrayList<shentu.gov.v1alpha1.Gov.Proposal>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              proposals_.add(
+                  input.readMessage(shentu.gov.v1alpha1.Gov.Proposal.parser(), extensionRegistry));
+              break;
+            }
+            case 42: {
+              shentu.gov.v1alpha1.Gov.DepositParams.Builder subBuilder = null;
+              if (depositParams_ != null) {
+                subBuilder = depositParams_.toBuilder();
+              }
+              depositParams_ = input.readMessage(shentu.gov.v1alpha1.Gov.DepositParams.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(depositParams_);
+                depositParams_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 50: {
+              cosmos.gov.v1beta1.Gov.VotingParams.Builder subBuilder = null;
+              if (votingParams_ != null) {
+                subBuilder = votingParams_.toBuilder();
+              }
+              votingParams_ = input.readMessage(cosmos.gov.v1beta1.Gov.VotingParams.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(votingParams_);
+                votingParams_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 58: {
+              shentu.gov.v1alpha1.Gov.TallyParams.Builder subBuilder = null;
+              if (tallyParams_ != null) {
+                subBuilder = tallyParams_.toBuilder();
+              }
+              tallyParams_ = input.readMessage(shentu.gov.v1alpha1.Gov.TallyParams.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(tallyParams_);
+                tallyParams_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          deposits_ = java.util.Collections.unmodifiableList(deposits_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          votes_ = java.util.Collections.unmodifiableList(votes_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          proposals_ = java.util.Collections.unmodifiableList(proposals_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return shentu.gov.v1alpha1.Gov.internal_static_shentu_gov_v1alpha1_GenesisState_descriptor;
@@ -853,7 +971,7 @@ public final class Gov {
       if (tallyParams_ != null) {
         output.writeMessage(7, getTallyParams());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -890,7 +1008,7 @@ public final class Gov {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getTallyParams());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -928,7 +1046,7 @@ public final class Gov {
         if (!getTallyParams()
             .equals(other.getTallyParams())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -966,7 +1084,7 @@ public final class Gov {
         hash = (37 * hash) + TALLY_PARAMS_FIELD_NUMBER;
         hash = (53 * hash) + getTallyParams().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1087,13 +1205,21 @@ public final class Gov {
 
       // Construct using shentu.gov.v1alpha1.Gov.GenesisState.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getDepositsFieldBuilder();
+          getVotesFieldBuilder();
+          getProposalsFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -1102,25 +1228,22 @@ public final class Gov {
 
         if (depositsBuilder_ == null) {
           deposits_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          deposits_ = null;
           depositsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (votesBuilder_ == null) {
           votes_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          votes_ = null;
           votesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         if (proposalsBuilder_ == null) {
           proposals_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          proposals_ = null;
           proposalsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         if (depositParamsBuilder_ == null) {
           depositParams_ = null;
         } else {
@@ -1347,7 +1470,7 @@ public final class Gov {
         if (other.hasTallyParams()) {
           mergeTallyParams(other.getTallyParams());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1362,95 +1485,17 @@ public final class Gov {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        shentu.gov.v1alpha1.Gov.GenesisState parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                startingProposalId_ = input.readUInt64();
-
-                break;
-              } // case 8
-              case 18: {
-                shentu.gov.v1alpha1.Gov.Deposit m =
-                    input.readMessage(
-                        shentu.gov.v1alpha1.Gov.Deposit.parser(),
-                        extensionRegistry);
-                if (depositsBuilder_ == null) {
-                  ensureDepositsIsMutable();
-                  deposits_.add(m);
-                } else {
-                  depositsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-              case 26: {
-                shentu.gov.v1alpha1.Gov.Vote m =
-                    input.readMessage(
-                        shentu.gov.v1alpha1.Gov.Vote.parser(),
-                        extensionRegistry);
-                if (votesBuilder_ == null) {
-                  ensureVotesIsMutable();
-                  votes_.add(m);
-                } else {
-                  votesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 26
-              case 34: {
-                shentu.gov.v1alpha1.Gov.Proposal m =
-                    input.readMessage(
-                        shentu.gov.v1alpha1.Gov.Proposal.parser(),
-                        extensionRegistry);
-                if (proposalsBuilder_ == null) {
-                  ensureProposalsIsMutable();
-                  proposals_.add(m);
-                } else {
-                  proposalsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              case 42: {
-                input.readMessage(
-                    getDepositParamsFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 42
-              case 50: {
-                input.readMessage(
-                    getVotingParamsFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 50
-              case 58: {
-                input.readMessage(
-                    getTallyParamsFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 58
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (shentu.gov.v1alpha1.Gov.GenesisState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -2931,18 +2976,7 @@ public final class Gov {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GenesisState(input, extensionRegistry);
       }
     };
 
@@ -3025,6 +3059,62 @@ public final class Gov {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private Deposit(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              cosmos.gov.v1beta1.Gov.Deposit.Builder subBuilder = null;
+              if (deposit_ != null) {
+                subBuilder = deposit_.toBuilder();
+              }
+              deposit_ = input.readMessage(cosmos.gov.v1beta1.Gov.Deposit.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(deposit_);
+                deposit_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              txHash_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -3120,10 +3210,10 @@ public final class Gov {
       if (deposit_ != null) {
         output.writeMessage(1, getDeposit());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(txHash_)) {
+      if (!getTxHashBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, txHash_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -3136,10 +3226,10 @@ public final class Gov {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getDeposit());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(txHash_)) {
+      if (!getTxHashBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, txHash_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3161,7 +3251,7 @@ public final class Gov {
       }
       if (!getTxHash()
           .equals(other.getTxHash())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -3178,7 +3268,7 @@ public final class Gov {
       }
       hash = (37 * hash) + TX_HASH_FIELD_NUMBER;
       hash = (53 * hash) + getTxHash().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3300,13 +3390,18 @@ public final class Gov {
 
       // Construct using shentu.gov.v1alpha1.Gov.Deposit.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -3406,7 +3501,7 @@ public final class Gov {
           txHash_ = other.txHash_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -3421,42 +3516,17 @@ public final class Gov {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        shentu.gov.v1alpha1.Gov.Deposit parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getDepositFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 10
-              case 18: {
-                txHash_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (shentu.gov.v1alpha1.Gov.Deposit) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -3687,18 +3757,7 @@ public final class Gov {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Deposit(input, extensionRegistry);
       }
     };
 
@@ -3872,6 +3931,81 @@ public final class Gov {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private DepositParams(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                minInitialDeposit_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              minInitialDeposit_.add(
+                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                minDeposit_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              minDeposit_.add(
+                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (maxDepositPeriod_ != null) {
+                subBuilder = maxDepositPeriod_.toBuilder();
+              }
+              maxDepositPeriod_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(maxDepositPeriod_);
+                maxDepositPeriod_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          minInitialDeposit_ = java.util.Collections.unmodifiableList(minInitialDeposit_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          minDeposit_ = java.util.Collections.unmodifiableList(minDeposit_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -4070,7 +4204,7 @@ public final class Gov {
       if (maxDepositPeriod_ != null) {
         output.writeMessage(3, getMaxDepositPeriod());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -4091,7 +4225,7 @@ public final class Gov {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getMaxDepositPeriod());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4115,7 +4249,7 @@ public final class Gov {
         if (!getMaxDepositPeriod()
             .equals(other.getMaxDepositPeriod())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -4138,7 +4272,7 @@ public final class Gov {
         hash = (37 * hash) + MAX_DEPOSIT_PERIOD_FIELD_NUMBER;
         hash = (53 * hash) + getMaxDepositPeriod().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4259,31 +4393,36 @@ public final class Gov {
 
       // Construct using shentu.gov.v1alpha1.Gov.DepositParams.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getMinInitialDepositFieldBuilder();
+          getMinDepositFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
         if (minInitialDepositBuilder_ == null) {
           minInitialDeposit_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          minInitialDeposit_ = null;
           minInitialDepositBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (minDepositBuilder_ == null) {
           minDeposit_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          minDeposit_ = null;
           minDepositBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         if (maxDepositPeriodBuilder_ == null) {
           maxDepositPeriod_ = null;
         } else {
@@ -4443,7 +4582,7 @@ public final class Gov {
         if (other.hasMaxDepositPeriod()) {
           mergeMaxDepositPeriod(other.getMaxDepositPeriod());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -4458,63 +4597,17 @@ public final class Gov {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        shentu.gov.v1alpha1.Gov.DepositParams parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                cosmos.base.v1beta1.CoinOuterClass.Coin m =
-                    input.readMessage(
-                        cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
-                        extensionRegistry);
-                if (minInitialDepositBuilder_ == null) {
-                  ensureMinInitialDepositIsMutable();
-                  minInitialDeposit_.add(m);
-                } else {
-                  minInitialDepositBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              case 18: {
-                cosmos.base.v1beta1.CoinOuterClass.Coin m =
-                    input.readMessage(
-                        cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
-                        extensionRegistry);
-                if (minDepositBuilder_ == null) {
-                  ensureMinDepositIsMutable();
-                  minDeposit_.add(m);
-                } else {
-                  minDepositBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getMaxDepositPeriodFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 26
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (shentu.gov.v1alpha1.Gov.DepositParams) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -5339,18 +5432,7 @@ public final class Gov {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new DepositParams(input, extensionRegistry);
       }
     };
 
@@ -5449,6 +5531,82 @@ public final class Gov {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private TallyParams(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              cosmos.gov.v1beta1.Gov.TallyParams.Builder subBuilder = null;
+              if (defaultTally_ != null) {
+                subBuilder = defaultTally_.toBuilder();
+              }
+              defaultTally_ = input.readMessage(cosmos.gov.v1beta1.Gov.TallyParams.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(defaultTally_);
+                defaultTally_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              cosmos.gov.v1beta1.Gov.TallyParams.Builder subBuilder = null;
+              if (certifierUpdateSecurityVoteTally_ != null) {
+                subBuilder = certifierUpdateSecurityVoteTally_.toBuilder();
+              }
+              certifierUpdateSecurityVoteTally_ = input.readMessage(cosmos.gov.v1beta1.Gov.TallyParams.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(certifierUpdateSecurityVoteTally_);
+                certifierUpdateSecurityVoteTally_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              cosmos.gov.v1beta1.Gov.TallyParams.Builder subBuilder = null;
+              if (certifierUpdateStakeVoteTally_ != null) {
+                subBuilder = certifierUpdateStakeVoteTally_.toBuilder();
+              }
+              certifierUpdateStakeVoteTally_ = input.readMessage(cosmos.gov.v1beta1.Gov.TallyParams.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(certifierUpdateStakeVoteTally_);
+                certifierUpdateStakeVoteTally_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -5564,7 +5722,7 @@ public final class Gov {
       if (certifierUpdateStakeVoteTally_ != null) {
         output.writeMessage(3, getCertifierUpdateStakeVoteTally());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -5585,7 +5743,7 @@ public final class Gov {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getCertifierUpdateStakeVoteTally());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5615,7 +5773,7 @@ public final class Gov {
         if (!getCertifierUpdateStakeVoteTally()
             .equals(other.getCertifierUpdateStakeVoteTally())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -5638,7 +5796,7 @@ public final class Gov {
         hash = (37 * hash) + CERTIFIER_UPDATE_STAKE_VOTE_TALLY_FIELD_NUMBER;
         hash = (53 * hash) + getCertifierUpdateStakeVoteTally().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5759,13 +5917,18 @@ public final class Gov {
 
       // Construct using shentu.gov.v1alpha1.Gov.TallyParams.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -5886,7 +6049,7 @@ public final class Gov {
         if (other.hasCertifierUpdateStakeVoteTally()) {
           mergeCertifierUpdateStakeVoteTally(other.getCertifierUpdateStakeVoteTally());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -5901,51 +6064,17 @@ public final class Gov {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        shentu.gov.v1alpha1.Gov.TallyParams parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getDefaultTallyFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getCertifierUpdateSecurityVoteTallyFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getCertifierUpdateStakeVoteTallyFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 26
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (shentu.gov.v1alpha1.Gov.TallyParams) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -6338,18 +6467,7 @@ public final class Gov {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TallyParams(input, extensionRegistry);
       }
     };
 
@@ -6551,6 +6669,156 @@ public final class Gov {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private Proposal(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.google.protobuf2.Any.Builder subBuilder = null;
+              if (content_ != null) {
+                subBuilder = content_.toBuilder();
+              }
+              content_ = input.readMessage(com.google.protobuf2.Any.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(content_);
+                content_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+
+              proposalId_ = input.readUInt64();
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+
+              status_ = rawValue;
+              break;
+            }
+            case 32: {
+
+              isProposerCouncilMember_ = input.readBool();
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              proposerAddress_ = s;
+              break;
+            }
+            case 50: {
+              cosmos.gov.v1beta1.Gov.TallyResult.Builder subBuilder = null;
+              if (finalTallyResult_ != null) {
+                subBuilder = finalTallyResult_.toBuilder();
+              }
+              finalTallyResult_ = input.readMessage(cosmos.gov.v1beta1.Gov.TallyResult.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(finalTallyResult_);
+                finalTallyResult_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 58: {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (submitTime_ != null) {
+                subBuilder = submitTime_.toBuilder();
+              }
+              submitTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(submitTime_);
+                submitTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 66: {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (depositEndTime_ != null) {
+                subBuilder = depositEndTime_.toBuilder();
+              }
+              depositEndTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(depositEndTime_);
+                depositEndTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                totalDeposit_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              totalDeposit_.add(
+                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
+              break;
+            }
+            case 82: {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (votingStartTime_ != null) {
+                subBuilder = votingStartTime_.toBuilder();
+              }
+              votingStartTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(votingStartTime_);
+                votingStartTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 90: {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (votingEndTime_ != null) {
+                subBuilder = votingEndTime_.toBuilder();
+              }
+              votingEndTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(votingEndTime_);
+                votingEndTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          totalDeposit_ = java.util.Collections.unmodifiableList(totalDeposit_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -6866,7 +7134,7 @@ public final class Gov {
       if (isProposerCouncilMember_ != false) {
         output.writeBool(4, isProposerCouncilMember_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(proposerAddress_)) {
+      if (!getProposerAddressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, proposerAddress_);
       }
       if (finalTallyResult_ != null) {
@@ -6887,7 +7155,7 @@ public final class Gov {
       if (votingEndTime_ != null) {
         output.writeMessage(11, getVotingEndTime());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -6912,7 +7180,7 @@ public final class Gov {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(4, isProposerCouncilMember_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(proposerAddress_)) {
+      if (!getProposerAddressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, proposerAddress_);
       }
       if (finalTallyResult_ != null) {
@@ -6939,7 +7207,7 @@ public final class Gov {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, getVotingEndTime());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -6993,7 +7261,7 @@ public final class Gov {
         if (!getVotingEndTime()
             .equals(other.getVotingEndTime())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -7042,7 +7310,7 @@ public final class Gov {
         hash = (37 * hash) + VOTING_END_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getVotingEndTime().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -7159,13 +7427,19 @@ public final class Gov {
 
       // Construct using shentu.gov.v1alpha1.Gov.Proposal.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getTotalDepositFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -7204,11 +7478,10 @@ public final class Gov {
         }
         if (totalDepositBuilder_ == null) {
           totalDeposit_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          totalDeposit_ = null;
           totalDepositBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (votingStartTimeBuilder_ == null) {
           votingStartTime_ = null;
         } else {
@@ -7396,7 +7669,7 @@ public final class Gov {
         if (other.hasVotingEndTime()) {
           mergeVotingEndTime(other.getVotingEndTime());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -7411,105 +7684,17 @@ public final class Gov {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        shentu.gov.v1alpha1.Gov.Proposal parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getContentFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 10
-              case 16: {
-                proposalId_ = input.readUInt64();
-
-                break;
-              } // case 16
-              case 24: {
-                status_ = input.readEnum();
-
-                break;
-              } // case 24
-              case 32: {
-                isProposerCouncilMember_ = input.readBool();
-
-                break;
-              } // case 32
-              case 42: {
-                proposerAddress_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 42
-              case 50: {
-                input.readMessage(
-                    getFinalTallyResultFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 50
-              case 58: {
-                input.readMessage(
-                    getSubmitTimeFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 58
-              case 66: {
-                input.readMessage(
-                    getDepositEndTimeFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 66
-              case 74: {
-                cosmos.base.v1beta1.CoinOuterClass.Coin m =
-                    input.readMessage(
-                        cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
-                        extensionRegistry);
-                if (totalDepositBuilder_ == null) {
-                  ensureTotalDepositIsMutable();
-                  totalDeposit_.add(m);
-                } else {
-                  totalDepositBuilder_.addMessage(m);
-                }
-                break;
-              } // case 74
-              case 82: {
-                input.readMessage(
-                    getVotingStartTimeFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 82
-              case 90: {
-                input.readMessage(
-                    getVotingEndTimeFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 90
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (shentu.gov.v1alpha1.Gov.Proposal) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -8692,18 +8877,7 @@ public final class Gov {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Proposal(input, extensionRegistry);
       }
     };
 
@@ -8786,6 +8960,62 @@ public final class Gov {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private Vote(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              cosmos.gov.v1beta1.Gov.Vote.Builder subBuilder = null;
+              if (deposit_ != null) {
+                subBuilder = deposit_.toBuilder();
+              }
+              deposit_ = input.readMessage(cosmos.gov.v1beta1.Gov.Vote.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(deposit_);
+                deposit_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              txHash_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -8881,10 +9111,10 @@ public final class Gov {
       if (deposit_ != null) {
         output.writeMessage(1, getDeposit());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(txHash_)) {
+      if (!getTxHashBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, txHash_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -8897,10 +9127,10 @@ public final class Gov {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getDeposit());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(txHash_)) {
+      if (!getTxHashBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, txHash_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -8922,7 +9152,7 @@ public final class Gov {
       }
       if (!getTxHash()
           .equals(other.getTxHash())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -8939,7 +9169,7 @@ public final class Gov {
       }
       hash = (37 * hash) + TX_HASH_FIELD_NUMBER;
       hash = (53 * hash) + getTxHash().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -9061,13 +9291,18 @@ public final class Gov {
 
       // Construct using shentu.gov.v1alpha1.Gov.Vote.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -9167,7 +9402,7 @@ public final class Gov {
           txHash_ = other.txHash_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -9182,42 +9417,17 @@ public final class Gov {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        shentu.gov.v1alpha1.Gov.Vote parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getDepositFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 10
-              case 18: {
-                txHash_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (shentu.gov.v1alpha1.Gov.Vote) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -9448,18 +9658,7 @@ public final class Gov {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Vote(input, extensionRegistry);
       }
     };
 

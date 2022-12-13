@@ -250,6 +250,115 @@ public final class TwapRecordOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private TwapRecord(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              poolId_ = input.readUInt64();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              asset0Denom_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              asset1Denom_ = s;
+              break;
+            }
+            case 32: {
+
+              height_ = input.readInt64();
+              break;
+            }
+            case 42: {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (time_ != null) {
+                subBuilder = time_.toBuilder();
+              }
+              time_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(time_);
+                time_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              p0LastSpotPrice_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              p1LastSpotPrice_ = s;
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              p0ArithmeticTwapAccumulator_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              p1ArithmeticTwapAccumulator_ = s;
+              break;
+            }
+            case 90: {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (lastErrorTime_ != null) {
+                subBuilder = lastErrorTime_.toBuilder();
+              }
+              lastErrorTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(lastErrorTime_);
+                lastErrorTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return osmosis.twap.v1beta1.TwapRecordOuterClass.internal_static_osmosis_twap_v1beta1_TwapRecord_descriptor;
@@ -657,10 +766,10 @@ public final class TwapRecordOuterClass {
       if (poolId_ != 0L) {
         output.writeUInt64(1, poolId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(asset0Denom_)) {
+      if (!getAsset0DenomBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, asset0Denom_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(asset1Denom_)) {
+      if (!getAsset1DenomBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, asset1Denom_);
       }
       if (height_ != 0L) {
@@ -669,22 +778,22 @@ public final class TwapRecordOuterClass {
       if (time_ != null) {
         output.writeMessage(5, getTime());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(p0LastSpotPrice_)) {
+      if (!getP0LastSpotPriceBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, p0LastSpotPrice_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(p1LastSpotPrice_)) {
+      if (!getP1LastSpotPriceBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, p1LastSpotPrice_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(p0ArithmeticTwapAccumulator_)) {
+      if (!getP0ArithmeticTwapAccumulatorBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, p0ArithmeticTwapAccumulator_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(p1ArithmeticTwapAccumulator_)) {
+      if (!getP1ArithmeticTwapAccumulatorBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, p1ArithmeticTwapAccumulator_);
       }
       if (lastErrorTime_ != null) {
         output.writeMessage(11, getLastErrorTime());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -697,10 +806,10 @@ public final class TwapRecordOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(1, poolId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(asset0Denom_)) {
+      if (!getAsset0DenomBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, asset0Denom_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(asset1Denom_)) {
+      if (!getAsset1DenomBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, asset1Denom_);
       }
       if (height_ != 0L) {
@@ -711,23 +820,23 @@ public final class TwapRecordOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getTime());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(p0LastSpotPrice_)) {
+      if (!getP0LastSpotPriceBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, p0LastSpotPrice_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(p1LastSpotPrice_)) {
+      if (!getP1LastSpotPriceBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, p1LastSpotPrice_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(p0ArithmeticTwapAccumulator_)) {
+      if (!getP0ArithmeticTwapAccumulatorBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, p0ArithmeticTwapAccumulator_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(p1ArithmeticTwapAccumulator_)) {
+      if (!getP1ArithmeticTwapAccumulatorBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, p1ArithmeticTwapAccumulator_);
       }
       if (lastErrorTime_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, getLastErrorTime());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -768,7 +877,7 @@ public final class TwapRecordOuterClass {
         if (!getLastErrorTime()
             .equals(other.getLastErrorTime())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -805,7 +914,7 @@ public final class TwapRecordOuterClass {
         hash = (37 * hash) + LAST_ERROR_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getLastErrorTime().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -932,13 +1041,18 @@ public final class TwapRecordOuterClass {
 
       // Construct using osmosis.twap.v1beta1.TwapRecordOuterClass.TwapRecord.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -1099,7 +1213,7 @@ public final class TwapRecordOuterClass {
         if (other.hasLastErrorTime()) {
           mergeLastErrorTime(other.getLastErrorTime());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1114,84 +1228,17 @@ public final class TwapRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        osmosis.twap.v1beta1.TwapRecordOuterClass.TwapRecord parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                poolId_ = input.readUInt64();
-
-                break;
-              } // case 8
-              case 18: {
-                asset0Denom_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 18
-              case 26: {
-                asset1Denom_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 26
-              case 32: {
-                height_ = input.readInt64();
-
-                break;
-              } // case 32
-              case 42: {
-                input.readMessage(
-                    getTimeFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 42
-              case 50: {
-                p0LastSpotPrice_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 50
-              case 58: {
-                p1LastSpotPrice_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 58
-              case 66: {
-                p0ArithmeticTwapAccumulator_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 66
-              case 74: {
-                p1ArithmeticTwapAccumulator_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 74
-              case 90: {
-                input.readMessage(
-                    getLastErrorTimeFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 90
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (osmosis.twap.v1beta1.TwapRecordOuterClass.TwapRecord) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -2189,18 +2236,7 @@ public final class TwapRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TwapRecord(input, extensionRegistry);
       }
     };
 

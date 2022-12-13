@@ -34,6 +34,57 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
+  private GenesisState(
+      com.google.protobuf.CodedInputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    int mutable_bitField0_ = 0;
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
+    try {
+      boolean done = false;
+      while (!done) {
+        int tag = input.readTag();
+        switch (tag) {
+          case 0:
+            done = true;
+            break;
+          case 10: {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              documents_ = com.google.protobuf.MapField.newMapField(
+                  DocumentsDefaultEntryHolder.defaultEntry);
+              mutable_bitField0_ |= 0x00000001;
+            }
+            com.google.protobuf.MapEntry<java.lang.String, panacea.did.v2.DIDDocumentWithSeq>
+            documents__ = input.readMessage(
+                DocumentsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            documents_.getMutableMap().put(
+                documents__.getKey(), documents__.getValue());
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
+        }
+      }
+    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      throw e.setUnfinishedMessage(this);
+    } catch (java.io.IOException e) {
+      throw new com.google.protobuf.InvalidProtocolBufferException(
+          e).setUnfinishedMessage(this);
+    } finally {
+      this.unknownFields = unknownFields.build();
+      makeExtensionsImmutable();
+    }
+  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return panacea.did.v2.Genesis.internal_static_panacea_did_v2_GenesisState_descriptor;
@@ -92,7 +143,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean containsDocuments(
       java.lang.String key) {
-    if (key == null) { throw new NullPointerException("map key"); }
+    if (key == null) { throw new java.lang.NullPointerException(); }
     return internalGetDocuments().getMap().containsKey(key);
   }
   /**
@@ -119,7 +170,7 @@ private static final long serialVersionUID = 0L;
   public panacea.did.v2.DIDDocumentWithSeq getDocumentsOrDefault(
       java.lang.String key,
       panacea.did.v2.DIDDocumentWithSeq defaultValue) {
-    if (key == null) { throw new NullPointerException("map key"); }
+    if (key == null) { throw new java.lang.NullPointerException(); }
     java.util.Map<java.lang.String, panacea.did.v2.DIDDocumentWithSeq> map =
         internalGetDocuments().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -131,7 +182,7 @@ private static final long serialVersionUID = 0L;
 
   public panacea.did.v2.DIDDocumentWithSeq getDocumentsOrThrow(
       java.lang.String key) {
-    if (key == null) { throw new NullPointerException("map key"); }
+    if (key == null) { throw new java.lang.NullPointerException(); }
     java.util.Map<java.lang.String, panacea.did.v2.DIDDocumentWithSeq> map =
         internalGetDocuments().getMap();
     if (!map.containsKey(key)) {
@@ -160,7 +211,7 @@ private static final long serialVersionUID = 0L;
         internalGetDocuments(),
         DocumentsDefaultEntryHolder.defaultEntry,
         1);
-    getUnknownFields().writeTo(output);
+    unknownFields.writeTo(output);
   }
 
   @java.lang.Override
@@ -179,7 +230,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, documents__);
     }
-    size += getUnknownFields().getSerializedSize();
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -196,7 +247,7 @@ private static final long serialVersionUID = 0L;
 
     if (!internalGetDocuments().equals(
         other.internalGetDocuments())) return false;
-    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
 
@@ -211,7 +262,7 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DOCUMENTS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetDocuments().hashCode();
     }
-    hash = (29 * hash) + getUnknownFields().hashCode();
+    hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -354,13 +405,18 @@ private static final long serialVersionUID = 0L;
 
     // Construct using panacea.did.v2.GenesisState.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -445,7 +501,7 @@ private static final long serialVersionUID = 0L;
       if (other == panacea.did.v2.GenesisState.getDefaultInstance()) return this;
       internalGetMutableDocuments().mergeFrom(
           other.internalGetDocuments());
-      this.mergeUnknownFields(other.getUnknownFields());
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
@@ -460,38 +516,17 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
+      panacea.did.v2.GenesisState parsedMessage = null;
       try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.MapEntry<java.lang.String, panacea.did.v2.DIDDocumentWithSeq>
-              documents__ = input.readMessage(
-                  DocumentsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              internalGetMutableDocuments().getMutableMap().put(
-                  documents__.getKey(), documents__.getValue());
-              break;
-            } // case 10
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
-          } // switch (tag)
-        } // while (!done)
+        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        parsedMessage = (panacea.did.v2.GenesisState) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        onChanged();
-      } // finally
+        if (parsedMessage != null) {
+          mergeFrom(parsedMessage);
+        }
+      }
       return this;
     }
     private int bitField0_;
@@ -529,7 +564,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean containsDocuments(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       return internalGetDocuments().getMap().containsKey(key);
     }
     /**
@@ -556,7 +591,7 @@ private static final long serialVersionUID = 0L;
     public panacea.did.v2.DIDDocumentWithSeq getDocumentsOrDefault(
         java.lang.String key,
         panacea.did.v2.DIDDocumentWithSeq defaultValue) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, panacea.did.v2.DIDDocumentWithSeq> map =
           internalGetDocuments().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -568,7 +603,7 @@ private static final long serialVersionUID = 0L;
 
     public panacea.did.v2.DIDDocumentWithSeq getDocumentsOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, panacea.did.v2.DIDDocumentWithSeq> map =
           internalGetDocuments().getMap();
       if (!map.containsKey(key)) {
@@ -588,7 +623,7 @@ private static final long serialVersionUID = 0L;
 
     public Builder removeDocuments(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       internalGetMutableDocuments().getMutableMap()
           .remove(key);
       return this;
@@ -607,11 +642,8 @@ private static final long serialVersionUID = 0L;
     public Builder putDocuments(
         java.lang.String key,
         panacea.did.v2.DIDDocumentWithSeq value) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      if (value == null) {
-  throw new NullPointerException("map value");
-}
-
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (value == null) { throw new java.lang.NullPointerException(); }
       internalGetMutableDocuments().getMutableMap()
           .put(key, value);
       return this;
@@ -659,18 +691,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
+      return new GenesisState(input, extensionRegistry);
     }
   };
 

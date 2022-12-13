@@ -104,11 +104,9 @@ public final class ParamsOuterClass {
      * <code>map&lt;string, string&gt; zone_com_address = 5;</code>
      */
 
-    /* nullable */
-java.lang.String getZoneComAddressOrDefault(
+    java.lang.String getZoneComAddressOrDefault(
         java.lang.String key,
-        /* nullable */
-java.lang.String defaultValue);
+        java.lang.String defaultValue);
     /**
      * <pre>
      * zone_com_address stores which addresses to
@@ -220,6 +218,137 @@ java.lang.String defaultValue);
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private Params(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              rewardsInterval_ = input.readUInt64();
+              break;
+            }
+            case 16: {
+
+              depositInterval_ = input.readUInt64();
+              break;
+            }
+            case 24: {
+
+              redemptionRateInterval_ = input.readUInt64();
+              break;
+            }
+            case 32: {
+
+              strideCommission_ = input.readUInt64();
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                zoneComAddress_ = com.google.protobuf.MapField.newMapField(
+                    ZoneComAddressDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              zoneComAddress__ = input.readMessage(
+                  ZoneComAddressDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              zoneComAddress_.getMutableMap().put(
+                  zoneComAddress__.getKey(), zoneComAddress__.getValue());
+              break;
+            }
+            case 48: {
+
+              delegateInterval_ = input.readUInt64();
+              break;
+            }
+            case 56: {
+
+              reinvestInterval_ = input.readUInt64();
+              break;
+            }
+            case 64: {
+
+              validatorRebalancingThreshold_ = input.readUInt64();
+              break;
+            }
+            case 72: {
+
+              icaTimeoutNanos_ = input.readUInt64();
+              break;
+            }
+            case 80: {
+
+              bufferSize_ = input.readUInt64();
+              break;
+            }
+            case 88: {
+
+              ibcTimeoutBlocks_ = input.readUInt64();
+              break;
+            }
+            case 96: {
+
+              feeTransferTimeoutNanos_ = input.readUInt64();
+              break;
+            }
+            case 104: {
+
+              maxStakeIcaCallsPerEpoch_ = input.readUInt64();
+              break;
+            }
+            case 112: {
+
+              safetyMinRedemptionRateThreshold_ = input.readUInt64();
+              break;
+            }
+            case 120: {
+
+              safetyMaxRedemptionRateThreshold_ = input.readUInt64();
+              break;
+            }
+            case 128: {
+
+              ibcTransferTimeoutNanos_ = input.readUInt64();
+              break;
+            }
+            case 136: {
+
+              safetyNumValidators_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -345,7 +474,7 @@ java.lang.String defaultValue);
     @java.lang.Override
     public boolean containsZoneComAddress(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       return internalGetZoneComAddress().getMap().containsKey(key);
     }
     /**
@@ -386,7 +515,7 @@ java.lang.String defaultValue);
     public java.lang.String getZoneComAddressOrDefault(
         java.lang.String key,
         java.lang.String defaultValue) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetZoneComAddress().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -405,7 +534,7 @@ java.lang.String defaultValue);
 
     public java.lang.String getZoneComAddressOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetZoneComAddress().getMap();
       if (!map.containsKey(key)) {
@@ -603,7 +732,7 @@ java.lang.String defaultValue);
       if (safetyNumValidators_ != 0L) {
         output.writeUInt64(17, safetyNumValidators_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -686,7 +815,7 @@ java.lang.String defaultValue);
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(17, safetyNumValidators_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -735,7 +864,7 @@ java.lang.String defaultValue);
           != other.getIbcTransferTimeoutNanos()) return false;
       if (getSafetyNumValidators()
           != other.getSafetyNumValidators()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -798,7 +927,7 @@ java.lang.String defaultValue);
       hash = (37 * hash) + SAFETY_NUM_VALIDATORS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSafetyNumValidators());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -942,13 +1071,18 @@ java.lang.String defaultValue);
 
       // Construct using stride.stakeibc.ParamsOuterClass.Params.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -1129,7 +1263,7 @@ java.lang.String defaultValue);
         if (other.getSafetyNumValidators() != 0L) {
           setSafetyNumValidators(other.getSafetyNumValidators());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1144,118 +1278,17 @@ java.lang.String defaultValue);
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        stride.stakeibc.ParamsOuterClass.Params parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                rewardsInterval_ = input.readUInt64();
-
-                break;
-              } // case 8
-              case 16: {
-                depositInterval_ = input.readUInt64();
-
-                break;
-              } // case 16
-              case 24: {
-                redemptionRateInterval_ = input.readUInt64();
-
-                break;
-              } // case 24
-              case 32: {
-                strideCommission_ = input.readUInt64();
-
-                break;
-              } // case 32
-              case 42: {
-                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-                zoneComAddress__ = input.readMessage(
-                    ZoneComAddressDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableZoneComAddress().getMutableMap().put(
-                    zoneComAddress__.getKey(), zoneComAddress__.getValue());
-                break;
-              } // case 42
-              case 48: {
-                delegateInterval_ = input.readUInt64();
-
-                break;
-              } // case 48
-              case 56: {
-                reinvestInterval_ = input.readUInt64();
-
-                break;
-              } // case 56
-              case 64: {
-                validatorRebalancingThreshold_ = input.readUInt64();
-
-                break;
-              } // case 64
-              case 72: {
-                icaTimeoutNanos_ = input.readUInt64();
-
-                break;
-              } // case 72
-              case 80: {
-                bufferSize_ = input.readUInt64();
-
-                break;
-              } // case 80
-              case 88: {
-                ibcTimeoutBlocks_ = input.readUInt64();
-
-                break;
-              } // case 88
-              case 96: {
-                feeTransferTimeoutNanos_ = input.readUInt64();
-
-                break;
-              } // case 96
-              case 104: {
-                maxStakeIcaCallsPerEpoch_ = input.readUInt64();
-
-                break;
-              } // case 104
-              case 112: {
-                safetyMinRedemptionRateThreshold_ = input.readUInt64();
-
-                break;
-              } // case 112
-              case 120: {
-                safetyMaxRedemptionRateThreshold_ = input.readUInt64();
-
-                break;
-              } // case 120
-              case 128: {
-                ibcTransferTimeoutNanos_ = input.readUInt64();
-
-                break;
-              } // case 128
-              case 136: {
-                safetyNumValidators_ = input.readUInt64();
-
-                break;
-              } // case 136
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (stride.stakeibc.ParamsOuterClass.Params) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1467,7 +1500,7 @@ java.lang.String defaultValue);
       @java.lang.Override
       public boolean containsZoneComAddress(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         return internalGetZoneComAddress().getMap().containsKey(key);
       }
       /**
@@ -1508,7 +1541,7 @@ java.lang.String defaultValue);
       public java.lang.String getZoneComAddressOrDefault(
           java.lang.String key,
           java.lang.String defaultValue) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         java.util.Map<java.lang.String, java.lang.String> map =
             internalGetZoneComAddress().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1527,7 +1560,7 @@ java.lang.String defaultValue);
 
       public java.lang.String getZoneComAddressOrThrow(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         java.util.Map<java.lang.String, java.lang.String> map =
             internalGetZoneComAddress().getMap();
         if (!map.containsKey(key)) {
@@ -1554,7 +1587,7 @@ java.lang.String defaultValue);
 
       public Builder removeZoneComAddress(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableZoneComAddress().getMutableMap()
             .remove(key);
         return this;
@@ -1580,11 +1613,8 @@ java.lang.String defaultValue);
       public Builder putZoneComAddress(
           java.lang.String key,
           java.lang.String value) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        if (value == null) {
-  throw new NullPointerException("map value");
-}
-
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableZoneComAddress().getMutableMap()
             .put(key, value);
         return this;
@@ -1980,18 +2010,7 @@ java.lang.String defaultValue);
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Params(input, extensionRegistry);
       }
     };
 

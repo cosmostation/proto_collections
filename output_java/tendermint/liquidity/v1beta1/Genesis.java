@@ -169,6 +169,119 @@ public final class Genesis {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private PoolRecord(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              tendermint.liquidity.v1beta1.Liquidity.Pool.Builder subBuilder = null;
+              if (pool_ != null) {
+                subBuilder = pool_.toBuilder();
+              }
+              pool_ = input.readMessage(tendermint.liquidity.v1beta1.Liquidity.Pool.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pool_);
+                pool_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              tendermint.liquidity.v1beta1.Liquidity.PoolMetadata.Builder subBuilder = null;
+              if (poolMetadata_ != null) {
+                subBuilder = poolMetadata_.toBuilder();
+              }
+              poolMetadata_ = input.readMessage(tendermint.liquidity.v1beta1.Liquidity.PoolMetadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(poolMetadata_);
+                poolMetadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              tendermint.liquidity.v1beta1.Liquidity.PoolBatch.Builder subBuilder = null;
+              if (poolBatch_ != null) {
+                subBuilder = poolBatch_.toBuilder();
+              }
+              poolBatch_ = input.readMessage(tendermint.liquidity.v1beta1.Liquidity.PoolBatch.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(poolBatch_);
+                poolBatch_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                depositMsgStates_ = new java.util.ArrayList<tendermint.liquidity.v1beta1.Liquidity.DepositMsgState>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              depositMsgStates_.add(
+                  input.readMessage(tendermint.liquidity.v1beta1.Liquidity.DepositMsgState.parser(), extensionRegistry));
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                withdrawMsgStates_ = new java.util.ArrayList<tendermint.liquidity.v1beta1.Liquidity.WithdrawMsgState>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              withdrawMsgStates_.add(
+                  input.readMessage(tendermint.liquidity.v1beta1.Liquidity.WithdrawMsgState.parser(), extensionRegistry));
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                swapMsgStates_ = new java.util.ArrayList<tendermint.liquidity.v1beta1.Liquidity.SwapMsgState>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              swapMsgStates_.add(
+                  input.readMessage(tendermint.liquidity.v1beta1.Liquidity.SwapMsgState.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          depositMsgStates_ = java.util.Collections.unmodifiableList(depositMsgStates_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          withdrawMsgStates_ = java.util.Collections.unmodifiableList(withdrawMsgStates_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          swapMsgStates_ = java.util.Collections.unmodifiableList(swapMsgStates_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return tendermint.liquidity.v1beta1.Genesis.internal_static_tendermint_liquidity_v1beta1_PoolRecord_descriptor;
@@ -412,7 +525,7 @@ public final class Genesis {
       for (int i = 0; i < swapMsgStates_.size(); i++) {
         output.writeMessage(6, swapMsgStates_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -445,7 +558,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, swapMsgStates_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -481,7 +594,7 @@ public final class Genesis {
           .equals(other.getWithdrawMsgStatesList())) return false;
       if (!getSwapMsgStatesList()
           .equals(other.getSwapMsgStatesList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -516,7 +629,7 @@ public final class Genesis {
         hash = (37 * hash) + SWAP_MSG_STATES_FIELD_NUMBER;
         hash = (53 * hash) + getSwapMsgStatesList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -637,13 +750,21 @@ public final class Genesis {
 
       // Construct using tendermint.liquidity.v1beta1.Genesis.PoolRecord.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getDepositMsgStatesFieldBuilder();
+          getWithdrawMsgStatesFieldBuilder();
+          getSwapMsgStatesFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -668,25 +789,22 @@ public final class Genesis {
         }
         if (depositMsgStatesBuilder_ == null) {
           depositMsgStates_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          depositMsgStates_ = null;
           depositMsgStatesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (withdrawMsgStatesBuilder_ == null) {
           withdrawMsgStates_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          withdrawMsgStates_ = null;
           withdrawMsgStatesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         if (swapMsgStatesBuilder_ == null) {
           swapMsgStates_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          swapMsgStates_ = null;
           swapMsgStatesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -891,7 +1009,7 @@ public final class Genesis {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -906,90 +1024,17 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        tendermint.liquidity.v1beta1.Genesis.PoolRecord parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getPoolFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getPoolMetadataFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getPoolBatchFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 26
-              case 34: {
-                tendermint.liquidity.v1beta1.Liquidity.DepositMsgState m =
-                    input.readMessage(
-                        tendermint.liquidity.v1beta1.Liquidity.DepositMsgState.parser(),
-                        extensionRegistry);
-                if (depositMsgStatesBuilder_ == null) {
-                  ensureDepositMsgStatesIsMutable();
-                  depositMsgStates_.add(m);
-                } else {
-                  depositMsgStatesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              case 42: {
-                tendermint.liquidity.v1beta1.Liquidity.WithdrawMsgState m =
-                    input.readMessage(
-                        tendermint.liquidity.v1beta1.Liquidity.WithdrawMsgState.parser(),
-                        extensionRegistry);
-                if (withdrawMsgStatesBuilder_ == null) {
-                  ensureWithdrawMsgStatesIsMutable();
-                  withdrawMsgStates_.add(m);
-                } else {
-                  withdrawMsgStatesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 42
-              case 50: {
-                tendermint.liquidity.v1beta1.Liquidity.SwapMsgState m =
-                    input.readMessage(
-                        tendermint.liquidity.v1beta1.Liquidity.SwapMsgState.parser(),
-                        extensionRegistry);
-                if (swapMsgStatesBuilder_ == null) {
-                  ensureSwapMsgStatesIsMutable();
-                  swapMsgStates_.add(m);
-                } else {
-                  swapMsgStatesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 50
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (tendermint.liquidity.v1beta1.Genesis.PoolRecord) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -2103,18 +2148,7 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new PoolRecord(input, extensionRegistry);
       }
     };
 
@@ -2220,6 +2254,69 @@ public final class Genesis {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private GenesisState(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              tendermint.liquidity.v1beta1.Liquidity.Params.Builder subBuilder = null;
+              if (params_ != null) {
+                subBuilder = params_.toBuilder();
+              }
+              params_ = input.readMessage(tendermint.liquidity.v1beta1.Liquidity.Params.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(params_);
+                params_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                poolRecords_ = new java.util.ArrayList<tendermint.liquidity.v1beta1.Genesis.PoolRecord>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              poolRecords_.add(
+                  input.readMessage(tendermint.liquidity.v1beta1.Genesis.PoolRecord.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          poolRecords_ = java.util.Collections.unmodifiableList(poolRecords_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -2332,7 +2429,7 @@ public final class Genesis {
       for (int i = 0; i < poolRecords_.size(); i++) {
         output.writeMessage(2, poolRecords_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -2349,7 +2446,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, poolRecords_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2371,7 +2468,7 @@ public final class Genesis {
       }
       if (!getPoolRecordsList()
           .equals(other.getPoolRecordsList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -2390,7 +2487,7 @@ public final class Genesis {
         hash = (37 * hash) + POOL_RECORDS_FIELD_NUMBER;
         hash = (53 * hash) + getPoolRecordsList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2511,13 +2608,19 @@ public final class Genesis {
 
       // Construct using tendermint.liquidity.v1beta1.Genesis.GenesisState.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getPoolRecordsFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -2530,11 +2633,10 @@ public final class Genesis {
         }
         if (poolRecordsBuilder_ == null) {
           poolRecords_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          poolRecords_ = null;
           poolRecordsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -2653,7 +2755,7 @@ public final class Genesis {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -2668,50 +2770,17 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        tendermint.liquidity.v1beta1.Genesis.GenesisState parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getParamsFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 10
-              case 18: {
-                tendermint.liquidity.v1beta1.Genesis.PoolRecord m =
-                    input.readMessage(
-                        tendermint.liquidity.v1beta1.Genesis.PoolRecord.parser(),
-                        extensionRegistry);
-                if (poolRecordsBuilder_ == null) {
-                  ensurePoolRecordsIsMutable();
-                  poolRecords_.add(m);
-                } else {
-                  poolRecordsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (tendermint.liquidity.v1beta1.Genesis.GenesisState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -3143,18 +3212,7 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GenesisState(input, extensionRegistry);
       }
     };
 

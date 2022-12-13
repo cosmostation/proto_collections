@@ -70,6 +70,49 @@ public final class Mint {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private Minter(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              blockProvisions_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return teritori.mint.v1beta1.Mint.internal_static_teritori_mint_v1beta1_Minter_descriptor;
@@ -143,10 +186,10 @@ public final class Mint {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(blockProvisions_)) {
+      if (!getBlockProvisionsBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, blockProvisions_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -155,10 +198,10 @@ public final class Mint {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(blockProvisions_)) {
+      if (!getBlockProvisionsBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, blockProvisions_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -175,7 +218,7 @@ public final class Mint {
 
       if (!getBlockProvisions()
           .equals(other.getBlockProvisions())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -188,7 +231,7 @@ public final class Mint {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + BLOCK_PROVISIONS_FIELD_NUMBER;
       hash = (53 * hash) + getBlockProvisions().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -309,13 +352,18 @@ public final class Mint {
 
       // Construct using teritori.mint.v1beta1.Mint.Minter.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -401,7 +449,7 @@ public final class Mint {
           blockProvisions_ = other.blockProvisions_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -416,35 +464,17 @@ public final class Mint {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        teritori.mint.v1beta1.Mint.Minter parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                blockProvisions_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 10
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (teritori.mint.v1beta1.Mint.Minter) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -576,18 +606,7 @@ public final class Mint {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Minter(input, extensionRegistry);
       }
     };
 
@@ -660,6 +679,58 @@ public final class Mint {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private TeamVestingMonthInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              monthsSinceGenesis_ = input.readInt64();
+              break;
+            }
+            case 16: {
+
+              monthStartedBlock_ = input.readInt64();
+              break;
+            }
+            case 24: {
+
+              oneMonthPeriodInBlocks_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return teritori.mint.v1beta1.Mint.internal_static_teritori_mint_v1beta1_TeamVestingMonthInfo_descriptor;
@@ -729,7 +800,7 @@ public final class Mint {
       if (oneMonthPeriodInBlocks_ != 0L) {
         output.writeInt64(3, oneMonthPeriodInBlocks_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -750,7 +821,7 @@ public final class Mint {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(3, oneMonthPeriodInBlocks_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -771,7 +842,7 @@ public final class Mint {
           != other.getMonthStartedBlock()) return false;
       if (getOneMonthPeriodInBlocks()
           != other.getOneMonthPeriodInBlocks()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -791,7 +862,7 @@ public final class Mint {
       hash = (37 * hash) + ONE_MONTH_PERIOD_IN_BLOCKS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getOneMonthPeriodInBlocks());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -912,13 +983,18 @@ public final class Mint {
 
       // Construct using teritori.mint.v1beta1.Mint.TeamVestingMonthInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -1015,7 +1091,7 @@ public final class Mint {
         if (other.getOneMonthPeriodInBlocks() != 0L) {
           setOneMonthPeriodInBlocks(other.getOneMonthPeriodInBlocks());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1030,45 +1106,17 @@ public final class Mint {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        teritori.mint.v1beta1.Mint.TeamVestingMonthInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                monthsSinceGenesis_ = input.readInt64();
-
-                break;
-              } // case 8
-              case 16: {
-                monthStartedBlock_ = input.readInt64();
-
-                break;
-              } // case 16
-              case 24: {
-                oneMonthPeriodInBlocks_ = input.readInt64();
-
-                break;
-              } // case 24
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (teritori.mint.v1beta1.Mint.TeamVestingMonthInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -1197,18 +1245,7 @@ public final class Mint {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TeamVestingMonthInfo(input, extensionRegistry);
       }
     };
 
@@ -1297,6 +1334,62 @@ public final class Mint {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private MonthlyVestingAddress(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              address_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                monthlyAmounts_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              monthlyAmounts_.add(s);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          monthlyAmounts_ = monthlyAmounts_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -1398,13 +1491,13 @@ public final class Mint {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
+      if (!getAddressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, address_);
       }
       for (int i = 0; i < monthlyAmounts_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, monthlyAmounts_.getRaw(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1413,7 +1506,7 @@ public final class Mint {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
+      if (!getAddressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, address_);
       }
       {
@@ -1424,7 +1517,7 @@ public final class Mint {
         size += dataSize;
         size += 1 * getMonthlyAmountsList().size();
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1443,7 +1536,7 @@ public final class Mint {
           .equals(other.getAddress())) return false;
       if (!getMonthlyAmountsList()
           .equals(other.getMonthlyAmountsList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -1460,7 +1553,7 @@ public final class Mint {
         hash = (37 * hash) + MONTHLY_AMOUNTS_FIELD_NUMBER;
         hash = (53 * hash) + getMonthlyAmountsList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1577,13 +1670,18 @@ public final class Mint {
 
       // Construct using teritori.mint.v1beta1.Mint.MonthlyVestingAddress.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -1687,7 +1785,7 @@ public final class Mint {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1702,41 +1800,17 @@ public final class Mint {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        teritori.mint.v1beta1.Mint.MonthlyVestingAddress parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                address_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 10
-              case 18: {
-                java.lang.String s = input.readStringRequireUtf8();
-                ensureMonthlyAmountsIsMutable();
-                monthlyAmounts_.add(s);
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (teritori.mint.v1beta1.Mint.MonthlyVestingAddress) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1959,18 +2033,7 @@ public final class Mint {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new MonthlyVestingAddress(input, extensionRegistry);
       }
     };
 
@@ -2135,6 +2198,73 @@ public final class Mint {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private DistributionProportions(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              grantsProgram_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              communityPool_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              usageIncentive_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              staking_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              developerRewards_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -2403,22 +2533,22 @@ public final class Mint {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(grantsProgram_)) {
+      if (!getGrantsProgramBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, grantsProgram_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(communityPool_)) {
+      if (!getCommunityPoolBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, communityPool_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(usageIncentive_)) {
+      if (!getUsageIncentiveBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, usageIncentive_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(staking_)) {
+      if (!getStakingBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, staking_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(developerRewards_)) {
+      if (!getDeveloperRewardsBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, developerRewards_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -2427,22 +2557,22 @@ public final class Mint {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(grantsProgram_)) {
+      if (!getGrantsProgramBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, grantsProgram_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(communityPool_)) {
+      if (!getCommunityPoolBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, communityPool_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(usageIncentive_)) {
+      if (!getUsageIncentiveBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, usageIncentive_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(staking_)) {
+      if (!getStakingBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, staking_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(developerRewards_)) {
+      if (!getDeveloperRewardsBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, developerRewards_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2467,7 +2597,7 @@ public final class Mint {
           .equals(other.getStaking())) return false;
       if (!getDeveloperRewards()
           .equals(other.getDeveloperRewards())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -2488,7 +2618,7 @@ public final class Mint {
       hash = (53 * hash) + getStaking().hashCode();
       hash = (37 * hash) + DEVELOPER_REWARDS_FIELD_NUMBER;
       hash = (53 * hash) + getDeveloperRewards().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2605,13 +2735,18 @@ public final class Mint {
 
       // Construct using teritori.mint.v1beta1.Mint.DistributionProportions.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -2725,7 +2860,7 @@ public final class Mint {
           developerRewards_ = other.developerRewards_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -2740,55 +2875,17 @@ public final class Mint {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        teritori.mint.v1beta1.Mint.DistributionProportions parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                grantsProgram_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 10
-              case 18: {
-                communityPool_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 18
-              case 26: {
-                usageIncentive_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 26
-              case 34: {
-                staking_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 34
-              case 42: {
-                developerRewards_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 42
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (teritori.mint.v1beta1.Mint.DistributionProportions) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -3329,18 +3426,7 @@ public final class Mint {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new DistributionProportions(input, extensionRegistry);
       }
     };
 
@@ -3612,6 +3698,115 @@ public final class Mint {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private Params(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              mintDenom_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              genesisBlockProvisions_ = s;
+              break;
+            }
+            case 24: {
+
+              reductionPeriodInBlocks_ = input.readInt64();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              reductionFactor_ = s;
+              break;
+            }
+            case 42: {
+              teritori.mint.v1beta1.Mint.DistributionProportions.Builder subBuilder = null;
+              if (distributionProportions_ != null) {
+                subBuilder = distributionProportions_.toBuilder();
+              }
+              distributionProportions_ = input.readMessage(teritori.mint.v1beta1.Mint.DistributionProportions.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(distributionProportions_);
+                distributionProportions_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                weightedDeveloperRewardsReceivers_ = new java.util.ArrayList<teritori.mint.v1beta1.Mint.MonthlyVestingAddress>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              weightedDeveloperRewardsReceivers_.add(
+                  input.readMessage(teritori.mint.v1beta1.Mint.MonthlyVestingAddress.parser(), extensionRegistry));
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              usageIncentiveAddress_ = s;
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              grantsProgramAddress_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              teamReserveAddress_ = s;
+              break;
+            }
+            case 80: {
+
+              mintingRewardsDistributionStartBlock_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          weightedDeveloperRewardsReceivers_ = java.util.Collections.unmodifiableList(weightedDeveloperRewardsReceivers_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -4044,16 +4239,16 @@ public final class Mint {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mintDenom_)) {
+      if (!getMintDenomBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, mintDenom_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(genesisBlockProvisions_)) {
+      if (!getGenesisBlockProvisionsBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, genesisBlockProvisions_);
       }
       if (reductionPeriodInBlocks_ != 0L) {
         output.writeInt64(3, reductionPeriodInBlocks_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reductionFactor_)) {
+      if (!getReductionFactorBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, reductionFactor_);
       }
       if (distributionProportions_ != null) {
@@ -4062,19 +4257,19 @@ public final class Mint {
       for (int i = 0; i < weightedDeveloperRewardsReceivers_.size(); i++) {
         output.writeMessage(6, weightedDeveloperRewardsReceivers_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(usageIncentiveAddress_)) {
+      if (!getUsageIncentiveAddressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, usageIncentiveAddress_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(grantsProgramAddress_)) {
+      if (!getGrantsProgramAddressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, grantsProgramAddress_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(teamReserveAddress_)) {
+      if (!getTeamReserveAddressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, teamReserveAddress_);
       }
       if (mintingRewardsDistributionStartBlock_ != 0L) {
         output.writeInt64(10, mintingRewardsDistributionStartBlock_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -4083,17 +4278,17 @@ public final class Mint {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mintDenom_)) {
+      if (!getMintDenomBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, mintDenom_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(genesisBlockProvisions_)) {
+      if (!getGenesisBlockProvisionsBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, genesisBlockProvisions_);
       }
       if (reductionPeriodInBlocks_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(3, reductionPeriodInBlocks_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reductionFactor_)) {
+      if (!getReductionFactorBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, reductionFactor_);
       }
       if (distributionProportions_ != null) {
@@ -4104,20 +4299,20 @@ public final class Mint {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, weightedDeveloperRewardsReceivers_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(usageIncentiveAddress_)) {
+      if (!getUsageIncentiveAddressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, usageIncentiveAddress_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(grantsProgramAddress_)) {
+      if (!getGrantsProgramAddressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, grantsProgramAddress_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(teamReserveAddress_)) {
+      if (!getTeamReserveAddressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, teamReserveAddress_);
       }
       if (mintingRewardsDistributionStartBlock_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(10, mintingRewardsDistributionStartBlock_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4155,7 +4350,7 @@ public final class Mint {
           .equals(other.getTeamReserveAddress())) return false;
       if (getMintingRewardsDistributionStartBlock()
           != other.getMintingRewardsDistributionStartBlock()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -4192,7 +4387,7 @@ public final class Mint {
       hash = (37 * hash) + MINTING_REWARDS_DISTRIBUTION_START_BLOCK_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMintingRewardsDistributionStartBlock());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4313,13 +4508,19 @@ public final class Mint {
 
       // Construct using teritori.mint.v1beta1.Mint.Params.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getWeightedDeveloperRewardsReceiversFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -4340,11 +4541,10 @@ public final class Mint {
         }
         if (weightedDeveloperRewardsReceiversBuilder_ == null) {
           weightedDeveloperRewardsReceivers_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          weightedDeveloperRewardsReceivers_ = null;
           weightedDeveloperRewardsReceiversBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         usageIncentiveAddress_ = "";
 
         grantsProgramAddress_ = "";
@@ -4509,7 +4709,7 @@ public final class Mint {
         if (other.getMintingRewardsDistributionStartBlock() != 0L) {
           setMintingRewardsDistributionStartBlock(other.getMintingRewardsDistributionStartBlock());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -4524,90 +4724,17 @@ public final class Mint {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        teritori.mint.v1beta1.Mint.Params parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                mintDenom_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 10
-              case 18: {
-                genesisBlockProvisions_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 18
-              case 24: {
-                reductionPeriodInBlocks_ = input.readInt64();
-
-                break;
-              } // case 24
-              case 34: {
-                reductionFactor_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 34
-              case 42: {
-                input.readMessage(
-                    getDistributionProportionsFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 42
-              case 50: {
-                teritori.mint.v1beta1.Mint.MonthlyVestingAddress m =
-                    input.readMessage(
-                        teritori.mint.v1beta1.Mint.MonthlyVestingAddress.parser(),
-                        extensionRegistry);
-                if (weightedDeveloperRewardsReceiversBuilder_ == null) {
-                  ensureWeightedDeveloperRewardsReceiversIsMutable();
-                  weightedDeveloperRewardsReceivers_.add(m);
-                } else {
-                  weightedDeveloperRewardsReceiversBuilder_.addMessage(m);
-                }
-                break;
-              } // case 50
-              case 58: {
-                usageIncentiveAddress_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 58
-              case 66: {
-                grantsProgramAddress_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 66
-              case 74: {
-                teamReserveAddress_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 74
-              case 80: {
-                mintingRewardsDistributionStartBlock_ = input.readInt64();
-
-                break;
-              } // case 80
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (teritori.mint.v1beta1.Mint.Params) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -5773,18 +5900,7 @@ public final class Mint {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Params(input, extensionRegistry);
       }
     };
 

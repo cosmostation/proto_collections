@@ -261,6 +261,157 @@ public final class Genesis {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GenesisState(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              stafihub.mining.ParamsOuterClass.Params.Builder subBuilder = null;
+              if (params_ != null) {
+                subBuilder = params_.toBuilder();
+              }
+              params_ = input.readMessage(stafihub.mining.ParamsOuterClass.Params.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(params_);
+                params_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                stakePoolList_ = new java.util.ArrayList<stafihub.mining.Models.StakePool>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              stakePoolList_.add(
+                  input.readMessage(stafihub.mining.Models.StakePool.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                stakeItemList_ = new java.util.ArrayList<stafihub.mining.Models.StakeItem>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              stakeItemList_.add(
+                  input.readMessage(stafihub.mining.Models.StakeItem.parser(), extensionRegistry));
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                userStakeRecordList_ = new java.util.ArrayList<stafihub.mining.Models.UserStakeRecord>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              userStakeRecordList_.add(
+                  input.readMessage(stafihub.mining.Models.UserStakeRecord.parser(), extensionRegistry));
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                miningProviderList_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              miningProviderList_.add(s);
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                rewardTokenList_ = new java.util.ArrayList<stafihub.mining.Models.RewardToken>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              rewardTokenList_.add(
+                  input.readMessage(stafihub.mining.Models.RewardToken.parser(), extensionRegistry));
+              break;
+            }
+            case 56: {
+
+              maxRewardPoolNumber_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              miningProviderSwitch_ = input.readBool();
+              break;
+            }
+            case 72: {
+
+              maxStakeItemNumber_ = input.readUInt32();
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                stakeTokenList_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              stakeTokenList_.add(s);
+              break;
+            }
+            case 90: {
+              stafihub.mining.Models.StakeItemLimit.Builder subBuilder = null;
+              if (stakeItemLimit_ != null) {
+                subBuilder = stakeItemLimit_.toBuilder();
+              }
+              stakeItemLimit_ = input.readMessage(stafihub.mining.Models.StakeItemLimit.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(stakeItemLimit_);
+                stakeItemLimit_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          stakePoolList_ = java.util.Collections.unmodifiableList(stakePoolList_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          stakeItemList_ = java.util.Collections.unmodifiableList(stakeItemList_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          userStakeRecordList_ = java.util.Collections.unmodifiableList(userStakeRecordList_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          miningProviderList_ = miningProviderList_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+          rewardTokenList_ = java.util.Collections.unmodifiableList(rewardTokenList_);
+        }
+        if (((mutable_bitField0_ & 0x00000020) != 0)) {
+          stakeTokenList_ = stakeTokenList_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return stafihub.mining.Genesis.internal_static_stafihub_stafihub_mining_GenesisState_descriptor;
@@ -648,7 +799,7 @@ public final class Genesis {
       if (stakeItemLimit_ != null) {
         output.writeMessage(11, getStakeItemLimit());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -709,7 +860,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, getStakeItemLimit());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -752,7 +903,7 @@ public final class Genesis {
         if (!getStakeItemLimit()
             .equals(other.getStakeItemLimit())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -802,7 +953,7 @@ public final class Genesis {
         hash = (37 * hash) + STAKEITEMLIMIT_FIELD_NUMBER;
         hash = (53 * hash) + getStakeItemLimit().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -923,13 +1074,22 @@ public final class Genesis {
 
       // Construct using stafihub.mining.Genesis.GenesisState.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getStakePoolListFieldBuilder();
+          getStakeItemListFieldBuilder();
+          getUserStakeRecordListFieldBuilder();
+          getRewardTokenListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -942,34 +1102,30 @@ public final class Genesis {
         }
         if (stakePoolListBuilder_ == null) {
           stakePoolList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          stakePoolList_ = null;
           stakePoolListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (stakeItemListBuilder_ == null) {
           stakeItemList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          stakeItemList_ = null;
           stakeItemListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         if (userStakeRecordListBuilder_ == null) {
           userStakeRecordList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          userStakeRecordList_ = null;
           userStakeRecordListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         miningProviderList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000008);
         if (rewardTokenListBuilder_ == null) {
           rewardTokenList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
-          rewardTokenList_ = null;
           rewardTokenListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000010);
         maxRewardPoolNumber_ = 0;
 
         miningProviderSwitch_ = false;
@@ -1257,7 +1413,7 @@ public final class Genesis {
         if (other.hasStakeItemLimit()) {
           mergeStakeItemLimit(other.getStakeItemLimit());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1272,123 +1428,17 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        stafihub.mining.Genesis.GenesisState parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getParamsFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 10
-              case 18: {
-                stafihub.mining.Models.StakePool m =
-                    input.readMessage(
-                        stafihub.mining.Models.StakePool.parser(),
-                        extensionRegistry);
-                if (stakePoolListBuilder_ == null) {
-                  ensureStakePoolListIsMutable();
-                  stakePoolList_.add(m);
-                } else {
-                  stakePoolListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-              case 26: {
-                stafihub.mining.Models.StakeItem m =
-                    input.readMessage(
-                        stafihub.mining.Models.StakeItem.parser(),
-                        extensionRegistry);
-                if (stakeItemListBuilder_ == null) {
-                  ensureStakeItemListIsMutable();
-                  stakeItemList_.add(m);
-                } else {
-                  stakeItemListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 26
-              case 34: {
-                stafihub.mining.Models.UserStakeRecord m =
-                    input.readMessage(
-                        stafihub.mining.Models.UserStakeRecord.parser(),
-                        extensionRegistry);
-                if (userStakeRecordListBuilder_ == null) {
-                  ensureUserStakeRecordListIsMutable();
-                  userStakeRecordList_.add(m);
-                } else {
-                  userStakeRecordListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              case 42: {
-                java.lang.String s = input.readStringRequireUtf8();
-                ensureMiningProviderListIsMutable();
-                miningProviderList_.add(s);
-                break;
-              } // case 42
-              case 50: {
-                stafihub.mining.Models.RewardToken m =
-                    input.readMessage(
-                        stafihub.mining.Models.RewardToken.parser(),
-                        extensionRegistry);
-                if (rewardTokenListBuilder_ == null) {
-                  ensureRewardTokenListIsMutable();
-                  rewardTokenList_.add(m);
-                } else {
-                  rewardTokenListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 50
-              case 56: {
-                maxRewardPoolNumber_ = input.readUInt32();
-
-                break;
-              } // case 56
-              case 64: {
-                miningProviderSwitch_ = input.readBool();
-
-                break;
-              } // case 64
-              case 72: {
-                maxStakeItemNumber_ = input.readUInt32();
-
-                break;
-              } // case 72
-              case 82: {
-                java.lang.String s = input.readStringRequireUtf8();
-                ensureStakeTokenListIsMutable();
-                stakeTokenList_.add(s);
-                break;
-              } // case 82
-              case 90: {
-                input.readMessage(
-                    getStakeItemLimitFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 90
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (stafihub.mining.Genesis.GenesisState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -2972,18 +3022,7 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GenesisState(input, extensionRegistry);
       }
     };
 

@@ -182,6 +182,101 @@ public final class ModelsPackets {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private LinkChainAccountPacketData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.google.protobuf2.Any.Builder subBuilder = null;
+              if (sourceAddress_ != null) {
+                subBuilder = sourceAddress_.toBuilder();
+              }
+              sourceAddress_ = input.readMessage(com.google.protobuf2.Any.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sourceAddress_);
+                sourceAddress_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              desmos.profiles.v1beta1.ModelsChainLinks.Proof.Builder subBuilder = null;
+              if (sourceProof_ != null) {
+                subBuilder = sourceProof_.toBuilder();
+              }
+              sourceProof_ = input.readMessage(desmos.profiles.v1beta1.ModelsChainLinks.Proof.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sourceProof_);
+                sourceProof_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              desmos.profiles.v1beta1.ModelsChainLinks.ChainConfig.Builder subBuilder = null;
+              if (sourceChainConfig_ != null) {
+                subBuilder = sourceChainConfig_.toBuilder();
+              }
+              sourceChainConfig_ = input.readMessage(desmos.profiles.v1beta1.ModelsChainLinks.ChainConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sourceChainConfig_);
+                sourceChainConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              destinationAddress_ = s;
+              break;
+            }
+            case 42: {
+              desmos.profiles.v1beta1.ModelsChainLinks.Proof.Builder subBuilder = null;
+              if (destinationProof_ != null) {
+                subBuilder = destinationProof_.toBuilder();
+              }
+              destinationProof_ = input.readMessage(desmos.profiles.v1beta1.ModelsChainLinks.Proof.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(destinationProof_);
+                destinationProof_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return desmos.profiles.v1beta1.ModelsPackets.internal_static_desmos_profiles_v1beta1_LinkChainAccountPacketData_descriptor;
@@ -418,13 +513,13 @@ public final class ModelsPackets {
       if (sourceChainConfig_ != null) {
         output.writeMessage(3, getSourceChainConfig());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationAddress_)) {
+      if (!getDestinationAddressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, destinationAddress_);
       }
       if (destinationProof_ != null) {
         output.writeMessage(5, getDestinationProof());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -445,14 +540,14 @@ public final class ModelsPackets {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getSourceChainConfig());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationAddress_)) {
+      if (!getDestinationAddressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, destinationAddress_);
       }
       if (destinationProof_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getDestinationProof());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -489,7 +584,7 @@ public final class ModelsPackets {
         if (!getDestinationProof()
             .equals(other.getDestinationProof())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -518,7 +613,7 @@ public final class ModelsPackets {
         hash = (37 * hash) + DESTINATION_PROOF_FIELD_NUMBER;
         hash = (53 * hash) + getDestinationProof().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -641,13 +736,18 @@ public final class ModelsPackets {
 
       // Construct using desmos.profiles.v1beta1.ModelsPackets.LinkChainAccountPacketData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -789,7 +889,7 @@ public final class ModelsPackets {
         if (other.hasDestinationProof()) {
           mergeDestinationProof(other.getDestinationProof());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -804,63 +904,17 @@ public final class ModelsPackets {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        desmos.profiles.v1beta1.ModelsPackets.LinkChainAccountPacketData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getSourceAddressFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getSourceProofFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getSourceChainConfigFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 26
-              case 34: {
-                destinationAddress_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 34
-              case 42: {
-                input.readMessage(
-                    getDestinationProofFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 42
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (desmos.profiles.v1beta1.ModelsPackets.LinkChainAccountPacketData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -1617,18 +1671,7 @@ public final class ModelsPackets {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new LinkChainAccountPacketData(input, extensionRegistry);
       }
     };
 
@@ -1706,6 +1749,49 @@ public final class ModelsPackets {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private LinkChainAccountPacketAck(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sourceAddress_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return desmos.profiles.v1beta1.ModelsPackets.internal_static_desmos_profiles_v1beta1_LinkChainAccountPacketAck_descriptor;
@@ -1781,10 +1867,10 @@ public final class ModelsPackets {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceAddress_)) {
+      if (!getSourceAddressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sourceAddress_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1793,10 +1879,10 @@ public final class ModelsPackets {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceAddress_)) {
+      if (!getSourceAddressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sourceAddress_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1813,7 +1899,7 @@ public final class ModelsPackets {
 
       if (!getSourceAddress()
           .equals(other.getSourceAddress())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -1826,7 +1912,7 @@ public final class ModelsPackets {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SOURCE_ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getSourceAddress().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1947,13 +2033,18 @@ public final class ModelsPackets {
 
       // Construct using desmos.profiles.v1beta1.ModelsPackets.LinkChainAccountPacketAck.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -2039,7 +2130,7 @@ public final class ModelsPackets {
           sourceAddress_ = other.sourceAddress_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -2054,35 +2145,17 @@ public final class ModelsPackets {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        desmos.profiles.v1beta1.ModelsPackets.LinkChainAccountPacketAck parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                sourceAddress_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 10
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (desmos.profiles.v1beta1.ModelsPackets.LinkChainAccountPacketAck) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -2219,18 +2292,7 @@ public final class ModelsPackets {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new LinkChainAccountPacketAck(input, extensionRegistry);
       }
     };
 

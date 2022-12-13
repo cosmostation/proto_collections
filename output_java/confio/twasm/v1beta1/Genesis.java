@@ -328,6 +328,141 @@ public final class Genesis {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GenesisState(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              cosmwasm.wasm.v1.Types.Params.Builder subBuilder = null;
+              if (params_ != null) {
+                subBuilder = params_.toBuilder();
+              }
+              params_ = input.readMessage(cosmwasm.wasm.v1.Types.Params.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(params_);
+                params_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                codes_ = new java.util.ArrayList<cosmwasm.wasm.v1.Genesis.Code>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              codes_.add(
+                  input.readMessage(cosmwasm.wasm.v1.Genesis.Code.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                contracts_ = new java.util.ArrayList<confio.twasm.v1beta1.Genesis.Contract>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              contracts_.add(
+                  input.readMessage(confio.twasm.v1beta1.Genesis.Contract.parser(), extensionRegistry));
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                sequences_ = new java.util.ArrayList<cosmwasm.wasm.v1.Genesis.Sequence>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              sequences_.add(
+                  input.readMessage(cosmwasm.wasm.v1.Genesis.Sequence.parser(), extensionRegistry));
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                genMsgs_ = new java.util.ArrayList<cosmwasm.wasm.v1.Genesis.GenesisState.GenMsgs>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              genMsgs_.add(
+                  input.readMessage(cosmwasm.wasm.v1.Genesis.GenesisState.GenMsgs.parser(), extensionRegistry));
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                privilegedContractAddresses_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              privilegedContractAddresses_.add(s);
+              break;
+            }
+            case 56: {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                pinnedCodeIds_ = newLongList();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              pinnedCodeIds_.addLong(input.readUInt64());
+              break;
+            }
+            case 58: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000020) != 0) && input.getBytesUntilLimit() > 0) {
+                pinnedCodeIds_ = newLongList();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                pinnedCodeIds_.addLong(input.readUInt64());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          codes_ = java.util.Collections.unmodifiableList(codes_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          contracts_ = java.util.Collections.unmodifiableList(contracts_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          sequences_ = java.util.Collections.unmodifiableList(sequences_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          genMsgs_ = java.util.Collections.unmodifiableList(genMsgs_);
+        }
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+          privilegedContractAddresses_ = privilegedContractAddresses_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000020) != 0)) {
+          pinnedCodeIds_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return confio.twasm.v1beta1.Genesis.internal_static_confio_twasm_v1beta1_GenesisState_descriptor;
@@ -754,7 +889,7 @@ public final class Genesis {
       for (int i = 0; i < pinnedCodeIds_.size(); i++) {
         output.writeUInt64NoTag(pinnedCodeIds_.getLong(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -805,7 +940,7 @@ public final class Genesis {
         }
         pinnedCodeIdsMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -837,7 +972,7 @@ public final class Genesis {
           .equals(other.getPrivilegedContractAddressesList())) return false;
       if (!getPinnedCodeIdsList()
           .equals(other.getPinnedCodeIdsList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -876,7 +1011,7 @@ public final class Genesis {
         hash = (37 * hash) + PINNED_CODE_IDS_FIELD_NUMBER;
         hash = (53 * hash) + getPinnedCodeIdsList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -993,13 +1128,22 @@ public final class Genesis {
 
       // Construct using confio.twasm.v1beta1.Genesis.GenesisState.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getCodesFieldBuilder();
+          getContractsFieldBuilder();
+          getSequencesFieldBuilder();
+          getGenMsgsFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -1012,32 +1156,28 @@ public final class Genesis {
         }
         if (codesBuilder_ == null) {
           codes_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          codes_ = null;
           codesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (contractsBuilder_ == null) {
           contracts_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          contracts_ = null;
           contractsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         if (sequencesBuilder_ == null) {
           sequences_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          sequences_ = null;
           sequencesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         if (genMsgsBuilder_ == null) {
           genMsgs_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
-          genMsgs_ = null;
           genMsgsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
         privilegedContractAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000010);
         pinnedCodeIds_ = emptyLongList();
@@ -1295,7 +1435,7 @@ public final class Genesis {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1310,111 +1450,17 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        confio.twasm.v1beta1.Genesis.GenesisState parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getParamsFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 10
-              case 18: {
-                cosmwasm.wasm.v1.Genesis.Code m =
-                    input.readMessage(
-                        cosmwasm.wasm.v1.Genesis.Code.parser(),
-                        extensionRegistry);
-                if (codesBuilder_ == null) {
-                  ensureCodesIsMutable();
-                  codes_.add(m);
-                } else {
-                  codesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-              case 26: {
-                confio.twasm.v1beta1.Genesis.Contract m =
-                    input.readMessage(
-                        confio.twasm.v1beta1.Genesis.Contract.parser(),
-                        extensionRegistry);
-                if (contractsBuilder_ == null) {
-                  ensureContractsIsMutable();
-                  contracts_.add(m);
-                } else {
-                  contractsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 26
-              case 34: {
-                cosmwasm.wasm.v1.Genesis.Sequence m =
-                    input.readMessage(
-                        cosmwasm.wasm.v1.Genesis.Sequence.parser(),
-                        extensionRegistry);
-                if (sequencesBuilder_ == null) {
-                  ensureSequencesIsMutable();
-                  sequences_.add(m);
-                } else {
-                  sequencesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              case 42: {
-                cosmwasm.wasm.v1.Genesis.GenesisState.GenMsgs m =
-                    input.readMessage(
-                        cosmwasm.wasm.v1.Genesis.GenesisState.GenMsgs.parser(),
-                        extensionRegistry);
-                if (genMsgsBuilder_ == null) {
-                  ensureGenMsgsIsMutable();
-                  genMsgs_.add(m);
-                } else {
-                  genMsgsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 42
-              case 50: {
-                java.lang.String s = input.readStringRequireUtf8();
-                ensurePrivilegedContractAddressesIsMutable();
-                privilegedContractAddresses_.add(s);
-                break;
-              } // case 50
-              case 56: {
-                long v = input.readUInt64();
-                ensurePinnedCodeIdsIsMutable();
-                pinnedCodeIds_.addLong(v);
-                break;
-              } // case 56
-              case 58: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensurePinnedCodeIdsIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  pinnedCodeIds_.addLong(input.readUInt64());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 58
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (confio.twasm.v1beta1.Genesis.GenesisState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -3116,18 +3162,7 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GenesisState(input, extensionRegistry);
       }
     };
 
@@ -3241,6 +3276,90 @@ public final class Genesis {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private Contract(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              contractAddress_ = s;
+              break;
+            }
+            case 18: {
+              cosmwasm.wasm.v1.Types.ContractInfo.Builder subBuilder = null;
+              if (contractInfo_ != null) {
+                subBuilder = contractInfo_.toBuilder();
+              }
+              contractInfo_ = input.readMessage(cosmwasm.wasm.v1.Types.ContractInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(contractInfo_);
+                contractInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              confio.twasm.v1beta1.Genesis.KVModel.Builder subBuilder = null;
+              if (contractStateCase_ == 3) {
+                subBuilder = ((confio.twasm.v1beta1.Genesis.KVModel) contractState_).toBuilder();
+              }
+              contractState_ =
+                  input.readMessage(confio.twasm.v1beta1.Genesis.KVModel.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((confio.twasm.v1beta1.Genesis.KVModel) contractState_);
+                contractState_ = subBuilder.buildPartial();
+              }
+              contractStateCase_ = 3;
+              break;
+            }
+            case 34: {
+              confio.twasm.v1beta1.Genesis.CustomModel.Builder subBuilder = null;
+              if (contractStateCase_ == 4) {
+                subBuilder = ((confio.twasm.v1beta1.Genesis.CustomModel) contractState_).toBuilder();
+              }
+              contractState_ =
+                  input.readMessage(confio.twasm.v1beta1.Genesis.CustomModel.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((confio.twasm.v1beta1.Genesis.CustomModel) contractState_);
+                contractState_ = subBuilder.buildPartial();
+              }
+              contractStateCase_ = 4;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -3436,7 +3555,7 @@ public final class Genesis {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(contractAddress_)) {
+      if (!getContractAddressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, contractAddress_);
       }
       if (contractInfo_ != null) {
@@ -3448,7 +3567,7 @@ public final class Genesis {
       if (contractStateCase_ == 4) {
         output.writeMessage(4, (confio.twasm.v1beta1.Genesis.CustomModel) contractState_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -3457,7 +3576,7 @@ public final class Genesis {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(contractAddress_)) {
+      if (!getContractAddressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, contractAddress_);
       }
       if (contractInfo_ != null) {
@@ -3472,7 +3591,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, (confio.twasm.v1beta1.Genesis.CustomModel) contractState_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3507,7 +3626,7 @@ public final class Genesis {
         case 0:
         default:
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -3536,7 +3655,7 @@ public final class Genesis {
         case 0:
         default:
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3657,13 +3776,18 @@ public final class Genesis {
 
       // Construct using confio.twasm.v1beta1.Genesis.Contract.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -3675,12 +3799,6 @@ public final class Genesis {
         } else {
           contractInfo_ = null;
           contractInfoBuilder_ = null;
-        }
-        if (kvModelBuilder_ != null) {
-          kvModelBuilder_.clear();
-        }
-        if (customModelBuilder_ != null) {
-          customModelBuilder_.clear();
         }
         contractStateCase_ = 0;
         contractState_ = null;
@@ -3799,7 +3917,7 @@ public final class Genesis {
             break;
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -3814,56 +3932,17 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        confio.twasm.v1beta1.Genesis.Contract parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                contractAddress_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getContractInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getKvModelFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                contractStateCase_ = 3;
-                break;
-              } // case 26
-              case 34: {
-                input.readMessage(
-                    getCustomModelFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                contractStateCase_ = 4;
-                break;
-              } // case 34
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (confio.twasm.v1beta1.Genesis.Contract) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int contractStateCase_ = 0;
@@ -4151,9 +4230,8 @@ public final class Genesis {
         } else {
           if (contractStateCase_ == 3) {
             kvModelBuilder_.mergeFrom(value);
-          } else {
-            kvModelBuilder_.setMessage(value);
           }
+          kvModelBuilder_.setMessage(value);
         }
         contractStateCase_ = 3;
         return this;
@@ -4293,9 +4371,8 @@ public final class Genesis {
         } else {
           if (contractStateCase_ == 4) {
             customModelBuilder_.mergeFrom(value);
-          } else {
-            customModelBuilder_.setMessage(value);
           }
+          customModelBuilder_.setMessage(value);
         }
         contractStateCase_ = 4;
         return this;
@@ -4393,18 +4470,7 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Contract(input, extensionRegistry);
       }
     };
 
@@ -4484,6 +4550,56 @@ public final class Genesis {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private KVModel(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                models_ = new java.util.ArrayList<cosmwasm.wasm.v1.Types.Model>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              models_.add(
+                  input.readMessage(cosmwasm.wasm.v1.Types.Model.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          models_ = java.util.Collections.unmodifiableList(models_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return confio.twasm.v1beta1.Genesis.internal_static_confio_twasm_v1beta1_KVModel_descriptor;
@@ -4554,7 +4670,7 @@ public final class Genesis {
       for (int i = 0; i < models_.size(); i++) {
         output.writeMessage(1, models_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -4567,7 +4683,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, models_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4584,7 +4700,7 @@ public final class Genesis {
 
       if (!getModelsList()
           .equals(other.getModelsList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -4599,7 +4715,7 @@ public final class Genesis {
         hash = (37 * hash) + MODELS_FIELD_NUMBER;
         hash = (53 * hash) + getModelsList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4720,24 +4836,29 @@ public final class Genesis {
 
       // Construct using confio.twasm.v1beta1.Genesis.KVModel.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getModelsFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
         if (modelsBuilder_ == null) {
           models_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          models_ = null;
           modelsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -4848,7 +4969,7 @@ public final class Genesis {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -4863,43 +4984,17 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        confio.twasm.v1beta1.Genesis.KVModel parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                cosmwasm.wasm.v1.Types.Model m =
-                    input.readMessage(
-                        cosmwasm.wasm.v1.Types.Model.parser(),
-                        extensionRegistry);
-                if (modelsBuilder_ == null) {
-                  ensureModelsIsMutable();
-                  models_.add(m);
-                } else {
-                  modelsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (confio.twasm.v1beta1.Genesis.KVModel) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -5176,18 +5271,7 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new KVModel(input, extensionRegistry);
       }
     };
 
@@ -5254,6 +5338,48 @@ public final class Genesis {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private CustomModel(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 42: {
+
+              msg_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return confio.twasm.v1beta1.Genesis.internal_static_confio_twasm_v1beta1_CustomModel_descriptor;
@@ -5299,7 +5425,7 @@ public final class Genesis {
       if (!msg_.isEmpty()) {
         output.writeBytes(5, msg_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -5312,7 +5438,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(5, msg_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5329,7 +5455,7 @@ public final class Genesis {
 
       if (!getMsg()
           .equals(other.getMsg())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -5342,7 +5468,7 @@ public final class Genesis {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MSG_FIELD_NUMBER;
       hash = (53 * hash) + getMsg().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5464,13 +5590,18 @@ public final class Genesis {
 
       // Construct using confio.twasm.v1beta1.Genesis.CustomModel.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -5555,7 +5686,7 @@ public final class Genesis {
         if (other.getMsg() != com.google.protobuf.ByteString.EMPTY) {
           setMsg(other.getMsg());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -5570,35 +5701,17 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        confio.twasm.v1beta1.Genesis.CustomModel parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 42: {
-                msg_ = input.readBytes();
-
-                break;
-              } // case 42
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (confio.twasm.v1beta1.Genesis.CustomModel) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -5680,18 +5793,7 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CustomModel(input, extensionRegistry);
       }
     };
 

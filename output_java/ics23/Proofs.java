@@ -530,6 +530,79 @@ public final class Proofs {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ExistenceProof(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+
+              key_ = input.readBytes();
+              break;
+            }
+            case 18: {
+
+              value_ = input.readBytes();
+              break;
+            }
+            case 26: {
+              ics23.Proofs.LeafOp.Builder subBuilder = null;
+              if (leaf_ != null) {
+                subBuilder = leaf_.toBuilder();
+              }
+              leaf_ = input.readMessage(ics23.Proofs.LeafOp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(leaf_);
+                leaf_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                path_ = new java.util.ArrayList<ics23.Proofs.InnerOp>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              path_.add(
+                  input.readMessage(ics23.Proofs.InnerOp.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          path_ = java.util.Collections.unmodifiableList(path_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ics23.Proofs.internal_static_ics23_ExistenceProof_descriptor;
@@ -657,7 +730,7 @@ public final class Proofs {
       for (int i = 0; i < path_.size(); i++) {
         output.writeMessage(4, path_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -682,7 +755,7 @@ public final class Proofs {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, path_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -708,7 +781,7 @@ public final class Proofs {
       }
       if (!getPathList()
           .equals(other.getPathList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -731,7 +804,7 @@ public final class Proofs {
         hash = (37 * hash) + PATH_FIELD_NUMBER;
         hash = (53 * hash) + getPathList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -868,13 +941,19 @@ public final class Proofs {
 
       // Construct using ics23.Proofs.ExistenceProof.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getPathFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -891,11 +970,10 @@ public final class Proofs {
         }
         if (pathBuilder_ == null) {
           path_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          path_ = null;
           pathBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -1022,7 +1100,7 @@ public final class Proofs {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1037,60 +1115,17 @@ public final class Proofs {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ics23.Proofs.ExistenceProof parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                key_ = input.readBytes();
-
-                break;
-              } // case 10
-              case 18: {
-                value_ = input.readBytes();
-
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getLeafFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 26
-              case 34: {
-                ics23.Proofs.InnerOp m =
-                    input.readMessage(
-                        ics23.Proofs.InnerOp.parser(),
-                        extensionRegistry);
-                if (pathBuilder_ == null) {
-                  ensurePathIsMutable();
-                  path_.add(m);
-                } else {
-                  pathBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ics23.Proofs.ExistenceProof) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1554,18 +1589,7 @@ public final class Proofs {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ExistenceProof(input, extensionRegistry);
       }
     };
 
@@ -1662,6 +1686,74 @@ public final class Proofs {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private NonExistenceProof(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+
+              key_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              ics23.Proofs.ExistenceProof.Builder subBuilder = null;
+              if (left_ != null) {
+                subBuilder = left_.toBuilder();
+              }
+              left_ = input.readMessage(ics23.Proofs.ExistenceProof.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(left_);
+                left_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              ics23.Proofs.ExistenceProof.Builder subBuilder = null;
+              if (right_ != null) {
+                subBuilder = right_.toBuilder();
+              }
+              right_ = input.readMessage(ics23.Proofs.ExistenceProof.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(right_);
+                right_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -1766,7 +1858,7 @@ public final class Proofs {
       if (right_ != null) {
         output.writeMessage(3, getRight());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1787,7 +1879,7 @@ public final class Proofs {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getRight());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1814,7 +1906,7 @@ public final class Proofs {
         if (!getRight()
             .equals(other.getRight())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -1835,7 +1927,7 @@ public final class Proofs {
         hash = (37 * hash) + RIGHT_FIELD_NUMBER;
         hash = (53 * hash) + getRight().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1958,13 +2050,18 @@ public final class Proofs {
 
       // Construct using ics23.Proofs.NonExistenceProof.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -2077,7 +2174,7 @@ public final class Proofs {
         if (other.hasRight()) {
           mergeRight(other.getRight());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -2092,49 +2189,17 @@ public final class Proofs {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ics23.Proofs.NonExistenceProof parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                key_ = input.readBytes();
-
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getLeftFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getRightFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 26
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ics23.Proofs.NonExistenceProof) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -2454,18 +2519,7 @@ public final class Proofs {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new NonExistenceProof(input, extensionRegistry);
       }
     };
 
@@ -2581,6 +2635,99 @@ public final class Proofs {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private CommitmentProof(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              ics23.Proofs.ExistenceProof.Builder subBuilder = null;
+              if (proofCase_ == 1) {
+                subBuilder = ((ics23.Proofs.ExistenceProof) proof_).toBuilder();
+              }
+              proof_ =
+                  input.readMessage(ics23.Proofs.ExistenceProof.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ics23.Proofs.ExistenceProof) proof_);
+                proof_ = subBuilder.buildPartial();
+              }
+              proofCase_ = 1;
+              break;
+            }
+            case 18: {
+              ics23.Proofs.NonExistenceProof.Builder subBuilder = null;
+              if (proofCase_ == 2) {
+                subBuilder = ((ics23.Proofs.NonExistenceProof) proof_).toBuilder();
+              }
+              proof_ =
+                  input.readMessage(ics23.Proofs.NonExistenceProof.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ics23.Proofs.NonExistenceProof) proof_);
+                proof_ = subBuilder.buildPartial();
+              }
+              proofCase_ = 2;
+              break;
+            }
+            case 26: {
+              ics23.Proofs.BatchProof.Builder subBuilder = null;
+              if (proofCase_ == 3) {
+                subBuilder = ((ics23.Proofs.BatchProof) proof_).toBuilder();
+              }
+              proof_ =
+                  input.readMessage(ics23.Proofs.BatchProof.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ics23.Proofs.BatchProof) proof_);
+                proof_ = subBuilder.buildPartial();
+              }
+              proofCase_ = 3;
+              break;
+            }
+            case 34: {
+              ics23.Proofs.CompressedBatchProof.Builder subBuilder = null;
+              if (proofCase_ == 4) {
+                subBuilder = ((ics23.Proofs.CompressedBatchProof) proof_).toBuilder();
+              }
+              proof_ =
+                  input.readMessage(ics23.Proofs.CompressedBatchProof.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ics23.Proofs.CompressedBatchProof) proof_);
+                proof_ = subBuilder.buildPartial();
+              }
+              proofCase_ = 4;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -2790,7 +2937,7 @@ public final class Proofs {
       if (proofCase_ == 4) {
         output.writeMessage(4, (ics23.Proofs.CompressedBatchProof) proof_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -2815,7 +2962,7 @@ public final class Proofs {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, (ics23.Proofs.CompressedBatchProof) proof_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2851,7 +2998,7 @@ public final class Proofs {
         case 0:
         default:
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -2882,7 +3029,7 @@ public final class Proofs {
         case 0:
         default:
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3003,29 +3150,22 @@ public final class Proofs {
 
       // Construct using ics23.Proofs.CommitmentProof.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (existBuilder_ != null) {
-          existBuilder_.clear();
-        }
-        if (nonexistBuilder_ != null) {
-          nonexistBuilder_.clear();
-        }
-        if (batchBuilder_ != null) {
-          batchBuilder_.clear();
-        }
-        if (compressedBuilder_ != null) {
-          compressedBuilder_.clear();
-        }
         proofCase_ = 0;
         proof_ = null;
         return this;
@@ -3152,7 +3292,7 @@ public final class Proofs {
             break;
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -3167,58 +3307,17 @@ public final class Proofs {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ics23.Proofs.CommitmentProof parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getExistFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                proofCase_ = 1;
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getNonexistFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                proofCase_ = 2;
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getBatchFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                proofCase_ = 3;
-                break;
-              } // case 26
-              case 34: {
-                input.readMessage(
-                    getCompressedFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                proofCase_ = 4;
-                break;
-              } // case 34
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ics23.Proofs.CommitmentProof) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int proofCase_ = 0;
@@ -3311,9 +3410,8 @@ public final class Proofs {
         } else {
           if (proofCase_ == 1) {
             existBuilder_.mergeFrom(value);
-          } else {
-            existBuilder_.setMessage(value);
           }
+          existBuilder_.setMessage(value);
         }
         proofCase_ = 1;
         return this;
@@ -3453,9 +3551,8 @@ public final class Proofs {
         } else {
           if (proofCase_ == 2) {
             nonexistBuilder_.mergeFrom(value);
-          } else {
-            nonexistBuilder_.setMessage(value);
           }
+          nonexistBuilder_.setMessage(value);
         }
         proofCase_ = 2;
         return this;
@@ -3595,9 +3692,8 @@ public final class Proofs {
         } else {
           if (proofCase_ == 3) {
             batchBuilder_.mergeFrom(value);
-          } else {
-            batchBuilder_.setMessage(value);
           }
+          batchBuilder_.setMessage(value);
         }
         proofCase_ = 3;
         return this;
@@ -3737,9 +3833,8 @@ public final class Proofs {
         } else {
           if (proofCase_ == 4) {
             compressedBuilder_.mergeFrom(value);
-          } else {
-            compressedBuilder_.setMessage(value);
           }
+          compressedBuilder_.setMessage(value);
         }
         proofCase_ = 4;
         return this;
@@ -3837,18 +3932,7 @@ public final class Proofs {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CommitmentProof(input, extensionRegistry);
       }
     };
 
@@ -3973,6 +4057,72 @@ public final class Proofs {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private LeafOp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              hash_ = rawValue;
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              prehashKey_ = rawValue;
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+
+              prehashValue_ = rawValue;
+              break;
+            }
+            case 32: {
+              int rawValue = input.readEnum();
+
+              length_ = rawValue;
+              break;
+            }
+            case 42: {
+
+              prefix_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -4108,7 +4258,7 @@ public final class Proofs {
       if (!prefix_.isEmpty()) {
         output.writeBytes(5, prefix_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -4137,7 +4287,7 @@ public final class Proofs {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(5, prefix_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4158,7 +4308,7 @@ public final class Proofs {
       if (length_ != other.length_) return false;
       if (!getPrefix()
           .equals(other.getPrefix())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -4179,7 +4329,7 @@ public final class Proofs {
       hash = (53 * hash) + length_;
       hash = (37 * hash) + PREFIX_FIELD_NUMBER;
       hash = (53 * hash) + getPrefix().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4311,13 +4461,18 @@ public final class Proofs {
 
       // Construct using ics23.Proofs.LeafOp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -4426,7 +4581,7 @@ public final class Proofs {
         if (other.getPrefix() != com.google.protobuf.ByteString.EMPTY) {
           setPrefix(other.getPrefix());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -4441,55 +4596,17 @@ public final class Proofs {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ics23.Proofs.LeafOp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                hash_ = input.readEnum();
-
-                break;
-              } // case 8
-              case 16: {
-                prehashKey_ = input.readEnum();
-
-                break;
-              } // case 16
-              case 24: {
-                prehashValue_ = input.readEnum();
-
-                break;
-              } // case 24
-              case 32: {
-                length_ = input.readEnum();
-
-                break;
-              } // case 32
-              case 42: {
-                prefix_ = input.readBytes();
-
-                break;
-              } // case 42
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ics23.Proofs.LeafOp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -4790,18 +4907,7 @@ public final class Proofs {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new LeafOp(input, extensionRegistry);
       }
     };
 
@@ -4893,6 +4999,59 @@ public final class Proofs {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private InnerOp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              hash_ = rawValue;
+              break;
+            }
+            case 18: {
+
+              prefix_ = input.readBytes();
+              break;
+            }
+            case 26: {
+
+              suffix_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ics23.Proofs.internal_static_ics23_InnerOp_descriptor;
@@ -4970,7 +5129,7 @@ public final class Proofs {
       if (!suffix_.isEmpty()) {
         output.writeBytes(3, suffix_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -4991,7 +5150,7 @@ public final class Proofs {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(3, suffix_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5011,7 +5170,7 @@ public final class Proofs {
           .equals(other.getPrefix())) return false;
       if (!getSuffix()
           .equals(other.getSuffix())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -5028,7 +5187,7 @@ public final class Proofs {
       hash = (53 * hash) + getPrefix().hashCode();
       hash = (37 * hash) + SUFFIX_FIELD_NUMBER;
       hash = (53 * hash) + getSuffix().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5160,13 +5319,18 @@ public final class Proofs {
 
       // Construct using ics23.Proofs.InnerOp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -5263,7 +5427,7 @@ public final class Proofs {
         if (other.getSuffix() != com.google.protobuf.ByteString.EMPTY) {
           setSuffix(other.getSuffix());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -5278,45 +5442,17 @@ public final class Proofs {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ics23.Proofs.InnerOp parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                hash_ = input.readEnum();
-
-                break;
-              } // case 8
-              case 18: {
-                prefix_ = input.readBytes();
-
-                break;
-              } // case 18
-              case 26: {
-                suffix_ = input.readBytes();
-
-                break;
-              } // case 26
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ics23.Proofs.InnerOp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -5474,18 +5610,7 @@ public final class Proofs {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new InnerOp(input, extensionRegistry);
       }
     };
 
@@ -5612,6 +5737,79 @@ public final class Proofs {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private ProofSpec(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              ics23.Proofs.LeafOp.Builder subBuilder = null;
+              if (leafSpec_ != null) {
+                subBuilder = leafSpec_.toBuilder();
+              }
+              leafSpec_ = input.readMessage(ics23.Proofs.LeafOp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(leafSpec_);
+                leafSpec_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              ics23.Proofs.InnerSpec.Builder subBuilder = null;
+              if (innerSpec_ != null) {
+                subBuilder = innerSpec_.toBuilder();
+              }
+              innerSpec_ = input.readMessage(ics23.Proofs.InnerSpec.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(innerSpec_);
+                innerSpec_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 24: {
+
+              maxDepth_ = input.readInt32();
+              break;
+            }
+            case 32: {
+
+              minDepth_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -5749,7 +5947,7 @@ public final class Proofs {
       if (minDepth_ != 0) {
         output.writeInt32(4, minDepth_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -5774,7 +5972,7 @@ public final class Proofs {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(4, minDepth_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5803,7 +6001,7 @@ public final class Proofs {
           != other.getMaxDepth()) return false;
       if (getMinDepth()
           != other.getMinDepth()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -5826,7 +6024,7 @@ public final class Proofs {
       hash = (53 * hash) + getMaxDepth();
       hash = (37 * hash) + MIN_DEPTH_FIELD_NUMBER;
       hash = (53 * hash) + getMinDepth();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5955,13 +6153,18 @@ public final class Proofs {
 
       // Construct using ics23.Proofs.ProofSpec.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -6080,7 +6283,7 @@ public final class Proofs {
         if (other.getMinDepth() != 0) {
           setMinDepth(other.getMinDepth());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -6095,54 +6298,17 @@ public final class Proofs {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ics23.Proofs.ProofSpec parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getLeafSpecFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getInnerSpecFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 18
-              case 24: {
-                maxDepth_ = input.readInt32();
-
-                break;
-              } // case 24
-              case 32: {
-                minDepth_ = input.readInt32();
-
-                break;
-              } // case 32
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ics23.Proofs.ProofSpec) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -6547,18 +6713,7 @@ public final class Proofs {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ProofSpec(input, extensionRegistry);
       }
     };
 
@@ -6702,6 +6857,94 @@ public final class Proofs {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private InnerSpec(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                childOrder_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              childOrder_.addInt(input.readInt32());
+              break;
+            }
+            case 10: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                childOrder_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                childOrder_.addInt(input.readInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 16: {
+
+              childSize_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              minPrefixLength_ = input.readInt32();
+              break;
+            }
+            case 32: {
+
+              maxPrefixLength_ = input.readInt32();
+              break;
+            }
+            case 42: {
+
+              emptyChild_ = input.readBytes();
+              break;
+            }
+            case 48: {
+              int rawValue = input.readEnum();
+
+              hash_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          childOrder_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -6874,7 +7117,7 @@ public final class Proofs {
       if (hash_ != ics23.Proofs.HashOp.NO_HASH.getNumber()) {
         output.writeEnum(6, hash_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -6917,7 +7160,7 @@ public final class Proofs {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(6, hash_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -6943,7 +7186,7 @@ public final class Proofs {
       if (!getEmptyChild()
           .equals(other.getEmptyChild())) return false;
       if (hash_ != other.hash_) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -6968,7 +7211,7 @@ public final class Proofs {
       hash = (53 * hash) + getEmptyChild().hashCode();
       hash = (37 * hash) + HASH_FIELD_NUMBER;
       hash = (53 * hash) + hash_;
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -7094,13 +7337,18 @@ public final class Proofs {
 
       // Construct using ics23.Proofs.InnerSpec.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -7227,7 +7475,7 @@ public final class Proofs {
         if (other.hash_ != 0) {
           setHashValue(other.getHashValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -7242,71 +7490,17 @@ public final class Proofs {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ics23.Proofs.InnerSpec parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int v = input.readInt32();
-                ensureChildOrderIsMutable();
-                childOrder_.addInt(v);
-                break;
-              } // case 8
-              case 10: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureChildOrderIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  childOrder_.addInt(input.readInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 10
-              case 16: {
-                childSize_ = input.readInt32();
-
-                break;
-              } // case 16
-              case 24: {
-                minPrefixLength_ = input.readInt32();
-
-                break;
-              } // case 24
-              case 32: {
-                maxPrefixLength_ = input.readInt32();
-
-                break;
-              } // case 32
-              case 42: {
-                emptyChild_ = input.readBytes();
-
-                break;
-              } // case 42
-              case 48: {
-                hash_ = input.readEnum();
-
-                break;
-              } // case 48
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ics23.Proofs.InnerSpec) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -7677,18 +7871,7 @@ public final class Proofs {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new InnerSpec(input, extensionRegistry);
       }
     };
 
@@ -7768,6 +7951,56 @@ public final class Proofs {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private BatchProof(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                entries_ = new java.util.ArrayList<ics23.Proofs.BatchEntry>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              entries_.add(
+                  input.readMessage(ics23.Proofs.BatchEntry.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          entries_ = java.util.Collections.unmodifiableList(entries_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ics23.Proofs.internal_static_ics23_BatchProof_descriptor;
@@ -7838,7 +8071,7 @@ public final class Proofs {
       for (int i = 0; i < entries_.size(); i++) {
         output.writeMessage(1, entries_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -7851,7 +8084,7 @@ public final class Proofs {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, entries_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -7868,7 +8101,7 @@ public final class Proofs {
 
       if (!getEntriesList()
           .equals(other.getEntriesList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -7883,7 +8116,7 @@ public final class Proofs {
         hash = (37 * hash) + ENTRIES_FIELD_NUMBER;
         hash = (53 * hash) + getEntriesList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -8004,24 +8237,29 @@ public final class Proofs {
 
       // Construct using ics23.Proofs.BatchProof.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getEntriesFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
         if (entriesBuilder_ == null) {
           entries_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          entries_ = null;
           entriesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -8132,7 +8370,7 @@ public final class Proofs {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -8147,43 +8385,17 @@ public final class Proofs {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ics23.Proofs.BatchProof parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                ics23.Proofs.BatchEntry m =
-                    input.readMessage(
-                        ics23.Proofs.BatchEntry.parser(),
-                        extensionRegistry);
-                if (entriesBuilder_ == null) {
-                  ensureEntriesIsMutable();
-                  entries_.add(m);
-                } else {
-                  entriesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ics23.Proofs.BatchProof) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -8460,18 +8672,7 @@ public final class Proofs {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BatchProof(input, extensionRegistry);
       }
     };
 
@@ -8557,6 +8758,71 @@ public final class Proofs {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private BatchEntry(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              ics23.Proofs.ExistenceProof.Builder subBuilder = null;
+              if (proofCase_ == 1) {
+                subBuilder = ((ics23.Proofs.ExistenceProof) proof_).toBuilder();
+              }
+              proof_ =
+                  input.readMessage(ics23.Proofs.ExistenceProof.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ics23.Proofs.ExistenceProof) proof_);
+                proof_ = subBuilder.buildPartial();
+              }
+              proofCase_ = 1;
+              break;
+            }
+            case 18: {
+              ics23.Proofs.NonExistenceProof.Builder subBuilder = null;
+              if (proofCase_ == 2) {
+                subBuilder = ((ics23.Proofs.NonExistenceProof) proof_).toBuilder();
+              }
+              proof_ =
+                  input.readMessage(ics23.Proofs.NonExistenceProof.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ics23.Proofs.NonExistenceProof) proof_);
+                proof_ = subBuilder.buildPartial();
+              }
+              proofCase_ = 2;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -8694,7 +8960,7 @@ public final class Proofs {
       if (proofCase_ == 2) {
         output.writeMessage(2, (ics23.Proofs.NonExistenceProof) proof_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -8711,7 +8977,7 @@ public final class Proofs {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, (ics23.Proofs.NonExistenceProof) proof_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -8739,7 +9005,7 @@ public final class Proofs {
         case 0:
         default:
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -8762,7 +9028,7 @@ public final class Proofs {
         case 0:
         default:
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -8883,23 +9149,22 @@ public final class Proofs {
 
       // Construct using ics23.Proofs.BatchEntry.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (existBuilder_ != null) {
-          existBuilder_.clear();
-        }
-        if (nonexistBuilder_ != null) {
-          nonexistBuilder_.clear();
-        }
         proofCase_ = 0;
         proof_ = null;
         return this;
@@ -9004,7 +9269,7 @@ public final class Proofs {
             break;
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -9019,44 +9284,17 @@ public final class Proofs {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ics23.Proofs.BatchEntry parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getExistFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                proofCase_ = 1;
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getNonexistFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                proofCase_ = 2;
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ics23.Proofs.BatchEntry) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int proofCase_ = 0;
@@ -9149,9 +9387,8 @@ public final class Proofs {
         } else {
           if (proofCase_ == 1) {
             existBuilder_.mergeFrom(value);
-          } else {
-            existBuilder_.setMessage(value);
           }
+          existBuilder_.setMessage(value);
         }
         proofCase_ = 1;
         return this;
@@ -9291,9 +9528,8 @@ public final class Proofs {
         } else {
           if (proofCase_ == 2) {
             nonexistBuilder_.mergeFrom(value);
-          } else {
-            nonexistBuilder_.setMessage(value);
           }
+          nonexistBuilder_.setMessage(value);
         }
         proofCase_ = 2;
         return this;
@@ -9391,18 +9627,7 @@ public final class Proofs {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BatchEntry(input, extensionRegistry);
       }
     };
 
@@ -9502,6 +9727,68 @@ public final class Proofs {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private CompressedBatchProof(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                entries_ = new java.util.ArrayList<ics23.Proofs.CompressedBatchEntry>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              entries_.add(
+                  input.readMessage(ics23.Proofs.CompressedBatchEntry.parser(), extensionRegistry));
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                lookupInners_ = new java.util.ArrayList<ics23.Proofs.InnerOp>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              lookupInners_.add(
+                  input.readMessage(ics23.Proofs.InnerOp.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          entries_ = java.util.Collections.unmodifiableList(entries_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          lookupInners_ = java.util.Collections.unmodifiableList(lookupInners_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -9616,7 +9903,7 @@ public final class Proofs {
       for (int i = 0; i < lookupInners_.size(); i++) {
         output.writeMessage(2, lookupInners_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -9633,7 +9920,7 @@ public final class Proofs {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, lookupInners_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -9652,7 +9939,7 @@ public final class Proofs {
           .equals(other.getEntriesList())) return false;
       if (!getLookupInnersList()
           .equals(other.getLookupInnersList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -9671,7 +9958,7 @@ public final class Proofs {
         hash = (37 * hash) + LOOKUP_INNERS_FIELD_NUMBER;
         hash = (53 * hash) + getLookupInnersList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -9788,31 +10075,36 @@ public final class Proofs {
 
       // Construct using ics23.Proofs.CompressedBatchProof.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getEntriesFieldBuilder();
+          getLookupInnersFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
         if (entriesBuilder_ == null) {
           entries_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          entries_ = null;
           entriesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (lookupInnersBuilder_ == null) {
           lookupInners_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          lookupInners_ = null;
           lookupInnersBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -9958,7 +10250,7 @@ public final class Proofs {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -9973,56 +10265,17 @@ public final class Proofs {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ics23.Proofs.CompressedBatchProof parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                ics23.Proofs.CompressedBatchEntry m =
-                    input.readMessage(
-                        ics23.Proofs.CompressedBatchEntry.parser(),
-                        extensionRegistry);
-                if (entriesBuilder_ == null) {
-                  ensureEntriesIsMutable();
-                  entries_.add(m);
-                } else {
-                  entriesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              case 18: {
-                ics23.Proofs.InnerOp m =
-                    input.readMessage(
-                        ics23.Proofs.InnerOp.parser(),
-                        extensionRegistry);
-                if (lookupInnersBuilder_ == null) {
-                  ensureLookupInnersIsMutable();
-                  lookupInners_.add(m);
-                } else {
-                  lookupInnersBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ics23.Proofs.CompressedBatchProof) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -10539,18 +10792,7 @@ public final class Proofs {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CompressedBatchProof(input, extensionRegistry);
       }
     };
 
@@ -10636,6 +10878,71 @@ public final class Proofs {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private CompressedBatchEntry(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              ics23.Proofs.CompressedExistenceProof.Builder subBuilder = null;
+              if (proofCase_ == 1) {
+                subBuilder = ((ics23.Proofs.CompressedExistenceProof) proof_).toBuilder();
+              }
+              proof_ =
+                  input.readMessage(ics23.Proofs.CompressedExistenceProof.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ics23.Proofs.CompressedExistenceProof) proof_);
+                proof_ = subBuilder.buildPartial();
+              }
+              proofCase_ = 1;
+              break;
+            }
+            case 18: {
+              ics23.Proofs.CompressedNonExistenceProof.Builder subBuilder = null;
+              if (proofCase_ == 2) {
+                subBuilder = ((ics23.Proofs.CompressedNonExistenceProof) proof_).toBuilder();
+              }
+              proof_ =
+                  input.readMessage(ics23.Proofs.CompressedNonExistenceProof.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ics23.Proofs.CompressedNonExistenceProof) proof_);
+                proof_ = subBuilder.buildPartial();
+              }
+              proofCase_ = 2;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -10773,7 +11080,7 @@ public final class Proofs {
       if (proofCase_ == 2) {
         output.writeMessage(2, (ics23.Proofs.CompressedNonExistenceProof) proof_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -10790,7 +11097,7 @@ public final class Proofs {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, (ics23.Proofs.CompressedNonExistenceProof) proof_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -10818,7 +11125,7 @@ public final class Proofs {
         case 0:
         default:
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -10841,7 +11148,7 @@ public final class Proofs {
         case 0:
         default:
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -10962,23 +11269,22 @@ public final class Proofs {
 
       // Construct using ics23.Proofs.CompressedBatchEntry.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (existBuilder_ != null) {
-          existBuilder_.clear();
-        }
-        if (nonexistBuilder_ != null) {
-          nonexistBuilder_.clear();
-        }
         proofCase_ = 0;
         proof_ = null;
         return this;
@@ -11083,7 +11389,7 @@ public final class Proofs {
             break;
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -11098,44 +11404,17 @@ public final class Proofs {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ics23.Proofs.CompressedBatchEntry parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getExistFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                proofCase_ = 1;
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getNonexistFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                proofCase_ = 2;
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ics23.Proofs.CompressedBatchEntry) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int proofCase_ = 0;
@@ -11228,9 +11507,8 @@ public final class Proofs {
         } else {
           if (proofCase_ == 1) {
             existBuilder_.mergeFrom(value);
-          } else {
-            existBuilder_.setMessage(value);
           }
+          existBuilder_.setMessage(value);
         }
         proofCase_ = 1;
         return this;
@@ -11370,9 +11648,8 @@ public final class Proofs {
         } else {
           if (proofCase_ == 2) {
             nonexistBuilder_.mergeFrom(value);
-          } else {
-            nonexistBuilder_.setMessage(value);
           }
+          nonexistBuilder_.setMessage(value);
         }
         proofCase_ = 2;
         return this;
@@ -11470,18 +11747,7 @@ public final class Proofs {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CompressedBatchEntry(input, extensionRegistry);
       }
     };
 
@@ -11590,6 +11856,91 @@ public final class Proofs {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private CompressedExistenceProof(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+
+              key_ = input.readBytes();
+              break;
+            }
+            case 18: {
+
+              value_ = input.readBytes();
+              break;
+            }
+            case 26: {
+              ics23.Proofs.LeafOp.Builder subBuilder = null;
+              if (leaf_ != null) {
+                subBuilder = leaf_.toBuilder();
+              }
+              leaf_ = input.readMessage(ics23.Proofs.LeafOp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(leaf_);
+                leaf_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 32: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                path_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              path_.addInt(input.readInt32());
+              break;
+            }
+            case 34: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                path_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                path_.addInt(input.readInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          path_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -11723,7 +12074,7 @@ public final class Proofs {
       for (int i = 0; i < path_.size(); i++) {
         output.writeInt32NoTag(path_.getInt(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -11758,7 +12109,7 @@ public final class Proofs {
         }
         pathMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -11784,7 +12135,7 @@ public final class Proofs {
       }
       if (!getPathList()
           .equals(other.getPathList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -11807,7 +12158,7 @@ public final class Proofs {
         hash = (37 * hash) + PATH_FIELD_NUMBER;
         hash = (53 * hash) + getPathList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -11924,13 +12275,18 @@ public final class Proofs {
 
       // Construct using ics23.Proofs.CompressedExistenceProof.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -12053,7 +12409,7 @@ public final class Proofs {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -12068,63 +12424,17 @@ public final class Proofs {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ics23.Proofs.CompressedExistenceProof parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                key_ = input.readBytes();
-
-                break;
-              } // case 10
-              case 18: {
-                value_ = input.readBytes();
-
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getLeafFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 26
-              case 32: {
-                int v = input.readInt32();
-                ensurePathIsMutable();
-                path_.addInt(v);
-                break;
-              } // case 32
-              case 34: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensurePathIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  path_.addInt(input.readInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 34
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ics23.Proofs.CompressedExistenceProof) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -12455,18 +12765,7 @@ public final class Proofs {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CompressedExistenceProof(input, extensionRegistry);
       }
     };
 
@@ -12557,6 +12856,74 @@ public final class Proofs {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private CompressedNonExistenceProof(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+
+              key_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              ics23.Proofs.CompressedExistenceProof.Builder subBuilder = null;
+              if (left_ != null) {
+                subBuilder = left_.toBuilder();
+              }
+              left_ = input.readMessage(ics23.Proofs.CompressedExistenceProof.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(left_);
+                left_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              ics23.Proofs.CompressedExistenceProof.Builder subBuilder = null;
+              if (right_ != null) {
+                subBuilder = right_.toBuilder();
+              }
+              right_ = input.readMessage(ics23.Proofs.CompressedExistenceProof.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(right_);
+                right_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -12661,7 +13028,7 @@ public final class Proofs {
       if (right_ != null) {
         output.writeMessage(3, getRight());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -12682,7 +13049,7 @@ public final class Proofs {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getRight());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -12709,7 +13076,7 @@ public final class Proofs {
         if (!getRight()
             .equals(other.getRight())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -12730,7 +13097,7 @@ public final class Proofs {
         hash = (37 * hash) + RIGHT_FIELD_NUMBER;
         hash = (53 * hash) + getRight().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -12847,13 +13214,18 @@ public final class Proofs {
 
       // Construct using ics23.Proofs.CompressedNonExistenceProof.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -12966,7 +13338,7 @@ public final class Proofs {
         if (other.hasRight()) {
           mergeRight(other.getRight());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -12981,49 +13353,17 @@ public final class Proofs {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ics23.Proofs.CompressedNonExistenceProof parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                key_ = input.readBytes();
-
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getLeftFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getRightFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 26
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ics23.Proofs.CompressedNonExistenceProof) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -13343,18 +13683,7 @@ public final class Proofs {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CompressedNonExistenceProof(input, extensionRegistry);
       }
     };
 

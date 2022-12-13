@@ -316,6 +316,103 @@ public final class Committee {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private BaseCommittee(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              id_ = input.readUInt64();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                members_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              members_.add(input.readBytes());
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                permissions_ = new java.util.ArrayList<com.google.protobuf2.Any>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              permissions_.add(
+                  input.readMessage(com.google.protobuf2.Any.parser(), extensionRegistry));
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              voteThreshold_ = s;
+              break;
+            }
+            case 50: {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (proposalDuration_ != null) {
+                subBuilder = proposalDuration_.toBuilder();
+              }
+              proposalDuration_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(proposalDuration_);
+                proposalDuration_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 56: {
+              int rawValue = input.readEnum();
+
+              tallyOption_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          members_ = java.util.Collections.unmodifiableList(members_); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          permissions_ = java.util.Collections.unmodifiableList(permissions_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return kava.committee.v1beta1.Committee.internal_static_kava_committee_v1beta1_BaseCommittee_descriptor;
@@ -565,7 +662,7 @@ public final class Committee {
       if (id_ != 0L) {
         output.writeUInt64(1, id_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      if (!getDescriptionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
       }
       for (int i = 0; i < members_.size(); i++) {
@@ -574,7 +671,7 @@ public final class Committee {
       for (int i = 0; i < permissions_.size(); i++) {
         output.writeMessage(4, permissions_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(voteThreshold_)) {
+      if (!getVoteThresholdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, voteThreshold_);
       }
       if (proposalDuration_ != null) {
@@ -583,7 +680,7 @@ public final class Committee {
       if (tallyOption_ != kava.committee.v1beta1.Committee.TallyOption.TALLY_OPTION_UNSPECIFIED.getNumber()) {
         output.writeEnum(7, tallyOption_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -596,7 +693,7 @@ public final class Committee {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(1, id_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      if (!getDescriptionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
       }
       {
@@ -612,7 +709,7 @@ public final class Committee {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, permissions_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(voteThreshold_)) {
+      if (!getVoteThresholdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, voteThreshold_);
       }
       if (proposalDuration_ != null) {
@@ -623,7 +720,7 @@ public final class Committee {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(7, tallyOption_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -654,7 +751,7 @@ public final class Committee {
             .equals(other.getProposalDuration())) return false;
       }
       if (tallyOption_ != other.tallyOption_) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -686,7 +783,7 @@ public final class Committee {
       }
       hash = (37 * hash) + TALLY_OPTION_FIELD_NUMBER;
       hash = (53 * hash) + tallyOption_;
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -807,13 +904,19 @@ public final class Committee {
 
       // Construct using kava.committee.v1beta1.Committee.BaseCommittee.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getPermissionsFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -826,11 +929,10 @@ public final class Committee {
         bitField0_ = (bitField0_ & ~0x00000001);
         if (permissionsBuilder_ == null) {
           permissions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          permissions_ = null;
           permissionsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         voteThreshold_ = "";
 
         if (proposalDurationBuilder_ == null) {
@@ -992,7 +1094,7 @@ public final class Committee {
         if (other.tallyOption_ != 0) {
           setTallyOptionValue(other.getTallyOptionValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1007,76 +1109,17 @@ public final class Committee {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        kava.committee.v1beta1.Committee.BaseCommittee parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                id_ = input.readUInt64();
-
-                break;
-              } // case 8
-              case 18: {
-                description_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 18
-              case 26: {
-                com.google.protobuf.ByteString v = input.readBytes();
-                ensureMembersIsMutable();
-                members_.add(v);
-                break;
-              } // case 26
-              case 34: {
-                com.google.protobuf2.Any m =
-                    input.readMessage(
-                        com.google.protobuf2.Any.parser(),
-                        extensionRegistry);
-                if (permissionsBuilder_ == null) {
-                  ensurePermissionsIsMutable();
-                  permissions_.add(m);
-                } else {
-                  permissionsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              case 42: {
-                voteThreshold_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 42
-              case 50: {
-                input.readMessage(
-                    getProposalDurationFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 50
-              case 56: {
-                tallyOption_ = input.readEnum();
-
-                break;
-              } // case 56
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (kava.committee.v1beta1.Committee.BaseCommittee) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1850,18 +1893,7 @@ public final class Committee {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BaseCommittee(input, extensionRegistry);
       }
     };
 
@@ -1931,6 +1963,56 @@ public final class Committee {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private MemberCommittee(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              kava.committee.v1beta1.Committee.BaseCommittee.Builder subBuilder = null;
+              if (baseCommittee_ != null) {
+                subBuilder = baseCommittee_.toBuilder();
+              }
+              baseCommittee_ = input.readMessage(kava.committee.v1beta1.Committee.BaseCommittee.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(baseCommittee_);
+                baseCommittee_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return kava.committee.v1beta1.Committee.internal_static_kava_committee_v1beta1_MemberCommittee_descriptor;
@@ -1987,7 +2069,7 @@ public final class Committee {
       if (baseCommittee_ != null) {
         output.writeMessage(1, getBaseCommittee());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -2000,7 +2082,7 @@ public final class Committee {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getBaseCommittee());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2020,7 +2102,7 @@ public final class Committee {
         if (!getBaseCommittee()
             .equals(other.getBaseCommittee())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -2035,7 +2117,7 @@ public final class Committee {
         hash = (37 * hash) + BASE_COMMITTEE_FIELD_NUMBER;
         hash = (53 * hash) + getBaseCommittee().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2156,13 +2238,18 @@ public final class Committee {
 
       // Construct using kava.committee.v1beta1.Committee.MemberCommittee.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -2255,7 +2342,7 @@ public final class Committee {
         if (other.hasBaseCommittee()) {
           mergeBaseCommittee(other.getBaseCommittee());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -2270,37 +2357,17 @@ public final class Committee {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        kava.committee.v1beta1.Committee.MemberCommittee parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getBaseCommitteeFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 10
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (kava.committee.v1beta1.Committee.MemberCommittee) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -2455,18 +2522,7 @@ public final class Committee {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new MemberCommittee(input, extensionRegistry);
       }
     };
 
@@ -2561,6 +2617,68 @@ public final class Committee {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private TokenCommittee(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              kava.committee.v1beta1.Committee.BaseCommittee.Builder subBuilder = null;
+              if (baseCommittee_ != null) {
+                subBuilder = baseCommittee_.toBuilder();
+              }
+              baseCommittee_ = input.readMessage(kava.committee.v1beta1.Committee.BaseCommittee.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(baseCommittee_);
+                baseCommittee_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              quorum_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              tallyDenom_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -2694,13 +2812,13 @@ public final class Committee {
       if (baseCommittee_ != null) {
         output.writeMessage(1, getBaseCommittee());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(quorum_)) {
+      if (!getQuorumBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, quorum_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tallyDenom_)) {
+      if (!getTallyDenomBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tallyDenom_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -2713,13 +2831,13 @@ public final class Committee {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getBaseCommittee());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(quorum_)) {
+      if (!getQuorumBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, quorum_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tallyDenom_)) {
+      if (!getTallyDenomBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tallyDenom_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2743,7 +2861,7 @@ public final class Committee {
           .equals(other.getQuorum())) return false;
       if (!getTallyDenom()
           .equals(other.getTallyDenom())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -2762,7 +2880,7 @@ public final class Committee {
       hash = (53 * hash) + getQuorum().hashCode();
       hash = (37 * hash) + TALLY_DENOM_FIELD_NUMBER;
       hash = (53 * hash) + getTallyDenom().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2883,13 +3001,18 @@ public final class Committee {
 
       // Construct using kava.committee.v1beta1.Committee.TokenCommittee.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -2996,7 +3119,7 @@ public final class Committee {
           tallyDenom_ = other.tallyDenom_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -3011,47 +3134,17 @@ public final class Committee {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        kava.committee.v1beta1.Committee.TokenCommittee parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getBaseCommitteeFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 10
-              case 18: {
-                quorum_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 18
-              case 26: {
-                tallyDenom_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 26
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (kava.committee.v1beta1.Committee.TokenCommittee) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -3358,18 +3451,7 @@ public final class Committee {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TokenCommittee(input, extensionRegistry);
       }
     };
 

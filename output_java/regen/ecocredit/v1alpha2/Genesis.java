@@ -349,6 +349,129 @@ public final class Genesis {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GenesisState(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              regen.ecocredit.v1alpha2.Types.Params.Builder subBuilder = null;
+              if (params_ != null) {
+                subBuilder = params_.toBuilder();
+              }
+              params_ = input.readMessage(regen.ecocredit.v1alpha2.Types.Params.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(params_);
+                params_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                classInfo_ = new java.util.ArrayList<regen.ecocredit.v1alpha2.Types.ClassInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              classInfo_.add(
+                  input.readMessage(regen.ecocredit.v1alpha2.Types.ClassInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                batchInfo_ = new java.util.ArrayList<regen.ecocredit.v1alpha2.Types.BatchInfo>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              batchInfo_.add(
+                  input.readMessage(regen.ecocredit.v1alpha2.Types.BatchInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                sequences_ = new java.util.ArrayList<regen.ecocredit.v1alpha2.Types.CreditTypeSeq>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              sequences_.add(
+                  input.readMessage(regen.ecocredit.v1alpha2.Types.CreditTypeSeq.parser(), extensionRegistry));
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                balances_ = new java.util.ArrayList<regen.ecocredit.v1alpha2.Genesis.Balance>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              balances_.add(
+                  input.readMessage(regen.ecocredit.v1alpha2.Genesis.Balance.parser(), extensionRegistry));
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                supplies_ = new java.util.ArrayList<regen.ecocredit.v1alpha2.Genesis.Supply>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              supplies_.add(
+                  input.readMessage(regen.ecocredit.v1alpha2.Genesis.Supply.parser(), extensionRegistry));
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                projectInfo_ = new java.util.ArrayList<regen.ecocredit.v1alpha2.Types.ProjectInfo>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              projectInfo_.add(
+                  input.readMessage(regen.ecocredit.v1alpha2.Types.ProjectInfo.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          classInfo_ = java.util.Collections.unmodifiableList(classInfo_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          batchInfo_ = java.util.Collections.unmodifiableList(batchInfo_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          sequences_ = java.util.Collections.unmodifiableList(sequences_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          balances_ = java.util.Collections.unmodifiableList(balances_);
+        }
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+          supplies_ = java.util.Collections.unmodifiableList(supplies_);
+        }
+        if (((mutable_bitField0_ & 0x00000020) != 0)) {
+          projectInfo_ = java.util.Collections.unmodifiableList(projectInfo_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return regen.ecocredit.v1alpha2.Genesis.internal_static_regen_ecocredit_v1alpha2_GenesisState_descriptor;
@@ -798,7 +921,7 @@ public final class Genesis {
       for (int i = 0; i < projectInfo_.size(); i++) {
         output.writeMessage(7, projectInfo_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -835,7 +958,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, projectInfo_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -867,7 +990,7 @@ public final class Genesis {
           .equals(other.getSuppliesList())) return false;
       if (!getProjectInfoList()
           .equals(other.getProjectInfoList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -906,7 +1029,7 @@ public final class Genesis {
         hash = (37 * hash) + PROJECT_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getProjectInfoList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1027,13 +1150,24 @@ public final class Genesis {
 
       // Construct using regen.ecocredit.v1alpha2.Genesis.GenesisState.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getClassInfoFieldBuilder();
+          getBatchInfoFieldBuilder();
+          getSequencesFieldBuilder();
+          getBalancesFieldBuilder();
+          getSuppliesFieldBuilder();
+          getProjectInfoFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -1046,46 +1180,40 @@ public final class Genesis {
         }
         if (classInfoBuilder_ == null) {
           classInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          classInfo_ = null;
           classInfoBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (batchInfoBuilder_ == null) {
           batchInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          batchInfo_ = null;
           batchInfoBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         if (sequencesBuilder_ == null) {
           sequences_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          sequences_ = null;
           sequencesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         if (balancesBuilder_ == null) {
           balances_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
-          balances_ = null;
           balancesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
         if (suppliesBuilder_ == null) {
           supplies_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
-          supplies_ = null;
           suppliesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000010);
         if (projectInfoBuilder_ == null) {
           projectInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
-          projectInfo_ = null;
           projectInfoBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -1379,7 +1507,7 @@ public final class Genesis {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1394,115 +1522,17 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        regen.ecocredit.v1alpha2.Genesis.GenesisState parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getParamsFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 10
-              case 18: {
-                regen.ecocredit.v1alpha2.Types.ClassInfo m =
-                    input.readMessage(
-                        regen.ecocredit.v1alpha2.Types.ClassInfo.parser(),
-                        extensionRegistry);
-                if (classInfoBuilder_ == null) {
-                  ensureClassInfoIsMutable();
-                  classInfo_.add(m);
-                } else {
-                  classInfoBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-              case 26: {
-                regen.ecocredit.v1alpha2.Types.BatchInfo m =
-                    input.readMessage(
-                        regen.ecocredit.v1alpha2.Types.BatchInfo.parser(),
-                        extensionRegistry);
-                if (batchInfoBuilder_ == null) {
-                  ensureBatchInfoIsMutable();
-                  batchInfo_.add(m);
-                } else {
-                  batchInfoBuilder_.addMessage(m);
-                }
-                break;
-              } // case 26
-              case 34: {
-                regen.ecocredit.v1alpha2.Types.CreditTypeSeq m =
-                    input.readMessage(
-                        regen.ecocredit.v1alpha2.Types.CreditTypeSeq.parser(),
-                        extensionRegistry);
-                if (sequencesBuilder_ == null) {
-                  ensureSequencesIsMutable();
-                  sequences_.add(m);
-                } else {
-                  sequencesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              case 42: {
-                regen.ecocredit.v1alpha2.Genesis.Balance m =
-                    input.readMessage(
-                        regen.ecocredit.v1alpha2.Genesis.Balance.parser(),
-                        extensionRegistry);
-                if (balancesBuilder_ == null) {
-                  ensureBalancesIsMutable();
-                  balances_.add(m);
-                } else {
-                  balancesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 42
-              case 50: {
-                regen.ecocredit.v1alpha2.Genesis.Supply m =
-                    input.readMessage(
-                        regen.ecocredit.v1alpha2.Genesis.Supply.parser(),
-                        extensionRegistry);
-                if (suppliesBuilder_ == null) {
-                  ensureSuppliesIsMutable();
-                  supplies_.add(m);
-                } else {
-                  suppliesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 50
-              case 58: {
-                regen.ecocredit.v1alpha2.Types.ProjectInfo m =
-                    input.readMessage(
-                        regen.ecocredit.v1alpha2.Types.ProjectInfo.parser(),
-                        extensionRegistry);
-                if (projectInfoBuilder_ == null) {
-                  ensureProjectInfoIsMutable();
-                  projectInfo_.add(m);
-                } else {
-                  projectInfoBuilder_.addMessage(m);
-                }
-                break;
-              } // case 58
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (regen.ecocredit.v1alpha2.Genesis.GenesisState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -3575,18 +3605,7 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GenesisState(input, extensionRegistry);
       }
     };
 
@@ -3725,6 +3744,67 @@ public final class Genesis {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private Balance(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              address_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              batchDenom_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              tradableBalance_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              retiredBalance_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -3937,19 +4017,19 @@ public final class Genesis {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
+      if (!getAddressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, address_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(batchDenom_)) {
+      if (!getBatchDenomBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, batchDenom_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tradableBalance_)) {
+      if (!getTradableBalanceBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tradableBalance_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(retiredBalance_)) {
+      if (!getRetiredBalanceBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, retiredBalance_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -3958,19 +4038,19 @@ public final class Genesis {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
+      if (!getAddressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, address_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(batchDenom_)) {
+      if (!getBatchDenomBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, batchDenom_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tradableBalance_)) {
+      if (!getTradableBalanceBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tradableBalance_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(retiredBalance_)) {
+      if (!getRetiredBalanceBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, retiredBalance_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3993,7 +4073,7 @@ public final class Genesis {
           .equals(other.getTradableBalance())) return false;
       if (!getRetiredBalance()
           .equals(other.getRetiredBalance())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -4012,7 +4092,7 @@ public final class Genesis {
       hash = (53 * hash) + getTradableBalance().hashCode();
       hash = (37 * hash) + RETIRED_BALANCE_FIELD_NUMBER;
       hash = (53 * hash) + getRetiredBalance().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4134,13 +4214,18 @@ public final class Genesis {
 
       // Construct using regen.ecocredit.v1alpha2.Genesis.Balance.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -4247,7 +4332,7 @@ public final class Genesis {
           retiredBalance_ = other.retiredBalance_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -4262,50 +4347,17 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        regen.ecocredit.v1alpha2.Genesis.Balance parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                address_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 10
-              case 18: {
-                batchDenom_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 18
-              case 26: {
-                tradableBalance_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 26
-              case 34: {
-                retiredBalance_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 34
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (regen.ecocredit.v1alpha2.Genesis.Balance) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -4725,18 +4777,7 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Balance(input, extensionRegistry);
       }
     };
 
@@ -4853,6 +4894,61 @@ public final class Genesis {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private Supply(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              batchDenom_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              tradableSupply_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              retiredSupply_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -5019,16 +5115,16 @@ public final class Genesis {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(batchDenom_)) {
+      if (!getBatchDenomBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, batchDenom_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tradableSupply_)) {
+      if (!getTradableSupplyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tradableSupply_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(retiredSupply_)) {
+      if (!getRetiredSupplyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, retiredSupply_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -5037,16 +5133,16 @@ public final class Genesis {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(batchDenom_)) {
+      if (!getBatchDenomBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, batchDenom_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tradableSupply_)) {
+      if (!getTradableSupplyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tradableSupply_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(retiredSupply_)) {
+      if (!getRetiredSupplyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, retiredSupply_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5067,7 +5163,7 @@ public final class Genesis {
           .equals(other.getTradableSupply())) return false;
       if (!getRetiredSupply()
           .equals(other.getRetiredSupply())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -5084,7 +5180,7 @@ public final class Genesis {
       hash = (53 * hash) + getTradableSupply().hashCode();
       hash = (37 * hash) + RETIRED_SUPPLY_FIELD_NUMBER;
       hash = (53 * hash) + getRetiredSupply().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5205,13 +5301,18 @@ public final class Genesis {
 
       // Construct using regen.ecocredit.v1alpha2.Genesis.Supply.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -5311,7 +5412,7 @@ public final class Genesis {
           retiredSupply_ = other.retiredSupply_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -5326,45 +5427,17 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        regen.ecocredit.v1alpha2.Genesis.Supply parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                batchDenom_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 10
-              case 18: {
-                tradableSupply_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 18
-              case 26: {
-                retiredSupply_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 26
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (regen.ecocredit.v1alpha2.Genesis.Supply) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -5688,18 +5761,7 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Supply(input, extensionRegistry);
       }
     };
 

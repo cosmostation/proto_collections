@@ -64,6 +64,54 @@ public final class ValidatorOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ValidatorExchangeRate(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              internalTokensToSharesRate_ = s;
+              break;
+            }
+            case 16: {
+
+              epochNumber_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return stride.stakeibc.ValidatorOuterClass.internal_static_stride_stakeibc_ValidatorExchangeRate_descriptor;
@@ -140,13 +188,13 @@ public final class ValidatorOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(internalTokensToSharesRate_)) {
+      if (!getInternalTokensToSharesRateBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, internalTokensToSharesRate_);
       }
       if (epochNumber_ != 0L) {
         output.writeUInt64(2, epochNumber_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -155,14 +203,14 @@ public final class ValidatorOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(internalTokensToSharesRate_)) {
+      if (!getInternalTokensToSharesRateBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, internalTokensToSharesRate_);
       }
       if (epochNumber_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(2, epochNumber_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -181,7 +229,7 @@ public final class ValidatorOuterClass {
           .equals(other.getInternalTokensToSharesRate())) return false;
       if (getEpochNumber()
           != other.getEpochNumber()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -197,7 +245,7 @@ public final class ValidatorOuterClass {
       hash = (37 * hash) + EPOCH_NUMBER_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getEpochNumber());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -314,13 +362,18 @@ public final class ValidatorOuterClass {
 
       // Construct using stride.stakeibc.ValidatorOuterClass.ValidatorExchangeRate.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -412,7 +465,7 @@ public final class ValidatorOuterClass {
         if (other.getEpochNumber() != 0L) {
           setEpochNumber(other.getEpochNumber());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -427,40 +480,17 @@ public final class ValidatorOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        stride.stakeibc.ValidatorOuterClass.ValidatorExchangeRate parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                internalTokensToSharesRate_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 10
-              case 16: {
-                epochNumber_ = input.readUInt64();
-
-                break;
-              } // case 16
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (stride.stakeibc.ValidatorOuterClass.ValidatorExchangeRate) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -603,18 +633,7 @@ public final class ValidatorOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ValidatorExchangeRate(input, extensionRegistry);
       }
     };
 
@@ -735,6 +754,89 @@ public final class ValidatorOuterClass {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private Validator(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              address_ = s;
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+
+              status_ = rawValue;
+              break;
+            }
+            case 32: {
+
+              commissionRate_ = input.readUInt64();
+              break;
+            }
+            case 40: {
+
+              delegationAmt_ = input.readUInt64();
+              break;
+            }
+            case 48: {
+
+              weight_ = input.readUInt64();
+              break;
+            }
+            case 58: {
+              stride.stakeibc.ValidatorOuterClass.ValidatorExchangeRate.Builder subBuilder = null;
+              if (internalExchangeRate_ != null) {
+                subBuilder = internalExchangeRate_.toBuilder();
+              }
+              internalExchangeRate_ = input.readMessage(stride.stakeibc.ValidatorOuterClass.ValidatorExchangeRate.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(internalExchangeRate_);
+                internalExchangeRate_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -1025,10 +1127,10 @@ public final class ValidatorOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
+      if (!getAddressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, address_);
       }
       if (status_ != stride.stakeibc.ValidatorOuterClass.Validator.ValidatorStatus.ACTIVE.getNumber()) {
@@ -1046,7 +1148,7 @@ public final class ValidatorOuterClass {
       if (internalExchangeRate_ != null) {
         output.writeMessage(7, getInternalExchangeRate());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1055,10 +1157,10 @@ public final class ValidatorOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
+      if (!getAddressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, address_);
       }
       if (status_ != stride.stakeibc.ValidatorOuterClass.Validator.ValidatorStatus.ACTIVE.getNumber()) {
@@ -1081,7 +1183,7 @@ public final class ValidatorOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getInternalExchangeRate());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1112,7 +1214,7 @@ public final class ValidatorOuterClass {
         if (!getInternalExchangeRate()
             .equals(other.getInternalExchangeRate())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -1142,7 +1244,7 @@ public final class ValidatorOuterClass {
         hash = (37 * hash) + INTERNAL_EXCHANGE_RATE_FIELD_NUMBER;
         hash = (53 * hash) + getInternalExchangeRate().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1259,13 +1361,18 @@ public final class ValidatorOuterClass {
 
       // Construct using stride.stakeibc.ValidatorOuterClass.Validator.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -1396,7 +1503,7 @@ public final class ValidatorOuterClass {
         if (other.hasInternalExchangeRate()) {
           mergeInternalExchangeRate(other.getInternalExchangeRate());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1411,67 +1518,17 @@ public final class ValidatorOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        stride.stakeibc.ValidatorOuterClass.Validator parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                name_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 10
-              case 18: {
-                address_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 18
-              case 24: {
-                status_ = input.readEnum();
-
-                break;
-              } // case 24
-              case 32: {
-                commissionRate_ = input.readUInt64();
-
-                break;
-              } // case 32
-              case 40: {
-                delegationAmt_ = input.readUInt64();
-
-                break;
-              } // case 40
-              case 48: {
-                weight_ = input.readUInt64();
-
-                break;
-              } // case 48
-              case 58: {
-                input.readMessage(
-                    getInternalExchangeRateFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 58
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (stride.stakeibc.ValidatorOuterClass.Validator) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -1925,18 +1982,7 @@ public final class ValidatorOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Validator(input, extensionRegistry);
       }
     };
 

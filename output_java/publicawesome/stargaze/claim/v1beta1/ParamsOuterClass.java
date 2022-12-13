@@ -70,6 +70,55 @@ public final class ParamsOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ClaimAuthorization(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              contractAddress_ = s;
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              action_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return publicawesome.stargaze.claim.v1beta1.ParamsOuterClass.internal_static_publicawesome_stargaze_claim_v1beta1_ClaimAuthorization_descriptor;
@@ -154,13 +203,13 @@ public final class ParamsOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(contractAddress_)) {
+      if (!getContractAddressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, contractAddress_);
       }
       if (action_ != publicawesome.stargaze.claim.v1beta1.ClaimRecordOuterClass.Action.ActionInitialClaim.getNumber()) {
         output.writeEnum(2, action_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -169,14 +218,14 @@ public final class ParamsOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(contractAddress_)) {
+      if (!getContractAddressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, contractAddress_);
       }
       if (action_ != publicawesome.stargaze.claim.v1beta1.ClaimRecordOuterClass.Action.ActionInitialClaim.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, action_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -194,7 +243,7 @@ public final class ParamsOuterClass {
       if (!getContractAddress()
           .equals(other.getContractAddress())) return false;
       if (action_ != other.action_) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -209,7 +258,7 @@ public final class ParamsOuterClass {
       hash = (53 * hash) + getContractAddress().hashCode();
       hash = (37 * hash) + ACTION_FIELD_NUMBER;
       hash = (53 * hash) + action_;
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -326,13 +375,18 @@ public final class ParamsOuterClass {
 
       // Construct using publicawesome.stargaze.claim.v1beta1.ParamsOuterClass.ClaimAuthorization.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -424,7 +478,7 @@ public final class ParamsOuterClass {
         if (other.action_ != 0) {
           setActionValue(other.getActionValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -439,40 +493,17 @@ public final class ParamsOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        publicawesome.stargaze.claim.v1beta1.ParamsOuterClass.ClaimAuthorization parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                contractAddress_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 10
-              case 16: {
-                action_ = input.readEnum();
-
-                break;
-              } // case 16
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (publicawesome.stargaze.claim.v1beta1.ParamsOuterClass.ClaimAuthorization) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -638,18 +669,7 @@ public final class ParamsOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ClaimAuthorization(input, extensionRegistry);
       }
     };
 
@@ -820,6 +840,106 @@ public final class ParamsOuterClass {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private Params(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              airdropEnabled_ = input.readBool();
+              break;
+            }
+            case 18: {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (airdropStartTime_ != null) {
+                subBuilder = airdropStartTime_.toBuilder();
+              }
+              airdropStartTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(airdropStartTime_);
+                airdropStartTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (durationUntilDecay_ != null) {
+                subBuilder = durationUntilDecay_.toBuilder();
+              }
+              durationUntilDecay_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(durationUntilDecay_);
+                durationUntilDecay_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (durationOfDecay_ != null) {
+                subBuilder = durationOfDecay_.toBuilder();
+              }
+              durationOfDecay_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(durationOfDecay_);
+                durationOfDecay_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              claimDenom_ = s;
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                allowedClaimers_ = new java.util.ArrayList<publicawesome.stargaze.claim.v1beta1.ParamsOuterClass.ClaimAuthorization>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              allowedClaimers_.add(
+                  input.readMessage(publicawesome.stargaze.claim.v1beta1.ParamsOuterClass.ClaimAuthorization.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          allowedClaimers_ = java.util.Collections.unmodifiableList(allowedClaimers_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -1055,13 +1175,13 @@ public final class ParamsOuterClass {
       if (durationOfDecay_ != null) {
         output.writeMessage(4, getDurationOfDecay());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(claimDenom_)) {
+      if (!getClaimDenomBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, claimDenom_);
       }
       for (int i = 0; i < allowedClaimers_.size(); i++) {
         output.writeMessage(6, allowedClaimers_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1086,14 +1206,14 @@ public final class ParamsOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getDurationOfDecay());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(claimDenom_)) {
+      if (!getClaimDenomBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, claimDenom_);
       }
       for (int i = 0; i < allowedClaimers_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, allowedClaimers_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1129,7 +1249,7 @@ public final class ParamsOuterClass {
           .equals(other.getClaimDenom())) return false;
       if (!getAllowedClaimersList()
           .equals(other.getAllowedClaimersList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -1161,7 +1281,7 @@ public final class ParamsOuterClass {
         hash = (37 * hash) + ALLOWED_CLAIMERS_FIELD_NUMBER;
         hash = (53 * hash) + getAllowedClaimersList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1282,13 +1402,19 @@ public final class ParamsOuterClass {
 
       // Construct using publicawesome.stargaze.claim.v1beta1.ParamsOuterClass.Params.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getAllowedClaimersFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -1317,11 +1443,10 @@ public final class ParamsOuterClass {
 
         if (allowedClaimersBuilder_ == null) {
           allowedClaimers_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          allowedClaimers_ = null;
           allowedClaimersBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -1465,7 +1590,7 @@ public final class ParamsOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1480,74 +1605,17 @@ public final class ParamsOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        publicawesome.stargaze.claim.v1beta1.ParamsOuterClass.Params parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                airdropEnabled_ = input.readBool();
-
-                break;
-              } // case 8
-              case 18: {
-                input.readMessage(
-                    getAirdropStartTimeFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getDurationUntilDecayFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 26
-              case 34: {
-                input.readMessage(
-                    getDurationOfDecayFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 34
-              case 42: {
-                claimDenom_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 42
-              case 50: {
-                publicawesome.stargaze.claim.v1beta1.ParamsOuterClass.ClaimAuthorization m =
-                    input.readMessage(
-                        publicawesome.stargaze.claim.v1beta1.ParamsOuterClass.ClaimAuthorization.parser(),
-                        extensionRegistry);
-                if (allowedClaimersBuilder_ == null) {
-                  ensureAllowedClaimersIsMutable();
-                  allowedClaimers_.add(m);
-                } else {
-                  allowedClaimersBuilder_.addMessage(m);
-                }
-                break;
-              } // case 50
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (publicawesome.stargaze.claim.v1beta1.ParamsOuterClass.Params) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -2380,18 +2448,7 @@ public final class ParamsOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Params(input, extensionRegistry);
       }
     };
 

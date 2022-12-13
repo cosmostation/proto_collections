@@ -39,6 +39,80 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
+  private WithdrawEscrowProposal(
+      com.google.protobuf.CodedInputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    int mutable_bitField0_ = 0;
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
+    try {
+      boolean done = false;
+      while (!done) {
+        int tag = input.readTag();
+        switch (tag) {
+          case 0:
+            done = true;
+            break;
+          case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            title_ = s;
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            description_ = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            denom_ = s;
+            break;
+          }
+          case 34: {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              amount_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            amount_.add(
+                input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            targetAddress_ = s;
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
+        }
+      }
+    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      throw e.setUnfinishedMessage(this);
+    } catch (java.io.IOException e) {
+      throw new com.google.protobuf.InvalidProtocolBufferException(
+          e).setUnfinishedMessage(this);
+    } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        amount_ = java.util.Collections.unmodifiableList(amount_);
+      }
+      this.unknownFields = unknownFields.build();
+      makeExtensionsImmutable();
+    }
+  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return io.provenance.marker.v1.Proposals.internal_static_provenance_marker_v1_WithdrawEscrowProposal_descriptor;
@@ -258,22 +332,22 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+    if (!getTitleBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, title_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+    if (!getDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(denom_)) {
+    if (!getDenomBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, denom_);
     }
     for (int i = 0; i < amount_.size(); i++) {
       output.writeMessage(4, amount_.get(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetAddress_)) {
+    if (!getTargetAddressBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, targetAddress_);
     }
-    getUnknownFields().writeTo(output);
+    unknownFields.writeTo(output);
   }
 
   @java.lang.Override
@@ -282,23 +356,23 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+    if (!getTitleBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, title_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+    if (!getDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(denom_)) {
+    if (!getDenomBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, denom_);
     }
     for (int i = 0; i < amount_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, amount_.get(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetAddress_)) {
+    if (!getTargetAddressBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, targetAddress_);
     }
-    size += getUnknownFields().getSerializedSize();
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -323,7 +397,7 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAmountList())) return false;
     if (!getTargetAddress()
         .equals(other.getTargetAddress())) return false;
-    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
 
@@ -346,7 +420,7 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + TARGET_ADDRESS_FIELD_NUMBER;
     hash = (53 * hash) + getTargetAddress().hashCode();
-    hash = (29 * hash) + getUnknownFields().hashCode();
+    hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -467,13 +541,19 @@ private static final long serialVersionUID = 0L;
 
     // Construct using io.provenance.marker.v1.WithdrawEscrowProposal.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getAmountFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -486,11 +566,10 @@ private static final long serialVersionUID = 0L;
 
       if (amountBuilder_ == null) {
         amount_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        amount_ = null;
         amountBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       targetAddress_ = "";
 
       return this;
@@ -623,7 +702,7 @@ private static final long serialVersionUID = 0L;
         targetAddress_ = other.targetAddress_;
         onChanged();
       }
-      this.mergeUnknownFields(other.getUnknownFields());
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
@@ -638,63 +717,17 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
+      io.provenance.marker.v1.WithdrawEscrowProposal parsedMessage = null;
       try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              title_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 10
-            case 18: {
-              description_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 18
-            case 26: {
-              denom_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 26
-            case 34: {
-              cosmos.base.v1beta1.CoinOuterClass.Coin m =
-                  input.readMessage(
-                      cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
-                      extensionRegistry);
-              if (amountBuilder_ == null) {
-                ensureAmountIsMutable();
-                amount_.add(m);
-              } else {
-                amountBuilder_.addMessage(m);
-              }
-              break;
-            } // case 34
-            case 42: {
-              targetAddress_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 42
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
-          } // switch (tag)
-        } // while (!done)
+        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        parsedMessage = (io.provenance.marker.v1.WithdrawEscrowProposal) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        onChanged();
-      } // finally
+        if (parsedMessage != null) {
+          mergeFrom(parsedMessage);
+        }
+      }
       return this;
     }
     private int bitField0_;
@@ -1275,18 +1308,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
+      return new WithdrawEscrowProposal(input, extensionRegistry);
     }
   };
 

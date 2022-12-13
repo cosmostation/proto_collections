@@ -185,6 +185,123 @@ public final class Genesis {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GenesisState(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              axelar.nexus.v1beta1.ParamsOuterClass.Params.Builder subBuilder = null;
+              if (params_ != null) {
+                subBuilder = params_.toBuilder();
+              }
+              params_ = input.readMessage(axelar.nexus.v1beta1.ParamsOuterClass.Params.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(params_);
+                params_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+
+              nonce_ = input.readUInt64();
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                chains_ = new java.util.ArrayList<axelar.nexus.exported.v1beta1.Types.Chain>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              chains_.add(
+                  input.readMessage(axelar.nexus.exported.v1beta1.Types.Chain.parser(), extensionRegistry));
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                chainStates_ = new java.util.ArrayList<axelar.nexus.v1beta1.Types.ChainState>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              chainStates_.add(
+                  input.readMessage(axelar.nexus.v1beta1.Types.ChainState.parser(), extensionRegistry));
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                linkedAddresses_ = new java.util.ArrayList<axelar.nexus.v1beta1.Types.LinkedAddresses>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              linkedAddresses_.add(
+                  input.readMessage(axelar.nexus.v1beta1.Types.LinkedAddresses.parser(), extensionRegistry));
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                transfers_ = new java.util.ArrayList<axelar.nexus.exported.v1beta1.Types.CrossChainTransfer>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              transfers_.add(
+                  input.readMessage(axelar.nexus.exported.v1beta1.Types.CrossChainTransfer.parser(), extensionRegistry));
+              break;
+            }
+            case 58: {
+              axelar.nexus.exported.v1beta1.Types.TransferFee.Builder subBuilder = null;
+              if (fee_ != null) {
+                subBuilder = fee_.toBuilder();
+              }
+              fee_ = input.readMessage(axelar.nexus.exported.v1beta1.Types.TransferFee.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(fee_);
+                fee_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          chains_ = java.util.Collections.unmodifiableList(chains_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          chainStates_ = java.util.Collections.unmodifiableList(chainStates_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          linkedAddresses_ = java.util.Collections.unmodifiableList(linkedAddresses_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          transfers_ = java.util.Collections.unmodifiableList(transfers_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return axelar.nexus.v1beta1.Genesis.internal_static_axelar_nexus_v1beta1_GenesisState_descriptor;
@@ -456,7 +573,7 @@ public final class Genesis {
       if (fee_ != null) {
         output.writeMessage(7, getFee());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -493,7 +610,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getFee());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -528,7 +645,7 @@ public final class Genesis {
         if (!getFee()
             .equals(other.getFee())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -566,7 +683,7 @@ public final class Genesis {
         hash = (37 * hash) + FEE_FIELD_NUMBER;
         hash = (53 * hash) + getFee().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -687,13 +804,22 @@ public final class Genesis {
 
       // Construct using axelar.nexus.v1beta1.Genesis.GenesisState.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getChainsFieldBuilder();
+          getChainStatesFieldBuilder();
+          getLinkedAddressesFieldBuilder();
+          getTransfersFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -708,32 +834,28 @@ public final class Genesis {
 
         if (chainsBuilder_ == null) {
           chains_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          chains_ = null;
           chainsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (chainStatesBuilder_ == null) {
           chainStates_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          chainStates_ = null;
           chainStatesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         if (linkedAddressesBuilder_ == null) {
           linkedAddresses_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          linkedAddresses_ = null;
           linkedAddressesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         if (transfersBuilder_ == null) {
           transfers_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
-          transfers_ = null;
           transfersBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
         if (feeBuilder_ == null) {
           fee_ = null;
         } else {
@@ -975,7 +1097,7 @@ public final class Genesis {
         if (other.hasFee()) {
           mergeFee(other.getFee());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -990,101 +1112,17 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        axelar.nexus.v1beta1.Genesis.GenesisState parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getParamsFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 10
-              case 16: {
-                nonce_ = input.readUInt64();
-
-                break;
-              } // case 16
-              case 26: {
-                axelar.nexus.exported.v1beta1.Types.Chain m =
-                    input.readMessage(
-                        axelar.nexus.exported.v1beta1.Types.Chain.parser(),
-                        extensionRegistry);
-                if (chainsBuilder_ == null) {
-                  ensureChainsIsMutable();
-                  chains_.add(m);
-                } else {
-                  chainsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 26
-              case 34: {
-                axelar.nexus.v1beta1.Types.ChainState m =
-                    input.readMessage(
-                        axelar.nexus.v1beta1.Types.ChainState.parser(),
-                        extensionRegistry);
-                if (chainStatesBuilder_ == null) {
-                  ensureChainStatesIsMutable();
-                  chainStates_.add(m);
-                } else {
-                  chainStatesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              case 42: {
-                axelar.nexus.v1beta1.Types.LinkedAddresses m =
-                    input.readMessage(
-                        axelar.nexus.v1beta1.Types.LinkedAddresses.parser(),
-                        extensionRegistry);
-                if (linkedAddressesBuilder_ == null) {
-                  ensureLinkedAddressesIsMutable();
-                  linkedAddresses_.add(m);
-                } else {
-                  linkedAddressesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 42
-              case 50: {
-                axelar.nexus.exported.v1beta1.Types.CrossChainTransfer m =
-                    input.readMessage(
-                        axelar.nexus.exported.v1beta1.Types.CrossChainTransfer.parser(),
-                        extensionRegistry);
-                if (transfersBuilder_ == null) {
-                  ensureTransfersIsMutable();
-                  transfers_.add(m);
-                } else {
-                  transfersBuilder_.addMessage(m);
-                }
-                break;
-              } // case 50
-              case 58: {
-                input.readMessage(
-                    getFeeFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 58
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (axelar.nexus.v1beta1.Genesis.GenesisState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -2350,18 +2388,7 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GenesisState(input, extensionRegistry);
       }
     };
 

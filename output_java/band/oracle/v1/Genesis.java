@@ -171,6 +171,81 @@ public final class Genesis {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GenesisState(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              band.oracle.v1.Oracle.Params.Builder subBuilder = null;
+              if (params_ != null) {
+                subBuilder = params_.toBuilder();
+              }
+              params_ = input.readMessage(band.oracle.v1.Oracle.Params.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(params_);
+                params_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                dataSources_ = new java.util.ArrayList<band.oracle.v1.Oracle.DataSource>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              dataSources_.add(
+                  input.readMessage(band.oracle.v1.Oracle.DataSource.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                oracleScripts_ = new java.util.ArrayList<band.oracle.v1.Oracle.OracleScript>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              oracleScripts_.add(
+                  input.readMessage(band.oracle.v1.Oracle.OracleScript.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          dataSources_ = java.util.Collections.unmodifiableList(dataSources_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          oracleScripts_ = java.util.Collections.unmodifiableList(oracleScripts_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return band.oracle.v1.Genesis.internal_static_band_oracle_v1_GenesisState_descriptor;
@@ -370,7 +445,7 @@ public final class Genesis {
       for (int i = 0; i < oracleScripts_.size(); i++) {
         output.writeMessage(3, oracleScripts_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -391,7 +466,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, oracleScripts_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -415,7 +490,7 @@ public final class Genesis {
           .equals(other.getDataSourcesList())) return false;
       if (!getOracleScriptsList()
           .equals(other.getOracleScriptsList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -438,7 +513,7 @@ public final class Genesis {
         hash = (37 * hash) + ORACLE_SCRIPTS_FIELD_NUMBER;
         hash = (53 * hash) + getOracleScriptsList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -559,13 +634,20 @@ public final class Genesis {
 
       // Construct using band.oracle.v1.Genesis.GenesisState.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getDataSourcesFieldBuilder();
+          getOracleScriptsFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -578,18 +660,16 @@ public final class Genesis {
         }
         if (dataSourcesBuilder_ == null) {
           dataSources_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          dataSources_ = null;
           dataSourcesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (oracleScriptsBuilder_ == null) {
           oracleScripts_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          oracleScripts_ = null;
           oracleScriptsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -743,7 +823,7 @@ public final class Genesis {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -758,63 +838,17 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        band.oracle.v1.Genesis.GenesisState parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getParamsFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 10
-              case 18: {
-                band.oracle.v1.Oracle.DataSource m =
-                    input.readMessage(
-                        band.oracle.v1.Oracle.DataSource.parser(),
-                        extensionRegistry);
-                if (dataSourcesBuilder_ == null) {
-                  ensureDataSourcesIsMutable();
-                  dataSources_.add(m);
-                } else {
-                  dataSourcesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-              case 26: {
-                band.oracle.v1.Oracle.OracleScript m =
-                    input.readMessage(
-                        band.oracle.v1.Oracle.OracleScript.parser(),
-                        extensionRegistry);
-                if (oracleScriptsBuilder_ == null) {
-                  ensureOracleScriptsIsMutable();
-                  oracleScripts_.add(m);
-                } else {
-                  oracleScriptsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 26
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (band.oracle.v1.Genesis.GenesisState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1648,18 +1682,7 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GenesisState(input, extensionRegistry);
       }
     };
 

@@ -184,6 +184,92 @@ public final class Vesting {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ClawbackVestingAccount(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              cosmos.vesting.v1beta1.Vesting.BaseVestingAccount.Builder subBuilder = null;
+              if (baseVestingAccount_ != null) {
+                subBuilder = baseVestingAccount_.toBuilder();
+              }
+              baseVestingAccount_ = input.readMessage(cosmos.vesting.v1beta1.Vesting.BaseVestingAccount.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(baseVestingAccount_);
+                baseVestingAccount_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              funderAddress_ = s;
+              break;
+            }
+            case 24: {
+
+              startTime_ = input.readInt64();
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                lockupPeriods_ = new java.util.ArrayList<cosmos.vesting.v1beta1.Vesting.Period>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              lockupPeriods_.add(
+                  input.readMessage(cosmos.vesting.v1beta1.Vesting.Period.parser(), extensionRegistry));
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                vestingPeriods_ = new java.util.ArrayList<cosmos.vesting.v1beta1.Vesting.Period>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              vestingPeriods_.add(
+                  input.readMessage(cosmos.vesting.v1beta1.Vesting.Period.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          lockupPeriods_ = java.util.Collections.unmodifiableList(lockupPeriods_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          vestingPeriods_ = java.util.Collections.unmodifiableList(vestingPeriods_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return evmos.vesting.v1.Vesting.internal_static_evmos_vesting_v1_ClawbackVestingAccount_descriptor;
@@ -417,7 +503,7 @@ public final class Vesting {
       if (baseVestingAccount_ != null) {
         output.writeMessage(1, getBaseVestingAccount());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(funderAddress_)) {
+      if (!getFunderAddressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, funderAddress_);
       }
       if (startTime_ != 0L) {
@@ -429,7 +515,7 @@ public final class Vesting {
       for (int i = 0; i < vestingPeriods_.size(); i++) {
         output.writeMessage(5, vestingPeriods_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -442,7 +528,7 @@ public final class Vesting {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getBaseVestingAccount());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(funderAddress_)) {
+      if (!getFunderAddressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, funderAddress_);
       }
       if (startTime_ != 0L) {
@@ -457,7 +543,7 @@ public final class Vesting {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, vestingPeriods_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -485,7 +571,7 @@ public final class Vesting {
           .equals(other.getLockupPeriodsList())) return false;
       if (!getVestingPeriodsList()
           .equals(other.getVestingPeriodsList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -513,7 +599,7 @@ public final class Vesting {
         hash = (37 * hash) + VESTING_PERIODS_FIELD_NUMBER;
         hash = (53 * hash) + getVestingPeriodsList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -637,13 +723,20 @@ public final class Vesting {
 
       // Construct using evmos.vesting.v1.Vesting.ClawbackVestingAccount.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getLockupPeriodsFieldBuilder();
+          getVestingPeriodsFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -660,18 +753,16 @@ public final class Vesting {
 
         if (lockupPeriodsBuilder_ == null) {
           lockupPeriods_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          lockupPeriods_ = null;
           lockupPeriodsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (vestingPeriodsBuilder_ == null) {
           vestingPeriods_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          vestingPeriods_ = null;
           vestingPeriodsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -834,7 +925,7 @@ public final class Vesting {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -849,73 +940,17 @@ public final class Vesting {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        evmos.vesting.v1.Vesting.ClawbackVestingAccount parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getBaseVestingAccountFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 10
-              case 18: {
-                funderAddress_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 18
-              case 24: {
-                startTime_ = input.readInt64();
-
-                break;
-              } // case 24
-              case 34: {
-                cosmos.vesting.v1beta1.Vesting.Period m =
-                    input.readMessage(
-                        cosmos.vesting.v1beta1.Vesting.Period.parser(),
-                        extensionRegistry);
-                if (lockupPeriodsBuilder_ == null) {
-                  ensureLockupPeriodsIsMutable();
-                  lockupPeriods_.add(m);
-                } else {
-                  lockupPeriodsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              case 42: {
-                cosmos.vesting.v1beta1.Vesting.Period m =
-                    input.readMessage(
-                        cosmos.vesting.v1beta1.Vesting.Period.parser(),
-                        extensionRegistry);
-                if (vestingPeriodsBuilder_ == null) {
-                  ensureVestingPeriodsIsMutable();
-                  vestingPeriods_.add(m);
-                } else {
-                  vestingPeriodsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 42
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (evmos.vesting.v1.Vesting.ClawbackVestingAccount) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1822,18 +1857,7 @@ public final class Vesting {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ClawbackVestingAccount(input, extensionRegistry);
       }
     };
 

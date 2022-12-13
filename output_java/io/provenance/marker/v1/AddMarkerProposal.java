@@ -40,6 +40,109 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
+  private AddMarkerProposal(
+      com.google.protobuf.CodedInputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    int mutable_bitField0_ = 0;
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
+    try {
+      boolean done = false;
+      while (!done) {
+        int tag = input.readTag();
+        switch (tag) {
+          case 0:
+            done = true;
+            break;
+          case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            title_ = s;
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            description_ = s;
+            break;
+          }
+          case 26: {
+            cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
+            if (amount_ != null) {
+              subBuilder = amount_.toBuilder();
+            }
+            amount_ = input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(amount_);
+              amount_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            manager_ = s;
+            break;
+          }
+          case 40: {
+            int rawValue = input.readEnum();
+
+            status_ = rawValue;
+            break;
+          }
+          case 48: {
+            int rawValue = input.readEnum();
+
+            markerType_ = rawValue;
+            break;
+          }
+          case 58: {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              accessList_ = new java.util.ArrayList<io.provenance.marker.v1.AccessGrant>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            accessList_.add(
+                input.readMessage(io.provenance.marker.v1.AccessGrant.parser(), extensionRegistry));
+            break;
+          }
+          case 64: {
+
+            supplyFixed_ = input.readBool();
+            break;
+          }
+          case 72: {
+
+            allowGovernanceControl_ = input.readBool();
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
+        }
+      }
+    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      throw e.setUnfinishedMessage(this);
+    } catch (java.io.IOException e) {
+      throw new com.google.protobuf.InvalidProtocolBufferException(
+          e).setUnfinishedMessage(this);
+    } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        accessList_ = java.util.Collections.unmodifiableList(accessList_);
+      }
+      this.unknownFields = unknownFields.build();
+      makeExtensionsImmutable();
+    }
+  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return io.provenance.marker.v1.Proposals.internal_static_provenance_marker_v1_AddMarkerProposal_descriptor;
@@ -307,16 +410,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+    if (!getTitleBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, title_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+    if (!getDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
     }
     if (amount_ != null) {
       output.writeMessage(3, getAmount());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(manager_)) {
+    if (!getManagerBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, manager_);
     }
     if (status_ != io.provenance.marker.v1.MarkerStatus.MARKER_STATUS_UNSPECIFIED.getNumber()) {
@@ -334,7 +437,7 @@ private static final long serialVersionUID = 0L;
     if (allowGovernanceControl_ != false) {
       output.writeBool(9, allowGovernanceControl_);
     }
-    getUnknownFields().writeTo(output);
+    unknownFields.writeTo(output);
   }
 
   @java.lang.Override
@@ -343,17 +446,17 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+    if (!getTitleBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, title_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+    if (!getDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
     }
     if (amount_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getAmount());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(manager_)) {
+    if (!getManagerBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, manager_);
     }
     if (status_ != io.provenance.marker.v1.MarkerStatus.MARKER_STATUS_UNSPECIFIED.getNumber()) {
@@ -376,7 +479,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(9, allowGovernanceControl_);
     }
-    size += getUnknownFields().getSerializedSize();
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -410,7 +513,7 @@ private static final long serialVersionUID = 0L;
         != other.getSupplyFixed()) return false;
     if (getAllowGovernanceControl()
         != other.getAllowGovernanceControl()) return false;
-    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
 
@@ -445,7 +548,7 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ALLOW_GOVERNANCE_CONTROL_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getAllowGovernanceControl());
-    hash = (29 * hash) + getUnknownFields().hashCode();
+    hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -566,13 +669,19 @@ private static final long serialVersionUID = 0L;
 
     // Construct using io.provenance.marker.v1.AddMarkerProposal.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getAccessListFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -595,11 +704,10 @@ private static final long serialVersionUID = 0L;
 
       if (accessListBuilder_ == null) {
         accessList_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        accessList_ = null;
         accessListBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       supplyFixed_ = false;
 
       allowGovernanceControl_ = false;
@@ -753,7 +861,7 @@ private static final long serialVersionUID = 0L;
       if (other.getAllowGovernanceControl() != false) {
         setAllowGovernanceControl(other.getAllowGovernanceControl());
       }
-      this.mergeUnknownFields(other.getUnknownFields());
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
@@ -768,85 +876,17 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
+      io.provenance.marker.v1.AddMarkerProposal parsedMessage = null;
       try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              title_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 10
-            case 18: {
-              description_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 18
-            case 26: {
-              input.readMessage(
-                  getAmountFieldBuilder().getBuilder(),
-                  extensionRegistry);
-
-              break;
-            } // case 26
-            case 34: {
-              manager_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 34
-            case 40: {
-              status_ = input.readEnum();
-
-              break;
-            } // case 40
-            case 48: {
-              markerType_ = input.readEnum();
-
-              break;
-            } // case 48
-            case 58: {
-              io.provenance.marker.v1.AccessGrant m =
-                  input.readMessage(
-                      io.provenance.marker.v1.AccessGrant.parser(),
-                      extensionRegistry);
-              if (accessListBuilder_ == null) {
-                ensureAccessListIsMutable();
-                accessList_.add(m);
-              } else {
-                accessListBuilder_.addMessage(m);
-              }
-              break;
-            } // case 58
-            case 64: {
-              supplyFixed_ = input.readBool();
-
-              break;
-            } // case 64
-            case 72: {
-              allowGovernanceControl_ = input.readBool();
-
-              break;
-            } // case 72
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
-          } // switch (tag)
-        } // while (!done)
+        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        parsedMessage = (io.provenance.marker.v1.AddMarkerProposal) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        onChanged();
-      } // finally
+        if (parsedMessage != null) {
+          mergeFrom(parsedMessage);
+        }
+      }
       return this;
     }
     private int bitField0_;
@@ -1640,18 +1680,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
+      return new AddMarkerProposal(input, extensionRegistry);
     }
   };
 

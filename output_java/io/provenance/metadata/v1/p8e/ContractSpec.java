@@ -34,6 +34,119 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
+  private ContractSpec(
+      com.google.protobuf.CodedInputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    int mutable_bitField0_ = 0;
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
+    try {
+      boolean done = false;
+      while (!done) {
+        int tag = input.readTag();
+        switch (tag) {
+          case 0:
+            done = true;
+            break;
+          case 10: {
+            io.provenance.metadata.v1.p8e.DefinitionSpec.Builder subBuilder = null;
+            if (definition_ != null) {
+              subBuilder = definition_.toBuilder();
+            }
+            definition_ = input.readMessage(io.provenance.metadata.v1.p8e.DefinitionSpec.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(definition_);
+              definition_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 18: {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              inputSpecs_ = new java.util.ArrayList<io.provenance.metadata.v1.p8e.DefinitionSpec>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            inputSpecs_.add(
+                input.readMessage(io.provenance.metadata.v1.p8e.DefinitionSpec.parser(), extensionRegistry));
+            break;
+          }
+          case 24: {
+            int rawValue = input.readEnum();
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              partiesInvolved_ = new java.util.ArrayList<java.lang.Integer>();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            partiesInvolved_.add(rawValue);
+            break;
+          }
+          case 26: {
+            int length = input.readRawVarint32();
+            int oldLimit = input.pushLimit(length);
+            while(input.getBytesUntilLimit() > 0) {
+              int rawValue = input.readEnum();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                partiesInvolved_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              partiesInvolved_.add(rawValue);
+            }
+            input.popLimit(oldLimit);
+            break;
+          }
+          case 34: {
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              conditionSpecs_ = new java.util.ArrayList<io.provenance.metadata.v1.p8e.ConditionSpec>();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            conditionSpecs_.add(
+                input.readMessage(io.provenance.metadata.v1.p8e.ConditionSpec.parser(), extensionRegistry));
+            break;
+          }
+          case 42: {
+            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              considerationSpecs_ = new java.util.ArrayList<io.provenance.metadata.v1.p8e.ConsiderationSpec>();
+              mutable_bitField0_ |= 0x00000008;
+            }
+            considerationSpecs_.add(
+                input.readMessage(io.provenance.metadata.v1.p8e.ConsiderationSpec.parser(), extensionRegistry));
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
+        }
+      }
+    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      throw e.setUnfinishedMessage(this);
+    } catch (java.io.IOException e) {
+      throw new com.google.protobuf.InvalidProtocolBufferException(
+          e).setUnfinishedMessage(this);
+    } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        inputSpecs_ = java.util.Collections.unmodifiableList(inputSpecs_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        partiesInvolved_ = java.util.Collections.unmodifiableList(partiesInvolved_);
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        conditionSpecs_ = java.util.Collections.unmodifiableList(conditionSpecs_);
+      }
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        considerationSpecs_ = java.util.Collections.unmodifiableList(considerationSpecs_);
+      }
+      this.unknownFields = unknownFields.build();
+      makeExtensionsImmutable();
+    }
+  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return io.provenance.metadata.v1.p8e.P8E.internal_static_provenance_metadata_v1_p8e_ContractSpec_descriptor;
@@ -285,7 +398,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < considerationSpecs_.size(); i++) {
       output.writeMessage(5, considerationSpecs_.get(i));
     }
-    getUnknownFields().writeTo(output);
+    unknownFields.writeTo(output);
   }
 
   @java.lang.Override
@@ -322,7 +435,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, considerationSpecs_.get(i));
     }
-    size += getUnknownFields().getSerializedSize();
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -349,7 +462,7 @@ private static final long serialVersionUID = 0L;
         .equals(other.getConditionSpecsList())) return false;
     if (!getConsiderationSpecsList()
         .equals(other.getConsiderationSpecsList())) return false;
-    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
 
@@ -380,7 +493,7 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + CONSIDERATION_SPECS_FIELD_NUMBER;
       hash = (53 * hash) + getConsiderationSpecsList().hashCode();
     }
-    hash = (29 * hash) + getUnknownFields().hashCode();
+    hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -497,13 +610,21 @@ private static final long serialVersionUID = 0L;
 
     // Construct using io.provenance.metadata.v1.p8e.ContractSpec.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getInputSpecsFieldBuilder();
+        getConditionSpecsFieldBuilder();
+        getConsiderationSpecsFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -516,27 +637,24 @@ private static final long serialVersionUID = 0L;
       }
       if (inputSpecsBuilder_ == null) {
         inputSpecs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        inputSpecs_ = null;
         inputSpecsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       partiesInvolved_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
       if (conditionSpecsBuilder_ == null) {
         conditionSpecs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
-        conditionSpecs_ = null;
         conditionSpecsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
       if (considerationSpecsBuilder_ == null) {
         considerationSpecs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
-        considerationSpecs_ = null;
         considerationSpecsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -740,7 +858,7 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
-      this.mergeUnknownFields(other.getUnknownFields());
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
@@ -755,93 +873,17 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
+      io.provenance.metadata.v1.p8e.ContractSpec parsedMessage = null;
       try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              input.readMessage(
-                  getDefinitionFieldBuilder().getBuilder(),
-                  extensionRegistry);
-
-              break;
-            } // case 10
-            case 18: {
-              io.provenance.metadata.v1.p8e.DefinitionSpec m =
-                  input.readMessage(
-                      io.provenance.metadata.v1.p8e.DefinitionSpec.parser(),
-                      extensionRegistry);
-              if (inputSpecsBuilder_ == null) {
-                ensureInputSpecsIsMutable();
-                inputSpecs_.add(m);
-              } else {
-                inputSpecsBuilder_.addMessage(m);
-              }
-              break;
-            } // case 18
-            case 24: {
-              int tmpRaw = input.readEnum();
-              ensurePartiesInvolvedIsMutable();
-              partiesInvolved_.add(tmpRaw);
-              break;
-            } // case 24
-            case 26: {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while(input.getBytesUntilLimit() > 0) {
-                int tmpRaw = input.readEnum();
-                ensurePartiesInvolvedIsMutable();
-                partiesInvolved_.add(tmpRaw);
-              }
-              input.popLimit(oldLimit);
-              break;
-            } // case 26
-            case 34: {
-              io.provenance.metadata.v1.p8e.ConditionSpec m =
-                  input.readMessage(
-                      io.provenance.metadata.v1.p8e.ConditionSpec.parser(),
-                      extensionRegistry);
-              if (conditionSpecsBuilder_ == null) {
-                ensureConditionSpecsIsMutable();
-                conditionSpecs_.add(m);
-              } else {
-                conditionSpecsBuilder_.addMessage(m);
-              }
-              break;
-            } // case 34
-            case 42: {
-              io.provenance.metadata.v1.p8e.ConsiderationSpec m =
-                  input.readMessage(
-                      io.provenance.metadata.v1.p8e.ConsiderationSpec.parser(),
-                      extensionRegistry);
-              if (considerationSpecsBuilder_ == null) {
-                ensureConsiderationSpecsIsMutable();
-                considerationSpecs_.add(m);
-              } else {
-                considerationSpecsBuilder_.addMessage(m);
-              }
-              break;
-            } // case 42
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
-          } // switch (tag)
-        } // while (!done)
+        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        parsedMessage = (io.provenance.metadata.v1.p8e.ContractSpec) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        onChanged();
-      } // finally
+        if (parsedMessage != null) {
+          mergeFrom(parsedMessage);
+        }
+      }
       return this;
     }
     private int bitField0_;
@@ -1308,8 +1350,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated .provenance.metadata.v1.p8e.PartyType parties_involved = 3;</code>
-     * @param index The index to set the value at.
-     * @param value The enum numeric value on the wire for partiesInvolved to set.
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of partiesInvolved at the given index.
      * @return This builder for chaining.
      */
     public Builder setPartiesInvolvedValue(
@@ -1857,18 +1899,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
+      return new ContractSpec(input, extensionRegistry);
     }
   };
 

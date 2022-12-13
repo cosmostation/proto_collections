@@ -40,6 +40,105 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
+  private RecordSpecification(
+      com.google.protobuf.CodedInputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    int mutable_bitField0_ = 0;
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
+    try {
+      boolean done = false;
+      while (!done) {
+        int tag = input.readTag();
+        switch (tag) {
+          case 0:
+            done = true;
+            break;
+          case 10: {
+
+            specificationId_ = input.readBytes();
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            name_ = s;
+            break;
+          }
+          case 26: {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              inputs_ = new java.util.ArrayList<io.provenance.metadata.v1.InputSpecification>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            inputs_.add(
+                input.readMessage(io.provenance.metadata.v1.InputSpecification.parser(), extensionRegistry));
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            typeName_ = s;
+            break;
+          }
+          case 40: {
+            int rawValue = input.readEnum();
+
+            resultType_ = rawValue;
+            break;
+          }
+          case 48: {
+            int rawValue = input.readEnum();
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              responsibleParties_ = new java.util.ArrayList<java.lang.Integer>();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            responsibleParties_.add(rawValue);
+            break;
+          }
+          case 50: {
+            int length = input.readRawVarint32();
+            int oldLimit = input.pushLimit(length);
+            while(input.getBytesUntilLimit() > 0) {
+              int rawValue = input.readEnum();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                responsibleParties_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              responsibleParties_.add(rawValue);
+            }
+            input.popLimit(oldLimit);
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
+        }
+      }
+    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      throw e.setUnfinishedMessage(this);
+    } catch (java.io.IOException e) {
+      throw new com.google.protobuf.InvalidProtocolBufferException(
+          e).setUnfinishedMessage(this);
+    } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        inputs_ = java.util.Collections.unmodifiableList(inputs_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        responsibleParties_ = java.util.Collections.unmodifiableList(responsibleParties_);
+      }
+      this.unknownFields = unknownFields.build();
+      makeExtensionsImmutable();
+    }
+  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return io.provenance.metadata.v1.Specification.internal_static_provenance_metadata_v1_RecordSpecification_descriptor;
@@ -343,13 +442,13 @@ private static final long serialVersionUID = 0L;
     if (!specificationId_.isEmpty()) {
       output.writeBytes(1, specificationId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+    if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
     for (int i = 0; i < inputs_.size(); i++) {
       output.writeMessage(3, inputs_.get(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(typeName_)) {
+    if (!getTypeNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, typeName_);
     }
     if (resultType_ != io.provenance.metadata.v1.DefinitionType.DEFINITION_TYPE_UNSPECIFIED.getNumber()) {
@@ -362,7 +461,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < responsibleParties_.size(); i++) {
       output.writeEnumNoTag(responsibleParties_.get(i));
     }
-    getUnknownFields().writeTo(output);
+    unknownFields.writeTo(output);
   }
 
   @java.lang.Override
@@ -375,14 +474,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(1, specificationId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+    if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
     for (int i = 0; i < inputs_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, inputs_.get(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(typeName_)) {
+    if (!getTypeNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, typeName_);
     }
     if (resultType_ != io.provenance.metadata.v1.DefinitionType.DEFINITION_TYPE_UNSPECIFIED.getNumber()) {
@@ -401,7 +500,7 @@ private static final long serialVersionUID = 0L;
           .computeUInt32SizeNoTag(dataSize);
       }responsiblePartiesMemoizedSerializedSize = dataSize;
     }
-    size += getUnknownFields().getSerializedSize();
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -426,7 +525,7 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTypeName())) return false;
     if (resultType_ != other.resultType_) return false;
     if (!responsibleParties_.equals(other.responsibleParties_)) return false;
-    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
 
@@ -453,7 +552,7 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + RESPONSIBLE_PARTIES_FIELD_NUMBER;
       hash = (53 * hash) + responsibleParties_.hashCode();
     }
-    hash = (29 * hash) + getUnknownFields().hashCode();
+    hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -574,13 +673,19 @@ private static final long serialVersionUID = 0L;
 
     // Construct using io.provenance.metadata.v1.RecordSpecification.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getInputsFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -591,11 +696,10 @@ private static final long serialVersionUID = 0L;
 
       if (inputsBuilder_ == null) {
         inputs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        inputs_ = null;
         inputsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       typeName_ = "";
 
       resultType_ = 0;
@@ -745,7 +849,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
-      this.mergeUnknownFields(other.getUnknownFields());
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
@@ -760,80 +864,17 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
+      io.provenance.metadata.v1.RecordSpecification parsedMessage = null;
       try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              specificationId_ = input.readBytes();
-
-              break;
-            } // case 10
-            case 18: {
-              name_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 18
-            case 26: {
-              io.provenance.metadata.v1.InputSpecification m =
-                  input.readMessage(
-                      io.provenance.metadata.v1.InputSpecification.parser(),
-                      extensionRegistry);
-              if (inputsBuilder_ == null) {
-                ensureInputsIsMutable();
-                inputs_.add(m);
-              } else {
-                inputsBuilder_.addMessage(m);
-              }
-              break;
-            } // case 26
-            case 34: {
-              typeName_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 34
-            case 40: {
-              resultType_ = input.readEnum();
-
-              break;
-            } // case 40
-            case 48: {
-              int tmpRaw = input.readEnum();
-              ensureResponsiblePartiesIsMutable();
-              responsibleParties_.add(tmpRaw);
-              break;
-            } // case 48
-            case 50: {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while(input.getBytesUntilLimit() > 0) {
-                int tmpRaw = input.readEnum();
-                ensureResponsiblePartiesIsMutable();
-                responsibleParties_.add(tmpRaw);
-              }
-              input.popLimit(oldLimit);
-              break;
-            } // case 50
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
-          } // switch (tag)
-        } // while (!done)
+        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        parsedMessage = (io.provenance.metadata.v1.RecordSpecification) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        onChanged();
-      } // finally
+        if (parsedMessage != null) {
+          mergeFrom(parsedMessage);
+        }
+      }
       return this;
     }
     private int bitField0_;
@@ -1605,8 +1646,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .provenance.metadata.v1.PartyType responsible_parties = 6 [(.gogoproto.moretags) = "yaml:&#92;"responsible_parties&#92;""];</code>
-     * @param index The index to set the value at.
-     * @param value The enum numeric value on the wire for responsibleParties to set.
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of responsibleParties at the given index.
      * @return This builder for chaining.
      */
     public Builder setResponsiblePartiesValue(
@@ -1682,18 +1723,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
+      return new RecordSpecification(input, extensionRegistry);
     }
   };
 

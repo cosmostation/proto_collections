@@ -100,6 +100,68 @@ public final class Diddoc {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private BaseDidDoc(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              did_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              pubKey_ = s;
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                credentials_ = new java.util.ArrayList<ixo.did.Did.DidCredential>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              credentials_.add(
+                  input.readMessage(ixo.did.Did.DidCredential.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          credentials_ = java.util.Collections.unmodifiableList(credentials_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ixo.did.Diddoc.internal_static_did_BaseDidDoc_descriptor;
@@ -243,16 +305,16 @@ public final class Diddoc {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(did_)) {
+      if (!getDidBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, did_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pubKey_)) {
+      if (!getPubKeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, pubKey_);
       }
       for (int i = 0; i < credentials_.size(); i++) {
         output.writeMessage(3, credentials_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -261,17 +323,17 @@ public final class Diddoc {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(did_)) {
+      if (!getDidBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, did_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pubKey_)) {
+      if (!getPubKeyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, pubKey_);
       }
       for (int i = 0; i < credentials_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, credentials_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -292,7 +354,7 @@ public final class Diddoc {
           .equals(other.getPubKey())) return false;
       if (!getCredentialsList()
           .equals(other.getCredentialsList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -311,7 +373,7 @@ public final class Diddoc {
         hash = (37 * hash) + CREDENTIALS_FIELD_NUMBER;
         hash = (53 * hash) + getCredentialsList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -432,13 +494,19 @@ public final class Diddoc {
 
       // Construct using ixo.did.Diddoc.BaseDidDoc.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getCredentialsFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -449,11 +517,10 @@ public final class Diddoc {
 
         if (credentialsBuilder_ == null) {
           credentials_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          credentials_ = null;
           credentialsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -574,7 +641,7 @@ public final class Diddoc {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -589,53 +656,17 @@ public final class Diddoc {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ixo.did.Diddoc.BaseDidDoc parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                did_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 10
-              case 18: {
-                pubKey_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 18
-              case 26: {
-                ixo.did.Did.DidCredential m =
-                    input.readMessage(
-                        ixo.did.Did.DidCredential.parser(),
-                        extensionRegistry);
-                if (credentialsBuilder_ == null) {
-                  ensureCredentialsIsMutable();
-                  credentials_.add(m);
-                } else {
-                  credentialsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 26
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ixo.did.Diddoc.BaseDidDoc) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1064,18 +1095,7 @@ public final class Diddoc {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new BaseDidDoc(input, extensionRegistry);
       }
     };
 

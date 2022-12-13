@@ -132,6 +132,73 @@ public final class Tx {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private MsgEthereumTx(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.google.protobuf2.Any.Builder subBuilder = null;
+              if (data_ != null) {
+                subBuilder = data_.toBuilder();
+              }
+              data_ = input.readMessage(com.google.protobuf2.Any.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(data_);
+                data_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 17: {
+
+              size_ = input.readDouble();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              hash_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              from_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ethermint.evm.v1.Tx.internal_static_ethermint_evm_v1_MsgEthereumTx_descriptor;
@@ -311,16 +378,16 @@ public final class Tx {
       if (data_ != null) {
         output.writeMessage(1, getData());
       }
-      if (java.lang.Double.doubleToRawLongBits(size_) != 0) {
+      if (size_ != 0D) {
         output.writeDouble(2, size_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hash_)) {
+      if (!getHashBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, hash_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(from_)) {
+      if (!getFromBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, from_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -333,17 +400,17 @@ public final class Tx {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getData());
       }
-      if (java.lang.Double.doubleToRawLongBits(size_) != 0) {
+      if (size_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(2, size_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hash_)) {
+      if (!getHashBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, hash_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(from_)) {
+      if (!getFromBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, from_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -370,7 +437,7 @@ public final class Tx {
           .equals(other.getHash())) return false;
       if (!getFrom()
           .equals(other.getFrom())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -392,7 +459,7 @@ public final class Tx {
       hash = (53 * hash) + getHash().hashCode();
       hash = (37 * hash) + FROM_FIELD_NUMBER;
       hash = (53 * hash) + getFrom().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -513,13 +580,18 @@ public final class Tx {
 
       // Construct using ethermint.evm.v1.Tx.MsgEthereumTx.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -632,7 +704,7 @@ public final class Tx {
           from_ = other.from_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -647,52 +719,17 @@ public final class Tx {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ethermint.evm.v1.Tx.MsgEthereumTx parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getDataFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 10
-              case 17: {
-                size_ = input.readDouble();
-
-                break;
-              } // case 17
-              case 26: {
-                hash_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 26
-              case 34: {
-                from_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 34
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ethermint.evm.v1.Tx.MsgEthereumTx) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -1128,18 +1165,7 @@ public final class Tx {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new MsgEthereumTx(input, extensionRegistry);
       }
     };
 
@@ -1322,6 +1348,91 @@ public final class Tx {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private LegacyTx(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              nonce_ = input.readUInt64();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              gasPrice_ = s;
+              break;
+            }
+            case 24: {
+
+              gas_ = input.readUInt64();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              to_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              value_ = s;
+              break;
+            }
+            case 50: {
+
+              data_ = input.readBytes();
+              break;
+            }
+            case 58: {
+
+              v_ = input.readBytes();
+              break;
+            }
+            case 66: {
+
+              r_ = input.readBytes();
+              break;
+            }
+            case 74: {
+
+              s_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -1581,16 +1692,16 @@ public final class Tx {
       if (nonce_ != 0L) {
         output.writeUInt64(1, nonce_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gasPrice_)) {
+      if (!getGasPriceBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, gasPrice_);
       }
       if (gas_ != 0L) {
         output.writeUInt64(3, gas_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(to_)) {
+      if (!getToBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, to_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
+      if (!getValueBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, value_);
       }
       if (!data_.isEmpty()) {
@@ -1605,7 +1716,7 @@ public final class Tx {
       if (!s_.isEmpty()) {
         output.writeBytes(9, s_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1618,17 +1729,17 @@ public final class Tx {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(1, nonce_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gasPrice_)) {
+      if (!getGasPriceBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, gasPrice_);
       }
       if (gas_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(3, gas_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(to_)) {
+      if (!getToBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, to_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
+      if (!getValueBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, value_);
       }
       if (!data_.isEmpty()) {
@@ -1647,7 +1758,7 @@ public final class Tx {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(9, s_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1680,7 +1791,7 @@ public final class Tx {
           .equals(other.getR())) return false;
       if (!getS()
           .equals(other.getS())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -1711,7 +1822,7 @@ public final class Tx {
       hash = (53 * hash) + getR().hashCode();
       hash = (37 * hash) + S_FIELD_NUMBER;
       hash = (53 * hash) + getS().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1834,13 +1945,18 @@ public final class Tx {
 
       // Construct using ethermint.evm.v1.Tx.LegacyTx.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -1976,7 +2092,7 @@ public final class Tx {
         if (other.getS() != com.google.protobuf.ByteString.EMPTY) {
           setS(other.getS());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1991,75 +2107,17 @@ public final class Tx {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ethermint.evm.v1.Tx.LegacyTx parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                nonce_ = input.readUInt64();
-
-                break;
-              } // case 8
-              case 18: {
-                gasPrice_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 18
-              case 24: {
-                gas_ = input.readUInt64();
-
-                break;
-              } // case 24
-              case 34: {
-                to_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 34
-              case 42: {
-                value_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 42
-              case 50: {
-                data_ = input.readBytes();
-
-                break;
-              } // case 50
-              case 58: {
-                v_ = input.readBytes();
-
-                break;
-              } // case 58
-              case 66: {
-                r_ = input.readBytes();
-
-                break;
-              } // case 66
-              case 74: {
-                s_ = input.readBytes();
-
-                break;
-              } // case 74
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ethermint.evm.v1.Tx.LegacyTx) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -2653,18 +2711,7 @@ public final class Tx {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new LegacyTx(input, extensionRegistry);
       }
     };
 
@@ -2891,6 +2938,110 @@ public final class Tx {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private AccessListTx(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              chainId_ = s;
+              break;
+            }
+            case 16: {
+
+              nonce_ = input.readUInt64();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              gasPrice_ = s;
+              break;
+            }
+            case 32: {
+
+              gas_ = input.readUInt64();
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              to_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              value_ = s;
+              break;
+            }
+            case 58: {
+
+              data_ = input.readBytes();
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                accesses_ = new java.util.ArrayList<ethermint.evm.v1.Evm.AccessTuple>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              accesses_.add(
+                  input.readMessage(ethermint.evm.v1.Evm.AccessTuple.parser(), extensionRegistry));
+              break;
+            }
+            case 74: {
+
+              v_ = input.readBytes();
+              break;
+            }
+            case 82: {
+
+              r_ = input.readBytes();
+              break;
+            }
+            case 90: {
+
+              s_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          accesses_ = java.util.Collections.unmodifiableList(accesses_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -3233,22 +3384,22 @@ public final class Tx {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(chainId_)) {
+      if (!getChainIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, chainId_);
       }
       if (nonce_ != 0L) {
         output.writeUInt64(2, nonce_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gasPrice_)) {
+      if (!getGasPriceBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, gasPrice_);
       }
       if (gas_ != 0L) {
         output.writeUInt64(4, gas_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(to_)) {
+      if (!getToBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, to_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
+      if (!getValueBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, value_);
       }
       if (!data_.isEmpty()) {
@@ -3266,7 +3417,7 @@ public final class Tx {
       if (!s_.isEmpty()) {
         output.writeBytes(11, s_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -3275,24 +3426,24 @@ public final class Tx {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(chainId_)) {
+      if (!getChainIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, chainId_);
       }
       if (nonce_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(2, nonce_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gasPrice_)) {
+      if (!getGasPriceBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, gasPrice_);
       }
       if (gas_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(4, gas_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(to_)) {
+      if (!getToBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, to_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
+      if (!getValueBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, value_);
       }
       if (!data_.isEmpty()) {
@@ -3315,7 +3466,7 @@ public final class Tx {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(11, s_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3352,7 +3503,7 @@ public final class Tx {
           .equals(other.getR())) return false;
       if (!getS()
           .equals(other.getS())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -3389,7 +3540,7 @@ public final class Tx {
       hash = (53 * hash) + getR().hashCode();
       hash = (37 * hash) + S_FIELD_NUMBER;
       hash = (53 * hash) + getS().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3510,13 +3661,19 @@ public final class Tx {
 
       // Construct using ethermint.evm.v1.Tx.AccessListTx.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getAccessesFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -3537,11 +3694,10 @@ public final class Tx {
 
         if (accessesBuilder_ == null) {
           accesses_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          accesses_ = null;
           accessesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         v_ = com.google.protobuf.ByteString.EMPTY;
 
         r_ = com.google.protobuf.ByteString.EMPTY;
@@ -3702,7 +3858,7 @@ public final class Tx {
         if (other.getS() != com.google.protobuf.ByteString.EMPTY) {
           setS(other.getS());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -3717,93 +3873,17 @@ public final class Tx {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ethermint.evm.v1.Tx.AccessListTx parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                chainId_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 10
-              case 16: {
-                nonce_ = input.readUInt64();
-
-                break;
-              } // case 16
-              case 26: {
-                gasPrice_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 26
-              case 32: {
-                gas_ = input.readUInt64();
-
-                break;
-              } // case 32
-              case 42: {
-                to_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 42
-              case 50: {
-                value_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 50
-              case 58: {
-                data_ = input.readBytes();
-
-                break;
-              } // case 58
-              case 66: {
-                ethermint.evm.v1.Evm.AccessTuple m =
-                    input.readMessage(
-                        ethermint.evm.v1.Evm.AccessTuple.parser(),
-                        extensionRegistry);
-                if (accessesBuilder_ == null) {
-                  ensureAccessesIsMutable();
-                  accesses_.add(m);
-                } else {
-                  accessesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 66
-              case 74: {
-                v_ = input.readBytes();
-
-                break;
-              } // case 74
-              case 82: {
-                r_ = input.readBytes();
-
-                break;
-              } // case 82
-              case 90: {
-                s_ = input.readBytes();
-
-                break;
-              } // case 90
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ethermint.evm.v1.Tx.AccessListTx) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -4734,18 +4814,7 @@ public final class Tx {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AccessListTx(input, extensionRegistry);
       }
     };
 
@@ -4993,6 +5062,116 @@ public final class Tx {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private DynamicFeeTx(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              chainId_ = s;
+              break;
+            }
+            case 16: {
+
+              nonce_ = input.readUInt64();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              gasTipCap_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              gasFeeCap_ = s;
+              break;
+            }
+            case 40: {
+
+              gas_ = input.readUInt64();
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              to_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              value_ = s;
+              break;
+            }
+            case 66: {
+
+              data_ = input.readBytes();
+              break;
+            }
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                accesses_ = new java.util.ArrayList<ethermint.evm.v1.Evm.AccessTuple>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              accesses_.add(
+                  input.readMessage(ethermint.evm.v1.Evm.AccessTuple.parser(), extensionRegistry));
+              break;
+            }
+            case 82: {
+
+              v_ = input.readBytes();
+              break;
+            }
+            case 90: {
+
+              r_ = input.readBytes();
+              break;
+            }
+            case 98: {
+
+              s_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          accesses_ = java.util.Collections.unmodifiableList(accesses_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -5381,25 +5560,25 @@ public final class Tx {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(chainId_)) {
+      if (!getChainIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, chainId_);
       }
       if (nonce_ != 0L) {
         output.writeUInt64(2, nonce_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gasTipCap_)) {
+      if (!getGasTipCapBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, gasTipCap_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gasFeeCap_)) {
+      if (!getGasFeeCapBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, gasFeeCap_);
       }
       if (gas_ != 0L) {
         output.writeUInt64(5, gas_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(to_)) {
+      if (!getToBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, to_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
+      if (!getValueBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, value_);
       }
       if (!data_.isEmpty()) {
@@ -5417,7 +5596,7 @@ public final class Tx {
       if (!s_.isEmpty()) {
         output.writeBytes(12, s_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -5426,27 +5605,27 @@ public final class Tx {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(chainId_)) {
+      if (!getChainIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, chainId_);
       }
       if (nonce_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(2, nonce_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gasTipCap_)) {
+      if (!getGasTipCapBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, gasTipCap_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gasFeeCap_)) {
+      if (!getGasFeeCapBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, gasFeeCap_);
       }
       if (gas_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(5, gas_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(to_)) {
+      if (!getToBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, to_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
+      if (!getValueBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, value_);
       }
       if (!data_.isEmpty()) {
@@ -5469,7 +5648,7 @@ public final class Tx {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(12, s_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5508,7 +5687,7 @@ public final class Tx {
           .equals(other.getR())) return false;
       if (!getS()
           .equals(other.getS())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -5547,7 +5726,7 @@ public final class Tx {
       hash = (53 * hash) + getR().hashCode();
       hash = (37 * hash) + S_FIELD_NUMBER;
       hash = (53 * hash) + getS().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5668,13 +5847,19 @@ public final class Tx {
 
       // Construct using ethermint.evm.v1.Tx.DynamicFeeTx.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getAccessesFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -5697,11 +5882,10 @@ public final class Tx {
 
         if (accessesBuilder_ == null) {
           accesses_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          accesses_ = null;
           accessesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         v_ = com.google.protobuf.ByteString.EMPTY;
 
         r_ = com.google.protobuf.ByteString.EMPTY;
@@ -5867,7 +6051,7 @@ public final class Tx {
         if (other.getS() != com.google.protobuf.ByteString.EMPTY) {
           setS(other.getS());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -5882,98 +6066,17 @@ public final class Tx {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ethermint.evm.v1.Tx.DynamicFeeTx parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                chainId_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 10
-              case 16: {
-                nonce_ = input.readUInt64();
-
-                break;
-              } // case 16
-              case 26: {
-                gasTipCap_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 26
-              case 34: {
-                gasFeeCap_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 34
-              case 40: {
-                gas_ = input.readUInt64();
-
-                break;
-              } // case 40
-              case 50: {
-                to_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 50
-              case 58: {
-                value_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 58
-              case 66: {
-                data_ = input.readBytes();
-
-                break;
-              } // case 66
-              case 74: {
-                ethermint.evm.v1.Evm.AccessTuple m =
-                    input.readMessage(
-                        ethermint.evm.v1.Evm.AccessTuple.parser(),
-                        extensionRegistry);
-                if (accessesBuilder_ == null) {
-                  ensureAccessesIsMutable();
-                  accesses_.add(m);
-                } else {
-                  accessesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 74
-              case 82: {
-                v_ = input.readBytes();
-
-                break;
-              } // case 82
-              case 90: {
-                r_ = input.readBytes();
-
-                break;
-              } // case 90
-              case 98: {
-                s_ = input.readBytes();
-
-                break;
-              } // case 98
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ethermint.evm.v1.Tx.DynamicFeeTx) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -7000,18 +7103,7 @@ public final class Tx {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new DynamicFeeTx(input, extensionRegistry);
       }
     };
 
@@ -7062,6 +7154,43 @@ public final class Tx {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ExtensionOptionsEthereumTx(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ethermint.evm.v1.Tx.internal_static_ethermint_evm_v1_ExtensionOptionsEthereumTx_descriptor;
@@ -7089,7 +7218,7 @@ public final class Tx {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -7098,7 +7227,7 @@ public final class Tx {
       if (size != -1) return size;
 
       size = 0;
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -7113,7 +7242,7 @@ public final class Tx {
       }
       ethermint.evm.v1.Tx.ExtensionOptionsEthereumTx other = (ethermint.evm.v1.Tx.ExtensionOptionsEthereumTx) obj;
 
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -7124,7 +7253,7 @@ public final class Tx {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -7241,13 +7370,18 @@ public final class Tx {
 
       // Construct using ethermint.evm.v1.Tx.ExtensionOptionsEthereumTx.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -7326,7 +7460,7 @@ public final class Tx {
 
       public Builder mergeFrom(ethermint.evm.v1.Tx.ExtensionOptionsEthereumTx other) {
         if (other == ethermint.evm.v1.Tx.ExtensionOptionsEthereumTx.getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -7341,30 +7475,17 @@ public final class Tx {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ethermint.evm.v1.Tx.ExtensionOptionsEthereumTx parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ethermint.evm.v1.Tx.ExtensionOptionsEthereumTx) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       @java.lang.Override
@@ -7400,18 +7521,7 @@ public final class Tx {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ExtensionOptionsEthereumTx(input, extensionRegistry);
       }
     };
 
@@ -7583,6 +7693,78 @@ public final class Tx {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private MsgEthereumTxResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              hash_ = s;
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                logs_ = new java.util.ArrayList<ethermint.evm.v1.Evm.Log>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              logs_.add(
+                  input.readMessage(ethermint.evm.v1.Evm.Log.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+
+              ret_ = input.readBytes();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              vmError_ = s;
+              break;
+            }
+            case 40: {
+
+              gasUsed_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          logs_ = java.util.Collections.unmodifiableList(logs_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -7803,7 +7985,7 @@ public final class Tx {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hash_)) {
+      if (!getHashBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, hash_);
       }
       for (int i = 0; i < logs_.size(); i++) {
@@ -7812,13 +7994,13 @@ public final class Tx {
       if (!ret_.isEmpty()) {
         output.writeBytes(3, ret_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vmError_)) {
+      if (!getVmErrorBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, vmError_);
       }
       if (gasUsed_ != 0L) {
         output.writeUInt64(5, gasUsed_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -7827,7 +8009,7 @@ public final class Tx {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hash_)) {
+      if (!getHashBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, hash_);
       }
       for (int i = 0; i < logs_.size(); i++) {
@@ -7838,14 +8020,14 @@ public final class Tx {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(3, ret_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vmError_)) {
+      if (!getVmErrorBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, vmError_);
       }
       if (gasUsed_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(5, gasUsed_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -7870,7 +8052,7 @@ public final class Tx {
           .equals(other.getVmError())) return false;
       if (getGasUsed()
           != other.getGasUsed()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -7894,7 +8076,7 @@ public final class Tx {
       hash = (37 * hash) + GAS_USED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getGasUsed());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -8015,13 +8197,19 @@ public final class Tx {
 
       // Construct using ethermint.evm.v1.Tx.MsgEthereumTxResponse.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getLogsFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -8030,11 +8218,10 @@ public final class Tx {
 
         if (logsBuilder_ == null) {
           logs_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          logs_ = null;
           logsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         ret_ = com.google.protobuf.ByteString.EMPTY;
 
         vmError_ = "";
@@ -8169,7 +8356,7 @@ public final class Tx {
         if (other.getGasUsed() != 0L) {
           setGasUsed(other.getGasUsed());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -8184,63 +8371,17 @@ public final class Tx {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ethermint.evm.v1.Tx.MsgEthereumTxResponse parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                hash_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 10
-              case 18: {
-                ethermint.evm.v1.Evm.Log m =
-                    input.readMessage(
-                        ethermint.evm.v1.Evm.Log.parser(),
-                        extensionRegistry);
-                if (logsBuilder_ == null) {
-                  ensureLogsIsMutable();
-                  logs_.add(m);
-                } else {
-                  logsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-              case 26: {
-                ret_ = input.readBytes();
-
-                break;
-              } // case 26
-              case 34: {
-                vmError_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 34
-              case 40: {
-                gasUsed_ = input.readUInt64();
-
-                break;
-              } // case 40
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ethermint.evm.v1.Tx.MsgEthereumTxResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -8901,18 +9042,7 @@ public final class Tx {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new MsgEthereumTxResponse(input, extensionRegistry);
       }
     };
 

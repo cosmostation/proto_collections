@@ -172,6 +172,146 @@ public final class ParamsOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private Params(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              axelar.bitcoin.v1beta1.Types.Network.Builder subBuilder = null;
+              if (network_ != null) {
+                subBuilder = network_.toBuilder();
+              }
+              network_ = input.readMessage(axelar.bitcoin.v1beta1.Types.Network.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(network_);
+                network_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+
+              confirmationHeight_ = input.readUInt64();
+              break;
+            }
+            case 24: {
+
+              revoteLockingPeriod_ = input.readInt64();
+              break;
+            }
+            case 32: {
+
+              sigCheckInterval_ = input.readInt64();
+              break;
+            }
+            case 42: {
+              cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder subBuilder = null;
+              if (minOutputAmount_ != null) {
+                subBuilder = minOutputAmount_.toBuilder();
+              }
+              minOutputAmount_ = input.readMessage(cosmos.base.v1beta1.CoinOuterClass.DecCoin.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(minOutputAmount_);
+                minOutputAmount_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 48: {
+
+              maxInputCount_ = input.readInt64();
+              break;
+            }
+            case 58: {
+              cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder subBuilder = null;
+              if (maxSecondaryOutputAmount_ != null) {
+                subBuilder = maxSecondaryOutputAmount_.toBuilder();
+              }
+              maxSecondaryOutputAmount_ = input.readMessage(cosmos.base.v1beta1.CoinOuterClass.DecCoin.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(maxSecondaryOutputAmount_);
+                maxSecondaryOutputAmount_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 64: {
+
+              masterKeyRetentionPeriod_ = input.readInt64();
+              break;
+            }
+            case 72: {
+
+              masterAddressInternalKeyLockDuration_ = input.readInt64();
+              break;
+            }
+            case 80: {
+
+              masterAddressExternalKeyLockDuration_ = input.readInt64();
+              break;
+            }
+            case 90: {
+              axelar.utils.v1beta1.ThresholdOuterClass.Threshold.Builder subBuilder = null;
+              if (votingThreshold_ != null) {
+                subBuilder = votingThreshold_.toBuilder();
+              }
+              votingThreshold_ = input.readMessage(axelar.utils.v1beta1.ThresholdOuterClass.Threshold.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(votingThreshold_);
+                votingThreshold_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 96: {
+
+              minVoterCount_ = input.readInt64();
+              break;
+            }
+            case 104: {
+
+              maxTxSize_ = input.readInt64();
+              break;
+            }
+            case 114: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              transactionFeeRate_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return axelar.bitcoin.v1beta1.ParamsOuterClass.internal_static_axelar_bitcoin_v1beta1_Params_descriptor;
@@ -479,10 +619,10 @@ public final class ParamsOuterClass {
       if (maxTxSize_ != 0L) {
         output.writeInt64(13, maxTxSize_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(transactionFeeRate_)) {
+      if (!getTransactionFeeRateBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 14, transactionFeeRate_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -543,10 +683,10 @@ public final class ParamsOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(13, maxTxSize_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(transactionFeeRate_)) {
+      if (!getTransactionFeeRateBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, transactionFeeRate_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -601,7 +741,7 @@ public final class ParamsOuterClass {
           != other.getMaxTxSize()) return false;
       if (!getTransactionFeeRate()
           .equals(other.getTransactionFeeRate())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -657,7 +797,7 @@ public final class ParamsOuterClass {
           getMaxTxSize());
       hash = (37 * hash) + TRANSACTION_FEE_RATE_FIELD_NUMBER;
       hash = (53 * hash) + getTransactionFeeRate().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -774,13 +914,18 @@ public final class ParamsOuterClass {
 
       // Construct using axelar.bitcoin.v1beta1.ParamsOuterClass.Params.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -976,7 +1121,7 @@ public final class ParamsOuterClass {
           transactionFeeRate_ = other.transactionFeeRate_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -991,108 +1136,17 @@ public final class ParamsOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        axelar.bitcoin.v1beta1.ParamsOuterClass.Params parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getNetworkFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 10
-              case 16: {
-                confirmationHeight_ = input.readUInt64();
-
-                break;
-              } // case 16
-              case 24: {
-                revoteLockingPeriod_ = input.readInt64();
-
-                break;
-              } // case 24
-              case 32: {
-                sigCheckInterval_ = input.readInt64();
-
-                break;
-              } // case 32
-              case 42: {
-                input.readMessage(
-                    getMinOutputAmountFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 42
-              case 48: {
-                maxInputCount_ = input.readInt64();
-
-                break;
-              } // case 48
-              case 58: {
-                input.readMessage(
-                    getMaxSecondaryOutputAmountFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 58
-              case 64: {
-                masterKeyRetentionPeriod_ = input.readInt64();
-
-                break;
-              } // case 64
-              case 72: {
-                masterAddressInternalKeyLockDuration_ = input.readInt64();
-
-                break;
-              } // case 72
-              case 80: {
-                masterAddressExternalKeyLockDuration_ = input.readInt64();
-
-                break;
-              } // case 80
-              case 90: {
-                input.readMessage(
-                    getVotingThresholdFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 90
-              case 96: {
-                minVoterCount_ = input.readInt64();
-
-                break;
-              } // case 96
-              case 104: {
-                maxTxSize_ = input.readInt64();
-
-                break;
-              } // case 104
-              case 114: {
-                transactionFeeRate_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 114
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (axelar.bitcoin.v1beta1.ParamsOuterClass.Params) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -1959,18 +2013,7 @@ public final class ParamsOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Params(input, extensionRegistry);
       }
     };
 

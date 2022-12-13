@@ -351,6 +351,104 @@ public final class Types {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private Escrow(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              seller_ = s;
+              break;
+            }
+            case 26: {
+              com.google.protobuf2.Any.Builder subBuilder = null;
+              if (object_ != null) {
+                subBuilder = object_.toBuilder();
+              }
+              object_ = input.readMessage(com.google.protobuf2.Any.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(object_);
+                object_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                price_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              price_.add(
+                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              state_ = rawValue;
+              break;
+            }
+            case 48: {
+
+              deadline_ = input.readUInt64();
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              brokerAddress_ = s;
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              brokerCommission_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          price_ = java.util.Collections.unmodifiableList(price_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return starnamed.x.escrow.v1beta1.Types.internal_static_starnamed_x_escrow_v1beta1_Escrow_descriptor;
@@ -656,10 +754,10 @@ public final class Types {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      if (!getIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(seller_)) {
+      if (!getSellerBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, seller_);
       }
       if (object_ != null) {
@@ -674,13 +772,13 @@ public final class Types {
       if (deadline_ != 0L) {
         output.writeUInt64(6, deadline_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(brokerAddress_)) {
+      if (!getBrokerAddressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, brokerAddress_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(brokerCommission_)) {
+      if (!getBrokerCommissionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, brokerCommission_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -689,10 +787,10 @@ public final class Types {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      if (!getIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(seller_)) {
+      if (!getSellerBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, seller_);
       }
       if (object_ != null) {
@@ -711,13 +809,13 @@ public final class Types {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(6, deadline_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(brokerAddress_)) {
+      if (!getBrokerAddressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, brokerAddress_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(brokerCommission_)) {
+      if (!getBrokerCommissionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, brokerCommission_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -750,7 +848,7 @@ public final class Types {
           .equals(other.getBrokerAddress())) return false;
       if (!getBrokerCommission()
           .equals(other.getBrokerCommission())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -782,7 +880,7 @@ public final class Types {
       hash = (53 * hash) + getBrokerAddress().hashCode();
       hash = (37 * hash) + BROKER_COMMISSION_FIELD_NUMBER;
       hash = (53 * hash) + getBrokerCommission().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -903,13 +1001,19 @@ public final class Types {
 
       // Construct using starnamed.x.escrow.v1beta1.Types.Escrow.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getPriceFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -926,11 +1030,10 @@ public final class Types {
         }
         if (priceBuilder_ == null) {
           price_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          price_ = null;
           priceBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         state_ = 0;
 
         deadline_ = 0L;
@@ -1085,7 +1188,7 @@ public final class Types {
           brokerCommission_ = other.brokerCommission_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1100,80 +1203,17 @@ public final class Types {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        starnamed.x.escrow.v1beta1.Types.Escrow parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                id_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 10
-              case 18: {
-                seller_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getObjectFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 26
-              case 34: {
-                cosmos.base.v1beta1.CoinOuterClass.Coin m =
-                    input.readMessage(
-                        cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
-                        extensionRegistry);
-                if (priceBuilder_ == null) {
-                  ensurePriceIsMutable();
-                  price_.add(m);
-                } else {
-                  priceBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              case 40: {
-                state_ = input.readEnum();
-
-                break;
-              } // case 40
-              case 48: {
-                deadline_ = input.readUInt64();
-
-                break;
-              } // case 48
-              case 58: {
-                brokerAddress_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 58
-              case 66: {
-                brokerCommission_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 66
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (starnamed.x.escrow.v1beta1.Types.Escrow) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -2066,18 +2106,7 @@ public final class Types {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Escrow(input, extensionRegistry);
       }
     };
 

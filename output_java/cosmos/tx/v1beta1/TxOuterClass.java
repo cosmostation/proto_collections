@@ -142,6 +142,81 @@ public final class TxOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private Tx(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              cosmos.tx.v1beta1.TxOuterClass.TxBody.Builder subBuilder = null;
+              if (body_ != null) {
+                subBuilder = body_.toBuilder();
+              }
+              body_ = input.readMessage(cosmos.tx.v1beta1.TxOuterClass.TxBody.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(body_);
+                body_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              cosmos.tx.v1beta1.TxOuterClass.AuthInfo.Builder subBuilder = null;
+              if (authInfo_ != null) {
+                subBuilder = authInfo_.toBuilder();
+              }
+              authInfo_ = input.readMessage(cosmos.tx.v1beta1.TxOuterClass.AuthInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(authInfo_);
+                authInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                signatures_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              signatures_.add(input.readBytes());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          signatures_ = java.util.Collections.unmodifiableList(signatures_); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_Tx_descriptor;
@@ -302,7 +377,7 @@ public final class TxOuterClass {
       for (int i = 0; i < signatures_.size(); i++) {
         output.writeBytes(3, signatures_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -328,7 +403,7 @@ public final class TxOuterClass {
         size += dataSize;
         size += 1 * getSignaturesList().size();
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -355,7 +430,7 @@ public final class TxOuterClass {
       }
       if (!getSignaturesList()
           .equals(other.getSignaturesList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -378,7 +453,7 @@ public final class TxOuterClass {
         hash = (37 * hash) + SIGNATURES_FIELD_NUMBER;
         hash = (53 * hash) + getSignaturesList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -499,13 +574,18 @@ public final class TxOuterClass {
 
       // Construct using cosmos.tx.v1beta1.TxOuterClass.Tx.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -630,7 +710,7 @@ public final class TxOuterClass {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -645,50 +725,17 @@ public final class TxOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        cosmos.tx.v1beta1.TxOuterClass.Tx parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getBodyFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getAuthInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 18
-              case 26: {
-                com.google.protobuf.ByteString v = input.readBytes();
-                ensureSignaturesIsMutable();
-                signatures_.add(v);
-                break;
-              } // case 26
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.tx.v1beta1.TxOuterClass.Tx) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1171,18 +1218,7 @@ public final class TxOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Tx(input, extensionRegistry);
       }
     };
 
@@ -1301,6 +1337,65 @@ public final class TxOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private TxRaw(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+
+              bodyBytes_ = input.readBytes();
+              break;
+            }
+            case 18: {
+
+              authInfoBytes_ = input.readBytes();
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                signatures_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              signatures_.add(input.readBytes());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          signatures_ = java.util.Collections.unmodifiableList(signatures_); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_TxRaw_descriptor;
@@ -1414,7 +1509,7 @@ public final class TxOuterClass {
       for (int i = 0; i < signatures_.size(); i++) {
         output.writeBytes(3, signatures_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1440,7 +1535,7 @@ public final class TxOuterClass {
         size += dataSize;
         size += 1 * getSignaturesList().size();
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1461,7 +1556,7 @@ public final class TxOuterClass {
           .equals(other.getAuthInfoBytes())) return false;
       if (!getSignaturesList()
           .equals(other.getSignaturesList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -1480,7 +1575,7 @@ public final class TxOuterClass {
         hash = (37 * hash) + SIGNATURES_FIELD_NUMBER;
         hash = (53 * hash) + getSignaturesList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1605,13 +1700,18 @@ public final class TxOuterClass {
 
       // Construct using cosmos.tx.v1beta1.TxOuterClass.TxRaw.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -1720,7 +1820,7 @@ public final class TxOuterClass {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1735,46 +1835,17 @@ public final class TxOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        cosmos.tx.v1beta1.TxOuterClass.TxRaw parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                bodyBytes_ = input.readBytes();
-
-                break;
-              } // case 10
-              case 18: {
-                authInfoBytes_ = input.readBytes();
-
-                break;
-              } // case 18
-              case 26: {
-                com.google.protobuf.ByteString v = input.readBytes();
-                ensureSignaturesIsMutable();
-                signatures_.add(v);
-                break;
-              } // case 26
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.tx.v1beta1.TxOuterClass.TxRaw) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -2036,18 +2107,7 @@ public final class TxOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TxRaw(input, extensionRegistry);
       }
     };
 
@@ -2160,6 +2220,64 @@ public final class TxOuterClass {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private SignDoc(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+
+              bodyBytes_ = input.readBytes();
+              break;
+            }
+            case 18: {
+
+              authInfoBytes_ = input.readBytes();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              chainId_ = s;
+              break;
+            }
+            case 32: {
+
+              accountNumber_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -2291,13 +2409,13 @@ public final class TxOuterClass {
       if (!authInfoBytes_.isEmpty()) {
         output.writeBytes(2, authInfoBytes_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(chainId_)) {
+      if (!getChainIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, chainId_);
       }
       if (accountNumber_ != 0L) {
         output.writeUInt64(4, accountNumber_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -2314,14 +2432,14 @@ public final class TxOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, authInfoBytes_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(chainId_)) {
+      if (!getChainIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, chainId_);
       }
       if (accountNumber_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(4, accountNumber_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2344,7 +2462,7 @@ public final class TxOuterClass {
           .equals(other.getChainId())) return false;
       if (getAccountNumber()
           != other.getAccountNumber()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -2364,7 +2482,7 @@ public final class TxOuterClass {
       hash = (37 * hash) + ACCOUNT_NUMBER_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAccountNumber());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2485,13 +2603,18 @@ public final class TxOuterClass {
 
       // Construct using cosmos.tx.v1beta1.TxOuterClass.SignDoc.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -2595,7 +2718,7 @@ public final class TxOuterClass {
         if (other.getAccountNumber() != 0L) {
           setAccountNumber(other.getAccountNumber());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -2610,50 +2733,17 @@ public final class TxOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        cosmos.tx.v1beta1.TxOuterClass.SignDoc parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                bodyBytes_ = input.readBytes();
-
-                break;
-              } // case 10
-              case 18: {
-                authInfoBytes_ = input.readBytes();
-
-                break;
-              } // case 18
-              case 26: {
-                chainId_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 26
-              case 32: {
-                accountNumber_ = input.readUInt64();
-
-                break;
-              } // case 32
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.tx.v1beta1.TxOuterClass.SignDoc) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -2936,18 +3026,7 @@ public final class TxOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SignDoc(input, extensionRegistry);
       }
     };
 
@@ -3116,6 +3195,90 @@ public final class TxOuterClass {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private SignDocDirectAux(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+
+              bodyBytes_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              com.google.protobuf2.Any.Builder subBuilder = null;
+              if (publicKey_ != null) {
+                subBuilder = publicKey_.toBuilder();
+              }
+              publicKey_ = input.readMessage(com.google.protobuf2.Any.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(publicKey_);
+                publicKey_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              chainId_ = s;
+              break;
+            }
+            case 32: {
+
+              accountNumber_ = input.readUInt64();
+              break;
+            }
+            case 40: {
+
+              sequence_ = input.readUInt64();
+              break;
+            }
+            case 50: {
+              cosmos.tx.v1beta1.TxOuterClass.Tip.Builder subBuilder = null;
+              if (tip_ != null) {
+                subBuilder = tip_.toBuilder();
+              }
+              tip_ = input.readMessage(cosmos.tx.v1beta1.TxOuterClass.Tip.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(tip_);
+                tip_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -3325,7 +3488,7 @@ public final class TxOuterClass {
       if (publicKey_ != null) {
         output.writeMessage(2, getPublicKey());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(chainId_)) {
+      if (!getChainIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, chainId_);
       }
       if (accountNumber_ != 0L) {
@@ -3337,7 +3500,7 @@ public final class TxOuterClass {
       if (tip_ != null) {
         output.writeMessage(6, getTip());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -3354,7 +3517,7 @@ public final class TxOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getPublicKey());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(chainId_)) {
+      if (!getChainIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, chainId_);
       }
       if (accountNumber_ != 0L) {
@@ -3369,7 +3532,7 @@ public final class TxOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, getTip());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3402,7 +3565,7 @@ public final class TxOuterClass {
         if (!getTip()
             .equals(other.getTip())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -3431,7 +3594,7 @@ public final class TxOuterClass {
         hash = (37 * hash) + TIP_FIELD_NUMBER;
         hash = (53 * hash) + getTip().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3553,13 +3716,18 @@ public final class TxOuterClass {
 
       // Construct using cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -3691,7 +3859,7 @@ public final class TxOuterClass {
         if (other.hasTip()) {
           mergeTip(other.getTip());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -3706,64 +3874,17 @@ public final class TxOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                bodyBytes_ = input.readBytes();
-
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getPublicKeyFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 18
-              case 26: {
-                chainId_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 26
-              case 32: {
-                accountNumber_ = input.readUInt64();
-
-                break;
-              } // case 32
-              case 40: {
-                sequence_ = input.readUInt64();
-
-                break;
-              } // case 40
-              case 50: {
-                input.readMessage(
-                    getTipFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 50
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -4359,18 +4480,7 @@ public final class TxOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SignDocDirectAux(input, extensionRegistry);
       }
     };
 
@@ -4645,6 +4755,91 @@ public final class TxOuterClass {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private TxBody(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                messages_ = new java.util.ArrayList<com.google.protobuf2.Any>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              messages_.add(
+                  input.readMessage(com.google.protobuf2.Any.parser(), extensionRegistry));
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              memo_ = s;
+              break;
+            }
+            case 24: {
+
+              timeoutHeight_ = input.readUInt64();
+              break;
+            }
+            case 8186: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                extensionOptions_ = new java.util.ArrayList<com.google.protobuf2.Any>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              extensionOptions_.add(
+                  input.readMessage(com.google.protobuf2.Any.parser(), extensionRegistry));
+              break;
+            }
+            case 16378: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                nonCriticalExtensionOptions_ = new java.util.ArrayList<com.google.protobuf2.Any>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              nonCriticalExtensionOptions_.add(
+                  input.readMessage(com.google.protobuf2.Any.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          messages_ = java.util.Collections.unmodifiableList(messages_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          extensionOptions_ = java.util.Collections.unmodifiableList(extensionOptions_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          nonCriticalExtensionOptions_ = java.util.Collections.unmodifiableList(nonCriticalExtensionOptions_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -4972,7 +5167,7 @@ public final class TxOuterClass {
       for (int i = 0; i < messages_.size(); i++) {
         output.writeMessage(1, messages_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memo_)) {
+      if (!getMemoBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, memo_);
       }
       if (timeoutHeight_ != 0L) {
@@ -4984,7 +5179,7 @@ public final class TxOuterClass {
       for (int i = 0; i < nonCriticalExtensionOptions_.size(); i++) {
         output.writeMessage(2047, nonCriticalExtensionOptions_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -4997,7 +5192,7 @@ public final class TxOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, messages_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(memo_)) {
+      if (!getMemoBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, memo_);
       }
       if (timeoutHeight_ != 0L) {
@@ -5012,7 +5207,7 @@ public final class TxOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2047, nonCriticalExtensionOptions_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5037,7 +5232,7 @@ public final class TxOuterClass {
           .equals(other.getExtensionOptionsList())) return false;
       if (!getNonCriticalExtensionOptionsList()
           .equals(other.getNonCriticalExtensionOptionsList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -5065,7 +5260,7 @@ public final class TxOuterClass {
         hash = (37 * hash) + NON_CRITICAL_EXTENSION_OPTIONS_FIELD_NUMBER;
         hash = (53 * hash) + getNonCriticalExtensionOptionsList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5186,42 +5381,47 @@ public final class TxOuterClass {
 
       // Construct using cosmos.tx.v1beta1.TxOuterClass.TxBody.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getMessagesFieldBuilder();
+          getExtensionOptionsFieldBuilder();
+          getNonCriticalExtensionOptionsFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
         if (messagesBuilder_ == null) {
           messages_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          messages_ = null;
           messagesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         memo_ = "";
 
         timeoutHeight_ = 0L;
 
         if (extensionOptionsBuilder_ == null) {
           extensionOptions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          extensionOptions_ = null;
           extensionOptionsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         if (nonCriticalExtensionOptionsBuilder_ == null) {
           nonCriticalExtensionOptions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          nonCriticalExtensionOptions_ = null;
           nonCriticalExtensionOptionsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -5411,7 +5611,7 @@ public final class TxOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -5426,79 +5626,17 @@ public final class TxOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        cosmos.tx.v1beta1.TxOuterClass.TxBody parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                com.google.protobuf2.Any m =
-                    input.readMessage(
-                        com.google.protobuf2.Any.parser(),
-                        extensionRegistry);
-                if (messagesBuilder_ == null) {
-                  ensureMessagesIsMutable();
-                  messages_.add(m);
-                } else {
-                  messagesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              case 18: {
-                memo_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 18
-              case 24: {
-                timeoutHeight_ = input.readUInt64();
-
-                break;
-              } // case 24
-              case 8186: {
-                com.google.protobuf2.Any m =
-                    input.readMessage(
-                        com.google.protobuf2.Any.parser(),
-                        extensionRegistry);
-                if (extensionOptionsBuilder_ == null) {
-                  ensureExtensionOptionsIsMutable();
-                  extensionOptions_.add(m);
-                } else {
-                  extensionOptionsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 8186
-              case 16378: {
-                com.google.protobuf2.Any m =
-                    input.readMessage(
-                        com.google.protobuf2.Any.parser(),
-                        extensionRegistry);
-                if (nonCriticalExtensionOptionsBuilder_ == null) {
-                  ensureNonCriticalExtensionOptionsIsMutable();
-                  nonCriticalExtensionOptions_.add(m);
-                } else {
-                  nonCriticalExtensionOptionsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 16378
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.tx.v1beta1.TxOuterClass.TxBody) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -6803,18 +6941,7 @@ public final class TxOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TxBody(input, extensionRegistry);
       }
     };
 
@@ -6995,6 +7122,82 @@ public final class TxOuterClass {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private AuthInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                signerInfos_ = new java.util.ArrayList<cosmos.tx.v1beta1.TxOuterClass.SignerInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              signerInfos_.add(
+                  input.readMessage(cosmos.tx.v1beta1.TxOuterClass.SignerInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 18: {
+              cosmos.tx.v1beta1.TxOuterClass.Fee.Builder subBuilder = null;
+              if (fee_ != null) {
+                subBuilder = fee_.toBuilder();
+              }
+              fee_ = input.readMessage(cosmos.tx.v1beta1.TxOuterClass.Fee.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(fee_);
+                fee_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              cosmos.tx.v1beta1.TxOuterClass.Tip.Builder subBuilder = null;
+              if (tip_ != null) {
+                subBuilder = tip_.toBuilder();
+              }
+              tip_ = input.readMessage(cosmos.tx.v1beta1.TxOuterClass.Tip.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(tip_);
+                tip_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          signerInfos_ = java.util.Collections.unmodifiableList(signerInfos_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -7195,7 +7398,7 @@ public final class TxOuterClass {
       if (tip_ != null) {
         output.writeMessage(3, getTip());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -7216,7 +7419,7 @@ public final class TxOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getTip());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -7243,7 +7446,7 @@ public final class TxOuterClass {
         if (!getTip()
             .equals(other.getTip())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -7266,7 +7469,7 @@ public final class TxOuterClass {
         hash = (37 * hash) + TIP_FIELD_NUMBER;
         hash = (53 * hash) + getTip().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -7388,24 +7591,29 @@ public final class TxOuterClass {
 
       // Construct using cosmos.tx.v1beta1.TxOuterClass.AuthInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getSignerInfosFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
         if (signerInfosBuilder_ == null) {
           signerInfos_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          signerInfos_ = null;
           signerInfosBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (feeBuilder_ == null) {
           fee_ = null;
         } else {
@@ -7544,7 +7752,7 @@ public final class TxOuterClass {
         if (other.hasTip()) {
           mergeTip(other.getTip());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -7559,57 +7767,17 @@ public final class TxOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        cosmos.tx.v1beta1.TxOuterClass.AuthInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                cosmos.tx.v1beta1.TxOuterClass.SignerInfo m =
-                    input.readMessage(
-                        cosmos.tx.v1beta1.TxOuterClass.SignerInfo.parser(),
-                        extensionRegistry);
-                if (signerInfosBuilder_ == null) {
-                  ensureSignerInfosIsMutable();
-                  signerInfos_.add(m);
-                } else {
-                  signerInfosBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getFeeFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getTipFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 26
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.tx.v1beta1.TxOuterClass.AuthInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -8358,18 +8526,7 @@ public final class TxOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AuthInfo(input, extensionRegistry);
       }
     };
 
@@ -8499,6 +8656,74 @@ public final class TxOuterClass {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private SignerInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.google.protobuf2.Any.Builder subBuilder = null;
+              if (publicKey_ != null) {
+                subBuilder = publicKey_.toBuilder();
+              }
+              publicKey_ = input.readMessage(com.google.protobuf2.Any.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(publicKey_);
+                publicKey_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Builder subBuilder = null;
+              if (modeInfo_ != null) {
+                subBuilder = modeInfo_.toBuilder();
+              }
+              modeInfo_ = input.readMessage(cosmos.tx.v1beta1.TxOuterClass.ModeInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(modeInfo_);
+                modeInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 24: {
+
+              sequence_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -8638,7 +8863,7 @@ public final class TxOuterClass {
       if (sequence_ != 0L) {
         output.writeUInt64(3, sequence_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -8659,7 +8884,7 @@ public final class TxOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(3, sequence_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -8686,7 +8911,7 @@ public final class TxOuterClass {
       }
       if (getSequence()
           != other.getSequence()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -8708,7 +8933,7 @@ public final class TxOuterClass {
       hash = (37 * hash) + SEQUENCE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSequence());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -8830,13 +9055,18 @@ public final class TxOuterClass {
 
       // Construct using cosmos.tx.v1beta1.TxOuterClass.SignerInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -8949,7 +9179,7 @@ public final class TxOuterClass {
         if (other.getSequence() != 0L) {
           setSequence(other.getSequence());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -8964,49 +9194,17 @@ public final class TxOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        cosmos.tx.v1beta1.TxOuterClass.SignerInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getPublicKeyFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getModeInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 18
-              case 24: {
-                sequence_ = input.readUInt64();
-
-                break;
-              } // case 24
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.tx.v1beta1.TxOuterClass.SignerInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -9428,18 +9626,7 @@ public final class TxOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SignerInfo(input, extensionRegistry);
       }
     };
 
@@ -9550,6 +9737,71 @@ public final class TxOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private ModeInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single.Builder subBuilder = null;
+              if (sumCase_ == 1) {
+                subBuilder = ((cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single) sum_).toBuilder();
+              }
+              sum_ =
+                  input.readMessage(cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single) sum_);
+                sum_ = subBuilder.buildPartial();
+              }
+              sumCase_ = 1;
+              break;
+            }
+            case 18: {
+              cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi.Builder subBuilder = null;
+              if (sumCase_ == 2) {
+                subBuilder = ((cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi) sum_).toBuilder();
+              }
+              sum_ =
+                  input.readMessage(cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi) sum_);
+                sum_ = subBuilder.buildPartial();
+              }
+              sumCase_ = 2;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_ModeInfo_descriptor;
@@ -9620,6 +9872,49 @@ public final class TxOuterClass {
       getUnknownFields() {
         return this.unknownFields;
       }
+      private Single(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                int rawValue = input.readEnum();
+
+                mode_ = rawValue;
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_ModeInfo_Single_descriptor;
@@ -9677,7 +9972,7 @@ public final class TxOuterClass {
         if (mode_ != cosmos.tx.signing.v1beta1.Signing.SignMode.SIGN_MODE_UNSPECIFIED.getNumber()) {
           output.writeEnum(1, mode_);
         }
-        getUnknownFields().writeTo(output);
+        unknownFields.writeTo(output);
       }
 
       @java.lang.Override
@@ -9690,7 +9985,7 @@ public final class TxOuterClass {
           size += com.google.protobuf.CodedOutputStream
             .computeEnumSize(1, mode_);
         }
-        size += getUnknownFields().getSerializedSize();
+        size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -9706,7 +10001,7 @@ public final class TxOuterClass {
         cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single other = (cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single) obj;
 
         if (mode_ != other.mode_) return false;
-        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
 
@@ -9719,7 +10014,7 @@ public final class TxOuterClass {
         hash = (19 * hash) + getDescriptor().hashCode();
         hash = (37 * hash) + MODE_FIELD_NUMBER;
         hash = (53 * hash) + mode_;
-        hash = (29 * hash) + getUnknownFields().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -9842,13 +10137,18 @@ public final class TxOuterClass {
 
         // Construct using cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single.newBuilder()
         private Builder() {
-
+          maybeForceBuilderInitialization();
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
         }
         @java.lang.Override
         public Builder clear() {
@@ -9933,7 +10233,7 @@ public final class TxOuterClass {
           if (other.mode_ != 0) {
             setModeValue(other.getModeValue());
           }
-          this.mergeUnknownFields(other.getUnknownFields());
+          this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
         }
@@ -9948,35 +10248,17 @@ public final class TxOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
+          cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single parsedMessage = null;
           try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                case 8: {
-                  mode_ = input.readEnum();
-
-                  break;
-                } // case 8
-                default: {
-                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                    done = true; // was an endgroup tag
-                  }
-                  break;
-                } // default:
-              } // switch (tag)
-            } // while (!done)
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Single) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            onChanged();
-          } // finally
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
           return this;
         }
 
@@ -10086,18 +10368,7 @@ public final class TxOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
+          return new Single(input, extensionRegistry);
         }
       };
 
@@ -10228,6 +10499,69 @@ public final class TxOuterClass {
       public final com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
         return this.unknownFields;
+      }
+      private Multi(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                cosmos.crypto.multisig.v1beta1.Multisig.CompactBitArray.Builder subBuilder = null;
+                if (bitarray_ != null) {
+                  subBuilder = bitarray_.toBuilder();
+                }
+                bitarray_ = input.readMessage(cosmos.crypto.multisig.v1beta1.Multisig.CompactBitArray.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(bitarray_);
+                  bitarray_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+              case 18: {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  modeInfos_ = new java.util.ArrayList<cosmos.tx.v1beta1.TxOuterClass.ModeInfo>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                modeInfos_.add(
+                    input.readMessage(cosmos.tx.v1beta1.TxOuterClass.ModeInfo.parser(), extensionRegistry));
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
+            modeInfos_ = java.util.Collections.unmodifiableList(modeInfos_);
+          }
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
@@ -10365,7 +10699,7 @@ public final class TxOuterClass {
         for (int i = 0; i < modeInfos_.size(); i++) {
           output.writeMessage(2, modeInfos_.get(i));
         }
-        getUnknownFields().writeTo(output);
+        unknownFields.writeTo(output);
       }
 
       @java.lang.Override
@@ -10382,7 +10716,7 @@ public final class TxOuterClass {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(2, modeInfos_.get(i));
         }
-        size += getUnknownFields().getSerializedSize();
+        size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -10404,7 +10738,7 @@ public final class TxOuterClass {
         }
         if (!getModeInfosList()
             .equals(other.getModeInfosList())) return false;
-        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
 
@@ -10423,7 +10757,7 @@ public final class TxOuterClass {
           hash = (37 * hash) + MODE_INFOS_FIELD_NUMBER;
           hash = (53 * hash) + getModeInfosList().hashCode();
         }
-        hash = (29 * hash) + getUnknownFields().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -10544,13 +10878,19 @@ public final class TxOuterClass {
 
         // Construct using cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi.newBuilder()
         private Builder() {
-
+          maybeForceBuilderInitialization();
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+            getModeInfosFieldBuilder();
+          }
         }
         @java.lang.Override
         public Builder clear() {
@@ -10563,11 +10903,10 @@ public final class TxOuterClass {
           }
           if (modeInfosBuilder_ == null) {
             modeInfos_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            modeInfos_ = null;
             modeInfosBuilder_.clear();
           }
-          bitField0_ = (bitField0_ & ~0x00000001);
           return this;
         }
 
@@ -10686,7 +11025,7 @@ public final class TxOuterClass {
               }
             }
           }
-          this.mergeUnknownFields(other.getUnknownFields());
+          this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
         }
@@ -10701,50 +11040,17 @@ public final class TxOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
+          cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi parsedMessage = null;
           try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                case 10: {
-                  input.readMessage(
-                      getBitarrayFieldBuilder().getBuilder(),
-                      extensionRegistry);
-
-                  break;
-                } // case 10
-                case 18: {
-                  cosmos.tx.v1beta1.TxOuterClass.ModeInfo m =
-                      input.readMessage(
-                          cosmos.tx.v1beta1.TxOuterClass.ModeInfo.parser(),
-                          extensionRegistry);
-                  if (modeInfosBuilder_ == null) {
-                    ensureModeInfosIsMutable();
-                    modeInfos_.add(m);
-                  } else {
-                    modeInfosBuilder_.addMessage(m);
-                  }
-                  break;
-                } // case 18
-                default: {
-                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                    done = true; // was an endgroup tag
-                  }
-                  break;
-                } // default:
-              } // switch (tag)
-            } // while (!done)
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            onChanged();
-          } // finally
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
           return this;
         }
         private int bitField0_;
@@ -11266,18 +11572,7 @@ public final class TxOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
+          return new Multi(input, extensionRegistry);
         }
       };
 
@@ -11444,7 +11739,7 @@ public final class TxOuterClass {
       if (sumCase_ == 2) {
         output.writeMessage(2, (cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi) sum_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -11461,7 +11756,7 @@ public final class TxOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, (cosmos.tx.v1beta1.TxOuterClass.ModeInfo.Multi) sum_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -11489,7 +11784,7 @@ public final class TxOuterClass {
         case 0:
         default:
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -11512,7 +11807,7 @@ public final class TxOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -11633,23 +11928,22 @@ public final class TxOuterClass {
 
       // Construct using cosmos.tx.v1beta1.TxOuterClass.ModeInfo.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (singleBuilder_ != null) {
-          singleBuilder_.clear();
-        }
-        if (multiBuilder_ != null) {
-          multiBuilder_.clear();
-        }
         sumCase_ = 0;
         sum_ = null;
         return this;
@@ -11754,7 +12048,7 @@ public final class TxOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -11769,44 +12063,17 @@ public final class TxOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        cosmos.tx.v1beta1.TxOuterClass.ModeInfo parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getSingleFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                sumCase_ = 1;
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getMultiFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                sumCase_ = 2;
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.tx.v1beta1.TxOuterClass.ModeInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int sumCase_ = 0;
@@ -11919,9 +12186,8 @@ public final class TxOuterClass {
         } else {
           if (sumCase_ == 1) {
             singleBuilder_.mergeFrom(value);
-          } else {
-            singleBuilder_.setMessage(value);
           }
+          singleBuilder_.setMessage(value);
         }
         sumCase_ = 1;
         return this;
@@ -12097,9 +12363,8 @@ public final class TxOuterClass {
         } else {
           if (sumCase_ == 2) {
             multiBuilder_.mergeFrom(value);
-          } else {
-            multiBuilder_.setMessage(value);
           }
+          multiBuilder_.setMessage(value);
         }
         sumCase_ = 2;
         return this;
@@ -12213,18 +12478,7 @@ public final class TxOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ModeInfo(input, extensionRegistry);
       }
     };
 
@@ -12386,6 +12640,73 @@ public final class TxOuterClass {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private Fee(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                amount_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              amount_.add(
+                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
+              break;
+            }
+            case 16: {
+
+              gasLimit_ = input.readUInt64();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              payer_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              granter_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          amount_ = java.util.Collections.unmodifiableList(amount_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -12596,13 +12917,13 @@ public final class TxOuterClass {
       if (gasLimit_ != 0L) {
         output.writeUInt64(2, gasLimit_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(payer_)) {
+      if (!getPayerBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, payer_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(granter_)) {
+      if (!getGranterBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, granter_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -12619,13 +12940,13 @@ public final class TxOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(2, gasLimit_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(payer_)) {
+      if (!getPayerBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, payer_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(granter_)) {
+      if (!getGranterBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, granter_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -12648,7 +12969,7 @@ public final class TxOuterClass {
           .equals(other.getPayer())) return false;
       if (!getGranter()
           .equals(other.getGranter())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -12670,7 +12991,7 @@ public final class TxOuterClass {
       hash = (53 * hash) + getPayer().hashCode();
       hash = (37 * hash) + GRANTER_FIELD_NUMBER;
       hash = (53 * hash) + getGranter().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -12793,24 +13114,29 @@ public final class TxOuterClass {
 
       // Construct using cosmos.tx.v1beta1.TxOuterClass.Fee.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getAmountFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
         if (amountBuilder_ == null) {
           amount_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          amount_ = null;
           amountBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         gasLimit_ = 0L;
 
         payer_ = "";
@@ -12941,7 +13267,7 @@ public final class TxOuterClass {
           granter_ = other.granter_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -12956,58 +13282,17 @@ public final class TxOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        cosmos.tx.v1beta1.TxOuterClass.Fee parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                cosmos.base.v1beta1.CoinOuterClass.Coin m =
-                    input.readMessage(
-                        cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
-                        extensionRegistry);
-                if (amountBuilder_ == null) {
-                  ensureAmountIsMutable();
-                  amount_.add(m);
-                } else {
-                  amountBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              case 16: {
-                gasLimit_ = input.readUInt64();
-
-                break;
-              } // case 16
-              case 26: {
-                payer_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 26
-              case 34: {
-                granter_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 34
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.tx.v1beta1.TxOuterClass.Fee) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -13614,18 +13899,7 @@ public final class TxOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Fee(input, extensionRegistry);
       }
     };
 
@@ -13745,6 +14019,62 @@ public final class TxOuterClass {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private Tip(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                amount_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              amount_.add(
+                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              tipper_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          amount_ = java.util.Collections.unmodifiableList(amount_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -13882,10 +14212,10 @@ public final class TxOuterClass {
       for (int i = 0; i < amount_.size(); i++) {
         output.writeMessage(1, amount_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tipper_)) {
+      if (!getTipperBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tipper_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -13898,10 +14228,10 @@ public final class TxOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, amount_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tipper_)) {
+      if (!getTipperBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tipper_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -13920,7 +14250,7 @@ public final class TxOuterClass {
           .equals(other.getAmountList())) return false;
       if (!getTipper()
           .equals(other.getTipper())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -13937,7 +14267,7 @@ public final class TxOuterClass {
       }
       hash = (37 * hash) + TIPPER_FIELD_NUMBER;
       hash = (53 * hash) + getTipper().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -14058,24 +14388,29 @@ public final class TxOuterClass {
 
       // Construct using cosmos.tx.v1beta1.TxOuterClass.Tip.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getAmountFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
         if (amountBuilder_ == null) {
           amount_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          amount_ = null;
           amountBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         tipper_ = "";
 
         return this;
@@ -14193,7 +14528,7 @@ public final class TxOuterClass {
           tipper_ = other.tipper_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -14208,48 +14543,17 @@ public final class TxOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        cosmos.tx.v1beta1.TxOuterClass.Tip parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                cosmos.base.v1beta1.CoinOuterClass.Coin m =
-                    input.readMessage(
-                        cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
-                        extensionRegistry);
-                if (amountBuilder_ == null) {
-                  ensureAmountIsMutable();
-                  amount_.add(m);
-                } else {
-                  amountBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              case 18: {
-                tipper_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.tx.v1beta1.TxOuterClass.Tip) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -14694,18 +14998,7 @@ public final class TxOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Tip(input, extensionRegistry);
       }
     };
 
@@ -14852,6 +15145,73 @@ public final class TxOuterClass {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private AuxSignerData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              address_ = s;
+              break;
+            }
+            case 18: {
+              cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux.Builder subBuilder = null;
+              if (signDoc_ != null) {
+                subBuilder = signDoc_.toBuilder();
+              }
+              signDoc_ = input.readMessage(cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signDoc_);
+                signDoc_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+
+              mode_ = rawValue;
+              break;
+            }
+            case 34: {
+
+              sig_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -15016,7 +15376,7 @@ public final class TxOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
+      if (!getAddressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, address_);
       }
       if (signDoc_ != null) {
@@ -15028,7 +15388,7 @@ public final class TxOuterClass {
       if (!sig_.isEmpty()) {
         output.writeBytes(4, sig_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -15037,7 +15397,7 @@ public final class TxOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
+      if (!getAddressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, address_);
       }
       if (signDoc_ != null) {
@@ -15052,7 +15412,7 @@ public final class TxOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(4, sig_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -15077,7 +15437,7 @@ public final class TxOuterClass {
       if (mode_ != other.mode_) return false;
       if (!getSig()
           .equals(other.getSig())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -15098,7 +15458,7 @@ public final class TxOuterClass {
       hash = (53 * hash) + mode_;
       hash = (37 * hash) + SIG_FIELD_NUMBER;
       hash = (53 * hash) + getSig().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -15223,13 +15583,18 @@ public final class TxOuterClass {
 
       // Construct using cosmos.tx.v1beta1.TxOuterClass.AuxSignerData.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -15341,7 +15706,7 @@ public final class TxOuterClass {
         if (other.getSig() != com.google.protobuf.ByteString.EMPTY) {
           setSig(other.getSig());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -15356,52 +15721,17 @@ public final class TxOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        cosmos.tx.v1beta1.TxOuterClass.AuxSignerData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                address_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getSignDocFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 18
-              case 24: {
-                mode_ = input.readEnum();
-
-                break;
-              } // case 24
-              case 34: {
-                sig_ = input.readBytes();
-
-                break;
-              } // case 34
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.tx.v1beta1.TxOuterClass.AuxSignerData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -15836,18 +16166,7 @@ public final class TxOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AuxSignerData(input, extensionRegistry);
       }
     };
 

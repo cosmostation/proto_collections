@@ -207,6 +207,118 @@ public final class RecordOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private Record(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 18: {
+              com.google.protobuf2.Any.Builder subBuilder = null;
+              if (pubKey_ != null) {
+                subBuilder = pubKey_.toBuilder();
+              }
+              pubKey_ = input.readMessage(com.google.protobuf2.Any.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pubKey_);
+                pubKey_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              cosmos.crypto.keyring.v1.RecordOuterClass.Record.Local.Builder subBuilder = null;
+              if (itemCase_ == 3) {
+                subBuilder = ((cosmos.crypto.keyring.v1.RecordOuterClass.Record.Local) item_).toBuilder();
+              }
+              item_ =
+                  input.readMessage(cosmos.crypto.keyring.v1.RecordOuterClass.Record.Local.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((cosmos.crypto.keyring.v1.RecordOuterClass.Record.Local) item_);
+                item_ = subBuilder.buildPartial();
+              }
+              itemCase_ = 3;
+              break;
+            }
+            case 34: {
+              cosmos.crypto.keyring.v1.RecordOuterClass.Record.Ledger.Builder subBuilder = null;
+              if (itemCase_ == 4) {
+                subBuilder = ((cosmos.crypto.keyring.v1.RecordOuterClass.Record.Ledger) item_).toBuilder();
+              }
+              item_ =
+                  input.readMessage(cosmos.crypto.keyring.v1.RecordOuterClass.Record.Ledger.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((cosmos.crypto.keyring.v1.RecordOuterClass.Record.Ledger) item_);
+                item_ = subBuilder.buildPartial();
+              }
+              itemCase_ = 4;
+              break;
+            }
+            case 42: {
+              cosmos.crypto.keyring.v1.RecordOuterClass.Record.Multi.Builder subBuilder = null;
+              if (itemCase_ == 5) {
+                subBuilder = ((cosmos.crypto.keyring.v1.RecordOuterClass.Record.Multi) item_).toBuilder();
+              }
+              item_ =
+                  input.readMessage(cosmos.crypto.keyring.v1.RecordOuterClass.Record.Multi.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((cosmos.crypto.keyring.v1.RecordOuterClass.Record.Multi) item_);
+                item_ = subBuilder.buildPartial();
+              }
+              itemCase_ = 5;
+              break;
+            }
+            case 50: {
+              cosmos.crypto.keyring.v1.RecordOuterClass.Record.Offline.Builder subBuilder = null;
+              if (itemCase_ == 6) {
+                subBuilder = ((cosmos.crypto.keyring.v1.RecordOuterClass.Record.Offline) item_).toBuilder();
+              }
+              item_ =
+                  input.readMessage(cosmos.crypto.keyring.v1.RecordOuterClass.Record.Offline.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((cosmos.crypto.keyring.v1.RecordOuterClass.Record.Offline) item_);
+                item_ = subBuilder.buildPartial();
+              }
+              itemCase_ = 6;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return cosmos.crypto.keyring.v1.RecordOuterClass.internal_static_cosmos_crypto_keyring_v1_Record_descriptor;
@@ -283,6 +395,62 @@ public final class RecordOuterClass {
       public final com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
         return this.unknownFields;
+      }
+      private Local(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                com.google.protobuf2.Any.Builder subBuilder = null;
+                if (privKey_ != null) {
+                  subBuilder = privKey_.toBuilder();
+                }
+                privKey_ = input.readMessage(com.google.protobuf2.Any.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(privKey_);
+                  privKey_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+              case 18: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                privKeyType_ = s;
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
@@ -378,10 +546,10 @@ public final class RecordOuterClass {
         if (privKey_ != null) {
           output.writeMessage(1, getPrivKey());
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(privKeyType_)) {
+        if (!getPrivKeyTypeBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, privKeyType_);
         }
-        getUnknownFields().writeTo(output);
+        unknownFields.writeTo(output);
       }
 
       @java.lang.Override
@@ -394,10 +562,10 @@ public final class RecordOuterClass {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(1, getPrivKey());
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(privKeyType_)) {
+        if (!getPrivKeyTypeBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, privKeyType_);
         }
-        size += getUnknownFields().getSerializedSize();
+        size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -419,7 +587,7 @@ public final class RecordOuterClass {
         }
         if (!getPrivKeyType()
             .equals(other.getPrivKeyType())) return false;
-        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
 
@@ -436,7 +604,7 @@ public final class RecordOuterClass {
         }
         hash = (37 * hash) + PRIV_KEY_TYPE_FIELD_NUMBER;
         hash = (53 * hash) + getPrivKeyType().hashCode();
-        hash = (29 * hash) + getUnknownFields().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -558,13 +726,18 @@ public final class RecordOuterClass {
 
         // Construct using cosmos.crypto.keyring.v1.RecordOuterClass.Record.Local.newBuilder()
         private Builder() {
-
+          maybeForceBuilderInitialization();
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
         }
         @java.lang.Override
         public Builder clear() {
@@ -664,7 +837,7 @@ public final class RecordOuterClass {
             privKeyType_ = other.privKeyType_;
             onChanged();
           }
-          this.mergeUnknownFields(other.getUnknownFields());
+          this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
         }
@@ -679,42 +852,17 @@ public final class RecordOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
+          cosmos.crypto.keyring.v1.RecordOuterClass.Record.Local parsedMessage = null;
           try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                case 10: {
-                  input.readMessage(
-                      getPrivKeyFieldBuilder().getBuilder(),
-                      extensionRegistry);
-
-                  break;
-                } // case 10
-                case 18: {
-                  privKeyType_ = input.readStringRequireUtf8();
-
-                  break;
-                } // case 18
-                default: {
-                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                    done = true; // was an endgroup tag
-                  }
-                  break;
-                } // default:
-              } // switch (tag)
-            } // while (!done)
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (cosmos.crypto.keyring.v1.RecordOuterClass.Record.Local) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            onChanged();
-          } // finally
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
           return this;
         }
 
@@ -945,18 +1093,7 @@ public final class RecordOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
+          return new Local(input, extensionRegistry);
         }
       };
 
@@ -1026,6 +1163,56 @@ public final class RecordOuterClass {
       getUnknownFields() {
         return this.unknownFields;
       }
+      private Ledger(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                cosmos.crypto.hd.v1.Hd.BIP44Params.Builder subBuilder = null;
+                if (path_ != null) {
+                  subBuilder = path_.toBuilder();
+                }
+                path_ = input.readMessage(cosmos.crypto.hd.v1.Hd.BIP44Params.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(path_);
+                  path_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return cosmos.crypto.keyring.v1.RecordOuterClass.internal_static_cosmos_crypto_keyring_v1_Record_Ledger_descriptor;
@@ -1082,7 +1269,7 @@ public final class RecordOuterClass {
         if (path_ != null) {
           output.writeMessage(1, getPath());
         }
-        getUnknownFields().writeTo(output);
+        unknownFields.writeTo(output);
       }
 
       @java.lang.Override
@@ -1095,7 +1282,7 @@ public final class RecordOuterClass {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(1, getPath());
         }
-        size += getUnknownFields().getSerializedSize();
+        size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -1115,7 +1302,7 @@ public final class RecordOuterClass {
           if (!getPath()
               .equals(other.getPath())) return false;
         }
-        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
 
@@ -1130,7 +1317,7 @@ public final class RecordOuterClass {
           hash = (37 * hash) + PATH_FIELD_NUMBER;
           hash = (53 * hash) + getPath().hashCode();
         }
-        hash = (29 * hash) + getUnknownFields().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -1251,13 +1438,18 @@ public final class RecordOuterClass {
 
         // Construct using cosmos.crypto.keyring.v1.RecordOuterClass.Record.Ledger.newBuilder()
         private Builder() {
-
+          maybeForceBuilderInitialization();
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
         }
         @java.lang.Override
         public Builder clear() {
@@ -1350,7 +1542,7 @@ public final class RecordOuterClass {
           if (other.hasPath()) {
             mergePath(other.getPath());
           }
-          this.mergeUnknownFields(other.getUnknownFields());
+          this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
         }
@@ -1365,37 +1557,17 @@ public final class RecordOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
+          cosmos.crypto.keyring.v1.RecordOuterClass.Record.Ledger parsedMessage = null;
           try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                case 10: {
-                  input.readMessage(
-                      getPathFieldBuilder().getBuilder(),
-                      extensionRegistry);
-
-                  break;
-                } // case 10
-                default: {
-                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                    done = true; // was an endgroup tag
-                  }
-                  break;
-                } // default:
-              } // switch (tag)
-            } // while (!done)
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (cosmos.crypto.keyring.v1.RecordOuterClass.Record.Ledger) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            onChanged();
-          } // finally
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
           return this;
         }
 
@@ -1550,18 +1722,7 @@ public final class RecordOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
+          return new Ledger(input, extensionRegistry);
         }
       };
 
@@ -1616,6 +1777,43 @@ public final class RecordOuterClass {
       getUnknownFields() {
         return this.unknownFields;
       }
+      private Multi(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return cosmos.crypto.keyring.v1.RecordOuterClass.internal_static_cosmos_crypto_keyring_v1_Record_Multi_descriptor;
@@ -1643,7 +1841,7 @@ public final class RecordOuterClass {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        getUnknownFields().writeTo(output);
+        unknownFields.writeTo(output);
       }
 
       @java.lang.Override
@@ -1652,7 +1850,7 @@ public final class RecordOuterClass {
         if (size != -1) return size;
 
         size = 0;
-        size += getUnknownFields().getSerializedSize();
+        size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -1667,7 +1865,7 @@ public final class RecordOuterClass {
         }
         cosmos.crypto.keyring.v1.RecordOuterClass.Record.Multi other = (cosmos.crypto.keyring.v1.RecordOuterClass.Record.Multi) obj;
 
-        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
 
@@ -1678,7 +1876,7 @@ public final class RecordOuterClass {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (29 * hash) + getUnknownFields().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -1799,13 +1997,18 @@ public final class RecordOuterClass {
 
         // Construct using cosmos.crypto.keyring.v1.RecordOuterClass.Record.Multi.newBuilder()
         private Builder() {
-
+          maybeForceBuilderInitialization();
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
         }
         @java.lang.Override
         public Builder clear() {
@@ -1884,7 +2087,7 @@ public final class RecordOuterClass {
 
         public Builder mergeFrom(cosmos.crypto.keyring.v1.RecordOuterClass.Record.Multi other) {
           if (other == cosmos.crypto.keyring.v1.RecordOuterClass.Record.Multi.getDefaultInstance()) return this;
-          this.mergeUnknownFields(other.getUnknownFields());
+          this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
         }
@@ -1899,30 +2102,17 @@ public final class RecordOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
+          cosmos.crypto.keyring.v1.RecordOuterClass.Record.Multi parsedMessage = null;
           try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                    done = true; // was an endgroup tag
-                  }
-                  break;
-                } // default:
-              } // switch (tag)
-            } // while (!done)
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (cosmos.crypto.keyring.v1.RecordOuterClass.Record.Multi) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            onChanged();
-          } // finally
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
           return this;
         }
         @java.lang.Override
@@ -1958,18 +2148,7 @@ public final class RecordOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
+          return new Multi(input, extensionRegistry);
         }
       };
 
@@ -2024,6 +2203,43 @@ public final class RecordOuterClass {
       getUnknownFields() {
         return this.unknownFields;
       }
+      private Offline(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return cosmos.crypto.keyring.v1.RecordOuterClass.internal_static_cosmos_crypto_keyring_v1_Record_Offline_descriptor;
@@ -2051,7 +2267,7 @@ public final class RecordOuterClass {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        getUnknownFields().writeTo(output);
+        unknownFields.writeTo(output);
       }
 
       @java.lang.Override
@@ -2060,7 +2276,7 @@ public final class RecordOuterClass {
         if (size != -1) return size;
 
         size = 0;
-        size += getUnknownFields().getSerializedSize();
+        size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -2075,7 +2291,7 @@ public final class RecordOuterClass {
         }
         cosmos.crypto.keyring.v1.RecordOuterClass.Record.Offline other = (cosmos.crypto.keyring.v1.RecordOuterClass.Record.Offline) obj;
 
-        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
 
@@ -2086,7 +2302,7 @@ public final class RecordOuterClass {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (29 * hash) + getUnknownFields().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -2207,13 +2423,18 @@ public final class RecordOuterClass {
 
         // Construct using cosmos.crypto.keyring.v1.RecordOuterClass.Record.Offline.newBuilder()
         private Builder() {
-
+          maybeForceBuilderInitialization();
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
         }
         @java.lang.Override
         public Builder clear() {
@@ -2292,7 +2513,7 @@ public final class RecordOuterClass {
 
         public Builder mergeFrom(cosmos.crypto.keyring.v1.RecordOuterClass.Record.Offline other) {
           if (other == cosmos.crypto.keyring.v1.RecordOuterClass.Record.Offline.getDefaultInstance()) return this;
-          this.mergeUnknownFields(other.getUnknownFields());
+          this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
         }
@@ -2307,30 +2528,17 @@ public final class RecordOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
+          cosmos.crypto.keyring.v1.RecordOuterClass.Record.Offline parsedMessage = null;
           try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                    done = true; // was an endgroup tag
-                  }
-                  break;
-                } // default:
-              } // switch (tag)
-            } // while (!done)
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (cosmos.crypto.keyring.v1.RecordOuterClass.Record.Offline) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            onChanged();
-          } // finally
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
           return this;
         }
         @java.lang.Override
@@ -2366,18 +2574,7 @@ public final class RecordOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
+          return new Offline(input, extensionRegistry);
         }
       };
 
@@ -2712,7 +2909,7 @@ public final class RecordOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
       if (pubKey_ != null) {
@@ -2730,7 +2927,7 @@ public final class RecordOuterClass {
       if (itemCase_ == 6) {
         output.writeMessage(6, (cosmos.crypto.keyring.v1.RecordOuterClass.Record.Offline) item_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -2739,7 +2936,7 @@ public final class RecordOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
       if (pubKey_ != null) {
@@ -2762,7 +2959,7 @@ public final class RecordOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, (cosmos.crypto.keyring.v1.RecordOuterClass.Record.Offline) item_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2805,7 +3002,7 @@ public final class RecordOuterClass {
         case 0:
         default:
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -2842,7 +3039,7 @@ public final class RecordOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2963,13 +3160,18 @@ public final class RecordOuterClass {
 
       // Construct using cosmos.crypto.keyring.v1.RecordOuterClass.Record.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -2981,18 +3183,6 @@ public final class RecordOuterClass {
         } else {
           pubKey_ = null;
           pubKeyBuilder_ = null;
-        }
-        if (localBuilder_ != null) {
-          localBuilder_.clear();
-        }
-        if (ledgerBuilder_ != null) {
-          ledgerBuilder_.clear();
-        }
-        if (multiBuilder_ != null) {
-          multiBuilder_.clear();
-        }
-        if (offlineBuilder_ != null) {
-          offlineBuilder_.clear();
         }
         itemCase_ = 0;
         item_ = null;
@@ -3133,7 +3323,7 @@ public final class RecordOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -3148,70 +3338,17 @@ public final class RecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        cosmos.crypto.keyring.v1.RecordOuterClass.Record parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                name_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getPubKeyFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getLocalFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                itemCase_ = 3;
-                break;
-              } // case 26
-              case 34: {
-                input.readMessage(
-                    getLedgerFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                itemCase_ = 4;
-                break;
-              } // case 34
-              case 42: {
-                input.readMessage(
-                    getMultiFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                itemCase_ = 5;
-                break;
-              } // case 42
-              case 50: {
-                input.readMessage(
-                    getOfflineFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                itemCase_ = 6;
-                break;
-              } // case 50
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.crypto.keyring.v1.RecordOuterClass.Record) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int itemCase_ = 0;
@@ -3575,9 +3712,8 @@ public final class RecordOuterClass {
         } else {
           if (itemCase_ == 3) {
             localBuilder_.mergeFrom(value);
-          } else {
-            localBuilder_.setMessage(value);
           }
+          localBuilder_.setMessage(value);
         }
         itemCase_ = 3;
         return this;
@@ -3753,9 +3889,8 @@ public final class RecordOuterClass {
         } else {
           if (itemCase_ == 4) {
             ledgerBuilder_.mergeFrom(value);
-          } else {
-            ledgerBuilder_.setMessage(value);
           }
+          ledgerBuilder_.setMessage(value);
         }
         itemCase_ = 4;
         return this;
@@ -3931,9 +4066,8 @@ public final class RecordOuterClass {
         } else {
           if (itemCase_ == 5) {
             multiBuilder_.mergeFrom(value);
-          } else {
-            multiBuilder_.setMessage(value);
           }
+          multiBuilder_.setMessage(value);
         }
         itemCase_ = 5;
         return this;
@@ -4109,9 +4243,8 @@ public final class RecordOuterClass {
         } else {
           if (itemCase_ == 6) {
             offlineBuilder_.mergeFrom(value);
-          } else {
-            offlineBuilder_.setMessage(value);
           }
+          offlineBuilder_.setMessage(value);
         }
         itemCase_ = 6;
         return this;
@@ -4225,18 +4358,7 @@ public final class RecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Record(input, extensionRegistry);
       }
     };
 

@@ -34,6 +34,96 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
+  private GenesisState(
+      com.google.protobuf.CodedInputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    int mutable_bitField0_ = 0;
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
+    try {
+      boolean done = false;
+      while (!done) {
+        int tag = input.readTag();
+        switch (tag) {
+          case 0:
+            done = true;
+            break;
+          case 10: {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              owners_ = com.google.protobuf.MapField.newMapField(
+                  OwnersDefaultEntryHolder.defaultEntry);
+              mutable_bitField0_ |= 0x00000001;
+            }
+            com.google.protobuf.MapEntry<java.lang.String, panacea.aol.v2.Owner>
+            owners__ = input.readMessage(
+                OwnersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            owners_.getMutableMap().put(
+                owners__.getKey(), owners__.getValue());
+            break;
+          }
+          case 18: {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              topics_ = com.google.protobuf.MapField.newMapField(
+                  TopicsDefaultEntryHolder.defaultEntry);
+              mutable_bitField0_ |= 0x00000002;
+            }
+            com.google.protobuf.MapEntry<java.lang.String, panacea.aol.v2.Topic>
+            topics__ = input.readMessage(
+                TopicsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            topics_.getMutableMap().put(
+                topics__.getKey(), topics__.getValue());
+            break;
+          }
+          case 26: {
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              writers_ = com.google.protobuf.MapField.newMapField(
+                  WritersDefaultEntryHolder.defaultEntry);
+              mutable_bitField0_ |= 0x00000004;
+            }
+            com.google.protobuf.MapEntry<java.lang.String, panacea.aol.v2.Writer>
+            writers__ = input.readMessage(
+                WritersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            writers_.getMutableMap().put(
+                writers__.getKey(), writers__.getValue());
+            break;
+          }
+          case 34: {
+            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              records_ = com.google.protobuf.MapField.newMapField(
+                  RecordsDefaultEntryHolder.defaultEntry);
+              mutable_bitField0_ |= 0x00000008;
+            }
+            com.google.protobuf.MapEntry<java.lang.String, panacea.aol.v2.Record>
+            records__ = input.readMessage(
+                RecordsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            records_.getMutableMap().put(
+                records__.getKey(), records__.getValue());
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
+        }
+      }
+    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      throw e.setUnfinishedMessage(this);
+    } catch (java.io.IOException e) {
+      throw new com.google.protobuf.InvalidProtocolBufferException(
+          e).setUnfinishedMessage(this);
+    } finally {
+      this.unknownFields = unknownFields.build();
+      makeExtensionsImmutable();
+    }
+  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return panacea.aol.v2.Genesis.internal_static_panacea_aol_v2_GenesisState_descriptor;
@@ -98,7 +188,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean containsOwners(
       java.lang.String key) {
-    if (key == null) { throw new NullPointerException("map key"); }
+    if (key == null) { throw new java.lang.NullPointerException(); }
     return internalGetOwners().getMap().containsKey(key);
   }
   /**
@@ -125,7 +215,7 @@ private static final long serialVersionUID = 0L;
   public panacea.aol.v2.Owner getOwnersOrDefault(
       java.lang.String key,
       panacea.aol.v2.Owner defaultValue) {
-    if (key == null) { throw new NullPointerException("map key"); }
+    if (key == null) { throw new java.lang.NullPointerException(); }
     java.util.Map<java.lang.String, panacea.aol.v2.Owner> map =
         internalGetOwners().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -137,7 +227,7 @@ private static final long serialVersionUID = 0L;
 
   public panacea.aol.v2.Owner getOwnersOrThrow(
       java.lang.String key) {
-    if (key == null) { throw new NullPointerException("map key"); }
+    if (key == null) { throw new java.lang.NullPointerException(); }
     java.util.Map<java.lang.String, panacea.aol.v2.Owner> map =
         internalGetOwners().getMap();
     if (!map.containsKey(key)) {
@@ -179,7 +269,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean containsTopics(
       java.lang.String key) {
-    if (key == null) { throw new NullPointerException("map key"); }
+    if (key == null) { throw new java.lang.NullPointerException(); }
     return internalGetTopics().getMap().containsKey(key);
   }
   /**
@@ -206,7 +296,7 @@ private static final long serialVersionUID = 0L;
   public panacea.aol.v2.Topic getTopicsOrDefault(
       java.lang.String key,
       panacea.aol.v2.Topic defaultValue) {
-    if (key == null) { throw new NullPointerException("map key"); }
+    if (key == null) { throw new java.lang.NullPointerException(); }
     java.util.Map<java.lang.String, panacea.aol.v2.Topic> map =
         internalGetTopics().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -218,7 +308,7 @@ private static final long serialVersionUID = 0L;
 
   public panacea.aol.v2.Topic getTopicsOrThrow(
       java.lang.String key) {
-    if (key == null) { throw new NullPointerException("map key"); }
+    if (key == null) { throw new java.lang.NullPointerException(); }
     java.util.Map<java.lang.String, panacea.aol.v2.Topic> map =
         internalGetTopics().getMap();
     if (!map.containsKey(key)) {
@@ -260,7 +350,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean containsWriters(
       java.lang.String key) {
-    if (key == null) { throw new NullPointerException("map key"); }
+    if (key == null) { throw new java.lang.NullPointerException(); }
     return internalGetWriters().getMap().containsKey(key);
   }
   /**
@@ -287,7 +377,7 @@ private static final long serialVersionUID = 0L;
   public panacea.aol.v2.Writer getWritersOrDefault(
       java.lang.String key,
       panacea.aol.v2.Writer defaultValue) {
-    if (key == null) { throw new NullPointerException("map key"); }
+    if (key == null) { throw new java.lang.NullPointerException(); }
     java.util.Map<java.lang.String, panacea.aol.v2.Writer> map =
         internalGetWriters().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -299,7 +389,7 @@ private static final long serialVersionUID = 0L;
 
   public panacea.aol.v2.Writer getWritersOrThrow(
       java.lang.String key) {
-    if (key == null) { throw new NullPointerException("map key"); }
+    if (key == null) { throw new java.lang.NullPointerException(); }
     java.util.Map<java.lang.String, panacea.aol.v2.Writer> map =
         internalGetWriters().getMap();
     if (!map.containsKey(key)) {
@@ -341,7 +431,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean containsRecords(
       java.lang.String key) {
-    if (key == null) { throw new NullPointerException("map key"); }
+    if (key == null) { throw new java.lang.NullPointerException(); }
     return internalGetRecords().getMap().containsKey(key);
   }
   /**
@@ -368,7 +458,7 @@ private static final long serialVersionUID = 0L;
   public panacea.aol.v2.Record getRecordsOrDefault(
       java.lang.String key,
       panacea.aol.v2.Record defaultValue) {
-    if (key == null) { throw new NullPointerException("map key"); }
+    if (key == null) { throw new java.lang.NullPointerException(); }
     java.util.Map<java.lang.String, panacea.aol.v2.Record> map =
         internalGetRecords().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -380,7 +470,7 @@ private static final long serialVersionUID = 0L;
 
   public panacea.aol.v2.Record getRecordsOrThrow(
       java.lang.String key) {
-    if (key == null) { throw new NullPointerException("map key"); }
+    if (key == null) { throw new java.lang.NullPointerException(); }
     java.util.Map<java.lang.String, panacea.aol.v2.Record> map =
         internalGetRecords().getMap();
     if (!map.containsKey(key)) {
@@ -427,7 +517,7 @@ private static final long serialVersionUID = 0L;
         internalGetRecords(),
         RecordsDefaultEntryHolder.defaultEntry,
         4);
-    getUnknownFields().writeTo(output);
+    unknownFields.writeTo(output);
   }
 
   @java.lang.Override
@@ -476,7 +566,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, records__);
     }
-    size += getUnknownFields().getSerializedSize();
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -499,7 +589,7 @@ private static final long serialVersionUID = 0L;
         other.internalGetWriters())) return false;
     if (!internalGetRecords().equals(
         other.internalGetRecords())) return false;
-    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
 
@@ -526,7 +616,7 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + RECORDS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetRecords().hashCode();
     }
-    hash = (29 * hash) + getUnknownFields().hashCode();
+    hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -681,13 +771,18 @@ private static final long serialVersionUID = 0L;
 
     // Construct using panacea.aol.v2.GenesisState.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -787,7 +882,7 @@ private static final long serialVersionUID = 0L;
           other.internalGetWriters());
       internalGetMutableRecords().mergeFrom(
           other.internalGetRecords());
-      this.mergeUnknownFields(other.getUnknownFields());
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
@@ -802,62 +897,17 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
+      panacea.aol.v2.GenesisState parsedMessage = null;
       try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.MapEntry<java.lang.String, panacea.aol.v2.Owner>
-              owners__ = input.readMessage(
-                  OwnersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              internalGetMutableOwners().getMutableMap().put(
-                  owners__.getKey(), owners__.getValue());
-              break;
-            } // case 10
-            case 18: {
-              com.google.protobuf.MapEntry<java.lang.String, panacea.aol.v2.Topic>
-              topics__ = input.readMessage(
-                  TopicsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              internalGetMutableTopics().getMutableMap().put(
-                  topics__.getKey(), topics__.getValue());
-              break;
-            } // case 18
-            case 26: {
-              com.google.protobuf.MapEntry<java.lang.String, panacea.aol.v2.Writer>
-              writers__ = input.readMessage(
-                  WritersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              internalGetMutableWriters().getMutableMap().put(
-                  writers__.getKey(), writers__.getValue());
-              break;
-            } // case 26
-            case 34: {
-              com.google.protobuf.MapEntry<java.lang.String, panacea.aol.v2.Record>
-              records__ = input.readMessage(
-                  RecordsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              internalGetMutableRecords().getMutableMap().put(
-                  records__.getKey(), records__.getValue());
-              break;
-            } // case 34
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
-          } // switch (tag)
-        } // while (!done)
+        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        parsedMessage = (panacea.aol.v2.GenesisState) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        onChanged();
-      } // finally
+        if (parsedMessage != null) {
+          mergeFrom(parsedMessage);
+        }
+      }
       return this;
     }
     private int bitField0_;
@@ -895,7 +945,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean containsOwners(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       return internalGetOwners().getMap().containsKey(key);
     }
     /**
@@ -922,7 +972,7 @@ private static final long serialVersionUID = 0L;
     public panacea.aol.v2.Owner getOwnersOrDefault(
         java.lang.String key,
         panacea.aol.v2.Owner defaultValue) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, panacea.aol.v2.Owner> map =
           internalGetOwners().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -934,7 +984,7 @@ private static final long serialVersionUID = 0L;
 
     public panacea.aol.v2.Owner getOwnersOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, panacea.aol.v2.Owner> map =
           internalGetOwners().getMap();
       if (!map.containsKey(key)) {
@@ -954,7 +1004,7 @@ private static final long serialVersionUID = 0L;
 
     public Builder removeOwners(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       internalGetMutableOwners().getMutableMap()
           .remove(key);
       return this;
@@ -973,11 +1023,8 @@ private static final long serialVersionUID = 0L;
     public Builder putOwners(
         java.lang.String key,
         panacea.aol.v2.Owner value) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      if (value == null) {
-  throw new NullPointerException("map value");
-}
-
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (value == null) { throw new java.lang.NullPointerException(); }
       internalGetMutableOwners().getMutableMap()
           .put(key, value);
       return this;
@@ -1026,7 +1073,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean containsTopics(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       return internalGetTopics().getMap().containsKey(key);
     }
     /**
@@ -1053,7 +1100,7 @@ private static final long serialVersionUID = 0L;
     public panacea.aol.v2.Topic getTopicsOrDefault(
         java.lang.String key,
         panacea.aol.v2.Topic defaultValue) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, panacea.aol.v2.Topic> map =
           internalGetTopics().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1065,7 +1112,7 @@ private static final long serialVersionUID = 0L;
 
     public panacea.aol.v2.Topic getTopicsOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, panacea.aol.v2.Topic> map =
           internalGetTopics().getMap();
       if (!map.containsKey(key)) {
@@ -1085,7 +1132,7 @@ private static final long serialVersionUID = 0L;
 
     public Builder removeTopics(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       internalGetMutableTopics().getMutableMap()
           .remove(key);
       return this;
@@ -1104,11 +1151,8 @@ private static final long serialVersionUID = 0L;
     public Builder putTopics(
         java.lang.String key,
         panacea.aol.v2.Topic value) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      if (value == null) {
-  throw new NullPointerException("map value");
-}
-
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (value == null) { throw new java.lang.NullPointerException(); }
       internalGetMutableTopics().getMutableMap()
           .put(key, value);
       return this;
@@ -1157,7 +1201,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean containsWriters(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       return internalGetWriters().getMap().containsKey(key);
     }
     /**
@@ -1184,7 +1228,7 @@ private static final long serialVersionUID = 0L;
     public panacea.aol.v2.Writer getWritersOrDefault(
         java.lang.String key,
         panacea.aol.v2.Writer defaultValue) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, panacea.aol.v2.Writer> map =
           internalGetWriters().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1196,7 +1240,7 @@ private static final long serialVersionUID = 0L;
 
     public panacea.aol.v2.Writer getWritersOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, panacea.aol.v2.Writer> map =
           internalGetWriters().getMap();
       if (!map.containsKey(key)) {
@@ -1216,7 +1260,7 @@ private static final long serialVersionUID = 0L;
 
     public Builder removeWriters(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       internalGetMutableWriters().getMutableMap()
           .remove(key);
       return this;
@@ -1235,11 +1279,8 @@ private static final long serialVersionUID = 0L;
     public Builder putWriters(
         java.lang.String key,
         panacea.aol.v2.Writer value) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      if (value == null) {
-  throw new NullPointerException("map value");
-}
-
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (value == null) { throw new java.lang.NullPointerException(); }
       internalGetMutableWriters().getMutableMap()
           .put(key, value);
       return this;
@@ -1288,7 +1329,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean containsRecords(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       return internalGetRecords().getMap().containsKey(key);
     }
     /**
@@ -1315,7 +1356,7 @@ private static final long serialVersionUID = 0L;
     public panacea.aol.v2.Record getRecordsOrDefault(
         java.lang.String key,
         panacea.aol.v2.Record defaultValue) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, panacea.aol.v2.Record> map =
           internalGetRecords().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1327,7 +1368,7 @@ private static final long serialVersionUID = 0L;
 
     public panacea.aol.v2.Record getRecordsOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, panacea.aol.v2.Record> map =
           internalGetRecords().getMap();
       if (!map.containsKey(key)) {
@@ -1347,7 +1388,7 @@ private static final long serialVersionUID = 0L;
 
     public Builder removeRecords(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       internalGetMutableRecords().getMutableMap()
           .remove(key);
       return this;
@@ -1366,11 +1407,8 @@ private static final long serialVersionUID = 0L;
     public Builder putRecords(
         java.lang.String key,
         panacea.aol.v2.Record value) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      if (value == null) {
-  throw new NullPointerException("map value");
-}
-
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (value == null) { throw new java.lang.NullPointerException(); }
       internalGetMutableRecords().getMutableMap()
           .put(key, value);
       return this;
@@ -1418,18 +1456,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
+      return new GenesisState(input, extensionRegistry);
     }
   };
 

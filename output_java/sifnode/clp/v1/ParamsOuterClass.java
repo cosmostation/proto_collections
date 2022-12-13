@@ -55,6 +55,48 @@ public final class ParamsOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private Params(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              minCreatePoolThreshold_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return sifnode.clp.v1.ParamsOuterClass.internal_static_sifnode_clp_v1_Params_descriptor;
@@ -96,7 +138,7 @@ public final class ParamsOuterClass {
       if (minCreatePoolThreshold_ != 0L) {
         output.writeUInt64(1, minCreatePoolThreshold_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -109,7 +151,7 @@ public final class ParamsOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(1, minCreatePoolThreshold_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -126,7 +168,7 @@ public final class ParamsOuterClass {
 
       if (getMinCreatePoolThreshold()
           != other.getMinCreatePoolThreshold()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -140,7 +182,7 @@ public final class ParamsOuterClass {
       hash = (37 * hash) + MIN_CREATE_POOL_THRESHOLD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMinCreatePoolThreshold());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -261,13 +303,18 @@ public final class ParamsOuterClass {
 
       // Construct using sifnode.clp.v1.ParamsOuterClass.Params.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -352,7 +399,7 @@ public final class ParamsOuterClass {
         if (other.getMinCreatePoolThreshold() != 0L) {
           setMinCreatePoolThreshold(other.getMinCreatePoolThreshold());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -367,35 +414,17 @@ public final class ParamsOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        sifnode.clp.v1.ParamsOuterClass.Params parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                minCreatePoolThreshold_ = input.readUInt64();
-
-                break;
-              } // case 8
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (sifnode.clp.v1.ParamsOuterClass.Params) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -462,18 +491,7 @@ public final class ParamsOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Params(input, extensionRegistry);
       }
     };
 
@@ -589,6 +607,72 @@ public final class ParamsOuterClass {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private RewardParams(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              liquidityRemovalLockPeriod_ = input.readUInt64();
+              break;
+            }
+            case 16: {
+
+              liquidityRemovalCancelPeriod_ = input.readUInt64();
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                rewardPeriods_ = new java.util.ArrayList<sifnode.clp.v1.ParamsOuterClass.RewardPeriod>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              rewardPeriods_.add(
+                  input.readMessage(sifnode.clp.v1.ParamsOuterClass.RewardPeriod.parser(), extensionRegistry));
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              rewardPeriodStartTime_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          rewardPeriods_ = java.util.Collections.unmodifiableList(rewardPeriods_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -742,10 +826,10 @@ public final class ParamsOuterClass {
       for (int i = 0; i < rewardPeriods_.size(); i++) {
         output.writeMessage(4, rewardPeriods_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rewardPeriodStartTime_)) {
+      if (!getRewardPeriodStartTimeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, rewardPeriodStartTime_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -766,10 +850,10 @@ public final class ParamsOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, rewardPeriods_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rewardPeriodStartTime_)) {
+      if (!getRewardPeriodStartTimeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, rewardPeriodStartTime_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -792,7 +876,7 @@ public final class ParamsOuterClass {
           .equals(other.getRewardPeriodsList())) return false;
       if (!getRewardPeriodStartTime()
           .equals(other.getRewardPeriodStartTime())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -815,7 +899,7 @@ public final class ParamsOuterClass {
       }
       hash = (37 * hash) + REWARD_PERIOD_START_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getRewardPeriodStartTime().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -932,13 +1016,19 @@ public final class ParamsOuterClass {
 
       // Construct using sifnode.clp.v1.ParamsOuterClass.RewardParams.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getRewardPeriodsFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -949,11 +1039,10 @@ public final class ParamsOuterClass {
 
         if (rewardPeriodsBuilder_ == null) {
           rewardPeriods_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          rewardPeriods_ = null;
           rewardPeriodsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         rewardPeriodStartTime_ = "";
 
         return this;
@@ -1079,7 +1168,7 @@ public final class ParamsOuterClass {
           rewardPeriodStartTime_ = other.rewardPeriodStartTime_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1094,58 +1183,17 @@ public final class ParamsOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        sifnode.clp.v1.ParamsOuterClass.RewardParams parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                liquidityRemovalLockPeriod_ = input.readUInt64();
-
-                break;
-              } // case 8
-              case 16: {
-                liquidityRemovalCancelPeriod_ = input.readUInt64();
-
-                break;
-              } // case 16
-              case 34: {
-                sifnode.clp.v1.ParamsOuterClass.RewardPeriod m =
-                    input.readMessage(
-                        sifnode.clp.v1.ParamsOuterClass.RewardPeriod.parser(),
-                        extensionRegistry);
-                if (rewardPeriodsBuilder_ == null) {
-                  ensureRewardPeriodsIsMutable();
-                  rewardPeriods_.add(m);
-                } else {
-                  rewardPeriodsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              case 42: {
-                rewardPeriodStartTime_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 42
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (sifnode.clp.v1.ParamsOuterClass.RewardParams) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1604,18 +1652,7 @@ public final class ParamsOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new RewardParams(input, extensionRegistry);
       }
     };
 
@@ -1708,6 +1745,61 @@ public final class ParamsOuterClass {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private PmtpRateParams(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              pmtpPeriodBlockRate_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              pmtpCurrentRunningRate_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              pmtpInterPolicyRate_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -1850,16 +1942,16 @@ public final class ParamsOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pmtpPeriodBlockRate_)) {
+      if (!getPmtpPeriodBlockRateBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, pmtpPeriodBlockRate_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pmtpCurrentRunningRate_)) {
+      if (!getPmtpCurrentRunningRateBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pmtpCurrentRunningRate_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pmtpInterPolicyRate_)) {
+      if (!getPmtpInterPolicyRateBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pmtpInterPolicyRate_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1868,16 +1960,16 @@ public final class ParamsOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pmtpPeriodBlockRate_)) {
+      if (!getPmtpPeriodBlockRateBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, pmtpPeriodBlockRate_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pmtpCurrentRunningRate_)) {
+      if (!getPmtpCurrentRunningRateBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pmtpCurrentRunningRate_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pmtpInterPolicyRate_)) {
+      if (!getPmtpInterPolicyRateBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pmtpInterPolicyRate_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1898,7 +1990,7 @@ public final class ParamsOuterClass {
           .equals(other.getPmtpCurrentRunningRate())) return false;
       if (!getPmtpInterPolicyRate()
           .equals(other.getPmtpInterPolicyRate())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -1915,7 +2007,7 @@ public final class ParamsOuterClass {
       hash = (53 * hash) + getPmtpCurrentRunningRate().hashCode();
       hash = (37 * hash) + PMTP_INTER_POLICY_RATE_FIELD_NUMBER;
       hash = (53 * hash) + getPmtpInterPolicyRate().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2036,13 +2128,18 @@ public final class ParamsOuterClass {
 
       // Construct using sifnode.clp.v1.ParamsOuterClass.PmtpRateParams.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -2142,7 +2239,7 @@ public final class ParamsOuterClass {
           pmtpInterPolicyRate_ = other.pmtpInterPolicyRate_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -2157,45 +2254,17 @@ public final class ParamsOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        sifnode.clp.v1.ParamsOuterClass.PmtpRateParams parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 18: {
-                pmtpPeriodBlockRate_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 18
-              case 26: {
-                pmtpCurrentRunningRate_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 26
-              case 34: {
-                pmtpInterPolicyRate_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 34
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (sifnode.clp.v1.ParamsOuterClass.PmtpRateParams) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -2459,18 +2528,7 @@ public final class ParamsOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new PmtpRateParams(input, extensionRegistry);
       }
     };
 
@@ -2551,6 +2609,64 @@ public final class ParamsOuterClass {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private PmtpParams(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              pmtpPeriodGovernanceRate_ = s;
+              break;
+            }
+            case 16: {
+
+              pmtpPeriodEpochLength_ = input.readInt64();
+              break;
+            }
+            case 24: {
+
+              pmtpPeriodStartBlock_ = input.readInt64();
+              break;
+            }
+            case 32: {
+
+              pmtpPeriodEndBlock_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -2650,7 +2766,7 @@ public final class ParamsOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pmtpPeriodGovernanceRate_)) {
+      if (!getPmtpPeriodGovernanceRateBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, pmtpPeriodGovernanceRate_);
       }
       if (pmtpPeriodEpochLength_ != 0L) {
@@ -2662,7 +2778,7 @@ public final class ParamsOuterClass {
       if (pmtpPeriodEndBlock_ != 0L) {
         output.writeInt64(4, pmtpPeriodEndBlock_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -2671,7 +2787,7 @@ public final class ParamsOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pmtpPeriodGovernanceRate_)) {
+      if (!getPmtpPeriodGovernanceRateBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, pmtpPeriodGovernanceRate_);
       }
       if (pmtpPeriodEpochLength_ != 0L) {
@@ -2686,7 +2802,7 @@ public final class ParamsOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, pmtpPeriodEndBlock_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2709,7 +2825,7 @@ public final class ParamsOuterClass {
           != other.getPmtpPeriodStartBlock()) return false;
       if (getPmtpPeriodEndBlock()
           != other.getPmtpPeriodEndBlock()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -2731,7 +2847,7 @@ public final class ParamsOuterClass {
       hash = (37 * hash) + PMTP_PERIOD_END_BLOCK_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getPmtpPeriodEndBlock());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2848,13 +2964,18 @@ public final class ParamsOuterClass {
 
       // Construct using sifnode.clp.v1.ParamsOuterClass.PmtpParams.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -2958,7 +3079,7 @@ public final class ParamsOuterClass {
         if (other.getPmtpPeriodEndBlock() != 0L) {
           setPmtpPeriodEndBlock(other.getPmtpPeriodEndBlock());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -2973,50 +3094,17 @@ public final class ParamsOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        sifnode.clp.v1.ParamsOuterClass.PmtpParams parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                pmtpPeriodGovernanceRate_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 10
-              case 16: {
-                pmtpPeriodEpochLength_ = input.readInt64();
-
-                break;
-              } // case 16
-              case 24: {
-                pmtpPeriodStartBlock_ = input.readInt64();
-
-                break;
-              } // case 24
-              case 32: {
-                pmtpPeriodEndBlock_ = input.readInt64();
-
-                break;
-              } // case 32
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (sifnode.clp.v1.ParamsOuterClass.PmtpParams) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -3221,18 +3309,7 @@ public final class ParamsOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new PmtpParams(input, extensionRegistry);
       }
     };
 
@@ -3358,6 +3435,84 @@ public final class ParamsOuterClass {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private RewardPeriod(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              rewardPeriodId_ = s;
+              break;
+            }
+            case 16: {
+
+              rewardPeriodStartBlock_ = input.readUInt64();
+              break;
+            }
+            case 24: {
+
+              rewardPeriodEndBlock_ = input.readUInt64();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              rewardPeriodAllocation_ = s;
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                rewardPeriodPoolMultipliers_ = new java.util.ArrayList<sifnode.clp.v1.ParamsOuterClass.PoolMultiplier>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              rewardPeriodPoolMultipliers_.add(
+                  input.readMessage(sifnode.clp.v1.ParamsOuterClass.PoolMultiplier.parser(), extensionRegistry));
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              rewardPeriodDefaultMultiplier_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          rewardPeriodPoolMultipliers_ = java.util.Collections.unmodifiableList(rewardPeriodPoolMultipliers_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -3562,7 +3717,7 @@ public final class ParamsOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rewardPeriodId_)) {
+      if (!getRewardPeriodIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, rewardPeriodId_);
       }
       if (rewardPeriodStartBlock_ != 0L) {
@@ -3571,16 +3726,16 @@ public final class ParamsOuterClass {
       if (rewardPeriodEndBlock_ != 0L) {
         output.writeUInt64(3, rewardPeriodEndBlock_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rewardPeriodAllocation_)) {
+      if (!getRewardPeriodAllocationBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, rewardPeriodAllocation_);
       }
       for (int i = 0; i < rewardPeriodPoolMultipliers_.size(); i++) {
         output.writeMessage(5, rewardPeriodPoolMultipliers_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rewardPeriodDefaultMultiplier_)) {
+      if (!getRewardPeriodDefaultMultiplierBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, rewardPeriodDefaultMultiplier_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -3589,7 +3744,7 @@ public final class ParamsOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rewardPeriodId_)) {
+      if (!getRewardPeriodIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, rewardPeriodId_);
       }
       if (rewardPeriodStartBlock_ != 0L) {
@@ -3600,17 +3755,17 @@ public final class ParamsOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(3, rewardPeriodEndBlock_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rewardPeriodAllocation_)) {
+      if (!getRewardPeriodAllocationBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, rewardPeriodAllocation_);
       }
       for (int i = 0; i < rewardPeriodPoolMultipliers_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, rewardPeriodPoolMultipliers_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rewardPeriodDefaultMultiplier_)) {
+      if (!getRewardPeriodDefaultMultiplierBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, rewardPeriodDefaultMultiplier_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3637,7 +3792,7 @@ public final class ParamsOuterClass {
           .equals(other.getRewardPeriodPoolMultipliersList())) return false;
       if (!getRewardPeriodDefaultMultiplier()
           .equals(other.getRewardPeriodDefaultMultiplier())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -3664,7 +3819,7 @@ public final class ParamsOuterClass {
       }
       hash = (37 * hash) + REWARD_PERIOD_DEFAULT_MULTIPLIER_FIELD_NUMBER;
       hash = (53 * hash) + getRewardPeriodDefaultMultiplier().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3781,13 +3936,19 @@ public final class ParamsOuterClass {
 
       // Construct using sifnode.clp.v1.ParamsOuterClass.RewardPeriod.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getRewardPeriodPoolMultipliersFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -3802,11 +3963,10 @@ public final class ParamsOuterClass {
 
         if (rewardPeriodPoolMultipliersBuilder_ == null) {
           rewardPeriodPoolMultipliers_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          rewardPeriodPoolMultipliers_ = null;
           rewardPeriodPoolMultipliersBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         rewardPeriodDefaultMultiplier_ = "";
 
         return this;
@@ -3942,7 +4102,7 @@ public final class ParamsOuterClass {
           rewardPeriodDefaultMultiplier_ = other.rewardPeriodDefaultMultiplier_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -3957,68 +4117,17 @@ public final class ParamsOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        sifnode.clp.v1.ParamsOuterClass.RewardPeriod parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                rewardPeriodId_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 10
-              case 16: {
-                rewardPeriodStartBlock_ = input.readUInt64();
-
-                break;
-              } // case 16
-              case 24: {
-                rewardPeriodEndBlock_ = input.readUInt64();
-
-                break;
-              } // case 24
-              case 34: {
-                rewardPeriodAllocation_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 34
-              case 42: {
-                sifnode.clp.v1.ParamsOuterClass.PoolMultiplier m =
-                    input.readMessage(
-                        sifnode.clp.v1.ParamsOuterClass.PoolMultiplier.parser(),
-                        extensionRegistry);
-                if (rewardPeriodPoolMultipliersBuilder_ == null) {
-                  ensureRewardPeriodPoolMultipliersIsMutable();
-                  rewardPeriodPoolMultipliers_.add(m);
-                } else {
-                  rewardPeriodPoolMultipliersBuilder_.addMessage(m);
-                }
-                break;
-              } // case 42
-              case 50: {
-                rewardPeriodDefaultMultiplier_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 50
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (sifnode.clp.v1.ParamsOuterClass.RewardPeriod) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -4585,18 +4694,7 @@ public final class ParamsOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new RewardPeriod(input, extensionRegistry);
       }
     };
 
@@ -4672,6 +4770,55 @@ public final class ParamsOuterClass {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private PoolMultiplier(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              poolMultiplierAsset_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              multiplier_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -4776,13 +4923,13 @@ public final class ParamsOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(poolMultiplierAsset_)) {
+      if (!getPoolMultiplierAssetBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, poolMultiplierAsset_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(multiplier_)) {
+      if (!getMultiplierBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, multiplier_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -4791,13 +4938,13 @@ public final class ParamsOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(poolMultiplierAsset_)) {
+      if (!getPoolMultiplierAssetBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, poolMultiplierAsset_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(multiplier_)) {
+      if (!getMultiplierBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, multiplier_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4816,7 +4963,7 @@ public final class ParamsOuterClass {
           .equals(other.getPoolMultiplierAsset())) return false;
       if (!getMultiplier()
           .equals(other.getMultiplier())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -4831,7 +4978,7 @@ public final class ParamsOuterClass {
       hash = (53 * hash) + getPoolMultiplierAsset().hashCode();
       hash = (37 * hash) + MULTIPLIER_FIELD_NUMBER;
       hash = (53 * hash) + getMultiplier().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4948,13 +5095,18 @@ public final class ParamsOuterClass {
 
       // Construct using sifnode.clp.v1.ParamsOuterClass.PoolMultiplier.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -5047,7 +5199,7 @@ public final class ParamsOuterClass {
           multiplier_ = other.multiplier_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -5062,40 +5214,17 @@ public final class ParamsOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        sifnode.clp.v1.ParamsOuterClass.PoolMultiplier parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                poolMultiplierAsset_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 10
-              case 18: {
-                multiplier_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (sifnode.clp.v1.ParamsOuterClass.PoolMultiplier) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -5283,18 +5412,7 @@ public final class ParamsOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new PoolMultiplier(input, extensionRegistry);
       }
     };
 

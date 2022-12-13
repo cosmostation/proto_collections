@@ -124,6 +124,86 @@ public final class Genesis {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GenesisState(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                connections_ = new java.util.ArrayList<ibc.core.connection.v1.Connection.IdentifiedConnection>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              connections_.add(
+                  input.readMessage(ibc.core.connection.v1.Connection.IdentifiedConnection.parser(), extensionRegistry));
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                clientConnectionPaths_ = new java.util.ArrayList<ibc.core.connection.v1.Connection.ConnectionPaths>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              clientConnectionPaths_.add(
+                  input.readMessage(ibc.core.connection.v1.Connection.ConnectionPaths.parser(), extensionRegistry));
+              break;
+            }
+            case 24: {
+
+              nextConnectionSequence_ = input.readUInt64();
+              break;
+            }
+            case 34: {
+              ibc.core.connection.v1.Connection.Params.Builder subBuilder = null;
+              if (params_ != null) {
+                subBuilder = params_.toBuilder();
+              }
+              params_ = input.readMessage(ibc.core.connection.v1.Connection.Params.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(params_);
+                params_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          connections_ = java.util.Collections.unmodifiableList(connections_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          clientConnectionPaths_ = java.util.Collections.unmodifiableList(clientConnectionPaths_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ibc.core.connection.v1.Genesis.internal_static_ibc_core_connection_v1_GenesisState_descriptor;
@@ -284,7 +364,7 @@ public final class Genesis {
       if (params_ != null) {
         output.writeMessage(4, getParams());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -309,7 +389,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getParams());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -335,7 +415,7 @@ public final class Genesis {
         if (!getParams()
             .equals(other.getParams())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -361,7 +441,7 @@ public final class Genesis {
         hash = (37 * hash) + PARAMS_FIELD_NUMBER;
         hash = (53 * hash) + getParams().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -482,31 +562,36 @@ public final class Genesis {
 
       // Construct using ibc.core.connection.v1.Genesis.GenesisState.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getConnectionsFieldBuilder();
+          getClientConnectionPathsFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
         if (connectionsBuilder_ == null) {
           connections_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          connections_ = null;
           connectionsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (clientConnectionPathsBuilder_ == null) {
           clientConnectionPaths_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          clientConnectionPaths_ = null;
           clientConnectionPathsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         nextConnectionSequence_ = 0L;
 
         if (paramsBuilder_ == null) {
@@ -672,7 +757,7 @@ public final class Genesis {
         if (other.hasParams()) {
           mergeParams(other.getParams());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -687,68 +772,17 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ibc.core.connection.v1.Genesis.GenesisState parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                ibc.core.connection.v1.Connection.IdentifiedConnection m =
-                    input.readMessage(
-                        ibc.core.connection.v1.Connection.IdentifiedConnection.parser(),
-                        extensionRegistry);
-                if (connectionsBuilder_ == null) {
-                  ensureConnectionsIsMutable();
-                  connections_.add(m);
-                } else {
-                  connectionsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              case 18: {
-                ibc.core.connection.v1.Connection.ConnectionPaths m =
-                    input.readMessage(
-                        ibc.core.connection.v1.Connection.ConnectionPaths.parser(),
-                        extensionRegistry);
-                if (clientConnectionPathsBuilder_ == null) {
-                  ensureClientConnectionPathsIsMutable();
-                  clientConnectionPaths_.add(m);
-                } else {
-                  clientConnectionPathsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-              case 24: {
-                nextConnectionSequence_ = input.readUInt64();
-
-                break;
-              } // case 24
-              case 34: {
-                input.readMessage(
-                    getParamsFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 34
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ibc.core.connection.v1.Genesis.GenesisState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1427,18 +1461,7 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GenesisState(input, extensionRegistry);
       }
     };
 

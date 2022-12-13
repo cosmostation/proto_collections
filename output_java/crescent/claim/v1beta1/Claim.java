@@ -365,6 +365,107 @@ public final class Claim {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private Airdrop(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              id_ = input.readUInt64();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sourceAddress_ = s;
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                conditions_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              conditions_.add(rawValue);
+              break;
+            }
+            case 26: {
+              int length = input.readRawVarint32();
+              int oldLimit = input.pushLimit(length);
+              while(input.getBytesUntilLimit() > 0) {
+                int rawValue = input.readEnum();
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  conditions_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                conditions_.add(rawValue);
+              }
+              input.popLimit(oldLimit);
+              break;
+            }
+            case 34: {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (startTime_ != null) {
+                subBuilder = startTime_.toBuilder();
+              }
+              startTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(startTime_);
+                startTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 42: {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (endTime_ != null) {
+                subBuilder = endTime_.toBuilder();
+              }
+              endTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(endTime_);
+                endTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          conditions_ = java.util.Collections.unmodifiableList(conditions_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return crescent.claim.v1beta1.Claim.internal_static_crescent_claim_v1beta1_Airdrop_descriptor;
@@ -613,7 +714,7 @@ public final class Claim {
       if (id_ != 0L) {
         output.writeUInt64(1, id_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceAddress_)) {
+      if (!getSourceAddressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sourceAddress_);
       }
       if (getConditionsList().size() > 0) {
@@ -629,7 +730,7 @@ public final class Claim {
       if (endTime_ != null) {
         output.writeMessage(5, getEndTime());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -642,7 +743,7 @@ public final class Claim {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(1, id_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceAddress_)) {
+      if (!getSourceAddressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sourceAddress_);
       }
       {
@@ -665,7 +766,7 @@ public final class Claim {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getEndTime());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -695,7 +796,7 @@ public final class Claim {
         if (!getEndTime()
             .equals(other.getEndTime())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -723,7 +824,7 @@ public final class Claim {
         hash = (37 * hash) + END_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getEndTime().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -844,13 +945,18 @@ public final class Claim {
 
       // Construct using crescent.claim.v1beta1.Claim.Airdrop.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -988,7 +1094,7 @@ public final class Claim {
         if (other.hasEndTime()) {
           mergeEndTime(other.getEndTime());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1003,71 +1109,17 @@ public final class Claim {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        crescent.claim.v1beta1.Claim.Airdrop parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                id_ = input.readUInt64();
-
-                break;
-              } // case 8
-              case 18: {
-                sourceAddress_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 18
-              case 24: {
-                int tmpRaw = input.readEnum();
-                ensureConditionsIsMutable();
-                conditions_.add(tmpRaw);
-                break;
-              } // case 24
-              case 26: {
-                int length = input.readRawVarint32();
-                int oldLimit = input.pushLimit(length);
-                while(input.getBytesUntilLimit() > 0) {
-                  int tmpRaw = input.readEnum();
-                  ensureConditionsIsMutable();
-                  conditions_.add(tmpRaw);
-                }
-                input.popLimit(oldLimit);
-                break;
-              } // case 26
-              case 34: {
-                input.readMessage(
-                    getStartTimeFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 34
-              case 42: {
-                input.readMessage(
-                    getEndTimeFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 42
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (crescent.claim.v1beta1.Claim.Airdrop) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1359,8 +1411,8 @@ public final class Claim {
        * </pre>
        *
        * <code>repeated .crescent.claim.v1beta1.ConditionType conditions = 3;</code>
-       * @param index The index to set the value at.
-       * @param value The enum numeric value on the wire for conditions to set.
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of conditions at the given index.
        * @return This builder for chaining.
        */
       public Builder setConditionsValue(
@@ -1746,18 +1798,7 @@ public final class Claim {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Airdrop(input, extensionRegistry);
       }
     };
 
@@ -1987,6 +2028,105 @@ public final class Claim {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private ClaimRecord(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              airdropId_ = input.readUInt64();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              recipient_ = s;
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                initialClaimableCoins_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              initialClaimableCoins_.add(
+                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                claimableCoins_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              claimableCoins_.add(
+                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                claimedConditions_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              claimedConditions_.add(rawValue);
+              break;
+            }
+            case 42: {
+              int length = input.readRawVarint32();
+              int oldLimit = input.pushLimit(length);
+              while(input.getBytesUntilLimit() > 0) {
+                int rawValue = input.readEnum();
+                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                  claimedConditions_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000004;
+                }
+                claimedConditions_.add(rawValue);
+              }
+              input.popLimit(oldLimit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          initialClaimableCoins_ = java.util.Collections.unmodifiableList(initialClaimableCoins_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          claimableCoins_ = java.util.Collections.unmodifiableList(claimableCoins_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          claimedConditions_ = java.util.Collections.unmodifiableList(claimedConditions_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -2283,7 +2423,7 @@ public final class Claim {
       if (airdropId_ != 0L) {
         output.writeUInt64(1, airdropId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(recipient_)) {
+      if (!getRecipientBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, recipient_);
       }
       for (int i = 0; i < initialClaimableCoins_.size(); i++) {
@@ -2299,7 +2439,7 @@ public final class Claim {
       for (int i = 0; i < claimedConditions_.size(); i++) {
         output.writeEnumNoTag(claimedConditions_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -2312,7 +2452,7 @@ public final class Claim {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(1, airdropId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(recipient_)) {
+      if (!getRecipientBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, recipient_);
       }
       for (int i = 0; i < initialClaimableCoins_.size(); i++) {
@@ -2335,7 +2475,7 @@ public final class Claim {
             .computeUInt32SizeNoTag(dataSize);
         }claimedConditionsMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2359,7 +2499,7 @@ public final class Claim {
       if (!getClaimableCoinsList()
           .equals(other.getClaimableCoinsList())) return false;
       if (!claimedConditions_.equals(other.claimedConditions_)) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -2387,7 +2527,7 @@ public final class Claim {
         hash = (37 * hash) + CLAIMED_CONDITIONS_FIELD_NUMBER;
         hash = (53 * hash) + claimedConditions_.hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2508,13 +2648,20 @@ public final class Claim {
 
       // Construct using crescent.claim.v1beta1.Claim.ClaimRecord.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getInitialClaimableCoinsFieldBuilder();
+          getClaimableCoinsFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -2525,18 +2672,16 @@ public final class Claim {
 
         if (initialClaimableCoinsBuilder_ == null) {
           initialClaimableCoins_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          initialClaimableCoins_ = null;
           initialClaimableCoinsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (claimableCoinsBuilder_ == null) {
           claimableCoins_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          claimableCoins_ = null;
           claimableCoinsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         claimedConditions_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
         return this;
@@ -2708,7 +2853,7 @@ public final class Claim {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -2723,83 +2868,17 @@ public final class Claim {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        crescent.claim.v1beta1.Claim.ClaimRecord parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                airdropId_ = input.readUInt64();
-
-                break;
-              } // case 8
-              case 18: {
-                recipient_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 18
-              case 26: {
-                cosmos.base.v1beta1.CoinOuterClass.Coin m =
-                    input.readMessage(
-                        cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
-                        extensionRegistry);
-                if (initialClaimableCoinsBuilder_ == null) {
-                  ensureInitialClaimableCoinsIsMutable();
-                  initialClaimableCoins_.add(m);
-                } else {
-                  initialClaimableCoinsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 26
-              case 34: {
-                cosmos.base.v1beta1.CoinOuterClass.Coin m =
-                    input.readMessage(
-                        cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
-                        extensionRegistry);
-                if (claimableCoinsBuilder_ == null) {
-                  ensureClaimableCoinsIsMutable();
-                  claimableCoins_.add(m);
-                } else {
-                  claimableCoinsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              case 40: {
-                int tmpRaw = input.readEnum();
-                ensureClaimedConditionsIsMutable();
-                claimedConditions_.add(tmpRaw);
-                break;
-              } // case 40
-              case 42: {
-                int length = input.readRawVarint32();
-                int oldLimit = input.pushLimit(length);
-                while(input.getBytesUntilLimit() > 0) {
-                  int tmpRaw = input.readEnum();
-                  ensureClaimedConditionsIsMutable();
-                  claimedConditions_.add(tmpRaw);
-                }
-                input.popLimit(oldLimit);
-                break;
-              } // case 42
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (crescent.claim.v1beta1.Claim.ClaimRecord) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -3720,8 +3799,8 @@ public final class Claim {
        * </pre>
        *
        * <code>repeated .crescent.claim.v1beta1.ConditionType claimed_conditions = 5;</code>
-       * @param index The index to set the value at.
-       * @param value The enum numeric value on the wire for claimedConditions to set.
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of claimedConditions at the given index.
        * @return This builder for chaining.
        */
       public Builder setClaimedConditionsValue(
@@ -3799,18 +3878,7 @@ public final class Claim {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ClaimRecord(input, extensionRegistry);
       }
     };
 

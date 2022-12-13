@@ -78,6 +78,55 @@ public final class StableswapPool {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private PoolParams(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              swapFee_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              exitFee_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return osmosis.gamm.poolmodels.stableswap.v1beta1.StableswapPool.internal_static_osmosis_gamm_poolmodels_stableswap_v1beta1_PoolParams_descriptor;
@@ -181,13 +230,13 @@ public final class StableswapPool {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(swapFee_)) {
+      if (!getSwapFeeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, swapFee_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(exitFee_)) {
+      if (!getExitFeeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, exitFee_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -196,13 +245,13 @@ public final class StableswapPool {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(swapFee_)) {
+      if (!getSwapFeeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, swapFee_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(exitFee_)) {
+      if (!getExitFeeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, exitFee_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -221,7 +270,7 @@ public final class StableswapPool {
           .equals(other.getSwapFee())) return false;
       if (!getExitFee()
           .equals(other.getExitFee())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -236,7 +285,7 @@ public final class StableswapPool {
       hash = (53 * hash) + getSwapFee().hashCode();
       hash = (37 * hash) + EXIT_FEE_FIELD_NUMBER;
       hash = (53 * hash) + getExitFee().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -360,13 +409,18 @@ public final class StableswapPool {
 
       // Construct using osmosis.gamm.poolmodels.stableswap.v1beta1.StableswapPool.PoolParams.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -459,7 +513,7 @@ public final class StableswapPool {
           exitFee_ = other.exitFee_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -474,40 +528,17 @@ public final class StableswapPool {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        osmosis.gamm.poolmodels.stableswap.v1beta1.StableswapPool.PoolParams parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                swapFee_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 10
-              case 18: {
-                exitFee_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (osmosis.gamm.poolmodels.stableswap.v1beta1.StableswapPool.PoolParams) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -695,18 +726,7 @@ public final class StableswapPool {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new PoolParams(input, extensionRegistry);
       }
     };
 
@@ -952,6 +972,129 @@ public final class StableswapPool {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private Pool(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              address_ = s;
+              break;
+            }
+            case 16: {
+
+              id_ = input.readUInt64();
+              break;
+            }
+            case 26: {
+              osmosis.gamm.poolmodels.stableswap.v1beta1.StableswapPool.PoolParams.Builder subBuilder = null;
+              if (poolParams_ != null) {
+                subBuilder = poolParams_.toBuilder();
+              }
+              poolParams_ = input.readMessage(osmosis.gamm.poolmodels.stableswap.v1beta1.StableswapPool.PoolParams.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(poolParams_);
+                poolParams_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              futurePoolGovernor_ = s;
+              break;
+            }
+            case 42: {
+              cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
+              if (totalShares_ != null) {
+                subBuilder = totalShares_.toBuilder();
+              }
+              totalShares_ = input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(totalShares_);
+                totalShares_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                poolLiquidity_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              poolLiquidity_.add(
+                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
+              break;
+            }
+            case 56: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                scalingFactors_ = newLongList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              scalingFactors_.addLong(input.readUInt64());
+              break;
+            }
+            case 58: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                scalingFactors_ = newLongList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                scalingFactors_.addLong(input.readUInt64());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              scalingFactorController_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          poolLiquidity_ = java.util.Collections.unmodifiableList(poolLiquidity_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          scalingFactors_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -1300,7 +1443,7 @@ public final class StableswapPool {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
+      if (!getAddressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, address_);
       }
       if (id_ != 0L) {
@@ -1309,7 +1452,7 @@ public final class StableswapPool {
       if (poolParams_ != null) {
         output.writeMessage(3, getPoolParams());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(futurePoolGovernor_)) {
+      if (!getFuturePoolGovernorBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, futurePoolGovernor_);
       }
       if (totalShares_ != null) {
@@ -1325,10 +1468,10 @@ public final class StableswapPool {
       for (int i = 0; i < scalingFactors_.size(); i++) {
         output.writeUInt64NoTag(scalingFactors_.getLong(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(scalingFactorController_)) {
+      if (!getScalingFactorControllerBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, scalingFactorController_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1337,7 +1480,7 @@ public final class StableswapPool {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
+      if (!getAddressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, address_);
       }
       if (id_ != 0L) {
@@ -1348,7 +1491,7 @@ public final class StableswapPool {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getPoolParams());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(futurePoolGovernor_)) {
+      if (!getFuturePoolGovernorBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, futurePoolGovernor_);
       }
       if (totalShares_ != null) {
@@ -1373,10 +1516,10 @@ public final class StableswapPool {
         }
         scalingFactorsMemoizedSerializedSize = dataSize;
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(scalingFactorController_)) {
+      if (!getScalingFactorControllerBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, scalingFactorController_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1413,7 +1556,7 @@ public final class StableswapPool {
           .equals(other.getScalingFactorsList())) return false;
       if (!getScalingFactorController()
           .equals(other.getScalingFactorController())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -1449,7 +1592,7 @@ public final class StableswapPool {
       }
       hash = (37 * hash) + SCALING_FACTOR_CONTROLLER_FIELD_NUMBER;
       hash = (53 * hash) + getScalingFactorController().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1570,13 +1713,19 @@ public final class StableswapPool {
 
       // Construct using osmosis.gamm.poolmodels.stableswap.v1beta1.StableswapPool.Pool.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getPoolLiquidityFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -1601,11 +1750,10 @@ public final class StableswapPool {
         }
         if (poolLiquidityBuilder_ == null) {
           poolLiquidity_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          poolLiquidity_ = null;
           poolLiquidityBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         scalingFactors_ = emptyLongList();
         bitField0_ = (bitField0_ & ~0x00000002);
         scalingFactorController_ = "";
@@ -1770,7 +1918,7 @@ public final class StableswapPool {
           scalingFactorController_ = other.scalingFactorController_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1785,93 +1933,17 @@ public final class StableswapPool {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        osmosis.gamm.poolmodels.stableswap.v1beta1.StableswapPool.Pool parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                address_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 10
-              case 16: {
-                id_ = input.readUInt64();
-
-                break;
-              } // case 16
-              case 26: {
-                input.readMessage(
-                    getPoolParamsFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 26
-              case 34: {
-                futurePoolGovernor_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 34
-              case 42: {
-                input.readMessage(
-                    getTotalSharesFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 42
-              case 50: {
-                cosmos.base.v1beta1.CoinOuterClass.Coin m =
-                    input.readMessage(
-                        cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
-                        extensionRegistry);
-                if (poolLiquidityBuilder_ == null) {
-                  ensurePoolLiquidityIsMutable();
-                  poolLiquidity_.add(m);
-                } else {
-                  poolLiquidityBuilder_.addMessage(m);
-                }
-                break;
-              } // case 50
-              case 56: {
-                long v = input.readUInt64();
-                ensureScalingFactorsIsMutable();
-                scalingFactors_.addLong(v);
-                break;
-              } // case 56
-              case 58: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureScalingFactorsIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  scalingFactors_.addLong(input.readUInt64());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 58
-              case 66: {
-                scalingFactorController_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 66
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (osmosis.gamm.poolmodels.stableswap.v1beta1.StableswapPool.Pool) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -2935,18 +3007,7 @@ public final class StableswapPool {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Pool(input, extensionRegistry);
       }
     };
 

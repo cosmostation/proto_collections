@@ -234,6 +234,133 @@ public final class Genesis {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GenesisState(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                channels_ = new java.util.ArrayList<ibc.core.channel.v1.ChannelOuterClass.IdentifiedChannel>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              channels_.add(
+                  input.readMessage(ibc.core.channel.v1.ChannelOuterClass.IdentifiedChannel.parser(), extensionRegistry));
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                acknowledgements_ = new java.util.ArrayList<ibc.core.channel.v1.ChannelOuterClass.PacketState>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              acknowledgements_.add(
+                  input.readMessage(ibc.core.channel.v1.ChannelOuterClass.PacketState.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                commitments_ = new java.util.ArrayList<ibc.core.channel.v1.ChannelOuterClass.PacketState>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              commitments_.add(
+                  input.readMessage(ibc.core.channel.v1.ChannelOuterClass.PacketState.parser(), extensionRegistry));
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                receipts_ = new java.util.ArrayList<ibc.core.channel.v1.ChannelOuterClass.PacketState>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              receipts_.add(
+                  input.readMessage(ibc.core.channel.v1.ChannelOuterClass.PacketState.parser(), extensionRegistry));
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                sendSequences_ = new java.util.ArrayList<ibc.core.channel.v1.Genesis.PacketSequence>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              sendSequences_.add(
+                  input.readMessage(ibc.core.channel.v1.Genesis.PacketSequence.parser(), extensionRegistry));
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                recvSequences_ = new java.util.ArrayList<ibc.core.channel.v1.Genesis.PacketSequence>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              recvSequences_.add(
+                  input.readMessage(ibc.core.channel.v1.Genesis.PacketSequence.parser(), extensionRegistry));
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+                ackSequences_ = new java.util.ArrayList<ibc.core.channel.v1.Genesis.PacketSequence>();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              ackSequences_.add(
+                  input.readMessage(ibc.core.channel.v1.Genesis.PacketSequence.parser(), extensionRegistry));
+              break;
+            }
+            case 64: {
+
+              nextChannelSequence_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          channels_ = java.util.Collections.unmodifiableList(channels_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          acknowledgements_ = java.util.Collections.unmodifiableList(acknowledgements_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          commitments_ = java.util.Collections.unmodifiableList(commitments_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          receipts_ = java.util.Collections.unmodifiableList(receipts_);
+        }
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+          sendSequences_ = java.util.Collections.unmodifiableList(sendSequences_);
+        }
+        if (((mutable_bitField0_ & 0x00000020) != 0)) {
+          recvSequences_ = java.util.Collections.unmodifiableList(recvSequences_);
+        }
+        if (((mutable_bitField0_ & 0x00000040) != 0)) {
+          ackSequences_ = java.util.Collections.unmodifiableList(ackSequences_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ibc.core.channel.v1.Genesis.internal_static_ibc_core_channel_v1_GenesisState_descriptor;
@@ -580,7 +707,7 @@ public final class Genesis {
       if (nextChannelSequence_ != 0L) {
         output.writeUInt64(8, nextChannelSequence_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -621,7 +748,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(8, nextChannelSequence_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -652,7 +779,7 @@ public final class Genesis {
           .equals(other.getAckSequencesList())) return false;
       if (getNextChannelSequence()
           != other.getNextChannelSequence()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -694,7 +821,7 @@ public final class Genesis {
       hash = (37 * hash) + NEXT_CHANNEL_SEQUENCE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getNextChannelSequence());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -815,66 +942,71 @@ public final class Genesis {
 
       // Construct using ibc.core.channel.v1.Genesis.GenesisState.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getChannelsFieldBuilder();
+          getAcknowledgementsFieldBuilder();
+          getCommitmentsFieldBuilder();
+          getReceiptsFieldBuilder();
+          getSendSequencesFieldBuilder();
+          getRecvSequencesFieldBuilder();
+          getAckSequencesFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
         if (channelsBuilder_ == null) {
           channels_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          channels_ = null;
           channelsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (acknowledgementsBuilder_ == null) {
           acknowledgements_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          acknowledgements_ = null;
           acknowledgementsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         if (commitmentsBuilder_ == null) {
           commitments_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          commitments_ = null;
           commitmentsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         if (receiptsBuilder_ == null) {
           receipts_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
-          receipts_ = null;
           receiptsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
         if (sendSequencesBuilder_ == null) {
           sendSequences_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
-          sendSequences_ = null;
           sendSequencesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000010);
         if (recvSequencesBuilder_ == null) {
           recvSequences_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
-          recvSequences_ = null;
           recvSequencesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000020);
         if (ackSequencesBuilder_ == null) {
           ackSequences_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
-          ackSequences_ = null;
           ackSequencesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000040);
         nextChannelSequence_ = 0L;
 
         return this;
@@ -1201,7 +1333,7 @@ public final class Genesis {
         if (other.getNextChannelSequence() != 0L) {
           setNextChannelSequence(other.getNextChannelSequence());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1216,126 +1348,17 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ibc.core.channel.v1.Genesis.GenesisState parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                ibc.core.channel.v1.ChannelOuterClass.IdentifiedChannel m =
-                    input.readMessage(
-                        ibc.core.channel.v1.ChannelOuterClass.IdentifiedChannel.parser(),
-                        extensionRegistry);
-                if (channelsBuilder_ == null) {
-                  ensureChannelsIsMutable();
-                  channels_.add(m);
-                } else {
-                  channelsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              case 18: {
-                ibc.core.channel.v1.ChannelOuterClass.PacketState m =
-                    input.readMessage(
-                        ibc.core.channel.v1.ChannelOuterClass.PacketState.parser(),
-                        extensionRegistry);
-                if (acknowledgementsBuilder_ == null) {
-                  ensureAcknowledgementsIsMutable();
-                  acknowledgements_.add(m);
-                } else {
-                  acknowledgementsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-              case 26: {
-                ibc.core.channel.v1.ChannelOuterClass.PacketState m =
-                    input.readMessage(
-                        ibc.core.channel.v1.ChannelOuterClass.PacketState.parser(),
-                        extensionRegistry);
-                if (commitmentsBuilder_ == null) {
-                  ensureCommitmentsIsMutable();
-                  commitments_.add(m);
-                } else {
-                  commitmentsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 26
-              case 34: {
-                ibc.core.channel.v1.ChannelOuterClass.PacketState m =
-                    input.readMessage(
-                        ibc.core.channel.v1.ChannelOuterClass.PacketState.parser(),
-                        extensionRegistry);
-                if (receiptsBuilder_ == null) {
-                  ensureReceiptsIsMutable();
-                  receipts_.add(m);
-                } else {
-                  receiptsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              case 42: {
-                ibc.core.channel.v1.Genesis.PacketSequence m =
-                    input.readMessage(
-                        ibc.core.channel.v1.Genesis.PacketSequence.parser(),
-                        extensionRegistry);
-                if (sendSequencesBuilder_ == null) {
-                  ensureSendSequencesIsMutable();
-                  sendSequences_.add(m);
-                } else {
-                  sendSequencesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 42
-              case 50: {
-                ibc.core.channel.v1.Genesis.PacketSequence m =
-                    input.readMessage(
-                        ibc.core.channel.v1.Genesis.PacketSequence.parser(),
-                        extensionRegistry);
-                if (recvSequencesBuilder_ == null) {
-                  ensureRecvSequencesIsMutable();
-                  recvSequences_.add(m);
-                } else {
-                  recvSequencesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 50
-              case 58: {
-                ibc.core.channel.v1.Genesis.PacketSequence m =
-                    input.readMessage(
-                        ibc.core.channel.v1.Genesis.PacketSequence.parser(),
-                        extensionRegistry);
-                if (ackSequencesBuilder_ == null) {
-                  ensureAckSequencesIsMutable();
-                  ackSequences_.add(m);
-                } else {
-                  ackSequencesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 58
-              case 64: {
-                nextChannelSequence_ = input.readUInt64();
-
-                break;
-              } // case 64
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ibc.core.channel.v1.Genesis.GenesisState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -3095,18 +3118,7 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GenesisState(input, extensionRegistry);
       }
     };
 
@@ -3193,6 +3205,60 @@ public final class Genesis {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private PacketSequence(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              portId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              channelId_ = s;
+              break;
+            }
+            case 24: {
+
+              sequence_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -3308,16 +3374,16 @@ public final class Genesis {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(portId_)) {
+      if (!getPortIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, portId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(channelId_)) {
+      if (!getChannelIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, channelId_);
       }
       if (sequence_ != 0L) {
         output.writeUInt64(3, sequence_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -3326,17 +3392,17 @@ public final class Genesis {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(portId_)) {
+      if (!getPortIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, portId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(channelId_)) {
+      if (!getChannelIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, channelId_);
       }
       if (sequence_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(3, sequence_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3357,7 +3423,7 @@ public final class Genesis {
           .equals(other.getChannelId())) return false;
       if (getSequence()
           != other.getSequence()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -3375,7 +3441,7 @@ public final class Genesis {
       hash = (37 * hash) + SEQUENCE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSequence());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3497,13 +3563,18 @@ public final class Genesis {
 
       // Construct using ibc.core.channel.v1.Genesis.PacketSequence.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -3602,7 +3673,7 @@ public final class Genesis {
         if (other.getSequence() != 0L) {
           setSequence(other.getSequence());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -3617,45 +3688,17 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        ibc.core.channel.v1.Genesis.PacketSequence parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                portId_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 10
-              case 18: {
-                channelId_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 18
-              case 24: {
-                sequence_ = input.readUInt64();
-
-                break;
-              } // case 24
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ibc.core.channel.v1.Genesis.PacketSequence) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -3874,18 +3917,7 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new PacketSequence(input, extensionRegistry);
       }
     };
 

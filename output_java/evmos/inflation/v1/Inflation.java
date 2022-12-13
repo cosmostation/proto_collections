@@ -124,6 +124,61 @@ public final class Inflation {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private InflationDistribution(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              stakingRewards_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              usageIncentives_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              communityPool_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return evmos.inflation.v1.Inflation.internal_static_evmos_inflation_v1_InflationDistribution_descriptor;
@@ -295,16 +350,16 @@ public final class Inflation {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stakingRewards_)) {
+      if (!getStakingRewardsBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, stakingRewards_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(usageIncentives_)) {
+      if (!getUsageIncentivesBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, usageIncentives_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(communityPool_)) {
+      if (!getCommunityPoolBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, communityPool_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -313,16 +368,16 @@ public final class Inflation {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stakingRewards_)) {
+      if (!getStakingRewardsBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, stakingRewards_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(usageIncentives_)) {
+      if (!getUsageIncentivesBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, usageIncentives_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(communityPool_)) {
+      if (!getCommunityPoolBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, communityPool_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -343,7 +398,7 @@ public final class Inflation {
           .equals(other.getUsageIncentives())) return false;
       if (!getCommunityPool()
           .equals(other.getCommunityPool())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -360,7 +415,7 @@ public final class Inflation {
       hash = (53 * hash) + getUsageIncentives().hashCode();
       hash = (37 * hash) + COMMUNITY_POOL_FIELD_NUMBER;
       hash = (53 * hash) + getCommunityPool().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -487,13 +542,18 @@ public final class Inflation {
 
       // Construct using evmos.inflation.v1.Inflation.InflationDistribution.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -593,7 +653,7 @@ public final class Inflation {
           communityPool_ = other.communityPool_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -608,45 +668,17 @@ public final class Inflation {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        evmos.inflation.v1.Inflation.InflationDistribution parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                stakingRewards_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 10
-              case 18: {
-                usageIncentives_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 18
-              case 26: {
-                communityPool_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 26
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (evmos.inflation.v1.Inflation.InflationDistribution) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -985,18 +1017,7 @@ public final class Inflation {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new InflationDistribution(input, extensionRegistry);
       }
     };
 
@@ -1159,6 +1180,73 @@ public final class Inflation {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private ExponentialCalculation(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              a_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              r_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              c_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              bondingTarget_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              maxVariance_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -1417,22 +1505,22 @@ public final class Inflation {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(a_)) {
+      if (!getABytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, a_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(r_)) {
+      if (!getRBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, r_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(c_)) {
+      if (!getCBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, c_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bondingTarget_)) {
+      if (!getBondingTargetBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, bondingTarget_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(maxVariance_)) {
+      if (!getMaxVarianceBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, maxVariance_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1441,22 +1529,22 @@ public final class Inflation {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(a_)) {
+      if (!getABytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, a_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(r_)) {
+      if (!getRBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, r_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(c_)) {
+      if (!getCBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, c_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bondingTarget_)) {
+      if (!getBondingTargetBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, bondingTarget_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(maxVariance_)) {
+      if (!getMaxVarianceBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, maxVariance_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1481,7 +1569,7 @@ public final class Inflation {
           .equals(other.getBondingTarget())) return false;
       if (!getMaxVariance()
           .equals(other.getMaxVariance())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -1502,7 +1590,7 @@ public final class Inflation {
       hash = (53 * hash) + getBondingTarget().hashCode();
       hash = (37 * hash) + MAX_VARIANCE_FIELD_NUMBER;
       hash = (53 * hash) + getMaxVariance().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1627,13 +1715,18 @@ public final class Inflation {
 
       // Construct using evmos.inflation.v1.Inflation.ExponentialCalculation.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -1747,7 +1840,7 @@ public final class Inflation {
           maxVariance_ = other.maxVariance_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1762,55 +1855,17 @@ public final class Inflation {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        evmos.inflation.v1.Inflation.ExponentialCalculation parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                a_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 10
-              case 18: {
-                r_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 18
-              case 26: {
-                c_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 26
-              case 34: {
-                bondingTarget_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 34
-              case 42: {
-                maxVariance_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 42
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (evmos.inflation.v1.Inflation.ExponentialCalculation) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -2326,18 +2381,7 @@ public final class Inflation {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ExponentialCalculation(input, extensionRegistry);
       }
     };
 

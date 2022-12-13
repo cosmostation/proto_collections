@@ -309,6 +309,165 @@ public final class Genesis {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GenesisState(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              likechain.likenft.v1.ParamsOuterClass.Params.Builder subBuilder = null;
+              if (params_ != null) {
+                subBuilder = params_.toBuilder();
+              }
+              params_ = input.readMessage(likechain.likenft.v1.ParamsOuterClass.Params.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(params_);
+                params_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                classesByIscnList_ = new java.util.ArrayList<likechain.likenft.v1.ClassesByIscn.ClassesByISCN>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              classesByIscnList_.add(
+                  input.readMessage(likechain.likenft.v1.ClassesByIscn.ClassesByISCN.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                classesByAccountList_ = new java.util.ArrayList<likechain.likenft.v1.ClassesByAccountOuterClass.ClassesByAccount>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              classesByAccountList_.add(
+                  input.readMessage(likechain.likenft.v1.ClassesByAccountOuterClass.ClassesByAccount.parser(), extensionRegistry));
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                blindBoxContentList_ = new java.util.ArrayList<likechain.likenft.v1.BlindBoxContentOuterClass.BlindBoxContent>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              blindBoxContentList_.add(
+                  input.readMessage(likechain.likenft.v1.BlindBoxContentOuterClass.BlindBoxContent.parser(), extensionRegistry));
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                classRevealQueue_ = new java.util.ArrayList<likechain.likenft.v1.ClassRevealQueue.ClassRevealQueueEntry>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              classRevealQueue_.add(
+                  input.readMessage(likechain.likenft.v1.ClassRevealQueue.ClassRevealQueueEntry.parser(), extensionRegistry));
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                offerList_ = new java.util.ArrayList<likechain.likenft.v1.OfferOuterClass.Offer>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              offerList_.add(
+                  input.readMessage(likechain.likenft.v1.OfferOuterClass.Offer.parser(), extensionRegistry));
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                listingList_ = new java.util.ArrayList<likechain.likenft.v1.ListingOuterClass.Listing>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              listingList_.add(
+                  input.readMessage(likechain.likenft.v1.ListingOuterClass.Listing.parser(), extensionRegistry));
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+                offerExpireQueue_ = new java.util.ArrayList<likechain.likenft.v1.OfferExpireQueue.OfferExpireQueueEntry>();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              offerExpireQueue_.add(
+                  input.readMessage(likechain.likenft.v1.OfferExpireQueue.OfferExpireQueueEntry.parser(), extensionRegistry));
+              break;
+            }
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+                listingExpireQueue_ = new java.util.ArrayList<likechain.likenft.v1.ListingExpireQueue.ListingExpireQueueEntry>();
+                mutable_bitField0_ |= 0x00000080;
+              }
+              listingExpireQueue_.add(
+                  input.readMessage(likechain.likenft.v1.ListingExpireQueue.ListingExpireQueueEntry.parser(), extensionRegistry));
+              break;
+            }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+                royaltyConfigByClassList_ = new java.util.ArrayList<likechain.likenft.v1.RoyaltyConfigOuterClass.RoyaltyConfigByClass>();
+                mutable_bitField0_ |= 0x00000100;
+              }
+              royaltyConfigByClassList_.add(
+                  input.readMessage(likechain.likenft.v1.RoyaltyConfigOuterClass.RoyaltyConfigByClass.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          classesByIscnList_ = java.util.Collections.unmodifiableList(classesByIscnList_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          classesByAccountList_ = java.util.Collections.unmodifiableList(classesByAccountList_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          blindBoxContentList_ = java.util.Collections.unmodifiableList(blindBoxContentList_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          classRevealQueue_ = java.util.Collections.unmodifiableList(classRevealQueue_);
+        }
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+          offerList_ = java.util.Collections.unmodifiableList(offerList_);
+        }
+        if (((mutable_bitField0_ & 0x00000020) != 0)) {
+          listingList_ = java.util.Collections.unmodifiableList(listingList_);
+        }
+        if (((mutable_bitField0_ & 0x00000040) != 0)) {
+          offerExpireQueue_ = java.util.Collections.unmodifiableList(offerExpireQueue_);
+        }
+        if (((mutable_bitField0_ & 0x00000080) != 0)) {
+          listingExpireQueue_ = java.util.Collections.unmodifiableList(listingExpireQueue_);
+        }
+        if (((mutable_bitField0_ & 0x00000100) != 0)) {
+          royaltyConfigByClassList_ = java.util.Collections.unmodifiableList(royaltyConfigByClassList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return likechain.likenft.v1.Genesis.internal_static_likechain_likenft_v1_GenesisState_descriptor;
@@ -772,7 +931,7 @@ public final class Genesis {
       for (int i = 0; i < royaltyConfigByClassList_.size(); i++) {
         output.writeMessage(10, royaltyConfigByClassList_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -821,7 +980,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, royaltyConfigByClassList_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -859,7 +1018,7 @@ public final class Genesis {
           .equals(other.getListingExpireQueueList())) return false;
       if (!getRoyaltyConfigByClassListList()
           .equals(other.getRoyaltyConfigByClassListList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -910,7 +1069,7 @@ public final class Genesis {
         hash = (37 * hash) + ROYALTY_CONFIG_BY_CLASS_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getRoyaltyConfigByClassListList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1031,13 +1190,27 @@ public final class Genesis {
 
       // Construct using likechain.likenft.v1.Genesis.GenesisState.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getClassesByIscnListFieldBuilder();
+          getClassesByAccountListFieldBuilder();
+          getBlindBoxContentListFieldBuilder();
+          getClassRevealQueueFieldBuilder();
+          getOfferListFieldBuilder();
+          getListingListFieldBuilder();
+          getOfferExpireQueueFieldBuilder();
+          getListingExpireQueueFieldBuilder();
+          getRoyaltyConfigByClassListFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -1050,67 +1223,58 @@ public final class Genesis {
         }
         if (classesByIscnListBuilder_ == null) {
           classesByIscnList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          classesByIscnList_ = null;
           classesByIscnListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (classesByAccountListBuilder_ == null) {
           classesByAccountList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          classesByAccountList_ = null;
           classesByAccountListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         if (blindBoxContentListBuilder_ == null) {
           blindBoxContentList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          blindBoxContentList_ = null;
           blindBoxContentListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         if (classRevealQueueBuilder_ == null) {
           classRevealQueue_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
-          classRevealQueue_ = null;
           classRevealQueueBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
         if (offerListBuilder_ == null) {
           offerList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
-          offerList_ = null;
           offerListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000010);
         if (listingListBuilder_ == null) {
           listingList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
-          listingList_ = null;
           listingListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000020);
         if (offerExpireQueueBuilder_ == null) {
           offerExpireQueue_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
-          offerExpireQueue_ = null;
           offerExpireQueueBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000040);
         if (listingExpireQueueBuilder_ == null) {
           listingExpireQueue_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
-          listingExpireQueue_ = null;
           listingExpireQueueBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000080);
         if (royaltyConfigByClassListBuilder_ == null) {
           royaltyConfigByClassList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
-          royaltyConfigByClassList_ = null;
           royaltyConfigByClassListBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000100);
         return this;
       }
 
@@ -1509,7 +1673,7 @@ public final class Genesis {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1524,154 +1688,17 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        likechain.likenft.v1.Genesis.GenesisState parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getParamsFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 10
-              case 18: {
-                likechain.likenft.v1.ClassesByIscn.ClassesByISCN m =
-                    input.readMessage(
-                        likechain.likenft.v1.ClassesByIscn.ClassesByISCN.parser(),
-                        extensionRegistry);
-                if (classesByIscnListBuilder_ == null) {
-                  ensureClassesByIscnListIsMutable();
-                  classesByIscnList_.add(m);
-                } else {
-                  classesByIscnListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-              case 26: {
-                likechain.likenft.v1.ClassesByAccountOuterClass.ClassesByAccount m =
-                    input.readMessage(
-                        likechain.likenft.v1.ClassesByAccountOuterClass.ClassesByAccount.parser(),
-                        extensionRegistry);
-                if (classesByAccountListBuilder_ == null) {
-                  ensureClassesByAccountListIsMutable();
-                  classesByAccountList_.add(m);
-                } else {
-                  classesByAccountListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 26
-              case 34: {
-                likechain.likenft.v1.BlindBoxContentOuterClass.BlindBoxContent m =
-                    input.readMessage(
-                        likechain.likenft.v1.BlindBoxContentOuterClass.BlindBoxContent.parser(),
-                        extensionRegistry);
-                if (blindBoxContentListBuilder_ == null) {
-                  ensureBlindBoxContentListIsMutable();
-                  blindBoxContentList_.add(m);
-                } else {
-                  blindBoxContentListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              case 42: {
-                likechain.likenft.v1.ClassRevealQueue.ClassRevealQueueEntry m =
-                    input.readMessage(
-                        likechain.likenft.v1.ClassRevealQueue.ClassRevealQueueEntry.parser(),
-                        extensionRegistry);
-                if (classRevealQueueBuilder_ == null) {
-                  ensureClassRevealQueueIsMutable();
-                  classRevealQueue_.add(m);
-                } else {
-                  classRevealQueueBuilder_.addMessage(m);
-                }
-                break;
-              } // case 42
-              case 50: {
-                likechain.likenft.v1.OfferOuterClass.Offer m =
-                    input.readMessage(
-                        likechain.likenft.v1.OfferOuterClass.Offer.parser(),
-                        extensionRegistry);
-                if (offerListBuilder_ == null) {
-                  ensureOfferListIsMutable();
-                  offerList_.add(m);
-                } else {
-                  offerListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 50
-              case 58: {
-                likechain.likenft.v1.ListingOuterClass.Listing m =
-                    input.readMessage(
-                        likechain.likenft.v1.ListingOuterClass.Listing.parser(),
-                        extensionRegistry);
-                if (listingListBuilder_ == null) {
-                  ensureListingListIsMutable();
-                  listingList_.add(m);
-                } else {
-                  listingListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 58
-              case 66: {
-                likechain.likenft.v1.OfferExpireQueue.OfferExpireQueueEntry m =
-                    input.readMessage(
-                        likechain.likenft.v1.OfferExpireQueue.OfferExpireQueueEntry.parser(),
-                        extensionRegistry);
-                if (offerExpireQueueBuilder_ == null) {
-                  ensureOfferExpireQueueIsMutable();
-                  offerExpireQueue_.add(m);
-                } else {
-                  offerExpireQueueBuilder_.addMessage(m);
-                }
-                break;
-              } // case 66
-              case 74: {
-                likechain.likenft.v1.ListingExpireQueue.ListingExpireQueueEntry m =
-                    input.readMessage(
-                        likechain.likenft.v1.ListingExpireQueue.ListingExpireQueueEntry.parser(),
-                        extensionRegistry);
-                if (listingExpireQueueBuilder_ == null) {
-                  ensureListingExpireQueueIsMutable();
-                  listingExpireQueue_.add(m);
-                } else {
-                  listingExpireQueueBuilder_.addMessage(m);
-                }
-                break;
-              } // case 74
-              case 82: {
-                likechain.likenft.v1.RoyaltyConfigOuterClass.RoyaltyConfigByClass m =
-                    input.readMessage(
-                        likechain.likenft.v1.RoyaltyConfigOuterClass.RoyaltyConfigByClass.parser(),
-                        extensionRegistry);
-                if (royaltyConfigByClassListBuilder_ == null) {
-                  ensureRoyaltyConfigByClassListIsMutable();
-                  royaltyConfigByClassList_.add(m);
-                } else {
-                  royaltyConfigByClassListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 82
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (likechain.likenft.v1.Genesis.GenesisState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -4059,18 +4086,7 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GenesisState(input, extensionRegistry);
       }
     };
 

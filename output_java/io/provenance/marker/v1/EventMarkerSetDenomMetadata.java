@@ -41,6 +41,92 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
+  private EventMarkerSetDenomMetadata(
+      com.google.protobuf.CodedInputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    int mutable_bitField0_ = 0;
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
+    try {
+      boolean done = false;
+      while (!done) {
+        int tag = input.readTag();
+        switch (tag) {
+          case 0:
+            done = true;
+            break;
+          case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            metadataBase_ = s;
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            metadataDescription_ = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            metadataDisplay_ = s;
+            break;
+          }
+          case 34: {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              metadataDenomUnits_ = new java.util.ArrayList<io.provenance.marker.v1.EventDenomUnit>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            metadataDenomUnits_.add(
+                input.readMessage(io.provenance.marker.v1.EventDenomUnit.parser(), extensionRegistry));
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            administrator_ = s;
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            metadataName_ = s;
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            metadataSymbol_ = s;
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
+        }
+      }
+    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      throw e.setUnfinishedMessage(this);
+    } catch (java.io.IOException e) {
+      throw new com.google.protobuf.InvalidProtocolBufferException(
+          e).setUnfinishedMessage(this);
+    } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        metadataDenomUnits_ = java.util.Collections.unmodifiableList(metadataDenomUnits_);
+      }
+      this.unknownFields = unknownFields.build();
+      makeExtensionsImmutable();
+    }
+  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return io.provenance.marker.v1.Marker.internal_static_provenance_marker_v1_EventMarkerSetDenomMetadata_descriptor;
@@ -336,28 +422,28 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataBase_)) {
+    if (!getMetadataBaseBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, metadataBase_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataDescription_)) {
+    if (!getMetadataDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, metadataDescription_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataDisplay_)) {
+    if (!getMetadataDisplayBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, metadataDisplay_);
     }
     for (int i = 0; i < metadataDenomUnits_.size(); i++) {
       output.writeMessage(4, metadataDenomUnits_.get(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(administrator_)) {
+    if (!getAdministratorBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, administrator_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataName_)) {
+    if (!getMetadataNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, metadataName_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataSymbol_)) {
+    if (!getMetadataSymbolBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, metadataSymbol_);
     }
-    getUnknownFields().writeTo(output);
+    unknownFields.writeTo(output);
   }
 
   @java.lang.Override
@@ -366,29 +452,29 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataBase_)) {
+    if (!getMetadataBaseBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, metadataBase_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataDescription_)) {
+    if (!getMetadataDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, metadataDescription_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataDisplay_)) {
+    if (!getMetadataDisplayBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, metadataDisplay_);
     }
     for (int i = 0; i < metadataDenomUnits_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, metadataDenomUnits_.get(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(administrator_)) {
+    if (!getAdministratorBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, administrator_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataName_)) {
+    if (!getMetadataNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, metadataName_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataSymbol_)) {
+    if (!getMetadataSymbolBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, metadataSymbol_);
     }
-    size += getUnknownFields().getSerializedSize();
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -417,7 +503,7 @@ private static final long serialVersionUID = 0L;
         .equals(other.getMetadataName())) return false;
     if (!getMetadataSymbol()
         .equals(other.getMetadataSymbol())) return false;
-    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
 
@@ -444,7 +530,7 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getMetadataName().hashCode();
     hash = (37 * hash) + METADATA_SYMBOL_FIELD_NUMBER;
     hash = (53 * hash) + getMetadataSymbol().hashCode();
-    hash = (29 * hash) + getUnknownFields().hashCode();
+    hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -565,13 +651,19 @@ private static final long serialVersionUID = 0L;
 
     // Construct using io.provenance.marker.v1.EventMarkerSetDenomMetadata.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getMetadataDenomUnitsFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -584,11 +676,10 @@ private static final long serialVersionUID = 0L;
 
       if (metadataDenomUnitsBuilder_ == null) {
         metadataDenomUnits_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        metadataDenomUnits_ = null;
         metadataDenomUnitsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       administrator_ = "";
 
       metadataName_ = "";
@@ -735,7 +826,7 @@ private static final long serialVersionUID = 0L;
         metadataSymbol_ = other.metadataSymbol_;
         onChanged();
       }
-      this.mergeUnknownFields(other.getUnknownFields());
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
@@ -750,73 +841,17 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
+      io.provenance.marker.v1.EventMarkerSetDenomMetadata parsedMessage = null;
       try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              metadataBase_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 10
-            case 18: {
-              metadataDescription_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 18
-            case 26: {
-              metadataDisplay_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 26
-            case 34: {
-              io.provenance.marker.v1.EventDenomUnit m =
-                  input.readMessage(
-                      io.provenance.marker.v1.EventDenomUnit.parser(),
-                      extensionRegistry);
-              if (metadataDenomUnitsBuilder_ == null) {
-                ensureMetadataDenomUnitsIsMutable();
-                metadataDenomUnits_.add(m);
-              } else {
-                metadataDenomUnitsBuilder_.addMessage(m);
-              }
-              break;
-            } // case 34
-            case 42: {
-              administrator_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 42
-            case 50: {
-              metadataName_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 50
-            case 58: {
-              metadataSymbol_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 58
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
-          } // switch (tag)
-        } // while (!done)
+        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        parsedMessage = (io.provenance.marker.v1.EventMarkerSetDenomMetadata) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        onChanged();
-      } // finally
+        if (parsedMessage != null) {
+          mergeFrom(parsedMessage);
+        }
+      }
       return this;
     }
     private int bitField0_;
@@ -1549,18 +1584,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
+      return new EventMarkerSetDenomMetadata(input, extensionRegistry);
     }
   };
 

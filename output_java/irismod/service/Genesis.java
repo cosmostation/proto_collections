@@ -105,11 +105,9 @@ public final class Genesis {
      * <code>map&lt;string, string&gt; withdraw_addresses = 4 [(.gogoproto.moretags) = "yaml:&#92;"withdraw_addresses&#92;""];</code>
      */
 
-    /* nullable */
-java.lang.String getWithdrawAddressesOrDefault(
+    java.lang.String getWithdrawAddressesOrDefault(
         java.lang.String key,
-        /* nullable */
-java.lang.String defaultValue);
+        java.lang.String defaultValue);
     /**
      * <code>map&lt;string, string&gt; withdraw_addresses = 4 [(.gogoproto.moretags) = "yaml:&#92;"withdraw_addresses&#92;""];</code>
      */
@@ -141,11 +139,9 @@ java.lang.String defaultValue);
      * <code>map&lt;string, .irismod.service.RequestContext&gt; request_contexts = 5 [(.gogoproto.moretags) = "yaml:&#92;"request_contexts&#92;""];</code>
      */
 
-    /* nullable */
-irismod.service.Service.RequestContext getRequestContextsOrDefault(
+    irismod.service.Service.RequestContext getRequestContextsOrDefault(
         java.lang.String key,
-        /* nullable */
-irismod.service.Service.RequestContext defaultValue);
+        irismod.service.Service.RequestContext defaultValue);
     /**
      * <code>map&lt;string, .irismod.service.RequestContext&gt; request_contexts = 5 [(.gogoproto.moretags) = "yaml:&#92;"request_contexts&#92;""];</code>
      */
@@ -185,6 +181,107 @@ irismod.service.Service.RequestContext defaultValue);
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private GenesisState(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              irismod.service.Service.Params.Builder subBuilder = null;
+              if (params_ != null) {
+                subBuilder = params_.toBuilder();
+              }
+              params_ = input.readMessage(irismod.service.Service.Params.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(params_);
+                params_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                definitions_ = new java.util.ArrayList<irismod.service.Service.ServiceDefinition>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              definitions_.add(
+                  input.readMessage(irismod.service.Service.ServiceDefinition.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                bindings_ = new java.util.ArrayList<irismod.service.Service.ServiceBinding>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              bindings_.add(
+                  input.readMessage(irismod.service.Service.ServiceBinding.parser(), extensionRegistry));
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                withdrawAddresses_ = com.google.protobuf.MapField.newMapField(
+                    WithdrawAddressesDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000004;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              withdrawAddresses__ = input.readMessage(
+                  WithdrawAddressesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              withdrawAddresses_.getMutableMap().put(
+                  withdrawAddresses__.getKey(), withdrawAddresses__.getValue());
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                requestContexts_ = com.google.protobuf.MapField.newMapField(
+                    RequestContextsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000008;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, irismod.service.Service.RequestContext>
+              requestContexts__ = input.readMessage(
+                  RequestContextsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              requestContexts_.getMutableMap().put(
+                  requestContexts__.getKey(), requestContexts__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          definitions_ = java.util.Collections.unmodifiableList(definitions_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          bindings_ = java.util.Collections.unmodifiableList(bindings_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -352,7 +449,7 @@ irismod.service.Service.RequestContext defaultValue);
     @java.lang.Override
     public boolean containsWithdrawAddresses(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       return internalGetWithdrawAddresses().getMap().containsKey(key);
     }
     /**
@@ -379,7 +476,7 @@ irismod.service.Service.RequestContext defaultValue);
     public java.lang.String getWithdrawAddressesOrDefault(
         java.lang.String key,
         java.lang.String defaultValue) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetWithdrawAddresses().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -391,7 +488,7 @@ irismod.service.Service.RequestContext defaultValue);
 
     public java.lang.String getWithdrawAddressesOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetWithdrawAddresses().getMap();
       if (!map.containsKey(key)) {
@@ -433,7 +530,7 @@ irismod.service.Service.RequestContext defaultValue);
     @java.lang.Override
     public boolean containsRequestContexts(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       return internalGetRequestContexts().getMap().containsKey(key);
     }
     /**
@@ -460,7 +557,7 @@ irismod.service.Service.RequestContext defaultValue);
     public irismod.service.Service.RequestContext getRequestContextsOrDefault(
         java.lang.String key,
         irismod.service.Service.RequestContext defaultValue) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, irismod.service.Service.RequestContext> map =
           internalGetRequestContexts().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -472,7 +569,7 @@ irismod.service.Service.RequestContext defaultValue);
 
     public irismod.service.Service.RequestContext getRequestContextsOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, irismod.service.Service.RequestContext> map =
           internalGetRequestContexts().getMap();
       if (!map.containsKey(key)) {
@@ -516,7 +613,7 @@ irismod.service.Service.RequestContext defaultValue);
           internalGetRequestContexts(),
           RequestContextsDefaultEntryHolder.defaultEntry,
           5);
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -557,7 +654,7 @@ irismod.service.Service.RequestContext defaultValue);
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(5, requestContexts__);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -585,7 +682,7 @@ irismod.service.Service.RequestContext defaultValue);
           other.internalGetWithdrawAddresses())) return false;
       if (!internalGetRequestContexts().equals(
           other.internalGetRequestContexts())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -616,7 +713,7 @@ irismod.service.Service.RequestContext defaultValue);
         hash = (37 * hash) + REQUEST_CONTEXTS_FIELD_NUMBER;
         hash = (53 * hash) + internalGetRequestContexts().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -763,13 +860,20 @@ irismod.service.Service.RequestContext defaultValue);
 
       // Construct using irismod.service.Genesis.GenesisState.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getDefinitionsFieldBuilder();
+          getBindingsFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -782,18 +886,16 @@ irismod.service.Service.RequestContext defaultValue);
         }
         if (definitionsBuilder_ == null) {
           definitions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          definitions_ = null;
           definitionsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (bindingsBuilder_ == null) {
           bindings_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          bindings_ = null;
           bindingsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableWithdrawAddresses().clear();
         internalGetMutableRequestContexts().clear();
         return this;
@@ -957,7 +1059,7 @@ irismod.service.Service.RequestContext defaultValue);
             other.internalGetWithdrawAddresses());
         internalGetMutableRequestContexts().mergeFrom(
             other.internalGetRequestContexts());
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -972,79 +1074,17 @@ irismod.service.Service.RequestContext defaultValue);
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        irismod.service.Genesis.GenesisState parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getParamsFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 10
-              case 18: {
-                irismod.service.Service.ServiceDefinition m =
-                    input.readMessage(
-                        irismod.service.Service.ServiceDefinition.parser(),
-                        extensionRegistry);
-                if (definitionsBuilder_ == null) {
-                  ensureDefinitionsIsMutable();
-                  definitions_.add(m);
-                } else {
-                  definitionsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-              case 26: {
-                irismod.service.Service.ServiceBinding m =
-                    input.readMessage(
-                        irismod.service.Service.ServiceBinding.parser(),
-                        extensionRegistry);
-                if (bindingsBuilder_ == null) {
-                  ensureBindingsIsMutable();
-                  bindings_.add(m);
-                } else {
-                  bindingsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 26
-              case 34: {
-                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-                withdrawAddresses__ = input.readMessage(
-                    WithdrawAddressesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableWithdrawAddresses().getMutableMap().put(
-                    withdrawAddresses__.getKey(), withdrawAddresses__.getValue());
-                break;
-              } // case 34
-              case 42: {
-                com.google.protobuf.MapEntry<java.lang.String, irismod.service.Service.RequestContext>
-                requestContexts__ = input.readMessage(
-                    RequestContextsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableRequestContexts().getMutableMap().put(
-                    requestContexts__.getKey(), requestContexts__.getValue());
-                break;
-              } // case 42
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (irismod.service.Genesis.GenesisState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1681,7 +1721,7 @@ irismod.service.Service.RequestContext defaultValue);
       @java.lang.Override
       public boolean containsWithdrawAddresses(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         return internalGetWithdrawAddresses().getMap().containsKey(key);
       }
       /**
@@ -1708,7 +1748,7 @@ irismod.service.Service.RequestContext defaultValue);
       public java.lang.String getWithdrawAddressesOrDefault(
           java.lang.String key,
           java.lang.String defaultValue) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         java.util.Map<java.lang.String, java.lang.String> map =
             internalGetWithdrawAddresses().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1720,7 +1760,7 @@ irismod.service.Service.RequestContext defaultValue);
 
       public java.lang.String getWithdrawAddressesOrThrow(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         java.util.Map<java.lang.String, java.lang.String> map =
             internalGetWithdrawAddresses().getMap();
         if (!map.containsKey(key)) {
@@ -1740,7 +1780,7 @@ irismod.service.Service.RequestContext defaultValue);
 
       public Builder removeWithdrawAddresses(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableWithdrawAddresses().getMutableMap()
             .remove(key);
         return this;
@@ -1759,11 +1799,8 @@ irismod.service.Service.RequestContext defaultValue);
       public Builder putWithdrawAddresses(
           java.lang.String key,
           java.lang.String value) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        if (value == null) {
-  throw new NullPointerException("map value");
-}
-
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableWithdrawAddresses().getMutableMap()
             .put(key, value);
         return this;
@@ -1812,7 +1849,7 @@ irismod.service.Service.RequestContext defaultValue);
       @java.lang.Override
       public boolean containsRequestContexts(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         return internalGetRequestContexts().getMap().containsKey(key);
       }
       /**
@@ -1839,7 +1876,7 @@ irismod.service.Service.RequestContext defaultValue);
       public irismod.service.Service.RequestContext getRequestContextsOrDefault(
           java.lang.String key,
           irismod.service.Service.RequestContext defaultValue) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         java.util.Map<java.lang.String, irismod.service.Service.RequestContext> map =
             internalGetRequestContexts().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1851,7 +1888,7 @@ irismod.service.Service.RequestContext defaultValue);
 
       public irismod.service.Service.RequestContext getRequestContextsOrThrow(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         java.util.Map<java.lang.String, irismod.service.Service.RequestContext> map =
             internalGetRequestContexts().getMap();
         if (!map.containsKey(key)) {
@@ -1871,7 +1908,7 @@ irismod.service.Service.RequestContext defaultValue);
 
       public Builder removeRequestContexts(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableRequestContexts().getMutableMap()
             .remove(key);
         return this;
@@ -1890,11 +1927,8 @@ irismod.service.Service.RequestContext defaultValue);
       public Builder putRequestContexts(
           java.lang.String key,
           irismod.service.Service.RequestContext value) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        if (value == null) {
-  throw new NullPointerException("map value");
-}
-
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableRequestContexts().getMutableMap()
             .put(key, value);
         return this;
@@ -1942,18 +1976,7 @@ irismod.service.Service.RequestContext defaultValue);
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GenesisState(input, extensionRegistry);
       }
     };
 

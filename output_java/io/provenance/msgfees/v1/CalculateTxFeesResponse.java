@@ -36,6 +36,73 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
+  private CalculateTxFeesResponse(
+      com.google.protobuf.CodedInputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    int mutable_bitField0_ = 0;
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
+    try {
+      boolean done = false;
+      while (!done) {
+        int tag = input.readTag();
+        switch (tag) {
+          case 0:
+            done = true;
+            break;
+          case 10: {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              additionalFees_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            additionalFees_.add(
+                input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
+            break;
+          }
+          case 18: {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              totalFees_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            totalFees_.add(
+                input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
+            break;
+          }
+          case 24: {
+
+            estimatedGas_ = input.readUInt64();
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
+        }
+      }
+    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      throw e.setUnfinishedMessage(this);
+    } catch (java.io.IOException e) {
+      throw new com.google.protobuf.InvalidProtocolBufferException(
+          e).setUnfinishedMessage(this);
+    } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        additionalFees_ = java.util.Collections.unmodifiableList(additionalFees_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        totalFees_ = java.util.Collections.unmodifiableList(totalFees_);
+      }
+      this.unknownFields = unknownFields.build();
+      makeExtensionsImmutable();
+    }
+  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return io.provenance.msgfees.v1.QueryOuterClass.internal_static_provenance_msgfees_v1_CalculateTxFeesResponse_descriptor;
@@ -212,7 +279,7 @@ private static final long serialVersionUID = 0L;
     if (estimatedGas_ != 0L) {
       output.writeUInt64(3, estimatedGas_);
     }
-    getUnknownFields().writeTo(output);
+    unknownFields.writeTo(output);
   }
 
   @java.lang.Override
@@ -233,7 +300,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt64Size(3, estimatedGas_);
     }
-    size += getUnknownFields().getSerializedSize();
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -254,7 +321,7 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTotalFeesList())) return false;
     if (getEstimatedGas()
         != other.getEstimatedGas()) return false;
-    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
 
@@ -276,7 +343,7 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ESTIMATED_GAS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getEstimatedGas());
-    hash = (29 * hash) + getUnknownFields().hashCode();
+    hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -397,31 +464,36 @@ private static final long serialVersionUID = 0L;
 
     // Construct using io.provenance.msgfees.v1.CalculateTxFeesResponse.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getAdditionalFeesFieldBuilder();
+        getTotalFeesFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
       if (additionalFeesBuilder_ == null) {
         additionalFees_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        additionalFees_ = null;
         additionalFeesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       if (totalFeesBuilder_ == null) {
         totalFees_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
-        totalFees_ = null;
         totalFeesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
       estimatedGas_ = 0L;
 
       return this;
@@ -573,7 +645,7 @@ private static final long serialVersionUID = 0L;
       if (other.getEstimatedGas() != 0L) {
         setEstimatedGas(other.getEstimatedGas());
       }
-      this.mergeUnknownFields(other.getUnknownFields());
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
@@ -588,61 +660,17 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
+      io.provenance.msgfees.v1.CalculateTxFeesResponse parsedMessage = null;
       try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              cosmos.base.v1beta1.CoinOuterClass.Coin m =
-                  input.readMessage(
-                      cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
-                      extensionRegistry);
-              if (additionalFeesBuilder_ == null) {
-                ensureAdditionalFeesIsMutable();
-                additionalFees_.add(m);
-              } else {
-                additionalFeesBuilder_.addMessage(m);
-              }
-              break;
-            } // case 10
-            case 18: {
-              cosmos.base.v1beta1.CoinOuterClass.Coin m =
-                  input.readMessage(
-                      cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
-                      extensionRegistry);
-              if (totalFeesBuilder_ == null) {
-                ensureTotalFeesIsMutable();
-                totalFees_.add(m);
-              } else {
-                totalFeesBuilder_.addMessage(m);
-              }
-              break;
-            } // case 18
-            case 24: {
-              estimatedGas_ = input.readUInt64();
-
-              break;
-            } // case 24
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
-          } // switch (tag)
-        } // while (!done)
+        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        parsedMessage = (io.provenance.msgfees.v1.CalculateTxFeesResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        onChanged();
-      } // finally
+        if (parsedMessage != null) {
+          mergeFrom(parsedMessage);
+        }
+      }
       return this;
     }
     private int bitField0_;
@@ -1364,18 +1392,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
+      return new CalculateTxFeesResponse(input, extensionRegistry);
     }
   };
 

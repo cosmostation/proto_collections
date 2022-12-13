@@ -210,6 +210,129 @@ public final class Genesis {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private GenesisState(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              axelar.tss.v1beta1.ParamsOuterClass.Params.Builder subBuilder = null;
+              if (params_ != null) {
+                subBuilder = params_.toBuilder();
+              }
+              params_ = input.readMessage(axelar.tss.v1beta1.ParamsOuterClass.Params.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(params_);
+                params_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                keyRecoveryInfos_ = new java.util.ArrayList<axelar.tss.v1beta1.Types.KeyRecoveryInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              keyRecoveryInfos_.add(
+                  input.readMessage(axelar.tss.v1beta1.Types.KeyRecoveryInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                keys_ = new java.util.ArrayList<axelar.tss.exported.v1beta1.Types.Key>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              keys_.add(
+                  input.readMessage(axelar.tss.exported.v1beta1.Types.Key.parser(), extensionRegistry));
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                multisigInfos_ = new java.util.ArrayList<axelar.tss.v1beta1.Types.MultisigInfo>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              multisigInfos_.add(
+                  input.readMessage(axelar.tss.v1beta1.Types.MultisigInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                externalKeys_ = new java.util.ArrayList<axelar.tss.v1beta1.Types.ExternalKeys>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              externalKeys_.add(
+                  input.readMessage(axelar.tss.v1beta1.Types.ExternalKeys.parser(), extensionRegistry));
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                signatures_ = new java.util.ArrayList<axelar.tss.exported.v1beta1.Types.Signature>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              signatures_.add(
+                  input.readMessage(axelar.tss.exported.v1beta1.Types.Signature.parser(), extensionRegistry));
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                validatorStatuses_ = new java.util.ArrayList<axelar.tss.v1beta1.Types.ValidatorStatus>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              validatorStatuses_.add(
+                  input.readMessage(axelar.tss.v1beta1.Types.ValidatorStatus.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          keyRecoveryInfos_ = java.util.Collections.unmodifiableList(keyRecoveryInfos_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          keys_ = java.util.Collections.unmodifiableList(keys_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          multisigInfos_ = java.util.Collections.unmodifiableList(multisigInfos_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          externalKeys_ = java.util.Collections.unmodifiableList(externalKeys_);
+        }
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+          signatures_ = java.util.Collections.unmodifiableList(signatures_);
+        }
+        if (((mutable_bitField0_ & 0x00000020) != 0)) {
+          validatorStatuses_ = java.util.Collections.unmodifiableList(validatorStatuses_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return axelar.tss.v1beta1.Genesis.internal_static_axelar_tss_v1beta1_GenesisState_descriptor;
@@ -524,7 +647,7 @@ public final class Genesis {
       for (int i = 0; i < validatorStatuses_.size(); i++) {
         output.writeMessage(7, validatorStatuses_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -561,7 +684,7 @@ public final class Genesis {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, validatorStatuses_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -593,7 +716,7 @@ public final class Genesis {
           .equals(other.getSignaturesList())) return false;
       if (!getValidatorStatusesList()
           .equals(other.getValidatorStatusesList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -632,7 +755,7 @@ public final class Genesis {
         hash = (37 * hash) + VALIDATOR_STATUSES_FIELD_NUMBER;
         hash = (53 * hash) + getValidatorStatusesList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -749,13 +872,24 @@ public final class Genesis {
 
       // Construct using axelar.tss.v1beta1.Genesis.GenesisState.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getKeyRecoveryInfosFieldBuilder();
+          getKeysFieldBuilder();
+          getMultisigInfosFieldBuilder();
+          getExternalKeysFieldBuilder();
+          getSignaturesFieldBuilder();
+          getValidatorStatusesFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -768,46 +902,40 @@ public final class Genesis {
         }
         if (keyRecoveryInfosBuilder_ == null) {
           keyRecoveryInfos_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          keyRecoveryInfos_ = null;
           keyRecoveryInfosBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (keysBuilder_ == null) {
           keys_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          keys_ = null;
           keysBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         if (multisigInfosBuilder_ == null) {
           multisigInfos_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          multisigInfos_ = null;
           multisigInfosBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         if (externalKeysBuilder_ == null) {
           externalKeys_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
-          externalKeys_ = null;
           externalKeysBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
         if (signaturesBuilder_ == null) {
           signatures_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
-          signatures_ = null;
           signaturesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000010);
         if (validatorStatusesBuilder_ == null) {
           validatorStatuses_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
-          validatorStatuses_ = null;
           validatorStatusesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -1101,7 +1229,7 @@ public final class Genesis {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1116,115 +1244,17 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        axelar.tss.v1beta1.Genesis.GenesisState parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getParamsFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 10
-              case 18: {
-                axelar.tss.v1beta1.Types.KeyRecoveryInfo m =
-                    input.readMessage(
-                        axelar.tss.v1beta1.Types.KeyRecoveryInfo.parser(),
-                        extensionRegistry);
-                if (keyRecoveryInfosBuilder_ == null) {
-                  ensureKeyRecoveryInfosIsMutable();
-                  keyRecoveryInfos_.add(m);
-                } else {
-                  keyRecoveryInfosBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-              case 26: {
-                axelar.tss.exported.v1beta1.Types.Key m =
-                    input.readMessage(
-                        axelar.tss.exported.v1beta1.Types.Key.parser(),
-                        extensionRegistry);
-                if (keysBuilder_ == null) {
-                  ensureKeysIsMutable();
-                  keys_.add(m);
-                } else {
-                  keysBuilder_.addMessage(m);
-                }
-                break;
-              } // case 26
-              case 34: {
-                axelar.tss.v1beta1.Types.MultisigInfo m =
-                    input.readMessage(
-                        axelar.tss.v1beta1.Types.MultisigInfo.parser(),
-                        extensionRegistry);
-                if (multisigInfosBuilder_ == null) {
-                  ensureMultisigInfosIsMutable();
-                  multisigInfos_.add(m);
-                } else {
-                  multisigInfosBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              case 42: {
-                axelar.tss.v1beta1.Types.ExternalKeys m =
-                    input.readMessage(
-                        axelar.tss.v1beta1.Types.ExternalKeys.parser(),
-                        extensionRegistry);
-                if (externalKeysBuilder_ == null) {
-                  ensureExternalKeysIsMutable();
-                  externalKeys_.add(m);
-                } else {
-                  externalKeysBuilder_.addMessage(m);
-                }
-                break;
-              } // case 42
-              case 50: {
-                axelar.tss.exported.v1beta1.Types.Signature m =
-                    input.readMessage(
-                        axelar.tss.exported.v1beta1.Types.Signature.parser(),
-                        extensionRegistry);
-                if (signaturesBuilder_ == null) {
-                  ensureSignaturesIsMutable();
-                  signatures_.add(m);
-                } else {
-                  signaturesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 50
-              case 58: {
-                axelar.tss.v1beta1.Types.ValidatorStatus m =
-                    input.readMessage(
-                        axelar.tss.v1beta1.Types.ValidatorStatus.parser(),
-                        extensionRegistry);
-                if (validatorStatusesBuilder_ == null) {
-                  ensureValidatorStatusesIsMutable();
-                  validatorStatuses_.add(m);
-                } else {
-                  validatorStatusesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 58
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (axelar.tss.v1beta1.Genesis.GenesisState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -2820,18 +2850,7 @@ public final class Genesis {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GenesisState(input, extensionRegistry);
       }
     };
 

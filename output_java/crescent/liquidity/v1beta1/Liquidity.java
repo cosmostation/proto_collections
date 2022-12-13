@@ -755,6 +755,148 @@ public final class Liquidity {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private Params(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              batchSize_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+
+              tickPrecision_ = input.readUInt32();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              feeCollectorAddress_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              dustCollectorAddress_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              minInitialPoolCoinSupply_ = s;
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                pairCreationFee_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              pairCreationFee_.add(
+                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                poolCreationFee_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              poolCreationFee_.add(
+                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              minInitialDepositAmount_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              maxPriceLimitRatio_ = s;
+              break;
+            }
+            case 82: {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (maxOrderLifespan_ != null) {
+                subBuilder = maxOrderLifespan_.toBuilder();
+              }
+              maxOrderLifespan_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(maxOrderLifespan_);
+                maxOrderLifespan_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              swapFeeRate_ = s;
+              break;
+            }
+            case 98: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              withdrawFeeRate_ = s;
+              break;
+            }
+            case 104: {
+
+              depositExtraGas_ = input.readUInt64();
+              break;
+            }
+            case 112: {
+
+              withdrawExtraGas_ = input.readUInt64();
+              break;
+            }
+            case 120: {
+
+              orderExtraGas_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          pairCreationFee_ = java.util.Collections.unmodifiableList(pairCreationFee_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          poolCreationFee_ = java.util.Collections.unmodifiableList(poolCreationFee_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return crescent.liquidity.v1beta1.Liquidity.internal_static_crescent_liquidity_v1beta1_Params_descriptor;
@@ -1215,13 +1357,13 @@ public final class Liquidity {
       if (tickPrecision_ != 0) {
         output.writeUInt32(2, tickPrecision_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(feeCollectorAddress_)) {
+      if (!getFeeCollectorAddressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, feeCollectorAddress_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dustCollectorAddress_)) {
+      if (!getDustCollectorAddressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, dustCollectorAddress_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(minInitialPoolCoinSupply_)) {
+      if (!getMinInitialPoolCoinSupplyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, minInitialPoolCoinSupply_);
       }
       for (int i = 0; i < pairCreationFee_.size(); i++) {
@@ -1230,19 +1372,19 @@ public final class Liquidity {
       for (int i = 0; i < poolCreationFee_.size(); i++) {
         output.writeMessage(7, poolCreationFee_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(minInitialDepositAmount_)) {
+      if (!getMinInitialDepositAmountBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, minInitialDepositAmount_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(maxPriceLimitRatio_)) {
+      if (!getMaxPriceLimitRatioBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, maxPriceLimitRatio_);
       }
       if (maxOrderLifespan_ != null) {
         output.writeMessage(10, getMaxOrderLifespan());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(swapFeeRate_)) {
+      if (!getSwapFeeRateBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, swapFeeRate_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(withdrawFeeRate_)) {
+      if (!getWithdrawFeeRateBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, withdrawFeeRate_);
       }
       if (depositExtraGas_ != 0L) {
@@ -1254,7 +1396,7 @@ public final class Liquidity {
       if (orderExtraGas_ != 0L) {
         output.writeUInt64(15, orderExtraGas_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1271,13 +1413,13 @@ public final class Liquidity {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2, tickPrecision_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(feeCollectorAddress_)) {
+      if (!getFeeCollectorAddressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, feeCollectorAddress_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dustCollectorAddress_)) {
+      if (!getDustCollectorAddressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, dustCollectorAddress_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(minInitialPoolCoinSupply_)) {
+      if (!getMinInitialPoolCoinSupplyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, minInitialPoolCoinSupply_);
       }
       for (int i = 0; i < pairCreationFee_.size(); i++) {
@@ -1288,20 +1430,20 @@ public final class Liquidity {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, poolCreationFee_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(minInitialDepositAmount_)) {
+      if (!getMinInitialDepositAmountBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, minInitialDepositAmount_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(maxPriceLimitRatio_)) {
+      if (!getMaxPriceLimitRatioBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, maxPriceLimitRatio_);
       }
       if (maxOrderLifespan_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, getMaxOrderLifespan());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(swapFeeRate_)) {
+      if (!getSwapFeeRateBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, swapFeeRate_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(withdrawFeeRate_)) {
+      if (!getWithdrawFeeRateBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, withdrawFeeRate_);
       }
       if (depositExtraGas_ != 0L) {
@@ -1316,7 +1458,7 @@ public final class Liquidity {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(15, orderExtraGas_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1364,7 +1506,7 @@ public final class Liquidity {
           != other.getWithdrawExtraGas()) return false;
       if (getOrderExtraGas()
           != other.getOrderExtraGas()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -1414,7 +1556,7 @@ public final class Liquidity {
       hash = (37 * hash) + ORDER_EXTRA_GAS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getOrderExtraGas());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1535,13 +1677,20 @@ public final class Liquidity {
 
       // Construct using crescent.liquidity.v1beta1.Liquidity.Params.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getPairCreationFeeFieldBuilder();
+          getPoolCreationFeeFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -1558,18 +1707,16 @@ public final class Liquidity {
 
         if (pairCreationFeeBuilder_ == null) {
           pairCreationFee_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          pairCreationFee_ = null;
           pairCreationFeeBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (poolCreationFeeBuilder_ == null) {
           poolCreationFee_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          poolCreationFee_ = null;
           poolCreationFeeBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         minInitialDepositAmount_ = "";
 
         maxPriceLimitRatio_ = "";
@@ -1798,7 +1945,7 @@ public final class Liquidity {
         if (other.getOrderExtraGas() != 0L) {
           setOrderExtraGas(other.getOrderExtraGas());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1813,123 +1960,17 @@ public final class Liquidity {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        crescent.liquidity.v1beta1.Liquidity.Params parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                batchSize_ = input.readUInt32();
-
-                break;
-              } // case 8
-              case 16: {
-                tickPrecision_ = input.readUInt32();
-
-                break;
-              } // case 16
-              case 26: {
-                feeCollectorAddress_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 26
-              case 34: {
-                dustCollectorAddress_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 34
-              case 42: {
-                minInitialPoolCoinSupply_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 42
-              case 50: {
-                cosmos.base.v1beta1.CoinOuterClass.Coin m =
-                    input.readMessage(
-                        cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
-                        extensionRegistry);
-                if (pairCreationFeeBuilder_ == null) {
-                  ensurePairCreationFeeIsMutable();
-                  pairCreationFee_.add(m);
-                } else {
-                  pairCreationFeeBuilder_.addMessage(m);
-                }
-                break;
-              } // case 50
-              case 58: {
-                cosmos.base.v1beta1.CoinOuterClass.Coin m =
-                    input.readMessage(
-                        cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
-                        extensionRegistry);
-                if (poolCreationFeeBuilder_ == null) {
-                  ensurePoolCreationFeeIsMutable();
-                  poolCreationFee_.add(m);
-                } else {
-                  poolCreationFeeBuilder_.addMessage(m);
-                }
-                break;
-              } // case 58
-              case 66: {
-                minInitialDepositAmount_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 66
-              case 74: {
-                maxPriceLimitRatio_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 74
-              case 82: {
-                input.readMessage(
-                    getMaxOrderLifespanFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 82
-              case 90: {
-                swapFeeRate_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 90
-              case 98: {
-                withdrawFeeRate_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 98
-              case 104: {
-                depositExtraGas_ = input.readUInt64();
-
-                break;
-              } // case 104
-              case 112: {
-                withdrawExtraGas_ = input.readUInt64();
-
-                break;
-              } // case 112
-              case 120: {
-                orderExtraGas_ = input.readUInt64();
-
-                break;
-              } // case 120
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (crescent.liquidity.v1beta1.Liquidity.Params) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -3252,18 +3293,7 @@ public final class Liquidity {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Params(input, extensionRegistry);
       }
     };
 
@@ -3387,6 +3417,82 @@ public final class Liquidity {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private Pair(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              id_ = input.readUInt64();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              baseCoinDenom_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              quoteCoinDenom_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              escrowAddress_ = s;
+              break;
+            }
+            case 40: {
+
+              lastOrderId_ = input.readUInt64();
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              lastPrice_ = s;
+              break;
+            }
+            case 56: {
+
+              currentBatchId_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -3603,25 +3709,25 @@ public final class Liquidity {
       if (id_ != 0L) {
         output.writeUInt64(1, id_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseCoinDenom_)) {
+      if (!getBaseCoinDenomBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, baseCoinDenom_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(quoteCoinDenom_)) {
+      if (!getQuoteCoinDenomBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, quoteCoinDenom_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(escrowAddress_)) {
+      if (!getEscrowAddressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, escrowAddress_);
       }
       if (lastOrderId_ != 0L) {
         output.writeUInt64(5, lastOrderId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastPrice_)) {
+      if (!getLastPriceBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, lastPrice_);
       }
       if (currentBatchId_ != 0L) {
         output.writeUInt64(7, currentBatchId_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -3634,27 +3740,27 @@ public final class Liquidity {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(1, id_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseCoinDenom_)) {
+      if (!getBaseCoinDenomBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, baseCoinDenom_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(quoteCoinDenom_)) {
+      if (!getQuoteCoinDenomBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, quoteCoinDenom_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(escrowAddress_)) {
+      if (!getEscrowAddressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, escrowAddress_);
       }
       if (lastOrderId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(5, lastOrderId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastPrice_)) {
+      if (!getLastPriceBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, lastPrice_);
       }
       if (currentBatchId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(7, currentBatchId_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3683,7 +3789,7 @@ public final class Liquidity {
           .equals(other.getLastPrice())) return false;
       if (getCurrentBatchId()
           != other.getCurrentBatchId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -3711,7 +3817,7 @@ public final class Liquidity {
       hash = (37 * hash) + CURRENT_BATCH_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCurrentBatchId());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3832,13 +3938,18 @@ public final class Liquidity {
 
       // Construct using crescent.liquidity.v1beta1.Liquidity.Pair.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -3963,7 +4074,7 @@ public final class Liquidity {
         if (other.getCurrentBatchId() != 0L) {
           setCurrentBatchId(other.getCurrentBatchId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -3978,65 +4089,17 @@ public final class Liquidity {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        crescent.liquidity.v1beta1.Liquidity.Pair parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                id_ = input.readUInt64();
-
-                break;
-              } // case 8
-              case 18: {
-                baseCoinDenom_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 18
-              case 26: {
-                quoteCoinDenom_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 26
-              case 34: {
-                escrowAddress_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 34
-              case 40: {
-                lastOrderId_ = input.readUInt64();
-
-                break;
-              } // case 40
-              case 50: {
-                lastPrice_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 50
-              case 56: {
-                currentBatchId_ = input.readUInt64();
-
-                break;
-              } // case 56
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (crescent.liquidity.v1beta1.Liquidity.Pair) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -4469,18 +4532,7 @@ public final class Liquidity {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Pair(input, extensionRegistry);
       }
     };
 
@@ -4590,6 +4642,80 @@ public final class Liquidity {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private Pool(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              id_ = input.readUInt64();
+              break;
+            }
+            case 16: {
+
+              pairId_ = input.readUInt64();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              reserveAddress_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              poolCoinDenom_ = s;
+              break;
+            }
+            case 40: {
+
+              lastDepositRequestId_ = input.readUInt64();
+              break;
+            }
+            case 48: {
+
+              lastWithdrawRequestId_ = input.readUInt64();
+              break;
+            }
+            case 56: {
+
+              disabled_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -4755,10 +4881,10 @@ public final class Liquidity {
       if (pairId_ != 0L) {
         output.writeUInt64(2, pairId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reserveAddress_)) {
+      if (!getReserveAddressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, reserveAddress_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(poolCoinDenom_)) {
+      if (!getPoolCoinDenomBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, poolCoinDenom_);
       }
       if (lastDepositRequestId_ != 0L) {
@@ -4770,7 +4896,7 @@ public final class Liquidity {
       if (disabled_ != false) {
         output.writeBool(7, disabled_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -4787,10 +4913,10 @@ public final class Liquidity {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(2, pairId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reserveAddress_)) {
+      if (!getReserveAddressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, reserveAddress_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(poolCoinDenom_)) {
+      if (!getPoolCoinDenomBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, poolCoinDenom_);
       }
       if (lastDepositRequestId_ != 0L) {
@@ -4805,7 +4931,7 @@ public final class Liquidity {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(7, disabled_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4834,7 +4960,7 @@ public final class Liquidity {
           != other.getLastWithdrawRequestId()) return false;
       if (getDisabled()
           != other.getDisabled()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -4864,7 +4990,7 @@ public final class Liquidity {
       hash = (37 * hash) + DISABLED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getDisabled());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4985,13 +5111,18 @@ public final class Liquidity {
 
       // Construct using crescent.liquidity.v1beta1.Liquidity.Pool.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -5114,7 +5245,7 @@ public final class Liquidity {
         if (other.getDisabled() != false) {
           setDisabled(other.getDisabled());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -5129,65 +5260,17 @@ public final class Liquidity {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        crescent.liquidity.v1beta1.Liquidity.Pool parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                id_ = input.readUInt64();
-
-                break;
-              } // case 8
-              case 16: {
-                pairId_ = input.readUInt64();
-
-                break;
-              } // case 16
-              case 26: {
-                reserveAddress_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 26
-              case 34: {
-                poolCoinDenom_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 34
-              case 40: {
-                lastDepositRequestId_ = input.readUInt64();
-
-                break;
-              } // case 40
-              case 48: {
-                lastWithdrawRequestId_ = input.readUInt64();
-
-                break;
-              } // case 48
-              case 56: {
-                disabled_ = input.readBool();
-
-                break;
-              } // case 56
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (crescent.liquidity.v1beta1.Liquidity.Pool) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -5530,18 +5613,7 @@ public final class Liquidity {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Pool(input, extensionRegistry);
       }
     };
 
@@ -5763,6 +5835,108 @@ public final class Liquidity {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private DepositRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              id_ = input.readUInt64();
+              break;
+            }
+            case 16: {
+
+              poolId_ = input.readUInt64();
+              break;
+            }
+            case 24: {
+
+              msgHeight_ = input.readInt64();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              depositor_ = s;
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                depositCoins_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              depositCoins_.add(
+                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                acceptedCoins_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              acceptedCoins_.add(
+                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
+              break;
+            }
+            case 58: {
+              cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
+              if (mintedPoolCoin_ != null) {
+                subBuilder = mintedPoolCoin_.toBuilder();
+              }
+              mintedPoolCoin_ = input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(mintedPoolCoin_);
+                mintedPoolCoin_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 64: {
+              int rawValue = input.readEnum();
+
+              status_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          depositCoins_ = java.util.Collections.unmodifiableList(depositCoins_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          acceptedCoins_ = java.util.Collections.unmodifiableList(acceptedCoins_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -6056,7 +6230,7 @@ public final class Liquidity {
       if (msgHeight_ != 0L) {
         output.writeInt64(3, msgHeight_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(depositor_)) {
+      if (!getDepositorBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, depositor_);
       }
       for (int i = 0; i < depositCoins_.size(); i++) {
@@ -6071,7 +6245,7 @@ public final class Liquidity {
       if (status_ != crescent.liquidity.v1beta1.Liquidity.RequestStatus.REQUEST_STATUS_UNSPECIFIED.getNumber()) {
         output.writeEnum(8, status_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -6092,7 +6266,7 @@ public final class Liquidity {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(3, msgHeight_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(depositor_)) {
+      if (!getDepositorBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, depositor_);
       }
       for (int i = 0; i < depositCoins_.size(); i++) {
@@ -6111,7 +6285,7 @@ public final class Liquidity {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(8, status_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -6144,7 +6318,7 @@ public final class Liquidity {
             .equals(other.getMintedPoolCoin())) return false;
       }
       if (status_ != other.status_) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -6180,7 +6354,7 @@ public final class Liquidity {
       }
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + status_;
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -6301,13 +6475,20 @@ public final class Liquidity {
 
       // Construct using crescent.liquidity.v1beta1.Liquidity.DepositRequest.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getDepositCoinsFieldBuilder();
+          getAcceptedCoinsFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -6322,18 +6503,16 @@ public final class Liquidity {
 
         if (depositCoinsBuilder_ == null) {
           depositCoins_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          depositCoins_ = null;
           depositCoinsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (acceptedCoinsBuilder_ == null) {
           acceptedCoins_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          acceptedCoins_ = null;
           acceptedCoinsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         if (mintedPoolCoinBuilder_ == null) {
           mintedPoolCoin_ = null;
         } else {
@@ -6516,7 +6695,7 @@ public final class Liquidity {
         if (other.status_ != 0) {
           setStatusValue(other.getStatusValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -6531,88 +6710,17 @@ public final class Liquidity {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        crescent.liquidity.v1beta1.Liquidity.DepositRequest parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                id_ = input.readUInt64();
-
-                break;
-              } // case 8
-              case 16: {
-                poolId_ = input.readUInt64();
-
-                break;
-              } // case 16
-              case 24: {
-                msgHeight_ = input.readInt64();
-
-                break;
-              } // case 24
-              case 34: {
-                depositor_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 34
-              case 42: {
-                cosmos.base.v1beta1.CoinOuterClass.Coin m =
-                    input.readMessage(
-                        cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
-                        extensionRegistry);
-                if (depositCoinsBuilder_ == null) {
-                  ensureDepositCoinsIsMutable();
-                  depositCoins_.add(m);
-                } else {
-                  depositCoinsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 42
-              case 50: {
-                cosmos.base.v1beta1.CoinOuterClass.Coin m =
-                    input.readMessage(
-                        cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
-                        extensionRegistry);
-                if (acceptedCoinsBuilder_ == null) {
-                  ensureAcceptedCoinsIsMutable();
-                  acceptedCoins_.add(m);
-                } else {
-                  acceptedCoinsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 50
-              case 58: {
-                input.readMessage(
-                    getMintedPoolCoinFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 58
-              case 64: {
-                status_ = input.readEnum();
-
-                break;
-              } // case 64
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (crescent.liquidity.v1beta1.Liquidity.DepositRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -7671,18 +7779,7 @@ public final class Liquidity {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new DepositRequest(input, extensionRegistry);
       }
     };
 
@@ -7871,6 +7968,96 @@ public final class Liquidity {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private WithdrawRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              id_ = input.readUInt64();
+              break;
+            }
+            case 16: {
+
+              poolId_ = input.readUInt64();
+              break;
+            }
+            case 24: {
+
+              msgHeight_ = input.readInt64();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              withdrawer_ = s;
+              break;
+            }
+            case 42: {
+              cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
+              if (poolCoin_ != null) {
+                subBuilder = poolCoin_.toBuilder();
+              }
+              poolCoin_ = input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(poolCoin_);
+                poolCoin_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                withdrawnCoins_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              withdrawnCoins_.add(
+                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
+              break;
+            }
+            case 56: {
+              int rawValue = input.readEnum();
+
+              status_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          withdrawnCoins_ = java.util.Collections.unmodifiableList(withdrawnCoins_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -8116,7 +8303,7 @@ public final class Liquidity {
       if (msgHeight_ != 0L) {
         output.writeInt64(3, msgHeight_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(withdrawer_)) {
+      if (!getWithdrawerBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, withdrawer_);
       }
       if (poolCoin_ != null) {
@@ -8128,7 +8315,7 @@ public final class Liquidity {
       if (status_ != crescent.liquidity.v1beta1.Liquidity.RequestStatus.REQUEST_STATUS_UNSPECIFIED.getNumber()) {
         output.writeEnum(7, status_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -8149,7 +8336,7 @@ public final class Liquidity {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(3, msgHeight_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(withdrawer_)) {
+      if (!getWithdrawerBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, withdrawer_);
       }
       if (poolCoin_ != null) {
@@ -8164,7 +8351,7 @@ public final class Liquidity {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(7, status_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -8195,7 +8382,7 @@ public final class Liquidity {
       if (!getWithdrawnCoinsList()
           .equals(other.getWithdrawnCoinsList())) return false;
       if (status_ != other.status_) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -8227,7 +8414,7 @@ public final class Liquidity {
       }
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + status_;
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -8348,13 +8535,19 @@ public final class Liquidity {
 
       // Construct using crescent.liquidity.v1beta1.Liquidity.WithdrawRequest.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getWithdrawnCoinsFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -8375,11 +8568,10 @@ public final class Liquidity {
         }
         if (withdrawnCoinsBuilder_ == null) {
           withdrawnCoins_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          withdrawnCoins_ = null;
           withdrawnCoinsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         status_ = 0;
 
         return this;
@@ -8521,7 +8713,7 @@ public final class Liquidity {
         if (other.status_ != 0) {
           setStatusValue(other.getStatusValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -8536,75 +8728,17 @@ public final class Liquidity {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        crescent.liquidity.v1beta1.Liquidity.WithdrawRequest parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                id_ = input.readUInt64();
-
-                break;
-              } // case 8
-              case 16: {
-                poolId_ = input.readUInt64();
-
-                break;
-              } // case 16
-              case 24: {
-                msgHeight_ = input.readInt64();
-
-                break;
-              } // case 24
-              case 34: {
-                withdrawer_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 34
-              case 42: {
-                input.readMessage(
-                    getPoolCoinFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 42
-              case 50: {
-                cosmos.base.v1beta1.CoinOuterClass.Coin m =
-                    input.readMessage(
-                        cosmos.base.v1beta1.CoinOuterClass.Coin.parser(),
-                        extensionRegistry);
-                if (withdrawnCoinsBuilder_ == null) {
-                  ensureWithdrawnCoinsIsMutable();
-                  withdrawnCoins_.add(m);
-                } else {
-                  withdrawnCoinsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 50
-              case 56: {
-                status_ = input.readEnum();
-
-                break;
-              } // case 56
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (crescent.liquidity.v1beta1.Liquidity.WithdrawRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -9387,18 +9521,7 @@ public final class Liquidity {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new WithdrawRequest(input, extensionRegistry);
       }
     };
 
@@ -9676,6 +9799,151 @@ public final class Liquidity {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private Order(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              id_ = input.readUInt64();
+              break;
+            }
+            case 16: {
+
+              pairId_ = input.readUInt64();
+              break;
+            }
+            case 24: {
+
+              msgHeight_ = input.readInt64();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              orderer_ = s;
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              direction_ = rawValue;
+              break;
+            }
+            case 50: {
+              cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
+              if (offerCoin_ != null) {
+                subBuilder = offerCoin_.toBuilder();
+              }
+              offerCoin_ = input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(offerCoin_);
+                offerCoin_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 58: {
+              cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
+              if (remainingOfferCoin_ != null) {
+                subBuilder = remainingOfferCoin_.toBuilder();
+              }
+              remainingOfferCoin_ = input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(remainingOfferCoin_);
+                remainingOfferCoin_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 66: {
+              cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
+              if (receivedCoin_ != null) {
+                subBuilder = receivedCoin_.toBuilder();
+              }
+              receivedCoin_ = input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(receivedCoin_);
+                receivedCoin_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              price_ = s;
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              amount_ = s;
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              openAmount_ = s;
+              break;
+            }
+            case 96: {
+
+              batchId_ = input.readUInt64();
+              break;
+            }
+            case 106: {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (expireAt_ != null) {
+                subBuilder = expireAt_.toBuilder();
+              }
+              expireAt_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(expireAt_);
+                expireAt_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 112: {
+              int rawValue = input.readEnum();
+
+              status_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -10115,7 +10383,7 @@ public final class Liquidity {
       if (msgHeight_ != 0L) {
         output.writeInt64(3, msgHeight_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderer_)) {
+      if (!getOrdererBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, orderer_);
       }
       if (direction_ != crescent.liquidity.v1beta1.Liquidity.OrderDirection.ORDER_DIRECTION_UNSPECIFIED.getNumber()) {
@@ -10130,13 +10398,13 @@ public final class Liquidity {
       if (receivedCoin_ != null) {
         output.writeMessage(8, getReceivedCoin());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(price_)) {
+      if (!getPriceBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, price_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(amount_)) {
+      if (!getAmountBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, amount_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(openAmount_)) {
+      if (!getOpenAmountBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, openAmount_);
       }
       if (batchId_ != 0L) {
@@ -10148,7 +10416,7 @@ public final class Liquidity {
       if (status_ != crescent.liquidity.v1beta1.Liquidity.OrderStatus.ORDER_STATUS_UNSPECIFIED.getNumber()) {
         output.writeEnum(14, status_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -10169,7 +10437,7 @@ public final class Liquidity {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(3, msgHeight_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderer_)) {
+      if (!getOrdererBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, orderer_);
       }
       if (direction_ != crescent.liquidity.v1beta1.Liquidity.OrderDirection.ORDER_DIRECTION_UNSPECIFIED.getNumber()) {
@@ -10188,13 +10456,13 @@ public final class Liquidity {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, getReceivedCoin());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(price_)) {
+      if (!getPriceBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, price_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(amount_)) {
+      if (!getAmountBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, amount_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(openAmount_)) {
+      if (!getOpenAmountBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, openAmount_);
       }
       if (batchId_ != 0L) {
@@ -10209,7 +10477,7 @@ public final class Liquidity {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(14, status_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -10262,7 +10530,7 @@ public final class Liquidity {
             .equals(other.getExpireAt())) return false;
       }
       if (status_ != other.status_) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -10313,7 +10581,7 @@ public final class Liquidity {
       }
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + status_;
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -10434,13 +10702,18 @@ public final class Liquidity {
 
       // Construct using crescent.liquidity.v1beta1.Liquidity.Order.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -10639,7 +10912,7 @@ public final class Liquidity {
         if (other.status_ != 0) {
           setStatusValue(other.getStatusValue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -10654,108 +10927,17 @@ public final class Liquidity {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        crescent.liquidity.v1beta1.Liquidity.Order parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                id_ = input.readUInt64();
-
-                break;
-              } // case 8
-              case 16: {
-                pairId_ = input.readUInt64();
-
-                break;
-              } // case 16
-              case 24: {
-                msgHeight_ = input.readInt64();
-
-                break;
-              } // case 24
-              case 34: {
-                orderer_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 34
-              case 40: {
-                direction_ = input.readEnum();
-
-                break;
-              } // case 40
-              case 50: {
-                input.readMessage(
-                    getOfferCoinFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 50
-              case 58: {
-                input.readMessage(
-                    getRemainingOfferCoinFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 58
-              case 66: {
-                input.readMessage(
-                    getReceivedCoinFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 66
-              case 74: {
-                price_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 74
-              case 82: {
-                amount_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 82
-              case 90: {
-                openAmount_ = input.readStringRequireUtf8();
-
-                break;
-              } // case 90
-              case 96: {
-                batchId_ = input.readUInt64();
-
-                break;
-              } // case 96
-              case 106: {
-                input.readMessage(
-                    getExpireAtFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
-                break;
-              } // case 106
-              case 112: {
-                status_ = input.readEnum();
-
-                break;
-              } // case 112
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (crescent.liquidity.v1beta1.Liquidity.Order) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
 
@@ -11983,18 +12165,7 @@ public final class Liquidity {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Order(input, extensionRegistry);
       }
     };
 
