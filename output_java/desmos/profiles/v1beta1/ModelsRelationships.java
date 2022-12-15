@@ -43,16 +43,16 @@ public final class ModelsRelationships {
         getRecipientBytes();
 
     /**
-     * <code>string subspace = 3 [(.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
-     * @return The subspace.
+     * <code>string subspace_id = 3 [(.gogoproto.customname) = "SubspaceID", (.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
+     * @return The subspaceId.
      */
-    java.lang.String getSubspace();
+    java.lang.String getSubspaceId();
     /**
-     * <code>string subspace = 3 [(.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
-     * @return The bytes for subspace.
+     * <code>string subspace_id = 3 [(.gogoproto.customname) = "SubspaceID", (.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
+     * @return The bytes for subspaceId.
      */
     com.google.protobuf.ByteString
-        getSubspaceBytes();
+        getSubspaceIdBytes();
   }
   /**
    * <pre>
@@ -74,7 +74,7 @@ public final class ModelsRelationships {
     private Relationship() {
       creator_ = "";
       recipient_ = "";
-      subspace_ = "";
+      subspaceId_ = "";
     }
 
     @java.lang.Override
@@ -122,7 +122,7 @@ public final class ModelsRelationships {
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              subspace_ = s;
+              subspaceId_ = s;
               break;
             }
             default: {
@@ -233,38 +233,38 @@ public final class ModelsRelationships {
       }
     }
 
-    public static final int SUBSPACE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object subspace_;
+    public static final int SUBSPACE_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object subspaceId_;
     /**
-     * <code>string subspace = 3 [(.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
-     * @return The subspace.
+     * <code>string subspace_id = 3 [(.gogoproto.customname) = "SubspaceID", (.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
+     * @return The subspaceId.
      */
     @java.lang.Override
-    public java.lang.String getSubspace() {
-      java.lang.Object ref = subspace_;
+    public java.lang.String getSubspaceId() {
+      java.lang.Object ref = subspaceId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        subspace_ = s;
+        subspaceId_ = s;
         return s;
       }
     }
     /**
-     * <code>string subspace = 3 [(.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
-     * @return The bytes for subspace.
+     * <code>string subspace_id = 3 [(.gogoproto.customname) = "SubspaceID", (.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
+     * @return The bytes for subspaceId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getSubspaceBytes() {
-      java.lang.Object ref = subspace_;
+        getSubspaceIdBytes() {
+      java.lang.Object ref = subspaceId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        subspace_ = b;
+        subspaceId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -291,8 +291,8 @@ public final class ModelsRelationships {
       if (!getRecipientBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, recipient_);
       }
-      if (!getSubspaceBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, subspace_);
+      if (!getSubspaceIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, subspaceId_);
       }
       unknownFields.writeTo(output);
     }
@@ -309,8 +309,8 @@ public final class ModelsRelationships {
       if (!getRecipientBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, recipient_);
       }
-      if (!getSubspaceBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, subspace_);
+      if (!getSubspaceIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, subspaceId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -331,8 +331,8 @@ public final class ModelsRelationships {
           .equals(other.getCreator())) return false;
       if (!getRecipient()
           .equals(other.getRecipient())) return false;
-      if (!getSubspace()
-          .equals(other.getSubspace())) return false;
+      if (!getSubspaceId()
+          .equals(other.getSubspaceId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -348,8 +348,8 @@ public final class ModelsRelationships {
       hash = (53 * hash) + getCreator().hashCode();
       hash = (37 * hash) + RECIPIENT_FIELD_NUMBER;
       hash = (53 * hash) + getRecipient().hashCode();
-      hash = (37 * hash) + SUBSPACE_FIELD_NUMBER;
-      hash = (53 * hash) + getSubspace().hashCode();
+      hash = (37 * hash) + SUBSPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSubspaceId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -492,7 +492,7 @@ public final class ModelsRelationships {
 
         recipient_ = "";
 
-        subspace_ = "";
+        subspaceId_ = "";
 
         return this;
       }
@@ -522,7 +522,7 @@ public final class ModelsRelationships {
         desmos.profiles.v1beta1.ModelsRelationships.Relationship result = new desmos.profiles.v1beta1.ModelsRelationships.Relationship(this);
         result.creator_ = creator_;
         result.recipient_ = recipient_;
-        result.subspace_ = subspace_;
+        result.subspaceId_ = subspaceId_;
         onBuilt();
         return result;
       }
@@ -579,8 +579,8 @@ public final class ModelsRelationships {
           recipient_ = other.recipient_;
           onChanged();
         }
-        if (!other.getSubspace().isEmpty()) {
-          subspace_ = other.subspace_;
+        if (!other.getSubspaceId().isEmpty()) {
+          subspaceId_ = other.subspaceId_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -764,78 +764,78 @@ public final class ModelsRelationships {
         return this;
       }
 
-      private java.lang.Object subspace_ = "";
+      private java.lang.Object subspaceId_ = "";
       /**
-       * <code>string subspace = 3 [(.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
-       * @return The subspace.
+       * <code>string subspace_id = 3 [(.gogoproto.customname) = "SubspaceID", (.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
+       * @return The subspaceId.
        */
-      public java.lang.String getSubspace() {
-        java.lang.Object ref = subspace_;
+      public java.lang.String getSubspaceId() {
+        java.lang.Object ref = subspaceId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          subspace_ = s;
+          subspaceId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string subspace = 3 [(.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
-       * @return The bytes for subspace.
+       * <code>string subspace_id = 3 [(.gogoproto.customname) = "SubspaceID", (.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
+       * @return The bytes for subspaceId.
        */
       public com.google.protobuf.ByteString
-          getSubspaceBytes() {
-        java.lang.Object ref = subspace_;
+          getSubspaceIdBytes() {
+        java.lang.Object ref = subspaceId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          subspace_ = b;
+          subspaceId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string subspace = 3 [(.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
-       * @param value The subspace to set.
+       * <code>string subspace_id = 3 [(.gogoproto.customname) = "SubspaceID", (.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
+       * @param value The subspaceId to set.
        * @return This builder for chaining.
        */
-      public Builder setSubspace(
+      public Builder setSubspaceId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        subspace_ = value;
+        subspaceId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string subspace = 3 [(.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
+       * <code>string subspace_id = 3 [(.gogoproto.customname) = "SubspaceID", (.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
        * @return This builder for chaining.
        */
-      public Builder clearSubspace() {
+      public Builder clearSubspaceId() {
         
-        subspace_ = getDefaultInstance().getSubspace();
+        subspaceId_ = getDefaultInstance().getSubspaceId();
         onChanged();
         return this;
       }
       /**
-       * <code>string subspace = 3 [(.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
-       * @param value The bytes for subspace to set.
+       * <code>string subspace_id = 3 [(.gogoproto.customname) = "SubspaceID", (.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
+       * @param value The bytes for subspaceId to set.
        * @return This builder for chaining.
        */
-      public Builder setSubspaceBytes(
+      public Builder setSubspaceIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        subspace_ = value;
+        subspaceId_ = value;
         onChanged();
         return this;
       }
@@ -958,25 +958,25 @@ public final class ModelsRelationships {
 
     /**
      * <pre>
-     * Subspace contains the ID of the subspace inside which the user should be
-     * blocked
+     * SubspaceID represents the ID of the subspace inside which the user should
+     * be blocked
      * </pre>
      *
-     * <code>string subspace = 4 [(.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
-     * @return The subspace.
+     * <code>string subspace_id = 4 [(.gogoproto.customname) = "SubspaceID", (.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
+     * @return The subspaceId.
      */
-    java.lang.String getSubspace();
+    java.lang.String getSubspaceId();
     /**
      * <pre>
-     * Subspace contains the ID of the subspace inside which the user should be
-     * blocked
+     * SubspaceID represents the ID of the subspace inside which the user should
+     * be blocked
      * </pre>
      *
-     * <code>string subspace = 4 [(.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
-     * @return The bytes for subspace.
+     * <code>string subspace_id = 4 [(.gogoproto.customname) = "SubspaceID", (.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
+     * @return The bytes for subspaceId.
      */
     com.google.protobuf.ByteString
-        getSubspaceBytes();
+        getSubspaceIdBytes();
   }
   /**
    * <pre>
@@ -999,7 +999,7 @@ public final class ModelsRelationships {
       blocker_ = "";
       blocked_ = "";
       reason_ = "";
-      subspace_ = "";
+      subspaceId_ = "";
     }
 
     @java.lang.Override
@@ -1053,7 +1053,7 @@ public final class ModelsRelationships {
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              subspace_ = s;
+              subspaceId_ = s;
               break;
             }
             default: {
@@ -1226,48 +1226,48 @@ public final class ModelsRelationships {
       }
     }
 
-    public static final int SUBSPACE_FIELD_NUMBER = 4;
-    private volatile java.lang.Object subspace_;
+    public static final int SUBSPACE_ID_FIELD_NUMBER = 4;
+    private volatile java.lang.Object subspaceId_;
     /**
      * <pre>
-     * Subspace contains the ID of the subspace inside which the user should be
-     * blocked
+     * SubspaceID represents the ID of the subspace inside which the user should
+     * be blocked
      * </pre>
      *
-     * <code>string subspace = 4 [(.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
-     * @return The subspace.
+     * <code>string subspace_id = 4 [(.gogoproto.customname) = "SubspaceID", (.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
+     * @return The subspaceId.
      */
     @java.lang.Override
-    public java.lang.String getSubspace() {
-      java.lang.Object ref = subspace_;
+    public java.lang.String getSubspaceId() {
+      java.lang.Object ref = subspaceId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        subspace_ = s;
+        subspaceId_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * Subspace contains the ID of the subspace inside which the user should be
-     * blocked
+     * SubspaceID represents the ID of the subspace inside which the user should
+     * be blocked
      * </pre>
      *
-     * <code>string subspace = 4 [(.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
-     * @return The bytes for subspace.
+     * <code>string subspace_id = 4 [(.gogoproto.customname) = "SubspaceID", (.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
+     * @return The bytes for subspaceId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getSubspaceBytes() {
-      java.lang.Object ref = subspace_;
+        getSubspaceIdBytes() {
+      java.lang.Object ref = subspaceId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        subspace_ = b;
+        subspaceId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1297,8 +1297,8 @@ public final class ModelsRelationships {
       if (!getReasonBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, reason_);
       }
-      if (!getSubspaceBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, subspace_);
+      if (!getSubspaceIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, subspaceId_);
       }
       unknownFields.writeTo(output);
     }
@@ -1318,8 +1318,8 @@ public final class ModelsRelationships {
       if (!getReasonBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, reason_);
       }
-      if (!getSubspaceBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, subspace_);
+      if (!getSubspaceIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, subspaceId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1342,8 +1342,8 @@ public final class ModelsRelationships {
           .equals(other.getBlocked())) return false;
       if (!getReason()
           .equals(other.getReason())) return false;
-      if (!getSubspace()
-          .equals(other.getSubspace())) return false;
+      if (!getSubspaceId()
+          .equals(other.getSubspaceId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1361,8 +1361,8 @@ public final class ModelsRelationships {
       hash = (53 * hash) + getBlocked().hashCode();
       hash = (37 * hash) + REASON_FIELD_NUMBER;
       hash = (53 * hash) + getReason().hashCode();
-      hash = (37 * hash) + SUBSPACE_FIELD_NUMBER;
-      hash = (53 * hash) + getSubspace().hashCode();
+      hash = (37 * hash) + SUBSPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSubspaceId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1507,7 +1507,7 @@ public final class ModelsRelationships {
 
         reason_ = "";
 
-        subspace_ = "";
+        subspaceId_ = "";
 
         return this;
       }
@@ -1538,7 +1538,7 @@ public final class ModelsRelationships {
         result.blocker_ = blocker_;
         result.blocked_ = blocked_;
         result.reason_ = reason_;
-        result.subspace_ = subspace_;
+        result.subspaceId_ = subspaceId_;
         onBuilt();
         return result;
       }
@@ -1599,8 +1599,8 @@ public final class ModelsRelationships {
           reason_ = other.reason_;
           onChanged();
         }
-        if (!other.getSubspace().isEmpty()) {
-          subspace_ = other.subspace_;
+        if (!other.getSubspaceId().isEmpty()) {
+          subspaceId_ = other.subspaceId_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1920,23 +1920,23 @@ public final class ModelsRelationships {
         return this;
       }
 
-      private java.lang.Object subspace_ = "";
+      private java.lang.Object subspaceId_ = "";
       /**
        * <pre>
-       * Subspace contains the ID of the subspace inside which the user should be
-       * blocked
+       * SubspaceID represents the ID of the subspace inside which the user should
+       * be blocked
        * </pre>
        *
-       * <code>string subspace = 4 [(.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
-       * @return The subspace.
+       * <code>string subspace_id = 4 [(.gogoproto.customname) = "SubspaceID", (.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
+       * @return The subspaceId.
        */
-      public java.lang.String getSubspace() {
-        java.lang.Object ref = subspace_;
+      public java.lang.String getSubspaceId() {
+        java.lang.Object ref = subspaceId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          subspace_ = s;
+          subspaceId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -1944,21 +1944,21 @@ public final class ModelsRelationships {
       }
       /**
        * <pre>
-       * Subspace contains the ID of the subspace inside which the user should be
-       * blocked
+       * SubspaceID represents the ID of the subspace inside which the user should
+       * be blocked
        * </pre>
        *
-       * <code>string subspace = 4 [(.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
-       * @return The bytes for subspace.
+       * <code>string subspace_id = 4 [(.gogoproto.customname) = "SubspaceID", (.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
+       * @return The bytes for subspaceId.
        */
       public com.google.protobuf.ByteString
-          getSubspaceBytes() {
-        java.lang.Object ref = subspace_;
+          getSubspaceIdBytes() {
+        java.lang.Object ref = subspaceId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          subspace_ = b;
+          subspaceId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -1966,57 +1966,57 @@ public final class ModelsRelationships {
       }
       /**
        * <pre>
-       * Subspace contains the ID of the subspace inside which the user should be
-       * blocked
+       * SubspaceID represents the ID of the subspace inside which the user should
+       * be blocked
        * </pre>
        *
-       * <code>string subspace = 4 [(.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
-       * @param value The subspace to set.
+       * <code>string subspace_id = 4 [(.gogoproto.customname) = "SubspaceID", (.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
+       * @param value The subspaceId to set.
        * @return This builder for chaining.
        */
-      public Builder setSubspace(
+      public Builder setSubspaceId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        subspace_ = value;
+        subspaceId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Subspace contains the ID of the subspace inside which the user should be
-       * blocked
+       * SubspaceID represents the ID of the subspace inside which the user should
+       * be blocked
        * </pre>
        *
-       * <code>string subspace = 4 [(.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
+       * <code>string subspace_id = 4 [(.gogoproto.customname) = "SubspaceID", (.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
        * @return This builder for chaining.
        */
-      public Builder clearSubspace() {
+      public Builder clearSubspaceId() {
         
-        subspace_ = getDefaultInstance().getSubspace();
+        subspaceId_ = getDefaultInstance().getSubspaceId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Subspace contains the ID of the subspace inside which the user should be
-       * blocked
+       * SubspaceID represents the ID of the subspace inside which the user should
+       * be blocked
        * </pre>
        *
-       * <code>string subspace = 4 [(.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
-       * @param value The bytes for subspace to set.
+       * <code>string subspace_id = 4 [(.gogoproto.customname) = "SubspaceID", (.gogoproto.moretags) = "yaml:&#92;"subspace&#92;""];</code>
+       * @param value The bytes for subspaceId to set.
        * @return This builder for chaining.
        */
-      public Builder setSubspaceBytes(
+      public Builder setSubspaceIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        subspace_ = value;
+        subspaceId_ = value;
         onChanged();
         return this;
       }
@@ -2094,42 +2094,47 @@ public final class ModelsRelationships {
     java.lang.String[] descriptorData = {
       "\n2desmos/profiles/v1beta1/models_relatio" +
       "nships.proto\022\027desmos.profiles.v1beta1\032\024g" +
-      "ogoproto/gogo.proto\"\215\001\n\014Relationship\022#\n\007" +
-      "creator\030\001 \001(\tB\022\362\336\037\016yaml:\"creator\"\022\'\n\trec" +
-      "ipient\030\002 \001(\tB\024\362\336\037\020yaml:\"recipient\"\022%\n\010su" +
-      "bspace\030\003 \001(\tB\023\362\336\037\017yaml:\"subspace\":\010\350\240\037\001\230" +
-      "\240\037\001\"\251\001\n\tUserBlock\022#\n\007blocker\030\001 \001(\tB\022\362\336\037\016" +
-      "yaml:\"blocker\"\022#\n\007blocked\030\002 \001(\tB\022\362\336\037\016yam" +
-      "l:\"blocked\"\022!\n\006reason\030\003 \001(\tB\021\362\336\037\ryaml:\"r" +
-      "eason\"\022%\n\010subspace\030\004 \001(\tB\023\362\336\037\017yaml:\"subs" +
-      "pace\":\010\350\240\037\001\230\240\037\001B3Z1github.com/desmos-lab" +
-      "s/desmos/v2/x/profiles/typesb\006proto3"
+      "ogoproto/gogo.proto\032\031cosmos_proto/cosmos" +
+      ".proto\"\236\001\n\014Relationship\022#\n\007creator\030\001 \001(\t" +
+      "B\022\362\336\037\016yaml:\"creator\"\022\'\n\trecipient\030\002 \001(\tB" +
+      "\024\362\336\037\020yaml:\"recipient\"\0226\n\013subspace_id\030\003 \001" +
+      "(\tB!\342\336\037\nSubspaceID\362\336\037\017yaml:\"subspace\":\010\350" +
+      "\240\037\001\230\240\037\001\"\272\001\n\tUserBlock\022#\n\007blocker\030\001 \001(\tB\022" +
+      "\362\336\037\016yaml:\"blocker\"\022#\n\007blocked\030\002 \001(\tB\022\362\336\037" +
+      "\016yaml:\"blocked\"\022!\n\006reason\030\003 \001(\tB\021\362\336\037\ryam" +
+      "l:\"reason\"\0226\n\013subspace_id\030\004 \001(\tB!\342\336\037\nSub" +
+      "spaceID\362\336\037\017yaml:\"subspace\":\010\350\240\037\001\230\240\037\001B=Z;" +
+      "github.com/desmos-labs/desmos/v4/x/profi" +
+      "les/legacy/v4/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf2.GoGoProtos.getDescriptor(),
+          cosmos_proto.Cosmos.getDescriptor(),
         });
     internal_static_desmos_profiles_v1beta1_Relationship_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_desmos_profiles_v1beta1_Relationship_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_desmos_profiles_v1beta1_Relationship_descriptor,
-        new java.lang.String[] { "Creator", "Recipient", "Subspace", });
+        new java.lang.String[] { "Creator", "Recipient", "SubspaceId", });
     internal_static_desmos_profiles_v1beta1_UserBlock_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_desmos_profiles_v1beta1_UserBlock_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_desmos_profiles_v1beta1_UserBlock_descriptor,
-        new java.lang.String[] { "Blocker", "Blocked", "Reason", "Subspace", });
+        new java.lang.String[] { "Blocker", "Blocked", "Reason", "SubspaceId", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.protobuf2.GoGoProtos.customname);
     registry.add(com.google.protobuf2.GoGoProtos.equal);
     registry.add(com.google.protobuf2.GoGoProtos.goprotoStringer);
     registry.add(com.google.protobuf2.GoGoProtos.moretags);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf2.GoGoProtos.getDescriptor();
+    cosmos_proto.Cosmos.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -7262,8 +7262,9 @@ public final class ModelsAppLinks {
       "ATION_SUCCESS\020\003\032#\212\235 \037AppLinkStateVerific" +
       "ationSuccess\022J\n APPLICATION_LINK_STATE_T" +
       "IMED_OUT\020\004\032$\212\235  AppLinkStateVerification" +
-      "TimedOut\032\004\210\243\036\000B3Z1github.com/desmos-labs" +
-      "/desmos/v2/x/profiles/typesb\006proto3"
+      "TimedOut\032\004\210\243\036\000B=Z;github.com/desmos-labs" +
+      "/desmos/v4/x/profiles/legacy/v4/typesb\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

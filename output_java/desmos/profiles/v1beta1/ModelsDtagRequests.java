@@ -1032,18 +1032,22 @@ public final class ModelsDtagRequests {
     java.lang.String[] descriptorData = {
       "\n2desmos/profiles/v1beta1/models_dtag_re" +
       "quests.proto\022\027desmos.profiles.v1beta1\032\024g" +
-      "ogoproto/gogo.proto\"\255\001\n\023DTagTransferRequ" +
-      "est\022>\n\rdtag_to_trade\030\001 \001(\tB\'\362\336\037\024yaml:\"dt" +
-      "ag_to_trade\"\342\336\037\013DTagToTrade\022!\n\006sender\030\002 " +
-      "\001(\tB\021\362\336\037\ryaml:\"sender\"\022%\n\010receiver\030\003 \001(\t" +
-      "B\023\362\336\037\017yaml:\"receiver\":\014\210\240\037\000\350\240\037\001\230\240\037\001B3Z1g" +
-      "ithub.com/desmos-labs/desmos/v2/x/profil" +
-      "es/typesb\006proto3"
+      "ogoproto/gogo.proto\032\031cosmos_proto/cosmos" +
+      ".proto\032+desmos/profiles/v3/models_chain_" +
+      "links.proto\"\255\001\n\023DTagTransferRequest\022>\n\rd" +
+      "tag_to_trade\030\001 \001(\tB\'\362\336\037\024yaml:\"dtag_to_tr" +
+      "ade\"\342\336\037\013DTagToTrade\022!\n\006sender\030\002 \001(\tB\021\362\336\037" +
+      "\ryaml:\"sender\"\022%\n\010receiver\030\003 \001(\tB\023\362\336\037\017ya" +
+      "ml:\"receiver\":\014\210\240\037\000\350\240\037\001\230\240\037\001B=Z;github.co" +
+      "m/desmos-labs/desmos/v4/x/profiles/legac" +
+      "y/v4/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf2.GoGoProtos.getDescriptor(),
+          cosmos_proto.Cosmos.getDescriptor(),
+          desmos.profiles.v3.ModelsChainLinks.getDescriptor(),
         });
     internal_static_desmos_profiles_v1beta1_DTagTransferRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1061,6 +1065,8 @@ public final class ModelsDtagRequests {
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf2.GoGoProtos.getDescriptor();
+    cosmos_proto.Cosmos.getDescriptor();
+    desmos.profiles.v3.ModelsChainLinks.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

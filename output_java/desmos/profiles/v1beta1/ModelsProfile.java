@@ -2621,8 +2621,9 @@ public final class ModelsProfile {
       "ampB \220\337\037\001\362\336\037\024yaml:\"creation_date\"\310\336\037\000:\010\210" +
       "\240\037\000\230\240\037\000\"Z\n\010Pictures\022#\n\007profile\030\001 \001(\tB\022\362\336" +
       "\037\016yaml:\"profile\"\022\037\n\005cover\030\002 \001(\tB\020\362\336\037\014yam" +
-      "l:\"cover\":\010\350\240\037\001\230\240\037\001B3Z1github.com/desmos" +
-      "-labs/desmos/v2/x/profiles/typesb\006proto3"
+      "l:\"cover\":\010\350\240\037\001\230\240\037\001B=Z;github.com/desmos" +
+      "-labs/desmos/v4/x/profiles/legacy/v4/typ" +
+      "esb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
