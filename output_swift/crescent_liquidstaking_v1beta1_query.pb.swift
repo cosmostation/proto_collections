@@ -145,17 +145,6 @@ struct Crescent_Liquidstaking_V1beta1_QueryVotingPowerResponse {
   fileprivate var _votingPower: Crescent_Liquidstaking_V1beta1_VotingPower? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Crescent_Liquidstaking_V1beta1_QueryParamsRequest: @unchecked Sendable {}
-extension Crescent_Liquidstaking_V1beta1_QueryParamsResponse: @unchecked Sendable {}
-extension Crescent_Liquidstaking_V1beta1_QueryLiquidValidatorsRequest: @unchecked Sendable {}
-extension Crescent_Liquidstaking_V1beta1_QueryLiquidValidatorsResponse: @unchecked Sendable {}
-extension Crescent_Liquidstaking_V1beta1_QueryStatesRequest: @unchecked Sendable {}
-extension Crescent_Liquidstaking_V1beta1_QueryStatesResponse: @unchecked Sendable {}
-extension Crescent_Liquidstaking_V1beta1_QueryVotingPowerRequest: @unchecked Sendable {}
-extension Crescent_Liquidstaking_V1beta1_QueryVotingPowerResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "crescent.liquidstaking.v1beta1"
@@ -198,13 +187,9 @@ extension Crescent_Liquidstaking_V1beta1_QueryParamsResponse: SwiftProtobuf.Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -304,13 +289,9 @@ extension Crescent_Liquidstaking_V1beta1_QueryStatesResponse: SwiftProtobuf.Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._netAmountState {
+    if let v = self._netAmountState {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -372,13 +353,9 @@ extension Crescent_Liquidstaking_V1beta1_QueryVotingPowerResponse: SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._votingPower {
+    if let v = self._votingPower {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

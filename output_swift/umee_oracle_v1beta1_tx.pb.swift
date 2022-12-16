@@ -110,15 +110,6 @@ struct Umeenetwork_Umee_Oracle_V1beta1_MsgDelegateFeedConsentResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Umeenetwork_Umee_Oracle_V1beta1_MsgAggregateExchangeRatePrevote: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_MsgAggregateExchangeRatePrevoteResponse: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_MsgAggregateExchangeRateVote: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_MsgAggregateExchangeRateVoteResponse: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_MsgDelegateFeedConsent: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_MsgDelegateFeedConsentResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "umeenetwork.umee.oracle.v1beta1"

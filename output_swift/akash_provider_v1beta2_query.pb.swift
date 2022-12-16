@@ -101,13 +101,6 @@ struct Akash_Provider_V1beta2_QueryProviderResponse {
   fileprivate var _provider: Akash_Provider_V1beta2_Provider? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Akash_Provider_V1beta2_QueryProvidersRequest: @unchecked Sendable {}
-extension Akash_Provider_V1beta2_QueryProvidersResponse: @unchecked Sendable {}
-extension Akash_Provider_V1beta2_QueryProviderRequest: @unchecked Sendable {}
-extension Akash_Provider_V1beta2_QueryProviderResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "akash.provider.v1beta2"
@@ -131,13 +124,9 @@ extension Akash_Provider_V1beta2_QueryProvidersRequest: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -169,16 +158,12 @@ extension Akash_Provider_V1beta2_QueryProvidersResponse: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.providers.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.providers, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -241,13 +226,9 @@ extension Akash_Provider_V1beta2_QueryProviderResponse: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._provider {
+    if let v = self._provider {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

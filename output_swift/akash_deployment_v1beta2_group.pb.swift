@@ -119,11 +119,6 @@ extension Akash_Deployment_V1beta2_Group.State: CaseIterable {
 
 #endif  // swift(>=4.2)
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Akash_Deployment_V1beta2_Group: @unchecked Sendable {}
-extension Akash_Deployment_V1beta2_Group.State: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "akash.deployment.v1beta2"
@@ -153,19 +148,15 @@ extension Akash_Deployment_V1beta2_Group: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._groupID {
+    if let v = self._groupID {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if self.state != .invalid {
       try visitor.visitSingularEnumField(value: self.state, fieldNumber: 2)
     }
-    try { if let v = self._groupSpec {
+    if let v = self._groupSpec {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if self.createdAt != 0 {
       try visitor.visitSingularInt64Field(value: self.createdAt, fieldNumber: 4)
     }

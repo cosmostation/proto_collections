@@ -72,11 +72,6 @@ struct Ibc_Core_Port_V1_QueryAppVersionResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Ibc_Core_Port_V1_QueryAppVersionRequest: @unchecked Sendable {}
-extension Ibc_Core_Port_V1_QueryAppVersionResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "ibc.core.port.v1"
@@ -108,10 +103,6 @@ extension Ibc_Core_Port_V1_QueryAppVersionRequest: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.portID.isEmpty {
       try visitor.visitSingularStringField(value: self.portID, fieldNumber: 1)
     }
@@ -121,9 +112,9 @@ extension Ibc_Core_Port_V1_QueryAppVersionRequest: SwiftProtobuf.Message, SwiftP
     if self.ordering != .noneUnspecified {
       try visitor.visitSingularEnumField(value: self.ordering, fieldNumber: 3)
     }
-    try { if let v = self._counterparty {
+    if let v = self._counterparty {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
+    }
     if !self.proposedVersion.isEmpty {
       try visitor.visitSingularStringField(value: self.proposedVersion, fieldNumber: 5)
     }

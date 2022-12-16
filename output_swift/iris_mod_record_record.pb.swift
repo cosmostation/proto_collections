@@ -56,11 +56,6 @@ struct Irismod_Record_Record {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Irismod_Record_Content: @unchecked Sendable {}
-extension Irismod_Record_Record: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "irismod.record"

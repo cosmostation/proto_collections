@@ -250,19 +250,6 @@ struct Shentu_Oracle_V1alpha1_CoinsProto {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Shentu_Oracle_V1alpha1_TaskStatus: @unchecked Sendable {}
-extension Shentu_Oracle_V1alpha1_Withdraw: @unchecked Sendable {}
-extension Shentu_Oracle_V1alpha1_Task: @unchecked Sendable {}
-extension Shentu_Oracle_V1alpha1_Response: @unchecked Sendable {}
-extension Shentu_Oracle_V1alpha1_Operator: @unchecked Sendable {}
-extension Shentu_Oracle_V1alpha1_TaskParams: @unchecked Sendable {}
-extension Shentu_Oracle_V1alpha1_LockedPoolParams: @unchecked Sendable {}
-extension Shentu_Oracle_V1alpha1_TaskID: @unchecked Sendable {}
-extension Shentu_Oracle_V1alpha1_TaskIDs: @unchecked Sendable {}
-extension Shentu_Oracle_V1alpha1_CoinsProto: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "shentu.oracle.v1alpha1"
@@ -361,10 +348,6 @@ extension Shentu_Oracle_V1alpha1_Task: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.contract.isEmpty {
       try visitor.visitSingularStringField(value: self.contract, fieldNumber: 1)
     }
@@ -380,9 +363,9 @@ extension Shentu_Oracle_V1alpha1_Task: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if !self.description_p.isEmpty {
       try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 5)
     }
-    try { if let v = self._expiration {
+    if let v = self._expiration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    } }()
+    }
     if !self.creator.isEmpty {
       try visitor.visitSingularStringField(value: self.creator, fieldNumber: 7)
     }
@@ -557,13 +540,9 @@ extension Shentu_Oracle_V1alpha1_TaskParams: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._expirationDuration {
+    if let v = self._expirationDuration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if self.aggregationWindow != 0 {
       try visitor.visitSingularInt64Field(value: self.aggregationWindow, fieldNumber: 2)
     }

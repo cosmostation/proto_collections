@@ -39,10 +39,6 @@ struct Em_Liquidityprovider_V1_LiquidityProviderAccount {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Em_Liquidityprovider_V1_LiquidityProviderAccount: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "em.liquidityprovider.v1"

@@ -210,16 +210,6 @@ struct Ibc_Core_Client_V1_Params {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Ibc_Core_Client_V1_IdentifiedClientState: @unchecked Sendable {}
-extension Ibc_Core_Client_V1_ConsensusStateWithHeight: @unchecked Sendable {}
-extension Ibc_Core_Client_V1_ClientConsensusStates: @unchecked Sendable {}
-extension Ibc_Core_Client_V1_ClientUpdateProposal: @unchecked Sendable {}
-extension Ibc_Core_Client_V1_UpgradeProposal: @unchecked Sendable {}
-extension Ibc_Core_Client_V1_Height: @unchecked Sendable {}
-extension Ibc_Core_Client_V1_Params: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "ibc.core.client.v1"
@@ -245,16 +235,12 @@ extension Ibc_Core_Client_V1_IdentifiedClientState: SwiftProtobuf.Message, Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.clientID.isEmpty {
       try visitor.visitSingularStringField(value: self.clientID, fieldNumber: 1)
     }
-    try { if let v = self._clientState {
+    if let v = self._clientState {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -287,16 +273,12 @@ extension Ibc_Core_Client_V1_ConsensusStateWithHeight: SwiftProtobuf.Message, Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._height {
+    if let v = self._height {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._consensusState {
+    }
+    if let v = self._consensusState {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -421,22 +403,18 @@ extension Ibc_Core_Client_V1_UpgradeProposal: SwiftProtobuf.Message, SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.title.isEmpty {
       try visitor.visitSingularStringField(value: self.title, fieldNumber: 1)
     }
     if !self.description_p.isEmpty {
       try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 2)
     }
-    try { if let v = self._plan {
+    if let v = self._plan {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
-    try { if let v = self._upgradedClientState {
+    }
+    if let v = self._upgradedClientState {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

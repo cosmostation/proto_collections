@@ -116,11 +116,6 @@ struct Starnamed_X_Escrow_V1beta1_Escrow {
   fileprivate var _object: Google_Protobuf2_Any? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Starnamed_X_Escrow_V1beta1_EscrowState: @unchecked Sendable {}
-extension Starnamed_X_Escrow_V1beta1_Escrow: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "starnamed.x.escrow.v1beta1"
@@ -167,19 +162,15 @@ extension Starnamed_X_Escrow_V1beta1_Escrow: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.id.isEmpty {
       try visitor.visitSingularStringField(value: self.id, fieldNumber: 1)
     }
     if !self.seller.isEmpty {
       try visitor.visitSingularStringField(value: self.seller, fieldNumber: 2)
     }
-    try { if let v = self._object {
+    if let v = self._object {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if !self.price.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.price, fieldNumber: 4)
     }

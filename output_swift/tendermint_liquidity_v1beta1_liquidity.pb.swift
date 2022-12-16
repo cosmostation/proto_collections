@@ -342,17 +342,6 @@ struct Tendermint_Liquidity_V1beta1_SwapMsgState {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Tendermint_Liquidity_V1beta1_PoolType: @unchecked Sendable {}
-extension Tendermint_Liquidity_V1beta1_Params: @unchecked Sendable {}
-extension Tendermint_Liquidity_V1beta1_Pool: @unchecked Sendable {}
-extension Tendermint_Liquidity_V1beta1_PoolMetadata: @unchecked Sendable {}
-extension Tendermint_Liquidity_V1beta1_PoolBatch: @unchecked Sendable {}
-extension Tendermint_Liquidity_V1beta1_DepositMsgState: @unchecked Sendable {}
-extension Tendermint_Liquidity_V1beta1_WithdrawMsgState: @unchecked Sendable {}
-extension Tendermint_Liquidity_V1beta1_SwapMsgState: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "tendermint.liquidity.v1beta1"
@@ -578,16 +567,12 @@ extension Tendermint_Liquidity_V1beta1_PoolMetadata: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.poolID != 0 {
       try visitor.visitSingularUInt64Field(value: self.poolID, fieldNumber: 1)
     }
-    try { if let v = self._poolCoinTotalSupply {
+    if let v = self._poolCoinTotalSupply {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if !self.reserveCoins.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.reserveCoins, fieldNumber: 3)
     }
@@ -700,10 +685,6 @@ extension Tendermint_Liquidity_V1beta1_DepositMsgState: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.msgHeight != 0 {
       try visitor.visitSingularInt64Field(value: self.msgHeight, fieldNumber: 1)
     }
@@ -719,9 +700,9 @@ extension Tendermint_Liquidity_V1beta1_DepositMsgState: SwiftProtobuf.Message, S
     if self.toBeDeleted != false {
       try visitor.visitSingularBoolField(value: self.toBeDeleted, fieldNumber: 5)
     }
-    try { if let v = self._msg {
+    if let v = self._msg {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -766,10 +747,6 @@ extension Tendermint_Liquidity_V1beta1_WithdrawMsgState: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.msgHeight != 0 {
       try visitor.visitSingularInt64Field(value: self.msgHeight, fieldNumber: 1)
     }
@@ -785,9 +762,9 @@ extension Tendermint_Liquidity_V1beta1_WithdrawMsgState: SwiftProtobuf.Message, 
     if self.toBeDeleted != false {
       try visitor.visitSingularBoolField(value: self.toBeDeleted, fieldNumber: 5)
     }
-    try { if let v = self._msg {
+    if let v = self._msg {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -881,10 +858,6 @@ extension Tendermint_Liquidity_V1beta1_SwapMsgState: SwiftProtobuf.Message, Swif
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
       if _storage._msgHeight != 0 {
         try visitor.visitSingularInt64Field(value: _storage._msgHeight, fieldNumber: 1)
       }
@@ -903,18 +876,18 @@ extension Tendermint_Liquidity_V1beta1_SwapMsgState: SwiftProtobuf.Message, Swif
       if _storage._orderExpiryHeight != 0 {
         try visitor.visitSingularInt64Field(value: _storage._orderExpiryHeight, fieldNumber: 6)
       }
-      try { if let v = _storage._exchangedOfferCoin {
+      if let v = _storage._exchangedOfferCoin {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-      } }()
-      try { if let v = _storage._remainingOfferCoin {
+      }
+      if let v = _storage._remainingOfferCoin {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
-      } }()
-      try { if let v = _storage._reservedOfferCoinFee {
+      }
+      if let v = _storage._reservedOfferCoinFee {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
-      } }()
-      try { if let v = _storage._msg {
+      }
+      if let v = _storage._msg {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
-      } }()
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }

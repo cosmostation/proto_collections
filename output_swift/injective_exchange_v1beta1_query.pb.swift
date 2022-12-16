@@ -823,56 +823,6 @@ struct Injective_Exchange_V1beta1_QueryFeeDiscountScheduleResponse {
   fileprivate var _feeDiscountSchedule: Injective_Exchange_V1beta1_FeeDiscountSchedule? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Injective_Exchange_V1beta1_Subaccount: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QueryExchangeParamsRequest: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QueryExchangeParamsResponse: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QuerySubaccountDepositsRequest: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QuerySubaccountDepositsResponse: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QueryExchangeBalancesRequest: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QueryExchangeBalancesResponse: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QuerySubaccountDepositRequest: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QuerySubaccountDepositResponse: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QuerySpotMarketsRequest: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QuerySpotMarketsResponse: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QuerySpotMarketRequest: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QuerySpotMarketResponse: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QuerySpotOrderbookRequest: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QuerySpotOrderbookResponse: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QueryTraderSpotOrdersRequest: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_TrimmedSpotLimitOrder: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QueryTraderSpotOrdersResponse: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QueryDerivativeOrderbookRequest: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QueryDerivativeOrderbookResponse: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QueryTraderDerivativeOrdersRequest: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_TrimmedDerivativeLimitOrder: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QueryTraderDerivativeOrdersResponse: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QueryDerivativeMarketsRequest: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_PriceLevel: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_PerpetualMarketState: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_FullDerivativeMarket: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_FullDerivativeMarket.OneOf_Info: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QueryDerivativeMarketsResponse: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QueryDerivativeMarketRequest: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QueryDerivativeMarketResponse: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QuerySubaccountTradeNonceRequest: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QuerySubaccountPositionsRequest: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QuerySubaccountPositionsResponse: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QuerySubaccountTradeNonceResponse: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QueryModuleStateRequest: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QueryModuleStateResponse: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QueryPositionsRequest: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QueryPositionsResponse: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QueryTradeRewardPointsRequest: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QueryTradeRewardPointsResponse: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QueryTradeRewardCampaignRequest: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QueryTradeRewardCampaignResponse: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QueryFeeDiscountAccountInfoRequest: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QueryFeeDiscountAccountInfoResponse: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QueryFeeDiscountScheduleRequest: @unchecked Sendable {}
-extension Injective_Exchange_V1beta1_QueryFeeDiscountScheduleResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "injective.exchange.v1beta1"
@@ -953,13 +903,9 @@ extension Injective_Exchange_V1beta1_QueryExchangeParamsResponse: SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -991,16 +937,12 @@ extension Injective_Exchange_V1beta1_QuerySubaccountDepositsRequest: SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.subaccountID.isEmpty {
       try visitor.visitSingularStringField(value: self.subaccountID, fieldNumber: 1)
     }
-    try { if let v = self._subaccount {
+    if let v = self._subaccount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1152,13 +1094,9 @@ extension Injective_Exchange_V1beta1_QuerySubaccountDepositResponse: SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._deposits {
+    if let v = self._deposits {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1284,13 +1222,9 @@ extension Injective_Exchange_V1beta1_QuerySpotMarketResponse: SwiftProtobuf.Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._market {
+    if let v = self._market {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1802,16 +1736,12 @@ extension Injective_Exchange_V1beta1_PerpetualMarketState: SwiftProtobuf.Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._marketInfo {
+    if let v = self._marketInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._fundingInfo {
+    }
+    if let v = self._fundingInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1899,13 +1829,12 @@ extension Injective_Exchange_V1beta1_FullDerivativeMarket: SwiftProtobuf.Message
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
-      try { if let v = _storage._market {
+      if let v = _storage._market {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      } }()
+      }
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch _storage._info {
       case .perpetualInfo?: try {
         guard case .perpetualInfo(let v)? = _storage._info else { preconditionFailure() }
@@ -2024,13 +1953,9 @@ extension Injective_Exchange_V1beta1_QueryDerivativeMarketResponse: SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._market {
+    if let v = self._market {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2207,13 +2132,9 @@ extension Injective_Exchange_V1beta1_QueryModuleStateResponse: SwiftProtobuf.Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._state {
+    if let v = self._state {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2381,13 +2302,9 @@ extension Injective_Exchange_V1beta1_QueryTradeRewardCampaignResponse: SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._tradingRewardCampaignInfo {
+    if let v = self._tradingRewardCampaignInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.tradingRewardPoolCampaignSchedule.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.tradingRewardPoolCampaignSchedule, fieldNumber: 2)
     }
@@ -2459,16 +2376,12 @@ extension Injective_Exchange_V1beta1_QueryFeeDiscountAccountInfoResponse: SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.tierLevel != 0 {
       try visitor.visitSingularUInt64Field(value: self.tierLevel, fieldNumber: 1)
     }
-    try { if let v = self._accountInfo {
+    if let v = self._accountInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2518,13 +2431,9 @@ extension Injective_Exchange_V1beta1_QueryFeeDiscountScheduleResponse: SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._feeDiscountSchedule {
+    if let v = self._feeDiscountSchedule {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

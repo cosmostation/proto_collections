@@ -344,27 +344,6 @@ struct Cosmos_Distribution_V1beta1_QueryCommunityPoolResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Cosmos_Distribution_V1beta1_QueryParamsRequest: @unchecked Sendable {}
-extension Cosmos_Distribution_V1beta1_QueryParamsResponse: @unchecked Sendable {}
-extension Cosmos_Distribution_V1beta1_QueryValidatorOutstandingRewardsRequest: @unchecked Sendable {}
-extension Cosmos_Distribution_V1beta1_QueryValidatorOutstandingRewardsResponse: @unchecked Sendable {}
-extension Cosmos_Distribution_V1beta1_QueryValidatorCommissionRequest: @unchecked Sendable {}
-extension Cosmos_Distribution_V1beta1_QueryValidatorCommissionResponse: @unchecked Sendable {}
-extension Cosmos_Distribution_V1beta1_QueryValidatorSlashesRequest: @unchecked Sendable {}
-extension Cosmos_Distribution_V1beta1_QueryValidatorSlashesResponse: @unchecked Sendable {}
-extension Cosmos_Distribution_V1beta1_QueryDelegationRewardsRequest: @unchecked Sendable {}
-extension Cosmos_Distribution_V1beta1_QueryDelegationRewardsResponse: @unchecked Sendable {}
-extension Cosmos_Distribution_V1beta1_QueryDelegationTotalRewardsRequest: @unchecked Sendable {}
-extension Cosmos_Distribution_V1beta1_QueryDelegationTotalRewardsResponse: @unchecked Sendable {}
-extension Cosmos_Distribution_V1beta1_QueryDelegatorValidatorsRequest: @unchecked Sendable {}
-extension Cosmos_Distribution_V1beta1_QueryDelegatorValidatorsResponse: @unchecked Sendable {}
-extension Cosmos_Distribution_V1beta1_QueryDelegatorWithdrawAddressRequest: @unchecked Sendable {}
-extension Cosmos_Distribution_V1beta1_QueryDelegatorWithdrawAddressResponse: @unchecked Sendable {}
-extension Cosmos_Distribution_V1beta1_QueryCommunityPoolRequest: @unchecked Sendable {}
-extension Cosmos_Distribution_V1beta1_QueryCommunityPoolResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.distribution.v1beta1"
@@ -407,13 +386,9 @@ extension Cosmos_Distribution_V1beta1_QueryParamsResponse: SwiftProtobuf.Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -475,13 +450,9 @@ extension Cosmos_Distribution_V1beta1_QueryValidatorOutstandingRewardsResponse: 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._rewards {
+    if let v = self._rewards {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -543,13 +514,9 @@ extension Cosmos_Distribution_V1beta1_QueryValidatorCommissionResponse: SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._commission {
+    if let v = self._commission {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -585,10 +552,6 @@ extension Cosmos_Distribution_V1beta1_QueryValidatorSlashesRequest: SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.validatorAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.validatorAddress, fieldNumber: 1)
     }
@@ -598,9 +561,9 @@ extension Cosmos_Distribution_V1beta1_QueryValidatorSlashesRequest: SwiftProtobu
     if self.endingHeight != 0 {
       try visitor.visitSingularUInt64Field(value: self.endingHeight, fieldNumber: 3)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -635,16 +598,12 @@ extension Cosmos_Distribution_V1beta1_QueryValidatorSlashesResponse: SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.slashes.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.slashes, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

@@ -82,11 +82,6 @@ struct Kava_Hard_V1beta1_GenesisAccumulationTime {
   fileprivate var _previousAccumulationTime: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Kava_Hard_V1beta1_GenesisState: @unchecked Sendable {}
-extension Kava_Hard_V1beta1_GenesisAccumulationTime: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kava.hard.v1beta1"
@@ -122,13 +117,9 @@ extension Kava_Hard_V1beta1_GenesisState: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.previousAccumulationTimes.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.previousAccumulationTimes, fieldNumber: 2)
     }
@@ -188,16 +179,12 @@ extension Kava_Hard_V1beta1_GenesisAccumulationTime: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.collateralType.isEmpty {
       try visitor.visitSingularStringField(value: self.collateralType, fieldNumber: 1)
     }
-    try { if let v = self._previousAccumulationTime {
+    if let v = self._previousAccumulationTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if !self.supplyInterestFactor.isEmpty {
       try visitor.visitSingularStringField(value: self.supplyInterestFactor, fieldNumber: 3)
     }

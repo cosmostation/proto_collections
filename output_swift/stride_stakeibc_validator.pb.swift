@@ -107,12 +107,6 @@ extension Stride_Stakeibc_Validator.ValidatorStatus: CaseIterable {
 
 #endif  // swift(>=4.2)
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Stride_Stakeibc_ValidatorExchangeRate: @unchecked Sendable {}
-extension Stride_Stakeibc_Validator: @unchecked Sendable {}
-extension Stride_Stakeibc_Validator.ValidatorStatus: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stride.stakeibc"
@@ -186,10 +180,6 @@ extension Stride_Stakeibc_Validator: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
     }
@@ -208,9 +198,9 @@ extension Stride_Stakeibc_Validator: SwiftProtobuf.Message, SwiftProtobuf._Messa
     if self.weight != 0 {
       try visitor.visitSingularUInt64Field(value: self.weight, fieldNumber: 6)
     }
-    try { if let v = self._internalExchangeRate {
+    if let v = self._internalExchangeRate {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

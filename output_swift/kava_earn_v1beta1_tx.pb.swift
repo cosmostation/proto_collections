@@ -124,13 +124,6 @@ struct Kava_Earn_V1beta1_MsgWithdrawResponse {
   fileprivate var _shares: Kava_Earn_V1beta1_VaultShare? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Kava_Earn_V1beta1_MsgDeposit: @unchecked Sendable {}
-extension Kava_Earn_V1beta1_MsgDepositResponse: @unchecked Sendable {}
-extension Kava_Earn_V1beta1_MsgWithdraw: @unchecked Sendable {}
-extension Kava_Earn_V1beta1_MsgWithdrawResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kava.earn.v1beta1"
@@ -158,16 +151,12 @@ extension Kava_Earn_V1beta1_MsgDeposit: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.depositor.isEmpty {
       try visitor.visitSingularStringField(value: self.depositor, fieldNumber: 1)
     }
-    try { if let v = self._amount {
+    if let v = self._amount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if self.strategy != .unspecified {
       try visitor.visitSingularEnumField(value: self.strategy, fieldNumber: 3)
     }
@@ -202,13 +191,9 @@ extension Kava_Earn_V1beta1_MsgDepositResponse: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._shares {
+    if let v = self._shares {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -242,16 +227,12 @@ extension Kava_Earn_V1beta1_MsgWithdraw: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.from.isEmpty {
       try visitor.visitSingularStringField(value: self.from, fieldNumber: 1)
     }
-    try { if let v = self._amount {
+    if let v = self._amount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if self.strategy != .unspecified {
       try visitor.visitSingularEnumField(value: self.strategy, fieldNumber: 3)
     }
@@ -286,13 +267,9 @@ extension Kava_Earn_V1beta1_MsgWithdrawResponse: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._shares {
+    if let v = self._shares {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

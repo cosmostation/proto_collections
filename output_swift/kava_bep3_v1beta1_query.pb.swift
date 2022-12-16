@@ -328,21 +328,6 @@ struct Kava_Bep3_V1beta1_QueryAtomicSwapsResponse {
   fileprivate var _pagination: Cosmos_Base_Query_V1beta1_PageResponse? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Kava_Bep3_V1beta1_QueryParamsRequest: @unchecked Sendable {}
-extension Kava_Bep3_V1beta1_QueryParamsResponse: @unchecked Sendable {}
-extension Kava_Bep3_V1beta1_QueryAssetSupplyRequest: @unchecked Sendable {}
-extension Kava_Bep3_V1beta1_AssetSupplyResponse: @unchecked Sendable {}
-extension Kava_Bep3_V1beta1_QueryAssetSupplyResponse: @unchecked Sendable {}
-extension Kava_Bep3_V1beta1_QueryAssetSuppliesRequest: @unchecked Sendable {}
-extension Kava_Bep3_V1beta1_QueryAssetSuppliesResponse: @unchecked Sendable {}
-extension Kava_Bep3_V1beta1_QueryAtomicSwapRequest: @unchecked Sendable {}
-extension Kava_Bep3_V1beta1_QueryAtomicSwapResponse: @unchecked Sendable {}
-extension Kava_Bep3_V1beta1_AtomicSwapResponse: @unchecked Sendable {}
-extension Kava_Bep3_V1beta1_QueryAtomicSwapsRequest: @unchecked Sendable {}
-extension Kava_Bep3_V1beta1_QueryAtomicSwapsResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kava.bep3.v1beta1"
@@ -385,13 +370,9 @@ extension Kava_Bep3_V1beta1_QueryParamsResponse: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -461,25 +442,21 @@ extension Kava_Bep3_V1beta1_AssetSupplyResponse: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._incomingSupply {
+    if let v = self._incomingSupply {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._outgoingSupply {
+    }
+    if let v = self._outgoingSupply {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
-    try { if let v = self._currentSupply {
+    }
+    if let v = self._currentSupply {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
-    try { if let v = self._timeLimitedCurrentSupply {
+    }
+    if let v = self._timeLimitedCurrentSupply {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
-    try { if let v = self._timeElapsed {
+    }
+    if let v = self._timeElapsed {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -513,13 +490,9 @@ extension Kava_Bep3_V1beta1_QueryAssetSupplyResponse: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._assetSupply {
+    if let v = self._assetSupply {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -632,13 +605,9 @@ extension Kava_Bep3_V1beta1_QueryAtomicSwapResponse: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._atomicSwap {
+    if let v = self._atomicSwap {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -780,10 +749,6 @@ extension Kava_Bep3_V1beta1_QueryAtomicSwapsRequest: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.involve.isEmpty {
       try visitor.visitSingularStringField(value: self.involve, fieldNumber: 1)
     }
@@ -796,9 +761,9 @@ extension Kava_Bep3_V1beta1_QueryAtomicSwapsRequest: SwiftProtobuf.Message, Swif
     if self.direction != .unspecified {
       try visitor.visitSingularEnumField(value: self.direction, fieldNumber: 4)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -834,16 +799,12 @@ extension Kava_Bep3_V1beta1_QueryAtomicSwapsResponse: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.atomicSwaps.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.atomicSwaps, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

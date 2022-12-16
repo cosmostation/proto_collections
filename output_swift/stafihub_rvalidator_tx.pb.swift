@@ -158,19 +158,6 @@ struct Stafihub_Stafihub_Rvalidator_MsgRmRValidatorResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Stafihub_Stafihub_Rvalidator_MsgInitRValidator: @unchecked Sendable {}
-extension Stafihub_Stafihub_Rvalidator_MsgInitRValidatorResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Rvalidator_MsgSetCycleSeconds: @unchecked Sendable {}
-extension Stafihub_Stafihub_Rvalidator_MsgSetCycleSecondsResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Rvalidator_MsgSetShuffleSeconds: @unchecked Sendable {}
-extension Stafihub_Stafihub_Rvalidator_MsgSetShuffleSecondsResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Rvalidator_MsgAddRValidator: @unchecked Sendable {}
-extension Stafihub_Stafihub_Rvalidator_MsgAddRValidatorResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Rvalidator_MsgRmRValidator: @unchecked Sendable {}
-extension Stafihub_Stafihub_Rvalidator_MsgRmRValidatorResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stafihub.stafihub.rvalidator"

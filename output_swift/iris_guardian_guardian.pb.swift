@@ -84,11 +84,6 @@ struct Irishub_Guardian_Super {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Irishub_Guardian_AccountType: @unchecked Sendable {}
-extension Irishub_Guardian_Super: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "irishub.guardian"

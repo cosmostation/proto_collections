@@ -56,10 +56,6 @@ struct Irismod_Htlc_GenesisState {
   fileprivate var _previousBlockTime: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Irismod_Htlc_GenesisState: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "irismod.htlc"
@@ -89,22 +85,18 @@ extension Irismod_Htlc_GenesisState: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.htlcs.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.htlcs, fieldNumber: 2)
     }
     if !self.supplies.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.supplies, fieldNumber: 3)
     }
-    try { if let v = self._previousBlockTime {
+    if let v = self._previousBlockTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

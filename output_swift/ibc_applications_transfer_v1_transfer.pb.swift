@@ -61,11 +61,6 @@ struct Ibc_Applications_Transfer_V1_Params {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Ibc_Applications_Transfer_V1_DenomTrace: @unchecked Sendable {}
-extension Ibc_Applications_Transfer_V1_Params: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "ibc.applications.transfer.v1"

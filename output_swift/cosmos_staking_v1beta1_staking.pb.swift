@@ -633,30 +633,6 @@ struct Cosmos_Staking_V1beta1_Pool {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Cosmos_Staking_V1beta1_BondStatus: @unchecked Sendable {}
-extension Cosmos_Staking_V1beta1_HistoricalInfo: @unchecked Sendable {}
-extension Cosmos_Staking_V1beta1_CommissionRates: @unchecked Sendable {}
-extension Cosmos_Staking_V1beta1_Commission: @unchecked Sendable {}
-extension Cosmos_Staking_V1beta1_Description: @unchecked Sendable {}
-extension Cosmos_Staking_V1beta1_Validator: @unchecked Sendable {}
-extension Cosmos_Staking_V1beta1_ValAddresses: @unchecked Sendable {}
-extension Cosmos_Staking_V1beta1_DVPair: @unchecked Sendable {}
-extension Cosmos_Staking_V1beta1_DVPairs: @unchecked Sendable {}
-extension Cosmos_Staking_V1beta1_DVVTriplet: @unchecked Sendable {}
-extension Cosmos_Staking_V1beta1_DVVTriplets: @unchecked Sendable {}
-extension Cosmos_Staking_V1beta1_Delegation: @unchecked Sendable {}
-extension Cosmos_Staking_V1beta1_UnbondingDelegation: @unchecked Sendable {}
-extension Cosmos_Staking_V1beta1_UnbondingDelegationEntry: @unchecked Sendable {}
-extension Cosmos_Staking_V1beta1_RedelegationEntry: @unchecked Sendable {}
-extension Cosmos_Staking_V1beta1_Redelegation: @unchecked Sendable {}
-extension Cosmos_Staking_V1beta1_Params: @unchecked Sendable {}
-extension Cosmos_Staking_V1beta1_DelegationResponse: @unchecked Sendable {}
-extension Cosmos_Staking_V1beta1_RedelegationEntryResponse: @unchecked Sendable {}
-extension Cosmos_Staking_V1beta1_RedelegationResponse: @unchecked Sendable {}
-extension Cosmos_Staking_V1beta1_Pool: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.staking.v1beta1"
@@ -691,13 +667,9 @@ extension Cosmos_Staking_V1beta1_HistoricalInfo: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._header {
+    if let v = self._header {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.valset.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.valset, fieldNumber: 2)
     }
@@ -777,16 +749,12 @@ extension Cosmos_Staking_V1beta1_Commission: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._commissionRates {
+    if let v = self._commissionRates {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._updateTime {
+    }
+    if let v = self._updateTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -936,16 +904,12 @@ extension Cosmos_Staking_V1beta1_Validator: SwiftProtobuf.Message, SwiftProtobuf
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
       if !_storage._operatorAddress.isEmpty {
         try visitor.visitSingularStringField(value: _storage._operatorAddress, fieldNumber: 1)
       }
-      try { if let v = _storage._consensusPubkey {
+      if let v = _storage._consensusPubkey {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      } }()
+      }
       if _storage._jailed != false {
         try visitor.visitSingularBoolField(value: _storage._jailed, fieldNumber: 3)
       }
@@ -958,18 +922,18 @@ extension Cosmos_Staking_V1beta1_Validator: SwiftProtobuf.Message, SwiftProtobuf
       if !_storage._delegatorShares.isEmpty {
         try visitor.visitSingularStringField(value: _storage._delegatorShares, fieldNumber: 6)
       }
-      try { if let v = _storage._description_p {
+      if let v = _storage._description_p {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-      } }()
+      }
       if _storage._unbondingHeight != 0 {
         try visitor.visitSingularInt64Field(value: _storage._unbondingHeight, fieldNumber: 8)
       }
-      try { if let v = _storage._unbondingTime {
+      if let v = _storage._unbondingTime {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
-      } }()
-      try { if let v = _storage._commission {
+      }
+      if let v = _storage._commission {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
-      } }()
+      }
       if !_storage._minSelfDelegation.isEmpty {
         try visitor.visitSingularStringField(value: _storage._minSelfDelegation, fieldNumber: 11)
       }
@@ -1293,16 +1257,12 @@ extension Cosmos_Staking_V1beta1_UnbondingDelegationEntry: SwiftProtobuf.Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.creationHeight != 0 {
       try visitor.visitSingularInt64Field(value: self.creationHeight, fieldNumber: 1)
     }
-    try { if let v = self._completionTime {
+    if let v = self._completionTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if !self.initialBalance.isEmpty {
       try visitor.visitSingularStringField(value: self.initialBalance, fieldNumber: 3)
     }
@@ -1347,16 +1307,12 @@ extension Cosmos_Staking_V1beta1_RedelegationEntry: SwiftProtobuf.Message, Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.creationHeight != 0 {
       try visitor.visitSingularInt64Field(value: self.creationHeight, fieldNumber: 1)
     }
-    try { if let v = self._completionTime {
+    if let v = self._completionTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if !self.initialBalance.isEmpty {
       try visitor.visitSingularStringField(value: self.initialBalance, fieldNumber: 3)
     }
@@ -1455,13 +1411,9 @@ extension Cosmos_Staking_V1beta1_Params: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._unbondingTime {
+    if let v = self._unbondingTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if self.maxValidators != 0 {
       try visitor.visitSingularUInt32Field(value: self.maxValidators, fieldNumber: 2)
     }
@@ -1513,16 +1465,12 @@ extension Cosmos_Staking_V1beta1_DelegationResponse: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._delegation {
+    if let v = self._delegation {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._balance {
+    }
+    if let v = self._balance {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1555,13 +1503,9 @@ extension Cosmos_Staking_V1beta1_RedelegationEntryResponse: SwiftProtobuf.Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._redelegationEntry {
+    if let v = self._redelegationEntry {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.balance.isEmpty {
       try visitor.visitSingularStringField(value: self.balance, fieldNumber: 4)
     }
@@ -1597,13 +1541,9 @@ extension Cosmos_Staking_V1beta1_RedelegationResponse: SwiftProtobuf.Message, Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._redelegation {
+    if let v = self._redelegation {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.entries.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.entries, fieldNumber: 2)
     }

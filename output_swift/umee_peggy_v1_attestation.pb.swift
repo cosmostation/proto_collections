@@ -135,12 +135,6 @@ struct Umeenetwork_Umee_Peggy_V1_ERC20Token {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Umeenetwork_Umee_Peggy_V1_ClaimType: @unchecked Sendable {}
-extension Umeenetwork_Umee_Peggy_V1_Attestation: @unchecked Sendable {}
-extension Umeenetwork_Umee_Peggy_V1_ERC20Token: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "umeenetwork.umee.peggy.v1"
@@ -180,10 +174,6 @@ extension Umeenetwork_Umee_Peggy_V1_Attestation: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.observed != false {
       try visitor.visitSingularBoolField(value: self.observed, fieldNumber: 1)
     }
@@ -193,9 +183,9 @@ extension Umeenetwork_Umee_Peggy_V1_Attestation: SwiftProtobuf.Message, SwiftPro
     if self.height != 0 {
       try visitor.visitSingularUInt64Field(value: self.height, fieldNumber: 3)
     }
-    try { if let v = self._claim {
+    if let v = self._claim {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

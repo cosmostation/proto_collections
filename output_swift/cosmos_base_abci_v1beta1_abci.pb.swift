@@ -262,19 +262,6 @@ struct Cosmos_Base_Abci_V1beta1_SearchTxsResult {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Cosmos_Base_Abci_V1beta1_TxResponse: @unchecked Sendable {}
-extension Cosmos_Base_Abci_V1beta1_ABCIMessageLog: @unchecked Sendable {}
-extension Cosmos_Base_Abci_V1beta1_StringEvent: @unchecked Sendable {}
-extension Cosmos_Base_Abci_V1beta1_Attribute: @unchecked Sendable {}
-extension Cosmos_Base_Abci_V1beta1_GasInfo: @unchecked Sendable {}
-extension Cosmos_Base_Abci_V1beta1_Result: @unchecked Sendable {}
-extension Cosmos_Base_Abci_V1beta1_SimulationResponse: @unchecked Sendable {}
-extension Cosmos_Base_Abci_V1beta1_MsgData: @unchecked Sendable {}
-extension Cosmos_Base_Abci_V1beta1_TxMsgData: @unchecked Sendable {}
-extension Cosmos_Base_Abci_V1beta1_SearchTxsResult: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.base.abci.v1beta1"
@@ -320,10 +307,6 @@ extension Cosmos_Base_Abci_V1beta1_TxResponse: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.height != 0 {
       try visitor.visitSingularInt64Field(value: self.height, fieldNumber: 1)
     }
@@ -354,9 +337,9 @@ extension Cosmos_Base_Abci_V1beta1_TxResponse: SwiftProtobuf.Message, SwiftProto
     if self.gasUsed != 0 {
       try visitor.visitSingularInt64Field(value: self.gasUsed, fieldNumber: 10)
     }
-    try { if let v = self._tx {
+    if let v = self._tx {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
-    } }()
+    }
     if !self.timestamp.isEmpty {
       try visitor.visitSingularStringField(value: self.timestamp, fieldNumber: 12)
     }
@@ -604,16 +587,12 @@ extension Cosmos_Base_Abci_V1beta1_SimulationResponse: SwiftProtobuf.Message, Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._gasInfo {
+    if let v = self._gasInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._result {
+    }
+    if let v = self._result {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

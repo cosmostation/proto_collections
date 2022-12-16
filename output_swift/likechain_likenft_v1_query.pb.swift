@@ -853,49 +853,6 @@ struct Likechain_Likenft_V1_QueryRoyaltyConfigIndexResponse {
   fileprivate var _pagination: Cosmos_Base_Query_V1beta1_PageResponse? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Likechain_Likenft_V1_QueryParamsRequest: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryParamsResponse: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryClassesByISCNRequest: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryClassesByISCNResponse: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryClassesByISCNIndexRequest: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryClassesByISCNIndexResponse: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryISCNByClassRequest: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryISCNByClassResponse: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryClassesByAccountRequest: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryClassesByAccountResponse: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryClassesByAccountIndexRequest: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryClassesByAccountIndexResponse: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryAccountByClassRequest: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryAccountByClassResponse: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryBlindBoxContentRequest: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryBlindBoxContentResponse: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryBlindBoxContentIndexRequest: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryBlindBoxContentIndexResponse: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryBlindBoxContentsRequest: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryBlindBoxContentsResponse: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryOfferRequest: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryOfferResponse: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryOfferIndexRequest: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryOfferIndexResponse: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryOffersByClassRequest: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryOffersByClassResponse: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryOffersByNFTRequest: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryOffersByNFTResponse: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryListingRequest: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryListingResponse: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryListingIndexRequest: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryListingIndexResponse: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryListingsByClassRequest: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryListingsByClassResponse: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryListingsByNFTRequest: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryListingsByNFTResponse: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryRoyaltyConfigRequest: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryRoyaltyConfigResponse: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryRoyaltyConfigIndexRequest: @unchecked Sendable {}
-extension Likechain_Likenft_V1_QueryRoyaltyConfigIndexResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "likechain.likenft.v1"
@@ -938,13 +895,9 @@ extension Likechain_Likenft_V1_QueryParamsResponse: SwiftProtobuf.Message, Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -976,16 +929,12 @@ extension Likechain_Likenft_V1_QueryClassesByISCNRequest: SwiftProtobuf.Message,
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.iscnIDPrefix.isEmpty {
       try visitor.visitSingularStringField(value: self.iscnIDPrefix, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1020,19 +969,15 @@ extension Likechain_Likenft_V1_QueryClassesByISCNResponse: SwiftProtobuf.Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.iscnIDPrefix.isEmpty {
       try visitor.visitSingularStringField(value: self.iscnIDPrefix, fieldNumber: 1)
     }
     if !self.classes.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.classes, fieldNumber: 2)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1064,13 +1009,9 @@ extension Likechain_Likenft_V1_QueryClassesByISCNIndexRequest: SwiftProtobuf.Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1102,16 +1043,12 @@ extension Likechain_Likenft_V1_QueryClassesByISCNIndexResponse: SwiftProtobuf.Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.classesByIscns.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.classesByIscns, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1180,10 +1117,6 @@ extension Likechain_Likenft_V1_QueryISCNByClassResponse: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.iscnIDPrefix.isEmpty {
       try visitor.visitSingularStringField(value: self.iscnIDPrefix, fieldNumber: 1)
     }
@@ -1193,9 +1126,9 @@ extension Likechain_Likenft_V1_QueryISCNByClassResponse: SwiftProtobuf.Message, 
     if self.latestVersion != 0 {
       try visitor.visitSingularUInt64Field(value: self.latestVersion, fieldNumber: 3)
     }
-    try { if let v = self._latestRecord {
+    if let v = self._latestRecord {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1230,16 +1163,12 @@ extension Likechain_Likenft_V1_QueryClassesByAccountRequest: SwiftProtobuf.Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.account.isEmpty {
       try visitor.visitSingularStringField(value: self.account, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1274,19 +1203,15 @@ extension Likechain_Likenft_V1_QueryClassesByAccountResponse: SwiftProtobuf.Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.account.isEmpty {
       try visitor.visitSingularStringField(value: self.account, fieldNumber: 1)
     }
     if !self.classes.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.classes, fieldNumber: 2)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1318,13 +1243,9 @@ extension Likechain_Likenft_V1_QueryClassesByAccountIndexRequest: SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1356,16 +1277,12 @@ extension Likechain_Likenft_V1_QueryClassesByAccountIndexResponse: SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.classesByAccounts.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.classesByAccounts, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1498,13 +1415,9 @@ extension Likechain_Likenft_V1_QueryBlindBoxContentResponse: SwiftProtobuf.Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._blindBoxContent {
+    if let v = self._blindBoxContent {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1534,13 +1447,9 @@ extension Likechain_Likenft_V1_QueryBlindBoxContentIndexRequest: SwiftProtobuf.M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1572,16 +1481,12 @@ extension Likechain_Likenft_V1_QueryBlindBoxContentIndexResponse: SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.blindBoxContents.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.blindBoxContents, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1614,16 +1519,12 @@ extension Likechain_Likenft_V1_QueryBlindBoxContentsRequest: SwiftProtobuf.Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.classID.isEmpty {
       try visitor.visitSingularStringField(value: self.classID, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1656,16 +1557,12 @@ extension Likechain_Likenft_V1_QueryBlindBoxContentsResponse: SwiftProtobuf.Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.blindBoxContents.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.blindBoxContents, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1740,13 +1637,9 @@ extension Likechain_Likenft_V1_QueryOfferResponse: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._offer {
+    if let v = self._offer {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1776,13 +1669,9 @@ extension Likechain_Likenft_V1_QueryOfferIndexRequest: SwiftProtobuf.Message, Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1814,16 +1703,12 @@ extension Likechain_Likenft_V1_QueryOfferIndexResponse: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.offers.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.offers, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1856,16 +1741,12 @@ extension Likechain_Likenft_V1_QueryOffersByClassRequest: SwiftProtobuf.Message,
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.classID.isEmpty {
       try visitor.visitSingularStringField(value: self.classID, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1898,16 +1779,12 @@ extension Likechain_Likenft_V1_QueryOffersByClassResponse: SwiftProtobuf.Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.offers.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.offers, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1942,19 +1819,15 @@ extension Likechain_Likenft_V1_QueryOffersByNFTRequest: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.classID.isEmpty {
       try visitor.visitSingularStringField(value: self.classID, fieldNumber: 1)
     }
     if !self.nftID.isEmpty {
       try visitor.visitSingularStringField(value: self.nftID, fieldNumber: 2)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1988,16 +1861,12 @@ extension Likechain_Likenft_V1_QueryOffersByNFTResponse: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.offers.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.offers, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2072,13 +1941,9 @@ extension Likechain_Likenft_V1_QueryListingResponse: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._listing {
+    if let v = self._listing {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2108,13 +1973,9 @@ extension Likechain_Likenft_V1_QueryListingIndexRequest: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2146,16 +2007,12 @@ extension Likechain_Likenft_V1_QueryListingIndexResponse: SwiftProtobuf.Message,
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.listings.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.listings, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2188,16 +2045,12 @@ extension Likechain_Likenft_V1_QueryListingsByClassRequest: SwiftProtobuf.Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.classID.isEmpty {
       try visitor.visitSingularStringField(value: self.classID, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2230,16 +2083,12 @@ extension Likechain_Likenft_V1_QueryListingsByClassResponse: SwiftProtobuf.Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.listings.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.listings, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2274,19 +2123,15 @@ extension Likechain_Likenft_V1_QueryListingsByNFTRequest: SwiftProtobuf.Message,
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.classID.isEmpty {
       try visitor.visitSingularStringField(value: self.classID, fieldNumber: 1)
     }
     if !self.nftID.isEmpty {
       try visitor.visitSingularStringField(value: self.nftID, fieldNumber: 2)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2320,16 +2165,12 @@ extension Likechain_Likenft_V1_QueryListingsByNFTResponse: SwiftProtobuf.Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.listings.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.listings, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2392,13 +2233,9 @@ extension Likechain_Likenft_V1_QueryRoyaltyConfigResponse: SwiftProtobuf.Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._royaltyConfig {
+    if let v = self._royaltyConfig {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2428,13 +2265,9 @@ extension Likechain_Likenft_V1_QueryRoyaltyConfigIndexRequest: SwiftProtobuf.Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2466,16 +2299,12 @@ extension Likechain_Likenft_V1_QueryRoyaltyConfigIndexResponse: SwiftProtobuf.Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.royaltyConfigByClass.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.royaltyConfigByClass, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

@@ -115,7 +115,8 @@ struct Desmos_Profiles_V1beta1_Proof {
   /// Signature represents the hex-encoded signature of the PlainText value
   var signature: String = String()
 
-  /// PlainText represents the hex-encoded value signed in order to produce the Signature
+  /// PlainText represents the hex-encoded value signed in order to produce the
+  /// Signature
   var plainText: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -156,13 +157,24 @@ struct Desmos_Profiles_V1beta1_Base58Address {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Desmos_Profiles_V1beta1_ChainLink: @unchecked Sendable {}
-extension Desmos_Profiles_V1beta1_ChainConfig: @unchecked Sendable {}
-extension Desmos_Profiles_V1beta1_Proof: @unchecked Sendable {}
-extension Desmos_Profiles_V1beta1_Bech32Address: @unchecked Sendable {}
-extension Desmos_Profiles_V1beta1_Base58Address: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
+/// HexAddress represents an Hex-encoded address
+/// NOTE: Currently it only supports keccak256-uncompressed addresses
+struct Desmos_Profiles_V1beta1_HexAddress {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  /// Value represents the hex address value
+  var value: String = String()
+
+  /// Prefix represents the optional prefix used during address encoding (e.g.
+  /// 0x)
+  var prefix: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
@@ -195,25 +207,21 @@ extension Desmos_Profiles_V1beta1_ChainLink: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.user.isEmpty {
       try visitor.visitSingularStringField(value: self.user, fieldNumber: 1)
     }
-    try { if let v = self._address {
+    if let v = self._address {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
-    try { if let v = self._proof {
+    }
+    if let v = self._proof {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
-    try { if let v = self._chainConfig {
+    }
+    if let v = self._chainConfig {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
-    try { if let v = self._creationTime {
+    }
+    if let v = self._creationTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -283,13 +291,9 @@ extension Desmos_Profiles_V1beta1_Proof: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pubKey {
+    if let v = self._pubKey {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.signature.isEmpty {
       try visitor.visitSingularStringField(value: self.signature, fieldNumber: 2)
     }
@@ -373,6 +377,44 @@ extension Desmos_Profiles_V1beta1_Base58Address: SwiftProtobuf.Message, SwiftPro
 
   static func ==(lhs: Desmos_Profiles_V1beta1_Base58Address, rhs: Desmos_Profiles_V1beta1_Base58Address) -> Bool {
     if lhs.value != rhs.value {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Desmos_Profiles_V1beta1_HexAddress: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".HexAddress"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "value"),
+    2: .same(proto: "prefix"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.value) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.prefix) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.value.isEmpty {
+      try visitor.visitSingularStringField(value: self.value, fieldNumber: 1)
+    }
+    if !self.prefix.isEmpty {
+      try visitor.visitSingularStringField(value: self.prefix, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Desmos_Profiles_V1beta1_HexAddress, rhs: Desmos_Profiles_V1beta1_HexAddress) -> Bool {
+    if lhs.value != rhs.value {return false}
+    if lhs.prefix != rhs.prefix {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

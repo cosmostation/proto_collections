@@ -190,18 +190,6 @@ struct Kava_Hard_V1beta1_CoinsProto {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Kava_Hard_V1beta1_Params: @unchecked Sendable {}
-extension Kava_Hard_V1beta1_MoneyMarket: @unchecked Sendable {}
-extension Kava_Hard_V1beta1_BorrowLimit: @unchecked Sendable {}
-extension Kava_Hard_V1beta1_InterestRateModel: @unchecked Sendable {}
-extension Kava_Hard_V1beta1_Deposit: @unchecked Sendable {}
-extension Kava_Hard_V1beta1_Borrow: @unchecked Sendable {}
-extension Kava_Hard_V1beta1_SupplyInterestFactor: @unchecked Sendable {}
-extension Kava_Hard_V1beta1_BorrowInterestFactor: @unchecked Sendable {}
-extension Kava_Hard_V1beta1_CoinsProto: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kava.hard.v1beta1"
@@ -275,25 +263,21 @@ extension Kava_Hard_V1beta1_MoneyMarket: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.denom.isEmpty {
       try visitor.visitSingularStringField(value: self.denom, fieldNumber: 1)
     }
-    try { if let v = self._borrowLimit {
+    if let v = self._borrowLimit {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if !self.spotMarketID.isEmpty {
       try visitor.visitSingularStringField(value: self.spotMarketID, fieldNumber: 3)
     }
     if !self.conversionFactor.isEmpty {
       try visitor.visitSingularStringField(value: self.conversionFactor, fieldNumber: 4)
     }
-    try { if let v = self._interestRateModel {
+    if let v = self._interestRateModel {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    } }()
+    }
     if !self.reserveFactor.isEmpty {
       try visitor.visitSingularStringField(value: self.reserveFactor, fieldNumber: 6)
     }

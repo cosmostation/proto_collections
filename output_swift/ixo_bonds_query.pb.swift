@@ -464,37 +464,6 @@ struct Bonds_QueryParamsResponse {
   fileprivate var _params: Bonds_Params? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Bonds_QueryBondsRequest: @unchecked Sendable {}
-extension Bonds_QueryBondsResponse: @unchecked Sendable {}
-extension Bonds_QueryBondsDetailedRequest: @unchecked Sendable {}
-extension Bonds_QueryBondsDetailedResponse: @unchecked Sendable {}
-extension Bonds_QueryBondRequest: @unchecked Sendable {}
-extension Bonds_QueryBondResponse: @unchecked Sendable {}
-extension Bonds_QueryBatchRequest: @unchecked Sendable {}
-extension Bonds_QueryBatchResponse: @unchecked Sendable {}
-extension Bonds_QueryLastBatchRequest: @unchecked Sendable {}
-extension Bonds_QueryLastBatchResponse: @unchecked Sendable {}
-extension Bonds_QueryCurrentPriceRequest: @unchecked Sendable {}
-extension Bonds_QueryCurrentPriceResponse: @unchecked Sendable {}
-extension Bonds_QueryCurrentReserveRequest: @unchecked Sendable {}
-extension Bonds_QueryCurrentReserveResponse: @unchecked Sendable {}
-extension Bonds_QueryAvailableReserveRequest: @unchecked Sendable {}
-extension Bonds_QueryAvailableReserveResponse: @unchecked Sendable {}
-extension Bonds_QueryCustomPriceRequest: @unchecked Sendable {}
-extension Bonds_QueryCustomPriceResponse: @unchecked Sendable {}
-extension Bonds_QueryBuyPriceRequest: @unchecked Sendable {}
-extension Bonds_QueryBuyPriceResponse: @unchecked Sendable {}
-extension Bonds_QuerySellReturnRequest: @unchecked Sendable {}
-extension Bonds_QuerySellReturnResponse: @unchecked Sendable {}
-extension Bonds_QuerySwapReturnRequest: @unchecked Sendable {}
-extension Bonds_QuerySwapReturnResponse: @unchecked Sendable {}
-extension Bonds_QueryAlphaMaximumsRequest: @unchecked Sendable {}
-extension Bonds_QueryAlphaMaximumsResponse: @unchecked Sendable {}
-extension Bonds_QueryParamsRequest: @unchecked Sendable {}
-extension Bonds_QueryParamsResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "bonds"
@@ -652,13 +621,9 @@ extension Bonds_QueryBondResponse: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._bond {
+    if let v = self._bond {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -720,13 +685,9 @@ extension Bonds_QueryBatchResponse: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._batch {
+    if let v = self._batch {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -788,13 +749,9 @@ extension Bonds_QueryLastBatchResponse: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._lastBatch {
+    if let v = self._lastBatch {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1132,13 +1089,9 @@ extension Bonds_QueryBuyPriceResponse: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._adjustedSupply {
+    if let v = self._adjustedSupply {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.prices.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.prices, fieldNumber: 2)
     }
@@ -1232,13 +1185,9 @@ extension Bonds_QuerySellReturnResponse: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._adjustedSupply {
+    if let v = self._adjustedSupply {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.returns.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.returns, fieldNumber: 2)
     }
@@ -1459,13 +1408,9 @@ extension Bonds_QueryParamsResponse: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

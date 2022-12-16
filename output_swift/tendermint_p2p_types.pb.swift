@@ -153,14 +153,6 @@ struct Tendermint_P2p_PeerAddressInfo {
   fileprivate var _lastDialFailure: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Tendermint_P2p_ProtocolVersion: @unchecked Sendable {}
-extension Tendermint_P2p_NodeInfo: @unchecked Sendable {}
-extension Tendermint_P2p_NodeInfoOther: @unchecked Sendable {}
-extension Tendermint_P2p_PeerInfo: @unchecked Sendable {}
-extension Tendermint_P2p_PeerAddressInfo: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "tendermint.p2p"
@@ -242,13 +234,9 @@ extension Tendermint_P2p_NodeInfo: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._protocolVersion {
+    if let v = self._protocolVersion {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.nodeID.isEmpty {
       try visitor.visitSingularStringField(value: self.nodeID, fieldNumber: 2)
     }
@@ -267,9 +255,9 @@ extension Tendermint_P2p_NodeInfo: SwiftProtobuf.Message, SwiftProtobuf._Message
     if !self.moniker.isEmpty {
       try visitor.visitSingularStringField(value: self.moniker, fieldNumber: 7)
     }
-    try { if let v = self._other {
+    if let v = self._other {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -348,19 +336,15 @@ extension Tendermint_P2p_PeerInfo: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.id.isEmpty {
       try visitor.visitSingularStringField(value: self.id, fieldNumber: 1)
     }
     if !self.addressInfo.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.addressInfo, fieldNumber: 2)
     }
-    try { if let v = self._lastConnected {
+    if let v = self._lastConnected {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -398,19 +382,15 @@ extension Tendermint_P2p_PeerAddressInfo: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.address.isEmpty {
       try visitor.visitSingularStringField(value: self.address, fieldNumber: 1)
     }
-    try { if let v = self._lastDialSuccess {
+    if let v = self._lastDialSuccess {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
-    try { if let v = self._lastDialFailure {
+    }
+    if let v = self._lastDialFailure {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if self.dialFailures != 0 {
       try visitor.visitSingularUInt32Field(value: self.dialFailures, fieldNumber: 4)
     }

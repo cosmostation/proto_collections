@@ -76,12 +76,6 @@ struct Osmosis_Superfluid_V1beta1_UpdateUnpoolWhiteListProposal {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Osmosis_Superfluid_V1beta1_SetSuperfluidAssetsProposal: @unchecked Sendable {}
-extension Osmosis_Superfluid_V1beta1_RemoveSuperfluidAssetsProposal: @unchecked Sendable {}
-extension Osmosis_Superfluid_V1beta1_UpdateUnpoolWhiteListProposal: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "osmosis.superfluid.v1beta1"

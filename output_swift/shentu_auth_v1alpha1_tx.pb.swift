@@ -49,11 +49,6 @@ struct Shentu_Auth_V1alpha1_MsgUnlockResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Shentu_Auth_V1alpha1_MsgUnlock: @unchecked Sendable {}
-extension Shentu_Auth_V1alpha1_MsgUnlockResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "shentu.auth.v1alpha1"

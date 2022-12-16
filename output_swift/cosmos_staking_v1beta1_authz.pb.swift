@@ -171,13 +171,6 @@ struct Cosmos_Staking_V1beta1_StakeAuthorization {
   fileprivate var _maxTokens: Cosmos_Base_V1beta1_Coin? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Cosmos_Staking_V1beta1_AuthorizationType: @unchecked Sendable {}
-extension Cosmos_Staking_V1beta1_StakeAuthorization: @unchecked Sendable {}
-extension Cosmos_Staking_V1beta1_StakeAuthorization.OneOf_Validators: @unchecked Sendable {}
-extension Cosmos_Staking_V1beta1_StakeAuthorization.Validators: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.staking.v1beta1"
@@ -240,13 +233,12 @@ extension Cosmos_Staking_V1beta1_StakeAuthorization: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._maxTokens {
+    if let v = self._maxTokens {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every case branch when no optimizations are
+    // enabled. https://github.com/apple/swift-protobuf/issues/1034
     switch self.validators {
     case .allowList?: try {
       guard case .allowList(let v)? = self.validators else { preconditionFailure() }

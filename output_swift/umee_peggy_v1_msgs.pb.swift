@@ -460,32 +460,6 @@ struct Umeenetwork_Umee_Peggy_V1_MsgValsetUpdatedClaimResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Umeenetwork_Umee_Peggy_V1_MsgSetOrchestratorAddresses: @unchecked Sendable {}
-extension Umeenetwork_Umee_Peggy_V1_MsgSetOrchestratorAddressesResponse: @unchecked Sendable {}
-extension Umeenetwork_Umee_Peggy_V1_SetOrchestratorAddressesSignMsg: @unchecked Sendable {}
-extension Umeenetwork_Umee_Peggy_V1_MsgValsetConfirm: @unchecked Sendable {}
-extension Umeenetwork_Umee_Peggy_V1_MsgValsetConfirmResponse: @unchecked Sendable {}
-extension Umeenetwork_Umee_Peggy_V1_MsgSendToEth: @unchecked Sendable {}
-extension Umeenetwork_Umee_Peggy_V1_MsgSendToEthResponse: @unchecked Sendable {}
-extension Umeenetwork_Umee_Peggy_V1_MsgRequestBatch: @unchecked Sendable {}
-extension Umeenetwork_Umee_Peggy_V1_MsgRequestBatchResponse: @unchecked Sendable {}
-extension Umeenetwork_Umee_Peggy_V1_MsgConfirmBatch: @unchecked Sendable {}
-extension Umeenetwork_Umee_Peggy_V1_MsgConfirmBatchResponse: @unchecked Sendable {}
-extension Umeenetwork_Umee_Peggy_V1_MsgDepositClaim: @unchecked Sendable {}
-extension Umeenetwork_Umee_Peggy_V1_MsgDepositClaimResponse: @unchecked Sendable {}
-extension Umeenetwork_Umee_Peggy_V1_MsgWithdrawClaim: @unchecked Sendable {}
-extension Umeenetwork_Umee_Peggy_V1_MsgWithdrawClaimResponse: @unchecked Sendable {}
-extension Umeenetwork_Umee_Peggy_V1_MsgERC20DeployedClaim: @unchecked Sendable {}
-extension Umeenetwork_Umee_Peggy_V1_MsgERC20DeployedClaimResponse: @unchecked Sendable {}
-extension Umeenetwork_Umee_Peggy_V1_MsgCancelSendToEth: @unchecked Sendable {}
-extension Umeenetwork_Umee_Peggy_V1_MsgCancelSendToEthResponse: @unchecked Sendable {}
-extension Umeenetwork_Umee_Peggy_V1_MsgSubmitBadSignatureEvidence: @unchecked Sendable {}
-extension Umeenetwork_Umee_Peggy_V1_MsgSubmitBadSignatureEvidenceResponse: @unchecked Sendable {}
-extension Umeenetwork_Umee_Peggy_V1_MsgValsetUpdatedClaim: @unchecked Sendable {}
-extension Umeenetwork_Umee_Peggy_V1_MsgValsetUpdatedClaimResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "umeenetwork.umee.peggy.v1"
@@ -691,22 +665,18 @@ extension Umeenetwork_Umee_Peggy_V1_MsgSendToEth: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularStringField(value: self.sender, fieldNumber: 1)
     }
     if !self.ethDest.isEmpty {
       try visitor.visitSingularStringField(value: self.ethDest, fieldNumber: 2)
     }
-    try { if let v = self._amount {
+    if let v = self._amount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
-    try { if let v = self._bridgeFee {
+    }
+    if let v = self._bridgeFee {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1206,13 +1176,9 @@ extension Umeenetwork_Umee_Peggy_V1_MsgSubmitBadSignatureEvidence: SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._subject {
+    if let v = self._subject {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.signature.isEmpty {
       try visitor.visitSingularStringField(value: self.signature, fieldNumber: 2)
     }

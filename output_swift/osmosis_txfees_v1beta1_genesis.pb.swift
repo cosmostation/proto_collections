@@ -35,10 +35,6 @@ struct Osmosis_Txfees_V1beta1_GenesisState {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Osmosis_Txfees_V1beta1_GenesisState: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "osmosis.txfees.v1beta1"

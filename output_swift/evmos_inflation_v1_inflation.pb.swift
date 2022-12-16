@@ -79,11 +79,6 @@ struct Evmos_Inflation_V1_ExponentialCalculation {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Evmos_Inflation_V1_InflationDistribution: @unchecked Sendable {}
-extension Evmos_Inflation_V1_ExponentialCalculation: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "evmos.inflation.v1"

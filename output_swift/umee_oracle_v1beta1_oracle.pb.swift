@@ -113,14 +113,6 @@ struct Umeenetwork_Umee_Oracle_V1beta1_ExchangeRateTuple {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Umeenetwork_Umee_Oracle_V1beta1_Params: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_Denom: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_AggregateExchangeRatePrevote: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_AggregateExchangeRateVote: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_ExchangeRateTuple: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "umeenetwork.umee.oracle.v1beta1"

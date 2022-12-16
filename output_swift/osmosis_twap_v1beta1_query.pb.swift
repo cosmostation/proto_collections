@@ -139,15 +139,6 @@ struct Osmosis_Twap_V1beta1_ParamsResponse {
   fileprivate var _params: Osmosis_Twap_V1beta1_Params? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Osmosis_Twap_V1beta1_ArithmeticTwapRequest: @unchecked Sendable {}
-extension Osmosis_Twap_V1beta1_ArithmeticTwapResponse: @unchecked Sendable {}
-extension Osmosis_Twap_V1beta1_ArithmeticTwapToNowRequest: @unchecked Sendable {}
-extension Osmosis_Twap_V1beta1_ArithmeticTwapToNowResponse: @unchecked Sendable {}
-extension Osmosis_Twap_V1beta1_ParamsRequest: @unchecked Sendable {}
-extension Osmosis_Twap_V1beta1_ParamsResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "osmosis.twap.v1beta1"
@@ -179,10 +170,6 @@ extension Osmosis_Twap_V1beta1_ArithmeticTwapRequest: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.poolID != 0 {
       try visitor.visitSingularUInt64Field(value: self.poolID, fieldNumber: 1)
     }
@@ -192,12 +179,12 @@ extension Osmosis_Twap_V1beta1_ArithmeticTwapRequest: SwiftProtobuf.Message, Swi
     if !self.quoteAsset.isEmpty {
       try visitor.visitSingularStringField(value: self.quoteAsset, fieldNumber: 3)
     }
-    try { if let v = self._startTime {
+    if let v = self._startTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
-    try { if let v = self._endTime {
+    }
+    if let v = self._endTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -269,10 +256,6 @@ extension Osmosis_Twap_V1beta1_ArithmeticTwapToNowRequest: SwiftProtobuf.Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.poolID != 0 {
       try visitor.visitSingularUInt64Field(value: self.poolID, fieldNumber: 1)
     }
@@ -282,9 +265,9 @@ extension Osmosis_Twap_V1beta1_ArithmeticTwapToNowRequest: SwiftProtobuf.Message
     if !self.quoteAsset.isEmpty {
       try visitor.visitSingularStringField(value: self.quoteAsset, fieldNumber: 3)
     }
-    try { if let v = self._startTime {
+    if let v = self._startTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -368,13 +351,9 @@ extension Osmosis_Twap_V1beta1_ParamsResponse: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

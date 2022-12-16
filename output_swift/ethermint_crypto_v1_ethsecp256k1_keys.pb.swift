@@ -49,11 +49,6 @@ struct Ethermint_Crypto_V1_Ethsecp256k1_PrivKey {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Ethermint_Crypto_V1_Ethsecp256k1_PubKey: @unchecked Sendable {}
-extension Ethermint_Crypto_V1_Ethsecp256k1_PrivKey: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "ethermint.crypto.v1.ethsecp256k1"

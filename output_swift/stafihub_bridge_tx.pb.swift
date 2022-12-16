@@ -269,27 +269,6 @@ struct Stafihub_Stafihub_Bridge_MsgRmBannedDenomResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Stafihub_Stafihub_Bridge_MsgSetResourceidToDenom: @unchecked Sendable {}
-extension Stafihub_Stafihub_Bridge_MsgSetResourceidToDenomResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Bridge_MsgDeposit: @unchecked Sendable {}
-extension Stafihub_Stafihub_Bridge_MsgDepositResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Bridge_MsgAddChainId: @unchecked Sendable {}
-extension Stafihub_Stafihub_Bridge_MsgAddChainIdResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Bridge_MsgVoteProposal: @unchecked Sendable {}
-extension Stafihub_Stafihub_Bridge_MsgVoteProposalResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Bridge_MsgRmChainId: @unchecked Sendable {}
-extension Stafihub_Stafihub_Bridge_MsgRmChainIdResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Bridge_MsgSetRelayFeeReceiver: @unchecked Sendable {}
-extension Stafihub_Stafihub_Bridge_MsgSetRelayFeeReceiverResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Bridge_MsgSetRelayFee: @unchecked Sendable {}
-extension Stafihub_Stafihub_Bridge_MsgSetRelayFeeResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Bridge_MsgAddBannedDenom: @unchecked Sendable {}
-extension Stafihub_Stafihub_Bridge_MsgAddBannedDenomResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Bridge_MsgRmBannedDenom: @unchecked Sendable {}
-extension Stafihub_Stafihub_Bridge_MsgRmBannedDenomResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stafihub.stafihub.bridge"
@@ -713,19 +692,15 @@ extension Stafihub_Stafihub_Bridge_MsgSetRelayFee: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.creator.isEmpty {
       try visitor.visitSingularStringField(value: self.creator, fieldNumber: 1)
     }
     if self.chainID != 0 {
       try visitor.visitSingularUInt32Field(value: self.chainID, fieldNumber: 2)
     }
-    try { if let v = self._value {
+    if let v = self._value {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

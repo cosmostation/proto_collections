@@ -40,10 +40,6 @@ struct Shentu_Cert_V1alpha1_GenesisState {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Shentu_Cert_V1alpha1_GenesisState: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "shentu.cert.v1alpha1"

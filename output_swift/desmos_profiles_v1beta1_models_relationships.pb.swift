@@ -31,7 +31,7 @@ struct Desmos_Profiles_V1beta1_Relationship {
 
   var recipient: String = String()
 
-  var subspace: String = String()
+  var subspaceID: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -54,19 +54,14 @@ struct Desmos_Profiles_V1beta1_UserBlock {
   /// Reason represents the optional reason the user has been blocked for.
   var reason: String = String()
 
-  /// Subspace contains the ID of the subspace inside which the user should be
-  /// blocked
-  var subspace: String = String()
+  /// SubspaceID represents the ID of the subspace inside which the user should
+  /// be blocked
+  var subspaceID: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Desmos_Profiles_V1beta1_Relationship: @unchecked Sendable {}
-extension Desmos_Profiles_V1beta1_UserBlock: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
@@ -77,7 +72,7 @@ extension Desmos_Profiles_V1beta1_Relationship: SwiftProtobuf.Message, SwiftProt
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "creator"),
     2: .same(proto: "recipient"),
-    3: .same(proto: "subspace"),
+    3: .standard(proto: "subspace_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -88,7 +83,7 @@ extension Desmos_Profiles_V1beta1_Relationship: SwiftProtobuf.Message, SwiftProt
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularStringField(value: &self.creator) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.recipient) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.subspace) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.subspaceID) }()
       default: break
       }
     }
@@ -101,8 +96,8 @@ extension Desmos_Profiles_V1beta1_Relationship: SwiftProtobuf.Message, SwiftProt
     if !self.recipient.isEmpty {
       try visitor.visitSingularStringField(value: self.recipient, fieldNumber: 2)
     }
-    if !self.subspace.isEmpty {
-      try visitor.visitSingularStringField(value: self.subspace, fieldNumber: 3)
+    if !self.subspaceID.isEmpty {
+      try visitor.visitSingularStringField(value: self.subspaceID, fieldNumber: 3)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -110,7 +105,7 @@ extension Desmos_Profiles_V1beta1_Relationship: SwiftProtobuf.Message, SwiftProt
   static func ==(lhs: Desmos_Profiles_V1beta1_Relationship, rhs: Desmos_Profiles_V1beta1_Relationship) -> Bool {
     if lhs.creator != rhs.creator {return false}
     if lhs.recipient != rhs.recipient {return false}
-    if lhs.subspace != rhs.subspace {return false}
+    if lhs.subspaceID != rhs.subspaceID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -122,7 +117,7 @@ extension Desmos_Profiles_V1beta1_UserBlock: SwiftProtobuf.Message, SwiftProtobu
     1: .same(proto: "blocker"),
     2: .same(proto: "blocked"),
     3: .same(proto: "reason"),
-    4: .same(proto: "subspace"),
+    4: .standard(proto: "subspace_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -134,7 +129,7 @@ extension Desmos_Profiles_V1beta1_UserBlock: SwiftProtobuf.Message, SwiftProtobu
       case 1: try { try decoder.decodeSingularStringField(value: &self.blocker) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.blocked) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.reason) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.subspace) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.subspaceID) }()
       default: break
       }
     }
@@ -150,8 +145,8 @@ extension Desmos_Profiles_V1beta1_UserBlock: SwiftProtobuf.Message, SwiftProtobu
     if !self.reason.isEmpty {
       try visitor.visitSingularStringField(value: self.reason, fieldNumber: 3)
     }
-    if !self.subspace.isEmpty {
-      try visitor.visitSingularStringField(value: self.subspace, fieldNumber: 4)
+    if !self.subspaceID.isEmpty {
+      try visitor.visitSingularStringField(value: self.subspaceID, fieldNumber: 4)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -160,7 +155,7 @@ extension Desmos_Profiles_V1beta1_UserBlock: SwiftProtobuf.Message, SwiftProtobu
     if lhs.blocker != rhs.blocker {return false}
     if lhs.blocked != rhs.blocked {return false}
     if lhs.reason != rhs.reason {return false}
-    if lhs.subspace != rhs.subspace {return false}
+    if lhs.subspaceID != rhs.subspaceID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

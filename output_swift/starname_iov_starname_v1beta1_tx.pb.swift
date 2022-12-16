@@ -454,33 +454,6 @@ struct Starnamed_X_Starname_V1beta1_MsgTransferDomainResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Starnamed_X_Starname_V1beta1_MsgAddAccountCertificate: @unchecked Sendable {}
-extension Starnamed_X_Starname_V1beta1_MsgAddAccountCertificateResponse: @unchecked Sendable {}
-extension Starnamed_X_Starname_V1beta1_MsgDeleteAccountCertificate: @unchecked Sendable {}
-extension Starnamed_X_Starname_V1beta1_MsgDeleteAccountCertificateResponse: @unchecked Sendable {}
-extension Starnamed_X_Starname_V1beta1_MsgDeleteAccount: @unchecked Sendable {}
-extension Starnamed_X_Starname_V1beta1_MsgDeleteAccountResponse: @unchecked Sendable {}
-extension Starnamed_X_Starname_V1beta1_MsgDeleteDomain: @unchecked Sendable {}
-extension Starnamed_X_Starname_V1beta1_MsgDeleteDomainResponse: @unchecked Sendable {}
-extension Starnamed_X_Starname_V1beta1_MsgRegisterAccount: @unchecked Sendable {}
-extension Starnamed_X_Starname_V1beta1_MsgRegisterAccountResponse: @unchecked Sendable {}
-extension Starnamed_X_Starname_V1beta1_MsgRegisterDomain: @unchecked Sendable {}
-extension Starnamed_X_Starname_V1beta1_MsgRegisterDomainResponse: @unchecked Sendable {}
-extension Starnamed_X_Starname_V1beta1_MsgRenewAccount: @unchecked Sendable {}
-extension Starnamed_X_Starname_V1beta1_MsgRenewAccountResponse: @unchecked Sendable {}
-extension Starnamed_X_Starname_V1beta1_MsgRenewDomain: @unchecked Sendable {}
-extension Starnamed_X_Starname_V1beta1_MsgRenewDomainResponse: @unchecked Sendable {}
-extension Starnamed_X_Starname_V1beta1_MsgReplaceAccountResources: @unchecked Sendable {}
-extension Starnamed_X_Starname_V1beta1_MsgReplaceAccountResourcesResponse: @unchecked Sendable {}
-extension Starnamed_X_Starname_V1beta1_MsgReplaceAccountMetadata: @unchecked Sendable {}
-extension Starnamed_X_Starname_V1beta1_MsgReplaceAccountMetadataResponse: @unchecked Sendable {}
-extension Starnamed_X_Starname_V1beta1_MsgTransferAccount: @unchecked Sendable {}
-extension Starnamed_X_Starname_V1beta1_MsgTransferAccountResponse: @unchecked Sendable {}
-extension Starnamed_X_Starname_V1beta1_MsgTransferDomain: @unchecked Sendable {}
-extension Starnamed_X_Starname_V1beta1_MsgTransferDomainResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "starnamed.x.starname.v1beta1"

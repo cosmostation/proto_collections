@@ -55,11 +55,6 @@ struct Publicawesome_Stargaze_Alloc_V1beta1_MsgCreateVestingAccountResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Publicawesome_Stargaze_Alloc_V1beta1_MsgCreateVestingAccount: @unchecked Sendable {}
-extension Publicawesome_Stargaze_Alloc_V1beta1_MsgCreateVestingAccountResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "publicawesome.stargaze.alloc.v1beta1"

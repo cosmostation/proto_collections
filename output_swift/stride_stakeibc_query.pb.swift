@@ -317,27 +317,6 @@ struct Stride_Stakeibc_QueryAllEpochTrackerResponse {
   fileprivate var _pagination: Cosmos_Base_Query_V1beta1_PageResponse? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Stride_Stakeibc_QueryInterchainAccountFromAddressRequest: @unchecked Sendable {}
-extension Stride_Stakeibc_QueryInterchainAccountFromAddressResponse: @unchecked Sendable {}
-extension Stride_Stakeibc_QueryParamsRequest: @unchecked Sendable {}
-extension Stride_Stakeibc_QueryParamsResponse: @unchecked Sendable {}
-extension Stride_Stakeibc_QueryGetValidatorsRequest: @unchecked Sendable {}
-extension Stride_Stakeibc_QueryGetValidatorsResponse: @unchecked Sendable {}
-extension Stride_Stakeibc_QueryGetICAAccountRequest: @unchecked Sendable {}
-extension Stride_Stakeibc_QueryGetICAAccountResponse: @unchecked Sendable {}
-extension Stride_Stakeibc_QueryGetHostZoneRequest: @unchecked Sendable {}
-extension Stride_Stakeibc_QueryGetHostZoneResponse: @unchecked Sendable {}
-extension Stride_Stakeibc_QueryAllHostZoneRequest: @unchecked Sendable {}
-extension Stride_Stakeibc_QueryAllHostZoneResponse: @unchecked Sendable {}
-extension Stride_Stakeibc_QueryModuleAddressRequest: @unchecked Sendable {}
-extension Stride_Stakeibc_QueryModuleAddressResponse: @unchecked Sendable {}
-extension Stride_Stakeibc_QueryGetEpochTrackerRequest: @unchecked Sendable {}
-extension Stride_Stakeibc_QueryGetEpochTrackerResponse: @unchecked Sendable {}
-extension Stride_Stakeibc_QueryAllEpochTrackerRequest: @unchecked Sendable {}
-extension Stride_Stakeibc_QueryAllEpochTrackerResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stride.stakeibc"
@@ -450,13 +429,9 @@ extension Stride_Stakeibc_QueryParamsResponse: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -569,13 +544,9 @@ extension Stride_Stakeibc_QueryGetICAAccountResponse: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._icaAccount {
+    if let v = self._icaAccount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -637,13 +608,9 @@ extension Stride_Stakeibc_QueryGetHostZoneResponse: SwiftProtobuf.Message, Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._hostZone {
+    if let v = self._hostZone {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -673,13 +640,9 @@ extension Stride_Stakeibc_QueryAllHostZoneRequest: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -711,16 +674,12 @@ extension Stride_Stakeibc_QueryAllHostZoneResponse: SwiftProtobuf.Message, Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.hostZone.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.hostZone, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -847,13 +806,9 @@ extension Stride_Stakeibc_QueryGetEpochTrackerResponse: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._epochTracker {
+    if let v = self._epochTracker {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -883,13 +838,9 @@ extension Stride_Stakeibc_QueryAllEpochTrackerRequest: SwiftProtobuf.Message, Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -921,16 +872,12 @@ extension Stride_Stakeibc_QueryAllEpochTrackerResponse: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.epochTracker.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.epochTracker, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

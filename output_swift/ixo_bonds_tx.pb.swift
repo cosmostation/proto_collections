@@ -446,29 +446,6 @@ struct Bonds_MsgWithdrawReserveResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Bonds_MsgCreateBond: @unchecked Sendable {}
-extension Bonds_MsgCreateBondResponse: @unchecked Sendable {}
-extension Bonds_MsgEditBond: @unchecked Sendable {}
-extension Bonds_MsgEditBondResponse: @unchecked Sendable {}
-extension Bonds_MsgSetNextAlpha: @unchecked Sendable {}
-extension Bonds_MsgSetNextAlphaResponse: @unchecked Sendable {}
-extension Bonds_MsgUpdateBondState: @unchecked Sendable {}
-extension Bonds_MsgUpdateBondStateResponse: @unchecked Sendable {}
-extension Bonds_MsgBuy: @unchecked Sendable {}
-extension Bonds_MsgBuyResponse: @unchecked Sendable {}
-extension Bonds_MsgSell: @unchecked Sendable {}
-extension Bonds_MsgSellResponse: @unchecked Sendable {}
-extension Bonds_MsgSwap: @unchecked Sendable {}
-extension Bonds_MsgSwapResponse: @unchecked Sendable {}
-extension Bonds_MsgMakeOutcomePayment: @unchecked Sendable {}
-extension Bonds_MsgMakeOutcomePaymentResponse: @unchecked Sendable {}
-extension Bonds_MsgWithdrawShare: @unchecked Sendable {}
-extension Bonds_MsgWithdrawShareResponse: @unchecked Sendable {}
-extension Bonds_MsgWithdrawReserve: @unchecked Sendable {}
-extension Bonds_MsgWithdrawReserveResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "bonds"
@@ -599,10 +576,6 @@ extension Bonds_MsgCreateBond: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
       if !_storage._bondDid.isEmpty {
         try visitor.visitSingularStringField(value: _storage._bondDid, fieldNumber: 1)
       }
@@ -642,9 +615,9 @@ extension Bonds_MsgCreateBond: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       if !_storage._reserveWithdrawalAddress.isEmpty {
         try visitor.visitSingularStringField(value: _storage._reserveWithdrawalAddress, fieldNumber: 13)
       }
-      try { if let v = _storage._maxSupply {
+      if let v = _storage._maxSupply {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 14)
-      } }()
+      }
       if !_storage._orderQuantityLimits.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._orderQuantityLimits, fieldNumber: 15)
       }
@@ -966,16 +939,12 @@ extension Bonds_MsgBuy: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementat
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.buyerDid.isEmpty {
       try visitor.visitSingularStringField(value: self.buyerDid, fieldNumber: 1)
     }
-    try { if let v = self._amount {
+    if let v = self._amount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if !self.maxPrices.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.maxPrices, fieldNumber: 3)
     }
@@ -1037,16 +1006,12 @@ extension Bonds_MsgSell: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sellerDid.isEmpty {
       try visitor.visitSingularStringField(value: self.sellerDid, fieldNumber: 1)
     }
-    try { if let v = self._amount {
+    if let v = self._amount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if !self.bondDid.isEmpty {
       try visitor.visitSingularStringField(value: self.bondDid, fieldNumber: 3)
     }
@@ -1106,19 +1071,15 @@ extension Bonds_MsgSwap: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.swapperDid.isEmpty {
       try visitor.visitSingularStringField(value: self.swapperDid, fieldNumber: 1)
     }
     if !self.bondDid.isEmpty {
       try visitor.visitSingularStringField(value: self.bondDid, fieldNumber: 2)
     }
-    try { if let v = self._from {
+    if let v = self._from {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if !self.toToken.isEmpty {
       try visitor.visitSingularStringField(value: self.toToken, fieldNumber: 4)
     }

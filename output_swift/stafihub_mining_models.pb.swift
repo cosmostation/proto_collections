@@ -175,16 +175,6 @@ struct Stafihub_Stafihub_Mining_StakeItemLimit {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Stafihub_Stafihub_Mining_StakePool: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_RewardPool: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_UserStakeRecord: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_UserRewardInfo: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_RewardToken: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_StakeItem: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_StakeItemLimit: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stafihub.stafihub.mining"

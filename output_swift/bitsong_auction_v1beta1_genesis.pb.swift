@@ -37,10 +37,6 @@ struct Bitsong_Auction_V1beta1_GenesisState {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Bitsong_Auction_V1beta1_GenesisState: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "bitsong.auction.v1beta1"

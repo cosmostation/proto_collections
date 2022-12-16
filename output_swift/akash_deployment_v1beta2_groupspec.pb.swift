@@ -46,10 +46,6 @@ struct Akash_Deployment_V1beta2_GroupSpec {
   fileprivate var _requirements: Akash_Base_V1beta2_PlacementRequirements? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Akash_Deployment_V1beta2_GroupSpec: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "akash.deployment.v1beta2"
@@ -77,16 +73,12 @@ extension Akash_Deployment_V1beta2_GroupSpec: SwiftProtobuf.Message, SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
     }
-    try { if let v = self._requirements {
+    if let v = self._requirements {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if !self.resources.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.resources, fieldNumber: 3)
     }

@@ -38,10 +38,6 @@ struct Kava_Evmutil_V1beta1_ConversionPair {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Kava_Evmutil_V1beta1_ConversionPair: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kava.evmutil.v1beta1"

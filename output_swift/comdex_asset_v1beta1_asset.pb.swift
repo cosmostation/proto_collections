@@ -38,10 +38,6 @@ struct Comdex_Asset_V1beta1_Asset {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Comdex_Asset_V1beta1_Asset: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "comdex.asset.v1beta1"

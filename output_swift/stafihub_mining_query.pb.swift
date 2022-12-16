@@ -360,35 +360,6 @@ struct Stafihub_Stafihub_Mining_QueryProviderSwitchResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Stafihub_Stafihub_Mining_QueryParamsRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_QueryParamsResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_QueryStakePoolInfoRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_QueryStakePoolInfoResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_QueryStakeItemListRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_QueryStakeItemListResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_QueryStakeRewardRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_QueryStakeRewardResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_QueryStakeRecordCountRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_QueryStakeRecordCountResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_QueryStakeRecordRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_QueryStakeRecordResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_QueryStakeRecordListRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_QueryStakeRecordListResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_QueryStakePoolListRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_QueryStakePoolListResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_QueryMiningProviderListRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_QueryMiningProviderListResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_QueryRewardTokenListRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_QueryRewardTokenListResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_QueryMaxRewardPoolNumberRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_QueryMaxRewardPoolNumberResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_QueryMaxStakeItemNumberRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_QueryMaxStakeItemNumberResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_QueryProviderSwitchRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Mining_QueryProviderSwitchResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stafihub.stafihub.mining"
@@ -431,13 +402,9 @@ extension Stafihub_Stafihub_Mining_QueryParamsResponse: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -499,13 +466,9 @@ extension Stafihub_Stafihub_Mining_QueryStakePoolInfoResponse: SwiftProtobuf.Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._stakePool {
+    if let v = self._stakePool {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -789,13 +752,9 @@ extension Stafihub_Stafihub_Mining_QueryStakeRecordResponse: SwiftProtobuf.Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._stakeRecord {
+    if let v = self._stakeRecord {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

@@ -37,10 +37,6 @@ struct Osmosis_Lockup_GenesisState {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Osmosis_Lockup_GenesisState: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "osmosis.lockup"

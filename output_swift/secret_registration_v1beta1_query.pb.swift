@@ -45,11 +45,6 @@ struct Secret_Registration_V1beta1_QueryEncryptedSeedResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Secret_Registration_V1beta1_QueryEncryptedSeedRequest: @unchecked Sendable {}
-extension Secret_Registration_V1beta1_QueryEncryptedSeedResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "secret.registration.v1beta1"

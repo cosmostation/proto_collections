@@ -268,25 +268,6 @@ struct Axelar_Axelarnet_V1beta1_RegisterFeeCollectorResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Axelar_Axelarnet_V1beta1_LinkRequest: @unchecked Sendable {}
-extension Axelar_Axelarnet_V1beta1_LinkResponse: @unchecked Sendable {}
-extension Axelar_Axelarnet_V1beta1_ConfirmDepositRequest: @unchecked Sendable {}
-extension Axelar_Axelarnet_V1beta1_ConfirmDepositResponse: @unchecked Sendable {}
-extension Axelar_Axelarnet_V1beta1_ExecutePendingTransfersRequest: @unchecked Sendable {}
-extension Axelar_Axelarnet_V1beta1_ExecutePendingTransfersResponse: @unchecked Sendable {}
-extension Axelar_Axelarnet_V1beta1_RegisterIBCPathRequest: @unchecked Sendable {}
-extension Axelar_Axelarnet_V1beta1_RegisterIBCPathResponse: @unchecked Sendable {}
-extension Axelar_Axelarnet_V1beta1_AddCosmosBasedChainRequest: @unchecked Sendable {}
-extension Axelar_Axelarnet_V1beta1_AddCosmosBasedChainResponse: @unchecked Sendable {}
-extension Axelar_Axelarnet_V1beta1_RegisterAssetRequest: @unchecked Sendable {}
-extension Axelar_Axelarnet_V1beta1_RegisterAssetResponse: @unchecked Sendable {}
-extension Axelar_Axelarnet_V1beta1_RouteIBCTransfersRequest: @unchecked Sendable {}
-extension Axelar_Axelarnet_V1beta1_RouteIBCTransfersResponse: @unchecked Sendable {}
-extension Axelar_Axelarnet_V1beta1_RegisterFeeCollectorRequest: @unchecked Sendable {}
-extension Axelar_Axelarnet_V1beta1_RegisterFeeCollectorResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "axelar.axelarnet.v1beta1"
@@ -398,16 +379,12 @@ extension Axelar_Axelarnet_V1beta1_ConfirmDepositRequest: SwiftProtobuf.Message,
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularBytesField(value: self.sender, fieldNumber: 1)
     }
-    try { if let v = self._token {
+    if let v = self._token {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if !self.depositAddress.isEmpty {
       try visitor.visitSingularBytesField(value: self.depositAddress, fieldNumber: 4)
     }
@@ -585,16 +562,12 @@ extension Axelar_Axelarnet_V1beta1_AddCosmosBasedChainRequest: SwiftProtobuf.Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularBytesField(value: self.sender, fieldNumber: 1)
     }
-    try { if let v = self._chain {
+    if let v = self._chain {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if !self.addrPrefix.isEmpty {
       try visitor.visitSingularStringField(value: self.addrPrefix, fieldNumber: 3)
     }
@@ -656,19 +629,15 @@ extension Axelar_Axelarnet_V1beta1_RegisterAssetRequest: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularBytesField(value: self.sender, fieldNumber: 1)
     }
     if !self.chain.isEmpty {
       try visitor.visitSingularStringField(value: self.chain, fieldNumber: 2)
     }
-    try { if let v = self._asset {
+    if let v = self._asset {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

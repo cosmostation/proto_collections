@@ -321,24 +321,6 @@ struct Kava_Cdp_V1beta1_CDPResponse {
   fileprivate var _collateralValue: Cosmos_Base_V1beta1_Coin? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Kava_Cdp_V1beta1_QueryParamsRequest: @unchecked Sendable {}
-extension Kava_Cdp_V1beta1_QueryParamsResponse: @unchecked Sendable {}
-extension Kava_Cdp_V1beta1_QueryAccountsRequest: @unchecked Sendable {}
-extension Kava_Cdp_V1beta1_QueryAccountsResponse: @unchecked Sendable {}
-extension Kava_Cdp_V1beta1_QueryCdpRequest: @unchecked Sendable {}
-extension Kava_Cdp_V1beta1_QueryCdpResponse: @unchecked Sendable {}
-extension Kava_Cdp_V1beta1_QueryCdpsRequest: @unchecked Sendable {}
-extension Kava_Cdp_V1beta1_QueryCdpsResponse: @unchecked Sendable {}
-extension Kava_Cdp_V1beta1_QueryDepositsRequest: @unchecked Sendable {}
-extension Kava_Cdp_V1beta1_QueryDepositsResponse: @unchecked Sendable {}
-extension Kava_Cdp_V1beta1_QueryTotalPrincipalRequest: @unchecked Sendable {}
-extension Kava_Cdp_V1beta1_QueryTotalPrincipalResponse: @unchecked Sendable {}
-extension Kava_Cdp_V1beta1_QueryTotalCollateralRequest: @unchecked Sendable {}
-extension Kava_Cdp_V1beta1_QueryTotalCollateralResponse: @unchecked Sendable {}
-extension Kava_Cdp_V1beta1_CDPResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kava.cdp.v1beta1"
@@ -381,13 +363,9 @@ extension Kava_Cdp_V1beta1_QueryParamsResponse: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -506,13 +484,9 @@ extension Kava_Cdp_V1beta1_QueryCdpResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._cdp {
+    if let v = self._cdp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -550,10 +524,6 @@ extension Kava_Cdp_V1beta1_QueryCdpsRequest: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.collateralType.isEmpty {
       try visitor.visitSingularStringField(value: self.collateralType, fieldNumber: 1)
     }
@@ -566,9 +536,9 @@ extension Kava_Cdp_V1beta1_QueryCdpsRequest: SwiftProtobuf.Message, SwiftProtobu
     if !self.ratio.isEmpty {
       try visitor.visitSingularStringField(value: self.ratio, fieldNumber: 4)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -604,16 +574,12 @@ extension Kava_Cdp_V1beta1_QueryCdpsResponse: SwiftProtobuf.Message, SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.cdps.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.cdps, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -860,10 +826,6 @@ extension Kava_Cdp_V1beta1_CDPResponse: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.id != 0 {
       try visitor.visitSingularUInt64Field(value: self.id, fieldNumber: 1)
     }
@@ -873,24 +835,24 @@ extension Kava_Cdp_V1beta1_CDPResponse: SwiftProtobuf.Message, SwiftProtobuf._Me
     if !self.type.isEmpty {
       try visitor.visitSingularStringField(value: self.type, fieldNumber: 3)
     }
-    try { if let v = self._collateral {
+    if let v = self._collateral {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
-    try { if let v = self._principal {
+    }
+    if let v = self._principal {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    } }()
-    try { if let v = self._accumulatedFees {
+    }
+    if let v = self._accumulatedFees {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    } }()
-    try { if let v = self._feesUpdated {
+    }
+    if let v = self._feesUpdated {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-    } }()
+    }
     if !self.interestFactor.isEmpty {
       try visitor.visitSingularStringField(value: self.interestFactor, fieldNumber: 8)
     }
-    try { if let v = self._collateralValue {
+    if let v = self._collateralValue {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
-    } }()
+    }
     if !self.collateralizationRatio.isEmpty {
       try visitor.visitSingularStringField(value: self.collateralizationRatio, fieldNumber: 10)
     }

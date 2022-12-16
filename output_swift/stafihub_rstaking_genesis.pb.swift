@@ -63,10 +63,6 @@ struct Stafihub_Stafihub_Rstaking_GenesisState {
   fileprivate var _coinToBeBurned: Cosmos_Base_V1beta1_Coin? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Stafihub_Stafihub_Rstaking_GenesisState: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stafihub.stafihub.rstaking"
@@ -102,19 +98,15 @@ extension Stafihub_Stafihub_Rstaking_GenesisState: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.inflationBase.isEmpty {
       try visitor.visitSingularStringField(value: self.inflationBase, fieldNumber: 2)
     }
-    try { if let v = self._coinToBeBurned {
+    if let v = self._coinToBeBurned {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if !self.validatorWhitelist.isEmpty {
       try visitor.visitRepeatedStringField(value: self.validatorWhitelist, fieldNumber: 4)
     }

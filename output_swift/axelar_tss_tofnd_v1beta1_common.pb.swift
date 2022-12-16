@@ -95,12 +95,6 @@ extension Axelar_Tss_Tofnd_V1beta1_KeyPresenceResponse.Response: CaseIterable {
 
 #endif  // swift(>=4.2)
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Axelar_Tss_Tofnd_V1beta1_KeyPresenceRequest: @unchecked Sendable {}
-extension Axelar_Tss_Tofnd_V1beta1_KeyPresenceResponse: @unchecked Sendable {}
-extension Axelar_Tss_Tofnd_V1beta1_KeyPresenceResponse.Response: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "axelar.tss.tofnd.v1beta1"

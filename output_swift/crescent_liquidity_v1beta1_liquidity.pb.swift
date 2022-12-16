@@ -493,18 +493,6 @@ struct Crescent_Liquidity_V1beta1_Order {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Crescent_Liquidity_V1beta1_OrderDirection: @unchecked Sendable {}
-extension Crescent_Liquidity_V1beta1_RequestStatus: @unchecked Sendable {}
-extension Crescent_Liquidity_V1beta1_OrderStatus: @unchecked Sendable {}
-extension Crescent_Liquidity_V1beta1_Params: @unchecked Sendable {}
-extension Crescent_Liquidity_V1beta1_Pair: @unchecked Sendable {}
-extension Crescent_Liquidity_V1beta1_Pool: @unchecked Sendable {}
-extension Crescent_Liquidity_V1beta1_DepositRequest: @unchecked Sendable {}
-extension Crescent_Liquidity_V1beta1_WithdrawRequest: @unchecked Sendable {}
-extension Crescent_Liquidity_V1beta1_Order: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "crescent.liquidity.v1beta1"
@@ -585,10 +573,6 @@ extension Crescent_Liquidity_V1beta1_Params: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.batchSize != 0 {
       try visitor.visitSingularUInt32Field(value: self.batchSize, fieldNumber: 1)
     }
@@ -616,9 +600,9 @@ extension Crescent_Liquidity_V1beta1_Params: SwiftProtobuf.Message, SwiftProtobu
     if !self.maxPriceLimitRatio.isEmpty {
       try visitor.visitSingularStringField(value: self.maxPriceLimitRatio, fieldNumber: 9)
     }
-    try { if let v = self._maxOrderLifespan {
+    if let v = self._maxOrderLifespan {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
-    } }()
+    }
     if !self.swapFeeRate.isEmpty {
       try visitor.visitSingularStringField(value: self.swapFeeRate, fieldNumber: 11)
     }
@@ -827,10 +811,6 @@ extension Crescent_Liquidity_V1beta1_DepositRequest: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.id != 0 {
       try visitor.visitSingularUInt64Field(value: self.id, fieldNumber: 1)
     }
@@ -849,9 +829,9 @@ extension Crescent_Liquidity_V1beta1_DepositRequest: SwiftProtobuf.Message, Swif
     if !self.acceptedCoins.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.acceptedCoins, fieldNumber: 6)
     }
-    try { if let v = self._mintedPoolCoin {
+    if let v = self._mintedPoolCoin {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-    } }()
+    }
     if self.status != .unspecified {
       try visitor.visitSingularEnumField(value: self.status, fieldNumber: 8)
     }
@@ -903,10 +883,6 @@ extension Crescent_Liquidity_V1beta1_WithdrawRequest: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.id != 0 {
       try visitor.visitSingularUInt64Field(value: self.id, fieldNumber: 1)
     }
@@ -919,9 +895,9 @@ extension Crescent_Liquidity_V1beta1_WithdrawRequest: SwiftProtobuf.Message, Swi
     if !self.withdrawer.isEmpty {
       try visitor.visitSingularStringField(value: self.withdrawer, fieldNumber: 4)
     }
-    try { if let v = self._poolCoin {
+    if let v = self._poolCoin {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    } }()
+    }
     if !self.withdrawnCoins.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.withdrawnCoins, fieldNumber: 6)
     }
@@ -1038,10 +1014,6 @@ extension Crescent_Liquidity_V1beta1_Order: SwiftProtobuf.Message, SwiftProtobuf
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
       if _storage._id != 0 {
         try visitor.visitSingularUInt64Field(value: _storage._id, fieldNumber: 1)
       }
@@ -1057,15 +1029,15 @@ extension Crescent_Liquidity_V1beta1_Order: SwiftProtobuf.Message, SwiftProtobuf
       if _storage._direction != .unspecified {
         try visitor.visitSingularEnumField(value: _storage._direction, fieldNumber: 5)
       }
-      try { if let v = _storage._offerCoin {
+      if let v = _storage._offerCoin {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-      } }()
-      try { if let v = _storage._remainingOfferCoin {
+      }
+      if let v = _storage._remainingOfferCoin {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-      } }()
-      try { if let v = _storage._receivedCoin {
+      }
+      if let v = _storage._receivedCoin {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
-      } }()
+      }
       if !_storage._price.isEmpty {
         try visitor.visitSingularStringField(value: _storage._price, fieldNumber: 9)
       }
@@ -1078,9 +1050,9 @@ extension Crescent_Liquidity_V1beta1_Order: SwiftProtobuf.Message, SwiftProtobuf
       if _storage._batchID != 0 {
         try visitor.visitSingularUInt64Field(value: _storage._batchID, fieldNumber: 12)
       }
-      try { if let v = _storage._expireAt {
+      if let v = _storage._expireAt {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 13)
-      } }()
+      }
       if _storage._status != .unspecified {
         try visitor.visitSingularEnumField(value: _storage._status, fieldNumber: 14)
       }

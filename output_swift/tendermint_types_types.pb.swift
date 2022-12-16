@@ -574,24 +574,6 @@ struct Tendermint_Types_TxProof {
   fileprivate var _proof: Tendermint_Crypto_Proof? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Tendermint_Types_BlockIDFlag: @unchecked Sendable {}
-extension Tendermint_Types_SignedMsgType: @unchecked Sendable {}
-extension Tendermint_Types_PartSetHeader: @unchecked Sendable {}
-extension Tendermint_Types_Part: @unchecked Sendable {}
-extension Tendermint_Types_BlockID: @unchecked Sendable {}
-extension Tendermint_Types_Header: @unchecked Sendable {}
-extension Tendermint_Types_Data: @unchecked Sendable {}
-extension Tendermint_Types_Vote: @unchecked Sendable {}
-extension Tendermint_Types_Commit: @unchecked Sendable {}
-extension Tendermint_Types_CommitSig: @unchecked Sendable {}
-extension Tendermint_Types_Proposal: @unchecked Sendable {}
-extension Tendermint_Types_SignedHeader: @unchecked Sendable {}
-extension Tendermint_Types_LightBlock: @unchecked Sendable {}
-extension Tendermint_Types_BlockMeta: @unchecked Sendable {}
-extension Tendermint_Types_TxProof: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "tendermint.types"
@@ -675,19 +657,15 @@ extension Tendermint_Types_Part: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.index != 0 {
       try visitor.visitSingularUInt32Field(value: self.index, fieldNumber: 1)
     }
     if !self.bytes.isEmpty {
       try visitor.visitSingularBytesField(value: self.bytes, fieldNumber: 2)
     }
-    try { if let v = self._proof {
+    if let v = self._proof {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -721,16 +699,12 @@ extension Tendermint_Types_BlockID: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.hash.isEmpty {
       try visitor.visitSingularBytesField(value: self.hash, fieldNumber: 1)
     }
-    try { if let v = self._partSetHeader {
+    if let v = self._partSetHeader {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -836,25 +810,21 @@ extension Tendermint_Types_Header: SwiftProtobuf.Message, SwiftProtobuf._Message
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
-      try { if let v = _storage._version {
+      if let v = _storage._version {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      } }()
+      }
       if !_storage._chainID.isEmpty {
         try visitor.visitSingularStringField(value: _storage._chainID, fieldNumber: 2)
       }
       if _storage._height != 0 {
         try visitor.visitSingularInt64Field(value: _storage._height, fieldNumber: 3)
       }
-      try { if let v = _storage._time {
+      if let v = _storage._time {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-      } }()
-      try { if let v = _storage._lastBlockID {
+      }
+      if let v = _storage._lastBlockID {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-      } }()
+      }
       if !_storage._lastCommitHash.isEmpty {
         try visitor.visitSingularBytesField(value: _storage._lastCommitHash, fieldNumber: 6)
       }
@@ -979,10 +949,6 @@ extension Tendermint_Types_Vote: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.type != .unknown {
       try visitor.visitSingularEnumField(value: self.type, fieldNumber: 1)
     }
@@ -992,12 +958,12 @@ extension Tendermint_Types_Vote: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if self.round != 0 {
       try visitor.visitSingularInt32Field(value: self.round, fieldNumber: 3)
     }
-    try { if let v = self._blockID {
+    if let v = self._blockID {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
-    try { if let v = self._timestamp {
+    }
+    if let v = self._timestamp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    } }()
+    }
     if !self.validatorAddress.isEmpty {
       try visitor.visitSingularBytesField(value: self.validatorAddress, fieldNumber: 6)
     }
@@ -1049,19 +1015,15 @@ extension Tendermint_Types_Commit: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.height != 0 {
       try visitor.visitSingularInt64Field(value: self.height, fieldNumber: 1)
     }
     if self.round != 0 {
       try visitor.visitSingularInt32Field(value: self.round, fieldNumber: 2)
     }
-    try { if let v = self._blockID {
+    if let v = self._blockID {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if !self.signatures.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.signatures, fieldNumber: 4)
     }
@@ -1103,19 +1065,15 @@ extension Tendermint_Types_CommitSig: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.blockIDFlag != .unknown {
       try visitor.visitSingularEnumField(value: self.blockIDFlag, fieldNumber: 1)
     }
     if !self.validatorAddress.isEmpty {
       try visitor.visitSingularBytesField(value: self.validatorAddress, fieldNumber: 2)
     }
-    try { if let v = self._timestamp {
+    if let v = self._timestamp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if !self.signature.isEmpty {
       try visitor.visitSingularBytesField(value: self.signature, fieldNumber: 4)
     }
@@ -1163,10 +1121,6 @@ extension Tendermint_Types_Proposal: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.type != .unknown {
       try visitor.visitSingularEnumField(value: self.type, fieldNumber: 1)
     }
@@ -1179,12 +1133,12 @@ extension Tendermint_Types_Proposal: SwiftProtobuf.Message, SwiftProtobuf._Messa
     if self.polRound != 0 {
       try visitor.visitSingularInt32Field(value: self.polRound, fieldNumber: 4)
     }
-    try { if let v = self._blockID {
+    if let v = self._blockID {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    } }()
-    try { if let v = self._timestamp {
+    }
+    if let v = self._timestamp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    } }()
+    }
     if !self.signature.isEmpty {
       try visitor.visitSingularBytesField(value: self.signature, fieldNumber: 7)
     }
@@ -1225,16 +1179,12 @@ extension Tendermint_Types_SignedHeader: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._header {
+    if let v = self._header {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._commit {
+    }
+    if let v = self._commit {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1267,16 +1217,12 @@ extension Tendermint_Types_LightBlock: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._signedHeader {
+    if let v = self._signedHeader {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._validatorSet {
+    }
+    if let v = self._validatorSet {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1313,19 +1259,15 @@ extension Tendermint_Types_BlockMeta: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._blockID {
+    if let v = self._blockID {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if self.blockSize != 0 {
       try visitor.visitSingularInt64Field(value: self.blockSize, fieldNumber: 2)
     }
-    try { if let v = self._header {
+    if let v = self._header {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if self.numTxs != 0 {
       try visitor.visitSingularInt64Field(value: self.numTxs, fieldNumber: 4)
     }
@@ -1365,19 +1307,15 @@ extension Tendermint_Types_TxProof: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.rootHash.isEmpty {
       try visitor.visitSingularBytesField(value: self.rootHash, fieldNumber: 1)
     }
     if !self.data.isEmpty {
       try visitor.visitSingularBytesField(value: self.data, fieldNumber: 2)
     }
-    try { if let v = self._proof {
+    if let v = self._proof {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

@@ -93,13 +93,6 @@ struct Shentu_Cvm_V1alpha1_MsgDeployResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Shentu_Cvm_V1alpha1_MsgCall: @unchecked Sendable {}
-extension Shentu_Cvm_V1alpha1_MsgCallResponse: @unchecked Sendable {}
-extension Shentu_Cvm_V1alpha1_MsgDeploy: @unchecked Sendable {}
-extension Shentu_Cvm_V1alpha1_MsgDeployResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "shentu.cvm.v1alpha1"

@@ -33,10 +33,6 @@ struct Panacea_Aol_V2_Owner {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Panacea_Aol_V2_Owner: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "panacea.aol.v2"

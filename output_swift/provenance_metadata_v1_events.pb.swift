@@ -379,31 +379,6 @@ struct Provenance_Metadata_V1_EventOSLocatorDeleted {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Provenance_Metadata_V1_EventTxCompleted: @unchecked Sendable {}
-extension Provenance_Metadata_V1_EventScopeCreated: @unchecked Sendable {}
-extension Provenance_Metadata_V1_EventScopeUpdated: @unchecked Sendable {}
-extension Provenance_Metadata_V1_EventScopeDeleted: @unchecked Sendable {}
-extension Provenance_Metadata_V1_EventSessionCreated: @unchecked Sendable {}
-extension Provenance_Metadata_V1_EventSessionUpdated: @unchecked Sendable {}
-extension Provenance_Metadata_V1_EventSessionDeleted: @unchecked Sendable {}
-extension Provenance_Metadata_V1_EventRecordCreated: @unchecked Sendable {}
-extension Provenance_Metadata_V1_EventRecordUpdated: @unchecked Sendable {}
-extension Provenance_Metadata_V1_EventRecordDeleted: @unchecked Sendable {}
-extension Provenance_Metadata_V1_EventScopeSpecificationCreated: @unchecked Sendable {}
-extension Provenance_Metadata_V1_EventScopeSpecificationUpdated: @unchecked Sendable {}
-extension Provenance_Metadata_V1_EventScopeSpecificationDeleted: @unchecked Sendable {}
-extension Provenance_Metadata_V1_EventContractSpecificationCreated: @unchecked Sendable {}
-extension Provenance_Metadata_V1_EventContractSpecificationUpdated: @unchecked Sendable {}
-extension Provenance_Metadata_V1_EventContractSpecificationDeleted: @unchecked Sendable {}
-extension Provenance_Metadata_V1_EventRecordSpecificationCreated: @unchecked Sendable {}
-extension Provenance_Metadata_V1_EventRecordSpecificationUpdated: @unchecked Sendable {}
-extension Provenance_Metadata_V1_EventRecordSpecificationDeleted: @unchecked Sendable {}
-extension Provenance_Metadata_V1_EventOSLocatorCreated: @unchecked Sendable {}
-extension Provenance_Metadata_V1_EventOSLocatorUpdated: @unchecked Sendable {}
-extension Provenance_Metadata_V1_EventOSLocatorDeleted: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "provenance.metadata.v1"

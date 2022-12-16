@@ -340,20 +340,6 @@ struct Stafihub_Stafihub_Ledger_GenesisInterchainTxProposalInfo {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Stafihub_Stafihub_Ledger_GenesisState: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_UnbondSwitch: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_GenesisEraSnapshot: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_StakingRewardCommission: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_UnbondCommission: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_RelayFeeReceiver: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_TotalExpectedActive: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_TotalExpectedFee: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_GenesisPoolUnbonding: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_GenesisSnapshot: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_GenesisInterchainTxProposalInfo: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stafihub.stafihub.ledger"
@@ -933,10 +919,6 @@ extension Stafihub_Stafihub_Ledger_GenesisPoolUnbonding: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.denom.isEmpty {
       try visitor.visitSingularStringField(value: self.denom, fieldNumber: 1)
     }
@@ -949,9 +931,9 @@ extension Stafihub_Stafihub_Ledger_GenesisPoolUnbonding: SwiftProtobuf.Message, 
     if self.sequence != 0 {
       try visitor.visitSingularUInt32Field(value: self.sequence, fieldNumber: 4)
     }
-    try { if let v = self._unbonding {
+    if let v = self._unbonding {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -987,16 +969,12 @@ extension Stafihub_Stafihub_Ledger_GenesisSnapshot: SwiftProtobuf.Message, Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.shotID.isEmpty {
       try visitor.visitSingularStringField(value: self.shotID, fieldNumber: 1)
     }
-    try { if let v = self._snapshot {
+    if let v = self._snapshot {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

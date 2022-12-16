@@ -51,11 +51,6 @@ struct Shentu_Bank_V1alpha1_MsgLockedSendResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Shentu_Bank_V1alpha1_MsgLockedSend: @unchecked Sendable {}
-extension Shentu_Bank_V1alpha1_MsgLockedSendResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "shentu.bank.v1alpha1"

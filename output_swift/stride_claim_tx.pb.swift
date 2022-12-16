@@ -126,17 +126,6 @@ struct Stride_Claim_MsgDeleteAirdropResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Stride_Claim_MsgSetAirdropAllocations: @unchecked Sendable {}
-extension Stride_Claim_MsgSetAirdropAllocationsResponse: @unchecked Sendable {}
-extension Stride_Claim_MsgClaimFreeAmount: @unchecked Sendable {}
-extension Stride_Claim_MsgClaimFreeAmountResponse: @unchecked Sendable {}
-extension Stride_Claim_MsgCreateAirdrop: @unchecked Sendable {}
-extension Stride_Claim_MsgCreateAirdropResponse: @unchecked Sendable {}
-extension Stride_Claim_MsgDeleteAirdrop: @unchecked Sendable {}
-extension Stride_Claim_MsgDeleteAirdropResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stride.claim"

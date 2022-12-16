@@ -53,11 +53,6 @@ struct Cosmos_Crypto_Multisig_V1beta1_CompactBitArray {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Cosmos_Crypto_Multisig_V1beta1_MultiSignature: @unchecked Sendable {}
-extension Cosmos_Crypto_Multisig_V1beta1_CompactBitArray: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.crypto.multisig.v1beta1"

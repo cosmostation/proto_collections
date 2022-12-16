@@ -144,15 +144,6 @@ struct Provenance_Msgfees_V1_CalculateTxFeesResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Provenance_Msgfees_V1_QueryParamsRequest: @unchecked Sendable {}
-extension Provenance_Msgfees_V1_QueryParamsResponse: @unchecked Sendable {}
-extension Provenance_Msgfees_V1_QueryAllMsgFeesRequest: @unchecked Sendable {}
-extension Provenance_Msgfees_V1_QueryAllMsgFeesResponse: @unchecked Sendable {}
-extension Provenance_Msgfees_V1_CalculateTxFeesRequest: @unchecked Sendable {}
-extension Provenance_Msgfees_V1_CalculateTxFeesResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "provenance.msgfees.v1"
@@ -195,13 +186,9 @@ extension Provenance_Msgfees_V1_QueryParamsResponse: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -231,13 +218,9 @@ extension Provenance_Msgfees_V1_QueryAllMsgFeesRequest: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -269,16 +252,12 @@ extension Provenance_Msgfees_V1_QueryAllMsgFeesResponse: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.msgFees.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.msgFees, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

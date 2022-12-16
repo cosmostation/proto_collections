@@ -128,15 +128,6 @@ struct Comdex_Oracle_V1beta1_QueryParamsResponse {
   fileprivate var _params: Comdex_Oracle_V1beta1_Params? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Comdex_Oracle_V1beta1_QueryMarketsRequest: @unchecked Sendable {}
-extension Comdex_Oracle_V1beta1_QueryMarketsResponse: @unchecked Sendable {}
-extension Comdex_Oracle_V1beta1_QueryMarketRequest: @unchecked Sendable {}
-extension Comdex_Oracle_V1beta1_QueryMarketResponse: @unchecked Sendable {}
-extension Comdex_Oracle_V1beta1_QueryParamsRequest: @unchecked Sendable {}
-extension Comdex_Oracle_V1beta1_QueryParamsResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "comdex.oracle.v1beta1"
@@ -160,13 +151,9 @@ extension Comdex_Oracle_V1beta1_QueryMarketsRequest: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -198,16 +185,12 @@ extension Comdex_Oracle_V1beta1_QueryMarketsResponse: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.markets.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.markets, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -270,13 +253,9 @@ extension Comdex_Oracle_V1beta1_QueryMarketResponse: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._market {
+    if let v = self._market {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -325,13 +304,9 @@ extension Comdex_Oracle_V1beta1_QueryParamsResponse: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

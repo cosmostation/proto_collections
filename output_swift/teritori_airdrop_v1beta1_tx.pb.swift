@@ -150,18 +150,6 @@ struct Teritori_Airdrop_V1beta1_MsgDepositTokensResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Teritori_Airdrop_V1beta1_MsgSetAllocation: @unchecked Sendable {}
-extension Teritori_Airdrop_V1beta1_MsgSetAllocationResponse: @unchecked Sendable {}
-extension Teritori_Airdrop_V1beta1_MsgClaimAllocation: @unchecked Sendable {}
-extension Teritori_Airdrop_V1beta1_MsgClaimAllocationResponse: @unchecked Sendable {}
-extension Teritori_Airdrop_V1beta1_MsgSignData: @unchecked Sendable {}
-extension Teritori_Airdrop_V1beta1_MsgTransferModuleOwnership: @unchecked Sendable {}
-extension Teritori_Airdrop_V1beta1_MsgTransferModuleOwnershipResponse: @unchecked Sendable {}
-extension Teritori_Airdrop_V1beta1_MsgDepositTokens: @unchecked Sendable {}
-extension Teritori_Airdrop_V1beta1_MsgDepositTokensResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "teritori.airdrop.v1beta1"
@@ -187,16 +175,12 @@ extension Teritori_Airdrop_V1beta1_MsgSetAllocation: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularStringField(value: self.sender, fieldNumber: 1)
     }
-    try { if let v = self._allocation {
+    if let v = self._allocation {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

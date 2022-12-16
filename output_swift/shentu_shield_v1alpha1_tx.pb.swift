@@ -421,37 +421,6 @@ struct Shentu_Shield_V1alpha1_MsgUpdateSponsorResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Shentu_Shield_V1alpha1_MsgCreatePool: @unchecked Sendable {}
-extension Shentu_Shield_V1alpha1_MsgCreatePoolResponse: @unchecked Sendable {}
-extension Shentu_Shield_V1alpha1_MsgUpdatePool: @unchecked Sendable {}
-extension Shentu_Shield_V1alpha1_MsgUpdatePoolResponse: @unchecked Sendable {}
-extension Shentu_Shield_V1alpha1_MsgPausePool: @unchecked Sendable {}
-extension Shentu_Shield_V1alpha1_MsgPausePoolResponse: @unchecked Sendable {}
-extension Shentu_Shield_V1alpha1_MsgResumePool: @unchecked Sendable {}
-extension Shentu_Shield_V1alpha1_MsgResumePoolResponse: @unchecked Sendable {}
-extension Shentu_Shield_V1alpha1_MsgDepositCollateral: @unchecked Sendable {}
-extension Shentu_Shield_V1alpha1_MsgDepositCollateralResponse: @unchecked Sendable {}
-extension Shentu_Shield_V1alpha1_MsgWithdrawCollateral: @unchecked Sendable {}
-extension Shentu_Shield_V1alpha1_MsgWithdrawCollateralResponse: @unchecked Sendable {}
-extension Shentu_Shield_V1alpha1_MsgWithdrawRewards: @unchecked Sendable {}
-extension Shentu_Shield_V1alpha1_MsgWithdrawRewardsResponse: @unchecked Sendable {}
-extension Shentu_Shield_V1alpha1_MsgWithdrawForeignRewards: @unchecked Sendable {}
-extension Shentu_Shield_V1alpha1_MsgWithdrawForeignRewardsResponse: @unchecked Sendable {}
-extension Shentu_Shield_V1alpha1_MsgClearPayouts: @unchecked Sendable {}
-extension Shentu_Shield_V1alpha1_MsgClearPayoutsResponse: @unchecked Sendable {}
-extension Shentu_Shield_V1alpha1_MsgPurchaseShield: @unchecked Sendable {}
-extension Shentu_Shield_V1alpha1_MsgPurchaseShieldResponse: @unchecked Sendable {}
-extension Shentu_Shield_V1alpha1_MsgWithdrawReimbursement: @unchecked Sendable {}
-extension Shentu_Shield_V1alpha1_MsgWithdrawReimbursementResponse: @unchecked Sendable {}
-extension Shentu_Shield_V1alpha1_MsgStakeForShield: @unchecked Sendable {}
-extension Shentu_Shield_V1alpha1_MsgStakeForShieldResponse: @unchecked Sendable {}
-extension Shentu_Shield_V1alpha1_MsgUnstakeFromShield: @unchecked Sendable {}
-extension Shentu_Shield_V1alpha1_MsgUnstakeFromShieldResponse: @unchecked Sendable {}
-extension Shentu_Shield_V1alpha1_MsgUpdateSponsor: @unchecked Sendable {}
-extension Shentu_Shield_V1alpha1_MsgUpdateSponsorResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "shentu.shield.v1alpha1"
@@ -487,19 +456,15 @@ extension Shentu_Shield_V1alpha1_MsgCreatePool: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.from.isEmpty {
       try visitor.visitSingularStringField(value: self.from, fieldNumber: 1)
     }
     if !self.shield.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.shield, fieldNumber: 2)
     }
-    try { if let v = self._deposit {
+    if let v = self._deposit {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if !self.sponsor.isEmpty {
       try visitor.visitSingularStringField(value: self.sponsor, fieldNumber: 4)
     }
@@ -576,19 +541,15 @@ extension Shentu_Shield_V1alpha1_MsgUpdatePool: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.from.isEmpty {
       try visitor.visitSingularStringField(value: self.from, fieldNumber: 1)
     }
     if !self.shield.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.shield, fieldNumber: 2)
     }
-    try { if let v = self._serviceFees {
+    if let v = self._serviceFees {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if self.poolID != 0 {
       try visitor.visitSingularUInt64Field(value: self.poolID, fieldNumber: 4)
     }

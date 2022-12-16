@@ -260,26 +260,6 @@ struct Injective_Peggy_V1_EventSubmitBadSignatureEvidence {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Injective_Peggy_V1_EventAttestationObserved: @unchecked Sendable {}
-extension Injective_Peggy_V1_EventBridgeWithdrawCanceled: @unchecked Sendable {}
-extension Injective_Peggy_V1_EventBridgeWithdrawalReceived: @unchecked Sendable {}
-extension Injective_Peggy_V1_EventOutgoingBatch: @unchecked Sendable {}
-extension Injective_Peggy_V1_EventOutgoingBatchCanceled: @unchecked Sendable {}
-extension Injective_Peggy_V1_EventMultisigUpdateRequest: @unchecked Sendable {}
-extension Injective_Peggy_V1_EventSetOrchestratorAddresses: @unchecked Sendable {}
-extension Injective_Peggy_V1_EventValsetConfirm: @unchecked Sendable {}
-extension Injective_Peggy_V1_EventSendToEth: @unchecked Sendable {}
-extension Injective_Peggy_V1_EventRequestBatch: @unchecked Sendable {}
-extension Injective_Peggy_V1_EventConfirmBatch: @unchecked Sendable {}
-extension Injective_Peggy_V1_EventDepositClaim: @unchecked Sendable {}
-extension Injective_Peggy_V1_EventWithdrawClaim: @unchecked Sendable {}
-extension Injective_Peggy_V1_EventERC20DeployedClaim: @unchecked Sendable {}
-extension Injective_Peggy_V1_EventValsetUpdateClaim: @unchecked Sendable {}
-extension Injective_Peggy_V1_EventCancelSendToEth: @unchecked Sendable {}
-extension Injective_Peggy_V1_EventSubmitBadSignatureEvidence: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "injective.peggy.v1"

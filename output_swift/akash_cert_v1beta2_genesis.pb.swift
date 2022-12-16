@@ -57,11 +57,6 @@ struct Akash_Cert_V1beta2_GenesisState {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Akash_Cert_V1beta2_GenesisCertificate: @unchecked Sendable {}
-extension Akash_Cert_V1beta2_GenesisState: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "akash.cert.v1beta2"
@@ -87,16 +82,12 @@ extension Akash_Cert_V1beta2_GenesisCertificate: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.owner.isEmpty {
       try visitor.visitSingularStringField(value: self.owner, fieldNumber: 1)
     }
-    try { if let v = self._certificate {
+    if let v = self._certificate {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

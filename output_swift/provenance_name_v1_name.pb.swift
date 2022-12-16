@@ -116,14 +116,6 @@ struct Provenance_Name_V1_EventNameUnbound {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Provenance_Name_V1_Params: @unchecked Sendable {}
-extension Provenance_Name_V1_NameRecord: @unchecked Sendable {}
-extension Provenance_Name_V1_CreateRootNameProposal: @unchecked Sendable {}
-extension Provenance_Name_V1_EventNameBound: @unchecked Sendable {}
-extension Provenance_Name_V1_EventNameUnbound: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "provenance.name.v1"

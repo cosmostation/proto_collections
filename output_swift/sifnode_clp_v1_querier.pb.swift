@@ -455,29 +455,6 @@ struct Sifnode_Clp_V1_PmtpParamsRes {
   fileprivate var _pmtpEpoch: Sifnode_Clp_V1_PmtpEpoch? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Sifnode_Clp_V1_PoolReq: @unchecked Sendable {}
-extension Sifnode_Clp_V1_PoolRes: @unchecked Sendable {}
-extension Sifnode_Clp_V1_PoolsReq: @unchecked Sendable {}
-extension Sifnode_Clp_V1_PoolsRes: @unchecked Sendable {}
-extension Sifnode_Clp_V1_LiquidityProviderReq: @unchecked Sendable {}
-extension Sifnode_Clp_V1_LiquidityProviderRes: @unchecked Sendable {}
-extension Sifnode_Clp_V1_AssetListReq: @unchecked Sendable {}
-extension Sifnode_Clp_V1_AssetListRes: @unchecked Sendable {}
-extension Sifnode_Clp_V1_LiquidityProviderDataReq: @unchecked Sendable {}
-extension Sifnode_Clp_V1_LiquidityProviderDataRes: @unchecked Sendable {}
-extension Sifnode_Clp_V1_LiquidityProviderListReq: @unchecked Sendable {}
-extension Sifnode_Clp_V1_LiquidityProviderListRes: @unchecked Sendable {}
-extension Sifnode_Clp_V1_LiquidityProvidersReq: @unchecked Sendable {}
-extension Sifnode_Clp_V1_LiquidityProvidersRes: @unchecked Sendable {}
-extension Sifnode_Clp_V1_ParamsReq: @unchecked Sendable {}
-extension Sifnode_Clp_V1_ParamsRes: @unchecked Sendable {}
-extension Sifnode_Clp_V1_RewardParamsReq: @unchecked Sendable {}
-extension Sifnode_Clp_V1_RewardParamsRes: @unchecked Sendable {}
-extension Sifnode_Clp_V1_PmtpParamsReq: @unchecked Sendable {}
-extension Sifnode_Clp_V1_PmtpParamsRes: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "sifnode.clp.v1"
@@ -537,13 +514,9 @@ extension Sifnode_Clp_V1_PoolRes: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pool {
+    if let v = self._pool {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.clpModuleAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.clpModuleAddress, fieldNumber: 2)
     }
@@ -581,13 +554,9 @@ extension Sifnode_Clp_V1_PoolsReq: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -623,10 +592,6 @@ extension Sifnode_Clp_V1_PoolsRes: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.pools.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.pools, fieldNumber: 1)
     }
@@ -636,9 +601,9 @@ extension Sifnode_Clp_V1_PoolsRes: SwiftProtobuf.Message, SwiftProtobuf._Message
     if self.height != 0 {
       try visitor.visitSingularInt64Field(value: self.height, fieldNumber: 3)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -715,13 +680,9 @@ extension Sifnode_Clp_V1_LiquidityProviderRes: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._liquidityProvider {
+    if let v = self._liquidityProvider {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.nativeAssetBalance.isEmpty {
       try visitor.visitSingularStringField(value: self.nativeAssetBalance, fieldNumber: 2)
     }
@@ -765,16 +726,12 @@ extension Sifnode_Clp_V1_AssetListReq: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.lpAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.lpAddress, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -809,19 +766,15 @@ extension Sifnode_Clp_V1_AssetListRes: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.assets.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.assets, fieldNumber: 1)
     }
     if self.height != 0 {
       try visitor.visitSingularInt64Field(value: self.height, fieldNumber: 2)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -855,16 +808,12 @@ extension Sifnode_Clp_V1_LiquidityProviderDataReq: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.lpAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.lpAddress, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -899,19 +848,15 @@ extension Sifnode_Clp_V1_LiquidityProviderDataRes: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.liquidityProviderData.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.liquidityProviderData, fieldNumber: 1)
     }
     if self.height != 0 {
       try visitor.visitSingularInt64Field(value: self.height, fieldNumber: 2)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -945,16 +890,12 @@ extension Sifnode_Clp_V1_LiquidityProviderListReq: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.symbol.isEmpty {
       try visitor.visitSingularStringField(value: self.symbol, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -989,19 +930,15 @@ extension Sifnode_Clp_V1_LiquidityProviderListRes: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.liquidityProviders.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.liquidityProviders, fieldNumber: 1)
     }
     if self.height != 0 {
       try visitor.visitSingularInt64Field(value: self.height, fieldNumber: 2)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1033,13 +970,9 @@ extension Sifnode_Clp_V1_LiquidityProvidersReq: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1073,19 +1006,15 @@ extension Sifnode_Clp_V1_LiquidityProvidersRes: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.liquidityProviders.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.liquidityProviders, fieldNumber: 1)
     }
     if self.height != 0 {
       try visitor.visitSingularInt64Field(value: self.height, fieldNumber: 2)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1138,13 +1067,9 @@ extension Sifnode_Clp_V1_ParamsRes: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.symmetryThreshold.isEmpty {
       try visitor.visitSingularStringField(value: self.symmetryThreshold, fieldNumber: 2)
     }
@@ -1197,13 +1122,9 @@ extension Sifnode_Clp_V1_RewardParamsRes: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1258,19 +1179,15 @@ extension Sifnode_Clp_V1_PmtpParamsRes: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._pmtpRateParams {
+    }
+    if let v = self._pmtpRateParams {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
-    try { if let v = self._pmtpEpoch {
+    }
+    if let v = self._pmtpEpoch {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if self.height != 0 {
       try visitor.visitSingularInt64Field(value: self.height, fieldNumber: 4)
     }

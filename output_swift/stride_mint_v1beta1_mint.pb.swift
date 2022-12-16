@@ -102,12 +102,6 @@ struct Stride_Mint_V1beta1_Params {
   fileprivate var _distributionProportions: Stride_Mint_V1beta1_DistributionProportions? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Stride_Mint_V1beta1_Minter: @unchecked Sendable {}
-extension Stride_Mint_V1beta1_DistributionProportions: @unchecked Sendable {}
-extension Stride_Mint_V1beta1_Params: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stride.mint.v1beta1"
@@ -225,10 +219,6 @@ extension Stride_Mint_V1beta1_Params: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.mintDenom.isEmpty {
       try visitor.visitSingularStringField(value: self.mintDenom, fieldNumber: 1)
     }
@@ -244,9 +234,9 @@ extension Stride_Mint_V1beta1_Params: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if !self.reductionFactor.isEmpty {
       try visitor.visitSingularStringField(value: self.reductionFactor, fieldNumber: 5)
     }
-    try { if let v = self._distributionProportions {
+    if let v = self._distributionProportions {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    } }()
+    }
     if self.mintingRewardsDistributionStartEpoch != 0 {
       try visitor.visitSingularInt64Field(value: self.mintingRewardsDistributionStartEpoch, fieldNumber: 7)
     }

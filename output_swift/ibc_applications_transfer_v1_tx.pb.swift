@@ -84,11 +84,6 @@ struct Ibc_Applications_Transfer_V1_MsgTransferResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Ibc_Applications_Transfer_V1_MsgTransfer: @unchecked Sendable {}
-extension Ibc_Applications_Transfer_V1_MsgTransferResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "ibc.applications.transfer.v1"
@@ -124,28 +119,24 @@ extension Ibc_Applications_Transfer_V1_MsgTransfer: SwiftProtobuf.Message, Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sourcePort.isEmpty {
       try visitor.visitSingularStringField(value: self.sourcePort, fieldNumber: 1)
     }
     if !self.sourceChannel.isEmpty {
       try visitor.visitSingularStringField(value: self.sourceChannel, fieldNumber: 2)
     }
-    try { if let v = self._token {
+    if let v = self._token {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if !self.sender.isEmpty {
       try visitor.visitSingularStringField(value: self.sender, fieldNumber: 4)
     }
     if !self.receiver.isEmpty {
       try visitor.visitSingularStringField(value: self.receiver, fieldNumber: 5)
     }
-    try { if let v = self._timeoutHeight {
+    if let v = self._timeoutHeight {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    } }()
+    }
     if self.timeoutTimestamp != 0 {
       try visitor.visitSingularUInt64Field(value: self.timeoutTimestamp, fieldNumber: 7)
     }

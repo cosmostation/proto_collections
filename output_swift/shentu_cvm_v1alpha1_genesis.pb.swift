@@ -134,16 +134,6 @@ struct Shentu_Cvm_V1alpha1_Metadata {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Shentu_Cvm_V1alpha1_GenesisState: @unchecked Sendable {}
-extension Shentu_Cvm_V1alpha1_Contract: @unchecked Sendable {}
-extension Shentu_Cvm_V1alpha1_CVMCode: @unchecked Sendable {}
-extension Shentu_Cvm_V1alpha1_Storage: @unchecked Sendable {}
-extension Shentu_Cvm_V1alpha1_ContractMeta: @unchecked Sendable {}
-extension Shentu_Cvm_V1alpha1_ContractMetas: @unchecked Sendable {}
-extension Shentu_Cvm_V1alpha1_Metadata: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "shentu.cvm.v1alpha1"
@@ -219,16 +209,12 @@ extension Shentu_Cvm_V1alpha1_Contract: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.address.isEmpty {
       try visitor.visitSingularBytesField(value: self.address, fieldNumber: 1)
     }
-    try { if let v = self._code {
+    if let v = self._code {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if !self.storage.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.storage, fieldNumber: 3)
     }

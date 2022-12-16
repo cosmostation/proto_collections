@@ -496,41 +496,6 @@ struct Osmosis_Superfluid_QueryUnpoolWhitelistResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Osmosis_Superfluid_QueryParamsRequest: @unchecked Sendable {}
-extension Osmosis_Superfluid_QueryParamsResponse: @unchecked Sendable {}
-extension Osmosis_Superfluid_AssetTypeRequest: @unchecked Sendable {}
-extension Osmosis_Superfluid_AssetTypeResponse: @unchecked Sendable {}
-extension Osmosis_Superfluid_AllAssetsRequest: @unchecked Sendable {}
-extension Osmosis_Superfluid_AllAssetsResponse: @unchecked Sendable {}
-extension Osmosis_Superfluid_AssetMultiplierRequest: @unchecked Sendable {}
-extension Osmosis_Superfluid_AssetMultiplierResponse: @unchecked Sendable {}
-extension Osmosis_Superfluid_SuperfluidIntermediaryAccountInfo: @unchecked Sendable {}
-extension Osmosis_Superfluid_AllIntermediaryAccountsRequest: @unchecked Sendable {}
-extension Osmosis_Superfluid_AllIntermediaryAccountsResponse: @unchecked Sendable {}
-extension Osmosis_Superfluid_ConnectedIntermediaryAccountRequest: @unchecked Sendable {}
-extension Osmosis_Superfluid_ConnectedIntermediaryAccountResponse: @unchecked Sendable {}
-extension Osmosis_Superfluid_QueryTotalDelegationByValidatorForDenomRequest: @unchecked Sendable {}
-extension Osmosis_Superfluid_QueryTotalDelegationByValidatorForDenomResponse: @unchecked Sendable {}
-extension Osmosis_Superfluid_Delegations: @unchecked Sendable {}
-extension Osmosis_Superfluid_TotalSuperfluidDelegationsRequest: @unchecked Sendable {}
-extension Osmosis_Superfluid_TotalSuperfluidDelegationsResponse: @unchecked Sendable {}
-extension Osmosis_Superfluid_SuperfluidDelegationAmountRequest: @unchecked Sendable {}
-extension Osmosis_Superfluid_SuperfluidDelegationAmountResponse: @unchecked Sendable {}
-extension Osmosis_Superfluid_SuperfluidDelegationsByDelegatorRequest: @unchecked Sendable {}
-extension Osmosis_Superfluid_SuperfluidDelegationsByDelegatorResponse: @unchecked Sendable {}
-extension Osmosis_Superfluid_SuperfluidUndelegationsByDelegatorRequest: @unchecked Sendable {}
-extension Osmosis_Superfluid_SuperfluidUndelegationsByDelegatorResponse: @unchecked Sendable {}
-extension Osmosis_Superfluid_SuperfluidDelegationsByValidatorDenomRequest: @unchecked Sendable {}
-extension Osmosis_Superfluid_SuperfluidDelegationsByValidatorDenomResponse: @unchecked Sendable {}
-extension Osmosis_Superfluid_EstimateSuperfluidDelegatedAmountByValidatorDenomRequest: @unchecked Sendable {}
-extension Osmosis_Superfluid_EstimateSuperfluidDelegatedAmountByValidatorDenomResponse: @unchecked Sendable {}
-extension Osmosis_Superfluid_QueryTotalDelegationByDelegatorRequest: @unchecked Sendable {}
-extension Osmosis_Superfluid_QueryTotalDelegationByDelegatorResponse: @unchecked Sendable {}
-extension Osmosis_Superfluid_QueryUnpoolWhitelistRequest: @unchecked Sendable {}
-extension Osmosis_Superfluid_QueryUnpoolWhitelistResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "osmosis.superfluid"
@@ -573,13 +538,9 @@ extension Osmosis_Superfluid_QueryParamsResponse: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -756,13 +717,9 @@ extension Osmosis_Superfluid_AssetMultiplierResponse: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._osmoEquivalentMultiplier {
+    if let v = self._osmoEquivalentMultiplier {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -842,13 +799,9 @@ extension Osmosis_Superfluid_AllIntermediaryAccountsRequest: SwiftProtobuf.Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -880,16 +833,12 @@ extension Osmosis_Superfluid_AllIntermediaryAccountsResponse: SwiftProtobuf.Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.accounts.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.accounts, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -952,13 +901,9 @@ extension Osmosis_Superfluid_ConnectedIntermediaryAccountResponse: SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._account {
+    if let v = self._account {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1259,19 +1204,15 @@ extension Osmosis_Superfluid_SuperfluidDelegationsByDelegatorResponse: SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.superfluidDelegationRecords.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.superfluidDelegationRecords, fieldNumber: 1)
     }
     if !self.totalDelegatedCoins.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.totalDelegatedCoins, fieldNumber: 2)
     }
-    try { if let v = self._totalEquivalentStakedAmount {
+    if let v = self._totalEquivalentStakedAmount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1563,10 +1504,6 @@ extension Osmosis_Superfluid_QueryTotalDelegationByDelegatorResponse: SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.superfluidDelegationRecords.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.superfluidDelegationRecords, fieldNumber: 1)
     }
@@ -1576,9 +1513,9 @@ extension Osmosis_Superfluid_QueryTotalDelegationByDelegatorResponse: SwiftProto
     if !self.totalDelegatedCoins.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.totalDelegatedCoins, fieldNumber: 3)
     }
-    try { if let v = self._totalEquivalentStakedAmount {
+    if let v = self._totalEquivalentStakedAmount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

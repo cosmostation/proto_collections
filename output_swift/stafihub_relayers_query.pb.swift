@@ -72,13 +72,6 @@ struct Stafihub_Stafihub_Relayers_QueryThresholdResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Stafihub_Stafihub_Relayers_QueryRelayersRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Relayers_QueryRelayersResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Relayers_QueryThresholdRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Relayers_QueryThresholdResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stafihub.stafihub.relayers"

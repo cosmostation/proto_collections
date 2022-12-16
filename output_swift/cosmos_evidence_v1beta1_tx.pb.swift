@@ -59,11 +59,6 @@ struct Cosmos_Evidence_V1beta1_MsgSubmitEvidenceResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Cosmos_Evidence_V1beta1_MsgSubmitEvidence: @unchecked Sendable {}
-extension Cosmos_Evidence_V1beta1_MsgSubmitEvidenceResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.evidence.v1beta1"
@@ -89,16 +84,12 @@ extension Cosmos_Evidence_V1beta1_MsgSubmitEvidence: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.submitter.isEmpty {
       try visitor.visitSingularStringField(value: self.submitter, fieldNumber: 1)
     }
-    try { if let v = self._evidence {
+    if let v = self._evidence {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

@@ -771,63 +771,6 @@ struct Stafihub_Stafihub_Ledger_QueryInterchainTxStatusResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Stafihub_Stafihub_Ledger_QueryGetExchangeRateRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetExchangeRateResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryExchangeRateAllRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryExchangeRateAllResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetEraExchangeRateRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetEraExchangeRateResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryEraExchangeRatesByDenomRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryEraExchangeRatesByDenomResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryBondedPoolsByDenomRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryBondedPoolsByDenomResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetPoolDetailRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetPoolDetailResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetChainEraRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetChainEraResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetCurrentEraSnapshotRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetCurrentEraSnapshotResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetProtocolFeeReceiverRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetProtocolFeeReceiverResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetStakingRewardCommissionRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetStakingRewardCommissionResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetUnbondRelayFeeRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetUnbondRelayFeeResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetUnbondCommissionRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetUnbondCommissionResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetEraUnbondLimitRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetEraUnbondLimitResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetBondPipelineRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetBondPipelineResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetEraSnapshotRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetEraSnapshotResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetSnapshotRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetSnapshotResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetTotalExpectedActiveRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetTotalExpectedActiveResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetBondRecordRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetBondRecordResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetSignatureRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetSignatureResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetRParamsRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryGetRParamsResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryTotalProtocolFeeRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryTotalProtocolFeeResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryRelayFeeReceiverRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryRelayFeeReceiverResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryUnbondSwitchRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryUnbondSwitchResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryPoolUnbondNextSequenceRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryPoolUnbondNextSequenceResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryPoolUnbondingsRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryPoolUnbondingsResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryIcaPoolListRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryIcaPoolListResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryInterchainTxStatusRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_QueryInterchainTxStatusResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stafihub.stafihub.ledger"
@@ -883,13 +826,9 @@ extension Stafihub_Stafihub_Ledger_QueryGetExchangeRateResponse: SwiftProtobuf.M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._exchangeRate {
+    if let v = self._exchangeRate {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1008,13 +947,9 @@ extension Stafihub_Stafihub_Ledger_QueryGetEraExchangeRateResponse: SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._eraExchangeRate {
+    if let v = self._eraExchangeRate {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1210,13 +1145,9 @@ extension Stafihub_Stafihub_Ledger_QueryGetPoolDetailResponse: SwiftProtobuf.Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._detail {
+    if let v = self._detail {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1521,13 +1452,9 @@ extension Stafihub_Stafihub_Ledger_QueryGetUnbondRelayFeeResponse: SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._fee {
+    if let v = self._fee {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1723,13 +1650,9 @@ extension Stafihub_Stafihub_Ledger_QueryGetBondPipelineResponse: SwiftProtobuf.M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pipeline {
+    if let v = self._pipeline {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1861,13 +1784,9 @@ extension Stafihub_Stafihub_Ledger_QueryGetSnapshotResponse: SwiftProtobuf.Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._shot {
+    if let v = self._shot {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2005,13 +1924,9 @@ extension Stafihub_Stafihub_Ledger_QueryGetBondRecordResponse: SwiftProtobuf.Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._bondRecord {
+    if let v = self._bondRecord {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2097,13 +2012,9 @@ extension Stafihub_Stafihub_Ledger_QueryGetSignatureResponse: SwiftProtobuf.Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._signature {
+    if let v = self._signature {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2165,13 +2076,9 @@ extension Stafihub_Stafihub_Ledger_QueryGetRParamsResponse: SwiftProtobuf.Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._rParams {
+    if let v = self._rParams {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

@@ -333,31 +333,6 @@ struct Stride_Stakeibc_MsgUpdateValidatorSharesExchRateResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Stride_Stakeibc_MsgLiquidStake: @unchecked Sendable {}
-extension Stride_Stakeibc_MsgLiquidStakeResponse: @unchecked Sendable {}
-extension Stride_Stakeibc_MsgClearBalance: @unchecked Sendable {}
-extension Stride_Stakeibc_MsgClearBalanceResponse: @unchecked Sendable {}
-extension Stride_Stakeibc_MsgRedeemStake: @unchecked Sendable {}
-extension Stride_Stakeibc_MsgRedeemStakeResponse: @unchecked Sendable {}
-extension Stride_Stakeibc_MsgRegisterHostZone: @unchecked Sendable {}
-extension Stride_Stakeibc_MsgRegisterHostZoneResponse: @unchecked Sendable {}
-extension Stride_Stakeibc_MsgClaimUndelegatedTokens: @unchecked Sendable {}
-extension Stride_Stakeibc_MsgClaimUndelegatedTokensResponse: @unchecked Sendable {}
-extension Stride_Stakeibc_MsgRebalanceValidators: @unchecked Sendable {}
-extension Stride_Stakeibc_MsgRebalanceValidatorsResponse: @unchecked Sendable {}
-extension Stride_Stakeibc_MsgAddValidator: @unchecked Sendable {}
-extension Stride_Stakeibc_MsgAddValidatorResponse: @unchecked Sendable {}
-extension Stride_Stakeibc_MsgChangeValidatorWeight: @unchecked Sendable {}
-extension Stride_Stakeibc_MsgChangeValidatorWeightResponse: @unchecked Sendable {}
-extension Stride_Stakeibc_MsgDeleteValidator: @unchecked Sendable {}
-extension Stride_Stakeibc_MsgDeleteValidatorResponse: @unchecked Sendable {}
-extension Stride_Stakeibc_MsgRestoreInterchainAccount: @unchecked Sendable {}
-extension Stride_Stakeibc_MsgRestoreInterchainAccountResponse: @unchecked Sendable {}
-extension Stride_Stakeibc_MsgUpdateValidatorSharesExchRate: @unchecked Sendable {}
-extension Stride_Stakeibc_MsgUpdateValidatorSharesExchRateResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stride.stakeibc"

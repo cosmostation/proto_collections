@@ -467,37 +467,6 @@ struct Sifnode_Clp_V1_MsgCancelUnlockResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Sifnode_Clp_V1_MsgUpdateStakingRewardParams: @unchecked Sendable {}
-extension Sifnode_Clp_V1_MsgUpdateStakingRewardParamsResponse: @unchecked Sendable {}
-extension Sifnode_Clp_V1_MsgRemoveLiquidity: @unchecked Sendable {}
-extension Sifnode_Clp_V1_MsgRemoveLiquidityResponse: @unchecked Sendable {}
-extension Sifnode_Clp_V1_MsgRemoveLiquidityUnits: @unchecked Sendable {}
-extension Sifnode_Clp_V1_MsgRemoveLiquidityUnitsResponse: @unchecked Sendable {}
-extension Sifnode_Clp_V1_MsgCreatePool: @unchecked Sendable {}
-extension Sifnode_Clp_V1_MsgCreatePoolResponse: @unchecked Sendable {}
-extension Sifnode_Clp_V1_MsgAddLiquidity: @unchecked Sendable {}
-extension Sifnode_Clp_V1_MsgAddLiquidityResponse: @unchecked Sendable {}
-extension Sifnode_Clp_V1_MsgModifyPmtpRates: @unchecked Sendable {}
-extension Sifnode_Clp_V1_MsgModifyPmtpRatesResponse: @unchecked Sendable {}
-extension Sifnode_Clp_V1_MsgUpdatePmtpParams: @unchecked Sendable {}
-extension Sifnode_Clp_V1_MsgUpdatePmtpParamsResponse: @unchecked Sendable {}
-extension Sifnode_Clp_V1_MsgSwap: @unchecked Sendable {}
-extension Sifnode_Clp_V1_MsgSwapResponse: @unchecked Sendable {}
-extension Sifnode_Clp_V1_MsgDecommissionPool: @unchecked Sendable {}
-extension Sifnode_Clp_V1_MsgDecommissionPoolResponse: @unchecked Sendable {}
-extension Sifnode_Clp_V1_MsgUnlockLiquidityRequest: @unchecked Sendable {}
-extension Sifnode_Clp_V1_MsgUnlockLiquidityResponse: @unchecked Sendable {}
-extension Sifnode_Clp_V1_MsgUpdateRewardsParamsRequest: @unchecked Sendable {}
-extension Sifnode_Clp_V1_MsgUpdateRewardsParamsResponse: @unchecked Sendable {}
-extension Sifnode_Clp_V1_MsgAddRewardPeriodRequest: @unchecked Sendable {}
-extension Sifnode_Clp_V1_MsgAddRewardPeriodResponse: @unchecked Sendable {}
-extension Sifnode_Clp_V1_MsgSetSymmetryThreshold: @unchecked Sendable {}
-extension Sifnode_Clp_V1_MsgSetSymmetryThresholdResponse: @unchecked Sendable {}
-extension Sifnode_Clp_V1_MsgCancelUnlock: @unchecked Sendable {}
-extension Sifnode_Clp_V1_MsgCancelUnlockResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "sifnode.clp.v1"
@@ -590,16 +559,12 @@ extension Sifnode_Clp_V1_MsgRemoveLiquidity: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.signer.isEmpty {
       try visitor.visitSingularStringField(value: self.signer, fieldNumber: 1)
     }
-    try { if let v = self._externalAsset {
+    if let v = self._externalAsset {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if !self.wBasisPoints.isEmpty {
       try visitor.visitSingularStringField(value: self.wBasisPoints, fieldNumber: 3)
     }
@@ -661,16 +626,12 @@ extension Sifnode_Clp_V1_MsgRemoveLiquidityUnits: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.signer.isEmpty {
       try visitor.visitSingularStringField(value: self.signer, fieldNumber: 1)
     }
-    try { if let v = self._externalAsset {
+    if let v = self._externalAsset {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if !self.withdrawUnits.isEmpty {
       try visitor.visitSingularStringField(value: self.withdrawUnits, fieldNumber: 3)
     }
@@ -730,16 +691,12 @@ extension Sifnode_Clp_V1_MsgCreatePool: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.signer.isEmpty {
       try visitor.visitSingularStringField(value: self.signer, fieldNumber: 1)
     }
-    try { if let v = self._externalAsset {
+    if let v = self._externalAsset {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if !self.nativeAssetAmount.isEmpty {
       try visitor.visitSingularStringField(value: self.nativeAssetAmount, fieldNumber: 3)
     }
@@ -803,16 +760,12 @@ extension Sifnode_Clp_V1_MsgAddLiquidity: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.signer.isEmpty {
       try visitor.visitSingularStringField(value: self.signer, fieldNumber: 1)
     }
-    try { if let v = self._externalAsset {
+    if let v = self._externalAsset {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if !self.nativeAssetAmount.isEmpty {
       try visitor.visitSingularStringField(value: self.nativeAssetAmount, fieldNumber: 3)
     }
@@ -1022,19 +975,15 @@ extension Sifnode_Clp_V1_MsgSwap: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.signer.isEmpty {
       try visitor.visitSingularStringField(value: self.signer, fieldNumber: 1)
     }
-    try { if let v = self._sentAsset {
+    if let v = self._sentAsset {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
-    try { if let v = self._receivedAsset {
+    }
+    if let v = self._receivedAsset {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if !self.sentAmount.isEmpty {
       try visitor.visitSingularStringField(value: self.sentAmount, fieldNumber: 4)
     }
@@ -1154,16 +1103,12 @@ extension Sifnode_Clp_V1_MsgUnlockLiquidityRequest: SwiftProtobuf.Message, Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.signer.isEmpty {
       try visitor.visitSingularStringField(value: self.signer, fieldNumber: 1)
     }
-    try { if let v = self._externalAsset {
+    if let v = self._externalAsset {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if !self.units.isEmpty {
       try visitor.visitSingularStringField(value: self.units, fieldNumber: 3)
     }
@@ -1398,16 +1343,12 @@ extension Sifnode_Clp_V1_MsgCancelUnlock: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.signer.isEmpty {
       try visitor.visitSingularStringField(value: self.signer, fieldNumber: 1)
     }
-    try { if let v = self._externalAsset {
+    if let v = self._externalAsset {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if !self.units.isEmpty {
       try visitor.visitSingularStringField(value: self.units, fieldNumber: 3)
     }

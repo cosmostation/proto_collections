@@ -162,15 +162,6 @@ struct Irismod_Coinswap_MsgSwapCoinResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Irismod_Coinswap_MsgAddLiquidity: @unchecked Sendable {}
-extension Irismod_Coinswap_MsgAddLiquidityResponse: @unchecked Sendable {}
-extension Irismod_Coinswap_MsgRemoveLiquidity: @unchecked Sendable {}
-extension Irismod_Coinswap_MsgRemoveLiquidityResponse: @unchecked Sendable {}
-extension Irismod_Coinswap_MsgSwapOrder: @unchecked Sendable {}
-extension Irismod_Coinswap_MsgSwapCoinResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "irismod.coinswap"
@@ -202,13 +193,9 @@ extension Irismod_Coinswap_MsgAddLiquidity: SwiftProtobuf.Message, SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._maxToken {
+    if let v = self._maxToken {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.exactStandardAmt.isEmpty {
       try visitor.visitSingularStringField(value: self.exactStandardAmt, fieldNumber: 2)
     }
@@ -254,13 +241,9 @@ extension Irismod_Coinswap_MsgAddLiquidityResponse: SwiftProtobuf.Message, Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._mintToken {
+    if let v = self._mintToken {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -298,13 +281,9 @@ extension Irismod_Coinswap_MsgRemoveLiquidity: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._withdrawLiquidity {
+    if let v = self._withdrawLiquidity {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.minToken.isEmpty {
       try visitor.visitSingularStringField(value: self.minToken, fieldNumber: 2)
     }
@@ -388,16 +367,12 @@ extension Irismod_Coinswap_MsgSwapOrder: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._input {
+    if let v = self._input {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._output {
+    }
+    if let v = self._output {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if self.deadline != 0 {
       try visitor.visitSingularInt64Field(value: self.deadline, fieldNumber: 3)
     }

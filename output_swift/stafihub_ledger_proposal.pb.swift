@@ -150,15 +150,6 @@ struct Stafihub_Stafihub_Ledger_InterchainTxProposal {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Stafihub_Stafihub_Ledger_SetChainEraProposal: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_BondReportProposal: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_ActiveReportProposal: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_TransferReportProposal: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_ExecuteBondProposal: @unchecked Sendable {}
-extension Stafihub_Stafihub_Ledger_InterchainTxProposal: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stafihub.stafihub.ledger"

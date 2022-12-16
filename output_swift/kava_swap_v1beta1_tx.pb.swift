@@ -239,17 +239,6 @@ struct Kava_Swap_V1beta1_MsgSwapForExactTokensResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Kava_Swap_V1beta1_MsgDeposit: @unchecked Sendable {}
-extension Kava_Swap_V1beta1_MsgDepositResponse: @unchecked Sendable {}
-extension Kava_Swap_V1beta1_MsgWithdraw: @unchecked Sendable {}
-extension Kava_Swap_V1beta1_MsgWithdrawResponse: @unchecked Sendable {}
-extension Kava_Swap_V1beta1_MsgSwapExactForTokens: @unchecked Sendable {}
-extension Kava_Swap_V1beta1_MsgSwapExactForTokensResponse: @unchecked Sendable {}
-extension Kava_Swap_V1beta1_MsgSwapForExactTokens: @unchecked Sendable {}
-extension Kava_Swap_V1beta1_MsgSwapForExactTokensResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kava.swap.v1beta1"
@@ -281,19 +270,15 @@ extension Kava_Swap_V1beta1_MsgDeposit: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.depositor.isEmpty {
       try visitor.visitSingularStringField(value: self.depositor, fieldNumber: 1)
     }
-    try { if let v = self._tokenA {
+    if let v = self._tokenA {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
-    try { if let v = self._tokenB {
+    }
+    if let v = self._tokenB {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if !self.slippage.isEmpty {
       try visitor.visitSingularStringField(value: self.slippage, fieldNumber: 4)
     }
@@ -360,22 +345,18 @@ extension Kava_Swap_V1beta1_MsgWithdraw: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.from.isEmpty {
       try visitor.visitSingularStringField(value: self.from, fieldNumber: 1)
     }
     if !self.shares.isEmpty {
       try visitor.visitSingularStringField(value: self.shares, fieldNumber: 2)
     }
-    try { if let v = self._minTokenA {
+    if let v = self._minTokenA {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
-    try { if let v = self._minTokenB {
+    }
+    if let v = self._minTokenB {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
+    }
     if self.deadline != 0 {
       try visitor.visitSingularInt64Field(value: self.deadline, fieldNumber: 5)
     }
@@ -439,19 +420,15 @@ extension Kava_Swap_V1beta1_MsgSwapExactForTokens: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.requester.isEmpty {
       try visitor.visitSingularStringField(value: self.requester, fieldNumber: 1)
     }
-    try { if let v = self._exactTokenA {
+    if let v = self._exactTokenA {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
-    try { if let v = self._tokenB {
+    }
+    if let v = self._tokenB {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if !self.slippage.isEmpty {
       try visitor.visitSingularStringField(value: self.slippage, fieldNumber: 4)
     }
@@ -518,19 +495,15 @@ extension Kava_Swap_V1beta1_MsgSwapForExactTokens: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.requester.isEmpty {
       try visitor.visitSingularStringField(value: self.requester, fieldNumber: 1)
     }
-    try { if let v = self._tokenA {
+    if let v = self._tokenA {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
-    try { if let v = self._exactTokenB {
+    }
+    if let v = self._exactTokenB {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if !self.slippage.isEmpty {
       try visitor.visitSingularStringField(value: self.slippage, fieldNumber: 4)
     }

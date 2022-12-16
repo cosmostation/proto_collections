@@ -199,17 +199,6 @@ struct Payments_TestPeriod {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Payments_PaymentTemplate: @unchecked Sendable {}
-extension Payments_Discount: @unchecked Sendable {}
-extension Payments_DistributionShare: @unchecked Sendable {}
-extension Payments_PaymentContract: @unchecked Sendable {}
-extension Payments_Subscription: @unchecked Sendable {}
-extension Payments_BlockPeriod: @unchecked Sendable {}
-extension Payments_TimePeriod: @unchecked Sendable {}
-extension Payments_TestPeriod: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "payments"
@@ -461,10 +450,6 @@ extension Payments_Subscription: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.id.isEmpty {
       try visitor.visitSingularStringField(value: self.id, fieldNumber: 1)
     }
@@ -480,9 +465,9 @@ extension Payments_Subscription: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if !self.periodsAccumulated.isEmpty {
       try visitor.visitSingularStringField(value: self.periodsAccumulated, fieldNumber: 5)
     }
-    try { if let v = self._period {
+    if let v = self._period {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -557,16 +542,12 @@ extension Payments_TimePeriod: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._periodDurationNs {
+    if let v = self._periodDurationNs {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._periodStartTime {
+    }
+    if let v = self._periodStartTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

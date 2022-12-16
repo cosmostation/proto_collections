@@ -85,13 +85,6 @@ struct Rizonworld_Rizon_Treasury_Sequence {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Rizonworld_Rizon_Treasury_Currency: @unchecked Sendable {}
-extension Rizonworld_Rizon_Treasury_Currencies: @unchecked Sendable {}
-extension Rizonworld_Rizon_Treasury_MaxAtoloSupply: @unchecked Sendable {}
-extension Rizonworld_Rizon_Treasury_Sequence: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "rizonworld.rizon.treasury"

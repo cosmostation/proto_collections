@@ -182,19 +182,6 @@ struct Osmosis_Lockup_MsgForceUnlockResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Osmosis_Lockup_MsgLockTokens: @unchecked Sendable {}
-extension Osmosis_Lockup_MsgLockTokensResponse: @unchecked Sendable {}
-extension Osmosis_Lockup_MsgBeginUnlockingAll: @unchecked Sendable {}
-extension Osmosis_Lockup_MsgBeginUnlockingAllResponse: @unchecked Sendable {}
-extension Osmosis_Lockup_MsgBeginUnlocking: @unchecked Sendable {}
-extension Osmosis_Lockup_MsgBeginUnlockingResponse: @unchecked Sendable {}
-extension Osmosis_Lockup_MsgExtendLockup: @unchecked Sendable {}
-extension Osmosis_Lockup_MsgExtendLockupResponse: @unchecked Sendable {}
-extension Osmosis_Lockup_MsgForceUnlock: @unchecked Sendable {}
-extension Osmosis_Lockup_MsgForceUnlockResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "osmosis.lockup"
@@ -222,16 +209,12 @@ extension Osmosis_Lockup_MsgLockTokens: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.owner.isEmpty {
       try visitor.visitSingularStringField(value: self.owner, fieldNumber: 1)
     }
-    try { if let v = self._duration {
+    if let v = self._duration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if !self.coins.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.coins, fieldNumber: 3)
     }
@@ -442,19 +425,15 @@ extension Osmosis_Lockup_MsgExtendLockup: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.owner.isEmpty {
       try visitor.visitSingularStringField(value: self.owner, fieldNumber: 1)
     }
     if self.id != 0 {
       try visitor.visitSingularUInt64Field(value: self.id, fieldNumber: 2)
     }
-    try { if let v = self._duration {
+    if let v = self._duration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

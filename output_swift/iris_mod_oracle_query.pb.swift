@@ -169,16 +169,6 @@ struct Irismod_Oracle_FeedContext {
   fileprivate var _feed: Irismod_Oracle_Feed? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Irismod_Oracle_QueryFeedRequest: @unchecked Sendable {}
-extension Irismod_Oracle_QueryFeedResponse: @unchecked Sendable {}
-extension Irismod_Oracle_QueryFeedsRequest: @unchecked Sendable {}
-extension Irismod_Oracle_QueryFeedsResponse: @unchecked Sendable {}
-extension Irismod_Oracle_QueryFeedValueRequest: @unchecked Sendable {}
-extension Irismod_Oracle_QueryFeedValueResponse: @unchecked Sendable {}
-extension Irismod_Oracle_FeedContext: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "irismod.oracle"
@@ -234,13 +224,9 @@ extension Irismod_Oracle_QueryFeedResponse: SwiftProtobuf.Message, SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._feed {
+    if let v = self._feed {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -272,16 +258,12 @@ extension Irismod_Oracle_QueryFeedsRequest: SwiftProtobuf.Message, SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.state.isEmpty {
       try visitor.visitSingularStringField(value: self.state, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -314,16 +296,12 @@ extension Irismod_Oracle_QueryFeedsResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.feeds.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.feeds, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -434,13 +412,9 @@ extension Irismod_Oracle_FeedContext: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._feed {
+    if let v = self._feed {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.serviceName.isEmpty {
       try visitor.visitSingularStringField(value: self.serviceName, fieldNumber: 2)
     }

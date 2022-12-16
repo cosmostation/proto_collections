@@ -82,13 +82,6 @@ struct Cosmos_Base_V1beta1_DecProto {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Cosmos_Base_V1beta1_Coin: @unchecked Sendable {}
-extension Cosmos_Base_V1beta1_DecCoin: @unchecked Sendable {}
-extension Cosmos_Base_V1beta1_IntProto: @unchecked Sendable {}
-extension Cosmos_Base_V1beta1_DecProto: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.base.v1beta1"

@@ -137,13 +137,6 @@ struct Cosmos_Upgrade_V1beta1_ModuleVersion {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Cosmos_Upgrade_V1beta1_Plan: @unchecked Sendable {}
-extension Cosmos_Upgrade_V1beta1_SoftwareUpgradeProposal: @unchecked Sendable {}
-extension Cosmos_Upgrade_V1beta1_CancelSoftwareUpgradeProposal: @unchecked Sendable {}
-extension Cosmos_Upgrade_V1beta1_ModuleVersion: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.upgrade.v1beta1"
@@ -175,25 +168,21 @@ extension Cosmos_Upgrade_V1beta1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
     }
-    try { if let v = self._time {
+    if let v = self._time {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if self.height != 0 {
       try visitor.visitSingularInt64Field(value: self.height, fieldNumber: 3)
     }
     if !self.info.isEmpty {
       try visitor.visitSingularStringField(value: self.info, fieldNumber: 4)
     }
-    try { if let v = self._upgradedClientState {
+    if let v = self._upgradedClientState {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -231,19 +220,15 @@ extension Cosmos_Upgrade_V1beta1_SoftwareUpgradeProposal: SwiftProtobuf.Message,
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.title.isEmpty {
       try visitor.visitSingularStringField(value: self.title, fieldNumber: 1)
     }
     if !self.description_p.isEmpty {
       try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 2)
     }
-    try { if let v = self._plan {
+    if let v = self._plan {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

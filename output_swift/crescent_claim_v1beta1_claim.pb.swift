@@ -154,12 +154,6 @@ struct Crescent_Claim_V1beta1_ClaimRecord {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Crescent_Claim_V1beta1_ConditionType: @unchecked Sendable {}
-extension Crescent_Claim_V1beta1_Airdrop: @unchecked Sendable {}
-extension Crescent_Claim_V1beta1_ClaimRecord: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "crescent.claim.v1beta1"
@@ -201,10 +195,6 @@ extension Crescent_Claim_V1beta1_Airdrop: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.id != 0 {
       try visitor.visitSingularUInt64Field(value: self.id, fieldNumber: 1)
     }
@@ -214,12 +204,12 @@ extension Crescent_Claim_V1beta1_Airdrop: SwiftProtobuf.Message, SwiftProtobuf._
     if !self.conditions.isEmpty {
       try visitor.visitPackedEnumField(value: self.conditions, fieldNumber: 3)
     }
-    try { if let v = self._startTime {
+    if let v = self._startTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
-    try { if let v = self._endTime {
+    }
+    if let v = self._endTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

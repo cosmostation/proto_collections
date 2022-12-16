@@ -95,12 +95,6 @@ struct Tendermint_Types_SimpleValidator {
   fileprivate var _pubKey: Tendermint_Crypto_PublicKey? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Tendermint_Types_ValidatorSet: @unchecked Sendable {}
-extension Tendermint_Types_Validator: @unchecked Sendable {}
-extension Tendermint_Types_SimpleValidator: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "tendermint.types"
@@ -128,16 +122,12 @@ extension Tendermint_Types_ValidatorSet: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.validators.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.validators, fieldNumber: 1)
     }
-    try { if let v = self._proposer {
+    if let v = self._proposer {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if self.totalVotingPower != 0 {
       try visitor.visitSingularInt64Field(value: self.totalVotingPower, fieldNumber: 3)
     }
@@ -178,16 +168,12 @@ extension Tendermint_Types_Validator: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.address.isEmpty {
       try visitor.visitSingularBytesField(value: self.address, fieldNumber: 1)
     }
-    try { if let v = self._pubKey {
+    if let v = self._pubKey {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if self.votingPower != 0 {
       try visitor.visitSingularInt64Field(value: self.votingPower, fieldNumber: 3)
     }
@@ -228,13 +214,9 @@ extension Tendermint_Types_SimpleValidator: SwiftProtobuf.Message, SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pubKey {
+    if let v = self._pubKey {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if self.votingPower != 0 {
       try visitor.visitSingularInt64Field(value: self.votingPower, fieldNumber: 2)
     }

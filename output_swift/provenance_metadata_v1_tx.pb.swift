@@ -1073,55 +1073,6 @@ struct Provenance_Metadata_V1_MsgModifyOSLocatorResponse {
   fileprivate var _locator: Provenance_Metadata_V1_ObjectStoreLocator? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Provenance_Metadata_V1_MsgWriteScopeRequest: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgWriteScopeResponse: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgDeleteScopeRequest: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgDeleteScopeResponse: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgAddScopeDataAccessRequest: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgAddScopeDataAccessResponse: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgDeleteScopeDataAccessRequest: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgDeleteScopeDataAccessResponse: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgAddScopeOwnerRequest: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgAddScopeOwnerResponse: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgDeleteScopeOwnerRequest: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgDeleteScopeOwnerResponse: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgWriteSessionRequest: @unchecked Sendable {}
-extension Provenance_Metadata_V1_SessionIdComponents: @unchecked Sendable {}
-extension Provenance_Metadata_V1_SessionIdComponents.OneOf_ScopeIdentifier: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgWriteSessionResponse: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgWriteRecordRequest: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgWriteRecordResponse: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgDeleteRecordRequest: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgDeleteRecordResponse: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgWriteScopeSpecificationRequest: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgWriteScopeSpecificationResponse: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgDeleteScopeSpecificationRequest: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgDeleteScopeSpecificationResponse: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgWriteContractSpecificationRequest: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgWriteContractSpecificationResponse: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgAddContractSpecToScopeSpecRequest: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgAddContractSpecToScopeSpecResponse: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgDeleteContractSpecFromScopeSpecRequest: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgDeleteContractSpecFromScopeSpecResponse: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgDeleteContractSpecificationRequest: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgDeleteContractSpecificationResponse: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgWriteRecordSpecificationRequest: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgWriteRecordSpecificationResponse: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgDeleteRecordSpecificationRequest: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgDeleteRecordSpecificationResponse: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgWriteP8eContractSpecRequest: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgWriteP8eContractSpecResponse: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgP8eMemorializeContractRequest: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgP8eMemorializeContractResponse: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgBindOSLocatorRequest: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgBindOSLocatorResponse: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgDeleteOSLocatorRequest: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgDeleteOSLocatorResponse: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgModifyOSLocatorRequest: @unchecked Sendable {}
-extension Provenance_Metadata_V1_MsgModifyOSLocatorResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "provenance.metadata.v1"
@@ -1151,13 +1102,9 @@ extension Provenance_Metadata_V1_MsgWriteScopeRequest: SwiftProtobuf.Message, Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._scope {
+    if let v = self._scope {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.signers.isEmpty {
       try visitor.visitRepeatedStringField(value: self.signers, fieldNumber: 2)
     }
@@ -1199,13 +1146,9 @@ extension Provenance_Metadata_V1_MsgWriteScopeResponse: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._scopeIDInfo {
+    if let v = self._scopeIDInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1579,19 +1522,15 @@ extension Provenance_Metadata_V1_MsgWriteSessionRequest: SwiftProtobuf.Message, 
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
-      try { if let v = _storage._session {
+      if let v = _storage._session {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      } }()
+      }
       if !_storage._signers.isEmpty {
         try visitor.visitRepeatedStringField(value: _storage._signers, fieldNumber: 2)
       }
-      try { if let v = _storage._sessionIDComponents {
+      if let v = _storage._sessionIDComponents {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-      } }()
+      }
       if !_storage._specUuid.isEmpty {
         try visitor.visitSingularStringField(value: _storage._specUuid, fieldNumber: 4)
       }
@@ -1655,9 +1594,8 @@ extension Provenance_Metadata_V1_SessionIdComponents: SwiftProtobuf.Message, Swi
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
+    // allocates stack space for every case branch when no optimizations are
+    // enabled. https://github.com/apple/swift-protobuf/issues/1034
     switch self.scopeIdentifier {
     case .scopeUuid?: try {
       guard case .scopeUuid(let v)? = self.scopeIdentifier else { preconditionFailure() }
@@ -1702,13 +1640,9 @@ extension Provenance_Metadata_V1_MsgWriteSessionResponse: SwiftProtobuf.Message,
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._sessionIDInfo {
+    if let v = self._sessionIDInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1746,19 +1680,15 @@ extension Provenance_Metadata_V1_MsgWriteRecordRequest: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._record {
+    if let v = self._record {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.signers.isEmpty {
       try visitor.visitRepeatedStringField(value: self.signers, fieldNumber: 2)
     }
-    try { if let v = self._sessionIDComponents {
+    if let v = self._sessionIDComponents {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if !self.contractSpecUuid.isEmpty {
       try visitor.visitSingularStringField(value: self.contractSpecUuid, fieldNumber: 4)
     }
@@ -1798,13 +1728,9 @@ extension Provenance_Metadata_V1_MsgWriteRecordResponse: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._recordIDInfo {
+    if let v = self._recordIDInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1895,13 +1821,9 @@ extension Provenance_Metadata_V1_MsgWriteScopeSpecificationRequest: SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._specification {
+    if let v = self._specification {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.signers.isEmpty {
       try visitor.visitRepeatedStringField(value: self.signers, fieldNumber: 2)
     }
@@ -1939,13 +1861,9 @@ extension Provenance_Metadata_V1_MsgWriteScopeSpecificationResponse: SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._scopeSpecIDInfo {
+    if let v = self._scopeSpecIDInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2036,13 +1954,9 @@ extension Provenance_Metadata_V1_MsgWriteContractSpecificationRequest: SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._specification {
+    if let v = self._specification {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.signers.isEmpty {
       try visitor.visitRepeatedStringField(value: self.signers, fieldNumber: 2)
     }
@@ -2080,13 +1994,9 @@ extension Provenance_Metadata_V1_MsgWriteContractSpecificationResponse: SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._contractSpecIDInfo {
+    if let v = self._contractSpecIDInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2303,13 +2213,9 @@ extension Provenance_Metadata_V1_MsgWriteRecordSpecificationRequest: SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._specification {
+    if let v = self._specification {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.signers.isEmpty {
       try visitor.visitRepeatedStringField(value: self.signers, fieldNumber: 2)
     }
@@ -2347,13 +2253,9 @@ extension Provenance_Metadata_V1_MsgWriteRecordSpecificationResponse: SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._recordSpecIDInfo {
+    if let v = self._recordSpecIDInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2442,13 +2344,9 @@ extension Provenance_Metadata_V1_MsgWriteP8eContractSpecRequest: SwiftProtobuf.M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._contractspec {
+    if let v = self._contractspec {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.signers.isEmpty {
       try visitor.visitRepeatedStringField(value: self.signers, fieldNumber: 2)
     }
@@ -2484,13 +2382,9 @@ extension Provenance_Metadata_V1_MsgWriteP8eContractSpecResponse: SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._contractSpecIDInfo {
+    if let v = self._contractSpecIDInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.recordSpecIDInfos.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.recordSpecIDInfos, fieldNumber: 2)
     }
@@ -2536,10 +2430,6 @@ extension Provenance_Metadata_V1_MsgP8eMemorializeContractRequest: SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.scopeID.isEmpty {
       try visitor.visitSingularStringField(value: self.scopeID, fieldNumber: 1)
     }
@@ -2549,15 +2439,15 @@ extension Provenance_Metadata_V1_MsgP8eMemorializeContractRequest: SwiftProtobuf
     if !self.scopeSpecificationID.isEmpty {
       try visitor.visitSingularStringField(value: self.scopeSpecificationID, fieldNumber: 3)
     }
-    try { if let v = self._recitals {
+    if let v = self._recitals {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
-    try { if let v = self._contract {
+    }
+    if let v = self._contract {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    } }()
-    try { if let v = self._signatures {
+    }
+    if let v = self._signatures {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    } }()
+    }
     if !self.invoker.isEmpty {
       try visitor.visitSingularStringField(value: self.invoker, fieldNumber: 7)
     }
@@ -2627,16 +2517,12 @@ extension Provenance_Metadata_V1_MsgP8eMemorializeContractResponse: SwiftProtobu
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
-      try { if let v = _storage._scopeIDInfo {
+      if let v = _storage._scopeIDInfo {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      } }()
-      try { if let v = _storage._sessionIDInfo {
+      }
+      if let v = _storage._sessionIDInfo {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      } }()
+      }
       if !_storage._recordIDInfos.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._recordIDInfos, fieldNumber: 3)
       }
@@ -2680,13 +2566,9 @@ extension Provenance_Metadata_V1_MsgBindOSLocatorRequest: SwiftProtobuf.Message,
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._locator {
+    if let v = self._locator {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2716,13 +2598,9 @@ extension Provenance_Metadata_V1_MsgBindOSLocatorResponse: SwiftProtobuf.Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._locator {
+    if let v = self._locator {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2752,13 +2630,9 @@ extension Provenance_Metadata_V1_MsgDeleteOSLocatorRequest: SwiftProtobuf.Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._locator {
+    if let v = self._locator {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2788,13 +2662,9 @@ extension Provenance_Metadata_V1_MsgDeleteOSLocatorResponse: SwiftProtobuf.Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._locator {
+    if let v = self._locator {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2824,13 +2694,9 @@ extension Provenance_Metadata_V1_MsgModifyOSLocatorRequest: SwiftProtobuf.Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._locator {
+    if let v = self._locator {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2860,13 +2726,9 @@ extension Provenance_Metadata_V1_MsgModifyOSLocatorResponse: SwiftProtobuf.Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._locator {
+    if let v = self._locator {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

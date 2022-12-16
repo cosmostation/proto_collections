@@ -42,11 +42,6 @@ struct Em_Issuer_V1_QueryIssuersResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Em_Issuer_V1_QueryIssuersRequest: @unchecked Sendable {}
-extension Em_Issuer_V1_QueryIssuersResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "em.issuer.v1"

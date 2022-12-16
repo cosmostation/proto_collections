@@ -54,11 +54,6 @@ struct Tendermint_Version_Consensus {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Tendermint_Version_App: @unchecked Sendable {}
-extension Tendermint_Version_Consensus: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "tendermint.version"

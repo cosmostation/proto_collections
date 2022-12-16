@@ -138,12 +138,6 @@ struct Permission_PermArgs {
   fileprivate var _value: Bool? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Permission_AccountPermissions: @unchecked Sendable {}
-extension Permission_BasePermissions: @unchecked Sendable {}
-extension Permission_PermArgs: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "permission"
@@ -169,13 +163,9 @@ extension Permission_AccountPermissions: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._base {
+    if let v = self._base {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.roles.isEmpty {
       try visitor.visitRepeatedStringField(value: self.roles, fieldNumber: 2)
     }
@@ -211,16 +201,12 @@ extension Permission_BasePermissions: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._perms {
+    if let v = self._perms {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._setBit {
+    }
+    if let v = self._setBit {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -259,25 +245,21 @@ extension Permission_PermArgs: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._action {
+    if let v = self._action {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._target {
+    }
+    if let v = self._target {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 2)
-    } }()
-    try { if let v = self._permission {
+    }
+    if let v = self._permission {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 3)
-    } }()
-    try { if let v = self._role {
+    }
+    if let v = self._role {
       try visitor.visitSingularStringField(value: v, fieldNumber: 4)
-    } }()
-    try { if let v = self._value {
+    }
+    if let v = self._value {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 5)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

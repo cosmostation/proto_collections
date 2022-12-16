@@ -111,14 +111,6 @@ struct Tendermint_Crypto_ProofOps {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Tendermint_Crypto_Proof: @unchecked Sendable {}
-extension Tendermint_Crypto_ValueOp: @unchecked Sendable {}
-extension Tendermint_Crypto_DominoOp: @unchecked Sendable {}
-extension Tendermint_Crypto_ProofOp: @unchecked Sendable {}
-extension Tendermint_Crypto_ProofOps: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "tendermint.crypto"
@@ -194,16 +186,12 @@ extension Tendermint_Crypto_ValueOp: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.key.isEmpty {
       try visitor.visitSingularBytesField(value: self.key, fieldNumber: 1)
     }
-    try { if let v = self._proof {
+    if let v = self._proof {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

@@ -691,27 +691,6 @@ struct Ics23_CompressedNonExistenceProof {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Ics23_HashOp: @unchecked Sendable {}
-extension Ics23_LengthOp: @unchecked Sendable {}
-extension Ics23_ExistenceProof: @unchecked Sendable {}
-extension Ics23_NonExistenceProof: @unchecked Sendable {}
-extension Ics23_CommitmentProof: @unchecked Sendable {}
-extension Ics23_CommitmentProof.OneOf_Proof: @unchecked Sendable {}
-extension Ics23_LeafOp: @unchecked Sendable {}
-extension Ics23_InnerOp: @unchecked Sendable {}
-extension Ics23_ProofSpec: @unchecked Sendable {}
-extension Ics23_InnerSpec: @unchecked Sendable {}
-extension Ics23_BatchProof: @unchecked Sendable {}
-extension Ics23_BatchEntry: @unchecked Sendable {}
-extension Ics23_BatchEntry.OneOf_Proof: @unchecked Sendable {}
-extension Ics23_CompressedBatchProof: @unchecked Sendable {}
-extension Ics23_CompressedBatchEntry: @unchecked Sendable {}
-extension Ics23_CompressedBatchEntry.OneOf_Proof: @unchecked Sendable {}
-extension Ics23_CompressedExistenceProof: @unchecked Sendable {}
-extension Ics23_CompressedNonExistenceProof: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "ics23"
@@ -766,19 +745,15 @@ extension Ics23_ExistenceProof: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.key.isEmpty {
       try visitor.visitSingularBytesField(value: self.key, fieldNumber: 1)
     }
     if !self.value.isEmpty {
       try visitor.visitSingularBytesField(value: self.value, fieldNumber: 2)
     }
-    try { if let v = self._leaf {
+    if let v = self._leaf {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if !self.path.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.path, fieldNumber: 4)
     }
@@ -845,19 +820,15 @@ extension Ics23_NonExistenceProof: SwiftProtobuf.Message, SwiftProtobuf._Message
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
       if !_storage._key.isEmpty {
         try visitor.visitSingularBytesField(value: _storage._key, fieldNumber: 1)
       }
-      try { if let v = _storage._left {
+      if let v = _storage._left {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      } }()
-      try { if let v = _storage._right {
+      }
+      if let v = _storage._right {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-      } }()
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -953,9 +924,8 @@ extension Ics23_CommitmentProof: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
+    // allocates stack space for every case branch when no optimizations are
+    // enabled. https://github.com/apple/swift-protobuf/issues/1034
     switch self.proof {
     case .exist?: try {
       guard case .exist(let v)? = self.proof else { preconditionFailure() }
@@ -1110,16 +1080,12 @@ extension Ics23_ProofSpec: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._leafSpec {
+    if let v = self._leafSpec {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._innerSpec {
+    }
+    if let v = self._innerSpec {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if self.maxDepth != 0 {
       try visitor.visitSingularInt32Field(value: self.maxDepth, fieldNumber: 3)
     }
@@ -1279,9 +1245,8 @@ extension Ics23_BatchEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
+    // allocates stack space for every case branch when no optimizations are
+    // enabled. https://github.com/apple/swift-protobuf/issues/1034
     switch self.proof {
     case .exist?: try {
       guard case .exist(let v)? = self.proof else { preconditionFailure() }
@@ -1387,9 +1352,8 @@ extension Ics23_CompressedBatchEntry: SwiftProtobuf.Message, SwiftProtobuf._Mess
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
+    // allocates stack space for every case branch when no optimizations are
+    // enabled. https://github.com/apple/swift-protobuf/issues/1034
     switch self.proof {
     case .exist?: try {
       guard case .exist(let v)? = self.proof else { preconditionFailure() }
@@ -1436,19 +1400,15 @@ extension Ics23_CompressedExistenceProof: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.key.isEmpty {
       try visitor.visitSingularBytesField(value: self.key, fieldNumber: 1)
     }
     if !self.value.isEmpty {
       try visitor.visitSingularBytesField(value: self.value, fieldNumber: 2)
     }
-    try { if let v = self._leaf {
+    if let v = self._leaf {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if !self.path.isEmpty {
       try visitor.visitPackedInt32Field(value: self.path, fieldNumber: 4)
     }
@@ -1515,19 +1475,15 @@ extension Ics23_CompressedNonExistenceProof: SwiftProtobuf.Message, SwiftProtobu
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
       if !_storage._key.isEmpty {
         try visitor.visitSingularBytesField(value: _storage._key, fieldNumber: 1)
       }
-      try { if let v = _storage._left {
+      if let v = _storage._left {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      } }()
-      try { if let v = _storage._right {
+      }
+      if let v = _storage._right {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-      } }()
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }

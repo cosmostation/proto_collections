@@ -118,17 +118,6 @@ struct Axelar_Nexus_V1beta1_DeactivateChainResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Axelar_Nexus_V1beta1_RegisterChainMaintainerRequest: @unchecked Sendable {}
-extension Axelar_Nexus_V1beta1_RegisterChainMaintainerResponse: @unchecked Sendable {}
-extension Axelar_Nexus_V1beta1_DeregisterChainMaintainerRequest: @unchecked Sendable {}
-extension Axelar_Nexus_V1beta1_DeregisterChainMaintainerResponse: @unchecked Sendable {}
-extension Axelar_Nexus_V1beta1_ActivateChainRequest: @unchecked Sendable {}
-extension Axelar_Nexus_V1beta1_ActivateChainResponse: @unchecked Sendable {}
-extension Axelar_Nexus_V1beta1_DeactivateChainRequest: @unchecked Sendable {}
-extension Axelar_Nexus_V1beta1_DeactivateChainResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "axelar.nexus.v1beta1"

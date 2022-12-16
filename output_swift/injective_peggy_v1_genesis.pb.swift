@@ -309,11 +309,6 @@ struct Injective_Peggy_V1_GenesisState {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Injective_Peggy_V1_Params: @unchecked Sendable {}
-extension Injective_Peggy_V1_GenesisState: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "injective.peggy.v1"
@@ -440,10 +435,6 @@ extension Injective_Peggy_V1_Params: SwiftProtobuf.Message, SwiftProtobuf._Messa
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
       if !_storage._peggyID.isEmpty {
         try visitor.visitSingularStringField(value: _storage._peggyID, fieldNumber: 1)
       }
@@ -504,9 +495,9 @@ extension Injective_Peggy_V1_Params: SwiftProtobuf.Message, SwiftProtobuf._Messa
       if _storage._bridgeContractStartHeight != 0 {
         try visitor.visitSingularUInt64Field(value: _storage._bridgeContractStartHeight, fieldNumber: 20)
       }
-      try { if let v = _storage._valsetReward {
+      if let v = _storage._valsetReward {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 21)
-      } }()
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -640,13 +631,9 @@ extension Injective_Peggy_V1_GenesisState: SwiftProtobuf.Message, SwiftProtobuf.
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
-      try { if let v = _storage._params {
+      if let v = _storage._params {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      } }()
+      }
       if _storage._lastObservedNonce != 0 {
         try visitor.visitSingularUInt64Field(value: _storage._lastObservedNonce, fieldNumber: 2)
       }
@@ -683,9 +670,9 @@ extension Injective_Peggy_V1_GenesisState: SwiftProtobuf.Message, SwiftProtobuf.
       if _storage._lastOutgoingPoolID != 0 {
         try visitor.visitSingularUInt64Field(value: _storage._lastOutgoingPoolID, fieldNumber: 13)
       }
-      try { if let v = _storage._lastObservedValset {
+      if let v = _storage._lastObservedValset {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 14)
-      } }()
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }

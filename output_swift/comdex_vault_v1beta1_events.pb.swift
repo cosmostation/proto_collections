@@ -148,15 +148,6 @@ struct Comdex_Vault_V1beta1_EventCloseVault {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Comdex_Vault_V1beta1_EventCreateVault: @unchecked Sendable {}
-extension Comdex_Vault_V1beta1_EventDepositCollateral: @unchecked Sendable {}
-extension Comdex_Vault_V1beta1_EventWithdrawCollateral: @unchecked Sendable {}
-extension Comdex_Vault_V1beta1_EventDrawDebt: @unchecked Sendable {}
-extension Comdex_Vault_V1beta1_EventRepayDebt: @unchecked Sendable {}
-extension Comdex_Vault_V1beta1_EventCloseVault: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "comdex.vault.v1beta1"
@@ -222,19 +213,15 @@ extension Comdex_Vault_V1beta1_EventDepositCollateral: SwiftProtobuf.Message, Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.owner.isEmpty {
       try visitor.visitSingularStringField(value: self.owner, fieldNumber: 1)
     }
     if !self.collateralType.isEmpty {
       try visitor.visitSingularStringField(value: self.collateralType, fieldNumber: 2)
     }
-    try { if let v = self._collateral {
+    if let v = self._collateral {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -270,19 +257,15 @@ extension Comdex_Vault_V1beta1_EventWithdrawCollateral: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.owner.isEmpty {
       try visitor.visitSingularStringField(value: self.owner, fieldNumber: 1)
     }
     if !self.collateralType.isEmpty {
       try visitor.visitSingularStringField(value: self.collateralType, fieldNumber: 2)
     }
-    try { if let v = self._collateral {
+    if let v = self._collateral {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -318,19 +301,15 @@ extension Comdex_Vault_V1beta1_EventDrawDebt: SwiftProtobuf.Message, SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.owner.isEmpty {
       try visitor.visitSingularStringField(value: self.owner, fieldNumber: 1)
     }
     if !self.collateralType.isEmpty {
       try visitor.visitSingularStringField(value: self.collateralType, fieldNumber: 2)
     }
-    try { if let v = self._debt {
+    if let v = self._debt {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -366,19 +345,15 @@ extension Comdex_Vault_V1beta1_EventRepayDebt: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.owner.isEmpty {
       try visitor.visitSingularStringField(value: self.owner, fieldNumber: 1)
     }
     if !self.collateralType.isEmpty {
       try visitor.visitSingularStringField(value: self.collateralType, fieldNumber: 2)
     }
-    try { if let v = self._debt {
+    if let v = self._debt {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

@@ -555,25 +555,6 @@ struct Axelar_Tss_Exported_V1beta1_Key {
   fileprivate var _rotatedAt: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Axelar_Tss_Exported_V1beta1_KeyRole: @unchecked Sendable {}
-extension Axelar_Tss_Exported_V1beta1_KeyShareDistributionPolicy: @unchecked Sendable {}
-extension Axelar_Tss_Exported_V1beta1_AckType: @unchecked Sendable {}
-extension Axelar_Tss_Exported_V1beta1_SigStatus: @unchecked Sendable {}
-extension Axelar_Tss_Exported_V1beta1_KeyType: @unchecked Sendable {}
-extension Axelar_Tss_Exported_V1beta1_KeyRequirement: @unchecked Sendable {}
-extension Axelar_Tss_Exported_V1beta1_SignInfo: @unchecked Sendable {}
-extension Axelar_Tss_Exported_V1beta1_SigKeyPair: @unchecked Sendable {}
-extension Axelar_Tss_Exported_V1beta1_Signature: @unchecked Sendable {}
-extension Axelar_Tss_Exported_V1beta1_Signature.OneOf_Sig: @unchecked Sendable {}
-extension Axelar_Tss_Exported_V1beta1_Signature.SingleSig: @unchecked Sendable {}
-extension Axelar_Tss_Exported_V1beta1_Signature.MultiSig: @unchecked Sendable {}
-extension Axelar_Tss_Exported_V1beta1_Key: @unchecked Sendable {}
-extension Axelar_Tss_Exported_V1beta1_Key.OneOf_PublicKey: @unchecked Sendable {}
-extension Axelar_Tss_Exported_V1beta1_Key.ECDSAKey: @unchecked Sendable {}
-extension Axelar_Tss_Exported_V1beta1_Key.MultisigKey: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "axelar.tss.exported.v1beta1"
@@ -662,22 +643,18 @@ extension Axelar_Tss_Exported_V1beta1_KeyRequirement: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.keyRole != .unspecified {
       try visitor.visitSingularEnumField(value: self.keyRole, fieldNumber: 1)
     }
     if self.keyType != .unspecified {
       try visitor.visitSingularEnumField(value: self.keyType, fieldNumber: 2)
     }
-    try { if let v = self._minKeygenThreshold {
+    if let v = self._minKeygenThreshold {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
-    try { if let v = self._safetyThreshold {
+    }
+    if let v = self._safetyThreshold {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
+    }
     if self.keyShareDistributionPolicy != .unspecified {
       try visitor.visitSingularEnumField(value: self.keyShareDistributionPolicy, fieldNumber: 5)
     }
@@ -687,12 +664,12 @@ extension Axelar_Tss_Exported_V1beta1_KeyRequirement: SwiftProtobuf.Message, Swi
     if self.minTotalShareCount != 0 {
       try visitor.visitSingularInt64Field(value: self.minTotalShareCount, fieldNumber: 7)
     }
-    try { if let v = self._keygenVotingThreshold {
+    if let v = self._keygenVotingThreshold {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
-    } }()
-    try { if let v = self._signVotingThreshold {
+    }
+    if let v = self._signVotingThreshold {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
-    } }()
+    }
     if self.keygenTimeout != 0 {
       try visitor.visitSingularInt64Field(value: self.keygenTimeout, fieldNumber: 10)
     }
@@ -868,13 +845,12 @@ extension Axelar_Tss_Exported_V1beta1_Signature: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sigID.isEmpty {
       try visitor.visitSingularStringField(value: self.sigID, fieldNumber: 1)
     }
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every case branch when no optimizations are
+    // enabled. https://github.com/apple/swift-protobuf/issues/1034
     switch self.sig {
     case .singleSig?: try {
       guard case .singleSig(let v)? = self.sig else { preconditionFailure() }
@@ -920,13 +896,9 @@ extension Axelar_Tss_Exported_V1beta1_Signature.SingleSig: SwiftProtobuf.Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._sigKeyPair {
+    if let v = self._sigKeyPair {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1028,10 +1000,6 @@ extension Axelar_Tss_Exported_V1beta1_Key: SwiftProtobuf.Message, SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.id.isEmpty {
       try visitor.visitSingularStringField(value: self.id, fieldNumber: 1)
     }
@@ -1041,6 +1009,9 @@ extension Axelar_Tss_Exported_V1beta1_Key: SwiftProtobuf.Message, SwiftProtobuf.
     if self.type != .unspecified {
       try visitor.visitSingularEnumField(value: self.type, fieldNumber: 3)
     }
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every case branch when no optimizations are
+    // enabled. https://github.com/apple/swift-protobuf/issues/1034
     switch self.publicKey {
     case .ecdsaKey?: try {
       guard case .ecdsaKey(let v)? = self.publicKey else { preconditionFailure() }
@@ -1052,9 +1023,9 @@ extension Axelar_Tss_Exported_V1beta1_Key: SwiftProtobuf.Message, SwiftProtobuf.
     }()
     case nil: break
     }
-    try { if let v = self._rotatedAt {
+    if let v = self._rotatedAt {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    } }()
+    }
     if self.rotationCount != 0 {
       try visitor.visitSingularInt64Field(value: self.rotationCount, fieldNumber: 7)
     }

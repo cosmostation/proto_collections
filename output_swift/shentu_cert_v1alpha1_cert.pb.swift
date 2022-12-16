@@ -313,24 +313,6 @@ struct Shentu_Cert_V1alpha1_KVPair {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Shentu_Cert_V1alpha1_CertificateType: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_Certifier: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_CompilationContent: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_Certificate: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_Library: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_Compilation: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_Auditing: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_Proof: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_OracleOperator: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_ShieldPoolCreator: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_Identity: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_General: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_Platform: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_CertifierUpdateProposal: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_KVPair: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "shentu.cert.v1alpha1"
@@ -463,19 +445,15 @@ extension Shentu_Cert_V1alpha1_Certificate: SwiftProtobuf.Message, SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.certificateID != 0 {
       try visitor.visitSingularUInt64Field(value: self.certificateID, fieldNumber: 1)
     }
-    try { if let v = self._content {
+    if let v = self._content {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
-    try { if let v = self._compilationContent {
+    }
+    if let v = self._compilationContent {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if !self.description_p.isEmpty {
       try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 4)
     }
@@ -779,13 +757,9 @@ extension Shentu_Cert_V1alpha1_Platform: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._validatorPubkey {
+    if let v = self._validatorPubkey {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.description_p.isEmpty {
       try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 2)
     }

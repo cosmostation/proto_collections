@@ -126,17 +126,6 @@ struct Cosmos_Distribution_V1beta1_MsgFundCommunityPoolResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Cosmos_Distribution_V1beta1_MsgSetWithdrawAddress: @unchecked Sendable {}
-extension Cosmos_Distribution_V1beta1_MsgSetWithdrawAddressResponse: @unchecked Sendable {}
-extension Cosmos_Distribution_V1beta1_MsgWithdrawDelegatorReward: @unchecked Sendable {}
-extension Cosmos_Distribution_V1beta1_MsgWithdrawDelegatorRewardResponse: @unchecked Sendable {}
-extension Cosmos_Distribution_V1beta1_MsgWithdrawValidatorCommission: @unchecked Sendable {}
-extension Cosmos_Distribution_V1beta1_MsgWithdrawValidatorCommissionResponse: @unchecked Sendable {}
-extension Cosmos_Distribution_V1beta1_MsgFundCommunityPool: @unchecked Sendable {}
-extension Cosmos_Distribution_V1beta1_MsgFundCommunityPoolResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.distribution.v1beta1"

@@ -334,19 +334,6 @@ struct Starnamed_X_Wasm_V1beta1_Model {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Starnamed_X_Wasm_V1beta1_AccessType: @unchecked Sendable {}
-extension Starnamed_X_Wasm_V1beta1_ContractCodeHistoryOperationType: @unchecked Sendable {}
-extension Starnamed_X_Wasm_V1beta1_AccessTypeParam: @unchecked Sendable {}
-extension Starnamed_X_Wasm_V1beta1_AccessConfig: @unchecked Sendable {}
-extension Starnamed_X_Wasm_V1beta1_Params: @unchecked Sendable {}
-extension Starnamed_X_Wasm_V1beta1_CodeInfo: @unchecked Sendable {}
-extension Starnamed_X_Wasm_V1beta1_ContractInfo: @unchecked Sendable {}
-extension Starnamed_X_Wasm_V1beta1_ContractCodeHistoryEntry: @unchecked Sendable {}
-extension Starnamed_X_Wasm_V1beta1_AbsoluteTxPosition: @unchecked Sendable {}
-extension Starnamed_X_Wasm_V1beta1_Model: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "starnamed.x.wasm.v1beta1"
@@ -462,13 +449,9 @@ extension Starnamed_X_Wasm_V1beta1_Params: SwiftProtobuf.Message, SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._codeUploadAccess {
+    if let v = self._codeUploadAccess {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if self.instantiateDefaultPermission != .unspecified {
       try visitor.visitSingularEnumField(value: self.instantiateDefaultPermission, fieldNumber: 2)
     }
@@ -510,19 +493,15 @@ extension Starnamed_X_Wasm_V1beta1_CodeInfo: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.codeHash.isEmpty {
       try visitor.visitSingularBytesField(value: self.codeHash, fieldNumber: 1)
     }
     if !self.creator.isEmpty {
       try visitor.visitSingularStringField(value: self.creator, fieldNumber: 2)
     }
-    try { if let v = self._instantiateConfig {
+    if let v = self._instantiateConfig {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -566,10 +545,6 @@ extension Starnamed_X_Wasm_V1beta1_ContractInfo: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.codeID != 0 {
       try visitor.visitSingularUInt64Field(value: self.codeID, fieldNumber: 1)
     }
@@ -582,15 +557,15 @@ extension Starnamed_X_Wasm_V1beta1_ContractInfo: SwiftProtobuf.Message, SwiftPro
     if !self.label.isEmpty {
       try visitor.visitSingularStringField(value: self.label, fieldNumber: 4)
     }
-    try { if let v = self._created {
+    if let v = self._created {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    } }()
+    }
     if !self.ibcPortID.isEmpty {
       try visitor.visitSingularStringField(value: self.ibcPortID, fieldNumber: 6)
     }
-    try { if let v = self._extension {
+    if let v = self._extension {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -632,19 +607,15 @@ extension Starnamed_X_Wasm_V1beta1_ContractCodeHistoryEntry: SwiftProtobuf.Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.operation != .unspecified {
       try visitor.visitSingularEnumField(value: self.operation, fieldNumber: 1)
     }
     if self.codeID != 0 {
       try visitor.visitSingularUInt64Field(value: self.codeID, fieldNumber: 2)
     }
-    try { if let v = self._updated {
+    if let v = self._updated {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if !self.msg.isEmpty {
       try visitor.visitSingularBytesField(value: self.msg, fieldNumber: 4)
     }

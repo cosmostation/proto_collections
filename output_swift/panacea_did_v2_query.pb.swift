@@ -56,11 +56,6 @@ struct Panacea_Did_V2_QueryDIDResponse {
   fileprivate var _didDocumentWithSeq: Panacea_Did_V2_DIDDocumentWithSeq? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Panacea_Did_V2_QueryDIDRequest: @unchecked Sendable {}
-extension Panacea_Did_V2_QueryDIDResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "panacea.did.v2"
@@ -116,13 +111,9 @@ extension Panacea_Did_V2_QueryDIDResponse: SwiftProtobuf.Message, SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._didDocumentWithSeq {
+    if let v = self._didDocumentWithSeq {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

@@ -352,24 +352,6 @@ struct Cosmos_Base_Tendermint_V1beta1_Module {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Cosmos_Base_Tendermint_V1beta1_GetValidatorSetByHeightRequest: @unchecked Sendable {}
-extension Cosmos_Base_Tendermint_V1beta1_GetValidatorSetByHeightResponse: @unchecked Sendable {}
-extension Cosmos_Base_Tendermint_V1beta1_GetLatestValidatorSetRequest: @unchecked Sendable {}
-extension Cosmos_Base_Tendermint_V1beta1_GetLatestValidatorSetResponse: @unchecked Sendable {}
-extension Cosmos_Base_Tendermint_V1beta1_Validator: @unchecked Sendable {}
-extension Cosmos_Base_Tendermint_V1beta1_GetBlockByHeightRequest: @unchecked Sendable {}
-extension Cosmos_Base_Tendermint_V1beta1_GetBlockByHeightResponse: @unchecked Sendable {}
-extension Cosmos_Base_Tendermint_V1beta1_GetLatestBlockRequest: @unchecked Sendable {}
-extension Cosmos_Base_Tendermint_V1beta1_GetLatestBlockResponse: @unchecked Sendable {}
-extension Cosmos_Base_Tendermint_V1beta1_GetSyncingRequest: @unchecked Sendable {}
-extension Cosmos_Base_Tendermint_V1beta1_GetSyncingResponse: @unchecked Sendable {}
-extension Cosmos_Base_Tendermint_V1beta1_GetNodeInfoRequest: @unchecked Sendable {}
-extension Cosmos_Base_Tendermint_V1beta1_GetNodeInfoResponse: @unchecked Sendable {}
-extension Cosmos_Base_Tendermint_V1beta1_VersionInfo: @unchecked Sendable {}
-extension Cosmos_Base_Tendermint_V1beta1_Module: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.base.tendermint.v1beta1"
@@ -395,16 +377,12 @@ extension Cosmos_Base_Tendermint_V1beta1_GetValidatorSetByHeightRequest: SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.height != 0 {
       try visitor.visitSingularInt64Field(value: self.height, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -439,19 +417,15 @@ extension Cosmos_Base_Tendermint_V1beta1_GetValidatorSetByHeightResponse: SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.blockHeight != 0 {
       try visitor.visitSingularInt64Field(value: self.blockHeight, fieldNumber: 1)
     }
     if !self.validators.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.validators, fieldNumber: 2)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -483,13 +457,9 @@ extension Cosmos_Base_Tendermint_V1beta1_GetLatestValidatorSetRequest: SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -523,19 +493,15 @@ extension Cosmos_Base_Tendermint_V1beta1_GetLatestValidatorSetResponse: SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.blockHeight != 0 {
       try visitor.visitSingularInt64Field(value: self.blockHeight, fieldNumber: 1)
     }
     if !self.validators.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.validators, fieldNumber: 2)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -573,16 +539,12 @@ extension Cosmos_Base_Tendermint_V1beta1_Validator: SwiftProtobuf.Message, Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.address.isEmpty {
       try visitor.visitSingularStringField(value: self.address, fieldNumber: 1)
     }
-    try { if let v = self._pubKey {
+    if let v = self._pubKey {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if self.votingPower != 0 {
       try visitor.visitSingularInt64Field(value: self.votingPower, fieldNumber: 3)
     }
@@ -655,16 +617,12 @@ extension Cosmos_Base_Tendermint_V1beta1_GetBlockByHeightResponse: SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._blockID {
+    if let v = self._blockID {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._block {
+    }
+    if let v = self._block {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -716,16 +674,12 @@ extension Cosmos_Base_Tendermint_V1beta1_GetLatestBlockResponse: SwiftProtobuf.M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._blockID {
+    if let v = self._blockID {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._block {
+    }
+    if let v = self._block {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -853,16 +807,12 @@ extension Cosmos_Base_Tendermint_V1beta1_GetNodeInfoResponse: SwiftProtobuf.Mess
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
-      try { if let v = _storage._nodeInfo {
+      if let v = _storage._nodeInfo {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      } }()
-      try { if let v = _storage._applicationVersion {
+      }
+      if let v = _storage._applicationVersion {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      } }()
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }

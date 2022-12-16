@@ -277,24 +277,6 @@ struct Axelar_Evm_V1beta1_BurnerInfoResponse {
   fileprivate var _burnerInfo: Axelar_Evm_V1beta1_BurnerInfo? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Axelar_Evm_V1beta1_DepositQueryParams: @unchecked Sendable {}
-extension Axelar_Evm_V1beta1_QueryBatchedCommandsResponse: @unchecked Sendable {}
-extension Axelar_Evm_V1beta1_QueryAddressResponse: @unchecked Sendable {}
-extension Axelar_Evm_V1beta1_QueryAddressResponse.OneOf_Address: @unchecked Sendable {}
-extension Axelar_Evm_V1beta1_QueryAddressResponse.MultisigAddresses: @unchecked Sendable {}
-extension Axelar_Evm_V1beta1_QueryAddressResponse.ThresholdAddress: @unchecked Sendable {}
-extension Axelar_Evm_V1beta1_QueryTokenAddressResponse: @unchecked Sendable {}
-extension Axelar_Evm_V1beta1_QueryDepositStateParams: @unchecked Sendable {}
-extension Axelar_Evm_V1beta1_QueryDepositStateResponse: @unchecked Sendable {}
-extension Axelar_Evm_V1beta1_QueryBurnerAddressResponse: @unchecked Sendable {}
-extension Axelar_Evm_V1beta1_QueryChainsResponse: @unchecked Sendable {}
-extension Axelar_Evm_V1beta1_QueryPendingCommandsResponse: @unchecked Sendable {}
-extension Axelar_Evm_V1beta1_QueryCommandResponse: @unchecked Sendable {}
-extension Axelar_Evm_V1beta1_BurnerInfoRequest: @unchecked Sendable {}
-extension Axelar_Evm_V1beta1_BurnerInfoResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "axelar.evm.v1beta1"
@@ -464,13 +446,12 @@ extension Axelar_Evm_V1beta1_QueryAddressResponse: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.keyID.isEmpty {
       try visitor.visitSingularStringField(value: self.keyID, fieldNumber: 1)
     }
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every case branch when no optimizations are
+    // enabled. https://github.com/apple/swift-protobuf/issues/1034
     switch self.address {
     case .multisigAddresses?: try {
       guard case .multisigAddresses(let v)? = self.address else { preconditionFailure() }
@@ -882,16 +863,12 @@ extension Axelar_Evm_V1beta1_BurnerInfoResponse: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.chain.isEmpty {
       try visitor.visitSingularStringField(value: self.chain, fieldNumber: 1)
     }
-    try { if let v = self._burnerInfo {
+    if let v = self._burnerInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

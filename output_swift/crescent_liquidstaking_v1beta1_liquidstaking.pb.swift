@@ -223,16 +223,6 @@ struct Crescent_Liquidstaking_V1beta1_VotingPower {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Crescent_Liquidstaking_V1beta1_ValidatorStatus: @unchecked Sendable {}
-extension Crescent_Liquidstaking_V1beta1_Params: @unchecked Sendable {}
-extension Crescent_Liquidstaking_V1beta1_WhitelistedValidator: @unchecked Sendable {}
-extension Crescent_Liquidstaking_V1beta1_LiquidValidator: @unchecked Sendable {}
-extension Crescent_Liquidstaking_V1beta1_LiquidValidatorState: @unchecked Sendable {}
-extension Crescent_Liquidstaking_V1beta1_NetAmountState: @unchecked Sendable {}
-extension Crescent_Liquidstaking_V1beta1_VotingPower: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "crescent.liquidstaking.v1beta1"

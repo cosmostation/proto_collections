@@ -115,13 +115,6 @@ struct Regen_Data_V1alpha2_MsgSignDataResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Regen_Data_V1alpha2_MsgAnchorData: @unchecked Sendable {}
-extension Regen_Data_V1alpha2_MsgAnchorDataResponse: @unchecked Sendable {}
-extension Regen_Data_V1alpha2_MsgSignData: @unchecked Sendable {}
-extension Regen_Data_V1alpha2_MsgSignDataResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "regen.data.v1alpha2"
@@ -147,16 +140,12 @@ extension Regen_Data_V1alpha2_MsgAnchorData: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularStringField(value: self.sender, fieldNumber: 1)
     }
-    try { if let v = self._hash {
+    if let v = self._hash {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -189,13 +178,9 @@ extension Regen_Data_V1alpha2_MsgAnchorDataResponse: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._timestamp {
+    if let v = self._timestamp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.iri.isEmpty {
       try visitor.visitSingularStringField(value: self.iri, fieldNumber: 2)
     }
@@ -231,16 +216,12 @@ extension Regen_Data_V1alpha2_MsgSignData: SwiftProtobuf.Message, SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.signers.isEmpty {
       try visitor.visitRepeatedStringField(value: self.signers, fieldNumber: 1)
     }
-    try { if let v = self._hash {
+    if let v = self._hash {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

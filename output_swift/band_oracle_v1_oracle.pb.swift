@@ -605,27 +605,6 @@ struct Band_Oracle_V1_PriceResult {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Band_Oracle_V1_ResolveStatus: @unchecked Sendable {}
-extension Band_Oracle_V1_DataSource: @unchecked Sendable {}
-extension Band_Oracle_V1_OracleScript: @unchecked Sendable {}
-extension Band_Oracle_V1_RawRequest: @unchecked Sendable {}
-extension Band_Oracle_V1_RawReport: @unchecked Sendable {}
-extension Band_Oracle_V1_Request: @unchecked Sendable {}
-extension Band_Oracle_V1_Report: @unchecked Sendable {}
-extension Band_Oracle_V1_OracleRequestPacketData: @unchecked Sendable {}
-extension Band_Oracle_V1_OracleRequestPacketAcknowledgement: @unchecked Sendable {}
-extension Band_Oracle_V1_OracleResponsePacketData: @unchecked Sendable {}
-extension Band_Oracle_V1_Result: @unchecked Sendable {}
-extension Band_Oracle_V1_ValidatorStatus: @unchecked Sendable {}
-extension Band_Oracle_V1_ActiveValidator: @unchecked Sendable {}
-extension Band_Oracle_V1_Params: @unchecked Sendable {}
-extension Band_Oracle_V1_PendingResolveList: @unchecked Sendable {}
-extension Band_Oracle_V1_IBCChannel: @unchecked Sendable {}
-extension Band_Oracle_V1_RequestVerification: @unchecked Sendable {}
-extension Band_Oracle_V1_PriceResult: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "band.oracle.v1"
@@ -888,10 +867,6 @@ extension Band_Oracle_V1_Request: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.oracleScriptID != 0 {
       try visitor.visitSingularUInt64Field(value: self.oracleScriptID, fieldNumber: 1)
     }
@@ -916,9 +891,9 @@ extension Band_Oracle_V1_Request: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     if !self.rawRequests.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.rawRequests, fieldNumber: 8)
     }
-    try { if let v = self._ibcChannel {
+    if let v = self._ibcChannel {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
-    } }()
+    }
     if self.executeGas != 0 {
       try visitor.visitSingularUInt64Field(value: self.executeGas, fieldNumber: 10)
     }
@@ -1272,16 +1247,12 @@ extension Band_Oracle_V1_ValidatorStatus: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.isActive != false {
       try visitor.visitSingularBoolField(value: self.isActive, fieldNumber: 1)
     }
-    try { if let v = self._since {
+    if let v = self._since {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

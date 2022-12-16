@@ -179,19 +179,6 @@ struct Bitsong_Nft_V1beta1_MsgBurnNFTResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Bitsong_Nft_V1beta1_MsgIssueDenom: @unchecked Sendable {}
-extension Bitsong_Nft_V1beta1_MsgIssueDenomResponse: @unchecked Sendable {}
-extension Bitsong_Nft_V1beta1_MsgTransferNFT: @unchecked Sendable {}
-extension Bitsong_Nft_V1beta1_MsgTransferNFTResponse: @unchecked Sendable {}
-extension Bitsong_Nft_V1beta1_MsgEditNFT: @unchecked Sendable {}
-extension Bitsong_Nft_V1beta1_MsgEditNFTResponse: @unchecked Sendable {}
-extension Bitsong_Nft_V1beta1_MsgMintNFT: @unchecked Sendable {}
-extension Bitsong_Nft_V1beta1_MsgMintNFTResponse: @unchecked Sendable {}
-extension Bitsong_Nft_V1beta1_MsgBurnNFT: @unchecked Sendable {}
-extension Bitsong_Nft_V1beta1_MsgBurnNFTResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "bitsong.nft.v1beta1"

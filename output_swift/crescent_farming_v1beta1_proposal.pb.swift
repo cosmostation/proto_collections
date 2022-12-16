@@ -174,13 +174,6 @@ struct Crescent_Farming_V1beta1_DeletePlanRequest {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Crescent_Farming_V1beta1_PublicPlanProposal: @unchecked Sendable {}
-extension Crescent_Farming_V1beta1_AddPlanRequest: @unchecked Sendable {}
-extension Crescent_Farming_V1beta1_ModifyPlanRequest: @unchecked Sendable {}
-extension Crescent_Farming_V1beta1_DeletePlanRequest: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "crescent.farming.v1beta1"
@@ -274,10 +267,6 @@ extension Crescent_Farming_V1beta1_AddPlanRequest: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
     }
@@ -290,12 +279,12 @@ extension Crescent_Farming_V1beta1_AddPlanRequest: SwiftProtobuf.Message, SwiftP
     if !self.stakingCoinWeights.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.stakingCoinWeights, fieldNumber: 4)
     }
-    try { if let v = self._startTime {
+    if let v = self._startTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    } }()
-    try { if let v = self._endTime {
+    }
+    if let v = self._endTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    } }()
+    }
     if !self.epochAmount.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.epochAmount, fieldNumber: 7)
     }
@@ -354,10 +343,6 @@ extension Crescent_Farming_V1beta1_ModifyPlanRequest: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.planID != 0 {
       try visitor.visitSingularUInt64Field(value: self.planID, fieldNumber: 1)
     }
@@ -373,12 +358,12 @@ extension Crescent_Farming_V1beta1_ModifyPlanRequest: SwiftProtobuf.Message, Swi
     if !self.stakingCoinWeights.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.stakingCoinWeights, fieldNumber: 5)
     }
-    try { if let v = self._startTime {
+    if let v = self._startTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    } }()
-    try { if let v = self._endTime {
+    }
+    if let v = self._endTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-    } }()
+    }
     if !self.epochAmount.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.epochAmount, fieldNumber: 8)
     }

@@ -158,14 +158,6 @@ struct Irismod_Coinswap_PoolInfo {
   fileprivate var _lpt: Cosmos_Base_V1beta1_Coin? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Irismod_Coinswap_QueryLiquidityPoolRequest: @unchecked Sendable {}
-extension Irismod_Coinswap_QueryLiquidityPoolResponse: @unchecked Sendable {}
-extension Irismod_Coinswap_QueryLiquidityPoolsRequest: @unchecked Sendable {}
-extension Irismod_Coinswap_QueryLiquidityPoolsResponse: @unchecked Sendable {}
-extension Irismod_Coinswap_PoolInfo: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "irismod.coinswap"
@@ -221,13 +213,9 @@ extension Irismod_Coinswap_QueryLiquidityPoolResponse: SwiftProtobuf.Message, Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pool {
+    if let v = self._pool {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -257,13 +245,9 @@ extension Irismod_Coinswap_QueryLiquidityPoolsRequest: SwiftProtobuf.Message, Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -295,16 +279,12 @@ extension Irismod_Coinswap_QueryLiquidityPoolsResponse: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.pools.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.pools, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -345,25 +325,21 @@ extension Irismod_Coinswap_PoolInfo: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.id.isEmpty {
       try visitor.visitSingularStringField(value: self.id, fieldNumber: 1)
     }
     if !self.escrowAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.escrowAddress, fieldNumber: 2)
     }
-    try { if let v = self._standard {
+    if let v = self._standard {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
-    try { if let v = self._token {
+    }
+    if let v = self._token {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
-    try { if let v = self._lpt {
+    }
+    if let v = self._lpt {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    } }()
+    }
     if !self.fee.isEmpty {
       try visitor.visitSingularStringField(value: self.fee, fieldNumber: 6)
     }

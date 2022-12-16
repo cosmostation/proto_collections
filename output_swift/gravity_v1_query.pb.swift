@@ -761,58 +761,6 @@ struct Gravity_V1_UnbatchedSendToEthereumsResponse {
   fileprivate var _pagination: Cosmos_Base_Query_V1beta1_PageResponse? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Gravity_V1_ParamsRequest: @unchecked Sendable {}
-extension Gravity_V1_ParamsResponse: @unchecked Sendable {}
-extension Gravity_V1_SignerSetTxRequest: @unchecked Sendable {}
-extension Gravity_V1_LatestSignerSetTxRequest: @unchecked Sendable {}
-extension Gravity_V1_SignerSetTxResponse: @unchecked Sendable {}
-extension Gravity_V1_BatchTxRequest: @unchecked Sendable {}
-extension Gravity_V1_BatchTxResponse: @unchecked Sendable {}
-extension Gravity_V1_ContractCallTxRequest: @unchecked Sendable {}
-extension Gravity_V1_ContractCallTxResponse: @unchecked Sendable {}
-extension Gravity_V1_SignerSetTxConfirmationsRequest: @unchecked Sendable {}
-extension Gravity_V1_SignerSetTxConfirmationsResponse: @unchecked Sendable {}
-extension Gravity_V1_SignerSetTxsRequest: @unchecked Sendable {}
-extension Gravity_V1_SignerSetTxsResponse: @unchecked Sendable {}
-extension Gravity_V1_BatchTxsRequest: @unchecked Sendable {}
-extension Gravity_V1_BatchTxsResponse: @unchecked Sendable {}
-extension Gravity_V1_ContractCallTxsRequest: @unchecked Sendable {}
-extension Gravity_V1_ContractCallTxsResponse: @unchecked Sendable {}
-extension Gravity_V1_UnsignedSignerSetTxsRequest: @unchecked Sendable {}
-extension Gravity_V1_UnsignedSignerSetTxsResponse: @unchecked Sendable {}
-extension Gravity_V1_UnsignedBatchTxsRequest: @unchecked Sendable {}
-extension Gravity_V1_UnsignedBatchTxsResponse: @unchecked Sendable {}
-extension Gravity_V1_UnsignedContractCallTxsRequest: @unchecked Sendable {}
-extension Gravity_V1_UnsignedContractCallTxsResponse: @unchecked Sendable {}
-extension Gravity_V1_BatchTxFeesRequest: @unchecked Sendable {}
-extension Gravity_V1_BatchTxFeesResponse: @unchecked Sendable {}
-extension Gravity_V1_ContractCallTxConfirmationsRequest: @unchecked Sendable {}
-extension Gravity_V1_ContractCallTxConfirmationsResponse: @unchecked Sendable {}
-extension Gravity_V1_BatchTxConfirmationsRequest: @unchecked Sendable {}
-extension Gravity_V1_BatchTxConfirmationsResponse: @unchecked Sendable {}
-extension Gravity_V1_LastSubmittedEthereumEventRequest: @unchecked Sendable {}
-extension Gravity_V1_LastSubmittedEthereumEventResponse: @unchecked Sendable {}
-extension Gravity_V1_ERC20ToDenomRequest: @unchecked Sendable {}
-extension Gravity_V1_ERC20ToDenomResponse: @unchecked Sendable {}
-extension Gravity_V1_DenomToERC20ParamsRequest: @unchecked Sendable {}
-extension Gravity_V1_DenomToERC20ParamsResponse: @unchecked Sendable {}
-extension Gravity_V1_DenomToERC20Request: @unchecked Sendable {}
-extension Gravity_V1_DenomToERC20Response: @unchecked Sendable {}
-extension Gravity_V1_DelegateKeysByValidatorRequest: @unchecked Sendable {}
-extension Gravity_V1_DelegateKeysByValidatorResponse: @unchecked Sendable {}
-extension Gravity_V1_DelegateKeysByEthereumSignerRequest: @unchecked Sendable {}
-extension Gravity_V1_DelegateKeysByEthereumSignerResponse: @unchecked Sendable {}
-extension Gravity_V1_DelegateKeysByOrchestratorRequest: @unchecked Sendable {}
-extension Gravity_V1_DelegateKeysByOrchestratorResponse: @unchecked Sendable {}
-extension Gravity_V1_DelegateKeysRequest: @unchecked Sendable {}
-extension Gravity_V1_DelegateKeysResponse: @unchecked Sendable {}
-extension Gravity_V1_BatchedSendToEthereumsRequest: @unchecked Sendable {}
-extension Gravity_V1_BatchedSendToEthereumsResponse: @unchecked Sendable {}
-extension Gravity_V1_UnbatchedSendToEthereumsRequest: @unchecked Sendable {}
-extension Gravity_V1_UnbatchedSendToEthereumsResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "gravity.v1"
@@ -855,13 +803,9 @@ extension Gravity_V1_ParamsResponse: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -942,13 +886,9 @@ extension Gravity_V1_SignerSetTxResponse: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._signerSet {
+    if let v = self._signerSet {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1016,13 +956,9 @@ extension Gravity_V1_BatchTxResponse: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._batch {
+    if let v = self._batch {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1090,13 +1026,9 @@ extension Gravity_V1_ContractCallTxResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._logicCall {
+    if let v = self._logicCall {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1190,13 +1122,9 @@ extension Gravity_V1_SignerSetTxsRequest: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1228,16 +1156,12 @@ extension Gravity_V1_SignerSetTxsResponse: SwiftProtobuf.Message, SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.signerSets.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.signerSets, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1268,13 +1192,9 @@ extension Gravity_V1_BatchTxsRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1306,16 +1226,12 @@ extension Gravity_V1_BatchTxsResponse: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.batches.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.batches, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1346,13 +1262,9 @@ extension Gravity_V1_ContractCallTxsRequest: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1384,16 +1296,12 @@ extension Gravity_V1_ContractCallTxsResponse: SwiftProtobuf.Message, SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.calls.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.calls, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2420,16 +2328,12 @@ extension Gravity_V1_UnbatchedSendToEthereumsRequest: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.senderAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.senderAddress, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2462,16 +2366,12 @@ extension Gravity_V1_UnbatchedSendToEthereumsResponse: SwiftProtobuf.Message, Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sendToEthereums.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.sendToEthereums, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

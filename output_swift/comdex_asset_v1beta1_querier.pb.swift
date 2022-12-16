@@ -227,20 +227,6 @@ struct Comdex_Asset_V1beta1_QueryParamsResponse {
   fileprivate var _params: Comdex_Asset_V1beta1_Params? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Comdex_Asset_V1beta1_QueryAssetsRequest: @unchecked Sendable {}
-extension Comdex_Asset_V1beta1_QueryAssetsResponse: @unchecked Sendable {}
-extension Comdex_Asset_V1beta1_QueryAssetRequest: @unchecked Sendable {}
-extension Comdex_Asset_V1beta1_QueryAssetResponse: @unchecked Sendable {}
-extension Comdex_Asset_V1beta1_PairInfo: @unchecked Sendable {}
-extension Comdex_Asset_V1beta1_QueryPairsRequest: @unchecked Sendable {}
-extension Comdex_Asset_V1beta1_QueryPairsResponse: @unchecked Sendable {}
-extension Comdex_Asset_V1beta1_QueryPairRequest: @unchecked Sendable {}
-extension Comdex_Asset_V1beta1_QueryPairResponse: @unchecked Sendable {}
-extension Comdex_Asset_V1beta1_QueryParamsRequest: @unchecked Sendable {}
-extension Comdex_Asset_V1beta1_QueryParamsResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "comdex.asset.v1beta1"
@@ -264,13 +250,9 @@ extension Comdex_Asset_V1beta1_QueryAssetsRequest: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -302,16 +284,12 @@ extension Comdex_Asset_V1beta1_QueryAssetsResponse: SwiftProtobuf.Message, Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.assets.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.assets, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -374,13 +352,9 @@ extension Comdex_Asset_V1beta1_QueryAssetResponse: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._asset {
+    if let v = self._asset {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -472,13 +446,9 @@ extension Comdex_Asset_V1beta1_QueryPairsRequest: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -510,16 +480,12 @@ extension Comdex_Asset_V1beta1_QueryPairsResponse: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.pairsInfo.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.pairsInfo, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -582,13 +548,9 @@ extension Comdex_Asset_V1beta1_QueryPairResponse: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pairInfo {
+    if let v = self._pairInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -637,13 +599,9 @@ extension Comdex_Asset_V1beta1_QueryParamsResponse: SwiftProtobuf.Message, Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

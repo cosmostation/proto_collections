@@ -112,15 +112,6 @@ struct Kava_Bep3_V1beta1_MsgRefundAtomicSwapResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Kava_Bep3_V1beta1_MsgCreateAtomicSwap: @unchecked Sendable {}
-extension Kava_Bep3_V1beta1_MsgCreateAtomicSwapResponse: @unchecked Sendable {}
-extension Kava_Bep3_V1beta1_MsgClaimAtomicSwap: @unchecked Sendable {}
-extension Kava_Bep3_V1beta1_MsgClaimAtomicSwapResponse: @unchecked Sendable {}
-extension Kava_Bep3_V1beta1_MsgRefundAtomicSwap: @unchecked Sendable {}
-extension Kava_Bep3_V1beta1_MsgRefundAtomicSwapResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kava.bep3.v1beta1"

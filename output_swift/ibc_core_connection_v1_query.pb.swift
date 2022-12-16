@@ -293,19 +293,6 @@ struct Ibc_Core_Connection_V1_QueryConnectionConsensusStateResponse {
   fileprivate var _proofHeight: Ibc_Core_Client_V1_Height? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Ibc_Core_Connection_V1_QueryConnectionRequest: @unchecked Sendable {}
-extension Ibc_Core_Connection_V1_QueryConnectionResponse: @unchecked Sendable {}
-extension Ibc_Core_Connection_V1_QueryConnectionsRequest: @unchecked Sendable {}
-extension Ibc_Core_Connection_V1_QueryConnectionsResponse: @unchecked Sendable {}
-extension Ibc_Core_Connection_V1_QueryClientConnectionsRequest: @unchecked Sendable {}
-extension Ibc_Core_Connection_V1_QueryClientConnectionsResponse: @unchecked Sendable {}
-extension Ibc_Core_Connection_V1_QueryConnectionClientStateRequest: @unchecked Sendable {}
-extension Ibc_Core_Connection_V1_QueryConnectionClientStateResponse: @unchecked Sendable {}
-extension Ibc_Core_Connection_V1_QueryConnectionConsensusStateRequest: @unchecked Sendable {}
-extension Ibc_Core_Connection_V1_QueryConnectionConsensusStateResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "ibc.core.connection.v1"
@@ -365,19 +352,15 @@ extension Ibc_Core_Connection_V1_QueryConnectionResponse: SwiftProtobuf.Message,
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._connection {
+    if let v = self._connection {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.proof.isEmpty {
       try visitor.visitSingularBytesField(value: self.proof, fieldNumber: 2)
     }
-    try { if let v = self._proofHeight {
+    if let v = self._proofHeight {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -409,13 +392,9 @@ extension Ibc_Core_Connection_V1_QueryConnectionsRequest: SwiftProtobuf.Message,
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -449,19 +428,15 @@ extension Ibc_Core_Connection_V1_QueryConnectionsResponse: SwiftProtobuf.Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.connections.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.connections, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
-    try { if let v = self._height {
+    }
+    if let v = self._height {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -529,19 +504,15 @@ extension Ibc_Core_Connection_V1_QueryClientConnectionsResponse: SwiftProtobuf.M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.connectionPaths.isEmpty {
       try visitor.visitRepeatedStringField(value: self.connectionPaths, fieldNumber: 1)
     }
     if !self.proof.isEmpty {
       try visitor.visitSingularBytesField(value: self.proof, fieldNumber: 2)
     }
-    try { if let v = self._proofHeight {
+    if let v = self._proofHeight {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -609,19 +580,15 @@ extension Ibc_Core_Connection_V1_QueryConnectionClientStateResponse: SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._identifiedClientState {
+    if let v = self._identifiedClientState {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.proof.isEmpty {
       try visitor.visitSingularBytesField(value: self.proof, fieldNumber: 2)
     }
-    try { if let v = self._proofHeight {
+    if let v = self._proofHeight {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -703,22 +670,18 @@ extension Ibc_Core_Connection_V1_QueryConnectionConsensusStateResponse: SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._consensusState {
+    if let v = self._consensusState {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.clientID.isEmpty {
       try visitor.visitSingularStringField(value: self.clientID, fieldNumber: 2)
     }
     if !self.proof.isEmpty {
       try visitor.visitSingularBytesField(value: self.proof, fieldNumber: 3)
     }
-    try { if let v = self._proofHeight {
+    if let v = self._proofHeight {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

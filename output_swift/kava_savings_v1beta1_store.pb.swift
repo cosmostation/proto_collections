@@ -48,11 +48,6 @@ struct Kava_Savings_V1beta1_Deposit {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Kava_Savings_V1beta1_Params: @unchecked Sendable {}
-extension Kava_Savings_V1beta1_Deposit: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kava.savings.v1beta1"

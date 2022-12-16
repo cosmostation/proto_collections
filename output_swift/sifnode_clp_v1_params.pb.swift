@@ -125,15 +125,6 @@ struct Sifnode_Clp_V1_PoolMultiplier {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Sifnode_Clp_V1_Params: @unchecked Sendable {}
-extension Sifnode_Clp_V1_RewardParams: @unchecked Sendable {}
-extension Sifnode_Clp_V1_PmtpRateParams: @unchecked Sendable {}
-extension Sifnode_Clp_V1_PmtpParams: @unchecked Sendable {}
-extension Sifnode_Clp_V1_RewardPeriod: @unchecked Sendable {}
-extension Sifnode_Clp_V1_PoolMultiplier: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "sifnode.clp.v1"

@@ -60,10 +60,6 @@ struct Injective_Auction_V1beta1_GenesisState {
   fileprivate var _highestBid: Injective_Auction_V1beta1_Bid? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Injective_Auction_V1beta1_GenesisState: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "injective.auction.v1beta1"
@@ -93,19 +89,15 @@ extension Injective_Auction_V1beta1_GenesisState: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if self.auctionRound != 0 {
       try visitor.visitSingularUInt64Field(value: self.auctionRound, fieldNumber: 2)
     }
-    try { if let v = self._highestBid {
+    if let v = self._highestBid {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if self.auctionEndingTimestamp != 0 {
       try visitor.visitSingularInt64Field(value: self.auctionEndingTimestamp, fieldNumber: 4)
     }

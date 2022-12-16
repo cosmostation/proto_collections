@@ -357,12 +357,6 @@ struct Starnamed_X_Configuration_V1beta1_GenesisState {
   fileprivate var _fees: Starnamed_X_Configuration_V1beta1_Fees? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Starnamed_X_Configuration_V1beta1_Config: @unchecked Sendable {}
-extension Starnamed_X_Configuration_V1beta1_Fees: @unchecked Sendable {}
-extension Starnamed_X_Configuration_V1beta1_GenesisState: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "starnamed.x.configuration.v1beta1"
@@ -477,10 +471,6 @@ extension Starnamed_X_Configuration_V1beta1_Config: SwiftProtobuf.Message, Swift
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
       if !_storage._configurer.isEmpty {
         try visitor.visitSingularStringField(value: _storage._configurer, fieldNumber: 1)
       }
@@ -496,24 +486,24 @@ extension Starnamed_X_Configuration_V1beta1_Config: SwiftProtobuf.Message, Swift
       if !_storage._validResource.isEmpty {
         try visitor.visitSingularStringField(value: _storage._validResource, fieldNumber: 5)
       }
-      try { if let v = _storage._domainRenewalPeriod {
+      if let v = _storage._domainRenewalPeriod {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-      } }()
+      }
       if _storage._domainRenewalCountMax != 0 {
         try visitor.visitSingularUInt32Field(value: _storage._domainRenewalCountMax, fieldNumber: 7)
       }
-      try { if let v = _storage._domainGracePeriod {
+      if let v = _storage._domainGracePeriod {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
-      } }()
-      try { if let v = _storage._accountRenewalPeriod {
+      }
+      if let v = _storage._accountRenewalPeriod {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
-      } }()
+      }
       if _storage._accountRenewalCountMax != 0 {
         try visitor.visitSingularUInt32Field(value: _storage._accountRenewalCountMax, fieldNumber: 10)
       }
-      try { if let v = _storage._accountGracePeriod {
+      if let v = _storage._accountGracePeriod {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
-      } }()
+      }
       if _storage._resourcesMax != 0 {
         try visitor.visitSingularUInt32Field(value: _storage._resourcesMax, fieldNumber: 12)
       }
@@ -532,9 +522,9 @@ extension Starnamed_X_Configuration_V1beta1_Config: SwiftProtobuf.Message, Swift
       if !_storage._escrowCommission.isEmpty {
         try visitor.visitSingularStringField(value: _storage._escrowCommission, fieldNumber: 17)
       }
-      try { if let v = _storage._escrowMaxPeriod {
+      if let v = _storage._escrowMaxPeriod {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 18)
-      } }()
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -848,16 +838,12 @@ extension Starnamed_X_Configuration_V1beta1_GenesisState: SwiftProtobuf.Message,
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._config {
+    if let v = self._config {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._fees {
+    }
+    if let v = self._fees {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

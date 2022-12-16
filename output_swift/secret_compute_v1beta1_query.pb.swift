@@ -318,28 +318,6 @@ struct Secret_Compute_V1beta1_DecryptedAnswer {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Secret_Compute_V1beta1_QueryContractInfoRequest: @unchecked Sendable {}
-extension Secret_Compute_V1beta1_QueryContractInfoResponse: @unchecked Sendable {}
-extension Secret_Compute_V1beta1_QueryContractHistoryRequest: @unchecked Sendable {}
-extension Secret_Compute_V1beta1_QueryContractsByCodeRequest: @unchecked Sendable {}
-extension Secret_Compute_V1beta1_ContractInfoWithAddress: @unchecked Sendable {}
-extension Secret_Compute_V1beta1_QueryContractsByCodeResponse: @unchecked Sendable {}
-extension Secret_Compute_V1beta1_QuerySmartContractStateRequest: @unchecked Sendable {}
-extension Secret_Compute_V1beta1_QueryContractAddressByLabelRequest: @unchecked Sendable {}
-extension Secret_Compute_V1beta1_QueryContractKeyRequest: @unchecked Sendable {}
-extension Secret_Compute_V1beta1_QueryContractHashRequest: @unchecked Sendable {}
-extension Secret_Compute_V1beta1_QuerySmartContractStateResponse: @unchecked Sendable {}
-extension Secret_Compute_V1beta1_QueryCodeRequest: @unchecked Sendable {}
-extension Secret_Compute_V1beta1_CodeInfoResponse: @unchecked Sendable {}
-extension Secret_Compute_V1beta1_QueryCodeResponse: @unchecked Sendable {}
-extension Secret_Compute_V1beta1_QueryCodesResponse: @unchecked Sendable {}
-extension Secret_Compute_V1beta1_QueryContractAddressByLabelResponse: @unchecked Sendable {}
-extension Secret_Compute_V1beta1_QueryContractKeyResponse: @unchecked Sendable {}
-extension Secret_Compute_V1beta1_QueryContractHashResponse: @unchecked Sendable {}
-extension Secret_Compute_V1beta1_DecryptedAnswer: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "secret.compute.v1beta1"
@@ -397,16 +375,12 @@ extension Secret_Compute_V1beta1_QueryContractInfoResponse: SwiftProtobuf.Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.address.isEmpty {
       try visitor.visitSingularBytesField(value: self.address, fieldNumber: 1)
     }
-    try { if let v = self._contractInfo {
+    if let v = self._contractInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -503,16 +477,12 @@ extension Secret_Compute_V1beta1_ContractInfoWithAddress: SwiftProtobuf.Message,
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.address.isEmpty {
       try visitor.visitSingularBytesField(value: self.address, fieldNumber: 1)
     }
-    try { if let v = self._contractInfo {
+    if let v = self._contractInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -831,13 +801,9 @@ extension Secret_Compute_V1beta1_QueryCodeResponse: SwiftProtobuf.Message, Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._codeInfo {
+    if let v = self._codeInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.data.isEmpty {
       try visitor.visitSingularBytesField(value: self.data, fieldNumber: 2)
     }

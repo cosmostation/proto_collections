@@ -55,11 +55,6 @@ struct Cosmos_Params_V1beta1_ParamChange {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Cosmos_Params_V1beta1_ParameterChangeProposal: @unchecked Sendable {}
-extension Cosmos_Params_V1beta1_ParamChange: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.params.v1beta1"

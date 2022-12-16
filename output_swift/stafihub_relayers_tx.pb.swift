@@ -104,15 +104,6 @@ struct Stafihub_Stafihub_Relayers_MsgSetThresholdResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Stafihub_Stafihub_Relayers_MsgAddRelayer: @unchecked Sendable {}
-extension Stafihub_Stafihub_Relayers_MsgAddRelayerResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Relayers_MsgDeleteRelayer: @unchecked Sendable {}
-extension Stafihub_Stafihub_Relayers_MsgDeleteRelayerResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Relayers_MsgSetThreshold: @unchecked Sendable {}
-extension Stafihub_Stafihub_Relayers_MsgSetThresholdResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stafihub.stafihub.relayers"

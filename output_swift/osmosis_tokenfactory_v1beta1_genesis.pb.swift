@@ -71,11 +71,6 @@ struct Osmosis_Tokenfactory_V1beta1_GenesisDenom {
   fileprivate var _authorityMetadata: Osmosis_Tokenfactory_V1beta1_DenomAuthorityMetadata? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Osmosis_Tokenfactory_V1beta1_GenesisState: @unchecked Sendable {}
-extension Osmosis_Tokenfactory_V1beta1_GenesisDenom: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "osmosis.tokenfactory.v1beta1"
@@ -101,13 +96,9 @@ extension Osmosis_Tokenfactory_V1beta1_GenesisState: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.factoryDenoms.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.factoryDenoms, fieldNumber: 2)
     }
@@ -143,16 +134,12 @@ extension Osmosis_Tokenfactory_V1beta1_GenesisDenom: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.denom.isEmpty {
       try visitor.visitSingularStringField(value: self.denom, fieldNumber: 1)
     }
-    try { if let v = self._authorityMetadata {
+    if let v = self._authorityMetadata {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

@@ -419,35 +419,6 @@ struct Umeenetwork_Umee_Oracle_V1beta1_QueryParamsResponse {
   fileprivate var _params: Umeenetwork_Umee_Oracle_V1beta1_Params? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Umeenetwork_Umee_Oracle_V1beta1_QueryExchangeRateRequest: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_QueryExchangeRateResponse: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_QueryExchangeRatesRequest: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_QueryExchangeRatesResponse: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_QueryTobinTaxRequest: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_QueryTobinTaxResponse: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_QueryTobinTaxesRequest: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_QueryTobinTaxesResponse: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_QueryActivesRequest: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_QueryActivesResponse: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_QueryVoteTargetsRequest: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_QueryVoteTargetsResponse: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_QueryFeederDelegationRequest: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_QueryFeederDelegationResponse: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_QueryMissCounterRequest: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_QueryMissCounterResponse: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_QueryAggregatePrevoteRequest: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_QueryAggregatePrevoteResponse: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_QueryAggregatePrevotesRequest: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_QueryAggregatePrevotesResponse: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_QueryAggregateVoteRequest: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_QueryAggregateVoteResponse: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_QueryAggregateVotesRequest: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_QueryAggregateVotesResponse: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_QueryParamsRequest: @unchecked Sendable {}
-extension Umeenetwork_Umee_Oracle_V1beta1_QueryParamsResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "umeenetwork.umee.oracle.v1beta1"
@@ -963,13 +934,9 @@ extension Umeenetwork_Umee_Oracle_V1beta1_QueryAggregatePrevoteResponse: SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._aggregatePrevote {
+    if let v = self._aggregatePrevote {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1082,13 +1049,9 @@ extension Umeenetwork_Umee_Oracle_V1beta1_QueryAggregateVoteResponse: SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._aggregateVote {
+    if let v = self._aggregateVote {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1188,13 +1151,9 @@ extension Umeenetwork_Umee_Oracle_V1beta1_QueryParamsResponse: SwiftProtobuf.Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

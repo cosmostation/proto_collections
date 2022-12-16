@@ -33,10 +33,6 @@ struct Akash_Base_V1beta2_ResourceValue {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Akash_Base_V1beta2_ResourceValue: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "akash.base.v1beta2"

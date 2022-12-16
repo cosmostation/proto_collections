@@ -256,18 +256,6 @@ struct Cosmwasm_Wasm_V1_UnpinCodesProposal {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Cosmwasm_Wasm_V1_StoreCodeProposal: @unchecked Sendable {}
-extension Cosmwasm_Wasm_V1_InstantiateContractProposal: @unchecked Sendable {}
-extension Cosmwasm_Wasm_V1_MigrateContractProposal: @unchecked Sendable {}
-extension Cosmwasm_Wasm_V1_SudoContractProposal: @unchecked Sendable {}
-extension Cosmwasm_Wasm_V1_ExecuteContractProposal: @unchecked Sendable {}
-extension Cosmwasm_Wasm_V1_UpdateAdminProposal: @unchecked Sendable {}
-extension Cosmwasm_Wasm_V1_ClearAdminProposal: @unchecked Sendable {}
-extension Cosmwasm_Wasm_V1_PinCodesProposal: @unchecked Sendable {}
-extension Cosmwasm_Wasm_V1_UnpinCodesProposal: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmwasm.wasm.v1"
@@ -299,10 +287,6 @@ extension Cosmwasm_Wasm_V1_StoreCodeProposal: SwiftProtobuf.Message, SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.title.isEmpty {
       try visitor.visitSingularStringField(value: self.title, fieldNumber: 1)
     }
@@ -315,9 +299,9 @@ extension Cosmwasm_Wasm_V1_StoreCodeProposal: SwiftProtobuf.Message, SwiftProtob
     if !self.wasmByteCode.isEmpty {
       try visitor.visitSingularBytesField(value: self.wasmByteCode, fieldNumber: 4)
     }
-    try { if let v = self._instantiatePermission {
+    if let v = self._instantiatePermission {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

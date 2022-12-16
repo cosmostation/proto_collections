@@ -112,13 +112,6 @@ struct Osmosis_Incentives_MsgAddToGaugeResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Osmosis_Incentives_MsgCreateGauge: @unchecked Sendable {}
-extension Osmosis_Incentives_MsgCreateGaugeResponse: @unchecked Sendable {}
-extension Osmosis_Incentives_MsgAddToGauge: @unchecked Sendable {}
-extension Osmosis_Incentives_MsgAddToGaugeResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "osmosis.incentives"
@@ -152,25 +145,21 @@ extension Osmosis_Incentives_MsgCreateGauge: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.isPerpetual != false {
       try visitor.visitSingularBoolField(value: self.isPerpetual, fieldNumber: 1)
     }
     if !self.owner.isEmpty {
       try visitor.visitSingularStringField(value: self.owner, fieldNumber: 2)
     }
-    try { if let v = self._distributeTo {
+    if let v = self._distributeTo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if !self.coins.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.coins, fieldNumber: 4)
     }
-    try { if let v = self._startTime {
+    if let v = self._startTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    } }()
+    }
     if self.numEpochsPaidOver != 0 {
       try visitor.visitSingularUInt64Field(value: self.numEpochsPaidOver, fieldNumber: 6)
     }

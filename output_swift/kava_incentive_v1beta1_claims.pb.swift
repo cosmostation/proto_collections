@@ -261,21 +261,6 @@ struct Kava_Incentive_V1beta1_EarnClaim {
   fileprivate var _baseClaim: Kava_Incentive_V1beta1_BaseMultiClaim? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Kava_Incentive_V1beta1_BaseClaim: @unchecked Sendable {}
-extension Kava_Incentive_V1beta1_BaseMultiClaim: @unchecked Sendable {}
-extension Kava_Incentive_V1beta1_RewardIndex: @unchecked Sendable {}
-extension Kava_Incentive_V1beta1_RewardIndexesProto: @unchecked Sendable {}
-extension Kava_Incentive_V1beta1_MultiRewardIndex: @unchecked Sendable {}
-extension Kava_Incentive_V1beta1_MultiRewardIndexesProto: @unchecked Sendable {}
-extension Kava_Incentive_V1beta1_USDXMintingClaim: @unchecked Sendable {}
-extension Kava_Incentive_V1beta1_HardLiquidityProviderClaim: @unchecked Sendable {}
-extension Kava_Incentive_V1beta1_DelegatorClaim: @unchecked Sendable {}
-extension Kava_Incentive_V1beta1_SwapClaim: @unchecked Sendable {}
-extension Kava_Incentive_V1beta1_SavingsClaim: @unchecked Sendable {}
-extension Kava_Incentive_V1beta1_EarnClaim: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kava.incentive.v1beta1"
@@ -301,16 +286,12 @@ extension Kava_Incentive_V1beta1_BaseClaim: SwiftProtobuf.Message, SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.owner.isEmpty {
       try visitor.visitSingularBytesField(value: self.owner, fieldNumber: 1)
     }
-    try { if let v = self._reward {
+    if let v = self._reward {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -521,13 +502,9 @@ extension Kava_Incentive_V1beta1_USDXMintingClaim: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseClaim {
+    if let v = self._baseClaim {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.rewardIndexes.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.rewardIndexes, fieldNumber: 2)
     }
@@ -565,13 +542,9 @@ extension Kava_Incentive_V1beta1_HardLiquidityProviderClaim: SwiftProtobuf.Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseClaim {
+    if let v = self._baseClaim {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.supplyRewardIndexes.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.supplyRewardIndexes, fieldNumber: 2)
     }
@@ -611,13 +584,9 @@ extension Kava_Incentive_V1beta1_DelegatorClaim: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseClaim {
+    if let v = self._baseClaim {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.rewardIndexes.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.rewardIndexes, fieldNumber: 2)
     }
@@ -653,13 +622,9 @@ extension Kava_Incentive_V1beta1_SwapClaim: SwiftProtobuf.Message, SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseClaim {
+    if let v = self._baseClaim {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.rewardIndexes.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.rewardIndexes, fieldNumber: 2)
     }
@@ -695,13 +660,9 @@ extension Kava_Incentive_V1beta1_SavingsClaim: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseClaim {
+    if let v = self._baseClaim {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.rewardIndexes.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.rewardIndexes, fieldNumber: 2)
     }
@@ -737,13 +698,9 @@ extension Kava_Incentive_V1beta1_EarnClaim: SwiftProtobuf.Message, SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseClaim {
+    if let v = self._baseClaim {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.rewardIndexes.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.rewardIndexes, fieldNumber: 2)
     }

@@ -312,16 +312,6 @@ struct Irismod_Htlc_SupplyLimit {
   fileprivate var _timePeriod: SwiftProtobuf.Google_Protobuf_Duration? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Irismod_Htlc_HTLCState: @unchecked Sendable {}
-extension Irismod_Htlc_SwapDirection: @unchecked Sendable {}
-extension Irismod_Htlc_HTLC: @unchecked Sendable {}
-extension Irismod_Htlc_AssetSupply: @unchecked Sendable {}
-extension Irismod_Htlc_Params: @unchecked Sendable {}
-extension Irismod_Htlc_AssetParam: @unchecked Sendable {}
-extension Irismod_Htlc_SupplyLimit: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "irismod.htlc"
@@ -479,25 +469,21 @@ extension Irismod_Htlc_AssetSupply: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._incomingSupply {
+    if let v = self._incomingSupply {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._outgoingSupply {
+    }
+    if let v = self._outgoingSupply {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
-    try { if let v = self._currentSupply {
+    }
+    if let v = self._currentSupply {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
-    try { if let v = self._timeLimitedCurrentSupply {
+    }
+    if let v = self._timeLimitedCurrentSupply {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
-    try { if let v = self._timeElapsed {
+    }
+    if let v = self._timeElapsed {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -579,16 +565,12 @@ extension Irismod_Htlc_AssetParam: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.denom.isEmpty {
       try visitor.visitSingularStringField(value: self.denom, fieldNumber: 1)
     }
-    try { if let v = self._supplyLimit {
+    if let v = self._supplyLimit {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if self.active != false {
       try visitor.visitSingularBoolField(value: self.active, fieldNumber: 3)
     }
@@ -653,19 +635,15 @@ extension Irismod_Htlc_SupplyLimit: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.limit.isEmpty {
       try visitor.visitSingularStringField(value: self.limit, fieldNumber: 1)
     }
     if self.timeLimited != false {
       try visitor.visitSingularBoolField(value: self.timeLimited, fieldNumber: 2)
     }
-    try { if let v = self._timePeriod {
+    if let v = self._timePeriod {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if !self.timeBasedLimit.isEmpty {
       try visitor.visitSingularStringField(value: self.timeBasedLimit, fieldNumber: 4)
     }

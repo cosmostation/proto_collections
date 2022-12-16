@@ -197,12 +197,6 @@ struct Gravity_V1_ERC20ToDenom {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Gravity_V1_Params: @unchecked Sendable {}
-extension Gravity_V1_GenesisState: @unchecked Sendable {}
-extension Gravity_V1_ERC20ToDenom: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "gravity.v1"
@@ -393,13 +387,9 @@ extension Gravity_V1_GenesisState: SwiftProtobuf.Message, SwiftProtobuf._Message
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
-      try { if let v = _storage._params {
+      if let v = _storage._params {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      } }()
+      }
       if _storage._lastObservedEventNonce != 0 {
         try visitor.visitSingularUInt64Field(value: _storage._lastObservedEventNonce, fieldNumber: 2)
       }

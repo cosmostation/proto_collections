@@ -279,14 +279,6 @@ struct Ibc_Lightclients_Tendermint_V1_Fraction {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Ibc_Lightclients_Tendermint_V1_ClientState: @unchecked Sendable {}
-extension Ibc_Lightclients_Tendermint_V1_ConsensusState: @unchecked Sendable {}
-extension Ibc_Lightclients_Tendermint_V1_Misbehaviour: @unchecked Sendable {}
-extension Ibc_Lightclients_Tendermint_V1_Header: @unchecked Sendable {}
-extension Ibc_Lightclients_Tendermint_V1_Fraction: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "ibc.lightclients.tendermint.v1"
@@ -373,31 +365,27 @@ extension Ibc_Lightclients_Tendermint_V1_ClientState: SwiftProtobuf.Message, Swi
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
       if !_storage._chainID.isEmpty {
         try visitor.visitSingularStringField(value: _storage._chainID, fieldNumber: 1)
       }
-      try { if let v = _storage._trustLevel {
+      if let v = _storage._trustLevel {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      } }()
-      try { if let v = _storage._trustingPeriod {
+      }
+      if let v = _storage._trustingPeriod {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-      } }()
-      try { if let v = _storage._unbondingPeriod {
+      }
+      if let v = _storage._unbondingPeriod {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-      } }()
-      try { if let v = _storage._maxClockDrift {
+      }
+      if let v = _storage._maxClockDrift {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-      } }()
-      try { if let v = _storage._frozenHeight {
+      }
+      if let v = _storage._frozenHeight {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-      } }()
-      try { if let v = _storage._latestHeight {
+      }
+      if let v = _storage._latestHeight {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-      } }()
+      }
       if !_storage._proofSpecs.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._proofSpecs, fieldNumber: 8)
       }
@@ -462,16 +450,12 @@ extension Ibc_Lightclients_Tendermint_V1_ConsensusState: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._timestamp {
+    if let v = self._timestamp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._root {
+    }
+    if let v = self._root {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if !self.nextValidatorsHash.isEmpty {
       try visitor.visitSingularBytesField(value: self.nextValidatorsHash, fieldNumber: 3)
     }
@@ -510,19 +494,15 @@ extension Ibc_Lightclients_Tendermint_V1_Misbehaviour: SwiftProtobuf.Message, Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.clientID.isEmpty {
       try visitor.visitSingularStringField(value: self.clientID, fieldNumber: 1)
     }
-    try { if let v = self._header1 {
+    if let v = self._header1 {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
-    try { if let v = self._header2 {
+    }
+    if let v = self._header2 {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -589,22 +569,18 @@ extension Ibc_Lightclients_Tendermint_V1_Header: SwiftProtobuf.Message, SwiftPro
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
-      try { if let v = _storage._signedHeader {
+      if let v = _storage._signedHeader {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      } }()
-      try { if let v = _storage._validatorSet {
+      }
+      if let v = _storage._validatorSet {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      } }()
-      try { if let v = _storage._trustedHeight {
+      }
+      if let v = _storage._trustedHeight {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-      } }()
-      try { if let v = _storage._trustedValidators {
+      }
+      if let v = _storage._trustedValidators {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-      } }()
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }

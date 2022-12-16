@@ -180,15 +180,6 @@ struct Tendermint_Types_HashedParams {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Tendermint_Types_ConsensusParams: @unchecked Sendable {}
-extension Tendermint_Types_BlockParams: @unchecked Sendable {}
-extension Tendermint_Types_EvidenceParams: @unchecked Sendable {}
-extension Tendermint_Types_ValidatorParams: @unchecked Sendable {}
-extension Tendermint_Types_VersionParams: @unchecked Sendable {}
-extension Tendermint_Types_HashedParams: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "tendermint.types"
@@ -218,22 +209,18 @@ extension Tendermint_Types_ConsensusParams: SwiftProtobuf.Message, SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._block {
+    if let v = self._block {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._evidence {
+    }
+    if let v = self._evidence {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
-    try { if let v = self._validator {
+    }
+    if let v = self._validator {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
-    try { if let v = self._version {
+    }
+    if let v = self._version {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -314,16 +301,12 @@ extension Tendermint_Types_EvidenceParams: SwiftProtobuf.Message, SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.maxAgeNumBlocks != 0 {
       try visitor.visitSingularInt64Field(value: self.maxAgeNumBlocks, fieldNumber: 1)
     }
-    try { if let v = self._maxAgeDuration {
+    if let v = self._maxAgeDuration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if self.maxBytes != 0 {
       try visitor.visitSingularInt64Field(value: self.maxBytes, fieldNumber: 3)
     }

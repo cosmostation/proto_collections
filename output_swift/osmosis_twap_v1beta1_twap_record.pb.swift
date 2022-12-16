@@ -87,10 +87,6 @@ struct Osmosis_Twap_V1beta1_TwapRecord {
   fileprivate var _lastErrorTime: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Osmosis_Twap_V1beta1_TwapRecord: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "osmosis.twap.v1beta1"
@@ -132,10 +128,6 @@ extension Osmosis_Twap_V1beta1_TwapRecord: SwiftProtobuf.Message, SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.poolID != 0 {
       try visitor.visitSingularUInt64Field(value: self.poolID, fieldNumber: 1)
     }
@@ -148,9 +140,9 @@ extension Osmosis_Twap_V1beta1_TwapRecord: SwiftProtobuf.Message, SwiftProtobuf.
     if self.height != 0 {
       try visitor.visitSingularInt64Field(value: self.height, fieldNumber: 4)
     }
-    try { if let v = self._time {
+    if let v = self._time {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    } }()
+    }
     if !self.p0LastSpotPrice.isEmpty {
       try visitor.visitSingularStringField(value: self.p0LastSpotPrice, fieldNumber: 6)
     }
@@ -163,9 +155,9 @@ extension Osmosis_Twap_V1beta1_TwapRecord: SwiftProtobuf.Message, SwiftProtobuf.
     if !self.p1ArithmeticTwapAccumulator.isEmpty {
       try visitor.visitSingularStringField(value: self.p1ArithmeticTwapAccumulator, fieldNumber: 9)
     }
-    try { if let v = self._lastErrorTime {
+    if let v = self._lastErrorTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

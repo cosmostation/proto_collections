@@ -139,17 +139,6 @@ struct Cosmos_Gov_V1beta2_MsgDepositResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Cosmos_Gov_V1beta2_MsgSubmitProposal: @unchecked Sendable {}
-extension Cosmos_Gov_V1beta2_MsgSubmitProposalResponse: @unchecked Sendable {}
-extension Cosmos_Gov_V1beta2_MsgVote: @unchecked Sendable {}
-extension Cosmos_Gov_V1beta2_MsgVoteResponse: @unchecked Sendable {}
-extension Cosmos_Gov_V1beta2_MsgVoteWeighted: @unchecked Sendable {}
-extension Cosmos_Gov_V1beta2_MsgVoteWeightedResponse: @unchecked Sendable {}
-extension Cosmos_Gov_V1beta2_MsgDeposit: @unchecked Sendable {}
-extension Cosmos_Gov_V1beta2_MsgDepositResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.gov.v1beta2"

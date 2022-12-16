@@ -58,11 +58,6 @@ struct CosmosContracts_Juno_Mint_Params {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension CosmosContracts_Juno_Mint_Minter: @unchecked Sendable {}
-extension CosmosContracts_Juno_Mint_Params: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "CosmosContracts.juno.mint"

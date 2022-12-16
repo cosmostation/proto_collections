@@ -248,16 +248,6 @@ struct Cosmos_Tx_Signing_V1beta1_SignatureDescriptor {
   fileprivate var _data: Cosmos_Tx_Signing_V1beta1_SignatureDescriptor.DataMessage? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Cosmos_Tx_Signing_V1beta1_SignMode: @unchecked Sendable {}
-extension Cosmos_Tx_Signing_V1beta1_SignatureDescriptors: @unchecked Sendable {}
-extension Cosmos_Tx_Signing_V1beta1_SignatureDescriptor: @unchecked Sendable {}
-extension Cosmos_Tx_Signing_V1beta1_SignatureDescriptor.DataMessage: @unchecked Sendable {}
-extension Cosmos_Tx_Signing_V1beta1_SignatureDescriptor.DataMessage.OneOf_Sum: @unchecked Sendable {}
-extension Cosmos_Tx_Signing_V1beta1_SignatureDescriptor.DataMessage.Single: @unchecked Sendable {}
-extension Cosmos_Tx_Signing_V1beta1_SignatureDescriptor.DataMessage.Multi: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.tx.signing.v1beta1"
@@ -327,16 +317,12 @@ extension Cosmos_Tx_Signing_V1beta1_SignatureDescriptor: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._publicKey {
+    if let v = self._publicKey {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._data {
+    }
+    if let v = self._data {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if self.sequence != 0 {
       try visitor.visitSingularUInt64Field(value: self.sequence, fieldNumber: 3)
     }
@@ -398,9 +384,8 @@ extension Cosmos_Tx_Signing_V1beta1_SignatureDescriptor.DataMessage: SwiftProtob
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
+    // allocates stack space for every case branch when no optimizations are
+    // enabled. https://github.com/apple/swift-protobuf/issues/1034
     switch self.sum {
     case .single?: try {
       guard case .single(let v)? = self.sum else { preconditionFailure() }
@@ -481,13 +466,9 @@ extension Cosmos_Tx_Signing_V1beta1_SignatureDescriptor.DataMessage.Multi: Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._bitarray {
+    if let v = self._bitarray {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.signatures.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.signatures, fieldNumber: 2)
     }

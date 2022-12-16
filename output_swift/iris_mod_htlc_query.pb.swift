@@ -147,17 +147,6 @@ struct Irismod_Htlc_QueryParamsResponse {
   fileprivate var _params: Irismod_Htlc_Params? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Irismod_Htlc_QueryHTLCRequest: @unchecked Sendable {}
-extension Irismod_Htlc_QueryHTLCResponse: @unchecked Sendable {}
-extension Irismod_Htlc_QueryAssetSupplyRequest: @unchecked Sendable {}
-extension Irismod_Htlc_QueryAssetSupplyResponse: @unchecked Sendable {}
-extension Irismod_Htlc_QueryAssetSuppliesRequest: @unchecked Sendable {}
-extension Irismod_Htlc_QueryAssetSuppliesResponse: @unchecked Sendable {}
-extension Irismod_Htlc_QueryParamsRequest: @unchecked Sendable {}
-extension Irismod_Htlc_QueryParamsResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "irismod.htlc"
@@ -213,13 +202,9 @@ extension Irismod_Htlc_QueryHTLCResponse: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._htlc {
+    if let v = self._htlc {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -281,13 +266,9 @@ extension Irismod_Htlc_QueryAssetSupplyResponse: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._assetSupply {
+    if let v = self._assetSupply {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -387,13 +368,9 @@ extension Irismod_Htlc_QueryParamsResponse: SwiftProtobuf.Message, SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

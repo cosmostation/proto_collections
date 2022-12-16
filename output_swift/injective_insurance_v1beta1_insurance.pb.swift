@@ -213,15 +213,6 @@ struct Injective_Insurance_V1beta1_EventWithdrawRedemption {
   fileprivate var _redeemCoin: Cosmos_Base_V1beta1_Coin? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Injective_Insurance_V1beta1_Params: @unchecked Sendable {}
-extension Injective_Insurance_V1beta1_InsuranceFund: @unchecked Sendable {}
-extension Injective_Insurance_V1beta1_RedemptionSchedule: @unchecked Sendable {}
-extension Injective_Insurance_V1beta1_EventInsuranceFundUpdate: @unchecked Sendable {}
-extension Injective_Insurance_V1beta1_EventRequestRedemption: @unchecked Sendable {}
-extension Injective_Insurance_V1beta1_EventWithdrawRedemption: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "injective.insurance.v1beta1"
@@ -245,13 +236,9 @@ extension Injective_Insurance_V1beta1_Params: SwiftProtobuf.Message, SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._defaultRedemptionNoticePeriodDuration {
+    if let v = self._defaultRedemptionNoticePeriodDuration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -301,19 +288,15 @@ extension Injective_Insurance_V1beta1_InsuranceFund: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.depositDenom.isEmpty {
       try visitor.visitSingularStringField(value: self.depositDenom, fieldNumber: 1)
     }
     if !self.insurancePoolTokenDenom.isEmpty {
       try visitor.visitSingularStringField(value: self.insurancePoolTokenDenom, fieldNumber: 2)
     }
-    try { if let v = self._redemptionNoticePeriodDuration {
+    if let v = self._redemptionNoticePeriodDuration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if !self.balance.isEmpty {
       try visitor.visitSingularStringField(value: self.balance, fieldNumber: 4)
     }
@@ -385,10 +368,6 @@ extension Injective_Insurance_V1beta1_RedemptionSchedule: SwiftProtobuf.Message,
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.id != 0 {
       try visitor.visitSingularUInt64Field(value: self.id, fieldNumber: 1)
     }
@@ -398,12 +377,12 @@ extension Injective_Insurance_V1beta1_RedemptionSchedule: SwiftProtobuf.Message,
     if !self.redeemer.isEmpty {
       try visitor.visitSingularStringField(value: self.redeemer, fieldNumber: 3)
     }
-    try { if let v = self._claimableRedemptionTime {
+    if let v = self._claimableRedemptionTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
-    try { if let v = self._redemptionAmount {
+    }
+    if let v = self._redemptionAmount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -437,13 +416,9 @@ extension Injective_Insurance_V1beta1_EventInsuranceFundUpdate: SwiftProtobuf.Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._fund {
+    if let v = self._fund {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -473,13 +448,9 @@ extension Injective_Insurance_V1beta1_EventRequestRedemption: SwiftProtobuf.Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._schedule {
+    if let v = self._schedule {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -511,16 +482,12 @@ extension Injective_Insurance_V1beta1_EventWithdrawRedemption: SwiftProtobuf.Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._schedule {
+    if let v = self._schedule {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._redeemCoin {
+    }
+    if let v = self._redeemCoin {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

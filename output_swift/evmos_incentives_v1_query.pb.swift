@@ -313,23 +313,6 @@ struct Evmos_Incentives_V1_QueryParamsResponse {
   fileprivate var _params: Evmos_Incentives_V1_Params? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Evmos_Incentives_V1_QueryIncentivesRequest: @unchecked Sendable {}
-extension Evmos_Incentives_V1_QueryIncentivesResponse: @unchecked Sendable {}
-extension Evmos_Incentives_V1_QueryIncentiveRequest: @unchecked Sendable {}
-extension Evmos_Incentives_V1_QueryIncentiveResponse: @unchecked Sendable {}
-extension Evmos_Incentives_V1_QueryGasMetersRequest: @unchecked Sendable {}
-extension Evmos_Incentives_V1_QueryGasMetersResponse: @unchecked Sendable {}
-extension Evmos_Incentives_V1_QueryGasMeterRequest: @unchecked Sendable {}
-extension Evmos_Incentives_V1_QueryGasMeterResponse: @unchecked Sendable {}
-extension Evmos_Incentives_V1_QueryAllocationMetersRequest: @unchecked Sendable {}
-extension Evmos_Incentives_V1_QueryAllocationMetersResponse: @unchecked Sendable {}
-extension Evmos_Incentives_V1_QueryAllocationMeterRequest: @unchecked Sendable {}
-extension Evmos_Incentives_V1_QueryAllocationMeterResponse: @unchecked Sendable {}
-extension Evmos_Incentives_V1_QueryParamsRequest: @unchecked Sendable {}
-extension Evmos_Incentives_V1_QueryParamsResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "evmos.incentives.v1"
@@ -353,13 +336,9 @@ extension Evmos_Incentives_V1_QueryIncentivesRequest: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -391,16 +370,12 @@ extension Evmos_Incentives_V1_QueryIncentivesResponse: SwiftProtobuf.Message, Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.incentives.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.incentives, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -463,13 +438,9 @@ extension Evmos_Incentives_V1_QueryIncentiveResponse: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._incentive {
+    if let v = self._incentive {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -501,16 +472,12 @@ extension Evmos_Incentives_V1_QueryGasMetersRequest: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.contract.isEmpty {
       try visitor.visitSingularStringField(value: self.contract, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -543,16 +510,12 @@ extension Evmos_Incentives_V1_QueryGasMetersResponse: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.gasMeters.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.gasMeters, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -653,13 +616,9 @@ extension Evmos_Incentives_V1_QueryAllocationMetersRequest: SwiftProtobuf.Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -691,16 +650,12 @@ extension Evmos_Incentives_V1_QueryAllocationMetersResponse: SwiftProtobuf.Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.allocationMeters.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.allocationMeters, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -763,13 +718,9 @@ extension Evmos_Incentives_V1_QueryAllocationMeterResponse: SwiftProtobuf.Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._allocationMeter {
+    if let v = self._allocationMeter {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -818,13 +769,9 @@ extension Evmos_Incentives_V1_QueryParamsResponse: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

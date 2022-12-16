@@ -50,10 +50,6 @@ struct Likechain_Likenft_V1_Params {
   fileprivate var _feePerByte: Cosmos_Base_V1beta1_DecCoin? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Likechain_Likenft_V1_Params: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "likechain.likenft.v1"
@@ -85,16 +81,12 @@ extension Likechain_Likenft_V1_Params: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.priceDenom.isEmpty {
       try visitor.visitSingularStringField(value: self.priceDenom, fieldNumber: 1)
     }
-    try { if let v = self._feePerByte {
+    if let v = self._feePerByte {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if self.maxOfferDurationDays != 0 {
       try visitor.visitSingularUInt64Field(value: self.maxOfferDurationDays, fieldNumber: 3)
     }

@@ -179,10 +179,6 @@ extension Provenance_Marker_V1_SIPrefix: CaseIterable {
 
 #endif  // swift(>=4.2)
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Provenance_Marker_V1_SIPrefix: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension Provenance_Marker_V1_SIPrefix: SwiftProtobuf._ProtoNameProviding {

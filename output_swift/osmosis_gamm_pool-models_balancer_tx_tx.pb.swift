@@ -61,11 +61,6 @@ struct Osmosis_Gamm_Poolmodels_Balancer_V1beta1_MsgCreateBalancerPoolResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Osmosis_Gamm_Poolmodels_Balancer_V1beta1_MsgCreateBalancerPool: @unchecked Sendable {}
-extension Osmosis_Gamm_Poolmodels_Balancer_V1beta1_MsgCreateBalancerPoolResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "osmosis.gamm.poolmodels.balancer.v1beta1"
@@ -95,16 +90,12 @@ extension Osmosis_Gamm_Poolmodels_Balancer_V1beta1_MsgCreateBalancerPool: SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularStringField(value: self.sender, fieldNumber: 1)
     }
-    try { if let v = self._poolParams {
+    if let v = self._poolParams {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if !self.poolAssets.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.poolAssets, fieldNumber: 3)
     }

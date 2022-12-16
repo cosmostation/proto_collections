@@ -255,23 +255,6 @@ struct Project_Claims {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Project_UpdateProjectStatusDoc: @unchecked Sendable {}
-extension Project_CreateAgentDoc: @unchecked Sendable {}
-extension Project_UpdateAgentDoc: @unchecked Sendable {}
-extension Project_CreateClaimDoc: @unchecked Sendable {}
-extension Project_CreateEvaluationDoc: @unchecked Sendable {}
-extension Project_WithdrawFundsDoc: @unchecked Sendable {}
-extension Project_ProjectDoc: @unchecked Sendable {}
-extension Project_WithdrawalInfoDoc: @unchecked Sendable {}
-extension Project_Params: @unchecked Sendable {}
-extension Project_Claim: @unchecked Sendable {}
-extension Project_GenesisAccountMap: @unchecked Sendable {}
-extension Project_AccountMap: @unchecked Sendable {}
-extension Project_WithdrawalInfoDocs: @unchecked Sendable {}
-extension Project_Claims: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "project"
@@ -607,19 +590,15 @@ extension Project_WithdrawalInfoDoc: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.projectDid.isEmpty {
       try visitor.visitSingularStringField(value: self.projectDid, fieldNumber: 1)
     }
     if !self.recipientDid.isEmpty {
       try visitor.visitSingularStringField(value: self.recipientDid, fieldNumber: 2)
     }
-    try { if let v = self._amount {
+    if let v = self._amount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

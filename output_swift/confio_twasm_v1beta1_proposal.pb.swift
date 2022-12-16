@@ -62,11 +62,6 @@ struct Confio_Twasm_V1beta1_DemotePrivilegedContractProposal {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Confio_Twasm_V1beta1_PromoteToPrivilegedContractProposal: @unchecked Sendable {}
-extension Confio_Twasm_V1beta1_DemotePrivilegedContractProposal: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "confio.twasm.v1beta1"

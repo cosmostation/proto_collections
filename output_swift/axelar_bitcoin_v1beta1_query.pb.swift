@@ -100,14 +100,6 @@ struct Axelar_Bitcoin_V1beta1_QueryTxResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Axelar_Bitcoin_V1beta1_DepositQueryParams: @unchecked Sendable {}
-extension Axelar_Bitcoin_V1beta1_QueryAddressResponse: @unchecked Sendable {}
-extension Axelar_Bitcoin_V1beta1_QueryDepositStatusResponse: @unchecked Sendable {}
-extension Axelar_Bitcoin_V1beta1_QueryTxResponse: @unchecked Sendable {}
-extension Axelar_Bitcoin_V1beta1_QueryTxResponse.SigningInfo: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "axelar.bitcoin.v1beta1"

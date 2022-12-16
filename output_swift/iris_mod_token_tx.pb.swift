@@ -176,19 +176,6 @@ struct Irismod_Token_MsgBurnTokenResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Irismod_Token_MsgIssueToken: @unchecked Sendable {}
-extension Irismod_Token_MsgIssueTokenResponse: @unchecked Sendable {}
-extension Irismod_Token_MsgTransferTokenOwner: @unchecked Sendable {}
-extension Irismod_Token_MsgTransferTokenOwnerResponse: @unchecked Sendable {}
-extension Irismod_Token_MsgEditToken: @unchecked Sendable {}
-extension Irismod_Token_MsgEditTokenResponse: @unchecked Sendable {}
-extension Irismod_Token_MsgMintToken: @unchecked Sendable {}
-extension Irismod_Token_MsgMintTokenResponse: @unchecked Sendable {}
-extension Irismod_Token_MsgBurnToken: @unchecked Sendable {}
-extension Irismod_Token_MsgBurnTokenResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "irismod.token"

@@ -122,17 +122,6 @@ struct Em_Issuer_V1_MsgSetInflationResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Em_Issuer_V1_MsgIncreaseMintable: @unchecked Sendable {}
-extension Em_Issuer_V1_MsgIncreaseMintableResponse: @unchecked Sendable {}
-extension Em_Issuer_V1_MsgDecreaseMintable: @unchecked Sendable {}
-extension Em_Issuer_V1_MsgDecreaseMintableResponse: @unchecked Sendable {}
-extension Em_Issuer_V1_MsgRevokeLiquidityProvider: @unchecked Sendable {}
-extension Em_Issuer_V1_MsgRevokeLiquidityProviderResponse: @unchecked Sendable {}
-extension Em_Issuer_V1_MsgSetInflation: @unchecked Sendable {}
-extension Em_Issuer_V1_MsgSetInflationResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "em.issuer.v1"

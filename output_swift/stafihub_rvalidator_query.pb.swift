@@ -216,21 +216,6 @@ struct Stafihub_Stafihub_Rvalidator_QueryLatestDealedCycleResponse {
   fileprivate var _latestDealedCycle: Stafihub_Stafihub_Rvalidator_Cycle? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Stafihub_Stafihub_Rvalidator_QueryParamsRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Rvalidator_QueryParamsResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Rvalidator_QueryRValidatorListRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Rvalidator_QueryRValidatorListResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Rvalidator_QueryCycleSecondsRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Rvalidator_QueryCycleSecondsResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Rvalidator_QueryShuffleSecondsRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Rvalidator_QueryShuffleSecondsResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Rvalidator_QueryLatestVotedCycleRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Rvalidator_QueryLatestVotedCycleResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Rvalidator_QueryLatestDealedCycleRequest: @unchecked Sendable {}
-extension Stafihub_Stafihub_Rvalidator_QueryLatestDealedCycleResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stafihub.stafihub.rvalidator"
@@ -273,13 +258,9 @@ extension Stafihub_Stafihub_Rvalidator_QueryParamsResponse: SwiftProtobuf.Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -411,13 +392,9 @@ extension Stafihub_Stafihub_Rvalidator_QueryCycleSecondsResponse: SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._cycleSeconds {
+    if let v = self._cycleSeconds {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -479,13 +456,9 @@ extension Stafihub_Stafihub_Rvalidator_QueryShuffleSecondsResponse: SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._shuffleSeconds {
+    if let v = self._shuffleSeconds {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -553,13 +526,9 @@ extension Stafihub_Stafihub_Rvalidator_QueryLatestVotedCycleResponse: SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._latestVotedCycle {
+    if let v = self._latestVotedCycle {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -627,13 +596,9 @@ extension Stafihub_Stafihub_Rvalidator_QueryLatestDealedCycleResponse: SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._latestDealedCycle {
+    if let v = self._latestDealedCycle {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

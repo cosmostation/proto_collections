@@ -85,10 +85,6 @@ struct Sentinel_Subscription_V1_Subscription {
   fileprivate var _statusAt: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Sentinel_Subscription_V1_Subscription: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "sentinel.subscription.v1"
@@ -132,10 +128,6 @@ extension Sentinel_Subscription_V1_Subscription: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.id != 0 {
       try visitor.visitSingularUInt64Field(value: self.id, fieldNumber: 1)
     }
@@ -145,30 +137,30 @@ extension Sentinel_Subscription_V1_Subscription: SwiftProtobuf.Message, SwiftPro
     if !self.node.isEmpty {
       try visitor.visitSingularStringField(value: self.node, fieldNumber: 3)
     }
-    try { if let v = self._price {
+    if let v = self._price {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
-    try { if let v = self._deposit {
+    }
+    if let v = self._deposit {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    } }()
+    }
     if self.plan != 0 {
       try visitor.visitSingularUInt64Field(value: self.plan, fieldNumber: 6)
     }
     if !self.denom.isEmpty {
       try visitor.visitSingularStringField(value: self.denom, fieldNumber: 7)
     }
-    try { if let v = self._expiry {
+    if let v = self._expiry {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
-    } }()
+    }
     if !self.free.isEmpty {
       try visitor.visitSingularStringField(value: self.free, fieldNumber: 9)
     }
     if self.status != .unspecified {
       try visitor.visitSingularEnumField(value: self.status, fieldNumber: 10)
     }
-    try { if let v = self._statusAt {
+    if let v = self._statusAt {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

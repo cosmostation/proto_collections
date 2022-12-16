@@ -76,11 +76,6 @@ struct Lum_Network_Airdrop_ClaimRecord {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Lum_Network_Airdrop_Action: @unchecked Sendable {}
-extension Lum_Network_Airdrop_ClaimRecord: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "lum.network.airdrop"

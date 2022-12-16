@@ -64,11 +64,6 @@ struct Cosmos_Capability_V1beta1_GenesisState {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Cosmos_Capability_V1beta1_GenesisOwners: @unchecked Sendable {}
-extension Cosmos_Capability_V1beta1_GenesisState: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.capability.v1beta1"
@@ -94,16 +89,12 @@ extension Cosmos_Capability_V1beta1_GenesisOwners: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.index != 0 {
       try visitor.visitSingularUInt64Field(value: self.index, fieldNumber: 1)
     }
-    try { if let v = self._indexOwners {
+    if let v = self._indexOwners {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

@@ -243,24 +243,6 @@ struct Likechain_Iscn_QueryHasCidResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Likechain_Iscn_QueryResponseRecord: @unchecked Sendable {}
-extension Likechain_Iscn_QueryRecordsByIdRequest: @unchecked Sendable {}
-extension Likechain_Iscn_QueryRecordsByIdResponse: @unchecked Sendable {}
-extension Likechain_Iscn_QueryRecordsByFingerprintRequest: @unchecked Sendable {}
-extension Likechain_Iscn_QueryRecordsByFingerprintResponse: @unchecked Sendable {}
-extension Likechain_Iscn_QueryRecordsByOwnerRequest: @unchecked Sendable {}
-extension Likechain_Iscn_QueryRecordsByOwnerResponse: @unchecked Sendable {}
-extension Likechain_Iscn_QueryParamsRequest: @unchecked Sendable {}
-extension Likechain_Iscn_QueryParamsResponse: @unchecked Sendable {}
-extension Likechain_Iscn_QueryGetCidRequest: @unchecked Sendable {}
-extension Likechain_Iscn_QueryGetCidResponse: @unchecked Sendable {}
-extension Likechain_Iscn_QueryGetCidSizeRequest: @unchecked Sendable {}
-extension Likechain_Iscn_QueryGetCidSizeResponse: @unchecked Sendable {}
-extension Likechain_Iscn_QueryHasCidRequest: @unchecked Sendable {}
-extension Likechain_Iscn_QueryHasCidResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "likechain.iscn"
@@ -581,13 +563,9 @@ extension Likechain_Iscn_QueryParamsResponse: SwiftProtobuf.Message, SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

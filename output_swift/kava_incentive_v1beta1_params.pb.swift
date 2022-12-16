@@ -174,14 +174,6 @@ struct Kava_Incentive_V1beta1_Params {
   fileprivate var _claimEnd: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Kava_Incentive_V1beta1_RewardPeriod: @unchecked Sendable {}
-extension Kava_Incentive_V1beta1_MultiRewardPeriod: @unchecked Sendable {}
-extension Kava_Incentive_V1beta1_Multiplier: @unchecked Sendable {}
-extension Kava_Incentive_V1beta1_MultipliersPerDenom: @unchecked Sendable {}
-extension Kava_Incentive_V1beta1_Params: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kava.incentive.v1beta1"
@@ -213,25 +205,21 @@ extension Kava_Incentive_V1beta1_RewardPeriod: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.active != false {
       try visitor.visitSingularBoolField(value: self.active, fieldNumber: 1)
     }
     if !self.collateralType.isEmpty {
       try visitor.visitSingularStringField(value: self.collateralType, fieldNumber: 2)
     }
-    try { if let v = self._start {
+    if let v = self._start {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
-    try { if let v = self._end {
+    }
+    if let v = self._end {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
-    try { if let v = self._rewardsPerSecond {
+    }
+    if let v = self._rewardsPerSecond {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -273,22 +261,18 @@ extension Kava_Incentive_V1beta1_MultiRewardPeriod: SwiftProtobuf.Message, Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.active != false {
       try visitor.visitSingularBoolField(value: self.active, fieldNumber: 1)
     }
     if !self.collateralType.isEmpty {
       try visitor.visitSingularStringField(value: self.collateralType, fieldNumber: 2)
     }
-    try { if let v = self._start {
+    if let v = self._start {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
-    try { if let v = self._end {
+    }
+    if let v = self._end {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
+    }
     if !self.rewardsPerSecond.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.rewardsPerSecond, fieldNumber: 5)
     }
@@ -423,10 +407,6 @@ extension Kava_Incentive_V1beta1_Params: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.usdxMintingRewardPeriods.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.usdxMintingRewardPeriods, fieldNumber: 1)
     }
@@ -445,9 +425,9 @@ extension Kava_Incentive_V1beta1_Params: SwiftProtobuf.Message, SwiftProtobuf._M
     if !self.claimMultipliers.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.claimMultipliers, fieldNumber: 6)
     }
-    try { if let v = self._claimEnd {
+    if let v = self._claimEnd {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-    } }()
+    }
     if !self.savingsRewardPeriods.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.savingsRewardPeriods, fieldNumber: 8)
     }

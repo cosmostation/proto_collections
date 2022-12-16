@@ -174,17 +174,6 @@ struct BitCannaGlobal_Bcna_Bcna_QueryAllSupplychainResponse {
   fileprivate var _pagination: Cosmos_Base_Query_V1beta1_PageResponse? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension BitCannaGlobal_Bcna_Bcna_QueryGetBitcannaidRequest: @unchecked Sendable {}
-extension BitCannaGlobal_Bcna_Bcna_QueryGetBitcannaidResponse: @unchecked Sendable {}
-extension BitCannaGlobal_Bcna_Bcna_QueryAllBitcannaidRequest: @unchecked Sendable {}
-extension BitCannaGlobal_Bcna_Bcna_QueryAllBitcannaidResponse: @unchecked Sendable {}
-extension BitCannaGlobal_Bcna_Bcna_QueryGetSupplychainRequest: @unchecked Sendable {}
-extension BitCannaGlobal_Bcna_Bcna_QueryGetSupplychainResponse: @unchecked Sendable {}
-extension BitCannaGlobal_Bcna_Bcna_QueryAllSupplychainRequest: @unchecked Sendable {}
-extension BitCannaGlobal_Bcna_Bcna_QueryAllSupplychainResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "BitCannaGlobal.bcna.bcna"
@@ -240,13 +229,9 @@ extension BitCannaGlobal_Bcna_Bcna_QueryGetBitcannaidResponse: SwiftProtobuf.Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._bitcannaid {
+    if let v = self._bitcannaid {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -276,13 +261,9 @@ extension BitCannaGlobal_Bcna_Bcna_QueryAllBitcannaidRequest: SwiftProtobuf.Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -314,16 +295,12 @@ extension BitCannaGlobal_Bcna_Bcna_QueryAllBitcannaidResponse: SwiftProtobuf.Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.bitcannaid.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.bitcannaid, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -386,13 +363,9 @@ extension BitCannaGlobal_Bcna_Bcna_QueryGetSupplychainResponse: SwiftProtobuf.Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._supplychain {
+    if let v = self._supplychain {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -422,13 +395,9 @@ extension BitCannaGlobal_Bcna_Bcna_QueryAllSupplychainRequest: SwiftProtobuf.Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -460,16 +429,12 @@ extension BitCannaGlobal_Bcna_Bcna_QueryAllSupplychainResponse: SwiftProtobuf.Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.supplychain.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.supplychain, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

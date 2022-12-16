@@ -48,11 +48,6 @@ struct Axelar_Reward_V1beta1_Pool {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Axelar_Reward_V1beta1_Pool: @unchecked Sendable {}
-extension Axelar_Reward_V1beta1_Pool.Reward: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "axelar.reward.v1beta1"

@@ -205,14 +205,6 @@ struct Kava_Auction_V1beta1_WeightedAddresses {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Kava_Auction_V1beta1_BaseAuction: @unchecked Sendable {}
-extension Kava_Auction_V1beta1_SurplusAuction: @unchecked Sendable {}
-extension Kava_Auction_V1beta1_DebtAuction: @unchecked Sendable {}
-extension Kava_Auction_V1beta1_CollateralAuction: @unchecked Sendable {}
-extension Kava_Auction_V1beta1_WeightedAddresses: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kava.auction.v1beta1"
@@ -250,34 +242,30 @@ extension Kava_Auction_V1beta1_BaseAuction: SwiftProtobuf.Message, SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.id != 0 {
       try visitor.visitSingularUInt64Field(value: self.id, fieldNumber: 1)
     }
     if !self.initiator.isEmpty {
       try visitor.visitSingularStringField(value: self.initiator, fieldNumber: 2)
     }
-    try { if let v = self._lot {
+    if let v = self._lot {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if !self.bidder.isEmpty {
       try visitor.visitSingularBytesField(value: self.bidder, fieldNumber: 4)
     }
-    try { if let v = self._bid {
+    if let v = self._bid {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    } }()
+    }
     if self.hasReceivedBids_p != false {
       try visitor.visitSingularBoolField(value: self.hasReceivedBids_p, fieldNumber: 6)
     }
-    try { if let v = self._endTime {
+    if let v = self._endTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-    } }()
-    try { if let v = self._maxEndTime {
+    }
+    if let v = self._maxEndTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -314,13 +302,9 @@ extension Kava_Auction_V1beta1_SurplusAuction: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseAuction {
+    if let v = self._baseAuction {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -352,16 +336,12 @@ extension Kava_Auction_V1beta1_DebtAuction: SwiftProtobuf.Message, SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseAuction {
+    if let v = self._baseAuction {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._correspondingDebt {
+    }
+    if let v = self._correspondingDebt {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -427,22 +407,18 @@ extension Kava_Auction_V1beta1_CollateralAuction: SwiftProtobuf.Message, SwiftPr
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
-      try { if let v = _storage._baseAuction {
+      if let v = _storage._baseAuction {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      } }()
-      try { if let v = _storage._correspondingDebt {
+      }
+      if let v = _storage._correspondingDebt {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      } }()
-      try { if let v = _storage._maxBid {
+      }
+      if let v = _storage._maxBid {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-      } }()
-      try { if let v = _storage._lotReturns {
+      }
+      if let v = _storage._lotReturns {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-      } }()
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }

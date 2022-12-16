@@ -48,11 +48,6 @@ struct Cosmos_Crisis_V1beta1_MsgVerifyInvariantResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Cosmos_Crisis_V1beta1_MsgVerifyInvariant: @unchecked Sendable {}
-extension Cosmos_Crisis_V1beta1_MsgVerifyInvariantResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.crisis.v1beta1"

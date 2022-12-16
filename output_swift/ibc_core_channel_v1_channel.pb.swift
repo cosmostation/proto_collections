@@ -369,18 +369,6 @@ struct Ibc_Core_Channel_V1_Acknowledgement {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Ibc_Core_Channel_V1_State: @unchecked Sendable {}
-extension Ibc_Core_Channel_V1_Order: @unchecked Sendable {}
-extension Ibc_Core_Channel_V1_Channel: @unchecked Sendable {}
-extension Ibc_Core_Channel_V1_IdentifiedChannel: @unchecked Sendable {}
-extension Ibc_Core_Channel_V1_Counterparty: @unchecked Sendable {}
-extension Ibc_Core_Channel_V1_Packet: @unchecked Sendable {}
-extension Ibc_Core_Channel_V1_PacketState: @unchecked Sendable {}
-extension Ibc_Core_Channel_V1_Acknowledgement: @unchecked Sendable {}
-extension Ibc_Core_Channel_V1_Acknowledgement.OneOf_Response: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "ibc.core.channel.v1"
@@ -430,19 +418,15 @@ extension Ibc_Core_Channel_V1_Channel: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.state != .uninitializedUnspecified {
       try visitor.visitSingularEnumField(value: self.state, fieldNumber: 1)
     }
     if self.ordering != .noneUnspecified {
       try visitor.visitSingularEnumField(value: self.ordering, fieldNumber: 2)
     }
-    try { if let v = self._counterparty {
+    if let v = self._counterparty {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if !self.connectionHops.isEmpty {
       try visitor.visitRepeatedStringField(value: self.connectionHops, fieldNumber: 4)
     }
@@ -494,19 +478,15 @@ extension Ibc_Core_Channel_V1_IdentifiedChannel: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.state != .uninitializedUnspecified {
       try visitor.visitSingularEnumField(value: self.state, fieldNumber: 1)
     }
     if self.ordering != .noneUnspecified {
       try visitor.visitSingularEnumField(value: self.ordering, fieldNumber: 2)
     }
-    try { if let v = self._counterparty {
+    if let v = self._counterparty {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if !self.connectionHops.isEmpty {
       try visitor.visitRepeatedStringField(value: self.connectionHops, fieldNumber: 4)
     }
@@ -606,10 +586,6 @@ extension Ibc_Core_Channel_V1_Packet: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.sequence != 0 {
       try visitor.visitSingularUInt64Field(value: self.sequence, fieldNumber: 1)
     }
@@ -628,9 +604,9 @@ extension Ibc_Core_Channel_V1_Packet: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if !self.data.isEmpty {
       try visitor.visitSingularBytesField(value: self.data, fieldNumber: 6)
     }
-    try { if let v = self._timeoutHeight {
+    if let v = self._timeoutHeight {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-    } }()
+    }
     if self.timeoutTimestamp != 0 {
       try visitor.visitSingularUInt64Field(value: self.timeoutTimestamp, fieldNumber: 8)
     }
@@ -737,9 +713,8 @@ extension Ibc_Core_Channel_V1_Acknowledgement: SwiftProtobuf.Message, SwiftProto
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
+    // allocates stack space for every case branch when no optimizations are
+    // enabled. https://github.com/apple/swift-protobuf/issues/1034
     switch self.response {
     case .result?: try {
       guard case .result(let v)? = self.response else { preconditionFailure() }

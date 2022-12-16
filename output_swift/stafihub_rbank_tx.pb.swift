@@ -57,11 +57,6 @@ struct Stafihub_Stafihub_Rbank_MsgAddDenomResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Stafihub_Stafihub_Rbank_MsgAddDenom: @unchecked Sendable {}
-extension Stafihub_Stafihub_Rbank_MsgAddDenomResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stafihub.stafihub.rbank"
@@ -91,10 +86,6 @@ extension Stafihub_Stafihub_Rbank_MsgAddDenom: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.creator.isEmpty {
       try visitor.visitSingularStringField(value: self.creator, fieldNumber: 1)
     }
@@ -104,9 +95,9 @@ extension Stafihub_Stafihub_Rbank_MsgAddDenom: SwiftProtobuf.Message, SwiftProto
     if !self.valAddressPrefix.isEmpty {
       try visitor.visitSingularStringField(value: self.valAddressPrefix, fieldNumber: 3)
     }
-    try { if let v = self._metadata {
+    if let v = self._metadata {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

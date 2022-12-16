@@ -119,11 +119,6 @@ struct Provenance_Marker_V1_AccessGrant {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Provenance_Marker_V1_Access: @unchecked Sendable {}
-extension Provenance_Marker_V1_AccessGrant: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "provenance.marker.v1"

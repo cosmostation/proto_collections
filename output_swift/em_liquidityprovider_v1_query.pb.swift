@@ -67,13 +67,6 @@ struct Em_Liquidityprovider_V1_QueryMintableResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Em_Liquidityprovider_V1_QueryListRequest: @unchecked Sendable {}
-extension Em_Liquidityprovider_V1_QueryListResponse: @unchecked Sendable {}
-extension Em_Liquidityprovider_V1_QueryMintableRequest: @unchecked Sendable {}
-extension Em_Liquidityprovider_V1_QueryMintableResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "em.liquidityprovider.v1"

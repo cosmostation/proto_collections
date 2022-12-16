@@ -466,27 +466,6 @@ struct Provenance_Marker_V1_EventDenomUnit {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Provenance_Marker_V1_MarkerType: @unchecked Sendable {}
-extension Provenance_Marker_V1_MarkerStatus: @unchecked Sendable {}
-extension Provenance_Marker_V1_Params: @unchecked Sendable {}
-extension Provenance_Marker_V1_MarkerAccount: @unchecked Sendable {}
-extension Provenance_Marker_V1_EventMarkerAdd: @unchecked Sendable {}
-extension Provenance_Marker_V1_EventMarkerAddAccess: @unchecked Sendable {}
-extension Provenance_Marker_V1_EventMarkerAccess: @unchecked Sendable {}
-extension Provenance_Marker_V1_EventMarkerDeleteAccess: @unchecked Sendable {}
-extension Provenance_Marker_V1_EventMarkerFinalize: @unchecked Sendable {}
-extension Provenance_Marker_V1_EventMarkerActivate: @unchecked Sendable {}
-extension Provenance_Marker_V1_EventMarkerCancel: @unchecked Sendable {}
-extension Provenance_Marker_V1_EventMarkerDelete: @unchecked Sendable {}
-extension Provenance_Marker_V1_EventMarkerMint: @unchecked Sendable {}
-extension Provenance_Marker_V1_EventMarkerBurn: @unchecked Sendable {}
-extension Provenance_Marker_V1_EventMarkerWithdraw: @unchecked Sendable {}
-extension Provenance_Marker_V1_EventMarkerTransfer: @unchecked Sendable {}
-extension Provenance_Marker_V1_EventMarkerSetDenomMetadata: @unchecked Sendable {}
-extension Provenance_Marker_V1_EventDenomUnit: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "provenance.marker.v1"
@@ -589,13 +568,9 @@ extension Provenance_Marker_V1_MarkerAccount: SwiftProtobuf.Message, SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseAccount {
+    if let v = self._baseAccount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.manager.isEmpty {
       try visitor.visitSingularStringField(value: self.manager, fieldNumber: 2)
     }
@@ -717,13 +692,9 @@ extension Provenance_Marker_V1_EventMarkerAddAccess: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._access {
+    if let v = self._access {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.denom.isEmpty {
       try visitor.visitSingularStringField(value: self.denom, fieldNumber: 2)
     }

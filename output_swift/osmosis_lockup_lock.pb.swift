@@ -208,13 +208,6 @@ struct Osmosis_Lockup_SyntheticLock {
   fileprivate var _duration: SwiftProtobuf.Google_Protobuf_Duration? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Osmosis_Lockup_LockQueryType: @unchecked Sendable {}
-extension Osmosis_Lockup_PeriodLock: @unchecked Sendable {}
-extension Osmosis_Lockup_QueryCondition: @unchecked Sendable {}
-extension Osmosis_Lockup_SyntheticLock: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "osmosis.lockup"
@@ -253,22 +246,18 @@ extension Osmosis_Lockup_PeriodLock: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.id != 0 {
       try visitor.visitSingularUInt64Field(value: self.id, fieldNumber: 1)
     }
     if !self.owner.isEmpty {
       try visitor.visitSingularStringField(value: self.owner, fieldNumber: 2)
     }
-    try { if let v = self._duration {
+    if let v = self._duration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
-    try { if let v = self._endTime {
+    }
+    if let v = self._endTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
+    }
     if !self.coins.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.coins, fieldNumber: 5)
     }
@@ -311,22 +300,18 @@ extension Osmosis_Lockup_QueryCondition: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.lockQueryType != .byDuration {
       try visitor.visitSingularEnumField(value: self.lockQueryType, fieldNumber: 1)
     }
     if !self.denom.isEmpty {
       try visitor.visitSingularStringField(value: self.denom, fieldNumber: 2)
     }
-    try { if let v = self._duration {
+    if let v = self._duration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
-    try { if let v = self._timestamp {
+    }
+    if let v = self._timestamp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -365,22 +350,18 @@ extension Osmosis_Lockup_SyntheticLock: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.underlyingLockID != 0 {
       try visitor.visitSingularUInt64Field(value: self.underlyingLockID, fieldNumber: 1)
     }
     if !self.synthDenom.isEmpty {
       try visitor.visitSingularStringField(value: self.synthDenom, fieldNumber: 2)
     }
-    try { if let v = self._endTime {
+    if let v = self._endTime {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
-    try { if let v = self._duration {
+    }
+    if let v = self._duration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

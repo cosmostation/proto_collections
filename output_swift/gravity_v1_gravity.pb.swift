@@ -216,18 +216,6 @@ struct Gravity_V1_IDSet {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Gravity_V1_EthereumEventVoteRecord: @unchecked Sendable {}
-extension Gravity_V1_LatestEthereumBlockHeight: @unchecked Sendable {}
-extension Gravity_V1_EthereumSigner: @unchecked Sendable {}
-extension Gravity_V1_SignerSetTx: @unchecked Sendable {}
-extension Gravity_V1_BatchTx: @unchecked Sendable {}
-extension Gravity_V1_SendToEthereum: @unchecked Sendable {}
-extension Gravity_V1_ContractCallTx: @unchecked Sendable {}
-extension Gravity_V1_ERC20Token: @unchecked Sendable {}
-extension Gravity_V1_IDSet: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "gravity.v1"
@@ -255,13 +243,9 @@ extension Gravity_V1_EthereumEventVoteRecord: SwiftProtobuf.Message, SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._event {
+    if let v = self._event {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.votes.isEmpty {
       try visitor.visitRepeatedStringField(value: self.votes, fieldNumber: 2)
     }
@@ -483,10 +467,6 @@ extension Gravity_V1_SendToEthereum: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.id != 0 {
       try visitor.visitSingularUInt64Field(value: self.id, fieldNumber: 1)
     }
@@ -496,12 +476,12 @@ extension Gravity_V1_SendToEthereum: SwiftProtobuf.Message, SwiftProtobuf._Messa
     if !self.ethereumRecipient.isEmpty {
       try visitor.visitSingularStringField(value: self.ethereumRecipient, fieldNumber: 3)
     }
-    try { if let v = self._erc20Token {
+    if let v = self._erc20Token {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
-    try { if let v = self._erc20Fee {
+    }
+    if let v = self._erc20Fee {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

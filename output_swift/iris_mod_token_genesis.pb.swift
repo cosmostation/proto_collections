@@ -46,10 +46,6 @@ struct Irismod_Token_GenesisState {
   fileprivate var _params: Irismod_Token_Params? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Irismod_Token_GenesisState: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "irismod.token"
@@ -77,13 +73,9 @@ extension Irismod_Token_GenesisState: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.tokens.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.tokens, fieldNumber: 2)
     }

@@ -192,19 +192,6 @@ struct Shentu_Cert_V1alpha1_QueryCertificatesResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Shentu_Cert_V1alpha1_QueryCertifierRequest: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_QueryCertifierResponse: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_QueryCertifiersRequest: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_QueryCertifiersResponse: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_QueryPlatformRequest: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_QueryPlatformResponse: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_QueryCertificateRequest: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_QueryCertificateResponse: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_QueryCertificatesRequest: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_QueryCertificatesResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "shentu.cert.v1alpha1"
@@ -266,13 +253,9 @@ extension Shentu_Cert_V1alpha1_QueryCertifierResponse: SwiftProtobuf.Message, Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._certifier {
+    if let v = self._certifier {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -353,13 +336,9 @@ extension Shentu_Cert_V1alpha1_QueryPlatformRequest: SwiftProtobuf.Message, Swif
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pubkey {
+    if let v = self._pubkey {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -389,13 +368,9 @@ extension Shentu_Cert_V1alpha1_QueryPlatformResponse: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._platform {
+    if let v = self._platform {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -457,13 +432,9 @@ extension Shentu_Cert_V1alpha1_QueryCertificateResponse: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._certificate {
+    if let v = self._certificate {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -497,19 +468,15 @@ extension Shentu_Cert_V1alpha1_QueryCertificatesRequest: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.certifier.isEmpty {
       try visitor.visitSingularStringField(value: self.certifier, fieldNumber: 1)
     }
     if !self.certificateType.isEmpty {
       try visitor.visitSingularStringField(value: self.certificateType, fieldNumber: 2)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

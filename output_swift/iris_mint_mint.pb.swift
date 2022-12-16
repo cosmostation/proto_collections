@@ -63,11 +63,6 @@ struct Irishub_Mint_Params {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Irishub_Mint_Minter: @unchecked Sendable {}
-extension Irishub_Mint_Params: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "irishub.mint"
@@ -93,13 +88,9 @@ extension Irishub_Mint_Minter: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._lastUpdate {
+    if let v = self._lastUpdate {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.inflationBase.isEmpty {
       try visitor.visitSingularStringField(value: self.inflationBase, fieldNumber: 2)
     }

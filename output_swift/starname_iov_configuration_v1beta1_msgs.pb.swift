@@ -70,11 +70,6 @@ struct Starnamed_X_Configuration_V1beta1_MsgUpdateFees {
   fileprivate var _fees: Starnamed_X_Configuration_V1beta1_Fees? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Starnamed_X_Configuration_V1beta1_MsgUpdateConfig: @unchecked Sendable {}
-extension Starnamed_X_Configuration_V1beta1_MsgUpdateFees: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "starnamed.x.configuration.v1beta1"
@@ -100,16 +95,12 @@ extension Starnamed_X_Configuration_V1beta1_MsgUpdateConfig: SwiftProtobuf.Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.signer.isEmpty {
       try visitor.visitSingularStringField(value: self.signer, fieldNumber: 1)
     }
-    try { if let v = self._newConfiguration {
+    if let v = self._newConfiguration {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -142,13 +133,9 @@ extension Starnamed_X_Configuration_V1beta1_MsgUpdateFees: SwiftProtobuf.Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._fees {
+    if let v = self._fees {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.configurer.isEmpty {
       try visitor.visitSingularStringField(value: self.configurer, fieldNumber: 2)
     }

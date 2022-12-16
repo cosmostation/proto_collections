@@ -167,16 +167,6 @@ struct Cosmos_Bank_V1beta1_Metadata {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Cosmos_Bank_V1beta1_Params: @unchecked Sendable {}
-extension Cosmos_Bank_V1beta1_SendEnabled: @unchecked Sendable {}
-extension Cosmos_Bank_V1beta1_Input: @unchecked Sendable {}
-extension Cosmos_Bank_V1beta1_Output: @unchecked Sendable {}
-extension Cosmos_Bank_V1beta1_Supply: @unchecked Sendable {}
-extension Cosmos_Bank_V1beta1_DenomUnit: @unchecked Sendable {}
-extension Cosmos_Bank_V1beta1_Metadata: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.bank.v1beta1"

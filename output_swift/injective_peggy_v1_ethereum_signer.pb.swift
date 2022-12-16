@@ -65,10 +65,6 @@ extension Injective_Peggy_V1_SignType: CaseIterable {
 
 #endif  // swift(>=4.2)
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Injective_Peggy_V1_SignType: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension Injective_Peggy_V1_SignType: SwiftProtobuf._ProtoNameProviding {

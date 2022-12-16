@@ -109,14 +109,6 @@ struct Umeenetwork_Umee_Peggy_V1_ERC20ToDenom {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Umeenetwork_Umee_Peggy_V1_BridgeValidator: @unchecked Sendable {}
-extension Umeenetwork_Umee_Peggy_V1_Valset: @unchecked Sendable {}
-extension Umeenetwork_Umee_Peggy_V1_LastObservedEthereumBlockHeight: @unchecked Sendable {}
-extension Umeenetwork_Umee_Peggy_V1_LastClaimEvent: @unchecked Sendable {}
-extension Umeenetwork_Umee_Peggy_V1_ERC20ToDenom: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "umeenetwork.umee.peggy.v1"

@@ -192,22 +192,6 @@ struct Kava_Incentive_V1beta1_MsgClaimEarnRewardResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Kava_Incentive_V1beta1_Selection: @unchecked Sendable {}
-extension Kava_Incentive_V1beta1_MsgClaimUSDXMintingReward: @unchecked Sendable {}
-extension Kava_Incentive_V1beta1_MsgClaimUSDXMintingRewardResponse: @unchecked Sendable {}
-extension Kava_Incentive_V1beta1_MsgClaimHardReward: @unchecked Sendable {}
-extension Kava_Incentive_V1beta1_MsgClaimHardRewardResponse: @unchecked Sendable {}
-extension Kava_Incentive_V1beta1_MsgClaimDelegatorReward: @unchecked Sendable {}
-extension Kava_Incentive_V1beta1_MsgClaimDelegatorRewardResponse: @unchecked Sendable {}
-extension Kava_Incentive_V1beta1_MsgClaimSwapReward: @unchecked Sendable {}
-extension Kava_Incentive_V1beta1_MsgClaimSwapRewardResponse: @unchecked Sendable {}
-extension Kava_Incentive_V1beta1_MsgClaimSavingsReward: @unchecked Sendable {}
-extension Kava_Incentive_V1beta1_MsgClaimSavingsRewardResponse: @unchecked Sendable {}
-extension Kava_Incentive_V1beta1_MsgClaimEarnReward: @unchecked Sendable {}
-extension Kava_Incentive_V1beta1_MsgClaimEarnRewardResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kava.incentive.v1beta1"

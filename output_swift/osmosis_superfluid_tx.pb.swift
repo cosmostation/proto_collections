@@ -159,19 +159,6 @@ struct Osmosis_Superfluid_MsgUnPoolWhitelistedPoolResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Osmosis_Superfluid_MsgSuperfluidDelegate: @unchecked Sendable {}
-extension Osmosis_Superfluid_MsgSuperfluidDelegateResponse: @unchecked Sendable {}
-extension Osmosis_Superfluid_MsgSuperfluidUndelegate: @unchecked Sendable {}
-extension Osmosis_Superfluid_MsgSuperfluidUndelegateResponse: @unchecked Sendable {}
-extension Osmosis_Superfluid_MsgSuperfluidUnbondLock: @unchecked Sendable {}
-extension Osmosis_Superfluid_MsgSuperfluidUnbondLockResponse: @unchecked Sendable {}
-extension Osmosis_Superfluid_MsgLockAndSuperfluidDelegate: @unchecked Sendable {}
-extension Osmosis_Superfluid_MsgLockAndSuperfluidDelegateResponse: @unchecked Sendable {}
-extension Osmosis_Superfluid_MsgUnPoolWhitelistedPool: @unchecked Sendable {}
-extension Osmosis_Superfluid_MsgUnPoolWhitelistedPoolResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "osmosis.superfluid"

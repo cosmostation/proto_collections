@@ -244,23 +244,6 @@ struct Payments_MsgEffectPaymentResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Payments_MsgSetPaymentContractAuthorisation: @unchecked Sendable {}
-extension Payments_MsgSetPaymentContractAuthorisationResponse: @unchecked Sendable {}
-extension Payments_MsgCreatePaymentTemplate: @unchecked Sendable {}
-extension Payments_MsgCreatePaymentTemplateResponse: @unchecked Sendable {}
-extension Payments_MsgCreatePaymentContract: @unchecked Sendable {}
-extension Payments_MsgCreatePaymentContractResponse: @unchecked Sendable {}
-extension Payments_MsgCreateSubscription: @unchecked Sendable {}
-extension Payments_MsgCreateSubscriptionResponse: @unchecked Sendable {}
-extension Payments_MsgGrantDiscount: @unchecked Sendable {}
-extension Payments_MsgGrantDiscountResponse: @unchecked Sendable {}
-extension Payments_MsgRevokeDiscount: @unchecked Sendable {}
-extension Payments_MsgRevokeDiscountResponse: @unchecked Sendable {}
-extension Payments_MsgEffectPayment: @unchecked Sendable {}
-extension Payments_MsgEffectPaymentResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "payments"
@@ -349,16 +332,12 @@ extension Payments_MsgCreatePaymentTemplate: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.creatorDid.isEmpty {
       try visitor.visitSingularStringField(value: self.creatorDid, fieldNumber: 1)
     }
-    try { if let v = self._paymentTemplate {
+    if let v = self._paymentTemplate {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -503,10 +482,6 @@ extension Payments_MsgCreateSubscription: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.creatorDid.isEmpty {
       try visitor.visitSingularStringField(value: self.creatorDid, fieldNumber: 1)
     }
@@ -519,9 +494,9 @@ extension Payments_MsgCreateSubscription: SwiftProtobuf.Message, SwiftProtobuf._
     if !self.maxPeriods.isEmpty {
       try visitor.visitSingularStringField(value: self.maxPeriods, fieldNumber: 4)
     }
-    try { if let v = self._period {
+    if let v = self._period {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

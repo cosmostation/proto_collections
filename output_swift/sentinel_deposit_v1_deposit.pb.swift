@@ -34,10 +34,6 @@ struct Sentinel_Deposit_V1_Deposit {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Sentinel_Deposit_V1_Deposit: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "sentinel.deposit.v1"

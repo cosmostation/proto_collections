@@ -108,13 +108,6 @@ struct Did_Secret {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Did_DidCredential: @unchecked Sendable {}
-extension Did_Claim: @unchecked Sendable {}
-extension Did_IxoDid: @unchecked Sendable {}
-extension Did_Secret: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "did"
@@ -144,10 +137,6 @@ extension Did_DidCredential: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.credType.isEmpty {
       try visitor.visitRepeatedStringField(value: self.credType, fieldNumber: 1)
     }
@@ -157,9 +146,9 @@ extension Did_DidCredential: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     if !self.issued.isEmpty {
       try visitor.visitSingularStringField(value: self.issued, fieldNumber: 3)
     }
-    try { if let v = self._claim {
+    if let v = self._claim {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -236,10 +225,6 @@ extension Did_IxoDid: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementatio
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.did.isEmpty {
       try visitor.visitSingularStringField(value: self.did, fieldNumber: 1)
     }
@@ -249,9 +234,9 @@ extension Did_IxoDid: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementatio
     if !self.encryptionPublicKey.isEmpty {
       try visitor.visitSingularStringField(value: self.encryptionPublicKey, fieldNumber: 3)
     }
-    try { if let v = self._secret {
+    if let v = self._secret {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

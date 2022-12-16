@@ -109,15 +109,6 @@ struct Kava_Committee_V1beta1_SubparamRequirement {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Kava_Committee_V1beta1_GodPermission: @unchecked Sendable {}
-extension Kava_Committee_V1beta1_SoftwareUpgradePermission: @unchecked Sendable {}
-extension Kava_Committee_V1beta1_TextPermission: @unchecked Sendable {}
-extension Kava_Committee_V1beta1_ParamsChangePermission: @unchecked Sendable {}
-extension Kava_Committee_V1beta1_AllowedParamsChange: @unchecked Sendable {}
-extension Kava_Committee_V1beta1_SubparamRequirement: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "kava.committee.v1beta1"

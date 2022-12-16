@@ -153,17 +153,6 @@ struct Stafihub_Stafihub_Rmintreward_MsgProvideRewardTokenResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Stafihub_Stafihub_Rmintreward_MsgAddMintRewardAct: @unchecked Sendable {}
-extension Stafihub_Stafihub_Rmintreward_MsgAddMintRewardActResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Rmintreward_MsgUpdateMintRewardAct: @unchecked Sendable {}
-extension Stafihub_Stafihub_Rmintreward_MsgUpdateMintRewardActResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Rmintreward_MsgClaimMintReward: @unchecked Sendable {}
-extension Stafihub_Stafihub_Rmintreward_MsgClaimMintRewardResponse: @unchecked Sendable {}
-extension Stafihub_Stafihub_Rmintreward_MsgProvideRewardToken: @unchecked Sendable {}
-extension Stafihub_Stafihub_Rmintreward_MsgProvideRewardTokenResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stafihub.stafihub.rmintreward"
@@ -191,19 +180,15 @@ extension Stafihub_Stafihub_Rmintreward_MsgAddMintRewardAct: SwiftProtobuf.Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.creator.isEmpty {
       try visitor.visitSingularStringField(value: self.creator, fieldNumber: 1)
     }
     if !self.denom.isEmpty {
       try visitor.visitSingularStringField(value: self.denom, fieldNumber: 2)
     }
-    try { if let v = self._act {
+    if let v = self._act {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -260,10 +245,6 @@ extension Stafihub_Stafihub_Rmintreward_MsgUpdateMintRewardAct: SwiftProtobuf.Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.creator.isEmpty {
       try visitor.visitSingularStringField(value: self.creator, fieldNumber: 1)
     }
@@ -273,9 +254,9 @@ extension Stafihub_Stafihub_Rmintreward_MsgUpdateMintRewardAct: SwiftProtobuf.Me
     if self.cycle != 0 {
       try visitor.visitSingularUInt64Field(value: self.cycle, fieldNumber: 3)
     }
-    try { if let v = self._act {
+    if let v = self._act {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -398,16 +379,12 @@ extension Stafihub_Stafihub_Rmintreward_MsgProvideRewardToken: SwiftProtobuf.Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.creator.isEmpty {
       try visitor.visitSingularStringField(value: self.creator, fieldNumber: 1)
     }
-    try { if let v = self._amount {
+    if let v = self._amount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

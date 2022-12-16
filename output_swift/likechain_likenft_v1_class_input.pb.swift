@@ -68,11 +68,6 @@ struct Likechain_Likenft_V1_ClassParentInput {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Likechain_Likenft_V1_ClassInput: @unchecked Sendable {}
-extension Likechain_Likenft_V1_ClassParentInput: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "likechain.likenft.v1"
@@ -108,10 +103,6 @@ extension Likechain_Likenft_V1_ClassInput: SwiftProtobuf.Message, SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
     }
@@ -130,9 +121,9 @@ extension Likechain_Likenft_V1_ClassInput: SwiftProtobuf.Message, SwiftProtobuf.
     if !self.metadata.isEmpty {
       try visitor.visitSingularBytesField(value: self.metadata, fieldNumber: 6)
     }
-    try { if let v = self._config {
+    if let v = self._config {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

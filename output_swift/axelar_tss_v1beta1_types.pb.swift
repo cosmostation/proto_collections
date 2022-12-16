@@ -127,16 +127,6 @@ struct Axelar_Tss_V1beta1_ValidatorStatus {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Axelar_Tss_V1beta1_KeygenVoteData: @unchecked Sendable {}
-extension Axelar_Tss_V1beta1_KeyInfo: @unchecked Sendable {}
-extension Axelar_Tss_V1beta1_MultisigInfo: @unchecked Sendable {}
-extension Axelar_Tss_V1beta1_MultisigInfo.Info: @unchecked Sendable {}
-extension Axelar_Tss_V1beta1_KeyRecoveryInfo: @unchecked Sendable {}
-extension Axelar_Tss_V1beta1_ExternalKeys: @unchecked Sendable {}
-extension Axelar_Tss_V1beta1_ValidatorStatus: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "axelar.tss.v1beta1"

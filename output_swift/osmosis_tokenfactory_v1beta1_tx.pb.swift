@@ -195,19 +195,6 @@ struct Osmosis_Tokenfactory_V1beta1_MsgSetDenomMetadataResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Osmosis_Tokenfactory_V1beta1_MsgCreateDenom: @unchecked Sendable {}
-extension Osmosis_Tokenfactory_V1beta1_MsgCreateDenomResponse: @unchecked Sendable {}
-extension Osmosis_Tokenfactory_V1beta1_MsgMint: @unchecked Sendable {}
-extension Osmosis_Tokenfactory_V1beta1_MsgMintResponse: @unchecked Sendable {}
-extension Osmosis_Tokenfactory_V1beta1_MsgBurn: @unchecked Sendable {}
-extension Osmosis_Tokenfactory_V1beta1_MsgBurnResponse: @unchecked Sendable {}
-extension Osmosis_Tokenfactory_V1beta1_MsgChangeAdmin: @unchecked Sendable {}
-extension Osmosis_Tokenfactory_V1beta1_MsgChangeAdminResponse: @unchecked Sendable {}
-extension Osmosis_Tokenfactory_V1beta1_MsgSetDenomMetadata: @unchecked Sendable {}
-extension Osmosis_Tokenfactory_V1beta1_MsgSetDenomMetadataResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "osmosis.tokenfactory.v1beta1"
@@ -303,16 +290,12 @@ extension Osmosis_Tokenfactory_V1beta1_MsgMint: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularStringField(value: self.sender, fieldNumber: 1)
     }
-    try { if let v = self._amount {
+    if let v = self._amount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -364,16 +347,12 @@ extension Osmosis_Tokenfactory_V1beta1_MsgBurn: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularStringField(value: self.sender, fieldNumber: 1)
     }
-    try { if let v = self._amount {
+    if let v = self._amount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -488,16 +467,12 @@ extension Osmosis_Tokenfactory_V1beta1_MsgSetDenomMetadata: SwiftProtobuf.Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.sender.isEmpty {
       try visitor.visitSingularStringField(value: self.sender, fieldNumber: 1)
     }
-    try { if let v = self._metadata {
+    if let v = self._metadata {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

@@ -225,24 +225,6 @@ struct Shentu_Cvm_V1alpha1_ReturnVars {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Shentu_Cvm_V1alpha1_QueryCodeRequest: @unchecked Sendable {}
-extension Shentu_Cvm_V1alpha1_QueryCodeResponse: @unchecked Sendable {}
-extension Shentu_Cvm_V1alpha1_QueryAbiRequest: @unchecked Sendable {}
-extension Shentu_Cvm_V1alpha1_QueryAbiResponse: @unchecked Sendable {}
-extension Shentu_Cvm_V1alpha1_QueryStorageRequest: @unchecked Sendable {}
-extension Shentu_Cvm_V1alpha1_QueryStorageResponse: @unchecked Sendable {}
-extension Shentu_Cvm_V1alpha1_QueryAddressMetaRequest: @unchecked Sendable {}
-extension Shentu_Cvm_V1alpha1_QueryAddressMetaResponse: @unchecked Sendable {}
-extension Shentu_Cvm_V1alpha1_QueryMetaRequest: @unchecked Sendable {}
-extension Shentu_Cvm_V1alpha1_QueryMetaResponse: @unchecked Sendable {}
-extension Shentu_Cvm_V1alpha1_QueryAccountRequest: @unchecked Sendable {}
-extension Shentu_Cvm_V1alpha1_CVMAccount: @unchecked Sendable {}
-extension Shentu_Cvm_V1alpha1_QueryViewRequest: @unchecked Sendable {}
-extension Shentu_Cvm_V1alpha1_QueryViewResponse: @unchecked Sendable {}
-extension Shentu_Cvm_V1alpha1_ReturnVars: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "shentu.cvm.v1alpha1"
@@ -628,13 +610,9 @@ extension Shentu_Cvm_V1alpha1_CVMAccount: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseAccount {
+    if let v = self._baseAccount {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.code.isEmpty {
       try visitor.visitSingularStringField(value: self.code, fieldNumber: 2)
     }

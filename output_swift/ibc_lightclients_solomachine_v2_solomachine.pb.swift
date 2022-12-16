@@ -493,26 +493,6 @@ struct Ibc_Lightclients_Solomachine_V2_NextSequenceRecvData {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Ibc_Lightclients_Solomachine_V2_DataType: @unchecked Sendable {}
-extension Ibc_Lightclients_Solomachine_V2_ClientState: @unchecked Sendable {}
-extension Ibc_Lightclients_Solomachine_V2_ConsensusState: @unchecked Sendable {}
-extension Ibc_Lightclients_Solomachine_V2_Header: @unchecked Sendable {}
-extension Ibc_Lightclients_Solomachine_V2_Misbehaviour: @unchecked Sendable {}
-extension Ibc_Lightclients_Solomachine_V2_SignatureAndData: @unchecked Sendable {}
-extension Ibc_Lightclients_Solomachine_V2_TimestampedSignatureData: @unchecked Sendable {}
-extension Ibc_Lightclients_Solomachine_V2_SignBytes: @unchecked Sendable {}
-extension Ibc_Lightclients_Solomachine_V2_HeaderData: @unchecked Sendable {}
-extension Ibc_Lightclients_Solomachine_V2_ClientStateData: @unchecked Sendable {}
-extension Ibc_Lightclients_Solomachine_V2_ConsensusStateData: @unchecked Sendable {}
-extension Ibc_Lightclients_Solomachine_V2_ConnectionStateData: @unchecked Sendable {}
-extension Ibc_Lightclients_Solomachine_V2_ChannelStateData: @unchecked Sendable {}
-extension Ibc_Lightclients_Solomachine_V2_PacketCommitmentData: @unchecked Sendable {}
-extension Ibc_Lightclients_Solomachine_V2_PacketAcknowledgementData: @unchecked Sendable {}
-extension Ibc_Lightclients_Solomachine_V2_PacketReceiptAbsenceData: @unchecked Sendable {}
-extension Ibc_Lightclients_Solomachine_V2_NextSequenceRecvData: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "ibc.lightclients.solomachine.v2"
@@ -557,19 +537,15 @@ extension Ibc_Lightclients_Solomachine_V2_ClientState: SwiftProtobuf.Message, Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.sequence != 0 {
       try visitor.visitSingularUInt64Field(value: self.sequence, fieldNumber: 1)
     }
     if self.isFrozen != false {
       try visitor.visitSingularBoolField(value: self.isFrozen, fieldNumber: 2)
     }
-    try { if let v = self._consensusState {
+    if let v = self._consensusState {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     if self.allowUpdateAfterProposal != false {
       try visitor.visitSingularBoolField(value: self.allowUpdateAfterProposal, fieldNumber: 4)
     }
@@ -609,13 +585,9 @@ extension Ibc_Lightclients_Solomachine_V2_ConsensusState: SwiftProtobuf.Message,
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._publicKey {
+    if let v = self._publicKey {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.diversifier.isEmpty {
       try visitor.visitSingularStringField(value: self.diversifier, fieldNumber: 2)
     }
@@ -661,10 +633,6 @@ extension Ibc_Lightclients_Solomachine_V2_Header: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if self.sequence != 0 {
       try visitor.visitSingularUInt64Field(value: self.sequence, fieldNumber: 1)
     }
@@ -674,9 +642,9 @@ extension Ibc_Lightclients_Solomachine_V2_Header: SwiftProtobuf.Message, SwiftPr
     if !self.signature.isEmpty {
       try visitor.visitSingularBytesField(value: self.signature, fieldNumber: 3)
     }
-    try { if let v = self._newPublicKey {
+    if let v = self._newPublicKey {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
+    }
     if !self.newDiversifier.isEmpty {
       try visitor.visitSingularStringField(value: self.newDiversifier, fieldNumber: 5)
     }
@@ -719,22 +687,18 @@ extension Ibc_Lightclients_Solomachine_V2_Misbehaviour: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.clientID.isEmpty {
       try visitor.visitSingularStringField(value: self.clientID, fieldNumber: 1)
     }
     if self.sequence != 0 {
       try visitor.visitSingularUInt64Field(value: self.sequence, fieldNumber: 2)
     }
-    try { if let v = self._signatureOne {
+    if let v = self._signatureOne {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
-    try { if let v = self._signatureTwo {
+    }
+    if let v = self._signatureTwo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -913,13 +877,9 @@ extension Ibc_Lightclients_Solomachine_V2_HeaderData: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._newPubKey {
+    if let v = self._newPubKey {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.newDiversifier.isEmpty {
       try visitor.visitSingularStringField(value: self.newDiversifier, fieldNumber: 2)
     }
@@ -955,16 +915,12 @@ extension Ibc_Lightclients_Solomachine_V2_ClientStateData: SwiftProtobuf.Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.path.isEmpty {
       try visitor.visitSingularBytesField(value: self.path, fieldNumber: 1)
     }
-    try { if let v = self._clientState {
+    if let v = self._clientState {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -997,16 +953,12 @@ extension Ibc_Lightclients_Solomachine_V2_ConsensusStateData: SwiftProtobuf.Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.path.isEmpty {
       try visitor.visitSingularBytesField(value: self.path, fieldNumber: 1)
     }
-    try { if let v = self._consensusState {
+    if let v = self._consensusState {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1039,16 +991,12 @@ extension Ibc_Lightclients_Solomachine_V2_ConnectionStateData: SwiftProtobuf.Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.path.isEmpty {
       try visitor.visitSingularBytesField(value: self.path, fieldNumber: 1)
     }
-    try { if let v = self._connection {
+    if let v = self._connection {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1081,16 +1029,12 @@ extension Ibc_Lightclients_Solomachine_V2_ChannelStateData: SwiftProtobuf.Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.path.isEmpty {
       try visitor.visitSingularBytesField(value: self.path, fieldNumber: 1)
     }
-    try { if let v = self._channel {
+    if let v = self._channel {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

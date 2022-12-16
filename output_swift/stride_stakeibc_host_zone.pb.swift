@@ -140,10 +140,6 @@ struct Stride_Stakeibc_HostZone {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Stride_Stakeibc_HostZone: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "stride.stakeibc"
@@ -254,10 +250,6 @@ extension Stride_Stakeibc_HostZone: SwiftProtobuf.Message, SwiftProtobuf._Messag
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
       if !_storage._chainID.isEmpty {
         try visitor.visitSingularStringField(value: _storage._chainID, fieldNumber: 1)
       }
@@ -270,15 +262,15 @@ extension Stride_Stakeibc_HostZone: SwiftProtobuf.Message, SwiftProtobuf._Messag
       if !_storage._blacklistedValidators.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._blacklistedValidators, fieldNumber: 4)
       }
-      try { if let v = _storage._withdrawalAccount {
+      if let v = _storage._withdrawalAccount {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-      } }()
-      try { if let v = _storage._feeAccount {
+      }
+      if let v = _storage._feeAccount {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-      } }()
-      try { if let v = _storage._delegationAccount {
+      }
+      if let v = _storage._delegationAccount {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-      } }()
+      }
       if !_storage._ibcDenom.isEmpty {
         try visitor.visitSingularStringField(value: _storage._ibcDenom, fieldNumber: 8)
       }
@@ -300,9 +292,9 @@ extension Stride_Stakeibc_HostZone: SwiftProtobuf.Message, SwiftProtobuf._Messag
       if _storage._unbondingFrequency != 0 {
         try visitor.visitSingularUInt64Field(value: _storage._unbondingFrequency, fieldNumber: 14)
       }
-      try { if let v = _storage._redemptionAccount {
+      if let v = _storage._redemptionAccount {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 16)
-      } }()
+      }
       if !_storage._bech32Prefix.isEmpty {
         try visitor.visitSingularStringField(value: _storage._bech32Prefix, fieldNumber: 17)
       }

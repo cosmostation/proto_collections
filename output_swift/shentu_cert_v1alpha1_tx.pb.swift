@@ -152,17 +152,6 @@ struct Shentu_Cert_V1alpha1_MsgCertifyPlatformResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Shentu_Cert_V1alpha1_MsgProposeCertifier: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_MsgProposeCertifierResponse: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_MsgIssueCertificate: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_MsgIssueCertificateResponse: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_MsgRevokeCertificate: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_MsgRevokeCertificateResponse: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_MsgCertifyPlatform: @unchecked Sendable {}
-extension Shentu_Cert_V1alpha1_MsgCertifyPlatformResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "shentu.cert.v1alpha1"
@@ -263,13 +252,9 @@ extension Shentu_Cert_V1alpha1_MsgIssueCertificate: SwiftProtobuf.Message, Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._content {
+    if let v = self._content {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.compiler.isEmpty {
       try visitor.visitSingularStringField(value: self.compiler, fieldNumber: 2)
     }
@@ -401,16 +386,12 @@ extension Shentu_Cert_V1alpha1_MsgCertifyPlatform: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.certifier.isEmpty {
       try visitor.visitSingularStringField(value: self.certifier, fieldNumber: 1)
     }
-    try { if let v = self._validatorPubkey {
+    if let v = self._validatorPubkey {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     if !self.platform.isEmpty {
       try visitor.visitSingularStringField(value: self.platform, fieldNumber: 3)
     }

@@ -160,17 +160,6 @@ struct Irismod_Oracle_MsgEditFeedResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Irismod_Oracle_MsgCreateFeed: @unchecked Sendable {}
-extension Irismod_Oracle_MsgCreateFeedResponse: @unchecked Sendable {}
-extension Irismod_Oracle_MsgStartFeed: @unchecked Sendable {}
-extension Irismod_Oracle_MsgStartFeedResponse: @unchecked Sendable {}
-extension Irismod_Oracle_MsgPauseFeed: @unchecked Sendable {}
-extension Irismod_Oracle_MsgPauseFeedResponse: @unchecked Sendable {}
-extension Irismod_Oracle_MsgEditFeed: @unchecked Sendable {}
-extension Irismod_Oracle_MsgEditFeedResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "irismod.oracle"

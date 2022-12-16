@@ -380,25 +380,6 @@ struct Ibc_Core_Client_V1_QueryUpgradedConsensusStateResponse {
   fileprivate var _upgradedConsensusState: Google_Protobuf2_Any? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Ibc_Core_Client_V1_QueryClientStateRequest: @unchecked Sendable {}
-extension Ibc_Core_Client_V1_QueryClientStateResponse: @unchecked Sendable {}
-extension Ibc_Core_Client_V1_QueryClientStatesRequest: @unchecked Sendable {}
-extension Ibc_Core_Client_V1_QueryClientStatesResponse: @unchecked Sendable {}
-extension Ibc_Core_Client_V1_QueryConsensusStateRequest: @unchecked Sendable {}
-extension Ibc_Core_Client_V1_QueryConsensusStateResponse: @unchecked Sendable {}
-extension Ibc_Core_Client_V1_QueryConsensusStatesRequest: @unchecked Sendable {}
-extension Ibc_Core_Client_V1_QueryConsensusStatesResponse: @unchecked Sendable {}
-extension Ibc_Core_Client_V1_QueryClientStatusRequest: @unchecked Sendable {}
-extension Ibc_Core_Client_V1_QueryClientStatusResponse: @unchecked Sendable {}
-extension Ibc_Core_Client_V1_QueryClientParamsRequest: @unchecked Sendable {}
-extension Ibc_Core_Client_V1_QueryClientParamsResponse: @unchecked Sendable {}
-extension Ibc_Core_Client_V1_QueryUpgradedClientStateRequest: @unchecked Sendable {}
-extension Ibc_Core_Client_V1_QueryUpgradedClientStateResponse: @unchecked Sendable {}
-extension Ibc_Core_Client_V1_QueryUpgradedConsensusStateRequest: @unchecked Sendable {}
-extension Ibc_Core_Client_V1_QueryUpgradedConsensusStateResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "ibc.core.client.v1"
@@ -458,19 +439,15 @@ extension Ibc_Core_Client_V1_QueryClientStateResponse: SwiftProtobuf.Message, Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._clientState {
+    if let v = self._clientState {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.proof.isEmpty {
       try visitor.visitSingularBytesField(value: self.proof, fieldNumber: 2)
     }
-    try { if let v = self._proofHeight {
+    if let v = self._proofHeight {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -502,13 +479,9 @@ extension Ibc_Core_Client_V1_QueryClientStatesRequest: SwiftProtobuf.Message, Sw
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -540,16 +513,12 @@ extension Ibc_Core_Client_V1_QueryClientStatesResponse: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.clientStates.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.clientStates, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -634,19 +603,15 @@ extension Ibc_Core_Client_V1_QueryConsensusStateResponse: SwiftProtobuf.Message,
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._consensusState {
+    if let v = self._consensusState {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     if !self.proof.isEmpty {
       try visitor.visitSingularBytesField(value: self.proof, fieldNumber: 2)
     }
-    try { if let v = self._proofHeight {
+    if let v = self._proofHeight {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -680,16 +645,12 @@ extension Ibc_Core_Client_V1_QueryConsensusStatesRequest: SwiftProtobuf.Message,
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.clientID.isEmpty {
       try visitor.visitSingularStringField(value: self.clientID, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -722,16 +683,12 @@ extension Ibc_Core_Client_V1_QueryConsensusStatesResponse: SwiftProtobuf.Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.consensusStates.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.consensusStates, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -845,13 +802,9 @@ extension Ibc_Core_Client_V1_QueryClientParamsResponse: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -900,13 +853,9 @@ extension Ibc_Core_Client_V1_QueryUpgradedClientStateResponse: SwiftProtobuf.Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._upgradedClientState {
+    if let v = self._upgradedClientState {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -955,13 +904,9 @@ extension Ibc_Core_Client_V1_QueryUpgradedConsensusStateResponse: SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._upgradedConsensusState {
+    if let v = self._upgradedConsensusState {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

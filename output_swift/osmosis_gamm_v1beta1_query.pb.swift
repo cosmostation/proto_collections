@@ -495,39 +495,6 @@ struct Osmosis_Gamm_V1beta1_QueryTotalLiquidityResponse {
   init() {}
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Osmosis_Gamm_V1beta1_QueryPoolRequest: @unchecked Sendable {}
-extension Osmosis_Gamm_V1beta1_QueryPoolResponse: @unchecked Sendable {}
-extension Osmosis_Gamm_V1beta1_QueryPoolsRequest: @unchecked Sendable {}
-extension Osmosis_Gamm_V1beta1_QueryPoolsResponse: @unchecked Sendable {}
-extension Osmosis_Gamm_V1beta1_QueryNumPoolsRequest: @unchecked Sendable {}
-extension Osmosis_Gamm_V1beta1_QueryNumPoolsResponse: @unchecked Sendable {}
-extension Osmosis_Gamm_V1beta1_QueryPoolTypeRequest: @unchecked Sendable {}
-extension Osmosis_Gamm_V1beta1_QueryPoolTypeResponse: @unchecked Sendable {}
-extension Osmosis_Gamm_V1beta1_QueryCalcJoinPoolSharesRequest: @unchecked Sendable {}
-extension Osmosis_Gamm_V1beta1_QueryCalcJoinPoolSharesResponse: @unchecked Sendable {}
-extension Osmosis_Gamm_V1beta1_QueryCalcExitPoolCoinsFromSharesRequest: @unchecked Sendable {}
-extension Osmosis_Gamm_V1beta1_QueryCalcExitPoolCoinsFromSharesResponse: @unchecked Sendable {}
-extension Osmosis_Gamm_V1beta1_QueryPoolParamsRequest: @unchecked Sendable {}
-extension Osmosis_Gamm_V1beta1_QueryPoolParamsResponse: @unchecked Sendable {}
-extension Osmosis_Gamm_V1beta1_QueryTotalPoolLiquidityRequest: @unchecked Sendable {}
-extension Osmosis_Gamm_V1beta1_QueryTotalPoolLiquidityResponse: @unchecked Sendable {}
-extension Osmosis_Gamm_V1beta1_QueryTotalSharesRequest: @unchecked Sendable {}
-extension Osmosis_Gamm_V1beta1_QueryTotalSharesResponse: @unchecked Sendable {}
-extension Osmosis_Gamm_V1beta1_QueryCalcJoinPoolNoSwapSharesRequest: @unchecked Sendable {}
-extension Osmosis_Gamm_V1beta1_QueryCalcJoinPoolNoSwapSharesResponse: @unchecked Sendable {}
-extension Osmosis_Gamm_V1beta1_QuerySpotPriceRequest: @unchecked Sendable {}
-extension Osmosis_Gamm_V1beta1_QueryPoolsWithFilterRequest: @unchecked Sendable {}
-extension Osmosis_Gamm_V1beta1_QueryPoolsWithFilterResponse: @unchecked Sendable {}
-extension Osmosis_Gamm_V1beta1_QuerySpotPriceResponse: @unchecked Sendable {}
-extension Osmosis_Gamm_V1beta1_QuerySwapExactAmountInRequest: @unchecked Sendable {}
-extension Osmosis_Gamm_V1beta1_QuerySwapExactAmountInResponse: @unchecked Sendable {}
-extension Osmosis_Gamm_V1beta1_QuerySwapExactAmountOutRequest: @unchecked Sendable {}
-extension Osmosis_Gamm_V1beta1_QuerySwapExactAmountOutResponse: @unchecked Sendable {}
-extension Osmosis_Gamm_V1beta1_QueryTotalLiquidityRequest: @unchecked Sendable {}
-extension Osmosis_Gamm_V1beta1_QueryTotalLiquidityResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "osmosis.gamm.v1beta1"
@@ -583,13 +550,9 @@ extension Osmosis_Gamm_V1beta1_QueryPoolResponse: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pool {
+    if let v = self._pool {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -619,13 +582,9 @@ extension Osmosis_Gamm_V1beta1_QueryPoolsRequest: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -657,16 +616,12 @@ extension Osmosis_Gamm_V1beta1_QueryPoolsResponse: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.pools.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.pools, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -990,13 +945,9 @@ extension Osmosis_Gamm_V1beta1_QueryPoolParamsResponse: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._params {
+    if let v = self._params {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1122,13 +1073,9 @@ extension Osmosis_Gamm_V1beta1_QueryTotalSharesResponse: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._totalShares {
+    if let v = self._totalShares {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1282,19 +1229,15 @@ extension Osmosis_Gamm_V1beta1_QueryPoolsWithFilterRequest: SwiftProtobuf.Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.minLiquidity.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.minLiquidity, fieldNumber: 1)
     }
     if !self.poolType.isEmpty {
       try visitor.visitSingularStringField(value: self.poolType, fieldNumber: 2)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1328,16 +1271,12 @@ extension Osmosis_Gamm_V1beta1_QueryPoolsWithFilterResponse: SwiftProtobuf.Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.pools.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.pools, fieldNumber: 1)
     }
-    try { if let v = self._pagination {
+    if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 

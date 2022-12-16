@@ -86,11 +86,6 @@ extension Akash_Base_V1beta2_Endpoint.Kind: CaseIterable {
 
 #endif  // swift(>=4.2)
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Akash_Base_V1beta2_Endpoint: @unchecked Sendable {}
-extension Akash_Base_V1beta2_Endpoint.Kind: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "akash.base.v1beta2"
