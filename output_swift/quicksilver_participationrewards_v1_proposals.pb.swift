@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Quicksilver_Interchainstaking_V1_AddProtocolDataProposal {
+struct Quicksilver_Participationrewards_V1_AddProtocolDataProposal {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -40,7 +40,7 @@ struct Quicksilver_Interchainstaking_V1_AddProtocolDataProposal {
   init() {}
 }
 
-struct Quicksilver_Interchainstaking_V1_AddProtocolDataProposalWithDeposit {
+struct Quicksilver_Participationrewards_V1_AddProtocolDataProposalWithDeposit {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -66,9 +66,9 @@ struct Quicksilver_Interchainstaking_V1_AddProtocolDataProposalWithDeposit {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "quicksilver.interchainstaking.v1"
+fileprivate let _protobuf_package = "quicksilver.participationrewards.v1"
 
-extension Quicksilver_Interchainstaking_V1_AddProtocolDataProposal: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Quicksilver_Participationrewards_V1_AddProtocolDataProposal: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".AddProtocolDataProposal"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "title"),
@@ -113,7 +113,7 @@ extension Quicksilver_Interchainstaking_V1_AddProtocolDataProposal: SwiftProtobu
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Quicksilver_Interchainstaking_V1_AddProtocolDataProposal, rhs: Quicksilver_Interchainstaking_V1_AddProtocolDataProposal) -> Bool {
+  static func ==(lhs: Quicksilver_Participationrewards_V1_AddProtocolDataProposal, rhs: Quicksilver_Participationrewards_V1_AddProtocolDataProposal) -> Bool {
     if lhs.title != rhs.title {return false}
     if lhs.description_p != rhs.description_p {return false}
     if lhs.type != rhs.type {return false}
@@ -124,7 +124,7 @@ extension Quicksilver_Interchainstaking_V1_AddProtocolDataProposal: SwiftProtobu
   }
 }
 
-extension Quicksilver_Interchainstaking_V1_AddProtocolDataProposalWithDeposit: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Quicksilver_Participationrewards_V1_AddProtocolDataProposalWithDeposit: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".AddProtocolDataProposalWithDeposit"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "title"),
@@ -179,7 +179,7 @@ extension Quicksilver_Interchainstaking_V1_AddProtocolDataProposalWithDeposit: S
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Quicksilver_Interchainstaking_V1_AddProtocolDataProposalWithDeposit, rhs: Quicksilver_Interchainstaking_V1_AddProtocolDataProposalWithDeposit) -> Bool {
+  static func ==(lhs: Quicksilver_Participationrewards_V1_AddProtocolDataProposalWithDeposit, rhs: Quicksilver_Participationrewards_V1_AddProtocolDataProposalWithDeposit) -> Bool {
     if lhs.title != rhs.title {return false}
     if lhs.description_p != rhs.description_p {return false}
     if lhs.`protocol` != rhs.`protocol` {return false}
