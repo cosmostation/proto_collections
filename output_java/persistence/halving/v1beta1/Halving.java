@@ -548,9 +548,9 @@ public final class Halving {
       "\n)persistence/halving/v1beta1/halving.pr" +
       "oto\022\033persistence.halving.v1beta1\032\024gogopr" +
       "oto/gogo.proto\";\n\006Params\022+\n\013blockHeight\030" +
-      "\001 \001(\004B\026\362\336\037\022yaml:\"blockHeight\":\004\230\240\037\000B;Z9g" +
-      "ithub.com/persistenceOne/persistenceCore" +
-      "/x/halving/typesb\006proto3"
+      "\001 \001(\004B\026\362\336\037\022yaml:\"blockHeight\":\004\230\240\037\000B>Z<g" +
+      "ithub.com/persistenceOne/persistence-sdk" +
+      "/v2/x/halving/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

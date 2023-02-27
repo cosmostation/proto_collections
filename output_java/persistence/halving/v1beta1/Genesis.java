@@ -722,9 +722,9 @@ public final class Genesis {
       "oto/gogo.proto\032)persistence/halving/v1be" +
       "ta1/halving.proto\"I\n\014GenesisState\0229\n\006par" +
       "ams\030\001 \001(\0132#.persistence.halving.v1beta1." +
-      "ParamsB\004\310\336\037\000B;Z9github.com/persistenceOn" +
-      "e/persistenceCore/x/halving/typesb\006proto" +
-      "3"
+      "ParamsB\004\310\336\037\000B>Z<github.com/persistenceOn" +
+      "e/persistence-sdk/v2/x/halving/typesb\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

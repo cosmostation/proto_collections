@@ -1158,9 +1158,9 @@ public final class QueryOuterClass {
       "\230\001\n\006Params\022/.persistence.halving.v1beta1" +
       ".QueryParamsRequest\0320.persistence.halvin" +
       "g.v1beta1.QueryParamsResponse\"+\202\323\344\223\002%\022#/" +
-      "persistence/halving/v1beta1/paramsB;Z9gi" +
-      "thub.com/persistenceOne/persistenceCore/" +
-      "x/halving/typesb\006proto3"
+      "persistence/halving/v1beta1/paramsB>Z<gi" +
+      "thub.com/persistenceOne/persistence-sdk/" +
+      "v2/x/halving/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
