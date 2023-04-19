@@ -19,11 +19,19 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The classId.
      */
     java.lang.String getClassId();
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The bytes for classId.
      */
@@ -31,11 +39,19 @@ public final class QueryOuterClass {
         getClassIdBytes();
 
     /**
+     * <pre>
+     * owner is the owner address of the nft
+     * </pre>
+     *
      * <code>string owner = 2;</code>
      * @return The owner.
      */
     java.lang.String getOwner();
     /**
+     * <pre>
+     * owner is the owner address of the nft
+     * </pre>
+     *
      * <code>string owner = 2;</code>
      * @return The bytes for owner.
      */
@@ -140,6 +156,10 @@ public final class QueryOuterClass {
     public static final int CLASS_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object classId_;
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The classId.
      */
@@ -157,6 +177,10 @@ public final class QueryOuterClass {
       }
     }
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The bytes for classId.
      */
@@ -178,6 +202,10 @@ public final class QueryOuterClass {
     public static final int OWNER_FIELD_NUMBER = 2;
     private volatile java.lang.Object owner_;
     /**
+     * <pre>
+     * owner is the owner address of the nft
+     * </pre>
+     *
      * <code>string owner = 2;</code>
      * @return The owner.
      */
@@ -195,6 +223,10 @@ public final class QueryOuterClass {
       }
     }
     /**
+     * <pre>
+     * owner is the owner address of the nft
+     * </pre>
+     *
      * <code>string owner = 2;</code>
      * @return The bytes for owner.
      */
@@ -538,6 +570,10 @@ public final class QueryOuterClass {
 
       private java.lang.Object classId_ = "";
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @return The classId.
        */
@@ -554,6 +590,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @return The bytes for classId.
        */
@@ -571,6 +611,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @param value The classId to set.
        * @return This builder for chaining.
@@ -586,6 +630,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @return This builder for chaining.
        */
@@ -596,6 +644,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @param value The bytes for classId to set.
        * @return This builder for chaining.
@@ -614,6 +666,10 @@ public final class QueryOuterClass {
 
       private java.lang.Object owner_ = "";
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>string owner = 2;</code>
        * @return The owner.
        */
@@ -630,6 +686,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>string owner = 2;</code>
        * @return The bytes for owner.
        */
@@ -647,6 +707,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>string owner = 2;</code>
        * @param value The owner to set.
        * @return This builder for chaining.
@@ -662,6 +726,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>string owner = 2;</code>
        * @return This builder for chaining.
        */
@@ -672,6 +740,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>string owner = 2;</code>
        * @param value The bytes for owner to set.
        * @return This builder for chaining.
@@ -745,6 +817,10 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * amount is the number of all NFTs of a given class owned by the owner
+     * </pre>
+     *
      * <code>uint64 amount = 1;</code>
      * @return The amount.
      */
@@ -839,6 +915,10 @@ public final class QueryOuterClass {
     public static final int AMOUNT_FIELD_NUMBER = 1;
     private long amount_;
     /**
+     * <pre>
+     * amount is the number of all NFTs of a given class owned by the owner
+     * </pre>
+     *
      * <code>uint64 amount = 1;</code>
      * @return The amount.
      */
@@ -1156,6 +1236,10 @@ public final class QueryOuterClass {
 
       private long amount_ ;
       /**
+       * <pre>
+       * amount is the number of all NFTs of a given class owned by the owner
+       * </pre>
+       *
        * <code>uint64 amount = 1;</code>
        * @return The amount.
        */
@@ -1164,6 +1248,10 @@ public final class QueryOuterClass {
         return amount_;
       }
       /**
+       * <pre>
+       * amount is the number of all NFTs of a given class owned by the owner
+       * </pre>
+       *
        * <code>uint64 amount = 1;</code>
        * @param value The amount to set.
        * @return This builder for chaining.
@@ -1175,6 +1263,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * amount is the number of all NFTs of a given class owned by the owner
+       * </pre>
+       *
        * <code>uint64 amount = 1;</code>
        * @return This builder for chaining.
        */
@@ -1242,11 +1334,19 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The classId.
      */
     java.lang.String getClassId();
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The bytes for classId.
      */
@@ -1254,11 +1354,19 @@ public final class QueryOuterClass {
         getClassIdBytes();
 
     /**
+     * <pre>
+     * id is a unique identifier of the NFT
+     * </pre>
+     *
      * <code>string id = 2;</code>
      * @return The id.
      */
     java.lang.String getId();
     /**
+     * <pre>
+     * id is a unique identifier of the NFT
+     * </pre>
+     *
      * <code>string id = 2;</code>
      * @return The bytes for id.
      */
@@ -1363,6 +1471,10 @@ public final class QueryOuterClass {
     public static final int CLASS_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object classId_;
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The classId.
      */
@@ -1380,6 +1492,10 @@ public final class QueryOuterClass {
       }
     }
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The bytes for classId.
      */
@@ -1401,6 +1517,10 @@ public final class QueryOuterClass {
     public static final int ID_FIELD_NUMBER = 2;
     private volatile java.lang.Object id_;
     /**
+     * <pre>
+     * id is a unique identifier of the NFT
+     * </pre>
+     *
      * <code>string id = 2;</code>
      * @return The id.
      */
@@ -1418,6 +1538,10 @@ public final class QueryOuterClass {
       }
     }
     /**
+     * <pre>
+     * id is a unique identifier of the NFT
+     * </pre>
+     *
      * <code>string id = 2;</code>
      * @return The bytes for id.
      */
@@ -1761,6 +1885,10 @@ public final class QueryOuterClass {
 
       private java.lang.Object classId_ = "";
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @return The classId.
        */
@@ -1777,6 +1905,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @return The bytes for classId.
        */
@@ -1794,6 +1926,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @param value The classId to set.
        * @return This builder for chaining.
@@ -1809,6 +1945,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @return This builder for chaining.
        */
@@ -1819,6 +1959,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @param value The bytes for classId to set.
        * @return This builder for chaining.
@@ -1837,6 +1981,10 @@ public final class QueryOuterClass {
 
       private java.lang.Object id_ = "";
       /**
+       * <pre>
+       * id is a unique identifier of the NFT
+       * </pre>
+       *
        * <code>string id = 2;</code>
        * @return The id.
        */
@@ -1853,6 +2001,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * id is a unique identifier of the NFT
+       * </pre>
+       *
        * <code>string id = 2;</code>
        * @return The bytes for id.
        */
@@ -1870,6 +2022,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * id is a unique identifier of the NFT
+       * </pre>
+       *
        * <code>string id = 2;</code>
        * @param value The id to set.
        * @return This builder for chaining.
@@ -1885,6 +2041,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * id is a unique identifier of the NFT
+       * </pre>
+       *
        * <code>string id = 2;</code>
        * @return This builder for chaining.
        */
@@ -1895,6 +2055,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * id is a unique identifier of the NFT
+       * </pre>
+       *
        * <code>string id = 2;</code>
        * @param value The bytes for id to set.
        * @return This builder for chaining.
@@ -1968,11 +2132,19 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * owner is the owner address of the nft
+     * </pre>
+     *
      * <code>string owner = 1;</code>
      * @return The owner.
      */
     java.lang.String getOwner();
     /**
+     * <pre>
+     * owner is the owner address of the nft
+     * </pre>
+     *
      * <code>string owner = 1;</code>
      * @return The bytes for owner.
      */
@@ -2070,6 +2242,10 @@ public final class QueryOuterClass {
     public static final int OWNER_FIELD_NUMBER = 1;
     private volatile java.lang.Object owner_;
     /**
+     * <pre>
+     * owner is the owner address of the nft
+     * </pre>
+     *
      * <code>string owner = 1;</code>
      * @return The owner.
      */
@@ -2087,6 +2263,10 @@ public final class QueryOuterClass {
       }
     }
     /**
+     * <pre>
+     * owner is the owner address of the nft
+     * </pre>
+     *
      * <code>string owner = 1;</code>
      * @return The bytes for owner.
      */
@@ -2413,6 +2593,10 @@ public final class QueryOuterClass {
 
       private java.lang.Object owner_ = "";
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>string owner = 1;</code>
        * @return The owner.
        */
@@ -2429,6 +2613,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>string owner = 1;</code>
        * @return The bytes for owner.
        */
@@ -2446,6 +2634,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>string owner = 1;</code>
        * @param value The owner to set.
        * @return This builder for chaining.
@@ -2461,6 +2653,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>string owner = 1;</code>
        * @return This builder for chaining.
        */
@@ -2471,6 +2667,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>string owner = 1;</code>
        * @param value The bytes for owner to set.
        * @return This builder for chaining.
@@ -2544,11 +2744,19 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The classId.
      */
     java.lang.String getClassId();
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The bytes for classId.
      */
@@ -2646,6 +2854,10 @@ public final class QueryOuterClass {
     public static final int CLASS_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object classId_;
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The classId.
      */
@@ -2663,6 +2875,10 @@ public final class QueryOuterClass {
       }
     }
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The bytes for classId.
      */
@@ -2989,6 +3205,10 @@ public final class QueryOuterClass {
 
       private java.lang.Object classId_ = "";
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @return The classId.
        */
@@ -3005,6 +3225,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @return The bytes for classId.
        */
@@ -3022,6 +3246,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @param value The classId to set.
        * @return This builder for chaining.
@@ -3037,6 +3265,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @return This builder for chaining.
        */
@@ -3047,6 +3279,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @param value The bytes for classId to set.
        * @return This builder for chaining.
@@ -3120,6 +3356,10 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * amount is the number of all NFTs from the given class
+     * </pre>
+     *
      * <code>uint64 amount = 1;</code>
      * @return The amount.
      */
@@ -3214,6 +3454,10 @@ public final class QueryOuterClass {
     public static final int AMOUNT_FIELD_NUMBER = 1;
     private long amount_;
     /**
+     * <pre>
+     * amount is the number of all NFTs from the given class
+     * </pre>
+     *
      * <code>uint64 amount = 1;</code>
      * @return The amount.
      */
@@ -3531,6 +3775,10 @@ public final class QueryOuterClass {
 
       private long amount_ ;
       /**
+       * <pre>
+       * amount is the number of all NFTs from the given class
+       * </pre>
+       *
        * <code>uint64 amount = 1;</code>
        * @return The amount.
        */
@@ -3539,6 +3787,10 @@ public final class QueryOuterClass {
         return amount_;
       }
       /**
+       * <pre>
+       * amount is the number of all NFTs from the given class
+       * </pre>
+       *
        * <code>uint64 amount = 1;</code>
        * @param value The amount to set.
        * @return This builder for chaining.
@@ -3550,6 +3802,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * amount is the number of all NFTs from the given class
+       * </pre>
+       *
        * <code>uint64 amount = 1;</code>
        * @return This builder for chaining.
        */
@@ -3617,11 +3873,19 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The classId.
      */
     java.lang.String getClassId();
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The bytes for classId.
      */
@@ -3629,11 +3893,19 @@ public final class QueryOuterClass {
         getClassIdBytes();
 
     /**
+     * <pre>
+     * owner is the owner address of the nft
+     * </pre>
+     *
      * <code>string owner = 2;</code>
      * @return The owner.
      */
     java.lang.String getOwner();
     /**
+     * <pre>
+     * owner is the owner address of the nft
+     * </pre>
+     *
      * <code>string owner = 2;</code>
      * @return The bytes for owner.
      */
@@ -3641,16 +3913,28 @@ public final class QueryOuterClass {
         getOwnerBytes();
 
     /**
+     * <pre>
+     * pagination defines an optional pagination for the request.
+     * </pre>
+     *
      * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 3;</code>
      * @return Whether the pagination field is set.
      */
     boolean hasPagination();
     /**
+     * <pre>
+     * pagination defines an optional pagination for the request.
+     * </pre>
+     *
      * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 3;</code>
      * @return The pagination.
      */
     cosmos.base.query.v1beta1.Pagination.PageRequest getPagination();
     /**
+     * <pre>
+     * pagination defines an optional pagination for the request.
+     * </pre>
+     *
      * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 3;</code>
      */
     cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder();
@@ -3766,6 +4050,10 @@ public final class QueryOuterClass {
     public static final int CLASS_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object classId_;
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The classId.
      */
@@ -3783,6 +4071,10 @@ public final class QueryOuterClass {
       }
     }
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The bytes for classId.
      */
@@ -3804,6 +4096,10 @@ public final class QueryOuterClass {
     public static final int OWNER_FIELD_NUMBER = 2;
     private volatile java.lang.Object owner_;
     /**
+     * <pre>
+     * owner is the owner address of the nft
+     * </pre>
+     *
      * <code>string owner = 2;</code>
      * @return The owner.
      */
@@ -3821,6 +4117,10 @@ public final class QueryOuterClass {
       }
     }
     /**
+     * <pre>
+     * owner is the owner address of the nft
+     * </pre>
+     *
      * <code>string owner = 2;</code>
      * @return The bytes for owner.
      */
@@ -3842,6 +4142,10 @@ public final class QueryOuterClass {
     public static final int PAGINATION_FIELD_NUMBER = 3;
     private cosmos.base.query.v1beta1.Pagination.PageRequest pagination_;
     /**
+     * <pre>
+     * pagination defines an optional pagination for the request.
+     * </pre>
+     *
      * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 3;</code>
      * @return Whether the pagination field is set.
      */
@@ -3850,6 +4154,10 @@ public final class QueryOuterClass {
       return pagination_ != null;
     }
     /**
+     * <pre>
+     * pagination defines an optional pagination for the request.
+     * </pre>
+     *
      * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 3;</code>
      * @return The pagination.
      */
@@ -3858,6 +4166,10 @@ public final class QueryOuterClass {
       return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageRequest.getDefaultInstance() : pagination_;
     }
     /**
+     * <pre>
+     * pagination defines an optional pagination for the request.
+     * </pre>
+     *
      * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 3;</code>
      */
     @java.lang.Override
@@ -4220,6 +4532,10 @@ public final class QueryOuterClass {
 
       private java.lang.Object classId_ = "";
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @return The classId.
        */
@@ -4236,6 +4552,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @return The bytes for classId.
        */
@@ -4253,6 +4573,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @param value The classId to set.
        * @return This builder for chaining.
@@ -4268,6 +4592,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @return This builder for chaining.
        */
@@ -4278,6 +4606,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @param value The bytes for classId to set.
        * @return This builder for chaining.
@@ -4296,6 +4628,10 @@ public final class QueryOuterClass {
 
       private java.lang.Object owner_ = "";
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>string owner = 2;</code>
        * @return The owner.
        */
@@ -4312,6 +4648,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>string owner = 2;</code>
        * @return The bytes for owner.
        */
@@ -4329,6 +4669,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>string owner = 2;</code>
        * @param value The owner to set.
        * @return This builder for chaining.
@@ -4344,6 +4688,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>string owner = 2;</code>
        * @return This builder for chaining.
        */
@@ -4354,6 +4702,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>string owner = 2;</code>
        * @param value The bytes for owner to set.
        * @return This builder for chaining.
@@ -4374,6 +4726,10 @@ public final class QueryOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageRequest, cosmos.base.query.v1beta1.Pagination.PageRequest.Builder, cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder> paginationBuilder_;
       /**
+       * <pre>
+       * pagination defines an optional pagination for the request.
+       * </pre>
+       *
        * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 3;</code>
        * @return Whether the pagination field is set.
        */
@@ -4381,6 +4737,10 @@ public final class QueryOuterClass {
         return paginationBuilder_ != null || pagination_ != null;
       }
       /**
+       * <pre>
+       * pagination defines an optional pagination for the request.
+       * </pre>
+       *
        * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 3;</code>
        * @return The pagination.
        */
@@ -4392,6 +4752,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * pagination defines an optional pagination for the request.
+       * </pre>
+       *
        * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 3;</code>
        */
       public Builder setPagination(cosmos.base.query.v1beta1.Pagination.PageRequest value) {
@@ -4408,6 +4772,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * pagination defines an optional pagination for the request.
+       * </pre>
+       *
        * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 3;</code>
        */
       public Builder setPagination(
@@ -4422,6 +4790,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * pagination defines an optional pagination for the request.
+       * </pre>
+       *
        * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 3;</code>
        */
       public Builder mergePagination(cosmos.base.query.v1beta1.Pagination.PageRequest value) {
@@ -4440,6 +4812,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * pagination defines an optional pagination for the request.
+       * </pre>
+       *
        * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 3;</code>
        */
       public Builder clearPagination() {
@@ -4454,6 +4830,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * pagination defines an optional pagination for the request.
+       * </pre>
+       *
        * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 3;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageRequest.Builder getPaginationBuilder() {
@@ -4462,6 +4842,10 @@ public final class QueryOuterClass {
         return getPaginationFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * pagination defines an optional pagination for the request.
+       * </pre>
+       *
        * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 3;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder() {
@@ -4473,6 +4857,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * pagination defines an optional pagination for the request.
+       * </pre>
+       *
        * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -4546,40 +4934,72 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * NFT defines the NFT
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 1;</code>
      */
     java.util.List<cosmos.nft.v1beta1.Nft.NFT> 
         getNftsList();
     /**
+     * <pre>
+     * NFT defines the NFT
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 1;</code>
      */
     cosmos.nft.v1beta1.Nft.NFT getNfts(int index);
     /**
+     * <pre>
+     * NFT defines the NFT
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 1;</code>
      */
     int getNftsCount();
     /**
+     * <pre>
+     * NFT defines the NFT
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 1;</code>
      */
     java.util.List<? extends cosmos.nft.v1beta1.Nft.NFTOrBuilder> 
         getNftsOrBuilderList();
     /**
+     * <pre>
+     * NFT defines the NFT
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 1;</code>
      */
     cosmos.nft.v1beta1.Nft.NFTOrBuilder getNftsOrBuilder(
         int index);
 
     /**
+     * <pre>
+     * pagination defines the pagination in the response.
+     * </pre>
+     *
      * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
      * @return Whether the pagination field is set.
      */
     boolean hasPagination();
     /**
+     * <pre>
+     * pagination defines the pagination in the response.
+     * </pre>
+     *
      * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
      * @return The pagination.
      */
     cosmos.base.query.v1beta1.Pagination.PageResponse getPagination();
     /**
+     * <pre>
+     * pagination defines the pagination in the response.
+     * </pre>
+     *
      * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
      */
     cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder();
@@ -4695,6 +5115,10 @@ public final class QueryOuterClass {
     public static final int NFTS_FIELD_NUMBER = 1;
     private java.util.List<cosmos.nft.v1beta1.Nft.NFT> nfts_;
     /**
+     * <pre>
+     * NFT defines the NFT
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 1;</code>
      */
     @java.lang.Override
@@ -4702,6 +5126,10 @@ public final class QueryOuterClass {
       return nfts_;
     }
     /**
+     * <pre>
+     * NFT defines the NFT
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 1;</code>
      */
     @java.lang.Override
@@ -4710,6 +5138,10 @@ public final class QueryOuterClass {
       return nfts_;
     }
     /**
+     * <pre>
+     * NFT defines the NFT
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 1;</code>
      */
     @java.lang.Override
@@ -4717,6 +5149,10 @@ public final class QueryOuterClass {
       return nfts_.size();
     }
     /**
+     * <pre>
+     * NFT defines the NFT
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 1;</code>
      */
     @java.lang.Override
@@ -4724,6 +5160,10 @@ public final class QueryOuterClass {
       return nfts_.get(index);
     }
     /**
+     * <pre>
+     * NFT defines the NFT
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 1;</code>
      */
     @java.lang.Override
@@ -4735,6 +5175,10 @@ public final class QueryOuterClass {
     public static final int PAGINATION_FIELD_NUMBER = 2;
     private cosmos.base.query.v1beta1.Pagination.PageResponse pagination_;
     /**
+     * <pre>
+     * pagination defines the pagination in the response.
+     * </pre>
+     *
      * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
      * @return Whether the pagination field is set.
      */
@@ -4743,6 +5187,10 @@ public final class QueryOuterClass {
       return pagination_ != null;
     }
     /**
+     * <pre>
+     * pagination defines the pagination in the response.
+     * </pre>
+     *
      * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
      * @return The pagination.
      */
@@ -4751,6 +5199,10 @@ public final class QueryOuterClass {
       return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageResponse.getDefaultInstance() : pagination_;
     }
     /**
+     * <pre>
+     * pagination defines the pagination in the response.
+     * </pre>
+     *
      * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
      */
     @java.lang.Override
@@ -5147,6 +5599,10 @@ public final class QueryOuterClass {
           cosmos.nft.v1beta1.Nft.NFT, cosmos.nft.v1beta1.Nft.NFT.Builder, cosmos.nft.v1beta1.Nft.NFTOrBuilder> nftsBuilder_;
 
       /**
+       * <pre>
+       * NFT defines the NFT
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 1;</code>
        */
       public java.util.List<cosmos.nft.v1beta1.Nft.NFT> getNftsList() {
@@ -5157,6 +5613,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * NFT defines the NFT
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 1;</code>
        */
       public int getNftsCount() {
@@ -5167,6 +5627,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * NFT defines the NFT
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 1;</code>
        */
       public cosmos.nft.v1beta1.Nft.NFT getNfts(int index) {
@@ -5177,6 +5641,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * NFT defines the NFT
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 1;</code>
        */
       public Builder setNfts(
@@ -5194,6 +5662,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * NFT defines the NFT
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 1;</code>
        */
       public Builder setNfts(
@@ -5208,6 +5680,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * NFT defines the NFT
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 1;</code>
        */
       public Builder addNfts(cosmos.nft.v1beta1.Nft.NFT value) {
@@ -5224,6 +5700,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * NFT defines the NFT
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 1;</code>
        */
       public Builder addNfts(
@@ -5241,6 +5721,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * NFT defines the NFT
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 1;</code>
        */
       public Builder addNfts(
@@ -5255,6 +5739,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * NFT defines the NFT
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 1;</code>
        */
       public Builder addNfts(
@@ -5269,6 +5757,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * NFT defines the NFT
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 1;</code>
        */
       public Builder addAllNfts(
@@ -5284,6 +5776,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * NFT defines the NFT
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 1;</code>
        */
       public Builder clearNfts() {
@@ -5297,6 +5793,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * NFT defines the NFT
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 1;</code>
        */
       public Builder removeNfts(int index) {
@@ -5310,6 +5810,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * NFT defines the NFT
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 1;</code>
        */
       public cosmos.nft.v1beta1.Nft.NFT.Builder getNftsBuilder(
@@ -5317,6 +5821,10 @@ public final class QueryOuterClass {
         return getNftsFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * NFT defines the NFT
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 1;</code>
        */
       public cosmos.nft.v1beta1.Nft.NFTOrBuilder getNftsOrBuilder(
@@ -5327,6 +5835,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * NFT defines the NFT
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 1;</code>
        */
       public java.util.List<? extends cosmos.nft.v1beta1.Nft.NFTOrBuilder> 
@@ -5338,6 +5850,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * NFT defines the NFT
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 1;</code>
        */
       public cosmos.nft.v1beta1.Nft.NFT.Builder addNftsBuilder() {
@@ -5345,6 +5861,10 @@ public final class QueryOuterClass {
             cosmos.nft.v1beta1.Nft.NFT.getDefaultInstance());
       }
       /**
+       * <pre>
+       * NFT defines the NFT
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 1;</code>
        */
       public cosmos.nft.v1beta1.Nft.NFT.Builder addNftsBuilder(
@@ -5353,6 +5873,10 @@ public final class QueryOuterClass {
             index, cosmos.nft.v1beta1.Nft.NFT.getDefaultInstance());
       }
       /**
+       * <pre>
+       * NFT defines the NFT
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.NFT nfts = 1;</code>
        */
       public java.util.List<cosmos.nft.v1beta1.Nft.NFT.Builder> 
@@ -5378,6 +5902,10 @@ public final class QueryOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageResponse, cosmos.base.query.v1beta1.Pagination.PageResponse.Builder, cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder> paginationBuilder_;
       /**
+       * <pre>
+       * pagination defines the pagination in the response.
+       * </pre>
+       *
        * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        * @return Whether the pagination field is set.
        */
@@ -5385,6 +5913,10 @@ public final class QueryOuterClass {
         return paginationBuilder_ != null || pagination_ != null;
       }
       /**
+       * <pre>
+       * pagination defines the pagination in the response.
+       * </pre>
+       *
        * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        * @return The pagination.
        */
@@ -5396,6 +5928,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * pagination defines the pagination in the response.
+       * </pre>
+       *
        * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder setPagination(cosmos.base.query.v1beta1.Pagination.PageResponse value) {
@@ -5412,6 +5948,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * pagination defines the pagination in the response.
+       * </pre>
+       *
        * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder setPagination(
@@ -5426,6 +5966,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * pagination defines the pagination in the response.
+       * </pre>
+       *
        * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder mergePagination(cosmos.base.query.v1beta1.Pagination.PageResponse value) {
@@ -5444,6 +5988,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * pagination defines the pagination in the response.
+       * </pre>
+       *
        * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder clearPagination() {
@@ -5458,6 +6006,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * pagination defines the pagination in the response.
+       * </pre>
+       *
        * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageResponse.Builder getPaginationBuilder() {
@@ -5466,6 +6018,10 @@ public final class QueryOuterClass {
         return getPaginationFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * pagination defines the pagination in the response.
+       * </pre>
+       *
        * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder() {
@@ -5477,6 +6033,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * pagination defines the pagination in the response.
+       * </pre>
+       *
        * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -5550,11 +6110,19 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The classId.
      */
     java.lang.String getClassId();
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The bytes for classId.
      */
@@ -5562,11 +6130,19 @@ public final class QueryOuterClass {
         getClassIdBytes();
 
     /**
+     * <pre>
+     * id is a unique identifier of the NFT
+     * </pre>
+     *
      * <code>string id = 2;</code>
      * @return The id.
      */
     java.lang.String getId();
     /**
+     * <pre>
+     * id is a unique identifier of the NFT
+     * </pre>
+     *
      * <code>string id = 2;</code>
      * @return The bytes for id.
      */
@@ -5671,6 +6247,10 @@ public final class QueryOuterClass {
     public static final int CLASS_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object classId_;
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The classId.
      */
@@ -5688,6 +6268,10 @@ public final class QueryOuterClass {
       }
     }
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The bytes for classId.
      */
@@ -5709,6 +6293,10 @@ public final class QueryOuterClass {
     public static final int ID_FIELD_NUMBER = 2;
     private volatile java.lang.Object id_;
     /**
+     * <pre>
+     * id is a unique identifier of the NFT
+     * </pre>
+     *
      * <code>string id = 2;</code>
      * @return The id.
      */
@@ -5726,6 +6314,10 @@ public final class QueryOuterClass {
       }
     }
     /**
+     * <pre>
+     * id is a unique identifier of the NFT
+     * </pre>
+     *
      * <code>string id = 2;</code>
      * @return The bytes for id.
      */
@@ -6069,6 +6661,10 @@ public final class QueryOuterClass {
 
       private java.lang.Object classId_ = "";
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @return The classId.
        */
@@ -6085,6 +6681,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @return The bytes for classId.
        */
@@ -6102,6 +6702,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @param value The classId to set.
        * @return This builder for chaining.
@@ -6117,6 +6721,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @return This builder for chaining.
        */
@@ -6127,6 +6735,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @param value The bytes for classId to set.
        * @return This builder for chaining.
@@ -6145,6 +6757,10 @@ public final class QueryOuterClass {
 
       private java.lang.Object id_ = "";
       /**
+       * <pre>
+       * id is a unique identifier of the NFT
+       * </pre>
+       *
        * <code>string id = 2;</code>
        * @return The id.
        */
@@ -6161,6 +6777,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * id is a unique identifier of the NFT
+       * </pre>
+       *
        * <code>string id = 2;</code>
        * @return The bytes for id.
        */
@@ -6178,6 +6798,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * id is a unique identifier of the NFT
+       * </pre>
+       *
        * <code>string id = 2;</code>
        * @param value The id to set.
        * @return This builder for chaining.
@@ -6193,6 +6817,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * id is a unique identifier of the NFT
+       * </pre>
+       *
        * <code>string id = 2;</code>
        * @return This builder for chaining.
        */
@@ -6203,6 +6831,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * id is a unique identifier of the NFT
+       * </pre>
+       *
        * <code>string id = 2;</code>
        * @param value The bytes for id to set.
        * @return This builder for chaining.
@@ -6276,16 +6908,28 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * owner is the owner address of the nft
+     * </pre>
+     *
      * <code>.cosmos.nft.v1beta1.NFT nft = 1;</code>
      * @return Whether the nft field is set.
      */
     boolean hasNft();
     /**
+     * <pre>
+     * owner is the owner address of the nft
+     * </pre>
+     *
      * <code>.cosmos.nft.v1beta1.NFT nft = 1;</code>
      * @return The nft.
      */
     cosmos.nft.v1beta1.Nft.NFT getNft();
     /**
+     * <pre>
+     * owner is the owner address of the nft
+     * </pre>
+     *
      * <code>.cosmos.nft.v1beta1.NFT nft = 1;</code>
      */
     cosmos.nft.v1beta1.Nft.NFTOrBuilder getNftOrBuilder();
@@ -6387,6 +7031,10 @@ public final class QueryOuterClass {
     public static final int NFT_FIELD_NUMBER = 1;
     private cosmos.nft.v1beta1.Nft.NFT nft_;
     /**
+     * <pre>
+     * owner is the owner address of the nft
+     * </pre>
+     *
      * <code>.cosmos.nft.v1beta1.NFT nft = 1;</code>
      * @return Whether the nft field is set.
      */
@@ -6395,6 +7043,10 @@ public final class QueryOuterClass {
       return nft_ != null;
     }
     /**
+     * <pre>
+     * owner is the owner address of the nft
+     * </pre>
+     *
      * <code>.cosmos.nft.v1beta1.NFT nft = 1;</code>
      * @return The nft.
      */
@@ -6403,6 +7055,10 @@ public final class QueryOuterClass {
       return nft_ == null ? cosmos.nft.v1beta1.Nft.NFT.getDefaultInstance() : nft_;
     }
     /**
+     * <pre>
+     * owner is the owner address of the nft
+     * </pre>
+     *
      * <code>.cosmos.nft.v1beta1.NFT nft = 1;</code>
      */
     @java.lang.Override
@@ -6733,6 +7389,10 @@ public final class QueryOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.nft.v1beta1.Nft.NFT, cosmos.nft.v1beta1.Nft.NFT.Builder, cosmos.nft.v1beta1.Nft.NFTOrBuilder> nftBuilder_;
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>.cosmos.nft.v1beta1.NFT nft = 1;</code>
        * @return Whether the nft field is set.
        */
@@ -6740,6 +7400,10 @@ public final class QueryOuterClass {
         return nftBuilder_ != null || nft_ != null;
       }
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>.cosmos.nft.v1beta1.NFT nft = 1;</code>
        * @return The nft.
        */
@@ -6751,6 +7415,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>.cosmos.nft.v1beta1.NFT nft = 1;</code>
        */
       public Builder setNft(cosmos.nft.v1beta1.Nft.NFT value) {
@@ -6767,6 +7435,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>.cosmos.nft.v1beta1.NFT nft = 1;</code>
        */
       public Builder setNft(
@@ -6781,6 +7453,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>.cosmos.nft.v1beta1.NFT nft = 1;</code>
        */
       public Builder mergeNft(cosmos.nft.v1beta1.Nft.NFT value) {
@@ -6799,6 +7475,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>.cosmos.nft.v1beta1.NFT nft = 1;</code>
        */
       public Builder clearNft() {
@@ -6813,6 +7493,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>.cosmos.nft.v1beta1.NFT nft = 1;</code>
        */
       public cosmos.nft.v1beta1.Nft.NFT.Builder getNftBuilder() {
@@ -6821,6 +7505,10 @@ public final class QueryOuterClass {
         return getNftFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>.cosmos.nft.v1beta1.NFT nft = 1;</code>
        */
       public cosmos.nft.v1beta1.Nft.NFTOrBuilder getNftOrBuilder() {
@@ -6832,6 +7520,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>.cosmos.nft.v1beta1.NFT nft = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -6905,11 +7597,19 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The classId.
      */
     java.lang.String getClassId();
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The bytes for classId.
      */
@@ -7007,6 +7707,10 @@ public final class QueryOuterClass {
     public static final int CLASS_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object classId_;
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The classId.
      */
@@ -7024,6 +7728,10 @@ public final class QueryOuterClass {
       }
     }
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The bytes for classId.
      */
@@ -7350,6 +8058,10 @@ public final class QueryOuterClass {
 
       private java.lang.Object classId_ = "";
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @return The classId.
        */
@@ -7366,6 +8078,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @return The bytes for classId.
        */
@@ -7383,6 +8099,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @param value The classId to set.
        * @return This builder for chaining.
@@ -7398,6 +8118,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @return This builder for chaining.
        */
@@ -7408,6 +8132,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @param value The bytes for classId to set.
        * @return This builder for chaining.
@@ -7481,16 +8209,28 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * class defines the class of the nft type.
+     * </pre>
+     *
      * <code>.cosmos.nft.v1beta1.Class class = 1;</code>
      * @return Whether the class field is set.
      */
     boolean hasClass_();
     /**
+     * <pre>
+     * class defines the class of the nft type.
+     * </pre>
+     *
      * <code>.cosmos.nft.v1beta1.Class class = 1;</code>
      * @return The class.
      */
     cosmos.nft.v1beta1.Nft.Class getClass_();
     /**
+     * <pre>
+     * class defines the class of the nft type.
+     * </pre>
+     *
      * <code>.cosmos.nft.v1beta1.Class class = 1;</code>
      */
     cosmos.nft.v1beta1.Nft.ClassOrBuilder getClass_OrBuilder();
@@ -7592,6 +8332,10 @@ public final class QueryOuterClass {
     public static final int CLASS_FIELD_NUMBER = 1;
     private cosmos.nft.v1beta1.Nft.Class class__;
     /**
+     * <pre>
+     * class defines the class of the nft type.
+     * </pre>
+     *
      * <code>.cosmos.nft.v1beta1.Class class = 1;</code>
      * @return Whether the class field is set.
      */
@@ -7600,6 +8344,10 @@ public final class QueryOuterClass {
       return class__ != null;
     }
     /**
+     * <pre>
+     * class defines the class of the nft type.
+     * </pre>
+     *
      * <code>.cosmos.nft.v1beta1.Class class = 1;</code>
      * @return The class.
      */
@@ -7608,6 +8356,10 @@ public final class QueryOuterClass {
       return class__ == null ? cosmos.nft.v1beta1.Nft.Class.getDefaultInstance() : class__;
     }
     /**
+     * <pre>
+     * class defines the class of the nft type.
+     * </pre>
+     *
      * <code>.cosmos.nft.v1beta1.Class class = 1;</code>
      */
     @java.lang.Override
@@ -7938,6 +8690,10 @@ public final class QueryOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.nft.v1beta1.Nft.Class, cosmos.nft.v1beta1.Nft.Class.Builder, cosmos.nft.v1beta1.Nft.ClassOrBuilder> class_Builder_;
       /**
+       * <pre>
+       * class defines the class of the nft type.
+       * </pre>
+       *
        * <code>.cosmos.nft.v1beta1.Class class = 1;</code>
        * @return Whether the class field is set.
        */
@@ -7945,6 +8701,10 @@ public final class QueryOuterClass {
         return class_Builder_ != null || class__ != null;
       }
       /**
+       * <pre>
+       * class defines the class of the nft type.
+       * </pre>
+       *
        * <code>.cosmos.nft.v1beta1.Class class = 1;</code>
        * @return The class.
        */
@@ -7956,6 +8716,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * class defines the class of the nft type.
+       * </pre>
+       *
        * <code>.cosmos.nft.v1beta1.Class class = 1;</code>
        */
       public Builder setClass_(cosmos.nft.v1beta1.Nft.Class value) {
@@ -7972,6 +8736,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * class defines the class of the nft type.
+       * </pre>
+       *
        * <code>.cosmos.nft.v1beta1.Class class = 1;</code>
        */
       public Builder setClass_(
@@ -7986,6 +8754,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * class defines the class of the nft type.
+       * </pre>
+       *
        * <code>.cosmos.nft.v1beta1.Class class = 1;</code>
        */
       public Builder mergeClass_(cosmos.nft.v1beta1.Nft.Class value) {
@@ -8004,6 +8776,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * class defines the class of the nft type.
+       * </pre>
+       *
        * <code>.cosmos.nft.v1beta1.Class class = 1;</code>
        */
       public Builder clearClass_() {
@@ -8018,6 +8794,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * class defines the class of the nft type.
+       * </pre>
+       *
        * <code>.cosmos.nft.v1beta1.Class class = 1;</code>
        */
       public cosmos.nft.v1beta1.Nft.Class.Builder getClass_Builder() {
@@ -8026,6 +8806,10 @@ public final class QueryOuterClass {
         return getClass_FieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * class defines the class of the nft type.
+       * </pre>
+       *
        * <code>.cosmos.nft.v1beta1.Class class = 1;</code>
        */
       public cosmos.nft.v1beta1.Nft.ClassOrBuilder getClass_OrBuilder() {
@@ -8037,6 +8821,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * class defines the class of the nft type.
+       * </pre>
+       *
        * <code>.cosmos.nft.v1beta1.Class class = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -8799,40 +9587,72 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * class defines the class of the nft type.
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
      */
     java.util.List<cosmos.nft.v1beta1.Nft.Class> 
         getClassesList();
     /**
+     * <pre>
+     * class defines the class of the nft type.
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
      */
     cosmos.nft.v1beta1.Nft.Class getClasses(int index);
     /**
+     * <pre>
+     * class defines the class of the nft type.
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
      */
     int getClassesCount();
     /**
+     * <pre>
+     * class defines the class of the nft type.
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
      */
     java.util.List<? extends cosmos.nft.v1beta1.Nft.ClassOrBuilder> 
         getClassesOrBuilderList();
     /**
+     * <pre>
+     * class defines the class of the nft type.
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
      */
     cosmos.nft.v1beta1.Nft.ClassOrBuilder getClassesOrBuilder(
         int index);
 
     /**
+     * <pre>
+     * pagination defines the pagination in the response.
+     * </pre>
+     *
      * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
      * @return Whether the pagination field is set.
      */
     boolean hasPagination();
     /**
+     * <pre>
+     * pagination defines the pagination in the response.
+     * </pre>
+     *
      * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
      * @return The pagination.
      */
     cosmos.base.query.v1beta1.Pagination.PageResponse getPagination();
     /**
+     * <pre>
+     * pagination defines the pagination in the response.
+     * </pre>
+     *
      * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
      */
     cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder();
@@ -8948,6 +9768,10 @@ public final class QueryOuterClass {
     public static final int CLASSES_FIELD_NUMBER = 1;
     private java.util.List<cosmos.nft.v1beta1.Nft.Class> classes_;
     /**
+     * <pre>
+     * class defines the class of the nft type.
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
      */
     @java.lang.Override
@@ -8955,6 +9779,10 @@ public final class QueryOuterClass {
       return classes_;
     }
     /**
+     * <pre>
+     * class defines the class of the nft type.
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
      */
     @java.lang.Override
@@ -8963,6 +9791,10 @@ public final class QueryOuterClass {
       return classes_;
     }
     /**
+     * <pre>
+     * class defines the class of the nft type.
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
      */
     @java.lang.Override
@@ -8970,6 +9802,10 @@ public final class QueryOuterClass {
       return classes_.size();
     }
     /**
+     * <pre>
+     * class defines the class of the nft type.
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
      */
     @java.lang.Override
@@ -8977,6 +9813,10 @@ public final class QueryOuterClass {
       return classes_.get(index);
     }
     /**
+     * <pre>
+     * class defines the class of the nft type.
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
      */
     @java.lang.Override
@@ -8988,6 +9828,10 @@ public final class QueryOuterClass {
     public static final int PAGINATION_FIELD_NUMBER = 2;
     private cosmos.base.query.v1beta1.Pagination.PageResponse pagination_;
     /**
+     * <pre>
+     * pagination defines the pagination in the response.
+     * </pre>
+     *
      * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
      * @return Whether the pagination field is set.
      */
@@ -8996,6 +9840,10 @@ public final class QueryOuterClass {
       return pagination_ != null;
     }
     /**
+     * <pre>
+     * pagination defines the pagination in the response.
+     * </pre>
+     *
      * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
      * @return The pagination.
      */
@@ -9004,6 +9852,10 @@ public final class QueryOuterClass {
       return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageResponse.getDefaultInstance() : pagination_;
     }
     /**
+     * <pre>
+     * pagination defines the pagination in the response.
+     * </pre>
+     *
      * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
      */
     @java.lang.Override
@@ -9400,6 +10252,10 @@ public final class QueryOuterClass {
           cosmos.nft.v1beta1.Nft.Class, cosmos.nft.v1beta1.Nft.Class.Builder, cosmos.nft.v1beta1.Nft.ClassOrBuilder> classesBuilder_;
 
       /**
+       * <pre>
+       * class defines the class of the nft type.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
       public java.util.List<cosmos.nft.v1beta1.Nft.Class> getClassesList() {
@@ -9410,6 +10266,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * class defines the class of the nft type.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
       public int getClassesCount() {
@@ -9420,6 +10280,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * class defines the class of the nft type.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
       public cosmos.nft.v1beta1.Nft.Class getClasses(int index) {
@@ -9430,6 +10294,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * class defines the class of the nft type.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
       public Builder setClasses(
@@ -9447,6 +10315,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * class defines the class of the nft type.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
       public Builder setClasses(
@@ -9461,6 +10333,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * class defines the class of the nft type.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
       public Builder addClasses(cosmos.nft.v1beta1.Nft.Class value) {
@@ -9477,6 +10353,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * class defines the class of the nft type.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
       public Builder addClasses(
@@ -9494,6 +10374,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * class defines the class of the nft type.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
       public Builder addClasses(
@@ -9508,6 +10392,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * class defines the class of the nft type.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
       public Builder addClasses(
@@ -9522,6 +10410,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * class defines the class of the nft type.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
       public Builder addAllClasses(
@@ -9537,6 +10429,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * class defines the class of the nft type.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
       public Builder clearClasses() {
@@ -9550,6 +10446,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * class defines the class of the nft type.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
       public Builder removeClasses(int index) {
@@ -9563,6 +10463,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * class defines the class of the nft type.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
       public cosmos.nft.v1beta1.Nft.Class.Builder getClassesBuilder(
@@ -9570,6 +10474,10 @@ public final class QueryOuterClass {
         return getClassesFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * class defines the class of the nft type.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
       public cosmos.nft.v1beta1.Nft.ClassOrBuilder getClassesOrBuilder(
@@ -9580,6 +10488,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * class defines the class of the nft type.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
       public java.util.List<? extends cosmos.nft.v1beta1.Nft.ClassOrBuilder> 
@@ -9591,6 +10503,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * class defines the class of the nft type.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
       public cosmos.nft.v1beta1.Nft.Class.Builder addClassesBuilder() {
@@ -9598,6 +10514,10 @@ public final class QueryOuterClass {
             cosmos.nft.v1beta1.Nft.Class.getDefaultInstance());
       }
       /**
+       * <pre>
+       * class defines the class of the nft type.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
       public cosmos.nft.v1beta1.Nft.Class.Builder addClassesBuilder(
@@ -9606,6 +10526,10 @@ public final class QueryOuterClass {
             index, cosmos.nft.v1beta1.Nft.Class.getDefaultInstance());
       }
       /**
+       * <pre>
+       * class defines the class of the nft type.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Class classes = 1;</code>
        */
       public java.util.List<cosmos.nft.v1beta1.Nft.Class.Builder> 
@@ -9631,6 +10555,10 @@ public final class QueryOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageResponse, cosmos.base.query.v1beta1.Pagination.PageResponse.Builder, cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder> paginationBuilder_;
       /**
+       * <pre>
+       * pagination defines the pagination in the response.
+       * </pre>
+       *
        * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        * @return Whether the pagination field is set.
        */
@@ -9638,6 +10566,10 @@ public final class QueryOuterClass {
         return paginationBuilder_ != null || pagination_ != null;
       }
       /**
+       * <pre>
+       * pagination defines the pagination in the response.
+       * </pre>
+       *
        * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        * @return The pagination.
        */
@@ -9649,6 +10581,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * pagination defines the pagination in the response.
+       * </pre>
+       *
        * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder setPagination(cosmos.base.query.v1beta1.Pagination.PageResponse value) {
@@ -9665,6 +10601,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * pagination defines the pagination in the response.
+       * </pre>
+       *
        * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder setPagination(
@@ -9679,6 +10619,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * pagination defines the pagination in the response.
+       * </pre>
+       *
        * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder mergePagination(cosmos.base.query.v1beta1.Pagination.PageResponse value) {
@@ -9697,6 +10641,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * pagination defines the pagination in the response.
+       * </pre>
+       *
        * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public Builder clearPagination() {
@@ -9711,6 +10659,10 @@ public final class QueryOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * pagination defines the pagination in the response.
+       * </pre>
+       *
        * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageResponse.Builder getPaginationBuilder() {
@@ -9719,6 +10671,10 @@ public final class QueryOuterClass {
         return getPaginationFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * pagination defines the pagination in the response.
+       * </pre>
+       *
        * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       public cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder() {
@@ -9730,6 +10686,10 @@ public final class QueryOuterClass {
         }
       }
       /**
+       * <pre>
+       * pagination defines the pagination in the response.
+       * </pre>
+       *
        * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -9927,9 +10887,8 @@ public final class QueryOuterClass {
       "beta1/classes/{class_id}\022\201\001\n\007Classes\022\'.c" +
       "osmos.nft.v1beta1.QueryClassesRequest\032(." +
       "cosmos.nft.v1beta1.QueryClassesResponse\"" +
-      "#\202\323\344\223\002\035\022\033/cosmos/nft/v1beta1/classesB$Z\"" +
-      "github.com/cosmos/cosmos-sdk/x/nftb\006prot" +
-      "o3"
+      "#\202\323\344\223\002\035\022\033/cosmos/nft/v1beta1/classesB\024Z\022" +
+      "cosmossdk.io/x/nftb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

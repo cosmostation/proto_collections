@@ -19,38 +19,66 @@ public final class Evidence {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * height is the equivocation height.
+     * </pre>
+     *
      * <code>int64 height = 1;</code>
      * @return The height.
      */
     long getHeight();
 
     /**
-     * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <pre>
+     * time is the equivocation time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
      * @return Whether the time field is set.
      */
     boolean hasTime();
     /**
-     * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <pre>
+     * time is the equivocation time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
      * @return The time.
      */
     com.google.protobuf.Timestamp getTime();
     /**
-     * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <pre>
+     * time is the equivocation time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
      */
     com.google.protobuf.TimestampOrBuilder getTimeOrBuilder();
 
     /**
+     * <pre>
+     * power is the equivocation validator power.
+     * </pre>
+     *
      * <code>int64 power = 3;</code>
      * @return The power.
      */
     long getPower();
 
     /**
+     * <pre>
+     * consensus_address is the equivocation validator consensus address.
+     * </pre>
+     *
      * <code>string consensus_address = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The consensusAddress.
      */
     java.lang.String getConsensusAddress();
     /**
+     * <pre>
+     * consensus_address is the equivocation validator consensus address.
+     * </pre>
+     *
      * <code>string consensus_address = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for consensusAddress.
      */
@@ -172,6 +200,10 @@ public final class Evidence {
     public static final int HEIGHT_FIELD_NUMBER = 1;
     private long height_;
     /**
+     * <pre>
+     * height is the equivocation height.
+     * </pre>
+     *
      * <code>int64 height = 1;</code>
      * @return The height.
      */
@@ -183,7 +215,11 @@ public final class Evidence {
     public static final int TIME_FIELD_NUMBER = 2;
     private com.google.protobuf.Timestamp time_;
     /**
-     * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <pre>
+     * time is the equivocation time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
      * @return Whether the time field is set.
      */
     @java.lang.Override
@@ -191,7 +227,11 @@ public final class Evidence {
       return time_ != null;
     }
     /**
-     * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <pre>
+     * time is the equivocation time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
      * @return The time.
      */
     @java.lang.Override
@@ -199,7 +239,11 @@ public final class Evidence {
       return time_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : time_;
     }
     /**
-     * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <pre>
+     * time is the equivocation time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getTimeOrBuilder() {
@@ -209,6 +253,10 @@ public final class Evidence {
     public static final int POWER_FIELD_NUMBER = 3;
     private long power_;
     /**
+     * <pre>
+     * power is the equivocation validator power.
+     * </pre>
+     *
      * <code>int64 power = 3;</code>
      * @return The power.
      */
@@ -220,6 +268,10 @@ public final class Evidence {
     public static final int CONSENSUS_ADDRESS_FIELD_NUMBER = 4;
     private volatile java.lang.Object consensusAddress_;
     /**
+     * <pre>
+     * consensus_address is the equivocation validator consensus address.
+     * </pre>
+     *
      * <code>string consensus_address = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The consensusAddress.
      */
@@ -237,6 +289,10 @@ public final class Evidence {
       }
     }
     /**
+     * <pre>
+     * consensus_address is the equivocation validator consensus address.
+     * </pre>
+     *
      * <code>string consensus_address = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for consensusAddress.
      */
@@ -630,6 +686,10 @@ public final class Evidence {
 
       private long height_ ;
       /**
+       * <pre>
+       * height is the equivocation height.
+       * </pre>
+       *
        * <code>int64 height = 1;</code>
        * @return The height.
        */
@@ -638,6 +698,10 @@ public final class Evidence {
         return height_;
       }
       /**
+       * <pre>
+       * height is the equivocation height.
+       * </pre>
+       *
        * <code>int64 height = 1;</code>
        * @param value The height to set.
        * @return This builder for chaining.
@@ -649,6 +713,10 @@ public final class Evidence {
         return this;
       }
       /**
+       * <pre>
+       * height is the equivocation height.
+       * </pre>
+       *
        * <code>int64 height = 1;</code>
        * @return This builder for chaining.
        */
@@ -663,14 +731,22 @@ public final class Evidence {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> timeBuilder_;
       /**
-       * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <pre>
+       * time is the equivocation time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        * @return Whether the time field is set.
        */
       public boolean hasTime() {
         return timeBuilder_ != null || time_ != null;
       }
       /**
-       * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <pre>
+       * time is the equivocation time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        * @return The time.
        */
       public com.google.protobuf.Timestamp getTime() {
@@ -681,7 +757,11 @@ public final class Evidence {
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <pre>
+       * time is the equivocation time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setTime(com.google.protobuf.Timestamp value) {
         if (timeBuilder_ == null) {
@@ -697,7 +777,11 @@ public final class Evidence {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <pre>
+       * time is the equivocation time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setTime(
           com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -711,7 +795,11 @@ public final class Evidence {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <pre>
+       * time is the equivocation time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeTime(com.google.protobuf.Timestamp value) {
         if (timeBuilder_ == null) {
@@ -729,7 +817,11 @@ public final class Evidence {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <pre>
+       * time is the equivocation time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearTime() {
         if (timeBuilder_ == null) {
@@ -743,7 +835,11 @@ public final class Evidence {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <pre>
+       * time is the equivocation time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        */
       public com.google.protobuf.Timestamp.Builder getTimeBuilder() {
         
@@ -751,7 +847,11 @@ public final class Evidence {
         return getTimeFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <pre>
+       * time is the equivocation time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        */
       public com.google.protobuf.TimestampOrBuilder getTimeOrBuilder() {
         if (timeBuilder_ != null) {
@@ -762,7 +862,11 @@ public final class Evidence {
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <pre>
+       * time is the equivocation time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp time = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -780,6 +884,10 @@ public final class Evidence {
 
       private long power_ ;
       /**
+       * <pre>
+       * power is the equivocation validator power.
+       * </pre>
+       *
        * <code>int64 power = 3;</code>
        * @return The power.
        */
@@ -788,6 +896,10 @@ public final class Evidence {
         return power_;
       }
       /**
+       * <pre>
+       * power is the equivocation validator power.
+       * </pre>
+       *
        * <code>int64 power = 3;</code>
        * @param value The power to set.
        * @return This builder for chaining.
@@ -799,6 +911,10 @@ public final class Evidence {
         return this;
       }
       /**
+       * <pre>
+       * power is the equivocation validator power.
+       * </pre>
+       *
        * <code>int64 power = 3;</code>
        * @return This builder for chaining.
        */
@@ -811,6 +927,10 @@ public final class Evidence {
 
       private java.lang.Object consensusAddress_ = "";
       /**
+       * <pre>
+       * consensus_address is the equivocation validator consensus address.
+       * </pre>
+       *
        * <code>string consensus_address = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The consensusAddress.
        */
@@ -827,6 +947,10 @@ public final class Evidence {
         }
       }
       /**
+       * <pre>
+       * consensus_address is the equivocation validator consensus address.
+       * </pre>
+       *
        * <code>string consensus_address = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for consensusAddress.
        */
@@ -844,6 +968,10 @@ public final class Evidence {
         }
       }
       /**
+       * <pre>
+       * consensus_address is the equivocation validator consensus address.
+       * </pre>
+       *
        * <code>string consensus_address = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The consensusAddress to set.
        * @return This builder for chaining.
@@ -859,6 +987,10 @@ public final class Evidence {
         return this;
       }
       /**
+       * <pre>
+       * consensus_address is the equivocation validator consensus address.
+       * </pre>
+       *
        * <code>string consensus_address = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
@@ -869,6 +1001,10 @@ public final class Evidence {
         return this;
       }
       /**
+       * <pre>
+       * consensus_address is the equivocation validator consensus address.
+       * </pre>
+       *
        * <code>string consensus_address = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for consensusAddress to set.
        * @return This builder for chaining.
@@ -952,19 +1088,21 @@ public final class Evidence {
   static {
     java.lang.String[] descriptorData = {
       "\n&cosmos/evidence/v1beta1/evidence.proto" +
-      "\022\027cosmos.evidence.v1beta1\032\024gogoproto/gog" +
-      "o.proto\032\037google/protobuf/timestamp.proto" +
-      "\032\031cosmos_proto/cosmos.proto\"\244\001\n\014Equivoca" +
-      "tion\022\016\n\006height\030\001 \001(\003\0222\n\004time\030\002 \001(\0132\032.goo" +
-      "gle.protobuf.TimestampB\010\310\336\037\000\220\337\037\001\022\r\n\005powe" +
-      "r\030\003 \001(\003\0223\n\021consensus_address\030\004 \001(\tB\030\322\264-\024" +
-      "cosmos.AddressString:\014\230\240\037\000\210\240\037\000\350\240\037\000B3Z-gi" +
-      "thub.com/cosmos/cosmos-sdk/x/evidence/ty" +
-      "pes\250\342\036\001b\006proto3"
+      "\022\027cosmos.evidence.v1beta1\032\021amino/amino.p" +
+      "roto\032\024gogoproto/gogo.proto\032\037google/proto" +
+      "buf/timestamp.proto\032\031cosmos_proto/cosmos" +
+      ".proto\"\301\001\n\014Equivocation\022\016\n\006height\030\001 \001(\003\022" +
+      "7\n\004time\030\002 \001(\0132\032.google.protobuf.Timestam" +
+      "pB\r\310\336\037\000\250\347\260*\001\220\337\037\001\022\r\n\005power\030\003 \001(\003\0223\n\021conse" +
+      "nsus_address\030\004 \001(\tB\030\322\264-\024cosmos.AddressSt" +
+      "ring:$\212\347\260*\027cosmos-sdk/Equivocation\210\240\037\000\350\240" +
+      "\037\000B#Z\035cosmossdk.io/x/evidence/types\250\342\036\001b" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          amino.Amino.getDescriptor(),
           com.google.protobuf2.GoGoProtos.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           cosmos_proto.Cosmos.getDescriptor(),
@@ -977,15 +1115,17 @@ public final class Evidence {
         new java.lang.String[] { "Height", "Time", "Power", "ConsensusAddress", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(amino.Amino.dontOmitempty);
+    registry.add(amino.Amino.name);
     registry.add(cosmos_proto.Cosmos.scalar);
     registry.add(com.google.protobuf2.GoGoProtos.equal);
     registry.add(com.google.protobuf2.GoGoProtos.equalAll);
     registry.add(com.google.protobuf2.GoGoProtos.goprotoGetters);
-    registry.add(com.google.protobuf2.GoGoProtos.goprotoStringer);
     registry.add(com.google.protobuf2.GoGoProtos.nullable);
     registry.add(com.google.protobuf2.GoGoProtos.stdtime);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
+    amino.Amino.getDescriptor();
     com.google.protobuf2.GoGoProtos.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     cosmos_proto.Cosmos.getDescriptor();

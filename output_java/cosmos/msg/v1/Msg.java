@@ -7,6 +7,7 @@ public final class Msg {
   private Msg() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
+    registry.add(cosmos.msg.v1.Msg.service);
     registry.add(cosmos.msg.v1.Msg.signer);
   }
 
@@ -15,6 +16,24 @@ public final class Msg {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public static final int SERVICE_FIELD_NUMBER = 11110000;
+  /**
+   * <pre>
+   * service indicates that the service is a Msg service and that requests
+   * must be transported via blockchain transactions rather than gRPC.
+   * Tooling can use this annotation to distinguish between Msg services and
+   * other types of services via reflection.
+   * </pre>
+   *
+   * <code>extend .google.protobuf.ServiceOptions { ... }</code>
+   */
+  public static final
+    com.google.protobuf.GeneratedMessage.GeneratedExtension<
+      com.google.protobuf.DescriptorProtos.ServiceOptions,
+      java.lang.Boolean> service = com.google.protobuf.GeneratedMessage
+          .newFileScopedGeneratedExtension(
+        java.lang.Boolean.class,
+        null);
   public static final int SIGNER_FIELD_NUMBER = 11110000;
   /**
    * <pre>
@@ -48,17 +67,19 @@ public final class Msg {
   static {
     java.lang.String[] descriptorData = {
       "\n\027cosmos/msg/v1/msg.proto\022\rcosmos.msg.v1" +
-      "\032 google/protobuf/descriptor.proto:2\n\006si" +
-      "gner\022\037.google.protobuf.MessageOptions\030\360\214" +
-      "\246\005 \003(\tB/Z-github.com/cosmos/cosmos-sdk/t" +
-      "ypes/msgserviceb\006proto3"
+      "\032 google/protobuf/descriptor.proto:3\n\007se" +
+      "rvice\022\037.google.protobuf.ServiceOptions\030\360" +
+      "\214\246\005 \001(\010:2\n\006signer\022\037.google.protobuf.Mess" +
+      "ageOptions\030\360\214\246\005 \003(\tB/Z-github.com/cosmos" +
+      "/cosmos-sdk/types/msgserviceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.DescriptorProtos.getDescriptor(),
         });
-    signer.internalInit(descriptor.getExtensions().get(0));
+    service.internalInit(descriptor.getExtensions().get(0));
+    signer.internalInit(descriptor.getExtensions().get(1));
     com.google.protobuf.DescriptorProtos.getDescriptor();
   }
 

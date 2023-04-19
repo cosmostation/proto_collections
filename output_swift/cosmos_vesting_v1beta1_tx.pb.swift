@@ -33,6 +33,7 @@ struct Cosmos_Vesting_V1beta1_MsgCreateVestingAccount {
 
   var amount: [Cosmos_Base_V1beta1_Coin] = []
 
+  /// end of vesting as unix time (in seconds).
   var endTime: Int64 = 0
 
   var delayed: Bool = false
@@ -53,8 +54,43 @@ struct Cosmos_Vesting_V1beta1_MsgCreateVestingAccountResponse {
   init() {}
 }
 
+/// MsgCreatePermanentLockedAccount defines a message that enables creating a permanent
+/// locked account.
+///
+/// Since: cosmos-sdk 0.46
+struct Cosmos_Vesting_V1beta1_MsgCreatePermanentLockedAccount {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var fromAddress: String = String()
+
+  var toAddress: String = String()
+
+  var amount: [Cosmos_Base_V1beta1_Coin] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+/// MsgCreatePermanentLockedAccountResponse defines the Msg/CreatePermanentLockedAccount response type.
+///
+/// Since: cosmos-sdk 0.46
+struct Cosmos_Vesting_V1beta1_MsgCreatePermanentLockedAccountResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 /// MsgCreateVestingAccount defines a message that enables creating a vesting
 /// account.
+///
+/// Since: cosmos-sdk 0.46
 struct Cosmos_Vesting_V1beta1_MsgCreatePeriodicVestingAccount {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -64,6 +100,7 @@ struct Cosmos_Vesting_V1beta1_MsgCreatePeriodicVestingAccount {
 
   var toAddress: String = String()
 
+  /// start of vesting as unix time (in seconds).
   var startTime: Int64 = 0
 
   var vestingPeriods: [Cosmos_Vesting_V1beta1_Period] = []
@@ -75,6 +112,8 @@ struct Cosmos_Vesting_V1beta1_MsgCreatePeriodicVestingAccount {
 
 /// MsgCreateVestingAccountResponse defines the Msg/CreatePeriodicVestingAccount
 /// response type.
+///
+/// Since: cosmos-sdk 0.46
 struct Cosmos_Vesting_V1beta1_MsgCreatePeriodicVestingAccountResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -159,6 +198,69 @@ extension Cosmos_Vesting_V1beta1_MsgCreateVestingAccountResponse: SwiftProtobuf.
   }
 
   static func ==(lhs: Cosmos_Vesting_V1beta1_MsgCreateVestingAccountResponse, rhs: Cosmos_Vesting_V1beta1_MsgCreateVestingAccountResponse) -> Bool {
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Cosmos_Vesting_V1beta1_MsgCreatePermanentLockedAccount: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".MsgCreatePermanentLockedAccount"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "from_address"),
+    2: .standard(proto: "to_address"),
+    3: .same(proto: "amount"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.fromAddress) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.toAddress) }()
+      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.amount) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.fromAddress.isEmpty {
+      try visitor.visitSingularStringField(value: self.fromAddress, fieldNumber: 1)
+    }
+    if !self.toAddress.isEmpty {
+      try visitor.visitSingularStringField(value: self.toAddress, fieldNumber: 2)
+    }
+    if !self.amount.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.amount, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Cosmos_Vesting_V1beta1_MsgCreatePermanentLockedAccount, rhs: Cosmos_Vesting_V1beta1_MsgCreatePermanentLockedAccount) -> Bool {
+    if lhs.fromAddress != rhs.fromAddress {return false}
+    if lhs.toAddress != rhs.toAddress {return false}
+    if lhs.amount != rhs.amount {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Cosmos_Vesting_V1beta1_MsgCreatePermanentLockedAccountResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".MsgCreatePermanentLockedAccountResponse"
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let _ = try decoder.nextFieldNumber() {
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Cosmos_Vesting_V1beta1_MsgCreatePermanentLockedAccountResponse, rhs: Cosmos_Vesting_V1beta1_MsgCreatePermanentLockedAccountResponse) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

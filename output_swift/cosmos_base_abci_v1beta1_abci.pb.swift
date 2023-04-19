@@ -73,6 +73,14 @@ struct Cosmos_Base_Abci_V1beta1_TxResponse {
   /// it's genesis time.
   var timestamp: String = String()
 
+  /// Events defines all the events emitted by processing a transaction. Note,
+  /// these events include those emitted by processing all the messages and those
+  /// emitted from the ante. Whereas Logs contains the events, with
+  /// additional metadata, emitted only by processing the messages.
+  ///
+  /// Since: cosmos-sdk 0.42.11, 0.44.5, 0.45
+  var events: [Tendermint_Abci_Event] = []
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -156,6 +164,8 @@ struct Cosmos_Base_Abci_V1beta1_Result {
 
   /// Data is any data returned from message or handler execution. It MUST be
   /// length prefixed in order to separate data from multiple message executions.
+  /// Deprecated. This field is still populated, but prefer msg_response instead
+  /// because it also contains the Msg response typeURL.
   var data: Data = Data()
 
   /// Log contains the log information from message or handler execution.
@@ -164,6 +174,11 @@ struct Cosmos_Base_Abci_V1beta1_Result {
   /// Events contains a slice of Event objects that were emitted during message
   /// or handler execution.
   var events: [Tendermint_Abci_Event] = []
+
+  /// msg_responses contains the Msg handler responses type packed in Anys.
+  ///
+  /// Since: cosmos-sdk 0.46
+  var msgResponses: [Google_Protobuf2_Any] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -226,7 +241,13 @@ struct Cosmos_Base_Abci_V1beta1_TxMsgData {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// data field is deprecated and not populated.
   var data: [Cosmos_Base_Abci_V1beta1_MsgData] = []
+
+  /// msg_responses contains the Msg handler responses packed into Anys.
+  ///
+  /// Since: cosmos-sdk 0.46
+  var msgResponses: [Google_Protobuf2_Any] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -262,6 +283,35 @@ struct Cosmos_Base_Abci_V1beta1_SearchTxsResult {
   init() {}
 }
 
+/// SearchBlocksResult defines a structure for querying blocks pageable
+struct Cosmos_Base_Abci_V1beta1_SearchBlocksResult {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  /// Count of all blocks
+  var totalCount: Int64 = 0
+
+  /// Count of blocks in current page
+  var count: Int64 = 0
+
+  /// Index of current page, start from 1
+  var pageNumber: Int64 = 0
+
+  /// Count of total pages
+  var pageTotal: Int64 = 0
+
+  /// Max count blocks per page
+  var limit: Int64 = 0
+
+  /// List of blocks in current page
+  var blocks: [Tendermint_Types_Block] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.base.abci.v1beta1"
@@ -281,6 +331,7 @@ extension Cosmos_Base_Abci_V1beta1_TxResponse: SwiftProtobuf.Message, SwiftProto
     10: .standard(proto: "gas_used"),
     11: .same(proto: "tx"),
     12: .same(proto: "timestamp"),
+    13: .same(proto: "events"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -301,6 +352,7 @@ extension Cosmos_Base_Abci_V1beta1_TxResponse: SwiftProtobuf.Message, SwiftProto
       case 10: try { try decoder.decodeSingularInt64Field(value: &self.gasUsed) }()
       case 11: try { try decoder.decodeSingularMessageField(value: &self._tx) }()
       case 12: try { try decoder.decodeSingularStringField(value: &self.timestamp) }()
+      case 13: try { try decoder.decodeRepeatedMessageField(value: &self.events) }()
       default: break
       }
     }
@@ -343,6 +395,9 @@ extension Cosmos_Base_Abci_V1beta1_TxResponse: SwiftProtobuf.Message, SwiftProto
     if !self.timestamp.isEmpty {
       try visitor.visitSingularStringField(value: self.timestamp, fieldNumber: 12)
     }
+    if !self.events.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.events, fieldNumber: 13)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -359,6 +414,7 @@ extension Cosmos_Base_Abci_V1beta1_TxResponse: SwiftProtobuf.Message, SwiftProto
     if lhs.gasUsed != rhs.gasUsed {return false}
     if lhs._tx != rhs._tx {return false}
     if lhs.timestamp != rhs.timestamp {return false}
+    if lhs.events != rhs.events {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -528,6 +584,7 @@ extension Cosmos_Base_Abci_V1beta1_Result: SwiftProtobuf.Message, SwiftProtobuf.
     1: .same(proto: "data"),
     2: .same(proto: "log"),
     3: .same(proto: "events"),
+    4: .standard(proto: "msg_responses"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -539,6 +596,7 @@ extension Cosmos_Base_Abci_V1beta1_Result: SwiftProtobuf.Message, SwiftProtobuf.
       case 1: try { try decoder.decodeSingularBytesField(value: &self.data) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.log) }()
       case 3: try { try decoder.decodeRepeatedMessageField(value: &self.events) }()
+      case 4: try { try decoder.decodeRepeatedMessageField(value: &self.msgResponses) }()
       default: break
       }
     }
@@ -554,6 +612,9 @@ extension Cosmos_Base_Abci_V1beta1_Result: SwiftProtobuf.Message, SwiftProtobuf.
     if !self.events.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.events, fieldNumber: 3)
     }
+    if !self.msgResponses.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.msgResponses, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -561,6 +622,7 @@ extension Cosmos_Base_Abci_V1beta1_Result: SwiftProtobuf.Message, SwiftProtobuf.
     if lhs.data != rhs.data {return false}
     if lhs.log != rhs.log {return false}
     if lhs.events != rhs.events {return false}
+    if lhs.msgResponses != rhs.msgResponses {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -646,6 +708,7 @@ extension Cosmos_Base_Abci_V1beta1_TxMsgData: SwiftProtobuf.Message, SwiftProtob
   static let protoMessageName: String = _protobuf_package + ".TxMsgData"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "data"),
+    2: .standard(proto: "msg_responses"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -655,6 +718,7 @@ extension Cosmos_Base_Abci_V1beta1_TxMsgData: SwiftProtobuf.Message, SwiftProtob
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeRepeatedMessageField(value: &self.data) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.msgResponses) }()
       default: break
       }
     }
@@ -664,11 +728,15 @@ extension Cosmos_Base_Abci_V1beta1_TxMsgData: SwiftProtobuf.Message, SwiftProtob
     if !self.data.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.data, fieldNumber: 1)
     }
+    if !self.msgResponses.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.msgResponses, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: Cosmos_Base_Abci_V1beta1_TxMsgData, rhs: Cosmos_Base_Abci_V1beta1_TxMsgData) -> Bool {
     if lhs.data != rhs.data {return false}
+    if lhs.msgResponses != rhs.msgResponses {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -731,6 +799,68 @@ extension Cosmos_Base_Abci_V1beta1_SearchTxsResult: SwiftProtobuf.Message, Swift
     if lhs.pageTotal != rhs.pageTotal {return false}
     if lhs.limit != rhs.limit {return false}
     if lhs.txs != rhs.txs {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Cosmos_Base_Abci_V1beta1_SearchBlocksResult: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".SearchBlocksResult"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "total_count"),
+    2: .same(proto: "count"),
+    3: .standard(proto: "page_number"),
+    4: .standard(proto: "page_total"),
+    5: .same(proto: "limit"),
+    6: .same(proto: "blocks"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.totalCount) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.count) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.pageNumber) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.pageTotal) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.limit) }()
+      case 6: try { try decoder.decodeRepeatedMessageField(value: &self.blocks) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.totalCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.totalCount, fieldNumber: 1)
+    }
+    if self.count != 0 {
+      try visitor.visitSingularInt64Field(value: self.count, fieldNumber: 2)
+    }
+    if self.pageNumber != 0 {
+      try visitor.visitSingularInt64Field(value: self.pageNumber, fieldNumber: 3)
+    }
+    if self.pageTotal != 0 {
+      try visitor.visitSingularInt64Field(value: self.pageTotal, fieldNumber: 4)
+    }
+    if self.limit != 0 {
+      try visitor.visitSingularInt64Field(value: self.limit, fieldNumber: 5)
+    }
+    if !self.blocks.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.blocks, fieldNumber: 6)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Cosmos_Base_Abci_V1beta1_SearchBlocksResult, rhs: Cosmos_Base_Abci_V1beta1_SearchBlocksResult) -> Bool {
+    if lhs.totalCount != rhs.totalCount {return false}
+    if lhs.count != rhs.count {return false}
+    if lhs.pageNumber != rhs.pageNumber {return false}
+    if lhs.pageTotal != rhs.pageTotal {return false}
+    if lhs.limit != rhs.limit {return false}
+    if lhs.blocks != rhs.blocks {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

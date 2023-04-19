@@ -42,6 +42,16 @@ internal protocol Cosmos_Bank_V1beta1_QueryClientProtocol: GRPCClient {
     callOptions: CallOptions?
   ) -> UnaryCall<Cosmos_Bank_V1beta1_QueryAllBalancesRequest, Cosmos_Bank_V1beta1_QueryAllBalancesResponse>
 
+  func spendableBalances(
+    _ request: Cosmos_Bank_V1beta1_QuerySpendableBalancesRequest,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Cosmos_Bank_V1beta1_QuerySpendableBalancesRequest, Cosmos_Bank_V1beta1_QuerySpendableBalancesResponse>
+
+  func spendableBalanceByDenom(
+    _ request: Cosmos_Bank_V1beta1_QuerySpendableBalanceByDenomRequest,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Cosmos_Bank_V1beta1_QuerySpendableBalanceByDenomRequest, Cosmos_Bank_V1beta1_QuerySpendableBalanceByDenomResponse>
+
   func totalSupply(
     _ request: Cosmos_Bank_V1beta1_QueryTotalSupplyRequest,
     callOptions: CallOptions?
@@ -71,6 +81,11 @@ internal protocol Cosmos_Bank_V1beta1_QueryClientProtocol: GRPCClient {
     _ request: Cosmos_Bank_V1beta1_QueryDenomOwnersRequest,
     callOptions: CallOptions?
   ) -> UnaryCall<Cosmos_Bank_V1beta1_QueryDenomOwnersRequest, Cosmos_Bank_V1beta1_QueryDenomOwnersResponse>
+
+  func sendEnabled(
+    _ request: Cosmos_Bank_V1beta1_QuerySendEnabledRequest,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Cosmos_Bank_V1beta1_QuerySendEnabledRequest, Cosmos_Bank_V1beta1_QuerySendEnabledResponse>
 }
 
 extension Cosmos_Bank_V1beta1_QueryClientProtocol {
@@ -98,6 +113,9 @@ extension Cosmos_Bank_V1beta1_QueryClientProtocol {
 
   /// AllBalances queries the balance of all coins for a single account.
   ///
+  /// When called from another module, this query might consume a high amount of
+  /// gas if the pagination field is incorrectly set.
+  ///
   /// - Parameters:
   ///   - request: Request to send to AllBalances.
   ///   - callOptions: Call options.
@@ -114,7 +132,58 @@ extension Cosmos_Bank_V1beta1_QueryClientProtocol {
     )
   }
 
+  /// SpendableBalances queries the spendable balance of all coins for a single
+  /// account.
+  ///
+  /// When called from another module, this query might consume a high amount of
+  /// gas if the pagination field is incorrectly set.
+  ///
+  /// Since: cosmos-sdk 0.46
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to SpendableBalances.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func spendableBalances(
+    _ request: Cosmos_Bank_V1beta1_QuerySpendableBalancesRequest,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Cosmos_Bank_V1beta1_QuerySpendableBalancesRequest, Cosmos_Bank_V1beta1_QuerySpendableBalancesResponse> {
+    return self.makeUnaryCall(
+      path: "/cosmos.bank.v1beta1.Query/SpendableBalances",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeSpendableBalancesInterceptors() ?? []
+    )
+  }
+
+  /// SpendableBalanceByDenom queries the spendable balance of a single denom for
+  /// a single account.
+  ///
+  /// When called from another module, this query might consume a high amount of
+  /// gas if the pagination field is incorrectly set.
+  ///
+  /// Since: cosmos-sdk 0.47
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to SpendableBalanceByDenom.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func spendableBalanceByDenom(
+    _ request: Cosmos_Bank_V1beta1_QuerySpendableBalanceByDenomRequest,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Cosmos_Bank_V1beta1_QuerySpendableBalanceByDenomRequest, Cosmos_Bank_V1beta1_QuerySpendableBalanceByDenomResponse> {
+    return self.makeUnaryCall(
+      path: "/cosmos.bank.v1beta1.Query/SpendableBalanceByDenom",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeSpendableBalanceByDenomInterceptors() ?? []
+    )
+  }
+
   /// TotalSupply queries the total supply of all coins.
+  ///
+  /// When called from another module, this query might consume a high amount of
+  /// gas if the pagination field is incorrectly set.
   ///
   /// - Parameters:
   ///   - request: Request to send to TotalSupply.
@@ -133,6 +202,9 @@ extension Cosmos_Bank_V1beta1_QueryClientProtocol {
   }
 
   /// SupplyOf queries the supply of a single coin.
+  ///
+  /// When called from another module, this query might consume a high amount of
+  /// gas if the pagination field is incorrectly set.
   ///
   /// - Parameters:
   ///   - request: Request to send to SupplyOf.
@@ -208,6 +280,11 @@ extension Cosmos_Bank_V1beta1_QueryClientProtocol {
   /// DenomOwners queries for all account addresses that own a particular token
   /// denomination.
   ///
+  /// When called from another module, this query might consume a high amount of
+  /// gas if the pagination field is incorrectly set.
+  ///
+  /// Since: cosmos-sdk 0.46
+  ///
   /// - Parameters:
   ///   - request: Request to send to DenomOwners.
   ///   - callOptions: Call options.
@@ -223,6 +300,30 @@ extension Cosmos_Bank_V1beta1_QueryClientProtocol {
       interceptors: self.interceptors?.makeDenomOwnersInterceptors() ?? []
     )
   }
+
+  /// SendEnabled queries for SendEnabled entries.
+  ///
+  /// This query only returns denominations that have specific SendEnabled settings.
+  /// Any denomination that does not have a specific setting will use the default
+  /// params.default_send_enabled, and will not be returned by this query.
+  ///
+  /// Since: cosmos-sdk 0.47
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to SendEnabled.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func sendEnabled(
+    _ request: Cosmos_Bank_V1beta1_QuerySendEnabledRequest,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Cosmos_Bank_V1beta1_QuerySendEnabledRequest, Cosmos_Bank_V1beta1_QuerySendEnabledResponse> {
+    return self.makeUnaryCall(
+      path: "/cosmos.bank.v1beta1.Query/SendEnabled",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeSendEnabledInterceptors() ?? []
+    )
+  }
 }
 
 internal protocol Cosmos_Bank_V1beta1_QueryClientInterceptorFactoryProtocol {
@@ -232,6 +333,12 @@ internal protocol Cosmos_Bank_V1beta1_QueryClientInterceptorFactoryProtocol {
 
   /// - Returns: Interceptors to use when invoking 'allBalances'.
   func makeAllBalancesInterceptors() -> [ClientInterceptor<Cosmos_Bank_V1beta1_QueryAllBalancesRequest, Cosmos_Bank_V1beta1_QueryAllBalancesResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'spendableBalances'.
+  func makeSpendableBalancesInterceptors() -> [ClientInterceptor<Cosmos_Bank_V1beta1_QuerySpendableBalancesRequest, Cosmos_Bank_V1beta1_QuerySpendableBalancesResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'spendableBalanceByDenom'.
+  func makeSpendableBalanceByDenomInterceptors() -> [ClientInterceptor<Cosmos_Bank_V1beta1_QuerySpendableBalanceByDenomRequest, Cosmos_Bank_V1beta1_QuerySpendableBalanceByDenomResponse>]
 
   /// - Returns: Interceptors to use when invoking 'totalSupply'.
   func makeTotalSupplyInterceptors() -> [ClientInterceptor<Cosmos_Bank_V1beta1_QueryTotalSupplyRequest, Cosmos_Bank_V1beta1_QueryTotalSupplyResponse>]
@@ -250,6 +357,9 @@ internal protocol Cosmos_Bank_V1beta1_QueryClientInterceptorFactoryProtocol {
 
   /// - Returns: Interceptors to use when invoking 'denomOwners'.
   func makeDenomOwnersInterceptors() -> [ClientInterceptor<Cosmos_Bank_V1beta1_QueryDenomOwnersRequest, Cosmos_Bank_V1beta1_QueryDenomOwnersResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'sendEnabled'.
+  func makeSendEnabledInterceptors() -> [ClientInterceptor<Cosmos_Bank_V1beta1_QuerySendEnabledRequest, Cosmos_Bank_V1beta1_QuerySendEnabledResponse>]
 }
 
 internal final class Cosmos_Bank_V1beta1_QueryClient: Cosmos_Bank_V1beta1_QueryClientProtocol {
@@ -284,12 +394,39 @@ internal protocol Cosmos_Bank_V1beta1_QueryProvider: CallHandlerProvider {
   func balance(request: Cosmos_Bank_V1beta1_QueryBalanceRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Bank_V1beta1_QueryBalanceResponse>
 
   /// AllBalances queries the balance of all coins for a single account.
+  ///
+  /// When called from another module, this query might consume a high amount of
+  /// gas if the pagination field is incorrectly set.
   func allBalances(request: Cosmos_Bank_V1beta1_QueryAllBalancesRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Bank_V1beta1_QueryAllBalancesResponse>
 
+  /// SpendableBalances queries the spendable balance of all coins for a single
+  /// account.
+  ///
+  /// When called from another module, this query might consume a high amount of
+  /// gas if the pagination field is incorrectly set.
+  ///
+  /// Since: cosmos-sdk 0.46
+  func spendableBalances(request: Cosmos_Bank_V1beta1_QuerySpendableBalancesRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Bank_V1beta1_QuerySpendableBalancesResponse>
+
+  /// SpendableBalanceByDenom queries the spendable balance of a single denom for
+  /// a single account.
+  ///
+  /// When called from another module, this query might consume a high amount of
+  /// gas if the pagination field is incorrectly set.
+  ///
+  /// Since: cosmos-sdk 0.47
+  func spendableBalanceByDenom(request: Cosmos_Bank_V1beta1_QuerySpendableBalanceByDenomRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Bank_V1beta1_QuerySpendableBalanceByDenomResponse>
+
   /// TotalSupply queries the total supply of all coins.
+  ///
+  /// When called from another module, this query might consume a high amount of
+  /// gas if the pagination field is incorrectly set.
   func totalSupply(request: Cosmos_Bank_V1beta1_QueryTotalSupplyRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Bank_V1beta1_QueryTotalSupplyResponse>
 
   /// SupplyOf queries the supply of a single coin.
+  ///
+  /// When called from another module, this query might consume a high amount of
+  /// gas if the pagination field is incorrectly set.
   func supplyOf(request: Cosmos_Bank_V1beta1_QuerySupplyOfRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Bank_V1beta1_QuerySupplyOfResponse>
 
   /// Params queries the parameters of x/bank module.
@@ -304,7 +441,21 @@ internal protocol Cosmos_Bank_V1beta1_QueryProvider: CallHandlerProvider {
 
   /// DenomOwners queries for all account addresses that own a particular token
   /// denomination.
+  ///
+  /// When called from another module, this query might consume a high amount of
+  /// gas if the pagination field is incorrectly set.
+  ///
+  /// Since: cosmos-sdk 0.46
   func denomOwners(request: Cosmos_Bank_V1beta1_QueryDenomOwnersRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Bank_V1beta1_QueryDenomOwnersResponse>
+
+  /// SendEnabled queries for SendEnabled entries.
+  ///
+  /// This query only returns denominations that have specific SendEnabled settings.
+  /// Any denomination that does not have a specific setting will use the default
+  /// params.default_send_enabled, and will not be returned by this query.
+  ///
+  /// Since: cosmos-sdk 0.47
+  func sendEnabled(request: Cosmos_Bank_V1beta1_QuerySendEnabledRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Bank_V1beta1_QuerySendEnabledResponse>
 }
 
 extension Cosmos_Bank_V1beta1_QueryProvider {
@@ -333,6 +484,24 @@ extension Cosmos_Bank_V1beta1_QueryProvider {
         responseSerializer: ProtobufSerializer<Cosmos_Bank_V1beta1_QueryAllBalancesResponse>(),
         interceptors: self.interceptors?.makeAllBalancesInterceptors() ?? [],
         userFunction: self.allBalances(request:context:)
+      )
+
+    case "SpendableBalances":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Cosmos_Bank_V1beta1_QuerySpendableBalancesRequest>(),
+        responseSerializer: ProtobufSerializer<Cosmos_Bank_V1beta1_QuerySpendableBalancesResponse>(),
+        interceptors: self.interceptors?.makeSpendableBalancesInterceptors() ?? [],
+        userFunction: self.spendableBalances(request:context:)
+      )
+
+    case "SpendableBalanceByDenom":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Cosmos_Bank_V1beta1_QuerySpendableBalanceByDenomRequest>(),
+        responseSerializer: ProtobufSerializer<Cosmos_Bank_V1beta1_QuerySpendableBalanceByDenomResponse>(),
+        interceptors: self.interceptors?.makeSpendableBalanceByDenomInterceptors() ?? [],
+        userFunction: self.spendableBalanceByDenom(request:context:)
       )
 
     case "TotalSupply":
@@ -389,6 +558,15 @@ extension Cosmos_Bank_V1beta1_QueryProvider {
         userFunction: self.denomOwners(request:context:)
       )
 
+    case "SendEnabled":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Cosmos_Bank_V1beta1_QuerySendEnabledRequest>(),
+        responseSerializer: ProtobufSerializer<Cosmos_Bank_V1beta1_QuerySendEnabledResponse>(),
+        interceptors: self.interceptors?.makeSendEnabledInterceptors() ?? [],
+        userFunction: self.sendEnabled(request:context:)
+      )
+
     default:
       return nil
     }
@@ -404,6 +582,14 @@ internal protocol Cosmos_Bank_V1beta1_QueryServerInterceptorFactoryProtocol {
   /// - Returns: Interceptors to use when handling 'allBalances'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeAllBalancesInterceptors() -> [ServerInterceptor<Cosmos_Bank_V1beta1_QueryAllBalancesRequest, Cosmos_Bank_V1beta1_QueryAllBalancesResponse>]
+
+  /// - Returns: Interceptors to use when handling 'spendableBalances'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeSpendableBalancesInterceptors() -> [ServerInterceptor<Cosmos_Bank_V1beta1_QuerySpendableBalancesRequest, Cosmos_Bank_V1beta1_QuerySpendableBalancesResponse>]
+
+  /// - Returns: Interceptors to use when handling 'spendableBalanceByDenom'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeSpendableBalanceByDenomInterceptors() -> [ServerInterceptor<Cosmos_Bank_V1beta1_QuerySpendableBalanceByDenomRequest, Cosmos_Bank_V1beta1_QuerySpendableBalanceByDenomResponse>]
 
   /// - Returns: Interceptors to use when handling 'totalSupply'.
   ///   Defaults to calling `self.makeInterceptors()`.
@@ -428,4 +614,8 @@ internal protocol Cosmos_Bank_V1beta1_QueryServerInterceptorFactoryProtocol {
   /// - Returns: Interceptors to use when handling 'denomOwners'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeDenomOwnersInterceptors() -> [ServerInterceptor<Cosmos_Bank_V1beta1_QueryDenomOwnersRequest, Cosmos_Bank_V1beta1_QueryDenomOwnersResponse>]
+
+  /// - Returns: Interceptors to use when handling 'sendEnabled'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeSendEnabledInterceptors() -> [ServerInterceptor<Cosmos_Bank_V1beta1_QuerySendEnabledRequest, Cosmos_Bank_V1beta1_QuerySendEnabledResponse>]
 }

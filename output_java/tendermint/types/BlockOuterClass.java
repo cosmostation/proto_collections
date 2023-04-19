@@ -1266,9 +1266,9 @@ public final class BlockOuterClass {
       "\002 \001(\0132\026.tendermint.types.DataB\004\310\336\037\000\0226\n\010e" +
       "vidence\030\003 \001(\0132\036.tendermint.types.Evidenc" +
       "eListB\004\310\336\037\000\022-\n\013last_commit\030\004 \001(\0132\030.tende" +
-      "rmint.types.CommitB9Z7github.com/tenderm" +
-      "int/tendermint/proto/tendermint/typesb\006p" +
-      "roto3"
+      "rmint.types.CommitB5Z3github.com/cometbf" +
+      "t/cometbft/proto/tendermint/typesb\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

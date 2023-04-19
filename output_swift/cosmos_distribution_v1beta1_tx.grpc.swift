@@ -51,6 +51,21 @@ internal protocol Cosmos_Distribution_V1beta1_MsgClientProtocol: GRPCClient {
     _ request: Cosmos_Distribution_V1beta1_MsgFundCommunityPool,
     callOptions: CallOptions?
   ) -> UnaryCall<Cosmos_Distribution_V1beta1_MsgFundCommunityPool, Cosmos_Distribution_V1beta1_MsgFundCommunityPoolResponse>
+
+  func updateParams(
+    _ request: Cosmos_Distribution_V1beta1_MsgUpdateParams,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Cosmos_Distribution_V1beta1_MsgUpdateParams, Cosmos_Distribution_V1beta1_MsgUpdateParamsResponse>
+
+  func communityPoolSpend(
+    _ request: Cosmos_Distribution_V1beta1_MsgCommunityPoolSpend,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Cosmos_Distribution_V1beta1_MsgCommunityPoolSpend, Cosmos_Distribution_V1beta1_MsgCommunityPoolSpendResponse>
+
+  func depositValidatorRewardsPool(
+    _ request: Cosmos_Distribution_V1beta1_MsgDepositValidatorRewardsPool,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Cosmos_Distribution_V1beta1_MsgDepositValidatorRewardsPool, Cosmos_Distribution_V1beta1_MsgDepositValidatorRewardsPoolResponse>
 }
 
 extension Cosmos_Distribution_V1beta1_MsgClientProtocol {
@@ -133,6 +148,71 @@ extension Cosmos_Distribution_V1beta1_MsgClientProtocol {
       interceptors: self.interceptors?.makeFundCommunityPoolInterceptors() ?? []
     )
   }
+
+  /// UpdateParams defines a governance operation for updating the x/distribution
+  /// module parameters. The authority is defined in the keeper.
+  ///
+  /// Since: cosmos-sdk 0.47
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to UpdateParams.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func updateParams(
+    _ request: Cosmos_Distribution_V1beta1_MsgUpdateParams,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Cosmos_Distribution_V1beta1_MsgUpdateParams, Cosmos_Distribution_V1beta1_MsgUpdateParamsResponse> {
+    return self.makeUnaryCall(
+      path: "/cosmos.distribution.v1beta1.Msg/UpdateParams",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeUpdateParamsInterceptors() ?? []
+    )
+  }
+
+  /// CommunityPoolSpend defines a governance operation for sending tokens from
+  /// the community pool in the x/distribution module to another account, which
+  /// could be the governance module itself. The authority is defined in the
+  /// keeper.
+  ///
+  /// Since: cosmos-sdk 0.47
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to CommunityPoolSpend.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func communityPoolSpend(
+    _ request: Cosmos_Distribution_V1beta1_MsgCommunityPoolSpend,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Cosmos_Distribution_V1beta1_MsgCommunityPoolSpend, Cosmos_Distribution_V1beta1_MsgCommunityPoolSpendResponse> {
+    return self.makeUnaryCall(
+      path: "/cosmos.distribution.v1beta1.Msg/CommunityPoolSpend",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeCommunityPoolSpendInterceptors() ?? []
+    )
+  }
+
+  /// DepositValidatorRewardsPool defines a method to provide additional rewards
+  /// to delegators to a specific validator.
+  ///
+  /// Since: cosmos-sdk 0.48
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to DepositValidatorRewardsPool.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func depositValidatorRewardsPool(
+    _ request: Cosmos_Distribution_V1beta1_MsgDepositValidatorRewardsPool,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Cosmos_Distribution_V1beta1_MsgDepositValidatorRewardsPool, Cosmos_Distribution_V1beta1_MsgDepositValidatorRewardsPoolResponse> {
+    return self.makeUnaryCall(
+      path: "/cosmos.distribution.v1beta1.Msg/DepositValidatorRewardsPool",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeDepositValidatorRewardsPoolInterceptors() ?? []
+    )
+  }
 }
 
 internal protocol Cosmos_Distribution_V1beta1_MsgClientInterceptorFactoryProtocol {
@@ -148,6 +228,15 @@ internal protocol Cosmos_Distribution_V1beta1_MsgClientInterceptorFactoryProtoco
 
   /// - Returns: Interceptors to use when invoking 'fundCommunityPool'.
   func makeFundCommunityPoolInterceptors() -> [ClientInterceptor<Cosmos_Distribution_V1beta1_MsgFundCommunityPool, Cosmos_Distribution_V1beta1_MsgFundCommunityPoolResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'updateParams'.
+  func makeUpdateParamsInterceptors() -> [ClientInterceptor<Cosmos_Distribution_V1beta1_MsgUpdateParams, Cosmos_Distribution_V1beta1_MsgUpdateParamsResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'communityPoolSpend'.
+  func makeCommunityPoolSpendInterceptors() -> [ClientInterceptor<Cosmos_Distribution_V1beta1_MsgCommunityPoolSpend, Cosmos_Distribution_V1beta1_MsgCommunityPoolSpendResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'depositValidatorRewardsPool'.
+  func makeDepositValidatorRewardsPoolInterceptors() -> [ClientInterceptor<Cosmos_Distribution_V1beta1_MsgDepositValidatorRewardsPool, Cosmos_Distribution_V1beta1_MsgDepositValidatorRewardsPoolResponse>]
 }
 
 internal final class Cosmos_Distribution_V1beta1_MsgClient: Cosmos_Distribution_V1beta1_MsgClientProtocol {
@@ -193,6 +282,26 @@ internal protocol Cosmos_Distribution_V1beta1_MsgProvider: CallHandlerProvider {
   /// FundCommunityPool defines a method to allow an account to directly
   /// fund the community pool.
   func fundCommunityPool(request: Cosmos_Distribution_V1beta1_MsgFundCommunityPool, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Distribution_V1beta1_MsgFundCommunityPoolResponse>
+
+  /// UpdateParams defines a governance operation for updating the x/distribution
+  /// module parameters. The authority is defined in the keeper.
+  ///
+  /// Since: cosmos-sdk 0.47
+  func updateParams(request: Cosmos_Distribution_V1beta1_MsgUpdateParams, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Distribution_V1beta1_MsgUpdateParamsResponse>
+
+  /// CommunityPoolSpend defines a governance operation for sending tokens from
+  /// the community pool in the x/distribution module to another account, which
+  /// could be the governance module itself. The authority is defined in the
+  /// keeper.
+  ///
+  /// Since: cosmos-sdk 0.47
+  func communityPoolSpend(request: Cosmos_Distribution_V1beta1_MsgCommunityPoolSpend, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Distribution_V1beta1_MsgCommunityPoolSpendResponse>
+
+  /// DepositValidatorRewardsPool defines a method to provide additional rewards
+  /// to delegators to a specific validator.
+  ///
+  /// Since: cosmos-sdk 0.48
+  func depositValidatorRewardsPool(request: Cosmos_Distribution_V1beta1_MsgDepositValidatorRewardsPool, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Distribution_V1beta1_MsgDepositValidatorRewardsPoolResponse>
 }
 
 extension Cosmos_Distribution_V1beta1_MsgProvider {
@@ -241,6 +350,33 @@ extension Cosmos_Distribution_V1beta1_MsgProvider {
         userFunction: self.fundCommunityPool(request:context:)
       )
 
+    case "UpdateParams":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Cosmos_Distribution_V1beta1_MsgUpdateParams>(),
+        responseSerializer: ProtobufSerializer<Cosmos_Distribution_V1beta1_MsgUpdateParamsResponse>(),
+        interceptors: self.interceptors?.makeUpdateParamsInterceptors() ?? [],
+        userFunction: self.updateParams(request:context:)
+      )
+
+    case "CommunityPoolSpend":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Cosmos_Distribution_V1beta1_MsgCommunityPoolSpend>(),
+        responseSerializer: ProtobufSerializer<Cosmos_Distribution_V1beta1_MsgCommunityPoolSpendResponse>(),
+        interceptors: self.interceptors?.makeCommunityPoolSpendInterceptors() ?? [],
+        userFunction: self.communityPoolSpend(request:context:)
+      )
+
+    case "DepositValidatorRewardsPool":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Cosmos_Distribution_V1beta1_MsgDepositValidatorRewardsPool>(),
+        responseSerializer: ProtobufSerializer<Cosmos_Distribution_V1beta1_MsgDepositValidatorRewardsPoolResponse>(),
+        interceptors: self.interceptors?.makeDepositValidatorRewardsPoolInterceptors() ?? [],
+        userFunction: self.depositValidatorRewardsPool(request:context:)
+      )
+
     default:
       return nil
     }
@@ -264,4 +400,16 @@ internal protocol Cosmos_Distribution_V1beta1_MsgServerInterceptorFactoryProtoco
   /// - Returns: Interceptors to use when handling 'fundCommunityPool'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeFundCommunityPoolInterceptors() -> [ServerInterceptor<Cosmos_Distribution_V1beta1_MsgFundCommunityPool, Cosmos_Distribution_V1beta1_MsgFundCommunityPoolResponse>]
+
+  /// - Returns: Interceptors to use when handling 'updateParams'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeUpdateParamsInterceptors() -> [ServerInterceptor<Cosmos_Distribution_V1beta1_MsgUpdateParams, Cosmos_Distribution_V1beta1_MsgUpdateParamsResponse>]
+
+  /// - Returns: Interceptors to use when handling 'communityPoolSpend'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeCommunityPoolSpendInterceptors() -> [ServerInterceptor<Cosmos_Distribution_V1beta1_MsgCommunityPoolSpend, Cosmos_Distribution_V1beta1_MsgCommunityPoolSpendResponse>]
+
+  /// - Returns: Interceptors to use when handling 'depositValidatorRewardsPool'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeDepositValidatorRewardsPoolInterceptors() -> [ServerInterceptor<Cosmos_Distribution_V1beta1_MsgDepositValidatorRewardsPool, Cosmos_Distribution_V1beta1_MsgDepositValidatorRewardsPoolResponse>]
 }

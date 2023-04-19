@@ -44,7 +44,7 @@ public final class Keys {
   }
   /**
    * <pre>
-   * PublicKey defines the keys available for use with Tendermint Validators
+   * PublicKey defines the keys available for use with Validators
    * </pre>
    *
    * Protobuf type {@code tendermint.crypto.PublicKey}
@@ -405,7 +405,7 @@ public final class Keys {
     }
     /**
      * <pre>
-     * PublicKey defines the keys available for use with Tendermint Validators
+     * PublicKey defines the keys available for use with Validators
      * </pre>
      *
      * Protobuf type {@code tendermint.crypto.PublicKey}
@@ -742,9 +742,9 @@ public final class Keys {
       "\n\034tendermint/crypto/keys.proto\022\021tendermi" +
       "nt.crypto\032\024gogoproto/gogo.proto\"D\n\tPubli" +
       "cKey\022\021\n\007ed25519\030\001 \001(\014H\000\022\023\n\tsecp256k1\030\002 \001" +
-      "(\014H\000:\010\350\241\037\001\350\240\037\001B\005\n\003sumB:Z8github.com/tend" +
-      "ermint/tendermint/proto/tendermint/crypt" +
-      "ob\006proto3"
+      "(\014H\000:\010\350\241\037\001\350\240\037\001B\005\n\003sumB6Z4github.com/come" +
+      "tbft/cometbft/proto/tendermint/cryptob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -534,7 +534,7 @@ public final class Keys {
   }
   /**
    * <pre>
-   * Deprecated: PrivKey defines a ed25519 private key.
+   * PrivKey defines a ed25519 private key.
    * NOTE: ed25519 keys must not be used in SDK apps except in a tendermint validator context.
    * </pre>
    *
@@ -788,7 +788,7 @@ public final class Keys {
     }
     /**
      * <pre>
-     * Deprecated: PrivKey defines a ed25519 private key.
+     * PrivKey defines a ed25519 private key.
      * NOTE: ed25519 keys must not be used in SDK apps except in a tendermint validator context.
      * </pre>
      *
@@ -1044,16 +1044,20 @@ public final class Keys {
   static {
     java.lang.String[] descriptorData = {
       "\n cosmos/crypto/ed25519/keys.proto\022\025cosm" +
-      "os.crypto.ed25519\032\024gogoproto/gogo.proto\"" +
-      "9\n\006PubKey\022)\n\003key\030\001 \001(\014B\034\372\336\037\030crypto/ed255" +
-      "19.PublicKey:\004\230\240\037\000\"5\n\007PrivKey\022*\n\003key\030\001 \001" +
-      "(\014B\035\372\336\037\031crypto/ed25519.PrivateKeyB2Z0git" +
-      "hub.com/cosmos/cosmos-sdk/crypto/keys/ed" +
-      "25519b\006proto3"
+      "os.crypto.ed25519\032\021amino/amino.proto\032\024go" +
+      "goproto/gogo.proto\"d\n\006PubKey\022)\n\003key\030\001 \001(" +
+      "\014B\034\372\336\037\030crypto/ed25519.PublicKey:/\212\347\260*\030te" +
+      "ndermint/PubKeyEd25519\222\347\260*\tkey_field\230\240\037\000" +
+      "\"c\n\007PrivKey\022*\n\003key\030\001 \001(\014B\035\372\336\037\031crypto/ed2" +
+      "5519.PrivateKey:,\212\347\260*\031tendermint/PrivKey" +
+      "Ed25519\222\347\260*\tkey_fieldB2Z0github.com/cosm" +
+      "os/cosmos-sdk/crypto/keys/ed25519b\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          amino.Amino.getDescriptor(),
           com.google.protobuf2.GoGoProtos.getDescriptor(),
         });
     internal_static_cosmos_crypto_ed25519_PubKey_descriptor =
@@ -1070,10 +1074,13 @@ public final class Keys {
         new java.lang.String[] { "Key", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(amino.Amino.messageEncoding);
+    registry.add(amino.Amino.name);
     registry.add(com.google.protobuf2.GoGoProtos.casttype);
     registry.add(com.google.protobuf2.GoGoProtos.goprotoStringer);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
+    amino.Amino.getDescriptor();
     com.google.protobuf2.GoGoProtos.getDescriptor();
   }
 

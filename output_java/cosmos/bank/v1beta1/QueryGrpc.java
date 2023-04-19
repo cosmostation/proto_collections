@@ -92,6 +92,68 @@ public final class QueryGrpc {
     return getAllBalancesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest,
+      cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse> getSpendableBalancesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SpendableBalances",
+      requestType = cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest.class,
+      responseType = cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest,
+      cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse> getSpendableBalancesMethod() {
+    io.grpc.MethodDescriptor<cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest, cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse> getSpendableBalancesMethod;
+    if ((getSpendableBalancesMethod = QueryGrpc.getSpendableBalancesMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getSpendableBalancesMethod = QueryGrpc.getSpendableBalancesMethod) == null) {
+          QueryGrpc.getSpendableBalancesMethod = getSpendableBalancesMethod =
+              io.grpc.MethodDescriptor.<cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest, cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SpendableBalances"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("SpendableBalances"))
+              .build();
+        }
+      }
+    }
+    return getSpendableBalancesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest,
+      cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse> getSpendableBalanceByDenomMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SpendableBalanceByDenom",
+      requestType = cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest.class,
+      responseType = cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest,
+      cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse> getSpendableBalanceByDenomMethod() {
+    io.grpc.MethodDescriptor<cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest, cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse> getSpendableBalanceByDenomMethod;
+    if ((getSpendableBalanceByDenomMethod = QueryGrpc.getSpendableBalanceByDenomMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getSpendableBalanceByDenomMethod = QueryGrpc.getSpendableBalanceByDenomMethod) == null) {
+          QueryGrpc.getSpendableBalanceByDenomMethod = getSpendableBalanceByDenomMethod =
+              io.grpc.MethodDescriptor.<cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest, cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SpendableBalanceByDenom"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("SpendableBalanceByDenom"))
+              .build();
+        }
+      }
+    }
+    return getSpendableBalanceByDenomMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyRequest,
       cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyResponse> getTotalSupplyMethod;
 
@@ -278,6 +340,37 @@ public final class QueryGrpc {
     return getDenomOwnersMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest,
+      cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse> getSendEnabledMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SendEnabled",
+      requestType = cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest.class,
+      responseType = cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest,
+      cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse> getSendEnabledMethod() {
+    io.grpc.MethodDescriptor<cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest, cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse> getSendEnabledMethod;
+    if ((getSendEnabledMethod = QueryGrpc.getSendEnabledMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getSendEnabledMethod = QueryGrpc.getSendEnabledMethod) == null) {
+          QueryGrpc.getSendEnabledMethod = getSendEnabledMethod =
+              io.grpc.MethodDescriptor.<cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest, cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SendEnabled"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("SendEnabled"))
+              .build();
+        }
+      }
+    }
+    return getSendEnabledMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -342,6 +435,8 @@ public final class QueryGrpc {
     /**
      * <pre>
      * AllBalances queries the balance of all coins for a single account.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void allBalances(cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesRequest request,
@@ -351,7 +446,37 @@ public final class QueryGrpc {
 
     /**
      * <pre>
+     * SpendableBalances queries the spendable balance of all coins for a single
+     * account.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     */
+    public void spendableBalances(cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest request,
+        io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getSpendableBalancesMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * SpendableBalanceByDenom queries the spendable balance of a single denom for
+     * a single account.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public void spendableBalanceByDenom(cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest request,
+        io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getSpendableBalanceByDenomMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * TotalSupply queries the total supply of all coins.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void totalSupply(cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyRequest request,
@@ -362,6 +487,8 @@ public final class QueryGrpc {
     /**
      * <pre>
      * SupplyOf queries the supply of a single coin.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void supplyOf(cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfRequest request,
@@ -404,11 +531,28 @@ public final class QueryGrpc {
      * <pre>
      * DenomOwners queries for all account addresses that own a particular token
      * denomination.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
+     * Since: cosmos-sdk 0.46
      * </pre>
      */
     public void denomOwners(cosmos.bank.v1beta1.QueryOuterClass.QueryDenomOwnersRequest request,
         io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.QueryOuterClass.QueryDenomOwnersResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getDenomOwnersMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * SendEnabled queries for SendEnabled entries.
+     * This query only returns denominations that have specific SendEnabled settings.
+     * Any denomination that does not have a specific setting will use the default
+     * params.default_send_enabled, and will not be returned by this query.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public void sendEnabled(cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest request,
+        io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getSendEnabledMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -427,6 +571,20 @@ public final class QueryGrpc {
                 cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesRequest,
                 cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesResponse>(
                   this, METHODID_ALL_BALANCES)))
+          .addMethod(
+            getSpendableBalancesMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest,
+                cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse>(
+                  this, METHODID_SPENDABLE_BALANCES)))
+          .addMethod(
+            getSpendableBalanceByDenomMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest,
+                cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse>(
+                  this, METHODID_SPENDABLE_BALANCE_BY_DENOM)))
           .addMethod(
             getTotalSupplyMethod(),
             asyncUnaryCall(
@@ -469,6 +627,13 @@ public final class QueryGrpc {
                 cosmos.bank.v1beta1.QueryOuterClass.QueryDenomOwnersRequest,
                 cosmos.bank.v1beta1.QueryOuterClass.QueryDenomOwnersResponse>(
                   this, METHODID_DENOM_OWNERS)))
+          .addMethod(
+            getSendEnabledMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest,
+                cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse>(
+                  this, METHODID_SEND_ENABLED)))
           .build();
     }
   }
@@ -504,6 +669,8 @@ public final class QueryGrpc {
     /**
      * <pre>
      * AllBalances queries the balance of all coins for a single account.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void allBalances(cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesRequest request,
@@ -514,7 +681,39 @@ public final class QueryGrpc {
 
     /**
      * <pre>
+     * SpendableBalances queries the spendable balance of all coins for a single
+     * account.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     */
+    public void spendableBalances(cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest request,
+        io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getSpendableBalancesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * SpendableBalanceByDenom queries the spendable balance of a single denom for
+     * a single account.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public void spendableBalanceByDenom(cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest request,
+        io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getSpendableBalanceByDenomMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * TotalSupply queries the total supply of all coins.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void totalSupply(cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyRequest request,
@@ -526,6 +725,8 @@ public final class QueryGrpc {
     /**
      * <pre>
      * SupplyOf queries the supply of a single coin.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void supplyOf(cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfRequest request,
@@ -572,12 +773,30 @@ public final class QueryGrpc {
      * <pre>
      * DenomOwners queries for all account addresses that own a particular token
      * denomination.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
+     * Since: cosmos-sdk 0.46
      * </pre>
      */
     public void denomOwners(cosmos.bank.v1beta1.QueryOuterClass.QueryDenomOwnersRequest request,
         io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.QueryOuterClass.QueryDenomOwnersResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getDenomOwnersMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * SendEnabled queries for SendEnabled entries.
+     * This query only returns denominations that have specific SendEnabled settings.
+     * Any denomination that does not have a specific setting will use the default
+     * params.default_send_enabled, and will not be returned by this query.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public void sendEnabled(cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest request,
+        io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getSendEnabledMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -611,6 +830,8 @@ public final class QueryGrpc {
     /**
      * <pre>
      * AllBalances queries the balance of all coins for a single account.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesResponse allBalances(cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesRequest request) {
@@ -620,7 +841,37 @@ public final class QueryGrpc {
 
     /**
      * <pre>
+     * SpendableBalances queries the spendable balance of all coins for a single
+     * account.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     */
+    public cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse spendableBalances(cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getSpendableBalancesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * SpendableBalanceByDenom queries the spendable balance of a single denom for
+     * a single account.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse spendableBalanceByDenom(cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getSpendableBalanceByDenomMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * TotalSupply queries the total supply of all coins.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyResponse totalSupply(cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyRequest request) {
@@ -631,6 +882,8 @@ public final class QueryGrpc {
     /**
      * <pre>
      * SupplyOf queries the supply of a single coin.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfResponse supplyOf(cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfRequest request) {
@@ -673,11 +926,28 @@ public final class QueryGrpc {
      * <pre>
      * DenomOwners queries for all account addresses that own a particular token
      * denomination.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
+     * Since: cosmos-sdk 0.46
      * </pre>
      */
     public cosmos.bank.v1beta1.QueryOuterClass.QueryDenomOwnersResponse denomOwners(cosmos.bank.v1beta1.QueryOuterClass.QueryDenomOwnersRequest request) {
       return blockingUnaryCall(
           getChannel(), getDenomOwnersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * SendEnabled queries for SendEnabled entries.
+     * This query only returns denominations that have specific SendEnabled settings.
+     * Any denomination that does not have a specific setting will use the default
+     * params.default_send_enabled, and will not be returned by this query.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse sendEnabled(cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getSendEnabledMethod(), getCallOptions(), request);
     }
   }
 
@@ -712,6 +982,8 @@ public final class QueryGrpc {
     /**
      * <pre>
      * AllBalances queries the balance of all coins for a single account.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesResponse> allBalances(
@@ -722,7 +994,39 @@ public final class QueryGrpc {
 
     /**
      * <pre>
+     * SpendableBalances queries the spendable balance of all coins for a single
+     * account.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse> spendableBalances(
+        cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getSpendableBalancesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * SpendableBalanceByDenom queries the spendable balance of a single denom for
+     * a single account.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse> spendableBalanceByDenom(
+        cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getSpendableBalanceByDenomMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * TotalSupply queries the total supply of all coins.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyResponse> totalSupply(
@@ -734,6 +1038,8 @@ public final class QueryGrpc {
     /**
      * <pre>
      * SupplyOf queries the supply of a single coin.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<cosmos.bank.v1beta1.QueryOuterClass.QuerySupplyOfResponse> supplyOf(
@@ -780,6 +1086,9 @@ public final class QueryGrpc {
      * <pre>
      * DenomOwners queries for all account addresses that own a particular token
      * denomination.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
+     * Since: cosmos-sdk 0.46
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<cosmos.bank.v1beta1.QueryOuterClass.QueryDenomOwnersResponse> denomOwners(
@@ -787,16 +1096,34 @@ public final class QueryGrpc {
       return futureUnaryCall(
           getChannel().newCall(getDenomOwnersMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * SendEnabled queries for SendEnabled entries.
+     * This query only returns denominations that have specific SendEnabled settings.
+     * Any denomination that does not have a specific setting will use the default
+     * params.default_send_enabled, and will not be returned by this query.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse> sendEnabled(
+        cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getSendEnabledMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_BALANCE = 0;
   private static final int METHODID_ALL_BALANCES = 1;
-  private static final int METHODID_TOTAL_SUPPLY = 2;
-  private static final int METHODID_SUPPLY_OF = 3;
-  private static final int METHODID_PARAMS = 4;
-  private static final int METHODID_DENOM_METADATA = 5;
-  private static final int METHODID_DENOMS_METADATA = 6;
-  private static final int METHODID_DENOM_OWNERS = 7;
+  private static final int METHODID_SPENDABLE_BALANCES = 2;
+  private static final int METHODID_SPENDABLE_BALANCE_BY_DENOM = 3;
+  private static final int METHODID_TOTAL_SUPPLY = 4;
+  private static final int METHODID_SUPPLY_OF = 5;
+  private static final int METHODID_PARAMS = 6;
+  private static final int METHODID_DENOM_METADATA = 7;
+  private static final int METHODID_DENOMS_METADATA = 8;
+  private static final int METHODID_DENOM_OWNERS = 9;
+  private static final int METHODID_SEND_ENABLED = 10;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -823,6 +1150,14 @@ public final class QueryGrpc {
           serviceImpl.allBalances((cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesRequest) request,
               (io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesResponse>) responseObserver);
           break;
+        case METHODID_SPENDABLE_BALANCES:
+          serviceImpl.spendableBalances((cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest) request,
+              (io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse>) responseObserver);
+          break;
+        case METHODID_SPENDABLE_BALANCE_BY_DENOM:
+          serviceImpl.spendableBalanceByDenom((cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest) request,
+              (io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse>) responseObserver);
+          break;
         case METHODID_TOTAL_SUPPLY:
           serviceImpl.totalSupply((cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyRequest) request,
               (io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.QueryOuterClass.QueryTotalSupplyResponse>) responseObserver);
@@ -846,6 +1181,10 @@ public final class QueryGrpc {
         case METHODID_DENOM_OWNERS:
           serviceImpl.denomOwners((cosmos.bank.v1beta1.QueryOuterClass.QueryDenomOwnersRequest) request,
               (io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.QueryOuterClass.QueryDenomOwnersResponse>) responseObserver);
+          break;
+        case METHODID_SEND_ENABLED:
+          serviceImpl.sendEnabled((cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest) request,
+              (io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -910,12 +1249,15 @@ public final class QueryGrpc {
               .setSchemaDescriptor(new QueryFileDescriptorSupplier())
               .addMethod(getBalanceMethod())
               .addMethod(getAllBalancesMethod())
+              .addMethod(getSpendableBalancesMethod())
+              .addMethod(getSpendableBalanceByDenomMethod())
               .addMethod(getTotalSupplyMethod())
               .addMethod(getSupplyOfMethod())
               .addMethod(getParamsMethod())
               .addMethod(getDenomMetadataMethod())
               .addMethod(getDenomsMetadataMethod())
               .addMethod(getDenomOwnersMethod())
+              .addMethod(getSendEnabledMethod())
               .build();
         }
       }

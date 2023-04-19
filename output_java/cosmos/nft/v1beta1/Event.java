@@ -19,11 +19,19 @@ public final class Event {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The classId.
      */
     java.lang.String getClassId();
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The bytes for classId.
      */
@@ -31,11 +39,19 @@ public final class Event {
         getClassIdBytes();
 
     /**
+     * <pre>
+     * id is a unique identifier of the nft
+     * </pre>
+     *
      * <code>string id = 2;</code>
      * @return The id.
      */
     java.lang.String getId();
     /**
+     * <pre>
+     * id is a unique identifier of the nft
+     * </pre>
+     *
      * <code>string id = 2;</code>
      * @return The bytes for id.
      */
@@ -43,11 +59,19 @@ public final class Event {
         getIdBytes();
 
     /**
+     * <pre>
+     * sender is the address of the owner of nft
+     * </pre>
+     *
      * <code>string sender = 3;</code>
      * @return The sender.
      */
     java.lang.String getSender();
     /**
+     * <pre>
+     * sender is the address of the owner of nft
+     * </pre>
+     *
      * <code>string sender = 3;</code>
      * @return The bytes for sender.
      */
@@ -55,11 +79,19 @@ public final class Event {
         getSenderBytes();
 
     /**
+     * <pre>
+     * receiver is the receiver address of nft
+     * </pre>
+     *
      * <code>string receiver = 4;</code>
      * @return The receiver.
      */
     java.lang.String getReceiver();
     /**
+     * <pre>
+     * receiver is the receiver address of nft
+     * </pre>
+     *
      * <code>string receiver = 4;</code>
      * @return The bytes for receiver.
      */
@@ -178,6 +210,10 @@ public final class Event {
     public static final int CLASS_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object classId_;
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The classId.
      */
@@ -195,6 +231,10 @@ public final class Event {
       }
     }
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The bytes for classId.
      */
@@ -216,6 +256,10 @@ public final class Event {
     public static final int ID_FIELD_NUMBER = 2;
     private volatile java.lang.Object id_;
     /**
+     * <pre>
+     * id is a unique identifier of the nft
+     * </pre>
+     *
      * <code>string id = 2;</code>
      * @return The id.
      */
@@ -233,6 +277,10 @@ public final class Event {
       }
     }
     /**
+     * <pre>
+     * id is a unique identifier of the nft
+     * </pre>
+     *
      * <code>string id = 2;</code>
      * @return The bytes for id.
      */
@@ -254,6 +302,10 @@ public final class Event {
     public static final int SENDER_FIELD_NUMBER = 3;
     private volatile java.lang.Object sender_;
     /**
+     * <pre>
+     * sender is the address of the owner of nft
+     * </pre>
+     *
      * <code>string sender = 3;</code>
      * @return The sender.
      */
@@ -271,6 +323,10 @@ public final class Event {
       }
     }
     /**
+     * <pre>
+     * sender is the address of the owner of nft
+     * </pre>
+     *
      * <code>string sender = 3;</code>
      * @return The bytes for sender.
      */
@@ -292,6 +348,10 @@ public final class Event {
     public static final int RECEIVER_FIELD_NUMBER = 4;
     private volatile java.lang.Object receiver_;
     /**
+     * <pre>
+     * receiver is the receiver address of nft
+     * </pre>
+     *
      * <code>string receiver = 4;</code>
      * @return The receiver.
      */
@@ -309,6 +369,10 @@ public final class Event {
       }
     }
     /**
+     * <pre>
+     * receiver is the receiver address of nft
+     * </pre>
+     *
      * <code>string receiver = 4;</code>
      * @return The bytes for receiver.
      */
@@ -686,6 +750,10 @@ public final class Event {
 
       private java.lang.Object classId_ = "";
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @return The classId.
        */
@@ -702,6 +770,10 @@ public final class Event {
         }
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @return The bytes for classId.
        */
@@ -719,6 +791,10 @@ public final class Event {
         }
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @param value The classId to set.
        * @return This builder for chaining.
@@ -734,6 +810,10 @@ public final class Event {
         return this;
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @return This builder for chaining.
        */
@@ -744,6 +824,10 @@ public final class Event {
         return this;
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @param value The bytes for classId to set.
        * @return This builder for chaining.
@@ -762,6 +846,10 @@ public final class Event {
 
       private java.lang.Object id_ = "";
       /**
+       * <pre>
+       * id is a unique identifier of the nft
+       * </pre>
+       *
        * <code>string id = 2;</code>
        * @return The id.
        */
@@ -778,6 +866,10 @@ public final class Event {
         }
       }
       /**
+       * <pre>
+       * id is a unique identifier of the nft
+       * </pre>
+       *
        * <code>string id = 2;</code>
        * @return The bytes for id.
        */
@@ -795,6 +887,10 @@ public final class Event {
         }
       }
       /**
+       * <pre>
+       * id is a unique identifier of the nft
+       * </pre>
+       *
        * <code>string id = 2;</code>
        * @param value The id to set.
        * @return This builder for chaining.
@@ -810,6 +906,10 @@ public final class Event {
         return this;
       }
       /**
+       * <pre>
+       * id is a unique identifier of the nft
+       * </pre>
+       *
        * <code>string id = 2;</code>
        * @return This builder for chaining.
        */
@@ -820,6 +920,10 @@ public final class Event {
         return this;
       }
       /**
+       * <pre>
+       * id is a unique identifier of the nft
+       * </pre>
+       *
        * <code>string id = 2;</code>
        * @param value The bytes for id to set.
        * @return This builder for chaining.
@@ -838,6 +942,10 @@ public final class Event {
 
       private java.lang.Object sender_ = "";
       /**
+       * <pre>
+       * sender is the address of the owner of nft
+       * </pre>
+       *
        * <code>string sender = 3;</code>
        * @return The sender.
        */
@@ -854,6 +962,10 @@ public final class Event {
         }
       }
       /**
+       * <pre>
+       * sender is the address of the owner of nft
+       * </pre>
+       *
        * <code>string sender = 3;</code>
        * @return The bytes for sender.
        */
@@ -871,6 +983,10 @@ public final class Event {
         }
       }
       /**
+       * <pre>
+       * sender is the address of the owner of nft
+       * </pre>
+       *
        * <code>string sender = 3;</code>
        * @param value The sender to set.
        * @return This builder for chaining.
@@ -886,6 +1002,10 @@ public final class Event {
         return this;
       }
       /**
+       * <pre>
+       * sender is the address of the owner of nft
+       * </pre>
+       *
        * <code>string sender = 3;</code>
        * @return This builder for chaining.
        */
@@ -896,6 +1016,10 @@ public final class Event {
         return this;
       }
       /**
+       * <pre>
+       * sender is the address of the owner of nft
+       * </pre>
+       *
        * <code>string sender = 3;</code>
        * @param value The bytes for sender to set.
        * @return This builder for chaining.
@@ -914,6 +1038,10 @@ public final class Event {
 
       private java.lang.Object receiver_ = "";
       /**
+       * <pre>
+       * receiver is the receiver address of nft
+       * </pre>
+       *
        * <code>string receiver = 4;</code>
        * @return The receiver.
        */
@@ -930,6 +1058,10 @@ public final class Event {
         }
       }
       /**
+       * <pre>
+       * receiver is the receiver address of nft
+       * </pre>
+       *
        * <code>string receiver = 4;</code>
        * @return The bytes for receiver.
        */
@@ -947,6 +1079,10 @@ public final class Event {
         }
       }
       /**
+       * <pre>
+       * receiver is the receiver address of nft
+       * </pre>
+       *
        * <code>string receiver = 4;</code>
        * @param value The receiver to set.
        * @return This builder for chaining.
@@ -962,6 +1098,10 @@ public final class Event {
         return this;
       }
       /**
+       * <pre>
+       * receiver is the receiver address of nft
+       * </pre>
+       *
        * <code>string receiver = 4;</code>
        * @return This builder for chaining.
        */
@@ -972,6 +1112,10 @@ public final class Event {
         return this;
       }
       /**
+       * <pre>
+       * receiver is the receiver address of nft
+       * </pre>
+       *
        * <code>string receiver = 4;</code>
        * @param value The bytes for receiver to set.
        * @return This builder for chaining.
@@ -1045,11 +1189,19 @@ public final class Event {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The classId.
      */
     java.lang.String getClassId();
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The bytes for classId.
      */
@@ -1057,11 +1209,19 @@ public final class Event {
         getClassIdBytes();
 
     /**
+     * <pre>
+     * id is a unique identifier of the nft
+     * </pre>
+     *
      * <code>string id = 2;</code>
      * @return The id.
      */
     java.lang.String getId();
     /**
+     * <pre>
+     * id is a unique identifier of the nft
+     * </pre>
+     *
      * <code>string id = 2;</code>
      * @return The bytes for id.
      */
@@ -1069,11 +1229,19 @@ public final class Event {
         getIdBytes();
 
     /**
+     * <pre>
+     * owner is the owner address of the nft
+     * </pre>
+     *
      * <code>string owner = 3;</code>
      * @return The owner.
      */
     java.lang.String getOwner();
     /**
+     * <pre>
+     * owner is the owner address of the nft
+     * </pre>
+     *
      * <code>string owner = 3;</code>
      * @return The bytes for owner.
      */
@@ -1185,6 +1353,10 @@ public final class Event {
     public static final int CLASS_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object classId_;
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The classId.
      */
@@ -1202,6 +1374,10 @@ public final class Event {
       }
     }
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The bytes for classId.
      */
@@ -1223,6 +1399,10 @@ public final class Event {
     public static final int ID_FIELD_NUMBER = 2;
     private volatile java.lang.Object id_;
     /**
+     * <pre>
+     * id is a unique identifier of the nft
+     * </pre>
+     *
      * <code>string id = 2;</code>
      * @return The id.
      */
@@ -1240,6 +1420,10 @@ public final class Event {
       }
     }
     /**
+     * <pre>
+     * id is a unique identifier of the nft
+     * </pre>
+     *
      * <code>string id = 2;</code>
      * @return The bytes for id.
      */
@@ -1261,6 +1445,10 @@ public final class Event {
     public static final int OWNER_FIELD_NUMBER = 3;
     private volatile java.lang.Object owner_;
     /**
+     * <pre>
+     * owner is the owner address of the nft
+     * </pre>
+     *
      * <code>string owner = 3;</code>
      * @return The owner.
      */
@@ -1278,6 +1466,10 @@ public final class Event {
       }
     }
     /**
+     * <pre>
+     * owner is the owner address of the nft
+     * </pre>
+     *
      * <code>string owner = 3;</code>
      * @return The bytes for owner.
      */
@@ -1638,6 +1830,10 @@ public final class Event {
 
       private java.lang.Object classId_ = "";
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @return The classId.
        */
@@ -1654,6 +1850,10 @@ public final class Event {
         }
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @return The bytes for classId.
        */
@@ -1671,6 +1871,10 @@ public final class Event {
         }
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @param value The classId to set.
        * @return This builder for chaining.
@@ -1686,6 +1890,10 @@ public final class Event {
         return this;
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @return This builder for chaining.
        */
@@ -1696,6 +1904,10 @@ public final class Event {
         return this;
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @param value The bytes for classId to set.
        * @return This builder for chaining.
@@ -1714,6 +1926,10 @@ public final class Event {
 
       private java.lang.Object id_ = "";
       /**
+       * <pre>
+       * id is a unique identifier of the nft
+       * </pre>
+       *
        * <code>string id = 2;</code>
        * @return The id.
        */
@@ -1730,6 +1946,10 @@ public final class Event {
         }
       }
       /**
+       * <pre>
+       * id is a unique identifier of the nft
+       * </pre>
+       *
        * <code>string id = 2;</code>
        * @return The bytes for id.
        */
@@ -1747,6 +1967,10 @@ public final class Event {
         }
       }
       /**
+       * <pre>
+       * id is a unique identifier of the nft
+       * </pre>
+       *
        * <code>string id = 2;</code>
        * @param value The id to set.
        * @return This builder for chaining.
@@ -1762,6 +1986,10 @@ public final class Event {
         return this;
       }
       /**
+       * <pre>
+       * id is a unique identifier of the nft
+       * </pre>
+       *
        * <code>string id = 2;</code>
        * @return This builder for chaining.
        */
@@ -1772,6 +2000,10 @@ public final class Event {
         return this;
       }
       /**
+       * <pre>
+       * id is a unique identifier of the nft
+       * </pre>
+       *
        * <code>string id = 2;</code>
        * @param value The bytes for id to set.
        * @return This builder for chaining.
@@ -1790,6 +2022,10 @@ public final class Event {
 
       private java.lang.Object owner_ = "";
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>string owner = 3;</code>
        * @return The owner.
        */
@@ -1806,6 +2042,10 @@ public final class Event {
         }
       }
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>string owner = 3;</code>
        * @return The bytes for owner.
        */
@@ -1823,6 +2063,10 @@ public final class Event {
         }
       }
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>string owner = 3;</code>
        * @param value The owner to set.
        * @return This builder for chaining.
@@ -1838,6 +2082,10 @@ public final class Event {
         return this;
       }
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>string owner = 3;</code>
        * @return This builder for chaining.
        */
@@ -1848,6 +2096,10 @@ public final class Event {
         return this;
       }
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>string owner = 3;</code>
        * @param value The bytes for owner to set.
        * @return This builder for chaining.
@@ -1921,11 +2173,19 @@ public final class Event {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The classId.
      */
     java.lang.String getClassId();
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The bytes for classId.
      */
@@ -1933,11 +2193,19 @@ public final class Event {
         getClassIdBytes();
 
     /**
+     * <pre>
+     * id is a unique identifier of the nft
+     * </pre>
+     *
      * <code>string id = 2;</code>
      * @return The id.
      */
     java.lang.String getId();
     /**
+     * <pre>
+     * id is a unique identifier of the nft
+     * </pre>
+     *
      * <code>string id = 2;</code>
      * @return The bytes for id.
      */
@@ -1945,11 +2213,19 @@ public final class Event {
         getIdBytes();
 
     /**
+     * <pre>
+     * owner is the owner address of the nft
+     * </pre>
+     *
      * <code>string owner = 3;</code>
      * @return The owner.
      */
     java.lang.String getOwner();
     /**
+     * <pre>
+     * owner is the owner address of the nft
+     * </pre>
+     *
      * <code>string owner = 3;</code>
      * @return The bytes for owner.
      */
@@ -2061,6 +2337,10 @@ public final class Event {
     public static final int CLASS_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object classId_;
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The classId.
      */
@@ -2078,6 +2358,10 @@ public final class Event {
       }
     }
     /**
+     * <pre>
+     * class_id associated with the nft
+     * </pre>
+     *
      * <code>string class_id = 1;</code>
      * @return The bytes for classId.
      */
@@ -2099,6 +2383,10 @@ public final class Event {
     public static final int ID_FIELD_NUMBER = 2;
     private volatile java.lang.Object id_;
     /**
+     * <pre>
+     * id is a unique identifier of the nft
+     * </pre>
+     *
      * <code>string id = 2;</code>
      * @return The id.
      */
@@ -2116,6 +2404,10 @@ public final class Event {
       }
     }
     /**
+     * <pre>
+     * id is a unique identifier of the nft
+     * </pre>
+     *
      * <code>string id = 2;</code>
      * @return The bytes for id.
      */
@@ -2137,6 +2429,10 @@ public final class Event {
     public static final int OWNER_FIELD_NUMBER = 3;
     private volatile java.lang.Object owner_;
     /**
+     * <pre>
+     * owner is the owner address of the nft
+     * </pre>
+     *
      * <code>string owner = 3;</code>
      * @return The owner.
      */
@@ -2154,6 +2450,10 @@ public final class Event {
       }
     }
     /**
+     * <pre>
+     * owner is the owner address of the nft
+     * </pre>
+     *
      * <code>string owner = 3;</code>
      * @return The bytes for owner.
      */
@@ -2514,6 +2814,10 @@ public final class Event {
 
       private java.lang.Object classId_ = "";
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @return The classId.
        */
@@ -2530,6 +2834,10 @@ public final class Event {
         }
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @return The bytes for classId.
        */
@@ -2547,6 +2855,10 @@ public final class Event {
         }
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @param value The classId to set.
        * @return This builder for chaining.
@@ -2562,6 +2874,10 @@ public final class Event {
         return this;
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @return This builder for chaining.
        */
@@ -2572,6 +2888,10 @@ public final class Event {
         return this;
       }
       /**
+       * <pre>
+       * class_id associated with the nft
+       * </pre>
+       *
        * <code>string class_id = 1;</code>
        * @param value The bytes for classId to set.
        * @return This builder for chaining.
@@ -2590,6 +2910,10 @@ public final class Event {
 
       private java.lang.Object id_ = "";
       /**
+       * <pre>
+       * id is a unique identifier of the nft
+       * </pre>
+       *
        * <code>string id = 2;</code>
        * @return The id.
        */
@@ -2606,6 +2930,10 @@ public final class Event {
         }
       }
       /**
+       * <pre>
+       * id is a unique identifier of the nft
+       * </pre>
+       *
        * <code>string id = 2;</code>
        * @return The bytes for id.
        */
@@ -2623,6 +2951,10 @@ public final class Event {
         }
       }
       /**
+       * <pre>
+       * id is a unique identifier of the nft
+       * </pre>
+       *
        * <code>string id = 2;</code>
        * @param value The id to set.
        * @return This builder for chaining.
@@ -2638,6 +2970,10 @@ public final class Event {
         return this;
       }
       /**
+       * <pre>
+       * id is a unique identifier of the nft
+       * </pre>
+       *
        * <code>string id = 2;</code>
        * @return This builder for chaining.
        */
@@ -2648,6 +2984,10 @@ public final class Event {
         return this;
       }
       /**
+       * <pre>
+       * id is a unique identifier of the nft
+       * </pre>
+       *
        * <code>string id = 2;</code>
        * @param value The bytes for id to set.
        * @return This builder for chaining.
@@ -2666,6 +3006,10 @@ public final class Event {
 
       private java.lang.Object owner_ = "";
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>string owner = 3;</code>
        * @return The owner.
        */
@@ -2682,6 +3026,10 @@ public final class Event {
         }
       }
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>string owner = 3;</code>
        * @return The bytes for owner.
        */
@@ -2699,6 +3047,10 @@ public final class Event {
         }
       }
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>string owner = 3;</code>
        * @param value The owner to set.
        * @return This builder for chaining.
@@ -2714,6 +3066,10 @@ public final class Event {
         return this;
       }
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>string owner = 3;</code>
        * @return This builder for chaining.
        */
@@ -2724,6 +3080,10 @@ public final class Event {
         return this;
       }
       /**
+       * <pre>
+       * owner is the owner address of the nft
+       * </pre>
+       *
        * <code>string owner = 3;</code>
        * @param value The bytes for owner to set.
        * @return This builder for chaining.
@@ -2822,8 +3182,7 @@ public final class Event {
       "ver\030\004 \001(\t\"8\n\tEventMint\022\020\n\010class_id\030\001 \001(\t" +
       "\022\n\n\002id\030\002 \001(\t\022\r\n\005owner\030\003 \001(\t\"8\n\tEventBurn" +
       "\022\020\n\010class_id\030\001 \001(\t\022\n\n\002id\030\002 \001(\t\022\r\n\005owner\030" +
-      "\003 \001(\tB$Z\"github.com/cosmos/cosmos-sdk/x/" +
-      "nftb\006proto3"
+      "\003 \001(\tB\024Z\022cosmossdk.io/x/nftb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

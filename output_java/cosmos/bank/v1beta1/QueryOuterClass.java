@@ -1551,6 +1551,17 @@ public final class QueryOuterClass {
      * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
      */
     cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder();
+
+    /**
+     * <pre>
+     * resolve_denom is the flag to resolve the denom into a human-readable form from the metadata.
+     * Since: cosmos-sdk 0.48
+     * </pre>
+     *
+     * <code>bool resolve_denom = 3;</code>
+     * @return The resolveDenom.
+     */
+    boolean getResolveDenom();
   }
   /**
    * <pre>
@@ -1619,6 +1630,11 @@ public final class QueryOuterClass {
                 pagination_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 24: {
+
+              resolveDenom_ = input.readBool();
               break;
             }
             default: {
@@ -1737,6 +1753,22 @@ public final class QueryOuterClass {
       return getPagination();
     }
 
+    public static final int RESOLVE_DENOM_FIELD_NUMBER = 3;
+    private boolean resolveDenom_;
+    /**
+     * <pre>
+     * resolve_denom is the flag to resolve the denom into a human-readable form from the metadata.
+     * Since: cosmos-sdk 0.48
+     * </pre>
+     *
+     * <code>bool resolve_denom = 3;</code>
+     * @return The resolveDenom.
+     */
+    @java.lang.Override
+    public boolean getResolveDenom() {
+      return resolveDenom_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1757,6 +1789,9 @@ public final class QueryOuterClass {
       if (pagination_ != null) {
         output.writeMessage(2, getPagination());
       }
+      if (resolveDenom_ != false) {
+        output.writeBool(3, resolveDenom_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1772,6 +1807,10 @@ public final class QueryOuterClass {
       if (pagination_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getPagination());
+      }
+      if (resolveDenom_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, resolveDenom_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1795,6 +1834,8 @@ public final class QueryOuterClass {
         if (!getPagination()
             .equals(other.getPagination())) return false;
       }
+      if (getResolveDenom()
+          != other.getResolveDenom()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1812,6 +1853,9 @@ public final class QueryOuterClass {
         hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
         hash = (53 * hash) + getPagination().hashCode();
       }
+      hash = (37 * hash) + RESOLVE_DENOM_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getResolveDenom());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1957,6 +2001,8 @@ public final class QueryOuterClass {
           pagination_ = null;
           paginationBuilder_ = null;
         }
+        resolveDenom_ = false;
+
         return this;
       }
 
@@ -1989,6 +2035,7 @@ public final class QueryOuterClass {
         } else {
           result.pagination_ = paginationBuilder_.build();
         }
+        result.resolveDenom_ = resolveDenom_;
         onBuilt();
         return result;
       }
@@ -2043,6 +2090,9 @@ public final class QueryOuterClass {
         }
         if (other.hasPagination()) {
           mergePagination(other.getPagination());
+        }
+        if (other.getResolveDenom() != false) {
+          setResolveDenom(other.getResolveDenom());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2323,6 +2373,52 @@ public final class QueryOuterClass {
         }
         return paginationBuilder_;
       }
+
+      private boolean resolveDenom_ ;
+      /**
+       * <pre>
+       * resolve_denom is the flag to resolve the denom into a human-readable form from the metadata.
+       * Since: cosmos-sdk 0.48
+       * </pre>
+       *
+       * <code>bool resolve_denom = 3;</code>
+       * @return The resolveDenom.
+       */
+      @java.lang.Override
+      public boolean getResolveDenom() {
+        return resolveDenom_;
+      }
+      /**
+       * <pre>
+       * resolve_denom is the flag to resolve the denom into a human-readable form from the metadata.
+       * Since: cosmos-sdk 0.48
+       * </pre>
+       *
+       * <code>bool resolve_denom = 3;</code>
+       * @param value The resolveDenom to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResolveDenom(boolean value) {
+        
+        resolveDenom_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * resolve_denom is the flag to resolve the denom into a human-readable form from the metadata.
+       * Since: cosmos-sdk 0.48
+       * </pre>
+       *
+       * <code>bool resolve_denom = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearResolveDenom() {
+        
+        resolveDenom_ = false;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2385,7 +2481,7 @@ public final class QueryOuterClass {
      * balances is the balances of all the coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> 
         getBalancesList();
@@ -2394,7 +2490,7 @@ public final class QueryOuterClass {
      * balances is the balances of all the coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.Coin getBalances(int index);
     /**
@@ -2402,7 +2498,7 @@ public final class QueryOuterClass {
      * balances is the balances of all the coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     int getBalancesCount();
     /**
@@ -2410,7 +2506,7 @@ public final class QueryOuterClass {
      * balances is the balances of all the coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
         getBalancesOrBuilderList();
@@ -2419,7 +2515,7 @@ public final class QueryOuterClass {
      * balances is the balances of all the coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getBalancesOrBuilder(
         int index);
@@ -2567,7 +2663,7 @@ public final class QueryOuterClass {
      * balances is the balances of all the coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getBalancesList() {
@@ -2578,7 +2674,7 @@ public final class QueryOuterClass {
      * balances is the balances of all the coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
@@ -2590,7 +2686,7 @@ public final class QueryOuterClass {
      * balances is the balances of all the coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getBalancesCount() {
@@ -2601,7 +2697,7 @@ public final class QueryOuterClass {
      * balances is the balances of all the coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.Coin getBalances(int index) {
@@ -2612,7 +2708,7 @@ public final class QueryOuterClass {
      * balances is the balances of all the coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getBalancesOrBuilder(
@@ -3052,7 +3148,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getBalancesList() {
         if (balancesBuilder_ == null) {
@@ -3066,7 +3162,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public int getBalancesCount() {
         if (balancesBuilder_ == null) {
@@ -3080,7 +3176,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin getBalances(int index) {
         if (balancesBuilder_ == null) {
@@ -3094,7 +3190,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder setBalances(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -3115,7 +3211,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder setBalances(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -3133,7 +3229,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addBalances(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (balancesBuilder_ == null) {
@@ -3153,7 +3249,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addBalances(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -3174,7 +3270,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addBalances(
           cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -3192,7 +3288,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addBalances(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -3210,7 +3306,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllBalances(
           java.lang.Iterable<? extends cosmos.base.v1beta1.CoinOuterClass.Coin> values) {
@@ -3229,7 +3325,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearBalances() {
         if (balancesBuilder_ == null) {
@@ -3246,7 +3342,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeBalances(int index) {
         if (balancesBuilder_ == null) {
@@ -3263,7 +3359,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getBalancesBuilder(
           int index) {
@@ -3274,7 +3370,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getBalancesOrBuilder(
           int index) {
@@ -3288,7 +3384,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
            getBalancesOrBuilderList() {
@@ -3303,7 +3399,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addBalancesBuilder() {
         return getBalancesFieldBuilder().addBuilder(
@@ -3314,7 +3410,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addBalancesBuilder(
           int index) {
@@ -3326,7 +3422,7 @@ public final class QueryOuterClass {
        * balances is the balances of all the coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin.Builder> 
            getBalancesBuilderList() {
@@ -3549,6 +3645,3560 @@ public final class QueryOuterClass {
 
     @java.lang.Override
     public cosmos.bank.v1beta1.QueryOuterClass.QueryAllBalancesResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface QuerySpendableBalancesRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.bank.v1beta1.QuerySpendableBalancesRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * address is the address to query spendable balances for.
+     * </pre>
+     *
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The address.
+     */
+    java.lang.String getAddress();
+    /**
+     * <pre>
+     * address is the address to query spendable balances for.
+     * </pre>
+     *
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for address.
+     */
+    com.google.protobuf.ByteString
+        getAddressBytes();
+
+    /**
+     * <pre>
+     * pagination defines an optional pagination for the request.
+     * </pre>
+     *
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * @return Whether the pagination field is set.
+     */
+    boolean hasPagination();
+    /**
+     * <pre>
+     * pagination defines an optional pagination for the request.
+     * </pre>
+     *
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * @return The pagination.
+     */
+    cosmos.base.query.v1beta1.Pagination.PageRequest getPagination();
+    /**
+     * <pre>
+     * pagination defines an optional pagination for the request.
+     * </pre>
+     *
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     */
+    cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder();
+  }
+  /**
+   * <pre>
+   * QuerySpendableBalancesRequest defines the gRPC request structure for querying
+   * an account's spendable balances.
+   * Since: cosmos-sdk 0.46
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.bank.v1beta1.QuerySpendableBalancesRequest}
+   */
+  public static final class QuerySpendableBalancesRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.bank.v1beta1.QuerySpendableBalancesRequest)
+      QuerySpendableBalancesRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use QuerySpendableBalancesRequest.newBuilder() to construct.
+    private QuerySpendableBalancesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private QuerySpendableBalancesRequest() {
+      address_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QuerySpendableBalancesRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private QuerySpendableBalancesRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              address_ = s;
+              break;
+            }
+            case 18: {
+              cosmos.base.query.v1beta1.Pagination.PageRequest.Builder subBuilder = null;
+              if (pagination_ != null) {
+                subBuilder = pagination_.toBuilder();
+              }
+              pagination_ = input.readMessage(cosmos.base.query.v1beta1.Pagination.PageRequest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pagination_);
+                pagination_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySpendableBalancesRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySpendableBalancesRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest.class, cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest.Builder.class);
+    }
+
+    public static final int ADDRESS_FIELD_NUMBER = 1;
+    private volatile java.lang.Object address_;
+    /**
+     * <pre>
+     * address is the address to query spendable balances for.
+     * </pre>
+     *
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The address.
+     */
+    @java.lang.Override
+    public java.lang.String getAddress() {
+      java.lang.Object ref = address_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        address_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * address is the address to query spendable balances for.
+     * </pre>
+     *
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for address.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAddressBytes() {
+      java.lang.Object ref = address_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        address_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PAGINATION_FIELD_NUMBER = 2;
+    private cosmos.base.query.v1beta1.Pagination.PageRequest pagination_;
+    /**
+     * <pre>
+     * pagination defines an optional pagination for the request.
+     * </pre>
+     *
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * @return Whether the pagination field is set.
+     */
+    @java.lang.Override
+    public boolean hasPagination() {
+      return pagination_ != null;
+    }
+    /**
+     * <pre>
+     * pagination defines an optional pagination for the request.
+     * </pre>
+     *
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * @return The pagination.
+     */
+    @java.lang.Override
+    public cosmos.base.query.v1beta1.Pagination.PageRequest getPagination() {
+      return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageRequest.getDefaultInstance() : pagination_;
+    }
+    /**
+     * <pre>
+     * pagination defines an optional pagination for the request.
+     * </pre>
+     *
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     */
+    @java.lang.Override
+    public cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder() {
+      return getPagination();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getAddressBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, address_);
+      }
+      if (pagination_ != null) {
+        output.writeMessage(2, getPagination());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getAddressBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, address_);
+      }
+      if (pagination_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getPagination());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest)) {
+        return super.equals(obj);
+      }
+      cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest other = (cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest) obj;
+
+      if (!getAddress()
+          .equals(other.getAddress())) return false;
+      if (hasPagination() != other.hasPagination()) return false;
+      if (hasPagination()) {
+        if (!getPagination()
+            .equals(other.getPagination())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getAddress().hashCode();
+      if (hasPagination()) {
+        hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
+        hash = (53 * hash) + getPagination().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * QuerySpendableBalancesRequest defines the gRPC request structure for querying
+     * an account's spendable balances.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.bank.v1beta1.QuerySpendableBalancesRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.bank.v1beta1.QuerySpendableBalancesRequest)
+        cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySpendableBalancesRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySpendableBalancesRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest.class, cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest.Builder.class);
+      }
+
+      // Construct using cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        address_ = "";
+
+        if (paginationBuilder_ == null) {
+          pagination_ = null;
+        } else {
+          pagination_ = null;
+          paginationBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySpendableBalancesRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest getDefaultInstanceForType() {
+        return cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest build() {
+        cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest buildPartial() {
+        cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest result = new cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest(this);
+        result.address_ = address_;
+        if (paginationBuilder_ == null) {
+          result.pagination_ = pagination_;
+        } else {
+          result.pagination_ = paginationBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest) {
+          return mergeFrom((cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest other) {
+        if (other == cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest.getDefaultInstance()) return this;
+        if (!other.getAddress().isEmpty()) {
+          address_ = other.address_;
+          onChanged();
+        }
+        if (other.hasPagination()) {
+          mergePagination(other.getPagination());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object address_ = "";
+      /**
+       * <pre>
+       * address is the address to query spendable balances for.
+       * </pre>
+       *
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The address.
+       */
+      public java.lang.String getAddress() {
+        java.lang.Object ref = address_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          address_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * address is the address to query spendable balances for.
+       * </pre>
+       *
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The bytes for address.
+       */
+      public com.google.protobuf.ByteString
+          getAddressBytes() {
+        java.lang.Object ref = address_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          address_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * address is the address to query spendable balances for.
+       * </pre>
+       *
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The address to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddress(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        address_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * address is the address to query spendable balances for.
+       * </pre>
+       *
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAddress() {
+        
+        address_ = getDefaultInstance().getAddress();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * address is the address to query spendable balances for.
+       * </pre>
+       *
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The bytes for address to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        address_ = value;
+        onChanged();
+        return this;
+      }
+
+      private cosmos.base.query.v1beta1.Pagination.PageRequest pagination_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.base.query.v1beta1.Pagination.PageRequest, cosmos.base.query.v1beta1.Pagination.PageRequest.Builder, cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder> paginationBuilder_;
+      /**
+       * <pre>
+       * pagination defines an optional pagination for the request.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * @return Whether the pagination field is set.
+       */
+      public boolean hasPagination() {
+        return paginationBuilder_ != null || pagination_ != null;
+      }
+      /**
+       * <pre>
+       * pagination defines an optional pagination for the request.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * @return The pagination.
+       */
+      public cosmos.base.query.v1beta1.Pagination.PageRequest getPagination() {
+        if (paginationBuilder_ == null) {
+          return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageRequest.getDefaultInstance() : pagination_;
+        } else {
+          return paginationBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * pagination defines an optional pagination for the request.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       */
+      public Builder setPagination(cosmos.base.query.v1beta1.Pagination.PageRequest value) {
+        if (paginationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          pagination_ = value;
+          onChanged();
+        } else {
+          paginationBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * pagination defines an optional pagination for the request.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       */
+      public Builder setPagination(
+          cosmos.base.query.v1beta1.Pagination.PageRequest.Builder builderForValue) {
+        if (paginationBuilder_ == null) {
+          pagination_ = builderForValue.build();
+          onChanged();
+        } else {
+          paginationBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * pagination defines an optional pagination for the request.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       */
+      public Builder mergePagination(cosmos.base.query.v1beta1.Pagination.PageRequest value) {
+        if (paginationBuilder_ == null) {
+          if (pagination_ != null) {
+            pagination_ =
+              cosmos.base.query.v1beta1.Pagination.PageRequest.newBuilder(pagination_).mergeFrom(value).buildPartial();
+          } else {
+            pagination_ = value;
+          }
+          onChanged();
+        } else {
+          paginationBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * pagination defines an optional pagination for the request.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       */
+      public Builder clearPagination() {
+        if (paginationBuilder_ == null) {
+          pagination_ = null;
+          onChanged();
+        } else {
+          pagination_ = null;
+          paginationBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * pagination defines an optional pagination for the request.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       */
+      public cosmos.base.query.v1beta1.Pagination.PageRequest.Builder getPaginationBuilder() {
+        
+        onChanged();
+        return getPaginationFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * pagination defines an optional pagination for the request.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       */
+      public cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder() {
+        if (paginationBuilder_ != null) {
+          return paginationBuilder_.getMessageOrBuilder();
+        } else {
+          return pagination_ == null ?
+              cosmos.base.query.v1beta1.Pagination.PageRequest.getDefaultInstance() : pagination_;
+        }
+      }
+      /**
+       * <pre>
+       * pagination defines an optional pagination for the request.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.base.query.v1beta1.Pagination.PageRequest, cosmos.base.query.v1beta1.Pagination.PageRequest.Builder, cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder> 
+          getPaginationFieldBuilder() {
+        if (paginationBuilder_ == null) {
+          paginationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              cosmos.base.query.v1beta1.Pagination.PageRequest, cosmos.base.query.v1beta1.Pagination.PageRequest.Builder, cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder>(
+                  getPagination(),
+                  getParentForChildren(),
+                  isClean());
+          pagination_ = null;
+        }
+        return paginationBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.bank.v1beta1.QuerySpendableBalancesRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.bank.v1beta1.QuerySpendableBalancesRequest)
+    private static final cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest();
+    }
+
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QuerySpendableBalancesRequest>
+        PARSER = new com.google.protobuf.AbstractParser<QuerySpendableBalancesRequest>() {
+      @java.lang.Override
+      public QuerySpendableBalancesRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new QuerySpendableBalancesRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<QuerySpendableBalancesRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QuerySpendableBalancesRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface QuerySpendableBalancesResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.bank.v1beta1.QuerySpendableBalancesResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * balances is the spendable balances of all the coins.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
+     */
+    java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> 
+        getBalancesList();
+    /**
+     * <pre>
+     * balances is the spendable balances of all the coins.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
+     */
+    cosmos.base.v1beta1.CoinOuterClass.Coin getBalances(int index);
+    /**
+     * <pre>
+     * balances is the spendable balances of all the coins.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
+     */
+    int getBalancesCount();
+    /**
+     * <pre>
+     * balances is the spendable balances of all the coins.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
+     */
+    java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
+        getBalancesOrBuilderList();
+    /**
+     * <pre>
+     * balances is the spendable balances of all the coins.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
+     */
+    cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getBalancesOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * pagination defines the pagination in the response.
+     * </pre>
+     *
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * @return Whether the pagination field is set.
+     */
+    boolean hasPagination();
+    /**
+     * <pre>
+     * pagination defines the pagination in the response.
+     * </pre>
+     *
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * @return The pagination.
+     */
+    cosmos.base.query.v1beta1.Pagination.PageResponse getPagination();
+    /**
+     * <pre>
+     * pagination defines the pagination in the response.
+     * </pre>
+     *
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     */
+    cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder();
+  }
+  /**
+   * <pre>
+   * QuerySpendableBalancesResponse defines the gRPC response structure for querying
+   * an account's spendable balances.
+   * Since: cosmos-sdk 0.46
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.bank.v1beta1.QuerySpendableBalancesResponse}
+   */
+  public static final class QuerySpendableBalancesResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.bank.v1beta1.QuerySpendableBalancesResponse)
+      QuerySpendableBalancesResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use QuerySpendableBalancesResponse.newBuilder() to construct.
+    private QuerySpendableBalancesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private QuerySpendableBalancesResponse() {
+      balances_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QuerySpendableBalancesResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private QuerySpendableBalancesResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                balances_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              balances_.add(
+                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
+              break;
+            }
+            case 18: {
+              cosmos.base.query.v1beta1.Pagination.PageResponse.Builder subBuilder = null;
+              if (pagination_ != null) {
+                subBuilder = pagination_.toBuilder();
+              }
+              pagination_ = input.readMessage(cosmos.base.query.v1beta1.Pagination.PageResponse.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pagination_);
+                pagination_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          balances_ = java.util.Collections.unmodifiableList(balances_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySpendableBalancesResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySpendableBalancesResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse.class, cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse.Builder.class);
+    }
+
+    public static final int BALANCES_FIELD_NUMBER = 1;
+    private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> balances_;
+    /**
+     * <pre>
+     * balances is the spendable balances of all the coins.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
+     */
+    @java.lang.Override
+    public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getBalancesList() {
+      return balances_;
+    }
+    /**
+     * <pre>
+     * balances is the spendable balances of all the coins.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
+        getBalancesOrBuilderList() {
+      return balances_;
+    }
+    /**
+     * <pre>
+     * balances is the spendable balances of all the coins.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
+     */
+    @java.lang.Override
+    public int getBalancesCount() {
+      return balances_.size();
+    }
+    /**
+     * <pre>
+     * balances is the spendable balances of all the coins.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
+     */
+    @java.lang.Override
+    public cosmos.base.v1beta1.CoinOuterClass.Coin getBalances(int index) {
+      return balances_.get(index);
+    }
+    /**
+     * <pre>
+     * balances is the spendable balances of all the coins.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
+     */
+    @java.lang.Override
+    public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getBalancesOrBuilder(
+        int index) {
+      return balances_.get(index);
+    }
+
+    public static final int PAGINATION_FIELD_NUMBER = 2;
+    private cosmos.base.query.v1beta1.Pagination.PageResponse pagination_;
+    /**
+     * <pre>
+     * pagination defines the pagination in the response.
+     * </pre>
+     *
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * @return Whether the pagination field is set.
+     */
+    @java.lang.Override
+    public boolean hasPagination() {
+      return pagination_ != null;
+    }
+    /**
+     * <pre>
+     * pagination defines the pagination in the response.
+     * </pre>
+     *
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     * @return The pagination.
+     */
+    @java.lang.Override
+    public cosmos.base.query.v1beta1.Pagination.PageResponse getPagination() {
+      return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageResponse.getDefaultInstance() : pagination_;
+    }
+    /**
+     * <pre>
+     * pagination defines the pagination in the response.
+     * </pre>
+     *
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+     */
+    @java.lang.Override
+    public cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder() {
+      return getPagination();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < balances_.size(); i++) {
+        output.writeMessage(1, balances_.get(i));
+      }
+      if (pagination_ != null) {
+        output.writeMessage(2, getPagination());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < balances_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, balances_.get(i));
+      }
+      if (pagination_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getPagination());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse)) {
+        return super.equals(obj);
+      }
+      cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse other = (cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse) obj;
+
+      if (!getBalancesList()
+          .equals(other.getBalancesList())) return false;
+      if (hasPagination() != other.hasPagination()) return false;
+      if (hasPagination()) {
+        if (!getPagination()
+            .equals(other.getPagination())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getBalancesCount() > 0) {
+        hash = (37 * hash) + BALANCES_FIELD_NUMBER;
+        hash = (53 * hash) + getBalancesList().hashCode();
+      }
+      if (hasPagination()) {
+        hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
+        hash = (53 * hash) + getPagination().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * QuerySpendableBalancesResponse defines the gRPC response structure for querying
+     * an account's spendable balances.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.bank.v1beta1.QuerySpendableBalancesResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.bank.v1beta1.QuerySpendableBalancesResponse)
+        cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySpendableBalancesResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySpendableBalancesResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse.class, cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse.Builder.class);
+      }
+
+      // Construct using cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getBalancesFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (balancesBuilder_ == null) {
+          balances_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          balancesBuilder_.clear();
+        }
+        if (paginationBuilder_ == null) {
+          pagination_ = null;
+        } else {
+          pagination_ = null;
+          paginationBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySpendableBalancesResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse getDefaultInstanceForType() {
+        return cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse build() {
+        cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse buildPartial() {
+        cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse result = new cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (balancesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            balances_ = java.util.Collections.unmodifiableList(balances_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.balances_ = balances_;
+        } else {
+          result.balances_ = balancesBuilder_.build();
+        }
+        if (paginationBuilder_ == null) {
+          result.pagination_ = pagination_;
+        } else {
+          result.pagination_ = paginationBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse) {
+          return mergeFrom((cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse other) {
+        if (other == cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse.getDefaultInstance()) return this;
+        if (balancesBuilder_ == null) {
+          if (!other.balances_.isEmpty()) {
+            if (balances_.isEmpty()) {
+              balances_ = other.balances_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureBalancesIsMutable();
+              balances_.addAll(other.balances_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.balances_.isEmpty()) {
+            if (balancesBuilder_.isEmpty()) {
+              balancesBuilder_.dispose();
+              balancesBuilder_ = null;
+              balances_ = other.balances_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              balancesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getBalancesFieldBuilder() : null;
+            } else {
+              balancesBuilder_.addAllMessages(other.balances_);
+            }
+          }
+        }
+        if (other.hasPagination()) {
+          mergePagination(other.getPagination());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> balances_ =
+        java.util.Collections.emptyList();
+      private void ensureBalancesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          balances_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>(balances_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> balancesBuilder_;
+
+      /**
+       * <pre>
+       * balances is the spendable balances of all the coins.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
+       */
+      public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getBalancesList() {
+        if (balancesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(balances_);
+        } else {
+          return balancesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * balances is the spendable balances of all the coins.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
+       */
+      public int getBalancesCount() {
+        if (balancesBuilder_ == null) {
+          return balances_.size();
+        } else {
+          return balancesBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * balances is the spendable balances of all the coins.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.Coin getBalances(int index) {
+        if (balancesBuilder_ == null) {
+          return balances_.get(index);
+        } else {
+          return balancesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * balances is the spendable balances of all the coins.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder setBalances(
+          int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
+        if (balancesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBalancesIsMutable();
+          balances_.set(index, value);
+          onChanged();
+        } else {
+          balancesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * balances is the spendable balances of all the coins.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder setBalances(
+          int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
+        if (balancesBuilder_ == null) {
+          ensureBalancesIsMutable();
+          balances_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          balancesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * balances is the spendable balances of all the coins.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder addBalances(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
+        if (balancesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBalancesIsMutable();
+          balances_.add(value);
+          onChanged();
+        } else {
+          balancesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * balances is the spendable balances of all the coins.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder addBalances(
+          int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
+        if (balancesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBalancesIsMutable();
+          balances_.add(index, value);
+          onChanged();
+        } else {
+          balancesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * balances is the spendable balances of all the coins.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder addBalances(
+          cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
+        if (balancesBuilder_ == null) {
+          ensureBalancesIsMutable();
+          balances_.add(builderForValue.build());
+          onChanged();
+        } else {
+          balancesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * balances is the spendable balances of all the coins.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder addBalances(
+          int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
+        if (balancesBuilder_ == null) {
+          ensureBalancesIsMutable();
+          balances_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          balancesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * balances is the spendable balances of all the coins.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder addAllBalances(
+          java.lang.Iterable<? extends cosmos.base.v1beta1.CoinOuterClass.Coin> values) {
+        if (balancesBuilder_ == null) {
+          ensureBalancesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, balances_);
+          onChanged();
+        } else {
+          balancesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * balances is the spendable balances of all the coins.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder clearBalances() {
+        if (balancesBuilder_ == null) {
+          balances_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          balancesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * balances is the spendable balances of all the coins.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder removeBalances(int index) {
+        if (balancesBuilder_ == null) {
+          ensureBalancesIsMutable();
+          balances_.remove(index);
+          onChanged();
+        } else {
+          balancesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * balances is the spendable balances of all the coins.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getBalancesBuilder(
+          int index) {
+        return getBalancesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * balances is the spendable balances of all the coins.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getBalancesOrBuilder(
+          int index) {
+        if (balancesBuilder_ == null) {
+          return balances_.get(index);  } else {
+          return balancesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * balances is the spendable balances of all the coins.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
+       */
+      public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
+           getBalancesOrBuilderList() {
+        if (balancesBuilder_ != null) {
+          return balancesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(balances_);
+        }
+      }
+      /**
+       * <pre>
+       * balances is the spendable balances of all the coins.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addBalancesBuilder() {
+        return getBalancesFieldBuilder().addBuilder(
+            cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * balances is the spendable balances of all the coins.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addBalancesBuilder(
+          int index) {
+        return getBalancesFieldBuilder().addBuilder(
+            index, cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * balances is the spendable balances of all the coins.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin balances = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
+       */
+      public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin.Builder> 
+           getBalancesBuilderList() {
+        return getBalancesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
+          getBalancesFieldBuilder() {
+        if (balancesBuilder_ == null) {
+          balancesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder>(
+                  balances_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          balances_ = null;
+        }
+        return balancesBuilder_;
+      }
+
+      private cosmos.base.query.v1beta1.Pagination.PageResponse pagination_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.base.query.v1beta1.Pagination.PageResponse, cosmos.base.query.v1beta1.Pagination.PageResponse.Builder, cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder> paginationBuilder_;
+      /**
+       * <pre>
+       * pagination defines the pagination in the response.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * @return Whether the pagination field is set.
+       */
+      public boolean hasPagination() {
+        return paginationBuilder_ != null || pagination_ != null;
+      }
+      /**
+       * <pre>
+       * pagination defines the pagination in the response.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       * @return The pagination.
+       */
+      public cosmos.base.query.v1beta1.Pagination.PageResponse getPagination() {
+        if (paginationBuilder_ == null) {
+          return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageResponse.getDefaultInstance() : pagination_;
+        } else {
+          return paginationBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * pagination defines the pagination in the response.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       */
+      public Builder setPagination(cosmos.base.query.v1beta1.Pagination.PageResponse value) {
+        if (paginationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          pagination_ = value;
+          onChanged();
+        } else {
+          paginationBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * pagination defines the pagination in the response.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       */
+      public Builder setPagination(
+          cosmos.base.query.v1beta1.Pagination.PageResponse.Builder builderForValue) {
+        if (paginationBuilder_ == null) {
+          pagination_ = builderForValue.build();
+          onChanged();
+        } else {
+          paginationBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * pagination defines the pagination in the response.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       */
+      public Builder mergePagination(cosmos.base.query.v1beta1.Pagination.PageResponse value) {
+        if (paginationBuilder_ == null) {
+          if (pagination_ != null) {
+            pagination_ =
+              cosmos.base.query.v1beta1.Pagination.PageResponse.newBuilder(pagination_).mergeFrom(value).buildPartial();
+          } else {
+            pagination_ = value;
+          }
+          onChanged();
+        } else {
+          paginationBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * pagination defines the pagination in the response.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       */
+      public Builder clearPagination() {
+        if (paginationBuilder_ == null) {
+          pagination_ = null;
+          onChanged();
+        } else {
+          pagination_ = null;
+          paginationBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * pagination defines the pagination in the response.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       */
+      public cosmos.base.query.v1beta1.Pagination.PageResponse.Builder getPaginationBuilder() {
+        
+        onChanged();
+        return getPaginationFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * pagination defines the pagination in the response.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       */
+      public cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder() {
+        if (paginationBuilder_ != null) {
+          return paginationBuilder_.getMessageOrBuilder();
+        } else {
+          return pagination_ == null ?
+              cosmos.base.query.v1beta1.Pagination.PageResponse.getDefaultInstance() : pagination_;
+        }
+      }
+      /**
+       * <pre>
+       * pagination defines the pagination in the response.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.base.query.v1beta1.Pagination.PageResponse, cosmos.base.query.v1beta1.Pagination.PageResponse.Builder, cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder> 
+          getPaginationFieldBuilder() {
+        if (paginationBuilder_ == null) {
+          paginationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              cosmos.base.query.v1beta1.Pagination.PageResponse, cosmos.base.query.v1beta1.Pagination.PageResponse.Builder, cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder>(
+                  getPagination(),
+                  getParentForChildren(),
+                  isClean());
+          pagination_ = null;
+        }
+        return paginationBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.bank.v1beta1.QuerySpendableBalancesResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.bank.v1beta1.QuerySpendableBalancesResponse)
+    private static final cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse();
+    }
+
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QuerySpendableBalancesResponse>
+        PARSER = new com.google.protobuf.AbstractParser<QuerySpendableBalancesResponse>() {
+      @java.lang.Override
+      public QuerySpendableBalancesResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new QuerySpendableBalancesResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<QuerySpendableBalancesResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QuerySpendableBalancesResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalancesResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface QuerySpendableBalanceByDenomRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.bank.v1beta1.QuerySpendableBalanceByDenomRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * address is the address to query balances for.
+     * </pre>
+     *
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The address.
+     */
+    java.lang.String getAddress();
+    /**
+     * <pre>
+     * address is the address to query balances for.
+     * </pre>
+     *
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for address.
+     */
+    com.google.protobuf.ByteString
+        getAddressBytes();
+
+    /**
+     * <pre>
+     * denom is the coin denom to query balances for.
+     * </pre>
+     *
+     * <code>string denom = 2;</code>
+     * @return The denom.
+     */
+    java.lang.String getDenom();
+    /**
+     * <pre>
+     * denom is the coin denom to query balances for.
+     * </pre>
+     *
+     * <code>string denom = 2;</code>
+     * @return The bytes for denom.
+     */
+    com.google.protobuf.ByteString
+        getDenomBytes();
+  }
+  /**
+   * <pre>
+   * QuerySpendableBalanceByDenomRequest defines the gRPC request structure for
+   * querying an account's spendable balance for a specific denom.
+   * Since: cosmos-sdk 0.47
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.bank.v1beta1.QuerySpendableBalanceByDenomRequest}
+   */
+  public static final class QuerySpendableBalanceByDenomRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.bank.v1beta1.QuerySpendableBalanceByDenomRequest)
+      QuerySpendableBalanceByDenomRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use QuerySpendableBalanceByDenomRequest.newBuilder() to construct.
+    private QuerySpendableBalanceByDenomRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private QuerySpendableBalanceByDenomRequest() {
+      address_ = "";
+      denom_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QuerySpendableBalanceByDenomRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private QuerySpendableBalanceByDenomRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              address_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              denom_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySpendableBalanceByDenomRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySpendableBalanceByDenomRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest.class, cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest.Builder.class);
+    }
+
+    public static final int ADDRESS_FIELD_NUMBER = 1;
+    private volatile java.lang.Object address_;
+    /**
+     * <pre>
+     * address is the address to query balances for.
+     * </pre>
+     *
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The address.
+     */
+    @java.lang.Override
+    public java.lang.String getAddress() {
+      java.lang.Object ref = address_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        address_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * address is the address to query balances for.
+     * </pre>
+     *
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for address.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAddressBytes() {
+      java.lang.Object ref = address_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        address_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DENOM_FIELD_NUMBER = 2;
+    private volatile java.lang.Object denom_;
+    /**
+     * <pre>
+     * denom is the coin denom to query balances for.
+     * </pre>
+     *
+     * <code>string denom = 2;</code>
+     * @return The denom.
+     */
+    @java.lang.Override
+    public java.lang.String getDenom() {
+      java.lang.Object ref = denom_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        denom_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * denom is the coin denom to query balances for.
+     * </pre>
+     *
+     * <code>string denom = 2;</code>
+     * @return The bytes for denom.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDenomBytes() {
+      java.lang.Object ref = denom_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        denom_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getAddressBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, address_);
+      }
+      if (!getDenomBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, denom_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getAddressBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, address_);
+      }
+      if (!getDenomBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, denom_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest)) {
+        return super.equals(obj);
+      }
+      cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest other = (cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest) obj;
+
+      if (!getAddress()
+          .equals(other.getAddress())) return false;
+      if (!getDenom()
+          .equals(other.getDenom())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getAddress().hashCode();
+      hash = (37 * hash) + DENOM_FIELD_NUMBER;
+      hash = (53 * hash) + getDenom().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * QuerySpendableBalanceByDenomRequest defines the gRPC request structure for
+     * querying an account's spendable balance for a specific denom.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.bank.v1beta1.QuerySpendableBalanceByDenomRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.bank.v1beta1.QuerySpendableBalanceByDenomRequest)
+        cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySpendableBalanceByDenomRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySpendableBalanceByDenomRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest.class, cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest.Builder.class);
+      }
+
+      // Construct using cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        address_ = "";
+
+        denom_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySpendableBalanceByDenomRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest getDefaultInstanceForType() {
+        return cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest build() {
+        cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest buildPartial() {
+        cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest result = new cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest(this);
+        result.address_ = address_;
+        result.denom_ = denom_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest) {
+          return mergeFrom((cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest other) {
+        if (other == cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest.getDefaultInstance()) return this;
+        if (!other.getAddress().isEmpty()) {
+          address_ = other.address_;
+          onChanged();
+        }
+        if (!other.getDenom().isEmpty()) {
+          denom_ = other.denom_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object address_ = "";
+      /**
+       * <pre>
+       * address is the address to query balances for.
+       * </pre>
+       *
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The address.
+       */
+      public java.lang.String getAddress() {
+        java.lang.Object ref = address_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          address_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * address is the address to query balances for.
+       * </pre>
+       *
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The bytes for address.
+       */
+      public com.google.protobuf.ByteString
+          getAddressBytes() {
+        java.lang.Object ref = address_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          address_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * address is the address to query balances for.
+       * </pre>
+       *
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The address to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddress(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        address_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * address is the address to query balances for.
+       * </pre>
+       *
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAddress() {
+        
+        address_ = getDefaultInstance().getAddress();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * address is the address to query balances for.
+       * </pre>
+       *
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The bytes for address to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        address_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object denom_ = "";
+      /**
+       * <pre>
+       * denom is the coin denom to query balances for.
+       * </pre>
+       *
+       * <code>string denom = 2;</code>
+       * @return The denom.
+       */
+      public java.lang.String getDenom() {
+        java.lang.Object ref = denom_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          denom_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * denom is the coin denom to query balances for.
+       * </pre>
+       *
+       * <code>string denom = 2;</code>
+       * @return The bytes for denom.
+       */
+      public com.google.protobuf.ByteString
+          getDenomBytes() {
+        java.lang.Object ref = denom_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          denom_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * denom is the coin denom to query balances for.
+       * </pre>
+       *
+       * <code>string denom = 2;</code>
+       * @param value The denom to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDenom(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        denom_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * denom is the coin denom to query balances for.
+       * </pre>
+       *
+       * <code>string denom = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDenom() {
+        
+        denom_ = getDefaultInstance().getDenom();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * denom is the coin denom to query balances for.
+       * </pre>
+       *
+       * <code>string denom = 2;</code>
+       * @param value The bytes for denom to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDenomBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        denom_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.bank.v1beta1.QuerySpendableBalanceByDenomRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.bank.v1beta1.QuerySpendableBalanceByDenomRequest)
+    private static final cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest();
+    }
+
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QuerySpendableBalanceByDenomRequest>
+        PARSER = new com.google.protobuf.AbstractParser<QuerySpendableBalanceByDenomRequest>() {
+      @java.lang.Override
+      public QuerySpendableBalanceByDenomRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new QuerySpendableBalanceByDenomRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<QuerySpendableBalanceByDenomRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QuerySpendableBalanceByDenomRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface QuerySpendableBalanceByDenomResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.bank.v1beta1.QuerySpendableBalanceByDenomResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * balance is the balance of the coin.
+     * </pre>
+     *
+     * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
+     * @return Whether the balance field is set.
+     */
+    boolean hasBalance();
+    /**
+     * <pre>
+     * balance is the balance of the coin.
+     * </pre>
+     *
+     * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
+     * @return The balance.
+     */
+    cosmos.base.v1beta1.CoinOuterClass.Coin getBalance();
+    /**
+     * <pre>
+     * balance is the balance of the coin.
+     * </pre>
+     *
+     * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
+     */
+    cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getBalanceOrBuilder();
+  }
+  /**
+   * <pre>
+   * QuerySpendableBalanceByDenomResponse defines the gRPC response structure for
+   * querying an account's spendable balance for a specific denom.
+   * Since: cosmos-sdk 0.47
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.bank.v1beta1.QuerySpendableBalanceByDenomResponse}
+   */
+  public static final class QuerySpendableBalanceByDenomResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.bank.v1beta1.QuerySpendableBalanceByDenomResponse)
+      QuerySpendableBalanceByDenomResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use QuerySpendableBalanceByDenomResponse.newBuilder() to construct.
+    private QuerySpendableBalanceByDenomResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private QuerySpendableBalanceByDenomResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QuerySpendableBalanceByDenomResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private QuerySpendableBalanceByDenomResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
+              if (balance_ != null) {
+                subBuilder = balance_.toBuilder();
+              }
+              balance_ = input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(balance_);
+                balance_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySpendableBalanceByDenomResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySpendableBalanceByDenomResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse.class, cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse.Builder.class);
+    }
+
+    public static final int BALANCE_FIELD_NUMBER = 1;
+    private cosmos.base.v1beta1.CoinOuterClass.Coin balance_;
+    /**
+     * <pre>
+     * balance is the balance of the coin.
+     * </pre>
+     *
+     * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
+     * @return Whether the balance field is set.
+     */
+    @java.lang.Override
+    public boolean hasBalance() {
+      return balance_ != null;
+    }
+    /**
+     * <pre>
+     * balance is the balance of the coin.
+     * </pre>
+     *
+     * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
+     * @return The balance.
+     */
+    @java.lang.Override
+    public cosmos.base.v1beta1.CoinOuterClass.Coin getBalance() {
+      return balance_ == null ? cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : balance_;
+    }
+    /**
+     * <pre>
+     * balance is the balance of the coin.
+     * </pre>
+     *
+     * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
+     */
+    @java.lang.Override
+    public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getBalanceOrBuilder() {
+      return getBalance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (balance_ != null) {
+        output.writeMessage(1, getBalance());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (balance_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getBalance());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse)) {
+        return super.equals(obj);
+      }
+      cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse other = (cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse) obj;
+
+      if (hasBalance() != other.hasBalance()) return false;
+      if (hasBalance()) {
+        if (!getBalance()
+            .equals(other.getBalance())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasBalance()) {
+        hash = (37 * hash) + BALANCE_FIELD_NUMBER;
+        hash = (53 * hash) + getBalance().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * QuerySpendableBalanceByDenomResponse defines the gRPC response structure for
+     * querying an account's spendable balance for a specific denom.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.bank.v1beta1.QuerySpendableBalanceByDenomResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.bank.v1beta1.QuerySpendableBalanceByDenomResponse)
+        cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySpendableBalanceByDenomResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySpendableBalanceByDenomResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse.class, cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse.Builder.class);
+      }
+
+      // Construct using cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (balanceBuilder_ == null) {
+          balance_ = null;
+        } else {
+          balance_ = null;
+          balanceBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySpendableBalanceByDenomResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse getDefaultInstanceForType() {
+        return cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse build() {
+        cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse buildPartial() {
+        cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse result = new cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse(this);
+        if (balanceBuilder_ == null) {
+          result.balance_ = balance_;
+        } else {
+          result.balance_ = balanceBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse) {
+          return mergeFrom((cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse other) {
+        if (other == cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse.getDefaultInstance()) return this;
+        if (other.hasBalance()) {
+          mergeBalance(other.getBalance());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private cosmos.base.v1beta1.CoinOuterClass.Coin balance_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> balanceBuilder_;
+      /**
+       * <pre>
+       * balance is the balance of the coin.
+       * </pre>
+       *
+       * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
+       * @return Whether the balance field is set.
+       */
+      public boolean hasBalance() {
+        return balanceBuilder_ != null || balance_ != null;
+      }
+      /**
+       * <pre>
+       * balance is the balance of the coin.
+       * </pre>
+       *
+       * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
+       * @return The balance.
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.Coin getBalance() {
+        if (balanceBuilder_ == null) {
+          return balance_ == null ? cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : balance_;
+        } else {
+          return balanceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * balance is the balance of the coin.
+       * </pre>
+       *
+       * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
+       */
+      public Builder setBalance(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
+        if (balanceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          balance_ = value;
+          onChanged();
+        } else {
+          balanceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * balance is the balance of the coin.
+       * </pre>
+       *
+       * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
+       */
+      public Builder setBalance(
+          cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
+        if (balanceBuilder_ == null) {
+          balance_ = builderForValue.build();
+          onChanged();
+        } else {
+          balanceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * balance is the balance of the coin.
+       * </pre>
+       *
+       * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
+       */
+      public Builder mergeBalance(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
+        if (balanceBuilder_ == null) {
+          if (balance_ != null) {
+            balance_ =
+              cosmos.base.v1beta1.CoinOuterClass.Coin.newBuilder(balance_).mergeFrom(value).buildPartial();
+          } else {
+            balance_ = value;
+          }
+          onChanged();
+        } else {
+          balanceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * balance is the balance of the coin.
+       * </pre>
+       *
+       * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
+       */
+      public Builder clearBalance() {
+        if (balanceBuilder_ == null) {
+          balance_ = null;
+          onChanged();
+        } else {
+          balance_ = null;
+          balanceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * balance is the balance of the coin.
+       * </pre>
+       *
+       * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getBalanceBuilder() {
+        
+        onChanged();
+        return getBalanceFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * balance is the balance of the coin.
+       * </pre>
+       *
+       * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getBalanceOrBuilder() {
+        if (balanceBuilder_ != null) {
+          return balanceBuilder_.getMessageOrBuilder();
+        } else {
+          return balance_ == null ?
+              cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : balance_;
+        }
+      }
+      /**
+       * <pre>
+       * balance is the balance of the coin.
+       * </pre>
+       *
+       * <code>.cosmos.base.v1beta1.Coin balance = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
+          getBalanceFieldBuilder() {
+        if (balanceBuilder_ == null) {
+          balanceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder>(
+                  getBalance(),
+                  getParentForChildren(),
+                  isClean());
+          balance_ = null;
+        }
+        return balanceBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.bank.v1beta1.QuerySpendableBalanceByDenomResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.bank.v1beta1.QuerySpendableBalanceByDenomResponse)
+    private static final cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse();
+    }
+
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QuerySpendableBalanceByDenomResponse>
+        PARSER = new com.google.protobuf.AbstractParser<QuerySpendableBalanceByDenomResponse>() {
+      @java.lang.Override
+      public QuerySpendableBalanceByDenomResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new QuerySpendableBalanceByDenomResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<QuerySpendableBalanceByDenomResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QuerySpendableBalanceByDenomResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.bank.v1beta1.QueryOuterClass.QuerySpendableBalanceByDenomResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4269,7 +7919,7 @@ public final class QueryOuterClass {
      * supply is the supply of the coins
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> 
         getSupplyList();
@@ -4278,7 +7928,7 @@ public final class QueryOuterClass {
      * supply is the supply of the coins
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.Coin getSupply(int index);
     /**
@@ -4286,7 +7936,7 @@ public final class QueryOuterClass {
      * supply is the supply of the coins
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     int getSupplyCount();
     /**
@@ -4294,7 +7944,7 @@ public final class QueryOuterClass {
      * supply is the supply of the coins
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
         getSupplyOrBuilderList();
@@ -4303,7 +7953,7 @@ public final class QueryOuterClass {
      * supply is the supply of the coins
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getSupplyOrBuilder(
         int index);
@@ -4454,7 +8104,7 @@ public final class QueryOuterClass {
      * supply is the supply of the coins
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getSupplyList() {
@@ -4465,7 +8115,7 @@ public final class QueryOuterClass {
      * supply is the supply of the coins
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
@@ -4477,7 +8127,7 @@ public final class QueryOuterClass {
      * supply is the supply of the coins
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getSupplyCount() {
@@ -4488,7 +8138,7 @@ public final class QueryOuterClass {
      * supply is the supply of the coins
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.Coin getSupply(int index) {
@@ -4499,7 +8149,7 @@ public final class QueryOuterClass {
      * supply is the supply of the coins
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getSupplyOrBuilder(
@@ -4942,7 +8592,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getSupplyList() {
         if (supplyBuilder_ == null) {
@@ -4956,7 +8606,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public int getSupplyCount() {
         if (supplyBuilder_ == null) {
@@ -4970,7 +8620,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin getSupply(int index) {
         if (supplyBuilder_ == null) {
@@ -4984,7 +8634,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder setSupply(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -5005,7 +8655,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder setSupply(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -5023,7 +8673,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addSupply(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (supplyBuilder_ == null) {
@@ -5043,7 +8693,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addSupply(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -5064,7 +8714,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addSupply(
           cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -5082,7 +8732,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addSupply(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -5100,7 +8750,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllSupply(
           java.lang.Iterable<? extends cosmos.base.v1beta1.CoinOuterClass.Coin> values) {
@@ -5119,7 +8769,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearSupply() {
         if (supplyBuilder_ == null) {
@@ -5136,7 +8786,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeSupply(int index) {
         if (supplyBuilder_ == null) {
@@ -5153,7 +8803,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getSupplyBuilder(
           int index) {
@@ -5164,7 +8814,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getSupplyOrBuilder(
           int index) {
@@ -5178,7 +8828,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
            getSupplyOrBuilderList() {
@@ -5193,7 +8843,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addSupplyBuilder() {
         return getSupplyFieldBuilder().addBuilder(
@@ -5204,7 +8854,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addSupplyBuilder(
           int index) {
@@ -5216,7 +8866,7 @@ public final class QueryOuterClass {
        * supply is the supply of the coins
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin supply = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin.Builder> 
            getSupplyBuilderList() {
@@ -6074,7 +9724,7 @@ public final class QueryOuterClass {
      * amount is the supply of the coin.
      * </pre>
      *
-     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the amount field is set.
      */
     boolean hasAmount();
@@ -6083,7 +9733,7 @@ public final class QueryOuterClass {
      * amount is the supply of the coin.
      * </pre>
      *
-     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The amount.
      */
     cosmos.base.v1beta1.CoinOuterClass.Coin getAmount();
@@ -6092,7 +9742,7 @@ public final class QueryOuterClass {
      * amount is the supply of the coin.
      * </pre>
      *
-     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder();
   }
@@ -6197,7 +9847,7 @@ public final class QueryOuterClass {
      * amount is the supply of the coin.
      * </pre>
      *
-     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the amount field is set.
      */
     @java.lang.Override
@@ -6209,7 +9859,7 @@ public final class QueryOuterClass {
      * amount is the supply of the coin.
      * </pre>
      *
-     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The amount.
      */
     @java.lang.Override
@@ -6221,7 +9871,7 @@ public final class QueryOuterClass {
      * amount is the supply of the coin.
      * </pre>
      *
-     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder() {
@@ -6555,7 +10205,7 @@ public final class QueryOuterClass {
        * amount is the supply of the coin.
        * </pre>
        *
-       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the amount field is set.
        */
       public boolean hasAmount() {
@@ -6566,7 +10216,7 @@ public final class QueryOuterClass {
        * amount is the supply of the coin.
        * </pre>
        *
-       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The amount.
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin getAmount() {
@@ -6581,7 +10231,7 @@ public final class QueryOuterClass {
        * amount is the supply of the coin.
        * </pre>
        *
-       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setAmount(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (amountBuilder_ == null) {
@@ -6601,7 +10251,7 @@ public final class QueryOuterClass {
        * amount is the supply of the coin.
        * </pre>
        *
-       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setAmount(
           cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -6619,7 +10269,7 @@ public final class QueryOuterClass {
        * amount is the supply of the coin.
        * </pre>
        *
-       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeAmount(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (amountBuilder_ == null) {
@@ -6641,7 +10291,7 @@ public final class QueryOuterClass {
        * amount is the supply of the coin.
        * </pre>
        *
-       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearAmount() {
         if (amountBuilder_ == null) {
@@ -6659,7 +10309,7 @@ public final class QueryOuterClass {
        * amount is the supply of the coin.
        * </pre>
        *
-       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getAmountBuilder() {
         
@@ -6671,7 +10321,7 @@ public final class QueryOuterClass {
        * amount is the supply of the coin.
        * </pre>
        *
-       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder() {
         if (amountBuilder_ != null) {
@@ -6686,7 +10336,7 @@ public final class QueryOuterClass {
        * amount is the supply of the coin.
        * </pre>
        *
-       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
@@ -7185,17 +10835,17 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the params field is set.
      */
     boolean hasParams();
     /**
-     * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The params.
      */
     cosmos.bank.v1beta1.Bank.Params getParams();
     /**
-     * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.bank.v1beta1.Bank.ParamsOrBuilder getParamsOrBuilder();
   }
@@ -7296,7 +10946,7 @@ public final class QueryOuterClass {
     public static final int PARAMS_FIELD_NUMBER = 1;
     private cosmos.bank.v1beta1.Bank.Params params_;
     /**
-     * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the params field is set.
      */
     @java.lang.Override
@@ -7304,7 +10954,7 @@ public final class QueryOuterClass {
       return params_ != null;
     }
     /**
-     * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The params.
      */
     @java.lang.Override
@@ -7312,7 +10962,7 @@ public final class QueryOuterClass {
       return params_ == null ? cosmos.bank.v1beta1.Bank.Params.getDefaultInstance() : params_;
     }
     /**
-     * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.bank.v1beta1.Bank.ParamsOrBuilder getParamsOrBuilder() {
@@ -7642,14 +11292,14 @@ public final class QueryOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.bank.v1beta1.Bank.Params, cosmos.bank.v1beta1.Bank.Params.Builder, cosmos.bank.v1beta1.Bank.ParamsOrBuilder> paramsBuilder_;
       /**
-       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the params field is set.
        */
       public boolean hasParams() {
         return paramsBuilder_ != null || params_ != null;
       }
       /**
-       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The params.
        */
       public cosmos.bank.v1beta1.Bank.Params getParams() {
@@ -7660,7 +11310,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setParams(cosmos.bank.v1beta1.Bank.Params value) {
         if (paramsBuilder_ == null) {
@@ -7676,7 +11326,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setParams(
           cosmos.bank.v1beta1.Bank.Params.Builder builderForValue) {
@@ -7690,7 +11340,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeParams(cosmos.bank.v1beta1.Bank.Params value) {
         if (paramsBuilder_ == null) {
@@ -7708,7 +11358,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearParams() {
         if (paramsBuilder_ == null) {
@@ -7722,7 +11372,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.bank.v1beta1.Bank.Params.Builder getParamsBuilder() {
         
@@ -7730,7 +11380,7 @@ public final class QueryOuterClass {
         return getParamsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.bank.v1beta1.Bank.ParamsOrBuilder getParamsOrBuilder() {
         if (paramsBuilder_ != null) {
@@ -7741,7 +11391,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.bank.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.bank.v1beta1.Bank.Params, cosmos.bank.v1beta1.Bank.Params.Builder, cosmos.bank.v1beta1.Bank.ParamsOrBuilder> 
@@ -8507,7 +12157,7 @@ public final class QueryOuterClass {
      * metadata provides the client information for all the registered tokens.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.bank.v1beta1.Bank.Metadata> 
         getMetadatasList();
@@ -8516,7 +12166,7 @@ public final class QueryOuterClass {
      * metadata provides the client information for all the registered tokens.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.bank.v1beta1.Bank.Metadata getMetadatas(int index);
     /**
@@ -8524,7 +12174,7 @@ public final class QueryOuterClass {
      * metadata provides the client information for all the registered tokens.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     int getMetadatasCount();
     /**
@@ -8532,7 +12182,7 @@ public final class QueryOuterClass {
      * metadata provides the client information for all the registered tokens.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.bank.v1beta1.Bank.MetadataOrBuilder> 
         getMetadatasOrBuilderList();
@@ -8541,7 +12191,7 @@ public final class QueryOuterClass {
      * metadata provides the client information for all the registered tokens.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.bank.v1beta1.Bank.MetadataOrBuilder getMetadatasOrBuilder(
         int index);
@@ -8689,7 +12339,7 @@ public final class QueryOuterClass {
      * metadata provides the client information for all the registered tokens.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.bank.v1beta1.Bank.Metadata> getMetadatasList() {
@@ -8700,7 +12350,7 @@ public final class QueryOuterClass {
      * metadata provides the client information for all the registered tokens.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.bank.v1beta1.Bank.MetadataOrBuilder> 
@@ -8712,7 +12362,7 @@ public final class QueryOuterClass {
      * metadata provides the client information for all the registered tokens.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getMetadatasCount() {
@@ -8723,7 +12373,7 @@ public final class QueryOuterClass {
      * metadata provides the client information for all the registered tokens.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.bank.v1beta1.Bank.Metadata getMetadatas(int index) {
@@ -8734,7 +12384,7 @@ public final class QueryOuterClass {
      * metadata provides the client information for all the registered tokens.
      * </pre>
      *
-     * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.bank.v1beta1.Bank.MetadataOrBuilder getMetadatasOrBuilder(
@@ -9174,7 +12824,7 @@ public final class QueryOuterClass {
        * metadata provides the client information for all the registered tokens.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.bank.v1beta1.Bank.Metadata> getMetadatasList() {
         if (metadatasBuilder_ == null) {
@@ -9188,7 +12838,7 @@ public final class QueryOuterClass {
        * metadata provides the client information for all the registered tokens.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public int getMetadatasCount() {
         if (metadatasBuilder_ == null) {
@@ -9202,7 +12852,7 @@ public final class QueryOuterClass {
        * metadata provides the client information for all the registered tokens.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.bank.v1beta1.Bank.Metadata getMetadatas(int index) {
         if (metadatasBuilder_ == null) {
@@ -9216,7 +12866,7 @@ public final class QueryOuterClass {
        * metadata provides the client information for all the registered tokens.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setMetadatas(
           int index, cosmos.bank.v1beta1.Bank.Metadata value) {
@@ -9237,7 +12887,7 @@ public final class QueryOuterClass {
        * metadata provides the client information for all the registered tokens.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setMetadatas(
           int index, cosmos.bank.v1beta1.Bank.Metadata.Builder builderForValue) {
@@ -9255,7 +12905,7 @@ public final class QueryOuterClass {
        * metadata provides the client information for all the registered tokens.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addMetadatas(cosmos.bank.v1beta1.Bank.Metadata value) {
         if (metadatasBuilder_ == null) {
@@ -9275,7 +12925,7 @@ public final class QueryOuterClass {
        * metadata provides the client information for all the registered tokens.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addMetadatas(
           int index, cosmos.bank.v1beta1.Bank.Metadata value) {
@@ -9296,7 +12946,7 @@ public final class QueryOuterClass {
        * metadata provides the client information for all the registered tokens.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addMetadatas(
           cosmos.bank.v1beta1.Bank.Metadata.Builder builderForValue) {
@@ -9314,7 +12964,7 @@ public final class QueryOuterClass {
        * metadata provides the client information for all the registered tokens.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addMetadatas(
           int index, cosmos.bank.v1beta1.Bank.Metadata.Builder builderForValue) {
@@ -9332,7 +12982,7 @@ public final class QueryOuterClass {
        * metadata provides the client information for all the registered tokens.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllMetadatas(
           java.lang.Iterable<? extends cosmos.bank.v1beta1.Bank.Metadata> values) {
@@ -9351,7 +13001,7 @@ public final class QueryOuterClass {
        * metadata provides the client information for all the registered tokens.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearMetadatas() {
         if (metadatasBuilder_ == null) {
@@ -9368,7 +13018,7 @@ public final class QueryOuterClass {
        * metadata provides the client information for all the registered tokens.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeMetadatas(int index) {
         if (metadatasBuilder_ == null) {
@@ -9385,7 +13035,7 @@ public final class QueryOuterClass {
        * metadata provides the client information for all the registered tokens.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.bank.v1beta1.Bank.Metadata.Builder getMetadatasBuilder(
           int index) {
@@ -9396,7 +13046,7 @@ public final class QueryOuterClass {
        * metadata provides the client information for all the registered tokens.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.bank.v1beta1.Bank.MetadataOrBuilder getMetadatasOrBuilder(
           int index) {
@@ -9410,7 +13060,7 @@ public final class QueryOuterClass {
        * metadata provides the client information for all the registered tokens.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.bank.v1beta1.Bank.MetadataOrBuilder> 
            getMetadatasOrBuilderList() {
@@ -9425,7 +13075,7 @@ public final class QueryOuterClass {
        * metadata provides the client information for all the registered tokens.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.bank.v1beta1.Bank.Metadata.Builder addMetadatasBuilder() {
         return getMetadatasFieldBuilder().addBuilder(
@@ -9436,7 +13086,7 @@ public final class QueryOuterClass {
        * metadata provides the client information for all the registered tokens.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.bank.v1beta1.Bank.Metadata.Builder addMetadatasBuilder(
           int index) {
@@ -9448,7 +13098,7 @@ public final class QueryOuterClass {
        * metadata provides the client information for all the registered tokens.
        * </pre>
        *
-       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Metadata metadatas = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.bank.v1beta1.Bank.Metadata.Builder> 
            getMetadatasBuilderList() {
@@ -10297,7 +13947,7 @@ public final class QueryOuterClass {
      * metadata describes and provides all the client information for the requested token.
      * </pre>
      *
-     * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the metadata field is set.
      */
     boolean hasMetadata();
@@ -10306,7 +13956,7 @@ public final class QueryOuterClass {
      * metadata describes and provides all the client information for the requested token.
      * </pre>
      *
-     * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The metadata.
      */
     cosmos.bank.v1beta1.Bank.Metadata getMetadata();
@@ -10315,7 +13965,7 @@ public final class QueryOuterClass {
      * metadata describes and provides all the client information for the requested token.
      * </pre>
      *
-     * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.bank.v1beta1.Bank.MetadataOrBuilder getMetadataOrBuilder();
   }
@@ -10421,7 +14071,7 @@ public final class QueryOuterClass {
      * metadata describes and provides all the client information for the requested token.
      * </pre>
      *
-     * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the metadata field is set.
      */
     @java.lang.Override
@@ -10433,7 +14083,7 @@ public final class QueryOuterClass {
      * metadata describes and provides all the client information for the requested token.
      * </pre>
      *
-     * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The metadata.
      */
     @java.lang.Override
@@ -10445,7 +14095,7 @@ public final class QueryOuterClass {
      * metadata describes and provides all the client information for the requested token.
      * </pre>
      *
-     * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.bank.v1beta1.Bank.MetadataOrBuilder getMetadataOrBuilder() {
@@ -10780,7 +14430,7 @@ public final class QueryOuterClass {
        * metadata describes and provides all the client information for the requested token.
        * </pre>
        *
-       * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the metadata field is set.
        */
       public boolean hasMetadata() {
@@ -10791,7 +14441,7 @@ public final class QueryOuterClass {
        * metadata describes and provides all the client information for the requested token.
        * </pre>
        *
-       * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The metadata.
        */
       public cosmos.bank.v1beta1.Bank.Metadata getMetadata() {
@@ -10806,7 +14456,7 @@ public final class QueryOuterClass {
        * metadata describes and provides all the client information for the requested token.
        * </pre>
        *
-       * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setMetadata(cosmos.bank.v1beta1.Bank.Metadata value) {
         if (metadataBuilder_ == null) {
@@ -10826,7 +14476,7 @@ public final class QueryOuterClass {
        * metadata describes and provides all the client information for the requested token.
        * </pre>
        *
-       * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setMetadata(
           cosmos.bank.v1beta1.Bank.Metadata.Builder builderForValue) {
@@ -10844,7 +14494,7 @@ public final class QueryOuterClass {
        * metadata describes and provides all the client information for the requested token.
        * </pre>
        *
-       * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeMetadata(cosmos.bank.v1beta1.Bank.Metadata value) {
         if (metadataBuilder_ == null) {
@@ -10866,7 +14516,7 @@ public final class QueryOuterClass {
        * metadata describes and provides all the client information for the requested token.
        * </pre>
        *
-       * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearMetadata() {
         if (metadataBuilder_ == null) {
@@ -10884,7 +14534,7 @@ public final class QueryOuterClass {
        * metadata describes and provides all the client information for the requested token.
        * </pre>
        *
-       * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.bank.v1beta1.Bank.Metadata.Builder getMetadataBuilder() {
         
@@ -10896,7 +14546,7 @@ public final class QueryOuterClass {
        * metadata describes and provides all the client information for the requested token.
        * </pre>
        *
-       * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.bank.v1beta1.Bank.MetadataOrBuilder getMetadataOrBuilder() {
         if (metadataBuilder_ != null) {
@@ -10911,7 +14561,7 @@ public final class QueryOuterClass {
        * metadata describes and provides all the client information for the requested token.
        * </pre>
        *
-       * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.bank.v1beta1.Metadata metadata = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.bank.v1beta1.Bank.Metadata, cosmos.bank.v1beta1.Bank.Metadata.Builder, cosmos.bank.v1beta1.Bank.MetadataOrBuilder> 
@@ -11887,7 +15537,7 @@ public final class QueryOuterClass {
      * balance is the balance of the denominated coin for an account.
      * </pre>
      *
-     * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the balance field is set.
      */
     boolean hasBalance();
@@ -11896,7 +15546,7 @@ public final class QueryOuterClass {
      * balance is the balance of the denominated coin for an account.
      * </pre>
      *
-     * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The balance.
      */
     cosmos.base.v1beta1.CoinOuterClass.Coin getBalance();
@@ -11905,7 +15555,7 @@ public final class QueryOuterClass {
      * balance is the balance of the denominated coin for an account.
      * </pre>
      *
-     * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getBalanceOrBuilder();
   }
@@ -11914,6 +15564,7 @@ public final class QueryOuterClass {
    * DenomOwner defines structure representing an account that owns or holds a
    * particular denominated token. It contains the account address and account
    * balance of the denominated token.
+   * Since: cosmos-sdk 0.46
    * </pre>
    *
    * Protobuf type {@code cosmos.bank.v1beta1.DenomOwner}
@@ -12065,7 +15716,7 @@ public final class QueryOuterClass {
      * balance is the balance of the denominated coin for an account.
      * </pre>
      *
-     * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the balance field is set.
      */
     @java.lang.Override
@@ -12077,7 +15728,7 @@ public final class QueryOuterClass {
      * balance is the balance of the denominated coin for an account.
      * </pre>
      *
-     * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The balance.
      */
     @java.lang.Override
@@ -12089,7 +15740,7 @@ public final class QueryOuterClass {
      * balance is the balance of the denominated coin for an account.
      * </pre>
      *
-     * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getBalanceOrBuilder() {
@@ -12271,6 +15922,7 @@ public final class QueryOuterClass {
      * DenomOwner defines structure representing an account that owns or holds a
      * particular denominated token. It contains the account address and account
      * balance of the denominated token.
+     * Since: cosmos-sdk 0.46
      * </pre>
      *
      * Protobuf type {@code cosmos.bank.v1beta1.DenomOwner}
@@ -12538,7 +16190,7 @@ public final class QueryOuterClass {
        * balance is the balance of the denominated coin for an account.
        * </pre>
        *
-       * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the balance field is set.
        */
       public boolean hasBalance() {
@@ -12549,7 +16201,7 @@ public final class QueryOuterClass {
        * balance is the balance of the denominated coin for an account.
        * </pre>
        *
-       * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The balance.
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin getBalance() {
@@ -12564,7 +16216,7 @@ public final class QueryOuterClass {
        * balance is the balance of the denominated coin for an account.
        * </pre>
        *
-       * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setBalance(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (balanceBuilder_ == null) {
@@ -12584,7 +16236,7 @@ public final class QueryOuterClass {
        * balance is the balance of the denominated coin for an account.
        * </pre>
        *
-       * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setBalance(
           cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -12602,7 +16254,7 @@ public final class QueryOuterClass {
        * balance is the balance of the denominated coin for an account.
        * </pre>
        *
-       * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeBalance(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (balanceBuilder_ == null) {
@@ -12624,7 +16276,7 @@ public final class QueryOuterClass {
        * balance is the balance of the denominated coin for an account.
        * </pre>
        *
-       * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearBalance() {
         if (balanceBuilder_ == null) {
@@ -12642,7 +16294,7 @@ public final class QueryOuterClass {
        * balance is the balance of the denominated coin for an account.
        * </pre>
        *
-       * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getBalanceBuilder() {
         
@@ -12654,7 +16306,7 @@ public final class QueryOuterClass {
        * balance is the balance of the denominated coin for an account.
        * </pre>
        *
-       * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getBalanceOrBuilder() {
         if (balanceBuilder_ != null) {
@@ -12669,7 +16321,7 @@ public final class QueryOuterClass {
        * balance is the balance of the denominated coin for an account.
        * </pre>
        *
-       * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.base.v1beta1.Coin balance = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
@@ -12795,6 +16447,7 @@ public final class QueryOuterClass {
   /**
    * <pre>
    * QueryDenomOwnersResponse defines the RPC response of a DenomOwners RPC query.
+   * Since: cosmos-sdk 0.46
    * </pre>
    *
    * Protobuf type {@code cosmos.bank.v1beta1.QueryDenomOwnersResponse}
@@ -13154,6 +16807,7 @@ public final class QueryOuterClass {
     /**
      * <pre>
      * QueryDenomOwnersResponse defines the RPC response of a DenomOwners RPC query.
+     * Since: cosmos-sdk 0.46
      * </pre>
      *
      * Protobuf type {@code cosmos.bank.v1beta1.QueryDenomOwnersResponse}
@@ -13801,6 +17455,2081 @@ public final class QueryOuterClass {
 
   }
 
+  public interface QuerySendEnabledRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.bank.v1beta1.QuerySendEnabledRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * denoms is the specific denoms you want look up. Leave empty to get all entries.
+     * </pre>
+     *
+     * <code>repeated string denoms = 1;</code>
+     * @return A list containing the denoms.
+     */
+    java.util.List<java.lang.String>
+        getDenomsList();
+    /**
+     * <pre>
+     * denoms is the specific denoms you want look up. Leave empty to get all entries.
+     * </pre>
+     *
+     * <code>repeated string denoms = 1;</code>
+     * @return The count of denoms.
+     */
+    int getDenomsCount();
+    /**
+     * <pre>
+     * denoms is the specific denoms you want look up. Leave empty to get all entries.
+     * </pre>
+     *
+     * <code>repeated string denoms = 1;</code>
+     * @param index The index of the element to return.
+     * @return The denoms at the given index.
+     */
+    java.lang.String getDenoms(int index);
+    /**
+     * <pre>
+     * denoms is the specific denoms you want look up. Leave empty to get all entries.
+     * </pre>
+     *
+     * <code>repeated string denoms = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the denoms at the given index.
+     */
+    com.google.protobuf.ByteString
+        getDenomsBytes(int index);
+
+    /**
+     * <pre>
+     * pagination defines an optional pagination for the request. This field is
+     * only read if the denoms field is empty.
+     * </pre>
+     *
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 99;</code>
+     * @return Whether the pagination field is set.
+     */
+    boolean hasPagination();
+    /**
+     * <pre>
+     * pagination defines an optional pagination for the request. This field is
+     * only read if the denoms field is empty.
+     * </pre>
+     *
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 99;</code>
+     * @return The pagination.
+     */
+    cosmos.base.query.v1beta1.Pagination.PageRequest getPagination();
+    /**
+     * <pre>
+     * pagination defines an optional pagination for the request. This field is
+     * only read if the denoms field is empty.
+     * </pre>
+     *
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 99;</code>
+     */
+    cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder();
+  }
+  /**
+   * <pre>
+   * QuerySendEnabledRequest defines the RPC request for looking up SendEnabled entries.
+   * Since: cosmos-sdk 0.47
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.bank.v1beta1.QuerySendEnabledRequest}
+   */
+  public static final class QuerySendEnabledRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.bank.v1beta1.QuerySendEnabledRequest)
+      QuerySendEnabledRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use QuerySendEnabledRequest.newBuilder() to construct.
+    private QuerySendEnabledRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private QuerySendEnabledRequest() {
+      denoms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QuerySendEnabledRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private QuerySendEnabledRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                denoms_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              denoms_.add(s);
+              break;
+            }
+            case 794: {
+              cosmos.base.query.v1beta1.Pagination.PageRequest.Builder subBuilder = null;
+              if (pagination_ != null) {
+                subBuilder = pagination_.toBuilder();
+              }
+              pagination_ = input.readMessage(cosmos.base.query.v1beta1.Pagination.PageRequest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pagination_);
+                pagination_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          denoms_ = denoms_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySendEnabledRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySendEnabledRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest.class, cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest.Builder.class);
+    }
+
+    public static final int DENOMS_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList denoms_;
+    /**
+     * <pre>
+     * denoms is the specific denoms you want look up. Leave empty to get all entries.
+     * </pre>
+     *
+     * <code>repeated string denoms = 1;</code>
+     * @return A list containing the denoms.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getDenomsList() {
+      return denoms_;
+    }
+    /**
+     * <pre>
+     * denoms is the specific denoms you want look up. Leave empty to get all entries.
+     * </pre>
+     *
+     * <code>repeated string denoms = 1;</code>
+     * @return The count of denoms.
+     */
+    public int getDenomsCount() {
+      return denoms_.size();
+    }
+    /**
+     * <pre>
+     * denoms is the specific denoms you want look up. Leave empty to get all entries.
+     * </pre>
+     *
+     * <code>repeated string denoms = 1;</code>
+     * @param index The index of the element to return.
+     * @return The denoms at the given index.
+     */
+    public java.lang.String getDenoms(int index) {
+      return denoms_.get(index);
+    }
+    /**
+     * <pre>
+     * denoms is the specific denoms you want look up. Leave empty to get all entries.
+     * </pre>
+     *
+     * <code>repeated string denoms = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the denoms at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getDenomsBytes(int index) {
+      return denoms_.getByteString(index);
+    }
+
+    public static final int PAGINATION_FIELD_NUMBER = 99;
+    private cosmos.base.query.v1beta1.Pagination.PageRequest pagination_;
+    /**
+     * <pre>
+     * pagination defines an optional pagination for the request. This field is
+     * only read if the denoms field is empty.
+     * </pre>
+     *
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 99;</code>
+     * @return Whether the pagination field is set.
+     */
+    @java.lang.Override
+    public boolean hasPagination() {
+      return pagination_ != null;
+    }
+    /**
+     * <pre>
+     * pagination defines an optional pagination for the request. This field is
+     * only read if the denoms field is empty.
+     * </pre>
+     *
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 99;</code>
+     * @return The pagination.
+     */
+    @java.lang.Override
+    public cosmos.base.query.v1beta1.Pagination.PageRequest getPagination() {
+      return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageRequest.getDefaultInstance() : pagination_;
+    }
+    /**
+     * <pre>
+     * pagination defines an optional pagination for the request. This field is
+     * only read if the denoms field is empty.
+     * </pre>
+     *
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 99;</code>
+     */
+    @java.lang.Override
+    public cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder() {
+      return getPagination();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < denoms_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, denoms_.getRaw(i));
+      }
+      if (pagination_ != null) {
+        output.writeMessage(99, getPagination());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < denoms_.size(); i++) {
+          dataSize += computeStringSizeNoTag(denoms_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getDenomsList().size();
+      }
+      if (pagination_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(99, getPagination());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest)) {
+        return super.equals(obj);
+      }
+      cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest other = (cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest) obj;
+
+      if (!getDenomsList()
+          .equals(other.getDenomsList())) return false;
+      if (hasPagination() != other.hasPagination()) return false;
+      if (hasPagination()) {
+        if (!getPagination()
+            .equals(other.getPagination())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getDenomsCount() > 0) {
+        hash = (37 * hash) + DENOMS_FIELD_NUMBER;
+        hash = (53 * hash) + getDenomsList().hashCode();
+      }
+      if (hasPagination()) {
+        hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
+        hash = (53 * hash) + getPagination().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * QuerySendEnabledRequest defines the RPC request for looking up SendEnabled entries.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.bank.v1beta1.QuerySendEnabledRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.bank.v1beta1.QuerySendEnabledRequest)
+        cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySendEnabledRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySendEnabledRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest.class, cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest.Builder.class);
+      }
+
+      // Construct using cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        denoms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (paginationBuilder_ == null) {
+          pagination_ = null;
+        } else {
+          pagination_ = null;
+          paginationBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySendEnabledRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest getDefaultInstanceForType() {
+        return cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest build() {
+        cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest buildPartial() {
+        cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest result = new cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          denoms_ = denoms_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.denoms_ = denoms_;
+        if (paginationBuilder_ == null) {
+          result.pagination_ = pagination_;
+        } else {
+          result.pagination_ = paginationBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest) {
+          return mergeFrom((cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest other) {
+        if (other == cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest.getDefaultInstance()) return this;
+        if (!other.denoms_.isEmpty()) {
+          if (denoms_.isEmpty()) {
+            denoms_ = other.denoms_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureDenomsIsMutable();
+            denoms_.addAll(other.denoms_);
+          }
+          onChanged();
+        }
+        if (other.hasPagination()) {
+          mergePagination(other.getPagination());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringList denoms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureDenomsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          denoms_ = new com.google.protobuf.LazyStringArrayList(denoms_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <pre>
+       * denoms is the specific denoms you want look up. Leave empty to get all entries.
+       * </pre>
+       *
+       * <code>repeated string denoms = 1;</code>
+       * @return A list containing the denoms.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getDenomsList() {
+        return denoms_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * denoms is the specific denoms you want look up. Leave empty to get all entries.
+       * </pre>
+       *
+       * <code>repeated string denoms = 1;</code>
+       * @return The count of denoms.
+       */
+      public int getDenomsCount() {
+        return denoms_.size();
+      }
+      /**
+       * <pre>
+       * denoms is the specific denoms you want look up. Leave empty to get all entries.
+       * </pre>
+       *
+       * <code>repeated string denoms = 1;</code>
+       * @param index The index of the element to return.
+       * @return The denoms at the given index.
+       */
+      public java.lang.String getDenoms(int index) {
+        return denoms_.get(index);
+      }
+      /**
+       * <pre>
+       * denoms is the specific denoms you want look up. Leave empty to get all entries.
+       * </pre>
+       *
+       * <code>repeated string denoms = 1;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the denoms at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getDenomsBytes(int index) {
+        return denoms_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * denoms is the specific denoms you want look up. Leave empty to get all entries.
+       * </pre>
+       *
+       * <code>repeated string denoms = 1;</code>
+       * @param index The index to set the value at.
+       * @param value The denoms to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDenoms(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDenomsIsMutable();
+        denoms_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * denoms is the specific denoms you want look up. Leave empty to get all entries.
+       * </pre>
+       *
+       * <code>repeated string denoms = 1;</code>
+       * @param value The denoms to add.
+       * @return This builder for chaining.
+       */
+      public Builder addDenoms(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDenomsIsMutable();
+        denoms_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * denoms is the specific denoms you want look up. Leave empty to get all entries.
+       * </pre>
+       *
+       * <code>repeated string denoms = 1;</code>
+       * @param values The denoms to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllDenoms(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureDenomsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, denoms_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * denoms is the specific denoms you want look up. Leave empty to get all entries.
+       * </pre>
+       *
+       * <code>repeated string denoms = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDenoms() {
+        denoms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * denoms is the specific denoms you want look up. Leave empty to get all entries.
+       * </pre>
+       *
+       * <code>repeated string denoms = 1;</code>
+       * @param value The bytes of the denoms to add.
+       * @return This builder for chaining.
+       */
+      public Builder addDenomsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureDenomsIsMutable();
+        denoms_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private cosmos.base.query.v1beta1.Pagination.PageRequest pagination_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.base.query.v1beta1.Pagination.PageRequest, cosmos.base.query.v1beta1.Pagination.PageRequest.Builder, cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder> paginationBuilder_;
+      /**
+       * <pre>
+       * pagination defines an optional pagination for the request. This field is
+       * only read if the denoms field is empty.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 99;</code>
+       * @return Whether the pagination field is set.
+       */
+      public boolean hasPagination() {
+        return paginationBuilder_ != null || pagination_ != null;
+      }
+      /**
+       * <pre>
+       * pagination defines an optional pagination for the request. This field is
+       * only read if the denoms field is empty.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 99;</code>
+       * @return The pagination.
+       */
+      public cosmos.base.query.v1beta1.Pagination.PageRequest getPagination() {
+        if (paginationBuilder_ == null) {
+          return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageRequest.getDefaultInstance() : pagination_;
+        } else {
+          return paginationBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * pagination defines an optional pagination for the request. This field is
+       * only read if the denoms field is empty.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 99;</code>
+       */
+      public Builder setPagination(cosmos.base.query.v1beta1.Pagination.PageRequest value) {
+        if (paginationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          pagination_ = value;
+          onChanged();
+        } else {
+          paginationBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * pagination defines an optional pagination for the request. This field is
+       * only read if the denoms field is empty.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 99;</code>
+       */
+      public Builder setPagination(
+          cosmos.base.query.v1beta1.Pagination.PageRequest.Builder builderForValue) {
+        if (paginationBuilder_ == null) {
+          pagination_ = builderForValue.build();
+          onChanged();
+        } else {
+          paginationBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * pagination defines an optional pagination for the request. This field is
+       * only read if the denoms field is empty.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 99;</code>
+       */
+      public Builder mergePagination(cosmos.base.query.v1beta1.Pagination.PageRequest value) {
+        if (paginationBuilder_ == null) {
+          if (pagination_ != null) {
+            pagination_ =
+              cosmos.base.query.v1beta1.Pagination.PageRequest.newBuilder(pagination_).mergeFrom(value).buildPartial();
+          } else {
+            pagination_ = value;
+          }
+          onChanged();
+        } else {
+          paginationBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * pagination defines an optional pagination for the request. This field is
+       * only read if the denoms field is empty.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 99;</code>
+       */
+      public Builder clearPagination() {
+        if (paginationBuilder_ == null) {
+          pagination_ = null;
+          onChanged();
+        } else {
+          pagination_ = null;
+          paginationBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * pagination defines an optional pagination for the request. This field is
+       * only read if the denoms field is empty.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 99;</code>
+       */
+      public cosmos.base.query.v1beta1.Pagination.PageRequest.Builder getPaginationBuilder() {
+        
+        onChanged();
+        return getPaginationFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * pagination defines an optional pagination for the request. This field is
+       * only read if the denoms field is empty.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 99;</code>
+       */
+      public cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder() {
+        if (paginationBuilder_ != null) {
+          return paginationBuilder_.getMessageOrBuilder();
+        } else {
+          return pagination_ == null ?
+              cosmos.base.query.v1beta1.Pagination.PageRequest.getDefaultInstance() : pagination_;
+        }
+      }
+      /**
+       * <pre>
+       * pagination defines an optional pagination for the request. This field is
+       * only read if the denoms field is empty.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 99;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.base.query.v1beta1.Pagination.PageRequest, cosmos.base.query.v1beta1.Pagination.PageRequest.Builder, cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder> 
+          getPaginationFieldBuilder() {
+        if (paginationBuilder_ == null) {
+          paginationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              cosmos.base.query.v1beta1.Pagination.PageRequest, cosmos.base.query.v1beta1.Pagination.PageRequest.Builder, cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder>(
+                  getPagination(),
+                  getParentForChildren(),
+                  isClean());
+          pagination_ = null;
+        }
+        return paginationBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.bank.v1beta1.QuerySendEnabledRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.bank.v1beta1.QuerySendEnabledRequest)
+    private static final cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest();
+    }
+
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QuerySendEnabledRequest>
+        PARSER = new com.google.protobuf.AbstractParser<QuerySendEnabledRequest>() {
+      @java.lang.Override
+      public QuerySendEnabledRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new QuerySendEnabledRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<QuerySendEnabledRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QuerySendEnabledRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface QuerySendEnabledResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.bank.v1beta1.QuerySendEnabledResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+     */
+    java.util.List<cosmos.bank.v1beta1.Bank.SendEnabled> 
+        getSendEnabledList();
+    /**
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+     */
+    cosmos.bank.v1beta1.Bank.SendEnabled getSendEnabled(int index);
+    /**
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+     */
+    int getSendEnabledCount();
+    /**
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+     */
+    java.util.List<? extends cosmos.bank.v1beta1.Bank.SendEnabledOrBuilder> 
+        getSendEnabledOrBuilderList();
+    /**
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+     */
+    cosmos.bank.v1beta1.Bank.SendEnabledOrBuilder getSendEnabledOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * pagination defines the pagination in the response. This field is only
+     * populated if the denoms field in the request is empty.
+     * </pre>
+     *
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 99;</code>
+     * @return Whether the pagination field is set.
+     */
+    boolean hasPagination();
+    /**
+     * <pre>
+     * pagination defines the pagination in the response. This field is only
+     * populated if the denoms field in the request is empty.
+     * </pre>
+     *
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 99;</code>
+     * @return The pagination.
+     */
+    cosmos.base.query.v1beta1.Pagination.PageResponse getPagination();
+    /**
+     * <pre>
+     * pagination defines the pagination in the response. This field is only
+     * populated if the denoms field in the request is empty.
+     * </pre>
+     *
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 99;</code>
+     */
+    cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder();
+  }
+  /**
+   * <pre>
+   * QuerySendEnabledResponse defines the RPC response of a SendEnable query.
+   * Since: cosmos-sdk 0.47
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.bank.v1beta1.QuerySendEnabledResponse}
+   */
+  public static final class QuerySendEnabledResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.bank.v1beta1.QuerySendEnabledResponse)
+      QuerySendEnabledResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use QuerySendEnabledResponse.newBuilder() to construct.
+    private QuerySendEnabledResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private QuerySendEnabledResponse() {
+      sendEnabled_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QuerySendEnabledResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private QuerySendEnabledResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                sendEnabled_ = new java.util.ArrayList<cosmos.bank.v1beta1.Bank.SendEnabled>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              sendEnabled_.add(
+                  input.readMessage(cosmos.bank.v1beta1.Bank.SendEnabled.parser(), extensionRegistry));
+              break;
+            }
+            case 794: {
+              cosmos.base.query.v1beta1.Pagination.PageResponse.Builder subBuilder = null;
+              if (pagination_ != null) {
+                subBuilder = pagination_.toBuilder();
+              }
+              pagination_ = input.readMessage(cosmos.base.query.v1beta1.Pagination.PageResponse.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pagination_);
+                pagination_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          sendEnabled_ = java.util.Collections.unmodifiableList(sendEnabled_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySendEnabledResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySendEnabledResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse.class, cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse.Builder.class);
+    }
+
+    public static final int SEND_ENABLED_FIELD_NUMBER = 1;
+    private java.util.List<cosmos.bank.v1beta1.Bank.SendEnabled> sendEnabled_;
+    /**
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<cosmos.bank.v1beta1.Bank.SendEnabled> getSendEnabledList() {
+      return sendEnabled_;
+    }
+    /**
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends cosmos.bank.v1beta1.Bank.SendEnabledOrBuilder> 
+        getSendEnabledOrBuilderList() {
+      return sendEnabled_;
+    }
+    /**
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+     */
+    @java.lang.Override
+    public int getSendEnabledCount() {
+      return sendEnabled_.size();
+    }
+    /**
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+     */
+    @java.lang.Override
+    public cosmos.bank.v1beta1.Bank.SendEnabled getSendEnabled(int index) {
+      return sendEnabled_.get(index);
+    }
+    /**
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+     */
+    @java.lang.Override
+    public cosmos.bank.v1beta1.Bank.SendEnabledOrBuilder getSendEnabledOrBuilder(
+        int index) {
+      return sendEnabled_.get(index);
+    }
+
+    public static final int PAGINATION_FIELD_NUMBER = 99;
+    private cosmos.base.query.v1beta1.Pagination.PageResponse pagination_;
+    /**
+     * <pre>
+     * pagination defines the pagination in the response. This field is only
+     * populated if the denoms field in the request is empty.
+     * </pre>
+     *
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 99;</code>
+     * @return Whether the pagination field is set.
+     */
+    @java.lang.Override
+    public boolean hasPagination() {
+      return pagination_ != null;
+    }
+    /**
+     * <pre>
+     * pagination defines the pagination in the response. This field is only
+     * populated if the denoms field in the request is empty.
+     * </pre>
+     *
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 99;</code>
+     * @return The pagination.
+     */
+    @java.lang.Override
+    public cosmos.base.query.v1beta1.Pagination.PageResponse getPagination() {
+      return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageResponse.getDefaultInstance() : pagination_;
+    }
+    /**
+     * <pre>
+     * pagination defines the pagination in the response. This field is only
+     * populated if the denoms field in the request is empty.
+     * </pre>
+     *
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 99;</code>
+     */
+    @java.lang.Override
+    public cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder() {
+      return getPagination();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < sendEnabled_.size(); i++) {
+        output.writeMessage(1, sendEnabled_.get(i));
+      }
+      if (pagination_ != null) {
+        output.writeMessage(99, getPagination());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < sendEnabled_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, sendEnabled_.get(i));
+      }
+      if (pagination_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(99, getPagination());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse)) {
+        return super.equals(obj);
+      }
+      cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse other = (cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse) obj;
+
+      if (!getSendEnabledList()
+          .equals(other.getSendEnabledList())) return false;
+      if (hasPagination() != other.hasPagination()) return false;
+      if (hasPagination()) {
+        if (!getPagination()
+            .equals(other.getPagination())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getSendEnabledCount() > 0) {
+        hash = (37 * hash) + SEND_ENABLED_FIELD_NUMBER;
+        hash = (53 * hash) + getSendEnabledList().hashCode();
+      }
+      if (hasPagination()) {
+        hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
+        hash = (53 * hash) + getPagination().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * QuerySendEnabledResponse defines the RPC response of a SendEnable query.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.bank.v1beta1.QuerySendEnabledResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.bank.v1beta1.QuerySendEnabledResponse)
+        cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySendEnabledResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySendEnabledResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse.class, cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse.Builder.class);
+      }
+
+      // Construct using cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getSendEnabledFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (sendEnabledBuilder_ == null) {
+          sendEnabled_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          sendEnabledBuilder_.clear();
+        }
+        if (paginationBuilder_ == null) {
+          pagination_ = null;
+        } else {
+          pagination_ = null;
+          paginationBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.bank.v1beta1.QueryOuterClass.internal_static_cosmos_bank_v1beta1_QuerySendEnabledResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse getDefaultInstanceForType() {
+        return cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse build() {
+        cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse buildPartial() {
+        cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse result = new cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (sendEnabledBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            sendEnabled_ = java.util.Collections.unmodifiableList(sendEnabled_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.sendEnabled_ = sendEnabled_;
+        } else {
+          result.sendEnabled_ = sendEnabledBuilder_.build();
+        }
+        if (paginationBuilder_ == null) {
+          result.pagination_ = pagination_;
+        } else {
+          result.pagination_ = paginationBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse) {
+          return mergeFrom((cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse other) {
+        if (other == cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse.getDefaultInstance()) return this;
+        if (sendEnabledBuilder_ == null) {
+          if (!other.sendEnabled_.isEmpty()) {
+            if (sendEnabled_.isEmpty()) {
+              sendEnabled_ = other.sendEnabled_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureSendEnabledIsMutable();
+              sendEnabled_.addAll(other.sendEnabled_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.sendEnabled_.isEmpty()) {
+            if (sendEnabledBuilder_.isEmpty()) {
+              sendEnabledBuilder_.dispose();
+              sendEnabledBuilder_ = null;
+              sendEnabled_ = other.sendEnabled_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              sendEnabledBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getSendEnabledFieldBuilder() : null;
+            } else {
+              sendEnabledBuilder_.addAllMessages(other.sendEnabled_);
+            }
+          }
+        }
+        if (other.hasPagination()) {
+          mergePagination(other.getPagination());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<cosmos.bank.v1beta1.Bank.SendEnabled> sendEnabled_ =
+        java.util.Collections.emptyList();
+      private void ensureSendEnabledIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          sendEnabled_ = new java.util.ArrayList<cosmos.bank.v1beta1.Bank.SendEnabled>(sendEnabled_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          cosmos.bank.v1beta1.Bank.SendEnabled, cosmos.bank.v1beta1.Bank.SendEnabled.Builder, cosmos.bank.v1beta1.Bank.SendEnabledOrBuilder> sendEnabledBuilder_;
+
+      /**
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       */
+      public java.util.List<cosmos.bank.v1beta1.Bank.SendEnabled> getSendEnabledList() {
+        if (sendEnabledBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(sendEnabled_);
+        } else {
+          return sendEnabledBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       */
+      public int getSendEnabledCount() {
+        if (sendEnabledBuilder_ == null) {
+          return sendEnabled_.size();
+        } else {
+          return sendEnabledBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       */
+      public cosmos.bank.v1beta1.Bank.SendEnabled getSendEnabled(int index) {
+        if (sendEnabledBuilder_ == null) {
+          return sendEnabled_.get(index);
+        } else {
+          return sendEnabledBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       */
+      public Builder setSendEnabled(
+          int index, cosmos.bank.v1beta1.Bank.SendEnabled value) {
+        if (sendEnabledBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSendEnabledIsMutable();
+          sendEnabled_.set(index, value);
+          onChanged();
+        } else {
+          sendEnabledBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       */
+      public Builder setSendEnabled(
+          int index, cosmos.bank.v1beta1.Bank.SendEnabled.Builder builderForValue) {
+        if (sendEnabledBuilder_ == null) {
+          ensureSendEnabledIsMutable();
+          sendEnabled_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          sendEnabledBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       */
+      public Builder addSendEnabled(cosmos.bank.v1beta1.Bank.SendEnabled value) {
+        if (sendEnabledBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSendEnabledIsMutable();
+          sendEnabled_.add(value);
+          onChanged();
+        } else {
+          sendEnabledBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       */
+      public Builder addSendEnabled(
+          int index, cosmos.bank.v1beta1.Bank.SendEnabled value) {
+        if (sendEnabledBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSendEnabledIsMutable();
+          sendEnabled_.add(index, value);
+          onChanged();
+        } else {
+          sendEnabledBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       */
+      public Builder addSendEnabled(
+          cosmos.bank.v1beta1.Bank.SendEnabled.Builder builderForValue) {
+        if (sendEnabledBuilder_ == null) {
+          ensureSendEnabledIsMutable();
+          sendEnabled_.add(builderForValue.build());
+          onChanged();
+        } else {
+          sendEnabledBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       */
+      public Builder addSendEnabled(
+          int index, cosmos.bank.v1beta1.Bank.SendEnabled.Builder builderForValue) {
+        if (sendEnabledBuilder_ == null) {
+          ensureSendEnabledIsMutable();
+          sendEnabled_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          sendEnabledBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       */
+      public Builder addAllSendEnabled(
+          java.lang.Iterable<? extends cosmos.bank.v1beta1.Bank.SendEnabled> values) {
+        if (sendEnabledBuilder_ == null) {
+          ensureSendEnabledIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, sendEnabled_);
+          onChanged();
+        } else {
+          sendEnabledBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       */
+      public Builder clearSendEnabled() {
+        if (sendEnabledBuilder_ == null) {
+          sendEnabled_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          sendEnabledBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       */
+      public Builder removeSendEnabled(int index) {
+        if (sendEnabledBuilder_ == null) {
+          ensureSendEnabledIsMutable();
+          sendEnabled_.remove(index);
+          onChanged();
+        } else {
+          sendEnabledBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       */
+      public cosmos.bank.v1beta1.Bank.SendEnabled.Builder getSendEnabledBuilder(
+          int index) {
+        return getSendEnabledFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       */
+      public cosmos.bank.v1beta1.Bank.SendEnabledOrBuilder getSendEnabledOrBuilder(
+          int index) {
+        if (sendEnabledBuilder_ == null) {
+          return sendEnabled_.get(index);  } else {
+          return sendEnabledBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       */
+      public java.util.List<? extends cosmos.bank.v1beta1.Bank.SendEnabledOrBuilder> 
+           getSendEnabledOrBuilderList() {
+        if (sendEnabledBuilder_ != null) {
+          return sendEnabledBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(sendEnabled_);
+        }
+      }
+      /**
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       */
+      public cosmos.bank.v1beta1.Bank.SendEnabled.Builder addSendEnabledBuilder() {
+        return getSendEnabledFieldBuilder().addBuilder(
+            cosmos.bank.v1beta1.Bank.SendEnabled.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       */
+      public cosmos.bank.v1beta1.Bank.SendEnabled.Builder addSendEnabledBuilder(
+          int index) {
+        return getSendEnabledFieldBuilder().addBuilder(
+            index, cosmos.bank.v1beta1.Bank.SendEnabled.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 1;</code>
+       */
+      public java.util.List<cosmos.bank.v1beta1.Bank.SendEnabled.Builder> 
+           getSendEnabledBuilderList() {
+        return getSendEnabledFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          cosmos.bank.v1beta1.Bank.SendEnabled, cosmos.bank.v1beta1.Bank.SendEnabled.Builder, cosmos.bank.v1beta1.Bank.SendEnabledOrBuilder> 
+          getSendEnabledFieldBuilder() {
+        if (sendEnabledBuilder_ == null) {
+          sendEnabledBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              cosmos.bank.v1beta1.Bank.SendEnabled, cosmos.bank.v1beta1.Bank.SendEnabled.Builder, cosmos.bank.v1beta1.Bank.SendEnabledOrBuilder>(
+                  sendEnabled_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          sendEnabled_ = null;
+        }
+        return sendEnabledBuilder_;
+      }
+
+      private cosmos.base.query.v1beta1.Pagination.PageResponse pagination_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.base.query.v1beta1.Pagination.PageResponse, cosmos.base.query.v1beta1.Pagination.PageResponse.Builder, cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder> paginationBuilder_;
+      /**
+       * <pre>
+       * pagination defines the pagination in the response. This field is only
+       * populated if the denoms field in the request is empty.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 99;</code>
+       * @return Whether the pagination field is set.
+       */
+      public boolean hasPagination() {
+        return paginationBuilder_ != null || pagination_ != null;
+      }
+      /**
+       * <pre>
+       * pagination defines the pagination in the response. This field is only
+       * populated if the denoms field in the request is empty.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 99;</code>
+       * @return The pagination.
+       */
+      public cosmos.base.query.v1beta1.Pagination.PageResponse getPagination() {
+        if (paginationBuilder_ == null) {
+          return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageResponse.getDefaultInstance() : pagination_;
+        } else {
+          return paginationBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * pagination defines the pagination in the response. This field is only
+       * populated if the denoms field in the request is empty.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 99;</code>
+       */
+      public Builder setPagination(cosmos.base.query.v1beta1.Pagination.PageResponse value) {
+        if (paginationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          pagination_ = value;
+          onChanged();
+        } else {
+          paginationBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * pagination defines the pagination in the response. This field is only
+       * populated if the denoms field in the request is empty.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 99;</code>
+       */
+      public Builder setPagination(
+          cosmos.base.query.v1beta1.Pagination.PageResponse.Builder builderForValue) {
+        if (paginationBuilder_ == null) {
+          pagination_ = builderForValue.build();
+          onChanged();
+        } else {
+          paginationBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * pagination defines the pagination in the response. This field is only
+       * populated if the denoms field in the request is empty.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 99;</code>
+       */
+      public Builder mergePagination(cosmos.base.query.v1beta1.Pagination.PageResponse value) {
+        if (paginationBuilder_ == null) {
+          if (pagination_ != null) {
+            pagination_ =
+              cosmos.base.query.v1beta1.Pagination.PageResponse.newBuilder(pagination_).mergeFrom(value).buildPartial();
+          } else {
+            pagination_ = value;
+          }
+          onChanged();
+        } else {
+          paginationBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * pagination defines the pagination in the response. This field is only
+       * populated if the denoms field in the request is empty.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 99;</code>
+       */
+      public Builder clearPagination() {
+        if (paginationBuilder_ == null) {
+          pagination_ = null;
+          onChanged();
+        } else {
+          pagination_ = null;
+          paginationBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * pagination defines the pagination in the response. This field is only
+       * populated if the denoms field in the request is empty.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 99;</code>
+       */
+      public cosmos.base.query.v1beta1.Pagination.PageResponse.Builder getPaginationBuilder() {
+        
+        onChanged();
+        return getPaginationFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * pagination defines the pagination in the response. This field is only
+       * populated if the denoms field in the request is empty.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 99;</code>
+       */
+      public cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder() {
+        if (paginationBuilder_ != null) {
+          return paginationBuilder_.getMessageOrBuilder();
+        } else {
+          return pagination_ == null ?
+              cosmos.base.query.v1beta1.Pagination.PageResponse.getDefaultInstance() : pagination_;
+        }
+      }
+      /**
+       * <pre>
+       * pagination defines the pagination in the response. This field is only
+       * populated if the denoms field in the request is empty.
+       * </pre>
+       *
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 99;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.base.query.v1beta1.Pagination.PageResponse, cosmos.base.query.v1beta1.Pagination.PageResponse.Builder, cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder> 
+          getPaginationFieldBuilder() {
+        if (paginationBuilder_ == null) {
+          paginationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              cosmos.base.query.v1beta1.Pagination.PageResponse, cosmos.base.query.v1beta1.Pagination.PageResponse.Builder, cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder>(
+                  getPagination(),
+                  getParentForChildren(),
+                  isClean());
+          pagination_ = null;
+        }
+        return paginationBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.bank.v1beta1.QuerySendEnabledResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.bank.v1beta1.QuerySendEnabledResponse)
+    private static final cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse();
+    }
+
+    public static cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QuerySendEnabledResponse>
+        PARSER = new com.google.protobuf.AbstractParser<QuerySendEnabledResponse>() {
+      @java.lang.Override
+      public QuerySendEnabledResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new QuerySendEnabledResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<QuerySendEnabledResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QuerySendEnabledResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.bank.v1beta1.QueryOuterClass.QuerySendEnabledResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cosmos_bank_v1beta1_QueryBalanceRequest_descriptor;
   private static final 
@@ -13821,6 +19550,26 @@ public final class QueryOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cosmos_bank_v1beta1_QueryAllBalancesResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_bank_v1beta1_QuerySpendableBalancesRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_bank_v1beta1_QuerySpendableBalancesRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_bank_v1beta1_QuerySpendableBalancesResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_bank_v1beta1_QuerySpendableBalancesResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_bank_v1beta1_QuerySpendableBalanceByDenomRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_bank_v1beta1_QuerySpendableBalanceByDenomRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_bank_v1beta1_QuerySpendableBalanceByDenomResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_bank_v1beta1_QuerySpendableBalanceByDenomResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cosmos_bank_v1beta1_QueryTotalSupplyRequest_descriptor;
   private static final 
@@ -13886,6 +19635,16 @@ public final class QueryOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cosmos_bank_v1beta1_QueryDenomOwnersResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_bank_v1beta1_QuerySendEnabledRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_bank_v1beta1_QuerySendEnabledRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_bank_v1beta1_QuerySendEnabledResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_bank_v1beta1_QuerySendEnabledResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -13901,81 +19660,120 @@ public final class QueryOuterClass {
       "\032\034google/api/annotations.proto\032\036cosmos/b" +
       "ase/v1beta1/coin.proto\032\036cosmos/bank/v1be" +
       "ta1/bank.proto\032\031cosmos_proto/cosmos.prot" +
-      "o\"Y\n\023QueryBalanceRequest\022)\n\007address\030\001 \001(" +
-      "\tB\030\322\264-\024cosmos.AddressString\022\r\n\005denom\030\002 \001" +
-      "(\t:\010\350\240\037\000\210\240\037\000\"B\n\024QueryBalanceResponse\022*\n\007" +
-      "balance\030\001 \001(\0132\031.cosmos.base.v1beta1.Coin" +
-      "\"\212\001\n\027QueryAllBalancesRequest\022)\n\007address\030" +
-      "\001 \001(\tB\030\322\264-\024cosmos.AddressString\022:\n\npagin" +
+      "o\032\033cosmos/query/v1/query.proto\032\021amino/am" +
+      "ino.proto\"Y\n\023QueryBalanceRequest\022)\n\007addr" +
+      "ess\030\001 \001(\tB\030\322\264-\024cosmos.AddressString\022\r\n\005d" +
+      "enom\030\002 \001(\t:\010\350\240\037\000\210\240\037\000\"B\n\024QueryBalanceResp" +
+      "onse\022*\n\007balance\030\001 \001(\0132\031.cosmos.base.v1be" +
+      "ta1.Coin\"\241\001\n\027QueryAllBalancesRequest\022)\n\007" +
+      "address\030\001 \001(\tB\030\322\264-\024cosmos.AddressString\022" +
+      ":\n\npagination\030\002 \001(\0132&.cosmos.base.query." +
+      "v1beta1.PageRequest\022\025\n\rresolve_denom\030\003 \001" +
+      "(\010:\010\350\240\037\000\210\240\037\000\"\314\001\n\030QueryAllBalancesRespons" +
+      "e\022s\n\010balances\030\001 \003(\0132\031.cosmos.base.v1beta" +
+      "1.CoinBF\310\336\037\000\250\347\260*\001\232\347\260*\014legacy_coins\252\337\037(gi" +
+      "thub.com/cosmos/cosmos-sdk/types.Coins\022;" +
+      "\n\npagination\030\002 \001(\0132\'.cosmos.base.query.v" +
+      "1beta1.PageResponse\"\220\001\n\035QuerySpendableBa" +
+      "lancesRequest\022)\n\007address\030\001 \001(\tB\030\322\264-\024cosm" +
+      "os.AddressString\022:\n\npagination\030\002 \001(\0132&.c" +
+      "osmos.base.query.v1beta1.PageRequest:\010\350\240" +
+      "\037\000\210\240\037\000\"\322\001\n\036QuerySpendableBalancesRespons" +
+      "e\022s\n\010balances\030\001 \003(\0132\031.cosmos.base.v1beta" +
+      "1.CoinBF\310\336\037\000\250\347\260*\001\232\347\260*\014legacy_coins\252\337\037(gi" +
+      "thub.com/cosmos/cosmos-sdk/types.Coins\022;" +
+      "\n\npagination\030\002 \001(\0132\'.cosmos.base.query.v" +
+      "1beta1.PageResponse\"i\n#QuerySpendableBal" +
+      "anceByDenomRequest\022)\n\007address\030\001 \001(\tB\030\322\264-" +
+      "\024cosmos.AddressString\022\r\n\005denom\030\002 \001(\t:\010\350\240" +
+      "\037\000\210\240\037\000\"R\n$QuerySpendableBalanceByDenomRe" +
+      "sponse\022*\n\007balance\030\001 \001(\0132\031.cosmos.base.v1" +
+      "beta1.Coin\"_\n\027QueryTotalSupplyRequest\022:\n" +
+      "\npagination\030\001 \001(\0132&.cosmos.base.query.v1" +
+      "beta1.PageRequest:\010\350\240\037\000\210\240\037\000\"\312\001\n\030QueryTot" +
+      "alSupplyResponse\022q\n\006supply\030\001 \003(\0132\031.cosmo" +
+      "s.base.v1beta1.CoinBF\310\336\037\000\250\347\260*\001\232\347\260*\014legac" +
+      "y_coins\252\337\037(github.com/cosmos/cosmos-sdk/" +
+      "types.Coins\022;\n\npagination\030\002 \001(\0132\'.cosmos" +
+      ".base.query.v1beta1.PageResponse\"%\n\024Quer" +
+      "ySupplyOfRequest\022\r\n\005denom\030\001 \001(\t\"M\n\025Query" +
+      "SupplyOfResponse\0224\n\006amount\030\001 \001(\0132\031.cosmo" +
+      "s.base.v1beta1.CoinB\t\310\336\037\000\250\347\260*\001\"\024\n\022QueryP" +
+      "aramsRequest\"M\n\023QueryParamsResponse\0226\n\006p" +
+      "arams\030\001 \001(\0132\033.cosmos.bank.v1beta1.Params" +
+      "B\t\310\336\037\000\250\347\260*\001\"X\n\032QueryDenomsMetadataReques" +
+      "t\022:\n\npagination\030\001 \001(\0132&.cosmos.base.quer" +
+      "y.v1beta1.PageRequest\"\227\001\n\033QueryDenomsMet" +
+      "adataResponse\022;\n\tmetadatas\030\001 \003(\0132\035.cosmo" +
+      "s.bank.v1beta1.MetadataB\t\310\336\037\000\250\347\260*\001\022;\n\npa" +
+      "gination\030\002 \001(\0132\'.cosmos.base.query.v1bet" +
+      "a1.PageResponse\"*\n\031QueryDenomMetadataReq" +
+      "uest\022\r\n\005denom\030\001 \001(\t\"X\n\032QueryDenomMetadat" +
+      "aResponse\022:\n\010metadata\030\001 \001(\0132\035.cosmos.ban" +
+      "k.v1beta1.MetadataB\t\310\336\037\000\250\347\260*\001\"d\n\027QueryDe" +
+      "nomOwnersRequest\022\r\n\005denom\030\001 \001(\t\022:\n\npagin" +
       "ation\030\002 \001(\0132&.cosmos.base.query.v1beta1." +
-      "PageRequest:\010\350\240\037\000\210\240\037\000\"\266\001\n\030QueryAllBalanc" +
-      "esResponse\022]\n\010balances\030\001 \003(\0132\031.cosmos.ba" +
-      "se.v1beta1.CoinB0\310\336\037\000\252\337\037(github.com/cosm" +
-      "os/cosmos-sdk/types.Coins\022;\n\npagination\030" +
-      "\002 \001(\0132\'.cosmos.base.query.v1beta1.PageRe" +
-      "sponse\"_\n\027QueryTotalSupplyRequest\022:\n\npag" +
-      "ination\030\001 \001(\0132&.cosmos.base.query.v1beta" +
-      "1.PageRequest:\010\350\240\037\000\210\240\037\000\"\264\001\n\030QueryTotalSu" +
-      "pplyResponse\022[\n\006supply\030\001 \003(\0132\031.cosmos.ba" +
-      "se.v1beta1.CoinB0\310\336\037\000\252\337\037(github.com/cosm" +
-      "os/cosmos-sdk/types.Coins\022;\n\npagination\030" +
-      "\002 \001(\0132\'.cosmos.base.query.v1beta1.PageRe" +
-      "sponse\"%\n\024QuerySupplyOfRequest\022\r\n\005denom\030" +
-      "\001 \001(\t\"H\n\025QuerySupplyOfResponse\022/\n\006amount" +
-      "\030\001 \001(\0132\031.cosmos.base.v1beta1.CoinB\004\310\336\037\000\"" +
-      "\024\n\022QueryParamsRequest\"H\n\023QueryParamsResp" +
-      "onse\0221\n\006params\030\001 \001(\0132\033.cosmos.bank.v1bet" +
-      "a1.ParamsB\004\310\336\037\000\"X\n\032QueryDenomsMetadataRe" +
-      "quest\022:\n\npagination\030\001 \001(\0132&.cosmos.base." +
-      "query.v1beta1.PageRequest\"\222\001\n\033QueryDenom" +
-      "sMetadataResponse\0226\n\tmetadatas\030\001 \003(\0132\035.c" +
-      "osmos.bank.v1beta1.MetadataB\004\310\336\037\000\022;\n\npag" +
-      "ination\030\002 \001(\0132\'.cosmos.base.query.v1beta" +
-      "1.PageResponse\"*\n\031QueryDenomMetadataRequ" +
-      "est\022\r\n\005denom\030\001 \001(\t\"S\n\032QueryDenomMetadata" +
-      "Response\0225\n\010metadata\030\001 \001(\0132\035.cosmos.bank" +
-      ".v1beta1.MetadataB\004\310\336\037\000\"d\n\027QueryDenomOwn" +
-      "ersRequest\022\r\n\005denom\030\001 \001(\t\022:\n\npagination\030" +
-      "\002 \001(\0132&.cosmos.base.query.v1beta1.PageRe" +
-      "quest\"i\n\nDenomOwner\022)\n\007address\030\001 \001(\tB\030\322\264" +
-      "-\024cosmos.AddressString\0220\n\007balance\030\002 \001(\0132" +
-      "\031.cosmos.base.v1beta1.CoinB\004\310\336\037\000\"\216\001\n\030Que" +
-      "ryDenomOwnersResponse\0225\n\014denom_owners\030\001 " +
-      "\003(\0132\037.cosmos.bank.v1beta1.DenomOwner\022;\n\n" +
-      "pagination\030\002 \001(\0132\'.cosmos.base.query.v1b" +
-      "eta1.PageResponse2\323\t\n\005Query\022\230\001\n\007Balance\022" +
-      "(.cosmos.bank.v1beta1.QueryBalanceReques" +
-      "t\032).cosmos.bank.v1beta1.QueryBalanceResp" +
-      "onse\"8\202\323\344\223\0022\0220/cosmos/bank/v1beta1/balan" +
-      "ces/{address}/by_denom\022\233\001\n\013AllBalances\022," +
-      ".cosmos.bank.v1beta1.QueryAllBalancesReq" +
-      "uest\032-.cosmos.bank.v1beta1.QueryAllBalan" +
-      "cesResponse\"/\202\323\344\223\002)\022\'/cosmos/bank/v1beta" +
-      "1/balances/{address}\022\217\001\n\013TotalSupply\022,.c" +
-      "osmos.bank.v1beta1.QueryTotalSupplyReque" +
-      "st\032-.cosmos.bank.v1beta1.QueryTotalSuppl" +
-      "yResponse\"#\202\323\344\223\002\035\022\033/cosmos/bank/v1beta1/" +
-      "supply\022\216\001\n\010SupplyOf\022).cosmos.bank.v1beta" +
-      "1.QuerySupplyOfRequest\032*.cosmos.bank.v1b" +
-      "eta1.QuerySupplyOfResponse\"+\202\323\344\223\002%\022#/cos" +
-      "mos/bank/v1beta1/supply/{denom}\022\200\001\n\006Para" +
-      "ms\022\'.cosmos.bank.v1beta1.QueryParamsRequ" +
-      "est\032(.cosmos.bank.v1beta1.QueryParamsRes" +
-      "ponse\"#\202\323\344\223\002\035\022\033/cosmos/bank/v1beta1/para" +
-      "ms\022\246\001\n\rDenomMetadata\022..cosmos.bank.v1bet" +
-      "a1.QueryDenomMetadataRequest\032/.cosmos.ba" +
-      "nk.v1beta1.QueryDenomMetadataResponse\"4\202" +
-      "\323\344\223\002.\022,/cosmos/bank/v1beta1/denoms_metad" +
-      "ata/{denom}\022\241\001\n\016DenomsMetadata\022/.cosmos." +
-      "bank.v1beta1.QueryDenomsMetadataRequest\032" +
-      "0.cosmos.bank.v1beta1.QueryDenomsMetadat" +
-      "aResponse\",\202\323\344\223\002&\022$/cosmos/bank/v1beta1/" +
-      "denoms_metadata\022\235\001\n\013DenomOwners\022,.cosmos" +
-      ".bank.v1beta1.QueryDenomOwnersRequest\032-." +
-      "cosmos.bank.v1beta1.QueryDenomOwnersResp" +
-      "onse\"1\202\323\344\223\002+\022)/cosmos/bank/v1beta1/denom" +
-      "_owners/{denom}B+Z)github.com/cosmos/cos" +
-      "mos-sdk/x/bank/typesb\006proto3"
+      "PageRequest\"n\n\nDenomOwner\022)\n\007address\030\001 \001" +
+      "(\tB\030\322\264-\024cosmos.AddressString\0225\n\007balance\030" +
+      "\002 \001(\0132\031.cosmos.base.v1beta1.CoinB\t\310\336\037\000\250\347" +
+      "\260*\001\"\216\001\n\030QueryDenomOwnersResponse\0225\n\014deno" +
+      "m_owners\030\001 \003(\0132\037.cosmos.bank.v1beta1.Den" +
+      "omOwner\022;\n\npagination\030\002 \001(\0132\'.cosmos.bas" +
+      "e.query.v1beta1.PageResponse\"e\n\027QuerySen" +
+      "dEnabledRequest\022\016\n\006denoms\030\001 \003(\t\022:\n\npagin" +
+      "ation\030c \001(\0132&.cosmos.base.query.v1beta1." +
+      "PageRequest\"\217\001\n\030QuerySendEnabledResponse" +
+      "\0226\n\014send_enabled\030\001 \003(\0132 .cosmos.bank.v1b" +
+      "eta1.SendEnabled\022;\n\npagination\030c \001(\0132\'.c" +
+      "osmos.base.query.v1beta1.PageResponse2\262\016" +
+      "\n\005Query\022\235\001\n\007Balance\022(.cosmos.bank.v1beta" +
+      "1.QueryBalanceRequest\032).cosmos.bank.v1be" +
+      "ta1.QueryBalanceResponse\"=\210\347\260*\001\202\323\344\223\0022\0220/" +
+      "cosmos/bank/v1beta1/balances/{address}/b" +
+      "y_denom\022\240\001\n\013AllBalances\022,.cosmos.bank.v1" +
+      "beta1.QueryAllBalancesRequest\032-.cosmos.b" +
+      "ank.v1beta1.QueryAllBalancesResponse\"4\210\347" +
+      "\260*\001\202\323\344\223\002)\022\'/cosmos/bank/v1beta1/balances" +
+      "/{address}\022\274\001\n\021SpendableBalances\0222.cosmo" +
+      "s.bank.v1beta1.QuerySpendableBalancesReq" +
+      "uest\0323.cosmos.bank.v1beta1.QuerySpendabl" +
+      "eBalancesResponse\">\210\347\260*\001\202\323\344\223\0023\0221/cosmos/" +
+      "bank/v1beta1/spendable_balances/{address" +
+      "}\022\327\001\n\027SpendableBalanceByDenom\0228.cosmos.b" +
+      "ank.v1beta1.QuerySpendableBalanceByDenom" +
+      "Request\0329.cosmos.bank.v1beta1.QuerySpend" +
+      "ableBalanceByDenomResponse\"G\210\347\260*\001\202\323\344\223\002<\022" +
+      ":/cosmos/bank/v1beta1/spendable_balances" +
+      "/{address}/by_denom\022\224\001\n\013TotalSupply\022,.co" +
+      "smos.bank.v1beta1.QueryTotalSupplyReques" +
+      "t\032-.cosmos.bank.v1beta1.QueryTotalSupply" +
+      "Response\"(\210\347\260*\001\202\323\344\223\002\035\022\033/cosmos/bank/v1be" +
+      "ta1/supply\022\224\001\n\010SupplyOf\022).cosmos.bank.v1" +
+      "beta1.QuerySupplyOfRequest\032*.cosmos.bank" +
+      ".v1beta1.QuerySupplyOfResponse\"1\210\347\260*\001\202\323\344" +
+      "\223\002&\022$/cosmos/bank/v1beta1/supply/by_deno" +
+      "m\022\205\001\n\006Params\022\'.cosmos.bank.v1beta1.Query" +
+      "ParamsRequest\032(.cosmos.bank.v1beta1.Quer" +
+      "yParamsResponse\"(\210\347\260*\001\202\323\344\223\002\035\022\033/cosmos/ba" +
+      "nk/v1beta1/params\022\253\001\n\rDenomMetadata\022..co" +
+      "smos.bank.v1beta1.QueryDenomMetadataRequ" +
+      "est\032/.cosmos.bank.v1beta1.QueryDenomMeta" +
+      "dataResponse\"9\210\347\260*\001\202\323\344\223\002.\022,/cosmos/bank/" +
+      "v1beta1/denoms_metadata/{denom}\022\246\001\n\016Deno" +
+      "msMetadata\022/.cosmos.bank.v1beta1.QueryDe" +
+      "nomsMetadataRequest\0320.cosmos.bank.v1beta" +
+      "1.QueryDenomsMetadataResponse\"1\210\347\260*\001\202\323\344\223" +
+      "\002&\022$/cosmos/bank/v1beta1/denoms_metadata" +
+      "\022\242\001\n\013DenomOwners\022,.cosmos.bank.v1beta1.Q" +
+      "ueryDenomOwnersRequest\032-.cosmos.bank.v1b" +
+      "eta1.QueryDenomOwnersResponse\"6\210\347\260*\001\202\323\344\223" +
+      "\002+\022)/cosmos/bank/v1beta1/denom_owners/{d" +
+      "enom}\022\232\001\n\013SendEnabled\022,.cosmos.bank.v1be" +
+      "ta1.QuerySendEnabledRequest\032-.cosmos.ban" +
+      "k.v1beta1.QuerySendEnabledResponse\".\210\347\260*" +
+      "\001\202\323\344\223\002#\022!/cosmos/bank/v1beta1/send_enabl" +
+      "edB+Z)github.com/cosmos/cosmos-sdk/x/ban" +
+      "k/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -13986,6 +19784,8 @@ public final class QueryOuterClass {
           cosmos.base.v1beta1.CoinOuterClass.getDescriptor(),
           cosmos.bank.v1beta1.Bank.getDescriptor(),
           cosmos_proto.Cosmos.getDescriptor(),
+          cosmos.query.v1.Query.getDescriptor(),
+          amino.Amino.getDescriptor(),
         });
     internal_static_cosmos_bank_v1beta1_QueryBalanceRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -14004,93 +19804,132 @@ public final class QueryOuterClass {
     internal_static_cosmos_bank_v1beta1_QueryAllBalancesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_bank_v1beta1_QueryAllBalancesRequest_descriptor,
-        new java.lang.String[] { "Address", "Pagination", });
+        new java.lang.String[] { "Address", "Pagination", "ResolveDenom", });
     internal_static_cosmos_bank_v1beta1_QueryAllBalancesResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_cosmos_bank_v1beta1_QueryAllBalancesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_bank_v1beta1_QueryAllBalancesResponse_descriptor,
         new java.lang.String[] { "Balances", "Pagination", });
-    internal_static_cosmos_bank_v1beta1_QueryTotalSupplyRequest_descriptor =
+    internal_static_cosmos_bank_v1beta1_QuerySpendableBalancesRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
+    internal_static_cosmos_bank_v1beta1_QuerySpendableBalancesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_bank_v1beta1_QuerySpendableBalancesRequest_descriptor,
+        new java.lang.String[] { "Address", "Pagination", });
+    internal_static_cosmos_bank_v1beta1_QuerySpendableBalancesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_cosmos_bank_v1beta1_QuerySpendableBalancesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_bank_v1beta1_QuerySpendableBalancesResponse_descriptor,
+        new java.lang.String[] { "Balances", "Pagination", });
+    internal_static_cosmos_bank_v1beta1_QuerySpendableBalanceByDenomRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_cosmos_bank_v1beta1_QuerySpendableBalanceByDenomRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_bank_v1beta1_QuerySpendableBalanceByDenomRequest_descriptor,
+        new java.lang.String[] { "Address", "Denom", });
+    internal_static_cosmos_bank_v1beta1_QuerySpendableBalanceByDenomResponse_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_cosmos_bank_v1beta1_QuerySpendableBalanceByDenomResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_bank_v1beta1_QuerySpendableBalanceByDenomResponse_descriptor,
+        new java.lang.String[] { "Balance", });
+    internal_static_cosmos_bank_v1beta1_QueryTotalSupplyRequest_descriptor =
+      getDescriptor().getMessageTypes().get(8);
     internal_static_cosmos_bank_v1beta1_QueryTotalSupplyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_bank_v1beta1_QueryTotalSupplyRequest_descriptor,
         new java.lang.String[] { "Pagination", });
     internal_static_cosmos_bank_v1beta1_QueryTotalSupplyResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_cosmos_bank_v1beta1_QueryTotalSupplyResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_bank_v1beta1_QueryTotalSupplyResponse_descriptor,
         new java.lang.String[] { "Supply", "Pagination", });
     internal_static_cosmos_bank_v1beta1_QuerySupplyOfRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_cosmos_bank_v1beta1_QuerySupplyOfRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_bank_v1beta1_QuerySupplyOfRequest_descriptor,
         new java.lang.String[] { "Denom", });
     internal_static_cosmos_bank_v1beta1_QuerySupplyOfResponse_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_cosmos_bank_v1beta1_QuerySupplyOfResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_bank_v1beta1_QuerySupplyOfResponse_descriptor,
         new java.lang.String[] { "Amount", });
     internal_static_cosmos_bank_v1beta1_QueryParamsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_cosmos_bank_v1beta1_QueryParamsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_bank_v1beta1_QueryParamsRequest_descriptor,
         new java.lang.String[] { });
     internal_static_cosmos_bank_v1beta1_QueryParamsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_cosmos_bank_v1beta1_QueryParamsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_bank_v1beta1_QueryParamsResponse_descriptor,
         new java.lang.String[] { "Params", });
     internal_static_cosmos_bank_v1beta1_QueryDenomsMetadataRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_cosmos_bank_v1beta1_QueryDenomsMetadataRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_bank_v1beta1_QueryDenomsMetadataRequest_descriptor,
         new java.lang.String[] { "Pagination", });
     internal_static_cosmos_bank_v1beta1_QueryDenomsMetadataResponse_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_cosmos_bank_v1beta1_QueryDenomsMetadataResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_bank_v1beta1_QueryDenomsMetadataResponse_descriptor,
         new java.lang.String[] { "Metadatas", "Pagination", });
     internal_static_cosmos_bank_v1beta1_QueryDenomMetadataRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_cosmos_bank_v1beta1_QueryDenomMetadataRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_bank_v1beta1_QueryDenomMetadataRequest_descriptor,
         new java.lang.String[] { "Denom", });
     internal_static_cosmos_bank_v1beta1_QueryDenomMetadataResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_cosmos_bank_v1beta1_QueryDenomMetadataResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_bank_v1beta1_QueryDenomMetadataResponse_descriptor,
         new java.lang.String[] { "Metadata", });
     internal_static_cosmos_bank_v1beta1_QueryDenomOwnersRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_cosmos_bank_v1beta1_QueryDenomOwnersRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_bank_v1beta1_QueryDenomOwnersRequest_descriptor,
         new java.lang.String[] { "Denom", "Pagination", });
     internal_static_cosmos_bank_v1beta1_DenomOwner_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_cosmos_bank_v1beta1_DenomOwner_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_bank_v1beta1_DenomOwner_descriptor,
         new java.lang.String[] { "Address", "Balance", });
     internal_static_cosmos_bank_v1beta1_QueryDenomOwnersResponse_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_cosmos_bank_v1beta1_QueryDenomOwnersResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_bank_v1beta1_QueryDenomOwnersResponse_descriptor,
         new java.lang.String[] { "DenomOwners", "Pagination", });
+    internal_static_cosmos_bank_v1beta1_QuerySendEnabledRequest_descriptor =
+      getDescriptor().getMessageTypes().get(21);
+    internal_static_cosmos_bank_v1beta1_QuerySendEnabledRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_bank_v1beta1_QuerySendEnabledRequest_descriptor,
+        new java.lang.String[] { "Denoms", "Pagination", });
+    internal_static_cosmos_bank_v1beta1_QuerySendEnabledResponse_descriptor =
+      getDescriptor().getMessageTypes().get(22);
+    internal_static_cosmos_bank_v1beta1_QuerySendEnabledResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_bank_v1beta1_QuerySendEnabledResponse_descriptor,
+        new java.lang.String[] { "SendEnabled", "Pagination", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(amino.Amino.dontOmitempty);
+    registry.add(amino.Amino.encoding);
+    registry.add(cosmos.query.v1.Query.moduleQuerySafe);
     registry.add(cosmos_proto.Cosmos.scalar);
     registry.add(com.google.protobuf2.GoGoProtos.castrepeated);
     registry.add(com.google.protobuf2.GoGoProtos.equal);
@@ -14105,6 +19944,8 @@ public final class QueryOuterClass {
     cosmos.base.v1beta1.CoinOuterClass.getDescriptor();
     cosmos.bank.v1beta1.Bank.getDescriptor();
     cosmos_proto.Cosmos.getDescriptor();
+    cosmos.query.v1.Query.getDescriptor();
+    amino.Amino.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

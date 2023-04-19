@@ -61,6 +61,37 @@ public final class MsgGrpc {
     return getVerifyInvariantMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<cosmos.crisis.v1beta1.Tx.MsgUpdateParams,
+      cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse> getUpdateParamsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateParams",
+      requestType = cosmos.crisis.v1beta1.Tx.MsgUpdateParams.class,
+      responseType = cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.crisis.v1beta1.Tx.MsgUpdateParams,
+      cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse> getUpdateParamsMethod() {
+    io.grpc.MethodDescriptor<cosmos.crisis.v1beta1.Tx.MsgUpdateParams, cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse> getUpdateParamsMethod;
+    if ((getUpdateParamsMethod = MsgGrpc.getUpdateParamsMethod) == null) {
+      synchronized (MsgGrpc.class) {
+        if ((getUpdateParamsMethod = MsgGrpc.getUpdateParamsMethod) == null) {
+          MsgGrpc.getUpdateParamsMethod = getUpdateParamsMethod =
+              io.grpc.MethodDescriptor.<cosmos.crisis.v1beta1.Tx.MsgUpdateParams, cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateParams"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.crisis.v1beta1.Tx.MsgUpdateParams.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MsgMethodDescriptorSupplier("UpdateParams"))
+              .build();
+        }
+      }
+    }
+    return getUpdateParamsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -114,12 +145,24 @@ public final class MsgGrpc {
 
     /**
      * <pre>
-     * VerifyInvariant defines a method to verify a particular invariance.
+     * VerifyInvariant defines a method to verify a particular invariant.
      * </pre>
      */
     public void verifyInvariant(cosmos.crisis.v1beta1.Tx.MsgVerifyInvariant request,
         io.grpc.stub.StreamObserver<cosmos.crisis.v1beta1.Tx.MsgVerifyInvariantResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getVerifyInvariantMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * UpdateParams defines a governance operation for updating the x/crisis module
+     * parameters. The authority is defined in the keeper.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public void updateParams(cosmos.crisis.v1beta1.Tx.MsgUpdateParams request,
+        io.grpc.stub.StreamObserver<cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getUpdateParamsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -131,6 +174,13 @@ public final class MsgGrpc {
                 cosmos.crisis.v1beta1.Tx.MsgVerifyInvariant,
                 cosmos.crisis.v1beta1.Tx.MsgVerifyInvariantResponse>(
                   this, METHODID_VERIFY_INVARIANT)))
+          .addMethod(
+            getUpdateParamsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.crisis.v1beta1.Tx.MsgUpdateParams,
+                cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse>(
+                  this, METHODID_UPDATE_PARAMS)))
           .build();
     }
   }
@@ -154,13 +204,26 @@ public final class MsgGrpc {
 
     /**
      * <pre>
-     * VerifyInvariant defines a method to verify a particular invariance.
+     * VerifyInvariant defines a method to verify a particular invariant.
      * </pre>
      */
     public void verifyInvariant(cosmos.crisis.v1beta1.Tx.MsgVerifyInvariant request,
         io.grpc.stub.StreamObserver<cosmos.crisis.v1beta1.Tx.MsgVerifyInvariantResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getVerifyInvariantMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * UpdateParams defines a governance operation for updating the x/crisis module
+     * parameters. The authority is defined in the keeper.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public void updateParams(cosmos.crisis.v1beta1.Tx.MsgUpdateParams request,
+        io.grpc.stub.StreamObserver<cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getUpdateParamsMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -183,12 +246,24 @@ public final class MsgGrpc {
 
     /**
      * <pre>
-     * VerifyInvariant defines a method to verify a particular invariance.
+     * VerifyInvariant defines a method to verify a particular invariant.
      * </pre>
      */
     public cosmos.crisis.v1beta1.Tx.MsgVerifyInvariantResponse verifyInvariant(cosmos.crisis.v1beta1.Tx.MsgVerifyInvariant request) {
       return blockingUnaryCall(
           getChannel(), getVerifyInvariantMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * UpdateParams defines a governance operation for updating the x/crisis module
+     * parameters. The authority is defined in the keeper.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse updateParams(cosmos.crisis.v1beta1.Tx.MsgUpdateParams request) {
+      return blockingUnaryCall(
+          getChannel(), getUpdateParamsMethod(), getCallOptions(), request);
     }
   }
 
@@ -211,7 +286,7 @@ public final class MsgGrpc {
 
     /**
      * <pre>
-     * VerifyInvariant defines a method to verify a particular invariance.
+     * VerifyInvariant defines a method to verify a particular invariant.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<cosmos.crisis.v1beta1.Tx.MsgVerifyInvariantResponse> verifyInvariant(
@@ -219,9 +294,23 @@ public final class MsgGrpc {
       return futureUnaryCall(
           getChannel().newCall(getVerifyInvariantMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * UpdateParams defines a governance operation for updating the x/crisis module
+     * parameters. The authority is defined in the keeper.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse> updateParams(
+        cosmos.crisis.v1beta1.Tx.MsgUpdateParams request) {
+      return futureUnaryCall(
+          getChannel().newCall(getUpdateParamsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_VERIFY_INVARIANT = 0;
+  private static final int METHODID_UPDATE_PARAMS = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -243,6 +332,10 @@ public final class MsgGrpc {
         case METHODID_VERIFY_INVARIANT:
           serviceImpl.verifyInvariant((cosmos.crisis.v1beta1.Tx.MsgVerifyInvariant) request,
               (io.grpc.stub.StreamObserver<cosmos.crisis.v1beta1.Tx.MsgVerifyInvariantResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_PARAMS:
+          serviceImpl.updateParams((cosmos.crisis.v1beta1.Tx.MsgUpdateParams) request,
+              (io.grpc.stub.StreamObserver<cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -306,6 +399,7 @@ public final class MsgGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new MsgFileDescriptorSupplier())
               .addMethod(getVerifyInvariantMethod())
+              .addMethod(getUpdateParamsMethod())
               .build();
         }
       }

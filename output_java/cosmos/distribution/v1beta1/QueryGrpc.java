@@ -61,6 +61,37 @@ public final class QueryGrpc {
     return getParamsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest,
+      cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse> getValidatorDistributionInfoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ValidatorDistributionInfo",
+      requestType = cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest.class,
+      responseType = cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest,
+      cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse> getValidatorDistributionInfoMethod() {
+    io.grpc.MethodDescriptor<cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest, cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse> getValidatorDistributionInfoMethod;
+    if ((getValidatorDistributionInfoMethod = QueryGrpc.getValidatorDistributionInfoMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getValidatorDistributionInfoMethod = QueryGrpc.getValidatorDistributionInfoMethod) == null) {
+          QueryGrpc.getValidatorDistributionInfoMethod = getValidatorDistributionInfoMethod =
+              io.grpc.MethodDescriptor.<cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest, cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ValidatorDistributionInfo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("ValidatorDistributionInfo"))
+              .build();
+        }
+      }
+    }
+    return getValidatorDistributionInfoMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorOutstandingRewardsRequest,
       cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorOutstandingRewardsResponse> getValidatorOutstandingRewardsMethod;
 
@@ -372,6 +403,16 @@ public final class QueryGrpc {
 
     /**
      * <pre>
+     * ValidatorDistributionInfo queries validator commission and self-delegation rewards for validator
+     * </pre>
+     */
+    public void validatorDistributionInfo(cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest request,
+        io.grpc.stub.StreamObserver<cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getValidatorDistributionInfoMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * ValidatorOutstandingRewards queries rewards of a validator address.
      * </pre>
      */
@@ -412,7 +453,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * DelegationTotalRewards queries the total rewards accrued by a each
+     * DelegationTotalRewards queries the total rewards accrued by each
      * validator.
      * </pre>
      */
@@ -460,6 +501,13 @@ public final class QueryGrpc {
                 cosmos.distribution.v1beta1.QueryOuterClass.QueryParamsRequest,
                 cosmos.distribution.v1beta1.QueryOuterClass.QueryParamsResponse>(
                   this, METHODID_PARAMS)))
+          .addMethod(
+            getValidatorDistributionInfoMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest,
+                cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse>(
+                  this, METHODID_VALIDATOR_DISTRIBUTION_INFO)))
           .addMethod(
             getValidatorOutstandingRewardsMethod(),
             asyncUnaryCall(
@@ -550,6 +598,17 @@ public final class QueryGrpc {
 
     /**
      * <pre>
+     * ValidatorDistributionInfo queries validator commission and self-delegation rewards for validator
+     * </pre>
+     */
+    public void validatorDistributionInfo(cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest request,
+        io.grpc.stub.StreamObserver<cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getValidatorDistributionInfoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * ValidatorOutstandingRewards queries rewards of a validator address.
      * </pre>
      */
@@ -594,7 +653,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * DelegationTotalRewards queries the total rewards accrued by a each
+     * DelegationTotalRewards queries the total rewards accrued by each
      * validator.
      * </pre>
      */
@@ -667,6 +726,16 @@ public final class QueryGrpc {
 
     /**
      * <pre>
+     * ValidatorDistributionInfo queries validator commission and self-delegation rewards for validator
+     * </pre>
+     */
+    public cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse validatorDistributionInfo(cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getValidatorDistributionInfoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * ValidatorOutstandingRewards queries rewards of a validator address.
      * </pre>
      */
@@ -707,7 +776,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * DelegationTotalRewards queries the total rewards accrued by a each
+     * DelegationTotalRewards queries the total rewards accrued by each
      * validator.
      * </pre>
      */
@@ -777,6 +846,17 @@ public final class QueryGrpc {
 
     /**
      * <pre>
+     * ValidatorDistributionInfo queries validator commission and self-delegation rewards for validator
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse> validatorDistributionInfo(
+        cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getValidatorDistributionInfoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * ValidatorOutstandingRewards queries rewards of a validator address.
      * </pre>
      */
@@ -821,7 +901,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * DelegationTotalRewards queries the total rewards accrued by a each
+     * DelegationTotalRewards queries the total rewards accrued by each
      * validator.
      * </pre>
      */
@@ -866,14 +946,15 @@ public final class QueryGrpc {
   }
 
   private static final int METHODID_PARAMS = 0;
-  private static final int METHODID_VALIDATOR_OUTSTANDING_REWARDS = 1;
-  private static final int METHODID_VALIDATOR_COMMISSION = 2;
-  private static final int METHODID_VALIDATOR_SLASHES = 3;
-  private static final int METHODID_DELEGATION_REWARDS = 4;
-  private static final int METHODID_DELEGATION_TOTAL_REWARDS = 5;
-  private static final int METHODID_DELEGATOR_VALIDATORS = 6;
-  private static final int METHODID_DELEGATOR_WITHDRAW_ADDRESS = 7;
-  private static final int METHODID_COMMUNITY_POOL = 8;
+  private static final int METHODID_VALIDATOR_DISTRIBUTION_INFO = 1;
+  private static final int METHODID_VALIDATOR_OUTSTANDING_REWARDS = 2;
+  private static final int METHODID_VALIDATOR_COMMISSION = 3;
+  private static final int METHODID_VALIDATOR_SLASHES = 4;
+  private static final int METHODID_DELEGATION_REWARDS = 5;
+  private static final int METHODID_DELEGATION_TOTAL_REWARDS = 6;
+  private static final int METHODID_DELEGATOR_VALIDATORS = 7;
+  private static final int METHODID_DELEGATOR_WITHDRAW_ADDRESS = 8;
+  private static final int METHODID_COMMUNITY_POOL = 9;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -895,6 +976,10 @@ public final class QueryGrpc {
         case METHODID_PARAMS:
           serviceImpl.params((cosmos.distribution.v1beta1.QueryOuterClass.QueryParamsRequest) request,
               (io.grpc.stub.StreamObserver<cosmos.distribution.v1beta1.QueryOuterClass.QueryParamsResponse>) responseObserver);
+          break;
+        case METHODID_VALIDATOR_DISTRIBUTION_INFO:
+          serviceImpl.validatorDistributionInfo((cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest) request,
+              (io.grpc.stub.StreamObserver<cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse>) responseObserver);
           break;
         case METHODID_VALIDATOR_OUTSTANDING_REWARDS:
           serviceImpl.validatorOutstandingRewards((cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorOutstandingRewardsRequest) request,
@@ -990,6 +1075,7 @@ public final class QueryGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new QueryFileDescriptorSupplier())
               .addMethod(getParamsMethod())
+              .addMethod(getValidatorDistributionInfoMethod())
               .addMethod(getValidatorOutstandingRewardsMethod())
               .addMethod(getValidatorCommissionMethod())
               .addMethod(getValidatorSlashesMethod())

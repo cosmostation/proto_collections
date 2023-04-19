@@ -518,6 +518,8 @@ public final class QueryGrpc {
     /**
      * <pre>
      * Validators queries all validators that match the given status.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void validators(cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorsRequest request,
@@ -538,6 +540,8 @@ public final class QueryGrpc {
     /**
      * <pre>
      * ValidatorDelegations queries delegate info for given validator.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void validatorDelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorDelegationsRequest request,
@@ -548,6 +552,8 @@ public final class QueryGrpc {
     /**
      * <pre>
      * ValidatorUnbondingDelegations queries unbonding delegations of a validator.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void validatorUnbondingDelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorUnbondingDelegationsRequest request,
@@ -579,6 +585,8 @@ public final class QueryGrpc {
     /**
      * <pre>
      * DelegatorDelegations queries all delegations of a given delegator address.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void delegatorDelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorDelegationsRequest request,
@@ -590,6 +598,8 @@ public final class QueryGrpc {
      * <pre>
      * DelegatorUnbondingDelegations queries all unbonding delegations of a given
      * delegator address.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void delegatorUnbondingDelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorUnbondingDelegationsRequest request,
@@ -600,6 +610,8 @@ public final class QueryGrpc {
     /**
      * <pre>
      * Redelegations queries redelegations of given address.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void redelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryRedelegationsRequest request,
@@ -611,6 +623,8 @@ public final class QueryGrpc {
      * <pre>
      * DelegatorValidators queries all validators info for given delegator
      * address.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void delegatorValidators(cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorValidatorsRequest request,
@@ -783,6 +797,8 @@ public final class QueryGrpc {
     /**
      * <pre>
      * Validators queries all validators that match the given status.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void validators(cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorsRequest request,
@@ -805,6 +821,8 @@ public final class QueryGrpc {
     /**
      * <pre>
      * ValidatorDelegations queries delegate info for given validator.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void validatorDelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorDelegationsRequest request,
@@ -816,6 +834,8 @@ public final class QueryGrpc {
     /**
      * <pre>
      * ValidatorUnbondingDelegations queries unbonding delegations of a validator.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void validatorUnbondingDelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorUnbondingDelegationsRequest request,
@@ -850,6 +870,8 @@ public final class QueryGrpc {
     /**
      * <pre>
      * DelegatorDelegations queries all delegations of a given delegator address.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void delegatorDelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorDelegationsRequest request,
@@ -862,6 +884,8 @@ public final class QueryGrpc {
      * <pre>
      * DelegatorUnbondingDelegations queries all unbonding delegations of a given
      * delegator address.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void delegatorUnbondingDelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorUnbondingDelegationsRequest request,
@@ -873,6 +897,8 @@ public final class QueryGrpc {
     /**
      * <pre>
      * Redelegations queries redelegations of given address.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void redelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryRedelegationsRequest request,
@@ -885,6 +911,8 @@ public final class QueryGrpc {
      * <pre>
      * DelegatorValidators queries all validators info for given delegator
      * address.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void delegatorValidators(cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorValidatorsRequest request,
@@ -959,6 +987,8 @@ public final class QueryGrpc {
     /**
      * <pre>
      * Validators queries all validators that match the given status.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorsResponse validators(cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorsRequest request) {
@@ -979,6 +1009,8 @@ public final class QueryGrpc {
     /**
      * <pre>
      * ValidatorDelegations queries delegate info for given validator.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorDelegationsResponse validatorDelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorDelegationsRequest request) {
@@ -989,6 +1021,8 @@ public final class QueryGrpc {
     /**
      * <pre>
      * ValidatorUnbondingDelegations queries unbonding delegations of a validator.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorUnbondingDelegationsResponse validatorUnbondingDelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorUnbondingDelegationsRequest request) {
@@ -1020,6 +1054,8 @@ public final class QueryGrpc {
     /**
      * <pre>
      * DelegatorDelegations queries all delegations of a given delegator address.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorDelegationsResponse delegatorDelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorDelegationsRequest request) {
@@ -1031,6 +1067,8 @@ public final class QueryGrpc {
      * <pre>
      * DelegatorUnbondingDelegations queries all unbonding delegations of a given
      * delegator address.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorUnbondingDelegationsResponse delegatorUnbondingDelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorUnbondingDelegationsRequest request) {
@@ -1041,6 +1079,8 @@ public final class QueryGrpc {
     /**
      * <pre>
      * Redelegations queries redelegations of given address.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public cosmos.staking.v1beta1.QueryOuterClass.QueryRedelegationsResponse redelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryRedelegationsRequest request) {
@@ -1052,6 +1092,8 @@ public final class QueryGrpc {
      * <pre>
      * DelegatorValidators queries all validators info for given delegator
      * address.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorValidatorsResponse delegatorValidators(cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorValidatorsRequest request) {
@@ -1121,6 +1163,8 @@ public final class QueryGrpc {
     /**
      * <pre>
      * Validators queries all validators that match the given status.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorsResponse> validators(
@@ -1143,6 +1187,8 @@ public final class QueryGrpc {
     /**
      * <pre>
      * ValidatorDelegations queries delegate info for given validator.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorDelegationsResponse> validatorDelegations(
@@ -1154,6 +1200,8 @@ public final class QueryGrpc {
     /**
      * <pre>
      * ValidatorUnbondingDelegations queries unbonding delegations of a validator.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorUnbondingDelegationsResponse> validatorUnbondingDelegations(
@@ -1188,6 +1236,8 @@ public final class QueryGrpc {
     /**
      * <pre>
      * DelegatorDelegations queries all delegations of a given delegator address.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorDelegationsResponse> delegatorDelegations(
@@ -1200,6 +1250,8 @@ public final class QueryGrpc {
      * <pre>
      * DelegatorUnbondingDelegations queries all unbonding delegations of a given
      * delegator address.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorUnbondingDelegationsResponse> delegatorUnbondingDelegations(
@@ -1211,6 +1263,8 @@ public final class QueryGrpc {
     /**
      * <pre>
      * Redelegations queries redelegations of given address.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<cosmos.staking.v1beta1.QueryOuterClass.QueryRedelegationsResponse> redelegations(
@@ -1223,6 +1277,8 @@ public final class QueryGrpc {
      * <pre>
      * DelegatorValidators queries all validators info for given delegator
      * address.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorValidatorsResponse> delegatorValidators(

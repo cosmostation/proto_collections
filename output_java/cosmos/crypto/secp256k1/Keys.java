@@ -1042,14 +1042,18 @@ public final class Keys {
   static {
     java.lang.String[] descriptorData = {
       "\n\"cosmos/crypto/secp256k1/keys.proto\022\027co" +
-      "smos.crypto.secp256k1\032\024gogoproto/gogo.pr" +
-      "oto\"\033\n\006PubKey\022\013\n\003key\030\001 \001(\014:\004\230\240\037\000\"\026\n\007Priv" +
-      "Key\022\013\n\003key\030\001 \001(\014B4Z2github.com/cosmos/co" +
-      "smos-sdk/crypto/keys/secp256k1b\006proto3"
+      "smos.crypto.secp256k1\032\021amino/amino.proto" +
+      "\032\024gogoproto/gogo.proto\"H\n\006PubKey\022\013\n\003key\030" +
+      "\001 \001(\014:1\212\347\260*\032tendermint/PubKeySecp256k1\222\347" +
+      "\260*\tkey_field\230\240\037\000\"F\n\007PrivKey\022\013\n\003key\030\001 \001(\014" +
+      ":.\212\347\260*\033tendermint/PrivKeySecp256k1\222\347\260*\tk" +
+      "ey_fieldB4Z2github.com/cosmos/cosmos-sdk" +
+      "/crypto/keys/secp256k1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          amino.Amino.getDescriptor(),
           com.google.protobuf2.GoGoProtos.getDescriptor(),
         });
     internal_static_cosmos_crypto_secp256k1_PubKey_descriptor =
@@ -1066,9 +1070,12 @@ public final class Keys {
         new java.lang.String[] { "Key", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(amino.Amino.messageEncoding);
+    registry.add(amino.Amino.name);
     registry.add(com.google.protobuf2.GoGoProtos.goprotoStringer);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
+    amino.Amino.getDescriptor();
     com.google.protobuf2.GoGoProtos.getDescriptor();
   }
 

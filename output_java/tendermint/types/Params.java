@@ -19,62 +19,62 @@ public final class Params {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.tendermint.types.BlockParams block = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.tendermint.types.BlockParams block = 1;</code>
      * @return Whether the block field is set.
      */
     boolean hasBlock();
     /**
-     * <code>.tendermint.types.BlockParams block = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.tendermint.types.BlockParams block = 1;</code>
      * @return The block.
      */
     tendermint.types.Params.BlockParams getBlock();
     /**
-     * <code>.tendermint.types.BlockParams block = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.tendermint.types.BlockParams block = 1;</code>
      */
     tendermint.types.Params.BlockParamsOrBuilder getBlockOrBuilder();
 
     /**
-     * <code>.tendermint.types.EvidenceParams evidence = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.tendermint.types.EvidenceParams evidence = 2;</code>
      * @return Whether the evidence field is set.
      */
     boolean hasEvidence();
     /**
-     * <code>.tendermint.types.EvidenceParams evidence = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.tendermint.types.EvidenceParams evidence = 2;</code>
      * @return The evidence.
      */
     tendermint.types.Params.EvidenceParams getEvidence();
     /**
-     * <code>.tendermint.types.EvidenceParams evidence = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.tendermint.types.EvidenceParams evidence = 2;</code>
      */
     tendermint.types.Params.EvidenceParamsOrBuilder getEvidenceOrBuilder();
 
     /**
-     * <code>.tendermint.types.ValidatorParams validator = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>.tendermint.types.ValidatorParams validator = 3;</code>
      * @return Whether the validator field is set.
      */
     boolean hasValidator();
     /**
-     * <code>.tendermint.types.ValidatorParams validator = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>.tendermint.types.ValidatorParams validator = 3;</code>
      * @return The validator.
      */
     tendermint.types.Params.ValidatorParams getValidator();
     /**
-     * <code>.tendermint.types.ValidatorParams validator = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>.tendermint.types.ValidatorParams validator = 3;</code>
      */
     tendermint.types.Params.ValidatorParamsOrBuilder getValidatorOrBuilder();
 
     /**
-     * <code>.tendermint.types.VersionParams version = 4 [(.gogoproto.nullable) = false];</code>
+     * <code>.tendermint.types.VersionParams version = 4;</code>
      * @return Whether the version field is set.
      */
     boolean hasVersion();
     /**
-     * <code>.tendermint.types.VersionParams version = 4 [(.gogoproto.nullable) = false];</code>
+     * <code>.tendermint.types.VersionParams version = 4;</code>
      * @return The version.
      */
     tendermint.types.Params.VersionParams getVersion();
     /**
-     * <code>.tendermint.types.VersionParams version = 4 [(.gogoproto.nullable) = false];</code>
+     * <code>.tendermint.types.VersionParams version = 4;</code>
      */
     tendermint.types.Params.VersionParamsOrBuilder getVersionOrBuilder();
   }
@@ -215,7 +215,7 @@ public final class Params {
     public static final int BLOCK_FIELD_NUMBER = 1;
     private tendermint.types.Params.BlockParams block_;
     /**
-     * <code>.tendermint.types.BlockParams block = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.tendermint.types.BlockParams block = 1;</code>
      * @return Whether the block field is set.
      */
     @java.lang.Override
@@ -223,7 +223,7 @@ public final class Params {
       return block_ != null;
     }
     /**
-     * <code>.tendermint.types.BlockParams block = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.tendermint.types.BlockParams block = 1;</code>
      * @return The block.
      */
     @java.lang.Override
@@ -231,7 +231,7 @@ public final class Params {
       return block_ == null ? tendermint.types.Params.BlockParams.getDefaultInstance() : block_;
     }
     /**
-     * <code>.tendermint.types.BlockParams block = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.tendermint.types.BlockParams block = 1;</code>
      */
     @java.lang.Override
     public tendermint.types.Params.BlockParamsOrBuilder getBlockOrBuilder() {
@@ -241,7 +241,7 @@ public final class Params {
     public static final int EVIDENCE_FIELD_NUMBER = 2;
     private tendermint.types.Params.EvidenceParams evidence_;
     /**
-     * <code>.tendermint.types.EvidenceParams evidence = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.tendermint.types.EvidenceParams evidence = 2;</code>
      * @return Whether the evidence field is set.
      */
     @java.lang.Override
@@ -249,7 +249,7 @@ public final class Params {
       return evidence_ != null;
     }
     /**
-     * <code>.tendermint.types.EvidenceParams evidence = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.tendermint.types.EvidenceParams evidence = 2;</code>
      * @return The evidence.
      */
     @java.lang.Override
@@ -257,7 +257,7 @@ public final class Params {
       return evidence_ == null ? tendermint.types.Params.EvidenceParams.getDefaultInstance() : evidence_;
     }
     /**
-     * <code>.tendermint.types.EvidenceParams evidence = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.tendermint.types.EvidenceParams evidence = 2;</code>
      */
     @java.lang.Override
     public tendermint.types.Params.EvidenceParamsOrBuilder getEvidenceOrBuilder() {
@@ -267,7 +267,7 @@ public final class Params {
     public static final int VALIDATOR_FIELD_NUMBER = 3;
     private tendermint.types.Params.ValidatorParams validator_;
     /**
-     * <code>.tendermint.types.ValidatorParams validator = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>.tendermint.types.ValidatorParams validator = 3;</code>
      * @return Whether the validator field is set.
      */
     @java.lang.Override
@@ -275,7 +275,7 @@ public final class Params {
       return validator_ != null;
     }
     /**
-     * <code>.tendermint.types.ValidatorParams validator = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>.tendermint.types.ValidatorParams validator = 3;</code>
      * @return The validator.
      */
     @java.lang.Override
@@ -283,7 +283,7 @@ public final class Params {
       return validator_ == null ? tendermint.types.Params.ValidatorParams.getDefaultInstance() : validator_;
     }
     /**
-     * <code>.tendermint.types.ValidatorParams validator = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>.tendermint.types.ValidatorParams validator = 3;</code>
      */
     @java.lang.Override
     public tendermint.types.Params.ValidatorParamsOrBuilder getValidatorOrBuilder() {
@@ -293,7 +293,7 @@ public final class Params {
     public static final int VERSION_FIELD_NUMBER = 4;
     private tendermint.types.Params.VersionParams version_;
     /**
-     * <code>.tendermint.types.VersionParams version = 4 [(.gogoproto.nullable) = false];</code>
+     * <code>.tendermint.types.VersionParams version = 4;</code>
      * @return Whether the version field is set.
      */
     @java.lang.Override
@@ -301,7 +301,7 @@ public final class Params {
       return version_ != null;
     }
     /**
-     * <code>.tendermint.types.VersionParams version = 4 [(.gogoproto.nullable) = false];</code>
+     * <code>.tendermint.types.VersionParams version = 4;</code>
      * @return The version.
      */
     @java.lang.Override
@@ -309,7 +309,7 @@ public final class Params {
       return version_ == null ? tendermint.types.Params.VersionParams.getDefaultInstance() : version_;
     }
     /**
-     * <code>.tendermint.types.VersionParams version = 4 [(.gogoproto.nullable) = false];</code>
+     * <code>.tendermint.types.VersionParams version = 4;</code>
      */
     @java.lang.Override
     public tendermint.types.Params.VersionParamsOrBuilder getVersionOrBuilder() {
@@ -730,14 +730,14 @@ public final class Params {
       private com.google.protobuf.SingleFieldBuilderV3<
           tendermint.types.Params.BlockParams, tendermint.types.Params.BlockParams.Builder, tendermint.types.Params.BlockParamsOrBuilder> blockBuilder_;
       /**
-       * <code>.tendermint.types.BlockParams block = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.BlockParams block = 1;</code>
        * @return Whether the block field is set.
        */
       public boolean hasBlock() {
         return blockBuilder_ != null || block_ != null;
       }
       /**
-       * <code>.tendermint.types.BlockParams block = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.BlockParams block = 1;</code>
        * @return The block.
        */
       public tendermint.types.Params.BlockParams getBlock() {
@@ -748,7 +748,7 @@ public final class Params {
         }
       }
       /**
-       * <code>.tendermint.types.BlockParams block = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.BlockParams block = 1;</code>
        */
       public Builder setBlock(tendermint.types.Params.BlockParams value) {
         if (blockBuilder_ == null) {
@@ -764,7 +764,7 @@ public final class Params {
         return this;
       }
       /**
-       * <code>.tendermint.types.BlockParams block = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.BlockParams block = 1;</code>
        */
       public Builder setBlock(
           tendermint.types.Params.BlockParams.Builder builderForValue) {
@@ -778,7 +778,7 @@ public final class Params {
         return this;
       }
       /**
-       * <code>.tendermint.types.BlockParams block = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.BlockParams block = 1;</code>
        */
       public Builder mergeBlock(tendermint.types.Params.BlockParams value) {
         if (blockBuilder_ == null) {
@@ -796,7 +796,7 @@ public final class Params {
         return this;
       }
       /**
-       * <code>.tendermint.types.BlockParams block = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.BlockParams block = 1;</code>
        */
       public Builder clearBlock() {
         if (blockBuilder_ == null) {
@@ -810,7 +810,7 @@ public final class Params {
         return this;
       }
       /**
-       * <code>.tendermint.types.BlockParams block = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.BlockParams block = 1;</code>
        */
       public tendermint.types.Params.BlockParams.Builder getBlockBuilder() {
         
@@ -818,7 +818,7 @@ public final class Params {
         return getBlockFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tendermint.types.BlockParams block = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.BlockParams block = 1;</code>
        */
       public tendermint.types.Params.BlockParamsOrBuilder getBlockOrBuilder() {
         if (blockBuilder_ != null) {
@@ -829,7 +829,7 @@ public final class Params {
         }
       }
       /**
-       * <code>.tendermint.types.BlockParams block = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.BlockParams block = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           tendermint.types.Params.BlockParams, tendermint.types.Params.BlockParams.Builder, tendermint.types.Params.BlockParamsOrBuilder> 
@@ -849,14 +849,14 @@ public final class Params {
       private com.google.protobuf.SingleFieldBuilderV3<
           tendermint.types.Params.EvidenceParams, tendermint.types.Params.EvidenceParams.Builder, tendermint.types.Params.EvidenceParamsOrBuilder> evidenceBuilder_;
       /**
-       * <code>.tendermint.types.EvidenceParams evidence = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.EvidenceParams evidence = 2;</code>
        * @return Whether the evidence field is set.
        */
       public boolean hasEvidence() {
         return evidenceBuilder_ != null || evidence_ != null;
       }
       /**
-       * <code>.tendermint.types.EvidenceParams evidence = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.EvidenceParams evidence = 2;</code>
        * @return The evidence.
        */
       public tendermint.types.Params.EvidenceParams getEvidence() {
@@ -867,7 +867,7 @@ public final class Params {
         }
       }
       /**
-       * <code>.tendermint.types.EvidenceParams evidence = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.EvidenceParams evidence = 2;</code>
        */
       public Builder setEvidence(tendermint.types.Params.EvidenceParams value) {
         if (evidenceBuilder_ == null) {
@@ -883,7 +883,7 @@ public final class Params {
         return this;
       }
       /**
-       * <code>.tendermint.types.EvidenceParams evidence = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.EvidenceParams evidence = 2;</code>
        */
       public Builder setEvidence(
           tendermint.types.Params.EvidenceParams.Builder builderForValue) {
@@ -897,7 +897,7 @@ public final class Params {
         return this;
       }
       /**
-       * <code>.tendermint.types.EvidenceParams evidence = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.EvidenceParams evidence = 2;</code>
        */
       public Builder mergeEvidence(tendermint.types.Params.EvidenceParams value) {
         if (evidenceBuilder_ == null) {
@@ -915,7 +915,7 @@ public final class Params {
         return this;
       }
       /**
-       * <code>.tendermint.types.EvidenceParams evidence = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.EvidenceParams evidence = 2;</code>
        */
       public Builder clearEvidence() {
         if (evidenceBuilder_ == null) {
@@ -929,7 +929,7 @@ public final class Params {
         return this;
       }
       /**
-       * <code>.tendermint.types.EvidenceParams evidence = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.EvidenceParams evidence = 2;</code>
        */
       public tendermint.types.Params.EvidenceParams.Builder getEvidenceBuilder() {
         
@@ -937,7 +937,7 @@ public final class Params {
         return getEvidenceFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tendermint.types.EvidenceParams evidence = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.EvidenceParams evidence = 2;</code>
        */
       public tendermint.types.Params.EvidenceParamsOrBuilder getEvidenceOrBuilder() {
         if (evidenceBuilder_ != null) {
@@ -948,7 +948,7 @@ public final class Params {
         }
       }
       /**
-       * <code>.tendermint.types.EvidenceParams evidence = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.EvidenceParams evidence = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           tendermint.types.Params.EvidenceParams, tendermint.types.Params.EvidenceParams.Builder, tendermint.types.Params.EvidenceParamsOrBuilder> 
@@ -968,14 +968,14 @@ public final class Params {
       private com.google.protobuf.SingleFieldBuilderV3<
           tendermint.types.Params.ValidatorParams, tendermint.types.Params.ValidatorParams.Builder, tendermint.types.Params.ValidatorParamsOrBuilder> validatorBuilder_;
       /**
-       * <code>.tendermint.types.ValidatorParams validator = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.ValidatorParams validator = 3;</code>
        * @return Whether the validator field is set.
        */
       public boolean hasValidator() {
         return validatorBuilder_ != null || validator_ != null;
       }
       /**
-       * <code>.tendermint.types.ValidatorParams validator = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.ValidatorParams validator = 3;</code>
        * @return The validator.
        */
       public tendermint.types.Params.ValidatorParams getValidator() {
@@ -986,7 +986,7 @@ public final class Params {
         }
       }
       /**
-       * <code>.tendermint.types.ValidatorParams validator = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.ValidatorParams validator = 3;</code>
        */
       public Builder setValidator(tendermint.types.Params.ValidatorParams value) {
         if (validatorBuilder_ == null) {
@@ -1002,7 +1002,7 @@ public final class Params {
         return this;
       }
       /**
-       * <code>.tendermint.types.ValidatorParams validator = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.ValidatorParams validator = 3;</code>
        */
       public Builder setValidator(
           tendermint.types.Params.ValidatorParams.Builder builderForValue) {
@@ -1016,7 +1016,7 @@ public final class Params {
         return this;
       }
       /**
-       * <code>.tendermint.types.ValidatorParams validator = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.ValidatorParams validator = 3;</code>
        */
       public Builder mergeValidator(tendermint.types.Params.ValidatorParams value) {
         if (validatorBuilder_ == null) {
@@ -1034,7 +1034,7 @@ public final class Params {
         return this;
       }
       /**
-       * <code>.tendermint.types.ValidatorParams validator = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.ValidatorParams validator = 3;</code>
        */
       public Builder clearValidator() {
         if (validatorBuilder_ == null) {
@@ -1048,7 +1048,7 @@ public final class Params {
         return this;
       }
       /**
-       * <code>.tendermint.types.ValidatorParams validator = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.ValidatorParams validator = 3;</code>
        */
       public tendermint.types.Params.ValidatorParams.Builder getValidatorBuilder() {
         
@@ -1056,7 +1056,7 @@ public final class Params {
         return getValidatorFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tendermint.types.ValidatorParams validator = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.ValidatorParams validator = 3;</code>
        */
       public tendermint.types.Params.ValidatorParamsOrBuilder getValidatorOrBuilder() {
         if (validatorBuilder_ != null) {
@@ -1067,7 +1067,7 @@ public final class Params {
         }
       }
       /**
-       * <code>.tendermint.types.ValidatorParams validator = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.ValidatorParams validator = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           tendermint.types.Params.ValidatorParams, tendermint.types.Params.ValidatorParams.Builder, tendermint.types.Params.ValidatorParamsOrBuilder> 
@@ -1087,14 +1087,14 @@ public final class Params {
       private com.google.protobuf.SingleFieldBuilderV3<
           tendermint.types.Params.VersionParams, tendermint.types.Params.VersionParams.Builder, tendermint.types.Params.VersionParamsOrBuilder> versionBuilder_;
       /**
-       * <code>.tendermint.types.VersionParams version = 4 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.VersionParams version = 4;</code>
        * @return Whether the version field is set.
        */
       public boolean hasVersion() {
         return versionBuilder_ != null || version_ != null;
       }
       /**
-       * <code>.tendermint.types.VersionParams version = 4 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.VersionParams version = 4;</code>
        * @return The version.
        */
       public tendermint.types.Params.VersionParams getVersion() {
@@ -1105,7 +1105,7 @@ public final class Params {
         }
       }
       /**
-       * <code>.tendermint.types.VersionParams version = 4 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.VersionParams version = 4;</code>
        */
       public Builder setVersion(tendermint.types.Params.VersionParams value) {
         if (versionBuilder_ == null) {
@@ -1121,7 +1121,7 @@ public final class Params {
         return this;
       }
       /**
-       * <code>.tendermint.types.VersionParams version = 4 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.VersionParams version = 4;</code>
        */
       public Builder setVersion(
           tendermint.types.Params.VersionParams.Builder builderForValue) {
@@ -1135,7 +1135,7 @@ public final class Params {
         return this;
       }
       /**
-       * <code>.tendermint.types.VersionParams version = 4 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.VersionParams version = 4;</code>
        */
       public Builder mergeVersion(tendermint.types.Params.VersionParams value) {
         if (versionBuilder_ == null) {
@@ -1153,7 +1153,7 @@ public final class Params {
         return this;
       }
       /**
-       * <code>.tendermint.types.VersionParams version = 4 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.VersionParams version = 4;</code>
        */
       public Builder clearVersion() {
         if (versionBuilder_ == null) {
@@ -1167,7 +1167,7 @@ public final class Params {
         return this;
       }
       /**
-       * <code>.tendermint.types.VersionParams version = 4 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.VersionParams version = 4;</code>
        */
       public tendermint.types.Params.VersionParams.Builder getVersionBuilder() {
         
@@ -1175,7 +1175,7 @@ public final class Params {
         return getVersionFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tendermint.types.VersionParams version = 4 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.VersionParams version = 4;</code>
        */
       public tendermint.types.Params.VersionParamsOrBuilder getVersionOrBuilder() {
         if (versionBuilder_ != null) {
@@ -1186,7 +1186,7 @@ public final class Params {
         }
       }
       /**
-       * <code>.tendermint.types.VersionParams version = 4 [(.gogoproto.nullable) = false];</code>
+       * <code>.tendermint.types.VersionParams version = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           tendermint.types.Params.VersionParams, tendermint.types.Params.VersionParams.Builder, tendermint.types.Params.VersionParamsOrBuilder> 
@@ -1279,18 +1279,6 @@ public final class Params {
      * @return The maxGas.
      */
     long getMaxGas();
-
-    /**
-     * <pre>
-     * Minimum time increment between consecutive blocks (in milliseconds) If the
-     * block header timestamp is ahead of the system clock, decrease this value.
-     * Not exposed to the application.
-     * </pre>
-     *
-     * <code>int64 time_iota_ms = 3;</code>
-     * @return The timeIotaMs.
-     */
-    long getTimeIotaMs();
   }
   /**
    * <pre>
@@ -1349,11 +1337,6 @@ public final class Params {
             case 16: {
 
               maxGas_ = input.readInt64();
-              break;
-            }
-            case 24: {
-
-              timeIotaMs_ = input.readInt64();
               break;
             }
             default: {
@@ -1420,23 +1403,6 @@ public final class Params {
       return maxGas_;
     }
 
-    public static final int TIME_IOTA_MS_FIELD_NUMBER = 3;
-    private long timeIotaMs_;
-    /**
-     * <pre>
-     * Minimum time increment between consecutive blocks (in milliseconds) If the
-     * block header timestamp is ahead of the system clock, decrease this value.
-     * Not exposed to the application.
-     * </pre>
-     *
-     * <code>int64 time_iota_ms = 3;</code>
-     * @return The timeIotaMs.
-     */
-    @java.lang.Override
-    public long getTimeIotaMs() {
-      return timeIotaMs_;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1457,9 +1423,6 @@ public final class Params {
       if (maxGas_ != 0L) {
         output.writeInt64(2, maxGas_);
       }
-      if (timeIotaMs_ != 0L) {
-        output.writeInt64(3, timeIotaMs_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -1476,10 +1439,6 @@ public final class Params {
       if (maxGas_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(2, maxGas_);
-      }
-      if (timeIotaMs_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, timeIotaMs_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1500,8 +1459,6 @@ public final class Params {
           != other.getMaxBytes()) return false;
       if (getMaxGas()
           != other.getMaxGas()) return false;
-      if (getTimeIotaMs()
-          != other.getTimeIotaMs()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1519,9 +1476,6 @@ public final class Params {
       hash = (37 * hash) + MAX_GAS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMaxGas());
-      hash = (37 * hash) + TIME_IOTA_MS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTimeIotaMs());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1663,8 +1617,6 @@ public final class Params {
 
         maxGas_ = 0L;
 
-        timeIotaMs_ = 0L;
-
         return this;
       }
 
@@ -1693,7 +1645,6 @@ public final class Params {
         tendermint.types.Params.BlockParams result = new tendermint.types.Params.BlockParams(this);
         result.maxBytes_ = maxBytes_;
         result.maxGas_ = maxGas_;
-        result.timeIotaMs_ = timeIotaMs_;
         onBuilt();
         return result;
       }
@@ -1747,9 +1698,6 @@ public final class Params {
         }
         if (other.getMaxGas() != 0L) {
           setMaxGas(other.getMaxGas());
-        }
-        if (other.getTimeIotaMs() != 0L) {
-          setTimeIotaMs(other.getTimeIotaMs());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1868,55 +1816,6 @@ public final class Params {
       public Builder clearMaxGas() {
         
         maxGas_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long timeIotaMs_ ;
-      /**
-       * <pre>
-       * Minimum time increment between consecutive blocks (in milliseconds) If the
-       * block header timestamp is ahead of the system clock, decrease this value.
-       * Not exposed to the application.
-       * </pre>
-       *
-       * <code>int64 time_iota_ms = 3;</code>
-       * @return The timeIotaMs.
-       */
-      @java.lang.Override
-      public long getTimeIotaMs() {
-        return timeIotaMs_;
-      }
-      /**
-       * <pre>
-       * Minimum time increment between consecutive blocks (in milliseconds) If the
-       * block header timestamp is ahead of the system clock, decrease this value.
-       * Not exposed to the application.
-       * </pre>
-       *
-       * <code>int64 time_iota_ms = 3;</code>
-       * @param value The timeIotaMs to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTimeIotaMs(long value) {
-        
-        timeIotaMs_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Minimum time increment between consecutive blocks (in milliseconds) If the
-       * block header timestamp is ahead of the system clock, decrease this value.
-       * Not exposed to the application.
-       * </pre>
-       *
-       * <code>int64 time_iota_ms = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTimeIotaMs() {
-        
-        timeIotaMs_ = 0L;
         onChanged();
         return this;
       }
@@ -3562,10 +3461,10 @@ public final class Params {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 app_version = 1;</code>
-     * @return The appVersion.
+     * <code>uint64 app = 1;</code>
+     * @return The app.
      */
-    long getAppVersion();
+    long getApp();
   }
   /**
    * <pre>
@@ -3618,7 +3517,7 @@ public final class Params {
               break;
             case 8: {
 
-              appVersion_ = input.readUInt64();
+              app_ = input.readUInt64();
               break;
             }
             default: {
@@ -3653,15 +3552,15 @@ public final class Params {
               tendermint.types.Params.VersionParams.class, tendermint.types.Params.VersionParams.Builder.class);
     }
 
-    public static final int APP_VERSION_FIELD_NUMBER = 1;
-    private long appVersion_;
+    public static final int APP_FIELD_NUMBER = 1;
+    private long app_;
     /**
-     * <code>uint64 app_version = 1;</code>
-     * @return The appVersion.
+     * <code>uint64 app = 1;</code>
+     * @return The app.
      */
     @java.lang.Override
-    public long getAppVersion() {
-      return appVersion_;
+    public long getApp() {
+      return app_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3678,8 +3577,8 @@ public final class Params {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (appVersion_ != 0L) {
-        output.writeUInt64(1, appVersion_);
+      if (app_ != 0L) {
+        output.writeUInt64(1, app_);
       }
       unknownFields.writeTo(output);
     }
@@ -3690,9 +3589,9 @@ public final class Params {
       if (size != -1) return size;
 
       size = 0;
-      if (appVersion_ != 0L) {
+      if (app_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, appVersion_);
+          .computeUInt64Size(1, app_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3709,8 +3608,8 @@ public final class Params {
       }
       tendermint.types.Params.VersionParams other = (tendermint.types.Params.VersionParams) obj;
 
-      if (getAppVersion()
-          != other.getAppVersion()) return false;
+      if (getApp()
+          != other.getApp()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3722,9 +3621,9 @@ public final class Params {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + APP_VERSION_FIELD_NUMBER;
+      hash = (37 * hash) + APP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getAppVersion());
+          getApp());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3862,7 +3761,7 @@ public final class Params {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        appVersion_ = 0L;
+        app_ = 0L;
 
         return this;
       }
@@ -3890,7 +3789,7 @@ public final class Params {
       @java.lang.Override
       public tendermint.types.Params.VersionParams buildPartial() {
         tendermint.types.Params.VersionParams result = new tendermint.types.Params.VersionParams(this);
-        result.appVersion_ = appVersion_;
+        result.app_ = app_;
         onBuilt();
         return result;
       }
@@ -3939,8 +3838,8 @@ public final class Params {
 
       public Builder mergeFrom(tendermint.types.Params.VersionParams other) {
         if (other == tendermint.types.Params.VersionParams.getDefaultInstance()) return this;
-        if (other.getAppVersion() != 0L) {
-          setAppVersion(other.getAppVersion());
+        if (other.getApp() != 0L) {
+          setApp(other.getApp());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3971,33 +3870,33 @@ public final class Params {
         return this;
       }
 
-      private long appVersion_ ;
+      private long app_ ;
       /**
-       * <code>uint64 app_version = 1;</code>
-       * @return The appVersion.
+       * <code>uint64 app = 1;</code>
+       * @return The app.
        */
       @java.lang.Override
-      public long getAppVersion() {
-        return appVersion_;
+      public long getApp() {
+        return app_;
       }
       /**
-       * <code>uint64 app_version = 1;</code>
-       * @param value The appVersion to set.
+       * <code>uint64 app = 1;</code>
+       * @param value The app to set.
        * @return This builder for chaining.
        */
-      public Builder setAppVersion(long value) {
+      public Builder setApp(long value) {
         
-        appVersion_ = value;
+        app_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint64 app_version = 1;</code>
+       * <code>uint64 app = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearAppVersion() {
+      public Builder clearApp() {
         
-        appVersion_ = 0L;
+        app_ = 0L;
         onChanged();
         return this;
       }
@@ -4665,24 +4564,23 @@ public final class Params {
     java.lang.String[] descriptorData = {
       "\n\035tendermint/types/params.proto\022\020tenderm" +
       "int.types\032\024gogoproto/gogo.proto\032\036google/" +
-      "protobuf/duration.proto\"\363\001\n\017ConsensusPar" +
-      "ams\0222\n\005block\030\001 \001(\0132\035.tendermint.types.Bl" +
-      "ockParamsB\004\310\336\037\000\0228\n\010evidence\030\002 \001(\0132 .tend" +
-      "ermint.types.EvidenceParamsB\004\310\336\037\000\022:\n\tval" +
-      "idator\030\003 \001(\0132!.tendermint.types.Validato" +
-      "rParamsB\004\310\336\037\000\0226\n\007version\030\004 \001(\0132\037.tenderm" +
-      "int.types.VersionParamsB\004\310\336\037\000\"G\n\013BlockPa" +
-      "rams\022\021\n\tmax_bytes\030\001 \001(\003\022\017\n\007max_gas\030\002 \001(\003" +
-      "\022\024\n\014time_iota_ms\030\003 \001(\003\"~\n\016EvidenceParams" +
+      "protobuf/duration.proto\"\333\001\n\017ConsensusPar" +
+      "ams\022,\n\005block\030\001 \001(\0132\035.tendermint.types.Bl" +
+      "ockParams\0222\n\010evidence\030\002 \001(\0132 .tendermint" +
+      ".types.EvidenceParams\0224\n\tvalidator\030\003 \001(\013" +
+      "2!.tendermint.types.ValidatorParams\0220\n\007v" +
+      "ersion\030\004 \001(\0132\037.tendermint.types.VersionP" +
+      "arams\"7\n\013BlockParams\022\021\n\tmax_bytes\030\001 \001(\003\022" +
+      "\017\n\007max_gas\030\002 \001(\003J\004\010\003\020\004\"~\n\016EvidenceParams" +
       "\022\032\n\022max_age_num_blocks\030\001 \001(\003\022=\n\020max_age_" +
       "duration\030\002 \001(\0132\031.google.protobuf.Duratio" +
       "nB\010\310\336\037\000\230\337\037\001\022\021\n\tmax_bytes\030\003 \001(\003\"2\n\017Valida" +
       "torParams\022\025\n\rpub_key_types\030\001 \003(\t:\010\270\240\037\001\350\240" +
-      "\037\001\".\n\rVersionParams\022\023\n\013app_version\030\001 \001(\004" +
-      ":\010\270\240\037\001\350\240\037\001\">\n\014HashedParams\022\027\n\017block_max_" +
-      "bytes\030\001 \001(\003\022\025\n\rblock_max_gas\030\002 \001(\003B=Z7gi" +
-      "thub.com/tendermint/tendermint/proto/ten" +
-      "dermint/types\250\342\036\001b\006proto3"
+      "\037\001\"&\n\rVersionParams\022\013\n\003app\030\001 \001(\004:\010\270\240\037\001\350\240" +
+      "\037\001\">\n\014HashedParams\022\027\n\017block_max_bytes\030\001 " +
+      "\001(\003\022\025\n\rblock_max_gas\030\002 \001(\003B9Z3github.com" +
+      "/cometbft/cometbft/proto/tendermint/type" +
+      "s\250\342\036\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4701,7 +4599,7 @@ public final class Params {
     internal_static_tendermint_types_BlockParams_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tendermint_types_BlockParams_descriptor,
-        new java.lang.String[] { "MaxBytes", "MaxGas", "TimeIotaMs", });
+        new java.lang.String[] { "MaxBytes", "MaxGas", });
     internal_static_tendermint_types_EvidenceParams_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_tendermint_types_EvidenceParams_fieldAccessorTable = new
@@ -4719,7 +4617,7 @@ public final class Params {
     internal_static_tendermint_types_VersionParams_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tendermint_types_VersionParams_descriptor,
-        new java.lang.String[] { "AppVersion", });
+        new java.lang.String[] { "App", });
     internal_static_tendermint_types_HashedParams_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_tendermint_types_HashedParams_fieldAccessorTable = new

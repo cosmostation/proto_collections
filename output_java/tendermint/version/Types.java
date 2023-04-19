@@ -1260,8 +1260,8 @@ public final class Types {
       "mint.version\032\024gogoproto/gogo.proto\")\n\003Ap" +
       "p\022\020\n\010protocol\030\001 \001(\004\022\020\n\010software\030\002 \001(\t\"-\n" +
       "\tConsensus\022\r\n\005block\030\001 \001(\004\022\013\n\003app\030\002 \001(\004:\004" +
-      "\350\240\037\001B;Z9github.com/tendermint/tendermint" +
-      "/proto/tendermint/versionb\006proto3"
+      "\350\240\037\001B7Z5github.com/cometbft/cometbft/pro" +
+      "to/tendermint/versionb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

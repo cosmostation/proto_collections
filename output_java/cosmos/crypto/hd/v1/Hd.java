@@ -911,15 +911,18 @@ public final class Hd {
   static {
     java.lang.String[] descriptorData = {
       "\n\034cosmos/crypto/hd/v1/hd.proto\022\023cosmos.c" +
-      "rypto.hd.v1\032\024gogoproto/gogo.proto\"o\n\013BIP" +
-      "44Params\022\017\n\007purpose\030\001 \001(\r\022\021\n\tcoin_type\030\002" +
-      " \001(\r\022\017\n\007account\030\003 \001(\r\022\016\n\006change\030\004 \001(\010\022\025\n" +
-      "\raddress_index\030\005 \001(\r:\004\230\240\037\000B,Z&github.com" +
-      "/cosmos/cosmos-sdk/crypto/hd\310\341\036\000b\006proto3"
+      "rypto.hd.v1\032\021amino/amino.proto\032\024gogoprot" +
+      "o/gogo.proto\"\216\001\n\013BIP44Params\022\017\n\007purpose\030" +
+      "\001 \001(\r\022\021\n\tcoin_type\030\002 \001(\r\022\017\n\007account\030\003 \001(" +
+      "\r\022\016\n\006change\030\004 \001(\010\022\025\n\raddress_index\030\005 \001(\r" +
+      ":#\212\347\260*\032crypto/keys/hd/BIP44Params\230\240\037\000B,Z" +
+      "&github.com/cosmos/cosmos-sdk/crypto/hd\310" +
+      "\341\036\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          amino.Amino.getDescriptor(),
           com.google.protobuf2.GoGoProtos.getDescriptor(),
         });
     internal_static_cosmos_crypto_hd_v1_BIP44Params_descriptor =
@@ -930,10 +933,12 @@ public final class Hd {
         new java.lang.String[] { "Purpose", "CoinType", "Account", "Change", "AddressIndex", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(amino.Amino.name);
     registry.add(com.google.protobuf2.GoGoProtos.goprotoGettersAll);
     registry.add(com.google.protobuf2.GoGoProtos.goprotoStringer);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
+    amino.Amino.getDescriptor();
     com.google.protobuf2.GoGoProtos.getDescriptor();
   }
 

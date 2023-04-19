@@ -95,6 +95,7 @@ struct Cosmos_Gov_V1beta1_QueryProposalsResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// proposals defines all the requested governance proposals.
   var proposals: [Cosmos_Gov_V1beta1_Proposal] = []
 
   /// pagination defines the pagination in the response.
@@ -123,7 +124,7 @@ struct Cosmos_Gov_V1beta1_QueryVoteRequest {
   /// proposal_id defines the unique id of the proposal.
   var proposalID: UInt64 = 0
 
-  /// voter defines the oter address for the proposals.
+  /// voter defines the voter address for the proposals.
   var voter: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -137,7 +138,7 @@ struct Cosmos_Gov_V1beta1_QueryVoteResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  /// vote defined the queried vote.
+  /// vote defines the queried vote.
   var vote: Cosmos_Gov_V1beta1_Vote {
     get {return _vote ?? Cosmos_Gov_V1beta1_Vote()}
     set {_vote = newValue}
@@ -186,7 +187,7 @@ struct Cosmos_Gov_V1beta1_QueryVotesResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  /// votes defined the queried votes.
+  /// votes defines the queried votes.
   var votes: [Cosmos_Gov_V1beta1_Vote] = []
 
   /// pagination defines the pagination in the response.
@@ -338,6 +339,7 @@ struct Cosmos_Gov_V1beta1_QueryDepositsResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// deposits defines the requested deposits.
   var deposits: [Cosmos_Gov_V1beta1_Deposit] = []
 
   /// pagination defines the pagination in the response.

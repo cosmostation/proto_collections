@@ -449,7 +449,7 @@ public final class QueryOuterClass {
      * params defines the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the params field is set.
      */
     boolean hasParams();
@@ -458,7 +458,7 @@ public final class QueryOuterClass {
      * params defines the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The params.
      */
     cosmos.mint.v1beta1.Mint.Params getParams();
@@ -467,7 +467,7 @@ public final class QueryOuterClass {
      * params defines the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.mint.v1beta1.Mint.ParamsOrBuilder getParamsOrBuilder();
   }
@@ -572,7 +572,7 @@ public final class QueryOuterClass {
      * params defines the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the params field is set.
      */
     @java.lang.Override
@@ -584,7 +584,7 @@ public final class QueryOuterClass {
      * params defines the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The params.
      */
     @java.lang.Override
@@ -596,7 +596,7 @@ public final class QueryOuterClass {
      * params defines the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.mint.v1beta1.Mint.ParamsOrBuilder getParamsOrBuilder() {
@@ -930,7 +930,7 @@ public final class QueryOuterClass {
        * params defines the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the params field is set.
        */
       public boolean hasParams() {
@@ -941,7 +941,7 @@ public final class QueryOuterClass {
        * params defines the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The params.
        */
       public cosmos.mint.v1beta1.Mint.Params getParams() {
@@ -956,7 +956,7 @@ public final class QueryOuterClass {
        * params defines the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setParams(cosmos.mint.v1beta1.Mint.Params value) {
         if (paramsBuilder_ == null) {
@@ -976,7 +976,7 @@ public final class QueryOuterClass {
        * params defines the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setParams(
           cosmos.mint.v1beta1.Mint.Params.Builder builderForValue) {
@@ -994,7 +994,7 @@ public final class QueryOuterClass {
        * params defines the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeParams(cosmos.mint.v1beta1.Mint.Params value) {
         if (paramsBuilder_ == null) {
@@ -1016,7 +1016,7 @@ public final class QueryOuterClass {
        * params defines the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearParams() {
         if (paramsBuilder_ == null) {
@@ -1034,7 +1034,7 @@ public final class QueryOuterClass {
        * params defines the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.mint.v1beta1.Mint.Params.Builder getParamsBuilder() {
         
@@ -1046,7 +1046,7 @@ public final class QueryOuterClass {
        * params defines the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.mint.v1beta1.Mint.ParamsOrBuilder getParamsOrBuilder() {
         if (paramsBuilder_ != null) {
@@ -1061,7 +1061,7 @@ public final class QueryOuterClass {
        * params defines the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.mint.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.mint.v1beta1.Mint.Params, cosmos.mint.v1beta1.Mint.Params.Builder, cosmos.mint.v1beta1.Mint.ParamsOrBuilder> 
@@ -1564,7 +1564,7 @@ public final class QueryOuterClass {
      * inflation is the current minting inflation value.
      * </pre>
      *
-     * <code>bytes inflation = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
+     * <code>bytes inflation = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.dont_omitempty) = true];</code>
      * @return The inflation.
      */
     com.google.protobuf.ByteString getInflation();
@@ -1664,7 +1664,7 @@ public final class QueryOuterClass {
      * inflation is the current minting inflation value.
      * </pre>
      *
-     * <code>bytes inflation = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
+     * <code>bytes inflation = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.dont_omitempty) = true];</code>
      * @return The inflation.
      */
     @java.lang.Override
@@ -1985,7 +1985,7 @@ public final class QueryOuterClass {
        * inflation is the current minting inflation value.
        * </pre>
        *
-       * <code>bytes inflation = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
+       * <code>bytes inflation = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.dont_omitempty) = true];</code>
        * @return The inflation.
        */
       @java.lang.Override
@@ -1997,7 +1997,7 @@ public final class QueryOuterClass {
        * inflation is the current minting inflation value.
        * </pre>
        *
-       * <code>bytes inflation = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
+       * <code>bytes inflation = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.dont_omitempty) = true];</code>
        * @param value The inflation to set.
        * @return This builder for chaining.
        */
@@ -2015,7 +2015,7 @@ public final class QueryOuterClass {
        * inflation is the current minting inflation value.
        * </pre>
        *
-       * <code>bytes inflation = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
+       * <code>bytes inflation = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.dont_omitempty) = true];</code>
        * @return This builder for chaining.
        */
       public Builder clearInflation() {
@@ -2514,7 +2514,7 @@ public final class QueryOuterClass {
      * annual_provisions is the current minting annual provisions value.
      * </pre>
      *
-     * <code>bytes annual_provisions = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
+     * <code>bytes annual_provisions = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.dont_omitempty) = true];</code>
      * @return The annualProvisions.
      */
     com.google.protobuf.ByteString getAnnualProvisions();
@@ -2614,7 +2614,7 @@ public final class QueryOuterClass {
      * annual_provisions is the current minting annual provisions value.
      * </pre>
      *
-     * <code>bytes annual_provisions = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
+     * <code>bytes annual_provisions = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.dont_omitempty) = true];</code>
      * @return The annualProvisions.
      */
     @java.lang.Override
@@ -2935,7 +2935,7 @@ public final class QueryOuterClass {
        * annual_provisions is the current minting annual provisions value.
        * </pre>
        *
-       * <code>bytes annual_provisions = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
+       * <code>bytes annual_provisions = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.dont_omitempty) = true];</code>
        * @return The annualProvisions.
        */
       @java.lang.Override
@@ -2947,7 +2947,7 @@ public final class QueryOuterClass {
        * annual_provisions is the current minting annual provisions value.
        * </pre>
        *
-       * <code>bytes annual_provisions = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
+       * <code>bytes annual_provisions = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.dont_omitempty) = true];</code>
        * @param value The annualProvisions to set.
        * @return This builder for chaining.
        */
@@ -2965,7 +2965,7 @@ public final class QueryOuterClass {
        * annual_provisions is the current minting annual provisions value.
        * </pre>
        *
-       * <code>bytes annual_provisions = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
+       * <code>bytes annual_provisions = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.dont_omitempty) = true];</code>
        * @return This builder for chaining.
        */
       public Builder clearAnnualProvisions() {
@@ -3069,29 +3069,29 @@ public final class QueryOuterClass {
       "\n\037cosmos/mint/v1beta1/query.proto\022\023cosmo" +
       "s.mint.v1beta1\032\024gogoproto/gogo.proto\032\034go" +
       "ogle/api/annotations.proto\032\036cosmos/mint/" +
-      "v1beta1/mint.proto\"\024\n\022QueryParamsRequest" +
-      "\"H\n\023QueryParamsResponse\0221\n\006params\030\001 \001(\0132" +
-      "\033.cosmos.mint.v1beta1.ParamsB\004\310\336\037\000\"\027\n\025Qu" +
-      "eryInflationRequest\"[\n\026QueryInflationRes" +
-      "ponse\022A\n\tinflation\030\001 \001(\014B.\332\336\037&github.com" +
-      "/cosmos/cosmos-sdk/types.Dec\310\336\037\000\"\036\n\034Quer" +
-      "yAnnualProvisionsRequest\"j\n\035QueryAnnualP" +
-      "rovisionsResponse\022I\n\021annual_provisions\030\001" +
-      " \001(\014B.\332\336\037&github.com/cosmos/cosmos-sdk/t" +
-      "ypes.Dec\310\336\037\0002\305\003\n\005Query\022\200\001\n\006Params\022\'.cosm" +
-      "os.mint.v1beta1.QueryParamsRequest\032(.cos" +
-      "mos.mint.v1beta1.QueryParamsResponse\"#\202\323" +
-      "\344\223\002\035\022\033/cosmos/mint/v1beta1/params\022\214\001\n\tIn" +
-      "flation\022*.cosmos.mint.v1beta1.QueryInfla" +
-      "tionRequest\032+.cosmos.mint.v1beta1.QueryI" +
-      "nflationResponse\"&\202\323\344\223\002 \022\036/cosmos/mint/v" +
-      "1beta1/inflation\022\251\001\n\020AnnualProvisions\0221." +
-      "cosmos.mint.v1beta1.QueryAnnualProvision" +
-      "sRequest\0322.cosmos.mint.v1beta1.QueryAnnu" +
-      "alProvisionsResponse\".\202\323\344\223\002(\022&/cosmos/mi" +
-      "nt/v1beta1/annual_provisionsB+Z)github.c" +
-      "om/cosmos/cosmos-sdk/x/mint/typesb\006proto" +
-      "3"
+      "v1beta1/mint.proto\032\021amino/amino.proto\"\024\n" +
+      "\022QueryParamsRequest\"M\n\023QueryParamsRespon" +
+      "se\0226\n\006params\030\001 \001(\0132\033.cosmos.mint.v1beta1" +
+      ".ParamsB\t\310\336\037\000\250\347\260*\001\"\027\n\025QueryInflationRequ" +
+      "est\"`\n\026QueryInflationResponse\022F\n\tinflati" +
+      "on\030\001 \001(\014B3\332\336\037&github.com/cosmos/cosmos-s" +
+      "dk/types.Dec\310\336\037\000\250\347\260*\001\"\036\n\034QueryAnnualProv" +
+      "isionsRequest\"o\n\035QueryAnnualProvisionsRe" +
+      "sponse\022N\n\021annual_provisions\030\001 \001(\014B3\332\336\037&g" +
+      "ithub.com/cosmos/cosmos-sdk/types.Dec\310\336\037" +
+      "\000\250\347\260*\0012\305\003\n\005Query\022\200\001\n\006Params\022\'.cosmos.min" +
+      "t.v1beta1.QueryParamsRequest\032(.cosmos.mi" +
+      "nt.v1beta1.QueryParamsResponse\"#\202\323\344\223\002\035\022\033" +
+      "/cosmos/mint/v1beta1/params\022\214\001\n\tInflatio" +
+      "n\022*.cosmos.mint.v1beta1.QueryInflationRe" +
+      "quest\032+.cosmos.mint.v1beta1.QueryInflati" +
+      "onResponse\"&\202\323\344\223\002 \022\036/cosmos/mint/v1beta1" +
+      "/inflation\022\251\001\n\020AnnualProvisions\0221.cosmos" +
+      ".mint.v1beta1.QueryAnnualProvisionsReque" +
+      "st\0322.cosmos.mint.v1beta1.QueryAnnualProv" +
+      "isionsResponse\".\202\323\344\223\002(\022&/cosmos/mint/v1b" +
+      "eta1/annual_provisionsB+Z)github.com/cos" +
+      "mos/cosmos-sdk/x/mint/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3099,6 +3099,7 @@ public final class QueryOuterClass {
           com.google.protobuf2.GoGoProtos.getDescriptor(),
           com.google.api.AnnotationsProto.getDescriptor(),
           cosmos.mint.v1beta1.Mint.getDescriptor(),
+          amino.Amino.getDescriptor(),
         });
     internal_static_cosmos_mint_v1beta1_QueryParamsRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -3138,6 +3139,7 @@ public final class QueryOuterClass {
         new java.lang.String[] { "AnnualProvisions", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(amino.Amino.dontOmitempty);
     registry.add(com.google.protobuf2.GoGoProtos.customtype);
     registry.add(com.google.protobuf2.GoGoProtos.nullable);
     registry.add(com.google.api.AnnotationsProto.http);
@@ -3146,6 +3148,7 @@ public final class QueryOuterClass {
     com.google.protobuf2.GoGoProtos.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
     cosmos.mint.v1beta1.Mint.getDescriptor();
+    amino.Amino.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -185,6 +185,37 @@ public final class QueryGrpc {
     return getModuleAccountsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest,
+      cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse> getModuleAccountByNameMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ModuleAccountByName",
+      requestType = cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest.class,
+      responseType = cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest,
+      cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse> getModuleAccountByNameMethod() {
+    io.grpc.MethodDescriptor<cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest, cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse> getModuleAccountByNameMethod;
+    if ((getModuleAccountByNameMethod = QueryGrpc.getModuleAccountByNameMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getModuleAccountByNameMethod = QueryGrpc.getModuleAccountByNameMethod) == null) {
+          QueryGrpc.getModuleAccountByNameMethod = getModuleAccountByNameMethod =
+              io.grpc.MethodDescriptor.<cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest, cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ModuleAccountByName"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("ModuleAccountByName"))
+              .build();
+        }
+      }
+    }
+    return getModuleAccountByNameMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest,
       cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse> getBech32PrefixMethod;
 
@@ -278,6 +309,37 @@ public final class QueryGrpc {
     return getAddressStringToBytesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest,
+      cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse> getAccountInfoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AccountInfo",
+      requestType = cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest.class,
+      responseType = cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest,
+      cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse> getAccountInfoMethod() {
+    io.grpc.MethodDescriptor<cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest, cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse> getAccountInfoMethod;
+    if ((getAccountInfoMethod = QueryGrpc.getAccountInfoMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getAccountInfoMethod = QueryGrpc.getAccountInfoMethod) == null) {
+          QueryGrpc.getAccountInfoMethod = getAccountInfoMethod =
+              io.grpc.MethodDescriptor.<cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest, cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AccountInfo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("AccountInfo"))
+              .build();
+        }
+      }
+    }
+    return getAccountInfoMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -331,7 +393,9 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Accounts returns all the existing accounts
+     * Accounts returns all the existing accounts.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * Since: cosmos-sdk 0.43
      * </pre>
      */
@@ -352,7 +416,8 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * AccountAddressByID returns account address based on account id
+     * AccountAddressByID returns account address based on account number.
+     * Since: cosmos-sdk 0.46.2
      * </pre>
      */
     public void accountAddressByID(cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest request,
@@ -379,6 +444,16 @@ public final class QueryGrpc {
     public void moduleAccounts(cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest request,
         io.grpc.stub.StreamObserver<cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getModuleAccountsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * ModuleAccountByName returns the module account info by module name
+     * </pre>
+     */
+    public void moduleAccountByName(cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest request,
+        io.grpc.stub.StreamObserver<cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getModuleAccountByNameMethod(), responseObserver);
     }
 
     /**
@@ -412,6 +487,17 @@ public final class QueryGrpc {
     public void addressStringToBytes(cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest request,
         io.grpc.stub.StreamObserver<cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getAddressStringToBytesMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * AccountInfo queries account info which is common to all account types.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public void accountInfo(cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest request,
+        io.grpc.stub.StreamObserver<cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getAccountInfoMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -452,6 +538,13 @@ public final class QueryGrpc {
                 cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse>(
                   this, METHODID_MODULE_ACCOUNTS)))
           .addMethod(
+            getModuleAccountByNameMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest,
+                cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse>(
+                  this, METHODID_MODULE_ACCOUNT_BY_NAME)))
+          .addMethod(
             getBech32PrefixMethod(),
             asyncUnaryCall(
               new MethodHandlers<
@@ -472,6 +565,13 @@ public final class QueryGrpc {
                 cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest,
                 cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse>(
                   this, METHODID_ADDRESS_STRING_TO_BYTES)))
+          .addMethod(
+            getAccountInfoMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest,
+                cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse>(
+                  this, METHODID_ACCOUNT_INFO)))
           .build();
     }
   }
@@ -495,7 +595,9 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Accounts returns all the existing accounts
+     * Accounts returns all the existing accounts.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * Since: cosmos-sdk 0.43
      * </pre>
      */
@@ -518,7 +620,8 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * AccountAddressByID returns account address based on account id
+     * AccountAddressByID returns account address based on account number.
+     * Since: cosmos-sdk 0.46.2
      * </pre>
      */
     public void accountAddressByID(cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest request,
@@ -548,6 +651,17 @@ public final class QueryGrpc {
         io.grpc.stub.StreamObserver<cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getModuleAccountsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * ModuleAccountByName returns the module account info by module name
+     * </pre>
+     */
+    public void moduleAccountByName(cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest request,
+        io.grpc.stub.StreamObserver<cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getModuleAccountByNameMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -585,6 +699,18 @@ public final class QueryGrpc {
       asyncUnaryCall(
           getChannel().newCall(getAddressStringToBytesMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * AccountInfo queries account info which is common to all account types.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public void accountInfo(cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest request,
+        io.grpc.stub.StreamObserver<cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getAccountInfoMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -606,7 +732,9 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Accounts returns all the existing accounts
+     * Accounts returns all the existing accounts.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * Since: cosmos-sdk 0.43
      * </pre>
      */
@@ -627,7 +755,8 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * AccountAddressByID returns account address based on account id
+     * AccountAddressByID returns account address based on account number.
+     * Since: cosmos-sdk 0.46.2
      * </pre>
      */
     public cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse accountAddressByID(cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest request) {
@@ -654,6 +783,16 @@ public final class QueryGrpc {
     public cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse moduleAccounts(cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest request) {
       return blockingUnaryCall(
           getChannel(), getModuleAccountsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * ModuleAccountByName returns the module account info by module name
+     * </pre>
+     */
+    public cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse moduleAccountByName(cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getModuleAccountByNameMethod(), getCallOptions(), request);
     }
 
     /**
@@ -688,6 +827,17 @@ public final class QueryGrpc {
       return blockingUnaryCall(
           getChannel(), getAddressStringToBytesMethod(), getCallOptions(), request);
     }
+
+    /**
+     * <pre>
+     * AccountInfo queries account info which is common to all account types.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse accountInfo(cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getAccountInfoMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -709,7 +859,9 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Accounts returns all the existing accounts
+     * Accounts returns all the existing accounts.
+     * When called from another module, this query might consume a high amount of
+     * gas if the pagination field is incorrectly set.
      * Since: cosmos-sdk 0.43
      * </pre>
      */
@@ -732,7 +884,8 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * AccountAddressByID returns account address based on account id
+     * AccountAddressByID returns account address based on account number.
+     * Since: cosmos-sdk 0.46.2
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse> accountAddressByID(
@@ -762,6 +915,17 @@ public final class QueryGrpc {
         cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getModuleAccountsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * ModuleAccountByName returns the module account info by module name
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse> moduleAccountByName(
+        cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getModuleAccountByNameMethod(), getCallOptions()), request);
     }
 
     /**
@@ -799,6 +963,18 @@ public final class QueryGrpc {
       return futureUnaryCall(
           getChannel().newCall(getAddressStringToBytesMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * AccountInfo queries account info which is common to all account types.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse> accountInfo(
+        cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getAccountInfoMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_ACCOUNTS = 0;
@@ -806,9 +982,11 @@ public final class QueryGrpc {
   private static final int METHODID_ACCOUNT_ADDRESS_BY_ID = 2;
   private static final int METHODID_PARAMS = 3;
   private static final int METHODID_MODULE_ACCOUNTS = 4;
-  private static final int METHODID_BECH32PREFIX = 5;
-  private static final int METHODID_ADDRESS_BYTES_TO_STRING = 6;
-  private static final int METHODID_ADDRESS_STRING_TO_BYTES = 7;
+  private static final int METHODID_MODULE_ACCOUNT_BY_NAME = 5;
+  private static final int METHODID_BECH32PREFIX = 6;
+  private static final int METHODID_ADDRESS_BYTES_TO_STRING = 7;
+  private static final int METHODID_ADDRESS_STRING_TO_BYTES = 8;
+  private static final int METHODID_ACCOUNT_INFO = 9;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -847,6 +1025,10 @@ public final class QueryGrpc {
           serviceImpl.moduleAccounts((cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest) request,
               (io.grpc.stub.StreamObserver<cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse>) responseObserver);
           break;
+        case METHODID_MODULE_ACCOUNT_BY_NAME:
+          serviceImpl.moduleAccountByName((cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest) request,
+              (io.grpc.stub.StreamObserver<cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse>) responseObserver);
+          break;
         case METHODID_BECH32PREFIX:
           serviceImpl.bech32Prefix((cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest) request,
               (io.grpc.stub.StreamObserver<cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse>) responseObserver);
@@ -858,6 +1040,10 @@ public final class QueryGrpc {
         case METHODID_ADDRESS_STRING_TO_BYTES:
           serviceImpl.addressStringToBytes((cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest) request,
               (io.grpc.stub.StreamObserver<cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse>) responseObserver);
+          break;
+        case METHODID_ACCOUNT_INFO:
+          serviceImpl.accountInfo((cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest) request,
+              (io.grpc.stub.StreamObserver<cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -925,9 +1111,11 @@ public final class QueryGrpc {
               .addMethod(getAccountAddressByIDMethod())
               .addMethod(getParamsMethod())
               .addMethod(getModuleAccountsMethod())
+              .addMethod(getModuleAccountByNameMethod())
               .addMethod(getBech32PrefixMethod())
               .addMethod(getAddressBytesToStringMethod())
               .addMethod(getAddressStringToBytesMethod())
+              .addMethod(getAccountInfoMethod())
               .build();
         }
       }

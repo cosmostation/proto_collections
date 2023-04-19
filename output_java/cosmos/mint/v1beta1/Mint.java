@@ -841,7 +841,7 @@ public final class Mint {
      * maximum annual change in inflation rate
      * </pre>
      *
-     * <code>string inflation_rate_change = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string inflation_rate_change = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
      * @return The inflationRateChange.
      */
     java.lang.String getInflationRateChange();
@@ -850,7 +850,7 @@ public final class Mint {
      * maximum annual change in inflation rate
      * </pre>
      *
-     * <code>string inflation_rate_change = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string inflation_rate_change = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
      * @return The bytes for inflationRateChange.
      */
     com.google.protobuf.ByteString
@@ -861,7 +861,7 @@ public final class Mint {
      * maximum inflation rate
      * </pre>
      *
-     * <code>string inflation_max = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string inflation_max = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
      * @return The inflationMax.
      */
     java.lang.String getInflationMax();
@@ -870,7 +870,7 @@ public final class Mint {
      * maximum inflation rate
      * </pre>
      *
-     * <code>string inflation_max = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string inflation_max = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
      * @return The bytes for inflationMax.
      */
     com.google.protobuf.ByteString
@@ -881,7 +881,7 @@ public final class Mint {
      * minimum inflation rate
      * </pre>
      *
-     * <code>string inflation_min = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string inflation_min = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
      * @return The inflationMin.
      */
     java.lang.String getInflationMin();
@@ -890,7 +890,7 @@ public final class Mint {
      * minimum inflation rate
      * </pre>
      *
-     * <code>string inflation_min = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string inflation_min = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
      * @return The bytes for inflationMin.
      */
     com.google.protobuf.ByteString
@@ -901,7 +901,7 @@ public final class Mint {
      * goal of percent bonded atoms
      * </pre>
      *
-     * <code>string goal_bonded = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string goal_bonded = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
      * @return The goalBonded.
      */
     java.lang.String getGoalBonded();
@@ -910,7 +910,7 @@ public final class Mint {
      * goal of percent bonded atoms
      * </pre>
      *
-     * <code>string goal_bonded = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string goal_bonded = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
      * @return The bytes for goalBonded.
      */
     com.google.protobuf.ByteString
@@ -928,7 +928,7 @@ public final class Mint {
   }
   /**
    * <pre>
-   * Params holds parameters for the mint module.
+   * Params defines the parameters for the x/mint module.
    * </pre>
    *
    * Protobuf type {@code cosmos.mint.v1beta1.Params}
@@ -1100,7 +1100,7 @@ public final class Mint {
      * maximum annual change in inflation rate
      * </pre>
      *
-     * <code>string inflation_rate_change = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string inflation_rate_change = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
      * @return The inflationRateChange.
      */
     @java.lang.Override
@@ -1121,7 +1121,7 @@ public final class Mint {
      * maximum annual change in inflation rate
      * </pre>
      *
-     * <code>string inflation_rate_change = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string inflation_rate_change = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
      * @return The bytes for inflationRateChange.
      */
     @java.lang.Override
@@ -1146,7 +1146,7 @@ public final class Mint {
      * maximum inflation rate
      * </pre>
      *
-     * <code>string inflation_max = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string inflation_max = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
      * @return The inflationMax.
      */
     @java.lang.Override
@@ -1167,7 +1167,7 @@ public final class Mint {
      * maximum inflation rate
      * </pre>
      *
-     * <code>string inflation_max = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string inflation_max = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
      * @return The bytes for inflationMax.
      */
     @java.lang.Override
@@ -1192,7 +1192,7 @@ public final class Mint {
      * minimum inflation rate
      * </pre>
      *
-     * <code>string inflation_min = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string inflation_min = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
      * @return The inflationMin.
      */
     @java.lang.Override
@@ -1213,7 +1213,7 @@ public final class Mint {
      * minimum inflation rate
      * </pre>
      *
-     * <code>string inflation_min = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string inflation_min = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
      * @return The bytes for inflationMin.
      */
     @java.lang.Override
@@ -1238,7 +1238,7 @@ public final class Mint {
      * goal of percent bonded atoms
      * </pre>
      *
-     * <code>string goal_bonded = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string goal_bonded = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
      * @return The goalBonded.
      */
     @java.lang.Override
@@ -1259,7 +1259,7 @@ public final class Mint {
      * goal of percent bonded atoms
      * </pre>
      *
-     * <code>string goal_bonded = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string goal_bonded = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
      * @return The bytes for goalBonded.
      */
     @java.lang.Override
@@ -1500,7 +1500,7 @@ public final class Mint {
     }
     /**
      * <pre>
-     * Params holds parameters for the mint module.
+     * Params defines the parameters for the x/mint module.
      * </pre>
      *
      * Protobuf type {@code cosmos.mint.v1beta1.Params}
@@ -1786,7 +1786,7 @@ public final class Mint {
        * maximum annual change in inflation rate
        * </pre>
        *
-       * <code>string inflation_rate_change = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string inflation_rate_change = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
        * @return The inflationRateChange.
        */
       public java.lang.String getInflationRateChange() {
@@ -1806,7 +1806,7 @@ public final class Mint {
        * maximum annual change in inflation rate
        * </pre>
        *
-       * <code>string inflation_rate_change = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string inflation_rate_change = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
        * @return The bytes for inflationRateChange.
        */
       public com.google.protobuf.ByteString
@@ -1827,7 +1827,7 @@ public final class Mint {
        * maximum annual change in inflation rate
        * </pre>
        *
-       * <code>string inflation_rate_change = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string inflation_rate_change = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
        * @param value The inflationRateChange to set.
        * @return This builder for chaining.
        */
@@ -1846,7 +1846,7 @@ public final class Mint {
        * maximum annual change in inflation rate
        * </pre>
        *
-       * <code>string inflation_rate_change = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string inflation_rate_change = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
        * @return This builder for chaining.
        */
       public Builder clearInflationRateChange() {
@@ -1860,7 +1860,7 @@ public final class Mint {
        * maximum annual change in inflation rate
        * </pre>
        *
-       * <code>string inflation_rate_change = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string inflation_rate_change = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
        * @param value The bytes for inflationRateChange to set.
        * @return This builder for chaining.
        */
@@ -1882,7 +1882,7 @@ public final class Mint {
        * maximum inflation rate
        * </pre>
        *
-       * <code>string inflation_max = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string inflation_max = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
        * @return The inflationMax.
        */
       public java.lang.String getInflationMax() {
@@ -1902,7 +1902,7 @@ public final class Mint {
        * maximum inflation rate
        * </pre>
        *
-       * <code>string inflation_max = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string inflation_max = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
        * @return The bytes for inflationMax.
        */
       public com.google.protobuf.ByteString
@@ -1923,7 +1923,7 @@ public final class Mint {
        * maximum inflation rate
        * </pre>
        *
-       * <code>string inflation_max = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string inflation_max = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
        * @param value The inflationMax to set.
        * @return This builder for chaining.
        */
@@ -1942,7 +1942,7 @@ public final class Mint {
        * maximum inflation rate
        * </pre>
        *
-       * <code>string inflation_max = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string inflation_max = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
        * @return This builder for chaining.
        */
       public Builder clearInflationMax() {
@@ -1956,7 +1956,7 @@ public final class Mint {
        * maximum inflation rate
        * </pre>
        *
-       * <code>string inflation_max = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string inflation_max = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
        * @param value The bytes for inflationMax to set.
        * @return This builder for chaining.
        */
@@ -1978,7 +1978,7 @@ public final class Mint {
        * minimum inflation rate
        * </pre>
        *
-       * <code>string inflation_min = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string inflation_min = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
        * @return The inflationMin.
        */
       public java.lang.String getInflationMin() {
@@ -1998,7 +1998,7 @@ public final class Mint {
        * minimum inflation rate
        * </pre>
        *
-       * <code>string inflation_min = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string inflation_min = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
        * @return The bytes for inflationMin.
        */
       public com.google.protobuf.ByteString
@@ -2019,7 +2019,7 @@ public final class Mint {
        * minimum inflation rate
        * </pre>
        *
-       * <code>string inflation_min = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string inflation_min = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
        * @param value The inflationMin to set.
        * @return This builder for chaining.
        */
@@ -2038,7 +2038,7 @@ public final class Mint {
        * minimum inflation rate
        * </pre>
        *
-       * <code>string inflation_min = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string inflation_min = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
        * @return This builder for chaining.
        */
       public Builder clearInflationMin() {
@@ -2052,7 +2052,7 @@ public final class Mint {
        * minimum inflation rate
        * </pre>
        *
-       * <code>string inflation_min = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string inflation_min = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
        * @param value The bytes for inflationMin to set.
        * @return This builder for chaining.
        */
@@ -2074,7 +2074,7 @@ public final class Mint {
        * goal of percent bonded atoms
        * </pre>
        *
-       * <code>string goal_bonded = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string goal_bonded = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
        * @return The goalBonded.
        */
       public java.lang.String getGoalBonded() {
@@ -2094,7 +2094,7 @@ public final class Mint {
        * goal of percent bonded atoms
        * </pre>
        *
-       * <code>string goal_bonded = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string goal_bonded = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
        * @return The bytes for goalBonded.
        */
       public com.google.protobuf.ByteString
@@ -2115,7 +2115,7 @@ public final class Mint {
        * goal of percent bonded atoms
        * </pre>
        *
-       * <code>string goal_bonded = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string goal_bonded = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
        * @param value The goalBonded to set.
        * @return This builder for chaining.
        */
@@ -2134,7 +2134,7 @@ public final class Mint {
        * goal of percent bonded atoms
        * </pre>
        *
-       * <code>string goal_bonded = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string goal_bonded = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
        * @return This builder for chaining.
        */
       public Builder clearGoalBonded() {
@@ -2148,7 +2148,7 @@ public final class Mint {
        * goal of percent bonded atoms
        * </pre>
        *
-       * <code>string goal_bonded = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string goal_bonded = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
        * @param value The bytes for goalBonded to set.
        * @return This builder for chaining.
        */
@@ -2280,29 +2280,32 @@ public final class Mint {
     java.lang.String[] descriptorData = {
       "\n\036cosmos/mint/v1beta1/mint.proto\022\023cosmos" +
       ".mint.v1beta1\032\024gogoproto/gogo.proto\032\031cos" +
-      "mos_proto/cosmos.proto\"\262\001\n\006Minter\022O\n\tinf" +
-      "lation\030\001 \001(\tB<\322\264-\ncosmos.Dec\332\336\037&github.c" +
-      "om/cosmos/cosmos-sdk/types.Dec\310\336\037\000\022W\n\021an" +
-      "nual_provisions\030\002 \001(\tB<\322\264-\ncosmos.Dec\332\336\037" +
-      "&github.com/cosmos/cosmos-sdk/types.Dec\310" +
-      "\336\037\000\"\225\003\n\006Params\022\022\n\nmint_denom\030\001 \001(\t\022[\n\025in" +
-      "flation_rate_change\030\002 \001(\tB<\322\264-\ncosmos.De" +
-      "c\332\336\037&github.com/cosmos/cosmos-sdk/types." +
-      "Dec\310\336\037\000\022S\n\rinflation_max\030\003 \001(\tB<\322\264-\ncosm" +
-      "os.Dec\332\336\037&github.com/cosmos/cosmos-sdk/t" +
-      "ypes.Dec\310\336\037\000\022S\n\rinflation_min\030\004 \001(\tB<\322\264-" +
-      "\ncosmos.Dec\332\336\037&github.com/cosmos/cosmos-" +
-      "sdk/types.Dec\310\336\037\000\022Q\n\013goal_bonded\030\005 \001(\tB<" +
-      "\322\264-\ncosmos.Dec\332\336\037&github.com/cosmos/cosm" +
-      "os-sdk/types.Dec\310\336\037\000\022\027\n\017blocks_per_year\030" +
-      "\006 \001(\004:\004\230\240\037\000B+Z)github.com/cosmos/cosmos-" +
-      "sdk/x/mint/typesb\006proto3"
+      "mos_proto/cosmos.proto\032\021amino/amino.prot" +
+      "o\"\262\001\n\006Minter\022O\n\tinflation\030\001 \001(\tB<\322\264-\ncos" +
+      "mos.Dec\332\336\037&github.com/cosmos/cosmos-sdk/" +
+      "types.Dec\310\336\037\000\022W\n\021annual_provisions\030\002 \001(\t" +
+      "B<\322\264-\ncosmos.Dec\332\336\037&github.com/cosmos/co" +
+      "smos-sdk/types.Dec\310\336\037\000\"\302\003\n\006Params\022\022\n\nmin" +
+      "t_denom\030\001 \001(\t\022`\n\025inflation_rate_change\030\002" +
+      " \001(\tBA\322\264-\ncosmos.Dec\332\336\037&github.com/cosmo" +
+      "s/cosmos-sdk/types.Dec\310\336\037\000\250\347\260*\001\022X\n\rinfla" +
+      "tion_max\030\003 \001(\tBA\322\264-\ncosmos.Dec\332\336\037&github" +
+      ".com/cosmos/cosmos-sdk/types.Dec\310\336\037\000\250\347\260*" +
+      "\001\022X\n\rinflation_min\030\004 \001(\tBA\322\264-\ncosmos.Dec" +
+      "\332\336\037&github.com/cosmos/cosmos-sdk/types.D" +
+      "ec\310\336\037\000\250\347\260*\001\022V\n\013goal_bonded\030\005 \001(\tBA\322\264-\nco" +
+      "smos.Dec\332\336\037&github.com/cosmos/cosmos-sdk" +
+      "/types.Dec\310\336\037\000\250\347\260*\001\022\027\n\017blocks_per_year\030\006" +
+      " \001(\004:\035\212\347\260*\030cosmos-sdk/x/mint/ParamsB+Z)g" +
+      "ithub.com/cosmos/cosmos-sdk/x/mint/types" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf2.GoGoProtos.getDescriptor(),
           cosmos_proto.Cosmos.getDescriptor(),
+          amino.Amino.getDescriptor(),
         });
     internal_static_cosmos_mint_v1beta1_Minter_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2318,14 +2321,16 @@ public final class Mint {
         new java.lang.String[] { "MintDenom", "InflationRateChange", "InflationMax", "InflationMin", "GoalBonded", "BlocksPerYear", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(amino.Amino.dontOmitempty);
+    registry.add(amino.Amino.name);
     registry.add(cosmos_proto.Cosmos.scalar);
     registry.add(com.google.protobuf2.GoGoProtos.customtype);
-    registry.add(com.google.protobuf2.GoGoProtos.goprotoStringer);
     registry.add(com.google.protobuf2.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf2.GoGoProtos.getDescriptor();
     cosmos_proto.Cosmos.getDescriptor();
+    amino.Amino.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -2645,9 +2645,9 @@ public final class ValidatorOuterClass {
       "KeyB\004\310\336\037\000\022\024\n\014voting_power\030\003 \001(\003\022\031\n\021propo" +
       "ser_priority\030\004 \001(\003\"V\n\017SimpleValidator\022-\n" +
       "\007pub_key\030\001 \001(\0132\034.tendermint.crypto.Publi" +
-      "cKey\022\024\n\014voting_power\030\002 \001(\003B9Z7github.com" +
-      "/tendermint/tendermint/proto/tendermint/" +
-      "typesb\006proto3"
+      "cKey\022\024\n\014voting_power\030\002 \001(\003B5Z3github.com" +
+      "/cometbft/cometbft/proto/tendermint/type" +
+      "sb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

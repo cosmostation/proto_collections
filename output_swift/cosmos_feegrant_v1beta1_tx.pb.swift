@@ -35,7 +35,7 @@ struct Cosmos_Feegrant_V1beta1_MsgGrantAllowance {
   /// grantee is the address of the user being granted an allowance of another user's funds.
   var grantee: String = String()
 
-  /// allowance can be any of basic and filtered fee allowance.
+  /// allowance can be any of basic, periodic, allowed fee allowance.
   var allowance: Google_Protobuf2_Any {
     get {return _allowance ?? Google_Protobuf2_Any()}
     set {_allowance = newValue}

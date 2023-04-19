@@ -57,7 +57,7 @@ public final class Slashing {
      * Timestamp until which the validator is jailed due to liveness downtime.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
      * @return Whether the jailedUntil field is set.
      */
     boolean hasJailedUntil();
@@ -66,7 +66,7 @@ public final class Slashing {
      * Timestamp until which the validator is jailed due to liveness downtime.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
      * @return The jailedUntil.
      */
     com.google.protobuf.Timestamp getJailedUntil();
@@ -75,7 +75,7 @@ public final class Slashing {
      * Timestamp until which the validator is jailed due to liveness downtime.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
      */
     com.google.protobuf.TimestampOrBuilder getJailedUntilOrBuilder();
 
@@ -300,7 +300,7 @@ public final class Slashing {
      * Timestamp until which the validator is jailed due to liveness downtime.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
      * @return Whether the jailedUntil field is set.
      */
     @java.lang.Override
@@ -312,7 +312,7 @@ public final class Slashing {
      * Timestamp until which the validator is jailed due to liveness downtime.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
      * @return The jailedUntil.
      */
     @java.lang.Override
@@ -324,7 +324,7 @@ public final class Slashing {
      * Timestamp until which the validator is jailed due to liveness downtime.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getJailedUntilOrBuilder() {
@@ -948,7 +948,7 @@ public final class Slashing {
        * Timestamp until which the validator is jailed due to liveness downtime.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        * @return Whether the jailedUntil field is set.
        */
       public boolean hasJailedUntil() {
@@ -959,7 +959,7 @@ public final class Slashing {
        * Timestamp until which the validator is jailed due to liveness downtime.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        * @return The jailedUntil.
        */
       public com.google.protobuf.Timestamp getJailedUntil() {
@@ -974,7 +974,7 @@ public final class Slashing {
        * Timestamp until which the validator is jailed due to liveness downtime.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setJailedUntil(com.google.protobuf.Timestamp value) {
         if (jailedUntilBuilder_ == null) {
@@ -994,7 +994,7 @@ public final class Slashing {
        * Timestamp until which the validator is jailed due to liveness downtime.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setJailedUntil(
           com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1012,7 +1012,7 @@ public final class Slashing {
        * Timestamp until which the validator is jailed due to liveness downtime.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeJailedUntil(com.google.protobuf.Timestamp value) {
         if (jailedUntilBuilder_ == null) {
@@ -1034,7 +1034,7 @@ public final class Slashing {
        * Timestamp until which the validator is jailed due to liveness downtime.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearJailedUntil() {
         if (jailedUntilBuilder_ == null) {
@@ -1052,7 +1052,7 @@ public final class Slashing {
        * Timestamp until which the validator is jailed due to liveness downtime.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        */
       public com.google.protobuf.Timestamp.Builder getJailedUntilBuilder() {
         
@@ -1064,7 +1064,7 @@ public final class Slashing {
        * Timestamp until which the validator is jailed due to liveness downtime.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        */
       public com.google.protobuf.TimestampOrBuilder getJailedUntilOrBuilder() {
         if (jailedUntilBuilder_ != null) {
@@ -1079,7 +1079,7 @@ public final class Slashing {
        * Timestamp until which the validator is jailed due to liveness downtime.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1250,34 +1250,34 @@ public final class Slashing {
     long getSignedBlocksWindow();
 
     /**
-     * <code>bytes min_signed_per_window = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
+     * <code>bytes min_signed_per_window = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
      * @return The minSignedPerWindow.
      */
     com.google.protobuf.ByteString getMinSignedPerWindow();
 
     /**
-     * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+     * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
      * @return Whether the downtimeJailDuration field is set.
      */
     boolean hasDowntimeJailDuration();
     /**
-     * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+     * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
      * @return The downtimeJailDuration.
      */
     com.google.protobuf.Duration getDowntimeJailDuration();
     /**
-     * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+     * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
      */
     com.google.protobuf.DurationOrBuilder getDowntimeJailDurationOrBuilder();
 
     /**
-     * <code>bytes slash_fraction_double_sign = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
+     * <code>bytes slash_fraction_double_sign = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
      * @return The slashFractionDoubleSign.
      */
     com.google.protobuf.ByteString getSlashFractionDoubleSign();
 
     /**
-     * <code>bytes slash_fraction_downtime = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
+     * <code>bytes slash_fraction_downtime = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
      * @return The slashFractionDowntime.
      */
     com.google.protobuf.ByteString getSlashFractionDowntime();
@@ -1413,7 +1413,7 @@ public final class Slashing {
     public static final int MIN_SIGNED_PER_WINDOW_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString minSignedPerWindow_;
     /**
-     * <code>bytes min_signed_per_window = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
+     * <code>bytes min_signed_per_window = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
      * @return The minSignedPerWindow.
      */
     @java.lang.Override
@@ -1424,7 +1424,7 @@ public final class Slashing {
     public static final int DOWNTIME_JAIL_DURATION_FIELD_NUMBER = 3;
     private com.google.protobuf.Duration downtimeJailDuration_;
     /**
-     * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+     * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
      * @return Whether the downtimeJailDuration field is set.
      */
     @java.lang.Override
@@ -1432,7 +1432,7 @@ public final class Slashing {
       return downtimeJailDuration_ != null;
     }
     /**
-     * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+     * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
      * @return The downtimeJailDuration.
      */
     @java.lang.Override
@@ -1440,7 +1440,7 @@ public final class Slashing {
       return downtimeJailDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : downtimeJailDuration_;
     }
     /**
-     * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+     * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getDowntimeJailDurationOrBuilder() {
@@ -1450,7 +1450,7 @@ public final class Slashing {
     public static final int SLASH_FRACTION_DOUBLE_SIGN_FIELD_NUMBER = 4;
     private com.google.protobuf.ByteString slashFractionDoubleSign_;
     /**
-     * <code>bytes slash_fraction_double_sign = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
+     * <code>bytes slash_fraction_double_sign = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
      * @return The slashFractionDoubleSign.
      */
     @java.lang.Override
@@ -1461,7 +1461,7 @@ public final class Slashing {
     public static final int SLASH_FRACTION_DOWNTIME_FIELD_NUMBER = 5;
     private com.google.protobuf.ByteString slashFractionDowntime_;
     /**
-     * <code>bytes slash_fraction_downtime = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
+     * <code>bytes slash_fraction_downtime = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
      * @return The slashFractionDowntime.
      */
     @java.lang.Override
@@ -1890,7 +1890,7 @@ public final class Slashing {
 
       private com.google.protobuf.ByteString minSignedPerWindow_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes min_signed_per_window = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
+       * <code>bytes min_signed_per_window = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
        * @return The minSignedPerWindow.
        */
       @java.lang.Override
@@ -1898,7 +1898,7 @@ public final class Slashing {
         return minSignedPerWindow_;
       }
       /**
-       * <code>bytes min_signed_per_window = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
+       * <code>bytes min_signed_per_window = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
        * @param value The minSignedPerWindow to set.
        * @return This builder for chaining.
        */
@@ -1912,7 +1912,7 @@ public final class Slashing {
         return this;
       }
       /**
-       * <code>bytes min_signed_per_window = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
+       * <code>bytes min_signed_per_window = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
        * @return This builder for chaining.
        */
       public Builder clearMinSignedPerWindow() {
@@ -1926,14 +1926,14 @@ public final class Slashing {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> downtimeJailDurationBuilder_;
       /**
-       * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+       * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
        * @return Whether the downtimeJailDuration field is set.
        */
       public boolean hasDowntimeJailDuration() {
         return downtimeJailDurationBuilder_ != null || downtimeJailDuration_ != null;
       }
       /**
-       * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+       * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
        * @return The downtimeJailDuration.
        */
       public com.google.protobuf.Duration getDowntimeJailDuration() {
@@ -1944,7 +1944,7 @@ public final class Slashing {
         }
       }
       /**
-       * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+       * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setDowntimeJailDuration(com.google.protobuf.Duration value) {
         if (downtimeJailDurationBuilder_ == null) {
@@ -1960,7 +1960,7 @@ public final class Slashing {
         return this;
       }
       /**
-       * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+       * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setDowntimeJailDuration(
           com.google.protobuf.Duration.Builder builderForValue) {
@@ -1974,7 +1974,7 @@ public final class Slashing {
         return this;
       }
       /**
-       * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+       * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeDowntimeJailDuration(com.google.protobuf.Duration value) {
         if (downtimeJailDurationBuilder_ == null) {
@@ -1992,7 +1992,7 @@ public final class Slashing {
         return this;
       }
       /**
-       * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+       * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearDowntimeJailDuration() {
         if (downtimeJailDurationBuilder_ == null) {
@@ -2006,7 +2006,7 @@ public final class Slashing {
         return this;
       }
       /**
-       * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+       * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
        */
       public com.google.protobuf.Duration.Builder getDowntimeJailDurationBuilder() {
         
@@ -2014,7 +2014,7 @@ public final class Slashing {
         return getDowntimeJailDurationFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+       * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
        */
       public com.google.protobuf.DurationOrBuilder getDowntimeJailDurationOrBuilder() {
         if (downtimeJailDurationBuilder_ != null) {
@@ -2025,7 +2025,7 @@ public final class Slashing {
         }
       }
       /**
-       * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+       * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
@@ -2043,7 +2043,7 @@ public final class Slashing {
 
       private com.google.protobuf.ByteString slashFractionDoubleSign_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes slash_fraction_double_sign = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
+       * <code>bytes slash_fraction_double_sign = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
        * @return The slashFractionDoubleSign.
        */
       @java.lang.Override
@@ -2051,7 +2051,7 @@ public final class Slashing {
         return slashFractionDoubleSign_;
       }
       /**
-       * <code>bytes slash_fraction_double_sign = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
+       * <code>bytes slash_fraction_double_sign = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
        * @param value The slashFractionDoubleSign to set.
        * @return This builder for chaining.
        */
@@ -2065,7 +2065,7 @@ public final class Slashing {
         return this;
       }
       /**
-       * <code>bytes slash_fraction_double_sign = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
+       * <code>bytes slash_fraction_double_sign = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
        * @return This builder for chaining.
        */
       public Builder clearSlashFractionDoubleSign() {
@@ -2077,7 +2077,7 @@ public final class Slashing {
 
       private com.google.protobuf.ByteString slashFractionDowntime_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes slash_fraction_downtime = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
+       * <code>bytes slash_fraction_downtime = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
        * @return The slashFractionDowntime.
        */
       @java.lang.Override
@@ -2085,7 +2085,7 @@ public final class Slashing {
         return slashFractionDowntime_;
       }
       /**
-       * <code>bytes slash_fraction_downtime = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
+       * <code>bytes slash_fraction_downtime = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
        * @param value The slashFractionDowntime to set.
        * @return This builder for chaining.
        */
@@ -2099,7 +2099,7 @@ public final class Slashing {
         return this;
       }
       /**
-       * <code>bytes slash_fraction_downtime = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec"];</code>
+       * <code>bytes slash_fraction_downtime = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
        * @return This builder for chaining.
        */
       public Builder clearSlashFractionDowntime() {
@@ -2184,23 +2184,27 @@ public final class Slashing {
       "\022\027cosmos.slashing.v1beta1\032\024gogoproto/gog" +
       "o.proto\032\036google/protobuf/duration.proto\032" +
       "\037google/protobuf/timestamp.proto\032\031cosmos" +
-      "_proto/cosmos.proto\"\346\001\n\024ValidatorSigning" +
-      "Info\022)\n\007address\030\001 \001(\tB\030\322\264-\024cosmos.Addres" +
-      "sString\022\024\n\014start_height\030\002 \001(\003\022\024\n\014index_o" +
-      "ffset\030\003 \001(\003\022:\n\014jailed_until\030\004 \001(\0132\032.goog" +
-      "le.protobuf.TimestampB\010\220\337\037\001\310\336\037\000\022\022\n\ntombs" +
-      "toned\030\005 \001(\010\022\035\n\025missed_blocks_counter\030\006 \001" +
-      "(\003:\010\350\240\037\001\230\240\037\000\"\337\002\n\006Params\022\034\n\024signed_blocks" +
-      "_window\030\001 \001(\003\022M\n\025min_signed_per_window\030\002" +
-      " \001(\014B.\332\336\037&github.com/cosmos/cosmos-sdk/t" +
-      "ypes.Dec\310\336\037\000\022C\n\026downtime_jail_duration\030\003" +
-      " \001(\0132\031.google.protobuf.DurationB\010\310\336\037\000\230\337\037" +
-      "\001\022R\n\032slash_fraction_double_sign\030\004 \001(\014B.\332" +
-      "\336\037&github.com/cosmos/cosmos-sdk/types.De" +
-      "c\310\336\037\000\022O\n\027slash_fraction_downtime\030\005 \001(\014B." +
-      "\332\336\037&github.com/cosmos/cosmos-sdk/types.D" +
-      "ec\310\336\037\000B3Z-github.com/cosmos/cosmos-sdk/x" +
-      "/slashing/types\250\342\036\001b\006proto3"
+      "_proto/cosmos.proto\032\021amino/amino.proto\"\347" +
+      "\001\n\024ValidatorSigningInfo\022)\n\007address\030\001 \001(\t" +
+      "B\030\322\264-\024cosmos.AddressString\022\024\n\014start_heig" +
+      "ht\030\002 \001(\003\022\024\n\014index_offset\030\003 \001(\003\022?\n\014jailed" +
+      "_until\030\004 \001(\0132\032.google.protobuf.Timestamp" +
+      "B\r\220\337\037\001\310\336\037\000\250\347\260*\001\022\022\n\ntombstoned\030\005 \001(\010\022\035\n\025m" +
+      "issed_blocks_counter\030\006 \001(\003:\004\350\240\037\001\"\325\003\n\006Par" +
+      "ams\022\034\n\024signed_blocks_window\030\001 \001(\003\022g\n\025min" +
+      "_signed_per_window\030\002 \001(\014BH\332\336\037&github.com" +
+      "/cosmos/cosmos-sdk/types.Dec\310\336\037\000\232\347\260*\020cos" +
+      "mos_dec_bytes\250\347\260*\001\022H\n\026downtime_jail_dura" +
+      "tion\030\003 \001(\0132\031.google.protobuf.DurationB\r\310" +
+      "\336\037\000\250\347\260*\001\230\337\037\001\022l\n\032slash_fraction_double_si" +
+      "gn\030\004 \001(\014BH\332\336\037&github.com/cosmos/cosmos-s" +
+      "dk/types.Dec\310\336\037\000\232\347\260*\020cosmos_dec_bytes\250\347\260" +
+      "*\001\022i\n\027slash_fraction_downtime\030\005 \001(\014BH\332\336\037" +
+      "&github.com/cosmos/cosmos-sdk/types.Dec\310" +
+      "\336\037\000\232\347\260*\020cosmos_dec_bytes\250\347\260*\001:!\212\347\260*\034cosm" +
+      "os-sdk/x/slashing/ParamsB3Z-github.com/c" +
+      "osmos/cosmos-sdk/x/slashing/types\250\342\036\001b\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2209,6 +2213,7 @@ public final class Slashing {
           com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           cosmos_proto.Cosmos.getDescriptor(),
+          amino.Amino.getDescriptor(),
         });
     internal_static_cosmos_slashing_v1beta1_ValidatorSigningInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2224,11 +2229,13 @@ public final class Slashing {
         new java.lang.String[] { "SignedBlocksWindow", "MinSignedPerWindow", "DowntimeJailDuration", "SlashFractionDoubleSign", "SlashFractionDowntime", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(amino.Amino.dontOmitempty);
+    registry.add(amino.Amino.encoding);
+    registry.add(amino.Amino.name);
     registry.add(cosmos_proto.Cosmos.scalar);
     registry.add(com.google.protobuf2.GoGoProtos.customtype);
     registry.add(com.google.protobuf2.GoGoProtos.equal);
     registry.add(com.google.protobuf2.GoGoProtos.equalAll);
-    registry.add(com.google.protobuf2.GoGoProtos.goprotoStringer);
     registry.add(com.google.protobuf2.GoGoProtos.nullable);
     registry.add(com.google.protobuf2.GoGoProtos.stdduration);
     registry.add(com.google.protobuf2.GoGoProtos.stdtime);
@@ -2238,6 +2245,7 @@ public final class Slashing {
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     cosmos_proto.Cosmos.getDescriptor();
+    amino.Amino.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

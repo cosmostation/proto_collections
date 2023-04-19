@@ -48,7 +48,6 @@ struct Cosmos_Upgrade_V1beta1_Plan {
   mutating func clearTime() {self._time = nil}
 
   /// The height at which the upgrade must be performed.
-  /// Only used if Time is not set.
   var height: Int64 = 0
 
   /// Any application specific upgrade info to be included on-chain
@@ -77,15 +76,20 @@ struct Cosmos_Upgrade_V1beta1_Plan {
 
 /// SoftwareUpgradeProposal is a gov Content type for initiating a software
 /// upgrade.
+/// Deprecated: This legacy proposal is deprecated in favor of Msg-based gov
+/// proposals, see MsgSoftwareUpgrade.
 struct Cosmos_Upgrade_V1beta1_SoftwareUpgradeProposal {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// title of the proposal
   var title: String = String()
 
+  /// description of the proposal
   var description_p: String = String()
 
+  /// plan of the proposal
   var plan: Cosmos_Upgrade_V1beta1_Plan {
     get {return _plan ?? Cosmos_Upgrade_V1beta1_Plan()}
     set {_plan = newValue}
@@ -104,13 +108,17 @@ struct Cosmos_Upgrade_V1beta1_SoftwareUpgradeProposal {
 
 /// CancelSoftwareUpgradeProposal is a gov Content type for cancelling a software
 /// upgrade.
+/// Deprecated: This legacy proposal is deprecated in favor of Msg-based gov
+/// proposals, see MsgCancelUpgrade.
 struct Cosmos_Upgrade_V1beta1_CancelSoftwareUpgradeProposal {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// title of the proposal
   var title: String = String()
 
+  /// description of the proposal
   var description_p: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()

@@ -4331,8 +4331,8 @@ public final class EvidenceOuterClass {
       " \001(\003\0227\n\ttimestamp\030\005 \001(\0132\032.google.protobu" +
       "f.TimestampB\010\310\336\037\000\220\337\037\001\"B\n\014EvidenceList\0222\n" +
       "\010evidence\030\001 \003(\0132\032.tendermint.types.Evide" +
-      "nceB\004\310\336\037\000B9Z7github.com/tendermint/tende" +
-      "rmint/proto/tendermint/typesb\006proto3"
+      "nceB\004\310\336\037\000B5Z3github.com/cometbft/cometbf" +
+      "t/proto/tendermint/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

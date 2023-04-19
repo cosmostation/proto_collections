@@ -63,24 +63,44 @@ public final class Genesis {
         int index);
 
     /**
+     * <pre>
+     * entry defines all nft owned by a person.
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.Entry entries = 2;</code>
      */
     java.util.List<cosmos.nft.v1beta1.Genesis.Entry> 
         getEntriesList();
     /**
+     * <pre>
+     * entry defines all nft owned by a person.
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.Entry entries = 2;</code>
      */
     cosmos.nft.v1beta1.Genesis.Entry getEntries(int index);
     /**
+     * <pre>
+     * entry defines all nft owned by a person.
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.Entry entries = 2;</code>
      */
     int getEntriesCount();
     /**
+     * <pre>
+     * entry defines all nft owned by a person.
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.Entry entries = 2;</code>
      */
     java.util.List<? extends cosmos.nft.v1beta1.Genesis.EntryOrBuilder> 
         getEntriesOrBuilderList();
     /**
+     * <pre>
+     * entry defines all nft owned by a person.
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.Entry entries = 2;</code>
      */
     cosmos.nft.v1beta1.Genesis.EntryOrBuilder getEntriesOrBuilder(
@@ -257,6 +277,10 @@ public final class Genesis {
     public static final int ENTRIES_FIELD_NUMBER = 2;
     private java.util.List<cosmos.nft.v1beta1.Genesis.Entry> entries_;
     /**
+     * <pre>
+     * entry defines all nft owned by a person.
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.Entry entries = 2;</code>
      */
     @java.lang.Override
@@ -264,6 +288,10 @@ public final class Genesis {
       return entries_;
     }
     /**
+     * <pre>
+     * entry defines all nft owned by a person.
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.Entry entries = 2;</code>
      */
     @java.lang.Override
@@ -272,6 +300,10 @@ public final class Genesis {
       return entries_;
     }
     /**
+     * <pre>
+     * entry defines all nft owned by a person.
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.Entry entries = 2;</code>
      */
     @java.lang.Override
@@ -279,6 +311,10 @@ public final class Genesis {
       return entries_.size();
     }
     /**
+     * <pre>
+     * entry defines all nft owned by a person.
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.Entry entries = 2;</code>
      */
     @java.lang.Override
@@ -286,6 +322,10 @@ public final class Genesis {
       return entries_.get(index);
     }
     /**
+     * <pre>
+     * entry defines all nft owned by a person.
+     * </pre>
+     *
      * <code>repeated .cosmos.nft.v1beta1.Entry entries = 2;</code>
      */
     @java.lang.Override
@@ -1020,6 +1060,10 @@ public final class Genesis {
           cosmos.nft.v1beta1.Genesis.Entry, cosmos.nft.v1beta1.Genesis.Entry.Builder, cosmos.nft.v1beta1.Genesis.EntryOrBuilder> entriesBuilder_;
 
       /**
+       * <pre>
+       * entry defines all nft owned by a person.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Entry entries = 2;</code>
        */
       public java.util.List<cosmos.nft.v1beta1.Genesis.Entry> getEntriesList() {
@@ -1030,6 +1074,10 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * entry defines all nft owned by a person.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Entry entries = 2;</code>
        */
       public int getEntriesCount() {
@@ -1040,6 +1088,10 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * entry defines all nft owned by a person.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Entry entries = 2;</code>
        */
       public cosmos.nft.v1beta1.Genesis.Entry getEntries(int index) {
@@ -1050,6 +1102,10 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * entry defines all nft owned by a person.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Entry entries = 2;</code>
        */
       public Builder setEntries(
@@ -1067,6 +1123,10 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * entry defines all nft owned by a person.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Entry entries = 2;</code>
        */
       public Builder setEntries(
@@ -1081,6 +1141,10 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * entry defines all nft owned by a person.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Entry entries = 2;</code>
        */
       public Builder addEntries(cosmos.nft.v1beta1.Genesis.Entry value) {
@@ -1097,6 +1161,10 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * entry defines all nft owned by a person.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Entry entries = 2;</code>
        */
       public Builder addEntries(
@@ -1114,6 +1182,10 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * entry defines all nft owned by a person.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Entry entries = 2;</code>
        */
       public Builder addEntries(
@@ -1128,6 +1200,10 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * entry defines all nft owned by a person.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Entry entries = 2;</code>
        */
       public Builder addEntries(
@@ -1142,6 +1218,10 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * entry defines all nft owned by a person.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Entry entries = 2;</code>
        */
       public Builder addAllEntries(
@@ -1157,6 +1237,10 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * entry defines all nft owned by a person.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Entry entries = 2;</code>
        */
       public Builder clearEntries() {
@@ -1170,6 +1254,10 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * entry defines all nft owned by a person.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Entry entries = 2;</code>
        */
       public Builder removeEntries(int index) {
@@ -1183,6 +1271,10 @@ public final class Genesis {
         return this;
       }
       /**
+       * <pre>
+       * entry defines all nft owned by a person.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Entry entries = 2;</code>
        */
       public cosmos.nft.v1beta1.Genesis.Entry.Builder getEntriesBuilder(
@@ -1190,6 +1282,10 @@ public final class Genesis {
         return getEntriesFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * entry defines all nft owned by a person.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Entry entries = 2;</code>
        */
       public cosmos.nft.v1beta1.Genesis.EntryOrBuilder getEntriesOrBuilder(
@@ -1200,6 +1296,10 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * entry defines all nft owned by a person.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Entry entries = 2;</code>
        */
       public java.util.List<? extends cosmos.nft.v1beta1.Genesis.EntryOrBuilder> 
@@ -1211,6 +1311,10 @@ public final class Genesis {
         }
       }
       /**
+       * <pre>
+       * entry defines all nft owned by a person.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Entry entries = 2;</code>
        */
       public cosmos.nft.v1beta1.Genesis.Entry.Builder addEntriesBuilder() {
@@ -1218,6 +1322,10 @@ public final class Genesis {
             cosmos.nft.v1beta1.Genesis.Entry.getDefaultInstance());
       }
       /**
+       * <pre>
+       * entry defines all nft owned by a person.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Entry entries = 2;</code>
        */
       public cosmos.nft.v1beta1.Genesis.Entry.Builder addEntriesBuilder(
@@ -1226,6 +1334,10 @@ public final class Genesis {
             index, cosmos.nft.v1beta1.Genesis.Entry.getDefaultInstance());
       }
       /**
+       * <pre>
+       * entry defines all nft owned by a person.
+       * </pre>
+       *
        * <code>repeated .cosmos.nft.v1beta1.Entry entries = 2;</code>
        */
       public java.util.List<cosmos.nft.v1beta1.Genesis.Entry.Builder> 
@@ -2423,8 +2535,8 @@ public final class Genesis {
       "cosmos.nft.v1beta1.Class\022*\n\007entries\030\002 \003(" +
       "\0132\031.cosmos.nft.v1beta1.Entry\"=\n\005Entry\022\r\n" +
       "\005owner\030\001 \001(\t\022%\n\004nfts\030\002 \003(\0132\027.cosmos.nft." +
-      "v1beta1.NFTB$Z\"github.com/cosmos/cosmos-" +
-      "sdk/x/nftb\006proto3"
+      "v1beta1.NFTB\024Z\022cosmossdk.io/x/nftb\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

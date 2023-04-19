@@ -20,7 +20,7 @@ public final class Tx {
 
     /**
      * <pre>
-     * authority is the address of the governance account.
+     * authority is the address that controls the module (defaults to x/gov unless overwritten).
      * </pre>
      *
      * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
@@ -29,7 +29,7 @@ public final class Tx {
     java.lang.String getAuthority();
     /**
      * <pre>
-     * authority is the address of the governance account.
+     * authority is the address that controls the module (defaults to x/gov unless overwritten).
      * </pre>
      *
      * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
@@ -44,7 +44,7 @@ public final class Tx {
      * NOTE: All parameters must be supplied.
      * </pre>
      *
-     * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the params field is set.
      */
     boolean hasParams();
@@ -54,7 +54,7 @@ public final class Tx {
      * NOTE: All parameters must be supplied.
      * </pre>
      *
-     * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The params.
      */
     cosmos.auth.v1beta1.Auth.Params getParams();
@@ -64,7 +64,7 @@ public final class Tx {
      * NOTE: All parameters must be supplied.
      * </pre>
      *
-     * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.auth.v1beta1.Auth.ParamsOrBuilder getParamsOrBuilder();
   }
@@ -174,7 +174,7 @@ public final class Tx {
     private volatile java.lang.Object authority_;
     /**
      * <pre>
-     * authority is the address of the governance account.
+     * authority is the address that controls the module (defaults to x/gov unless overwritten).
      * </pre>
      *
      * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
@@ -195,7 +195,7 @@ public final class Tx {
     }
     /**
      * <pre>
-     * authority is the address of the governance account.
+     * authority is the address that controls the module (defaults to x/gov unless overwritten).
      * </pre>
      *
      * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
@@ -224,7 +224,7 @@ public final class Tx {
      * NOTE: All parameters must be supplied.
      * </pre>
      *
-     * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the params field is set.
      */
     @java.lang.Override
@@ -237,7 +237,7 @@ public final class Tx {
      * NOTE: All parameters must be supplied.
      * </pre>
      *
-     * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The params.
      */
     @java.lang.Override
@@ -250,7 +250,7 @@ public final class Tx {
      * NOTE: All parameters must be supplied.
      * </pre>
      *
-     * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.auth.v1beta1.Auth.ParamsOrBuilder getParamsOrBuilder() {
@@ -597,7 +597,7 @@ public final class Tx {
       private java.lang.Object authority_ = "";
       /**
        * <pre>
-       * authority is the address of the governance account.
+       * authority is the address that controls the module (defaults to x/gov unless overwritten).
        * </pre>
        *
        * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
@@ -617,7 +617,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * authority is the address of the governance account.
+       * authority is the address that controls the module (defaults to x/gov unless overwritten).
        * </pre>
        *
        * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
@@ -638,7 +638,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * authority is the address of the governance account.
+       * authority is the address that controls the module (defaults to x/gov unless overwritten).
        * </pre>
        *
        * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
@@ -657,7 +657,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * authority is the address of the governance account.
+       * authority is the address that controls the module (defaults to x/gov unless overwritten).
        * </pre>
        *
        * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
@@ -671,7 +671,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * authority is the address of the governance account.
+       * authority is the address that controls the module (defaults to x/gov unless overwritten).
        * </pre>
        *
        * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
@@ -699,7 +699,7 @@ public final class Tx {
        * NOTE: All parameters must be supplied.
        * </pre>
        *
-       * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the params field is set.
        */
       public boolean hasParams() {
@@ -711,7 +711,7 @@ public final class Tx {
        * NOTE: All parameters must be supplied.
        * </pre>
        *
-       * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The params.
        */
       public cosmos.auth.v1beta1.Auth.Params getParams() {
@@ -727,7 +727,7 @@ public final class Tx {
        * NOTE: All parameters must be supplied.
        * </pre>
        *
-       * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setParams(cosmos.auth.v1beta1.Auth.Params value) {
         if (paramsBuilder_ == null) {
@@ -748,7 +748,7 @@ public final class Tx {
        * NOTE: All parameters must be supplied.
        * </pre>
        *
-       * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setParams(
           cosmos.auth.v1beta1.Auth.Params.Builder builderForValue) {
@@ -767,7 +767,7 @@ public final class Tx {
        * NOTE: All parameters must be supplied.
        * </pre>
        *
-       * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeParams(cosmos.auth.v1beta1.Auth.Params value) {
         if (paramsBuilder_ == null) {
@@ -790,7 +790,7 @@ public final class Tx {
        * NOTE: All parameters must be supplied.
        * </pre>
        *
-       * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearParams() {
         if (paramsBuilder_ == null) {
@@ -809,7 +809,7 @@ public final class Tx {
        * NOTE: All parameters must be supplied.
        * </pre>
        *
-       * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.auth.v1beta1.Auth.Params.Builder getParamsBuilder() {
         
@@ -822,7 +822,7 @@ public final class Tx {
        * NOTE: All parameters must be supplied.
        * </pre>
        *
-       * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.auth.v1beta1.Auth.ParamsOrBuilder getParamsOrBuilder() {
         if (paramsBuilder_ != null) {
@@ -838,7 +838,7 @@ public final class Tx {
        * NOTE: All parameters must be supplied.
        * </pre>
        *
-       * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.auth.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.auth.v1beta1.Auth.Params, cosmos.auth.v1beta1.Auth.Params.Builder, cosmos.auth.v1beta1.Auth.ParamsOrBuilder> 
@@ -1358,15 +1358,17 @@ public final class Tx {
       "\n\034cosmos/auth/v1beta1/tx.proto\022\023cosmos.a" +
       "uth.v1beta1\032\024gogoproto/gogo.proto\032\031cosmo" +
       "s_proto/cosmos.proto\032\027cosmos/msg/v1/msg." +
-      "proto\032\036cosmos/auth/v1beta1/auth.proto\"\201\001" +
-      "\n\017MsgUpdateParams\022+\n\tauthority\030\001 \001(\tB\030\322\264" +
-      "-\024cosmos.AddressString\0221\n\006params\030\002 \001(\0132\033" +
-      ".cosmos.auth.v1beta1.ParamsB\004\310\336\037\000:\016\202\347\260*\t" +
-      "authority\"\031\n\027MsgUpdateParamsResponse2i\n\003" +
-      "Msg\022b\n\014UpdateParams\022$.cosmos.auth.v1beta" +
-      "1.MsgUpdateParams\032,.cosmos.auth.v1beta1." +
-      "MsgUpdateParamsResponseB+Z)github.com/co" +
-      "smos/cosmos-sdk/x/auth/typesb\006proto3"
+      "proto\032\021amino/amino.proto\032\036cosmos/auth/v1" +
+      "beta1/auth.proto\"\254\001\n\017MsgUpdateParams\022+\n\t" +
+      "authority\030\001 \001(\tB\030\322\264-\024cosmos.AddressStrin" +
+      "g\0226\n\006params\030\002 \001(\0132\033.cosmos.auth.v1beta1." +
+      "ParamsB\t\310\336\037\000\250\347\260*\001:4\202\347\260*\tauthority\212\347\260*!co" +
+      "smos-sdk/x/auth/MsgUpdateParams\"\031\n\027MsgUp" +
+      "dateParamsResponse2p\n\003Msg\022b\n\014UpdateParam" +
+      "s\022$.cosmos.auth.v1beta1.MsgUpdateParams\032" +
+      ",.cosmos.auth.v1beta1.MsgUpdateParamsRes" +
+      "ponse\032\005\200\347\260*\001B+Z)github.com/cosmos/cosmos" +
+      "-sdk/x/auth/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1374,6 +1376,7 @@ public final class Tx {
           com.google.protobuf2.GoGoProtos.getDescriptor(),
           cosmos_proto.Cosmos.getDescriptor(),
           cosmos.msg.v1.Msg.getDescriptor(),
+          amino.Amino.getDescriptor(),
           cosmos.auth.v1beta1.Auth.getDescriptor(),
         });
     internal_static_cosmos_auth_v1beta1_MsgUpdateParams_descriptor =
@@ -1390,6 +1393,9 @@ public final class Tx {
         new java.lang.String[] { });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(amino.Amino.dontOmitempty);
+    registry.add(amino.Amino.name);
+    registry.add(cosmos.msg.v1.Msg.service);
     registry.add(cosmos.msg.v1.Msg.signer);
     registry.add(cosmos_proto.Cosmos.scalar);
     registry.add(com.google.protobuf2.GoGoProtos.nullable);
@@ -1398,6 +1404,7 @@ public final class Tx {
     com.google.protobuf2.GoGoProtos.getDescriptor();
     cosmos_proto.Cosmos.getDescriptor();
     cosmos.msg.v1.Msg.getDescriptor();
+    amino.Amino.getDescriptor();
     cosmos.auth.v1beta1.Auth.getDescriptor();
   }
 

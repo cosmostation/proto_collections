@@ -37,6 +37,11 @@ internal protocol Cosmos_Distribution_V1beta1_QueryClientProtocol: GRPCClient {
     callOptions: CallOptions?
   ) -> UnaryCall<Cosmos_Distribution_V1beta1_QueryParamsRequest, Cosmos_Distribution_V1beta1_QueryParamsResponse>
 
+  func validatorDistributionInfo(
+    _ request: Cosmos_Distribution_V1beta1_QueryValidatorDistributionInfoRequest,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Cosmos_Distribution_V1beta1_QueryValidatorDistributionInfoRequest, Cosmos_Distribution_V1beta1_QueryValidatorDistributionInfoResponse>
+
   func validatorOutstandingRewards(
     _ request: Cosmos_Distribution_V1beta1_QueryValidatorOutstandingRewardsRequest,
     callOptions: CallOptions?
@@ -98,6 +103,24 @@ extension Cosmos_Distribution_V1beta1_QueryClientProtocol {
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeParamsInterceptors() ?? []
+    )
+  }
+
+  /// ValidatorDistributionInfo queries validator commission and self-delegation rewards for validator
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to ValidatorDistributionInfo.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func validatorDistributionInfo(
+    _ request: Cosmos_Distribution_V1beta1_QueryValidatorDistributionInfoRequest,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Cosmos_Distribution_V1beta1_QueryValidatorDistributionInfoRequest, Cosmos_Distribution_V1beta1_QueryValidatorDistributionInfoResponse> {
+    return self.makeUnaryCall(
+      path: "/cosmos.distribution.v1beta1.Query/ValidatorDistributionInfo",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeValidatorDistributionInfoInterceptors() ?? []
     )
   }
 
@@ -173,7 +196,7 @@ extension Cosmos_Distribution_V1beta1_QueryClientProtocol {
     )
   }
 
-  /// DelegationTotalRewards queries the total rewards accrued by a each
+  /// DelegationTotalRewards queries the total rewards accrued by each
   /// validator.
   ///
   /// - Parameters:
@@ -252,6 +275,9 @@ internal protocol Cosmos_Distribution_V1beta1_QueryClientInterceptorFactoryProto
   /// - Returns: Interceptors to use when invoking 'params'.
   func makeParamsInterceptors() -> [ClientInterceptor<Cosmos_Distribution_V1beta1_QueryParamsRequest, Cosmos_Distribution_V1beta1_QueryParamsResponse>]
 
+  /// - Returns: Interceptors to use when invoking 'validatorDistributionInfo'.
+  func makeValidatorDistributionInfoInterceptors() -> [ClientInterceptor<Cosmos_Distribution_V1beta1_QueryValidatorDistributionInfoRequest, Cosmos_Distribution_V1beta1_QueryValidatorDistributionInfoResponse>]
+
   /// - Returns: Interceptors to use when invoking 'validatorOutstandingRewards'.
   func makeValidatorOutstandingRewardsInterceptors() -> [ClientInterceptor<Cosmos_Distribution_V1beta1_QueryValidatorOutstandingRewardsRequest, Cosmos_Distribution_V1beta1_QueryValidatorOutstandingRewardsResponse>]
 
@@ -308,6 +334,9 @@ internal protocol Cosmos_Distribution_V1beta1_QueryProvider: CallHandlerProvider
   /// Params queries params of the distribution module.
   func params(request: Cosmos_Distribution_V1beta1_QueryParamsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Distribution_V1beta1_QueryParamsResponse>
 
+  /// ValidatorDistributionInfo queries validator commission and self-delegation rewards for validator
+  func validatorDistributionInfo(request: Cosmos_Distribution_V1beta1_QueryValidatorDistributionInfoRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Distribution_V1beta1_QueryValidatorDistributionInfoResponse>
+
   /// ValidatorOutstandingRewards queries rewards of a validator address.
   func validatorOutstandingRewards(request: Cosmos_Distribution_V1beta1_QueryValidatorOutstandingRewardsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Distribution_V1beta1_QueryValidatorOutstandingRewardsResponse>
 
@@ -320,7 +349,7 @@ internal protocol Cosmos_Distribution_V1beta1_QueryProvider: CallHandlerProvider
   /// DelegationRewards queries the total rewards accrued by a delegation.
   func delegationRewards(request: Cosmos_Distribution_V1beta1_QueryDelegationRewardsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Distribution_V1beta1_QueryDelegationRewardsResponse>
 
-  /// DelegationTotalRewards queries the total rewards accrued by a each
+  /// DelegationTotalRewards queries the total rewards accrued by each
   /// validator.
   func delegationTotalRewards(request: Cosmos_Distribution_V1beta1_QueryDelegationTotalRewardsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Distribution_V1beta1_QueryDelegationTotalRewardsResponse>
 
@@ -351,6 +380,15 @@ extension Cosmos_Distribution_V1beta1_QueryProvider {
         responseSerializer: ProtobufSerializer<Cosmos_Distribution_V1beta1_QueryParamsResponse>(),
         interceptors: self.interceptors?.makeParamsInterceptors() ?? [],
         userFunction: self.params(request:context:)
+      )
+
+    case "ValidatorDistributionInfo":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Cosmos_Distribution_V1beta1_QueryValidatorDistributionInfoRequest>(),
+        responseSerializer: ProtobufSerializer<Cosmos_Distribution_V1beta1_QueryValidatorDistributionInfoResponse>(),
+        interceptors: self.interceptors?.makeValidatorDistributionInfoInterceptors() ?? [],
+        userFunction: self.validatorDistributionInfo(request:context:)
       )
 
     case "ValidatorOutstandingRewards":
@@ -436,6 +474,10 @@ internal protocol Cosmos_Distribution_V1beta1_QueryServerInterceptorFactoryProto
   /// - Returns: Interceptors to use when handling 'params'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeParamsInterceptors() -> [ServerInterceptor<Cosmos_Distribution_V1beta1_QueryParamsRequest, Cosmos_Distribution_V1beta1_QueryParamsResponse>]
+
+  /// - Returns: Interceptors to use when handling 'validatorDistributionInfo'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeValidatorDistributionInfoInterceptors() -> [ServerInterceptor<Cosmos_Distribution_V1beta1_QueryValidatorDistributionInfoRequest, Cosmos_Distribution_V1beta1_QueryValidatorDistributionInfoResponse>]
 
   /// - Returns: Interceptors to use when handling 'validatorOutstandingRewards'.
   ///   Defaults to calling `self.makeInterceptors()`.

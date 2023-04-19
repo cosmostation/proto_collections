@@ -62,6 +62,8 @@ struct Cosmos_Params_V1beta1_QueryParamsResponse {
 
 /// QuerySubspacesRequest defines a request type for querying for all registered
 /// subspaces and all keys for a subspace.
+///
+/// Since: cosmos-sdk 0.46
 struct Cosmos_Params_V1beta1_QuerySubspacesRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -74,6 +76,8 @@ struct Cosmos_Params_V1beta1_QuerySubspacesRequest {
 
 /// QuerySubspacesResponse defines the response types for querying for all
 /// registered subspaces and all keys for a subspace.
+///
+/// Since: cosmos-sdk 0.46
 struct Cosmos_Params_V1beta1_QuerySubspacesResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -88,6 +92,8 @@ struct Cosmos_Params_V1beta1_QuerySubspacesResponse {
 
 /// Subspace defines a parameter subspace name and all the keys that exist for
 /// the subspace.
+///
+/// Since: cosmos-sdk 0.46
 struct Cosmos_Params_V1beta1_Subspace {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for

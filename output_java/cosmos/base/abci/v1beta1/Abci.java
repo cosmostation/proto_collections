@@ -254,6 +254,70 @@ public final class Abci {
      */
     com.google.protobuf.ByteString
         getTimestampBytes();
+
+    /**
+     * <pre>
+     * Events defines all the events emitted by processing a transaction. Note,
+     * these events include those emitted by processing all the messages and those
+     * emitted from the ante. Whereas Logs contains the events, with
+     * additional metadata, emitted only by processing the messages.
+     * Since: cosmos-sdk 0.42.11, 0.44.5, 0.45
+     * </pre>
+     *
+     * <code>repeated .tendermint.abci.Event events = 13 [(.gogoproto.nullable) = false];</code>
+     */
+    java.util.List<tendermint.abci.Types.Event> 
+        getEventsList();
+    /**
+     * <pre>
+     * Events defines all the events emitted by processing a transaction. Note,
+     * these events include those emitted by processing all the messages and those
+     * emitted from the ante. Whereas Logs contains the events, with
+     * additional metadata, emitted only by processing the messages.
+     * Since: cosmos-sdk 0.42.11, 0.44.5, 0.45
+     * </pre>
+     *
+     * <code>repeated .tendermint.abci.Event events = 13 [(.gogoproto.nullable) = false];</code>
+     */
+    tendermint.abci.Types.Event getEvents(int index);
+    /**
+     * <pre>
+     * Events defines all the events emitted by processing a transaction. Note,
+     * these events include those emitted by processing all the messages and those
+     * emitted from the ante. Whereas Logs contains the events, with
+     * additional metadata, emitted only by processing the messages.
+     * Since: cosmos-sdk 0.42.11, 0.44.5, 0.45
+     * </pre>
+     *
+     * <code>repeated .tendermint.abci.Event events = 13 [(.gogoproto.nullable) = false];</code>
+     */
+    int getEventsCount();
+    /**
+     * <pre>
+     * Events defines all the events emitted by processing a transaction. Note,
+     * these events include those emitted by processing all the messages and those
+     * emitted from the ante. Whereas Logs contains the events, with
+     * additional metadata, emitted only by processing the messages.
+     * Since: cosmos-sdk 0.42.11, 0.44.5, 0.45
+     * </pre>
+     *
+     * <code>repeated .tendermint.abci.Event events = 13 [(.gogoproto.nullable) = false];</code>
+     */
+    java.util.List<? extends tendermint.abci.Types.EventOrBuilder> 
+        getEventsOrBuilderList();
+    /**
+     * <pre>
+     * Events defines all the events emitted by processing a transaction. Note,
+     * these events include those emitted by processing all the messages and those
+     * emitted from the ante. Whereas Logs contains the events, with
+     * additional metadata, emitted only by processing the messages.
+     * Since: cosmos-sdk 0.42.11, 0.44.5, 0.45
+     * </pre>
+     *
+     * <code>repeated .tendermint.abci.Event events = 13 [(.gogoproto.nullable) = false];</code>
+     */
+    tendermint.abci.Types.EventOrBuilder getEventsOrBuilder(
+        int index);
   }
   /**
    * <pre>
@@ -280,6 +344,7 @@ public final class Abci {
       logs_ = java.util.Collections.emptyList();
       info_ = "";
       timestamp_ = "";
+      events_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -391,6 +456,15 @@ public final class Abci {
               timestamp_ = s;
               break;
             }
+            case 106: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                events_ = new java.util.ArrayList<tendermint.abci.Types.Event>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              events_.add(
+                  input.readMessage(tendermint.abci.Types.Event.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -408,6 +482,9 @@ public final class Abci {
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           logs_ = java.util.Collections.unmodifiableList(logs_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          events_ = java.util.Collections.unmodifiableList(events_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -866,6 +943,86 @@ public final class Abci {
       }
     }
 
+    public static final int EVENTS_FIELD_NUMBER = 13;
+    private java.util.List<tendermint.abci.Types.Event> events_;
+    /**
+     * <pre>
+     * Events defines all the events emitted by processing a transaction. Note,
+     * these events include those emitted by processing all the messages and those
+     * emitted from the ante. Whereas Logs contains the events, with
+     * additional metadata, emitted only by processing the messages.
+     * Since: cosmos-sdk 0.42.11, 0.44.5, 0.45
+     * </pre>
+     *
+     * <code>repeated .tendermint.abci.Event events = 13 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public java.util.List<tendermint.abci.Types.Event> getEventsList() {
+      return events_;
+    }
+    /**
+     * <pre>
+     * Events defines all the events emitted by processing a transaction. Note,
+     * these events include those emitted by processing all the messages and those
+     * emitted from the ante. Whereas Logs contains the events, with
+     * additional metadata, emitted only by processing the messages.
+     * Since: cosmos-sdk 0.42.11, 0.44.5, 0.45
+     * </pre>
+     *
+     * <code>repeated .tendermint.abci.Event events = 13 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends tendermint.abci.Types.EventOrBuilder> 
+        getEventsOrBuilderList() {
+      return events_;
+    }
+    /**
+     * <pre>
+     * Events defines all the events emitted by processing a transaction. Note,
+     * these events include those emitted by processing all the messages and those
+     * emitted from the ante. Whereas Logs contains the events, with
+     * additional metadata, emitted only by processing the messages.
+     * Since: cosmos-sdk 0.42.11, 0.44.5, 0.45
+     * </pre>
+     *
+     * <code>repeated .tendermint.abci.Event events = 13 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public int getEventsCount() {
+      return events_.size();
+    }
+    /**
+     * <pre>
+     * Events defines all the events emitted by processing a transaction. Note,
+     * these events include those emitted by processing all the messages and those
+     * emitted from the ante. Whereas Logs contains the events, with
+     * additional metadata, emitted only by processing the messages.
+     * Since: cosmos-sdk 0.42.11, 0.44.5, 0.45
+     * </pre>
+     *
+     * <code>repeated .tendermint.abci.Event events = 13 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public tendermint.abci.Types.Event getEvents(int index) {
+      return events_.get(index);
+    }
+    /**
+     * <pre>
+     * Events defines all the events emitted by processing a transaction. Note,
+     * these events include those emitted by processing all the messages and those
+     * emitted from the ante. Whereas Logs contains the events, with
+     * additional metadata, emitted only by processing the messages.
+     * Since: cosmos-sdk 0.42.11, 0.44.5, 0.45
+     * </pre>
+     *
+     * <code>repeated .tendermint.abci.Event events = 13 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public tendermint.abci.Types.EventOrBuilder getEventsOrBuilder(
+        int index) {
+      return events_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -915,6 +1072,9 @@ public final class Abci {
       }
       if (!getTimestampBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, timestamp_);
+      }
+      for (int i = 0; i < events_.size(); i++) {
+        output.writeMessage(13, events_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -967,6 +1127,10 @@ public final class Abci {
       if (!getTimestampBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, timestamp_);
       }
+      for (int i = 0; i < events_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, events_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1009,6 +1173,8 @@ public final class Abci {
       }
       if (!getTimestamp()
           .equals(other.getTimestamp())) return false;
+      if (!getEventsList()
+          .equals(other.getEventsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1051,6 +1217,10 @@ public final class Abci {
       }
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + getTimestamp().hashCode();
+      if (getEventsCount() > 0) {
+        hash = (37 * hash) + EVENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getEventsList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1185,6 +1355,7 @@ public final class Abci {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getLogsFieldBuilder();
+          getEventsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -1222,6 +1393,12 @@ public final class Abci {
         }
         timestamp_ = "";
 
+        if (eventsBuilder_ == null) {
+          events_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          eventsBuilder_.clear();
+        }
         return this;
       }
 
@@ -1273,6 +1450,15 @@ public final class Abci {
           result.tx_ = txBuilder_.build();
         }
         result.timestamp_ = timestamp_;
+        if (eventsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            events_ = java.util.Collections.unmodifiableList(events_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.events_ = events_;
+        } else {
+          result.events_ = eventsBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -1385,6 +1571,32 @@ public final class Abci {
         if (!other.getTimestamp().isEmpty()) {
           timestamp_ = other.timestamp_;
           onChanged();
+        }
+        if (eventsBuilder_ == null) {
+          if (!other.events_.isEmpty()) {
+            if (events_.isEmpty()) {
+              events_ = other.events_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureEventsIsMutable();
+              events_.addAll(other.events_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.events_.isEmpty()) {
+            if (eventsBuilder_.isEmpty()) {
+              eventsBuilder_.dispose();
+              eventsBuilder_ = null;
+              events_ = other.events_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              eventsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getEventsFieldBuilder() : null;
+            } else {
+              eventsBuilder_.addAllMessages(other.events_);
+            }
+          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2645,6 +2857,390 @@ public final class Abci {
         onChanged();
         return this;
       }
+
+      private java.util.List<tendermint.abci.Types.Event> events_ =
+        java.util.Collections.emptyList();
+      private void ensureEventsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          events_ = new java.util.ArrayList<tendermint.abci.Types.Event>(events_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          tendermint.abci.Types.Event, tendermint.abci.Types.Event.Builder, tendermint.abci.Types.EventOrBuilder> eventsBuilder_;
+
+      /**
+       * <pre>
+       * Events defines all the events emitted by processing a transaction. Note,
+       * these events include those emitted by processing all the messages and those
+       * emitted from the ante. Whereas Logs contains the events, with
+       * additional metadata, emitted only by processing the messages.
+       * Since: cosmos-sdk 0.42.11, 0.44.5, 0.45
+       * </pre>
+       *
+       * <code>repeated .tendermint.abci.Event events = 13 [(.gogoproto.nullable) = false];</code>
+       */
+      public java.util.List<tendermint.abci.Types.Event> getEventsList() {
+        if (eventsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(events_);
+        } else {
+          return eventsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * Events defines all the events emitted by processing a transaction. Note,
+       * these events include those emitted by processing all the messages and those
+       * emitted from the ante. Whereas Logs contains the events, with
+       * additional metadata, emitted only by processing the messages.
+       * Since: cosmos-sdk 0.42.11, 0.44.5, 0.45
+       * </pre>
+       *
+       * <code>repeated .tendermint.abci.Event events = 13 [(.gogoproto.nullable) = false];</code>
+       */
+      public int getEventsCount() {
+        if (eventsBuilder_ == null) {
+          return events_.size();
+        } else {
+          return eventsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * Events defines all the events emitted by processing a transaction. Note,
+       * these events include those emitted by processing all the messages and those
+       * emitted from the ante. Whereas Logs contains the events, with
+       * additional metadata, emitted only by processing the messages.
+       * Since: cosmos-sdk 0.42.11, 0.44.5, 0.45
+       * </pre>
+       *
+       * <code>repeated .tendermint.abci.Event events = 13 [(.gogoproto.nullable) = false];</code>
+       */
+      public tendermint.abci.Types.Event getEvents(int index) {
+        if (eventsBuilder_ == null) {
+          return events_.get(index);
+        } else {
+          return eventsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * Events defines all the events emitted by processing a transaction. Note,
+       * these events include those emitted by processing all the messages and those
+       * emitted from the ante. Whereas Logs contains the events, with
+       * additional metadata, emitted only by processing the messages.
+       * Since: cosmos-sdk 0.42.11, 0.44.5, 0.45
+       * </pre>
+       *
+       * <code>repeated .tendermint.abci.Event events = 13 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder setEvents(
+          int index, tendermint.abci.Types.Event value) {
+        if (eventsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEventsIsMutable();
+          events_.set(index, value);
+          onChanged();
+        } else {
+          eventsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Events defines all the events emitted by processing a transaction. Note,
+       * these events include those emitted by processing all the messages and those
+       * emitted from the ante. Whereas Logs contains the events, with
+       * additional metadata, emitted only by processing the messages.
+       * Since: cosmos-sdk 0.42.11, 0.44.5, 0.45
+       * </pre>
+       *
+       * <code>repeated .tendermint.abci.Event events = 13 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder setEvents(
+          int index, tendermint.abci.Types.Event.Builder builderForValue) {
+        if (eventsBuilder_ == null) {
+          ensureEventsIsMutable();
+          events_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          eventsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Events defines all the events emitted by processing a transaction. Note,
+       * these events include those emitted by processing all the messages and those
+       * emitted from the ante. Whereas Logs contains the events, with
+       * additional metadata, emitted only by processing the messages.
+       * Since: cosmos-sdk 0.42.11, 0.44.5, 0.45
+       * </pre>
+       *
+       * <code>repeated .tendermint.abci.Event events = 13 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addEvents(tendermint.abci.Types.Event value) {
+        if (eventsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEventsIsMutable();
+          events_.add(value);
+          onChanged();
+        } else {
+          eventsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Events defines all the events emitted by processing a transaction. Note,
+       * these events include those emitted by processing all the messages and those
+       * emitted from the ante. Whereas Logs contains the events, with
+       * additional metadata, emitted only by processing the messages.
+       * Since: cosmos-sdk 0.42.11, 0.44.5, 0.45
+       * </pre>
+       *
+       * <code>repeated .tendermint.abci.Event events = 13 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addEvents(
+          int index, tendermint.abci.Types.Event value) {
+        if (eventsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEventsIsMutable();
+          events_.add(index, value);
+          onChanged();
+        } else {
+          eventsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Events defines all the events emitted by processing a transaction. Note,
+       * these events include those emitted by processing all the messages and those
+       * emitted from the ante. Whereas Logs contains the events, with
+       * additional metadata, emitted only by processing the messages.
+       * Since: cosmos-sdk 0.42.11, 0.44.5, 0.45
+       * </pre>
+       *
+       * <code>repeated .tendermint.abci.Event events = 13 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addEvents(
+          tendermint.abci.Types.Event.Builder builderForValue) {
+        if (eventsBuilder_ == null) {
+          ensureEventsIsMutable();
+          events_.add(builderForValue.build());
+          onChanged();
+        } else {
+          eventsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Events defines all the events emitted by processing a transaction. Note,
+       * these events include those emitted by processing all the messages and those
+       * emitted from the ante. Whereas Logs contains the events, with
+       * additional metadata, emitted only by processing the messages.
+       * Since: cosmos-sdk 0.42.11, 0.44.5, 0.45
+       * </pre>
+       *
+       * <code>repeated .tendermint.abci.Event events = 13 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addEvents(
+          int index, tendermint.abci.Types.Event.Builder builderForValue) {
+        if (eventsBuilder_ == null) {
+          ensureEventsIsMutable();
+          events_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          eventsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Events defines all the events emitted by processing a transaction. Note,
+       * these events include those emitted by processing all the messages and those
+       * emitted from the ante. Whereas Logs contains the events, with
+       * additional metadata, emitted only by processing the messages.
+       * Since: cosmos-sdk 0.42.11, 0.44.5, 0.45
+       * </pre>
+       *
+       * <code>repeated .tendermint.abci.Event events = 13 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder addAllEvents(
+          java.lang.Iterable<? extends tendermint.abci.Types.Event> values) {
+        if (eventsBuilder_ == null) {
+          ensureEventsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, events_);
+          onChanged();
+        } else {
+          eventsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Events defines all the events emitted by processing a transaction. Note,
+       * these events include those emitted by processing all the messages and those
+       * emitted from the ante. Whereas Logs contains the events, with
+       * additional metadata, emitted only by processing the messages.
+       * Since: cosmos-sdk 0.42.11, 0.44.5, 0.45
+       * </pre>
+       *
+       * <code>repeated .tendermint.abci.Event events = 13 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder clearEvents() {
+        if (eventsBuilder_ == null) {
+          events_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          eventsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Events defines all the events emitted by processing a transaction. Note,
+       * these events include those emitted by processing all the messages and those
+       * emitted from the ante. Whereas Logs contains the events, with
+       * additional metadata, emitted only by processing the messages.
+       * Since: cosmos-sdk 0.42.11, 0.44.5, 0.45
+       * </pre>
+       *
+       * <code>repeated .tendermint.abci.Event events = 13 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder removeEvents(int index) {
+        if (eventsBuilder_ == null) {
+          ensureEventsIsMutable();
+          events_.remove(index);
+          onChanged();
+        } else {
+          eventsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Events defines all the events emitted by processing a transaction. Note,
+       * these events include those emitted by processing all the messages and those
+       * emitted from the ante. Whereas Logs contains the events, with
+       * additional metadata, emitted only by processing the messages.
+       * Since: cosmos-sdk 0.42.11, 0.44.5, 0.45
+       * </pre>
+       *
+       * <code>repeated .tendermint.abci.Event events = 13 [(.gogoproto.nullable) = false];</code>
+       */
+      public tendermint.abci.Types.Event.Builder getEventsBuilder(
+          int index) {
+        return getEventsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * Events defines all the events emitted by processing a transaction. Note,
+       * these events include those emitted by processing all the messages and those
+       * emitted from the ante. Whereas Logs contains the events, with
+       * additional metadata, emitted only by processing the messages.
+       * Since: cosmos-sdk 0.42.11, 0.44.5, 0.45
+       * </pre>
+       *
+       * <code>repeated .tendermint.abci.Event events = 13 [(.gogoproto.nullable) = false];</code>
+       */
+      public tendermint.abci.Types.EventOrBuilder getEventsOrBuilder(
+          int index) {
+        if (eventsBuilder_ == null) {
+          return events_.get(index);  } else {
+          return eventsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * Events defines all the events emitted by processing a transaction. Note,
+       * these events include those emitted by processing all the messages and those
+       * emitted from the ante. Whereas Logs contains the events, with
+       * additional metadata, emitted only by processing the messages.
+       * Since: cosmos-sdk 0.42.11, 0.44.5, 0.45
+       * </pre>
+       *
+       * <code>repeated .tendermint.abci.Event events = 13 [(.gogoproto.nullable) = false];</code>
+       */
+      public java.util.List<? extends tendermint.abci.Types.EventOrBuilder> 
+           getEventsOrBuilderList() {
+        if (eventsBuilder_ != null) {
+          return eventsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(events_);
+        }
+      }
+      /**
+       * <pre>
+       * Events defines all the events emitted by processing a transaction. Note,
+       * these events include those emitted by processing all the messages and those
+       * emitted from the ante. Whereas Logs contains the events, with
+       * additional metadata, emitted only by processing the messages.
+       * Since: cosmos-sdk 0.42.11, 0.44.5, 0.45
+       * </pre>
+       *
+       * <code>repeated .tendermint.abci.Event events = 13 [(.gogoproto.nullable) = false];</code>
+       */
+      public tendermint.abci.Types.Event.Builder addEventsBuilder() {
+        return getEventsFieldBuilder().addBuilder(
+            tendermint.abci.Types.Event.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Events defines all the events emitted by processing a transaction. Note,
+       * these events include those emitted by processing all the messages and those
+       * emitted from the ante. Whereas Logs contains the events, with
+       * additional metadata, emitted only by processing the messages.
+       * Since: cosmos-sdk 0.42.11, 0.44.5, 0.45
+       * </pre>
+       *
+       * <code>repeated .tendermint.abci.Event events = 13 [(.gogoproto.nullable) = false];</code>
+       */
+      public tendermint.abci.Types.Event.Builder addEventsBuilder(
+          int index) {
+        return getEventsFieldBuilder().addBuilder(
+            index, tendermint.abci.Types.Event.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Events defines all the events emitted by processing a transaction. Note,
+       * these events include those emitted by processing all the messages and those
+       * emitted from the ante. Whereas Logs contains the events, with
+       * additional metadata, emitted only by processing the messages.
+       * Since: cosmos-sdk 0.42.11, 0.44.5, 0.45
+       * </pre>
+       *
+       * <code>repeated .tendermint.abci.Event events = 13 [(.gogoproto.nullable) = false];</code>
+       */
+      public java.util.List<tendermint.abci.Types.Event.Builder> 
+           getEventsBuilderList() {
+        return getEventsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          tendermint.abci.Types.Event, tendermint.abci.Types.Event.Builder, tendermint.abci.Types.EventOrBuilder> 
+          getEventsFieldBuilder() {
+        if (eventsBuilder_ == null) {
+          eventsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              tendermint.abci.Types.Event, tendermint.abci.Types.Event.Builder, tendermint.abci.Types.EventOrBuilder>(
+                  events_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          events_ = null;
+        }
+        return eventsBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2703,7 +3299,7 @@ public final class Abci {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 msg_index = 1;</code>
+     * <code>uint32 msg_index = 1 [(.gogoproto.jsontag) = "msg_index"];</code>
      * @return The msgIndex.
      */
     int getMsgIndex();
@@ -2879,7 +3475,7 @@ public final class Abci {
     public static final int MSG_INDEX_FIELD_NUMBER = 1;
     private int msgIndex_;
     /**
-     * <code>uint32 msg_index = 1;</code>
+     * <code>uint32 msg_index = 1 [(.gogoproto.jsontag) = "msg_index"];</code>
      * @return The msgIndex.
      */
     @java.lang.Override
@@ -3372,7 +3968,7 @@ public final class Abci {
 
       private int msgIndex_ ;
       /**
-       * <code>uint32 msg_index = 1;</code>
+       * <code>uint32 msg_index = 1 [(.gogoproto.jsontag) = "msg_index"];</code>
        * @return The msgIndex.
        */
       @java.lang.Override
@@ -3380,7 +3976,7 @@ public final class Abci {
         return msgIndex_;
       }
       /**
-       * <code>uint32 msg_index = 1;</code>
+       * <code>uint32 msg_index = 1 [(.gogoproto.jsontag) = "msg_index"];</code>
        * @param value The msgIndex to set.
        * @return This builder for chaining.
        */
@@ -3391,7 +3987,7 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>uint32 msg_index = 1;</code>
+       * <code>uint32 msg_index = 1 [(.gogoproto.jsontag) = "msg_index"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMsgIndex() {
@@ -6156,12 +6752,14 @@ public final class Abci {
      * <pre>
      * Data is any data returned from message or handler execution. It MUST be
      * length prefixed in order to separate data from multiple message executions.
+     * Deprecated. This field is still populated, but prefer msg_response instead
+     * because it also contains the Msg response typeURL.
      * </pre>
      *
-     * <code>bytes data = 1;</code>
+     * <code>bytes data = 1 [deprecated = true];</code>
      * @return The data.
      */
-    com.google.protobuf.ByteString getData();
+    @java.lang.Deprecated com.google.protobuf.ByteString getData();
 
     /**
      * <pre>
@@ -6231,6 +6829,55 @@ public final class Abci {
      */
     tendermint.abci.Types.EventOrBuilder getEventsOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     * msg_responses contains the Msg handler responses type packed in Anys.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * <code>repeated .google.protobuf2.Any msg_responses = 4;</code>
+     */
+    java.util.List<com.google.protobuf2.Any> 
+        getMsgResponsesList();
+    /**
+     * <pre>
+     * msg_responses contains the Msg handler responses type packed in Anys.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * <code>repeated .google.protobuf2.Any msg_responses = 4;</code>
+     */
+    com.google.protobuf2.Any getMsgResponses(int index);
+    /**
+     * <pre>
+     * msg_responses contains the Msg handler responses type packed in Anys.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * <code>repeated .google.protobuf2.Any msg_responses = 4;</code>
+     */
+    int getMsgResponsesCount();
+    /**
+     * <pre>
+     * msg_responses contains the Msg handler responses type packed in Anys.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * <code>repeated .google.protobuf2.Any msg_responses = 4;</code>
+     */
+    java.util.List<? extends com.google.protobuf2.AnyOrBuilder> 
+        getMsgResponsesOrBuilderList();
+    /**
+     * <pre>
+     * msg_responses contains the Msg handler responses type packed in Anys.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * <code>repeated .google.protobuf2.Any msg_responses = 4;</code>
+     */
+    com.google.protobuf2.AnyOrBuilder getMsgResponsesOrBuilder(
+        int index);
   }
   /**
    * <pre>
@@ -6252,6 +6899,7 @@ public final class Abci {
       data_ = com.google.protobuf.ByteString.EMPTY;
       log_ = "";
       events_ = java.util.Collections.emptyList();
+      msgResponses_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -6305,6 +6953,15 @@ public final class Abci {
                   input.readMessage(tendermint.abci.Types.Event.parser(), extensionRegistry));
               break;
             }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                msgResponses_ = new java.util.ArrayList<com.google.protobuf2.Any>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              msgResponses_.add(
+                  input.readMessage(com.google.protobuf2.Any.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -6322,6 +6979,9 @@ public final class Abci {
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           events_ = java.util.Collections.unmodifiableList(events_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          msgResponses_ = java.util.Collections.unmodifiableList(msgResponses_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -6346,13 +7006,15 @@ public final class Abci {
      * <pre>
      * Data is any data returned from message or handler execution. It MUST be
      * length prefixed in order to separate data from multiple message executions.
+     * Deprecated. This field is still populated, but prefer msg_response instead
+     * because it also contains the Msg response typeURL.
      * </pre>
      *
-     * <code>bytes data = 1;</code>
+     * <code>bytes data = 1 [deprecated = true];</code>
      * @return The data.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString getData() {
+    @java.lang.Deprecated public com.google.protobuf.ByteString getData() {
       return data_;
     }
 
@@ -6467,6 +7129,71 @@ public final class Abci {
       return events_.get(index);
     }
 
+    public static final int MSG_RESPONSES_FIELD_NUMBER = 4;
+    private java.util.List<com.google.protobuf2.Any> msgResponses_;
+    /**
+     * <pre>
+     * msg_responses contains the Msg handler responses type packed in Anys.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * <code>repeated .google.protobuf2.Any msg_responses = 4;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.protobuf2.Any> getMsgResponsesList() {
+      return msgResponses_;
+    }
+    /**
+     * <pre>
+     * msg_responses contains the Msg handler responses type packed in Anys.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * <code>repeated .google.protobuf2.Any msg_responses = 4;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.protobuf2.AnyOrBuilder> 
+        getMsgResponsesOrBuilderList() {
+      return msgResponses_;
+    }
+    /**
+     * <pre>
+     * msg_responses contains the Msg handler responses type packed in Anys.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * <code>repeated .google.protobuf2.Any msg_responses = 4;</code>
+     */
+    @java.lang.Override
+    public int getMsgResponsesCount() {
+      return msgResponses_.size();
+    }
+    /**
+     * <pre>
+     * msg_responses contains the Msg handler responses type packed in Anys.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * <code>repeated .google.protobuf2.Any msg_responses = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf2.Any getMsgResponses(int index) {
+      return msgResponses_.get(index);
+    }
+    /**
+     * <pre>
+     * msg_responses contains the Msg handler responses type packed in Anys.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * <code>repeated .google.protobuf2.Any msg_responses = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf2.AnyOrBuilder getMsgResponsesOrBuilder(
+        int index) {
+      return msgResponses_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -6490,6 +7217,9 @@ public final class Abci {
       for (int i = 0; i < events_.size(); i++) {
         output.writeMessage(3, events_.get(i));
       }
+      for (int i = 0; i < msgResponses_.size(); i++) {
+        output.writeMessage(4, msgResponses_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -6509,6 +7239,10 @@ public final class Abci {
       for (int i = 0; i < events_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, events_.get(i));
+      }
+      for (int i = 0; i < msgResponses_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, msgResponses_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6531,6 +7265,8 @@ public final class Abci {
           .equals(other.getLog())) return false;
       if (!getEventsList()
           .equals(other.getEventsList())) return false;
+      if (!getMsgResponsesList()
+          .equals(other.getMsgResponsesList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6549,6 +7285,10 @@ public final class Abci {
       if (getEventsCount() > 0) {
         hash = (37 * hash) + EVENTS_FIELD_NUMBER;
         hash = (53 * hash) + getEventsList().hashCode();
+      }
+      if (getMsgResponsesCount() > 0) {
+        hash = (37 * hash) + MSG_RESPONSES_FIELD_NUMBER;
+        hash = (53 * hash) + getMsgResponsesList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -6683,6 +7423,7 @@ public final class Abci {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getEventsFieldBuilder();
+          getMsgResponsesFieldBuilder();
         }
       }
       @java.lang.Override
@@ -6697,6 +7438,12 @@ public final class Abci {
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           eventsBuilder_.clear();
+        }
+        if (msgResponsesBuilder_ == null) {
+          msgResponses_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          msgResponsesBuilder_.clear();
         }
         return this;
       }
@@ -6735,6 +7482,15 @@ public final class Abci {
           result.events_ = events_;
         } else {
           result.events_ = eventsBuilder_.build();
+        }
+        if (msgResponsesBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            msgResponses_ = java.util.Collections.unmodifiableList(msgResponses_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.msgResponses_ = msgResponses_;
+        } else {
+          result.msgResponses_ = msgResponsesBuilder_.build();
         }
         onBuilt();
         return result;
@@ -6817,6 +7573,32 @@ public final class Abci {
             }
           }
         }
+        if (msgResponsesBuilder_ == null) {
+          if (!other.msgResponses_.isEmpty()) {
+            if (msgResponses_.isEmpty()) {
+              msgResponses_ = other.msgResponses_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureMsgResponsesIsMutable();
+              msgResponses_.addAll(other.msgResponses_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.msgResponses_.isEmpty()) {
+            if (msgResponsesBuilder_.isEmpty()) {
+              msgResponsesBuilder_.dispose();
+              msgResponsesBuilder_ = null;
+              msgResponses_ = other.msgResponses_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              msgResponsesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getMsgResponsesFieldBuilder() : null;
+            } else {
+              msgResponsesBuilder_.addAllMessages(other.msgResponses_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -6852,26 +7634,30 @@ public final class Abci {
        * <pre>
        * Data is any data returned from message or handler execution. It MUST be
        * length prefixed in order to separate data from multiple message executions.
+       * Deprecated. This field is still populated, but prefer msg_response instead
+       * because it also contains the Msg response typeURL.
        * </pre>
        *
-       * <code>bytes data = 1;</code>
+       * <code>bytes data = 1 [deprecated = true];</code>
        * @return The data.
        */
       @java.lang.Override
-      public com.google.protobuf.ByteString getData() {
+      @java.lang.Deprecated public com.google.protobuf.ByteString getData() {
         return data_;
       }
       /**
        * <pre>
        * Data is any data returned from message or handler execution. It MUST be
        * length prefixed in order to separate data from multiple message executions.
+       * Deprecated. This field is still populated, but prefer msg_response instead
+       * because it also contains the Msg response typeURL.
        * </pre>
        *
-       * <code>bytes data = 1;</code>
+       * <code>bytes data = 1 [deprecated = true];</code>
        * @param value The data to set.
        * @return This builder for chaining.
        */
-      public Builder setData(com.google.protobuf.ByteString value) {
+      @java.lang.Deprecated public Builder setData(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -6884,12 +7670,14 @@ public final class Abci {
        * <pre>
        * Data is any data returned from message or handler execution. It MUST be
        * length prefixed in order to separate data from multiple message executions.
+       * Deprecated. This field is still populated, but prefer msg_response instead
+       * because it also contains the Msg response typeURL.
        * </pre>
        *
-       * <code>bytes data = 1;</code>
+       * <code>bytes data = 1 [deprecated = true];</code>
        * @return This builder for chaining.
        */
-      public Builder clearData() {
+      @java.lang.Deprecated public Builder clearData() {
         
         data_ = getDefaultInstance().getData();
         onChanged();
@@ -7320,6 +8108,336 @@ public final class Abci {
           events_ = null;
         }
         return eventsBuilder_;
+      }
+
+      private java.util.List<com.google.protobuf2.Any> msgResponses_ =
+        java.util.Collections.emptyList();
+      private void ensureMsgResponsesIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          msgResponses_ = new java.util.ArrayList<com.google.protobuf2.Any>(msgResponses_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.google.protobuf2.Any, com.google.protobuf2.Any.Builder, com.google.protobuf2.AnyOrBuilder> msgResponsesBuilder_;
+
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses type packed in Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 4;</code>
+       */
+      public java.util.List<com.google.protobuf2.Any> getMsgResponsesList() {
+        if (msgResponsesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(msgResponses_);
+        } else {
+          return msgResponsesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses type packed in Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 4;</code>
+       */
+      public int getMsgResponsesCount() {
+        if (msgResponsesBuilder_ == null) {
+          return msgResponses_.size();
+        } else {
+          return msgResponsesBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses type packed in Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 4;</code>
+       */
+      public com.google.protobuf2.Any getMsgResponses(int index) {
+        if (msgResponsesBuilder_ == null) {
+          return msgResponses_.get(index);
+        } else {
+          return msgResponsesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses type packed in Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 4;</code>
+       */
+      public Builder setMsgResponses(
+          int index, com.google.protobuf2.Any value) {
+        if (msgResponsesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMsgResponsesIsMutable();
+          msgResponses_.set(index, value);
+          onChanged();
+        } else {
+          msgResponsesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses type packed in Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 4;</code>
+       */
+      public Builder setMsgResponses(
+          int index, com.google.protobuf2.Any.Builder builderForValue) {
+        if (msgResponsesBuilder_ == null) {
+          ensureMsgResponsesIsMutable();
+          msgResponses_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          msgResponsesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses type packed in Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 4;</code>
+       */
+      public Builder addMsgResponses(com.google.protobuf2.Any value) {
+        if (msgResponsesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMsgResponsesIsMutable();
+          msgResponses_.add(value);
+          onChanged();
+        } else {
+          msgResponsesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses type packed in Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 4;</code>
+       */
+      public Builder addMsgResponses(
+          int index, com.google.protobuf2.Any value) {
+        if (msgResponsesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMsgResponsesIsMutable();
+          msgResponses_.add(index, value);
+          onChanged();
+        } else {
+          msgResponsesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses type packed in Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 4;</code>
+       */
+      public Builder addMsgResponses(
+          com.google.protobuf2.Any.Builder builderForValue) {
+        if (msgResponsesBuilder_ == null) {
+          ensureMsgResponsesIsMutable();
+          msgResponses_.add(builderForValue.build());
+          onChanged();
+        } else {
+          msgResponsesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses type packed in Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 4;</code>
+       */
+      public Builder addMsgResponses(
+          int index, com.google.protobuf2.Any.Builder builderForValue) {
+        if (msgResponsesBuilder_ == null) {
+          ensureMsgResponsesIsMutable();
+          msgResponses_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          msgResponsesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses type packed in Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 4;</code>
+       */
+      public Builder addAllMsgResponses(
+          java.lang.Iterable<? extends com.google.protobuf2.Any> values) {
+        if (msgResponsesBuilder_ == null) {
+          ensureMsgResponsesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, msgResponses_);
+          onChanged();
+        } else {
+          msgResponsesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses type packed in Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 4;</code>
+       */
+      public Builder clearMsgResponses() {
+        if (msgResponsesBuilder_ == null) {
+          msgResponses_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          msgResponsesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses type packed in Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 4;</code>
+       */
+      public Builder removeMsgResponses(int index) {
+        if (msgResponsesBuilder_ == null) {
+          ensureMsgResponsesIsMutable();
+          msgResponses_.remove(index);
+          onChanged();
+        } else {
+          msgResponsesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses type packed in Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 4;</code>
+       */
+      public com.google.protobuf2.Any.Builder getMsgResponsesBuilder(
+          int index) {
+        return getMsgResponsesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses type packed in Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 4;</code>
+       */
+      public com.google.protobuf2.AnyOrBuilder getMsgResponsesOrBuilder(
+          int index) {
+        if (msgResponsesBuilder_ == null) {
+          return msgResponses_.get(index);  } else {
+          return msgResponsesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses type packed in Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 4;</code>
+       */
+      public java.util.List<? extends com.google.protobuf2.AnyOrBuilder> 
+           getMsgResponsesOrBuilderList() {
+        if (msgResponsesBuilder_ != null) {
+          return msgResponsesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(msgResponses_);
+        }
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses type packed in Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 4;</code>
+       */
+      public com.google.protobuf2.Any.Builder addMsgResponsesBuilder() {
+        return getMsgResponsesFieldBuilder().addBuilder(
+            com.google.protobuf2.Any.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses type packed in Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 4;</code>
+       */
+      public com.google.protobuf2.Any.Builder addMsgResponsesBuilder(
+          int index) {
+        return getMsgResponsesFieldBuilder().addBuilder(
+            index, com.google.protobuf2.Any.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses type packed in Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 4;</code>
+       */
+      public java.util.List<com.google.protobuf2.Any.Builder> 
+           getMsgResponsesBuilderList() {
+        return getMsgResponsesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.google.protobuf2.Any, com.google.protobuf2.Any.Builder, com.google.protobuf2.AnyOrBuilder> 
+          getMsgResponsesFieldBuilder() {
+        if (msgResponsesBuilder_ == null) {
+          msgResponsesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.protobuf2.Any, com.google.protobuf2.Any.Builder, com.google.protobuf2.AnyOrBuilder>(
+                  msgResponses_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          msgResponses_ = null;
+        }
+        return msgResponsesBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -8208,7 +9326,7 @@ public final class Abci {
 
   }
 
-  public interface MsgDataOrBuilder extends
+  @java.lang.Deprecated public interface MsgDataOrBuilder extends
       // @@protoc_insertion_point(interface_extends:cosmos.base.abci.v1beta1.MsgData)
       com.google.protobuf.MessageOrBuilder {
 
@@ -8238,7 +9356,7 @@ public final class Abci {
    *
    * Protobuf type {@code cosmos.base.abci.v1beta1.MsgData}
    */
-  public static final class MsgData extends
+  @java.lang.Deprecated public static final class MsgData extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.base.abci.v1beta1.MsgData)
       MsgDataOrBuilder {
@@ -8865,27 +9983,96 @@ public final class Abci {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
+     * <pre>
+     * data field is deprecated and not populated.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
      */
-    java.util.List<cosmos.base.abci.v1beta1.Abci.MsgData> 
+    @java.lang.Deprecated java.util.List<cosmos.base.abci.v1beta1.Abci.MsgData> 
         getDataList();
     /**
-     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
+     * <pre>
+     * data field is deprecated and not populated.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
      */
-    cosmos.base.abci.v1beta1.Abci.MsgData getData(int index);
+    @java.lang.Deprecated cosmos.base.abci.v1beta1.Abci.MsgData getData(int index);
     /**
-     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
+     * <pre>
+     * data field is deprecated and not populated.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
      */
-    int getDataCount();
+    @java.lang.Deprecated int getDataCount();
     /**
-     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
+     * <pre>
+     * data field is deprecated and not populated.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
      */
-    java.util.List<? extends cosmos.base.abci.v1beta1.Abci.MsgDataOrBuilder> 
+    @java.lang.Deprecated java.util.List<? extends cosmos.base.abci.v1beta1.Abci.MsgDataOrBuilder> 
         getDataOrBuilderList();
     /**
-     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
+     * <pre>
+     * data field is deprecated and not populated.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
      */
-    cosmos.base.abci.v1beta1.Abci.MsgDataOrBuilder getDataOrBuilder(
+    @java.lang.Deprecated cosmos.base.abci.v1beta1.Abci.MsgDataOrBuilder getDataOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * msg_responses contains the Msg handler responses packed into Anys.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * <code>repeated .google.protobuf2.Any msg_responses = 2;</code>
+     */
+    java.util.List<com.google.protobuf2.Any> 
+        getMsgResponsesList();
+    /**
+     * <pre>
+     * msg_responses contains the Msg handler responses packed into Anys.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * <code>repeated .google.protobuf2.Any msg_responses = 2;</code>
+     */
+    com.google.protobuf2.Any getMsgResponses(int index);
+    /**
+     * <pre>
+     * msg_responses contains the Msg handler responses packed into Anys.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * <code>repeated .google.protobuf2.Any msg_responses = 2;</code>
+     */
+    int getMsgResponsesCount();
+    /**
+     * <pre>
+     * msg_responses contains the Msg handler responses packed into Anys.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * <code>repeated .google.protobuf2.Any msg_responses = 2;</code>
+     */
+    java.util.List<? extends com.google.protobuf2.AnyOrBuilder> 
+        getMsgResponsesOrBuilderList();
+    /**
+     * <pre>
+     * msg_responses contains the Msg handler responses packed into Anys.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * <code>repeated .google.protobuf2.Any msg_responses = 2;</code>
+     */
+    com.google.protobuf2.AnyOrBuilder getMsgResponsesOrBuilder(
         int index);
   }
   /**
@@ -8907,6 +10094,7 @@ public final class Abci {
     }
     private TxMsgData() {
       data_ = java.util.Collections.emptyList();
+      msgResponses_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -8949,6 +10137,15 @@ public final class Abci {
                   input.readMessage(cosmos.base.abci.v1beta1.Abci.MsgData.parser(), extensionRegistry));
               break;
             }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                msgResponses_ = new java.util.ArrayList<com.google.protobuf2.Any>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              msgResponses_.add(
+                  input.readMessage(com.google.protobuf2.Any.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -8966,6 +10163,9 @@ public final class Abci {
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           data_ = java.util.Collections.unmodifiableList(data_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          msgResponses_ = java.util.Collections.unmodifiableList(msgResponses_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -8987,41 +10187,126 @@ public final class Abci {
     public static final int DATA_FIELD_NUMBER = 1;
     private java.util.List<cosmos.base.abci.v1beta1.Abci.MsgData> data_;
     /**
-     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
+     * <pre>
+     * data field is deprecated and not populated.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
      */
     @java.lang.Override
-    public java.util.List<cosmos.base.abci.v1beta1.Abci.MsgData> getDataList() {
+    @java.lang.Deprecated public java.util.List<cosmos.base.abci.v1beta1.Abci.MsgData> getDataList() {
       return data_;
     }
     /**
-     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
+     * <pre>
+     * data field is deprecated and not populated.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends cosmos.base.abci.v1beta1.Abci.MsgDataOrBuilder> 
+    @java.lang.Deprecated public java.util.List<? extends cosmos.base.abci.v1beta1.Abci.MsgDataOrBuilder> 
         getDataOrBuilderList() {
       return data_;
     }
     /**
-     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
+     * <pre>
+     * data field is deprecated and not populated.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
      */
     @java.lang.Override
-    public int getDataCount() {
+    @java.lang.Deprecated public int getDataCount() {
       return data_.size();
     }
     /**
-     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
+     * <pre>
+     * data field is deprecated and not populated.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
      */
     @java.lang.Override
-    public cosmos.base.abci.v1beta1.Abci.MsgData getData(int index) {
+    @java.lang.Deprecated public cosmos.base.abci.v1beta1.Abci.MsgData getData(int index) {
       return data_.get(index);
     }
     /**
-     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
+     * <pre>
+     * data field is deprecated and not populated.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
      */
     @java.lang.Override
-    public cosmos.base.abci.v1beta1.Abci.MsgDataOrBuilder getDataOrBuilder(
+    @java.lang.Deprecated public cosmos.base.abci.v1beta1.Abci.MsgDataOrBuilder getDataOrBuilder(
         int index) {
       return data_.get(index);
+    }
+
+    public static final int MSG_RESPONSES_FIELD_NUMBER = 2;
+    private java.util.List<com.google.protobuf2.Any> msgResponses_;
+    /**
+     * <pre>
+     * msg_responses contains the Msg handler responses packed into Anys.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * <code>repeated .google.protobuf2.Any msg_responses = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.protobuf2.Any> getMsgResponsesList() {
+      return msgResponses_;
+    }
+    /**
+     * <pre>
+     * msg_responses contains the Msg handler responses packed into Anys.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * <code>repeated .google.protobuf2.Any msg_responses = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.protobuf2.AnyOrBuilder> 
+        getMsgResponsesOrBuilderList() {
+      return msgResponses_;
+    }
+    /**
+     * <pre>
+     * msg_responses contains the Msg handler responses packed into Anys.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * <code>repeated .google.protobuf2.Any msg_responses = 2;</code>
+     */
+    @java.lang.Override
+    public int getMsgResponsesCount() {
+      return msgResponses_.size();
+    }
+    /**
+     * <pre>
+     * msg_responses contains the Msg handler responses packed into Anys.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * <code>repeated .google.protobuf2.Any msg_responses = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf2.Any getMsgResponses(int index) {
+      return msgResponses_.get(index);
+    }
+    /**
+     * <pre>
+     * msg_responses contains the Msg handler responses packed into Anys.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * <code>repeated .google.protobuf2.Any msg_responses = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf2.AnyOrBuilder getMsgResponsesOrBuilder(
+        int index) {
+      return msgResponses_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -9041,6 +10326,9 @@ public final class Abci {
       for (int i = 0; i < data_.size(); i++) {
         output.writeMessage(1, data_.get(i));
       }
+      for (int i = 0; i < msgResponses_.size(); i++) {
+        output.writeMessage(2, msgResponses_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -9053,6 +10341,10 @@ public final class Abci {
       for (int i = 0; i < data_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, data_.get(i));
+      }
+      for (int i = 0; i < msgResponses_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, msgResponses_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9071,6 +10363,8 @@ public final class Abci {
 
       if (!getDataList()
           .equals(other.getDataList())) return false;
+      if (!getMsgResponsesList()
+          .equals(other.getMsgResponsesList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -9085,6 +10379,10 @@ public final class Abci {
       if (getDataCount() > 0) {
         hash = (37 * hash) + DATA_FIELD_NUMBER;
         hash = (53 * hash) + getDataList().hashCode();
+      }
+      if (getMsgResponsesCount() > 0) {
+        hash = (37 * hash) + MSG_RESPONSES_FIELD_NUMBER;
+        hash = (53 * hash) + getMsgResponsesList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -9220,6 +10518,7 @@ public final class Abci {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getDataFieldBuilder();
+          getMsgResponsesFieldBuilder();
         }
       }
       @java.lang.Override
@@ -9230,6 +10529,12 @@ public final class Abci {
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           dataBuilder_.clear();
+        }
+        if (msgResponsesBuilder_ == null) {
+          msgResponses_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          msgResponsesBuilder_.clear();
         }
         return this;
       }
@@ -9266,6 +10571,15 @@ public final class Abci {
           result.data_ = data_;
         } else {
           result.data_ = dataBuilder_.build();
+        }
+        if (msgResponsesBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            msgResponses_ = java.util.Collections.unmodifiableList(msgResponses_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.msgResponses_ = msgResponses_;
+        } else {
+          result.msgResponses_ = msgResponsesBuilder_.build();
         }
         onBuilt();
         return result;
@@ -9341,6 +10655,32 @@ public final class Abci {
             }
           }
         }
+        if (msgResponsesBuilder_ == null) {
+          if (!other.msgResponses_.isEmpty()) {
+            if (msgResponses_.isEmpty()) {
+              msgResponses_ = other.msgResponses_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureMsgResponsesIsMutable();
+              msgResponses_.addAll(other.msgResponses_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.msgResponses_.isEmpty()) {
+            if (msgResponsesBuilder_.isEmpty()) {
+              msgResponsesBuilder_.dispose();
+              msgResponsesBuilder_ = null;
+              msgResponses_ = other.msgResponses_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              msgResponsesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getMsgResponsesFieldBuilder() : null;
+            } else {
+              msgResponsesBuilder_.addAllMessages(other.msgResponses_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -9384,9 +10724,13 @@ public final class Abci {
           cosmos.base.abci.v1beta1.Abci.MsgData, cosmos.base.abci.v1beta1.Abci.MsgData.Builder, cosmos.base.abci.v1beta1.Abci.MsgDataOrBuilder> dataBuilder_;
 
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
+       * <pre>
+       * data field is deprecated and not populated.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
        */
-      public java.util.List<cosmos.base.abci.v1beta1.Abci.MsgData> getDataList() {
+      @java.lang.Deprecated public java.util.List<cosmos.base.abci.v1beta1.Abci.MsgData> getDataList() {
         if (dataBuilder_ == null) {
           return java.util.Collections.unmodifiableList(data_);
         } else {
@@ -9394,9 +10738,13 @@ public final class Abci {
         }
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
+       * <pre>
+       * data field is deprecated and not populated.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
        */
-      public int getDataCount() {
+      @java.lang.Deprecated public int getDataCount() {
         if (dataBuilder_ == null) {
           return data_.size();
         } else {
@@ -9404,9 +10752,13 @@ public final class Abci {
         }
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
+       * <pre>
+       * data field is deprecated and not populated.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
        */
-      public cosmos.base.abci.v1beta1.Abci.MsgData getData(int index) {
+      @java.lang.Deprecated public cosmos.base.abci.v1beta1.Abci.MsgData getData(int index) {
         if (dataBuilder_ == null) {
           return data_.get(index);
         } else {
@@ -9414,9 +10766,13 @@ public final class Abci {
         }
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
+       * <pre>
+       * data field is deprecated and not populated.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
        */
-      public Builder setData(
+      @java.lang.Deprecated public Builder setData(
           int index, cosmos.base.abci.v1beta1.Abci.MsgData value) {
         if (dataBuilder_ == null) {
           if (value == null) {
@@ -9431,9 +10787,13 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
+       * <pre>
+       * data field is deprecated and not populated.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
        */
-      public Builder setData(
+      @java.lang.Deprecated public Builder setData(
           int index, cosmos.base.abci.v1beta1.Abci.MsgData.Builder builderForValue) {
         if (dataBuilder_ == null) {
           ensureDataIsMutable();
@@ -9445,9 +10805,13 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
+       * <pre>
+       * data field is deprecated and not populated.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
        */
-      public Builder addData(cosmos.base.abci.v1beta1.Abci.MsgData value) {
+      @java.lang.Deprecated public Builder addData(cosmos.base.abci.v1beta1.Abci.MsgData value) {
         if (dataBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -9461,9 +10825,13 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
+       * <pre>
+       * data field is deprecated and not populated.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
        */
-      public Builder addData(
+      @java.lang.Deprecated public Builder addData(
           int index, cosmos.base.abci.v1beta1.Abci.MsgData value) {
         if (dataBuilder_ == null) {
           if (value == null) {
@@ -9478,9 +10846,13 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
+       * <pre>
+       * data field is deprecated and not populated.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
        */
-      public Builder addData(
+      @java.lang.Deprecated public Builder addData(
           cosmos.base.abci.v1beta1.Abci.MsgData.Builder builderForValue) {
         if (dataBuilder_ == null) {
           ensureDataIsMutable();
@@ -9492,9 +10864,13 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
+       * <pre>
+       * data field is deprecated and not populated.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
        */
-      public Builder addData(
+      @java.lang.Deprecated public Builder addData(
           int index, cosmos.base.abci.v1beta1.Abci.MsgData.Builder builderForValue) {
         if (dataBuilder_ == null) {
           ensureDataIsMutable();
@@ -9506,9 +10882,13 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
+       * <pre>
+       * data field is deprecated and not populated.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
        */
-      public Builder addAllData(
+      @java.lang.Deprecated public Builder addAllData(
           java.lang.Iterable<? extends cosmos.base.abci.v1beta1.Abci.MsgData> values) {
         if (dataBuilder_ == null) {
           ensureDataIsMutable();
@@ -9521,9 +10901,13 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
+       * <pre>
+       * data field is deprecated and not populated.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
        */
-      public Builder clearData() {
+      @java.lang.Deprecated public Builder clearData() {
         if (dataBuilder_ == null) {
           data_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -9534,9 +10918,13 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
+       * <pre>
+       * data field is deprecated and not populated.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
        */
-      public Builder removeData(int index) {
+      @java.lang.Deprecated public Builder removeData(int index) {
         if (dataBuilder_ == null) {
           ensureDataIsMutable();
           data_.remove(index);
@@ -9547,16 +10935,24 @@ public final class Abci {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
+       * <pre>
+       * data field is deprecated and not populated.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
        */
-      public cosmos.base.abci.v1beta1.Abci.MsgData.Builder getDataBuilder(
+      @java.lang.Deprecated public cosmos.base.abci.v1beta1.Abci.MsgData.Builder getDataBuilder(
           int index) {
         return getDataFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
+       * <pre>
+       * data field is deprecated and not populated.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
        */
-      public cosmos.base.abci.v1beta1.Abci.MsgDataOrBuilder getDataOrBuilder(
+      @java.lang.Deprecated public cosmos.base.abci.v1beta1.Abci.MsgDataOrBuilder getDataOrBuilder(
           int index) {
         if (dataBuilder_ == null) {
           return data_.get(index);  } else {
@@ -9564,9 +10960,13 @@ public final class Abci {
         }
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
+       * <pre>
+       * data field is deprecated and not populated.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
        */
-      public java.util.List<? extends cosmos.base.abci.v1beta1.Abci.MsgDataOrBuilder> 
+      @java.lang.Deprecated public java.util.List<? extends cosmos.base.abci.v1beta1.Abci.MsgDataOrBuilder> 
            getDataOrBuilderList() {
         if (dataBuilder_ != null) {
           return dataBuilder_.getMessageOrBuilderList();
@@ -9575,24 +10975,36 @@ public final class Abci {
         }
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
+       * <pre>
+       * data field is deprecated and not populated.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
        */
-      public cosmos.base.abci.v1beta1.Abci.MsgData.Builder addDataBuilder() {
+      @java.lang.Deprecated public cosmos.base.abci.v1beta1.Abci.MsgData.Builder addDataBuilder() {
         return getDataFieldBuilder().addBuilder(
             cosmos.base.abci.v1beta1.Abci.MsgData.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
+       * <pre>
+       * data field is deprecated and not populated.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
        */
-      public cosmos.base.abci.v1beta1.Abci.MsgData.Builder addDataBuilder(
+      @java.lang.Deprecated public cosmos.base.abci.v1beta1.Abci.MsgData.Builder addDataBuilder(
           int index) {
         return getDataFieldBuilder().addBuilder(
             index, cosmos.base.abci.v1beta1.Abci.MsgData.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1;</code>
+       * <pre>
+       * data field is deprecated and not populated.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.abci.v1beta1.MsgData data = 1 [deprecated = true];</code>
        */
-      public java.util.List<cosmos.base.abci.v1beta1.Abci.MsgData.Builder> 
+      @java.lang.Deprecated public java.util.List<cosmos.base.abci.v1beta1.Abci.MsgData.Builder> 
            getDataBuilderList() {
         return getDataFieldBuilder().getBuilderList();
       }
@@ -9609,6 +11021,336 @@ public final class Abci {
           data_ = null;
         }
         return dataBuilder_;
+      }
+
+      private java.util.List<com.google.protobuf2.Any> msgResponses_ =
+        java.util.Collections.emptyList();
+      private void ensureMsgResponsesIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          msgResponses_ = new java.util.ArrayList<com.google.protobuf2.Any>(msgResponses_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.google.protobuf2.Any, com.google.protobuf2.Any.Builder, com.google.protobuf2.AnyOrBuilder> msgResponsesBuilder_;
+
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses packed into Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 2;</code>
+       */
+      public java.util.List<com.google.protobuf2.Any> getMsgResponsesList() {
+        if (msgResponsesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(msgResponses_);
+        } else {
+          return msgResponsesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses packed into Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 2;</code>
+       */
+      public int getMsgResponsesCount() {
+        if (msgResponsesBuilder_ == null) {
+          return msgResponses_.size();
+        } else {
+          return msgResponsesBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses packed into Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 2;</code>
+       */
+      public com.google.protobuf2.Any getMsgResponses(int index) {
+        if (msgResponsesBuilder_ == null) {
+          return msgResponses_.get(index);
+        } else {
+          return msgResponsesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses packed into Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 2;</code>
+       */
+      public Builder setMsgResponses(
+          int index, com.google.protobuf2.Any value) {
+        if (msgResponsesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMsgResponsesIsMutable();
+          msgResponses_.set(index, value);
+          onChanged();
+        } else {
+          msgResponsesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses packed into Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 2;</code>
+       */
+      public Builder setMsgResponses(
+          int index, com.google.protobuf2.Any.Builder builderForValue) {
+        if (msgResponsesBuilder_ == null) {
+          ensureMsgResponsesIsMutable();
+          msgResponses_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          msgResponsesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses packed into Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 2;</code>
+       */
+      public Builder addMsgResponses(com.google.protobuf2.Any value) {
+        if (msgResponsesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMsgResponsesIsMutable();
+          msgResponses_.add(value);
+          onChanged();
+        } else {
+          msgResponsesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses packed into Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 2;</code>
+       */
+      public Builder addMsgResponses(
+          int index, com.google.protobuf2.Any value) {
+        if (msgResponsesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMsgResponsesIsMutable();
+          msgResponses_.add(index, value);
+          onChanged();
+        } else {
+          msgResponsesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses packed into Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 2;</code>
+       */
+      public Builder addMsgResponses(
+          com.google.protobuf2.Any.Builder builderForValue) {
+        if (msgResponsesBuilder_ == null) {
+          ensureMsgResponsesIsMutable();
+          msgResponses_.add(builderForValue.build());
+          onChanged();
+        } else {
+          msgResponsesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses packed into Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 2;</code>
+       */
+      public Builder addMsgResponses(
+          int index, com.google.protobuf2.Any.Builder builderForValue) {
+        if (msgResponsesBuilder_ == null) {
+          ensureMsgResponsesIsMutable();
+          msgResponses_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          msgResponsesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses packed into Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 2;</code>
+       */
+      public Builder addAllMsgResponses(
+          java.lang.Iterable<? extends com.google.protobuf2.Any> values) {
+        if (msgResponsesBuilder_ == null) {
+          ensureMsgResponsesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, msgResponses_);
+          onChanged();
+        } else {
+          msgResponsesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses packed into Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 2;</code>
+       */
+      public Builder clearMsgResponses() {
+        if (msgResponsesBuilder_ == null) {
+          msgResponses_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          msgResponsesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses packed into Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 2;</code>
+       */
+      public Builder removeMsgResponses(int index) {
+        if (msgResponsesBuilder_ == null) {
+          ensureMsgResponsesIsMutable();
+          msgResponses_.remove(index);
+          onChanged();
+        } else {
+          msgResponsesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses packed into Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 2;</code>
+       */
+      public com.google.protobuf2.Any.Builder getMsgResponsesBuilder(
+          int index) {
+        return getMsgResponsesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses packed into Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 2;</code>
+       */
+      public com.google.protobuf2.AnyOrBuilder getMsgResponsesOrBuilder(
+          int index) {
+        if (msgResponsesBuilder_ == null) {
+          return msgResponses_.get(index);  } else {
+          return msgResponsesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses packed into Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 2;</code>
+       */
+      public java.util.List<? extends com.google.protobuf2.AnyOrBuilder> 
+           getMsgResponsesOrBuilderList() {
+        if (msgResponsesBuilder_ != null) {
+          return msgResponsesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(msgResponses_);
+        }
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses packed into Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 2;</code>
+       */
+      public com.google.protobuf2.Any.Builder addMsgResponsesBuilder() {
+        return getMsgResponsesFieldBuilder().addBuilder(
+            com.google.protobuf2.Any.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses packed into Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 2;</code>
+       */
+      public com.google.protobuf2.Any.Builder addMsgResponsesBuilder(
+          int index) {
+        return getMsgResponsesFieldBuilder().addBuilder(
+            index, com.google.protobuf2.Any.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * msg_responses contains the Msg handler responses packed into Anys.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>repeated .google.protobuf2.Any msg_responses = 2;</code>
+       */
+      public java.util.List<com.google.protobuf2.Any.Builder> 
+           getMsgResponsesBuilderList() {
+        return getMsgResponsesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.google.protobuf2.Any, com.google.protobuf2.Any.Builder, com.google.protobuf2.AnyOrBuilder> 
+          getMsgResponsesFieldBuilder() {
+        if (msgResponsesBuilder_ == null) {
+          msgResponsesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.protobuf2.Any, com.google.protobuf2.Any.Builder, com.google.protobuf2.AnyOrBuilder>(
+                  msgResponses_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          msgResponses_ = null;
+        }
+        return msgResponsesBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -9672,7 +11414,7 @@ public final class Abci {
      * Count of all txs
      * </pre>
      *
-     * <code>uint64 total_count = 1 [(.gogoproto.jsontag) = "total_count"];</code>
+     * <code>uint64 total_count = 1;</code>
      * @return The totalCount.
      */
     long getTotalCount();
@@ -9692,7 +11434,7 @@ public final class Abci {
      * Index of current page, start from 1
      * </pre>
      *
-     * <code>uint64 page_number = 3 [(.gogoproto.jsontag) = "page_number"];</code>
+     * <code>uint64 page_number = 3;</code>
      * @return The pageNumber.
      */
     long getPageNumber();
@@ -9702,7 +11444,7 @@ public final class Abci {
      * Count of total pages
      * </pre>
      *
-     * <code>uint64 page_total = 4 [(.gogoproto.jsontag) = "page_total"];</code>
+     * <code>uint64 page_total = 4;</code>
      * @return The pageTotal.
      */
     long getPageTotal();
@@ -9888,7 +11630,7 @@ public final class Abci {
      * Count of all txs
      * </pre>
      *
-     * <code>uint64 total_count = 1 [(.gogoproto.jsontag) = "total_count"];</code>
+     * <code>uint64 total_count = 1;</code>
      * @return The totalCount.
      */
     @java.lang.Override
@@ -9918,7 +11660,7 @@ public final class Abci {
      * Index of current page, start from 1
      * </pre>
      *
-     * <code>uint64 page_number = 3 [(.gogoproto.jsontag) = "page_number"];</code>
+     * <code>uint64 page_number = 3;</code>
      * @return The pageNumber.
      */
     @java.lang.Override
@@ -9933,7 +11675,7 @@ public final class Abci {
      * Count of total pages
      * </pre>
      *
-     * <code>uint64 page_total = 4 [(.gogoproto.jsontag) = "page_total"];</code>
+     * <code>uint64 page_total = 4;</code>
      * @return The pageTotal.
      */
     @java.lang.Override
@@ -10458,7 +12200,7 @@ public final class Abci {
        * Count of all txs
        * </pre>
        *
-       * <code>uint64 total_count = 1 [(.gogoproto.jsontag) = "total_count"];</code>
+       * <code>uint64 total_count = 1;</code>
        * @return The totalCount.
        */
       @java.lang.Override
@@ -10470,7 +12212,7 @@ public final class Abci {
        * Count of all txs
        * </pre>
        *
-       * <code>uint64 total_count = 1 [(.gogoproto.jsontag) = "total_count"];</code>
+       * <code>uint64 total_count = 1;</code>
        * @param value The totalCount to set.
        * @return This builder for chaining.
        */
@@ -10485,7 +12227,7 @@ public final class Abci {
        * Count of all txs
        * </pre>
        *
-       * <code>uint64 total_count = 1 [(.gogoproto.jsontag) = "total_count"];</code>
+       * <code>uint64 total_count = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearTotalCount() {
@@ -10544,7 +12286,7 @@ public final class Abci {
        * Index of current page, start from 1
        * </pre>
        *
-       * <code>uint64 page_number = 3 [(.gogoproto.jsontag) = "page_number"];</code>
+       * <code>uint64 page_number = 3;</code>
        * @return The pageNumber.
        */
       @java.lang.Override
@@ -10556,7 +12298,7 @@ public final class Abci {
        * Index of current page, start from 1
        * </pre>
        *
-       * <code>uint64 page_number = 3 [(.gogoproto.jsontag) = "page_number"];</code>
+       * <code>uint64 page_number = 3;</code>
        * @param value The pageNumber to set.
        * @return This builder for chaining.
        */
@@ -10571,7 +12313,7 @@ public final class Abci {
        * Index of current page, start from 1
        * </pre>
        *
-       * <code>uint64 page_number = 3 [(.gogoproto.jsontag) = "page_number"];</code>
+       * <code>uint64 page_number = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearPageNumber() {
@@ -10587,7 +12329,7 @@ public final class Abci {
        * Count of total pages
        * </pre>
        *
-       * <code>uint64 page_total = 4 [(.gogoproto.jsontag) = "page_total"];</code>
+       * <code>uint64 page_total = 4;</code>
        * @return The pageTotal.
        */
       @java.lang.Override
@@ -10599,7 +12341,7 @@ public final class Abci {
        * Count of total pages
        * </pre>
        *
-       * <code>uint64 page_total = 4 [(.gogoproto.jsontag) = "page_total"];</code>
+       * <code>uint64 page_total = 4;</code>
        * @param value The pageTotal to set.
        * @return This builder for chaining.
        */
@@ -10614,7 +12356,7 @@ public final class Abci {
        * Count of total pages
        * </pre>
        *
-       * <code>uint64 page_total = 4 [(.gogoproto.jsontag) = "page_total"];</code>
+       * <code>uint64 page_total = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearPageTotal() {
@@ -11031,6 +12773,1374 @@ public final class Abci {
 
   }
 
+  public interface SearchBlocksResultOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.base.abci.v1beta1.SearchBlocksResult)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Count of all blocks
+     * </pre>
+     *
+     * <code>int64 total_count = 1;</code>
+     * @return The totalCount.
+     */
+    long getTotalCount();
+
+    /**
+     * <pre>
+     * Count of blocks in current page
+     * </pre>
+     *
+     * <code>int64 count = 2;</code>
+     * @return The count.
+     */
+    long getCount();
+
+    /**
+     * <pre>
+     * Index of current page, start from 1
+     * </pre>
+     *
+     * <code>int64 page_number = 3;</code>
+     * @return The pageNumber.
+     */
+    long getPageNumber();
+
+    /**
+     * <pre>
+     * Count of total pages
+     * </pre>
+     *
+     * <code>int64 page_total = 4;</code>
+     * @return The pageTotal.
+     */
+    long getPageTotal();
+
+    /**
+     * <pre>
+     * Max count blocks per page
+     * </pre>
+     *
+     * <code>int64 limit = 5;</code>
+     * @return The limit.
+     */
+    long getLimit();
+
+    /**
+     * <pre>
+     * List of blocks in current page
+     * </pre>
+     *
+     * <code>repeated .tendermint.types.Block blocks = 6;</code>
+     */
+    java.util.List<tendermint.types.BlockOuterClass.Block> 
+        getBlocksList();
+    /**
+     * <pre>
+     * List of blocks in current page
+     * </pre>
+     *
+     * <code>repeated .tendermint.types.Block blocks = 6;</code>
+     */
+    tendermint.types.BlockOuterClass.Block getBlocks(int index);
+    /**
+     * <pre>
+     * List of blocks in current page
+     * </pre>
+     *
+     * <code>repeated .tendermint.types.Block blocks = 6;</code>
+     */
+    int getBlocksCount();
+    /**
+     * <pre>
+     * List of blocks in current page
+     * </pre>
+     *
+     * <code>repeated .tendermint.types.Block blocks = 6;</code>
+     */
+    java.util.List<? extends tendermint.types.BlockOuterClass.BlockOrBuilder> 
+        getBlocksOrBuilderList();
+    /**
+     * <pre>
+     * List of blocks in current page
+     * </pre>
+     *
+     * <code>repeated .tendermint.types.Block blocks = 6;</code>
+     */
+    tendermint.types.BlockOuterClass.BlockOrBuilder getBlocksOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * SearchBlocksResult defines a structure for querying blocks pageable
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.base.abci.v1beta1.SearchBlocksResult}
+   */
+  public static final class SearchBlocksResult extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.base.abci.v1beta1.SearchBlocksResult)
+      SearchBlocksResultOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SearchBlocksResult.newBuilder() to construct.
+    private SearchBlocksResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SearchBlocksResult() {
+      blocks_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SearchBlocksResult();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SearchBlocksResult(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              totalCount_ = input.readInt64();
+              break;
+            }
+            case 16: {
+
+              count_ = input.readInt64();
+              break;
+            }
+            case 24: {
+
+              pageNumber_ = input.readInt64();
+              break;
+            }
+            case 32: {
+
+              pageTotal_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              limit_ = input.readInt64();
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                blocks_ = new java.util.ArrayList<tendermint.types.BlockOuterClass.Block>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              blocks_.add(
+                  input.readMessage(tendermint.types.BlockOuterClass.Block.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          blocks_ = java.util.Collections.unmodifiableList(blocks_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_SearchBlocksResult_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_SearchBlocksResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.base.abci.v1beta1.Abci.SearchBlocksResult.class, cosmos.base.abci.v1beta1.Abci.SearchBlocksResult.Builder.class);
+    }
+
+    public static final int TOTAL_COUNT_FIELD_NUMBER = 1;
+    private long totalCount_;
+    /**
+     * <pre>
+     * Count of all blocks
+     * </pre>
+     *
+     * <code>int64 total_count = 1;</code>
+     * @return The totalCount.
+     */
+    @java.lang.Override
+    public long getTotalCount() {
+      return totalCount_;
+    }
+
+    public static final int COUNT_FIELD_NUMBER = 2;
+    private long count_;
+    /**
+     * <pre>
+     * Count of blocks in current page
+     * </pre>
+     *
+     * <code>int64 count = 2;</code>
+     * @return The count.
+     */
+    @java.lang.Override
+    public long getCount() {
+      return count_;
+    }
+
+    public static final int PAGE_NUMBER_FIELD_NUMBER = 3;
+    private long pageNumber_;
+    /**
+     * <pre>
+     * Index of current page, start from 1
+     * </pre>
+     *
+     * <code>int64 page_number = 3;</code>
+     * @return The pageNumber.
+     */
+    @java.lang.Override
+    public long getPageNumber() {
+      return pageNumber_;
+    }
+
+    public static final int PAGE_TOTAL_FIELD_NUMBER = 4;
+    private long pageTotal_;
+    /**
+     * <pre>
+     * Count of total pages
+     * </pre>
+     *
+     * <code>int64 page_total = 4;</code>
+     * @return The pageTotal.
+     */
+    @java.lang.Override
+    public long getPageTotal() {
+      return pageTotal_;
+    }
+
+    public static final int LIMIT_FIELD_NUMBER = 5;
+    private long limit_;
+    /**
+     * <pre>
+     * Max count blocks per page
+     * </pre>
+     *
+     * <code>int64 limit = 5;</code>
+     * @return The limit.
+     */
+    @java.lang.Override
+    public long getLimit() {
+      return limit_;
+    }
+
+    public static final int BLOCKS_FIELD_NUMBER = 6;
+    private java.util.List<tendermint.types.BlockOuterClass.Block> blocks_;
+    /**
+     * <pre>
+     * List of blocks in current page
+     * </pre>
+     *
+     * <code>repeated .tendermint.types.Block blocks = 6;</code>
+     */
+    @java.lang.Override
+    public java.util.List<tendermint.types.BlockOuterClass.Block> getBlocksList() {
+      return blocks_;
+    }
+    /**
+     * <pre>
+     * List of blocks in current page
+     * </pre>
+     *
+     * <code>repeated .tendermint.types.Block blocks = 6;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends tendermint.types.BlockOuterClass.BlockOrBuilder> 
+        getBlocksOrBuilderList() {
+      return blocks_;
+    }
+    /**
+     * <pre>
+     * List of blocks in current page
+     * </pre>
+     *
+     * <code>repeated .tendermint.types.Block blocks = 6;</code>
+     */
+    @java.lang.Override
+    public int getBlocksCount() {
+      return blocks_.size();
+    }
+    /**
+     * <pre>
+     * List of blocks in current page
+     * </pre>
+     *
+     * <code>repeated .tendermint.types.Block blocks = 6;</code>
+     */
+    @java.lang.Override
+    public tendermint.types.BlockOuterClass.Block getBlocks(int index) {
+      return blocks_.get(index);
+    }
+    /**
+     * <pre>
+     * List of blocks in current page
+     * </pre>
+     *
+     * <code>repeated .tendermint.types.Block blocks = 6;</code>
+     */
+    @java.lang.Override
+    public tendermint.types.BlockOuterClass.BlockOrBuilder getBlocksOrBuilder(
+        int index) {
+      return blocks_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (totalCount_ != 0L) {
+        output.writeInt64(1, totalCount_);
+      }
+      if (count_ != 0L) {
+        output.writeInt64(2, count_);
+      }
+      if (pageNumber_ != 0L) {
+        output.writeInt64(3, pageNumber_);
+      }
+      if (pageTotal_ != 0L) {
+        output.writeInt64(4, pageTotal_);
+      }
+      if (limit_ != 0L) {
+        output.writeInt64(5, limit_);
+      }
+      for (int i = 0; i < blocks_.size(); i++) {
+        output.writeMessage(6, blocks_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (totalCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, totalCount_);
+      }
+      if (count_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, count_);
+      }
+      if (pageNumber_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, pageNumber_);
+      }
+      if (pageTotal_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, pageTotal_);
+      }
+      if (limit_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, limit_);
+      }
+      for (int i = 0; i < blocks_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, blocks_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.base.abci.v1beta1.Abci.SearchBlocksResult)) {
+        return super.equals(obj);
+      }
+      cosmos.base.abci.v1beta1.Abci.SearchBlocksResult other = (cosmos.base.abci.v1beta1.Abci.SearchBlocksResult) obj;
+
+      if (getTotalCount()
+          != other.getTotalCount()) return false;
+      if (getCount()
+          != other.getCount()) return false;
+      if (getPageNumber()
+          != other.getPageNumber()) return false;
+      if (getPageTotal()
+          != other.getPageTotal()) return false;
+      if (getLimit()
+          != other.getLimit()) return false;
+      if (!getBlocksList()
+          .equals(other.getBlocksList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TOTAL_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTotalCount());
+      hash = (37 * hash) + COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCount());
+      hash = (37 * hash) + PAGE_NUMBER_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getPageNumber());
+      hash = (37 * hash) + PAGE_TOTAL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getPageTotal());
+      hash = (37 * hash) + LIMIT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getLimit());
+      if (getBlocksCount() > 0) {
+        hash = (37 * hash) + BLOCKS_FIELD_NUMBER;
+        hash = (53 * hash) + getBlocksList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.base.abci.v1beta1.Abci.SearchBlocksResult parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.abci.v1beta1.Abci.SearchBlocksResult parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.base.abci.v1beta1.Abci.SearchBlocksResult parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.abci.v1beta1.Abci.SearchBlocksResult parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.base.abci.v1beta1.Abci.SearchBlocksResult parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.abci.v1beta1.Abci.SearchBlocksResult parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.base.abci.v1beta1.Abci.SearchBlocksResult parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.base.abci.v1beta1.Abci.SearchBlocksResult parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.base.abci.v1beta1.Abci.SearchBlocksResult parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.base.abci.v1beta1.Abci.SearchBlocksResult parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.base.abci.v1beta1.Abci.SearchBlocksResult parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.base.abci.v1beta1.Abci.SearchBlocksResult parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.base.abci.v1beta1.Abci.SearchBlocksResult prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * SearchBlocksResult defines a structure for querying blocks pageable
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.base.abci.v1beta1.SearchBlocksResult}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.base.abci.v1beta1.SearchBlocksResult)
+        cosmos.base.abci.v1beta1.Abci.SearchBlocksResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_SearchBlocksResult_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_SearchBlocksResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.base.abci.v1beta1.Abci.SearchBlocksResult.class, cosmos.base.abci.v1beta1.Abci.SearchBlocksResult.Builder.class);
+      }
+
+      // Construct using cosmos.base.abci.v1beta1.Abci.SearchBlocksResult.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getBlocksFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        totalCount_ = 0L;
+
+        count_ = 0L;
+
+        pageNumber_ = 0L;
+
+        pageTotal_ = 0L;
+
+        limit_ = 0L;
+
+        if (blocksBuilder_ == null) {
+          blocks_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          blocksBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.base.abci.v1beta1.Abci.internal_static_cosmos_base_abci_v1beta1_SearchBlocksResult_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.base.abci.v1beta1.Abci.SearchBlocksResult getDefaultInstanceForType() {
+        return cosmos.base.abci.v1beta1.Abci.SearchBlocksResult.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.base.abci.v1beta1.Abci.SearchBlocksResult build() {
+        cosmos.base.abci.v1beta1.Abci.SearchBlocksResult result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.base.abci.v1beta1.Abci.SearchBlocksResult buildPartial() {
+        cosmos.base.abci.v1beta1.Abci.SearchBlocksResult result = new cosmos.base.abci.v1beta1.Abci.SearchBlocksResult(this);
+        int from_bitField0_ = bitField0_;
+        result.totalCount_ = totalCount_;
+        result.count_ = count_;
+        result.pageNumber_ = pageNumber_;
+        result.pageTotal_ = pageTotal_;
+        result.limit_ = limit_;
+        if (blocksBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            blocks_ = java.util.Collections.unmodifiableList(blocks_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.blocks_ = blocks_;
+        } else {
+          result.blocks_ = blocksBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.base.abci.v1beta1.Abci.SearchBlocksResult) {
+          return mergeFrom((cosmos.base.abci.v1beta1.Abci.SearchBlocksResult)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.base.abci.v1beta1.Abci.SearchBlocksResult other) {
+        if (other == cosmos.base.abci.v1beta1.Abci.SearchBlocksResult.getDefaultInstance()) return this;
+        if (other.getTotalCount() != 0L) {
+          setTotalCount(other.getTotalCount());
+        }
+        if (other.getCount() != 0L) {
+          setCount(other.getCount());
+        }
+        if (other.getPageNumber() != 0L) {
+          setPageNumber(other.getPageNumber());
+        }
+        if (other.getPageTotal() != 0L) {
+          setPageTotal(other.getPageTotal());
+        }
+        if (other.getLimit() != 0L) {
+          setLimit(other.getLimit());
+        }
+        if (blocksBuilder_ == null) {
+          if (!other.blocks_.isEmpty()) {
+            if (blocks_.isEmpty()) {
+              blocks_ = other.blocks_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureBlocksIsMutable();
+              blocks_.addAll(other.blocks_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.blocks_.isEmpty()) {
+            if (blocksBuilder_.isEmpty()) {
+              blocksBuilder_.dispose();
+              blocksBuilder_ = null;
+              blocks_ = other.blocks_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              blocksBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getBlocksFieldBuilder() : null;
+            } else {
+              blocksBuilder_.addAllMessages(other.blocks_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.base.abci.v1beta1.Abci.SearchBlocksResult parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.base.abci.v1beta1.Abci.SearchBlocksResult) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private long totalCount_ ;
+      /**
+       * <pre>
+       * Count of all blocks
+       * </pre>
+       *
+       * <code>int64 total_count = 1;</code>
+       * @return The totalCount.
+       */
+      @java.lang.Override
+      public long getTotalCount() {
+        return totalCount_;
+      }
+      /**
+       * <pre>
+       * Count of all blocks
+       * </pre>
+       *
+       * <code>int64 total_count = 1;</code>
+       * @param value The totalCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalCount(long value) {
+        
+        totalCount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Count of all blocks
+       * </pre>
+       *
+       * <code>int64 total_count = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalCount() {
+        
+        totalCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long count_ ;
+      /**
+       * <pre>
+       * Count of blocks in current page
+       * </pre>
+       *
+       * <code>int64 count = 2;</code>
+       * @return The count.
+       */
+      @java.lang.Override
+      public long getCount() {
+        return count_;
+      }
+      /**
+       * <pre>
+       * Count of blocks in current page
+       * </pre>
+       *
+       * <code>int64 count = 2;</code>
+       * @param value The count to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCount(long value) {
+        
+        count_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Count of blocks in current page
+       * </pre>
+       *
+       * <code>int64 count = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCount() {
+        
+        count_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long pageNumber_ ;
+      /**
+       * <pre>
+       * Index of current page, start from 1
+       * </pre>
+       *
+       * <code>int64 page_number = 3;</code>
+       * @return The pageNumber.
+       */
+      @java.lang.Override
+      public long getPageNumber() {
+        return pageNumber_;
+      }
+      /**
+       * <pre>
+       * Index of current page, start from 1
+       * </pre>
+       *
+       * <code>int64 page_number = 3;</code>
+       * @param value The pageNumber to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPageNumber(long value) {
+        
+        pageNumber_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Index of current page, start from 1
+       * </pre>
+       *
+       * <code>int64 page_number = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPageNumber() {
+        
+        pageNumber_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long pageTotal_ ;
+      /**
+       * <pre>
+       * Count of total pages
+       * </pre>
+       *
+       * <code>int64 page_total = 4;</code>
+       * @return The pageTotal.
+       */
+      @java.lang.Override
+      public long getPageTotal() {
+        return pageTotal_;
+      }
+      /**
+       * <pre>
+       * Count of total pages
+       * </pre>
+       *
+       * <code>int64 page_total = 4;</code>
+       * @param value The pageTotal to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPageTotal(long value) {
+        
+        pageTotal_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Count of total pages
+       * </pre>
+       *
+       * <code>int64 page_total = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPageTotal() {
+        
+        pageTotal_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long limit_ ;
+      /**
+       * <pre>
+       * Max count blocks per page
+       * </pre>
+       *
+       * <code>int64 limit = 5;</code>
+       * @return The limit.
+       */
+      @java.lang.Override
+      public long getLimit() {
+        return limit_;
+      }
+      /**
+       * <pre>
+       * Max count blocks per page
+       * </pre>
+       *
+       * <code>int64 limit = 5;</code>
+       * @param value The limit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLimit(long value) {
+        
+        limit_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Max count blocks per page
+       * </pre>
+       *
+       * <code>int64 limit = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLimit() {
+        
+        limit_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<tendermint.types.BlockOuterClass.Block> blocks_ =
+        java.util.Collections.emptyList();
+      private void ensureBlocksIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          blocks_ = new java.util.ArrayList<tendermint.types.BlockOuterClass.Block>(blocks_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          tendermint.types.BlockOuterClass.Block, tendermint.types.BlockOuterClass.Block.Builder, tendermint.types.BlockOuterClass.BlockOrBuilder> blocksBuilder_;
+
+      /**
+       * <pre>
+       * List of blocks in current page
+       * </pre>
+       *
+       * <code>repeated .tendermint.types.Block blocks = 6;</code>
+       */
+      public java.util.List<tendermint.types.BlockOuterClass.Block> getBlocksList() {
+        if (blocksBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(blocks_);
+        } else {
+          return blocksBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * List of blocks in current page
+       * </pre>
+       *
+       * <code>repeated .tendermint.types.Block blocks = 6;</code>
+       */
+      public int getBlocksCount() {
+        if (blocksBuilder_ == null) {
+          return blocks_.size();
+        } else {
+          return blocksBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * List of blocks in current page
+       * </pre>
+       *
+       * <code>repeated .tendermint.types.Block blocks = 6;</code>
+       */
+      public tendermint.types.BlockOuterClass.Block getBlocks(int index) {
+        if (blocksBuilder_ == null) {
+          return blocks_.get(index);
+        } else {
+          return blocksBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * List of blocks in current page
+       * </pre>
+       *
+       * <code>repeated .tendermint.types.Block blocks = 6;</code>
+       */
+      public Builder setBlocks(
+          int index, tendermint.types.BlockOuterClass.Block value) {
+        if (blocksBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBlocksIsMutable();
+          blocks_.set(index, value);
+          onChanged();
+        } else {
+          blocksBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * List of blocks in current page
+       * </pre>
+       *
+       * <code>repeated .tendermint.types.Block blocks = 6;</code>
+       */
+      public Builder setBlocks(
+          int index, tendermint.types.BlockOuterClass.Block.Builder builderForValue) {
+        if (blocksBuilder_ == null) {
+          ensureBlocksIsMutable();
+          blocks_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          blocksBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * List of blocks in current page
+       * </pre>
+       *
+       * <code>repeated .tendermint.types.Block blocks = 6;</code>
+       */
+      public Builder addBlocks(tendermint.types.BlockOuterClass.Block value) {
+        if (blocksBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBlocksIsMutable();
+          blocks_.add(value);
+          onChanged();
+        } else {
+          blocksBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * List of blocks in current page
+       * </pre>
+       *
+       * <code>repeated .tendermint.types.Block blocks = 6;</code>
+       */
+      public Builder addBlocks(
+          int index, tendermint.types.BlockOuterClass.Block value) {
+        if (blocksBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBlocksIsMutable();
+          blocks_.add(index, value);
+          onChanged();
+        } else {
+          blocksBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * List of blocks in current page
+       * </pre>
+       *
+       * <code>repeated .tendermint.types.Block blocks = 6;</code>
+       */
+      public Builder addBlocks(
+          tendermint.types.BlockOuterClass.Block.Builder builderForValue) {
+        if (blocksBuilder_ == null) {
+          ensureBlocksIsMutable();
+          blocks_.add(builderForValue.build());
+          onChanged();
+        } else {
+          blocksBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * List of blocks in current page
+       * </pre>
+       *
+       * <code>repeated .tendermint.types.Block blocks = 6;</code>
+       */
+      public Builder addBlocks(
+          int index, tendermint.types.BlockOuterClass.Block.Builder builderForValue) {
+        if (blocksBuilder_ == null) {
+          ensureBlocksIsMutable();
+          blocks_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          blocksBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * List of blocks in current page
+       * </pre>
+       *
+       * <code>repeated .tendermint.types.Block blocks = 6;</code>
+       */
+      public Builder addAllBlocks(
+          java.lang.Iterable<? extends tendermint.types.BlockOuterClass.Block> values) {
+        if (blocksBuilder_ == null) {
+          ensureBlocksIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, blocks_);
+          onChanged();
+        } else {
+          blocksBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * List of blocks in current page
+       * </pre>
+       *
+       * <code>repeated .tendermint.types.Block blocks = 6;</code>
+       */
+      public Builder clearBlocks() {
+        if (blocksBuilder_ == null) {
+          blocks_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          blocksBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * List of blocks in current page
+       * </pre>
+       *
+       * <code>repeated .tendermint.types.Block blocks = 6;</code>
+       */
+      public Builder removeBlocks(int index) {
+        if (blocksBuilder_ == null) {
+          ensureBlocksIsMutable();
+          blocks_.remove(index);
+          onChanged();
+        } else {
+          blocksBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * List of blocks in current page
+       * </pre>
+       *
+       * <code>repeated .tendermint.types.Block blocks = 6;</code>
+       */
+      public tendermint.types.BlockOuterClass.Block.Builder getBlocksBuilder(
+          int index) {
+        return getBlocksFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * List of blocks in current page
+       * </pre>
+       *
+       * <code>repeated .tendermint.types.Block blocks = 6;</code>
+       */
+      public tendermint.types.BlockOuterClass.BlockOrBuilder getBlocksOrBuilder(
+          int index) {
+        if (blocksBuilder_ == null) {
+          return blocks_.get(index);  } else {
+          return blocksBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * List of blocks in current page
+       * </pre>
+       *
+       * <code>repeated .tendermint.types.Block blocks = 6;</code>
+       */
+      public java.util.List<? extends tendermint.types.BlockOuterClass.BlockOrBuilder> 
+           getBlocksOrBuilderList() {
+        if (blocksBuilder_ != null) {
+          return blocksBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(blocks_);
+        }
+      }
+      /**
+       * <pre>
+       * List of blocks in current page
+       * </pre>
+       *
+       * <code>repeated .tendermint.types.Block blocks = 6;</code>
+       */
+      public tendermint.types.BlockOuterClass.Block.Builder addBlocksBuilder() {
+        return getBlocksFieldBuilder().addBuilder(
+            tendermint.types.BlockOuterClass.Block.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * List of blocks in current page
+       * </pre>
+       *
+       * <code>repeated .tendermint.types.Block blocks = 6;</code>
+       */
+      public tendermint.types.BlockOuterClass.Block.Builder addBlocksBuilder(
+          int index) {
+        return getBlocksFieldBuilder().addBuilder(
+            index, tendermint.types.BlockOuterClass.Block.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * List of blocks in current page
+       * </pre>
+       *
+       * <code>repeated .tendermint.types.Block blocks = 6;</code>
+       */
+      public java.util.List<tendermint.types.BlockOuterClass.Block.Builder> 
+           getBlocksBuilderList() {
+        return getBlocksFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          tendermint.types.BlockOuterClass.Block, tendermint.types.BlockOuterClass.Block.Builder, tendermint.types.BlockOuterClass.BlockOrBuilder> 
+          getBlocksFieldBuilder() {
+        if (blocksBuilder_ == null) {
+          blocksBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              tendermint.types.BlockOuterClass.Block, tendermint.types.BlockOuterClass.Block.Builder, tendermint.types.BlockOuterClass.BlockOrBuilder>(
+                  blocks_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          blocks_ = null;
+        }
+        return blocksBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.base.abci.v1beta1.SearchBlocksResult)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.base.abci.v1beta1.SearchBlocksResult)
+    private static final cosmos.base.abci.v1beta1.Abci.SearchBlocksResult DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.base.abci.v1beta1.Abci.SearchBlocksResult();
+    }
+
+    public static cosmos.base.abci.v1beta1.Abci.SearchBlocksResult getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SearchBlocksResult>
+        PARSER = new com.google.protobuf.AbstractParser<SearchBlocksResult>() {
+      @java.lang.Override
+      public SearchBlocksResult parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SearchBlocksResult(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SearchBlocksResult> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SearchBlocksResult> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.base.abci.v1beta1.Abci.SearchBlocksResult getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cosmos_base_abci_v1beta1_TxResponse_descriptor;
   private static final 
@@ -11081,6 +14191,11 @@ public final class Abci {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cosmos_base_abci_v1beta1_SearchTxsResult_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_base_abci_v1beta1_SearchBlocksResult_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_base_abci_v1beta1_SearchBlocksResult_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -11092,45 +14207,54 @@ public final class Abci {
     java.lang.String[] descriptorData = {
       "\n#cosmos/base/abci/v1beta1/abci.proto\022\030c" +
       "osmos.base.abci.v1beta1\032\024gogoproto/gogo." +
-      "proto\032\033tendermint/abci/types.proto\032\032goog" +
-      "le/protobuf2/any.proto\"\271\002\n\nTxResponse\022\016\n" +
-      "\006height\030\001 \001(\003\022\032\n\006txhash\030\002 \001(\tB\n\342\336\037\006TxHas" +
-      "h\022\021\n\tcodespace\030\003 \001(\t\022\014\n\004code\030\004 \001(\r\022\014\n\004da" +
-      "ta\030\005 \001(\t\022\017\n\007raw_log\030\006 \001(\t\022O\n\004logs\030\007 \003(\0132" +
-      "(.cosmos.base.abci.v1beta1.ABCIMessageLo" +
-      "gB\027\252\337\037\017ABCIMessageLogs\310\336\037\000\022\014\n\004info\030\010 \001(\t" +
-      "\022\022\n\ngas_wanted\030\t \001(\003\022\020\n\010gas_used\030\n \001(\003\022!" +
-      "\n\002tx\030\013 \001(\0132\025.google.protobuf2.Any\022\021\n\ttim" +
-      "estamp\030\014 \001(\t:\004\210\240\037\000\"\203\001\n\016ABCIMessageLog\022\021\n" +
-      "\tmsg_index\030\001 \001(\r\022\013\n\003log\030\002 \001(\t\022K\n\006events\030" +
-      "\003 \003(\0132%.cosmos.base.abci.v1beta1.StringE" +
-      "ventB\024\252\337\037\014StringEvents\310\336\037\000:\004\200\334 \001\"`\n\013Stri" +
-      "ngEvent\022\014\n\004type\030\001 \001(\t\022=\n\nattributes\030\002 \003(" +
-      "\0132#.cosmos.base.abci.v1beta1.AttributeB\004" +
-      "\310\336\037\000:\004\200\334 \001\"\'\n\tAttribute\022\013\n\003key\030\001 \001(\t\022\r\n\005" +
-      "value\030\002 \001(\t\"/\n\007GasInfo\022\022\n\ngas_wanted\030\001 \001" +
-      "(\004\022\020\n\010gas_used\030\002 \001(\004\"W\n\006Result\022\014\n\004data\030\001" +
-      " \001(\014\022\013\n\003log\030\002 \001(\t\022,\n\006events\030\003 \003(\0132\026.tend" +
-      "ermint.abci.EventB\004\310\336\037\000:\004\210\240\037\000\"\205\001\n\022Simula" +
-      "tionResponse\022=\n\010gas_info\030\001 \001(\0132!.cosmos." +
-      "base.abci.v1beta1.GasInfoB\010\320\336\037\001\310\336\037\000\0220\n\006r" +
-      "esult\030\002 \001(\0132 .cosmos.base.abci.v1beta1.R" +
-      "esult\"/\n\007MsgData\022\020\n\010msg_type\030\001 \001(\t\022\014\n\004da" +
-      "ta\030\002 \001(\014:\004\200\334 \001\"B\n\tTxMsgData\022/\n\004data\030\001 \003(" +
-      "\0132!.cosmos.base.abci.v1beta1.MsgData:\004\200\334" +
-      " \001\"\330\001\n\017SearchTxsResult\022$\n\013total_count\030\001 " +
-      "\001(\004B\017\352\336\037\013total_count\022\r\n\005count\030\002 \001(\004\022$\n\013p" +
-      "age_number\030\003 \001(\004B\017\352\336\037\013page_number\022\"\n\npag" +
-      "e_total\030\004 \001(\004B\016\352\336\037\npage_total\022\r\n\005limit\030\005" +
-      " \001(\004\0221\n\003txs\030\006 \003(\0132$.cosmos.base.abci.v1b" +
-      "eta1.TxResponse:\004\200\334 \001B(Z\"github.com/cosm" +
-      "os/cosmos-sdk/types\330\341\036\000b\006proto3"
+      "proto\032\033tendermint/abci/types.proto\032\034tend" +
+      "ermint/types/block.proto\032\032google/protobu" +
+      "f2/any.proto\"\347\002\n\nTxResponse\022\016\n\006height\030\001 " +
+      "\001(\003\022\032\n\006txhash\030\002 \001(\tB\n\342\336\037\006TxHash\022\021\n\tcodes" +
+      "pace\030\003 \001(\t\022\014\n\004code\030\004 \001(\r\022\014\n\004data\030\005 \001(\t\022\017" +
+      "\n\007raw_log\030\006 \001(\t\022O\n\004logs\030\007 \003(\0132(.cosmos.b" +
+      "ase.abci.v1beta1.ABCIMessageLogB\027\252\337\037\017ABC" +
+      "IMessageLogs\310\336\037\000\022\014\n\004info\030\010 \001(\t\022\022\n\ngas_wa" +
+      "nted\030\t \001(\003\022\020\n\010gas_used\030\n \001(\003\022!\n\002tx\030\013 \001(\013" +
+      "2\025.google.protobuf2.Any\022\021\n\ttimestamp\030\014 \001" +
+      "(\t\022,\n\006events\030\r \003(\0132\026.tendermint.abci.Eve" +
+      "ntB\004\310\336\037\000:\004\210\240\037\000\"\222\001\n\016ABCIMessageLog\022 \n\tmsg" +
+      "_index\030\001 \001(\rB\r\352\336\037\tmsg_index\022\013\n\003log\030\002 \001(\t" +
+      "\022K\n\006events\030\003 \003(\0132%.cosmos.base.abci.v1be" +
+      "ta1.StringEventB\024\252\337\037\014StringEvents\310\336\037\000:\004\200" +
+      "\334 \001\"`\n\013StringEvent\022\014\n\004type\030\001 \001(\t\022=\n\nattr" +
+      "ibutes\030\002 \003(\0132#.cosmos.base.abci.v1beta1." +
+      "AttributeB\004\310\336\037\000:\004\200\334 \001\"\'\n\tAttribute\022\013\n\003ke" +
+      "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"/\n\007GasInfo\022\022\n\ngas" +
+      "_wanted\030\001 \001(\004\022\020\n\010gas_used\030\002 \001(\004\"\211\001\n\006Resu" +
+      "lt\022\020\n\004data\030\001 \001(\014B\002\030\001\022\013\n\003log\030\002 \001(\t\022,\n\006eve" +
+      "nts\030\003 \003(\0132\026.tendermint.abci.EventB\004\310\336\037\000\022" +
+      ",\n\rmsg_responses\030\004 \003(\0132\025.google.protobuf" +
+      "2.Any:\004\210\240\037\000\"\205\001\n\022SimulationResponse\022=\n\010ga" +
+      "s_info\030\001 \001(\0132!.cosmos.base.abci.v1beta1." +
+      "GasInfoB\010\320\336\037\001\310\336\037\000\0220\n\006result\030\002 \001(\0132 .cosm" +
+      "os.base.abci.v1beta1.Result\"1\n\007MsgData\022\020" +
+      "\n\010msg_type\030\001 \001(\t\022\014\n\004data\030\002 \001(\014:\006\030\001\200\334 \001\"t" +
+      "\n\tTxMsgData\0223\n\004data\030\001 \003(\0132!.cosmos.base." +
+      "abci.v1beta1.MsgDataB\002\030\001\022,\n\rmsg_response" +
+      "s\030\002 \003(\0132\025.google.protobuf2.Any:\004\200\334 \001\"\246\001\n" +
+      "\017SearchTxsResult\022\023\n\013total_count\030\001 \001(\004\022\r\n" +
+      "\005count\030\002 \001(\004\022\023\n\013page_number\030\003 \001(\004\022\022\n\npag" +
+      "e_total\030\004 \001(\004\022\r\n\005limit\030\005 \001(\004\0221\n\003txs\030\006 \003(" +
+      "\0132$.cosmos.base.abci.v1beta1.TxResponse:" +
+      "\004\200\334 \001\"\237\001\n\022SearchBlocksResult\022\023\n\013total_co" +
+      "unt\030\001 \001(\003\022\r\n\005count\030\002 \001(\003\022\023\n\013page_number\030" +
+      "\003 \001(\003\022\022\n\npage_total\030\004 \001(\003\022\r\n\005limit\030\005 \001(\003" +
+      "\022\'\n\006blocks\030\006 \003(\0132\027.tendermint.types.Bloc" +
+      "k:\004\200\334 \001B(Z\"github.com/cosmos/cosmos-sdk/" +
+      "types\330\341\036\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf2.GoGoProtos.getDescriptor(),
           tendermint.abci.Types.getDescriptor(),
+          tendermint.types.BlockOuterClass.getDescriptor(),
           com.google.protobuf2.AnyProto.getDescriptor(),
         });
     internal_static_cosmos_base_abci_v1beta1_TxResponse_descriptor =
@@ -11138,7 +14262,7 @@ public final class Abci {
     internal_static_cosmos_base_abci_v1beta1_TxResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_base_abci_v1beta1_TxResponse_descriptor,
-        new java.lang.String[] { "Height", "Txhash", "Codespace", "Code", "Data", "RawLog", "Logs", "Info", "GasWanted", "GasUsed", "Tx", "Timestamp", });
+        new java.lang.String[] { "Height", "Txhash", "Codespace", "Code", "Data", "RawLog", "Logs", "Info", "GasWanted", "GasUsed", "Tx", "Timestamp", "Events", });
     internal_static_cosmos_base_abci_v1beta1_ABCIMessageLog_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_cosmos_base_abci_v1beta1_ABCIMessageLog_fieldAccessorTable = new
@@ -11168,7 +14292,7 @@ public final class Abci {
     internal_static_cosmos_base_abci_v1beta1_Result_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_base_abci_v1beta1_Result_descriptor,
-        new java.lang.String[] { "Data", "Log", "Events", });
+        new java.lang.String[] { "Data", "Log", "Events", "MsgResponses", });
     internal_static_cosmos_base_abci_v1beta1_SimulationResponse_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_cosmos_base_abci_v1beta1_SimulationResponse_fieldAccessorTable = new
@@ -11186,13 +14310,19 @@ public final class Abci {
     internal_static_cosmos_base_abci_v1beta1_TxMsgData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_base_abci_v1beta1_TxMsgData_descriptor,
-        new java.lang.String[] { "Data", });
+        new java.lang.String[] { "Data", "MsgResponses", });
     internal_static_cosmos_base_abci_v1beta1_SearchTxsResult_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_cosmos_base_abci_v1beta1_SearchTxsResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_base_abci_v1beta1_SearchTxsResult_descriptor,
         new java.lang.String[] { "TotalCount", "Count", "PageNumber", "PageTotal", "Limit", "Txs", });
+    internal_static_cosmos_base_abci_v1beta1_SearchBlocksResult_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_cosmos_base_abci_v1beta1_SearchBlocksResult_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_base_abci_v1beta1_SearchBlocksResult_descriptor,
+        new java.lang.String[] { "TotalCount", "Count", "PageNumber", "PageTotal", "Limit", "Blocks", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.protobuf2.GoGoProtos.castrepeated);
@@ -11207,6 +14337,7 @@ public final class Abci {
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf2.GoGoProtos.getDescriptor();
     tendermint.abci.Types.getDescriptor();
+    tendermint.types.BlockOuterClass.getDescriptor();
     com.google.protobuf2.AnyProto.getDescriptor();
   }
 

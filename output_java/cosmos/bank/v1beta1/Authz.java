@@ -19,28 +19,77 @@ public final class Authz {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> 
         getSpendLimitList();
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.Coin getSpendLimit(int index);
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     int getSpendLimitCount();
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
         getSpendLimitOrBuilderList();
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getSpendLimitOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     * allow_list specifies an optional list of addresses to whom the grantee can send tokens on behalf of the
+     * granter. If omitted, any recipient is allowed.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * <code>repeated string allow_list = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return A list containing the allowList.
+     */
+    java.util.List<java.lang.String>
+        getAllowListList();
+    /**
+     * <pre>
+     * allow_list specifies an optional list of addresses to whom the grantee can send tokens on behalf of the
+     * granter. If omitted, any recipient is allowed.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * <code>repeated string allow_list = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The count of allowList.
+     */
+    int getAllowListCount();
+    /**
+     * <pre>
+     * allow_list specifies an optional list of addresses to whom the grantee can send tokens on behalf of the
+     * granter. If omitted, any recipient is allowed.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * <code>repeated string allow_list = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @param index The index of the element to return.
+     * @return The allowList at the given index.
+     */
+    java.lang.String getAllowList(int index);
+    /**
+     * <pre>
+     * allow_list specifies an optional list of addresses to whom the grantee can send tokens on behalf of the
+     * granter. If omitted, any recipient is allowed.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * <code>repeated string allow_list = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the allowList at the given index.
+     */
+    com.google.protobuf.ByteString
+        getAllowListBytes(int index);
   }
   /**
    * <pre>
@@ -62,6 +111,7 @@ public final class Authz {
     }
     private SendAuthorization() {
       spendLimit_ = java.util.Collections.emptyList();
+      allowList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -104,6 +154,15 @@ public final class Authz {
                   input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
               break;
             }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                allowList_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              allowList_.add(s);
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -121,6 +180,9 @@ public final class Authz {
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           spendLimit_ = java.util.Collections.unmodifiableList(spendLimit_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          allowList_ = allowList_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -142,14 +204,14 @@ public final class Authz {
     public static final int SPEND_LIMIT_FIELD_NUMBER = 1;
     private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> spendLimit_;
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getSpendLimitList() {
       return spendLimit_;
     }
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
@@ -157,26 +219,85 @@ public final class Authz {
       return spendLimit_;
     }
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getSpendLimitCount() {
       return spendLimit_.size();
     }
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.Coin getSpendLimit(int index) {
       return spendLimit_.get(index);
     }
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getSpendLimitOrBuilder(
         int index) {
       return spendLimit_.get(index);
+    }
+
+    public static final int ALLOW_LIST_FIELD_NUMBER = 2;
+    private com.google.protobuf.LazyStringList allowList_;
+    /**
+     * <pre>
+     * allow_list specifies an optional list of addresses to whom the grantee can send tokens on behalf of the
+     * granter. If omitted, any recipient is allowed.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * <code>repeated string allow_list = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return A list containing the allowList.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getAllowListList() {
+      return allowList_;
+    }
+    /**
+     * <pre>
+     * allow_list specifies an optional list of addresses to whom the grantee can send tokens on behalf of the
+     * granter. If omitted, any recipient is allowed.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * <code>repeated string allow_list = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The count of allowList.
+     */
+    public int getAllowListCount() {
+      return allowList_.size();
+    }
+    /**
+     * <pre>
+     * allow_list specifies an optional list of addresses to whom the grantee can send tokens on behalf of the
+     * granter. If omitted, any recipient is allowed.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * <code>repeated string allow_list = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @param index The index of the element to return.
+     * @return The allowList at the given index.
+     */
+    public java.lang.String getAllowList(int index) {
+      return allowList_.get(index);
+    }
+    /**
+     * <pre>
+     * allow_list specifies an optional list of addresses to whom the grantee can send tokens on behalf of the
+     * granter. If omitted, any recipient is allowed.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * <code>repeated string allow_list = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the allowList at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getAllowListBytes(int index) {
+      return allowList_.getByteString(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -196,6 +317,9 @@ public final class Authz {
       for (int i = 0; i < spendLimit_.size(); i++) {
         output.writeMessage(1, spendLimit_.get(i));
       }
+      for (int i = 0; i < allowList_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, allowList_.getRaw(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -208,6 +332,14 @@ public final class Authz {
       for (int i = 0; i < spendLimit_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, spendLimit_.get(i));
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < allowList_.size(); i++) {
+          dataSize += computeStringSizeNoTag(allowList_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getAllowListList().size();
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -226,6 +358,8 @@ public final class Authz {
 
       if (!getSpendLimitList()
           .equals(other.getSpendLimitList())) return false;
+      if (!getAllowListList()
+          .equals(other.getAllowListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -240,6 +374,10 @@ public final class Authz {
       if (getSpendLimitCount() > 0) {
         hash = (37 * hash) + SPEND_LIMIT_FIELD_NUMBER;
         hash = (53 * hash) + getSpendLimitList().hashCode();
+      }
+      if (getAllowListCount() > 0) {
+        hash = (37 * hash) + ALLOW_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getAllowListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -387,6 +525,8 @@ public final class Authz {
         } else {
           spendLimitBuilder_.clear();
         }
+        allowList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -423,6 +563,11 @@ public final class Authz {
         } else {
           result.spendLimit_ = spendLimitBuilder_.build();
         }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          allowList_ = allowList_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.allowList_ = allowList_;
         onBuilt();
         return result;
       }
@@ -497,6 +642,16 @@ public final class Authz {
             }
           }
         }
+        if (!other.allowList_.isEmpty()) {
+          if (allowList_.isEmpty()) {
+            allowList_ = other.allowList_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureAllowListIsMutable();
+            allowList_.addAll(other.allowList_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -540,7 +695,7 @@ public final class Authz {
           cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> spendLimitBuilder_;
 
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getSpendLimitList() {
         if (spendLimitBuilder_ == null) {
@@ -550,7 +705,7 @@ public final class Authz {
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public int getSpendLimitCount() {
         if (spendLimitBuilder_ == null) {
@@ -560,7 +715,7 @@ public final class Authz {
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin getSpendLimit(int index) {
         if (spendLimitBuilder_ == null) {
@@ -570,7 +725,7 @@ public final class Authz {
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder setSpendLimit(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -587,7 +742,7 @@ public final class Authz {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder setSpendLimit(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -601,7 +756,7 @@ public final class Authz {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addSpendLimit(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (spendLimitBuilder_ == null) {
@@ -617,7 +772,7 @@ public final class Authz {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addSpendLimit(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -634,7 +789,7 @@ public final class Authz {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addSpendLimit(
           cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -648,7 +803,7 @@ public final class Authz {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addSpendLimit(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -662,7 +817,7 @@ public final class Authz {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllSpendLimit(
           java.lang.Iterable<? extends cosmos.base.v1beta1.CoinOuterClass.Coin> values) {
@@ -677,7 +832,7 @@ public final class Authz {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearSpendLimit() {
         if (spendLimitBuilder_ == null) {
@@ -690,7 +845,7 @@ public final class Authz {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeSpendLimit(int index) {
         if (spendLimitBuilder_ == null) {
@@ -703,14 +858,14 @@ public final class Authz {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getSpendLimitBuilder(
           int index) {
         return getSpendLimitFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getSpendLimitOrBuilder(
           int index) {
@@ -720,7 +875,7 @@ public final class Authz {
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
            getSpendLimitOrBuilderList() {
@@ -731,14 +886,14 @@ public final class Authz {
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addSpendLimitBuilder() {
         return getSpendLimitFieldBuilder().addBuilder(
             cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addSpendLimitBuilder(
           int index) {
@@ -746,7 +901,7 @@ public final class Authz {
             index, cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin.Builder> 
            getSpendLimitBuilderList() {
@@ -765,6 +920,170 @@ public final class Authz {
           spendLimit_ = null;
         }
         return spendLimitBuilder_;
+      }
+
+      private com.google.protobuf.LazyStringList allowList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureAllowListIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          allowList_ = new com.google.protobuf.LazyStringArrayList(allowList_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <pre>
+       * allow_list specifies an optional list of addresses to whom the grantee can send tokens on behalf of the
+       * granter. If omitted, any recipient is allowed.
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>repeated string allow_list = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return A list containing the allowList.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getAllowListList() {
+        return allowList_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * allow_list specifies an optional list of addresses to whom the grantee can send tokens on behalf of the
+       * granter. If omitted, any recipient is allowed.
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>repeated string allow_list = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The count of allowList.
+       */
+      public int getAllowListCount() {
+        return allowList_.size();
+      }
+      /**
+       * <pre>
+       * allow_list specifies an optional list of addresses to whom the grantee can send tokens on behalf of the
+       * granter. If omitted, any recipient is allowed.
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>repeated string allow_list = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param index The index of the element to return.
+       * @return The allowList at the given index.
+       */
+      public java.lang.String getAllowList(int index) {
+        return allowList_.get(index);
+      }
+      /**
+       * <pre>
+       * allow_list specifies an optional list of addresses to whom the grantee can send tokens on behalf of the
+       * granter. If omitted, any recipient is allowed.
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>repeated string allow_list = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the allowList at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getAllowListBytes(int index) {
+        return allowList_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * allow_list specifies an optional list of addresses to whom the grantee can send tokens on behalf of the
+       * granter. If omitted, any recipient is allowed.
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>repeated string allow_list = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param index The index to set the value at.
+       * @param value The allowList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAllowList(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAllowListIsMutable();
+        allowList_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * allow_list specifies an optional list of addresses to whom the grantee can send tokens on behalf of the
+       * granter. If omitted, any recipient is allowed.
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>repeated string allow_list = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The allowList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllowList(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAllowListIsMutable();
+        allowList_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * allow_list specifies an optional list of addresses to whom the grantee can send tokens on behalf of the
+       * granter. If omitted, any recipient is allowed.
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>repeated string allow_list = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param values The allowList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllAllowList(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureAllowListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, allowList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * allow_list specifies an optional list of addresses to whom the grantee can send tokens on behalf of the
+       * granter. If omitted, any recipient is allowed.
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>repeated string allow_list = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAllowList() {
+        allowList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * allow_list specifies an optional list of addresses to whom the grantee can send tokens on behalf of the
+       * granter. If omitted, any recipient is allowed.
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>repeated string allow_list = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The bytes of the allowList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllowListBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureAllowListIsMutable();
+        allowList_.add(value);
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -834,18 +1153,22 @@ public final class Authz {
   static {
     java.lang.String[] descriptorData = {
       "\n\037cosmos/bank/v1beta1/authz.proto\022\023cosmo" +
-      "s.bank.v1beta1\032\024gogoproto/gogo.proto\032\031co" +
-      "smos_proto/cosmos.proto\032\036cosmos/base/v1b" +
-      "eta1/coin.proto\"\210\001\n\021SendAuthorization\022`\n" +
-      "\013spend_limit\030\001 \003(\0132\031.cosmos.base.v1beta1" +
-      ".CoinB0\310\336\037\000\252\337\037(github.com/cosmos/cosmos-" +
-      "sdk/types.Coins:\021\312\264-\rAuthorizationB+Z)gi" +
-      "thub.com/cosmos/cosmos-sdk/x/bank/typesb" +
-      "\006proto3"
+      "s.bank.v1beta1\032\021amino/amino.proto\032\024gogop" +
+      "roto/gogo.proto\032\031cosmos_proto/cosmos.pro" +
+      "to\032\036cosmos/base/v1beta1/coin.proto\"\202\002\n\021S" +
+      "endAuthorization\022v\n\013spend_limit\030\001 \003(\0132\031." +
+      "cosmos.base.v1beta1.CoinBF\310\336\037\000\250\347\260*\001\232\347\260*\014" +
+      "legacy_coins\252\337\037(github.com/cosmos/cosmos" +
+      "-sdk/types.Coins\022,\n\nallow_list\030\002 \003(\tB\030\322\264" +
+      "-\024cosmos.AddressString:G\312\264-\"cosmos.authz" +
+      ".v1beta1.Authorization\212\347\260*\034cosmos-sdk/Se" +
+      "ndAuthorizationB+Z)github.com/cosmos/cos" +
+      "mos-sdk/x/bank/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          amino.Amino.getDescriptor(),
           com.google.protobuf2.GoGoProtos.getDescriptor(),
           cosmos_proto.Cosmos.getDescriptor(),
           cosmos.base.v1beta1.CoinOuterClass.getDescriptor(),
@@ -855,14 +1178,19 @@ public final class Authz {
     internal_static_cosmos_bank_v1beta1_SendAuthorization_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_bank_v1beta1_SendAuthorization_descriptor,
-        new java.lang.String[] { "SpendLimit", });
+        new java.lang.String[] { "SpendLimit", "AllowList", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(amino.Amino.dontOmitempty);
+    registry.add(amino.Amino.encoding);
+    registry.add(amino.Amino.name);
     registry.add(cosmos_proto.Cosmos.implementsInterface);
+    registry.add(cosmos_proto.Cosmos.scalar);
     registry.add(com.google.protobuf2.GoGoProtos.castrepeated);
     registry.add(com.google.protobuf2.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
+    amino.Amino.getDescriptor();
     com.google.protobuf2.GoGoProtos.getDescriptor();
     cosmos_proto.Cosmos.getDescriptor();
     cosmos.base.v1beta1.CoinOuterClass.getDescriptor();

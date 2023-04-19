@@ -56,6 +56,16 @@ internal protocol Cosmos_Staking_V1beta1_MsgClientProtocol: GRPCClient {
     _ request: Cosmos_Staking_V1beta1_MsgUndelegate,
     callOptions: CallOptions?
   ) -> UnaryCall<Cosmos_Staking_V1beta1_MsgUndelegate, Cosmos_Staking_V1beta1_MsgUndelegateResponse>
+
+  func cancelUnbondingDelegation(
+    _ request: Cosmos_Staking_V1beta1_MsgCancelUnbondingDelegation,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Cosmos_Staking_V1beta1_MsgCancelUnbondingDelegation, Cosmos_Staking_V1beta1_MsgCancelUnbondingDelegationResponse>
+
+  func updateParams(
+    _ request: Cosmos_Staking_V1beta1_MsgUpdateParams,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Cosmos_Staking_V1beta1_MsgUpdateParams, Cosmos_Staking_V1beta1_MsgUpdateParamsResponse>
 }
 
 extension Cosmos_Staking_V1beta1_MsgClientProtocol {
@@ -155,6 +165,47 @@ extension Cosmos_Staking_V1beta1_MsgClientProtocol {
       interceptors: self.interceptors?.makeUndelegateInterceptors() ?? []
     )
   }
+
+  /// CancelUnbondingDelegation defines a method for performing canceling the unbonding delegation
+  /// and delegate back to previous validator.
+  ///
+  /// Since: cosmos-sdk 0.46
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to CancelUnbondingDelegation.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func cancelUnbondingDelegation(
+    _ request: Cosmos_Staking_V1beta1_MsgCancelUnbondingDelegation,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Cosmos_Staking_V1beta1_MsgCancelUnbondingDelegation, Cosmos_Staking_V1beta1_MsgCancelUnbondingDelegationResponse> {
+    return self.makeUnaryCall(
+      path: "/cosmos.staking.v1beta1.Msg/CancelUnbondingDelegation",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeCancelUnbondingDelegationInterceptors() ?? []
+    )
+  }
+
+  /// UpdateParams defines an operation for updating the x/staking module
+  /// parameters.
+  /// Since: cosmos-sdk 0.47
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to UpdateParams.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func updateParams(
+    _ request: Cosmos_Staking_V1beta1_MsgUpdateParams,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Cosmos_Staking_V1beta1_MsgUpdateParams, Cosmos_Staking_V1beta1_MsgUpdateParamsResponse> {
+    return self.makeUnaryCall(
+      path: "/cosmos.staking.v1beta1.Msg/UpdateParams",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeUpdateParamsInterceptors() ?? []
+    )
+  }
 }
 
 internal protocol Cosmos_Staking_V1beta1_MsgClientInterceptorFactoryProtocol {
@@ -173,6 +224,12 @@ internal protocol Cosmos_Staking_V1beta1_MsgClientInterceptorFactoryProtocol {
 
   /// - Returns: Interceptors to use when invoking 'undelegate'.
   func makeUndelegateInterceptors() -> [ClientInterceptor<Cosmos_Staking_V1beta1_MsgUndelegate, Cosmos_Staking_V1beta1_MsgUndelegateResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'cancelUnbondingDelegation'.
+  func makeCancelUnbondingDelegationInterceptors() -> [ClientInterceptor<Cosmos_Staking_V1beta1_MsgCancelUnbondingDelegation, Cosmos_Staking_V1beta1_MsgCancelUnbondingDelegationResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'updateParams'.
+  func makeUpdateParamsInterceptors() -> [ClientInterceptor<Cosmos_Staking_V1beta1_MsgUpdateParams, Cosmos_Staking_V1beta1_MsgUpdateParamsResponse>]
 }
 
 internal final class Cosmos_Staking_V1beta1_MsgClient: Cosmos_Staking_V1beta1_MsgClientProtocol {
@@ -220,6 +277,17 @@ internal protocol Cosmos_Staking_V1beta1_MsgProvider: CallHandlerProvider {
   /// Undelegate defines a method for performing an undelegation from a
   /// delegate and a validator.
   func undelegate(request: Cosmos_Staking_V1beta1_MsgUndelegate, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Staking_V1beta1_MsgUndelegateResponse>
+
+  /// CancelUnbondingDelegation defines a method for performing canceling the unbonding delegation
+  /// and delegate back to previous validator.
+  ///
+  /// Since: cosmos-sdk 0.46
+  func cancelUnbondingDelegation(request: Cosmos_Staking_V1beta1_MsgCancelUnbondingDelegation, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Staking_V1beta1_MsgCancelUnbondingDelegationResponse>
+
+  /// UpdateParams defines an operation for updating the x/staking module
+  /// parameters.
+  /// Since: cosmos-sdk 0.47
+  func updateParams(request: Cosmos_Staking_V1beta1_MsgUpdateParams, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Staking_V1beta1_MsgUpdateParamsResponse>
 }
 
 extension Cosmos_Staking_V1beta1_MsgProvider {
@@ -277,6 +345,24 @@ extension Cosmos_Staking_V1beta1_MsgProvider {
         userFunction: self.undelegate(request:context:)
       )
 
+    case "CancelUnbondingDelegation":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Cosmos_Staking_V1beta1_MsgCancelUnbondingDelegation>(),
+        responseSerializer: ProtobufSerializer<Cosmos_Staking_V1beta1_MsgCancelUnbondingDelegationResponse>(),
+        interceptors: self.interceptors?.makeCancelUnbondingDelegationInterceptors() ?? [],
+        userFunction: self.cancelUnbondingDelegation(request:context:)
+      )
+
+    case "UpdateParams":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Cosmos_Staking_V1beta1_MsgUpdateParams>(),
+        responseSerializer: ProtobufSerializer<Cosmos_Staking_V1beta1_MsgUpdateParamsResponse>(),
+        interceptors: self.interceptors?.makeUpdateParamsInterceptors() ?? [],
+        userFunction: self.updateParams(request:context:)
+      )
+
     default:
       return nil
     }
@@ -304,4 +390,12 @@ internal protocol Cosmos_Staking_V1beta1_MsgServerInterceptorFactoryProtocol {
   /// - Returns: Interceptors to use when handling 'undelegate'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeUndelegateInterceptors() -> [ServerInterceptor<Cosmos_Staking_V1beta1_MsgUndelegate, Cosmos_Staking_V1beta1_MsgUndelegateResponse>]
+
+  /// - Returns: Interceptors to use when handling 'cancelUnbondingDelegation'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeCancelUnbondingDelegationInterceptors() -> [ServerInterceptor<Cosmos_Staking_V1beta1_MsgCancelUnbondingDelegation, Cosmos_Staking_V1beta1_MsgCancelUnbondingDelegationResponse>]
+
+  /// - Returns: Interceptors to use when handling 'updateParams'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeUpdateParamsInterceptors() -> [ServerInterceptor<Cosmos_Staking_V1beta1_MsgUpdateParams, Cosmos_Staking_V1beta1_MsgUpdateParamsResponse>]
 }

@@ -3134,8 +3134,11 @@ public final class TxOuterClass {
 
     /**
      * <pre>
-     * Tip is the optional tip used for meta-transactions. It should be left
-     * empty if the signer is not the tipper for this transaction.
+     * Tip is the optional tip used for transactions fees paid in another denom.
+     * It should be left empty if the signer is not the tipper for this
+     * transaction.
+     * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+     * `TipDecorator` in its posthandler.
      * </pre>
      *
      * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
@@ -3144,8 +3147,11 @@ public final class TxOuterClass {
     boolean hasTip();
     /**
      * <pre>
-     * Tip is the optional tip used for meta-transactions. It should be left
-     * empty if the signer is not the tipper for this transaction.
+     * Tip is the optional tip used for transactions fees paid in another denom.
+     * It should be left empty if the signer is not the tipper for this
+     * transaction.
+     * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+     * `TipDecorator` in its posthandler.
      * </pre>
      *
      * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
@@ -3154,8 +3160,11 @@ public final class TxOuterClass {
     cosmos.tx.v1beta1.TxOuterClass.Tip getTip();
     /**
      * <pre>
-     * Tip is the optional tip used for meta-transactions. It should be left
-     * empty if the signer is not the tipper for this transaction.
+     * Tip is the optional tip used for transactions fees paid in another denom.
+     * It should be left empty if the signer is not the tipper for this
+     * transaction.
+     * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+     * `TipDecorator` in its posthandler.
      * </pre>
      *
      * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
@@ -3166,6 +3175,7 @@ public final class TxOuterClass {
    * <pre>
    * SignDocDirectAux is the type used for generating sign bytes for
    * SIGN_MODE_DIRECT_AUX.
+   * Since: cosmos-sdk 0.46
    * </pre>
    *
    * Protobuf type {@code cosmos.tx.v1beta1.SignDocDirectAux}
@@ -3431,8 +3441,11 @@ public final class TxOuterClass {
     private cosmos.tx.v1beta1.TxOuterClass.Tip tip_;
     /**
      * <pre>
-     * Tip is the optional tip used for meta-transactions. It should be left
-     * empty if the signer is not the tipper for this transaction.
+     * Tip is the optional tip used for transactions fees paid in another denom.
+     * It should be left empty if the signer is not the tipper for this
+     * transaction.
+     * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+     * `TipDecorator` in its posthandler.
      * </pre>
      *
      * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
@@ -3444,8 +3457,11 @@ public final class TxOuterClass {
     }
     /**
      * <pre>
-     * Tip is the optional tip used for meta-transactions. It should be left
-     * empty if the signer is not the tipper for this transaction.
+     * Tip is the optional tip used for transactions fees paid in another denom.
+     * It should be left empty if the signer is not the tipper for this
+     * transaction.
+     * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+     * `TipDecorator` in its posthandler.
      * </pre>
      *
      * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
@@ -3457,8 +3473,11 @@ public final class TxOuterClass {
     }
     /**
      * <pre>
-     * Tip is the optional tip used for meta-transactions. It should be left
-     * empty if the signer is not the tipper for this transaction.
+     * Tip is the optional tip used for transactions fees paid in another denom.
+     * It should be left empty if the signer is not the tipper for this
+     * transaction.
+     * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+     * `TipDecorator` in its posthandler.
      * </pre>
      *
      * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
@@ -3693,6 +3712,7 @@ public final class TxOuterClass {
      * <pre>
      * SignDocDirectAux is the type used for generating sign bytes for
      * SIGN_MODE_DIRECT_AUX.
+     * Since: cosmos-sdk 0.46
      * </pre>
      *
      * Protobuf type {@code cosmos.tx.v1beta1.SignDocDirectAux}
@@ -4289,8 +4309,11 @@ public final class TxOuterClass {
           cosmos.tx.v1beta1.TxOuterClass.Tip, cosmos.tx.v1beta1.TxOuterClass.Tip.Builder, cosmos.tx.v1beta1.TxOuterClass.TipOrBuilder> tipBuilder_;
       /**
        * <pre>
-       * Tip is the optional tip used for meta-transactions. It should be left
-       * empty if the signer is not the tipper for this transaction.
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * It should be left empty if the signer is not the tipper for this
+       * transaction.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
        * </pre>
        *
        * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
@@ -4301,8 +4324,11 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * Tip is the optional tip used for meta-transactions. It should be left
-       * empty if the signer is not the tipper for this transaction.
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * It should be left empty if the signer is not the tipper for this
+       * transaction.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
        * </pre>
        *
        * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
@@ -4317,8 +4343,11 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * Tip is the optional tip used for meta-transactions. It should be left
-       * empty if the signer is not the tipper for this transaction.
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * It should be left empty if the signer is not the tipper for this
+       * transaction.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
        * </pre>
        *
        * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
@@ -4338,8 +4367,11 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * Tip is the optional tip used for meta-transactions. It should be left
-       * empty if the signer is not the tipper for this transaction.
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * It should be left empty if the signer is not the tipper for this
+       * transaction.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
        * </pre>
        *
        * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
@@ -4357,8 +4389,11 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * Tip is the optional tip used for meta-transactions. It should be left
-       * empty if the signer is not the tipper for this transaction.
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * It should be left empty if the signer is not the tipper for this
+       * transaction.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
        * </pre>
        *
        * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
@@ -4380,8 +4415,11 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * Tip is the optional tip used for meta-transactions. It should be left
-       * empty if the signer is not the tipper for this transaction.
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * It should be left empty if the signer is not the tipper for this
+       * transaction.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
        * </pre>
        *
        * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
@@ -4399,8 +4437,11 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * Tip is the optional tip used for meta-transactions. It should be left
-       * empty if the signer is not the tipper for this transaction.
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * It should be left empty if the signer is not the tipper for this
+       * transaction.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
        * </pre>
        *
        * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
@@ -4412,8 +4453,11 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * Tip is the optional tip used for meta-transactions. It should be left
-       * empty if the signer is not the tipper for this transaction.
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * It should be left empty if the signer is not the tipper for this
+       * transaction.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
        * </pre>
        *
        * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
@@ -4428,8 +4472,11 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * Tip is the optional tip used for meta-transactions. It should be left
-       * empty if the signer is not the tipper for this transaction.
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * It should be left empty if the signer is not the tipper for this
+       * transaction.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
        * </pre>
        *
        * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
@@ -7062,8 +7109,10 @@ public final class TxOuterClass {
 
     /**
      * <pre>
-     * Tip is the optional tip used for meta-transactions.
-     * Since: cosmos-sdk 0.45
+     * Tip is the optional tip used for transactions fees paid in another denom.
+     * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+     * `TipDecorator` in its posthandler.
+     * Since: cosmos-sdk 0.46
      * </pre>
      *
      * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
@@ -7072,8 +7121,10 @@ public final class TxOuterClass {
     boolean hasTip();
     /**
      * <pre>
-     * Tip is the optional tip used for meta-transactions.
-     * Since: cosmos-sdk 0.45
+     * Tip is the optional tip used for transactions fees paid in another denom.
+     * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+     * `TipDecorator` in its posthandler.
+     * Since: cosmos-sdk 0.46
      * </pre>
      *
      * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
@@ -7082,8 +7133,10 @@ public final class TxOuterClass {
     cosmos.tx.v1beta1.TxOuterClass.Tip getTip();
     /**
      * <pre>
-     * Tip is the optional tip used for meta-transactions.
-     * Since: cosmos-sdk 0.45
+     * Tip is the optional tip used for transactions fees paid in another denom.
+     * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+     * `TipDecorator` in its posthandler.
+     * Since: cosmos-sdk 0.46
      * </pre>
      *
      * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
@@ -7338,8 +7391,10 @@ public final class TxOuterClass {
     private cosmos.tx.v1beta1.TxOuterClass.Tip tip_;
     /**
      * <pre>
-     * Tip is the optional tip used for meta-transactions.
-     * Since: cosmos-sdk 0.45
+     * Tip is the optional tip used for transactions fees paid in another denom.
+     * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+     * `TipDecorator` in its posthandler.
+     * Since: cosmos-sdk 0.46
      * </pre>
      *
      * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
@@ -7351,8 +7406,10 @@ public final class TxOuterClass {
     }
     /**
      * <pre>
-     * Tip is the optional tip used for meta-transactions.
-     * Since: cosmos-sdk 0.45
+     * Tip is the optional tip used for transactions fees paid in another denom.
+     * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+     * `TipDecorator` in its posthandler.
+     * Since: cosmos-sdk 0.46
      * </pre>
      *
      * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
@@ -7364,8 +7421,10 @@ public final class TxOuterClass {
     }
     /**
      * <pre>
-     * Tip is the optional tip used for meta-transactions.
-     * Since: cosmos-sdk 0.45
+     * Tip is the optional tip used for transactions fees paid in another denom.
+     * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+     * `TipDecorator` in its posthandler.
+     * Since: cosmos-sdk 0.46
      * </pre>
      *
      * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
@@ -8335,8 +8394,10 @@ public final class TxOuterClass {
           cosmos.tx.v1beta1.TxOuterClass.Tip, cosmos.tx.v1beta1.TxOuterClass.Tip.Builder, cosmos.tx.v1beta1.TxOuterClass.TipOrBuilder> tipBuilder_;
       /**
        * <pre>
-       * Tip is the optional tip used for meta-transactions.
-       * Since: cosmos-sdk 0.45
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
+       * Since: cosmos-sdk 0.46
        * </pre>
        *
        * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
@@ -8347,8 +8408,10 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * Tip is the optional tip used for meta-transactions.
-       * Since: cosmos-sdk 0.45
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
+       * Since: cosmos-sdk 0.46
        * </pre>
        *
        * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
@@ -8363,8 +8426,10 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * Tip is the optional tip used for meta-transactions.
-       * Since: cosmos-sdk 0.45
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
+       * Since: cosmos-sdk 0.46
        * </pre>
        *
        * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
@@ -8384,8 +8449,10 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * Tip is the optional tip used for meta-transactions.
-       * Since: cosmos-sdk 0.45
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
+       * Since: cosmos-sdk 0.46
        * </pre>
        *
        * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
@@ -8403,8 +8470,10 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * Tip is the optional tip used for meta-transactions.
-       * Since: cosmos-sdk 0.45
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
+       * Since: cosmos-sdk 0.46
        * </pre>
        *
        * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
@@ -8426,8 +8495,10 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * Tip is the optional tip used for meta-transactions.
-       * Since: cosmos-sdk 0.45
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
+       * Since: cosmos-sdk 0.46
        * </pre>
        *
        * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
@@ -8445,8 +8516,10 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * Tip is the optional tip used for meta-transactions.
-       * Since: cosmos-sdk 0.45
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
+       * Since: cosmos-sdk 0.46
        * </pre>
        *
        * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
@@ -8458,8 +8531,10 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * Tip is the optional tip used for meta-transactions.
-       * Since: cosmos-sdk 0.45
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
+       * Since: cosmos-sdk 0.46
        * </pre>
        *
        * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
@@ -8474,8 +8549,10 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * Tip is the optional tip used for meta-transactions.
-       * Since: cosmos-sdk 0.45
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
+       * Since: cosmos-sdk 0.46
        * </pre>
        *
        * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
@@ -13990,6 +14067,7 @@ public final class TxOuterClass {
   /**
    * <pre>
    * Tip is the tip used for meta-transactions.
+   * Since: cosmos-sdk 0.46
    * </pre>
    *
    * Protobuf type {@code cosmos.tx.v1beta1.Tip}
@@ -14365,6 +14443,7 @@ public final class TxOuterClass {
     /**
      * <pre>
      * Tip is the tip used for meta-transactions.
+     * Since: cosmos-sdk 0.46
      * </pre>
      *
      * Protobuf type {@code cosmos.tx.v1beta1.Tip}
@@ -15048,7 +15127,7 @@ public final class TxOuterClass {
 
     /**
      * <pre>
-     * sign_doc is the SIGN_MOD_DIRECT_AUX sign doc that the auxiliary signer
+     * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
      * signs. Note: we use the same sign doc even if we're signing with
      * LEGACY_AMINO_JSON.
      * </pre>
@@ -15059,7 +15138,7 @@ public final class TxOuterClass {
     boolean hasSignDoc();
     /**
      * <pre>
-     * sign_doc is the SIGN_MOD_DIRECT_AUX sign doc that the auxiliary signer
+     * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
      * signs. Note: we use the same sign doc even if we're signing with
      * LEGACY_AMINO_JSON.
      * </pre>
@@ -15070,7 +15149,7 @@ public final class TxOuterClass {
     cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux getSignDoc();
     /**
      * <pre>
-     * sign_doc is the SIGN_MOD_DIRECT_AUX sign doc that the auxiliary signer
+     * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
      * signs. Note: we use the same sign doc even if we're signing with
      * LEGACY_AMINO_JSON.
      * </pre>
@@ -15081,7 +15160,7 @@ public final class TxOuterClass {
 
     /**
      * <pre>
-     * mode is the signing mode of the single signer
+     * mode is the signing mode of the single signer.
      * </pre>
      *
      * <code>.cosmos.tx.signing.v1beta1.SignMode mode = 3;</code>
@@ -15090,7 +15169,7 @@ public final class TxOuterClass {
     int getModeValue();
     /**
      * <pre>
-     * mode is the signing mode of the single signer
+     * mode is the signing mode of the single signer.
      * </pre>
      *
      * <code>.cosmos.tx.signing.v1beta1.SignMode mode = 3;</code>
@@ -15114,7 +15193,7 @@ public final class TxOuterClass {
    * tipper) builds and sends to the fee payer (who will build and broadcast the
    * actual tx). AuxSignerData is not a valid tx in itself, and will be rejected
    * by the node if sent directly as-is.
-   * Since: cosmos-sdk 0.45
+   * Since: cosmos-sdk 0.46
    * </pre>
    *
    * Protobuf type {@code cosmos.tx.v1beta1.AuxSignerData}
@@ -15280,7 +15359,7 @@ public final class TxOuterClass {
     private cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux signDoc_;
     /**
      * <pre>
-     * sign_doc is the SIGN_MOD_DIRECT_AUX sign doc that the auxiliary signer
+     * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
      * signs. Note: we use the same sign doc even if we're signing with
      * LEGACY_AMINO_JSON.
      * </pre>
@@ -15294,7 +15373,7 @@ public final class TxOuterClass {
     }
     /**
      * <pre>
-     * sign_doc is the SIGN_MOD_DIRECT_AUX sign doc that the auxiliary signer
+     * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
      * signs. Note: we use the same sign doc even if we're signing with
      * LEGACY_AMINO_JSON.
      * </pre>
@@ -15308,7 +15387,7 @@ public final class TxOuterClass {
     }
     /**
      * <pre>
-     * sign_doc is the SIGN_MOD_DIRECT_AUX sign doc that the auxiliary signer
+     * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
      * signs. Note: we use the same sign doc even if we're signing with
      * LEGACY_AMINO_JSON.
      * </pre>
@@ -15324,7 +15403,7 @@ public final class TxOuterClass {
     private int mode_;
     /**
      * <pre>
-     * mode is the signing mode of the single signer
+     * mode is the signing mode of the single signer.
      * </pre>
      *
      * <code>.cosmos.tx.signing.v1beta1.SignMode mode = 3;</code>
@@ -15335,7 +15414,7 @@ public final class TxOuterClass {
     }
     /**
      * <pre>
-     * mode is the signing mode of the single signer
+     * mode is the signing mode of the single signer.
      * </pre>
      *
      * <code>.cosmos.tx.signing.v1beta1.SignMode mode = 3;</code>
@@ -15559,7 +15638,7 @@ public final class TxOuterClass {
      * tipper) builds and sends to the fee payer (who will build and broadcast the
      * actual tx). AuxSignerData is not a valid tx in itself, and will be rejected
      * by the node if sent directly as-is.
-     * Since: cosmos-sdk 0.45
+     * Since: cosmos-sdk 0.46
      * </pre>
      *
      * Protobuf type {@code cosmos.tx.v1beta1.AuxSignerData}
@@ -15846,7 +15925,7 @@ public final class TxOuterClass {
           cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux, cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux.Builder, cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAuxOrBuilder> signDocBuilder_;
       /**
        * <pre>
-       * sign_doc is the SIGN_MOD_DIRECT_AUX sign doc that the auxiliary signer
+       * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
        * signs. Note: we use the same sign doc even if we're signing with
        * LEGACY_AMINO_JSON.
        * </pre>
@@ -15859,7 +15938,7 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * sign_doc is the SIGN_MOD_DIRECT_AUX sign doc that the auxiliary signer
+       * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
        * signs. Note: we use the same sign doc even if we're signing with
        * LEGACY_AMINO_JSON.
        * </pre>
@@ -15876,7 +15955,7 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * sign_doc is the SIGN_MOD_DIRECT_AUX sign doc that the auxiliary signer
+       * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
        * signs. Note: we use the same sign doc even if we're signing with
        * LEGACY_AMINO_JSON.
        * </pre>
@@ -15898,7 +15977,7 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * sign_doc is the SIGN_MOD_DIRECT_AUX sign doc that the auxiliary signer
+       * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
        * signs. Note: we use the same sign doc even if we're signing with
        * LEGACY_AMINO_JSON.
        * </pre>
@@ -15918,7 +15997,7 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * sign_doc is the SIGN_MOD_DIRECT_AUX sign doc that the auxiliary signer
+       * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
        * signs. Note: we use the same sign doc even if we're signing with
        * LEGACY_AMINO_JSON.
        * </pre>
@@ -15942,7 +16021,7 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * sign_doc is the SIGN_MOD_DIRECT_AUX sign doc that the auxiliary signer
+       * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
        * signs. Note: we use the same sign doc even if we're signing with
        * LEGACY_AMINO_JSON.
        * </pre>
@@ -15962,7 +16041,7 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * sign_doc is the SIGN_MOD_DIRECT_AUX sign doc that the auxiliary signer
+       * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
        * signs. Note: we use the same sign doc even if we're signing with
        * LEGACY_AMINO_JSON.
        * </pre>
@@ -15976,7 +16055,7 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * sign_doc is the SIGN_MOD_DIRECT_AUX sign doc that the auxiliary signer
+       * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
        * signs. Note: we use the same sign doc even if we're signing with
        * LEGACY_AMINO_JSON.
        * </pre>
@@ -15993,7 +16072,7 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * sign_doc is the SIGN_MOD_DIRECT_AUX sign doc that the auxiliary signer
+       * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
        * signs. Note: we use the same sign doc even if we're signing with
        * LEGACY_AMINO_JSON.
        * </pre>
@@ -16017,7 +16096,7 @@ public final class TxOuterClass {
       private int mode_ = 0;
       /**
        * <pre>
-       * mode is the signing mode of the single signer
+       * mode is the signing mode of the single signer.
        * </pre>
        *
        * <code>.cosmos.tx.signing.v1beta1.SignMode mode = 3;</code>
@@ -16028,7 +16107,7 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * mode is the signing mode of the single signer
+       * mode is the signing mode of the single signer.
        * </pre>
        *
        * <code>.cosmos.tx.signing.v1beta1.SignMode mode = 3;</code>
@@ -16043,7 +16122,7 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * mode is the signing mode of the single signer
+       * mode is the signing mode of the single signer.
        * </pre>
        *
        * <code>.cosmos.tx.signing.v1beta1.SignMode mode = 3;</code>
@@ -16057,7 +16136,7 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * mode is the signing mode of the single signer
+       * mode is the signing mode of the single signer.
        * </pre>
        *
        * <code>.cosmos.tx.signing.v1beta1.SignMode mode = 3;</code>
@@ -16075,7 +16154,7 @@ public final class TxOuterClass {
       }
       /**
        * <pre>
-       * mode is the signing mode of the single signer
+       * mode is the signing mode of the single signer.
        * </pre>
        *
        * <code>.cosmos.tx.signing.v1beta1.SignMode mode = 3;</code>

@@ -63,7 +63,7 @@ public final class Tx {
      * sender is the address of the owner of nft
      * </pre>
      *
-     * <code>string sender = 3;</code>
+     * <code>string sender = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The sender.
      */
     java.lang.String getSender();
@@ -72,7 +72,7 @@ public final class Tx {
      * sender is the address of the owner of nft
      * </pre>
      *
-     * <code>string sender = 3;</code>
+     * <code>string sender = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for sender.
      */
     com.google.protobuf.ByteString
@@ -83,7 +83,7 @@ public final class Tx {
      * receiver is the receiver address of nft
      * </pre>
      *
-     * <code>string receiver = 4;</code>
+     * <code>string receiver = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The receiver.
      */
     java.lang.String getReceiver();
@@ -92,7 +92,7 @@ public final class Tx {
      * receiver is the receiver address of nft
      * </pre>
      *
-     * <code>string receiver = 4;</code>
+     * <code>string receiver = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for receiver.
      */
     com.google.protobuf.ByteString
@@ -306,7 +306,7 @@ public final class Tx {
      * sender is the address of the owner of nft
      * </pre>
      *
-     * <code>string sender = 3;</code>
+     * <code>string sender = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The sender.
      */
     @java.lang.Override
@@ -327,7 +327,7 @@ public final class Tx {
      * sender is the address of the owner of nft
      * </pre>
      *
-     * <code>string sender = 3;</code>
+     * <code>string sender = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for sender.
      */
     @java.lang.Override
@@ -352,7 +352,7 @@ public final class Tx {
      * receiver is the receiver address of nft
      * </pre>
      *
-     * <code>string receiver = 4;</code>
+     * <code>string receiver = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The receiver.
      */
     @java.lang.Override
@@ -373,7 +373,7 @@ public final class Tx {
      * receiver is the receiver address of nft
      * </pre>
      *
-     * <code>string receiver = 4;</code>
+     * <code>string receiver = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for receiver.
      */
     @java.lang.Override
@@ -946,7 +946,7 @@ public final class Tx {
        * sender is the address of the owner of nft
        * </pre>
        *
-       * <code>string sender = 3;</code>
+       * <code>string sender = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The sender.
        */
       public java.lang.String getSender() {
@@ -966,7 +966,7 @@ public final class Tx {
        * sender is the address of the owner of nft
        * </pre>
        *
-       * <code>string sender = 3;</code>
+       * <code>string sender = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for sender.
        */
       public com.google.protobuf.ByteString
@@ -987,7 +987,7 @@ public final class Tx {
        * sender is the address of the owner of nft
        * </pre>
        *
-       * <code>string sender = 3;</code>
+       * <code>string sender = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The sender to set.
        * @return This builder for chaining.
        */
@@ -1006,7 +1006,7 @@ public final class Tx {
        * sender is the address of the owner of nft
        * </pre>
        *
-       * <code>string sender = 3;</code>
+       * <code>string sender = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearSender() {
@@ -1020,7 +1020,7 @@ public final class Tx {
        * sender is the address of the owner of nft
        * </pre>
        *
-       * <code>string sender = 3;</code>
+       * <code>string sender = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for sender to set.
        * @return This builder for chaining.
        */
@@ -1042,7 +1042,7 @@ public final class Tx {
        * receiver is the receiver address of nft
        * </pre>
        *
-       * <code>string receiver = 4;</code>
+       * <code>string receiver = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The receiver.
        */
       public java.lang.String getReceiver() {
@@ -1062,7 +1062,7 @@ public final class Tx {
        * receiver is the receiver address of nft
        * </pre>
        *
-       * <code>string receiver = 4;</code>
+       * <code>string receiver = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for receiver.
        */
       public com.google.protobuf.ByteString
@@ -1083,7 +1083,7 @@ public final class Tx {
        * receiver is the receiver address of nft
        * </pre>
        *
-       * <code>string receiver = 4;</code>
+       * <code>string receiver = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The receiver to set.
        * @return This builder for chaining.
        */
@@ -1102,7 +1102,7 @@ public final class Tx {
        * receiver is the receiver address of nft
        * </pre>
        *
-       * <code>string receiver = 4;</code>
+       * <code>string receiver = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearReceiver() {
@@ -1116,7 +1116,7 @@ public final class Tx {
        * receiver is the receiver address of nft
        * </pre>
        *
-       * <code>string receiver = 4;</code>
+       * <code>string receiver = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for receiver to set.
        * @return This builder for chaining.
        */
@@ -1630,17 +1630,20 @@ public final class Tx {
   static {
     java.lang.String[] descriptorData = {
       "\n\033cosmos/nft/v1beta1/tx.proto\022\022cosmos.nf" +
-      "t.v1beta1\032\027cosmos/msg/v1/msg.proto\"V\n\007Ms" +
-      "gSend\022\020\n\010class_id\030\001 \001(\t\022\n\n\002id\030\002 \001(\t\022\016\n\006s" +
-      "ender\030\003 \001(\t\022\020\n\010receiver\030\004 \001(\t:\013\202\347\260*\006send" +
-      "er\"\021\n\017MsgSendResponse2O\n\003Msg\022H\n\004Send\022\033.c" +
+      "t.v1beta1\032\031cosmos_proto/cosmos.proto\032\027co" +
+      "smos/msg/v1/msg.proto\"\212\001\n\007MsgSend\022\020\n\010cla" +
+      "ss_id\030\001 \001(\t\022\n\n\002id\030\002 \001(\t\022(\n\006sender\030\003 \001(\tB" +
+      "\030\322\264-\024cosmos.AddressString\022*\n\010receiver\030\004 " +
+      "\001(\tB\030\322\264-\024cosmos.AddressString:\013\202\347\260*\006send" +
+      "er\"\021\n\017MsgSendResponse2V\n\003Msg\022H\n\004Send\022\033.c" +
       "osmos.nft.v1beta1.MsgSend\032#.cosmos.nft.v" +
-      "1beta1.MsgSendResponseB$Z\"github.com/cos" +
-      "mos/cosmos-sdk/x/nftb\006proto3"
+      "1beta1.MsgSendResponse\032\005\200\347\260*\001B\024Z\022cosmoss" +
+      "dk.io/x/nftb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          cosmos_proto.Cosmos.getDescriptor(),
           cosmos.msg.v1.Msg.getDescriptor(),
         });
     internal_static_cosmos_nft_v1beta1_MsgSend_descriptor =
@@ -1657,9 +1660,12 @@ public final class Tx {
         new java.lang.String[] { });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(cosmos.msg.v1.Msg.service);
     registry.add(cosmos.msg.v1.Msg.signer);
+    registry.add(cosmos_proto.Cosmos.scalar);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
+    cosmos_proto.Cosmos.getDescriptor();
     cosmos.msg.v1.Msg.getDescriptor();
   }
 

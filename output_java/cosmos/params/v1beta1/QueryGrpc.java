@@ -157,6 +157,7 @@ public final class QueryGrpc {
     /**
      * <pre>
      * Subspaces queries for all registered subspaces and all keys for a subspace.
+     * Since: cosmos-sdk 0.46
      * </pre>
      */
     public void subspaces(cosmos.params.v1beta1.QueryOuterClass.QuerySubspacesRequest request,
@@ -216,6 +217,7 @@ public final class QueryGrpc {
     /**
      * <pre>
      * Subspaces queries for all registered subspaces and all keys for a subspace.
+     * Since: cosmos-sdk 0.46
      * </pre>
      */
     public void subspaces(cosmos.params.v1beta1.QueryOuterClass.QuerySubspacesRequest request,
@@ -256,6 +258,7 @@ public final class QueryGrpc {
     /**
      * <pre>
      * Subspaces queries for all registered subspaces and all keys for a subspace.
+     * Since: cosmos-sdk 0.46
      * </pre>
      */
     public cosmos.params.v1beta1.QueryOuterClass.QuerySubspacesResponse subspaces(cosmos.params.v1beta1.QueryOuterClass.QuerySubspacesRequest request) {
@@ -296,6 +299,7 @@ public final class QueryGrpc {
     /**
      * <pre>
      * Subspaces queries for all registered subspaces and all keys for a subspace.
+     * Since: cosmos-sdk 0.46
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<cosmos.params.v1beta1.QueryOuterClass.QuerySubspacesResponse> subspaces(

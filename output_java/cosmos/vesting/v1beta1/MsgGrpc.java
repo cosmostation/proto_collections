@@ -61,6 +61,37 @@ public final class MsgGrpc {
     return getCreateVestingAccountMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<cosmos.vesting.v1beta1.Tx.MsgCreatePermanentLockedAccount,
+      cosmos.vesting.v1beta1.Tx.MsgCreatePermanentLockedAccountResponse> getCreatePermanentLockedAccountMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreatePermanentLockedAccount",
+      requestType = cosmos.vesting.v1beta1.Tx.MsgCreatePermanentLockedAccount.class,
+      responseType = cosmos.vesting.v1beta1.Tx.MsgCreatePermanentLockedAccountResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.vesting.v1beta1.Tx.MsgCreatePermanentLockedAccount,
+      cosmos.vesting.v1beta1.Tx.MsgCreatePermanentLockedAccountResponse> getCreatePermanentLockedAccountMethod() {
+    io.grpc.MethodDescriptor<cosmos.vesting.v1beta1.Tx.MsgCreatePermanentLockedAccount, cosmos.vesting.v1beta1.Tx.MsgCreatePermanentLockedAccountResponse> getCreatePermanentLockedAccountMethod;
+    if ((getCreatePermanentLockedAccountMethod = MsgGrpc.getCreatePermanentLockedAccountMethod) == null) {
+      synchronized (MsgGrpc.class) {
+        if ((getCreatePermanentLockedAccountMethod = MsgGrpc.getCreatePermanentLockedAccountMethod) == null) {
+          MsgGrpc.getCreatePermanentLockedAccountMethod = getCreatePermanentLockedAccountMethod =
+              io.grpc.MethodDescriptor.<cosmos.vesting.v1beta1.Tx.MsgCreatePermanentLockedAccount, cosmos.vesting.v1beta1.Tx.MsgCreatePermanentLockedAccountResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreatePermanentLockedAccount"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.vesting.v1beta1.Tx.MsgCreatePermanentLockedAccount.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.vesting.v1beta1.Tx.MsgCreatePermanentLockedAccountResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MsgMethodDescriptorSupplier("CreatePermanentLockedAccount"))
+              .build();
+        }
+      }
+    }
+    return getCreatePermanentLockedAccountMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccount,
       cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccountResponse> getCreatePeriodicVestingAccountMethod;
 
@@ -156,8 +187,21 @@ public final class MsgGrpc {
 
     /**
      * <pre>
+     * CreatePermanentLockedAccount defines a method that enables creating a permanent
+     * locked account.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     */
+    public void createPermanentLockedAccount(cosmos.vesting.v1beta1.Tx.MsgCreatePermanentLockedAccount request,
+        io.grpc.stub.StreamObserver<cosmos.vesting.v1beta1.Tx.MsgCreatePermanentLockedAccountResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getCreatePermanentLockedAccountMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * CreatePeriodicVestingAccount defines a method that enables creating a
      * periodic vesting account.
+     * Since: cosmos-sdk 0.46
      * </pre>
      */
     public void createPeriodicVestingAccount(cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccount request,
@@ -174,6 +218,13 @@ public final class MsgGrpc {
                 cosmos.vesting.v1beta1.Tx.MsgCreateVestingAccount,
                 cosmos.vesting.v1beta1.Tx.MsgCreateVestingAccountResponse>(
                   this, METHODID_CREATE_VESTING_ACCOUNT)))
+          .addMethod(
+            getCreatePermanentLockedAccountMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.vesting.v1beta1.Tx.MsgCreatePermanentLockedAccount,
+                cosmos.vesting.v1beta1.Tx.MsgCreatePermanentLockedAccountResponse>(
+                  this, METHODID_CREATE_PERMANENT_LOCKED_ACCOUNT)))
           .addMethod(
             getCreatePeriodicVestingAccountMethod(),
             asyncUnaryCall(
@@ -216,8 +267,22 @@ public final class MsgGrpc {
 
     /**
      * <pre>
+     * CreatePermanentLockedAccount defines a method that enables creating a permanent
+     * locked account.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     */
+    public void createPermanentLockedAccount(cosmos.vesting.v1beta1.Tx.MsgCreatePermanentLockedAccount request,
+        io.grpc.stub.StreamObserver<cosmos.vesting.v1beta1.Tx.MsgCreatePermanentLockedAccountResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCreatePermanentLockedAccountMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * CreatePeriodicVestingAccount defines a method that enables creating a
      * periodic vesting account.
+     * Since: cosmos-sdk 0.46
      * </pre>
      */
     public void createPeriodicVestingAccount(cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccount request,
@@ -257,8 +322,21 @@ public final class MsgGrpc {
 
     /**
      * <pre>
+     * CreatePermanentLockedAccount defines a method that enables creating a permanent
+     * locked account.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     */
+    public cosmos.vesting.v1beta1.Tx.MsgCreatePermanentLockedAccountResponse createPermanentLockedAccount(cosmos.vesting.v1beta1.Tx.MsgCreatePermanentLockedAccount request) {
+      return blockingUnaryCall(
+          getChannel(), getCreatePermanentLockedAccountMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * CreatePeriodicVestingAccount defines a method that enables creating a
      * periodic vesting account.
+     * Since: cosmos-sdk 0.46
      * </pre>
      */
     public cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccountResponse createPeriodicVestingAccount(cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccount request) {
@@ -298,8 +376,22 @@ public final class MsgGrpc {
 
     /**
      * <pre>
+     * CreatePermanentLockedAccount defines a method that enables creating a permanent
+     * locked account.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.vesting.v1beta1.Tx.MsgCreatePermanentLockedAccountResponse> createPermanentLockedAccount(
+        cosmos.vesting.v1beta1.Tx.MsgCreatePermanentLockedAccount request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCreatePermanentLockedAccountMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * CreatePeriodicVestingAccount defines a method that enables creating a
      * periodic vesting account.
+     * Since: cosmos-sdk 0.46
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccountResponse> createPeriodicVestingAccount(
@@ -310,7 +402,8 @@ public final class MsgGrpc {
   }
 
   private static final int METHODID_CREATE_VESTING_ACCOUNT = 0;
-  private static final int METHODID_CREATE_PERIODIC_VESTING_ACCOUNT = 1;
+  private static final int METHODID_CREATE_PERMANENT_LOCKED_ACCOUNT = 1;
+  private static final int METHODID_CREATE_PERIODIC_VESTING_ACCOUNT = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -332,6 +425,10 @@ public final class MsgGrpc {
         case METHODID_CREATE_VESTING_ACCOUNT:
           serviceImpl.createVestingAccount((cosmos.vesting.v1beta1.Tx.MsgCreateVestingAccount) request,
               (io.grpc.stub.StreamObserver<cosmos.vesting.v1beta1.Tx.MsgCreateVestingAccountResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_PERMANENT_LOCKED_ACCOUNT:
+          serviceImpl.createPermanentLockedAccount((cosmos.vesting.v1beta1.Tx.MsgCreatePermanentLockedAccount) request,
+              (io.grpc.stub.StreamObserver<cosmos.vesting.v1beta1.Tx.MsgCreatePermanentLockedAccountResponse>) responseObserver);
           break;
         case METHODID_CREATE_PERIODIC_VESTING_ACCOUNT:
           serviceImpl.createPeriodicVestingAccount((cosmos.vesting.v1beta1.Tx.MsgCreatePeriodicVestingAccount) request,
@@ -399,6 +496,7 @@ public final class MsgGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new MsgFileDescriptorSupplier())
               .addMethod(getCreateVestingAccountMethod())
+              .addMethod(getCreatePermanentLockedAccountMethod())
               .addMethod(getCreatePeriodicVestingAccountMethod())
               .build();
         }

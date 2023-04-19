@@ -2511,7 +2511,7 @@ public final class Types {
   }
   /**
    * <pre>
-   * Header defines the structure of a Tendermint block header.
+   * Header defines the structure of a block header.
    * </pre>
    *
    * Protobuf type {@code tendermint.types.Header}
@@ -3296,7 +3296,7 @@ public final class Types {
     }
     /**
      * <pre>
-     * Header defines the structure of a Tendermint block header.
+     * Header defines the structure of a block header.
      * </pre>
      *
      * Protobuf type {@code tendermint.types.Header}
@@ -13369,8 +13369,8 @@ public final class Types {
       "\013PrevoteType\0220\n\031SIGNED_MSG_TYPE_PRECOMMI" +
       "T\020\002\032\021\212\235 \rPrecommitType\022.\n\030SIGNED_MSG_TYP" +
       "E_PROPOSAL\020 \032\020\212\235 \014ProposalType\032\010\250\244\036\001\210\243\036\000" +
-      "B9Z7github.com/tendermint/tendermint/pro" +
-      "to/tendermint/typesb\006proto3"
+      "B5Z3github.com/cometbft/cometbft/proto/t" +
+      "endermint/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -23,7 +23,7 @@ public final class Genesis {
      * params defines all the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the params field is set.
      */
     boolean hasParams();
@@ -32,7 +32,7 @@ public final class Genesis {
      * params defines all the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The params.
      */
     cosmos.auth.v1beta1.Auth.Params getParams();
@@ -41,7 +41,7 @@ public final class Genesis {
      * params defines all the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.auth.v1beta1.Auth.ParamsOrBuilder getParamsOrBuilder();
 
@@ -204,7 +204,7 @@ public final class Genesis {
      * params defines all the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the params field is set.
      */
     @java.lang.Override
@@ -216,7 +216,7 @@ public final class Genesis {
      * params defines all the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The params.
      */
     @java.lang.Override
@@ -228,7 +228,7 @@ public final class Genesis {
      * params defines all the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.auth.v1beta1.Auth.ParamsOrBuilder getParamsOrBuilder() {
@@ -679,7 +679,7 @@ public final class Genesis {
        * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the params field is set.
        */
       public boolean hasParams() {
@@ -690,7 +690,7 @@ public final class Genesis {
        * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The params.
        */
       public cosmos.auth.v1beta1.Auth.Params getParams() {
@@ -705,7 +705,7 @@ public final class Genesis {
        * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setParams(cosmos.auth.v1beta1.Auth.Params value) {
         if (paramsBuilder_ == null) {
@@ -725,7 +725,7 @@ public final class Genesis {
        * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setParams(
           cosmos.auth.v1beta1.Auth.Params.Builder builderForValue) {
@@ -743,7 +743,7 @@ public final class Genesis {
        * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeParams(cosmos.auth.v1beta1.Auth.Params value) {
         if (paramsBuilder_ == null) {
@@ -765,7 +765,7 @@ public final class Genesis {
        * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearParams() {
         if (paramsBuilder_ == null) {
@@ -783,7 +783,7 @@ public final class Genesis {
        * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.auth.v1beta1.Auth.Params.Builder getParamsBuilder() {
         
@@ -795,7 +795,7 @@ public final class Genesis {
        * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.auth.v1beta1.Auth.ParamsOrBuilder getParamsOrBuilder() {
         if (paramsBuilder_ != null) {
@@ -810,7 +810,7 @@ public final class Genesis {
        * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.auth.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.auth.v1beta1.Auth.Params, cosmos.auth.v1beta1.Auth.Params.Builder, cosmos.auth.v1beta1.Auth.ParamsOrBuilder> 
@@ -1207,11 +1207,12 @@ public final class Genesis {
       "\n!cosmos/auth/v1beta1/genesis.proto\022\023cos" +
       "mos.auth.v1beta1\032\032google/protobuf2/any.p" +
       "roto\032\024gogoproto/gogo.proto\032\036cosmos/auth/" +
-      "v1beta1/auth.proto\"j\n\014GenesisState\0221\n\006pa" +
-      "rams\030\001 \001(\0132\033.cosmos.auth.v1beta1.ParamsB" +
-      "\004\310\336\037\000\022\'\n\010accounts\030\002 \003(\0132\025.google.protobu" +
-      "f2.AnyB+Z)github.com/cosmos/cosmos-sdk/x" +
-      "/auth/typesb\006proto3"
+      "v1beta1/auth.proto\032\021amino/amino.proto\"o\n" +
+      "\014GenesisState\0226\n\006params\030\001 \001(\0132\033.cosmos.a" +
+      "uth.v1beta1.ParamsB\t\310\336\037\000\250\347\260*\001\022\'\n\010account" +
+      "s\030\002 \003(\0132\025.google.protobuf2.AnyB+Z)github" +
+      ".com/cosmos/cosmos-sdk/x/auth/typesb\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1219,6 +1220,7 @@ public final class Genesis {
           com.google.protobuf2.AnyProto.getDescriptor(),
           com.google.protobuf2.GoGoProtos.getDescriptor(),
           cosmos.auth.v1beta1.Auth.getDescriptor(),
+          amino.Amino.getDescriptor(),
         });
     internal_static_cosmos_auth_v1beta1_GenesisState_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1228,12 +1230,14 @@ public final class Genesis {
         new java.lang.String[] { "Params", "Accounts", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(amino.Amino.dontOmitempty);
     registry.add(com.google.protobuf2.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf2.AnyProto.getDescriptor();
     com.google.protobuf2.GoGoProtos.getDescriptor();
     cosmos.auth.v1beta1.Auth.getDescriptor();
+    amino.Amino.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

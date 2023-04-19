@@ -25,25 +25,25 @@ public final class Keys {
     int getThreshold();
 
     /**
-     * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys"];</code>
+     * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.amino.field_name) = "pubkeys"];</code>
      */
     java.util.List<com.google.protobuf2.Any> 
         getPublicKeysList();
     /**
-     * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys"];</code>
+     * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.amino.field_name) = "pubkeys"];</code>
      */
     com.google.protobuf2.Any getPublicKeys(int index);
     /**
-     * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys"];</code>
+     * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.amino.field_name) = "pubkeys"];</code>
      */
     int getPublicKeysCount();
     /**
-     * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys"];</code>
+     * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.amino.field_name) = "pubkeys"];</code>
      */
     java.util.List<? extends com.google.protobuf2.AnyOrBuilder> 
         getPublicKeysOrBuilderList();
     /**
-     * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys"];</code>
+     * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.amino.field_name) = "pubkeys"];</code>
      */
     com.google.protobuf2.AnyOrBuilder getPublicKeysOrBuilder(
         int index);
@@ -164,14 +164,14 @@ public final class Keys {
     public static final int PUBLIC_KEYS_FIELD_NUMBER = 2;
     private java.util.List<com.google.protobuf2.Any> publicKeys_;
     /**
-     * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys"];</code>
+     * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.amino.field_name) = "pubkeys"];</code>
      */
     @java.lang.Override
     public java.util.List<com.google.protobuf2.Any> getPublicKeysList() {
       return publicKeys_;
     }
     /**
-     * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys"];</code>
+     * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.amino.field_name) = "pubkeys"];</code>
      */
     @java.lang.Override
     public java.util.List<? extends com.google.protobuf2.AnyOrBuilder> 
@@ -179,21 +179,21 @@ public final class Keys {
       return publicKeys_;
     }
     /**
-     * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys"];</code>
+     * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.amino.field_name) = "pubkeys"];</code>
      */
     @java.lang.Override
     public int getPublicKeysCount() {
       return publicKeys_.size();
     }
     /**
-     * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys"];</code>
+     * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.amino.field_name) = "pubkeys"];</code>
      */
     @java.lang.Override
     public com.google.protobuf2.Any getPublicKeys(int index) {
       return publicKeys_.get(index);
     }
     /**
-     * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys"];</code>
+     * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.amino.field_name) = "pubkeys"];</code>
      */
     @java.lang.Override
     public com.google.protobuf2.AnyOrBuilder getPublicKeysOrBuilder(
@@ -610,7 +610,7 @@ public final class Keys {
           com.google.protobuf2.Any, com.google.protobuf2.Any.Builder, com.google.protobuf2.AnyOrBuilder> publicKeysBuilder_;
 
       /**
-       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys"];</code>
+       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.amino.field_name) = "pubkeys"];</code>
        */
       public java.util.List<com.google.protobuf2.Any> getPublicKeysList() {
         if (publicKeysBuilder_ == null) {
@@ -620,7 +620,7 @@ public final class Keys {
         }
       }
       /**
-       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys"];</code>
+       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.amino.field_name) = "pubkeys"];</code>
        */
       public int getPublicKeysCount() {
         if (publicKeysBuilder_ == null) {
@@ -630,7 +630,7 @@ public final class Keys {
         }
       }
       /**
-       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys"];</code>
+       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.amino.field_name) = "pubkeys"];</code>
        */
       public com.google.protobuf2.Any getPublicKeys(int index) {
         if (publicKeysBuilder_ == null) {
@@ -640,7 +640,7 @@ public final class Keys {
         }
       }
       /**
-       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys"];</code>
+       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.amino.field_name) = "pubkeys"];</code>
        */
       public Builder setPublicKeys(
           int index, com.google.protobuf2.Any value) {
@@ -657,7 +657,7 @@ public final class Keys {
         return this;
       }
       /**
-       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys"];</code>
+       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.amino.field_name) = "pubkeys"];</code>
        */
       public Builder setPublicKeys(
           int index, com.google.protobuf2.Any.Builder builderForValue) {
@@ -671,7 +671,7 @@ public final class Keys {
         return this;
       }
       /**
-       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys"];</code>
+       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.amino.field_name) = "pubkeys"];</code>
        */
       public Builder addPublicKeys(com.google.protobuf2.Any value) {
         if (publicKeysBuilder_ == null) {
@@ -687,7 +687,7 @@ public final class Keys {
         return this;
       }
       /**
-       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys"];</code>
+       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.amino.field_name) = "pubkeys"];</code>
        */
       public Builder addPublicKeys(
           int index, com.google.protobuf2.Any value) {
@@ -704,7 +704,7 @@ public final class Keys {
         return this;
       }
       /**
-       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys"];</code>
+       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.amino.field_name) = "pubkeys"];</code>
        */
       public Builder addPublicKeys(
           com.google.protobuf2.Any.Builder builderForValue) {
@@ -718,7 +718,7 @@ public final class Keys {
         return this;
       }
       /**
-       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys"];</code>
+       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.amino.field_name) = "pubkeys"];</code>
        */
       public Builder addPublicKeys(
           int index, com.google.protobuf2.Any.Builder builderForValue) {
@@ -732,7 +732,7 @@ public final class Keys {
         return this;
       }
       /**
-       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys"];</code>
+       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.amino.field_name) = "pubkeys"];</code>
        */
       public Builder addAllPublicKeys(
           java.lang.Iterable<? extends com.google.protobuf2.Any> values) {
@@ -747,7 +747,7 @@ public final class Keys {
         return this;
       }
       /**
-       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys"];</code>
+       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.amino.field_name) = "pubkeys"];</code>
        */
       public Builder clearPublicKeys() {
         if (publicKeysBuilder_ == null) {
@@ -760,7 +760,7 @@ public final class Keys {
         return this;
       }
       /**
-       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys"];</code>
+       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.amino.field_name) = "pubkeys"];</code>
        */
       public Builder removePublicKeys(int index) {
         if (publicKeysBuilder_ == null) {
@@ -773,14 +773,14 @@ public final class Keys {
         return this;
       }
       /**
-       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys"];</code>
+       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.amino.field_name) = "pubkeys"];</code>
        */
       public com.google.protobuf2.Any.Builder getPublicKeysBuilder(
           int index) {
         return getPublicKeysFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys"];</code>
+       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.amino.field_name) = "pubkeys"];</code>
        */
       public com.google.protobuf2.AnyOrBuilder getPublicKeysOrBuilder(
           int index) {
@@ -790,7 +790,7 @@ public final class Keys {
         }
       }
       /**
-       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys"];</code>
+       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.amino.field_name) = "pubkeys"];</code>
        */
       public java.util.List<? extends com.google.protobuf2.AnyOrBuilder> 
            getPublicKeysOrBuilderList() {
@@ -801,14 +801,14 @@ public final class Keys {
         }
       }
       /**
-       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys"];</code>
+       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.amino.field_name) = "pubkeys"];</code>
        */
       public com.google.protobuf2.Any.Builder addPublicKeysBuilder() {
         return getPublicKeysFieldBuilder().addBuilder(
             com.google.protobuf2.Any.getDefaultInstance());
       }
       /**
-       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys"];</code>
+       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.amino.field_name) = "pubkeys"];</code>
        */
       public com.google.protobuf2.Any.Builder addPublicKeysBuilder(
           int index) {
@@ -816,7 +816,7 @@ public final class Keys {
             index, com.google.protobuf2.Any.getDefaultInstance());
       }
       /**
-       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys"];</code>
+       * <code>repeated .google.protobuf2.Any public_keys = 2 [(.gogoproto.customname) = "PubKeys", (.amino.field_name) = "pubkeys"];</code>
        */
       public java.util.List<com.google.protobuf2.Any.Builder> 
            getPublicKeysBuilderList() {
@@ -905,17 +905,21 @@ public final class Keys {
     java.lang.String[] descriptorData = {
       "\n!cosmos/crypto/multisig/keys.proto\022\026cos" +
       "mos.crypto.multisig\032\024gogoproto/gogo.prot" +
-      "o\032\032google/protobuf2/any.proto\"e\n\021LegacyA" +
-      "minoPubKey\022\021\n\tthreshold\030\001 \001(\r\0227\n\013public_" +
-      "keys\030\002 \003(\0132\025.google.protobuf2.AnyB\013\342\336\037\007P" +
-      "ubKeys:\004\210\240\037\000B3Z1github.com/cosmos/cosmos" +
-      "-sdk/crypto/keys/multisigb\006proto3"
+      "o\032\032google/protobuf2/any.proto\032\021amino/ami" +
+      "no.proto\"\255\001\n\021LegacyAminoPubKey\022\021\n\tthresh" +
+      "old\030\001 \001(\r\022C\n\013public_keys\030\002 \003(\0132\025.google." +
+      "protobuf2.AnyB\027\342\336\037\007PubKeys\242\347\260*\007pubkeys:@" +
+      "\212\347\260*\"tendermint/PubKeyMultisigThreshold\222" +
+      "\347\260*\020threshold_string\210\240\037\000B3Z1github.com/c" +
+      "osmos/cosmos-sdk/crypto/keys/multisigb\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf2.GoGoProtos.getDescriptor(),
           com.google.protobuf2.AnyProto.getDescriptor(),
+          amino.Amino.getDescriptor(),
         });
     internal_static_cosmos_crypto_multisig_LegacyAminoPubKey_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -925,12 +929,16 @@ public final class Keys {
         new java.lang.String[] { "Threshold", "PublicKeys", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(amino.Amino.fieldName);
+    registry.add(amino.Amino.messageEncoding);
+    registry.add(amino.Amino.name);
     registry.add(com.google.protobuf2.GoGoProtos.customname);
     registry.add(com.google.protobuf2.GoGoProtos.goprotoGetters);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf2.GoGoProtos.getDescriptor();
     com.google.protobuf2.AnyProto.getDescriptor();
+    amino.Amino.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

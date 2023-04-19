@@ -33,7 +33,7 @@ public final class Genesis {
      * deposits defines all the deposits present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits", (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.gov.v1beta1.Gov.Deposit> 
         getDepositsList();
@@ -42,7 +42,7 @@ public final class Genesis {
      * deposits defines all the deposits present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits", (.amino.dont_omitempty) = true];</code>
      */
     cosmos.gov.v1beta1.Gov.Deposit getDeposits(int index);
     /**
@@ -50,7 +50,7 @@ public final class Genesis {
      * deposits defines all the deposits present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits", (.amino.dont_omitempty) = true];</code>
      */
     int getDepositsCount();
     /**
@@ -58,7 +58,7 @@ public final class Genesis {
      * deposits defines all the deposits present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits", (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.gov.v1beta1.Gov.DepositOrBuilder> 
         getDepositsOrBuilderList();
@@ -67,7 +67,7 @@ public final class Genesis {
      * deposits defines all the deposits present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits", (.amino.dont_omitempty) = true];</code>
      */
     cosmos.gov.v1beta1.Gov.DepositOrBuilder getDepositsOrBuilder(
         int index);
@@ -77,7 +77,7 @@ public final class Genesis {
      * votes defines all the votes present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes", (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.gov.v1beta1.Gov.Vote> 
         getVotesList();
@@ -86,7 +86,7 @@ public final class Genesis {
      * votes defines all the votes present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes", (.amino.dont_omitempty) = true];</code>
      */
     cosmos.gov.v1beta1.Gov.Vote getVotes(int index);
     /**
@@ -94,7 +94,7 @@ public final class Genesis {
      * votes defines all the votes present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes", (.amino.dont_omitempty) = true];</code>
      */
     int getVotesCount();
     /**
@@ -102,7 +102,7 @@ public final class Genesis {
      * votes defines all the votes present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes", (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.gov.v1beta1.Gov.VoteOrBuilder> 
         getVotesOrBuilderList();
@@ -111,7 +111,7 @@ public final class Genesis {
      * votes defines all the votes present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes", (.amino.dont_omitempty) = true];</code>
      */
     cosmos.gov.v1beta1.Gov.VoteOrBuilder getVotesOrBuilder(
         int index);
@@ -121,7 +121,7 @@ public final class Genesis {
      * proposals defines all the proposals present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals", (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.gov.v1beta1.Gov.Proposal> 
         getProposalsList();
@@ -130,7 +130,7 @@ public final class Genesis {
      * proposals defines all the proposals present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals", (.amino.dont_omitempty) = true];</code>
      */
     cosmos.gov.v1beta1.Gov.Proposal getProposals(int index);
     /**
@@ -138,7 +138,7 @@ public final class Genesis {
      * proposals defines all the proposals present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals", (.amino.dont_omitempty) = true];</code>
      */
     int getProposalsCount();
     /**
@@ -146,7 +146,7 @@ public final class Genesis {
      * proposals defines all the proposals present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals", (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.gov.v1beta1.Gov.ProposalOrBuilder> 
         getProposalsOrBuilderList();
@@ -155,89 +155,89 @@ public final class Genesis {
      * proposals defines all the proposals present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals", (.amino.dont_omitempty) = true];</code>
      */
     cosmos.gov.v1beta1.Gov.ProposalOrBuilder getProposalsOrBuilder(
         int index);
 
     /**
      * <pre>
-     * params defines all the paramaters of related to deposit.
+     * params defines all the parameters of related to deposit.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the depositParams field is set.
      */
     boolean hasDepositParams();
     /**
      * <pre>
-     * params defines all the paramaters of related to deposit.
+     * params defines all the parameters of related to deposit.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The depositParams.
      */
     cosmos.gov.v1beta1.Gov.DepositParams getDepositParams();
     /**
      * <pre>
-     * params defines all the paramaters of related to deposit.
+     * params defines all the parameters of related to deposit.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.gov.v1beta1.Gov.DepositParamsOrBuilder getDepositParamsOrBuilder();
 
     /**
      * <pre>
-     * params defines all the paramaters of related to voting.
+     * params defines all the parameters of related to voting.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the votingParams field is set.
      */
     boolean hasVotingParams();
     /**
      * <pre>
-     * params defines all the paramaters of related to voting.
+     * params defines all the parameters of related to voting.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The votingParams.
      */
     cosmos.gov.v1beta1.Gov.VotingParams getVotingParams();
     /**
      * <pre>
-     * params defines all the paramaters of related to voting.
+     * params defines all the parameters of related to voting.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.gov.v1beta1.Gov.VotingParamsOrBuilder getVotingParamsOrBuilder();
 
     /**
      * <pre>
-     * params defines all the paramaters of related to tally.
+     * params defines all the parameters of related to tally.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the tallyParams field is set.
      */
     boolean hasTallyParams();
     /**
      * <pre>
-     * params defines all the paramaters of related to tally.
+     * params defines all the parameters of related to tally.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The tallyParams.
      */
     cosmos.gov.v1beta1.Gov.TallyParams getTallyParams();
     /**
      * <pre>
-     * params defines all the paramaters of related to tally.
+     * params defines all the parameters of related to tally.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.gov.v1beta1.Gov.TallyParamsOrBuilder getTallyParamsOrBuilder();
   }
@@ -428,7 +428,7 @@ public final class Genesis {
      * deposits defines all the deposits present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.gov.v1beta1.Gov.Deposit> getDepositsList() {
@@ -439,7 +439,7 @@ public final class Genesis {
      * deposits defines all the deposits present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.gov.v1beta1.Gov.DepositOrBuilder> 
@@ -451,7 +451,7 @@ public final class Genesis {
      * deposits defines all the deposits present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getDepositsCount() {
@@ -462,7 +462,7 @@ public final class Genesis {
      * deposits defines all the deposits present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.gov.v1beta1.Gov.Deposit getDeposits(int index) {
@@ -473,7 +473,7 @@ public final class Genesis {
      * deposits defines all the deposits present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.gov.v1beta1.Gov.DepositOrBuilder getDepositsOrBuilder(
@@ -488,7 +488,7 @@ public final class Genesis {
      * votes defines all the votes present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.gov.v1beta1.Gov.Vote> getVotesList() {
@@ -499,7 +499,7 @@ public final class Genesis {
      * votes defines all the votes present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.gov.v1beta1.Gov.VoteOrBuilder> 
@@ -511,7 +511,7 @@ public final class Genesis {
      * votes defines all the votes present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getVotesCount() {
@@ -522,7 +522,7 @@ public final class Genesis {
      * votes defines all the votes present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.gov.v1beta1.Gov.Vote getVotes(int index) {
@@ -533,7 +533,7 @@ public final class Genesis {
      * votes defines all the votes present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.gov.v1beta1.Gov.VoteOrBuilder getVotesOrBuilder(
@@ -548,7 +548,7 @@ public final class Genesis {
      * proposals defines all the proposals present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.gov.v1beta1.Gov.Proposal> getProposalsList() {
@@ -559,7 +559,7 @@ public final class Genesis {
      * proposals defines all the proposals present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.gov.v1beta1.Gov.ProposalOrBuilder> 
@@ -571,7 +571,7 @@ public final class Genesis {
      * proposals defines all the proposals present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getProposalsCount() {
@@ -582,7 +582,7 @@ public final class Genesis {
      * proposals defines all the proposals present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.gov.v1beta1.Gov.Proposal getProposals(int index) {
@@ -593,7 +593,7 @@ public final class Genesis {
      * proposals defines all the proposals present at genesis.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals"];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.gov.v1beta1.Gov.ProposalOrBuilder getProposalsOrBuilder(
@@ -605,10 +605,10 @@ public final class Genesis {
     private cosmos.gov.v1beta1.Gov.DepositParams depositParams_;
     /**
      * <pre>
-     * params defines all the paramaters of related to deposit.
+     * params defines all the parameters of related to deposit.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the depositParams field is set.
      */
     @java.lang.Override
@@ -617,10 +617,10 @@ public final class Genesis {
     }
     /**
      * <pre>
-     * params defines all the paramaters of related to deposit.
+     * params defines all the parameters of related to deposit.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The depositParams.
      */
     @java.lang.Override
@@ -629,10 +629,10 @@ public final class Genesis {
     }
     /**
      * <pre>
-     * params defines all the paramaters of related to deposit.
+     * params defines all the parameters of related to deposit.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.gov.v1beta1.Gov.DepositParamsOrBuilder getDepositParamsOrBuilder() {
@@ -643,10 +643,10 @@ public final class Genesis {
     private cosmos.gov.v1beta1.Gov.VotingParams votingParams_;
     /**
      * <pre>
-     * params defines all the paramaters of related to voting.
+     * params defines all the parameters of related to voting.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the votingParams field is set.
      */
     @java.lang.Override
@@ -655,10 +655,10 @@ public final class Genesis {
     }
     /**
      * <pre>
-     * params defines all the paramaters of related to voting.
+     * params defines all the parameters of related to voting.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The votingParams.
      */
     @java.lang.Override
@@ -667,10 +667,10 @@ public final class Genesis {
     }
     /**
      * <pre>
-     * params defines all the paramaters of related to voting.
+     * params defines all the parameters of related to voting.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.gov.v1beta1.Gov.VotingParamsOrBuilder getVotingParamsOrBuilder() {
@@ -681,10 +681,10 @@ public final class Genesis {
     private cosmos.gov.v1beta1.Gov.TallyParams tallyParams_;
     /**
      * <pre>
-     * params defines all the paramaters of related to tally.
+     * params defines all the parameters of related to tally.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the tallyParams field is set.
      */
     @java.lang.Override
@@ -693,10 +693,10 @@ public final class Genesis {
     }
     /**
      * <pre>
-     * params defines all the paramaters of related to tally.
+     * params defines all the parameters of related to tally.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The tallyParams.
      */
     @java.lang.Override
@@ -705,10 +705,10 @@ public final class Genesis {
     }
     /**
      * <pre>
-     * params defines all the paramaters of related to tally.
+     * params defines all the parameters of related to tally.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.gov.v1beta1.Gov.TallyParamsOrBuilder getTallyParamsOrBuilder() {
@@ -1339,7 +1339,7 @@ public final class Genesis {
        * deposits defines all the deposits present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.gov.v1beta1.Gov.Deposit> getDepositsList() {
         if (depositsBuilder_ == null) {
@@ -1353,7 +1353,7 @@ public final class Genesis {
        * deposits defines all the deposits present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits", (.amino.dont_omitempty) = true];</code>
        */
       public int getDepositsCount() {
         if (depositsBuilder_ == null) {
@@ -1367,7 +1367,7 @@ public final class Genesis {
        * deposits defines all the deposits present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.Deposit getDeposits(int index) {
         if (depositsBuilder_ == null) {
@@ -1381,7 +1381,7 @@ public final class Genesis {
        * deposits defines all the deposits present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits", (.amino.dont_omitempty) = true];</code>
        */
       public Builder setDeposits(
           int index, cosmos.gov.v1beta1.Gov.Deposit value) {
@@ -1402,7 +1402,7 @@ public final class Genesis {
        * deposits defines all the deposits present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits", (.amino.dont_omitempty) = true];</code>
        */
       public Builder setDeposits(
           int index, cosmos.gov.v1beta1.Gov.Deposit.Builder builderForValue) {
@@ -1420,7 +1420,7 @@ public final class Genesis {
        * deposits defines all the deposits present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addDeposits(cosmos.gov.v1beta1.Gov.Deposit value) {
         if (depositsBuilder_ == null) {
@@ -1440,7 +1440,7 @@ public final class Genesis {
        * deposits defines all the deposits present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addDeposits(
           int index, cosmos.gov.v1beta1.Gov.Deposit value) {
@@ -1461,7 +1461,7 @@ public final class Genesis {
        * deposits defines all the deposits present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addDeposits(
           cosmos.gov.v1beta1.Gov.Deposit.Builder builderForValue) {
@@ -1479,7 +1479,7 @@ public final class Genesis {
        * deposits defines all the deposits present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addDeposits(
           int index, cosmos.gov.v1beta1.Gov.Deposit.Builder builderForValue) {
@@ -1497,7 +1497,7 @@ public final class Genesis {
        * deposits defines all the deposits present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllDeposits(
           java.lang.Iterable<? extends cosmos.gov.v1beta1.Gov.Deposit> values) {
@@ -1516,7 +1516,7 @@ public final class Genesis {
        * deposits defines all the deposits present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits", (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearDeposits() {
         if (depositsBuilder_ == null) {
@@ -1533,7 +1533,7 @@ public final class Genesis {
        * deposits defines all the deposits present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits", (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeDeposits(int index) {
         if (depositsBuilder_ == null) {
@@ -1550,7 +1550,7 @@ public final class Genesis {
        * deposits defines all the deposits present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.Deposit.Builder getDepositsBuilder(
           int index) {
@@ -1561,7 +1561,7 @@ public final class Genesis {
        * deposits defines all the deposits present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.DepositOrBuilder getDepositsOrBuilder(
           int index) {
@@ -1575,7 +1575,7 @@ public final class Genesis {
        * deposits defines all the deposits present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.gov.v1beta1.Gov.DepositOrBuilder> 
            getDepositsOrBuilderList() {
@@ -1590,7 +1590,7 @@ public final class Genesis {
        * deposits defines all the deposits present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.Deposit.Builder addDepositsBuilder() {
         return getDepositsFieldBuilder().addBuilder(
@@ -1601,7 +1601,7 @@ public final class Genesis {
        * deposits defines all the deposits present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.Deposit.Builder addDepositsBuilder(
           int index) {
@@ -1613,7 +1613,7 @@ public final class Genesis {
        * deposits defines all the deposits present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Deposits", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.gov.v1beta1.Gov.Deposit.Builder> 
            getDepositsBuilderList() {
@@ -1651,7 +1651,7 @@ public final class Genesis {
        * votes defines all the votes present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.gov.v1beta1.Gov.Vote> getVotesList() {
         if (votesBuilder_ == null) {
@@ -1665,7 +1665,7 @@ public final class Genesis {
        * votes defines all the votes present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes", (.amino.dont_omitempty) = true];</code>
        */
       public int getVotesCount() {
         if (votesBuilder_ == null) {
@@ -1679,7 +1679,7 @@ public final class Genesis {
        * votes defines all the votes present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.Vote getVotes(int index) {
         if (votesBuilder_ == null) {
@@ -1693,7 +1693,7 @@ public final class Genesis {
        * votes defines all the votes present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes", (.amino.dont_omitempty) = true];</code>
        */
       public Builder setVotes(
           int index, cosmos.gov.v1beta1.Gov.Vote value) {
@@ -1714,7 +1714,7 @@ public final class Genesis {
        * votes defines all the votes present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes", (.amino.dont_omitempty) = true];</code>
        */
       public Builder setVotes(
           int index, cosmos.gov.v1beta1.Gov.Vote.Builder builderForValue) {
@@ -1732,7 +1732,7 @@ public final class Genesis {
        * votes defines all the votes present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addVotes(cosmos.gov.v1beta1.Gov.Vote value) {
         if (votesBuilder_ == null) {
@@ -1752,7 +1752,7 @@ public final class Genesis {
        * votes defines all the votes present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addVotes(
           int index, cosmos.gov.v1beta1.Gov.Vote value) {
@@ -1773,7 +1773,7 @@ public final class Genesis {
        * votes defines all the votes present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addVotes(
           cosmos.gov.v1beta1.Gov.Vote.Builder builderForValue) {
@@ -1791,7 +1791,7 @@ public final class Genesis {
        * votes defines all the votes present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addVotes(
           int index, cosmos.gov.v1beta1.Gov.Vote.Builder builderForValue) {
@@ -1809,7 +1809,7 @@ public final class Genesis {
        * votes defines all the votes present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllVotes(
           java.lang.Iterable<? extends cosmos.gov.v1beta1.Gov.Vote> values) {
@@ -1828,7 +1828,7 @@ public final class Genesis {
        * votes defines all the votes present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes", (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearVotes() {
         if (votesBuilder_ == null) {
@@ -1845,7 +1845,7 @@ public final class Genesis {
        * votes defines all the votes present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes", (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeVotes(int index) {
         if (votesBuilder_ == null) {
@@ -1862,7 +1862,7 @@ public final class Genesis {
        * votes defines all the votes present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.Vote.Builder getVotesBuilder(
           int index) {
@@ -1873,7 +1873,7 @@ public final class Genesis {
        * votes defines all the votes present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.VoteOrBuilder getVotesOrBuilder(
           int index) {
@@ -1887,7 +1887,7 @@ public final class Genesis {
        * votes defines all the votes present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.gov.v1beta1.Gov.VoteOrBuilder> 
            getVotesOrBuilderList() {
@@ -1902,7 +1902,7 @@ public final class Genesis {
        * votes defines all the votes present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.Vote.Builder addVotesBuilder() {
         return getVotesFieldBuilder().addBuilder(
@@ -1913,7 +1913,7 @@ public final class Genesis {
        * votes defines all the votes present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.Vote.Builder addVotesBuilder(
           int index) {
@@ -1925,7 +1925,7 @@ public final class Genesis {
        * votes defines all the votes present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Votes", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.gov.v1beta1.Gov.Vote.Builder> 
            getVotesBuilderList() {
@@ -1963,7 +1963,7 @@ public final class Genesis {
        * proposals defines all the proposals present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.gov.v1beta1.Gov.Proposal> getProposalsList() {
         if (proposalsBuilder_ == null) {
@@ -1977,7 +1977,7 @@ public final class Genesis {
        * proposals defines all the proposals present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals", (.amino.dont_omitempty) = true];</code>
        */
       public int getProposalsCount() {
         if (proposalsBuilder_ == null) {
@@ -1991,7 +1991,7 @@ public final class Genesis {
        * proposals defines all the proposals present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.Proposal getProposals(int index) {
         if (proposalsBuilder_ == null) {
@@ -2005,7 +2005,7 @@ public final class Genesis {
        * proposals defines all the proposals present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals", (.amino.dont_omitempty) = true];</code>
        */
       public Builder setProposals(
           int index, cosmos.gov.v1beta1.Gov.Proposal value) {
@@ -2026,7 +2026,7 @@ public final class Genesis {
        * proposals defines all the proposals present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals", (.amino.dont_omitempty) = true];</code>
        */
       public Builder setProposals(
           int index, cosmos.gov.v1beta1.Gov.Proposal.Builder builderForValue) {
@@ -2044,7 +2044,7 @@ public final class Genesis {
        * proposals defines all the proposals present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addProposals(cosmos.gov.v1beta1.Gov.Proposal value) {
         if (proposalsBuilder_ == null) {
@@ -2064,7 +2064,7 @@ public final class Genesis {
        * proposals defines all the proposals present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addProposals(
           int index, cosmos.gov.v1beta1.Gov.Proposal value) {
@@ -2085,7 +2085,7 @@ public final class Genesis {
        * proposals defines all the proposals present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addProposals(
           cosmos.gov.v1beta1.Gov.Proposal.Builder builderForValue) {
@@ -2103,7 +2103,7 @@ public final class Genesis {
        * proposals defines all the proposals present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addProposals(
           int index, cosmos.gov.v1beta1.Gov.Proposal.Builder builderForValue) {
@@ -2121,7 +2121,7 @@ public final class Genesis {
        * proposals defines all the proposals present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllProposals(
           java.lang.Iterable<? extends cosmos.gov.v1beta1.Gov.Proposal> values) {
@@ -2140,7 +2140,7 @@ public final class Genesis {
        * proposals defines all the proposals present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals", (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearProposals() {
         if (proposalsBuilder_ == null) {
@@ -2157,7 +2157,7 @@ public final class Genesis {
        * proposals defines all the proposals present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals", (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeProposals(int index) {
         if (proposalsBuilder_ == null) {
@@ -2174,7 +2174,7 @@ public final class Genesis {
        * proposals defines all the proposals present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.Proposal.Builder getProposalsBuilder(
           int index) {
@@ -2185,7 +2185,7 @@ public final class Genesis {
        * proposals defines all the proposals present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.ProposalOrBuilder getProposalsOrBuilder(
           int index) {
@@ -2199,7 +2199,7 @@ public final class Genesis {
        * proposals defines all the proposals present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.gov.v1beta1.Gov.ProposalOrBuilder> 
            getProposalsOrBuilderList() {
@@ -2214,7 +2214,7 @@ public final class Genesis {
        * proposals defines all the proposals present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.Proposal.Builder addProposalsBuilder() {
         return getProposalsFieldBuilder().addBuilder(
@@ -2225,7 +2225,7 @@ public final class Genesis {
        * proposals defines all the proposals present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.Proposal.Builder addProposalsBuilder(
           int index) {
@@ -2237,7 +2237,7 @@ public final class Genesis {
        * proposals defines all the proposals present at genesis.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals"];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "Proposals", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.gov.v1beta1.Gov.Proposal.Builder> 
            getProposalsBuilderList() {
@@ -2263,10 +2263,10 @@ public final class Genesis {
           cosmos.gov.v1beta1.Gov.DepositParams, cosmos.gov.v1beta1.Gov.DepositParams.Builder, cosmos.gov.v1beta1.Gov.DepositParamsOrBuilder> depositParamsBuilder_;
       /**
        * <pre>
-       * params defines all the paramaters of related to deposit.
+       * params defines all the parameters of related to deposit.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the depositParams field is set.
        */
       public boolean hasDepositParams() {
@@ -2274,10 +2274,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to deposit.
+       * params defines all the parameters of related to deposit.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The depositParams.
        */
       public cosmos.gov.v1beta1.Gov.DepositParams getDepositParams() {
@@ -2289,10 +2289,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to deposit.
+       * params defines all the parameters of related to deposit.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setDepositParams(cosmos.gov.v1beta1.Gov.DepositParams value) {
         if (depositParamsBuilder_ == null) {
@@ -2309,10 +2309,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to deposit.
+       * params defines all the parameters of related to deposit.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setDepositParams(
           cosmos.gov.v1beta1.Gov.DepositParams.Builder builderForValue) {
@@ -2327,10 +2327,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to deposit.
+       * params defines all the parameters of related to deposit.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeDepositParams(cosmos.gov.v1beta1.Gov.DepositParams value) {
         if (depositParamsBuilder_ == null) {
@@ -2349,10 +2349,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to deposit.
+       * params defines all the parameters of related to deposit.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearDepositParams() {
         if (depositParamsBuilder_ == null) {
@@ -2367,10 +2367,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to deposit.
+       * params defines all the parameters of related to deposit.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.DepositParams.Builder getDepositParamsBuilder() {
         
@@ -2379,10 +2379,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to deposit.
+       * params defines all the parameters of related to deposit.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.DepositParamsOrBuilder getDepositParamsOrBuilder() {
         if (depositParamsBuilder_ != null) {
@@ -2394,10 +2394,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to deposit.
+       * params defines all the parameters of related to deposit.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 5 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.gov.v1beta1.Gov.DepositParams, cosmos.gov.v1beta1.Gov.DepositParams.Builder, cosmos.gov.v1beta1.Gov.DepositParamsOrBuilder> 
@@ -2418,10 +2418,10 @@ public final class Genesis {
           cosmos.gov.v1beta1.Gov.VotingParams, cosmos.gov.v1beta1.Gov.VotingParams.Builder, cosmos.gov.v1beta1.Gov.VotingParamsOrBuilder> votingParamsBuilder_;
       /**
        * <pre>
-       * params defines all the paramaters of related to voting.
+       * params defines all the parameters of related to voting.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the votingParams field is set.
        */
       public boolean hasVotingParams() {
@@ -2429,10 +2429,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to voting.
+       * params defines all the parameters of related to voting.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The votingParams.
        */
       public cosmos.gov.v1beta1.Gov.VotingParams getVotingParams() {
@@ -2444,10 +2444,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to voting.
+       * params defines all the parameters of related to voting.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setVotingParams(cosmos.gov.v1beta1.Gov.VotingParams value) {
         if (votingParamsBuilder_ == null) {
@@ -2464,10 +2464,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to voting.
+       * params defines all the parameters of related to voting.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setVotingParams(
           cosmos.gov.v1beta1.Gov.VotingParams.Builder builderForValue) {
@@ -2482,10 +2482,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to voting.
+       * params defines all the parameters of related to voting.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeVotingParams(cosmos.gov.v1beta1.Gov.VotingParams value) {
         if (votingParamsBuilder_ == null) {
@@ -2504,10 +2504,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to voting.
+       * params defines all the parameters of related to voting.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearVotingParams() {
         if (votingParamsBuilder_ == null) {
@@ -2522,10 +2522,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to voting.
+       * params defines all the parameters of related to voting.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.VotingParams.Builder getVotingParamsBuilder() {
         
@@ -2534,10 +2534,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to voting.
+       * params defines all the parameters of related to voting.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.VotingParamsOrBuilder getVotingParamsOrBuilder() {
         if (votingParamsBuilder_ != null) {
@@ -2549,10 +2549,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to voting.
+       * params defines all the parameters of related to voting.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 6 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.gov.v1beta1.Gov.VotingParams, cosmos.gov.v1beta1.Gov.VotingParams.Builder, cosmos.gov.v1beta1.Gov.VotingParamsOrBuilder> 
@@ -2573,10 +2573,10 @@ public final class Genesis {
           cosmos.gov.v1beta1.Gov.TallyParams, cosmos.gov.v1beta1.Gov.TallyParams.Builder, cosmos.gov.v1beta1.Gov.TallyParamsOrBuilder> tallyParamsBuilder_;
       /**
        * <pre>
-       * params defines all the paramaters of related to tally.
+       * params defines all the parameters of related to tally.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the tallyParams field is set.
        */
       public boolean hasTallyParams() {
@@ -2584,10 +2584,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to tally.
+       * params defines all the parameters of related to tally.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The tallyParams.
        */
       public cosmos.gov.v1beta1.Gov.TallyParams getTallyParams() {
@@ -2599,10 +2599,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to tally.
+       * params defines all the parameters of related to tally.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setTallyParams(cosmos.gov.v1beta1.Gov.TallyParams value) {
         if (tallyParamsBuilder_ == null) {
@@ -2619,10 +2619,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to tally.
+       * params defines all the parameters of related to tally.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setTallyParams(
           cosmos.gov.v1beta1.Gov.TallyParams.Builder builderForValue) {
@@ -2637,10 +2637,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to tally.
+       * params defines all the parameters of related to tally.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeTallyParams(cosmos.gov.v1beta1.Gov.TallyParams value) {
         if (tallyParamsBuilder_ == null) {
@@ -2659,10 +2659,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to tally.
+       * params defines all the parameters of related to tally.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearTallyParams() {
         if (tallyParamsBuilder_ == null) {
@@ -2677,10 +2677,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to tally.
+       * params defines all the parameters of related to tally.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.TallyParams.Builder getTallyParamsBuilder() {
         
@@ -2689,10 +2689,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to tally.
+       * params defines all the parameters of related to tally.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.TallyParamsOrBuilder getTallyParamsOrBuilder() {
         if (tallyParamsBuilder_ != null) {
@@ -2704,10 +2704,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to tally.
+       * params defines all the parameters of related to tally.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.gov.v1beta1.Gov.TallyParams, cosmos.gov.v1beta1.Gov.TallyParams.Builder, cosmos.gov.v1beta1.Gov.TallyParamsOrBuilder> 
@@ -2791,25 +2791,27 @@ public final class Genesis {
     java.lang.String[] descriptorData = {
       "\n cosmos/gov/v1beta1/genesis.proto\022\022cosm" +
       "os.gov.v1beta1\032\024gogoproto/gogo.proto\032\034co" +
-      "smos/gov/v1beta1/gov.proto\"\246\003\n\014GenesisSt" +
-      "ate\022\034\n\024starting_proposal_id\030\001 \001(\004\022?\n\010dep" +
-      "osits\030\002 \003(\0132\033.cosmos.gov.v1beta1.Deposit" +
-      "B\020\252\337\037\010Deposits\310\336\037\000\0226\n\005votes\030\003 \003(\0132\030.cosm" +
-      "os.gov.v1beta1.VoteB\r\252\337\037\005Votes\310\336\037\000\022B\n\tpr" +
-      "oposals\030\004 \003(\0132\034.cosmos.gov.v1beta1.Propo" +
-      "salB\021\252\337\037\tProposals\310\336\037\000\022?\n\016deposit_params" +
-      "\030\005 \001(\0132!.cosmos.gov.v1beta1.DepositParam" +
-      "sB\004\310\336\037\000\022=\n\rvoting_params\030\006 \001(\0132 .cosmos." +
-      "gov.v1beta1.VotingParamsB\004\310\336\037\000\022;\n\014tally_" +
-      "params\030\007 \001(\0132\037.cosmos.gov.v1beta1.TallyP" +
-      "aramsB\004\310\336\037\000B*Z(github.com/cosmos/cosmos-" +
-      "sdk/x/gov/typesb\006proto3"
+      "smos/gov/v1beta1/gov.proto\032\021amino/amino." +
+      "proto\"\304\003\n\014GenesisState\022\034\n\024starting_propo" +
+      "sal_id\030\001 \001(\004\022D\n\010deposits\030\002 \003(\0132\033.cosmos." +
+      "gov.v1beta1.DepositB\025\252\337\037\010Deposits\310\336\037\000\250\347\260" +
+      "*\001\022;\n\005votes\030\003 \003(\0132\030.cosmos.gov.v1beta1.V" +
+      "oteB\022\252\337\037\005Votes\310\336\037\000\250\347\260*\001\022G\n\tproposals\030\004 \003" +
+      "(\0132\034.cosmos.gov.v1beta1.ProposalB\026\252\337\037\tPr" +
+      "oposals\310\336\037\000\250\347\260*\001\022D\n\016deposit_params\030\005 \001(\013" +
+      "2!.cosmos.gov.v1beta1.DepositParamsB\t\310\336\037" +
+      "\000\250\347\260*\001\022B\n\rvoting_params\030\006 \001(\0132 .cosmos.g" +
+      "ov.v1beta1.VotingParamsB\t\310\336\037\000\250\347\260*\001\022@\n\014ta" +
+      "lly_params\030\007 \001(\0132\037.cosmos.gov.v1beta1.Ta" +
+      "llyParamsB\t\310\336\037\000\250\347\260*\001B2Z0github.com/cosmo" +
+      "s/cosmos-sdk/x/gov/types/v1beta1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf2.GoGoProtos.getDescriptor(),
           cosmos.gov.v1beta1.Gov.getDescriptor(),
+          amino.Amino.getDescriptor(),
         });
     internal_static_cosmos_gov_v1beta1_GenesisState_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2819,12 +2821,14 @@ public final class Genesis {
         new java.lang.String[] { "StartingProposalId", "Deposits", "Votes", "Proposals", "DepositParams", "VotingParams", "TallyParams", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(amino.Amino.dontOmitempty);
     registry.add(com.google.protobuf2.GoGoProtos.castrepeated);
     registry.add(com.google.protobuf2.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf2.GoGoProtos.getDescriptor();
     cosmos.gov.v1beta1.Gov.getDescriptor();
+    amino.Amino.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

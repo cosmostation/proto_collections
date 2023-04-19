@@ -36,6 +36,11 @@ internal protocol Cosmos_Slashing_V1beta1_MsgClientProtocol: GRPCClient {
     _ request: Cosmos_Slashing_V1beta1_MsgUnjail,
     callOptions: CallOptions?
   ) -> UnaryCall<Cosmos_Slashing_V1beta1_MsgUnjail, Cosmos_Slashing_V1beta1_MsgUnjailResponse>
+
+  func updateParams(
+    _ request: Cosmos_Slashing_V1beta1_MsgUpdateParams,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Cosmos_Slashing_V1beta1_MsgUpdateParams, Cosmos_Slashing_V1beta1_MsgUpdateParamsResponse>
 }
 
 extension Cosmos_Slashing_V1beta1_MsgClientProtocol {
@@ -62,12 +67,36 @@ extension Cosmos_Slashing_V1beta1_MsgClientProtocol {
       interceptors: self.interceptors?.makeUnjailInterceptors() ?? []
     )
   }
+
+  /// UpdateParams defines a governance operation for updating the x/slashing module
+  /// parameters. The authority defaults to the x/gov module account.
+  ///
+  /// Since: cosmos-sdk 0.47
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to UpdateParams.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func updateParams(
+    _ request: Cosmos_Slashing_V1beta1_MsgUpdateParams,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Cosmos_Slashing_V1beta1_MsgUpdateParams, Cosmos_Slashing_V1beta1_MsgUpdateParamsResponse> {
+    return self.makeUnaryCall(
+      path: "/cosmos.slashing.v1beta1.Msg/UpdateParams",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeUpdateParamsInterceptors() ?? []
+    )
+  }
 }
 
 internal protocol Cosmos_Slashing_V1beta1_MsgClientInterceptorFactoryProtocol {
 
   /// - Returns: Interceptors to use when invoking 'unjail'.
   func makeUnjailInterceptors() -> [ClientInterceptor<Cosmos_Slashing_V1beta1_MsgUnjail, Cosmos_Slashing_V1beta1_MsgUnjailResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'updateParams'.
+  func makeUpdateParamsInterceptors() -> [ClientInterceptor<Cosmos_Slashing_V1beta1_MsgUpdateParams, Cosmos_Slashing_V1beta1_MsgUpdateParamsResponse>]
 }
 
 internal final class Cosmos_Slashing_V1beta1_MsgClient: Cosmos_Slashing_V1beta1_MsgClientProtocol {
@@ -102,6 +131,12 @@ internal protocol Cosmos_Slashing_V1beta1_MsgProvider: CallHandlerProvider {
   /// them into the bonded validator set, so they can begin receiving provisions
   /// and rewards again.
   func unjail(request: Cosmos_Slashing_V1beta1_MsgUnjail, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Slashing_V1beta1_MsgUnjailResponse>
+
+  /// UpdateParams defines a governance operation for updating the x/slashing module
+  /// parameters. The authority defaults to the x/gov module account.
+  ///
+  /// Since: cosmos-sdk 0.47
+  func updateParams(request: Cosmos_Slashing_V1beta1_MsgUpdateParams, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Slashing_V1beta1_MsgUpdateParamsResponse>
 }
 
 extension Cosmos_Slashing_V1beta1_MsgProvider {
@@ -123,6 +158,15 @@ extension Cosmos_Slashing_V1beta1_MsgProvider {
         userFunction: self.unjail(request:context:)
       )
 
+    case "UpdateParams":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Cosmos_Slashing_V1beta1_MsgUpdateParams>(),
+        responseSerializer: ProtobufSerializer<Cosmos_Slashing_V1beta1_MsgUpdateParamsResponse>(),
+        interceptors: self.interceptors?.makeUpdateParamsInterceptors() ?? [],
+        userFunction: self.updateParams(request:context:)
+      )
+
     default:
       return nil
     }
@@ -134,4 +178,8 @@ internal protocol Cosmos_Slashing_V1beta1_MsgServerInterceptorFactoryProtocol {
   /// - Returns: Interceptors to use when handling 'unjail'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeUnjailInterceptors() -> [ServerInterceptor<Cosmos_Slashing_V1beta1_MsgUnjail, Cosmos_Slashing_V1beta1_MsgUnjailResponse>]
+
+  /// - Returns: Interceptors to use when handling 'updateParams'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeUpdateParamsInterceptors() -> [ServerInterceptor<Cosmos_Slashing_V1beta1_MsgUpdateParams, Cosmos_Slashing_V1beta1_MsgUpdateParamsResponse>]
 }

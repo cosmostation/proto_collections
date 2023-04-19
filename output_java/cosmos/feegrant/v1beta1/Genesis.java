@@ -19,25 +19,25 @@ public final class Genesis {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.feegrant.v1beta1.Feegrant.Grant> 
         getAllowancesList();
     /**
-     * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.feegrant.v1beta1.Feegrant.Grant getAllowances(int index);
     /**
-     * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     int getAllowancesCount();
     /**
-     * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.feegrant.v1beta1.Feegrant.GrantOrBuilder> 
         getAllowancesOrBuilderList();
     /**
-     * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.feegrant.v1beta1.Feegrant.GrantOrBuilder getAllowancesOrBuilder(
         int index);
@@ -140,14 +140,14 @@ public final class Genesis {
     public static final int ALLOWANCES_FIELD_NUMBER = 1;
     private java.util.List<cosmos.feegrant.v1beta1.Feegrant.Grant> allowances_;
     /**
-     * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.feegrant.v1beta1.Feegrant.Grant> getAllowancesList() {
       return allowances_;
     }
     /**
-     * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.feegrant.v1beta1.Feegrant.GrantOrBuilder> 
@@ -155,21 +155,21 @@ public final class Genesis {
       return allowances_;
     }
     /**
-     * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getAllowancesCount() {
       return allowances_.size();
     }
     /**
-     * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.feegrant.v1beta1.Feegrant.Grant getAllowances(int index) {
       return allowances_.get(index);
     }
     /**
-     * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.feegrant.v1beta1.Feegrant.GrantOrBuilder getAllowancesOrBuilder(
@@ -536,7 +536,7 @@ public final class Genesis {
           cosmos.feegrant.v1beta1.Feegrant.Grant, cosmos.feegrant.v1beta1.Feegrant.Grant.Builder, cosmos.feegrant.v1beta1.Feegrant.GrantOrBuilder> allowancesBuilder_;
 
       /**
-       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.feegrant.v1beta1.Feegrant.Grant> getAllowancesList() {
         if (allowancesBuilder_ == null) {
@@ -546,7 +546,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public int getAllowancesCount() {
         if (allowancesBuilder_ == null) {
@@ -556,7 +556,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.feegrant.v1beta1.Feegrant.Grant getAllowances(int index) {
         if (allowancesBuilder_ == null) {
@@ -566,7 +566,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setAllowances(
           int index, cosmos.feegrant.v1beta1.Feegrant.Grant value) {
@@ -583,7 +583,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setAllowances(
           int index, cosmos.feegrant.v1beta1.Feegrant.Grant.Builder builderForValue) {
@@ -597,7 +597,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllowances(cosmos.feegrant.v1beta1.Feegrant.Grant value) {
         if (allowancesBuilder_ == null) {
@@ -613,7 +613,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllowances(
           int index, cosmos.feegrant.v1beta1.Feegrant.Grant value) {
@@ -630,7 +630,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllowances(
           cosmos.feegrant.v1beta1.Feegrant.Grant.Builder builderForValue) {
@@ -644,7 +644,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllowances(
           int index, cosmos.feegrant.v1beta1.Feegrant.Grant.Builder builderForValue) {
@@ -658,7 +658,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllAllowances(
           java.lang.Iterable<? extends cosmos.feegrant.v1beta1.Feegrant.Grant> values) {
@@ -673,7 +673,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearAllowances() {
         if (allowancesBuilder_ == null) {
@@ -686,7 +686,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeAllowances(int index) {
         if (allowancesBuilder_ == null) {
@@ -699,14 +699,14 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.feegrant.v1beta1.Feegrant.Grant.Builder getAllowancesBuilder(
           int index) {
         return getAllowancesFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.feegrant.v1beta1.Feegrant.GrantOrBuilder getAllowancesOrBuilder(
           int index) {
@@ -716,7 +716,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.feegrant.v1beta1.Feegrant.GrantOrBuilder> 
            getAllowancesOrBuilderList() {
@@ -727,14 +727,14 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.feegrant.v1beta1.Feegrant.Grant.Builder addAllowancesBuilder() {
         return getAllowancesFieldBuilder().addBuilder(
             cosmos.feegrant.v1beta1.Feegrant.Grant.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.feegrant.v1beta1.Feegrant.Grant.Builder addAllowancesBuilder(
           int index) {
@@ -742,7 +742,7 @@ public final class Genesis {
             index, cosmos.feegrant.v1beta1.Feegrant.Grant.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.feegrant.v1beta1.Grant allowances = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.feegrant.v1beta1.Feegrant.Grant.Builder> 
            getAllowancesBuilderList() {
@@ -832,16 +832,17 @@ public final class Genesis {
       "\n%cosmos/feegrant/v1beta1/genesis.proto\022" +
       "\027cosmos.feegrant.v1beta1\032\024gogoproto/gogo" +
       ".proto\032&cosmos/feegrant/v1beta1/feegrant" +
-      ".proto\"H\n\014GenesisState\0228\n\nallowances\030\001 \003" +
-      "(\0132\036.cosmos.feegrant.v1beta1.GrantB\004\310\336\037\000" +
-      "B)Z\'github.com/cosmos/cosmos-sdk/x/feegr" +
-      "antb\006proto3"
+      ".proto\032\021amino/amino.proto\"M\n\014GenesisStat" +
+      "e\022=\n\nallowances\030\001 \003(\0132\036.cosmos.feegrant." +
+      "v1beta1.GrantB\t\310\336\037\000\250\347\260*\001B\031Z\027cosmossdk.io" +
+      "/x/feegrantb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf2.GoGoProtos.getDescriptor(),
           cosmos.feegrant.v1beta1.Feegrant.getDescriptor(),
+          amino.Amino.getDescriptor(),
         });
     internal_static_cosmos_feegrant_v1beta1_GenesisState_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -851,11 +852,13 @@ public final class Genesis {
         new java.lang.String[] { "Allowances", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(amino.Amino.dontOmitempty);
     registry.add(com.google.protobuf2.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf2.GoGoProtos.getDescriptor();
     cosmos.feegrant.v1beta1.Feegrant.getDescriptor();
+    amino.Amino.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -633,17 +633,17 @@ public final class Authz {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+     * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
      * @return Whether the authorization field is set.
      */
     boolean hasAuthorization();
     /**
-     * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+     * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
      * @return The authorization.
      */
     com.google.protobuf2.Any getAuthorization();
     /**
-     * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+     * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
      */
     com.google.protobuf2.AnyOrBuilder getAuthorizationOrBuilder();
 
@@ -791,7 +791,7 @@ public final class Authz {
     public static final int AUTHORIZATION_FIELD_NUMBER = 1;
     private com.google.protobuf2.Any authorization_;
     /**
-     * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+     * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
      * @return Whether the authorization field is set.
      */
     @java.lang.Override
@@ -799,7 +799,7 @@ public final class Authz {
       return authorization_ != null;
     }
     /**
-     * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+     * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
      * @return The authorization.
      */
     @java.lang.Override
@@ -807,7 +807,7 @@ public final class Authz {
       return authorization_ == null ? com.google.protobuf2.Any.getDefaultInstance() : authorization_;
     }
     /**
-     * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+     * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
      */
     @java.lang.Override
     public com.google.protobuf2.AnyOrBuilder getAuthorizationOrBuilder() {
@@ -1212,14 +1212,14 @@ public final class Authz {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf2.Any, com.google.protobuf2.Any.Builder, com.google.protobuf2.AnyOrBuilder> authorizationBuilder_;
       /**
-       * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+       * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
        * @return Whether the authorization field is set.
        */
       public boolean hasAuthorization() {
         return authorizationBuilder_ != null || authorization_ != null;
       }
       /**
-       * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+       * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
        * @return The authorization.
        */
       public com.google.protobuf2.Any getAuthorization() {
@@ -1230,7 +1230,7 @@ public final class Authz {
         }
       }
       /**
-       * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+       * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
        */
       public Builder setAuthorization(com.google.protobuf2.Any value) {
         if (authorizationBuilder_ == null) {
@@ -1246,7 +1246,7 @@ public final class Authz {
         return this;
       }
       /**
-       * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+       * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
        */
       public Builder setAuthorization(
           com.google.protobuf2.Any.Builder builderForValue) {
@@ -1260,7 +1260,7 @@ public final class Authz {
         return this;
       }
       /**
-       * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+       * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
        */
       public Builder mergeAuthorization(com.google.protobuf2.Any value) {
         if (authorizationBuilder_ == null) {
@@ -1278,7 +1278,7 @@ public final class Authz {
         return this;
       }
       /**
-       * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+       * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
        */
       public Builder clearAuthorization() {
         if (authorizationBuilder_ == null) {
@@ -1292,7 +1292,7 @@ public final class Authz {
         return this;
       }
       /**
-       * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+       * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
        */
       public com.google.protobuf2.Any.Builder getAuthorizationBuilder() {
         
@@ -1300,7 +1300,7 @@ public final class Authz {
         return getAuthorizationFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+       * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
        */
       public com.google.protobuf2.AnyOrBuilder getAuthorizationOrBuilder() {
         if (authorizationBuilder_ != null) {
@@ -1311,7 +1311,7 @@ public final class Authz {
         }
       }
       /**
-       * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+       * <code>.google.protobuf2.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf2.Any, com.google.protobuf2.Any.Builder, com.google.protobuf2.AnyOrBuilder> 
@@ -1581,17 +1581,17 @@ public final class Authz {
         getGranteeBytes();
 
     /**
-     * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+     * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
      * @return Whether the authorization field is set.
      */
     boolean hasAuthorization();
     /**
-     * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+     * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
      * @return The authorization.
      */
     com.google.protobuf2.Any getAuthorization();
     /**
-     * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+     * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
      */
     com.google.protobuf2.AnyOrBuilder getAuthorizationOrBuilder();
 
@@ -1811,7 +1811,7 @@ public final class Authz {
     public static final int AUTHORIZATION_FIELD_NUMBER = 3;
     private com.google.protobuf2.Any authorization_;
     /**
-     * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+     * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
      * @return Whether the authorization field is set.
      */
     @java.lang.Override
@@ -1819,7 +1819,7 @@ public final class Authz {
       return authorization_ != null;
     }
     /**
-     * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+     * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
      * @return The authorization.
      */
     @java.lang.Override
@@ -1827,7 +1827,7 @@ public final class Authz {
       return authorization_ == null ? com.google.protobuf2.Any.getDefaultInstance() : authorization_;
     }
     /**
-     * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+     * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
      */
     @java.lang.Override
     public com.google.protobuf2.AnyOrBuilder getAuthorizationOrBuilder() {
@@ -2400,14 +2400,14 @@ public final class Authz {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf2.Any, com.google.protobuf2.Any.Builder, com.google.protobuf2.AnyOrBuilder> authorizationBuilder_;
       /**
-       * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+       * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
        * @return Whether the authorization field is set.
        */
       public boolean hasAuthorization() {
         return authorizationBuilder_ != null || authorization_ != null;
       }
       /**
-       * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+       * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
        * @return The authorization.
        */
       public com.google.protobuf2.Any getAuthorization() {
@@ -2418,7 +2418,7 @@ public final class Authz {
         }
       }
       /**
-       * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+       * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
        */
       public Builder setAuthorization(com.google.protobuf2.Any value) {
         if (authorizationBuilder_ == null) {
@@ -2434,7 +2434,7 @@ public final class Authz {
         return this;
       }
       /**
-       * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+       * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
        */
       public Builder setAuthorization(
           com.google.protobuf2.Any.Builder builderForValue) {
@@ -2448,7 +2448,7 @@ public final class Authz {
         return this;
       }
       /**
-       * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+       * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
        */
       public Builder mergeAuthorization(com.google.protobuf2.Any value) {
         if (authorizationBuilder_ == null) {
@@ -2466,7 +2466,7 @@ public final class Authz {
         return this;
       }
       /**
-       * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+       * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
        */
       public Builder clearAuthorization() {
         if (authorizationBuilder_ == null) {
@@ -2480,7 +2480,7 @@ public final class Authz {
         return this;
       }
       /**
-       * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+       * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
        */
       public com.google.protobuf2.Any.Builder getAuthorizationBuilder() {
         
@@ -2488,7 +2488,7 @@ public final class Authz {
         return getAuthorizationFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+       * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
        */
       public com.google.protobuf2.AnyOrBuilder getAuthorizationOrBuilder() {
         if (authorizationBuilder_ != null) {
@@ -2499,7 +2499,7 @@ public final class Authz {
         }
       }
       /**
-       * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
+       * <code>.google.protobuf2.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "cosmos.authz.v1beta1.Authorization"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf2.Any, com.google.protobuf2.Any.Builder, com.google.protobuf2.AnyOrBuilder> 
@@ -3430,26 +3430,30 @@ public final class Authz {
   static {
     java.lang.String[] descriptorData = {
       "\n cosmos/authz/v1beta1/authz.proto\022\024cosm" +
-      "os.authz.v1beta1\032\031cosmos_proto/cosmos.pr" +
-      "oto\032\037google/protobuf/timestamp.proto\032\024go" +
-      "goproto/gogo.proto\032\032google/protobuf2/any" +
-      ".proto\"6\n\024GenericAuthorization\022\013\n\003msg\030\001 " +
-      "\001(\t:\021\312\264-\rAuthorization\"\202\001\n\005Grant\022?\n\rauth" +
-      "orization\030\001 \001(\0132\025.google.protobuf2.AnyB\021" +
-      "\312\264-\rAuthorization\0228\n\nexpiration\030\002 \001(\0132\032." +
-      "google.protobuf.TimestampB\010\220\337\037\001\310\336\037\001\"\341\001\n\022" +
-      "GrantAuthorization\022)\n\007granter\030\001 \001(\tB\030\322\264-" +
-      "\024cosmos.AddressString\022)\n\007grantee\030\002 \001(\tB\030" +
-      "\322\264-\024cosmos.AddressString\022?\n\rauthorizatio" +
-      "n\030\003 \001(\0132\025.google.protobuf2.AnyB\021\312\264-\rAuth" +
-      "orization\0224\n\nexpiration\030\004 \001(\0132\032.google.p" +
-      "rotobuf.TimestampB\004\220\337\037\001\"\'\n\016GrantQueueIte" +
-      "m\022\025\n\rmsg_type_urls\030\001 \003(\tB*Z$github.com/c" +
-      "osmos/cosmos-sdk/x/authz\310\341\036\000b\006proto3"
+      "os.authz.v1beta1\032\021amino/amino.proto\032\031cos" +
+      "mos_proto/cosmos.proto\032\037google/protobuf/" +
+      "timestamp.proto\032\024gogoproto/gogo.proto\032\032g" +
+      "oogle/protobuf2/any.proto\"o\n\024GenericAuth" +
+      "orization\022\013\n\003msg\030\001 \001(\t:J\212\347\260*\037cosmos-sdk/" +
+      "GenericAuthorization\312\264-\"cosmos.authz.v1b" +
+      "eta1.Authorization\"\227\001\n\005Grant\022T\n\rauthoriz" +
+      "ation\030\001 \001(\0132\025.google.protobuf2.AnyB&\312\264-\"" +
+      "cosmos.authz.v1beta1.Authorization\0228\n\nex" +
+      "piration\030\002 \001(\0132\032.google.protobuf.Timesta" +
+      "mpB\010\220\337\037\001\310\336\037\001\"\366\001\n\022GrantAuthorization\022)\n\007g" +
+      "ranter\030\001 \001(\tB\030\322\264-\024cosmos.AddressString\022)" +
+      "\n\007grantee\030\002 \001(\tB\030\322\264-\024cosmos.AddressStrin" +
+      "g\022T\n\rauthorization\030\003 \001(\0132\025.google.protob" +
+      "uf2.AnyB&\312\264-\"cosmos.authz.v1beta1.Author" +
+      "ization\0224\n\nexpiration\030\004 \001(\0132\032.google.pro" +
+      "tobuf.TimestampB\004\220\337\037\001\"\'\n\016GrantQueueItem\022" +
+      "\025\n\rmsg_type_urls\030\001 \003(\tB*Z$github.com/cos" +
+      "mos/cosmos-sdk/x/authz\310\341\036\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          amino.Amino.getDescriptor(),
           cosmos_proto.Cosmos.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.protobuf2.GoGoProtos.getDescriptor(),
@@ -3481,6 +3485,7 @@ public final class Authz {
         new java.lang.String[] { "MsgTypeUrls", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(amino.Amino.name);
     registry.add(cosmos_proto.Cosmos.acceptsInterface);
     registry.add(cosmos_proto.Cosmos.implementsInterface);
     registry.add(cosmos_proto.Cosmos.scalar);
@@ -3489,6 +3494,7 @@ public final class Authz {
     registry.add(com.google.protobuf2.GoGoProtos.stdtime);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
+    amino.Amino.getDescriptor();
     cosmos_proto.Cosmos.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf2.GoGoProtos.getDescriptor();

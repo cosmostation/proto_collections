@@ -22,15 +22,15 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-/// BasicAllowance implements Allowance with a one-time grant of tokens
+/// BasicAllowance implements Allowance with a one-time grant of coins
 /// that optionally expires. The grantee can use up to SpendLimit to cover fees.
 struct Cosmos_Feegrant_V1beta1_BasicAllowance {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  /// spend_limit specifies the maximum amount of tokens that can be spent
-  /// by this allowance and will be updated as tokens are spent. If it is
+  /// spend_limit specifies the maximum amount of coins that can be spent
+  /// by this allowance and will be updated as coins are spent. If it is
   /// empty, there is no spend limit and any amount of coins can be spent.
   var spendLimit: [Cosmos_Base_V1beta1_Coin] = []
 
@@ -113,7 +113,7 @@ struct Cosmos_Feegrant_V1beta1_AllowedMsgAllowance {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  /// allowance can be any of basic and filtered fee allowance.
+  /// allowance can be any of basic and periodic fee allowance.
   var allowance: Google_Protobuf2_Any {
     get {return _allowance ?? Google_Protobuf2_Any()}
     set {_allowance = newValue}
@@ -145,7 +145,7 @@ struct Cosmos_Feegrant_V1beta1_Grant {
   /// grantee is the address of the user being granted an allowance of another user's funds.
   var grantee: String = String()
 
-  /// allowance can be any of basic and filtered fee allowance.
+  /// allowance can be any of basic, periodic, allowed fee allowance.
   var allowance: Google_Protobuf2_Any {
     get {return _allowance ?? Google_Protobuf2_Any()}
     set {_allowance = newValue}

@@ -170,29 +170,39 @@ struct Cosmos_Base_Tendermint_V1beta1_GetBlockByHeightResponse {
   // methods supported on all messages.
 
   var blockID: Tendermint_Types_BlockID {
-    get {return _blockID ?? Tendermint_Types_BlockID()}
-    set {_blockID = newValue}
+    get {return _storage._blockID ?? Tendermint_Types_BlockID()}
+    set {_uniqueStorage()._blockID = newValue}
   }
   /// Returns true if `blockID` has been explicitly set.
-  var hasBlockID: Bool {return self._blockID != nil}
+  var hasBlockID: Bool {return _storage._blockID != nil}
   /// Clears the value of `blockID`. Subsequent reads from it will return its default value.
-  mutating func clearBlockID() {self._blockID = nil}
+  mutating func clearBlockID() {_uniqueStorage()._blockID = nil}
 
+  /// Deprecated: please use `sdk_block` instead
   var block: Tendermint_Types_Block {
-    get {return _block ?? Tendermint_Types_Block()}
-    set {_block = newValue}
+    get {return _storage._block ?? Tendermint_Types_Block()}
+    set {_uniqueStorage()._block = newValue}
   }
   /// Returns true if `block` has been explicitly set.
-  var hasBlock: Bool {return self._block != nil}
+  var hasBlock: Bool {return _storage._block != nil}
   /// Clears the value of `block`. Subsequent reads from it will return its default value.
-  mutating func clearBlock() {self._block = nil}
+  mutating func clearBlock() {_uniqueStorage()._block = nil}
+
+  /// Since: cosmos-sdk 0.47
+  var sdkBlock: Cosmos_Base_Tendermint_V1beta1_Block {
+    get {return _storage._sdkBlock ?? Cosmos_Base_Tendermint_V1beta1_Block()}
+    set {_uniqueStorage()._sdkBlock = newValue}
+  }
+  /// Returns true if `sdkBlock` has been explicitly set.
+  var hasSdkBlock: Bool {return _storage._sdkBlock != nil}
+  /// Clears the value of `sdkBlock`. Subsequent reads from it will return its default value.
+  mutating func clearSdkBlock() {_uniqueStorage()._sdkBlock = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _blockID: Tendermint_Types_BlockID? = nil
-  fileprivate var _block: Tendermint_Types_Block? = nil
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 /// GetLatestBlockRequest is the request type for the Query/GetLatestBlock RPC method.
@@ -213,29 +223,39 @@ struct Cosmos_Base_Tendermint_V1beta1_GetLatestBlockResponse {
   // methods supported on all messages.
 
   var blockID: Tendermint_Types_BlockID {
-    get {return _blockID ?? Tendermint_Types_BlockID()}
-    set {_blockID = newValue}
+    get {return _storage._blockID ?? Tendermint_Types_BlockID()}
+    set {_uniqueStorage()._blockID = newValue}
   }
   /// Returns true if `blockID` has been explicitly set.
-  var hasBlockID: Bool {return self._blockID != nil}
+  var hasBlockID: Bool {return _storage._blockID != nil}
   /// Clears the value of `blockID`. Subsequent reads from it will return its default value.
-  mutating func clearBlockID() {self._blockID = nil}
+  mutating func clearBlockID() {_uniqueStorage()._blockID = nil}
 
+  /// Deprecated: please use `sdk_block` instead
   var block: Tendermint_Types_Block {
-    get {return _block ?? Tendermint_Types_Block()}
-    set {_block = newValue}
+    get {return _storage._block ?? Tendermint_Types_Block()}
+    set {_uniqueStorage()._block = newValue}
   }
   /// Returns true if `block` has been explicitly set.
-  var hasBlock: Bool {return self._block != nil}
+  var hasBlock: Bool {return _storage._block != nil}
   /// Clears the value of `block`. Subsequent reads from it will return its default value.
-  mutating func clearBlock() {self._block = nil}
+  mutating func clearBlock() {_uniqueStorage()._block = nil}
+
+  /// Since: cosmos-sdk 0.47
+  var sdkBlock: Cosmos_Base_Tendermint_V1beta1_Block {
+    get {return _storage._sdkBlock ?? Cosmos_Base_Tendermint_V1beta1_Block()}
+    set {_uniqueStorage()._sdkBlock = newValue}
+  }
+  /// Returns true if `sdkBlock` has been explicitly set.
+  var hasSdkBlock: Bool {return _storage._sdkBlock != nil}
+  /// Clears the value of `sdkBlock`. Subsequent reads from it will return its default value.
+  mutating func clearSdkBlock() {_uniqueStorage()._sdkBlock = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _blockID: Tendermint_Types_BlockID? = nil
-  fileprivate var _block: Tendermint_Types_Block? = nil
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 /// GetSyncingRequest is the request type for the Query/GetSyncing RPC method.
@@ -279,14 +299,14 @@ struct Cosmos_Base_Tendermint_V1beta1_GetNodeInfoResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var nodeInfo: Tendermint_P2p_NodeInfo {
-    get {return _storage._nodeInfo ?? Tendermint_P2p_NodeInfo()}
-    set {_uniqueStorage()._nodeInfo = newValue}
+  var defaultNodeInfo: Tendermint_P2p_DefaultNodeInfo {
+    get {return _storage._defaultNodeInfo ?? Tendermint_P2p_DefaultNodeInfo()}
+    set {_uniqueStorage()._defaultNodeInfo = newValue}
   }
-  /// Returns true if `nodeInfo` has been explicitly set.
-  var hasNodeInfo: Bool {return _storage._nodeInfo != nil}
-  /// Clears the value of `nodeInfo`. Subsequent reads from it will return its default value.
-  mutating func clearNodeInfo() {_uniqueStorage()._nodeInfo = nil}
+  /// Returns true if `defaultNodeInfo` has been explicitly set.
+  var hasDefaultNodeInfo: Bool {return _storage._defaultNodeInfo != nil}
+  /// Clears the value of `defaultNodeInfo`. Subsequent reads from it will return its default value.
+  mutating func clearDefaultNodeInfo() {_uniqueStorage()._defaultNodeInfo = nil}
 
   var applicationVersion: Cosmos_Base_Tendermint_V1beta1_VersionInfo {
     get {return _storage._applicationVersion ?? Cosmos_Base_Tendermint_V1beta1_VersionInfo()}
@@ -346,6 +366,104 @@ struct Cosmos_Base_Tendermint_V1beta1_Module {
 
   /// checksum
   var sum: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+/// ABCIQueryRequest defines the request structure for the ABCIQuery gRPC query.
+struct Cosmos_Base_Tendermint_V1beta1_ABCIQueryRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var data: Data = Data()
+
+  var path: String = String()
+
+  var height: Int64 = 0
+
+  var prove: Bool = false
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+/// ABCIQueryResponse defines the response structure for the ABCIQuery gRPC query.
+///
+/// Note: This type is a duplicate of the ResponseQuery proto type defined in
+/// Tendermint.
+struct Cosmos_Base_Tendermint_V1beta1_ABCIQueryResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var code: UInt32 = 0
+
+  /// nondeterministic
+  var log: String = String()
+
+  /// nondeterministic
+  var info: String = String()
+
+  var index: Int64 = 0
+
+  var key: Data = Data()
+
+  var value: Data = Data()
+
+  var proofOps: Cosmos_Base_Tendermint_V1beta1_ProofOps {
+    get {return _proofOps ?? Cosmos_Base_Tendermint_V1beta1_ProofOps()}
+    set {_proofOps = newValue}
+  }
+  /// Returns true if `proofOps` has been explicitly set.
+  var hasProofOps: Bool {return self._proofOps != nil}
+  /// Clears the value of `proofOps`. Subsequent reads from it will return its default value.
+  mutating func clearProofOps() {self._proofOps = nil}
+
+  var height: Int64 = 0
+
+  var codespace: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _proofOps: Cosmos_Base_Tendermint_V1beta1_ProofOps? = nil
+}
+
+/// ProofOp defines an operation used for calculating Merkle root. The data could
+/// be arbitrary format, providing necessary data for example neighbouring node
+/// hash.
+///
+/// Note: This type is a duplicate of the ProofOp proto type defined in Tendermint.
+struct Cosmos_Base_Tendermint_V1beta1_ProofOp {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var type: String = String()
+
+  var key: Data = Data()
+
+  var data: Data = Data()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+/// ProofOps is Merkle proof defined by the list of ProofOps.
+///
+/// Note: This type is a duplicate of the ProofOps proto type defined in Tendermint.
+struct Cosmos_Base_Tendermint_V1beta1_ProofOps {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var ops: [Cosmos_Base_Tendermint_V1beta1_ProofOp] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -601,34 +719,76 @@ extension Cosmos_Base_Tendermint_V1beta1_GetBlockByHeightResponse: SwiftProtobuf
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "block_id"),
     2: .same(proto: "block"),
+    3: .standard(proto: "sdk_block"),
   ]
 
+  fileprivate class _StorageClass {
+    var _blockID: Tendermint_Types_BlockID? = nil
+    var _block: Tendermint_Types_Block? = nil
+    var _sdkBlock: Cosmos_Base_Tendermint_V1beta1_Block? = nil
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _blockID = source._blockID
+      _block = source._block
+      _sdkBlock = source._sdkBlock
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._blockID) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._block) }()
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._blockID) }()
+        case 2: try { try decoder.decodeSingularMessageField(value: &_storage._block) }()
+        case 3: try { try decoder.decodeSingularMessageField(value: &_storage._sdkBlock) }()
+        default: break
+        }
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._blockID {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
-    if let v = self._block {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if let v = _storage._blockID {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      }
+      if let v = _storage._block {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      }
+      if let v = _storage._sdkBlock {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: Cosmos_Base_Tendermint_V1beta1_GetBlockByHeightResponse, rhs: Cosmos_Base_Tendermint_V1beta1_GetBlockByHeightResponse) -> Bool {
-    if lhs._blockID != rhs._blockID {return false}
-    if lhs._block != rhs._block {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._blockID != rhs_storage._blockID {return false}
+        if _storage._block != rhs_storage._block {return false}
+        if _storage._sdkBlock != rhs_storage._sdkBlock {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -658,34 +818,76 @@ extension Cosmos_Base_Tendermint_V1beta1_GetLatestBlockResponse: SwiftProtobuf.M
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "block_id"),
     2: .same(proto: "block"),
+    3: .standard(proto: "sdk_block"),
   ]
 
+  fileprivate class _StorageClass {
+    var _blockID: Tendermint_Types_BlockID? = nil
+    var _block: Tendermint_Types_Block? = nil
+    var _sdkBlock: Cosmos_Base_Tendermint_V1beta1_Block? = nil
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _blockID = source._blockID
+      _block = source._block
+      _sdkBlock = source._sdkBlock
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._blockID) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._block) }()
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._blockID) }()
+        case 2: try { try decoder.decodeSingularMessageField(value: &_storage._block) }()
+        case 3: try { try decoder.decodeSingularMessageField(value: &_storage._sdkBlock) }()
+        default: break
+        }
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._blockID {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
-    if let v = self._block {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if let v = _storage._blockID {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      }
+      if let v = _storage._block {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      }
+      if let v = _storage._sdkBlock {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: Cosmos_Base_Tendermint_V1beta1_GetLatestBlockResponse, rhs: Cosmos_Base_Tendermint_V1beta1_GetLatestBlockResponse) -> Bool {
-    if lhs._blockID != rhs._blockID {return false}
-    if lhs._block != rhs._block {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._blockID != rhs_storage._blockID {return false}
+        if _storage._block != rhs_storage._block {return false}
+        if _storage._sdkBlock != rhs_storage._sdkBlock {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -764,12 +966,12 @@ extension Cosmos_Base_Tendermint_V1beta1_GetNodeInfoRequest: SwiftProtobuf.Messa
 extension Cosmos_Base_Tendermint_V1beta1_GetNodeInfoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetNodeInfoResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "node_info"),
+    1: .standard(proto: "default_node_info"),
     2: .standard(proto: "application_version"),
   ]
 
   fileprivate class _StorageClass {
-    var _nodeInfo: Tendermint_P2p_NodeInfo? = nil
+    var _defaultNodeInfo: Tendermint_P2p_DefaultNodeInfo? = nil
     var _applicationVersion: Cosmos_Base_Tendermint_V1beta1_VersionInfo? = nil
 
     static let defaultInstance = _StorageClass()
@@ -777,7 +979,7 @@ extension Cosmos_Base_Tendermint_V1beta1_GetNodeInfoResponse: SwiftProtobuf.Mess
     private init() {}
 
     init(copying source: _StorageClass) {
-      _nodeInfo = source._nodeInfo
+      _defaultNodeInfo = source._defaultNodeInfo
       _applicationVersion = source._applicationVersion
     }
   }
@@ -797,7 +999,7 @@ extension Cosmos_Base_Tendermint_V1beta1_GetNodeInfoResponse: SwiftProtobuf.Mess
         // allocates stack space for every case branch when no optimizations are
         // enabled. https://github.com/apple/swift-protobuf/issues/1034
         switch fieldNumber {
-        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._nodeInfo) }()
+        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._defaultNodeInfo) }()
         case 2: try { try decoder.decodeSingularMessageField(value: &_storage._applicationVersion) }()
         default: break
         }
@@ -807,7 +1009,7 @@ extension Cosmos_Base_Tendermint_V1beta1_GetNodeInfoResponse: SwiftProtobuf.Mess
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._nodeInfo {
+      if let v = _storage._defaultNodeInfo {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
       }
       if let v = _storage._applicationVersion {
@@ -822,7 +1024,7 @@ extension Cosmos_Base_Tendermint_V1beta1_GetNodeInfoResponse: SwiftProtobuf.Mess
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
         let rhs_storage = _args.1
-        if _storage._nodeInfo != rhs_storage._nodeInfo {return false}
+        if _storage._defaultNodeInfo != rhs_storage._defaultNodeInfo {return false}
         if _storage._applicationVersion != rhs_storage._applicationVersion {return false}
         return true
       }
@@ -946,6 +1148,212 @@ extension Cosmos_Base_Tendermint_V1beta1_Module: SwiftProtobuf.Message, SwiftPro
     if lhs.path != rhs.path {return false}
     if lhs.version != rhs.version {return false}
     if lhs.sum != rhs.sum {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Cosmos_Base_Tendermint_V1beta1_ABCIQueryRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ABCIQueryRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "data"),
+    2: .same(proto: "path"),
+    3: .same(proto: "height"),
+    4: .same(proto: "prove"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularBytesField(value: &self.data) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.path) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.height) }()
+      case 4: try { try decoder.decodeSingularBoolField(value: &self.prove) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.data.isEmpty {
+      try visitor.visitSingularBytesField(value: self.data, fieldNumber: 1)
+    }
+    if !self.path.isEmpty {
+      try visitor.visitSingularStringField(value: self.path, fieldNumber: 2)
+    }
+    if self.height != 0 {
+      try visitor.visitSingularInt64Field(value: self.height, fieldNumber: 3)
+    }
+    if self.prove != false {
+      try visitor.visitSingularBoolField(value: self.prove, fieldNumber: 4)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Cosmos_Base_Tendermint_V1beta1_ABCIQueryRequest, rhs: Cosmos_Base_Tendermint_V1beta1_ABCIQueryRequest) -> Bool {
+    if lhs.data != rhs.data {return false}
+    if lhs.path != rhs.path {return false}
+    if lhs.height != rhs.height {return false}
+    if lhs.prove != rhs.prove {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Cosmos_Base_Tendermint_V1beta1_ABCIQueryResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ABCIQueryResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "code"),
+    3: .same(proto: "log"),
+    4: .same(proto: "info"),
+    5: .same(proto: "index"),
+    6: .same(proto: "key"),
+    7: .same(proto: "value"),
+    8: .standard(proto: "proof_ops"),
+    9: .same(proto: "height"),
+    10: .same(proto: "codespace"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularUInt32Field(value: &self.code) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.log) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.info) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.index) }()
+      case 6: try { try decoder.decodeSingularBytesField(value: &self.key) }()
+      case 7: try { try decoder.decodeSingularBytesField(value: &self.value) }()
+      case 8: try { try decoder.decodeSingularMessageField(value: &self._proofOps) }()
+      case 9: try { try decoder.decodeSingularInt64Field(value: &self.height) }()
+      case 10: try { try decoder.decodeSingularStringField(value: &self.codespace) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.code != 0 {
+      try visitor.visitSingularUInt32Field(value: self.code, fieldNumber: 1)
+    }
+    if !self.log.isEmpty {
+      try visitor.visitSingularStringField(value: self.log, fieldNumber: 3)
+    }
+    if !self.info.isEmpty {
+      try visitor.visitSingularStringField(value: self.info, fieldNumber: 4)
+    }
+    if self.index != 0 {
+      try visitor.visitSingularInt64Field(value: self.index, fieldNumber: 5)
+    }
+    if !self.key.isEmpty {
+      try visitor.visitSingularBytesField(value: self.key, fieldNumber: 6)
+    }
+    if !self.value.isEmpty {
+      try visitor.visitSingularBytesField(value: self.value, fieldNumber: 7)
+    }
+    if let v = self._proofOps {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
+    }
+    if self.height != 0 {
+      try visitor.visitSingularInt64Field(value: self.height, fieldNumber: 9)
+    }
+    if !self.codespace.isEmpty {
+      try visitor.visitSingularStringField(value: self.codespace, fieldNumber: 10)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Cosmos_Base_Tendermint_V1beta1_ABCIQueryResponse, rhs: Cosmos_Base_Tendermint_V1beta1_ABCIQueryResponse) -> Bool {
+    if lhs.code != rhs.code {return false}
+    if lhs.log != rhs.log {return false}
+    if lhs.info != rhs.info {return false}
+    if lhs.index != rhs.index {return false}
+    if lhs.key != rhs.key {return false}
+    if lhs.value != rhs.value {return false}
+    if lhs._proofOps != rhs._proofOps {return false}
+    if lhs.height != rhs.height {return false}
+    if lhs.codespace != rhs.codespace {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Cosmos_Base_Tendermint_V1beta1_ProofOp: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ProofOp"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "type"),
+    2: .same(proto: "key"),
+    3: .same(proto: "data"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.type) }()
+      case 2: try { try decoder.decodeSingularBytesField(value: &self.key) }()
+      case 3: try { try decoder.decodeSingularBytesField(value: &self.data) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.type.isEmpty {
+      try visitor.visitSingularStringField(value: self.type, fieldNumber: 1)
+    }
+    if !self.key.isEmpty {
+      try visitor.visitSingularBytesField(value: self.key, fieldNumber: 2)
+    }
+    if !self.data.isEmpty {
+      try visitor.visitSingularBytesField(value: self.data, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Cosmos_Base_Tendermint_V1beta1_ProofOp, rhs: Cosmos_Base_Tendermint_V1beta1_ProofOp) -> Bool {
+    if lhs.type != rhs.type {return false}
+    if lhs.key != rhs.key {return false}
+    if lhs.data != rhs.data {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Cosmos_Base_Tendermint_V1beta1_ProofOps: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ProofOps"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "ops"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeRepeatedMessageField(value: &self.ops) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.ops.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.ops, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Cosmos_Base_Tendermint_V1beta1_ProofOps, rhs: Cosmos_Base_Tendermint_V1beta1_ProofOps) -> Bool {
+    if lhs.ops != rhs.ops {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

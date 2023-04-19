@@ -153,6 +153,34 @@ struct Cosmos_Upgrade_V1beta1_QueryModuleVersionsResponse {
   init() {}
 }
 
+/// QueryAuthorityRequest is the request type for Query/Authority
+///
+/// Since: cosmos-sdk 0.46
+struct Cosmos_Upgrade_V1beta1_QueryAuthorityRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+/// QueryAuthorityResponse is the response type for Query/Authority
+///
+/// Since: cosmos-sdk 0.46
+struct Cosmos_Upgrade_V1beta1_QueryAuthorityResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var address: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.upgrade.v1beta1"
@@ -395,6 +423,57 @@ extension Cosmos_Upgrade_V1beta1_QueryModuleVersionsResponse: SwiftProtobuf.Mess
 
   static func ==(lhs: Cosmos_Upgrade_V1beta1_QueryModuleVersionsResponse, rhs: Cosmos_Upgrade_V1beta1_QueryModuleVersionsResponse) -> Bool {
     if lhs.moduleVersions != rhs.moduleVersions {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Cosmos_Upgrade_V1beta1_QueryAuthorityRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QueryAuthorityRequest"
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let _ = try decoder.nextFieldNumber() {
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Cosmos_Upgrade_V1beta1_QueryAuthorityRequest, rhs: Cosmos_Upgrade_V1beta1_QueryAuthorityRequest) -> Bool {
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Cosmos_Upgrade_V1beta1_QueryAuthorityResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QueryAuthorityResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "address"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.address) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.address.isEmpty {
+      try visitor.visitSingularStringField(value: self.address, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Cosmos_Upgrade_V1beta1_QueryAuthorityResponse, rhs: Cosmos_Upgrade_V1beta1_QueryAuthorityResponse) -> Bool {
+    if lhs.address != rhs.address {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -36,6 +36,11 @@ internal protocol Cosmos_Crisis_V1beta1_MsgClientProtocol: GRPCClient {
     _ request: Cosmos_Crisis_V1beta1_MsgVerifyInvariant,
     callOptions: CallOptions?
   ) -> UnaryCall<Cosmos_Crisis_V1beta1_MsgVerifyInvariant, Cosmos_Crisis_V1beta1_MsgVerifyInvariantResponse>
+
+  func updateParams(
+    _ request: Cosmos_Crisis_V1beta1_MsgUpdateParams,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Cosmos_Crisis_V1beta1_MsgUpdateParams, Cosmos_Crisis_V1beta1_MsgUpdateParamsResponse>
 }
 
 extension Cosmos_Crisis_V1beta1_MsgClientProtocol {
@@ -43,7 +48,7 @@ extension Cosmos_Crisis_V1beta1_MsgClientProtocol {
     return "cosmos.crisis.v1beta1.Msg"
   }
 
-  /// VerifyInvariant defines a method to verify a particular invariance.
+  /// VerifyInvariant defines a method to verify a particular invariant.
   ///
   /// - Parameters:
   ///   - request: Request to send to VerifyInvariant.
@@ -60,12 +65,36 @@ extension Cosmos_Crisis_V1beta1_MsgClientProtocol {
       interceptors: self.interceptors?.makeVerifyInvariantInterceptors() ?? []
     )
   }
+
+  /// UpdateParams defines a governance operation for updating the x/crisis module
+  /// parameters. The authority is defined in the keeper.
+  ///
+  /// Since: cosmos-sdk 0.47
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to UpdateParams.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func updateParams(
+    _ request: Cosmos_Crisis_V1beta1_MsgUpdateParams,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Cosmos_Crisis_V1beta1_MsgUpdateParams, Cosmos_Crisis_V1beta1_MsgUpdateParamsResponse> {
+    return self.makeUnaryCall(
+      path: "/cosmos.crisis.v1beta1.Msg/UpdateParams",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeUpdateParamsInterceptors() ?? []
+    )
+  }
 }
 
 internal protocol Cosmos_Crisis_V1beta1_MsgClientInterceptorFactoryProtocol {
 
   /// - Returns: Interceptors to use when invoking 'verifyInvariant'.
   func makeVerifyInvariantInterceptors() -> [ClientInterceptor<Cosmos_Crisis_V1beta1_MsgVerifyInvariant, Cosmos_Crisis_V1beta1_MsgVerifyInvariantResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'updateParams'.
+  func makeUpdateParamsInterceptors() -> [ClientInterceptor<Cosmos_Crisis_V1beta1_MsgUpdateParams, Cosmos_Crisis_V1beta1_MsgUpdateParamsResponse>]
 }
 
 internal final class Cosmos_Crisis_V1beta1_MsgClient: Cosmos_Crisis_V1beta1_MsgClientProtocol {
@@ -96,8 +125,14 @@ internal final class Cosmos_Crisis_V1beta1_MsgClient: Cosmos_Crisis_V1beta1_MsgC
 internal protocol Cosmos_Crisis_V1beta1_MsgProvider: CallHandlerProvider {
   var interceptors: Cosmos_Crisis_V1beta1_MsgServerInterceptorFactoryProtocol? { get }
 
-  /// VerifyInvariant defines a method to verify a particular invariance.
+  /// VerifyInvariant defines a method to verify a particular invariant.
   func verifyInvariant(request: Cosmos_Crisis_V1beta1_MsgVerifyInvariant, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Crisis_V1beta1_MsgVerifyInvariantResponse>
+
+  /// UpdateParams defines a governance operation for updating the x/crisis module
+  /// parameters. The authority is defined in the keeper.
+  ///
+  /// Since: cosmos-sdk 0.47
+  func updateParams(request: Cosmos_Crisis_V1beta1_MsgUpdateParams, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Crisis_V1beta1_MsgUpdateParamsResponse>
 }
 
 extension Cosmos_Crisis_V1beta1_MsgProvider {
@@ -119,6 +154,15 @@ extension Cosmos_Crisis_V1beta1_MsgProvider {
         userFunction: self.verifyInvariant(request:context:)
       )
 
+    case "UpdateParams":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Cosmos_Crisis_V1beta1_MsgUpdateParams>(),
+        responseSerializer: ProtobufSerializer<Cosmos_Crisis_V1beta1_MsgUpdateParamsResponse>(),
+        interceptors: self.interceptors?.makeUpdateParamsInterceptors() ?? [],
+        userFunction: self.updateParams(request:context:)
+      )
+
     default:
       return nil
     }
@@ -130,4 +174,8 @@ internal protocol Cosmos_Crisis_V1beta1_MsgServerInterceptorFactoryProtocol {
   /// - Returns: Interceptors to use when handling 'verifyInvariant'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeVerifyInvariantInterceptors() -> [ServerInterceptor<Cosmos_Crisis_V1beta1_MsgVerifyInvariant, Cosmos_Crisis_V1beta1_MsgVerifyInvariantResponse>]
+
+  /// - Returns: Interceptors to use when handling 'updateParams'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeUpdateParamsInterceptors() -> [ServerInterceptor<Cosmos_Crisis_V1beta1_MsgUpdateParams, Cosmos_Crisis_V1beta1_MsgUpdateParamsResponse>]
 }

@@ -42,6 +42,7 @@ struct Cosmos_Vesting_V1beta1_BaseVestingAccount {
 
   var delegatedVesting: [Cosmos_Base_V1beta1_Coin] = []
 
+  /// Vesting end time, as unix timestamp (in seconds).
   var endTime: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -67,6 +68,7 @@ struct Cosmos_Vesting_V1beta1_ContinuousVestingAccount {
   /// Clears the value of `baseVestingAccount`. Subsequent reads from it will return its default value.
   mutating func clearBaseVestingAccount() {self._baseVestingAccount = nil}
 
+  /// Vesting start time, as unix timestamp (in seconds).
   var startTime: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -106,6 +108,7 @@ struct Cosmos_Vesting_V1beta1_Period {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// Period duration in seconds.
   var length: Int64 = 0
 
   var amount: [Cosmos_Base_V1beta1_Coin] = []

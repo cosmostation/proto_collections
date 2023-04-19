@@ -51,6 +51,31 @@ internal protocol Cosmos_Tx_V1beta1_ServiceClientProtocol: GRPCClient {
     _ request: Cosmos_Tx_V1beta1_GetTxsEventRequest,
     callOptions: CallOptions?
   ) -> UnaryCall<Cosmos_Tx_V1beta1_GetTxsEventRequest, Cosmos_Tx_V1beta1_GetTxsEventResponse>
+
+  func getBlockWithTxs(
+    _ request: Cosmos_Tx_V1beta1_GetBlockWithTxsRequest,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Cosmos_Tx_V1beta1_GetBlockWithTxsRequest, Cosmos_Tx_V1beta1_GetBlockWithTxsResponse>
+
+  func txDecode(
+    _ request: Cosmos_Tx_V1beta1_TxDecodeRequest,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Cosmos_Tx_V1beta1_TxDecodeRequest, Cosmos_Tx_V1beta1_TxDecodeResponse>
+
+  func txEncode(
+    _ request: Cosmos_Tx_V1beta1_TxEncodeRequest,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Cosmos_Tx_V1beta1_TxEncodeRequest, Cosmos_Tx_V1beta1_TxEncodeResponse>
+
+  func txEncodeAmino(
+    _ request: Cosmos_Tx_V1beta1_TxEncodeAminoRequest,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Cosmos_Tx_V1beta1_TxEncodeAminoRequest, Cosmos_Tx_V1beta1_TxEncodeAminoResponse>
+
+  func txDecodeAmino(
+    _ request: Cosmos_Tx_V1beta1_TxDecodeAminoRequest,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Cosmos_Tx_V1beta1_TxDecodeAminoRequest, Cosmos_Tx_V1beta1_TxDecodeAminoResponse>
 }
 
 extension Cosmos_Tx_V1beta1_ServiceClientProtocol {
@@ -129,6 +154,106 @@ extension Cosmos_Tx_V1beta1_ServiceClientProtocol {
       interceptors: self.interceptors?.makeGetTxsEventInterceptors() ?? []
     )
   }
+
+  /// GetBlockWithTxs fetches a block with decoded txs.
+  ///
+  /// Since: cosmos-sdk 0.45.2
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to GetBlockWithTxs.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func getBlockWithTxs(
+    _ request: Cosmos_Tx_V1beta1_GetBlockWithTxsRequest,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Cosmos_Tx_V1beta1_GetBlockWithTxsRequest, Cosmos_Tx_V1beta1_GetBlockWithTxsResponse> {
+    return self.makeUnaryCall(
+      path: "/cosmos.tx.v1beta1.Service/GetBlockWithTxs",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeGetBlockWithTxsInterceptors() ?? []
+    )
+  }
+
+  /// TxDecode decodes the transaction.
+  ///
+  /// Since: cosmos-sdk 0.47
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to TxDecode.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func txDecode(
+    _ request: Cosmos_Tx_V1beta1_TxDecodeRequest,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Cosmos_Tx_V1beta1_TxDecodeRequest, Cosmos_Tx_V1beta1_TxDecodeResponse> {
+    return self.makeUnaryCall(
+      path: "/cosmos.tx.v1beta1.Service/TxDecode",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeTxDecodeInterceptors() ?? []
+    )
+  }
+
+  /// TxEncode encodes the transaction.
+  ///
+  /// Since: cosmos-sdk 0.47
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to TxEncode.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func txEncode(
+    _ request: Cosmos_Tx_V1beta1_TxEncodeRequest,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Cosmos_Tx_V1beta1_TxEncodeRequest, Cosmos_Tx_V1beta1_TxEncodeResponse> {
+    return self.makeUnaryCall(
+      path: "/cosmos.tx.v1beta1.Service/TxEncode",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeTxEncodeInterceptors() ?? []
+    )
+  }
+
+  /// TxEncodeAmino encodes an Amino transaction from JSON to encoded bytes.
+  ///
+  /// Since: cosmos-sdk 0.47
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to TxEncodeAmino.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func txEncodeAmino(
+    _ request: Cosmos_Tx_V1beta1_TxEncodeAminoRequest,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Cosmos_Tx_V1beta1_TxEncodeAminoRequest, Cosmos_Tx_V1beta1_TxEncodeAminoResponse> {
+    return self.makeUnaryCall(
+      path: "/cosmos.tx.v1beta1.Service/TxEncodeAmino",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeTxEncodeAminoInterceptors() ?? []
+    )
+  }
+
+  /// TxDecodeAmino decodes an Amino transaction from encoded bytes to JSON.
+  ///
+  /// Since: cosmos-sdk 0.47
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to TxDecodeAmino.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func txDecodeAmino(
+    _ request: Cosmos_Tx_V1beta1_TxDecodeAminoRequest,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Cosmos_Tx_V1beta1_TxDecodeAminoRequest, Cosmos_Tx_V1beta1_TxDecodeAminoResponse> {
+    return self.makeUnaryCall(
+      path: "/cosmos.tx.v1beta1.Service/TxDecodeAmino",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeTxDecodeAminoInterceptors() ?? []
+    )
+  }
 }
 
 internal protocol Cosmos_Tx_V1beta1_ServiceClientInterceptorFactoryProtocol {
@@ -144,6 +269,21 @@ internal protocol Cosmos_Tx_V1beta1_ServiceClientInterceptorFactoryProtocol {
 
   /// - Returns: Interceptors to use when invoking 'getTxsEvent'.
   func makeGetTxsEventInterceptors() -> [ClientInterceptor<Cosmos_Tx_V1beta1_GetTxsEventRequest, Cosmos_Tx_V1beta1_GetTxsEventResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'getBlockWithTxs'.
+  func makeGetBlockWithTxsInterceptors() -> [ClientInterceptor<Cosmos_Tx_V1beta1_GetBlockWithTxsRequest, Cosmos_Tx_V1beta1_GetBlockWithTxsResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'txDecode'.
+  func makeTxDecodeInterceptors() -> [ClientInterceptor<Cosmos_Tx_V1beta1_TxDecodeRequest, Cosmos_Tx_V1beta1_TxDecodeResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'txEncode'.
+  func makeTxEncodeInterceptors() -> [ClientInterceptor<Cosmos_Tx_V1beta1_TxEncodeRequest, Cosmos_Tx_V1beta1_TxEncodeResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'txEncodeAmino'.
+  func makeTxEncodeAminoInterceptors() -> [ClientInterceptor<Cosmos_Tx_V1beta1_TxEncodeAminoRequest, Cosmos_Tx_V1beta1_TxEncodeAminoResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'txDecodeAmino'.
+  func makeTxDecodeAminoInterceptors() -> [ClientInterceptor<Cosmos_Tx_V1beta1_TxDecodeAminoRequest, Cosmos_Tx_V1beta1_TxDecodeAminoResponse>]
 }
 
 internal final class Cosmos_Tx_V1beta1_ServiceClient: Cosmos_Tx_V1beta1_ServiceClientProtocol {
@@ -185,6 +325,31 @@ internal protocol Cosmos_Tx_V1beta1_ServiceProvider: CallHandlerProvider {
 
   /// GetTxsEvent fetches txs by event.
   func getTxsEvent(request: Cosmos_Tx_V1beta1_GetTxsEventRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Tx_V1beta1_GetTxsEventResponse>
+
+  /// GetBlockWithTxs fetches a block with decoded txs.
+  ///
+  /// Since: cosmos-sdk 0.45.2
+  func getBlockWithTxs(request: Cosmos_Tx_V1beta1_GetBlockWithTxsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Tx_V1beta1_GetBlockWithTxsResponse>
+
+  /// TxDecode decodes the transaction.
+  ///
+  /// Since: cosmos-sdk 0.47
+  func txDecode(request: Cosmos_Tx_V1beta1_TxDecodeRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Tx_V1beta1_TxDecodeResponse>
+
+  /// TxEncode encodes the transaction.
+  ///
+  /// Since: cosmos-sdk 0.47
+  func txEncode(request: Cosmos_Tx_V1beta1_TxEncodeRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Tx_V1beta1_TxEncodeResponse>
+
+  /// TxEncodeAmino encodes an Amino transaction from JSON to encoded bytes.
+  ///
+  /// Since: cosmos-sdk 0.47
+  func txEncodeAmino(request: Cosmos_Tx_V1beta1_TxEncodeAminoRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Tx_V1beta1_TxEncodeAminoResponse>
+
+  /// TxDecodeAmino decodes an Amino transaction from encoded bytes to JSON.
+  ///
+  /// Since: cosmos-sdk 0.47
+  func txDecodeAmino(request: Cosmos_Tx_V1beta1_TxDecodeAminoRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Tx_V1beta1_TxDecodeAminoResponse>
 }
 
 extension Cosmos_Tx_V1beta1_ServiceProvider {
@@ -233,6 +398,51 @@ extension Cosmos_Tx_V1beta1_ServiceProvider {
         userFunction: self.getTxsEvent(request:context:)
       )
 
+    case "GetBlockWithTxs":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Cosmos_Tx_V1beta1_GetBlockWithTxsRequest>(),
+        responseSerializer: ProtobufSerializer<Cosmos_Tx_V1beta1_GetBlockWithTxsResponse>(),
+        interceptors: self.interceptors?.makeGetBlockWithTxsInterceptors() ?? [],
+        userFunction: self.getBlockWithTxs(request:context:)
+      )
+
+    case "TxDecode":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Cosmos_Tx_V1beta1_TxDecodeRequest>(),
+        responseSerializer: ProtobufSerializer<Cosmos_Tx_V1beta1_TxDecodeResponse>(),
+        interceptors: self.interceptors?.makeTxDecodeInterceptors() ?? [],
+        userFunction: self.txDecode(request:context:)
+      )
+
+    case "TxEncode":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Cosmos_Tx_V1beta1_TxEncodeRequest>(),
+        responseSerializer: ProtobufSerializer<Cosmos_Tx_V1beta1_TxEncodeResponse>(),
+        interceptors: self.interceptors?.makeTxEncodeInterceptors() ?? [],
+        userFunction: self.txEncode(request:context:)
+      )
+
+    case "TxEncodeAmino":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Cosmos_Tx_V1beta1_TxEncodeAminoRequest>(),
+        responseSerializer: ProtobufSerializer<Cosmos_Tx_V1beta1_TxEncodeAminoResponse>(),
+        interceptors: self.interceptors?.makeTxEncodeAminoInterceptors() ?? [],
+        userFunction: self.txEncodeAmino(request:context:)
+      )
+
+    case "TxDecodeAmino":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Cosmos_Tx_V1beta1_TxDecodeAminoRequest>(),
+        responseSerializer: ProtobufSerializer<Cosmos_Tx_V1beta1_TxDecodeAminoResponse>(),
+        interceptors: self.interceptors?.makeTxDecodeAminoInterceptors() ?? [],
+        userFunction: self.txDecodeAmino(request:context:)
+      )
+
     default:
       return nil
     }
@@ -256,4 +466,24 @@ internal protocol Cosmos_Tx_V1beta1_ServiceServerInterceptorFactoryProtocol {
   /// - Returns: Interceptors to use when handling 'getTxsEvent'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeGetTxsEventInterceptors() -> [ServerInterceptor<Cosmos_Tx_V1beta1_GetTxsEventRequest, Cosmos_Tx_V1beta1_GetTxsEventResponse>]
+
+  /// - Returns: Interceptors to use when handling 'getBlockWithTxs'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeGetBlockWithTxsInterceptors() -> [ServerInterceptor<Cosmos_Tx_V1beta1_GetBlockWithTxsRequest, Cosmos_Tx_V1beta1_GetBlockWithTxsResponse>]
+
+  /// - Returns: Interceptors to use when handling 'txDecode'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeTxDecodeInterceptors() -> [ServerInterceptor<Cosmos_Tx_V1beta1_TxDecodeRequest, Cosmos_Tx_V1beta1_TxDecodeResponse>]
+
+  /// - Returns: Interceptors to use when handling 'txEncode'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeTxEncodeInterceptors() -> [ServerInterceptor<Cosmos_Tx_V1beta1_TxEncodeRequest, Cosmos_Tx_V1beta1_TxEncodeResponse>]
+
+  /// - Returns: Interceptors to use when handling 'txEncodeAmino'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeTxEncodeAminoInterceptors() -> [ServerInterceptor<Cosmos_Tx_V1beta1_TxEncodeAminoRequest, Cosmos_Tx_V1beta1_TxEncodeAminoResponse>]
+
+  /// - Returns: Interceptors to use when handling 'txDecodeAmino'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeTxDecodeAminoInterceptors() -> [ServerInterceptor<Cosmos_Tx_V1beta1_TxDecodeAminoRequest, Cosmos_Tx_V1beta1_TxDecodeAminoResponse>]
 }

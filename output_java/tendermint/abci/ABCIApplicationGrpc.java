@@ -120,37 +120,6 @@ public final class ABCIApplicationGrpc {
     return getInfoMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<tendermint.abci.Types.RequestSetOption,
-      tendermint.abci.Types.ResponseSetOption> getSetOptionMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "SetOption",
-      requestType = tendermint.abci.Types.RequestSetOption.class,
-      responseType = tendermint.abci.Types.ResponseSetOption.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<tendermint.abci.Types.RequestSetOption,
-      tendermint.abci.Types.ResponseSetOption> getSetOptionMethod() {
-    io.grpc.MethodDescriptor<tendermint.abci.Types.RequestSetOption, tendermint.abci.Types.ResponseSetOption> getSetOptionMethod;
-    if ((getSetOptionMethod = ABCIApplicationGrpc.getSetOptionMethod) == null) {
-      synchronized (ABCIApplicationGrpc.class) {
-        if ((getSetOptionMethod = ABCIApplicationGrpc.getSetOptionMethod) == null) {
-          ABCIApplicationGrpc.getSetOptionMethod = getSetOptionMethod =
-              io.grpc.MethodDescriptor.<tendermint.abci.Types.RequestSetOption, tendermint.abci.Types.ResponseSetOption>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetOption"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  tendermint.abci.Types.RequestSetOption.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  tendermint.abci.Types.ResponseSetOption.getDefaultInstance()))
-              .setSchemaDescriptor(new ABCIApplicationMethodDescriptorSupplier("SetOption"))
-              .build();
-        }
-      }
-    }
-    return getSetOptionMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<tendermint.abci.Types.RequestDeliverTx,
       tendermint.abci.Types.ResponseDeliverTx> getDeliverTxMethod;
 
@@ -492,6 +461,68 @@ public final class ABCIApplicationGrpc {
     return getApplySnapshotChunkMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<tendermint.abci.Types.RequestPrepareProposal,
+      tendermint.abci.Types.ResponsePrepareProposal> getPrepareProposalMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PrepareProposal",
+      requestType = tendermint.abci.Types.RequestPrepareProposal.class,
+      responseType = tendermint.abci.Types.ResponsePrepareProposal.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<tendermint.abci.Types.RequestPrepareProposal,
+      tendermint.abci.Types.ResponsePrepareProposal> getPrepareProposalMethod() {
+    io.grpc.MethodDescriptor<tendermint.abci.Types.RequestPrepareProposal, tendermint.abci.Types.ResponsePrepareProposal> getPrepareProposalMethod;
+    if ((getPrepareProposalMethod = ABCIApplicationGrpc.getPrepareProposalMethod) == null) {
+      synchronized (ABCIApplicationGrpc.class) {
+        if ((getPrepareProposalMethod = ABCIApplicationGrpc.getPrepareProposalMethod) == null) {
+          ABCIApplicationGrpc.getPrepareProposalMethod = getPrepareProposalMethod =
+              io.grpc.MethodDescriptor.<tendermint.abci.Types.RequestPrepareProposal, tendermint.abci.Types.ResponsePrepareProposal>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PrepareProposal"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  tendermint.abci.Types.RequestPrepareProposal.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  tendermint.abci.Types.ResponsePrepareProposal.getDefaultInstance()))
+              .setSchemaDescriptor(new ABCIApplicationMethodDescriptorSupplier("PrepareProposal"))
+              .build();
+        }
+      }
+    }
+    return getPrepareProposalMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<tendermint.abci.Types.RequestProcessProposal,
+      tendermint.abci.Types.ResponseProcessProposal> getProcessProposalMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ProcessProposal",
+      requestType = tendermint.abci.Types.RequestProcessProposal.class,
+      responseType = tendermint.abci.Types.ResponseProcessProposal.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<tendermint.abci.Types.RequestProcessProposal,
+      tendermint.abci.Types.ResponseProcessProposal> getProcessProposalMethod() {
+    io.grpc.MethodDescriptor<tendermint.abci.Types.RequestProcessProposal, tendermint.abci.Types.ResponseProcessProposal> getProcessProposalMethod;
+    if ((getProcessProposalMethod = ABCIApplicationGrpc.getProcessProposalMethod) == null) {
+      synchronized (ABCIApplicationGrpc.class) {
+        if ((getProcessProposalMethod = ABCIApplicationGrpc.getProcessProposalMethod) == null) {
+          ABCIApplicationGrpc.getProcessProposalMethod = getProcessProposalMethod =
+              io.grpc.MethodDescriptor.<tendermint.abci.Types.RequestProcessProposal, tendermint.abci.Types.ResponseProcessProposal>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ProcessProposal"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  tendermint.abci.Types.RequestProcessProposal.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  tendermint.abci.Types.ResponseProcessProposal.getDefaultInstance()))
+              .setSchemaDescriptor(new ABCIApplicationMethodDescriptorSupplier("ProcessProposal"))
+              .build();
+        }
+      }
+    }
+    return getProcessProposalMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -559,13 +590,6 @@ public final class ABCIApplicationGrpc {
     public void info(tendermint.abci.Types.RequestInfo request,
         io.grpc.stub.StreamObserver<tendermint.abci.Types.ResponseInfo> responseObserver) {
       asyncUnimplementedUnaryCall(getInfoMethod(), responseObserver);
-    }
-
-    /**
-     */
-    public void setOption(tendermint.abci.Types.RequestSetOption request,
-        io.grpc.stub.StreamObserver<tendermint.abci.Types.ResponseSetOption> responseObserver) {
-      asyncUnimplementedUnaryCall(getSetOptionMethod(), responseObserver);
     }
 
     /**
@@ -645,6 +669,20 @@ public final class ABCIApplicationGrpc {
       asyncUnimplementedUnaryCall(getApplySnapshotChunkMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void prepareProposal(tendermint.abci.Types.RequestPrepareProposal request,
+        io.grpc.stub.StreamObserver<tendermint.abci.Types.ResponsePrepareProposal> responseObserver) {
+      asyncUnimplementedUnaryCall(getPrepareProposalMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void processProposal(tendermint.abci.Types.RequestProcessProposal request,
+        io.grpc.stub.StreamObserver<tendermint.abci.Types.ResponseProcessProposal> responseObserver) {
+      asyncUnimplementedUnaryCall(getProcessProposalMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -668,13 +706,6 @@ public final class ABCIApplicationGrpc {
                 tendermint.abci.Types.RequestInfo,
                 tendermint.abci.Types.ResponseInfo>(
                   this, METHODID_INFO)))
-          .addMethod(
-            getSetOptionMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                tendermint.abci.Types.RequestSetOption,
-                tendermint.abci.Types.ResponseSetOption>(
-                  this, METHODID_SET_OPTION)))
           .addMethod(
             getDeliverTxMethod(),
             asyncUnaryCall(
@@ -752,6 +783,20 @@ public final class ABCIApplicationGrpc {
                 tendermint.abci.Types.RequestApplySnapshotChunk,
                 tendermint.abci.Types.ResponseApplySnapshotChunk>(
                   this, METHODID_APPLY_SNAPSHOT_CHUNK)))
+          .addMethod(
+            getPrepareProposalMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                tendermint.abci.Types.RequestPrepareProposal,
+                tendermint.abci.Types.ResponsePrepareProposal>(
+                  this, METHODID_PREPARE_PROPOSAL)))
+          .addMethod(
+            getProcessProposalMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                tendermint.abci.Types.RequestProcessProposal,
+                tendermint.abci.Types.ResponseProcessProposal>(
+                  this, METHODID_PROCESS_PROPOSAL)))
           .build();
     }
   }
@@ -792,14 +837,6 @@ public final class ABCIApplicationGrpc {
         io.grpc.stub.StreamObserver<tendermint.abci.Types.ResponseInfo> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getInfoMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void setOption(tendermint.abci.Types.RequestSetOption request,
-        io.grpc.stub.StreamObserver<tendermint.abci.Types.ResponseSetOption> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getSetOptionMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -889,6 +926,22 @@ public final class ABCIApplicationGrpc {
       asyncUnaryCall(
           getChannel().newCall(getApplySnapshotChunkMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void prepareProposal(tendermint.abci.Types.RequestPrepareProposal request,
+        io.grpc.stub.StreamObserver<tendermint.abci.Types.ResponsePrepareProposal> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPrepareProposalMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void processProposal(tendermint.abci.Types.RequestProcessProposal request,
+        io.grpc.stub.StreamObserver<tendermint.abci.Types.ResponseProcessProposal> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getProcessProposalMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -924,13 +977,6 @@ public final class ABCIApplicationGrpc {
     public tendermint.abci.Types.ResponseInfo info(tendermint.abci.Types.RequestInfo request) {
       return blockingUnaryCall(
           getChannel(), getInfoMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public tendermint.abci.Types.ResponseSetOption setOption(tendermint.abci.Types.RequestSetOption request) {
-      return blockingUnaryCall(
-          getChannel(), getSetOptionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1009,6 +1055,20 @@ public final class ABCIApplicationGrpc {
       return blockingUnaryCall(
           getChannel(), getApplySnapshotChunkMethod(), getCallOptions(), request);
     }
+
+    /**
+     */
+    public tendermint.abci.Types.ResponsePrepareProposal prepareProposal(tendermint.abci.Types.RequestPrepareProposal request) {
+      return blockingUnaryCall(
+          getChannel(), getPrepareProposalMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public tendermint.abci.Types.ResponseProcessProposal processProposal(tendermint.abci.Types.RequestProcessProposal request) {
+      return blockingUnaryCall(
+          getChannel(), getProcessProposalMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -1047,14 +1107,6 @@ public final class ABCIApplicationGrpc {
         tendermint.abci.Types.RequestInfo request) {
       return futureUnaryCall(
           getChannel().newCall(getInfoMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<tendermint.abci.Types.ResponseSetOption> setOption(
-        tendermint.abci.Types.RequestSetOption request) {
-      return futureUnaryCall(
-          getChannel().newCall(getSetOptionMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1144,23 +1196,40 @@ public final class ABCIApplicationGrpc {
       return futureUnaryCall(
           getChannel().newCall(getApplySnapshotChunkMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<tendermint.abci.Types.ResponsePrepareProposal> prepareProposal(
+        tendermint.abci.Types.RequestPrepareProposal request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPrepareProposalMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<tendermint.abci.Types.ResponseProcessProposal> processProposal(
+        tendermint.abci.Types.RequestProcessProposal request) {
+      return futureUnaryCall(
+          getChannel().newCall(getProcessProposalMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_ECHO = 0;
   private static final int METHODID_FLUSH = 1;
   private static final int METHODID_INFO = 2;
-  private static final int METHODID_SET_OPTION = 3;
-  private static final int METHODID_DELIVER_TX = 4;
-  private static final int METHODID_CHECK_TX = 5;
-  private static final int METHODID_QUERY = 6;
-  private static final int METHODID_COMMIT = 7;
-  private static final int METHODID_INIT_CHAIN = 8;
-  private static final int METHODID_BEGIN_BLOCK = 9;
-  private static final int METHODID_END_BLOCK = 10;
-  private static final int METHODID_LIST_SNAPSHOTS = 11;
-  private static final int METHODID_OFFER_SNAPSHOT = 12;
-  private static final int METHODID_LOAD_SNAPSHOT_CHUNK = 13;
-  private static final int METHODID_APPLY_SNAPSHOT_CHUNK = 14;
+  private static final int METHODID_DELIVER_TX = 3;
+  private static final int METHODID_CHECK_TX = 4;
+  private static final int METHODID_QUERY = 5;
+  private static final int METHODID_COMMIT = 6;
+  private static final int METHODID_INIT_CHAIN = 7;
+  private static final int METHODID_BEGIN_BLOCK = 8;
+  private static final int METHODID_END_BLOCK = 9;
+  private static final int METHODID_LIST_SNAPSHOTS = 10;
+  private static final int METHODID_OFFER_SNAPSHOT = 11;
+  private static final int METHODID_LOAD_SNAPSHOT_CHUNK = 12;
+  private static final int METHODID_APPLY_SNAPSHOT_CHUNK = 13;
+  private static final int METHODID_PREPARE_PROPOSAL = 14;
+  private static final int METHODID_PROCESS_PROPOSAL = 15;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1190,10 +1259,6 @@ public final class ABCIApplicationGrpc {
         case METHODID_INFO:
           serviceImpl.info((tendermint.abci.Types.RequestInfo) request,
               (io.grpc.stub.StreamObserver<tendermint.abci.Types.ResponseInfo>) responseObserver);
-          break;
-        case METHODID_SET_OPTION:
-          serviceImpl.setOption((tendermint.abci.Types.RequestSetOption) request,
-              (io.grpc.stub.StreamObserver<tendermint.abci.Types.ResponseSetOption>) responseObserver);
           break;
         case METHODID_DELIVER_TX:
           serviceImpl.deliverTx((tendermint.abci.Types.RequestDeliverTx) request,
@@ -1238,6 +1303,14 @@ public final class ABCIApplicationGrpc {
         case METHODID_APPLY_SNAPSHOT_CHUNK:
           serviceImpl.applySnapshotChunk((tendermint.abci.Types.RequestApplySnapshotChunk) request,
               (io.grpc.stub.StreamObserver<tendermint.abci.Types.ResponseApplySnapshotChunk>) responseObserver);
+          break;
+        case METHODID_PREPARE_PROPOSAL:
+          serviceImpl.prepareProposal((tendermint.abci.Types.RequestPrepareProposal) request,
+              (io.grpc.stub.StreamObserver<tendermint.abci.Types.ResponsePrepareProposal>) responseObserver);
+          break;
+        case METHODID_PROCESS_PROPOSAL:
+          serviceImpl.processProposal((tendermint.abci.Types.RequestProcessProposal) request,
+              (io.grpc.stub.StreamObserver<tendermint.abci.Types.ResponseProcessProposal>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1303,7 +1376,6 @@ public final class ABCIApplicationGrpc {
               .addMethod(getEchoMethod())
               .addMethod(getFlushMethod())
               .addMethod(getInfoMethod())
-              .addMethod(getSetOptionMethod())
               .addMethod(getDeliverTxMethod())
               .addMethod(getCheckTxMethod())
               .addMethod(getQueryMethod())
@@ -1315,6 +1387,8 @@ public final class ABCIApplicationGrpc {
               .addMethod(getOfferSnapshotMethod())
               .addMethod(getLoadSnapshotChunkMethod())
               .addMethod(getApplySnapshotChunkMethod())
+              .addMethod(getPrepareProposalMethod())
+              .addMethod(getProcessProposalMethod())
               .build();
         }
       }

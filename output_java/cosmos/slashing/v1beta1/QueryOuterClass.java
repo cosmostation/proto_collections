@@ -445,17 +445,17 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the params field is set.
      */
     boolean hasParams();
     /**
-     * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The params.
      */
     cosmos.slashing.v1beta1.Slashing.Params getParams();
     /**
-     * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.slashing.v1beta1.Slashing.ParamsOrBuilder getParamsOrBuilder();
   }
@@ -556,7 +556,7 @@ public final class QueryOuterClass {
     public static final int PARAMS_FIELD_NUMBER = 1;
     private cosmos.slashing.v1beta1.Slashing.Params params_;
     /**
-     * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the params field is set.
      */
     @java.lang.Override
@@ -564,7 +564,7 @@ public final class QueryOuterClass {
       return params_ != null;
     }
     /**
-     * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The params.
      */
     @java.lang.Override
@@ -572,7 +572,7 @@ public final class QueryOuterClass {
       return params_ == null ? cosmos.slashing.v1beta1.Slashing.Params.getDefaultInstance() : params_;
     }
     /**
-     * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.slashing.v1beta1.Slashing.ParamsOrBuilder getParamsOrBuilder() {
@@ -902,14 +902,14 @@ public final class QueryOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.slashing.v1beta1.Slashing.Params, cosmos.slashing.v1beta1.Slashing.Params.Builder, cosmos.slashing.v1beta1.Slashing.ParamsOrBuilder> paramsBuilder_;
       /**
-       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the params field is set.
        */
       public boolean hasParams() {
         return paramsBuilder_ != null || params_ != null;
       }
       /**
-       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The params.
        */
       public cosmos.slashing.v1beta1.Slashing.Params getParams() {
@@ -920,7 +920,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setParams(cosmos.slashing.v1beta1.Slashing.Params value) {
         if (paramsBuilder_ == null) {
@@ -936,7 +936,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setParams(
           cosmos.slashing.v1beta1.Slashing.Params.Builder builderForValue) {
@@ -950,7 +950,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeParams(cosmos.slashing.v1beta1.Slashing.Params value) {
         if (paramsBuilder_ == null) {
@@ -968,7 +968,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearParams() {
         if (paramsBuilder_ == null) {
@@ -982,7 +982,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.slashing.v1beta1.Slashing.Params.Builder getParamsBuilder() {
         
@@ -990,7 +990,7 @@ public final class QueryOuterClass {
         return getParamsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.slashing.v1beta1.Slashing.ParamsOrBuilder getParamsOrBuilder() {
         if (paramsBuilder_ != null) {
@@ -1001,7 +1001,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.slashing.v1beta1.Slashing.Params, cosmos.slashing.v1beta1.Slashing.Params.Builder, cosmos.slashing.v1beta1.Slashing.ParamsOrBuilder> 
@@ -1692,7 +1692,7 @@ public final class QueryOuterClass {
      * val_signing_info is the signing info of requested val cons address
      * </pre>
      *
-     * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the valSigningInfo field is set.
      */
     boolean hasValSigningInfo();
@@ -1701,7 +1701,7 @@ public final class QueryOuterClass {
      * val_signing_info is the signing info of requested val cons address
      * </pre>
      *
-     * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The valSigningInfo.
      */
     cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo getValSigningInfo();
@@ -1710,7 +1710,7 @@ public final class QueryOuterClass {
      * val_signing_info is the signing info of requested val cons address
      * </pre>
      *
-     * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfoOrBuilder getValSigningInfoOrBuilder();
   }
@@ -1816,7 +1816,7 @@ public final class QueryOuterClass {
      * val_signing_info is the signing info of requested val cons address
      * </pre>
      *
-     * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the valSigningInfo field is set.
      */
     @java.lang.Override
@@ -1828,7 +1828,7 @@ public final class QueryOuterClass {
      * val_signing_info is the signing info of requested val cons address
      * </pre>
      *
-     * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The valSigningInfo.
      */
     @java.lang.Override
@@ -1840,7 +1840,7 @@ public final class QueryOuterClass {
      * val_signing_info is the signing info of requested val cons address
      * </pre>
      *
-     * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfoOrBuilder getValSigningInfoOrBuilder() {
@@ -2175,7 +2175,7 @@ public final class QueryOuterClass {
        * val_signing_info is the signing info of requested val cons address
        * </pre>
        *
-       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the valSigningInfo field is set.
        */
       public boolean hasValSigningInfo() {
@@ -2186,7 +2186,7 @@ public final class QueryOuterClass {
        * val_signing_info is the signing info of requested val cons address
        * </pre>
        *
-       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The valSigningInfo.
        */
       public cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo getValSigningInfo() {
@@ -2201,7 +2201,7 @@ public final class QueryOuterClass {
        * val_signing_info is the signing info of requested val cons address
        * </pre>
        *
-       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setValSigningInfo(cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo value) {
         if (valSigningInfoBuilder_ == null) {
@@ -2221,7 +2221,7 @@ public final class QueryOuterClass {
        * val_signing_info is the signing info of requested val cons address
        * </pre>
        *
-       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setValSigningInfo(
           cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo.Builder builderForValue) {
@@ -2239,7 +2239,7 @@ public final class QueryOuterClass {
        * val_signing_info is the signing info of requested val cons address
        * </pre>
        *
-       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeValSigningInfo(cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo value) {
         if (valSigningInfoBuilder_ == null) {
@@ -2261,7 +2261,7 @@ public final class QueryOuterClass {
        * val_signing_info is the signing info of requested val cons address
        * </pre>
        *
-       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearValSigningInfo() {
         if (valSigningInfoBuilder_ == null) {
@@ -2279,7 +2279,7 @@ public final class QueryOuterClass {
        * val_signing_info is the signing info of requested val cons address
        * </pre>
        *
-       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo.Builder getValSigningInfoBuilder() {
         
@@ -2291,7 +2291,7 @@ public final class QueryOuterClass {
        * val_signing_info is the signing info of requested val cons address
        * </pre>
        *
-       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfoOrBuilder getValSigningInfoOrBuilder() {
         if (valSigningInfoBuilder_ != null) {
@@ -2306,7 +2306,7 @@ public final class QueryOuterClass {
        * val_signing_info is the signing info of requested val cons address
        * </pre>
        *
-       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo val_signing_info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo, cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo.Builder, cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfoOrBuilder> 
@@ -3014,7 +3014,7 @@ public final class QueryOuterClass {
      * info is the signing info of all validators
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo> 
         getInfoList();
@@ -3023,7 +3023,7 @@ public final class QueryOuterClass {
      * info is the signing info of all validators
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo getInfo(int index);
     /**
@@ -3031,7 +3031,7 @@ public final class QueryOuterClass {
      * info is the signing info of all validators
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     int getInfoCount();
     /**
@@ -3039,7 +3039,7 @@ public final class QueryOuterClass {
      * info is the signing info of all validators
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfoOrBuilder> 
         getInfoOrBuilderList();
@@ -3048,7 +3048,7 @@ public final class QueryOuterClass {
      * info is the signing info of all validators
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfoOrBuilder getInfoOrBuilder(
         int index);
@@ -3184,7 +3184,7 @@ public final class QueryOuterClass {
      * info is the signing info of all validators
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo> getInfoList() {
@@ -3195,7 +3195,7 @@ public final class QueryOuterClass {
      * info is the signing info of all validators
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfoOrBuilder> 
@@ -3207,7 +3207,7 @@ public final class QueryOuterClass {
      * info is the signing info of all validators
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getInfoCount() {
@@ -3218,7 +3218,7 @@ public final class QueryOuterClass {
      * info is the signing info of all validators
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo getInfo(int index) {
@@ -3229,7 +3229,7 @@ public final class QueryOuterClass {
      * info is the signing info of all validators
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfoOrBuilder getInfoOrBuilder(
@@ -3657,7 +3657,7 @@ public final class QueryOuterClass {
        * info is the signing info of all validators
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo> getInfoList() {
         if (infoBuilder_ == null) {
@@ -3671,7 +3671,7 @@ public final class QueryOuterClass {
        * info is the signing info of all validators
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public int getInfoCount() {
         if (infoBuilder_ == null) {
@@ -3685,7 +3685,7 @@ public final class QueryOuterClass {
        * info is the signing info of all validators
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo getInfo(int index) {
         if (infoBuilder_ == null) {
@@ -3699,7 +3699,7 @@ public final class QueryOuterClass {
        * info is the signing info of all validators
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setInfo(
           int index, cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo value) {
@@ -3720,7 +3720,7 @@ public final class QueryOuterClass {
        * info is the signing info of all validators
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setInfo(
           int index, cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo.Builder builderForValue) {
@@ -3738,7 +3738,7 @@ public final class QueryOuterClass {
        * info is the signing info of all validators
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addInfo(cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo value) {
         if (infoBuilder_ == null) {
@@ -3758,7 +3758,7 @@ public final class QueryOuterClass {
        * info is the signing info of all validators
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addInfo(
           int index, cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo value) {
@@ -3779,7 +3779,7 @@ public final class QueryOuterClass {
        * info is the signing info of all validators
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addInfo(
           cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo.Builder builderForValue) {
@@ -3797,7 +3797,7 @@ public final class QueryOuterClass {
        * info is the signing info of all validators
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addInfo(
           int index, cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo.Builder builderForValue) {
@@ -3815,7 +3815,7 @@ public final class QueryOuterClass {
        * info is the signing info of all validators
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllInfo(
           java.lang.Iterable<? extends cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo> values) {
@@ -3834,7 +3834,7 @@ public final class QueryOuterClass {
        * info is the signing info of all validators
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearInfo() {
         if (infoBuilder_ == null) {
@@ -3851,7 +3851,7 @@ public final class QueryOuterClass {
        * info is the signing info of all validators
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeInfo(int index) {
         if (infoBuilder_ == null) {
@@ -3868,7 +3868,7 @@ public final class QueryOuterClass {
        * info is the signing info of all validators
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo.Builder getInfoBuilder(
           int index) {
@@ -3879,7 +3879,7 @@ public final class QueryOuterClass {
        * info is the signing info of all validators
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfoOrBuilder getInfoOrBuilder(
           int index) {
@@ -3893,7 +3893,7 @@ public final class QueryOuterClass {
        * info is the signing info of all validators
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfoOrBuilder> 
            getInfoOrBuilderList() {
@@ -3908,7 +3908,7 @@ public final class QueryOuterClass {
        * info is the signing info of all validators
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo.Builder addInfoBuilder() {
         return getInfoFieldBuilder().addBuilder(
@@ -3919,7 +3919,7 @@ public final class QueryOuterClass {
        * info is the signing info of all validators
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo.Builder addInfoBuilder(
           int index) {
@@ -3931,7 +3931,7 @@ public final class QueryOuterClass {
        * info is the signing info of all validators
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorSigningInfo info = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo.Builder> 
            getInfoBuilderList() {
@@ -4167,34 +4167,35 @@ public final class QueryOuterClass {
       "y/v1beta1/pagination.proto\032\024gogoproto/go" +
       "go.proto\032\034google/api/annotations.proto\032&" +
       "cosmos/slashing/v1beta1/slashing.proto\032\031" +
-      "cosmos_proto/cosmos.proto\"\024\n\022QueryParams" +
-      "Request\"L\n\023QueryParamsResponse\0225\n\006params" +
-      "\030\001 \001(\0132\037.cosmos.slashing.v1beta1.ParamsB" +
-      "\004\310\336\037\000\"I\n\027QuerySigningInfoRequest\022.\n\014cons" +
-      "_address\030\001 \001(\tB\030\322\264-\024cosmos.AddressString" +
-      "\"i\n\030QuerySigningInfoResponse\022M\n\020val_sign" +
-      "ing_info\030\001 \001(\0132-.cosmos.slashing.v1beta1" +
-      ".ValidatorSigningInfoB\004\310\336\037\000\"V\n\030QuerySign" +
-      "ingInfosRequest\022:\n\npagination\030\001 \001(\0132&.co" +
-      "smos.base.query.v1beta1.PageRequest\"\233\001\n\031" +
-      "QuerySigningInfosResponse\022A\n\004info\030\001 \003(\0132" +
-      "-.cosmos.slashing.v1beta1.ValidatorSigni" +
-      "ngInfoB\004\310\336\037\000\022;\n\npagination\030\002 \001(\0132\'.cosmo" +
-      "s.base.query.v1beta1.PageResponse2\362\003\n\005Qu" +
-      "ery\022\214\001\n\006Params\022+.cosmos.slashing.v1beta1" +
-      ".QueryParamsRequest\032,.cosmos.slashing.v1" +
-      "beta1.QueryParamsResponse\"\'\202\323\344\223\002!\022\037/cosm" +
-      "os/slashing/v1beta1/params\022\261\001\n\013SigningIn" +
-      "fo\0220.cosmos.slashing.v1beta1.QuerySignin" +
-      "gInfoRequest\0321.cosmos.slashing.v1beta1.Q" +
-      "uerySigningInfoResponse\"=\202\323\344\223\0027\0225/cosmos" +
-      "/slashing/v1beta1/signing_infos/{cons_ad" +
-      "dress}\022\245\001\n\014SigningInfos\0221.cosmos.slashin" +
-      "g.v1beta1.QuerySigningInfosRequest\0322.cos" +
-      "mos.slashing.v1beta1.QuerySigningInfosRe" +
-      "sponse\".\202\323\344\223\002(\022&/cosmos/slashing/v1beta1" +
-      "/signing_infosB/Z-github.com/cosmos/cosm" +
-      "os-sdk/x/slashing/typesb\006proto3"
+      "cosmos_proto/cosmos.proto\032\021amino/amino.p" +
+      "roto\"\024\n\022QueryParamsRequest\"Q\n\023QueryParam" +
+      "sResponse\022:\n\006params\030\001 \001(\0132\037.cosmos.slash" +
+      "ing.v1beta1.ParamsB\t\310\336\037\000\250\347\260*\001\"I\n\027QuerySi" +
+      "gningInfoRequest\022.\n\014cons_address\030\001 \001(\tB\030" +
+      "\322\264-\024cosmos.AddressString\"n\n\030QuerySigning" +
+      "InfoResponse\022R\n\020val_signing_info\030\001 \001(\0132-" +
+      ".cosmos.slashing.v1beta1.ValidatorSignin" +
+      "gInfoB\t\310\336\037\000\250\347\260*\001\"V\n\030QuerySigningInfosReq" +
+      "uest\022:\n\npagination\030\001 \001(\0132&.cosmos.base.q" +
+      "uery.v1beta1.PageRequest\"\240\001\n\031QuerySignin" +
+      "gInfosResponse\022F\n\004info\030\001 \003(\0132-.cosmos.sl" +
+      "ashing.v1beta1.ValidatorSigningInfoB\t\310\336\037" +
+      "\000\250\347\260*\001\022;\n\npagination\030\002 \001(\0132\'.cosmos.base" +
+      ".query.v1beta1.PageResponse2\362\003\n\005Query\022\214\001" +
+      "\n\006Params\022+.cosmos.slashing.v1beta1.Query" +
+      "ParamsRequest\032,.cosmos.slashing.v1beta1." +
+      "QueryParamsResponse\"\'\202\323\344\223\002!\022\037/cosmos/sla" +
+      "shing/v1beta1/params\022\261\001\n\013SigningInfo\0220.c" +
+      "osmos.slashing.v1beta1.QuerySigningInfoR" +
+      "equest\0321.cosmos.slashing.v1beta1.QuerySi" +
+      "gningInfoResponse\"=\202\323\344\223\0027\0225/cosmos/slash" +
+      "ing/v1beta1/signing_infos/{cons_address}" +
+      "\022\245\001\n\014SigningInfos\0221.cosmos.slashing.v1be" +
+      "ta1.QuerySigningInfosRequest\0322.cosmos.sl" +
+      "ashing.v1beta1.QuerySigningInfosResponse" +
+      "\".\202\323\344\223\002(\022&/cosmos/slashing/v1beta1/signi" +
+      "ng_infosB/Z-github.com/cosmos/cosmos-sdk" +
+      "/x/slashing/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4204,6 +4205,7 @@ public final class QueryOuterClass {
           com.google.api.AnnotationsProto.getDescriptor(),
           cosmos.slashing.v1beta1.Slashing.getDescriptor(),
           cosmos_proto.Cosmos.getDescriptor(),
+          amino.Amino.getDescriptor(),
         });
     internal_static_cosmos_slashing_v1beta1_QueryParamsRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -4243,6 +4245,7 @@ public final class QueryOuterClass {
         new java.lang.String[] { "Info", "Pagination", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(amino.Amino.dontOmitempty);
     registry.add(cosmos_proto.Cosmos.scalar);
     registry.add(com.google.protobuf2.GoGoProtos.nullable);
     registry.add(com.google.api.AnnotationsProto.http);
@@ -4253,6 +4256,7 @@ public final class QueryOuterClass {
     com.google.api.AnnotationsProto.getDescriptor();
     cosmos.slashing.v1beta1.Slashing.getDescriptor();
     cosmos_proto.Cosmos.getDescriptor();
+    amino.Amino.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

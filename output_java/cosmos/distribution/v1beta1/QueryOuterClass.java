@@ -449,7 +449,7 @@ public final class QueryOuterClass {
      * params defines the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the params field is set.
      */
     boolean hasParams();
@@ -458,7 +458,7 @@ public final class QueryOuterClass {
      * params defines the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The params.
      */
     cosmos.distribution.v1beta1.Distribution.Params getParams();
@@ -467,7 +467,7 @@ public final class QueryOuterClass {
      * params defines the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.distribution.v1beta1.Distribution.ParamsOrBuilder getParamsOrBuilder();
   }
@@ -572,7 +572,7 @@ public final class QueryOuterClass {
      * params defines the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the params field is set.
      */
     @java.lang.Override
@@ -584,7 +584,7 @@ public final class QueryOuterClass {
      * params defines the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The params.
      */
     @java.lang.Override
@@ -596,7 +596,7 @@ public final class QueryOuterClass {
      * params defines the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.distribution.v1beta1.Distribution.ParamsOrBuilder getParamsOrBuilder() {
@@ -930,7 +930,7 @@ public final class QueryOuterClass {
        * params defines the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the params field is set.
        */
       public boolean hasParams() {
@@ -941,7 +941,7 @@ public final class QueryOuterClass {
        * params defines the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The params.
        */
       public cosmos.distribution.v1beta1.Distribution.Params getParams() {
@@ -956,7 +956,7 @@ public final class QueryOuterClass {
        * params defines the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setParams(cosmos.distribution.v1beta1.Distribution.Params value) {
         if (paramsBuilder_ == null) {
@@ -976,7 +976,7 @@ public final class QueryOuterClass {
        * params defines the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setParams(
           cosmos.distribution.v1beta1.Distribution.Params.Builder builderForValue) {
@@ -994,7 +994,7 @@ public final class QueryOuterClass {
        * params defines the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeParams(cosmos.distribution.v1beta1.Distribution.Params value) {
         if (paramsBuilder_ == null) {
@@ -1016,7 +1016,7 @@ public final class QueryOuterClass {
        * params defines the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearParams() {
         if (paramsBuilder_ == null) {
@@ -1034,7 +1034,7 @@ public final class QueryOuterClass {
        * params defines the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.distribution.v1beta1.Distribution.Params.Builder getParamsBuilder() {
         
@@ -1046,7 +1046,7 @@ public final class QueryOuterClass {
        * params defines the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.distribution.v1beta1.Distribution.ParamsOrBuilder getParamsOrBuilder() {
         if (paramsBuilder_ != null) {
@@ -1061,7 +1061,7 @@ public final class QueryOuterClass {
        * params defines the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.distribution.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.distribution.v1beta1.Distribution.Params, cosmos.distribution.v1beta1.Distribution.Params.Builder, cosmos.distribution.v1beta1.Distribution.ParamsOrBuilder> 
@@ -1124,6 +1124,2201 @@ public final class QueryOuterClass {
 
     @java.lang.Override
     public cosmos.distribution.v1beta1.QueryOuterClass.QueryParamsResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface QueryValidatorDistributionInfoRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.distribution.v1beta1.QueryValidatorDistributionInfoRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * validator_address defines the validator address to query for.
+     * </pre>
+     *
+     * <code>string validator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The validatorAddress.
+     */
+    java.lang.String getValidatorAddress();
+    /**
+     * <pre>
+     * validator_address defines the validator address to query for.
+     * </pre>
+     *
+     * <code>string validator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for validatorAddress.
+     */
+    com.google.protobuf.ByteString
+        getValidatorAddressBytes();
+  }
+  /**
+   * <pre>
+   * QueryValidatorDistributionInfoRequest is the request type for the Query/ValidatorDistributionInfo RPC method.
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.distribution.v1beta1.QueryValidatorDistributionInfoRequest}
+   */
+  public static final class QueryValidatorDistributionInfoRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.distribution.v1beta1.QueryValidatorDistributionInfoRequest)
+      QueryValidatorDistributionInfoRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use QueryValidatorDistributionInfoRequest.newBuilder() to construct.
+    private QueryValidatorDistributionInfoRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private QueryValidatorDistributionInfoRequest() {
+      validatorAddress_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryValidatorDistributionInfoRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private QueryValidatorDistributionInfoRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              validatorAddress_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.distribution.v1beta1.QueryOuterClass.internal_static_cosmos_distribution_v1beta1_QueryValidatorDistributionInfoRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.distribution.v1beta1.QueryOuterClass.internal_static_cosmos_distribution_v1beta1_QueryValidatorDistributionInfoRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest.class, cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest.Builder.class);
+    }
+
+    public static final int VALIDATOR_ADDRESS_FIELD_NUMBER = 1;
+    private volatile java.lang.Object validatorAddress_;
+    /**
+     * <pre>
+     * validator_address defines the validator address to query for.
+     * </pre>
+     *
+     * <code>string validator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The validatorAddress.
+     */
+    @java.lang.Override
+    public java.lang.String getValidatorAddress() {
+      java.lang.Object ref = validatorAddress_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        validatorAddress_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * validator_address defines the validator address to query for.
+     * </pre>
+     *
+     * <code>string validator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for validatorAddress.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getValidatorAddressBytes() {
+      java.lang.Object ref = validatorAddress_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        validatorAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getValidatorAddressBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, validatorAddress_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getValidatorAddressBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, validatorAddress_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest)) {
+        return super.equals(obj);
+      }
+      cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest other = (cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest) obj;
+
+      if (!getValidatorAddress()
+          .equals(other.getValidatorAddress())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + VALIDATOR_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getValidatorAddress().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * QueryValidatorDistributionInfoRequest is the request type for the Query/ValidatorDistributionInfo RPC method.
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.distribution.v1beta1.QueryValidatorDistributionInfoRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.distribution.v1beta1.QueryValidatorDistributionInfoRequest)
+        cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.distribution.v1beta1.QueryOuterClass.internal_static_cosmos_distribution_v1beta1_QueryValidatorDistributionInfoRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.distribution.v1beta1.QueryOuterClass.internal_static_cosmos_distribution_v1beta1_QueryValidatorDistributionInfoRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest.class, cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest.Builder.class);
+      }
+
+      // Construct using cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        validatorAddress_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.distribution.v1beta1.QueryOuterClass.internal_static_cosmos_distribution_v1beta1_QueryValidatorDistributionInfoRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest getDefaultInstanceForType() {
+        return cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest build() {
+        cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest buildPartial() {
+        cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest result = new cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest(this);
+        result.validatorAddress_ = validatorAddress_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest) {
+          return mergeFrom((cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest other) {
+        if (other == cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest.getDefaultInstance()) return this;
+        if (!other.getValidatorAddress().isEmpty()) {
+          validatorAddress_ = other.validatorAddress_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object validatorAddress_ = "";
+      /**
+       * <pre>
+       * validator_address defines the validator address to query for.
+       * </pre>
+       *
+       * <code>string validator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The validatorAddress.
+       */
+      public java.lang.String getValidatorAddress() {
+        java.lang.Object ref = validatorAddress_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          validatorAddress_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * validator_address defines the validator address to query for.
+       * </pre>
+       *
+       * <code>string validator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The bytes for validatorAddress.
+       */
+      public com.google.protobuf.ByteString
+          getValidatorAddressBytes() {
+        java.lang.Object ref = validatorAddress_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          validatorAddress_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * validator_address defines the validator address to query for.
+       * </pre>
+       *
+       * <code>string validator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The validatorAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValidatorAddress(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        validatorAddress_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * validator_address defines the validator address to query for.
+       * </pre>
+       *
+       * <code>string validator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearValidatorAddress() {
+        
+        validatorAddress_ = getDefaultInstance().getValidatorAddress();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * validator_address defines the validator address to query for.
+       * </pre>
+       *
+       * <code>string validator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The bytes for validatorAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValidatorAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        validatorAddress_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.distribution.v1beta1.QueryValidatorDistributionInfoRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.distribution.v1beta1.QueryValidatorDistributionInfoRequest)
+    private static final cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest();
+    }
+
+    public static cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QueryValidatorDistributionInfoRequest>
+        PARSER = new com.google.protobuf.AbstractParser<QueryValidatorDistributionInfoRequest>() {
+      @java.lang.Override
+      public QueryValidatorDistributionInfoRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new QueryValidatorDistributionInfoRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<QueryValidatorDistributionInfoRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QueryValidatorDistributionInfoRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface QueryValidatorDistributionInfoResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.distribution.v1beta1.QueryValidatorDistributionInfoResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * operator_address defines the validator operator address.
+     * </pre>
+     *
+     * <code>string operator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The operatorAddress.
+     */
+    java.lang.String getOperatorAddress();
+    /**
+     * <pre>
+     * operator_address defines the validator operator address.
+     * </pre>
+     *
+     * <code>string operator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for operatorAddress.
+     */
+    com.google.protobuf.ByteString
+        getOperatorAddressBytes();
+
+    /**
+     * <pre>
+     * self_bond_rewards defines the self delegations rewards.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.DecCoin self_bond_rewards = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
+     */
+    java.util.List<cosmos.base.v1beta1.CoinOuterClass.DecCoin> 
+        getSelfBondRewardsList();
+    /**
+     * <pre>
+     * self_bond_rewards defines the self delegations rewards.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.DecCoin self_bond_rewards = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
+     */
+    cosmos.base.v1beta1.CoinOuterClass.DecCoin getSelfBondRewards(int index);
+    /**
+     * <pre>
+     * self_bond_rewards defines the self delegations rewards.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.DecCoin self_bond_rewards = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
+     */
+    int getSelfBondRewardsCount();
+    /**
+     * <pre>
+     * self_bond_rewards defines the self delegations rewards.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.DecCoin self_bond_rewards = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
+     */
+    java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder> 
+        getSelfBondRewardsOrBuilderList();
+    /**
+     * <pre>
+     * self_bond_rewards defines the self delegations rewards.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.DecCoin self_bond_rewards = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
+     */
+    cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder getSelfBondRewardsOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * commission defines the commission the validator received.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.DecCoin commission = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     */
+    java.util.List<cosmos.base.v1beta1.CoinOuterClass.DecCoin> 
+        getCommissionList();
+    /**
+     * <pre>
+     * commission defines the commission the validator received.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.DecCoin commission = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     */
+    cosmos.base.v1beta1.CoinOuterClass.DecCoin getCommission(int index);
+    /**
+     * <pre>
+     * commission defines the commission the validator received.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.DecCoin commission = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     */
+    int getCommissionCount();
+    /**
+     * <pre>
+     * commission defines the commission the validator received.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.DecCoin commission = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     */
+    java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder> 
+        getCommissionOrBuilderList();
+    /**
+     * <pre>
+     * commission defines the commission the validator received.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.DecCoin commission = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     */
+    cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder getCommissionOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * QueryValidatorDistributionInfoResponse is the response type for the Query/ValidatorDistributionInfo RPC method.
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.distribution.v1beta1.QueryValidatorDistributionInfoResponse}
+   */
+  public static final class QueryValidatorDistributionInfoResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.distribution.v1beta1.QueryValidatorDistributionInfoResponse)
+      QueryValidatorDistributionInfoResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use QueryValidatorDistributionInfoResponse.newBuilder() to construct.
+    private QueryValidatorDistributionInfoResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private QueryValidatorDistributionInfoResponse() {
+      operatorAddress_ = "";
+      selfBondRewards_ = java.util.Collections.emptyList();
+      commission_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryValidatorDistributionInfoResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private QueryValidatorDistributionInfoResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              operatorAddress_ = s;
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                selfBondRewards_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.DecCoin>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              selfBondRewards_.add(
+                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.DecCoin.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                commission_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.DecCoin>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              commission_.add(
+                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.DecCoin.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          selfBondRewards_ = java.util.Collections.unmodifiableList(selfBondRewards_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          commission_ = java.util.Collections.unmodifiableList(commission_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.distribution.v1beta1.QueryOuterClass.internal_static_cosmos_distribution_v1beta1_QueryValidatorDistributionInfoResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.distribution.v1beta1.QueryOuterClass.internal_static_cosmos_distribution_v1beta1_QueryValidatorDistributionInfoResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse.class, cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse.Builder.class);
+    }
+
+    public static final int OPERATOR_ADDRESS_FIELD_NUMBER = 1;
+    private volatile java.lang.Object operatorAddress_;
+    /**
+     * <pre>
+     * operator_address defines the validator operator address.
+     * </pre>
+     *
+     * <code>string operator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The operatorAddress.
+     */
+    @java.lang.Override
+    public java.lang.String getOperatorAddress() {
+      java.lang.Object ref = operatorAddress_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        operatorAddress_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * operator_address defines the validator operator address.
+     * </pre>
+     *
+     * <code>string operator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for operatorAddress.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOperatorAddressBytes() {
+      java.lang.Object ref = operatorAddress_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        operatorAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SELF_BOND_REWARDS_FIELD_NUMBER = 2;
+    private java.util.List<cosmos.base.v1beta1.CoinOuterClass.DecCoin> selfBondRewards_;
+    /**
+     * <pre>
+     * self_bond_rewards defines the self delegations rewards.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.DecCoin self_bond_rewards = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
+     */
+    @java.lang.Override
+    public java.util.List<cosmos.base.v1beta1.CoinOuterClass.DecCoin> getSelfBondRewardsList() {
+      return selfBondRewards_;
+    }
+    /**
+     * <pre>
+     * self_bond_rewards defines the self delegations rewards.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.DecCoin self_bond_rewards = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder> 
+        getSelfBondRewardsOrBuilderList() {
+      return selfBondRewards_;
+    }
+    /**
+     * <pre>
+     * self_bond_rewards defines the self delegations rewards.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.DecCoin self_bond_rewards = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
+     */
+    @java.lang.Override
+    public int getSelfBondRewardsCount() {
+      return selfBondRewards_.size();
+    }
+    /**
+     * <pre>
+     * self_bond_rewards defines the self delegations rewards.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.DecCoin self_bond_rewards = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
+     */
+    @java.lang.Override
+    public cosmos.base.v1beta1.CoinOuterClass.DecCoin getSelfBondRewards(int index) {
+      return selfBondRewards_.get(index);
+    }
+    /**
+     * <pre>
+     * self_bond_rewards defines the self delegations rewards.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.DecCoin self_bond_rewards = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
+     */
+    @java.lang.Override
+    public cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder getSelfBondRewardsOrBuilder(
+        int index) {
+      return selfBondRewards_.get(index);
+    }
+
+    public static final int COMMISSION_FIELD_NUMBER = 3;
+    private java.util.List<cosmos.base.v1beta1.CoinOuterClass.DecCoin> commission_;
+    /**
+     * <pre>
+     * commission defines the commission the validator received.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.DecCoin commission = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<cosmos.base.v1beta1.CoinOuterClass.DecCoin> getCommissionList() {
+      return commission_;
+    }
+    /**
+     * <pre>
+     * commission defines the commission the validator received.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.DecCoin commission = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder> 
+        getCommissionOrBuilderList() {
+      return commission_;
+    }
+    /**
+     * <pre>
+     * commission defines the commission the validator received.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.DecCoin commission = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     */
+    @java.lang.Override
+    public int getCommissionCount() {
+      return commission_.size();
+    }
+    /**
+     * <pre>
+     * commission defines the commission the validator received.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.DecCoin commission = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     */
+    @java.lang.Override
+    public cosmos.base.v1beta1.CoinOuterClass.DecCoin getCommission(int index) {
+      return commission_.get(index);
+    }
+    /**
+     * <pre>
+     * commission defines the commission the validator received.
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.DecCoin commission = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     */
+    @java.lang.Override
+    public cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder getCommissionOrBuilder(
+        int index) {
+      return commission_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getOperatorAddressBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, operatorAddress_);
+      }
+      for (int i = 0; i < selfBondRewards_.size(); i++) {
+        output.writeMessage(2, selfBondRewards_.get(i));
+      }
+      for (int i = 0; i < commission_.size(); i++) {
+        output.writeMessage(3, commission_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getOperatorAddressBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, operatorAddress_);
+      }
+      for (int i = 0; i < selfBondRewards_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, selfBondRewards_.get(i));
+      }
+      for (int i = 0; i < commission_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, commission_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse)) {
+        return super.equals(obj);
+      }
+      cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse other = (cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse) obj;
+
+      if (!getOperatorAddress()
+          .equals(other.getOperatorAddress())) return false;
+      if (!getSelfBondRewardsList()
+          .equals(other.getSelfBondRewardsList())) return false;
+      if (!getCommissionList()
+          .equals(other.getCommissionList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OPERATOR_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getOperatorAddress().hashCode();
+      if (getSelfBondRewardsCount() > 0) {
+        hash = (37 * hash) + SELF_BOND_REWARDS_FIELD_NUMBER;
+        hash = (53 * hash) + getSelfBondRewardsList().hashCode();
+      }
+      if (getCommissionCount() > 0) {
+        hash = (37 * hash) + COMMISSION_FIELD_NUMBER;
+        hash = (53 * hash) + getCommissionList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * QueryValidatorDistributionInfoResponse is the response type for the Query/ValidatorDistributionInfo RPC method.
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.distribution.v1beta1.QueryValidatorDistributionInfoResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.distribution.v1beta1.QueryValidatorDistributionInfoResponse)
+        cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.distribution.v1beta1.QueryOuterClass.internal_static_cosmos_distribution_v1beta1_QueryValidatorDistributionInfoResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.distribution.v1beta1.QueryOuterClass.internal_static_cosmos_distribution_v1beta1_QueryValidatorDistributionInfoResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse.class, cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse.Builder.class);
+      }
+
+      // Construct using cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getSelfBondRewardsFieldBuilder();
+          getCommissionFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        operatorAddress_ = "";
+
+        if (selfBondRewardsBuilder_ == null) {
+          selfBondRewards_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          selfBondRewardsBuilder_.clear();
+        }
+        if (commissionBuilder_ == null) {
+          commission_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          commissionBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.distribution.v1beta1.QueryOuterClass.internal_static_cosmos_distribution_v1beta1_QueryValidatorDistributionInfoResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse getDefaultInstanceForType() {
+        return cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse build() {
+        cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse buildPartial() {
+        cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse result = new cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse(this);
+        int from_bitField0_ = bitField0_;
+        result.operatorAddress_ = operatorAddress_;
+        if (selfBondRewardsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            selfBondRewards_ = java.util.Collections.unmodifiableList(selfBondRewards_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.selfBondRewards_ = selfBondRewards_;
+        } else {
+          result.selfBondRewards_ = selfBondRewardsBuilder_.build();
+        }
+        if (commissionBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            commission_ = java.util.Collections.unmodifiableList(commission_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.commission_ = commission_;
+        } else {
+          result.commission_ = commissionBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse) {
+          return mergeFrom((cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse other) {
+        if (other == cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse.getDefaultInstance()) return this;
+        if (!other.getOperatorAddress().isEmpty()) {
+          operatorAddress_ = other.operatorAddress_;
+          onChanged();
+        }
+        if (selfBondRewardsBuilder_ == null) {
+          if (!other.selfBondRewards_.isEmpty()) {
+            if (selfBondRewards_.isEmpty()) {
+              selfBondRewards_ = other.selfBondRewards_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureSelfBondRewardsIsMutable();
+              selfBondRewards_.addAll(other.selfBondRewards_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.selfBondRewards_.isEmpty()) {
+            if (selfBondRewardsBuilder_.isEmpty()) {
+              selfBondRewardsBuilder_.dispose();
+              selfBondRewardsBuilder_ = null;
+              selfBondRewards_ = other.selfBondRewards_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              selfBondRewardsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getSelfBondRewardsFieldBuilder() : null;
+            } else {
+              selfBondRewardsBuilder_.addAllMessages(other.selfBondRewards_);
+            }
+          }
+        }
+        if (commissionBuilder_ == null) {
+          if (!other.commission_.isEmpty()) {
+            if (commission_.isEmpty()) {
+              commission_ = other.commission_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureCommissionIsMutable();
+              commission_.addAll(other.commission_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.commission_.isEmpty()) {
+            if (commissionBuilder_.isEmpty()) {
+              commissionBuilder_.dispose();
+              commissionBuilder_ = null;
+              commission_ = other.commission_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              commissionBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getCommissionFieldBuilder() : null;
+            } else {
+              commissionBuilder_.addAllMessages(other.commission_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object operatorAddress_ = "";
+      /**
+       * <pre>
+       * operator_address defines the validator operator address.
+       * </pre>
+       *
+       * <code>string operator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The operatorAddress.
+       */
+      public java.lang.String getOperatorAddress() {
+        java.lang.Object ref = operatorAddress_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          operatorAddress_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * operator_address defines the validator operator address.
+       * </pre>
+       *
+       * <code>string operator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The bytes for operatorAddress.
+       */
+      public com.google.protobuf.ByteString
+          getOperatorAddressBytes() {
+        java.lang.Object ref = operatorAddress_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          operatorAddress_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * operator_address defines the validator operator address.
+       * </pre>
+       *
+       * <code>string operator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The operatorAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOperatorAddress(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        operatorAddress_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * operator_address defines the validator operator address.
+       * </pre>
+       *
+       * <code>string operator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOperatorAddress() {
+        
+        operatorAddress_ = getDefaultInstance().getOperatorAddress();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * operator_address defines the validator operator address.
+       * </pre>
+       *
+       * <code>string operator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The bytes for operatorAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOperatorAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        operatorAddress_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<cosmos.base.v1beta1.CoinOuterClass.DecCoin> selfBondRewards_ =
+        java.util.Collections.emptyList();
+      private void ensureSelfBondRewardsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          selfBondRewards_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.DecCoin>(selfBondRewards_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          cosmos.base.v1beta1.CoinOuterClass.DecCoin, cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder, cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder> selfBondRewardsBuilder_;
+
+      /**
+       * <pre>
+       * self_bond_rewards defines the self delegations rewards.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin self_bond_rewards = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
+       */
+      public java.util.List<cosmos.base.v1beta1.CoinOuterClass.DecCoin> getSelfBondRewardsList() {
+        if (selfBondRewardsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(selfBondRewards_);
+        } else {
+          return selfBondRewardsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * self_bond_rewards defines the self delegations rewards.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin self_bond_rewards = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
+       */
+      public int getSelfBondRewardsCount() {
+        if (selfBondRewardsBuilder_ == null) {
+          return selfBondRewards_.size();
+        } else {
+          return selfBondRewardsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * self_bond_rewards defines the self delegations rewards.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin self_bond_rewards = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.DecCoin getSelfBondRewards(int index) {
+        if (selfBondRewardsBuilder_ == null) {
+          return selfBondRewards_.get(index);
+        } else {
+          return selfBondRewardsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * self_bond_rewards defines the self delegations rewards.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin self_bond_rewards = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder setSelfBondRewards(
+          int index, cosmos.base.v1beta1.CoinOuterClass.DecCoin value) {
+        if (selfBondRewardsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSelfBondRewardsIsMutable();
+          selfBondRewards_.set(index, value);
+          onChanged();
+        } else {
+          selfBondRewardsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * self_bond_rewards defines the self delegations rewards.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin self_bond_rewards = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder setSelfBondRewards(
+          int index, cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder builderForValue) {
+        if (selfBondRewardsBuilder_ == null) {
+          ensureSelfBondRewardsIsMutable();
+          selfBondRewards_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          selfBondRewardsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * self_bond_rewards defines the self delegations rewards.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin self_bond_rewards = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder addSelfBondRewards(cosmos.base.v1beta1.CoinOuterClass.DecCoin value) {
+        if (selfBondRewardsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSelfBondRewardsIsMutable();
+          selfBondRewards_.add(value);
+          onChanged();
+        } else {
+          selfBondRewardsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * self_bond_rewards defines the self delegations rewards.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin self_bond_rewards = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder addSelfBondRewards(
+          int index, cosmos.base.v1beta1.CoinOuterClass.DecCoin value) {
+        if (selfBondRewardsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSelfBondRewardsIsMutable();
+          selfBondRewards_.add(index, value);
+          onChanged();
+        } else {
+          selfBondRewardsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * self_bond_rewards defines the self delegations rewards.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin self_bond_rewards = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder addSelfBondRewards(
+          cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder builderForValue) {
+        if (selfBondRewardsBuilder_ == null) {
+          ensureSelfBondRewardsIsMutable();
+          selfBondRewards_.add(builderForValue.build());
+          onChanged();
+        } else {
+          selfBondRewardsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * self_bond_rewards defines the self delegations rewards.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin self_bond_rewards = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder addSelfBondRewards(
+          int index, cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder builderForValue) {
+        if (selfBondRewardsBuilder_ == null) {
+          ensureSelfBondRewardsIsMutable();
+          selfBondRewards_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          selfBondRewardsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * self_bond_rewards defines the self delegations rewards.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin self_bond_rewards = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder addAllSelfBondRewards(
+          java.lang.Iterable<? extends cosmos.base.v1beta1.CoinOuterClass.DecCoin> values) {
+        if (selfBondRewardsBuilder_ == null) {
+          ensureSelfBondRewardsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, selfBondRewards_);
+          onChanged();
+        } else {
+          selfBondRewardsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * self_bond_rewards defines the self delegations rewards.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin self_bond_rewards = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder clearSelfBondRewards() {
+        if (selfBondRewardsBuilder_ == null) {
+          selfBondRewards_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          selfBondRewardsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * self_bond_rewards defines the self delegations rewards.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin self_bond_rewards = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder removeSelfBondRewards(int index) {
+        if (selfBondRewardsBuilder_ == null) {
+          ensureSelfBondRewardsIsMutable();
+          selfBondRewards_.remove(index);
+          onChanged();
+        } else {
+          selfBondRewardsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * self_bond_rewards defines the self delegations rewards.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin self_bond_rewards = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder getSelfBondRewardsBuilder(
+          int index) {
+        return getSelfBondRewardsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * self_bond_rewards defines the self delegations rewards.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin self_bond_rewards = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder getSelfBondRewardsOrBuilder(
+          int index) {
+        if (selfBondRewardsBuilder_ == null) {
+          return selfBondRewards_.get(index);  } else {
+          return selfBondRewardsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * self_bond_rewards defines the self delegations rewards.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin self_bond_rewards = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
+       */
+      public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder> 
+           getSelfBondRewardsOrBuilderList() {
+        if (selfBondRewardsBuilder_ != null) {
+          return selfBondRewardsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(selfBondRewards_);
+        }
+      }
+      /**
+       * <pre>
+       * self_bond_rewards defines the self delegations rewards.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin self_bond_rewards = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder addSelfBondRewardsBuilder() {
+        return getSelfBondRewardsFieldBuilder().addBuilder(
+            cosmos.base.v1beta1.CoinOuterClass.DecCoin.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * self_bond_rewards defines the self delegations rewards.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin self_bond_rewards = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder addSelfBondRewardsBuilder(
+          int index) {
+        return getSelfBondRewardsFieldBuilder().addBuilder(
+            index, cosmos.base.v1beta1.CoinOuterClass.DecCoin.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * self_bond_rewards defines the self delegations rewards.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin self_bond_rewards = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
+       */
+      public java.util.List<cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder> 
+           getSelfBondRewardsBuilderList() {
+        return getSelfBondRewardsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          cosmos.base.v1beta1.CoinOuterClass.DecCoin, cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder, cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder> 
+          getSelfBondRewardsFieldBuilder() {
+        if (selfBondRewardsBuilder_ == null) {
+          selfBondRewardsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              cosmos.base.v1beta1.CoinOuterClass.DecCoin, cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder, cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder>(
+                  selfBondRewards_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          selfBondRewards_ = null;
+        }
+        return selfBondRewardsBuilder_;
+      }
+
+      private java.util.List<cosmos.base.v1beta1.CoinOuterClass.DecCoin> commission_ =
+        java.util.Collections.emptyList();
+      private void ensureCommissionIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          commission_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.DecCoin>(commission_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          cosmos.base.v1beta1.CoinOuterClass.DecCoin, cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder, cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder> commissionBuilder_;
+
+      /**
+       * <pre>
+       * commission defines the commission the validator received.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin commission = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       */
+      public java.util.List<cosmos.base.v1beta1.CoinOuterClass.DecCoin> getCommissionList() {
+        if (commissionBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(commission_);
+        } else {
+          return commissionBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * commission defines the commission the validator received.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin commission = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       */
+      public int getCommissionCount() {
+        if (commissionBuilder_ == null) {
+          return commission_.size();
+        } else {
+          return commissionBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * commission defines the commission the validator received.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin commission = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.DecCoin getCommission(int index) {
+        if (commissionBuilder_ == null) {
+          return commission_.get(index);
+        } else {
+          return commissionBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * commission defines the commission the validator received.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin commission = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       */
+      public Builder setCommission(
+          int index, cosmos.base.v1beta1.CoinOuterClass.DecCoin value) {
+        if (commissionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCommissionIsMutable();
+          commission_.set(index, value);
+          onChanged();
+        } else {
+          commissionBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * commission defines the commission the validator received.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin commission = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       */
+      public Builder setCommission(
+          int index, cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder builderForValue) {
+        if (commissionBuilder_ == null) {
+          ensureCommissionIsMutable();
+          commission_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          commissionBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * commission defines the commission the validator received.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin commission = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       */
+      public Builder addCommission(cosmos.base.v1beta1.CoinOuterClass.DecCoin value) {
+        if (commissionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCommissionIsMutable();
+          commission_.add(value);
+          onChanged();
+        } else {
+          commissionBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * commission defines the commission the validator received.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin commission = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       */
+      public Builder addCommission(
+          int index, cosmos.base.v1beta1.CoinOuterClass.DecCoin value) {
+        if (commissionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCommissionIsMutable();
+          commission_.add(index, value);
+          onChanged();
+        } else {
+          commissionBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * commission defines the commission the validator received.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin commission = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       */
+      public Builder addCommission(
+          cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder builderForValue) {
+        if (commissionBuilder_ == null) {
+          ensureCommissionIsMutable();
+          commission_.add(builderForValue.build());
+          onChanged();
+        } else {
+          commissionBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * commission defines the commission the validator received.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin commission = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       */
+      public Builder addCommission(
+          int index, cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder builderForValue) {
+        if (commissionBuilder_ == null) {
+          ensureCommissionIsMutable();
+          commission_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          commissionBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * commission defines the commission the validator received.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin commission = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       */
+      public Builder addAllCommission(
+          java.lang.Iterable<? extends cosmos.base.v1beta1.CoinOuterClass.DecCoin> values) {
+        if (commissionBuilder_ == null) {
+          ensureCommissionIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, commission_);
+          onChanged();
+        } else {
+          commissionBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * commission defines the commission the validator received.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin commission = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       */
+      public Builder clearCommission() {
+        if (commissionBuilder_ == null) {
+          commission_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          commissionBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * commission defines the commission the validator received.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin commission = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       */
+      public Builder removeCommission(int index) {
+        if (commissionBuilder_ == null) {
+          ensureCommissionIsMutable();
+          commission_.remove(index);
+          onChanged();
+        } else {
+          commissionBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * commission defines the commission the validator received.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin commission = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder getCommissionBuilder(
+          int index) {
+        return getCommissionFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * commission defines the commission the validator received.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin commission = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder getCommissionOrBuilder(
+          int index) {
+        if (commissionBuilder_ == null) {
+          return commission_.get(index);  } else {
+          return commissionBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * commission defines the commission the validator received.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin commission = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       */
+      public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder> 
+           getCommissionOrBuilderList() {
+        if (commissionBuilder_ != null) {
+          return commissionBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(commission_);
+        }
+      }
+      /**
+       * <pre>
+       * commission defines the commission the validator received.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin commission = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder addCommissionBuilder() {
+        return getCommissionFieldBuilder().addBuilder(
+            cosmos.base.v1beta1.CoinOuterClass.DecCoin.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * commission defines the commission the validator received.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin commission = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder addCommissionBuilder(
+          int index) {
+        return getCommissionFieldBuilder().addBuilder(
+            index, cosmos.base.v1beta1.CoinOuterClass.DecCoin.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * commission defines the commission the validator received.
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.DecCoin commission = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       */
+      public java.util.List<cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder> 
+           getCommissionBuilderList() {
+        return getCommissionFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          cosmos.base.v1beta1.CoinOuterClass.DecCoin, cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder, cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder> 
+          getCommissionFieldBuilder() {
+        if (commissionBuilder_ == null) {
+          commissionBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              cosmos.base.v1beta1.CoinOuterClass.DecCoin, cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder, cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder>(
+                  commission_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          commission_ = null;
+        }
+        return commissionBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.distribution.v1beta1.QueryValidatorDistributionInfoResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.distribution.v1beta1.QueryValidatorDistributionInfoResponse)
+    private static final cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse();
+    }
+
+    public static cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QueryValidatorDistributionInfoResponse>
+        PARSER = new com.google.protobuf.AbstractParser<QueryValidatorDistributionInfoResponse>() {
+      @java.lang.Override
+      public QueryValidatorDistributionInfoResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new QueryValidatorDistributionInfoResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<QueryValidatorDistributionInfoResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QueryValidatorDistributionInfoResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.distribution.v1beta1.QueryOuterClass.QueryValidatorDistributionInfoResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1748,17 +3943,17 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the rewards field is set.
      */
     boolean hasRewards();
     /**
-     * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The rewards.
      */
     cosmos.distribution.v1beta1.Distribution.ValidatorOutstandingRewards getRewards();
     /**
-     * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.distribution.v1beta1.Distribution.ValidatorOutstandingRewardsOrBuilder getRewardsOrBuilder();
   }
@@ -1860,7 +4055,7 @@ public final class QueryOuterClass {
     public static final int REWARDS_FIELD_NUMBER = 1;
     private cosmos.distribution.v1beta1.Distribution.ValidatorOutstandingRewards rewards_;
     /**
-     * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the rewards field is set.
      */
     @java.lang.Override
@@ -1868,7 +4063,7 @@ public final class QueryOuterClass {
       return rewards_ != null;
     }
     /**
-     * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The rewards.
      */
     @java.lang.Override
@@ -1876,7 +4071,7 @@ public final class QueryOuterClass {
       return rewards_ == null ? cosmos.distribution.v1beta1.Distribution.ValidatorOutstandingRewards.getDefaultInstance() : rewards_;
     }
     /**
-     * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.distribution.v1beta1.Distribution.ValidatorOutstandingRewardsOrBuilder getRewardsOrBuilder() {
@@ -2207,14 +4402,14 @@ public final class QueryOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.distribution.v1beta1.Distribution.ValidatorOutstandingRewards, cosmos.distribution.v1beta1.Distribution.ValidatorOutstandingRewards.Builder, cosmos.distribution.v1beta1.Distribution.ValidatorOutstandingRewardsOrBuilder> rewardsBuilder_;
       /**
-       * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the rewards field is set.
        */
       public boolean hasRewards() {
         return rewardsBuilder_ != null || rewards_ != null;
       }
       /**
-       * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The rewards.
        */
       public cosmos.distribution.v1beta1.Distribution.ValidatorOutstandingRewards getRewards() {
@@ -2225,7 +4420,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setRewards(cosmos.distribution.v1beta1.Distribution.ValidatorOutstandingRewards value) {
         if (rewardsBuilder_ == null) {
@@ -2241,7 +4436,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setRewards(
           cosmos.distribution.v1beta1.Distribution.ValidatorOutstandingRewards.Builder builderForValue) {
@@ -2255,7 +4450,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeRewards(cosmos.distribution.v1beta1.Distribution.ValidatorOutstandingRewards value) {
         if (rewardsBuilder_ == null) {
@@ -2273,7 +4468,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearRewards() {
         if (rewardsBuilder_ == null) {
@@ -2287,7 +4482,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.distribution.v1beta1.Distribution.ValidatorOutstandingRewards.Builder getRewardsBuilder() {
         
@@ -2295,7 +4490,7 @@ public final class QueryOuterClass {
         return getRewardsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.distribution.v1beta1.Distribution.ValidatorOutstandingRewardsOrBuilder getRewardsOrBuilder() {
         if (rewardsBuilder_ != null) {
@@ -2306,7 +4501,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.distribution.v1beta1.ValidatorOutstandingRewards rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.distribution.v1beta1.Distribution.ValidatorOutstandingRewards, cosmos.distribution.v1beta1.Distribution.ValidatorOutstandingRewards.Builder, cosmos.distribution.v1beta1.Distribution.ValidatorOutstandingRewardsOrBuilder> 
@@ -2994,28 +5189,28 @@ public final class QueryOuterClass {
 
     /**
      * <pre>
-     * commission defines the commision the validator received.
+     * commission defines the commission the validator received.
      * </pre>
      *
-     * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the commission field is set.
      */
     boolean hasCommission();
     /**
      * <pre>
-     * commission defines the commision the validator received.
+     * commission defines the commission the validator received.
      * </pre>
      *
-     * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The commission.
      */
     cosmos.distribution.v1beta1.Distribution.ValidatorAccumulatedCommission getCommission();
     /**
      * <pre>
-     * commission defines the commision the validator received.
+     * commission defines the commission the validator received.
      * </pre>
      *
-     * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.distribution.v1beta1.Distribution.ValidatorAccumulatedCommissionOrBuilder getCommissionOrBuilder();
   }
@@ -3118,10 +5313,10 @@ public final class QueryOuterClass {
     private cosmos.distribution.v1beta1.Distribution.ValidatorAccumulatedCommission commission_;
     /**
      * <pre>
-     * commission defines the commision the validator received.
+     * commission defines the commission the validator received.
      * </pre>
      *
-     * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the commission field is set.
      */
     @java.lang.Override
@@ -3130,10 +5325,10 @@ public final class QueryOuterClass {
     }
     /**
      * <pre>
-     * commission defines the commision the validator received.
+     * commission defines the commission the validator received.
      * </pre>
      *
-     * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The commission.
      */
     @java.lang.Override
@@ -3142,10 +5337,10 @@ public final class QueryOuterClass {
     }
     /**
      * <pre>
-     * commission defines the commision the validator received.
+     * commission defines the commission the validator received.
      * </pre>
      *
-     * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.distribution.v1beta1.Distribution.ValidatorAccumulatedCommissionOrBuilder getCommissionOrBuilder() {
@@ -3477,10 +5672,10 @@ public final class QueryOuterClass {
           cosmos.distribution.v1beta1.Distribution.ValidatorAccumulatedCommission, cosmos.distribution.v1beta1.Distribution.ValidatorAccumulatedCommission.Builder, cosmos.distribution.v1beta1.Distribution.ValidatorAccumulatedCommissionOrBuilder> commissionBuilder_;
       /**
        * <pre>
-       * commission defines the commision the validator received.
+       * commission defines the commission the validator received.
        * </pre>
        *
-       * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the commission field is set.
        */
       public boolean hasCommission() {
@@ -3488,10 +5683,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * commission defines the commision the validator received.
+       * commission defines the commission the validator received.
        * </pre>
        *
-       * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The commission.
        */
       public cosmos.distribution.v1beta1.Distribution.ValidatorAccumulatedCommission getCommission() {
@@ -3503,10 +5698,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * commission defines the commision the validator received.
+       * commission defines the commission the validator received.
        * </pre>
        *
-       * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setCommission(cosmos.distribution.v1beta1.Distribution.ValidatorAccumulatedCommission value) {
         if (commissionBuilder_ == null) {
@@ -3523,10 +5718,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * commission defines the commision the validator received.
+       * commission defines the commission the validator received.
        * </pre>
        *
-       * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setCommission(
           cosmos.distribution.v1beta1.Distribution.ValidatorAccumulatedCommission.Builder builderForValue) {
@@ -3541,10 +5736,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * commission defines the commision the validator received.
+       * commission defines the commission the validator received.
        * </pre>
        *
-       * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeCommission(cosmos.distribution.v1beta1.Distribution.ValidatorAccumulatedCommission value) {
         if (commissionBuilder_ == null) {
@@ -3563,10 +5758,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * commission defines the commision the validator received.
+       * commission defines the commission the validator received.
        * </pre>
        *
-       * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearCommission() {
         if (commissionBuilder_ == null) {
@@ -3581,10 +5776,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * commission defines the commision the validator received.
+       * commission defines the commission the validator received.
        * </pre>
        *
-       * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.distribution.v1beta1.Distribution.ValidatorAccumulatedCommission.Builder getCommissionBuilder() {
         
@@ -3593,10 +5788,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * commission defines the commision the validator received.
+       * commission defines the commission the validator received.
        * </pre>
        *
-       * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.distribution.v1beta1.Distribution.ValidatorAccumulatedCommissionOrBuilder getCommissionOrBuilder() {
         if (commissionBuilder_ != null) {
@@ -3608,10 +5803,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * commission defines the commision the validator received.
+       * commission defines the commission the validator received.
        * </pre>
        *
-       * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission commission = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.distribution.v1beta1.Distribution.ValidatorAccumulatedCommission, cosmos.distribution.v1beta1.Distribution.ValidatorAccumulatedCommission.Builder, cosmos.distribution.v1beta1.Distribution.ValidatorAccumulatedCommissionOrBuilder> 
@@ -4747,7 +6942,7 @@ public final class QueryOuterClass {
      * slashes defines the slashes the validator received.
      * </pre>
      *
-     * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.distribution.v1beta1.Distribution.ValidatorSlashEvent> 
         getSlashesList();
@@ -4756,7 +6951,7 @@ public final class QueryOuterClass {
      * slashes defines the slashes the validator received.
      * </pre>
      *
-     * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.distribution.v1beta1.Distribution.ValidatorSlashEvent getSlashes(int index);
     /**
@@ -4764,7 +6959,7 @@ public final class QueryOuterClass {
      * slashes defines the slashes the validator received.
      * </pre>
      *
-     * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     int getSlashesCount();
     /**
@@ -4772,7 +6967,7 @@ public final class QueryOuterClass {
      * slashes defines the slashes the validator received.
      * </pre>
      *
-     * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.distribution.v1beta1.Distribution.ValidatorSlashEventOrBuilder> 
         getSlashesOrBuilderList();
@@ -4781,7 +6976,7 @@ public final class QueryOuterClass {
      * slashes defines the slashes the validator received.
      * </pre>
      *
-     * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.distribution.v1beta1.Distribution.ValidatorSlashEventOrBuilder getSlashesOrBuilder(
         int index);
@@ -4929,7 +7124,7 @@ public final class QueryOuterClass {
      * slashes defines the slashes the validator received.
      * </pre>
      *
-     * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.distribution.v1beta1.Distribution.ValidatorSlashEvent> getSlashesList() {
@@ -4940,7 +7135,7 @@ public final class QueryOuterClass {
      * slashes defines the slashes the validator received.
      * </pre>
      *
-     * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.distribution.v1beta1.Distribution.ValidatorSlashEventOrBuilder> 
@@ -4952,7 +7147,7 @@ public final class QueryOuterClass {
      * slashes defines the slashes the validator received.
      * </pre>
      *
-     * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getSlashesCount() {
@@ -4963,7 +7158,7 @@ public final class QueryOuterClass {
      * slashes defines the slashes the validator received.
      * </pre>
      *
-     * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.distribution.v1beta1.Distribution.ValidatorSlashEvent getSlashes(int index) {
@@ -4974,7 +7169,7 @@ public final class QueryOuterClass {
      * slashes defines the slashes the validator received.
      * </pre>
      *
-     * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.distribution.v1beta1.Distribution.ValidatorSlashEventOrBuilder getSlashesOrBuilder(
@@ -5414,7 +7609,7 @@ public final class QueryOuterClass {
        * slashes defines the slashes the validator received.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.distribution.v1beta1.Distribution.ValidatorSlashEvent> getSlashesList() {
         if (slashesBuilder_ == null) {
@@ -5428,7 +7623,7 @@ public final class QueryOuterClass {
        * slashes defines the slashes the validator received.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public int getSlashesCount() {
         if (slashesBuilder_ == null) {
@@ -5442,7 +7637,7 @@ public final class QueryOuterClass {
        * slashes defines the slashes the validator received.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.distribution.v1beta1.Distribution.ValidatorSlashEvent getSlashes(int index) {
         if (slashesBuilder_ == null) {
@@ -5456,7 +7651,7 @@ public final class QueryOuterClass {
        * slashes defines the slashes the validator received.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setSlashes(
           int index, cosmos.distribution.v1beta1.Distribution.ValidatorSlashEvent value) {
@@ -5477,7 +7672,7 @@ public final class QueryOuterClass {
        * slashes defines the slashes the validator received.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setSlashes(
           int index, cosmos.distribution.v1beta1.Distribution.ValidatorSlashEvent.Builder builderForValue) {
@@ -5495,7 +7690,7 @@ public final class QueryOuterClass {
        * slashes defines the slashes the validator received.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addSlashes(cosmos.distribution.v1beta1.Distribution.ValidatorSlashEvent value) {
         if (slashesBuilder_ == null) {
@@ -5515,7 +7710,7 @@ public final class QueryOuterClass {
        * slashes defines the slashes the validator received.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addSlashes(
           int index, cosmos.distribution.v1beta1.Distribution.ValidatorSlashEvent value) {
@@ -5536,7 +7731,7 @@ public final class QueryOuterClass {
        * slashes defines the slashes the validator received.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addSlashes(
           cosmos.distribution.v1beta1.Distribution.ValidatorSlashEvent.Builder builderForValue) {
@@ -5554,7 +7749,7 @@ public final class QueryOuterClass {
        * slashes defines the slashes the validator received.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addSlashes(
           int index, cosmos.distribution.v1beta1.Distribution.ValidatorSlashEvent.Builder builderForValue) {
@@ -5572,7 +7767,7 @@ public final class QueryOuterClass {
        * slashes defines the slashes the validator received.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllSlashes(
           java.lang.Iterable<? extends cosmos.distribution.v1beta1.Distribution.ValidatorSlashEvent> values) {
@@ -5591,7 +7786,7 @@ public final class QueryOuterClass {
        * slashes defines the slashes the validator received.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearSlashes() {
         if (slashesBuilder_ == null) {
@@ -5608,7 +7803,7 @@ public final class QueryOuterClass {
        * slashes defines the slashes the validator received.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeSlashes(int index) {
         if (slashesBuilder_ == null) {
@@ -5625,7 +7820,7 @@ public final class QueryOuterClass {
        * slashes defines the slashes the validator received.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.distribution.v1beta1.Distribution.ValidatorSlashEvent.Builder getSlashesBuilder(
           int index) {
@@ -5636,7 +7831,7 @@ public final class QueryOuterClass {
        * slashes defines the slashes the validator received.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.distribution.v1beta1.Distribution.ValidatorSlashEventOrBuilder getSlashesOrBuilder(
           int index) {
@@ -5650,7 +7845,7 @@ public final class QueryOuterClass {
        * slashes defines the slashes the validator received.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.distribution.v1beta1.Distribution.ValidatorSlashEventOrBuilder> 
            getSlashesOrBuilderList() {
@@ -5665,7 +7860,7 @@ public final class QueryOuterClass {
        * slashes defines the slashes the validator received.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.distribution.v1beta1.Distribution.ValidatorSlashEvent.Builder addSlashesBuilder() {
         return getSlashesFieldBuilder().addBuilder(
@@ -5676,7 +7871,7 @@ public final class QueryOuterClass {
        * slashes defines the slashes the validator received.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.distribution.v1beta1.Distribution.ValidatorSlashEvent.Builder addSlashesBuilder(
           int index) {
@@ -5688,7 +7883,7 @@ public final class QueryOuterClass {
        * slashes defines the slashes the validator received.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.ValidatorSlashEvent slashes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.distribution.v1beta1.Distribution.ValidatorSlashEvent.Builder> 
            getSlashesBuilderList() {
@@ -6725,7 +8920,7 @@ public final class QueryOuterClass {
      * rewards defines the rewards accrued by a delegation.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.base.v1beta1.CoinOuterClass.DecCoin> 
         getRewardsList();
@@ -6734,7 +8929,7 @@ public final class QueryOuterClass {
      * rewards defines the rewards accrued by a delegation.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.DecCoin getRewards(int index);
     /**
@@ -6742,7 +8937,7 @@ public final class QueryOuterClass {
      * rewards defines the rewards accrued by a delegation.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     int getRewardsCount();
     /**
@@ -6750,7 +8945,7 @@ public final class QueryOuterClass {
      * rewards defines the rewards accrued by a delegation.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder> 
         getRewardsOrBuilderList();
@@ -6759,7 +8954,7 @@ public final class QueryOuterClass {
      * rewards defines the rewards accrued by a delegation.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder getRewardsOrBuilder(
         int index);
@@ -6867,7 +9062,7 @@ public final class QueryOuterClass {
      * rewards defines the rewards accrued by a delegation.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.base.v1beta1.CoinOuterClass.DecCoin> getRewardsList() {
@@ -6878,7 +9073,7 @@ public final class QueryOuterClass {
      * rewards defines the rewards accrued by a delegation.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder> 
@@ -6890,7 +9085,7 @@ public final class QueryOuterClass {
      * rewards defines the rewards accrued by a delegation.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getRewardsCount() {
@@ -6901,7 +9096,7 @@ public final class QueryOuterClass {
      * rewards defines the rewards accrued by a delegation.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.DecCoin getRewards(int index) {
@@ -6912,7 +9107,7 @@ public final class QueryOuterClass {
      * rewards defines the rewards accrued by a delegation.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder getRewardsOrBuilder(
@@ -7284,7 +9479,7 @@ public final class QueryOuterClass {
        * rewards defines the rewards accrued by a delegation.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.DecCoin> getRewardsList() {
         if (rewardsBuilder_ == null) {
@@ -7298,7 +9493,7 @@ public final class QueryOuterClass {
        * rewards defines the rewards accrued by a delegation.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public int getRewardsCount() {
         if (rewardsBuilder_ == null) {
@@ -7312,7 +9507,7 @@ public final class QueryOuterClass {
        * rewards defines the rewards accrued by a delegation.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.DecCoin getRewards(int index) {
         if (rewardsBuilder_ == null) {
@@ -7326,7 +9521,7 @@ public final class QueryOuterClass {
        * rewards defines the rewards accrued by a delegation.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder setRewards(
           int index, cosmos.base.v1beta1.CoinOuterClass.DecCoin value) {
@@ -7347,7 +9542,7 @@ public final class QueryOuterClass {
        * rewards defines the rewards accrued by a delegation.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder setRewards(
           int index, cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder builderForValue) {
@@ -7365,7 +9560,7 @@ public final class QueryOuterClass {
        * rewards defines the rewards accrued by a delegation.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addRewards(cosmos.base.v1beta1.CoinOuterClass.DecCoin value) {
         if (rewardsBuilder_ == null) {
@@ -7385,7 +9580,7 @@ public final class QueryOuterClass {
        * rewards defines the rewards accrued by a delegation.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addRewards(
           int index, cosmos.base.v1beta1.CoinOuterClass.DecCoin value) {
@@ -7406,7 +9601,7 @@ public final class QueryOuterClass {
        * rewards defines the rewards accrued by a delegation.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addRewards(
           cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder builderForValue) {
@@ -7424,7 +9619,7 @@ public final class QueryOuterClass {
        * rewards defines the rewards accrued by a delegation.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addRewards(
           int index, cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder builderForValue) {
@@ -7442,7 +9637,7 @@ public final class QueryOuterClass {
        * rewards defines the rewards accrued by a delegation.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllRewards(
           java.lang.Iterable<? extends cosmos.base.v1beta1.CoinOuterClass.DecCoin> values) {
@@ -7461,7 +9656,7 @@ public final class QueryOuterClass {
        * rewards defines the rewards accrued by a delegation.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearRewards() {
         if (rewardsBuilder_ == null) {
@@ -7478,7 +9673,7 @@ public final class QueryOuterClass {
        * rewards defines the rewards accrued by a delegation.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeRewards(int index) {
         if (rewardsBuilder_ == null) {
@@ -7495,7 +9690,7 @@ public final class QueryOuterClass {
        * rewards defines the rewards accrued by a delegation.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder getRewardsBuilder(
           int index) {
@@ -7506,7 +9701,7 @@ public final class QueryOuterClass {
        * rewards defines the rewards accrued by a delegation.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder getRewardsOrBuilder(
           int index) {
@@ -7520,7 +9715,7 @@ public final class QueryOuterClass {
        * rewards defines the rewards accrued by a delegation.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder> 
            getRewardsOrBuilderList() {
@@ -7535,7 +9730,7 @@ public final class QueryOuterClass {
        * rewards defines the rewards accrued by a delegation.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder addRewardsBuilder() {
         return getRewardsFieldBuilder().addBuilder(
@@ -7546,7 +9741,7 @@ public final class QueryOuterClass {
        * rewards defines the rewards accrued by a delegation.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder addRewardsBuilder(
           int index) {
@@ -7558,7 +9753,7 @@ public final class QueryOuterClass {
        * rewards defines the rewards accrued by a delegation.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin rewards = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder> 
            getRewardsBuilderList() {
@@ -8254,7 +10449,7 @@ public final class QueryOuterClass {
      * rewards defines all the rewards accrued by a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.distribution.v1beta1.Distribution.DelegationDelegatorReward> 
         getRewardsList();
@@ -8263,7 +10458,7 @@ public final class QueryOuterClass {
      * rewards defines all the rewards accrued by a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.distribution.v1beta1.Distribution.DelegationDelegatorReward getRewards(int index);
     /**
@@ -8271,7 +10466,7 @@ public final class QueryOuterClass {
      * rewards defines all the rewards accrued by a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     int getRewardsCount();
     /**
@@ -8279,7 +10474,7 @@ public final class QueryOuterClass {
      * rewards defines all the rewards accrued by a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.distribution.v1beta1.Distribution.DelegationDelegatorRewardOrBuilder> 
         getRewardsOrBuilderList();
@@ -8288,7 +10483,7 @@ public final class QueryOuterClass {
      * rewards defines all the rewards accrued by a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.distribution.v1beta1.Distribution.DelegationDelegatorRewardOrBuilder getRewardsOrBuilder(
         int index);
@@ -8298,7 +10493,7 @@ public final class QueryOuterClass {
      * total defines the sum of all the rewards.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.base.v1beta1.CoinOuterClass.DecCoin> 
         getTotalList();
@@ -8307,7 +10502,7 @@ public final class QueryOuterClass {
      * total defines the sum of all the rewards.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.DecCoin getTotal(int index);
     /**
@@ -8315,7 +10510,7 @@ public final class QueryOuterClass {
      * total defines the sum of all the rewards.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     int getTotalCount();
     /**
@@ -8323,7 +10518,7 @@ public final class QueryOuterClass {
      * total defines the sum of all the rewards.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder> 
         getTotalOrBuilderList();
@@ -8332,7 +10527,7 @@ public final class QueryOuterClass {
      * total defines the sum of all the rewards.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder getTotalOrBuilder(
         int index);
@@ -8453,7 +10648,7 @@ public final class QueryOuterClass {
      * rewards defines all the rewards accrued by a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.distribution.v1beta1.Distribution.DelegationDelegatorReward> getRewardsList() {
@@ -8464,7 +10659,7 @@ public final class QueryOuterClass {
      * rewards defines all the rewards accrued by a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.distribution.v1beta1.Distribution.DelegationDelegatorRewardOrBuilder> 
@@ -8476,7 +10671,7 @@ public final class QueryOuterClass {
      * rewards defines all the rewards accrued by a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getRewardsCount() {
@@ -8487,7 +10682,7 @@ public final class QueryOuterClass {
      * rewards defines all the rewards accrued by a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.distribution.v1beta1.Distribution.DelegationDelegatorReward getRewards(int index) {
@@ -8498,7 +10693,7 @@ public final class QueryOuterClass {
      * rewards defines all the rewards accrued by a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.distribution.v1beta1.Distribution.DelegationDelegatorRewardOrBuilder getRewardsOrBuilder(
@@ -8513,7 +10708,7 @@ public final class QueryOuterClass {
      * total defines the sum of all the rewards.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.base.v1beta1.CoinOuterClass.DecCoin> getTotalList() {
@@ -8524,7 +10719,7 @@ public final class QueryOuterClass {
      * total defines the sum of all the rewards.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder> 
@@ -8536,7 +10731,7 @@ public final class QueryOuterClass {
      * total defines the sum of all the rewards.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getTotalCount() {
@@ -8547,7 +10742,7 @@ public final class QueryOuterClass {
      * total defines the sum of all the rewards.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.DecCoin getTotal(int index) {
@@ -8558,7 +10753,7 @@ public final class QueryOuterClass {
      * total defines the sum of all the rewards.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder getTotalOrBuilder(
@@ -8985,7 +11180,7 @@ public final class QueryOuterClass {
        * rewards defines all the rewards accrued by a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.distribution.v1beta1.Distribution.DelegationDelegatorReward> getRewardsList() {
         if (rewardsBuilder_ == null) {
@@ -8999,7 +11194,7 @@ public final class QueryOuterClass {
        * rewards defines all the rewards accrued by a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public int getRewardsCount() {
         if (rewardsBuilder_ == null) {
@@ -9013,7 +11208,7 @@ public final class QueryOuterClass {
        * rewards defines all the rewards accrued by a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.distribution.v1beta1.Distribution.DelegationDelegatorReward getRewards(int index) {
         if (rewardsBuilder_ == null) {
@@ -9027,7 +11222,7 @@ public final class QueryOuterClass {
        * rewards defines all the rewards accrued by a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setRewards(
           int index, cosmos.distribution.v1beta1.Distribution.DelegationDelegatorReward value) {
@@ -9048,7 +11243,7 @@ public final class QueryOuterClass {
        * rewards defines all the rewards accrued by a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setRewards(
           int index, cosmos.distribution.v1beta1.Distribution.DelegationDelegatorReward.Builder builderForValue) {
@@ -9066,7 +11261,7 @@ public final class QueryOuterClass {
        * rewards defines all the rewards accrued by a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addRewards(cosmos.distribution.v1beta1.Distribution.DelegationDelegatorReward value) {
         if (rewardsBuilder_ == null) {
@@ -9086,7 +11281,7 @@ public final class QueryOuterClass {
        * rewards defines all the rewards accrued by a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addRewards(
           int index, cosmos.distribution.v1beta1.Distribution.DelegationDelegatorReward value) {
@@ -9107,7 +11302,7 @@ public final class QueryOuterClass {
        * rewards defines all the rewards accrued by a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addRewards(
           cosmos.distribution.v1beta1.Distribution.DelegationDelegatorReward.Builder builderForValue) {
@@ -9125,7 +11320,7 @@ public final class QueryOuterClass {
        * rewards defines all the rewards accrued by a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addRewards(
           int index, cosmos.distribution.v1beta1.Distribution.DelegationDelegatorReward.Builder builderForValue) {
@@ -9143,7 +11338,7 @@ public final class QueryOuterClass {
        * rewards defines all the rewards accrued by a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllRewards(
           java.lang.Iterable<? extends cosmos.distribution.v1beta1.Distribution.DelegationDelegatorReward> values) {
@@ -9162,7 +11357,7 @@ public final class QueryOuterClass {
        * rewards defines all the rewards accrued by a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearRewards() {
         if (rewardsBuilder_ == null) {
@@ -9179,7 +11374,7 @@ public final class QueryOuterClass {
        * rewards defines all the rewards accrued by a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeRewards(int index) {
         if (rewardsBuilder_ == null) {
@@ -9196,7 +11391,7 @@ public final class QueryOuterClass {
        * rewards defines all the rewards accrued by a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.distribution.v1beta1.Distribution.DelegationDelegatorReward.Builder getRewardsBuilder(
           int index) {
@@ -9207,7 +11402,7 @@ public final class QueryOuterClass {
        * rewards defines all the rewards accrued by a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.distribution.v1beta1.Distribution.DelegationDelegatorRewardOrBuilder getRewardsOrBuilder(
           int index) {
@@ -9221,7 +11416,7 @@ public final class QueryOuterClass {
        * rewards defines all the rewards accrued by a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.distribution.v1beta1.Distribution.DelegationDelegatorRewardOrBuilder> 
            getRewardsOrBuilderList() {
@@ -9236,7 +11431,7 @@ public final class QueryOuterClass {
        * rewards defines all the rewards accrued by a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.distribution.v1beta1.Distribution.DelegationDelegatorReward.Builder addRewardsBuilder() {
         return getRewardsFieldBuilder().addBuilder(
@@ -9247,7 +11442,7 @@ public final class QueryOuterClass {
        * rewards defines all the rewards accrued by a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.distribution.v1beta1.Distribution.DelegationDelegatorReward.Builder addRewardsBuilder(
           int index) {
@@ -9259,7 +11454,7 @@ public final class QueryOuterClass {
        * rewards defines all the rewards accrued by a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.distribution.v1beta1.DelegationDelegatorReward rewards = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.distribution.v1beta1.Distribution.DelegationDelegatorReward.Builder> 
            getRewardsBuilderList() {
@@ -9297,7 +11492,7 @@ public final class QueryOuterClass {
        * total defines the sum of all the rewards.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.DecCoin> getTotalList() {
         if (totalBuilder_ == null) {
@@ -9311,7 +11506,7 @@ public final class QueryOuterClass {
        * total defines the sum of all the rewards.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public int getTotalCount() {
         if (totalBuilder_ == null) {
@@ -9325,7 +11520,7 @@ public final class QueryOuterClass {
        * total defines the sum of all the rewards.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.DecCoin getTotal(int index) {
         if (totalBuilder_ == null) {
@@ -9339,7 +11534,7 @@ public final class QueryOuterClass {
        * total defines the sum of all the rewards.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder setTotal(
           int index, cosmos.base.v1beta1.CoinOuterClass.DecCoin value) {
@@ -9360,7 +11555,7 @@ public final class QueryOuterClass {
        * total defines the sum of all the rewards.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder setTotal(
           int index, cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder builderForValue) {
@@ -9378,7 +11573,7 @@ public final class QueryOuterClass {
        * total defines the sum of all the rewards.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addTotal(cosmos.base.v1beta1.CoinOuterClass.DecCoin value) {
         if (totalBuilder_ == null) {
@@ -9398,7 +11593,7 @@ public final class QueryOuterClass {
        * total defines the sum of all the rewards.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addTotal(
           int index, cosmos.base.v1beta1.CoinOuterClass.DecCoin value) {
@@ -9419,7 +11614,7 @@ public final class QueryOuterClass {
        * total defines the sum of all the rewards.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addTotal(
           cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder builderForValue) {
@@ -9437,7 +11632,7 @@ public final class QueryOuterClass {
        * total defines the sum of all the rewards.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addTotal(
           int index, cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder builderForValue) {
@@ -9455,7 +11650,7 @@ public final class QueryOuterClass {
        * total defines the sum of all the rewards.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllTotal(
           java.lang.Iterable<? extends cosmos.base.v1beta1.CoinOuterClass.DecCoin> values) {
@@ -9474,7 +11669,7 @@ public final class QueryOuterClass {
        * total defines the sum of all the rewards.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearTotal() {
         if (totalBuilder_ == null) {
@@ -9491,7 +11686,7 @@ public final class QueryOuterClass {
        * total defines the sum of all the rewards.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeTotal(int index) {
         if (totalBuilder_ == null) {
@@ -9508,7 +11703,7 @@ public final class QueryOuterClass {
        * total defines the sum of all the rewards.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder getTotalBuilder(
           int index) {
@@ -9519,7 +11714,7 @@ public final class QueryOuterClass {
        * total defines the sum of all the rewards.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder getTotalOrBuilder(
           int index) {
@@ -9533,7 +11728,7 @@ public final class QueryOuterClass {
        * total defines the sum of all the rewards.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder> 
            getTotalOrBuilderList() {
@@ -9548,7 +11743,7 @@ public final class QueryOuterClass {
        * total defines the sum of all the rewards.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder addTotalBuilder() {
         return getTotalFieldBuilder().addBuilder(
@@ -9559,7 +11754,7 @@ public final class QueryOuterClass {
        * total defines the sum of all the rewards.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder addTotalBuilder(
           int index) {
@@ -9571,7 +11766,7 @@ public final class QueryOuterClass {
        * total defines the sum of all the rewards.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin total = 2 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder> 
            getTotalBuilderList() {
@@ -12639,7 +14834,7 @@ public final class QueryOuterClass {
      * pool defines community pool's coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.base.v1beta1.CoinOuterClass.DecCoin> 
         getPoolList();
@@ -12648,7 +14843,7 @@ public final class QueryOuterClass {
      * pool defines community pool's coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.DecCoin getPool(int index);
     /**
@@ -12656,7 +14851,7 @@ public final class QueryOuterClass {
      * pool defines community pool's coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     int getPoolCount();
     /**
@@ -12664,7 +14859,7 @@ public final class QueryOuterClass {
      * pool defines community pool's coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder> 
         getPoolOrBuilderList();
@@ -12673,7 +14868,7 @@ public final class QueryOuterClass {
      * pool defines community pool's coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder getPoolOrBuilder(
         int index);
@@ -12781,7 +14976,7 @@ public final class QueryOuterClass {
      * pool defines community pool's coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.base.v1beta1.CoinOuterClass.DecCoin> getPoolList() {
@@ -12792,7 +14987,7 @@ public final class QueryOuterClass {
      * pool defines community pool's coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder> 
@@ -12804,7 +14999,7 @@ public final class QueryOuterClass {
      * pool defines community pool's coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getPoolCount() {
@@ -12815,7 +15010,7 @@ public final class QueryOuterClass {
      * pool defines community pool's coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.DecCoin getPool(int index) {
@@ -12826,7 +15021,7 @@ public final class QueryOuterClass {
      * pool defines community pool's coins.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder getPoolOrBuilder(
@@ -13198,7 +15393,7 @@ public final class QueryOuterClass {
        * pool defines community pool's coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.DecCoin> getPoolList() {
         if (poolBuilder_ == null) {
@@ -13212,7 +15407,7 @@ public final class QueryOuterClass {
        * pool defines community pool's coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public int getPoolCount() {
         if (poolBuilder_ == null) {
@@ -13226,7 +15421,7 @@ public final class QueryOuterClass {
        * pool defines community pool's coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.DecCoin getPool(int index) {
         if (poolBuilder_ == null) {
@@ -13240,7 +15435,7 @@ public final class QueryOuterClass {
        * pool defines community pool's coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder setPool(
           int index, cosmos.base.v1beta1.CoinOuterClass.DecCoin value) {
@@ -13261,7 +15456,7 @@ public final class QueryOuterClass {
        * pool defines community pool's coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder setPool(
           int index, cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder builderForValue) {
@@ -13279,7 +15474,7 @@ public final class QueryOuterClass {
        * pool defines community pool's coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addPool(cosmos.base.v1beta1.CoinOuterClass.DecCoin value) {
         if (poolBuilder_ == null) {
@@ -13299,7 +15494,7 @@ public final class QueryOuterClass {
        * pool defines community pool's coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addPool(
           int index, cosmos.base.v1beta1.CoinOuterClass.DecCoin value) {
@@ -13320,7 +15515,7 @@ public final class QueryOuterClass {
        * pool defines community pool's coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addPool(
           cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder builderForValue) {
@@ -13338,7 +15533,7 @@ public final class QueryOuterClass {
        * pool defines community pool's coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addPool(
           int index, cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder builderForValue) {
@@ -13356,7 +15551,7 @@ public final class QueryOuterClass {
        * pool defines community pool's coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllPool(
           java.lang.Iterable<? extends cosmos.base.v1beta1.CoinOuterClass.DecCoin> values) {
@@ -13375,7 +15570,7 @@ public final class QueryOuterClass {
        * pool defines community pool's coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearPool() {
         if (poolBuilder_ == null) {
@@ -13392,7 +15587,7 @@ public final class QueryOuterClass {
        * pool defines community pool's coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder removePool(int index) {
         if (poolBuilder_ == null) {
@@ -13409,7 +15604,7 @@ public final class QueryOuterClass {
        * pool defines community pool's coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder getPoolBuilder(
           int index) {
@@ -13420,7 +15615,7 @@ public final class QueryOuterClass {
        * pool defines community pool's coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder getPoolOrBuilder(
           int index) {
@@ -13434,7 +15629,7 @@ public final class QueryOuterClass {
        * pool defines community pool's coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.DecCoinOrBuilder> 
            getPoolOrBuilderList() {
@@ -13449,7 +15644,7 @@ public final class QueryOuterClass {
        * pool defines community pool's coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder addPoolBuilder() {
         return getPoolFieldBuilder().addBuilder(
@@ -13460,7 +15655,7 @@ public final class QueryOuterClass {
        * pool defines community pool's coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder addPoolBuilder(
           int index) {
@@ -13472,7 +15667,7 @@ public final class QueryOuterClass {
        * pool defines community pool's coins.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.DecCoin pool = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.DecCoin.Builder> 
            getPoolBuilderList() {
@@ -13555,6 +15750,16 @@ public final class QueryOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cosmos_distribution_v1beta1_QueryParamsResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_distribution_v1beta1_QueryValidatorDistributionInfoRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_distribution_v1beta1_QueryValidatorDistributionInfoRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_distribution_v1beta1_QueryValidatorDistributionInfoResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_distribution_v1beta1_QueryValidatorDistributionInfoResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cosmos_distribution_v1beta1_QueryValidatorOutstandingRewardsRequest_descriptor;
   private static final 
@@ -13650,110 +15855,128 @@ public final class QueryOuterClass {
       "proto/gogo.proto\032\034google/api/annotations" +
       ".proto\032\036cosmos/base/v1beta1/coin.proto\032." +
       "cosmos/distribution/v1beta1/distribution" +
-      ".proto\032\031cosmos_proto/cosmos.proto\"\024\n\022Que" +
-      "ryParamsRequest\"P\n\023QueryParamsResponse\0229" +
-      "\n\006params\030\001 \001(\0132#.cosmos.distribution.v1b" +
-      "eta1.ParamsB\004\310\336\037\000\"^\n\'QueryValidatorOutst" +
-      "andingRewardsRequest\0223\n\021validator_addres" +
-      "s\030\001 \001(\tB\030\322\264-\024cosmos.AddressString\"{\n(Que" +
-      "ryValidatorOutstandingRewardsResponse\022O\n" +
-      "\007rewards\030\001 \001(\01328.cosmos.distribution.v1b" +
-      "eta1.ValidatorOutstandingRewardsB\004\310\336\037\000\"V" +
-      "\n\037QueryValidatorCommissionRequest\0223\n\021val" +
-      "idator_address\030\001 \001(\tB\030\322\264-\024cosmos.Address" +
-      "String\"y\n QueryValidatorCommissionRespon" +
-      "se\022U\n\ncommission\030\001 \001(\0132;.cosmos.distribu" +
-      "tion.v1beta1.ValidatorAccumulatedCommiss" +
-      "ionB\004\310\336\037\000\"\311\001\n\034QueryValidatorSlashesReque" +
+      ".proto\032\031cosmos_proto/cosmos.proto\032\021amino" +
+      "/amino.proto\"\024\n\022QueryParamsRequest\"U\n\023Qu" +
+      "eryParamsResponse\022>\n\006params\030\001 \001(\0132#.cosm" +
+      "os.distribution.v1beta1.ParamsB\t\310\336\037\000\250\347\260*" +
+      "\001\"\\\n%QueryValidatorDistributionInfoReque" +
       "st\0223\n\021validator_address\030\001 \001(\tB\030\322\264-\024cosmo" +
-      "s.AddressString\022\027\n\017starting_height\030\002 \001(\004" +
-      "\022\025\n\rending_height\030\003 \001(\004\022:\n\npagination\030\004 " +
-      "\001(\0132&.cosmos.base.query.v1beta1.PageRequ" +
-      "est:\010\210\240\037\000\230\240\037\001\"\245\001\n\035QueryValidatorSlashesR" +
-      "esponse\022G\n\007slashes\030\001 \003(\01320.cosmos.distri" +
-      "bution.v1beta1.ValidatorSlashEventB\004\310\336\037\000" +
-      "\022;\n\npagination\030\002 \001(\0132\'.cosmos.base.query" +
-      ".v1beta1.PageResponse\"\223\001\n\035QueryDelegatio" +
-      "nRewardsRequest\0223\n\021delegator_address\030\001 \001" +
-      "(\tB\030\322\264-\024cosmos.AddressString\0223\n\021validato" +
-      "r_address\030\002 \001(\tB\030\322\264-\024cosmos.AddressStrin" +
-      "g:\010\350\240\037\000\210\240\037\000\"\204\001\n\036QueryDelegationRewardsRe" +
-      "sponse\022b\n\007rewards\030\001 \003(\0132\034.cosmos.base.v1" +
-      "beta1.DecCoinB3\310\336\037\000\252\337\037+github.com/cosmos" +
-      "/cosmos-sdk/types.DecCoins\"c\n\"QueryDeleg" +
-      "ationTotalRewardsRequest\0223\n\021delegator_ad" +
-      "dress\030\001 \001(\tB\030\322\264-\024cosmos.AddressString:\010\350" +
-      "\240\037\000\210\240\037\000\"\326\001\n#QueryDelegationTotalRewardsR" +
-      "esponse\022M\n\007rewards\030\001 \003(\01326.cosmos.distri" +
-      "bution.v1beta1.DelegationDelegatorReward" +
-      "B\004\310\336\037\000\022`\n\005total\030\002 \003(\0132\034.cosmos.base.v1be" +
-      "ta1.DecCoinB3\310\336\037\000\252\337\037+github.com/cosmos/c" +
-      "osmos-sdk/types.DecCoins\"`\n\037QueryDelegat" +
-      "orValidatorsRequest\0223\n\021delegator_address" +
-      "\030\001 \001(\tB\030\322\264-\024cosmos.AddressString:\010\350\240\037\000\210\240" +
-      "\037\000\"@\n QueryDelegatorValidatorsResponse\022\022" +
-      "\n\nvalidators\030\001 \003(\t:\010\350\240\037\000\210\240\037\000\"e\n$QueryDel" +
-      "egatorWithdrawAddressRequest\0223\n\021delegato" +
-      "r_address\030\001 \001(\tB\030\322\264-\024cosmos.AddressStrin" +
-      "g:\010\350\240\037\000\210\240\037\000\"e\n%QueryDelegatorWithdrawAdd" +
-      "ressResponse\0222\n\020withdraw_address\030\001 \001(\tB\030" +
-      "\322\264-\024cosmos.AddressString:\010\350\240\037\000\210\240\037\000\"\033\n\031Qu" +
-      "eryCommunityPoolRequest\"}\n\032QueryCommunit" +
-      "yPoolResponse\022_\n\004pool\030\001 \003(\0132\034.cosmos.bas" +
-      "e.v1beta1.DecCoinB3\252\337\037+github.com/cosmos" +
-      "/cosmos-sdk/types.DecCoins\310\336\037\0002\330\017\n\005Query" +
-      "\022\230\001\n\006Params\022/.cosmos.distribution.v1beta" +
-      "1.QueryParamsRequest\0320.cosmos.distributi" +
-      "on.v1beta1.QueryParamsResponse\"+\202\323\344\223\002%\022#" +
-      "/cosmos/distribution/v1beta1/params\022\203\002\n\033" +
-      "ValidatorOutstandingRewards\022D.cosmos.dis" +
-      "tribution.v1beta1.QueryValidatorOutstand" +
-      "ingRewardsRequest\032E.cosmos.distribution." +
-      "v1beta1.QueryValidatorOutstandingRewards" +
-      "Response\"W\202\323\344\223\002Q\022O/cosmos/distribution/v" +
-      "1beta1/validators/{validator_address}/ou" +
-      "tstanding_rewards\022\342\001\n\023ValidatorCommissio" +
-      "n\022<.cosmos.distribution.v1beta1.QueryVal" +
-      "idatorCommissionRequest\032=.cosmos.distrib" +
-      "ution.v1beta1.QueryValidatorCommissionRe" +
-      "sponse\"N\202\323\344\223\002H\022F/cosmos/distribution/v1b" +
-      "eta1/validators/{validator_address}/comm" +
-      "ission\022\326\001\n\020ValidatorSlashes\0229.cosmos.dis" +
-      "tribution.v1beta1.QueryValidatorSlashesR" +
-      "equest\032:.cosmos.distribution.v1beta1.Que" +
-      "ryValidatorSlashesResponse\"K\202\323\344\223\002E\022C/cos" +
+      "s.AddressString\"\266\002\n&QueryValidatorDistri" +
+      "butionInfoResponse\0222\n\020operator_address\030\001" +
+      " \001(\tB\030\322\264-\024cosmos.AddressString\022q\n\021self_b" +
+      "ond_rewards\030\002 \003(\0132\034.cosmos.base.v1beta1." +
+      "DecCoinB8\310\336\037\000\250\347\260*\001\252\337\037+github.com/cosmos/" +
+      "cosmos-sdk/types.DecCoins\022e\n\ncommission\030" +
+      "\003 \003(\0132\034.cosmos.base.v1beta1.DecCoinB3\252\337\037" +
+      "+github.com/cosmos/cosmos-sdk/types.DecC" +
+      "oins\310\336\037\000\"^\n\'QueryValidatorOutstandingRew" +
+      "ardsRequest\0223\n\021validator_address\030\001 \001(\tB\030" +
+      "\322\264-\024cosmos.AddressString\"\200\001\n(QueryValida" +
+      "torOutstandingRewardsResponse\022T\n\007rewards" +
+      "\030\001 \001(\01328.cosmos.distribution.v1beta1.Val" +
+      "idatorOutstandingRewardsB\t\310\336\037\000\250\347\260*\001\"V\n\037Q" +
+      "ueryValidatorCommissionRequest\0223\n\021valida" +
+      "tor_address\030\001 \001(\tB\030\322\264-\024cosmos.AddressStr" +
+      "ing\"~\n QueryValidatorCommissionResponse\022" +
+      "Z\n\ncommission\030\001 \001(\0132;.cosmos.distributio" +
+      "n.v1beta1.ValidatorAccumulatedCommission" +
+      "B\t\310\336\037\000\250\347\260*\001\"\305\001\n\034QueryValidatorSlashesReq" +
+      "uest\0223\n\021validator_address\030\001 \001(\tB\030\322\264-\024cos" +
+      "mos.AddressString\022\027\n\017starting_height\030\002 \001" +
+      "(\004\022\025\n\rending_height\030\003 \001(\004\022:\n\npagination\030" +
+      "\004 \001(\0132&.cosmos.base.query.v1beta1.PageRe" +
+      "quest:\004\210\240\037\000\"\252\001\n\035QueryValidatorSlashesRes" +
+      "ponse\022L\n\007slashes\030\001 \003(\01320.cosmos.distribu" +
+      "tion.v1beta1.ValidatorSlashEventB\t\310\336\037\000\250\347" +
+      "\260*\001\022;\n\npagination\030\002 \001(\0132\'.cosmos.base.qu" +
+      "ery.v1beta1.PageResponse\"\223\001\n\035QueryDelega" +
+      "tionRewardsRequest\0223\n\021delegator_address\030" +
+      "\001 \001(\tB\030\322\264-\024cosmos.AddressString\0223\n\021valid" +
+      "ator_address\030\002 \001(\tB\030\322\264-\024cosmos.AddressSt" +
+      "ring:\010\350\240\037\000\210\240\037\000\"\211\001\n\036QueryDelegationReward" +
+      "sResponse\022g\n\007rewards\030\001 \003(\0132\034.cosmos.base" +
+      ".v1beta1.DecCoinB8\310\336\037\000\250\347\260*\001\252\337\037+github.co" +
+      "m/cosmos/cosmos-sdk/types.DecCoins\"c\n\"Qu" +
+      "eryDelegationTotalRewardsRequest\0223\n\021dele" +
+      "gator_address\030\001 \001(\tB\030\322\264-\024cosmos.AddressS" +
+      "tring:\010\350\240\037\000\210\240\037\000\"\340\001\n#QueryDelegationTotal" +
+      "RewardsResponse\022R\n\007rewards\030\001 \003(\01326.cosmo" +
+      "s.distribution.v1beta1.DelegationDelegat" +
+      "orRewardB\t\310\336\037\000\250\347\260*\001\022e\n\005total\030\002 \003(\0132\034.cos" +
+      "mos.base.v1beta1.DecCoinB8\310\336\037\000\250\347\260*\001\252\337\037+g" +
+      "ithub.com/cosmos/cosmos-sdk/types.DecCoi" +
+      "ns\"`\n\037QueryDelegatorValidatorsRequest\0223\n" +
+      "\021delegator_address\030\001 \001(\tB\030\322\264-\024cosmos.Add" +
+      "ressString:\010\350\240\037\000\210\240\037\000\"@\n QueryDelegatorVa" +
+      "lidatorsResponse\022\022\n\nvalidators\030\001 \003(\t:\010\350\240" +
+      "\037\000\210\240\037\000\"e\n$QueryDelegatorWithdrawAddressR" +
+      "equest\0223\n\021delegator_address\030\001 \001(\tB\030\322\264-\024c" +
+      "osmos.AddressString:\010\350\240\037\000\210\240\037\000\"e\n%QueryDe" +
+      "legatorWithdrawAddressResponse\0222\n\020withdr" +
+      "aw_address\030\001 \001(\tB\030\322\264-\024cosmos.AddressStri" +
+      "ng:\010\350\240\037\000\210\240\037\000\"\033\n\031QueryCommunityPoolReques" +
+      "t\"\202\001\n\032QueryCommunityPoolResponse\022d\n\004pool" +
+      "\030\001 \003(\0132\034.cosmos.base.v1beta1.DecCoinB8\252\337" +
+      "\037+github.com/cosmos/cosmos-sdk/types.Dec" +
+      "Coins\310\336\037\000\250\347\260*\0012\304\021\n\005Query\022\230\001\n\006Params\022/.co" +
+      "smos.distribution.v1beta1.QueryParamsReq" +
+      "uest\0320.cosmos.distribution.v1beta1.Query" +
+      "ParamsResponse\"+\202\323\344\223\002%\022#/cosmos/distribu" +
+      "tion/v1beta1/params\022\351\001\n\031ValidatorDistrib" +
+      "utionInfo\022B.cosmos.distribution.v1beta1." +
+      "QueryValidatorDistributionInfoRequest\032C." +
+      "cosmos.distribution.v1beta1.QueryValidat" +
+      "orDistributionInfoResponse\"C\202\323\344\223\002=\022;/cos" +
       "mos/distribution/v1beta1/validators/{val" +
-      "idator_address}/slashes\022\355\001\n\021DelegationRe" +
-      "wards\022:.cosmos.distribution.v1beta1.Quer" +
-      "yDelegationRewardsRequest\032;.cosmos.distr" +
+      "idator_address}\022\203\002\n\033ValidatorOutstanding" +
+      "Rewards\022D.cosmos.distribution.v1beta1.Qu" +
+      "eryValidatorOutstandingRewardsRequest\032E." +
+      "cosmos.distribution.v1beta1.QueryValidat" +
+      "orOutstandingRewardsResponse\"W\202\323\344\223\002Q\022O/c" +
+      "osmos/distribution/v1beta1/validators/{v" +
+      "alidator_address}/outstanding_rewards\022\342\001" +
+      "\n\023ValidatorCommission\022<.cosmos.distribut" +
+      "ion.v1beta1.QueryValidatorCommissionRequ" +
+      "est\032=.cosmos.distribution.v1beta1.QueryV" +
+      "alidatorCommissionResponse\"N\202\323\344\223\002H\022F/cos" +
+      "mos/distribution/v1beta1/validators/{val" +
+      "idator_address}/commission\022\326\001\n\020Validator" +
+      "Slashes\0229.cosmos.distribution.v1beta1.Qu" +
+      "eryValidatorSlashesRequest\032:.cosmos.dist" +
+      "ribution.v1beta1.QueryValidatorSlashesRe" +
+      "sponse\"K\202\323\344\223\002E\022C/cosmos/distribution/v1b" +
+      "eta1/validators/{validator_address}/slas" +
+      "hes\022\355\001\n\021DelegationRewards\022:.cosmos.distr" +
       "ibution.v1beta1.QueryDelegationRewardsRe" +
-      "sponse\"_\202\323\344\223\002Y\022W/cosmos/distribution/v1b" +
-      "eta1/delegators/{delegator_address}/rewa" +
-      "rds/{validator_address}\022\350\001\n\026DelegationTo" +
-      "talRewards\022?.cosmos.distribution.v1beta1" +
-      ".QueryDelegationTotalRewardsRequest\032@.co" +
-      "smos.distribution.v1beta1.QueryDelegatio" +
-      "nTotalRewardsResponse\"K\202\323\344\223\002E\022C/cosmos/d" +
-      "istribution/v1beta1/delegators/{delegato" +
-      "r_address}/rewards\022\342\001\n\023DelegatorValidato" +
-      "rs\022<.cosmos.distribution.v1beta1.QueryDe" +
-      "legatorValidatorsRequest\032=.cosmos.distri" +
-      "bution.v1beta1.QueryDelegatorValidatorsR" +
-      "esponse\"N\202\323\344\223\002H\022F/cosmos/distribution/v1" +
-      "beta1/delegators/{delegator_address}/val" +
-      "idators\022\367\001\n\030DelegatorWithdrawAddress\022A.c" +
-      "osmos.distribution.v1beta1.QueryDelegato" +
-      "rWithdrawAddressRequest\032B.cosmos.distrib" +
-      "ution.v1beta1.QueryDelegatorWithdrawAddr" +
-      "essResponse\"T\202\323\344\223\002N\022L/cosmos/distributio" +
-      "n/v1beta1/delegators/{delegator_address}" +
-      "/withdraw_address\022\265\001\n\rCommunityPool\0226.co" +
-      "smos.distribution.v1beta1.QueryCommunity" +
-      "PoolRequest\0327.cosmos.distribution.v1beta" +
-      "1.QueryCommunityPoolResponse\"3\202\323\344\223\002-\022+/c" +
-      "osmos/distribution/v1beta1/community_poo" +
-      "lB3Z1github.com/cosmos/cosmos-sdk/x/dist" +
-      "ribution/typesb\006proto3"
+      "quest\032;.cosmos.distribution.v1beta1.Quer" +
+      "yDelegationRewardsResponse\"_\202\323\344\223\002Y\022W/cos" +
+      "mos/distribution/v1beta1/delegators/{del" +
+      "egator_address}/rewards/{validator_addre" +
+      "ss}\022\350\001\n\026DelegationTotalRewards\022?.cosmos." +
+      "distribution.v1beta1.QueryDelegationTota" +
+      "lRewardsRequest\032@.cosmos.distribution.v1" +
+      "beta1.QueryDelegationTotalRewardsRespons" +
+      "e\"K\202\323\344\223\002E\022C/cosmos/distribution/v1beta1/" +
+      "delegators/{delegator_address}/rewards\022\342" +
+      "\001\n\023DelegatorValidators\022<.cosmos.distribu" +
+      "tion.v1beta1.QueryDelegatorValidatorsReq" +
+      "uest\032=.cosmos.distribution.v1beta1.Query" +
+      "DelegatorValidatorsResponse\"N\202\323\344\223\002H\022F/co" +
+      "smos/distribution/v1beta1/delegators/{de" +
+      "legator_address}/validators\022\367\001\n\030Delegato" +
+      "rWithdrawAddress\022A.cosmos.distribution.v" +
+      "1beta1.QueryDelegatorWithdrawAddressRequ" +
+      "est\032B.cosmos.distribution.v1beta1.QueryD" +
+      "elegatorWithdrawAddressResponse\"T\202\323\344\223\002N\022" +
+      "L/cosmos/distribution/v1beta1/delegators" +
+      "/{delegator_address}/withdraw_address\022\265\001" +
+      "\n\rCommunityPool\0226.cosmos.distribution.v1" +
+      "beta1.QueryCommunityPoolRequest\0327.cosmos" +
+      ".distribution.v1beta1.QueryCommunityPool" +
+      "Response\"3\202\323\344\223\002-\022+/cosmos/distribution/v" +
+      "1beta1/community_poolB3Z1github.com/cosm" +
+      "os/cosmos-sdk/x/distribution/typesb\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -13764,6 +15987,7 @@ public final class QueryOuterClass {
           cosmos.base.v1beta1.CoinOuterClass.getDescriptor(),
           cosmos.distribution.v1beta1.Distribution.getDescriptor(),
           cosmos_proto.Cosmos.getDescriptor(),
+          amino.Amino.getDescriptor(),
         });
     internal_static_cosmos_distribution_v1beta1_QueryParamsRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -13777,109 +16001,121 @@ public final class QueryOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_distribution_v1beta1_QueryParamsResponse_descriptor,
         new java.lang.String[] { "Params", });
-    internal_static_cosmos_distribution_v1beta1_QueryValidatorOutstandingRewardsRequest_descriptor =
+    internal_static_cosmos_distribution_v1beta1_QueryValidatorDistributionInfoRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_cosmos_distribution_v1beta1_QueryValidatorDistributionInfoRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_distribution_v1beta1_QueryValidatorDistributionInfoRequest_descriptor,
+        new java.lang.String[] { "ValidatorAddress", });
+    internal_static_cosmos_distribution_v1beta1_QueryValidatorDistributionInfoResponse_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_cosmos_distribution_v1beta1_QueryValidatorDistributionInfoResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_distribution_v1beta1_QueryValidatorDistributionInfoResponse_descriptor,
+        new java.lang.String[] { "OperatorAddress", "SelfBondRewards", "Commission", });
+    internal_static_cosmos_distribution_v1beta1_QueryValidatorOutstandingRewardsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
     internal_static_cosmos_distribution_v1beta1_QueryValidatorOutstandingRewardsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_distribution_v1beta1_QueryValidatorOutstandingRewardsRequest_descriptor,
         new java.lang.String[] { "ValidatorAddress", });
     internal_static_cosmos_distribution_v1beta1_QueryValidatorOutstandingRewardsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_cosmos_distribution_v1beta1_QueryValidatorOutstandingRewardsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_distribution_v1beta1_QueryValidatorOutstandingRewardsResponse_descriptor,
         new java.lang.String[] { "Rewards", });
     internal_static_cosmos_distribution_v1beta1_QueryValidatorCommissionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_cosmos_distribution_v1beta1_QueryValidatorCommissionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_distribution_v1beta1_QueryValidatorCommissionRequest_descriptor,
         new java.lang.String[] { "ValidatorAddress", });
     internal_static_cosmos_distribution_v1beta1_QueryValidatorCommissionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_cosmos_distribution_v1beta1_QueryValidatorCommissionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_distribution_v1beta1_QueryValidatorCommissionResponse_descriptor,
         new java.lang.String[] { "Commission", });
     internal_static_cosmos_distribution_v1beta1_QueryValidatorSlashesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_cosmos_distribution_v1beta1_QueryValidatorSlashesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_distribution_v1beta1_QueryValidatorSlashesRequest_descriptor,
         new java.lang.String[] { "ValidatorAddress", "StartingHeight", "EndingHeight", "Pagination", });
     internal_static_cosmos_distribution_v1beta1_QueryValidatorSlashesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_cosmos_distribution_v1beta1_QueryValidatorSlashesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_distribution_v1beta1_QueryValidatorSlashesResponse_descriptor,
         new java.lang.String[] { "Slashes", "Pagination", });
     internal_static_cosmos_distribution_v1beta1_QueryDelegationRewardsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_cosmos_distribution_v1beta1_QueryDelegationRewardsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_distribution_v1beta1_QueryDelegationRewardsRequest_descriptor,
         new java.lang.String[] { "DelegatorAddress", "ValidatorAddress", });
     internal_static_cosmos_distribution_v1beta1_QueryDelegationRewardsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_cosmos_distribution_v1beta1_QueryDelegationRewardsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_distribution_v1beta1_QueryDelegationRewardsResponse_descriptor,
         new java.lang.String[] { "Rewards", });
     internal_static_cosmos_distribution_v1beta1_QueryDelegationTotalRewardsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_cosmos_distribution_v1beta1_QueryDelegationTotalRewardsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_distribution_v1beta1_QueryDelegationTotalRewardsRequest_descriptor,
         new java.lang.String[] { "DelegatorAddress", });
     internal_static_cosmos_distribution_v1beta1_QueryDelegationTotalRewardsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_cosmos_distribution_v1beta1_QueryDelegationTotalRewardsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_distribution_v1beta1_QueryDelegationTotalRewardsResponse_descriptor,
         new java.lang.String[] { "Rewards", "Total", });
     internal_static_cosmos_distribution_v1beta1_QueryDelegatorValidatorsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_cosmos_distribution_v1beta1_QueryDelegatorValidatorsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_distribution_v1beta1_QueryDelegatorValidatorsRequest_descriptor,
         new java.lang.String[] { "DelegatorAddress", });
     internal_static_cosmos_distribution_v1beta1_QueryDelegatorValidatorsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_cosmos_distribution_v1beta1_QueryDelegatorValidatorsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_distribution_v1beta1_QueryDelegatorValidatorsResponse_descriptor,
         new java.lang.String[] { "Validators", });
     internal_static_cosmos_distribution_v1beta1_QueryDelegatorWithdrawAddressRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_cosmos_distribution_v1beta1_QueryDelegatorWithdrawAddressRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_distribution_v1beta1_QueryDelegatorWithdrawAddressRequest_descriptor,
         new java.lang.String[] { "DelegatorAddress", });
     internal_static_cosmos_distribution_v1beta1_QueryDelegatorWithdrawAddressResponse_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_cosmos_distribution_v1beta1_QueryDelegatorWithdrawAddressResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_distribution_v1beta1_QueryDelegatorWithdrawAddressResponse_descriptor,
         new java.lang.String[] { "WithdrawAddress", });
     internal_static_cosmos_distribution_v1beta1_QueryCommunityPoolRequest_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_cosmos_distribution_v1beta1_QueryCommunityPoolRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_distribution_v1beta1_QueryCommunityPoolRequest_descriptor,
         new java.lang.String[] { });
     internal_static_cosmos_distribution_v1beta1_QueryCommunityPoolResponse_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_cosmos_distribution_v1beta1_QueryCommunityPoolResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_distribution_v1beta1_QueryCommunityPoolResponse_descriptor,
         new java.lang.String[] { "Pool", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(amino.Amino.dontOmitempty);
     registry.add(cosmos_proto.Cosmos.scalar);
     registry.add(com.google.protobuf2.GoGoProtos.castrepeated);
     registry.add(com.google.protobuf2.GoGoProtos.equal);
     registry.add(com.google.protobuf2.GoGoProtos.goprotoGetters);
-    registry.add(com.google.protobuf2.GoGoProtos.goprotoStringer);
     registry.add(com.google.protobuf2.GoGoProtos.nullable);
     registry.add(com.google.api.AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
@@ -13890,6 +16126,7 @@ public final class QueryOuterClass {
     cosmos.base.v1beta1.CoinOuterClass.getDescriptor();
     cosmos.distribution.v1beta1.Distribution.getDescriptor();
     cosmos_proto.Cosmos.getDescriptor();
+    amino.Amino.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

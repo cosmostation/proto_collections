@@ -24,7 +24,8 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 enum Cosmos_Tx_V1beta1_OrderBy: SwiftProtobuf.Enum {
   typealias RawValue = Int
 
-  /// ORDER_BY_UNSPECIFIED specifies an unknown sorting order. OrderBy defaults to ASC in this case.
+  /// ORDER_BY_UNSPECIFIED specifies an unknown sorting order. OrderBy defaults
+  /// to ASC in this case.
   case unspecified // = 0
 
   /// ORDER_BY_ASC defines ascending order
@@ -71,23 +72,24 @@ extension Cosmos_Tx_V1beta1_OrderBy: CaseIterable {
 
 #endif  // swift(>=4.2)
 
-/// BroadcastMode specifies the broadcast mode for the TxService.Broadcast RPC method.
+/// BroadcastMode specifies the broadcast mode for the TxService.Broadcast RPC
+/// method.
 enum Cosmos_Tx_V1beta1_BroadcastMode: SwiftProtobuf.Enum {
   typealias RawValue = Int
 
   /// zero-value for mode ordering
   case unspecified // = 0
 
-  /// BROADCAST_MODE_BLOCK defines a tx broadcasting mode where the client waits for
-  /// the tx to be committed in a block.
+  /// DEPRECATED: use BROADCAST_MODE_SYNC instead,
+  /// BROADCAST_MODE_BLOCK is not supported by the SDK from v0.47.x onwards.
   case block // = 1
 
-  /// BROADCAST_MODE_SYNC defines a tx broadcasting mode where the client waits for
-  /// a CheckTx execution response only.
+  /// BROADCAST_MODE_SYNC defines a tx broadcasting mode where the client waits
+  /// for a CheckTx execution response only.
   case sync // = 2
 
-  /// BROADCAST_MODE_ASYNC defines a tx broadcasting mode where the client returns
-  /// immediately.
+  /// BROADCAST_MODE_ASYNC defines a tx broadcasting mode where the client
+  /// returns immediately.
   case async // = 3
   case UNRECOGNIZED(Int)
 
@@ -139,9 +141,12 @@ struct Cosmos_Tx_V1beta1_GetTxsEventRequest {
   // methods supported on all messages.
 
   /// events is the list of transaction event type.
+  /// Deprecated post v0.47.x: use query instead, which should contain a valid
+  /// events query.
   var events: [String] = []
 
-  /// pagination defines an pagination for the request.
+  /// pagination defines a pagination for the request.
+  /// Deprecated post v0.46.x: use page and limit instead.
   var pagination: Cosmos_Base_Query_V1beta1_PageRequest {
     get {return _pagination ?? Cosmos_Base_Query_V1beta1_PageRequest()}
     set {_pagination = newValue}
@@ -152,6 +157,20 @@ struct Cosmos_Tx_V1beta1_GetTxsEventRequest {
   mutating func clearPagination() {self._pagination = nil}
 
   var orderBy: Cosmos_Tx_V1beta1_OrderBy = .unspecified
+
+  /// page is the page number to query, starts at 1. If not provided, will
+  /// default to first page.
+  var page: UInt64 = 0
+
+  /// limit is the total number of results to be returned in the result page.
+  /// If left empty it will default to a value to be set by each app.
+  var limit: UInt64 = 0
+
+  /// query defines the transaction event query that is proxied to Tendermint's
+  /// TxSearch RPC method. The query must be valid.
+  ///
+  /// Since Cosmos SDK 0.48
+  var query: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -173,7 +192,8 @@ struct Cosmos_Tx_V1beta1_GetTxsEventResponse {
   /// tx_responses is the list of queried TxResponses.
   var txResponses: [Cosmos_Base_Abci_V1beta1_TxResponse] = []
 
-  /// pagination defines an pagination for the response.
+  /// pagination defines a pagination for the response.
+  /// Deprecated post v0.46.x: use total instead.
   var pagination: Cosmos_Base_Query_V1beta1_PageResponse {
     get {return _pagination ?? Cosmos_Base_Query_V1beta1_PageResponse()}
     set {_pagination = newValue}
@@ -182,6 +202,9 @@ struct Cosmos_Tx_V1beta1_GetTxsEventResponse {
   var hasPagination: Bool {return self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
+
+  /// total is total number of results available
+  var total: UInt64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -344,6 +367,234 @@ struct Cosmos_Tx_V1beta1_GetTxResponse {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
+/// GetBlockWithTxsRequest is the request type for the Service.GetBlockWithTxs
+/// RPC method.
+///
+/// Since: cosmos-sdk 0.45.2
+struct Cosmos_Tx_V1beta1_GetBlockWithTxsRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  /// height is the height of the block to query.
+  var height: Int64 = 0
+
+  /// pagination defines a pagination for the request.
+  var pagination: Cosmos_Base_Query_V1beta1_PageRequest {
+    get {return _pagination ?? Cosmos_Base_Query_V1beta1_PageRequest()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _pagination: Cosmos_Base_Query_V1beta1_PageRequest? = nil
+}
+
+/// GetBlockWithTxsResponse is the response type for the Service.GetBlockWithTxs
+/// method.
+///
+/// Since: cosmos-sdk 0.45.2
+struct Cosmos_Tx_V1beta1_GetBlockWithTxsResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  /// txs are the transactions in the block.
+  var txs: [Cosmos_Tx_V1beta1_Tx] = []
+
+  var blockID: Tendermint_Types_BlockID {
+    get {return _blockID ?? Tendermint_Types_BlockID()}
+    set {_blockID = newValue}
+  }
+  /// Returns true if `blockID` has been explicitly set.
+  var hasBlockID: Bool {return self._blockID != nil}
+  /// Clears the value of `blockID`. Subsequent reads from it will return its default value.
+  mutating func clearBlockID() {self._blockID = nil}
+
+  var block: Tendermint_Types_Block {
+    get {return _block ?? Tendermint_Types_Block()}
+    set {_block = newValue}
+  }
+  /// Returns true if `block` has been explicitly set.
+  var hasBlock: Bool {return self._block != nil}
+  /// Clears the value of `block`. Subsequent reads from it will return its default value.
+  mutating func clearBlock() {self._block = nil}
+
+  /// pagination defines a pagination for the response.
+  var pagination: Cosmos_Base_Query_V1beta1_PageResponse {
+    get {return _pagination ?? Cosmos_Base_Query_V1beta1_PageResponse()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _blockID: Tendermint_Types_BlockID? = nil
+  fileprivate var _block: Tendermint_Types_Block? = nil
+  fileprivate var _pagination: Cosmos_Base_Query_V1beta1_PageResponse? = nil
+}
+
+/// TxDecodeRequest is the request type for the Service.TxDecode
+/// RPC method.
+///
+/// Since: cosmos-sdk 0.47
+struct Cosmos_Tx_V1beta1_TxDecodeRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  /// tx_bytes is the raw transaction.
+  var txBytes: Data = Data()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+/// TxDecodeResponse is the response type for the
+/// Service.TxDecode method.
+///
+/// Since: cosmos-sdk 0.47
+struct Cosmos_Tx_V1beta1_TxDecodeResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  /// tx is the decoded transaction.
+  var tx: Cosmos_Tx_V1beta1_Tx {
+    get {return _tx ?? Cosmos_Tx_V1beta1_Tx()}
+    set {_tx = newValue}
+  }
+  /// Returns true if `tx` has been explicitly set.
+  var hasTx: Bool {return self._tx != nil}
+  /// Clears the value of `tx`. Subsequent reads from it will return its default value.
+  mutating func clearTx() {self._tx = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _tx: Cosmos_Tx_V1beta1_Tx? = nil
+}
+
+/// TxEncodeRequest is the request type for the Service.TxEncode
+/// RPC method.
+///
+/// Since: cosmos-sdk 0.47
+struct Cosmos_Tx_V1beta1_TxEncodeRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  /// tx is the transaction to encode.
+  var tx: Cosmos_Tx_V1beta1_Tx {
+    get {return _tx ?? Cosmos_Tx_V1beta1_Tx()}
+    set {_tx = newValue}
+  }
+  /// Returns true if `tx` has been explicitly set.
+  var hasTx: Bool {return self._tx != nil}
+  /// Clears the value of `tx`. Subsequent reads from it will return its default value.
+  mutating func clearTx() {self._tx = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _tx: Cosmos_Tx_V1beta1_Tx? = nil
+}
+
+/// TxEncodeResponse is the response type for the
+/// Service.TxEncode method.
+///
+/// Since: cosmos-sdk 0.47
+struct Cosmos_Tx_V1beta1_TxEncodeResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  /// tx_bytes is the encoded transaction bytes.
+  var txBytes: Data = Data()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+/// TxEncodeAminoRequest is the request type for the Service.TxEncodeAmino
+/// RPC method.
+///
+/// Since: cosmos-sdk 0.47
+struct Cosmos_Tx_V1beta1_TxEncodeAminoRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var aminoJson: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+/// TxEncodeAminoResponse is the response type for the Service.TxEncodeAmino
+/// RPC method.
+///
+/// Since: cosmos-sdk 0.47
+struct Cosmos_Tx_V1beta1_TxEncodeAminoResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var aminoBinary: Data = Data()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+/// TxDecodeAminoRequest is the request type for the Service.TxDecodeAmino
+/// RPC method.
+///
+/// Since: cosmos-sdk 0.47
+struct Cosmos_Tx_V1beta1_TxDecodeAminoRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var aminoBinary: Data = Data()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+/// TxDecodeAminoResponse is the response type for the Service.TxDecodeAmino
+/// RPC method.
+///
+/// Since: cosmos-sdk 0.47
+struct Cosmos_Tx_V1beta1_TxDecodeAminoResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var aminoJson: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "cosmos.tx.v1beta1"
@@ -371,6 +622,9 @@ extension Cosmos_Tx_V1beta1_GetTxsEventRequest: SwiftProtobuf.Message, SwiftProt
     1: .same(proto: "events"),
     2: .same(proto: "pagination"),
     3: .standard(proto: "order_by"),
+    4: .same(proto: "page"),
+    5: .same(proto: "limit"),
+    6: .same(proto: "query"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -382,6 +636,9 @@ extension Cosmos_Tx_V1beta1_GetTxsEventRequest: SwiftProtobuf.Message, SwiftProt
       case 1: try { try decoder.decodeRepeatedStringField(value: &self.events) }()
       case 2: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       case 3: try { try decoder.decodeSingularEnumField(value: &self.orderBy) }()
+      case 4: try { try decoder.decodeSingularUInt64Field(value: &self.page) }()
+      case 5: try { try decoder.decodeSingularUInt64Field(value: &self.limit) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.query) }()
       default: break
       }
     }
@@ -397,6 +654,15 @@ extension Cosmos_Tx_V1beta1_GetTxsEventRequest: SwiftProtobuf.Message, SwiftProt
     if self.orderBy != .unspecified {
       try visitor.visitSingularEnumField(value: self.orderBy, fieldNumber: 3)
     }
+    if self.page != 0 {
+      try visitor.visitSingularUInt64Field(value: self.page, fieldNumber: 4)
+    }
+    if self.limit != 0 {
+      try visitor.visitSingularUInt64Field(value: self.limit, fieldNumber: 5)
+    }
+    if !self.query.isEmpty {
+      try visitor.visitSingularStringField(value: self.query, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -404,6 +670,9 @@ extension Cosmos_Tx_V1beta1_GetTxsEventRequest: SwiftProtobuf.Message, SwiftProt
     if lhs.events != rhs.events {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.orderBy != rhs.orderBy {return false}
+    if lhs.page != rhs.page {return false}
+    if lhs.limit != rhs.limit {return false}
+    if lhs.query != rhs.query {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -415,6 +684,7 @@ extension Cosmos_Tx_V1beta1_GetTxsEventResponse: SwiftProtobuf.Message, SwiftPro
     1: .same(proto: "txs"),
     2: .standard(proto: "tx_responses"),
     3: .same(proto: "pagination"),
+    4: .same(proto: "total"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -426,6 +696,7 @@ extension Cosmos_Tx_V1beta1_GetTxsEventResponse: SwiftProtobuf.Message, SwiftPro
       case 1: try { try decoder.decodeRepeatedMessageField(value: &self.txs) }()
       case 2: try { try decoder.decodeRepeatedMessageField(value: &self.txResponses) }()
       case 3: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      case 4: try { try decoder.decodeSingularUInt64Field(value: &self.total) }()
       default: break
       }
     }
@@ -441,6 +712,9 @@ extension Cosmos_Tx_V1beta1_GetTxsEventResponse: SwiftProtobuf.Message, SwiftPro
     if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
     }
+    if self.total != 0 {
+      try visitor.visitSingularUInt64Field(value: self.total, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -448,6 +722,7 @@ extension Cosmos_Tx_V1beta1_GetTxsEventResponse: SwiftProtobuf.Message, SwiftPro
     if lhs.txs != rhs.txs {return false}
     if lhs.txResponses != rhs.txResponses {return false}
     if lhs._pagination != rhs._pagination {return false}
+    if lhs.total != rhs.total {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -698,6 +973,350 @@ extension Cosmos_Tx_V1beta1_GetTxResponse: SwiftProtobuf.Message, SwiftProtobuf.
       }
       if !storagesAreEqual {return false}
     }
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Cosmos_Tx_V1beta1_GetBlockWithTxsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetBlockWithTxsRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "height"),
+    2: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.height) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.height != 0 {
+      try visitor.visitSingularInt64Field(value: self.height, fieldNumber: 1)
+    }
+    if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Cosmos_Tx_V1beta1_GetBlockWithTxsRequest, rhs: Cosmos_Tx_V1beta1_GetBlockWithTxsRequest) -> Bool {
+    if lhs.height != rhs.height {return false}
+    if lhs._pagination != rhs._pagination {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Cosmos_Tx_V1beta1_GetBlockWithTxsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetBlockWithTxsResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "txs"),
+    2: .standard(proto: "block_id"),
+    3: .same(proto: "block"),
+    4: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeRepeatedMessageField(value: &self.txs) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._blockID) }()
+      case 3: try { try decoder.decodeSingularMessageField(value: &self._block) }()
+      case 4: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.txs.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.txs, fieldNumber: 1)
+    }
+    if let v = self._blockID {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    }
+    if let v = self._block {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+    }
+    if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Cosmos_Tx_V1beta1_GetBlockWithTxsResponse, rhs: Cosmos_Tx_V1beta1_GetBlockWithTxsResponse) -> Bool {
+    if lhs.txs != rhs.txs {return false}
+    if lhs._blockID != rhs._blockID {return false}
+    if lhs._block != rhs._block {return false}
+    if lhs._pagination != rhs._pagination {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Cosmos_Tx_V1beta1_TxDecodeRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".TxDecodeRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "tx_bytes"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularBytesField(value: &self.txBytes) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.txBytes.isEmpty {
+      try visitor.visitSingularBytesField(value: self.txBytes, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Cosmos_Tx_V1beta1_TxDecodeRequest, rhs: Cosmos_Tx_V1beta1_TxDecodeRequest) -> Bool {
+    if lhs.txBytes != rhs.txBytes {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Cosmos_Tx_V1beta1_TxDecodeResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".TxDecodeResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "tx"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._tx) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if let v = self._tx {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Cosmos_Tx_V1beta1_TxDecodeResponse, rhs: Cosmos_Tx_V1beta1_TxDecodeResponse) -> Bool {
+    if lhs._tx != rhs._tx {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Cosmos_Tx_V1beta1_TxEncodeRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".TxEncodeRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "tx"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._tx) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if let v = self._tx {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Cosmos_Tx_V1beta1_TxEncodeRequest, rhs: Cosmos_Tx_V1beta1_TxEncodeRequest) -> Bool {
+    if lhs._tx != rhs._tx {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Cosmos_Tx_V1beta1_TxEncodeResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".TxEncodeResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "tx_bytes"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularBytesField(value: &self.txBytes) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.txBytes.isEmpty {
+      try visitor.visitSingularBytesField(value: self.txBytes, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Cosmos_Tx_V1beta1_TxEncodeResponse, rhs: Cosmos_Tx_V1beta1_TxEncodeResponse) -> Bool {
+    if lhs.txBytes != rhs.txBytes {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Cosmos_Tx_V1beta1_TxEncodeAminoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".TxEncodeAminoRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "amino_json"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.aminoJson) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.aminoJson.isEmpty {
+      try visitor.visitSingularStringField(value: self.aminoJson, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Cosmos_Tx_V1beta1_TxEncodeAminoRequest, rhs: Cosmos_Tx_V1beta1_TxEncodeAminoRequest) -> Bool {
+    if lhs.aminoJson != rhs.aminoJson {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Cosmos_Tx_V1beta1_TxEncodeAminoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".TxEncodeAminoResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "amino_binary"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularBytesField(value: &self.aminoBinary) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.aminoBinary.isEmpty {
+      try visitor.visitSingularBytesField(value: self.aminoBinary, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Cosmos_Tx_V1beta1_TxEncodeAminoResponse, rhs: Cosmos_Tx_V1beta1_TxEncodeAminoResponse) -> Bool {
+    if lhs.aminoBinary != rhs.aminoBinary {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Cosmos_Tx_V1beta1_TxDecodeAminoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".TxDecodeAminoRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "amino_binary"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularBytesField(value: &self.aminoBinary) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.aminoBinary.isEmpty {
+      try visitor.visitSingularBytesField(value: self.aminoBinary, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Cosmos_Tx_V1beta1_TxDecodeAminoRequest, rhs: Cosmos_Tx_V1beta1_TxDecodeAminoRequest) -> Bool {
+    if lhs.aminoBinary != rhs.aminoBinary {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Cosmos_Tx_V1beta1_TxDecodeAminoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".TxDecodeAminoResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "amino_json"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.aminoJson) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.aminoJson.isEmpty {
+      try visitor.visitSingularStringField(value: self.aminoJson, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Cosmos_Tx_V1beta1_TxDecodeAminoResponse, rhs: Cosmos_Tx_V1beta1_TxDecodeAminoResponse) -> Bool {
+    if lhs.aminoJson != rhs.aminoJson {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

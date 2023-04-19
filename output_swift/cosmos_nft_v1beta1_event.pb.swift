@@ -26,12 +26,16 @@ struct Cosmos_Nft_V1beta1_EventSend {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// class_id associated with the nft
   var classID: String = String()
 
+  /// id is a unique identifier of the nft
   var id: String = String()
 
+  /// sender is the address of the owner of nft
   var sender: String = String()
 
+  /// receiver is the receiver address of nft
   var receiver: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -45,10 +49,13 @@ struct Cosmos_Nft_V1beta1_EventMint {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// class_id associated with the nft
   var classID: String = String()
 
+  /// id is a unique identifier of the nft
   var id: String = String()
 
+  /// owner is the owner address of the nft
   var owner: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -62,10 +69,13 @@ struct Cosmos_Nft_V1beta1_EventBurn {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// class_id associated with the nft
   var classID: String = String()
 
+  /// id is a unique identifier of the nft
   var id: String = String()
 
+  /// owner is the owner address of the nft
   var owner: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()

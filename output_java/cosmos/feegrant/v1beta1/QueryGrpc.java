@@ -92,6 +92,37 @@ public final class QueryGrpc {
     return getAllowancesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterRequest,
+      cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterResponse> getAllowancesByGranterMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AllowancesByGranter",
+      requestType = cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterRequest.class,
+      responseType = cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterRequest,
+      cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterResponse> getAllowancesByGranterMethod() {
+    io.grpc.MethodDescriptor<cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterRequest, cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterResponse> getAllowancesByGranterMethod;
+    if ((getAllowancesByGranterMethod = QueryGrpc.getAllowancesByGranterMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getAllowancesByGranterMethod = QueryGrpc.getAllowancesByGranterMethod) == null) {
+          QueryGrpc.getAllowancesByGranterMethod = getAllowancesByGranterMethod =
+              io.grpc.MethodDescriptor.<cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterRequest, cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AllowancesByGranter"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("AllowancesByGranter"))
+              .build();
+        }
+      }
+    }
+    return getAllowancesByGranterMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -163,6 +194,17 @@ public final class QueryGrpc {
       asyncUnimplementedUnaryCall(getAllowancesMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * AllowancesByGranter returns all the grants given by an address
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     */
+    public void allowancesByGranter(cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterRequest request,
+        io.grpc.stub.StreamObserver<cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getAllowancesByGranterMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -179,6 +221,13 @@ public final class QueryGrpc {
                 cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesRequest,
                 cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesResponse>(
                   this, METHODID_ALLOWANCES)))
+          .addMethod(
+            getAllowancesByGranterMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterRequest,
+                cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterResponse>(
+                  this, METHODID_ALLOWANCES_BY_GRANTER)))
           .build();
     }
   }
@@ -221,6 +270,18 @@ public final class QueryGrpc {
       asyncUnaryCall(
           getChannel().newCall(getAllowancesMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * AllowancesByGranter returns all the grants given by an address
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     */
+    public void allowancesByGranter(cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterRequest request,
+        io.grpc.stub.StreamObserver<cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getAllowancesByGranterMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -258,6 +319,17 @@ public final class QueryGrpc {
     public cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesResponse allowances(cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesRequest request) {
       return blockingUnaryCall(
           getChannel(), getAllowancesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * AllowancesByGranter returns all the grants given by an address
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     */
+    public cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterResponse allowancesByGranter(cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getAllowancesByGranterMethod(), getCallOptions(), request);
     }
   }
 
@@ -299,10 +371,23 @@ public final class QueryGrpc {
       return futureUnaryCall(
           getChannel().newCall(getAllowancesMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * AllowancesByGranter returns all the grants given by an address
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterResponse> allowancesByGranter(
+        cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getAllowancesByGranterMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_ALLOWANCE = 0;
   private static final int METHODID_ALLOWANCES = 1;
+  private static final int METHODID_ALLOWANCES_BY_GRANTER = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -328,6 +413,10 @@ public final class QueryGrpc {
         case METHODID_ALLOWANCES:
           serviceImpl.allowances((cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesRequest) request,
               (io.grpc.stub.StreamObserver<cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesResponse>) responseObserver);
+          break;
+        case METHODID_ALLOWANCES_BY_GRANTER:
+          serviceImpl.allowancesByGranter((cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterRequest) request,
+              (io.grpc.stub.StreamObserver<cosmos.feegrant.v1beta1.QueryOuterClass.QueryAllowancesByGranterResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -392,6 +481,7 @@ public final class QueryGrpc {
               .setSchemaDescriptor(new QueryFileDescriptorSupplier())
               .addMethod(getAllowanceMethod())
               .addMethod(getAllowancesMethod())
+              .addMethod(getAllowancesByGranterMethod())
               .build();
         }
       }

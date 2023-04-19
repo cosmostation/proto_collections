@@ -944,9 +944,8 @@ public final class Genesis {
       "\n%cosmos/evidence/v1beta1/genesis.proto\022" +
       "\027cosmos.evidence.v1beta1\032\032google/protobu" +
       "f2/any.proto\"7\n\014GenesisState\022\'\n\010evidence" +
-      "\030\001 \003(\0132\025.google.protobuf2.AnyB/Z-github." +
-      "com/cosmos/cosmos-sdk/x/evidence/typesb\006" +
-      "proto3"
+      "\030\001 \003(\0132\025.google.protobuf2.AnyB\037Z\035cosmoss" +
+      "dk.io/x/evidence/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

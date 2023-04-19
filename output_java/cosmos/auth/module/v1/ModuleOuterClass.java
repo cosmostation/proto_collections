@@ -81,6 +81,26 @@ public final class ModuleOuterClass {
      */
     cosmos.auth.module.v1.ModuleOuterClass.ModuleAccountPermissionOrBuilder getModuleAccountPermissionsOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     * authority defines the custom module authority. If not set, defaults to the governance module.
+     * </pre>
+     *
+     * <code>string authority = 3;</code>
+     * @return The authority.
+     */
+    java.lang.String getAuthority();
+    /**
+     * <pre>
+     * authority defines the custom module authority. If not set, defaults to the governance module.
+     * </pre>
+     *
+     * <code>string authority = 3;</code>
+     * @return The bytes for authority.
+     */
+    com.google.protobuf.ByteString
+        getAuthorityBytes();
   }
   /**
    * <pre>
@@ -101,6 +121,7 @@ public final class ModuleOuterClass {
     private Module() {
       bech32Prefix_ = "";
       moduleAccountPermissions_ = java.util.Collections.emptyList();
+      authority_ = "";
     }
 
     @java.lang.Override
@@ -147,6 +168,12 @@ public final class ModuleOuterClass {
               }
               moduleAccountPermissions_.add(
                   input.readMessage(cosmos.auth.module.v1.ModuleOuterClass.ModuleAccountPermission.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              authority_ = s;
               break;
             }
             default: {
@@ -290,6 +317,52 @@ public final class ModuleOuterClass {
       return moduleAccountPermissions_.get(index);
     }
 
+    public static final int AUTHORITY_FIELD_NUMBER = 3;
+    private volatile java.lang.Object authority_;
+    /**
+     * <pre>
+     * authority defines the custom module authority. If not set, defaults to the governance module.
+     * </pre>
+     *
+     * <code>string authority = 3;</code>
+     * @return The authority.
+     */
+    @java.lang.Override
+    public java.lang.String getAuthority() {
+      java.lang.Object ref = authority_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        authority_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * authority defines the custom module authority. If not set, defaults to the governance module.
+     * </pre>
+     *
+     * <code>string authority = 3;</code>
+     * @return The bytes for authority.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAuthorityBytes() {
+      java.lang.Object ref = authority_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        authority_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -310,6 +383,9 @@ public final class ModuleOuterClass {
       for (int i = 0; i < moduleAccountPermissions_.size(); i++) {
         output.writeMessage(2, moduleAccountPermissions_.get(i));
       }
+      if (!getAuthorityBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, authority_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -325,6 +401,9 @@ public final class ModuleOuterClass {
       for (int i = 0; i < moduleAccountPermissions_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, moduleAccountPermissions_.get(i));
+      }
+      if (!getAuthorityBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, authority_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -345,6 +424,8 @@ public final class ModuleOuterClass {
           .equals(other.getBech32Prefix())) return false;
       if (!getModuleAccountPermissionsList()
           .equals(other.getModuleAccountPermissionsList())) return false;
+      if (!getAuthority()
+          .equals(other.getAuthority())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -362,6 +443,8 @@ public final class ModuleOuterClass {
         hash = (37 * hash) + MODULE_ACCOUNT_PERMISSIONS_FIELD_NUMBER;
         hash = (53 * hash) + getModuleAccountPermissionsList().hashCode();
       }
+      hash = (37 * hash) + AUTHORITY_FIELD_NUMBER;
+      hash = (53 * hash) + getAuthority().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -508,6 +591,8 @@ public final class ModuleOuterClass {
         } else {
           moduleAccountPermissionsBuilder_.clear();
         }
+        authority_ = "";
+
         return this;
       }
 
@@ -545,6 +630,7 @@ public final class ModuleOuterClass {
         } else {
           result.moduleAccountPermissions_ = moduleAccountPermissionsBuilder_.build();
         }
+        result.authority_ = authority_;
         onBuilt();
         return result;
       }
@@ -622,6 +708,10 @@ public final class ModuleOuterClass {
               moduleAccountPermissionsBuilder_.addAllMessages(other.moduleAccountPermissions_);
             }
           }
+        }
+        if (!other.getAuthority().isEmpty()) {
+          authority_ = other.authority_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1059,6 +1149,102 @@ public final class ModuleOuterClass {
           moduleAccountPermissions_ = null;
         }
         return moduleAccountPermissionsBuilder_;
+      }
+
+      private java.lang.Object authority_ = "";
+      /**
+       * <pre>
+       * authority defines the custom module authority. If not set, defaults to the governance module.
+       * </pre>
+       *
+       * <code>string authority = 3;</code>
+       * @return The authority.
+       */
+      public java.lang.String getAuthority() {
+        java.lang.Object ref = authority_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          authority_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * authority defines the custom module authority. If not set, defaults to the governance module.
+       * </pre>
+       *
+       * <code>string authority = 3;</code>
+       * @return The bytes for authority.
+       */
+      public com.google.protobuf.ByteString
+          getAuthorityBytes() {
+        java.lang.Object ref = authority_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          authority_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * authority defines the custom module authority. If not set, defaults to the governance module.
+       * </pre>
+       *
+       * <code>string authority = 3;</code>
+       * @param value The authority to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAuthority(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        authority_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * authority defines the custom module authority. If not set, defaults to the governance module.
+       * </pre>
+       *
+       * <code>string authority = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAuthority() {
+        
+        authority_ = getDefaultInstance().getAuthority();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * authority defines the custom module authority. If not set, defaults to the governance module.
+       * </pre>
+       *
+       * <code>string authority = 3;</code>
+       * @param value The bytes for authority to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAuthorityBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        authority_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -2050,29 +2236,38 @@ public final class ModuleOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\"cosmos/auth/module/v1/module.proto\022\025co" +
-      "smos.auth.module.v1\"s\n\006Module\022\025\n\rbech32_" +
-      "prefix\030\001 \001(\t\022R\n\032module_account_permissio" +
-      "ns\030\002 \003(\0132..cosmos.auth.module.v1.ModuleA" +
-      "ccountPermission\"?\n\027ModuleAccountPermiss" +
-      "ion\022\017\n\007account\030\001 \001(\t\022\023\n\013permissions\030\002 \003(" +
-      "\tb\006proto3"
+      "smos.auth.module.v1\032 cosmos/app/v1alpha1" +
+      "/module.proto\"\263\001\n\006Module\022\025\n\rbech32_prefi" +
+      "x\030\001 \001(\t\022R\n\032module_account_permissions\030\002 " +
+      "\003(\0132..cosmos.auth.module.v1.ModuleAccoun" +
+      "tPermission\022\021\n\tauthority\030\003 \001(\t:+\272\300\226\332\001%\n#" +
+      "github.com/cosmos/cosmos-sdk/x/auth\"?\n\027M" +
+      "oduleAccountPermission\022\017\n\007account\030\001 \001(\t\022" +
+      "\023\n\013permissions\030\002 \003(\tb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          cosmos.app.v1alpha1.Module.getDescriptor(),
         });
     internal_static_cosmos_auth_module_v1_Module_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_cosmos_auth_module_v1_Module_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_auth_module_v1_Module_descriptor,
-        new java.lang.String[] { "Bech32Prefix", "ModuleAccountPermissions", });
+        new java.lang.String[] { "Bech32Prefix", "ModuleAccountPermissions", "Authority", });
     internal_static_cosmos_auth_module_v1_ModuleAccountPermission_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_cosmos_auth_module_v1_ModuleAccountPermission_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_auth_module_v1_ModuleAccountPermission_descriptor,
         new java.lang.String[] { "Account", "Permissions", });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(cosmos.app.v1alpha1.Module.module);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
+    cosmos.app.v1alpha1.Module.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

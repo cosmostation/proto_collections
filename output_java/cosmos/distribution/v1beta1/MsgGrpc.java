@@ -154,6 +154,99 @@ public final class MsgGrpc {
     return getFundCommunityPoolMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<cosmos.distribution.v1beta1.Tx.MsgUpdateParams,
+      cosmos.distribution.v1beta1.Tx.MsgUpdateParamsResponse> getUpdateParamsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateParams",
+      requestType = cosmos.distribution.v1beta1.Tx.MsgUpdateParams.class,
+      responseType = cosmos.distribution.v1beta1.Tx.MsgUpdateParamsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.distribution.v1beta1.Tx.MsgUpdateParams,
+      cosmos.distribution.v1beta1.Tx.MsgUpdateParamsResponse> getUpdateParamsMethod() {
+    io.grpc.MethodDescriptor<cosmos.distribution.v1beta1.Tx.MsgUpdateParams, cosmos.distribution.v1beta1.Tx.MsgUpdateParamsResponse> getUpdateParamsMethod;
+    if ((getUpdateParamsMethod = MsgGrpc.getUpdateParamsMethod) == null) {
+      synchronized (MsgGrpc.class) {
+        if ((getUpdateParamsMethod = MsgGrpc.getUpdateParamsMethod) == null) {
+          MsgGrpc.getUpdateParamsMethod = getUpdateParamsMethod =
+              io.grpc.MethodDescriptor.<cosmos.distribution.v1beta1.Tx.MsgUpdateParams, cosmos.distribution.v1beta1.Tx.MsgUpdateParamsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateParams"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.distribution.v1beta1.Tx.MsgUpdateParams.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.distribution.v1beta1.Tx.MsgUpdateParamsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MsgMethodDescriptorSupplier("UpdateParams"))
+              .build();
+        }
+      }
+    }
+    return getUpdateParamsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<cosmos.distribution.v1beta1.Tx.MsgCommunityPoolSpend,
+      cosmos.distribution.v1beta1.Tx.MsgCommunityPoolSpendResponse> getCommunityPoolSpendMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CommunityPoolSpend",
+      requestType = cosmos.distribution.v1beta1.Tx.MsgCommunityPoolSpend.class,
+      responseType = cosmos.distribution.v1beta1.Tx.MsgCommunityPoolSpendResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.distribution.v1beta1.Tx.MsgCommunityPoolSpend,
+      cosmos.distribution.v1beta1.Tx.MsgCommunityPoolSpendResponse> getCommunityPoolSpendMethod() {
+    io.grpc.MethodDescriptor<cosmos.distribution.v1beta1.Tx.MsgCommunityPoolSpend, cosmos.distribution.v1beta1.Tx.MsgCommunityPoolSpendResponse> getCommunityPoolSpendMethod;
+    if ((getCommunityPoolSpendMethod = MsgGrpc.getCommunityPoolSpendMethod) == null) {
+      synchronized (MsgGrpc.class) {
+        if ((getCommunityPoolSpendMethod = MsgGrpc.getCommunityPoolSpendMethod) == null) {
+          MsgGrpc.getCommunityPoolSpendMethod = getCommunityPoolSpendMethod =
+              io.grpc.MethodDescriptor.<cosmos.distribution.v1beta1.Tx.MsgCommunityPoolSpend, cosmos.distribution.v1beta1.Tx.MsgCommunityPoolSpendResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CommunityPoolSpend"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.distribution.v1beta1.Tx.MsgCommunityPoolSpend.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.distribution.v1beta1.Tx.MsgCommunityPoolSpendResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MsgMethodDescriptorSupplier("CommunityPoolSpend"))
+              .build();
+        }
+      }
+    }
+    return getCommunityPoolSpendMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPool,
+      cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPoolResponse> getDepositValidatorRewardsPoolMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DepositValidatorRewardsPool",
+      requestType = cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPool.class,
+      responseType = cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPoolResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPool,
+      cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPoolResponse> getDepositValidatorRewardsPoolMethod() {
+    io.grpc.MethodDescriptor<cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPool, cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPoolResponse> getDepositValidatorRewardsPoolMethod;
+    if ((getDepositValidatorRewardsPoolMethod = MsgGrpc.getDepositValidatorRewardsPoolMethod) == null) {
+      synchronized (MsgGrpc.class) {
+        if ((getDepositValidatorRewardsPoolMethod = MsgGrpc.getDepositValidatorRewardsPoolMethod) == null) {
+          MsgGrpc.getDepositValidatorRewardsPoolMethod = getDepositValidatorRewardsPoolMethod =
+              io.grpc.MethodDescriptor.<cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPool, cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPoolResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DepositValidatorRewardsPool"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPool.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPoolResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MsgMethodDescriptorSupplier("DepositValidatorRewardsPool"))
+              .build();
+        }
+      }
+    }
+    return getDepositValidatorRewardsPoolMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -249,6 +342,44 @@ public final class MsgGrpc {
       asyncUnimplementedUnaryCall(getFundCommunityPoolMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * UpdateParams defines a governance operation for updating the x/distribution
+     * module parameters. The authority is defined in the keeper.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public void updateParams(cosmos.distribution.v1beta1.Tx.MsgUpdateParams request,
+        io.grpc.stub.StreamObserver<cosmos.distribution.v1beta1.Tx.MsgUpdateParamsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getUpdateParamsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * CommunityPoolSpend defines a governance operation for sending tokens from
+     * the community pool in the x/distribution module to another account, which
+     * could be the governance module itself. The authority is defined in the
+     * keeper.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public void communityPoolSpend(cosmos.distribution.v1beta1.Tx.MsgCommunityPoolSpend request,
+        io.grpc.stub.StreamObserver<cosmos.distribution.v1beta1.Tx.MsgCommunityPoolSpendResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getCommunityPoolSpendMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * DepositValidatorRewardsPool defines a method to provide additional rewards
+     * to delegators to a specific validator.
+     * Since: cosmos-sdk 0.48
+     * </pre>
+     */
+    public void depositValidatorRewardsPool(cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPool request,
+        io.grpc.stub.StreamObserver<cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPoolResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getDepositValidatorRewardsPoolMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -279,6 +410,27 @@ public final class MsgGrpc {
                 cosmos.distribution.v1beta1.Tx.MsgFundCommunityPool,
                 cosmos.distribution.v1beta1.Tx.MsgFundCommunityPoolResponse>(
                   this, METHODID_FUND_COMMUNITY_POOL)))
+          .addMethod(
+            getUpdateParamsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.distribution.v1beta1.Tx.MsgUpdateParams,
+                cosmos.distribution.v1beta1.Tx.MsgUpdateParamsResponse>(
+                  this, METHODID_UPDATE_PARAMS)))
+          .addMethod(
+            getCommunityPoolSpendMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.distribution.v1beta1.Tx.MsgCommunityPoolSpend,
+                cosmos.distribution.v1beta1.Tx.MsgCommunityPoolSpendResponse>(
+                  this, METHODID_COMMUNITY_POOL_SPEND)))
+          .addMethod(
+            getDepositValidatorRewardsPoolMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPool,
+                cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPoolResponse>(
+                  this, METHODID_DEPOSIT_VALIDATOR_REWARDS_POOL)))
           .build();
     }
   }
@@ -347,6 +499,47 @@ public final class MsgGrpc {
       asyncUnaryCall(
           getChannel().newCall(getFundCommunityPoolMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * UpdateParams defines a governance operation for updating the x/distribution
+     * module parameters. The authority is defined in the keeper.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public void updateParams(cosmos.distribution.v1beta1.Tx.MsgUpdateParams request,
+        io.grpc.stub.StreamObserver<cosmos.distribution.v1beta1.Tx.MsgUpdateParamsResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getUpdateParamsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * CommunityPoolSpend defines a governance operation for sending tokens from
+     * the community pool in the x/distribution module to another account, which
+     * could be the governance module itself. The authority is defined in the
+     * keeper.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public void communityPoolSpend(cosmos.distribution.v1beta1.Tx.MsgCommunityPoolSpend request,
+        io.grpc.stub.StreamObserver<cosmos.distribution.v1beta1.Tx.MsgCommunityPoolSpendResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCommunityPoolSpendMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * DepositValidatorRewardsPool defines a method to provide additional rewards
+     * to delegators to a specific validator.
+     * Since: cosmos-sdk 0.48
+     * </pre>
+     */
+    public void depositValidatorRewardsPool(cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPool request,
+        io.grpc.stub.StreamObserver<cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPoolResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDepositValidatorRewardsPoolMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -408,6 +601,44 @@ public final class MsgGrpc {
     public cosmos.distribution.v1beta1.Tx.MsgFundCommunityPoolResponse fundCommunityPool(cosmos.distribution.v1beta1.Tx.MsgFundCommunityPool request) {
       return blockingUnaryCall(
           getChannel(), getFundCommunityPoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * UpdateParams defines a governance operation for updating the x/distribution
+     * module parameters. The authority is defined in the keeper.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public cosmos.distribution.v1beta1.Tx.MsgUpdateParamsResponse updateParams(cosmos.distribution.v1beta1.Tx.MsgUpdateParams request) {
+      return blockingUnaryCall(
+          getChannel(), getUpdateParamsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * CommunityPoolSpend defines a governance operation for sending tokens from
+     * the community pool in the x/distribution module to another account, which
+     * could be the governance module itself. The authority is defined in the
+     * keeper.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public cosmos.distribution.v1beta1.Tx.MsgCommunityPoolSpendResponse communityPoolSpend(cosmos.distribution.v1beta1.Tx.MsgCommunityPoolSpend request) {
+      return blockingUnaryCall(
+          getChannel(), getCommunityPoolSpendMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * DepositValidatorRewardsPool defines a method to provide additional rewards
+     * to delegators to a specific validator.
+     * Since: cosmos-sdk 0.48
+     * </pre>
+     */
+    public cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPoolResponse depositValidatorRewardsPool(cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPool request) {
+      return blockingUnaryCall(
+          getChannel(), getDepositValidatorRewardsPoolMethod(), getCallOptions(), request);
     }
   }
 
@@ -475,12 +706,56 @@ public final class MsgGrpc {
       return futureUnaryCall(
           getChannel().newCall(getFundCommunityPoolMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * UpdateParams defines a governance operation for updating the x/distribution
+     * module parameters. The authority is defined in the keeper.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.distribution.v1beta1.Tx.MsgUpdateParamsResponse> updateParams(
+        cosmos.distribution.v1beta1.Tx.MsgUpdateParams request) {
+      return futureUnaryCall(
+          getChannel().newCall(getUpdateParamsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * CommunityPoolSpend defines a governance operation for sending tokens from
+     * the community pool in the x/distribution module to another account, which
+     * could be the governance module itself. The authority is defined in the
+     * keeper.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.distribution.v1beta1.Tx.MsgCommunityPoolSpendResponse> communityPoolSpend(
+        cosmos.distribution.v1beta1.Tx.MsgCommunityPoolSpend request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCommunityPoolSpendMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * DepositValidatorRewardsPool defines a method to provide additional rewards
+     * to delegators to a specific validator.
+     * Since: cosmos-sdk 0.48
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPoolResponse> depositValidatorRewardsPool(
+        cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPool request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDepositValidatorRewardsPoolMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_SET_WITHDRAW_ADDRESS = 0;
   private static final int METHODID_WITHDRAW_DELEGATOR_REWARD = 1;
   private static final int METHODID_WITHDRAW_VALIDATOR_COMMISSION = 2;
   private static final int METHODID_FUND_COMMUNITY_POOL = 3;
+  private static final int METHODID_UPDATE_PARAMS = 4;
+  private static final int METHODID_COMMUNITY_POOL_SPEND = 5;
+  private static final int METHODID_DEPOSIT_VALIDATOR_REWARDS_POOL = 6;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -514,6 +789,18 @@ public final class MsgGrpc {
         case METHODID_FUND_COMMUNITY_POOL:
           serviceImpl.fundCommunityPool((cosmos.distribution.v1beta1.Tx.MsgFundCommunityPool) request,
               (io.grpc.stub.StreamObserver<cosmos.distribution.v1beta1.Tx.MsgFundCommunityPoolResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_PARAMS:
+          serviceImpl.updateParams((cosmos.distribution.v1beta1.Tx.MsgUpdateParams) request,
+              (io.grpc.stub.StreamObserver<cosmos.distribution.v1beta1.Tx.MsgUpdateParamsResponse>) responseObserver);
+          break;
+        case METHODID_COMMUNITY_POOL_SPEND:
+          serviceImpl.communityPoolSpend((cosmos.distribution.v1beta1.Tx.MsgCommunityPoolSpend) request,
+              (io.grpc.stub.StreamObserver<cosmos.distribution.v1beta1.Tx.MsgCommunityPoolSpendResponse>) responseObserver);
+          break;
+        case METHODID_DEPOSIT_VALIDATOR_REWARDS_POOL:
+          serviceImpl.depositValidatorRewardsPool((cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPool) request,
+              (io.grpc.stub.StreamObserver<cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPoolResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -580,6 +867,9 @@ public final class MsgGrpc {
               .addMethod(getWithdrawDelegatorRewardMethod())
               .addMethod(getWithdrawValidatorCommissionMethod())
               .addMethod(getFundCommunityPoolMethod())
+              .addMethod(getUpdateParamsMethod())
+              .addMethod(getCommunityPoolSpendMethod())
+              .addMethod(getDepositValidatorRewardsPoolMethod())
               .build();
         }
       }

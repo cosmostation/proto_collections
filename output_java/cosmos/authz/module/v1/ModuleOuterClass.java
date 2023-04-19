@@ -455,11 +455,14 @@ public final class ModuleOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n#cosmos/authz/module/v1/module.proto\022\026c" +
-      "osmos.authz.module.v1\"\010\n\006Moduleb\006proto3"
+      "osmos.authz.module.v1\032 cosmos/app/v1alph" +
+      "a1/module.proto\"6\n\006Module:,\272\300\226\332\001&\n$githu" +
+      "b.com/cosmos/cosmos-sdk/x/authzb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          cosmos.app.v1alpha1.Module.getDescriptor(),
         });
     internal_static_cosmos_authz_module_v1_Module_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -467,6 +470,12 @@ public final class ModuleOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_authz_module_v1_Module_descriptor,
         new java.lang.String[] { });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(cosmos.app.v1alpha1.Module.module);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
+    cosmos.app.v1alpha1.Module.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

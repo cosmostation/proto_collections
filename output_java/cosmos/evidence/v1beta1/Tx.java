@@ -19,11 +19,19 @@ public final class Tx {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * submitter is the signer account address of evidence.
+     * </pre>
+     *
      * <code>string submitter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The submitter.
      */
     java.lang.String getSubmitter();
     /**
+     * <pre>
+     * submitter is the signer account address of evidence.
+     * </pre>
+     *
      * <code>string submitter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for submitter.
      */
@@ -31,17 +39,29 @@ public final class Tx {
         getSubmitterBytes();
 
     /**
-     * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "Evidence"];</code>
+     * <pre>
+     * evidence defines the evidence of misbehavior.
+     * </pre>
+     *
+     * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "cosmos.evidence.v1beta1.Evidence"];</code>
      * @return Whether the evidence field is set.
      */
     boolean hasEvidence();
     /**
-     * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "Evidence"];</code>
+     * <pre>
+     * evidence defines the evidence of misbehavior.
+     * </pre>
+     *
+     * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "cosmos.evidence.v1beta1.Evidence"];</code>
      * @return The evidence.
      */
     com.google.protobuf2.Any getEvidence();
     /**
-     * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "Evidence"];</code>
+     * <pre>
+     * evidence defines the evidence of misbehavior.
+     * </pre>
+     *
+     * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "cosmos.evidence.v1beta1.Evidence"];</code>
      */
     com.google.protobuf2.AnyOrBuilder getEvidenceOrBuilder();
   }
@@ -150,6 +170,10 @@ public final class Tx {
     public static final int SUBMITTER_FIELD_NUMBER = 1;
     private volatile java.lang.Object submitter_;
     /**
+     * <pre>
+     * submitter is the signer account address of evidence.
+     * </pre>
+     *
      * <code>string submitter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The submitter.
      */
@@ -167,6 +191,10 @@ public final class Tx {
       }
     }
     /**
+     * <pre>
+     * submitter is the signer account address of evidence.
+     * </pre>
+     *
      * <code>string submitter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for submitter.
      */
@@ -188,7 +216,11 @@ public final class Tx {
     public static final int EVIDENCE_FIELD_NUMBER = 2;
     private com.google.protobuf2.Any evidence_;
     /**
-     * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "Evidence"];</code>
+     * <pre>
+     * evidence defines the evidence of misbehavior.
+     * </pre>
+     *
+     * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "cosmos.evidence.v1beta1.Evidence"];</code>
      * @return Whether the evidence field is set.
      */
     @java.lang.Override
@@ -196,7 +228,11 @@ public final class Tx {
       return evidence_ != null;
     }
     /**
-     * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "Evidence"];</code>
+     * <pre>
+     * evidence defines the evidence of misbehavior.
+     * </pre>
+     *
+     * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "cosmos.evidence.v1beta1.Evidence"];</code>
      * @return The evidence.
      */
     @java.lang.Override
@@ -204,7 +240,11 @@ public final class Tx {
       return evidence_ == null ? com.google.protobuf2.Any.getDefaultInstance() : evidence_;
     }
     /**
-     * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "Evidence"];</code>
+     * <pre>
+     * evidence defines the evidence of misbehavior.
+     * </pre>
+     *
+     * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "cosmos.evidence.v1beta1.Evidence"];</code>
      */
     @java.lang.Override
     public com.google.protobuf2.AnyOrBuilder getEvidenceOrBuilder() {
@@ -550,6 +590,10 @@ public final class Tx {
 
       private java.lang.Object submitter_ = "";
       /**
+       * <pre>
+       * submitter is the signer account address of evidence.
+       * </pre>
+       *
        * <code>string submitter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The submitter.
        */
@@ -566,6 +610,10 @@ public final class Tx {
         }
       }
       /**
+       * <pre>
+       * submitter is the signer account address of evidence.
+       * </pre>
+       *
        * <code>string submitter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for submitter.
        */
@@ -583,6 +631,10 @@ public final class Tx {
         }
       }
       /**
+       * <pre>
+       * submitter is the signer account address of evidence.
+       * </pre>
+       *
        * <code>string submitter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The submitter to set.
        * @return This builder for chaining.
@@ -598,6 +650,10 @@ public final class Tx {
         return this;
       }
       /**
+       * <pre>
+       * submitter is the signer account address of evidence.
+       * </pre>
+       *
        * <code>string submitter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
@@ -608,6 +664,10 @@ public final class Tx {
         return this;
       }
       /**
+       * <pre>
+       * submitter is the signer account address of evidence.
+       * </pre>
+       *
        * <code>string submitter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for submitter to set.
        * @return This builder for chaining.
@@ -628,14 +688,22 @@ public final class Tx {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf2.Any, com.google.protobuf2.Any.Builder, com.google.protobuf2.AnyOrBuilder> evidenceBuilder_;
       /**
-       * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "Evidence"];</code>
+       * <pre>
+       * evidence defines the evidence of misbehavior.
+       * </pre>
+       *
+       * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "cosmos.evidence.v1beta1.Evidence"];</code>
        * @return Whether the evidence field is set.
        */
       public boolean hasEvidence() {
         return evidenceBuilder_ != null || evidence_ != null;
       }
       /**
-       * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "Evidence"];</code>
+       * <pre>
+       * evidence defines the evidence of misbehavior.
+       * </pre>
+       *
+       * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "cosmos.evidence.v1beta1.Evidence"];</code>
        * @return The evidence.
        */
       public com.google.protobuf2.Any getEvidence() {
@@ -646,7 +714,11 @@ public final class Tx {
         }
       }
       /**
-       * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "Evidence"];</code>
+       * <pre>
+       * evidence defines the evidence of misbehavior.
+       * </pre>
+       *
+       * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "cosmos.evidence.v1beta1.Evidence"];</code>
        */
       public Builder setEvidence(com.google.protobuf2.Any value) {
         if (evidenceBuilder_ == null) {
@@ -662,7 +734,11 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "Evidence"];</code>
+       * <pre>
+       * evidence defines the evidence of misbehavior.
+       * </pre>
+       *
+       * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "cosmos.evidence.v1beta1.Evidence"];</code>
        */
       public Builder setEvidence(
           com.google.protobuf2.Any.Builder builderForValue) {
@@ -676,7 +752,11 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "Evidence"];</code>
+       * <pre>
+       * evidence defines the evidence of misbehavior.
+       * </pre>
+       *
+       * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "cosmos.evidence.v1beta1.Evidence"];</code>
        */
       public Builder mergeEvidence(com.google.protobuf2.Any value) {
         if (evidenceBuilder_ == null) {
@@ -694,7 +774,11 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "Evidence"];</code>
+       * <pre>
+       * evidence defines the evidence of misbehavior.
+       * </pre>
+       *
+       * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "cosmos.evidence.v1beta1.Evidence"];</code>
        */
       public Builder clearEvidence() {
         if (evidenceBuilder_ == null) {
@@ -708,7 +792,11 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "Evidence"];</code>
+       * <pre>
+       * evidence defines the evidence of misbehavior.
+       * </pre>
+       *
+       * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "cosmos.evidence.v1beta1.Evidence"];</code>
        */
       public com.google.protobuf2.Any.Builder getEvidenceBuilder() {
         
@@ -716,7 +804,11 @@ public final class Tx {
         return getEvidenceFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "Evidence"];</code>
+       * <pre>
+       * evidence defines the evidence of misbehavior.
+       * </pre>
+       *
+       * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "cosmos.evidence.v1beta1.Evidence"];</code>
        */
       public com.google.protobuf2.AnyOrBuilder getEvidenceOrBuilder() {
         if (evidenceBuilder_ != null) {
@@ -727,7 +819,11 @@ public final class Tx {
         }
       }
       /**
-       * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "Evidence"];</code>
+       * <pre>
+       * evidence defines the evidence of misbehavior.
+       * </pre>
+       *
+       * <code>.google.protobuf2.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "cosmos.evidence.v1beta1.Evidence"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf2.Any, com.google.protobuf2.Any.Builder, com.google.protobuf2.AnyOrBuilder> 
@@ -1337,16 +1433,18 @@ public final class Tx {
       "\n cosmos/evidence/v1beta1/tx.proto\022\027cosm" +
       "os.evidence.v1beta1\032\024gogoproto/gogo.prot" +
       "o\032\032google/protobuf2/any.proto\032\031cosmos_pr" +
-      "oto/cosmos.proto\"\201\001\n\021MsgSubmitEvidence\022+" +
-      "\n\tsubmitter\030\001 \001(\tB\030\322\264-\024cosmos.AddressStr" +
-      "ing\0225\n\010evidence\030\002 \001(\0132\025.google.protobuf2" +
-      ".AnyB\014\312\264-\010Evidence:\010\350\240\037\000\210\240\037\000\")\n\031MsgSubmi" +
-      "tEvidenceResponse\022\014\n\004hash\030\004 \001(\0142w\n\003Msg\022p" +
-      "\n\016SubmitEvidence\022*.cosmos.evidence.v1bet" +
-      "a1.MsgSubmitEvidence\0322.cosmos.evidence.v" +
-      "1beta1.MsgSubmitEvidenceResponseB3Z-gith" +
-      "ub.com/cosmos/cosmos-sdk/x/evidence/type" +
-      "s\250\342\036\001b\006proto3"
+      "oto/cosmos.proto\032\027cosmos/msg/v1/msg.prot" +
+      "o\032\021amino/amino.proto\"\310\001\n\021MsgSubmitEviden" +
+      "ce\022+\n\tsubmitter\030\001 \001(\tB\030\322\264-\024cosmos.Addres" +
+      "sString\022M\n\010evidence\030\002 \001(\0132\025.google.proto" +
+      "buf2.AnyB$\312\264- cosmos.evidence.v1beta1.Ev" +
+      "idence:7\202\347\260*\tsubmitter\212\347\260*\034cosmos-sdk/Ms" +
+      "gSubmitEvidence\350\240\037\000\210\240\037\000\")\n\031MsgSubmitEvid" +
+      "enceResponse\022\014\n\004hash\030\004 \001(\0142~\n\003Msg\022p\n\016Sub" +
+      "mitEvidence\022*.cosmos.evidence.v1beta1.Ms" +
+      "gSubmitEvidence\0322.cosmos.evidence.v1beta" +
+      "1.MsgSubmitEvidenceResponse\032\005\200\347\260*\001B#Z\035co" +
+      "smossdk.io/x/evidence/types\250\342\036\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1354,6 +1452,8 @@ public final class Tx {
           com.google.protobuf2.GoGoProtos.getDescriptor(),
           com.google.protobuf2.AnyProto.getDescriptor(),
           cosmos_proto.Cosmos.getDescriptor(),
+          cosmos.msg.v1.Msg.getDescriptor(),
+          amino.Amino.getDescriptor(),
         });
     internal_static_cosmos_evidence_v1beta1_MsgSubmitEvidence_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1369,6 +1469,9 @@ public final class Tx {
         new java.lang.String[] { "Hash", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(amino.Amino.name);
+    registry.add(cosmos.msg.v1.Msg.service);
+    registry.add(cosmos.msg.v1.Msg.signer);
     registry.add(cosmos_proto.Cosmos.acceptsInterface);
     registry.add(cosmos_proto.Cosmos.scalar);
     registry.add(com.google.protobuf2.GoGoProtos.equal);
@@ -1379,6 +1482,8 @@ public final class Tx {
     com.google.protobuf2.GoGoProtos.getDescriptor();
     com.google.protobuf2.AnyProto.getDescriptor();
     cosmos_proto.Cosmos.getDescriptor();
+    cosmos.msg.v1.Msg.getDescriptor();
+    amino.Amino.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

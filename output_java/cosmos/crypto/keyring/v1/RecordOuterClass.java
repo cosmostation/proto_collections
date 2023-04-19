@@ -67,7 +67,7 @@ public final class RecordOuterClass {
 
     /**
      * <pre>
-     * local stores the public information about a locally stored key
+     * local stores the private key locally.
      * </pre>
      *
      * <code>.cosmos.crypto.keyring.v1.Record.Local local = 3;</code>
@@ -76,7 +76,7 @@ public final class RecordOuterClass {
     boolean hasLocal();
     /**
      * <pre>
-     * local stores the public information about a locally stored key
+     * local stores the private key locally.
      * </pre>
      *
      * <code>.cosmos.crypto.keyring.v1.Record.Local local = 3;</code>
@@ -85,7 +85,7 @@ public final class RecordOuterClass {
     cosmos.crypto.keyring.v1.RecordOuterClass.Record.Local getLocal();
     /**
      * <pre>
-     * local stores the public information about a locally stored key
+     * local stores the private key locally.
      * </pre>
      *
      * <code>.cosmos.crypto.keyring.v1.Record.Local local = 3;</code>
@@ -94,7 +94,7 @@ public final class RecordOuterClass {
 
     /**
      * <pre>
-     * ledger stores the public information about a Ledger key
+     * ledger stores the information about a Ledger key.
      * </pre>
      *
      * <code>.cosmos.crypto.keyring.v1.Record.Ledger ledger = 4;</code>
@@ -103,7 +103,7 @@ public final class RecordOuterClass {
     boolean hasLedger();
     /**
      * <pre>
-     * ledger stores the public information about a Ledger key
+     * ledger stores the information about a Ledger key.
      * </pre>
      *
      * <code>.cosmos.crypto.keyring.v1.Record.Ledger ledger = 4;</code>
@@ -112,7 +112,7 @@ public final class RecordOuterClass {
     cosmos.crypto.keyring.v1.RecordOuterClass.Record.Ledger getLedger();
     /**
      * <pre>
-     * ledger stores the public information about a Ledger key
+     * ledger stores the information about a Ledger key.
      * </pre>
      *
      * <code>.cosmos.crypto.keyring.v1.Record.Ledger ledger = 4;</code>
@@ -121,7 +121,7 @@ public final class RecordOuterClass {
 
     /**
      * <pre>
-     * Multi does not store any information.
+     * Multi does not store any other information.
      * </pre>
      *
      * <code>.cosmos.crypto.keyring.v1.Record.Multi multi = 5;</code>
@@ -130,7 +130,7 @@ public final class RecordOuterClass {
     boolean hasMulti();
     /**
      * <pre>
-     * Multi does not store any information.
+     * Multi does not store any other information.
      * </pre>
      *
      * <code>.cosmos.crypto.keyring.v1.Record.Multi multi = 5;</code>
@@ -139,7 +139,7 @@ public final class RecordOuterClass {
     cosmos.crypto.keyring.v1.RecordOuterClass.Record.Multi getMulti();
     /**
      * <pre>
-     * Multi does not store any information.
+     * Multi does not store any other information.
      * </pre>
      *
      * <code>.cosmos.crypto.keyring.v1.Record.Multi multi = 5;</code>
@@ -148,7 +148,7 @@ public final class RecordOuterClass {
 
     /**
      * <pre>
-     * Offline does not store any information.
+     * Offline does not store any other information.
      * </pre>
      *
      * <code>.cosmos.crypto.keyring.v1.Record.Offline offline = 6;</code>
@@ -157,7 +157,7 @@ public final class RecordOuterClass {
     boolean hasOffline();
     /**
      * <pre>
-     * Offline does not store any information.
+     * Offline does not store any other information.
      * </pre>
      *
      * <code>.cosmos.crypto.keyring.v1.Record.Offline offline = 6;</code>
@@ -166,7 +166,7 @@ public final class RecordOuterClass {
     cosmos.crypto.keyring.v1.RecordOuterClass.Record.Offline getOffline();
     /**
      * <pre>
-     * Offline does not store any information.
+     * Offline does not store any other information.
      * </pre>
      *
      * <code>.cosmos.crypto.keyring.v1.Record.Offline offline = 6;</code>
@@ -350,18 +350,6 @@ public final class RecordOuterClass {
        * <code>.google.protobuf2.Any priv_key = 1;</code>
        */
       com.google.protobuf2.AnyOrBuilder getPrivKeyOrBuilder();
-
-      /**
-       * <code>string priv_key_type = 2;</code>
-       * @return The privKeyType.
-       */
-      java.lang.String getPrivKeyType();
-      /**
-       * <code>string priv_key_type = 2;</code>
-       * @return The bytes for privKeyType.
-       */
-      com.google.protobuf.ByteString
-          getPrivKeyTypeBytes();
     }
     /**
      * <pre>
@@ -381,7 +369,6 @@ public final class RecordOuterClass {
         super(builder);
       }
       private Local() {
-        privKeyType_ = "";
       }
 
       @java.lang.Override
@@ -425,12 +412,6 @@ public final class RecordOuterClass {
                   privKey_ = subBuilder.buildPartial();
                 }
 
-                break;
-              }
-              case 18: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                privKeyType_ = s;
                 break;
               }
               default: {
@@ -491,44 +472,6 @@ public final class RecordOuterClass {
         return getPrivKey();
       }
 
-      public static final int PRIV_KEY_TYPE_FIELD_NUMBER = 2;
-      private volatile java.lang.Object privKeyType_;
-      /**
-       * <code>string priv_key_type = 2;</code>
-       * @return The privKeyType.
-       */
-      @java.lang.Override
-      public java.lang.String getPrivKeyType() {
-        java.lang.Object ref = privKeyType_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          privKeyType_ = s;
-          return s;
-        }
-      }
-      /**
-       * <code>string priv_key_type = 2;</code>
-       * @return The bytes for privKeyType.
-       */
-      @java.lang.Override
-      public com.google.protobuf.ByteString
-          getPrivKeyTypeBytes() {
-        java.lang.Object ref = privKeyType_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          privKeyType_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
       private byte memoizedIsInitialized = -1;
       @java.lang.Override
       public final boolean isInitialized() {
@@ -546,9 +489,6 @@ public final class RecordOuterClass {
         if (privKey_ != null) {
           output.writeMessage(1, getPrivKey());
         }
-        if (!getPrivKeyTypeBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, privKeyType_);
-        }
         unknownFields.writeTo(output);
       }
 
@@ -561,9 +501,6 @@ public final class RecordOuterClass {
         if (privKey_ != null) {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(1, getPrivKey());
-        }
-        if (!getPrivKeyTypeBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, privKeyType_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -585,8 +522,6 @@ public final class RecordOuterClass {
           if (!getPrivKey()
               .equals(other.getPrivKey())) return false;
         }
-        if (!getPrivKeyType()
-            .equals(other.getPrivKeyType())) return false;
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -602,8 +537,6 @@ public final class RecordOuterClass {
           hash = (37 * hash) + PRIV_KEY_FIELD_NUMBER;
           hash = (53 * hash) + getPrivKey().hashCode();
         }
-        hash = (37 * hash) + PRIV_KEY_TYPE_FIELD_NUMBER;
-        hash = (53 * hash) + getPrivKeyType().hashCode();
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -748,8 +681,6 @@ public final class RecordOuterClass {
             privKey_ = null;
             privKeyBuilder_ = null;
           }
-          privKeyType_ = "";
-
           return this;
         }
 
@@ -781,7 +712,6 @@ public final class RecordOuterClass {
           } else {
             result.privKey_ = privKeyBuilder_.build();
           }
-          result.privKeyType_ = privKeyType_;
           onBuilt();
           return result;
         }
@@ -832,10 +762,6 @@ public final class RecordOuterClass {
           if (other == cosmos.crypto.keyring.v1.RecordOuterClass.Record.Local.getDefaultInstance()) return this;
           if (other.hasPrivKey()) {
             mergePrivKey(other.getPrivKey());
-          }
-          if (!other.getPrivKeyType().isEmpty()) {
-            privKeyType_ = other.privKeyType_;
-            onChanged();
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -983,82 +909,6 @@ public final class RecordOuterClass {
             privKey_ = null;
           }
           return privKeyBuilder_;
-        }
-
-        private java.lang.Object privKeyType_ = "";
-        /**
-         * <code>string priv_key_type = 2;</code>
-         * @return The privKeyType.
-         */
-        public java.lang.String getPrivKeyType() {
-          java.lang.Object ref = privKeyType_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            privKeyType_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
-        }
-        /**
-         * <code>string priv_key_type = 2;</code>
-         * @return The bytes for privKeyType.
-         */
-        public com.google.protobuf.ByteString
-            getPrivKeyTypeBytes() {
-          java.lang.Object ref = privKeyType_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            privKeyType_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <code>string priv_key_type = 2;</code>
-         * @param value The privKeyType to set.
-         * @return This builder for chaining.
-         */
-        public Builder setPrivKeyType(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          privKeyType_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string priv_key_type = 2;</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearPrivKeyType() {
-          
-          privKeyType_ = getDefaultInstance().getPrivKeyType();
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string priv_key_type = 2;</code>
-         * @param value The bytes for privKeyType to set.
-         * @return This builder for chaining.
-         */
-        public Builder setPrivKeyTypeBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          privKeyType_ = value;
-          onChanged();
-          return this;
         }
         @java.lang.Override
         public final Builder setUnknownFields(
@@ -2726,7 +2576,7 @@ public final class RecordOuterClass {
     public static final int LOCAL_FIELD_NUMBER = 3;
     /**
      * <pre>
-     * local stores the public information about a locally stored key
+     * local stores the private key locally.
      * </pre>
      *
      * <code>.cosmos.crypto.keyring.v1.Record.Local local = 3;</code>
@@ -2738,7 +2588,7 @@ public final class RecordOuterClass {
     }
     /**
      * <pre>
-     * local stores the public information about a locally stored key
+     * local stores the private key locally.
      * </pre>
      *
      * <code>.cosmos.crypto.keyring.v1.Record.Local local = 3;</code>
@@ -2753,7 +2603,7 @@ public final class RecordOuterClass {
     }
     /**
      * <pre>
-     * local stores the public information about a locally stored key
+     * local stores the private key locally.
      * </pre>
      *
      * <code>.cosmos.crypto.keyring.v1.Record.Local local = 3;</code>
@@ -2769,7 +2619,7 @@ public final class RecordOuterClass {
     public static final int LEDGER_FIELD_NUMBER = 4;
     /**
      * <pre>
-     * ledger stores the public information about a Ledger key
+     * ledger stores the information about a Ledger key.
      * </pre>
      *
      * <code>.cosmos.crypto.keyring.v1.Record.Ledger ledger = 4;</code>
@@ -2781,7 +2631,7 @@ public final class RecordOuterClass {
     }
     /**
      * <pre>
-     * ledger stores the public information about a Ledger key
+     * ledger stores the information about a Ledger key.
      * </pre>
      *
      * <code>.cosmos.crypto.keyring.v1.Record.Ledger ledger = 4;</code>
@@ -2796,7 +2646,7 @@ public final class RecordOuterClass {
     }
     /**
      * <pre>
-     * ledger stores the public information about a Ledger key
+     * ledger stores the information about a Ledger key.
      * </pre>
      *
      * <code>.cosmos.crypto.keyring.v1.Record.Ledger ledger = 4;</code>
@@ -2812,7 +2662,7 @@ public final class RecordOuterClass {
     public static final int MULTI_FIELD_NUMBER = 5;
     /**
      * <pre>
-     * Multi does not store any information.
+     * Multi does not store any other information.
      * </pre>
      *
      * <code>.cosmos.crypto.keyring.v1.Record.Multi multi = 5;</code>
@@ -2824,7 +2674,7 @@ public final class RecordOuterClass {
     }
     /**
      * <pre>
-     * Multi does not store any information.
+     * Multi does not store any other information.
      * </pre>
      *
      * <code>.cosmos.crypto.keyring.v1.Record.Multi multi = 5;</code>
@@ -2839,7 +2689,7 @@ public final class RecordOuterClass {
     }
     /**
      * <pre>
-     * Multi does not store any information.
+     * Multi does not store any other information.
      * </pre>
      *
      * <code>.cosmos.crypto.keyring.v1.Record.Multi multi = 5;</code>
@@ -2855,7 +2705,7 @@ public final class RecordOuterClass {
     public static final int OFFLINE_FIELD_NUMBER = 6;
     /**
      * <pre>
-     * Offline does not store any information.
+     * Offline does not store any other information.
      * </pre>
      *
      * <code>.cosmos.crypto.keyring.v1.Record.Offline offline = 6;</code>
@@ -2867,7 +2717,7 @@ public final class RecordOuterClass {
     }
     /**
      * <pre>
-     * Offline does not store any information.
+     * Offline does not store any other information.
      * </pre>
      *
      * <code>.cosmos.crypto.keyring.v1.Record.Offline offline = 6;</code>
@@ -2882,7 +2732,7 @@ public final class RecordOuterClass {
     }
     /**
      * <pre>
-     * Offline does not store any information.
+     * Offline does not store any other information.
      * </pre>
      *
      * <code>.cosmos.crypto.keyring.v1.Record.Offline offline = 6;</code>
@@ -3622,7 +3472,7 @@ public final class RecordOuterClass {
           cosmos.crypto.keyring.v1.RecordOuterClass.Record.Local, cosmos.crypto.keyring.v1.RecordOuterClass.Record.Local.Builder, cosmos.crypto.keyring.v1.RecordOuterClass.Record.LocalOrBuilder> localBuilder_;
       /**
        * <pre>
-       * local stores the public information about a locally stored key
+       * local stores the private key locally.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Local local = 3;</code>
@@ -3634,7 +3484,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * local stores the public information about a locally stored key
+       * local stores the private key locally.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Local local = 3;</code>
@@ -3656,7 +3506,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * local stores the public information about a locally stored key
+       * local stores the private key locally.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Local local = 3;</code>
@@ -3676,7 +3526,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * local stores the public information about a locally stored key
+       * local stores the private key locally.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Local local = 3;</code>
@@ -3694,7 +3544,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * local stores the public information about a locally stored key
+       * local stores the private key locally.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Local local = 3;</code>
@@ -3720,7 +3570,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * local stores the public information about a locally stored key
+       * local stores the private key locally.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Local local = 3;</code>
@@ -3743,7 +3593,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * local stores the public information about a locally stored key
+       * local stores the private key locally.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Local local = 3;</code>
@@ -3753,7 +3603,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * local stores the public information about a locally stored key
+       * local stores the private key locally.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Local local = 3;</code>
@@ -3771,7 +3621,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * local stores the public information about a locally stored key
+       * local stores the private key locally.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Local local = 3;</code>
@@ -3799,7 +3649,7 @@ public final class RecordOuterClass {
           cosmos.crypto.keyring.v1.RecordOuterClass.Record.Ledger, cosmos.crypto.keyring.v1.RecordOuterClass.Record.Ledger.Builder, cosmos.crypto.keyring.v1.RecordOuterClass.Record.LedgerOrBuilder> ledgerBuilder_;
       /**
        * <pre>
-       * ledger stores the public information about a Ledger key
+       * ledger stores the information about a Ledger key.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Ledger ledger = 4;</code>
@@ -3811,7 +3661,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * ledger stores the public information about a Ledger key
+       * ledger stores the information about a Ledger key.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Ledger ledger = 4;</code>
@@ -3833,7 +3683,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * ledger stores the public information about a Ledger key
+       * ledger stores the information about a Ledger key.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Ledger ledger = 4;</code>
@@ -3853,7 +3703,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * ledger stores the public information about a Ledger key
+       * ledger stores the information about a Ledger key.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Ledger ledger = 4;</code>
@@ -3871,7 +3721,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * ledger stores the public information about a Ledger key
+       * ledger stores the information about a Ledger key.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Ledger ledger = 4;</code>
@@ -3897,7 +3747,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * ledger stores the public information about a Ledger key
+       * ledger stores the information about a Ledger key.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Ledger ledger = 4;</code>
@@ -3920,7 +3770,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * ledger stores the public information about a Ledger key
+       * ledger stores the information about a Ledger key.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Ledger ledger = 4;</code>
@@ -3930,7 +3780,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * ledger stores the public information about a Ledger key
+       * ledger stores the information about a Ledger key.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Ledger ledger = 4;</code>
@@ -3948,7 +3798,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * ledger stores the public information about a Ledger key
+       * ledger stores the information about a Ledger key.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Ledger ledger = 4;</code>
@@ -3976,7 +3826,7 @@ public final class RecordOuterClass {
           cosmos.crypto.keyring.v1.RecordOuterClass.Record.Multi, cosmos.crypto.keyring.v1.RecordOuterClass.Record.Multi.Builder, cosmos.crypto.keyring.v1.RecordOuterClass.Record.MultiOrBuilder> multiBuilder_;
       /**
        * <pre>
-       * Multi does not store any information.
+       * Multi does not store any other information.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Multi multi = 5;</code>
@@ -3988,7 +3838,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * Multi does not store any information.
+       * Multi does not store any other information.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Multi multi = 5;</code>
@@ -4010,7 +3860,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * Multi does not store any information.
+       * Multi does not store any other information.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Multi multi = 5;</code>
@@ -4030,7 +3880,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * Multi does not store any information.
+       * Multi does not store any other information.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Multi multi = 5;</code>
@@ -4048,7 +3898,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * Multi does not store any information.
+       * Multi does not store any other information.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Multi multi = 5;</code>
@@ -4074,7 +3924,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * Multi does not store any information.
+       * Multi does not store any other information.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Multi multi = 5;</code>
@@ -4097,7 +3947,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * Multi does not store any information.
+       * Multi does not store any other information.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Multi multi = 5;</code>
@@ -4107,7 +3957,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * Multi does not store any information.
+       * Multi does not store any other information.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Multi multi = 5;</code>
@@ -4125,7 +3975,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * Multi does not store any information.
+       * Multi does not store any other information.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Multi multi = 5;</code>
@@ -4153,7 +4003,7 @@ public final class RecordOuterClass {
           cosmos.crypto.keyring.v1.RecordOuterClass.Record.Offline, cosmos.crypto.keyring.v1.RecordOuterClass.Record.Offline.Builder, cosmos.crypto.keyring.v1.RecordOuterClass.Record.OfflineOrBuilder> offlineBuilder_;
       /**
        * <pre>
-       * Offline does not store any information.
+       * Offline does not store any other information.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Offline offline = 6;</code>
@@ -4165,7 +4015,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * Offline does not store any information.
+       * Offline does not store any other information.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Offline offline = 6;</code>
@@ -4187,7 +4037,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * Offline does not store any information.
+       * Offline does not store any other information.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Offline offline = 6;</code>
@@ -4207,7 +4057,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * Offline does not store any information.
+       * Offline does not store any other information.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Offline offline = 6;</code>
@@ -4225,7 +4075,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * Offline does not store any information.
+       * Offline does not store any other information.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Offline offline = 6;</code>
@@ -4251,7 +4101,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * Offline does not store any information.
+       * Offline does not store any other information.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Offline offline = 6;</code>
@@ -4274,7 +4124,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * Offline does not store any information.
+       * Offline does not store any other information.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Offline offline = 6;</code>
@@ -4284,7 +4134,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * Offline does not store any information.
+       * Offline does not store any other information.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Offline offline = 6;</code>
@@ -4302,7 +4152,7 @@ public final class RecordOuterClass {
       }
       /**
        * <pre>
-       * Offline does not store any information.
+       * Offline does not store any other information.
        * </pre>
        *
        * <code>.cosmos.crypto.keyring.v1.Record.Offline offline = 6;</code>
@@ -4415,7 +4265,7 @@ public final class RecordOuterClass {
       "\n%cosmos/crypto/keyring/v1/record.proto\022" +
       "\030cosmos.crypto.keyring.v1\032\024gogoproto/gog" +
       "o.proto\032\032google/protobuf2/any.proto\032\034cos" +
-      "mos/crypto/hd/v1/hd.proto\"\307\003\n\006Record\022\014\n\004" +
+      "mos/crypto/hd/v1/hd.proto\"\260\003\n\006Record\022\014\n\004" +
       "name\030\001 \001(\t\022&\n\007pub_key\030\002 \001(\0132\025.google.pro" +
       "tobuf2.Any\0227\n\005local\030\003 \001(\0132&.cosmos.crypt" +
       "o.keyring.v1.Record.LocalH\000\0229\n\006ledger\030\004 " +
@@ -4423,12 +4273,12 @@ public final class RecordOuterClass {
       "dgerH\000\0227\n\005multi\030\005 \001(\0132&.cosmos.crypto.ke" +
       "yring.v1.Record.MultiH\000\022;\n\007offline\030\006 \001(\013" +
       "2(.cosmos.crypto.keyring.v1.Record.Offli" +
-      "neH\000\032G\n\005Local\022\'\n\010priv_key\030\001 \001(\0132\025.google" +
-      ".protobuf2.Any\022\025\n\rpriv_key_type\030\002 \001(\t\0328\n" +
-      "\006Ledger\022.\n\004path\030\001 \001(\0132 .cosmos.crypto.hd" +
-      ".v1.BIP44Params\032\007\n\005Multi\032\t\n\007OfflineB\006\n\004i" +
-      "temB1Z+github.com/cosmos/cosmos-sdk/cryp" +
-      "to/keyring\310\341\036\000b\006proto3"
+      "neH\000\0320\n\005Local\022\'\n\010priv_key\030\001 \001(\0132\025.google" +
+      ".protobuf2.Any\0328\n\006Ledger\022.\n\004path\030\001 \001(\0132 " +
+      ".cosmos.crypto.hd.v1.BIP44Params\032\007\n\005Mult" +
+      "i\032\t\n\007OfflineB\006\n\004itemB5Z+github.com/cosmo" +
+      "s/cosmos-sdk/crypto/keyring\310\341\036\000\230\343\036\000b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4448,7 +4298,7 @@ public final class RecordOuterClass {
     internal_static_cosmos_crypto_keyring_v1_Record_Local_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_crypto_keyring_v1_Record_Local_descriptor,
-        new java.lang.String[] { "PrivKey", "PrivKeyType", });
+        new java.lang.String[] { "PrivKey", });
     internal_static_cosmos_crypto_keyring_v1_Record_Ledger_descriptor =
       internal_static_cosmos_crypto_keyring_v1_Record_descriptor.getNestedTypes().get(1);
     internal_static_cosmos_crypto_keyring_v1_Record_Ledger_fieldAccessorTable = new
@@ -4469,6 +4319,7 @@ public final class RecordOuterClass {
         new java.lang.String[] { });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.protobuf2.GoGoProtos.gogoprotoImport);
     registry.add(com.google.protobuf2.GoGoProtos.goprotoGettersAll);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);

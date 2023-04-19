@@ -41,6 +41,16 @@ internal protocol Cosmos_Bank_V1beta1_MsgClientProtocol: GRPCClient {
     _ request: Cosmos_Bank_V1beta1_MsgMultiSend,
     callOptions: CallOptions?
   ) -> UnaryCall<Cosmos_Bank_V1beta1_MsgMultiSend, Cosmos_Bank_V1beta1_MsgMultiSendResponse>
+
+  func updateParams(
+    _ request: Cosmos_Bank_V1beta1_MsgUpdateParams,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Cosmos_Bank_V1beta1_MsgUpdateParams, Cosmos_Bank_V1beta1_MsgUpdateParamsResponse>
+
+  func setSendEnabled(
+    _ request: Cosmos_Bank_V1beta1_MsgSetSendEnabled,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Cosmos_Bank_V1beta1_MsgSetSendEnabled, Cosmos_Bank_V1beta1_MsgSetSendEnabledResponse>
 }
 
 extension Cosmos_Bank_V1beta1_MsgClientProtocol {
@@ -83,6 +93,50 @@ extension Cosmos_Bank_V1beta1_MsgClientProtocol {
       interceptors: self.interceptors?.makeMultiSendInterceptors() ?? []
     )
   }
+
+  /// UpdateParams defines a governance operation for updating the x/bank module parameters.
+  /// The authority is defined in the keeper.
+  ///
+  /// Since: cosmos-sdk 0.47
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to UpdateParams.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func updateParams(
+    _ request: Cosmos_Bank_V1beta1_MsgUpdateParams,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Cosmos_Bank_V1beta1_MsgUpdateParams, Cosmos_Bank_V1beta1_MsgUpdateParamsResponse> {
+    return self.makeUnaryCall(
+      path: "/cosmos.bank.v1beta1.Msg/UpdateParams",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeUpdateParamsInterceptors() ?? []
+    )
+  }
+
+  /// SetSendEnabled is a governance operation for setting the SendEnabled flag
+  /// on any number of Denoms. Only the entries to add or update should be
+  /// included. Entries that already exist in the store, but that aren't
+  /// included in this message, will be left unchanged.
+  ///
+  /// Since: cosmos-sdk 0.47
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to SetSendEnabled.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func setSendEnabled(
+    _ request: Cosmos_Bank_V1beta1_MsgSetSendEnabled,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Cosmos_Bank_V1beta1_MsgSetSendEnabled, Cosmos_Bank_V1beta1_MsgSetSendEnabledResponse> {
+    return self.makeUnaryCall(
+      path: "/cosmos.bank.v1beta1.Msg/SetSendEnabled",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeSetSendEnabledInterceptors() ?? []
+    )
+  }
 }
 
 internal protocol Cosmos_Bank_V1beta1_MsgClientInterceptorFactoryProtocol {
@@ -92,6 +146,12 @@ internal protocol Cosmos_Bank_V1beta1_MsgClientInterceptorFactoryProtocol {
 
   /// - Returns: Interceptors to use when invoking 'multiSend'.
   func makeMultiSendInterceptors() -> [ClientInterceptor<Cosmos_Bank_V1beta1_MsgMultiSend, Cosmos_Bank_V1beta1_MsgMultiSendResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'updateParams'.
+  func makeUpdateParamsInterceptors() -> [ClientInterceptor<Cosmos_Bank_V1beta1_MsgUpdateParams, Cosmos_Bank_V1beta1_MsgUpdateParamsResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'setSendEnabled'.
+  func makeSetSendEnabledInterceptors() -> [ClientInterceptor<Cosmos_Bank_V1beta1_MsgSetSendEnabled, Cosmos_Bank_V1beta1_MsgSetSendEnabledResponse>]
 }
 
 internal final class Cosmos_Bank_V1beta1_MsgClient: Cosmos_Bank_V1beta1_MsgClientProtocol {
@@ -127,6 +187,20 @@ internal protocol Cosmos_Bank_V1beta1_MsgProvider: CallHandlerProvider {
 
   /// MultiSend defines a method for sending coins from some accounts to other accounts.
   func multiSend(request: Cosmos_Bank_V1beta1_MsgMultiSend, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Bank_V1beta1_MsgMultiSendResponse>
+
+  /// UpdateParams defines a governance operation for updating the x/bank module parameters.
+  /// The authority is defined in the keeper.
+  ///
+  /// Since: cosmos-sdk 0.47
+  func updateParams(request: Cosmos_Bank_V1beta1_MsgUpdateParams, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Bank_V1beta1_MsgUpdateParamsResponse>
+
+  /// SetSendEnabled is a governance operation for setting the SendEnabled flag
+  /// on any number of Denoms. Only the entries to add or update should be
+  /// included. Entries that already exist in the store, but that aren't
+  /// included in this message, will be left unchanged.
+  ///
+  /// Since: cosmos-sdk 0.47
+  func setSendEnabled(request: Cosmos_Bank_V1beta1_MsgSetSendEnabled, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Bank_V1beta1_MsgSetSendEnabledResponse>
 }
 
 extension Cosmos_Bank_V1beta1_MsgProvider {
@@ -157,6 +231,24 @@ extension Cosmos_Bank_V1beta1_MsgProvider {
         userFunction: self.multiSend(request:context:)
       )
 
+    case "UpdateParams":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Cosmos_Bank_V1beta1_MsgUpdateParams>(),
+        responseSerializer: ProtobufSerializer<Cosmos_Bank_V1beta1_MsgUpdateParamsResponse>(),
+        interceptors: self.interceptors?.makeUpdateParamsInterceptors() ?? [],
+        userFunction: self.updateParams(request:context:)
+      )
+
+    case "SetSendEnabled":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Cosmos_Bank_V1beta1_MsgSetSendEnabled>(),
+        responseSerializer: ProtobufSerializer<Cosmos_Bank_V1beta1_MsgSetSendEnabledResponse>(),
+        interceptors: self.interceptors?.makeSetSendEnabledInterceptors() ?? [],
+        userFunction: self.setSendEnabled(request:context:)
+      )
+
     default:
       return nil
     }
@@ -172,4 +264,12 @@ internal protocol Cosmos_Bank_V1beta1_MsgServerInterceptorFactoryProtocol {
   /// - Returns: Interceptors to use when handling 'multiSend'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeMultiSendInterceptors() -> [ServerInterceptor<Cosmos_Bank_V1beta1_MsgMultiSend, Cosmos_Bank_V1beta1_MsgMultiSendResponse>]
+
+  /// - Returns: Interceptors to use when handling 'updateParams'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeUpdateParamsInterceptors() -> [ServerInterceptor<Cosmos_Bank_V1beta1_MsgUpdateParams, Cosmos_Bank_V1beta1_MsgUpdateParamsResponse>]
+
+  /// - Returns: Interceptors to use when handling 'setSendEnabled'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeSetSendEnabledInterceptors() -> [ServerInterceptor<Cosmos_Bank_V1beta1_MsgSetSendEnabled, Cosmos_Bank_V1beta1_MsgSetSendEnabledResponse>]
 }

@@ -43,8 +43,8 @@ extension Cosmos_Auth_V1beta1_MsgClientProtocol {
     return "cosmos.auth.v1beta1.Msg"
   }
 
-  /// UpdateParams defines a governance operation for updating the x/auth module
-  /// parameters. The authority is hard-coded to the x/gov module account.
+  /// UpdateParams defines a (governance) operation for updating the x/auth module
+  /// parameters. The authority defaults to the x/gov module account.
   ///
   /// Since: cosmos-sdk 0.47
   ///
@@ -99,8 +99,8 @@ internal final class Cosmos_Auth_V1beta1_MsgClient: Cosmos_Auth_V1beta1_MsgClien
 internal protocol Cosmos_Auth_V1beta1_MsgProvider: CallHandlerProvider {
   var interceptors: Cosmos_Auth_V1beta1_MsgServerInterceptorFactoryProtocol? { get }
 
-  /// UpdateParams defines a governance operation for updating the x/auth module
-  /// parameters. The authority is hard-coded to the x/gov module account.
+  /// UpdateParams defines a (governance) operation for updating the x/auth module
+  /// parameters. The authority defaults to the x/gov module account.
   ///
   /// Since: cosmos-sdk 0.47
   func updateParams(request: Cosmos_Auth_V1beta1_MsgUpdateParams, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Auth_V1beta1_MsgUpdateParamsResponse>

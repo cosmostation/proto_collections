@@ -185,6 +185,68 @@ public final class MsgGrpc {
     return getUndelegateMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<cosmos.staking.v1beta1.Tx.MsgCancelUnbondingDelegation,
+      cosmos.staking.v1beta1.Tx.MsgCancelUnbondingDelegationResponse> getCancelUnbondingDelegationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CancelUnbondingDelegation",
+      requestType = cosmos.staking.v1beta1.Tx.MsgCancelUnbondingDelegation.class,
+      responseType = cosmos.staking.v1beta1.Tx.MsgCancelUnbondingDelegationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.staking.v1beta1.Tx.MsgCancelUnbondingDelegation,
+      cosmos.staking.v1beta1.Tx.MsgCancelUnbondingDelegationResponse> getCancelUnbondingDelegationMethod() {
+    io.grpc.MethodDescriptor<cosmos.staking.v1beta1.Tx.MsgCancelUnbondingDelegation, cosmos.staking.v1beta1.Tx.MsgCancelUnbondingDelegationResponse> getCancelUnbondingDelegationMethod;
+    if ((getCancelUnbondingDelegationMethod = MsgGrpc.getCancelUnbondingDelegationMethod) == null) {
+      synchronized (MsgGrpc.class) {
+        if ((getCancelUnbondingDelegationMethod = MsgGrpc.getCancelUnbondingDelegationMethod) == null) {
+          MsgGrpc.getCancelUnbondingDelegationMethod = getCancelUnbondingDelegationMethod =
+              io.grpc.MethodDescriptor.<cosmos.staking.v1beta1.Tx.MsgCancelUnbondingDelegation, cosmos.staking.v1beta1.Tx.MsgCancelUnbondingDelegationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CancelUnbondingDelegation"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.staking.v1beta1.Tx.MsgCancelUnbondingDelegation.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.staking.v1beta1.Tx.MsgCancelUnbondingDelegationResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MsgMethodDescriptorSupplier("CancelUnbondingDelegation"))
+              .build();
+        }
+      }
+    }
+    return getCancelUnbondingDelegationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<cosmos.staking.v1beta1.Tx.MsgUpdateParams,
+      cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse> getUpdateParamsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateParams",
+      requestType = cosmos.staking.v1beta1.Tx.MsgUpdateParams.class,
+      responseType = cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.staking.v1beta1.Tx.MsgUpdateParams,
+      cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse> getUpdateParamsMethod() {
+    io.grpc.MethodDescriptor<cosmos.staking.v1beta1.Tx.MsgUpdateParams, cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse> getUpdateParamsMethod;
+    if ((getUpdateParamsMethod = MsgGrpc.getUpdateParamsMethod) == null) {
+      synchronized (MsgGrpc.class) {
+        if ((getUpdateParamsMethod = MsgGrpc.getUpdateParamsMethod) == null) {
+          MsgGrpc.getUpdateParamsMethod = getUpdateParamsMethod =
+              io.grpc.MethodDescriptor.<cosmos.staking.v1beta1.Tx.MsgUpdateParams, cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateParams"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.staking.v1beta1.Tx.MsgUpdateParams.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MsgMethodDescriptorSupplier("UpdateParams"))
+              .build();
+        }
+      }
+    }
+    return getUpdateParamsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -289,6 +351,30 @@ public final class MsgGrpc {
       asyncUnimplementedUnaryCall(getUndelegateMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * CancelUnbondingDelegation defines a method for performing canceling the unbonding delegation
+     * and delegate back to previous validator.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     */
+    public void cancelUnbondingDelegation(cosmos.staking.v1beta1.Tx.MsgCancelUnbondingDelegation request,
+        io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.Tx.MsgCancelUnbondingDelegationResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getCancelUnbondingDelegationMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * UpdateParams defines an operation for updating the x/staking module
+     * parameters.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public void updateParams(cosmos.staking.v1beta1.Tx.MsgUpdateParams request,
+        io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getUpdateParamsMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -326,6 +412,20 @@ public final class MsgGrpc {
                 cosmos.staking.v1beta1.Tx.MsgUndelegate,
                 cosmos.staking.v1beta1.Tx.MsgUndelegateResponse>(
                   this, METHODID_UNDELEGATE)))
+          .addMethod(
+            getCancelUnbondingDelegationMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.staking.v1beta1.Tx.MsgCancelUnbondingDelegation,
+                cosmos.staking.v1beta1.Tx.MsgCancelUnbondingDelegationResponse>(
+                  this, METHODID_CANCEL_UNBONDING_DELEGATION)))
+          .addMethod(
+            getUpdateParamsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.staking.v1beta1.Tx.MsgUpdateParams,
+                cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse>(
+                  this, METHODID_UPDATE_PARAMS)))
           .build();
     }
   }
@@ -404,6 +504,32 @@ public final class MsgGrpc {
       asyncUnaryCall(
           getChannel().newCall(getUndelegateMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * CancelUnbondingDelegation defines a method for performing canceling the unbonding delegation
+     * and delegate back to previous validator.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     */
+    public void cancelUnbondingDelegation(cosmos.staking.v1beta1.Tx.MsgCancelUnbondingDelegation request,
+        io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.Tx.MsgCancelUnbondingDelegationResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCancelUnbondingDelegationMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * UpdateParams defines an operation for updating the x/staking module
+     * parameters.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public void updateParams(cosmos.staking.v1beta1.Tx.MsgUpdateParams request,
+        io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getUpdateParamsMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -474,6 +600,30 @@ public final class MsgGrpc {
     public cosmos.staking.v1beta1.Tx.MsgUndelegateResponse undelegate(cosmos.staking.v1beta1.Tx.MsgUndelegate request) {
       return blockingUnaryCall(
           getChannel(), getUndelegateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * CancelUnbondingDelegation defines a method for performing canceling the unbonding delegation
+     * and delegate back to previous validator.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     */
+    public cosmos.staking.v1beta1.Tx.MsgCancelUnbondingDelegationResponse cancelUnbondingDelegation(cosmos.staking.v1beta1.Tx.MsgCancelUnbondingDelegation request) {
+      return blockingUnaryCall(
+          getChannel(), getCancelUnbondingDelegationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * UpdateParams defines an operation for updating the x/staking module
+     * parameters.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse updateParams(cosmos.staking.v1beta1.Tx.MsgUpdateParams request) {
+      return blockingUnaryCall(
+          getChannel(), getUpdateParamsMethod(), getCallOptions(), request);
     }
   }
 
@@ -551,6 +701,32 @@ public final class MsgGrpc {
       return futureUnaryCall(
           getChannel().newCall(getUndelegateMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * CancelUnbondingDelegation defines a method for performing canceling the unbonding delegation
+     * and delegate back to previous validator.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.staking.v1beta1.Tx.MsgCancelUnbondingDelegationResponse> cancelUnbondingDelegation(
+        cosmos.staking.v1beta1.Tx.MsgCancelUnbondingDelegation request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCancelUnbondingDelegationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * UpdateParams defines an operation for updating the x/staking module
+     * parameters.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse> updateParams(
+        cosmos.staking.v1beta1.Tx.MsgUpdateParams request) {
+      return futureUnaryCall(
+          getChannel().newCall(getUpdateParamsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_VALIDATOR = 0;
@@ -558,6 +734,8 @@ public final class MsgGrpc {
   private static final int METHODID_DELEGATE = 2;
   private static final int METHODID_BEGIN_REDELEGATE = 3;
   private static final int METHODID_UNDELEGATE = 4;
+  private static final int METHODID_CANCEL_UNBONDING_DELEGATION = 5;
+  private static final int METHODID_UPDATE_PARAMS = 6;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -595,6 +773,14 @@ public final class MsgGrpc {
         case METHODID_UNDELEGATE:
           serviceImpl.undelegate((cosmos.staking.v1beta1.Tx.MsgUndelegate) request,
               (io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.Tx.MsgUndelegateResponse>) responseObserver);
+          break;
+        case METHODID_CANCEL_UNBONDING_DELEGATION:
+          serviceImpl.cancelUnbondingDelegation((cosmos.staking.v1beta1.Tx.MsgCancelUnbondingDelegation) request,
+              (io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.Tx.MsgCancelUnbondingDelegationResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_PARAMS:
+          serviceImpl.updateParams((cosmos.staking.v1beta1.Tx.MsgUpdateParams) request,
+              (io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -662,6 +848,8 @@ public final class MsgGrpc {
               .addMethod(getDelegateMethod())
               .addMethod(getBeginRedelegateMethod())
               .addMethod(getUndelegateMethod())
+              .addMethod(getCancelUnbondingDelegationMethod())
+              .addMethod(getUpdateParamsMethod())
               .build();
         }
       }

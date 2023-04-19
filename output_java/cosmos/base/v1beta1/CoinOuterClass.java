@@ -31,12 +31,12 @@ public final class CoinOuterClass {
         getDenomBytes();
 
     /**
-     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
      * @return The amount.
      */
     java.lang.String getAmount();
     /**
-     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
      * @return The bytes for amount.
      */
     com.google.protobuf.ByteString
@@ -180,7 +180,7 @@ public final class CoinOuterClass {
     public static final int AMOUNT_FIELD_NUMBER = 2;
     private volatile java.lang.Object amount_;
     /**
-     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
      * @return The amount.
      */
     @java.lang.Override
@@ -197,7 +197,7 @@ public final class CoinOuterClass {
       }
     }
     /**
-     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
      * @return The bytes for amount.
      */
     @java.lang.Override
@@ -618,7 +618,7 @@ public final class CoinOuterClass {
 
       private java.lang.Object amount_ = "";
       /**
-       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
        * @return The amount.
        */
       public java.lang.String getAmount() {
@@ -634,7 +634,7 @@ public final class CoinOuterClass {
         }
       }
       /**
-       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
        * @return The bytes for amount.
        */
       public com.google.protobuf.ByteString
@@ -651,7 +651,7 @@ public final class CoinOuterClass {
         }
       }
       /**
-       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
        * @param value The amount to set.
        * @return This builder for chaining.
        */
@@ -666,7 +666,7 @@ public final class CoinOuterClass {
         return this;
       }
       /**
-       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
        * @return This builder for chaining.
        */
       public Builder clearAmount() {
@@ -676,7 +676,7 @@ public final class CoinOuterClass {
         return this;
       }
       /**
-       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
        * @param value The bytes for amount to set.
        * @return This builder for chaining.
        */
@@ -2657,21 +2657,22 @@ public final class CoinOuterClass {
     java.lang.String[] descriptorData = {
       "\n\036cosmos/base/v1beta1/coin.proto\022\023cosmos" +
       ".base.v1beta1\032\024gogoproto/gogo.proto\032\031cos" +
-      "mos_proto/cosmos.proto\"F\n\004Coin\022\r\n\005denom\030" +
-      "\001 \001(\t\022)\n\006amount\030\002 \001(\tB\031\322\264-\ncosmos.Int\332\336\037" +
-      "\003Int\310\336\037\000:\004\350\240\037\001\"I\n\007DecCoin\022\r\n\005denom\030\001 \001(\t" +
-      "\022)\n\006amount\030\002 \001(\tB\031\322\264-\ncosmos.Dec\332\336\037\003Dec\310" +
-      "\336\037\000:\004\350\240\037\001\"2\n\010IntProto\022&\n\003int\030\001 \001(\tB\031\322\264-\n" +
-      "cosmos.Int\332\336\037\003Int\310\336\037\000\"2\n\010DecProto\022&\n\003dec" +
-      "\030\001 \001(\tB\031\322\264-\ncosmos.Dec\332\336\037\003Dec\310\336\037\000B,Z\"git" +
-      "hub.com/cosmos/cosmos-sdk/types\330\341\036\000\200\342\036\000b" +
-      "\006proto3"
+      "mos_proto/cosmos.proto\032\021amino/amino.prot" +
+      "o\"K\n\004Coin\022\r\n\005denom\030\001 \001(\t\022.\n\006amount\030\002 \001(\t" +
+      "B\036\322\264-\ncosmos.Int\332\336\037\003Int\310\336\037\000\250\347\260*\001:\004\350\240\037\001\"I" +
+      "\n\007DecCoin\022\r\n\005denom\030\001 \001(\t\022)\n\006amount\030\002 \001(\t" +
+      "B\031\322\264-\ncosmos.Dec\332\336\037\003Dec\310\336\037\000:\004\350\240\037\001\"2\n\010Int" +
+      "Proto\022&\n\003int\030\001 \001(\tB\031\322\264-\ncosmos.Int\332\336\037\003In" +
+      "t\310\336\037\000\"2\n\010DecProto\022&\n\003dec\030\001 \001(\tB\031\322\264-\ncosm" +
+      "os.Dec\332\336\037\003Dec\310\336\037\000B,Z\"github.com/cosmos/c" +
+      "osmos-sdk/types\330\341\036\000\200\342\036\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf2.GoGoProtos.getDescriptor(),
           cosmos_proto.Cosmos.getDescriptor(),
+          amino.Amino.getDescriptor(),
         });
     internal_static_cosmos_base_v1beta1_Coin_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2699,6 +2700,7 @@ public final class CoinOuterClass {
         new java.lang.String[] { "Dec", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(amino.Amino.dontOmitempty);
     registry.add(cosmos_proto.Cosmos.scalar);
     registry.add(com.google.protobuf2.GoGoProtos.customtype);
     registry.add(com.google.protobuf2.GoGoProtos.equal);
@@ -2709,6 +2711,7 @@ public final class CoinOuterClass {
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf2.GoGoProtos.getDescriptor();
     cosmos_proto.Cosmos.getDescriptor();
+    amino.Amino.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

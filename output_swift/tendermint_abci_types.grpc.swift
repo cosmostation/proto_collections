@@ -45,11 +45,6 @@ internal protocol Tendermint_Abci_ABCIApplicationClientProtocol: GRPCClient {
     callOptions: CallOptions?
   ) -> UnaryCall<Tendermint_Abci_RequestInfo, Tendermint_Abci_ResponseInfo>
 
-  func setOption(
-    _ request: Tendermint_Abci_RequestSetOption,
-    callOptions: CallOptions?
-  ) -> UnaryCall<Tendermint_Abci_RequestSetOption, Tendermint_Abci_ResponseSetOption>
-
   func deliverTx(
     _ request: Tendermint_Abci_RequestDeliverTx,
     callOptions: CallOptions?
@@ -104,6 +99,16 @@ internal protocol Tendermint_Abci_ABCIApplicationClientProtocol: GRPCClient {
     _ request: Tendermint_Abci_RequestApplySnapshotChunk,
     callOptions: CallOptions?
   ) -> UnaryCall<Tendermint_Abci_RequestApplySnapshotChunk, Tendermint_Abci_ResponseApplySnapshotChunk>
+
+  func prepareProposal(
+    _ request: Tendermint_Abci_RequestPrepareProposal,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Tendermint_Abci_RequestPrepareProposal, Tendermint_Abci_ResponsePrepareProposal>
+
+  func processProposal(
+    _ request: Tendermint_Abci_RequestProcessProposal,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Tendermint_Abci_RequestProcessProposal, Tendermint_Abci_ResponseProcessProposal>
 }
 
 extension Tendermint_Abci_ABCIApplicationClientProtocol {
@@ -162,24 +167,6 @@ extension Tendermint_Abci_ABCIApplicationClientProtocol {
       request: request,
       callOptions: callOptions ?? self.defaultCallOptions,
       interceptors: self.interceptors?.makeInfoInterceptors() ?? []
-    )
-  }
-
-  /// Unary call to SetOption
-  ///
-  /// - Parameters:
-  ///   - request: Request to send to SetOption.
-  ///   - callOptions: Call options.
-  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
-  internal func setOption(
-    _ request: Tendermint_Abci_RequestSetOption,
-    callOptions: CallOptions? = nil
-  ) -> UnaryCall<Tendermint_Abci_RequestSetOption, Tendermint_Abci_ResponseSetOption> {
-    return self.makeUnaryCall(
-      path: "/tendermint.abci.ABCIApplication/SetOption",
-      request: request,
-      callOptions: callOptions ?? self.defaultCallOptions,
-      interceptors: self.interceptors?.makeSetOptionInterceptors() ?? []
     )
   }
 
@@ -380,6 +367,42 @@ extension Tendermint_Abci_ABCIApplicationClientProtocol {
       interceptors: self.interceptors?.makeApplySnapshotChunkInterceptors() ?? []
     )
   }
+
+  /// Unary call to PrepareProposal
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to PrepareProposal.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func prepareProposal(
+    _ request: Tendermint_Abci_RequestPrepareProposal,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Tendermint_Abci_RequestPrepareProposal, Tendermint_Abci_ResponsePrepareProposal> {
+    return self.makeUnaryCall(
+      path: "/tendermint.abci.ABCIApplication/PrepareProposal",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makePrepareProposalInterceptors() ?? []
+    )
+  }
+
+  /// Unary call to ProcessProposal
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to ProcessProposal.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func processProposal(
+    _ request: Tendermint_Abci_RequestProcessProposal,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Tendermint_Abci_RequestProcessProposal, Tendermint_Abci_ResponseProcessProposal> {
+    return self.makeUnaryCall(
+      path: "/tendermint.abci.ABCIApplication/ProcessProposal",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeProcessProposalInterceptors() ?? []
+    )
+  }
 }
 
 internal protocol Tendermint_Abci_ABCIApplicationClientInterceptorFactoryProtocol {
@@ -392,9 +415,6 @@ internal protocol Tendermint_Abci_ABCIApplicationClientInterceptorFactoryProtoco
 
   /// - Returns: Interceptors to use when invoking 'info'.
   func makeInfoInterceptors() -> [ClientInterceptor<Tendermint_Abci_RequestInfo, Tendermint_Abci_ResponseInfo>]
-
-  /// - Returns: Interceptors to use when invoking 'setOption'.
-  func makeSetOptionInterceptors() -> [ClientInterceptor<Tendermint_Abci_RequestSetOption, Tendermint_Abci_ResponseSetOption>]
 
   /// - Returns: Interceptors to use when invoking 'deliverTx'.
   func makeDeliverTxInterceptors() -> [ClientInterceptor<Tendermint_Abci_RequestDeliverTx, Tendermint_Abci_ResponseDeliverTx>]
@@ -428,6 +448,12 @@ internal protocol Tendermint_Abci_ABCIApplicationClientInterceptorFactoryProtoco
 
   /// - Returns: Interceptors to use when invoking 'applySnapshotChunk'.
   func makeApplySnapshotChunkInterceptors() -> [ClientInterceptor<Tendermint_Abci_RequestApplySnapshotChunk, Tendermint_Abci_ResponseApplySnapshotChunk>]
+
+  /// - Returns: Interceptors to use when invoking 'prepareProposal'.
+  func makePrepareProposalInterceptors() -> [ClientInterceptor<Tendermint_Abci_RequestPrepareProposal, Tendermint_Abci_ResponsePrepareProposal>]
+
+  /// - Returns: Interceptors to use when invoking 'processProposal'.
+  func makeProcessProposalInterceptors() -> [ClientInterceptor<Tendermint_Abci_RequestProcessProposal, Tendermint_Abci_ResponseProcessProposal>]
 }
 
 internal final class Tendermint_Abci_ABCIApplicationClient: Tendermint_Abci_ABCIApplicationClientProtocol {
@@ -462,8 +488,6 @@ internal protocol Tendermint_Abci_ABCIApplicationProvider: CallHandlerProvider {
 
   func info(request: Tendermint_Abci_RequestInfo, context: StatusOnlyCallContext) -> EventLoopFuture<Tendermint_Abci_ResponseInfo>
 
-  func setOption(request: Tendermint_Abci_RequestSetOption, context: StatusOnlyCallContext) -> EventLoopFuture<Tendermint_Abci_ResponseSetOption>
-
   func deliverTx(request: Tendermint_Abci_RequestDeliverTx, context: StatusOnlyCallContext) -> EventLoopFuture<Tendermint_Abci_ResponseDeliverTx>
 
   func checkTx(request: Tendermint_Abci_RequestCheckTx, context: StatusOnlyCallContext) -> EventLoopFuture<Tendermint_Abci_ResponseCheckTx>
@@ -485,6 +509,10 @@ internal protocol Tendermint_Abci_ABCIApplicationProvider: CallHandlerProvider {
   func loadSnapshotChunk(request: Tendermint_Abci_RequestLoadSnapshotChunk, context: StatusOnlyCallContext) -> EventLoopFuture<Tendermint_Abci_ResponseLoadSnapshotChunk>
 
   func applySnapshotChunk(request: Tendermint_Abci_RequestApplySnapshotChunk, context: StatusOnlyCallContext) -> EventLoopFuture<Tendermint_Abci_ResponseApplySnapshotChunk>
+
+  func prepareProposal(request: Tendermint_Abci_RequestPrepareProposal, context: StatusOnlyCallContext) -> EventLoopFuture<Tendermint_Abci_ResponsePrepareProposal>
+
+  func processProposal(request: Tendermint_Abci_RequestProcessProposal, context: StatusOnlyCallContext) -> EventLoopFuture<Tendermint_Abci_ResponseProcessProposal>
 }
 
 extension Tendermint_Abci_ABCIApplicationProvider {
@@ -522,15 +550,6 @@ extension Tendermint_Abci_ABCIApplicationProvider {
         responseSerializer: ProtobufSerializer<Tendermint_Abci_ResponseInfo>(),
         interceptors: self.interceptors?.makeInfoInterceptors() ?? [],
         userFunction: self.info(request:context:)
-      )
-
-    case "SetOption":
-      return UnaryServerHandler(
-        context: context,
-        requestDeserializer: ProtobufDeserializer<Tendermint_Abci_RequestSetOption>(),
-        responseSerializer: ProtobufSerializer<Tendermint_Abci_ResponseSetOption>(),
-        interceptors: self.interceptors?.makeSetOptionInterceptors() ?? [],
-        userFunction: self.setOption(request:context:)
       )
 
     case "DeliverTx":
@@ -632,6 +651,24 @@ extension Tendermint_Abci_ABCIApplicationProvider {
         userFunction: self.applySnapshotChunk(request:context:)
       )
 
+    case "PrepareProposal":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Tendermint_Abci_RequestPrepareProposal>(),
+        responseSerializer: ProtobufSerializer<Tendermint_Abci_ResponsePrepareProposal>(),
+        interceptors: self.interceptors?.makePrepareProposalInterceptors() ?? [],
+        userFunction: self.prepareProposal(request:context:)
+      )
+
+    case "ProcessProposal":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Tendermint_Abci_RequestProcessProposal>(),
+        responseSerializer: ProtobufSerializer<Tendermint_Abci_ResponseProcessProposal>(),
+        interceptors: self.interceptors?.makeProcessProposalInterceptors() ?? [],
+        userFunction: self.processProposal(request:context:)
+      )
+
     default:
       return nil
     }
@@ -651,10 +688,6 @@ internal protocol Tendermint_Abci_ABCIApplicationServerInterceptorFactoryProtoco
   /// - Returns: Interceptors to use when handling 'info'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeInfoInterceptors() -> [ServerInterceptor<Tendermint_Abci_RequestInfo, Tendermint_Abci_ResponseInfo>]
-
-  /// - Returns: Interceptors to use when handling 'setOption'.
-  ///   Defaults to calling `self.makeInterceptors()`.
-  func makeSetOptionInterceptors() -> [ServerInterceptor<Tendermint_Abci_RequestSetOption, Tendermint_Abci_ResponseSetOption>]
 
   /// - Returns: Interceptors to use when handling 'deliverTx'.
   ///   Defaults to calling `self.makeInterceptors()`.
@@ -699,4 +732,12 @@ internal protocol Tendermint_Abci_ABCIApplicationServerInterceptorFactoryProtoco
   /// - Returns: Interceptors to use when handling 'applySnapshotChunk'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeApplySnapshotChunkInterceptors() -> [ServerInterceptor<Tendermint_Abci_RequestApplySnapshotChunk, Tendermint_Abci_ResponseApplySnapshotChunk>]
+
+  /// - Returns: Interceptors to use when handling 'prepareProposal'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makePrepareProposalInterceptors() -> [ServerInterceptor<Tendermint_Abci_RequestPrepareProposal, Tendermint_Abci_ResponsePrepareProposal>]
+
+  /// - Returns: Interceptors to use when handling 'processProposal'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeProcessProposalInterceptors() -> [ServerInterceptor<Tendermint_Abci_RequestProcessProposal, Tendermint_Abci_ResponseProcessProposal>]
 }

@@ -57,7 +57,7 @@ public final class Upgrade {
      * If this field is not empty, an error will be thrown.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
      * @return Whether the time field is set.
      */
     @java.lang.Deprecated boolean hasTime();
@@ -68,7 +68,7 @@ public final class Upgrade {
      * If this field is not empty, an error will be thrown.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
      * @return The time.
      */
     @java.lang.Deprecated com.google.protobuf.Timestamp getTime();
@@ -79,14 +79,13 @@ public final class Upgrade {
      * If this field is not empty, an error will be thrown.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Deprecated com.google.protobuf.TimestampOrBuilder getTimeOrBuilder();
 
     /**
      * <pre>
      * The height at which the upgrade must be performed.
-     * Only used if Time is not set.
      * </pre>
      *
      * <code>int64 height = 3;</code>
@@ -342,7 +341,7 @@ public final class Upgrade {
      * If this field is not empty, an error will be thrown.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
      * @return Whether the time field is set.
      */
     @java.lang.Override
@@ -356,7 +355,7 @@ public final class Upgrade {
      * If this field is not empty, an error will be thrown.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
      * @return The time.
      */
     @java.lang.Override
@@ -370,7 +369,7 @@ public final class Upgrade {
      * If this field is not empty, an error will be thrown.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     @java.lang.Deprecated public com.google.protobuf.TimestampOrBuilder getTimeOrBuilder() {
@@ -382,7 +381,6 @@ public final class Upgrade {
     /**
      * <pre>
      * The height at which the upgrade must be performed.
-     * Only used if Time is not set.
      * </pre>
      *
      * <code>int64 height = 3;</code>
@@ -1022,7 +1020,7 @@ public final class Upgrade {
        * If this field is not empty, an error will be thrown.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        * @return Whether the time field is set.
        */
       @java.lang.Deprecated public boolean hasTime() {
@@ -1035,7 +1033,7 @@ public final class Upgrade {
        * If this field is not empty, an error will be thrown.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        * @return The time.
        */
       @java.lang.Deprecated public com.google.protobuf.Timestamp getTime() {
@@ -1052,7 +1050,7 @@ public final class Upgrade {
        * If this field is not empty, an error will be thrown.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        */
       @java.lang.Deprecated public Builder setTime(com.google.protobuf.Timestamp value) {
         if (timeBuilder_ == null) {
@@ -1074,7 +1072,7 @@ public final class Upgrade {
        * If this field is not empty, an error will be thrown.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        */
       @java.lang.Deprecated public Builder setTime(
           com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1094,7 +1092,7 @@ public final class Upgrade {
        * If this field is not empty, an error will be thrown.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        */
       @java.lang.Deprecated public Builder mergeTime(com.google.protobuf.Timestamp value) {
         if (timeBuilder_ == null) {
@@ -1118,7 +1116,7 @@ public final class Upgrade {
        * If this field is not empty, an error will be thrown.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        */
       @java.lang.Deprecated public Builder clearTime() {
         if (timeBuilder_ == null) {
@@ -1138,7 +1136,7 @@ public final class Upgrade {
        * If this field is not empty, an error will be thrown.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        */
       @java.lang.Deprecated public com.google.protobuf.Timestamp.Builder getTimeBuilder() {
         
@@ -1152,7 +1150,7 @@ public final class Upgrade {
        * If this field is not empty, an error will be thrown.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        */
       @java.lang.Deprecated public com.google.protobuf.TimestampOrBuilder getTimeOrBuilder() {
         if (timeBuilder_ != null) {
@@ -1169,7 +1167,7 @@ public final class Upgrade {
        * If this field is not empty, an error will be thrown.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1189,7 +1187,6 @@ public final class Upgrade {
       /**
        * <pre>
        * The height at which the upgrade must be performed.
-       * Only used if Time is not set.
        * </pre>
        *
        * <code>int64 height = 3;</code>
@@ -1202,7 +1199,6 @@ public final class Upgrade {
       /**
        * <pre>
        * The height at which the upgrade must be performed.
-       * Only used if Time is not set.
        * </pre>
        *
        * <code>int64 height = 3;</code>
@@ -1218,7 +1214,6 @@ public final class Upgrade {
       /**
        * <pre>
        * The height at which the upgrade must be performed.
-       * Only used if Time is not set.
        * </pre>
        *
        * <code>int64 height = 3;</code>
@@ -1557,16 +1552,24 @@ public final class Upgrade {
 
   }
 
-  public interface SoftwareUpgradeProposalOrBuilder extends
+  @java.lang.Deprecated public interface SoftwareUpgradeProposalOrBuilder extends
       // @@protoc_insertion_point(interface_extends:cosmos.upgrade.v1beta1.SoftwareUpgradeProposal)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * title of the proposal
+     * </pre>
+     *
      * <code>string title = 1;</code>
      * @return The title.
      */
     java.lang.String getTitle();
     /**
+     * <pre>
+     * title of the proposal
+     * </pre>
+     *
      * <code>string title = 1;</code>
      * @return The bytes for title.
      */
@@ -1574,11 +1577,19 @@ public final class Upgrade {
         getTitleBytes();
 
     /**
+     * <pre>
+     * description of the proposal
+     * </pre>
+     *
      * <code>string description = 2;</code>
      * @return The description.
      */
     java.lang.String getDescription();
     /**
+     * <pre>
+     * description of the proposal
+     * </pre>
+     *
      * <code>string description = 2;</code>
      * @return The bytes for description.
      */
@@ -1586,17 +1597,29 @@ public final class Upgrade {
         getDescriptionBytes();
 
     /**
-     * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * plan of the proposal
+     * </pre>
+     *
+     * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the plan field is set.
      */
     boolean hasPlan();
     /**
-     * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * plan of the proposal
+     * </pre>
+     *
+     * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The plan.
      */
     cosmos.upgrade.v1beta1.Upgrade.Plan getPlan();
     /**
-     * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * plan of the proposal
+     * </pre>
+     *
+     * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.upgrade.v1beta1.Upgrade.PlanOrBuilder getPlanOrBuilder();
   }
@@ -1604,11 +1627,13 @@ public final class Upgrade {
    * <pre>
    * SoftwareUpgradeProposal is a gov Content type for initiating a software
    * upgrade.
+   * Deprecated: This legacy proposal is deprecated in favor of Msg-based gov
+   * proposals, see MsgSoftwareUpgrade.
    * </pre>
    *
    * Protobuf type {@code cosmos.upgrade.v1beta1.SoftwareUpgradeProposal}
    */
-  public static final class SoftwareUpgradeProposal extends
+  @java.lang.Deprecated public static final class SoftwareUpgradeProposal extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.upgrade.v1beta1.SoftwareUpgradeProposal)
       SoftwareUpgradeProposalOrBuilder {
@@ -1712,6 +1737,10 @@ public final class Upgrade {
     public static final int TITLE_FIELD_NUMBER = 1;
     private volatile java.lang.Object title_;
     /**
+     * <pre>
+     * title of the proposal
+     * </pre>
+     *
      * <code>string title = 1;</code>
      * @return The title.
      */
@@ -1729,6 +1758,10 @@ public final class Upgrade {
       }
     }
     /**
+     * <pre>
+     * title of the proposal
+     * </pre>
+     *
      * <code>string title = 1;</code>
      * @return The bytes for title.
      */
@@ -1750,6 +1783,10 @@ public final class Upgrade {
     public static final int DESCRIPTION_FIELD_NUMBER = 2;
     private volatile java.lang.Object description_;
     /**
+     * <pre>
+     * description of the proposal
+     * </pre>
+     *
      * <code>string description = 2;</code>
      * @return The description.
      */
@@ -1767,6 +1804,10 @@ public final class Upgrade {
       }
     }
     /**
+     * <pre>
+     * description of the proposal
+     * </pre>
+     *
      * <code>string description = 2;</code>
      * @return The bytes for description.
      */
@@ -1788,7 +1829,11 @@ public final class Upgrade {
     public static final int PLAN_FIELD_NUMBER = 3;
     private cosmos.upgrade.v1beta1.Upgrade.Plan plan_;
     /**
-     * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * plan of the proposal
+     * </pre>
+     *
+     * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the plan field is set.
      */
     @java.lang.Override
@@ -1796,7 +1841,11 @@ public final class Upgrade {
       return plan_ != null;
     }
     /**
-     * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * plan of the proposal
+     * </pre>
+     *
+     * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The plan.
      */
     @java.lang.Override
@@ -1804,7 +1853,11 @@ public final class Upgrade {
       return plan_ == null ? cosmos.upgrade.v1beta1.Upgrade.Plan.getDefaultInstance() : plan_;
     }
     /**
-     * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * plan of the proposal
+     * </pre>
+     *
+     * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.upgrade.v1beta1.Upgrade.PlanOrBuilder getPlanOrBuilder() {
@@ -1995,6 +2048,8 @@ public final class Upgrade {
      * <pre>
      * SoftwareUpgradeProposal is a gov Content type for initiating a software
      * upgrade.
+     * Deprecated: This legacy proposal is deprecated in favor of Msg-based gov
+     * proposals, see MsgSoftwareUpgrade.
      * </pre>
      *
      * Protobuf type {@code cosmos.upgrade.v1beta1.SoftwareUpgradeProposal}
@@ -2167,6 +2222,10 @@ public final class Upgrade {
 
       private java.lang.Object title_ = "";
       /**
+       * <pre>
+       * title of the proposal
+       * </pre>
+       *
        * <code>string title = 1;</code>
        * @return The title.
        */
@@ -2183,6 +2242,10 @@ public final class Upgrade {
         }
       }
       /**
+       * <pre>
+       * title of the proposal
+       * </pre>
+       *
        * <code>string title = 1;</code>
        * @return The bytes for title.
        */
@@ -2200,6 +2263,10 @@ public final class Upgrade {
         }
       }
       /**
+       * <pre>
+       * title of the proposal
+       * </pre>
+       *
        * <code>string title = 1;</code>
        * @param value The title to set.
        * @return This builder for chaining.
@@ -2215,6 +2282,10 @@ public final class Upgrade {
         return this;
       }
       /**
+       * <pre>
+       * title of the proposal
+       * </pre>
+       *
        * <code>string title = 1;</code>
        * @return This builder for chaining.
        */
@@ -2225,6 +2296,10 @@ public final class Upgrade {
         return this;
       }
       /**
+       * <pre>
+       * title of the proposal
+       * </pre>
+       *
        * <code>string title = 1;</code>
        * @param value The bytes for title to set.
        * @return This builder for chaining.
@@ -2243,6 +2318,10 @@ public final class Upgrade {
 
       private java.lang.Object description_ = "";
       /**
+       * <pre>
+       * description of the proposal
+       * </pre>
+       *
        * <code>string description = 2;</code>
        * @return The description.
        */
@@ -2259,6 +2338,10 @@ public final class Upgrade {
         }
       }
       /**
+       * <pre>
+       * description of the proposal
+       * </pre>
+       *
        * <code>string description = 2;</code>
        * @return The bytes for description.
        */
@@ -2276,6 +2359,10 @@ public final class Upgrade {
         }
       }
       /**
+       * <pre>
+       * description of the proposal
+       * </pre>
+       *
        * <code>string description = 2;</code>
        * @param value The description to set.
        * @return This builder for chaining.
@@ -2291,6 +2378,10 @@ public final class Upgrade {
         return this;
       }
       /**
+       * <pre>
+       * description of the proposal
+       * </pre>
+       *
        * <code>string description = 2;</code>
        * @return This builder for chaining.
        */
@@ -2301,6 +2392,10 @@ public final class Upgrade {
         return this;
       }
       /**
+       * <pre>
+       * description of the proposal
+       * </pre>
+       *
        * <code>string description = 2;</code>
        * @param value The bytes for description to set.
        * @return This builder for chaining.
@@ -2321,14 +2416,22 @@ public final class Upgrade {
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.upgrade.v1beta1.Upgrade.Plan, cosmos.upgrade.v1beta1.Upgrade.Plan.Builder, cosmos.upgrade.v1beta1.Upgrade.PlanOrBuilder> planBuilder_;
       /**
-       * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * plan of the proposal
+       * </pre>
+       *
+       * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the plan field is set.
        */
       public boolean hasPlan() {
         return planBuilder_ != null || plan_ != null;
       }
       /**
-       * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * plan of the proposal
+       * </pre>
+       *
+       * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The plan.
        */
       public cosmos.upgrade.v1beta1.Upgrade.Plan getPlan() {
@@ -2339,7 +2442,11 @@ public final class Upgrade {
         }
       }
       /**
-       * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * plan of the proposal
+       * </pre>
+       *
+       * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setPlan(cosmos.upgrade.v1beta1.Upgrade.Plan value) {
         if (planBuilder_ == null) {
@@ -2355,7 +2462,11 @@ public final class Upgrade {
         return this;
       }
       /**
-       * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * plan of the proposal
+       * </pre>
+       *
+       * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setPlan(
           cosmos.upgrade.v1beta1.Upgrade.Plan.Builder builderForValue) {
@@ -2369,7 +2480,11 @@ public final class Upgrade {
         return this;
       }
       /**
-       * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * plan of the proposal
+       * </pre>
+       *
+       * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergePlan(cosmos.upgrade.v1beta1.Upgrade.Plan value) {
         if (planBuilder_ == null) {
@@ -2387,7 +2502,11 @@ public final class Upgrade {
         return this;
       }
       /**
-       * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * plan of the proposal
+       * </pre>
+       *
+       * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearPlan() {
         if (planBuilder_ == null) {
@@ -2401,7 +2520,11 @@ public final class Upgrade {
         return this;
       }
       /**
-       * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * plan of the proposal
+       * </pre>
+       *
+       * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.upgrade.v1beta1.Upgrade.Plan.Builder getPlanBuilder() {
         
@@ -2409,7 +2532,11 @@ public final class Upgrade {
         return getPlanFieldBuilder().getBuilder();
       }
       /**
-       * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * plan of the proposal
+       * </pre>
+       *
+       * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.upgrade.v1beta1.Upgrade.PlanOrBuilder getPlanOrBuilder() {
         if (planBuilder_ != null) {
@@ -2420,7 +2547,11 @@ public final class Upgrade {
         }
       }
       /**
-       * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * plan of the proposal
+       * </pre>
+       *
+       * <code>.cosmos.upgrade.v1beta1.Plan plan = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.upgrade.v1beta1.Upgrade.Plan, cosmos.upgrade.v1beta1.Upgrade.Plan.Builder, cosmos.upgrade.v1beta1.Upgrade.PlanOrBuilder> 
@@ -2488,16 +2619,24 @@ public final class Upgrade {
 
   }
 
-  public interface CancelSoftwareUpgradeProposalOrBuilder extends
+  @java.lang.Deprecated public interface CancelSoftwareUpgradeProposalOrBuilder extends
       // @@protoc_insertion_point(interface_extends:cosmos.upgrade.v1beta1.CancelSoftwareUpgradeProposal)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * title of the proposal
+     * </pre>
+     *
      * <code>string title = 1;</code>
      * @return The title.
      */
     java.lang.String getTitle();
     /**
+     * <pre>
+     * title of the proposal
+     * </pre>
+     *
      * <code>string title = 1;</code>
      * @return The bytes for title.
      */
@@ -2505,11 +2644,19 @@ public final class Upgrade {
         getTitleBytes();
 
     /**
+     * <pre>
+     * description of the proposal
+     * </pre>
+     *
      * <code>string description = 2;</code>
      * @return The description.
      */
     java.lang.String getDescription();
     /**
+     * <pre>
+     * description of the proposal
+     * </pre>
+     *
      * <code>string description = 2;</code>
      * @return The bytes for description.
      */
@@ -2520,11 +2667,13 @@ public final class Upgrade {
    * <pre>
    * CancelSoftwareUpgradeProposal is a gov Content type for cancelling a software
    * upgrade.
+   * Deprecated: This legacy proposal is deprecated in favor of Msg-based gov
+   * proposals, see MsgCancelUpgrade.
    * </pre>
    *
    * Protobuf type {@code cosmos.upgrade.v1beta1.CancelSoftwareUpgradeProposal}
    */
-  public static final class CancelSoftwareUpgradeProposal extends
+  @java.lang.Deprecated public static final class CancelSoftwareUpgradeProposal extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.upgrade.v1beta1.CancelSoftwareUpgradeProposal)
       CancelSoftwareUpgradeProposalOrBuilder {
@@ -2615,6 +2764,10 @@ public final class Upgrade {
     public static final int TITLE_FIELD_NUMBER = 1;
     private volatile java.lang.Object title_;
     /**
+     * <pre>
+     * title of the proposal
+     * </pre>
+     *
      * <code>string title = 1;</code>
      * @return The title.
      */
@@ -2632,6 +2785,10 @@ public final class Upgrade {
       }
     }
     /**
+     * <pre>
+     * title of the proposal
+     * </pre>
+     *
      * <code>string title = 1;</code>
      * @return The bytes for title.
      */
@@ -2653,6 +2810,10 @@ public final class Upgrade {
     public static final int DESCRIPTION_FIELD_NUMBER = 2;
     private volatile java.lang.Object description_;
     /**
+     * <pre>
+     * description of the proposal
+     * </pre>
+     *
      * <code>string description = 2;</code>
      * @return The description.
      */
@@ -2670,6 +2831,10 @@ public final class Upgrade {
       }
     }
     /**
+     * <pre>
+     * description of the proposal
+     * </pre>
+     *
      * <code>string description = 2;</code>
      * @return The bytes for description.
      */
@@ -2856,6 +3021,8 @@ public final class Upgrade {
      * <pre>
      * CancelSoftwareUpgradeProposal is a gov Content type for cancelling a software
      * upgrade.
+     * Deprecated: This legacy proposal is deprecated in favor of Msg-based gov
+     * proposals, see MsgCancelUpgrade.
      * </pre>
      *
      * Protobuf type {@code cosmos.upgrade.v1beta1.CancelSoftwareUpgradeProposal}
@@ -3014,6 +3181,10 @@ public final class Upgrade {
 
       private java.lang.Object title_ = "";
       /**
+       * <pre>
+       * title of the proposal
+       * </pre>
+       *
        * <code>string title = 1;</code>
        * @return The title.
        */
@@ -3030,6 +3201,10 @@ public final class Upgrade {
         }
       }
       /**
+       * <pre>
+       * title of the proposal
+       * </pre>
+       *
        * <code>string title = 1;</code>
        * @return The bytes for title.
        */
@@ -3047,6 +3222,10 @@ public final class Upgrade {
         }
       }
       /**
+       * <pre>
+       * title of the proposal
+       * </pre>
+       *
        * <code>string title = 1;</code>
        * @param value The title to set.
        * @return This builder for chaining.
@@ -3062,6 +3241,10 @@ public final class Upgrade {
         return this;
       }
       /**
+       * <pre>
+       * title of the proposal
+       * </pre>
+       *
        * <code>string title = 1;</code>
        * @return This builder for chaining.
        */
@@ -3072,6 +3255,10 @@ public final class Upgrade {
         return this;
       }
       /**
+       * <pre>
+       * title of the proposal
+       * </pre>
+       *
        * <code>string title = 1;</code>
        * @param value The bytes for title to set.
        * @return This builder for chaining.
@@ -3090,6 +3277,10 @@ public final class Upgrade {
 
       private java.lang.Object description_ = "";
       /**
+       * <pre>
+       * description of the proposal
+       * </pre>
+       *
        * <code>string description = 2;</code>
        * @return The description.
        */
@@ -3106,6 +3297,10 @@ public final class Upgrade {
         }
       }
       /**
+       * <pre>
+       * description of the proposal
+       * </pre>
+       *
        * <code>string description = 2;</code>
        * @return The bytes for description.
        */
@@ -3123,6 +3318,10 @@ public final class Upgrade {
         }
       }
       /**
+       * <pre>
+       * description of the proposal
+       * </pre>
+       *
        * <code>string description = 2;</code>
        * @param value The description to set.
        * @return This builder for chaining.
@@ -3138,6 +3337,10 @@ public final class Upgrade {
         return this;
       }
       /**
+       * <pre>
+       * description of the proposal
+       * </pre>
+       *
        * <code>string description = 2;</code>
        * @return This builder for chaining.
        */
@@ -3148,6 +3351,10 @@ public final class Upgrade {
         return this;
       }
       /**
+       * <pre>
+       * description of the proposal
+       * </pre>
+       *
        * <code>string description = 2;</code>
        * @param value The bytes for description to set.
        * @return This builder for chaining.
@@ -3953,19 +4160,24 @@ public final class Upgrade {
       "\n$cosmos/upgrade/v1beta1/upgrade.proto\022\026" +
       "cosmos.upgrade.v1beta1\032\032google/protobuf2" +
       "/any.proto\032\024gogoproto/gogo.proto\032\037google" +
-      "/protobuf/timestamp.proto\"\254\001\n\004Plan\022\014\n\004na" +
-      "me\030\001 \001(\t\0224\n\004time\030\002 \001(\0132\032.google.protobuf" +
-      ".TimestampB\n\030\001\220\337\037\001\310\336\037\000\022\016\n\006height\030\003 \001(\003\022\014" +
-      "\n\004info\030\004 \001(\t\0228\n\025upgraded_client_state\030\005 " +
-      "\001(\0132\025.google.protobuf2.AnyB\002\030\001:\010\350\240\037\001\230\240\037\000" +
-      "\"y\n\027SoftwareUpgradeProposal\022\r\n\005title\030\001 \001" +
-      "(\t\022\023\n\013description\030\002 \001(\t\0220\n\004plan\030\003 \001(\0132\034." +
-      "cosmos.upgrade.v1beta1.PlanB\004\310\336\037\000:\010\350\240\037\001\230" +
-      "\240\037\000\"M\n\035CancelSoftwareUpgradeProposal\022\r\n\005" +
-      "title\030\001 \001(\t\022\023\n\013description\030\002 \001(\t:\010\350\240\037\001\230\240" +
-      "\037\000\"8\n\rModuleVersion\022\014\n\004name\030\001 \001(\t\022\017\n\007ver" +
-      "sion\030\002 \001(\004:\010\350\240\037\001\230\240\037\001B2Z,github.com/cosmo" +
-      "s/cosmos-sdk/x/upgrade/types\310\341\036\000b\006proto3"
+      "/protobuf/timestamp.proto\032\031cosmos_proto/" +
+      "cosmos.proto\032\021amino/amino.proto\"\301\001\n\004Plan" +
+      "\022\014\n\004name\030\001 \001(\t\0229\n\004time\030\002 \001(\0132\032.google.pr" +
+      "otobuf.TimestampB\017\030\001\220\337\037\001\310\336\037\000\250\347\260*\001\022\016\n\006hei" +
+      "ght\030\003 \001(\003\022\014\n\004info\030\004 \001(\t\0228\n\025upgraded_clie" +
+      "nt_state\030\005 \001(\0132\025.google.protobuf2.AnyB\002\030" +
+      "\001:\030\212\347\260*\017cosmos-sdk/Plan\350\240\037\001\"\301\001\n\027Software" +
+      "UpgradeProposal\022\r\n\005title\030\001 \001(\t\022\023\n\013descri" +
+      "ption\030\002 \001(\t\0225\n\004plan\030\003 \001(\0132\034.cosmos.upgra" +
+      "de.v1beta1.PlanB\t\310\336\037\000\250\347\260*\001:K\030\001\312\264-\032cosmos" +
+      ".gov.v1beta1.Content\212\347\260*\"cosmos-sdk/Soft" +
+      "wareUpgradeProposal\350\240\037\001\"\226\001\n\035CancelSoftwa" +
+      "reUpgradeProposal\022\r\n\005title\030\001 \001(\t\022\023\n\013desc" +
+      "ription\030\002 \001(\t:Q\030\001\312\264-\032cosmos.gov.v1beta1." +
+      "Content\212\347\260*(cosmos-sdk/CancelSoftwareUpg" +
+      "radeProposal\350\240\037\001\"4\n\rModuleVersion\022\014\n\004nam" +
+      "e\030\001 \001(\t\022\017\n\007version\030\002 \001(\004:\004\350\240\037\001B\"Z\034cosmos" +
+      "sdk.io/x/upgrade/types\310\341\036\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3973,6 +4185,8 @@ public final class Upgrade {
           com.google.protobuf2.AnyProto.getDescriptor(),
           com.google.protobuf2.GoGoProtos.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
+          cosmos_proto.Cosmos.getDescriptor(),
+          amino.Amino.getDescriptor(),
         });
     internal_static_cosmos_upgrade_v1beta1_Plan_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -4000,9 +4214,11 @@ public final class Upgrade {
         new java.lang.String[] { "Name", "Version", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(amino.Amino.dontOmitempty);
+    registry.add(amino.Amino.name);
+    registry.add(cosmos_proto.Cosmos.implementsInterface);
     registry.add(com.google.protobuf2.GoGoProtos.equal);
     registry.add(com.google.protobuf2.GoGoProtos.goprotoGettersAll);
-    registry.add(com.google.protobuf2.GoGoProtos.goprotoStringer);
     registry.add(com.google.protobuf2.GoGoProtos.nullable);
     registry.add(com.google.protobuf2.GoGoProtos.stdtime);
     com.google.protobuf.Descriptors.FileDescriptor
@@ -4010,6 +4226,8 @@ public final class Upgrade {
     com.google.protobuf2.AnyProto.getDescriptor();
     com.google.protobuf2.GoGoProtos.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    cosmos_proto.Cosmos.getDescriptor();
+    amino.Amino.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

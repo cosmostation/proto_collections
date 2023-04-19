@@ -32,6 +32,9 @@ struct Cosmos_Auth_Module_V1_Module {
   /// module_account_permissions are module account permissions.
   var moduleAccountPermissions: [Cosmos_Auth_Module_V1_ModuleAccountPermission] = []
 
+  /// authority defines the custom module authority. If not set, defaults to the governance module.
+  var authority: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -64,6 +67,7 @@ extension Cosmos_Auth_Module_V1_Module: SwiftProtobuf.Message, SwiftProtobuf._Me
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "bech32_prefix"),
     2: .standard(proto: "module_account_permissions"),
+    3: .same(proto: "authority"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -74,6 +78,7 @@ extension Cosmos_Auth_Module_V1_Module: SwiftProtobuf.Message, SwiftProtobuf._Me
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularStringField(value: &self.bech32Prefix) }()
       case 2: try { try decoder.decodeRepeatedMessageField(value: &self.moduleAccountPermissions) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.authority) }()
       default: break
       }
     }
@@ -86,12 +91,16 @@ extension Cosmos_Auth_Module_V1_Module: SwiftProtobuf.Message, SwiftProtobuf._Me
     if !self.moduleAccountPermissions.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.moduleAccountPermissions, fieldNumber: 2)
     }
+    if !self.authority.isEmpty {
+      try visitor.visitSingularStringField(value: self.authority, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: Cosmos_Auth_Module_V1_Module, rhs: Cosmos_Auth_Module_V1_Module) -> Bool {
     if lhs.bech32Prefix != rhs.bech32Prefix {return false}
     if lhs.moduleAccountPermissions != rhs.moduleAccountPermissions {return false}
+    if lhs.authority != rhs.authority {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

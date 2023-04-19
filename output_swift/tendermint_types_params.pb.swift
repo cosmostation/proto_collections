@@ -87,12 +87,6 @@ struct Tendermint_Types_BlockParams {
   /// Note: must be greater or equal to -1
   var maxGas: Int64 = 0
 
-  /// Minimum time increment between consecutive blocks (in milliseconds) If the
-  /// block header timestamp is ahead of the system clock, decrease this value.
-  ///
-  /// Not exposed to the application.
-  var timeIotaMs: Int64 = 0
-
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -156,7 +150,7 @@ struct Tendermint_Types_VersionParams {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var appVersion: UInt64 = 0
+  var app: UInt64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -239,7 +233,6 @@ extension Tendermint_Types_BlockParams: SwiftProtobuf.Message, SwiftProtobuf._Me
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "max_bytes"),
     2: .standard(proto: "max_gas"),
-    3: .standard(proto: "time_iota_ms"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -250,7 +243,6 @@ extension Tendermint_Types_BlockParams: SwiftProtobuf.Message, SwiftProtobuf._Me
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.maxBytes) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.maxGas) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.timeIotaMs) }()
       default: break
       }
     }
@@ -263,16 +255,12 @@ extension Tendermint_Types_BlockParams: SwiftProtobuf.Message, SwiftProtobuf._Me
     if self.maxGas != 0 {
       try visitor.visitSingularInt64Field(value: self.maxGas, fieldNumber: 2)
     }
-    if self.timeIotaMs != 0 {
-      try visitor.visitSingularInt64Field(value: self.timeIotaMs, fieldNumber: 3)
-    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: Tendermint_Types_BlockParams, rhs: Tendermint_Types_BlockParams) -> Bool {
     if lhs.maxBytes != rhs.maxBytes {return false}
     if lhs.maxGas != rhs.maxGas {return false}
-    if lhs.timeIotaMs != rhs.timeIotaMs {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -357,7 +345,7 @@ extension Tendermint_Types_ValidatorParams: SwiftProtobuf.Message, SwiftProtobuf
 extension Tendermint_Types_VersionParams: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".VersionParams"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "app_version"),
+    1: .same(proto: "app"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -366,21 +354,21 @@ extension Tendermint_Types_VersionParams: SwiftProtobuf.Message, SwiftProtobuf._
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try { try decoder.decodeSingularUInt64Field(value: &self.appVersion) }()
+      case 1: try { try decoder.decodeSingularUInt64Field(value: &self.app) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.appVersion != 0 {
-      try visitor.visitSingularUInt64Field(value: self.appVersion, fieldNumber: 1)
+    if self.app != 0 {
+      try visitor.visitSingularUInt64Field(value: self.app, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: Tendermint_Types_VersionParams, rhs: Tendermint_Types_VersionParams) -> Bool {
-    if lhs.appVersion != rhs.appVersion {return false}
+    if lhs.app != rhs.app {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

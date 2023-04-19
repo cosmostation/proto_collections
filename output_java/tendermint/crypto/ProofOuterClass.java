@@ -4042,9 +4042,9 @@ public final class ProofOuterClass {
       "nput\030\002 \001(\t\022\016\n\006output\030\003 \001(\t\"2\n\007ProofOp\022\014\n" +
       "\004type\030\001 \001(\t\022\013\n\003key\030\002 \001(\014\022\014\n\004data\030\003 \001(\014\"9" +
       "\n\010ProofOps\022-\n\003ops\030\001 \003(\0132\032.tendermint.cry" +
-      "pto.ProofOpB\004\310\336\037\000B:Z8github.com/tendermi" +
-      "nt/tendermint/proto/tendermint/cryptob\006p" +
-      "roto3"
+      "pto.ProofOpB\004\310\336\037\000B6Z4github.com/cometbft" +
+      "/cometbft/proto/tendermint/cryptob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

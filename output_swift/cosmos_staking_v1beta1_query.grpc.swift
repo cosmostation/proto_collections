@@ -110,6 +110,9 @@ extension Cosmos_Staking_V1beta1_QueryClientProtocol {
 
   /// Validators queries all validators that match the given status.
   ///
+  /// When called from another module, this query might consume a high amount of
+  /// gas if the pagination field is incorrectly set.
+  ///
   /// - Parameters:
   ///   - request: Request to send to Validators.
   ///   - callOptions: Call options.
@@ -146,6 +149,9 @@ extension Cosmos_Staking_V1beta1_QueryClientProtocol {
 
   /// ValidatorDelegations queries delegate info for given validator.
   ///
+  /// When called from another module, this query might consume a high amount of
+  /// gas if the pagination field is incorrectly set.
+  ///
   /// - Parameters:
   ///   - request: Request to send to ValidatorDelegations.
   ///   - callOptions: Call options.
@@ -163,6 +169,9 @@ extension Cosmos_Staking_V1beta1_QueryClientProtocol {
   }
 
   /// ValidatorUnbondingDelegations queries unbonding delegations of a validator.
+  ///
+  /// When called from another module, this query might consume a high amount of
+  /// gas if the pagination field is incorrectly set.
   ///
   /// - Parameters:
   ///   - request: Request to send to ValidatorUnbondingDelegations.
@@ -219,6 +228,9 @@ extension Cosmos_Staking_V1beta1_QueryClientProtocol {
 
   /// DelegatorDelegations queries all delegations of a given delegator address.
   ///
+  /// When called from another module, this query might consume a high amount of
+  /// gas if the pagination field is incorrectly set.
+  ///
   /// - Parameters:
   ///   - request: Request to send to DelegatorDelegations.
   ///   - callOptions: Call options.
@@ -238,6 +250,9 @@ extension Cosmos_Staking_V1beta1_QueryClientProtocol {
   /// DelegatorUnbondingDelegations queries all unbonding delegations of a given
   /// delegator address.
   ///
+  /// When called from another module, this query might consume a high amount of
+  /// gas if the pagination field is incorrectly set.
+  ///
   /// - Parameters:
   ///   - request: Request to send to DelegatorUnbondingDelegations.
   ///   - callOptions: Call options.
@@ -255,6 +270,9 @@ extension Cosmos_Staking_V1beta1_QueryClientProtocol {
   }
 
   /// Redelegations queries redelegations of given address.
+  ///
+  /// When called from another module, this query might consume a high amount of
+  /// gas if the pagination field is incorrectly set.
   ///
   /// - Parameters:
   ///   - request: Request to send to Redelegations.
@@ -274,6 +292,9 @@ extension Cosmos_Staking_V1beta1_QueryClientProtocol {
 
   /// DelegatorValidators queries all validators info for given delegator
   /// address.
+  ///
+  /// When called from another module, this query might consume a high amount of
+  /// gas if the pagination field is incorrectly set.
   ///
   /// - Parameters:
   ///   - request: Request to send to DelegatorValidators.
@@ -439,15 +460,24 @@ internal protocol Cosmos_Staking_V1beta1_QueryProvider: CallHandlerProvider {
   var interceptors: Cosmos_Staking_V1beta1_QueryServerInterceptorFactoryProtocol? { get }
 
   /// Validators queries all validators that match the given status.
+  ///
+  /// When called from another module, this query might consume a high amount of
+  /// gas if the pagination field is incorrectly set.
   func validators(request: Cosmos_Staking_V1beta1_QueryValidatorsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Staking_V1beta1_QueryValidatorsResponse>
 
   /// Validator queries validator info for given validator address.
   func validator(request: Cosmos_Staking_V1beta1_QueryValidatorRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Staking_V1beta1_QueryValidatorResponse>
 
   /// ValidatorDelegations queries delegate info for given validator.
+  ///
+  /// When called from another module, this query might consume a high amount of
+  /// gas if the pagination field is incorrectly set.
   func validatorDelegations(request: Cosmos_Staking_V1beta1_QueryValidatorDelegationsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Staking_V1beta1_QueryValidatorDelegationsResponse>
 
   /// ValidatorUnbondingDelegations queries unbonding delegations of a validator.
+  ///
+  /// When called from another module, this query might consume a high amount of
+  /// gas if the pagination field is incorrectly set.
   func validatorUnbondingDelegations(request: Cosmos_Staking_V1beta1_QueryValidatorUnbondingDelegationsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Staking_V1beta1_QueryValidatorUnbondingDelegationsResponse>
 
   /// Delegation queries delegate info for given validator delegator pair.
@@ -458,17 +488,29 @@ internal protocol Cosmos_Staking_V1beta1_QueryProvider: CallHandlerProvider {
   func unbondingDelegation(request: Cosmos_Staking_V1beta1_QueryUnbondingDelegationRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Staking_V1beta1_QueryUnbondingDelegationResponse>
 
   /// DelegatorDelegations queries all delegations of a given delegator address.
+  ///
+  /// When called from another module, this query might consume a high amount of
+  /// gas if the pagination field is incorrectly set.
   func delegatorDelegations(request: Cosmos_Staking_V1beta1_QueryDelegatorDelegationsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Staking_V1beta1_QueryDelegatorDelegationsResponse>
 
   /// DelegatorUnbondingDelegations queries all unbonding delegations of a given
   /// delegator address.
+  ///
+  /// When called from another module, this query might consume a high amount of
+  /// gas if the pagination field is incorrectly set.
   func delegatorUnbondingDelegations(request: Cosmos_Staking_V1beta1_QueryDelegatorUnbondingDelegationsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Staking_V1beta1_QueryDelegatorUnbondingDelegationsResponse>
 
   /// Redelegations queries redelegations of given address.
+  ///
+  /// When called from another module, this query might consume a high amount of
+  /// gas if the pagination field is incorrectly set.
   func redelegations(request: Cosmos_Staking_V1beta1_QueryRedelegationsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Staking_V1beta1_QueryRedelegationsResponse>
 
   /// DelegatorValidators queries all validators info for given delegator
   /// address.
+  ///
+  /// When called from another module, this query might consume a high amount of
+  /// gas if the pagination field is incorrectly set.
   func delegatorValidators(request: Cosmos_Staking_V1beta1_QueryDelegatorValidatorsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Staking_V1beta1_QueryDelegatorValidatorsResponse>
 
   /// DelegatorValidator queries validator info for given delegator validator

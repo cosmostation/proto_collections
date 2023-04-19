@@ -75,7 +75,8 @@ struct Cosmos_Base_Query_V1beta1_PageResponse {
   // methods supported on all messages.
 
   /// next_key is the key to be passed to PageRequest.key to
-  /// query the next page most efficiently
+  /// query the next page most efficiently. It will be empty if
+  /// there are no more results.
   var nextKey: Data = Data()
 
   /// total is total number of results available if PageRequest.count_total

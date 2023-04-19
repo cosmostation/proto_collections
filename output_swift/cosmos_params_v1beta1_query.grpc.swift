@@ -69,6 +69,8 @@ extension Cosmos_Params_V1beta1_QueryClientProtocol {
 
   /// Subspaces queries for all registered subspaces and all keys for a subspace.
   ///
+  /// Since: cosmos-sdk 0.46
+  ///
   /// - Parameters:
   ///   - request: Request to send to Subspaces.
   ///   - callOptions: Call options.
@@ -128,6 +130,8 @@ internal protocol Cosmos_Params_V1beta1_QueryProvider: CallHandlerProvider {
   func params(request: Cosmos_Params_V1beta1_QueryParamsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Params_V1beta1_QueryParamsResponse>
 
   /// Subspaces queries for all registered subspaces and all keys for a subspace.
+  ///
+  /// Since: cosmos-sdk 0.46
   func subspaces(request: Cosmos_Params_V1beta1_QuerySubspacesRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Cosmos_Params_V1beta1_QuerySubspacesResponse>
 }
 

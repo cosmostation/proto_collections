@@ -7,6 +7,8 @@
 // For information on using the generated types, please see the documentation:
 //   https://github.com/apple/swift-protobuf/
 
+/// Since: cosmos-sdk 0.46
+
 import Foundation
 import SwiftProtobuf
 
@@ -42,7 +44,7 @@ struct Cosmos_Crypto_Keyring_V1_Record {
   /// Record contains one of the following items
   var item: Cosmos_Crypto_Keyring_V1_Record.OneOf_Item? = nil
 
-  /// local stores the public information about a locally stored key
+  /// local stores the private key locally.
   var local: Cosmos_Crypto_Keyring_V1_Record.Local {
     get {
       if case .local(let v)? = item {return v}
@@ -51,7 +53,7 @@ struct Cosmos_Crypto_Keyring_V1_Record {
     set {item = .local(newValue)}
   }
 
-  /// ledger stores the public information about a Ledger key
+  /// ledger stores the information about a Ledger key.
   var ledger: Cosmos_Crypto_Keyring_V1_Record.Ledger {
     get {
       if case .ledger(let v)? = item {return v}
@@ -60,7 +62,7 @@ struct Cosmos_Crypto_Keyring_V1_Record {
     set {item = .ledger(newValue)}
   }
 
-  /// Multi does not store any information.
+  /// Multi does not store any other information.
   var multi: Cosmos_Crypto_Keyring_V1_Record.Multi {
     get {
       if case .multi(let v)? = item {return v}
@@ -69,7 +71,7 @@ struct Cosmos_Crypto_Keyring_V1_Record {
     set {item = .multi(newValue)}
   }
 
-  /// Offline does not store any information.
+  /// Offline does not store any other information.
   var offline: Cosmos_Crypto_Keyring_V1_Record.Offline {
     get {
       if case .offline(let v)? = item {return v}
@@ -82,13 +84,13 @@ struct Cosmos_Crypto_Keyring_V1_Record {
 
   /// Record contains one of the following items
   enum OneOf_Item: Equatable {
-    /// local stores the public information about a locally stored key
+    /// local stores the private key locally.
     case local(Cosmos_Crypto_Keyring_V1_Record.Local)
-    /// ledger stores the public information about a Ledger key
+    /// ledger stores the information about a Ledger key.
     case ledger(Cosmos_Crypto_Keyring_V1_Record.Ledger)
-    /// Multi does not store any information.
+    /// Multi does not store any other information.
     case multi(Cosmos_Crypto_Keyring_V1_Record.Multi)
-    /// Offline does not store any information.
+    /// Offline does not store any other information.
     case offline(Cosmos_Crypto_Keyring_V1_Record.Offline)
 
   #if !swift(>=4.1)
@@ -134,8 +136,6 @@ struct Cosmos_Crypto_Keyring_V1_Record {
     var hasPrivKey: Bool {return self._privKey != nil}
     /// Clears the value of `privKey`. Subsequent reads from it will return its default value.
     mutating func clearPrivKey() {self._privKey = nil}
-
-    var privKeyType: String = String()
 
     var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -318,7 +318,6 @@ extension Cosmos_Crypto_Keyring_V1_Record.Local: SwiftProtobuf.Message, SwiftPro
   static let protoMessageName: String = Cosmos_Crypto_Keyring_V1_Record.protoMessageName + ".Local"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "priv_key"),
-    2: .standard(proto: "priv_key_type"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -328,7 +327,6 @@ extension Cosmos_Crypto_Keyring_V1_Record.Local: SwiftProtobuf.Message, SwiftPro
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._privKey) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.privKeyType) }()
       default: break
       }
     }
@@ -338,15 +336,11 @@ extension Cosmos_Crypto_Keyring_V1_Record.Local: SwiftProtobuf.Message, SwiftPro
     if let v = self._privKey {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     }
-    if !self.privKeyType.isEmpty {
-      try visitor.visitSingularStringField(value: self.privKeyType, fieldNumber: 2)
-    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: Cosmos_Crypto_Keyring_V1_Record.Local, rhs: Cosmos_Crypto_Keyring_V1_Record.Local) -> Bool {
     if lhs._privKey != rhs._privKey {return false}
-    if lhs.privKeyType != rhs.privKeyType {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

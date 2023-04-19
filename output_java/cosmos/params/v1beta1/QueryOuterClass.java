@@ -821,7 +821,7 @@ public final class QueryOuterClass {
      * param defines the queried parameter.
      * </pre>
      *
-     * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the param field is set.
      */
     boolean hasParam();
@@ -830,7 +830,7 @@ public final class QueryOuterClass {
      * param defines the queried parameter.
      * </pre>
      *
-     * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The param.
      */
     cosmos.params.v1beta1.Params.ParamChange getParam();
@@ -839,7 +839,7 @@ public final class QueryOuterClass {
      * param defines the queried parameter.
      * </pre>
      *
-     * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.params.v1beta1.Params.ParamChangeOrBuilder getParamOrBuilder();
   }
@@ -944,7 +944,7 @@ public final class QueryOuterClass {
      * param defines the queried parameter.
      * </pre>
      *
-     * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the param field is set.
      */
     @java.lang.Override
@@ -956,7 +956,7 @@ public final class QueryOuterClass {
      * param defines the queried parameter.
      * </pre>
      *
-     * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The param.
      */
     @java.lang.Override
@@ -968,7 +968,7 @@ public final class QueryOuterClass {
      * param defines the queried parameter.
      * </pre>
      *
-     * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.params.v1beta1.Params.ParamChangeOrBuilder getParamOrBuilder() {
@@ -1302,7 +1302,7 @@ public final class QueryOuterClass {
        * param defines the queried parameter.
        * </pre>
        *
-       * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the param field is set.
        */
       public boolean hasParam() {
@@ -1313,7 +1313,7 @@ public final class QueryOuterClass {
        * param defines the queried parameter.
        * </pre>
        *
-       * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The param.
        */
       public cosmos.params.v1beta1.Params.ParamChange getParam() {
@@ -1328,7 +1328,7 @@ public final class QueryOuterClass {
        * param defines the queried parameter.
        * </pre>
        *
-       * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setParam(cosmos.params.v1beta1.Params.ParamChange value) {
         if (paramBuilder_ == null) {
@@ -1348,7 +1348,7 @@ public final class QueryOuterClass {
        * param defines the queried parameter.
        * </pre>
        *
-       * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setParam(
           cosmos.params.v1beta1.Params.ParamChange.Builder builderForValue) {
@@ -1366,7 +1366,7 @@ public final class QueryOuterClass {
        * param defines the queried parameter.
        * </pre>
        *
-       * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeParam(cosmos.params.v1beta1.Params.ParamChange value) {
         if (paramBuilder_ == null) {
@@ -1388,7 +1388,7 @@ public final class QueryOuterClass {
        * param defines the queried parameter.
        * </pre>
        *
-       * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearParam() {
         if (paramBuilder_ == null) {
@@ -1406,7 +1406,7 @@ public final class QueryOuterClass {
        * param defines the queried parameter.
        * </pre>
        *
-       * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.params.v1beta1.Params.ParamChange.Builder getParamBuilder() {
         
@@ -1418,7 +1418,7 @@ public final class QueryOuterClass {
        * param defines the queried parameter.
        * </pre>
        *
-       * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.params.v1beta1.Params.ParamChangeOrBuilder getParamOrBuilder() {
         if (paramBuilder_ != null) {
@@ -1433,7 +1433,7 @@ public final class QueryOuterClass {
        * param defines the queried parameter.
        * </pre>
        *
-       * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.params.v1beta1.ParamChange param = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.params.v1beta1.Params.ParamChange, cosmos.params.v1beta1.Params.ParamChange.Builder, cosmos.params.v1beta1.Params.ParamChangeOrBuilder> 
@@ -1509,6 +1509,7 @@ public final class QueryOuterClass {
    * <pre>
    * QuerySubspacesRequest defines a request type for querying for all registered
    * subspaces and all keys for a subspace.
+   * Since: cosmos-sdk 0.46
    * </pre>
    *
    * Protobuf type {@code cosmos.params.v1beta1.QuerySubspacesRequest}
@@ -1735,6 +1736,7 @@ public final class QueryOuterClass {
      * <pre>
      * QuerySubspacesRequest defines a request type for querying for all registered
      * subspaces and all keys for a subspace.
+     * Since: cosmos-sdk 0.46
      * </pre>
      *
      * Protobuf type {@code cosmos.params.v1beta1.QuerySubspacesRequest}
@@ -1961,6 +1963,7 @@ public final class QueryOuterClass {
    * <pre>
    * QuerySubspacesResponse defines the response types for querying for all
    * registered subspaces and all keys for a subspace.
+   * Since: cosmos-sdk 0.46
    * </pre>
    *
    * Protobuf type {@code cosmos.params.v1beta1.QuerySubspacesResponse}
@@ -2254,6 +2257,7 @@ public final class QueryOuterClass {
      * <pre>
      * QuerySubspacesResponse defines the response types for querying for all
      * registered subspaces and all keys for a subspace.
+     * Since: cosmos-sdk 0.46
      * </pre>
      *
      * Protobuf type {@code cosmos.params.v1beta1.QuerySubspacesResponse}
@@ -2777,6 +2781,7 @@ public final class QueryOuterClass {
    * <pre>
    * Subspace defines a parameter subspace name and all the keys that exist for
    * the subspace.
+   * Since: cosmos-sdk 0.46
    * </pre>
    *
    * Protobuf type {@code cosmos.params.v1beta1.Subspace}
@@ -3124,6 +3129,7 @@ public final class QueryOuterClass {
      * <pre>
      * Subspace defines a parameter subspace name and all the keys that exist for
      * the subspace.
+     * Since: cosmos-sdk 0.46
      * </pre>
      *
      * Protobuf type {@code cosmos.params.v1beta1.Subspace}
@@ -3567,23 +3573,24 @@ public final class QueryOuterClass {
       "\n!cosmos/params/v1beta1/query.proto\022\025cos" +
       "mos.params.v1beta1\032\024gogoproto/gogo.proto" +
       "\032\034google/api/annotations.proto\032\"cosmos/p" +
-      "arams/v1beta1/params.proto\"3\n\022QueryParam" +
-      "sRequest\022\020\n\010subspace\030\001 \001(\t\022\013\n\003key\030\002 \001(\t\"" +
-      "N\n\023QueryParamsResponse\0227\n\005param\030\001 \001(\0132\"." +
-      "cosmos.params.v1beta1.ParamChangeB\004\310\336\037\000\"" +
-      "\027\n\025QuerySubspacesRequest\"L\n\026QuerySubspac" +
-      "esResponse\0222\n\tsubspaces\030\001 \003(\0132\037.cosmos.p" +
-      "arams.v1beta1.Subspace\"*\n\010Subspace\022\020\n\010su" +
-      "bspace\030\001 \001(\t\022\014\n\004keys\030\002 \003(\t2\245\002\n\005Query\022\206\001\n" +
-      "\006Params\022).cosmos.params.v1beta1.QueryPar" +
-      "amsRequest\032*.cosmos.params.v1beta1.Query" +
-      "ParamsResponse\"%\202\323\344\223\002\037\022\035/cosmos/params/v" +
-      "1beta1/params\022\222\001\n\tSubspaces\022,.cosmos.par" +
-      "ams.v1beta1.QuerySubspacesRequest\032-.cosm" +
-      "os.params.v1beta1.QuerySubspacesResponse" +
-      "\"(\202\323\344\223\002\"\022 /cosmos/params/v1beta1/subspac" +
-      "esB6Z4github.com/cosmos/cosmos-sdk/x/par" +
-      "ams/types/proposalb\006proto3"
+      "arams/v1beta1/params.proto\032\021amino/amino." +
+      "proto\"3\n\022QueryParamsRequest\022\020\n\010subspace\030" +
+      "\001 \001(\t\022\013\n\003key\030\002 \001(\t\"S\n\023QueryParamsRespons" +
+      "e\022<\n\005param\030\001 \001(\0132\".cosmos.params.v1beta1" +
+      ".ParamChangeB\t\310\336\037\000\250\347\260*\001\"\027\n\025QuerySubspace" +
+      "sRequest\"L\n\026QuerySubspacesResponse\0222\n\tsu" +
+      "bspaces\030\001 \003(\0132\037.cosmos.params.v1beta1.Su" +
+      "bspace\"*\n\010Subspace\022\020\n\010subspace\030\001 \001(\t\022\014\n\004" +
+      "keys\030\002 \003(\t2\245\002\n\005Query\022\206\001\n\006Params\022).cosmos" +
+      ".params.v1beta1.QueryParamsRequest\032*.cos" +
+      "mos.params.v1beta1.QueryParamsResponse\"%" +
+      "\202\323\344\223\002\037\022\035/cosmos/params/v1beta1/params\022\222\001" +
+      "\n\tSubspaces\022,.cosmos.params.v1beta1.Quer" +
+      "ySubspacesRequest\032-.cosmos.params.v1beta" +
+      "1.QuerySubspacesResponse\"(\202\323\344\223\002\"\022 /cosmo" +
+      "s/params/v1beta1/subspacesB6Z4github.com" +
+      "/cosmos/cosmos-sdk/x/params/types/propos" +
+      "alb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3591,6 +3598,7 @@ public final class QueryOuterClass {
           com.google.protobuf2.GoGoProtos.getDescriptor(),
           com.google.api.AnnotationsProto.getDescriptor(),
           cosmos.params.v1beta1.Params.getDescriptor(),
+          amino.Amino.getDescriptor(),
         });
     internal_static_cosmos_params_v1beta1_QueryParamsRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -3624,6 +3632,7 @@ public final class QueryOuterClass {
         new java.lang.String[] { "Subspace", "Keys", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(amino.Amino.dontOmitempty);
     registry.add(com.google.protobuf2.GoGoProtos.nullable);
     registry.add(com.google.api.AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
@@ -3631,6 +3640,7 @@ public final class QueryOuterClass {
     com.google.protobuf2.GoGoProtos.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
     cosmos.params.v1beta1.Params.getDescriptor();
+    amino.Amino.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

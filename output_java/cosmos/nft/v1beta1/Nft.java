@@ -3279,8 +3279,7 @@ public final class Nft {
       "oogle.protobuf2.Any\"g\n\003NFT\022\020\n\010class_id\030\001" +
       " \001(\t\022\n\n\002id\030\002 \001(\t\022\013\n\003uri\030\003 \001(\t\022\020\n\010uri_has" +
       "h\030\004 \001(\t\022#\n\004data\030\n \001(\0132\025.google.protobuf2" +
-      ".AnyB$Z\"github.com/cosmos/cosmos-sdk/x/n" +
-      "ftb\006proto3"
+      ".AnyB\024Z\022cosmossdk.io/x/nftb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

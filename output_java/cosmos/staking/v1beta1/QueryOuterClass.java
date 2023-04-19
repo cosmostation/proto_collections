@@ -898,7 +898,7 @@ public final class QueryOuterClass {
      * validators contains all the queried validators.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.staking.v1beta1.Staking.Validator> 
         getValidatorsList();
@@ -907,7 +907,7 @@ public final class QueryOuterClass {
      * validators contains all the queried validators.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.staking.v1beta1.Staking.Validator getValidators(int index);
     /**
@@ -915,7 +915,7 @@ public final class QueryOuterClass {
      * validators contains all the queried validators.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     int getValidatorsCount();
     /**
@@ -923,7 +923,7 @@ public final class QueryOuterClass {
      * validators contains all the queried validators.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.staking.v1beta1.Staking.ValidatorOrBuilder> 
         getValidatorsOrBuilderList();
@@ -932,7 +932,7 @@ public final class QueryOuterClass {
      * validators contains all the queried validators.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.staking.v1beta1.Staking.ValidatorOrBuilder getValidatorsOrBuilder(
         int index);
@@ -1079,7 +1079,7 @@ public final class QueryOuterClass {
      * validators contains all the queried validators.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.staking.v1beta1.Staking.Validator> getValidatorsList() {
@@ -1090,7 +1090,7 @@ public final class QueryOuterClass {
      * validators contains all the queried validators.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.staking.v1beta1.Staking.ValidatorOrBuilder> 
@@ -1102,7 +1102,7 @@ public final class QueryOuterClass {
      * validators contains all the queried validators.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getValidatorsCount() {
@@ -1113,7 +1113,7 @@ public final class QueryOuterClass {
      * validators contains all the queried validators.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.staking.v1beta1.Staking.Validator getValidators(int index) {
@@ -1124,7 +1124,7 @@ public final class QueryOuterClass {
      * validators contains all the queried validators.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.staking.v1beta1.Staking.ValidatorOrBuilder getValidatorsOrBuilder(
@@ -1563,7 +1563,7 @@ public final class QueryOuterClass {
        * validators contains all the queried validators.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.staking.v1beta1.Staking.Validator> getValidatorsList() {
         if (validatorsBuilder_ == null) {
@@ -1577,7 +1577,7 @@ public final class QueryOuterClass {
        * validators contains all the queried validators.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public int getValidatorsCount() {
         if (validatorsBuilder_ == null) {
@@ -1591,7 +1591,7 @@ public final class QueryOuterClass {
        * validators contains all the queried validators.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.Validator getValidators(int index) {
         if (validatorsBuilder_ == null) {
@@ -1605,7 +1605,7 @@ public final class QueryOuterClass {
        * validators contains all the queried validators.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setValidators(
           int index, cosmos.staking.v1beta1.Staking.Validator value) {
@@ -1626,7 +1626,7 @@ public final class QueryOuterClass {
        * validators contains all the queried validators.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setValidators(
           int index, cosmos.staking.v1beta1.Staking.Validator.Builder builderForValue) {
@@ -1644,7 +1644,7 @@ public final class QueryOuterClass {
        * validators contains all the queried validators.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addValidators(cosmos.staking.v1beta1.Staking.Validator value) {
         if (validatorsBuilder_ == null) {
@@ -1664,7 +1664,7 @@ public final class QueryOuterClass {
        * validators contains all the queried validators.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addValidators(
           int index, cosmos.staking.v1beta1.Staking.Validator value) {
@@ -1685,7 +1685,7 @@ public final class QueryOuterClass {
        * validators contains all the queried validators.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addValidators(
           cosmos.staking.v1beta1.Staking.Validator.Builder builderForValue) {
@@ -1703,7 +1703,7 @@ public final class QueryOuterClass {
        * validators contains all the queried validators.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addValidators(
           int index, cosmos.staking.v1beta1.Staking.Validator.Builder builderForValue) {
@@ -1721,7 +1721,7 @@ public final class QueryOuterClass {
        * validators contains all the queried validators.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllValidators(
           java.lang.Iterable<? extends cosmos.staking.v1beta1.Staking.Validator> values) {
@@ -1740,7 +1740,7 @@ public final class QueryOuterClass {
        * validators contains all the queried validators.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearValidators() {
         if (validatorsBuilder_ == null) {
@@ -1757,7 +1757,7 @@ public final class QueryOuterClass {
        * validators contains all the queried validators.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeValidators(int index) {
         if (validatorsBuilder_ == null) {
@@ -1774,7 +1774,7 @@ public final class QueryOuterClass {
        * validators contains all the queried validators.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.Validator.Builder getValidatorsBuilder(
           int index) {
@@ -1785,7 +1785,7 @@ public final class QueryOuterClass {
        * validators contains all the queried validators.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.ValidatorOrBuilder getValidatorsOrBuilder(
           int index) {
@@ -1799,7 +1799,7 @@ public final class QueryOuterClass {
        * validators contains all the queried validators.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.staking.v1beta1.Staking.ValidatorOrBuilder> 
            getValidatorsOrBuilderList() {
@@ -1814,7 +1814,7 @@ public final class QueryOuterClass {
        * validators contains all the queried validators.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.Validator.Builder addValidatorsBuilder() {
         return getValidatorsFieldBuilder().addBuilder(
@@ -1825,7 +1825,7 @@ public final class QueryOuterClass {
        * validators contains all the queried validators.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.Validator.Builder addValidatorsBuilder(
           int index) {
@@ -1837,7 +1837,7 @@ public final class QueryOuterClass {
        * validators contains all the queried validators.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.staking.v1beta1.Staking.Validator.Builder> 
            getValidatorsBuilderList() {
@@ -2683,28 +2683,28 @@ public final class QueryOuterClass {
 
     /**
      * <pre>
-     * validator defines the the validator info.
+     * validator defines the validator info.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the validator field is set.
      */
     boolean hasValidator();
     /**
      * <pre>
-     * validator defines the the validator info.
+     * validator defines the validator info.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The validator.
      */
     cosmos.staking.v1beta1.Staking.Validator getValidator();
     /**
      * <pre>
-     * validator defines the the validator info.
+     * validator defines the validator info.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.staking.v1beta1.Staking.ValidatorOrBuilder getValidatorOrBuilder();
   }
@@ -2806,10 +2806,10 @@ public final class QueryOuterClass {
     private cosmos.staking.v1beta1.Staking.Validator validator_;
     /**
      * <pre>
-     * validator defines the the validator info.
+     * validator defines the validator info.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the validator field is set.
      */
     @java.lang.Override
@@ -2818,10 +2818,10 @@ public final class QueryOuterClass {
     }
     /**
      * <pre>
-     * validator defines the the validator info.
+     * validator defines the validator info.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The validator.
      */
     @java.lang.Override
@@ -2830,10 +2830,10 @@ public final class QueryOuterClass {
     }
     /**
      * <pre>
-     * validator defines the the validator info.
+     * validator defines the validator info.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.staking.v1beta1.Staking.ValidatorOrBuilder getValidatorOrBuilder() {
@@ -3164,10 +3164,10 @@ public final class QueryOuterClass {
           cosmos.staking.v1beta1.Staking.Validator, cosmos.staking.v1beta1.Staking.Validator.Builder, cosmos.staking.v1beta1.Staking.ValidatorOrBuilder> validatorBuilder_;
       /**
        * <pre>
-       * validator defines the the validator info.
+       * validator defines the validator info.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the validator field is set.
        */
       public boolean hasValidator() {
@@ -3175,10 +3175,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validator defines the the validator info.
+       * validator defines the validator info.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The validator.
        */
       public cosmos.staking.v1beta1.Staking.Validator getValidator() {
@@ -3190,10 +3190,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validator defines the the validator info.
+       * validator defines the validator info.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setValidator(cosmos.staking.v1beta1.Staking.Validator value) {
         if (validatorBuilder_ == null) {
@@ -3210,10 +3210,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validator defines the the validator info.
+       * validator defines the validator info.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setValidator(
           cosmos.staking.v1beta1.Staking.Validator.Builder builderForValue) {
@@ -3228,10 +3228,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validator defines the the validator info.
+       * validator defines the validator info.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeValidator(cosmos.staking.v1beta1.Staking.Validator value) {
         if (validatorBuilder_ == null) {
@@ -3250,10 +3250,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validator defines the the validator info.
+       * validator defines the validator info.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearValidator() {
         if (validatorBuilder_ == null) {
@@ -3268,10 +3268,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validator defines the the validator info.
+       * validator defines the validator info.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.Validator.Builder getValidatorBuilder() {
         
@@ -3280,10 +3280,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validator defines the the validator info.
+       * validator defines the validator info.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.ValidatorOrBuilder getValidatorOrBuilder() {
         if (validatorBuilder_ != null) {
@@ -3295,10 +3295,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validator defines the the validator info.
+       * validator defines the validator info.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.staking.v1beta1.Staking.Validator, cosmos.staking.v1beta1.Staking.Validator.Builder, cosmos.staking.v1beta1.Staking.ValidatorOrBuilder> 
@@ -4248,25 +4248,25 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses"];</code>
+     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses", (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.staking.v1beta1.Staking.DelegationResponse> 
         getDelegationResponsesList();
     /**
-     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses"];</code>
+     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses", (.amino.dont_omitempty) = true];</code>
      */
     cosmos.staking.v1beta1.Staking.DelegationResponse getDelegationResponses(int index);
     /**
-     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses"];</code>
+     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses", (.amino.dont_omitempty) = true];</code>
      */
     int getDelegationResponsesCount();
     /**
-     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses"];</code>
+     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses", (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.staking.v1beta1.Staking.DelegationResponseOrBuilder> 
         getDelegationResponsesOrBuilderList();
     /**
-     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses"];</code>
+     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses", (.amino.dont_omitempty) = true];</code>
      */
     cosmos.staking.v1beta1.Staking.DelegationResponseOrBuilder getDelegationResponsesOrBuilder(
         int index);
@@ -4410,14 +4410,14 @@ public final class QueryOuterClass {
     public static final int DELEGATION_RESPONSES_FIELD_NUMBER = 1;
     private java.util.List<cosmos.staking.v1beta1.Staking.DelegationResponse> delegationResponses_;
     /**
-     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses"];</code>
+     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.staking.v1beta1.Staking.DelegationResponse> getDelegationResponsesList() {
       return delegationResponses_;
     }
     /**
-     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses"];</code>
+     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.staking.v1beta1.Staking.DelegationResponseOrBuilder> 
@@ -4425,21 +4425,21 @@ public final class QueryOuterClass {
       return delegationResponses_;
     }
     /**
-     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses"];</code>
+     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getDelegationResponsesCount() {
       return delegationResponses_.size();
     }
     /**
-     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses"];</code>
+     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.staking.v1beta1.Staking.DelegationResponse getDelegationResponses(int index) {
       return delegationResponses_.get(index);
     }
     /**
-     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses"];</code>
+     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.staking.v1beta1.Staking.DelegationResponseOrBuilder getDelegationResponsesOrBuilder(
@@ -4875,7 +4875,7 @@ public final class QueryOuterClass {
           cosmos.staking.v1beta1.Staking.DelegationResponse, cosmos.staking.v1beta1.Staking.DelegationResponse.Builder, cosmos.staking.v1beta1.Staking.DelegationResponseOrBuilder> delegationResponsesBuilder_;
 
       /**
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses"];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.staking.v1beta1.Staking.DelegationResponse> getDelegationResponsesList() {
         if (delegationResponsesBuilder_ == null) {
@@ -4885,7 +4885,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses"];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses", (.amino.dont_omitempty) = true];</code>
        */
       public int getDelegationResponsesCount() {
         if (delegationResponsesBuilder_ == null) {
@@ -4895,7 +4895,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses"];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.DelegationResponse getDelegationResponses(int index) {
         if (delegationResponsesBuilder_ == null) {
@@ -4905,7 +4905,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses"];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses", (.amino.dont_omitempty) = true];</code>
        */
       public Builder setDelegationResponses(
           int index, cosmos.staking.v1beta1.Staking.DelegationResponse value) {
@@ -4922,7 +4922,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses"];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses", (.amino.dont_omitempty) = true];</code>
        */
       public Builder setDelegationResponses(
           int index, cosmos.staking.v1beta1.Staking.DelegationResponse.Builder builderForValue) {
@@ -4936,7 +4936,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses"];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addDelegationResponses(cosmos.staking.v1beta1.Staking.DelegationResponse value) {
         if (delegationResponsesBuilder_ == null) {
@@ -4952,7 +4952,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses"];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addDelegationResponses(
           int index, cosmos.staking.v1beta1.Staking.DelegationResponse value) {
@@ -4969,7 +4969,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses"];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addDelegationResponses(
           cosmos.staking.v1beta1.Staking.DelegationResponse.Builder builderForValue) {
@@ -4983,7 +4983,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses"];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addDelegationResponses(
           int index, cosmos.staking.v1beta1.Staking.DelegationResponse.Builder builderForValue) {
@@ -4997,7 +4997,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses"];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllDelegationResponses(
           java.lang.Iterable<? extends cosmos.staking.v1beta1.Staking.DelegationResponse> values) {
@@ -5012,7 +5012,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses"];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses", (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearDelegationResponses() {
         if (delegationResponsesBuilder_ == null) {
@@ -5025,7 +5025,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses"];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses", (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeDelegationResponses(int index) {
         if (delegationResponsesBuilder_ == null) {
@@ -5038,14 +5038,14 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses"];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.DelegationResponse.Builder getDelegationResponsesBuilder(
           int index) {
         return getDelegationResponsesFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses"];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.DelegationResponseOrBuilder getDelegationResponsesOrBuilder(
           int index) {
@@ -5055,7 +5055,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses"];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.staking.v1beta1.Staking.DelegationResponseOrBuilder> 
            getDelegationResponsesOrBuilderList() {
@@ -5066,14 +5066,14 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses"];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.DelegationResponse.Builder addDelegationResponsesBuilder() {
         return getDelegationResponsesFieldBuilder().addBuilder(
             cosmos.staking.v1beta1.Staking.DelegationResponse.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses"];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.DelegationResponse.Builder addDelegationResponsesBuilder(
           int index) {
@@ -5081,7 +5081,7 @@ public final class QueryOuterClass {
             index, cosmos.staking.v1beta1.Staking.DelegationResponse.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses"];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "DelegationResponses", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.staking.v1beta1.Staking.DelegationResponse.Builder> 
            getDelegationResponsesBuilderList() {
@@ -6191,25 +6191,25 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.staking.v1beta1.Staking.UnbondingDelegation> 
         getUnbondingResponsesList();
     /**
-     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.staking.v1beta1.Staking.UnbondingDelegation getUnbondingResponses(int index);
     /**
-     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     int getUnbondingResponsesCount();
     /**
-     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.staking.v1beta1.Staking.UnbondingDelegationOrBuilder> 
         getUnbondingResponsesOrBuilderList();
     /**
-     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.staking.v1beta1.Staking.UnbondingDelegationOrBuilder getUnbondingResponsesOrBuilder(
         int index);
@@ -6353,14 +6353,14 @@ public final class QueryOuterClass {
     public static final int UNBONDING_RESPONSES_FIELD_NUMBER = 1;
     private java.util.List<cosmos.staking.v1beta1.Staking.UnbondingDelegation> unbondingResponses_;
     /**
-     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.staking.v1beta1.Staking.UnbondingDelegation> getUnbondingResponsesList() {
       return unbondingResponses_;
     }
     /**
-     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.staking.v1beta1.Staking.UnbondingDelegationOrBuilder> 
@@ -6368,21 +6368,21 @@ public final class QueryOuterClass {
       return unbondingResponses_;
     }
     /**
-     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getUnbondingResponsesCount() {
       return unbondingResponses_.size();
     }
     /**
-     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.staking.v1beta1.Staking.UnbondingDelegation getUnbondingResponses(int index) {
       return unbondingResponses_.get(index);
     }
     /**
-     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.staking.v1beta1.Staking.UnbondingDelegationOrBuilder getUnbondingResponsesOrBuilder(
@@ -6818,7 +6818,7 @@ public final class QueryOuterClass {
           cosmos.staking.v1beta1.Staking.UnbondingDelegation, cosmos.staking.v1beta1.Staking.UnbondingDelegation.Builder, cosmos.staking.v1beta1.Staking.UnbondingDelegationOrBuilder> unbondingResponsesBuilder_;
 
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.staking.v1beta1.Staking.UnbondingDelegation> getUnbondingResponsesList() {
         if (unbondingResponsesBuilder_ == null) {
@@ -6828,7 +6828,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public int getUnbondingResponsesCount() {
         if (unbondingResponsesBuilder_ == null) {
@@ -6838,7 +6838,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.UnbondingDelegation getUnbondingResponses(int index) {
         if (unbondingResponsesBuilder_ == null) {
@@ -6848,7 +6848,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setUnbondingResponses(
           int index, cosmos.staking.v1beta1.Staking.UnbondingDelegation value) {
@@ -6865,7 +6865,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setUnbondingResponses(
           int index, cosmos.staking.v1beta1.Staking.UnbondingDelegation.Builder builderForValue) {
@@ -6879,7 +6879,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addUnbondingResponses(cosmos.staking.v1beta1.Staking.UnbondingDelegation value) {
         if (unbondingResponsesBuilder_ == null) {
@@ -6895,7 +6895,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addUnbondingResponses(
           int index, cosmos.staking.v1beta1.Staking.UnbondingDelegation value) {
@@ -6912,7 +6912,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addUnbondingResponses(
           cosmos.staking.v1beta1.Staking.UnbondingDelegation.Builder builderForValue) {
@@ -6926,7 +6926,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addUnbondingResponses(
           int index, cosmos.staking.v1beta1.Staking.UnbondingDelegation.Builder builderForValue) {
@@ -6940,7 +6940,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllUnbondingResponses(
           java.lang.Iterable<? extends cosmos.staking.v1beta1.Staking.UnbondingDelegation> values) {
@@ -6955,7 +6955,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearUnbondingResponses() {
         if (unbondingResponsesBuilder_ == null) {
@@ -6968,7 +6968,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeUnbondingResponses(int index) {
         if (unbondingResponsesBuilder_ == null) {
@@ -6981,14 +6981,14 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.UnbondingDelegation.Builder getUnbondingResponsesBuilder(
           int index) {
         return getUnbondingResponsesFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.UnbondingDelegationOrBuilder getUnbondingResponsesOrBuilder(
           int index) {
@@ -6998,7 +6998,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.staking.v1beta1.Staking.UnbondingDelegationOrBuilder> 
            getUnbondingResponsesOrBuilderList() {
@@ -7009,14 +7009,14 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.UnbondingDelegation.Builder addUnbondingResponsesBuilder() {
         return getUnbondingResponsesFieldBuilder().addBuilder(
             cosmos.staking.v1beta1.Staking.UnbondingDelegation.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.UnbondingDelegation.Builder addUnbondingResponsesBuilder(
           int index) {
@@ -7024,7 +7024,7 @@ public final class QueryOuterClass {
             index, cosmos.staking.v1beta1.Staking.UnbondingDelegation.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.staking.v1beta1.Staking.UnbondingDelegation.Builder> 
            getUnbondingResponsesBuilderList() {
@@ -9548,7 +9548,7 @@ public final class QueryOuterClass {
      * unbond defines the unbonding information of a delegation.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the unbond field is set.
      */
     boolean hasUnbond();
@@ -9557,7 +9557,7 @@ public final class QueryOuterClass {
      * unbond defines the unbonding information of a delegation.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The unbond.
      */
     cosmos.staking.v1beta1.Staking.UnbondingDelegation getUnbond();
@@ -9566,7 +9566,7 @@ public final class QueryOuterClass {
      * unbond defines the unbonding information of a delegation.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.staking.v1beta1.Staking.UnbondingDelegationOrBuilder getUnbondOrBuilder();
   }
@@ -9672,7 +9672,7 @@ public final class QueryOuterClass {
      * unbond defines the unbonding information of a delegation.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the unbond field is set.
      */
     @java.lang.Override
@@ -9684,7 +9684,7 @@ public final class QueryOuterClass {
      * unbond defines the unbonding information of a delegation.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The unbond.
      */
     @java.lang.Override
@@ -9696,7 +9696,7 @@ public final class QueryOuterClass {
      * unbond defines the unbonding information of a delegation.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.staking.v1beta1.Staking.UnbondingDelegationOrBuilder getUnbondOrBuilder() {
@@ -10031,7 +10031,7 @@ public final class QueryOuterClass {
        * unbond defines the unbonding information of a delegation.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the unbond field is set.
        */
       public boolean hasUnbond() {
@@ -10042,7 +10042,7 @@ public final class QueryOuterClass {
        * unbond defines the unbonding information of a delegation.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The unbond.
        */
       public cosmos.staking.v1beta1.Staking.UnbondingDelegation getUnbond() {
@@ -10057,7 +10057,7 @@ public final class QueryOuterClass {
        * unbond defines the unbonding information of a delegation.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setUnbond(cosmos.staking.v1beta1.Staking.UnbondingDelegation value) {
         if (unbondBuilder_ == null) {
@@ -10077,7 +10077,7 @@ public final class QueryOuterClass {
        * unbond defines the unbonding information of a delegation.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setUnbond(
           cosmos.staking.v1beta1.Staking.UnbondingDelegation.Builder builderForValue) {
@@ -10095,7 +10095,7 @@ public final class QueryOuterClass {
        * unbond defines the unbonding information of a delegation.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeUnbond(cosmos.staking.v1beta1.Staking.UnbondingDelegation value) {
         if (unbondBuilder_ == null) {
@@ -10117,7 +10117,7 @@ public final class QueryOuterClass {
        * unbond defines the unbonding information of a delegation.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearUnbond() {
         if (unbondBuilder_ == null) {
@@ -10135,7 +10135,7 @@ public final class QueryOuterClass {
        * unbond defines the unbonding information of a delegation.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.UnbondingDelegation.Builder getUnbondBuilder() {
         
@@ -10147,7 +10147,7 @@ public final class QueryOuterClass {
        * unbond defines the unbonding information of a delegation.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.UnbondingDelegationOrBuilder getUnbondOrBuilder() {
         if (unbondBuilder_ != null) {
@@ -10162,7 +10162,7 @@ public final class QueryOuterClass {
        * unbond defines the unbonding information of a delegation.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.UnbondingDelegation unbond = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.staking.v1beta1.Staking.UnbondingDelegation, cosmos.staking.v1beta1.Staking.UnbondingDelegation.Builder, cosmos.staking.v1beta1.Staking.UnbondingDelegationOrBuilder> 
@@ -11116,7 +11116,7 @@ public final class QueryOuterClass {
      * delegation_responses defines all the delegations' info of a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.staking.v1beta1.Staking.DelegationResponse> 
         getDelegationResponsesList();
@@ -11125,7 +11125,7 @@ public final class QueryOuterClass {
      * delegation_responses defines all the delegations' info of a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.staking.v1beta1.Staking.DelegationResponse getDelegationResponses(int index);
     /**
@@ -11133,7 +11133,7 @@ public final class QueryOuterClass {
      * delegation_responses defines all the delegations' info of a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     int getDelegationResponsesCount();
     /**
@@ -11141,7 +11141,7 @@ public final class QueryOuterClass {
      * delegation_responses defines all the delegations' info of a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.staking.v1beta1.Staking.DelegationResponseOrBuilder> 
         getDelegationResponsesOrBuilderList();
@@ -11150,7 +11150,7 @@ public final class QueryOuterClass {
      * delegation_responses defines all the delegations' info of a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.staking.v1beta1.Staking.DelegationResponseOrBuilder getDelegationResponsesOrBuilder(
         int index);
@@ -11298,7 +11298,7 @@ public final class QueryOuterClass {
      * delegation_responses defines all the delegations' info of a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.staking.v1beta1.Staking.DelegationResponse> getDelegationResponsesList() {
@@ -11309,7 +11309,7 @@ public final class QueryOuterClass {
      * delegation_responses defines all the delegations' info of a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.staking.v1beta1.Staking.DelegationResponseOrBuilder> 
@@ -11321,7 +11321,7 @@ public final class QueryOuterClass {
      * delegation_responses defines all the delegations' info of a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getDelegationResponsesCount() {
@@ -11332,7 +11332,7 @@ public final class QueryOuterClass {
      * delegation_responses defines all the delegations' info of a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.staking.v1beta1.Staking.DelegationResponse getDelegationResponses(int index) {
@@ -11343,7 +11343,7 @@ public final class QueryOuterClass {
      * delegation_responses defines all the delegations' info of a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.staking.v1beta1.Staking.DelegationResponseOrBuilder getDelegationResponsesOrBuilder(
@@ -11783,7 +11783,7 @@ public final class QueryOuterClass {
        * delegation_responses defines all the delegations' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.staking.v1beta1.Staking.DelegationResponse> getDelegationResponsesList() {
         if (delegationResponsesBuilder_ == null) {
@@ -11797,7 +11797,7 @@ public final class QueryOuterClass {
        * delegation_responses defines all the delegations' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public int getDelegationResponsesCount() {
         if (delegationResponsesBuilder_ == null) {
@@ -11811,7 +11811,7 @@ public final class QueryOuterClass {
        * delegation_responses defines all the delegations' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.DelegationResponse getDelegationResponses(int index) {
         if (delegationResponsesBuilder_ == null) {
@@ -11825,7 +11825,7 @@ public final class QueryOuterClass {
        * delegation_responses defines all the delegations' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setDelegationResponses(
           int index, cosmos.staking.v1beta1.Staking.DelegationResponse value) {
@@ -11846,7 +11846,7 @@ public final class QueryOuterClass {
        * delegation_responses defines all the delegations' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setDelegationResponses(
           int index, cosmos.staking.v1beta1.Staking.DelegationResponse.Builder builderForValue) {
@@ -11864,7 +11864,7 @@ public final class QueryOuterClass {
        * delegation_responses defines all the delegations' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addDelegationResponses(cosmos.staking.v1beta1.Staking.DelegationResponse value) {
         if (delegationResponsesBuilder_ == null) {
@@ -11884,7 +11884,7 @@ public final class QueryOuterClass {
        * delegation_responses defines all the delegations' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addDelegationResponses(
           int index, cosmos.staking.v1beta1.Staking.DelegationResponse value) {
@@ -11905,7 +11905,7 @@ public final class QueryOuterClass {
        * delegation_responses defines all the delegations' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addDelegationResponses(
           cosmos.staking.v1beta1.Staking.DelegationResponse.Builder builderForValue) {
@@ -11923,7 +11923,7 @@ public final class QueryOuterClass {
        * delegation_responses defines all the delegations' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addDelegationResponses(
           int index, cosmos.staking.v1beta1.Staking.DelegationResponse.Builder builderForValue) {
@@ -11941,7 +11941,7 @@ public final class QueryOuterClass {
        * delegation_responses defines all the delegations' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllDelegationResponses(
           java.lang.Iterable<? extends cosmos.staking.v1beta1.Staking.DelegationResponse> values) {
@@ -11960,7 +11960,7 @@ public final class QueryOuterClass {
        * delegation_responses defines all the delegations' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearDelegationResponses() {
         if (delegationResponsesBuilder_ == null) {
@@ -11977,7 +11977,7 @@ public final class QueryOuterClass {
        * delegation_responses defines all the delegations' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeDelegationResponses(int index) {
         if (delegationResponsesBuilder_ == null) {
@@ -11994,7 +11994,7 @@ public final class QueryOuterClass {
        * delegation_responses defines all the delegations' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.DelegationResponse.Builder getDelegationResponsesBuilder(
           int index) {
@@ -12005,7 +12005,7 @@ public final class QueryOuterClass {
        * delegation_responses defines all the delegations' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.DelegationResponseOrBuilder getDelegationResponsesOrBuilder(
           int index) {
@@ -12019,7 +12019,7 @@ public final class QueryOuterClass {
        * delegation_responses defines all the delegations' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.staking.v1beta1.Staking.DelegationResponseOrBuilder> 
            getDelegationResponsesOrBuilderList() {
@@ -12034,7 +12034,7 @@ public final class QueryOuterClass {
        * delegation_responses defines all the delegations' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.DelegationResponse.Builder addDelegationResponsesBuilder() {
         return getDelegationResponsesFieldBuilder().addBuilder(
@@ -12045,7 +12045,7 @@ public final class QueryOuterClass {
        * delegation_responses defines all the delegations' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.DelegationResponse.Builder addDelegationResponsesBuilder(
           int index) {
@@ -12057,7 +12057,7 @@ public final class QueryOuterClass {
        * delegation_responses defines all the delegations' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.DelegationResponse delegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.staking.v1beta1.Staking.DelegationResponse.Builder> 
            getDelegationResponsesBuilderList() {
@@ -13167,25 +13167,25 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.staking.v1beta1.Staking.UnbondingDelegation> 
         getUnbondingResponsesList();
     /**
-     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.staking.v1beta1.Staking.UnbondingDelegation getUnbondingResponses(int index);
     /**
-     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     int getUnbondingResponsesCount();
     /**
-     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.staking.v1beta1.Staking.UnbondingDelegationOrBuilder> 
         getUnbondingResponsesOrBuilderList();
     /**
-     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.staking.v1beta1.Staking.UnbondingDelegationOrBuilder getUnbondingResponsesOrBuilder(
         int index);
@@ -13329,14 +13329,14 @@ public final class QueryOuterClass {
     public static final int UNBONDING_RESPONSES_FIELD_NUMBER = 1;
     private java.util.List<cosmos.staking.v1beta1.Staking.UnbondingDelegation> unbondingResponses_;
     /**
-     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.staking.v1beta1.Staking.UnbondingDelegation> getUnbondingResponsesList() {
       return unbondingResponses_;
     }
     /**
-     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.staking.v1beta1.Staking.UnbondingDelegationOrBuilder> 
@@ -13344,21 +13344,21 @@ public final class QueryOuterClass {
       return unbondingResponses_;
     }
     /**
-     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getUnbondingResponsesCount() {
       return unbondingResponses_.size();
     }
     /**
-     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.staking.v1beta1.Staking.UnbondingDelegation getUnbondingResponses(int index) {
       return unbondingResponses_.get(index);
     }
     /**
-     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.staking.v1beta1.Staking.UnbondingDelegationOrBuilder getUnbondingResponsesOrBuilder(
@@ -13794,7 +13794,7 @@ public final class QueryOuterClass {
           cosmos.staking.v1beta1.Staking.UnbondingDelegation, cosmos.staking.v1beta1.Staking.UnbondingDelegation.Builder, cosmos.staking.v1beta1.Staking.UnbondingDelegationOrBuilder> unbondingResponsesBuilder_;
 
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.staking.v1beta1.Staking.UnbondingDelegation> getUnbondingResponsesList() {
         if (unbondingResponsesBuilder_ == null) {
@@ -13804,7 +13804,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public int getUnbondingResponsesCount() {
         if (unbondingResponsesBuilder_ == null) {
@@ -13814,7 +13814,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.UnbondingDelegation getUnbondingResponses(int index) {
         if (unbondingResponsesBuilder_ == null) {
@@ -13824,7 +13824,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setUnbondingResponses(
           int index, cosmos.staking.v1beta1.Staking.UnbondingDelegation value) {
@@ -13841,7 +13841,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setUnbondingResponses(
           int index, cosmos.staking.v1beta1.Staking.UnbondingDelegation.Builder builderForValue) {
@@ -13855,7 +13855,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addUnbondingResponses(cosmos.staking.v1beta1.Staking.UnbondingDelegation value) {
         if (unbondingResponsesBuilder_ == null) {
@@ -13871,7 +13871,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addUnbondingResponses(
           int index, cosmos.staking.v1beta1.Staking.UnbondingDelegation value) {
@@ -13888,7 +13888,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addUnbondingResponses(
           cosmos.staking.v1beta1.Staking.UnbondingDelegation.Builder builderForValue) {
@@ -13902,7 +13902,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addUnbondingResponses(
           int index, cosmos.staking.v1beta1.Staking.UnbondingDelegation.Builder builderForValue) {
@@ -13916,7 +13916,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllUnbondingResponses(
           java.lang.Iterable<? extends cosmos.staking.v1beta1.Staking.UnbondingDelegation> values) {
@@ -13931,7 +13931,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearUnbondingResponses() {
         if (unbondingResponsesBuilder_ == null) {
@@ -13944,7 +13944,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeUnbondingResponses(int index) {
         if (unbondingResponsesBuilder_ == null) {
@@ -13957,14 +13957,14 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.UnbondingDelegation.Builder getUnbondingResponsesBuilder(
           int index) {
         return getUnbondingResponsesFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.UnbondingDelegationOrBuilder getUnbondingResponsesOrBuilder(
           int index) {
@@ -13974,7 +13974,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.staking.v1beta1.Staking.UnbondingDelegationOrBuilder> 
            getUnbondingResponsesOrBuilderList() {
@@ -13985,14 +13985,14 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.UnbondingDelegation.Builder addUnbondingResponsesBuilder() {
         return getUnbondingResponsesFieldBuilder().addBuilder(
             cosmos.staking.v1beta1.Staking.UnbondingDelegation.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.UnbondingDelegation.Builder addUnbondingResponsesBuilder(
           int index) {
@@ -14000,7 +14000,7 @@ public final class QueryOuterClass {
             index, cosmos.staking.v1beta1.Staking.UnbondingDelegation.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.UnbondingDelegation unbonding_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.staking.v1beta1.Staking.UnbondingDelegation.Builder> 
            getUnbondingResponsesBuilderList() {
@@ -15482,25 +15482,25 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.staking.v1beta1.Staking.RedelegationResponse> 
         getRedelegationResponsesList();
     /**
-     * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.staking.v1beta1.Staking.RedelegationResponse getRedelegationResponses(int index);
     /**
-     * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     int getRedelegationResponsesCount();
     /**
-     * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.staking.v1beta1.Staking.RedelegationResponseOrBuilder> 
         getRedelegationResponsesOrBuilderList();
     /**
-     * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.staking.v1beta1.Staking.RedelegationResponseOrBuilder getRedelegationResponsesOrBuilder(
         int index);
@@ -15644,14 +15644,14 @@ public final class QueryOuterClass {
     public static final int REDELEGATION_RESPONSES_FIELD_NUMBER = 1;
     private java.util.List<cosmos.staking.v1beta1.Staking.RedelegationResponse> redelegationResponses_;
     /**
-     * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.staking.v1beta1.Staking.RedelegationResponse> getRedelegationResponsesList() {
       return redelegationResponses_;
     }
     /**
-     * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.staking.v1beta1.Staking.RedelegationResponseOrBuilder> 
@@ -15659,21 +15659,21 @@ public final class QueryOuterClass {
       return redelegationResponses_;
     }
     /**
-     * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getRedelegationResponsesCount() {
       return redelegationResponses_.size();
     }
     /**
-     * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.staking.v1beta1.Staking.RedelegationResponse getRedelegationResponses(int index) {
       return redelegationResponses_.get(index);
     }
     /**
-     * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.staking.v1beta1.Staking.RedelegationResponseOrBuilder getRedelegationResponsesOrBuilder(
@@ -16109,7 +16109,7 @@ public final class QueryOuterClass {
           cosmos.staking.v1beta1.Staking.RedelegationResponse, cosmos.staking.v1beta1.Staking.RedelegationResponse.Builder, cosmos.staking.v1beta1.Staking.RedelegationResponseOrBuilder> redelegationResponsesBuilder_;
 
       /**
-       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.staking.v1beta1.Staking.RedelegationResponse> getRedelegationResponsesList() {
         if (redelegationResponsesBuilder_ == null) {
@@ -16119,7 +16119,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public int getRedelegationResponsesCount() {
         if (redelegationResponsesBuilder_ == null) {
@@ -16129,7 +16129,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.RedelegationResponse getRedelegationResponses(int index) {
         if (redelegationResponsesBuilder_ == null) {
@@ -16139,7 +16139,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setRedelegationResponses(
           int index, cosmos.staking.v1beta1.Staking.RedelegationResponse value) {
@@ -16156,7 +16156,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setRedelegationResponses(
           int index, cosmos.staking.v1beta1.Staking.RedelegationResponse.Builder builderForValue) {
@@ -16170,7 +16170,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addRedelegationResponses(cosmos.staking.v1beta1.Staking.RedelegationResponse value) {
         if (redelegationResponsesBuilder_ == null) {
@@ -16186,7 +16186,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addRedelegationResponses(
           int index, cosmos.staking.v1beta1.Staking.RedelegationResponse value) {
@@ -16203,7 +16203,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addRedelegationResponses(
           cosmos.staking.v1beta1.Staking.RedelegationResponse.Builder builderForValue) {
@@ -16217,7 +16217,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addRedelegationResponses(
           int index, cosmos.staking.v1beta1.Staking.RedelegationResponse.Builder builderForValue) {
@@ -16231,7 +16231,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllRedelegationResponses(
           java.lang.Iterable<? extends cosmos.staking.v1beta1.Staking.RedelegationResponse> values) {
@@ -16246,7 +16246,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearRedelegationResponses() {
         if (redelegationResponsesBuilder_ == null) {
@@ -16259,7 +16259,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeRedelegationResponses(int index) {
         if (redelegationResponsesBuilder_ == null) {
@@ -16272,14 +16272,14 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.RedelegationResponse.Builder getRedelegationResponsesBuilder(
           int index) {
         return getRedelegationResponsesFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.RedelegationResponseOrBuilder getRedelegationResponsesOrBuilder(
           int index) {
@@ -16289,7 +16289,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.staking.v1beta1.Staking.RedelegationResponseOrBuilder> 
            getRedelegationResponsesOrBuilderList() {
@@ -16300,14 +16300,14 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.RedelegationResponse.Builder addRedelegationResponsesBuilder() {
         return getRedelegationResponsesFieldBuilder().addBuilder(
             cosmos.staking.v1beta1.Staking.RedelegationResponse.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.RedelegationResponse.Builder addRedelegationResponsesBuilder(
           int index) {
@@ -16315,7 +16315,7 @@ public final class QueryOuterClass {
             index, cosmos.staking.v1beta1.Staking.RedelegationResponse.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.RedelegationResponse redelegation_responses = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.staking.v1beta1.Staking.RedelegationResponse.Builder> 
            getRedelegationResponsesBuilderList() {
@@ -17426,44 +17426,44 @@ public final class QueryOuterClass {
 
     /**
      * <pre>
-     * validators defines the the validators' info of a delegator.
+     * validators defines the validators' info of a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.staking.v1beta1.Staking.Validator> 
         getValidatorsList();
     /**
      * <pre>
-     * validators defines the the validators' info of a delegator.
+     * validators defines the validators' info of a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.staking.v1beta1.Staking.Validator getValidators(int index);
     /**
      * <pre>
-     * validators defines the the validators' info of a delegator.
+     * validators defines the validators' info of a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     int getValidatorsCount();
     /**
      * <pre>
-     * validators defines the the validators' info of a delegator.
+     * validators defines the validators' info of a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.staking.v1beta1.Staking.ValidatorOrBuilder> 
         getValidatorsOrBuilderList();
     /**
      * <pre>
-     * validators defines the the validators' info of a delegator.
+     * validators defines the validators' info of a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.staking.v1beta1.Staking.ValidatorOrBuilder getValidatorsOrBuilder(
         int index);
@@ -17608,10 +17608,10 @@ public final class QueryOuterClass {
     private java.util.List<cosmos.staking.v1beta1.Staking.Validator> validators_;
     /**
      * <pre>
-     * validators defines the the validators' info of a delegator.
+     * validators defines the validators' info of a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.staking.v1beta1.Staking.Validator> getValidatorsList() {
@@ -17619,10 +17619,10 @@ public final class QueryOuterClass {
     }
     /**
      * <pre>
-     * validators defines the the validators' info of a delegator.
+     * validators defines the validators' info of a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.staking.v1beta1.Staking.ValidatorOrBuilder> 
@@ -17631,10 +17631,10 @@ public final class QueryOuterClass {
     }
     /**
      * <pre>
-     * validators defines the the validators' info of a delegator.
+     * validators defines the validators' info of a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getValidatorsCount() {
@@ -17642,10 +17642,10 @@ public final class QueryOuterClass {
     }
     /**
      * <pre>
-     * validators defines the the validators' info of a delegator.
+     * validators defines the validators' info of a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.staking.v1beta1.Staking.Validator getValidators(int index) {
@@ -17653,10 +17653,10 @@ public final class QueryOuterClass {
     }
     /**
      * <pre>
-     * validators defines the the validators' info of a delegator.
+     * validators defines the validators' info of a delegator.
      * </pre>
      *
-     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.staking.v1beta1.Staking.ValidatorOrBuilder getValidatorsOrBuilder(
@@ -18093,10 +18093,10 @@ public final class QueryOuterClass {
 
       /**
        * <pre>
-       * validators defines the the validators' info of a delegator.
+       * validators defines the validators' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.staking.v1beta1.Staking.Validator> getValidatorsList() {
         if (validatorsBuilder_ == null) {
@@ -18107,10 +18107,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validators defines the the validators' info of a delegator.
+       * validators defines the validators' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public int getValidatorsCount() {
         if (validatorsBuilder_ == null) {
@@ -18121,10 +18121,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validators defines the the validators' info of a delegator.
+       * validators defines the validators' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.Validator getValidators(int index) {
         if (validatorsBuilder_ == null) {
@@ -18135,10 +18135,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validators defines the the validators' info of a delegator.
+       * validators defines the validators' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setValidators(
           int index, cosmos.staking.v1beta1.Staking.Validator value) {
@@ -18156,10 +18156,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validators defines the the validators' info of a delegator.
+       * validators defines the validators' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setValidators(
           int index, cosmos.staking.v1beta1.Staking.Validator.Builder builderForValue) {
@@ -18174,10 +18174,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validators defines the the validators' info of a delegator.
+       * validators defines the validators' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addValidators(cosmos.staking.v1beta1.Staking.Validator value) {
         if (validatorsBuilder_ == null) {
@@ -18194,10 +18194,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validators defines the the validators' info of a delegator.
+       * validators defines the validators' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addValidators(
           int index, cosmos.staking.v1beta1.Staking.Validator value) {
@@ -18215,10 +18215,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validators defines the the validators' info of a delegator.
+       * validators defines the validators' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addValidators(
           cosmos.staking.v1beta1.Staking.Validator.Builder builderForValue) {
@@ -18233,10 +18233,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validators defines the the validators' info of a delegator.
+       * validators defines the validators' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addValidators(
           int index, cosmos.staking.v1beta1.Staking.Validator.Builder builderForValue) {
@@ -18251,10 +18251,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validators defines the the validators' info of a delegator.
+       * validators defines the validators' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllValidators(
           java.lang.Iterable<? extends cosmos.staking.v1beta1.Staking.Validator> values) {
@@ -18270,10 +18270,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validators defines the the validators' info of a delegator.
+       * validators defines the validators' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearValidators() {
         if (validatorsBuilder_ == null) {
@@ -18287,10 +18287,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validators defines the the validators' info of a delegator.
+       * validators defines the validators' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeValidators(int index) {
         if (validatorsBuilder_ == null) {
@@ -18304,10 +18304,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validators defines the the validators' info of a delegator.
+       * validators defines the validators' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.Validator.Builder getValidatorsBuilder(
           int index) {
@@ -18315,10 +18315,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validators defines the the validators' info of a delegator.
+       * validators defines the validators' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.ValidatorOrBuilder getValidatorsOrBuilder(
           int index) {
@@ -18329,10 +18329,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validators defines the the validators' info of a delegator.
+       * validators defines the validators' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.staking.v1beta1.Staking.ValidatorOrBuilder> 
            getValidatorsOrBuilderList() {
@@ -18344,10 +18344,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validators defines the the validators' info of a delegator.
+       * validators defines the validators' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.Validator.Builder addValidatorsBuilder() {
         return getValidatorsFieldBuilder().addBuilder(
@@ -18355,10 +18355,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validators defines the the validators' info of a delegator.
+       * validators defines the validators' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.Validator.Builder addValidatorsBuilder(
           int index) {
@@ -18367,10 +18367,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validators defines the the validators' info of a delegator.
+       * validators defines the validators' info of a delegator.
        * </pre>
        *
-       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.staking.v1beta1.Validator validators = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.staking.v1beta1.Staking.Validator.Builder> 
            getValidatorsBuilderList() {
@@ -19404,28 +19404,28 @@ public final class QueryOuterClass {
 
     /**
      * <pre>
-     * validator defines the the validator info.
+     * validator defines the validator info.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the validator field is set.
      */
     boolean hasValidator();
     /**
      * <pre>
-     * validator defines the the validator info.
+     * validator defines the validator info.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The validator.
      */
     cosmos.staking.v1beta1.Staking.Validator getValidator();
     /**
      * <pre>
-     * validator defines the the validator info.
+     * validator defines the validator info.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.staking.v1beta1.Staking.ValidatorOrBuilder getValidatorOrBuilder();
   }
@@ -19528,10 +19528,10 @@ public final class QueryOuterClass {
     private cosmos.staking.v1beta1.Staking.Validator validator_;
     /**
      * <pre>
-     * validator defines the the validator info.
+     * validator defines the validator info.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the validator field is set.
      */
     @java.lang.Override
@@ -19540,10 +19540,10 @@ public final class QueryOuterClass {
     }
     /**
      * <pre>
-     * validator defines the the validator info.
+     * validator defines the validator info.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The validator.
      */
     @java.lang.Override
@@ -19552,10 +19552,10 @@ public final class QueryOuterClass {
     }
     /**
      * <pre>
-     * validator defines the the validator info.
+     * validator defines the validator info.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.staking.v1beta1.Staking.ValidatorOrBuilder getValidatorOrBuilder() {
@@ -19887,10 +19887,10 @@ public final class QueryOuterClass {
           cosmos.staking.v1beta1.Staking.Validator, cosmos.staking.v1beta1.Staking.Validator.Builder, cosmos.staking.v1beta1.Staking.ValidatorOrBuilder> validatorBuilder_;
       /**
        * <pre>
-       * validator defines the the validator info.
+       * validator defines the validator info.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the validator field is set.
        */
       public boolean hasValidator() {
@@ -19898,10 +19898,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validator defines the the validator info.
+       * validator defines the validator info.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The validator.
        */
       public cosmos.staking.v1beta1.Staking.Validator getValidator() {
@@ -19913,10 +19913,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validator defines the the validator info.
+       * validator defines the validator info.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setValidator(cosmos.staking.v1beta1.Staking.Validator value) {
         if (validatorBuilder_ == null) {
@@ -19933,10 +19933,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validator defines the the validator info.
+       * validator defines the validator info.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setValidator(
           cosmos.staking.v1beta1.Staking.Validator.Builder builderForValue) {
@@ -19951,10 +19951,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validator defines the the validator info.
+       * validator defines the validator info.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeValidator(cosmos.staking.v1beta1.Staking.Validator value) {
         if (validatorBuilder_ == null) {
@@ -19973,10 +19973,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validator defines the the validator info.
+       * validator defines the validator info.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearValidator() {
         if (validatorBuilder_ == null) {
@@ -19991,10 +19991,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validator defines the the validator info.
+       * validator defines the validator info.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.Validator.Builder getValidatorBuilder() {
         
@@ -20003,10 +20003,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validator defines the the validator info.
+       * validator defines the validator info.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.ValidatorOrBuilder getValidatorOrBuilder() {
         if (validatorBuilder_ != null) {
@@ -20018,10 +20018,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * validator defines the the validator info.
+       * validator defines the validator info.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Validator validator = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.staking.v1beta1.Staking.Validator, cosmos.staking.v1beta1.Staking.Validator.Builder, cosmos.staking.v1beta1.Staking.ValidatorOrBuilder> 
@@ -21734,7 +21734,7 @@ public final class QueryOuterClass {
      * pool defines the pool info.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the pool field is set.
      */
     boolean hasPool();
@@ -21743,7 +21743,7 @@ public final class QueryOuterClass {
      * pool defines the pool info.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The pool.
      */
     cosmos.staking.v1beta1.Staking.Pool getPool();
@@ -21752,7 +21752,7 @@ public final class QueryOuterClass {
      * pool defines the pool info.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.staking.v1beta1.Staking.PoolOrBuilder getPoolOrBuilder();
   }
@@ -21857,7 +21857,7 @@ public final class QueryOuterClass {
      * pool defines the pool info.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the pool field is set.
      */
     @java.lang.Override
@@ -21869,7 +21869,7 @@ public final class QueryOuterClass {
      * pool defines the pool info.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The pool.
      */
     @java.lang.Override
@@ -21881,7 +21881,7 @@ public final class QueryOuterClass {
      * pool defines the pool info.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.staking.v1beta1.Staking.PoolOrBuilder getPoolOrBuilder() {
@@ -22215,7 +22215,7 @@ public final class QueryOuterClass {
        * pool defines the pool info.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the pool field is set.
        */
       public boolean hasPool() {
@@ -22226,7 +22226,7 @@ public final class QueryOuterClass {
        * pool defines the pool info.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The pool.
        */
       public cosmos.staking.v1beta1.Staking.Pool getPool() {
@@ -22241,7 +22241,7 @@ public final class QueryOuterClass {
        * pool defines the pool info.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setPool(cosmos.staking.v1beta1.Staking.Pool value) {
         if (poolBuilder_ == null) {
@@ -22261,7 +22261,7 @@ public final class QueryOuterClass {
        * pool defines the pool info.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setPool(
           cosmos.staking.v1beta1.Staking.Pool.Builder builderForValue) {
@@ -22279,7 +22279,7 @@ public final class QueryOuterClass {
        * pool defines the pool info.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergePool(cosmos.staking.v1beta1.Staking.Pool value) {
         if (poolBuilder_ == null) {
@@ -22301,7 +22301,7 @@ public final class QueryOuterClass {
        * pool defines the pool info.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearPool() {
         if (poolBuilder_ == null) {
@@ -22319,7 +22319,7 @@ public final class QueryOuterClass {
        * pool defines the pool info.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.Pool.Builder getPoolBuilder() {
         
@@ -22331,7 +22331,7 @@ public final class QueryOuterClass {
        * pool defines the pool info.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.PoolOrBuilder getPoolOrBuilder() {
         if (poolBuilder_ != null) {
@@ -22346,7 +22346,7 @@ public final class QueryOuterClass {
        * pool defines the pool info.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Pool pool = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.staking.v1beta1.Staking.Pool, cosmos.staking.v1beta1.Staking.Pool.Builder, cosmos.staking.v1beta1.Staking.PoolOrBuilder> 
@@ -22849,7 +22849,7 @@ public final class QueryOuterClass {
      * params holds all the parameters of this module.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the params field is set.
      */
     boolean hasParams();
@@ -22858,7 +22858,7 @@ public final class QueryOuterClass {
      * params holds all the parameters of this module.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The params.
      */
     cosmos.staking.v1beta1.Staking.Params getParams();
@@ -22867,7 +22867,7 @@ public final class QueryOuterClass {
      * params holds all the parameters of this module.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.staking.v1beta1.Staking.ParamsOrBuilder getParamsOrBuilder();
   }
@@ -22972,7 +22972,7 @@ public final class QueryOuterClass {
      * params holds all the parameters of this module.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the params field is set.
      */
     @java.lang.Override
@@ -22984,7 +22984,7 @@ public final class QueryOuterClass {
      * params holds all the parameters of this module.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The params.
      */
     @java.lang.Override
@@ -22996,7 +22996,7 @@ public final class QueryOuterClass {
      * params holds all the parameters of this module.
      * </pre>
      *
-     * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.staking.v1beta1.Staking.ParamsOrBuilder getParamsOrBuilder() {
@@ -23330,7 +23330,7 @@ public final class QueryOuterClass {
        * params holds all the parameters of this module.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the params field is set.
        */
       public boolean hasParams() {
@@ -23341,7 +23341,7 @@ public final class QueryOuterClass {
        * params holds all the parameters of this module.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The params.
        */
       public cosmos.staking.v1beta1.Staking.Params getParams() {
@@ -23356,7 +23356,7 @@ public final class QueryOuterClass {
        * params holds all the parameters of this module.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setParams(cosmos.staking.v1beta1.Staking.Params value) {
         if (paramsBuilder_ == null) {
@@ -23376,7 +23376,7 @@ public final class QueryOuterClass {
        * params holds all the parameters of this module.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setParams(
           cosmos.staking.v1beta1.Staking.Params.Builder builderForValue) {
@@ -23394,7 +23394,7 @@ public final class QueryOuterClass {
        * params holds all the parameters of this module.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeParams(cosmos.staking.v1beta1.Staking.Params value) {
         if (paramsBuilder_ == null) {
@@ -23416,7 +23416,7 @@ public final class QueryOuterClass {
        * params holds all the parameters of this module.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearParams() {
         if (paramsBuilder_ == null) {
@@ -23434,7 +23434,7 @@ public final class QueryOuterClass {
        * params holds all the parameters of this module.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.Params.Builder getParamsBuilder() {
         
@@ -23446,7 +23446,7 @@ public final class QueryOuterClass {
        * params holds all the parameters of this module.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.staking.v1beta1.Staking.ParamsOrBuilder getParamsOrBuilder() {
         if (paramsBuilder_ != null) {
@@ -23461,7 +23461,7 @@ public final class QueryOuterClass {
        * params holds all the parameters of this module.
        * </pre>
        *
-       * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.staking.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.staking.v1beta1.Staking.Params, cosmos.staking.v1beta1.Staking.Params.Builder, cosmos.staking.v1beta1.Staking.ParamsOrBuilder> 
@@ -23683,168 +23683,173 @@ public final class QueryOuterClass {
       "v1beta1/pagination.proto\032\024gogoproto/gogo" +
       ".proto\032\034google/api/annotations.proto\032$co" +
       "smos/staking/v1beta1/staking.proto\032\031cosm" +
-      "os_proto/cosmos.proto\"d\n\026QueryValidators" +
-      "Request\022\016\n\006status\030\001 \001(\t\022:\n\npagination\030\002 " +
-      "\001(\0132&.cosmos.base.query.v1beta1.PageRequ" +
-      "est\"\223\001\n\027QueryValidatorsResponse\022;\n\nvalid" +
-      "ators\030\001 \003(\0132!.cosmos.staking.v1beta1.Val" +
-      "idatorB\004\310\336\037\000\022;\n\npagination\030\002 \001(\0132\'.cosmo" +
-      "s.base.query.v1beta1.PageResponse\"I\n\025Que" +
-      "ryValidatorRequest\0220\n\016validator_addr\030\001 \001" +
-      "(\tB\030\322\264-\024cosmos.AddressString\"T\n\026QueryVal" +
-      "idatorResponse\022:\n\tvalidator\030\001 \001(\0132!.cosm" +
-      "os.staking.v1beta1.ValidatorB\004\310\336\037\000\"\220\001\n Q" +
-      "ueryValidatorDelegationsRequest\0220\n\016valid" +
+      "os_proto/cosmos.proto\032\033cosmos/query/v1/q" +
+      "uery.proto\032\021amino/amino.proto\"d\n\026QueryVa" +
+      "lidatorsRequest\022\016\n\006status\030\001 \001(\t\022:\n\npagin" +
+      "ation\030\002 \001(\0132&.cosmos.base.query.v1beta1." +
+      "PageRequest\"\230\001\n\027QueryValidatorsResponse\022" +
+      "@\n\nvalidators\030\001 \003(\0132!.cosmos.staking.v1b" +
+      "eta1.ValidatorB\t\310\336\037\000\250\347\260*\001\022;\n\npagination\030" +
+      "\002 \001(\0132\'.cosmos.base.query.v1beta1.PageRe" +
+      "sponse\"I\n\025QueryValidatorRequest\0220\n\016valid" +
       "ator_addr\030\001 \001(\tB\030\322\264-\024cosmos.AddressStrin" +
-      "g\022:\n\npagination\030\002 \001(\0132&.cosmos.base.quer" +
-      "y.v1beta1.PageRequest\"\307\001\n!QueryValidator" +
-      "DelegationsResponse\022e\n\024delegation_respon" +
-      "ses\030\001 \003(\0132*.cosmos.staking.v1beta1.Deleg" +
-      "ationResponseB\033\310\336\037\000\252\337\037\023DelegationRespons" +
-      "es\022;\n\npagination\030\002 \001(\0132\'.cosmos.base.que" +
-      "ry.v1beta1.PageResponse\"\231\001\n)QueryValidat" +
-      "orUnbondingDelegationsRequest\0220\n\016validat" +
-      "or_addr\030\001 \001(\tB\030\322\264-\024cosmos.AddressString\022" +
-      ":\n\npagination\030\002 \001(\0132&.cosmos.base.query." +
-      "v1beta1.PageRequest\"\271\001\n*QueryValidatorUn" +
-      "bondingDelegationsResponse\022N\n\023unbonding_" +
-      "responses\030\001 \003(\0132+.cosmos.staking.v1beta1" +
-      ".UnbondingDelegationB\004\310\336\037\000\022;\n\npagination" +
-      "\030\002 \001(\0132\'.cosmos.base.query.v1beta1.PageR" +
-      "esponse\"\206\001\n\026QueryDelegationRequest\0220\n\016de" +
-      "legator_addr\030\001 \001(\tB\030\322\264-\024cosmos.AddressSt" +
-      "ring\0220\n\016validator_addr\030\002 \001(\tB\030\322\264-\024cosmos" +
-      ".AddressString:\010\350\240\037\000\210\240\037\000\"b\n\027QueryDelegat" +
-      "ionResponse\022G\n\023delegation_response\030\001 \001(\013" +
-      "2*.cosmos.staking.v1beta1.DelegationResp" +
-      "onse\"\217\001\n\037QueryUnbondingDelegationRequest" +
-      "\0220\n\016delegator_addr\030\001 \001(\tB\030\322\264-\024cosmos.Add" +
-      "ressString\0220\n\016validator_addr\030\002 \001(\tB\030\322\264-\024" +
-      "cosmos.AddressString:\010\350\240\037\000\210\240\037\000\"e\n QueryU" +
-      "nbondingDelegationResponse\022A\n\006unbond\030\001 \001" +
-      "(\0132+.cosmos.staking.v1beta1.UnbondingDel" +
-      "egationB\004\310\336\037\000\"\232\001\n QueryDelegatorDelegati" +
-      "onsRequest\0220\n\016delegator_addr\030\001 \001(\tB\030\322\264-\024" +
-      "cosmos.AddressString\022:\n\npagination\030\002 \001(\013" +
-      "2&.cosmos.base.query.v1beta1.PageRequest" +
-      ":\010\350\240\037\000\210\240\037\000\"\260\001\n!QueryDelegatorDelegations" +
-      "Response\022N\n\024delegation_responses\030\001 \003(\0132*" +
-      ".cosmos.staking.v1beta1.DelegationRespon" +
-      "seB\004\310\336\037\000\022;\n\npagination\030\002 \001(\0132\'.cosmos.ba" +
-      "se.query.v1beta1.PageResponse\"\243\001\n)QueryD" +
-      "elegatorUnbondingDelegationsRequest\0220\n\016d" +
-      "elegator_addr\030\001 \001(\tB\030\322\264-\024cosmos.AddressS" +
-      "tring\022:\n\npagination\030\002 \001(\0132&.cosmos.base." +
-      "query.v1beta1.PageRequest:\010\350\240\037\000\210\240\037\000\"\271\001\n*" +
-      "QueryDelegatorUnbondingDelegationsRespon" +
-      "se\022N\n\023unbonding_responses\030\001 \003(\0132+.cosmos" +
-      ".staking.v1beta1.UnbondingDelegationB\004\310\336" +
-      "\037\000\022;\n\npagination\030\002 \001(\0132\'.cosmos.base.que" +
-      "ry.v1beta1.PageResponse\"\377\001\n\031QueryRedeleg" +
-      "ationsRequest\0220\n\016delegator_addr\030\001 \001(\tB\030\322" +
-      "\264-\024cosmos.AddressString\0224\n\022src_validator" +
-      "_addr\030\002 \001(\tB\030\322\264-\024cosmos.AddressString\0224\n" +
-      "\022dst_validator_addr\030\003 \001(\tB\030\322\264-\024cosmos.Ad" +
-      "dressString\022:\n\npagination\030\004 \001(\0132&.cosmos" +
-      ".base.query.v1beta1.PageRequest:\010\350\240\037\000\210\240\037" +
-      "\000\"\255\001\n\032QueryRedelegationsResponse\022R\n\026rede" +
-      "legation_responses\030\001 \003(\0132,.cosmos.stakin" +
-      "g.v1beta1.RedelegationResponseB\004\310\336\037\000\022;\n\n" +
-      "pagination\030\002 \001(\0132\'.cosmos.base.query.v1b" +
-      "eta1.PageResponse\"\231\001\n\037QueryDelegatorVali" +
-      "datorsRequest\0220\n\016delegator_addr\030\001 \001(\tB\030\322" +
-      "\264-\024cosmos.AddressString\022:\n\npagination\030\002 " +
-      "\001(\0132&.cosmos.base.query.v1beta1.PageRequ" +
-      "est:\010\350\240\037\000\210\240\037\000\"\234\001\n QueryDelegatorValidato" +
-      "rsResponse\022;\n\nvalidators\030\001 \003(\0132!.cosmos." +
-      "staking.v1beta1.ValidatorB\004\310\336\037\000\022;\n\npagin" +
-      "ation\030\002 \001(\0132\'.cosmos.base.query.v1beta1." +
-      "PageResponse\"\216\001\n\036QueryDelegatorValidator" +
-      "Request\0220\n\016delegator_addr\030\001 \001(\tB\030\322\264-\024cos" +
-      "mos.AddressString\0220\n\016validator_addr\030\002 \001(" +
-      "\tB\030\322\264-\024cosmos.AddressString:\010\350\240\037\000\210\240\037\000\"]\n" +
-      "\037QueryDelegatorValidatorResponse\022:\n\tvali" +
-      "dator\030\001 \001(\0132!.cosmos.staking.v1beta1.Val" +
-      "idatorB\004\310\336\037\000\",\n\032QueryHistoricalInfoReque" +
-      "st\022\016\n\006height\030\001 \001(\003\"S\n\033QueryHistoricalInf" +
-      "oResponse\0224\n\004hist\030\001 \001(\0132&.cosmos.staking" +
-      ".v1beta1.HistoricalInfo\"\022\n\020QueryPoolRequ" +
-      "est\"E\n\021QueryPoolResponse\0220\n\004pool\030\001 \001(\0132\034" +
-      ".cosmos.staking.v1beta1.PoolB\004\310\336\037\000\"\024\n\022Qu" +
-      "eryParamsRequest\"K\n\023QueryParamsResponse\022" +
-      "4\n\006params\030\001 \001(\0132\036.cosmos.staking.v1beta1" +
-      ".ParamsB\004\310\336\037\0002\352\025\n\005Query\022\231\001\n\nValidators\022." +
-      ".cosmos.staking.v1beta1.QueryValidatorsR" +
-      "equest\032/.cosmos.staking.v1beta1.QueryVal" +
-      "idatorsResponse\"*\202\323\344\223\002$\022\"/cosmos/staking" +
-      "/v1beta1/validators\022\247\001\n\tValidator\022-.cosm" +
-      "os.staking.v1beta1.QueryValidatorRequest" +
-      "\032..cosmos.staking.v1beta1.QueryValidator" +
-      "Response\";\202\323\344\223\0025\0223/cosmos/staking/v1beta" +
-      "1/validators/{validator_addr}\022\324\001\n\024Valida" +
-      "torDelegations\0228.cosmos.staking.v1beta1." +
-      "QueryValidatorDelegationsRequest\0329.cosmo" +
-      "s.staking.v1beta1.QueryValidatorDelegati" +
-      "onsResponse\"G\202\323\344\223\002A\022?/cosmos/staking/v1b" +
-      "eta1/validators/{validator_addr}/delegat" +
-      "ions\022\371\001\n\035ValidatorUnbondingDelegations\022A" +
-      ".cosmos.staking.v1beta1.QueryValidatorUn" +
-      "bondingDelegationsRequest\032B.cosmos.staki" +
-      "ng.v1beta1.QueryValidatorUnbondingDelega" +
-      "tionsResponse\"Q\202\323\344\223\002K\022I/cosmos/staking/v" +
-      "1beta1/validators/{validator_addr}/unbon" +
-      "ding_delegations\022\307\001\n\nDelegation\022..cosmos" +
-      ".staking.v1beta1.QueryDelegationRequest\032" +
-      "/.cosmos.staking.v1beta1.QueryDelegation" +
-      "Response\"X\202\323\344\223\002R\022P/cosmos/staking/v1beta" +
-      "1/validators/{validator_addr}/delegation" +
-      "s/{delegator_addr}\022\367\001\n\023UnbondingDelegati" +
-      "on\0227.cosmos.staking.v1beta1.QueryUnbondi" +
-      "ngDelegationRequest\0328.cosmos.staking.v1b" +
-      "eta1.QueryUnbondingDelegationResponse\"m\202" +
-      "\323\344\223\002g\022e/cosmos/staking/v1beta1/validator" +
-      "s/{validator_addr}/delegations/{delegato" +
-      "r_addr}/unbonding_delegation\022\311\001\n\024Delegat" +
-      "orDelegations\0228.cosmos.staking.v1beta1.Q" +
-      "ueryDelegatorDelegationsRequest\0329.cosmos" +
+      "g\"Y\n\026QueryValidatorResponse\022?\n\tvalidator" +
+      "\030\001 \001(\0132!.cosmos.staking.v1beta1.Validato" +
+      "rB\t\310\336\037\000\250\347\260*\001\"\220\001\n QueryValidatorDelegatio" +
+      "nsRequest\0220\n\016validator_addr\030\001 \001(\tB\030\322\264-\024c" +
+      "osmos.AddressString\022:\n\npagination\030\002 \001(\0132" +
+      "&.cosmos.base.query.v1beta1.PageRequest\"" +
+      "\314\001\n!QueryValidatorDelegationsResponse\022j\n" +
+      "\024delegation_responses\030\001 \003(\0132*.cosmos.sta" +
+      "king.v1beta1.DelegationResponseB \310\336\037\000\250\347\260" +
+      "*\001\252\337\037\023DelegationResponses\022;\n\npagination\030" +
+      "\002 \001(\0132\'.cosmos.base.query.v1beta1.PageRe" +
+      "sponse\"\231\001\n)QueryValidatorUnbondingDelega" +
+      "tionsRequest\0220\n\016validator_addr\030\001 \001(\tB\030\322\264" +
+      "-\024cosmos.AddressString\022:\n\npagination\030\002 \001" +
+      "(\0132&.cosmos.base.query.v1beta1.PageReque" +
+      "st\"\276\001\n*QueryValidatorUnbondingDelegation" +
+      "sResponse\022S\n\023unbonding_responses\030\001 \003(\0132+" +
+      ".cosmos.staking.v1beta1.UnbondingDelegat" +
+      "ionB\t\310\336\037\000\250\347\260*\001\022;\n\npagination\030\002 \001(\0132\'.cos" +
+      "mos.base.query.v1beta1.PageResponse\"\206\001\n\026" +
+      "QueryDelegationRequest\0220\n\016delegator_addr" +
+      "\030\001 \001(\tB\030\322\264-\024cosmos.AddressString\0220\n\016vali" +
+      "dator_addr\030\002 \001(\tB\030\322\264-\024cosmos.AddressStri" +
+      "ng:\010\350\240\037\000\210\240\037\000\"b\n\027QueryDelegationResponse\022" +
+      "G\n\023delegation_response\030\001 \001(\0132*.cosmos.st" +
+      "aking.v1beta1.DelegationResponse\"\217\001\n\037Que" +
+      "ryUnbondingDelegationRequest\0220\n\016delegato" +
+      "r_addr\030\001 \001(\tB\030\322\264-\024cosmos.AddressString\0220" +
+      "\n\016validator_addr\030\002 \001(\tB\030\322\264-\024cosmos.Addre" +
+      "ssString:\010\350\240\037\000\210\240\037\000\"j\n QueryUnbondingDele" +
+      "gationResponse\022F\n\006unbond\030\001 \001(\0132+.cosmos." +
+      "staking.v1beta1.UnbondingDelegationB\t\310\336\037" +
+      "\000\250\347\260*\001\"\232\001\n QueryDelegatorDelegationsRequ" +
+      "est\0220\n\016delegator_addr\030\001 \001(\tB\030\322\264-\024cosmos." +
+      "AddressString\022:\n\npagination\030\002 \001(\0132&.cosm" +
+      "os.base.query.v1beta1.PageRequest:\010\350\240\037\000\210" +
+      "\240\037\000\"\265\001\n!QueryDelegatorDelegationsRespons" +
+      "e\022S\n\024delegation_responses\030\001 \003(\0132*.cosmos" +
+      ".staking.v1beta1.DelegationResponseB\t\310\336\037" +
+      "\000\250\347\260*\001\022;\n\npagination\030\002 \001(\0132\'.cosmos.base" +
+      ".query.v1beta1.PageResponse\"\243\001\n)QueryDel" +
+      "egatorUnbondingDelegationsRequest\0220\n\016del" +
+      "egator_addr\030\001 \001(\tB\030\322\264-\024cosmos.AddressStr" +
+      "ing\022:\n\npagination\030\002 \001(\0132&.cosmos.base.qu" +
+      "ery.v1beta1.PageRequest:\010\350\240\037\000\210\240\037\000\"\276\001\n*Qu" +
+      "eryDelegatorUnbondingDelegationsResponse" +
+      "\022S\n\023unbonding_responses\030\001 \003(\0132+.cosmos.s" +
+      "taking.v1beta1.UnbondingDelegationB\t\310\336\037\000" +
+      "\250\347\260*\001\022;\n\npagination\030\002 \001(\0132\'.cosmos.base." +
+      "query.v1beta1.PageResponse\"\377\001\n\031QueryRede" +
+      "legationsRequest\0220\n\016delegator_addr\030\001 \001(\t" +
+      "B\030\322\264-\024cosmos.AddressString\0224\n\022src_valida" +
+      "tor_addr\030\002 \001(\tB\030\322\264-\024cosmos.AddressString" +
+      "\0224\n\022dst_validator_addr\030\003 \001(\tB\030\322\264-\024cosmos" +
+      ".AddressString\022:\n\npagination\030\004 \001(\0132&.cos" +
+      "mos.base.query.v1beta1.PageRequest:\010\350\240\037\000" +
+      "\210\240\037\000\"\262\001\n\032QueryRedelegationsResponse\022W\n\026r" +
+      "edelegation_responses\030\001 \003(\0132,.cosmos.sta" +
+      "king.v1beta1.RedelegationResponseB\t\310\336\037\000\250" +
+      "\347\260*\001\022;\n\npagination\030\002 \001(\0132\'.cosmos.base.q" +
+      "uery.v1beta1.PageResponse\"\231\001\n\037QueryDeleg" +
+      "atorValidatorsRequest\0220\n\016delegator_addr\030" +
+      "\001 \001(\tB\030\322\264-\024cosmos.AddressString\022:\n\npagin" +
+      "ation\030\002 \001(\0132&.cosmos.base.query.v1beta1." +
+      "PageRequest:\010\350\240\037\000\210\240\037\000\"\241\001\n QueryDelegator" +
+      "ValidatorsResponse\022@\n\nvalidators\030\001 \003(\0132!" +
+      ".cosmos.staking.v1beta1.ValidatorB\t\310\336\037\000\250" +
+      "\347\260*\001\022;\n\npagination\030\002 \001(\0132\'.cosmos.base.q" +
+      "uery.v1beta1.PageResponse\"\216\001\n\036QueryDeleg" +
+      "atorValidatorRequest\0220\n\016delegator_addr\030\001" +
+      " \001(\tB\030\322\264-\024cosmos.AddressString\0220\n\016valida" +
+      "tor_addr\030\002 \001(\tB\030\322\264-\024cosmos.AddressString" +
+      ":\010\350\240\037\000\210\240\037\000\"b\n\037QueryDelegatorValidatorRes" +
+      "ponse\022?\n\tvalidator\030\001 \001(\0132!.cosmos.stakin" +
+      "g.v1beta1.ValidatorB\t\310\336\037\000\250\347\260*\001\",\n\032QueryH" +
+      "istoricalInfoRequest\022\016\n\006height\030\001 \001(\003\"S\n\033" +
+      "QueryHistoricalInfoResponse\0224\n\004hist\030\001 \001(" +
+      "\0132&.cosmos.staking.v1beta1.HistoricalInf" +
+      "o\"\022\n\020QueryPoolRequest\"J\n\021QueryPoolRespon" +
+      "se\0225\n\004pool\030\001 \001(\0132\034.cosmos.staking.v1beta" +
+      "1.PoolB\t\310\336\037\000\250\347\260*\001\"\024\n\022QueryParamsRequest\"" +
+      "P\n\023QueryParamsResponse\0229\n\006params\030\001 \001(\0132\036" +
+      ".cosmos.staking.v1beta1.ParamsB\t\310\336\037\000\250\347\260*" +
+      "\0012\260\026\n\005Query\022\236\001\n\nValidators\022..cosmos.stak" +
+      "ing.v1beta1.QueryValidatorsRequest\032/.cos" +
+      "mos.staking.v1beta1.QueryValidatorsRespo" +
+      "nse\"/\210\347\260*\001\202\323\344\223\002$\022\"/cosmos/staking/v1beta" +
+      "1/validators\022\254\001\n\tValidator\022-.cosmos.stak" +
+      "ing.v1beta1.QueryValidatorRequest\032..cosm" +
+      "os.staking.v1beta1.QueryValidatorRespons" +
+      "e\"@\210\347\260*\001\202\323\344\223\0025\0223/cosmos/staking/v1beta1/" +
+      "validators/{validator_addr}\022\331\001\n\024Validato" +
+      "rDelegations\0228.cosmos.staking.v1beta1.Qu" +
+      "eryValidatorDelegationsRequest\0329.cosmos." +
+      "staking.v1beta1.QueryValidatorDelegation" +
+      "sResponse\"L\210\347\260*\001\202\323\344\223\002A\022?/cosmos/staking/" +
+      "v1beta1/validators/{validator_addr}/dele" +
+      "gations\022\376\001\n\035ValidatorUnbondingDelegation" +
+      "s\022A.cosmos.staking.v1beta1.QueryValidato" +
+      "rUnbondingDelegationsRequest\032B.cosmos.st" +
+      "aking.v1beta1.QueryValidatorUnbondingDel" +
+      "egationsResponse\"V\210\347\260*\001\202\323\344\223\002K\022I/cosmos/s" +
+      "taking/v1beta1/validators/{validator_add" +
+      "r}/unbonding_delegations\022\314\001\n\nDelegation\022" +
+      "..cosmos.staking.v1beta1.QueryDelegation" +
+      "Request\032/.cosmos.staking.v1beta1.QueryDe" +
+      "legationResponse\"]\210\347\260*\001\202\323\344\223\002R\022P/cosmos/s" +
+      "taking/v1beta1/validators/{validator_add" +
+      "r}/delegations/{delegator_addr}\022\374\001\n\023Unbo" +
+      "ndingDelegation\0227.cosmos.staking.v1beta1" +
+      ".QueryUnbondingDelegationRequest\0328.cosmo" +
+      "s.staking.v1beta1.QueryUnbondingDelegati" +
+      "onResponse\"r\210\347\260*\001\202\323\344\223\002g\022e/cosmos/staking" +
+      "/v1beta1/validators/{validator_addr}/del" +
+      "egations/{delegator_addr}/unbonding_dele" +
+      "gation\022\316\001\n\024DelegatorDelegations\0228.cosmos" +
       ".staking.v1beta1.QueryDelegatorDelegatio" +
-      "nsResponse\"<\202\323\344\223\0026\0224/cosmos/staking/v1be" +
-      "ta1/delegations/{delegator_addr}\022\371\001\n\035Del" +
-      "egatorUnbondingDelegations\022A.cosmos.stak" +
-      "ing.v1beta1.QueryDelegatorUnbondingDeleg" +
-      "ationsRequest\032B.cosmos.staking.v1beta1.Q" +
-      "ueryDelegatorUnbondingDelegationsRespons" +
-      "e\"Q\202\323\344\223\002K\022I/cosmos/staking/v1beta1/deleg" +
-      "ators/{delegator_addr}/unbonding_delegat" +
-      "ions\022\301\001\n\rRedelegations\0221.cosmos.staking." +
-      "v1beta1.QueryRedelegationsRequest\0322.cosm" +
-      "os.staking.v1beta1.QueryRedelegationsRes" +
-      "ponse\"I\202\323\344\223\002C\022A/cosmos/staking/v1beta1/d" +
-      "elegators/{delegator_addr}/redelegations" +
-      "\022\320\001\n\023DelegatorValidators\0227.cosmos.stakin" +
-      "g.v1beta1.QueryDelegatorValidatorsReques" +
-      "t\0328.cosmos.staking.v1beta1.QueryDelegato" +
-      "rValidatorsResponse\"F\202\323\344\223\002@\022>/cosmos/sta" +
-      "king/v1beta1/delegators/{delegator_addr}" +
-      "/validators\022\336\001\n\022DelegatorValidator\0226.cos" +
+      "nsRequest\0329.cosmos.staking.v1beta1.Query" +
+      "DelegatorDelegationsResponse\"A\210\347\260*\001\202\323\344\223\002" +
+      "6\0224/cosmos/staking/v1beta1/delegations/{" +
+      "delegator_addr}\022\376\001\n\035DelegatorUnbondingDe" +
+      "legations\022A.cosmos.staking.v1beta1.Query" +
+      "DelegatorUnbondingDelegationsRequest\032B.c" +
+      "osmos.staking.v1beta1.QueryDelegatorUnbo" +
+      "ndingDelegationsResponse\"V\210\347\260*\001\202\323\344\223\002K\022I/" +
+      "cosmos/staking/v1beta1/delegators/{deleg" +
+      "ator_addr}/unbonding_delegations\022\306\001\n\rRed" +
+      "elegations\0221.cosmos.staking.v1beta1.Quer" +
+      "yRedelegationsRequest\0322.cosmos.staking.v" +
+      "1beta1.QueryRedelegationsResponse\"N\210\347\260*\001" +
+      "\202\323\344\223\002C\022A/cosmos/staking/v1beta1/delegato" +
+      "rs/{delegator_addr}/redelegations\022\325\001\n\023De" +
+      "legatorValidators\0227.cosmos.staking.v1bet" +
+      "a1.QueryDelegatorValidatorsRequest\0328.cos" +
       "mos.staking.v1beta1.QueryDelegatorValida" +
-      "torRequest\0327.cosmos.staking.v1beta1.Quer" +
-      "yDelegatorValidatorResponse\"W\202\323\344\223\002Q\022O/co" +
-      "smos/staking/v1beta1/delegators/{delegat" +
-      "or_addr}/validators/{validator_addr}\022\263\001\n" +
-      "\016HistoricalInfo\0222.cosmos.staking.v1beta1" +
-      ".QueryHistoricalInfoRequest\0323.cosmos.sta" +
-      "king.v1beta1.QueryHistoricalInfoResponse" +
-      "\"8\202\323\344\223\0022\0220/cosmos/staking/v1beta1/histor" +
-      "ical_info/{height}\022\201\001\n\004Pool\022(.cosmos.sta" +
-      "king.v1beta1.QueryPoolRequest\032).cosmos.s" +
-      "taking.v1beta1.QueryPoolResponse\"$\202\323\344\223\002\036" +
-      "\022\034/cosmos/staking/v1beta1/pool\022\211\001\n\006Param" +
-      "s\022*.cosmos.staking.v1beta1.QueryParamsRe" +
-      "quest\032+.cosmos.staking.v1beta1.QueryPara" +
-      "msResponse\"&\202\323\344\223\002 \022\036/cosmos/staking/v1be" +
-      "ta1/paramsB.Z,github.com/cosmos/cosmos-s" +
-      "dk/x/staking/typesb\006proto3"
+      "torsResponse\"K\210\347\260*\001\202\323\344\223\002@\022>/cosmos/staki" +
+      "ng/v1beta1/delegators/{delegator_addr}/v" +
+      "alidators\022\343\001\n\022DelegatorValidator\0226.cosmo" +
+      "s.staking.v1beta1.QueryDelegatorValidato" +
+      "rRequest\0327.cosmos.staking.v1beta1.QueryD" +
+      "elegatorValidatorResponse\"\\\210\347\260*\001\202\323\344\223\002Q\022O" +
+      "/cosmos/staking/v1beta1/delegators/{dele" +
+      "gator_addr}/validators/{validator_addr}\022" +
+      "\270\001\n\016HistoricalInfo\0222.cosmos.staking.v1be" +
+      "ta1.QueryHistoricalInfoRequest\0323.cosmos." +
+      "staking.v1beta1.QueryHistoricalInfoRespo" +
+      "nse\"=\210\347\260*\001\202\323\344\223\0022\0220/cosmos/staking/v1beta" +
+      "1/historical_info/{height}\022\206\001\n\004Pool\022(.co" +
+      "smos.staking.v1beta1.QueryPoolRequest\032)." +
+      "cosmos.staking.v1beta1.QueryPoolResponse" +
+      "\")\210\347\260*\001\202\323\344\223\002\036\022\034/cosmos/staking/v1beta1/p" +
+      "ool\022\216\001\n\006Params\022*.cosmos.staking.v1beta1." +
+      "QueryParamsRequest\032+.cosmos.staking.v1be" +
+      "ta1.QueryParamsResponse\"+\210\347\260*\001\202\323\344\223\002 \022\036/c" +
+      "osmos/staking/v1beta1/paramsB.Z,github.c" +
+      "om/cosmos/cosmos-sdk/x/staking/typesb\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -23854,6 +23859,8 @@ public final class QueryOuterClass {
           com.google.api.AnnotationsProto.getDescriptor(),
           cosmos.staking.v1beta1.Staking.getDescriptor(),
           cosmos_proto.Cosmos.getDescriptor(),
+          cosmos.query.v1.Query.getDescriptor(),
+          amino.Amino.getDescriptor(),
         });
     internal_static_cosmos_staking_v1beta1_QueryValidatorsRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -24025,6 +24032,8 @@ public final class QueryOuterClass {
         new java.lang.String[] { "Params", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(amino.Amino.dontOmitempty);
+    registry.add(cosmos.query.v1.Query.moduleQuerySafe);
     registry.add(cosmos_proto.Cosmos.scalar);
     registry.add(com.google.protobuf2.GoGoProtos.castrepeated);
     registry.add(com.google.protobuf2.GoGoProtos.equal);
@@ -24038,6 +24047,8 @@ public final class QueryOuterClass {
     com.google.api.AnnotationsProto.getDescriptor();
     cosmos.staking.v1beta1.Staking.getDescriptor();
     cosmos_proto.Cosmos.getDescriptor();
+    cosmos.query.v1.Query.getDescriptor();
+    amino.Amino.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -28,7 +28,7 @@ struct Cosmos_Auth_V1beta1_MsgUpdateParams {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  /// authority is the address of the governance account.
+  /// authority is the address that controls the module (defaults to x/gov unless overwritten).
   var authority: String = String()
 
   /// params defines the x/auth parameters to update.

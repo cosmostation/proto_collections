@@ -92,7 +92,7 @@ struct Cosmos_Staking_V1beta1_QueryValidatorResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  /// validator defines the the validator info.
+  /// validator defines the validator info.
   var validator: Cosmos_Staking_V1beta1_Validator {
     get {return _validator ?? Cosmos_Staking_V1beta1_Validator()}
     set {_validator = newValue}
@@ -497,7 +497,7 @@ struct Cosmos_Staking_V1beta1_QueryDelegatorValidatorsResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  /// validators defines the the validators' info of a delegator.
+  /// validators defines the validators' info of a delegator.
   var validators: [Cosmos_Staking_V1beta1_Validator] = []
 
   /// pagination defines the pagination in the response.
@@ -542,7 +542,7 @@ struct Cosmos_Staking_V1beta1_QueryDelegatorValidatorResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  /// validator defines the the validator info.
+  /// validator defines the validator info.
   var validator: Cosmos_Staking_V1beta1_Validator {
     get {return _validator ?? Cosmos_Staking_V1beta1_Validator()}
     set {_validator = newValue}
