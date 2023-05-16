@@ -5,7 +5,6 @@ import "gogoproto/gogo.proto";
 import "cosmos/base/v1beta1/coin.proto";
 
 option go_package = "github.com/stafihub/stafihub/x/ledger/types";
-option java_package = "stafihub.ledger";
 
 message ChainEra {
   string denom = 1;

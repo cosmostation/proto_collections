@@ -5,7 +5,6 @@ package stafihub.stafihub.rvalidator;
 import "gogoproto/gogo.proto";
 import "stafihub/rvalidator/genesis.proto";
 option go_package = "github.com/stafihub/stafihub/x/rvalidator/types";
-option java_package = "stafihub.rvalidator";
 
 message UpdateRValidatorProposal {
     string creator = 1;

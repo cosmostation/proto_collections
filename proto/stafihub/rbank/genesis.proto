@@ -6,7 +6,6 @@ import "stafihub/rbank/params.proto";
 // this line is used by starport scaffolding # genesis/proto/import
 
 option go_package = "github.com/stafihub/stafihub/x/rbank/types";
-option java_package = "stafihub.rbank";
 
 // GenesisState defines the rbank module's genesis state.
 message GenesisState {

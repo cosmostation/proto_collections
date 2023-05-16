@@ -66,6 +66,11 @@ internal protocol Stafihub_Stafihub_Bridge_QueryClientProtocol: GRPCClient {
     _ request: Stafihub_Stafihub_Bridge_QueryBannedDenomListRequest,
     callOptions: CallOptions?
   ) -> UnaryCall<Stafihub_Stafihub_Bridge_QueryBannedDenomListRequest, Stafihub_Stafihub_Bridge_QueryBannedDenomListResponse>
+
+  func getDepositCount(
+    _ request: Stafihub_Stafihub_Bridge_QueryGetDepositCountRequest,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Stafihub_Stafihub_Bridge_QueryGetDepositCountRequest, Stafihub_Stafihub_Bridge_QueryGetDepositCountResponse>
 }
 
 extension Stafihub_Stafihub_Bridge_QueryClientProtocol {
@@ -198,6 +203,24 @@ extension Stafihub_Stafihub_Bridge_QueryClientProtocol {
       interceptors: self.interceptors?.makeBannedDenomListInterceptors() ?? []
     )
   }
+
+  /// Queries a list of GetDepositCount items.
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to GetDepositCount.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func getDepositCount(
+    _ request: Stafihub_Stafihub_Bridge_QueryGetDepositCountRequest,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Stafihub_Stafihub_Bridge_QueryGetDepositCountRequest, Stafihub_Stafihub_Bridge_QueryGetDepositCountResponse> {
+    return self.makeUnaryCall(
+      path: "/stafihub.stafihub.bridge.Query/GetDepositCount",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeGetDepositCountInterceptors() ?? []
+    )
+  }
 }
 
 internal protocol Stafihub_Stafihub_Bridge_QueryClientInterceptorFactoryProtocol {
@@ -222,6 +245,9 @@ internal protocol Stafihub_Stafihub_Bridge_QueryClientInterceptorFactoryProtocol
 
   /// - Returns: Interceptors to use when invoking 'bannedDenomList'.
   func makeBannedDenomListInterceptors() -> [ClientInterceptor<Stafihub_Stafihub_Bridge_QueryBannedDenomListRequest, Stafihub_Stafihub_Bridge_QueryBannedDenomListResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'getDepositCount'.
+  func makeGetDepositCountInterceptors() -> [ClientInterceptor<Stafihub_Stafihub_Bridge_QueryGetDepositCountRequest, Stafihub_Stafihub_Bridge_QueryGetDepositCountResponse>]
 }
 
 internal final class Stafihub_Stafihub_Bridge_QueryClient: Stafihub_Stafihub_Bridge_QueryClientProtocol {
@@ -272,6 +298,9 @@ internal protocol Stafihub_Stafihub_Bridge_QueryProvider: CallHandlerProvider {
 
   /// Queries a list of BannedDenomList items.
   func bannedDenomList(request: Stafihub_Stafihub_Bridge_QueryBannedDenomListRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stafihub_Stafihub_Bridge_QueryBannedDenomListResponse>
+
+  /// Queries a list of GetDepositCount items.
+  func getDepositCount(request: Stafihub_Stafihub_Bridge_QueryGetDepositCountRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Stafihub_Stafihub_Bridge_QueryGetDepositCountResponse>
 }
 
 extension Stafihub_Stafihub_Bridge_QueryProvider {
@@ -347,6 +376,15 @@ extension Stafihub_Stafihub_Bridge_QueryProvider {
         userFunction: self.bannedDenomList(request:context:)
       )
 
+    case "GetDepositCount":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Stafihub_Stafihub_Bridge_QueryGetDepositCountRequest>(),
+        responseSerializer: ProtobufSerializer<Stafihub_Stafihub_Bridge_QueryGetDepositCountResponse>(),
+        interceptors: self.interceptors?.makeGetDepositCountInterceptors() ?? [],
+        userFunction: self.getDepositCount(request:context:)
+      )
+
     default:
       return nil
     }
@@ -382,4 +420,8 @@ internal protocol Stafihub_Stafihub_Bridge_QueryServerInterceptorFactoryProtocol
   /// - Returns: Interceptors to use when handling 'bannedDenomList'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeBannedDenomListInterceptors() -> [ServerInterceptor<Stafihub_Stafihub_Bridge_QueryBannedDenomListRequest, Stafihub_Stafihub_Bridge_QueryBannedDenomListResponse>]
+
+  /// - Returns: Interceptors to use when handling 'getDepositCount'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeGetDepositCountInterceptors() -> [ServerInterceptor<Stafihub_Stafihub_Bridge_QueryGetDepositCountRequest, Stafihub_Stafihub_Bridge_QueryGetDepositCountResponse>]
 }

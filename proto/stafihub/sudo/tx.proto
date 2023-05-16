@@ -7,7 +7,6 @@ import "cosmos/bank/v1beta1/bank.proto";
 // this line is used by starport scaffolding # proto/tx/import
 
 option go_package = "github.com/stafihub/stafihub/x/sudo/types";
-option java_package = "stafihub.sudo";
 
 // Msg defines the Msg service.
 service Msg {

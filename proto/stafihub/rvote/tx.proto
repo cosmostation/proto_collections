@@ -9,7 +9,6 @@ import "cosmos_proto/cosmos.proto";
 // this line is used by starport scaffolding # proto/tx/import
 
 option go_package = "github.com/stafihub/stafihub/x/rvote/types";
-option java_package = "stafihub.rvote";
 
 // Msg defines the Msg service.
 service Msg {
@@ -20,7 +19,7 @@ service Msg {
 
 message MsgSetProposalLife {
   string creator = 1;
-  int64 proposalLife = 2;
+  int64 proposalLife = 2 [(gogoproto.jsontag) = "proposalLife"];
 }
 
 message MsgSetProposalLifeResponse {

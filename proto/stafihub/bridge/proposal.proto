@@ -4,7 +4,6 @@ package stafihub.stafihub.bridge;
 import "gogoproto/gogo.proto";
 
 option go_package = "github.com/stafihub/stafihub/x/bridge/types";
-option java_package = "stafihub.bridge";
 
 message Proposal {
   ProposalContent content = 1 ;

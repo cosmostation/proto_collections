@@ -10,7 +10,6 @@ import "cosmos/base/v1beta1/coin.proto";
 // this line is used by starport scaffolding # 1
 
 option go_package = "github.com/stafihub/stafihub/x/mining/types";
-option java_package = "stafihub.mining";
 
 // Query defines the gRPC querier service.
 service Query {

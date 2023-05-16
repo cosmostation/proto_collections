@@ -4,7 +4,6 @@ package stafihub.stafihub.rvalidator;
 import "gogoproto/gogo.proto";
 
 option go_package = "github.com/stafihub/stafihub/x/rvalidator/types";
-option java_package = "stafihub.rvalidator";
 
 // Params defines the parameters for the module.
 message Params {
