@@ -3978,7 +3978,7 @@ public final class Genesis {
       "\007port_id\030\001 \001(\tB\022\362\336\037\016yaml:\"port_id\"\022)\n\nch" +
       "annel_id\030\002 \001(\tB\025\362\336\037\021yaml:\"channel_id\"\022\020\n" +
       "\010sequence\030\003 \001(\004B;Z9github.com/cosmos/ibc" +
-      "-go/v2/modules/core/04-channel/typesb\006pr" +
+      "-go/v7/modules/core/04-channel/typesb\006pr" +
       "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

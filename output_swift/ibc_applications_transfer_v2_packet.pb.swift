@@ -40,6 +40,9 @@ struct Ibc_Applications_Transfer_V2_FungibleTokenPacketData {
   /// the recipient address on the destination chain
   var receiver: String = String()
 
+  /// optional memo
+  var memo: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -56,6 +59,7 @@ extension Ibc_Applications_Transfer_V2_FungibleTokenPacketData: SwiftProtobuf.Me
     2: .same(proto: "amount"),
     3: .same(proto: "sender"),
     4: .same(proto: "receiver"),
+    5: .same(proto: "memo"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -68,6 +72,7 @@ extension Ibc_Applications_Transfer_V2_FungibleTokenPacketData: SwiftProtobuf.Me
       case 2: try { try decoder.decodeSingularStringField(value: &self.amount) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.sender) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.receiver) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.memo) }()
       default: break
       }
     }
@@ -86,6 +91,9 @@ extension Ibc_Applications_Transfer_V2_FungibleTokenPacketData: SwiftProtobuf.Me
     if !self.receiver.isEmpty {
       try visitor.visitSingularStringField(value: self.receiver, fieldNumber: 4)
     }
+    if !self.memo.isEmpty {
+      try visitor.visitSingularStringField(value: self.memo, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -94,6 +102,7 @@ extension Ibc_Applications_Transfer_V2_FungibleTokenPacketData: SwiftProtobuf.Me
     if lhs.amount != rhs.amount {return false}
     if lhs.sender != rhs.sender {return false}
     if lhs.receiver != rhs.receiver {return false}
+    if lhs.memo != rhs.memo {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

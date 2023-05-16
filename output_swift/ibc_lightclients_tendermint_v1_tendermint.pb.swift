@@ -93,7 +93,7 @@ struct Ibc_Lightclients_Tendermint_V1_ClientState {
   mutating func clearLatestHeight() {_uniqueStorage()._latestHeight = nil}
 
   /// Proof specifications used in verifying counterparty state
-  var proofSpecs: [Ics23_ProofSpec] {
+  var proofSpecs: [Cosmos_Ics23_V1_ProofSpec] {
     get {return _storage._proofSpecs}
     set {_uniqueStorage()._proofSpecs = newValue}
   }
@@ -110,15 +110,13 @@ struct Ibc_Lightclients_Tendermint_V1_ClientState {
     set {_uniqueStorage()._upgradePath = newValue}
   }
 
-  /// This flag, when set to true, will allow governance to recover a client
-  /// which has expired
+  /// allow_update_after_expiry is deprecated
   var allowUpdateAfterExpiry: Bool {
     get {return _storage._allowUpdateAfterExpiry}
     set {_uniqueStorage()._allowUpdateAfterExpiry = newValue}
   }
 
-  /// This flag, when set to true, will allow governance to unfreeze a client
-  /// whose chain has experienced a misbehaviour event
+  /// allow_update_after_misbehaviour is deprecated
   var allowUpdateAfterMisbehaviour: Bool {
     get {return _storage._allowUpdateAfterMisbehaviour}
     set {_uniqueStorage()._allowUpdateAfterMisbehaviour = newValue}
@@ -175,6 +173,7 @@ struct Ibc_Lightclients_Tendermint_V1_Misbehaviour {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// ClientID is deprecated
   var clientID: String = String()
 
   var header1: Ibc_Lightclients_Tendermint_V1_Header {
@@ -307,7 +306,7 @@ extension Ibc_Lightclients_Tendermint_V1_ClientState: SwiftProtobuf.Message, Swi
     var _maxClockDrift: SwiftProtobuf.Google_Protobuf_Duration? = nil
     var _frozenHeight: Ibc_Core_Client_V1_Height? = nil
     var _latestHeight: Ibc_Core_Client_V1_Height? = nil
-    var _proofSpecs: [Ics23_ProofSpec] = []
+    var _proofSpecs: [Cosmos_Ics23_V1_ProofSpec] = []
     var _upgradePath: [String] = []
     var _allowUpdateAfterExpiry: Bool = false
     var _allowUpdateAfterMisbehaviour: Bool = false

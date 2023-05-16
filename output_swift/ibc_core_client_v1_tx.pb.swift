@@ -70,7 +70,7 @@ struct Ibc_Core_Client_V1_MsgCreateClientResponse {
 }
 
 /// MsgUpdateClient defines an sdk.Msg to update a IBC client state using
-/// the given header.
+/// the given client message.
 struct Ibc_Core_Client_V1_MsgUpdateClient {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -79,15 +79,15 @@ struct Ibc_Core_Client_V1_MsgUpdateClient {
   /// client unique identifier
   var clientID: String = String()
 
-  /// header to update the light client
-  var header: Google_Protobuf2_Any {
-    get {return _header ?? Google_Protobuf2_Any()}
-    set {_header = newValue}
+  /// client message to update the light client
+  var clientMessage: Google_Protobuf2_Any {
+    get {return _clientMessage ?? Google_Protobuf2_Any()}
+    set {_clientMessage = newValue}
   }
-  /// Returns true if `header` has been explicitly set.
-  var hasHeader: Bool {return self._header != nil}
-  /// Clears the value of `header`. Subsequent reads from it will return its default value.
-  mutating func clearHeader() {self._header = nil}
+  /// Returns true if `clientMessage` has been explicitly set.
+  var hasClientMessage: Bool {return self._clientMessage != nil}
+  /// Clears the value of `clientMessage`. Subsequent reads from it will return its default value.
+  mutating func clearClientMessage() {self._clientMessage = nil}
 
   /// signer address
   var signer: String = String()
@@ -96,7 +96,7 @@ struct Ibc_Core_Client_V1_MsgUpdateClient {
 
   init() {}
 
-  fileprivate var _header: Google_Protobuf2_Any? = nil
+  fileprivate var _clientMessage: Google_Protobuf2_Any? = nil
 }
 
 /// MsgUpdateClientResponse defines the Msg/UpdateClient response type.
@@ -171,6 +171,7 @@ struct Ibc_Core_Client_V1_MsgUpgradeClientResponse {
 
 /// MsgSubmitMisbehaviour defines an sdk.Msg type that submits Evidence for
 /// light client misbehaviour.
+/// Warning: DEPRECATED
 struct Ibc_Core_Client_V1_MsgSubmitMisbehaviour {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -282,7 +283,7 @@ extension Ibc_Core_Client_V1_MsgUpdateClient: SwiftProtobuf.Message, SwiftProtob
   static let protoMessageName: String = _protobuf_package + ".MsgUpdateClient"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "client_id"),
-    2: .same(proto: "header"),
+    2: .standard(proto: "client_message"),
     3: .same(proto: "signer"),
   ]
 
@@ -293,7 +294,7 @@ extension Ibc_Core_Client_V1_MsgUpdateClient: SwiftProtobuf.Message, SwiftProtob
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularStringField(value: &self.clientID) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._header) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._clientMessage) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.signer) }()
       default: break
       }
@@ -304,7 +305,7 @@ extension Ibc_Core_Client_V1_MsgUpdateClient: SwiftProtobuf.Message, SwiftProtob
     if !self.clientID.isEmpty {
       try visitor.visitSingularStringField(value: self.clientID, fieldNumber: 1)
     }
-    if let v = self._header {
+    if let v = self._clientMessage {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
     }
     if !self.signer.isEmpty {
@@ -315,7 +316,7 @@ extension Ibc_Core_Client_V1_MsgUpdateClient: SwiftProtobuf.Message, SwiftProtob
 
   static func ==(lhs: Ibc_Core_Client_V1_MsgUpdateClient, rhs: Ibc_Core_Client_V1_MsgUpdateClient) -> Bool {
     if lhs.clientID != rhs.clientID {return false}
-    if lhs._header != rhs._header {return false}
+    if lhs._clientMessage != rhs._clientMessage {return false}
     if lhs.signer != rhs.signer {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

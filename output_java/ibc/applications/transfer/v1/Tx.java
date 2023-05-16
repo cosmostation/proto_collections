@@ -157,7 +157,7 @@ public final class Tx {
 
     /**
      * <pre>
-     * Timeout timestamp (in nanoseconds) relative to the current block timestamp.
+     * Timeout timestamp in absolute nanoseconds since unix epoch.
      * The timeout is disabled when set to 0.
      * </pre>
      *
@@ -165,6 +165,26 @@ public final class Tx {
      * @return The timeoutTimestamp.
      */
     long getTimeoutTimestamp();
+
+    /**
+     * <pre>
+     * optional memo
+     * </pre>
+     *
+     * <code>string memo = 8;</code>
+     * @return The memo.
+     */
+    java.lang.String getMemo();
+    /**
+     * <pre>
+     * optional memo
+     * </pre>
+     *
+     * <code>string memo = 8;</code>
+     * @return The bytes for memo.
+     */
+    com.google.protobuf.ByteString
+        getMemoBytes();
   }
   /**
    * <pre>
@@ -189,6 +209,7 @@ public final class Tx {
       sourceChannel_ = "";
       sender_ = "";
       receiver_ = "";
+      memo_ = "";
     }
 
     @java.lang.Override
@@ -274,6 +295,12 @@ public final class Tx {
             case 56: {
 
               timeoutTimestamp_ = input.readUInt64();
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              memo_ = s;
               break;
             }
             default: {
@@ -575,7 +602,7 @@ public final class Tx {
     private long timeoutTimestamp_;
     /**
      * <pre>
-     * Timeout timestamp (in nanoseconds) relative to the current block timestamp.
+     * Timeout timestamp in absolute nanoseconds since unix epoch.
      * The timeout is disabled when set to 0.
      * </pre>
      *
@@ -585,6 +612,52 @@ public final class Tx {
     @java.lang.Override
     public long getTimeoutTimestamp() {
       return timeoutTimestamp_;
+    }
+
+    public static final int MEMO_FIELD_NUMBER = 8;
+    private volatile java.lang.Object memo_;
+    /**
+     * <pre>
+     * optional memo
+     * </pre>
+     *
+     * <code>string memo = 8;</code>
+     * @return The memo.
+     */
+    @java.lang.Override
+    public java.lang.String getMemo() {
+      java.lang.Object ref = memo_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        memo_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * optional memo
+     * </pre>
+     *
+     * <code>string memo = 8;</code>
+     * @return The bytes for memo.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMemoBytes() {
+      java.lang.Object ref = memo_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        memo_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -622,6 +695,9 @@ public final class Tx {
       if (timeoutTimestamp_ != 0L) {
         output.writeUInt64(7, timeoutTimestamp_);
       }
+      if (!getMemoBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, memo_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -654,6 +730,9 @@ public final class Tx {
       if (timeoutTimestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(7, timeoutTimestamp_);
+      }
+      if (!getMemoBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, memo_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -690,6 +769,8 @@ public final class Tx {
       }
       if (getTimeoutTimestamp()
           != other.getTimeoutTimestamp()) return false;
+      if (!getMemo()
+          .equals(other.getMemo())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -720,6 +801,8 @@ public final class Tx {
       hash = (37 * hash) + TIMEOUT_TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimeoutTimestamp());
+      hash = (37 * hash) + MEMO_FIELD_NUMBER;
+      hash = (53 * hash) + getMemo().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -881,6 +964,8 @@ public final class Tx {
         }
         timeoutTimestamp_ = 0L;
 
+        memo_ = "";
+
         return this;
       }
 
@@ -922,6 +1007,7 @@ public final class Tx {
           result.timeoutHeight_ = timeoutHeightBuilder_.build();
         }
         result.timeoutTimestamp_ = timeoutTimestamp_;
+        result.memo_ = memo_;
         onBuilt();
         return result;
       }
@@ -994,6 +1080,10 @@ public final class Tx {
         }
         if (other.getTimeoutTimestamp() != 0L) {
           setTimeoutTimestamp(other.getTimeoutTimestamp());
+        }
+        if (!other.getMemo().isEmpty()) {
+          memo_ = other.memo_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1730,7 +1820,7 @@ public final class Tx {
       private long timeoutTimestamp_ ;
       /**
        * <pre>
-       * Timeout timestamp (in nanoseconds) relative to the current block timestamp.
+       * Timeout timestamp in absolute nanoseconds since unix epoch.
        * The timeout is disabled when set to 0.
        * </pre>
        *
@@ -1743,7 +1833,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * Timeout timestamp (in nanoseconds) relative to the current block timestamp.
+       * Timeout timestamp in absolute nanoseconds since unix epoch.
        * The timeout is disabled when set to 0.
        * </pre>
        *
@@ -1759,7 +1849,7 @@ public final class Tx {
       }
       /**
        * <pre>
-       * Timeout timestamp (in nanoseconds) relative to the current block timestamp.
+       * Timeout timestamp in absolute nanoseconds since unix epoch.
        * The timeout is disabled when set to 0.
        * </pre>
        *
@@ -1769,6 +1859,102 @@ public final class Tx {
       public Builder clearTimeoutTimestamp() {
         
         timeoutTimestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object memo_ = "";
+      /**
+       * <pre>
+       * optional memo
+       * </pre>
+       *
+       * <code>string memo = 8;</code>
+       * @return The memo.
+       */
+      public java.lang.String getMemo() {
+        java.lang.Object ref = memo_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          memo_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * optional memo
+       * </pre>
+       *
+       * <code>string memo = 8;</code>
+       * @return The bytes for memo.
+       */
+      public com.google.protobuf.ByteString
+          getMemoBytes() {
+        java.lang.Object ref = memo_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          memo_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * optional memo
+       * </pre>
+       *
+       * <code>string memo = 8;</code>
+       * @param value The memo to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMemo(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        memo_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * optional memo
+       * </pre>
+       *
+       * <code>string memo = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMemo() {
+        
+        memo_ = getDefaultInstance().getMemo();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * optional memo
+       * </pre>
+       *
+       * <code>string memo = 8;</code>
+       * @param value The bytes for memo to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMemoBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        memo_ = value;
         onChanged();
         return this;
       }
@@ -1828,6 +2014,16 @@ public final class Tx {
   public interface MsgTransferResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:ibc.applications.transfer.v1.MsgTransferResponse)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * sequence number of the transfer packet sent
+     * </pre>
+     *
+     * <code>uint64 sequence = 1;</code>
+     * @return The sequence.
+     */
+    long getSequence();
   }
   /**
    * <pre>
@@ -1878,6 +2074,11 @@ public final class Tx {
             case 0:
               done = true;
               break;
+            case 8: {
+
+              sequence_ = input.readUInt64();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -1910,6 +2111,21 @@ public final class Tx {
               ibc.applications.transfer.v1.Tx.MsgTransferResponse.class, ibc.applications.transfer.v1.Tx.MsgTransferResponse.Builder.class);
     }
 
+    public static final int SEQUENCE_FIELD_NUMBER = 1;
+    private long sequence_;
+    /**
+     * <pre>
+     * sequence number of the transfer packet sent
+     * </pre>
+     *
+     * <code>uint64 sequence = 1;</code>
+     * @return The sequence.
+     */
+    @java.lang.Override
+    public long getSequence() {
+      return sequence_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1924,6 +2140,9 @@ public final class Tx {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (sequence_ != 0L) {
+        output.writeUInt64(1, sequence_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1933,6 +2152,10 @@ public final class Tx {
       if (size != -1) return size;
 
       size = 0;
+      if (sequence_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, sequence_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1948,6 +2171,8 @@ public final class Tx {
       }
       ibc.applications.transfer.v1.Tx.MsgTransferResponse other = (ibc.applications.transfer.v1.Tx.MsgTransferResponse) obj;
 
+      if (getSequence()
+          != other.getSequence()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1959,6 +2184,9 @@ public final class Tx {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SEQUENCE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getSequence());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2096,6 +2324,8 @@ public final class Tx {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        sequence_ = 0L;
+
         return this;
       }
 
@@ -2122,6 +2352,7 @@ public final class Tx {
       @java.lang.Override
       public ibc.applications.transfer.v1.Tx.MsgTransferResponse buildPartial() {
         ibc.applications.transfer.v1.Tx.MsgTransferResponse result = new ibc.applications.transfer.v1.Tx.MsgTransferResponse(this);
+        result.sequence_ = sequence_;
         onBuilt();
         return result;
       }
@@ -2170,6 +2401,9 @@ public final class Tx {
 
       public Builder mergeFrom(ibc.applications.transfer.v1.Tx.MsgTransferResponse other) {
         if (other == ibc.applications.transfer.v1.Tx.MsgTransferResponse.getDefaultInstance()) return this;
+        if (other.getSequence() != 0L) {
+          setSequence(other.getSequence());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -2196,6 +2430,49 @@ public final class Tx {
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+
+      private long sequence_ ;
+      /**
+       * <pre>
+       * sequence number of the transfer packet sent
+       * </pre>
+       *
+       * <code>uint64 sequence = 1;</code>
+       * @return The sequence.
+       */
+      @java.lang.Override
+      public long getSequence() {
+        return sequence_;
+      }
+      /**
+       * <pre>
+       * sequence number of the transfer packet sent
+       * </pre>
+       *
+       * <code>uint64 sequence = 1;</code>
+       * @param value The sequence to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSequence(long value) {
+        
+        sequence_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * sequence number of the transfer packet sent
+       * </pre>
+       *
+       * <code>uint64 sequence = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSequence() {
+        
+        sequence_ = 0L;
+        onChanged();
         return this;
       }
       @java.lang.Override
@@ -2273,7 +2550,7 @@ public final class Tx {
       "\n%ibc/applications/transfer/v1/tx.proto\022" +
       "\034ibc.applications.transfer.v1\032\024gogoproto" +
       "/gogo.proto\032\036cosmos/base/v1beta1/coin.pr" +
-      "oto\032\037ibc/core/client/v1/client.proto\"\325\002\n" +
+      "oto\032\037ibc/core/client/v1/client.proto\"\343\002\n" +
       "\013MsgTransfer\022+\n\013source_port\030\001 \001(\tB\026\362\336\037\022y" +
       "aml:\"source_port\"\0221\n\016source_channel\030\002 \001(" +
       "\tB\031\362\336\037\025yaml:\"source_channel\"\022.\n\005token\030\003 " +
@@ -2282,12 +2559,13 @@ public final class Tx {
       "t_height\030\006 \001(\0132\032.ibc.core.client.v1.Heig" +
       "htB\035\362\336\037\025yaml:\"timeout_height\"\310\336\037\000\0227\n\021tim" +
       "eout_timestamp\030\007 \001(\004B\034\362\336\037\030yaml:\"timeout_" +
-      "timestamp\":\010\350\240\037\000\210\240\037\000\"\025\n\023MsgTransferRespo" +
-      "nse2o\n\003Msg\022h\n\010Transfer\022).ibc.application" +
-      "s.transfer.v1.MsgTransfer\0321.ibc.applicat" +
-      "ions.transfer.v1.MsgTransferResponseB9Z7" +
-      "github.com/cosmos/ibc-go/v2/modules/apps" +
-      "/transfer/typesb\006proto3"
+      "timestamp\"\022\014\n\004memo\030\010 \001(\t:\010\350\240\037\000\210\240\037\000\"\'\n\023Ms" +
+      "gTransferResponse\022\020\n\010sequence\030\001 \001(\0042o\n\003M" +
+      "sg\022h\n\010Transfer\022).ibc.applications.transf" +
+      "er.v1.MsgTransfer\0321.ibc.applications.tra" +
+      "nsfer.v1.MsgTransferResponseB9Z7github.c" +
+      "om/cosmos/ibc-go/v7/modules/apps/transfe" +
+      "r/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2301,13 +2579,13 @@ public final class Tx {
     internal_static_ibc_applications_transfer_v1_MsgTransfer_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ibc_applications_transfer_v1_MsgTransfer_descriptor,
-        new java.lang.String[] { "SourcePort", "SourceChannel", "Token", "Sender", "Receiver", "TimeoutHeight", "TimeoutTimestamp", });
+        new java.lang.String[] { "SourcePort", "SourceChannel", "Token", "Sender", "Receiver", "TimeoutHeight", "TimeoutTimestamp", "Memo", });
     internal_static_ibc_applications_transfer_v1_MsgTransferResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ibc_applications_transfer_v1_MsgTransferResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ibc_applications_transfer_v1_MsgTransferResponse_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "Sequence", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.protobuf2.GoGoProtos.equal);

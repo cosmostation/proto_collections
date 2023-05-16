@@ -1255,7 +1255,7 @@ public final class Genesis {
       "\336\037\031yaml:\"connection_genesis\"\022Z\n\017channel_" +
       "genesis\030\003 \001(\0132!.ibc.core.channel.v1.Gene" +
       "sisStateB\036\310\336\037\000\362\336\037\026yaml:\"channel_genesis\"" +
-      "B0Z.github.com/cosmos/ibc-go/v2/modules/" +
+      "B0Z.github.com/cosmos/ibc-go/v7/modules/" +
       "core/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

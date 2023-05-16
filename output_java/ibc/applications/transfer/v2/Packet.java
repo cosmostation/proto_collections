@@ -97,6 +97,26 @@ public final class Packet {
      */
     com.google.protobuf.ByteString
         getReceiverBytes();
+
+    /**
+     * <pre>
+     * optional memo
+     * </pre>
+     *
+     * <code>string memo = 5;</code>
+     * @return The memo.
+     */
+    java.lang.String getMemo();
+    /**
+     * <pre>
+     * optional memo
+     * </pre>
+     *
+     * <code>string memo = 5;</code>
+     * @return The bytes for memo.
+     */
+    com.google.protobuf.ByteString
+        getMemoBytes();
   }
   /**
    * <pre>
@@ -121,6 +141,7 @@ public final class Packet {
       amount_ = "";
       sender_ = "";
       receiver_ = "";
+      memo_ = "";
     }
 
     @java.lang.Override
@@ -175,6 +196,12 @@ public final class Packet {
               java.lang.String s = input.readStringRequireUtf8();
 
               receiver_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              memo_ = s;
               break;
             }
             default: {
@@ -393,6 +420,52 @@ public final class Packet {
       }
     }
 
+    public static final int MEMO_FIELD_NUMBER = 5;
+    private volatile java.lang.Object memo_;
+    /**
+     * <pre>
+     * optional memo
+     * </pre>
+     *
+     * <code>string memo = 5;</code>
+     * @return The memo.
+     */
+    @java.lang.Override
+    public java.lang.String getMemo() {
+      java.lang.Object ref = memo_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        memo_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * optional memo
+     * </pre>
+     *
+     * <code>string memo = 5;</code>
+     * @return The bytes for memo.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMemoBytes() {
+      java.lang.Object ref = memo_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        memo_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -419,6 +492,9 @@ public final class Packet {
       if (!getReceiverBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, receiver_);
       }
+      if (!getMemoBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, memo_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -439,6 +515,9 @@ public final class Packet {
       }
       if (!getReceiverBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, receiver_);
+      }
+      if (!getMemoBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, memo_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -463,6 +542,8 @@ public final class Packet {
           .equals(other.getSender())) return false;
       if (!getReceiver()
           .equals(other.getReceiver())) return false;
+      if (!getMemo()
+          .equals(other.getMemo())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -482,6 +563,8 @@ public final class Packet {
       hash = (53 * hash) + getSender().hashCode();
       hash = (37 * hash) + RECEIVER_FIELD_NUMBER;
       hash = (53 * hash) + getReceiver().hashCode();
+      hash = (37 * hash) + MEMO_FIELD_NUMBER;
+      hash = (53 * hash) + getMemo().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -629,6 +712,8 @@ public final class Packet {
 
         receiver_ = "";
 
+        memo_ = "";
+
         return this;
       }
 
@@ -659,6 +744,7 @@ public final class Packet {
         result.amount_ = amount_;
         result.sender_ = sender_;
         result.receiver_ = receiver_;
+        result.memo_ = memo_;
         onBuilt();
         return result;
       }
@@ -721,6 +807,10 @@ public final class Packet {
         }
         if (!other.getReceiver().isEmpty()) {
           receiver_ = other.receiver_;
+          onChanged();
+        }
+        if (!other.getMemo().isEmpty()) {
+          memo_ = other.memo_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1135,6 +1225,102 @@ public final class Packet {
         onChanged();
         return this;
       }
+
+      private java.lang.Object memo_ = "";
+      /**
+       * <pre>
+       * optional memo
+       * </pre>
+       *
+       * <code>string memo = 5;</code>
+       * @return The memo.
+       */
+      public java.lang.String getMemo() {
+        java.lang.Object ref = memo_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          memo_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * optional memo
+       * </pre>
+       *
+       * <code>string memo = 5;</code>
+       * @return The bytes for memo.
+       */
+      public com.google.protobuf.ByteString
+          getMemoBytes() {
+        java.lang.Object ref = memo_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          memo_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * optional memo
+       * </pre>
+       *
+       * <code>string memo = 5;</code>
+       * @param value The memo to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMemo(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        memo_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * optional memo
+       * </pre>
+       *
+       * <code>string memo = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMemo() {
+        
+        memo_ = getDefaultInstance().getMemo();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * optional memo
+       * </pre>
+       *
+       * <code>string memo = 5;</code>
+       * @param value The bytes for memo to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMemoBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        memo_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1203,11 +1389,12 @@ public final class Packet {
   static {
     java.lang.String[] descriptorData = {
       "\n)ibc/applications/transfer/v2/packet.pr" +
-      "oto\022\034ibc.applications.transfer.v2\"Z\n\027Fun" +
+      "oto\022\034ibc.applications.transfer.v2\"h\n\027Fun" +
       "gibleTokenPacketData\022\r\n\005denom\030\001 \001(\t\022\016\n\006a" +
       "mount\030\002 \001(\t\022\016\n\006sender\030\003 \001(\t\022\020\n\010receiver\030" +
-      "\004 \001(\tB9Z7github.com/cosmos/ibc-go/v2/mod" +
-      "ules/apps/transfer/typesb\006proto3"
+      "\004 \001(\t\022\014\n\004memo\030\005 \001(\tB9Z7github.com/cosmos" +
+      "/ibc-go/v7/modules/apps/transfer/typesb\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1218,7 +1405,7 @@ public final class Packet {
     internal_static_ibc_applications_transfer_v2_FungibleTokenPacketData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ibc_applications_transfer_v2_FungibleTokenPacketData_descriptor,
-        new java.lang.String[] { "Denom", "Amount", "Sender", "Receiver", });
+        new java.lang.String[] { "Denom", "Amount", "Sender", "Receiver", "Memo", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

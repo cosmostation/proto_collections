@@ -56,6 +56,11 @@ internal protocol Ibc_Core_Connection_V1_QueryClientProtocol: GRPCClient {
     _ request: Ibc_Core_Connection_V1_QueryConnectionConsensusStateRequest,
     callOptions: CallOptions?
   ) -> UnaryCall<Ibc_Core_Connection_V1_QueryConnectionConsensusStateRequest, Ibc_Core_Connection_V1_QueryConnectionConsensusStateResponse>
+
+  func connectionParams(
+    _ request: Ibc_Core_Connection_V1_QueryConnectionParamsRequest,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Ibc_Core_Connection_V1_QueryConnectionParamsRequest, Ibc_Core_Connection_V1_QueryConnectionParamsResponse>
 }
 
 extension Ibc_Core_Connection_V1_QueryClientProtocol {
@@ -155,6 +160,24 @@ extension Ibc_Core_Connection_V1_QueryClientProtocol {
       interceptors: self.interceptors?.makeConnectionConsensusStateInterceptors() ?? []
     )
   }
+
+  /// ConnectionParams queries all parameters of the ibc connection submodule.
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to ConnectionParams.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func connectionParams(
+    _ request: Ibc_Core_Connection_V1_QueryConnectionParamsRequest,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Ibc_Core_Connection_V1_QueryConnectionParamsRequest, Ibc_Core_Connection_V1_QueryConnectionParamsResponse> {
+    return self.makeUnaryCall(
+      path: "/ibc.core.connection.v1.Query/ConnectionParams",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeConnectionParamsInterceptors() ?? []
+    )
+  }
 }
 
 internal protocol Ibc_Core_Connection_V1_QueryClientInterceptorFactoryProtocol {
@@ -173,6 +196,9 @@ internal protocol Ibc_Core_Connection_V1_QueryClientInterceptorFactoryProtocol {
 
   /// - Returns: Interceptors to use when invoking 'connectionConsensusState'.
   func makeConnectionConsensusStateInterceptors() -> [ClientInterceptor<Ibc_Core_Connection_V1_QueryConnectionConsensusStateRequest, Ibc_Core_Connection_V1_QueryConnectionConsensusStateResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'connectionParams'.
+  func makeConnectionParamsInterceptors() -> [ClientInterceptor<Ibc_Core_Connection_V1_QueryConnectionParamsRequest, Ibc_Core_Connection_V1_QueryConnectionParamsResponse>]
 }
 
 internal final class Ibc_Core_Connection_V1_QueryClient: Ibc_Core_Connection_V1_QueryClientProtocol {
@@ -220,6 +246,9 @@ internal protocol Ibc_Core_Connection_V1_QueryProvider: CallHandlerProvider {
   /// ConnectionConsensusState queries the consensus state associated with the
   /// connection.
   func connectionConsensusState(request: Ibc_Core_Connection_V1_QueryConnectionConsensusStateRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Ibc_Core_Connection_V1_QueryConnectionConsensusStateResponse>
+
+  /// ConnectionParams queries all parameters of the ibc connection submodule.
+  func connectionParams(request: Ibc_Core_Connection_V1_QueryConnectionParamsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Ibc_Core_Connection_V1_QueryConnectionParamsResponse>
 }
 
 extension Ibc_Core_Connection_V1_QueryProvider {
@@ -277,6 +306,15 @@ extension Ibc_Core_Connection_V1_QueryProvider {
         userFunction: self.connectionConsensusState(request:context:)
       )
 
+    case "ConnectionParams":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Ibc_Core_Connection_V1_QueryConnectionParamsRequest>(),
+        responseSerializer: ProtobufSerializer<Ibc_Core_Connection_V1_QueryConnectionParamsResponse>(),
+        interceptors: self.interceptors?.makeConnectionParamsInterceptors() ?? [],
+        userFunction: self.connectionParams(request:context:)
+      )
+
     default:
       return nil
     }
@@ -304,4 +342,8 @@ internal protocol Ibc_Core_Connection_V1_QueryServerInterceptorFactoryProtocol {
   /// - Returns: Interceptors to use when handling 'connectionConsensusState'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeConnectionConsensusStateInterceptors() -> [ServerInterceptor<Ibc_Core_Connection_V1_QueryConnectionConsensusStateRequest, Ibc_Core_Connection_V1_QueryConnectionConsensusStateResponse>]
+
+  /// - Returns: Interceptors to use when handling 'connectionParams'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeConnectionParamsInterceptors() -> [ServerInterceptor<Ibc_Core_Connection_V1_QueryConnectionParamsRequest, Ibc_Core_Connection_V1_QueryConnectionParamsResponse>]
 }

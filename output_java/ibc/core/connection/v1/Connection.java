@@ -7829,7 +7829,7 @@ public final class Connection {
       "LIZED_UNSPECIFIED\020\000\032\021\212\235 \rUNINITIALIZED\022\030" +
       "\n\nSTATE_INIT\020\001\032\010\212\235 \004INIT\022\036\n\rSTATE_TRYOPE" +
       "N\020\002\032\013\212\235 \007TRYOPEN\022\030\n\nSTATE_OPEN\020\003\032\010\212\235 \004OP" +
-      "EN\032\004\210\243\036\000B>Z<github.com/cosmos/ibc-go/v2/" +
+      "EN\032\004\210\243\036\000B>Z<github.com/cosmos/ibc-go/v7/" +
       "modules/core/03-connection/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -123,6 +123,68 @@ public final class QueryGrpc {
     return getParamsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<ibc.applications.transfer.v1.QueryOuterClass.QueryDenomHashRequest,
+      ibc.applications.transfer.v1.QueryOuterClass.QueryDenomHashResponse> getDenomHashMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DenomHash",
+      requestType = ibc.applications.transfer.v1.QueryOuterClass.QueryDenomHashRequest.class,
+      responseType = ibc.applications.transfer.v1.QueryOuterClass.QueryDenomHashResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<ibc.applications.transfer.v1.QueryOuterClass.QueryDenomHashRequest,
+      ibc.applications.transfer.v1.QueryOuterClass.QueryDenomHashResponse> getDenomHashMethod() {
+    io.grpc.MethodDescriptor<ibc.applications.transfer.v1.QueryOuterClass.QueryDenomHashRequest, ibc.applications.transfer.v1.QueryOuterClass.QueryDenomHashResponse> getDenomHashMethod;
+    if ((getDenomHashMethod = QueryGrpc.getDenomHashMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getDenomHashMethod = QueryGrpc.getDenomHashMethod) == null) {
+          QueryGrpc.getDenomHashMethod = getDenomHashMethod =
+              io.grpc.MethodDescriptor.<ibc.applications.transfer.v1.QueryOuterClass.QueryDenomHashRequest, ibc.applications.transfer.v1.QueryOuterClass.QueryDenomHashResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DenomHash"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  ibc.applications.transfer.v1.QueryOuterClass.QueryDenomHashRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  ibc.applications.transfer.v1.QueryOuterClass.QueryDenomHashResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("DenomHash"))
+              .build();
+        }
+      }
+    }
+    return getDenomHashMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<ibc.applications.transfer.v1.QueryOuterClass.QueryEscrowAddressRequest,
+      ibc.applications.transfer.v1.QueryOuterClass.QueryEscrowAddressResponse> getEscrowAddressMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "EscrowAddress",
+      requestType = ibc.applications.transfer.v1.QueryOuterClass.QueryEscrowAddressRequest.class,
+      responseType = ibc.applications.transfer.v1.QueryOuterClass.QueryEscrowAddressResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<ibc.applications.transfer.v1.QueryOuterClass.QueryEscrowAddressRequest,
+      ibc.applications.transfer.v1.QueryOuterClass.QueryEscrowAddressResponse> getEscrowAddressMethod() {
+    io.grpc.MethodDescriptor<ibc.applications.transfer.v1.QueryOuterClass.QueryEscrowAddressRequest, ibc.applications.transfer.v1.QueryOuterClass.QueryEscrowAddressResponse> getEscrowAddressMethod;
+    if ((getEscrowAddressMethod = QueryGrpc.getEscrowAddressMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getEscrowAddressMethod = QueryGrpc.getEscrowAddressMethod) == null) {
+          QueryGrpc.getEscrowAddressMethod = getEscrowAddressMethod =
+              io.grpc.MethodDescriptor.<ibc.applications.transfer.v1.QueryOuterClass.QueryEscrowAddressRequest, ibc.applications.transfer.v1.QueryOuterClass.QueryEscrowAddressResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "EscrowAddress"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  ibc.applications.transfer.v1.QueryOuterClass.QueryEscrowAddressRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  ibc.applications.transfer.v1.QueryOuterClass.QueryEscrowAddressResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("EscrowAddress"))
+              .build();
+        }
+      }
+    }
+    return getEscrowAddressMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -204,6 +266,26 @@ public final class QueryGrpc {
       asyncUnimplementedUnaryCall(getParamsMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * DenomHash queries a denomination hash information.
+     * </pre>
+     */
+    public void denomHash(ibc.applications.transfer.v1.QueryOuterClass.QueryDenomHashRequest request,
+        io.grpc.stub.StreamObserver<ibc.applications.transfer.v1.QueryOuterClass.QueryDenomHashResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getDenomHashMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * EscrowAddress returns the escrow address for a particular port and channel id.
+     * </pre>
+     */
+    public void escrowAddress(ibc.applications.transfer.v1.QueryOuterClass.QueryEscrowAddressRequest request,
+        io.grpc.stub.StreamObserver<ibc.applications.transfer.v1.QueryOuterClass.QueryEscrowAddressResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getEscrowAddressMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -227,6 +309,20 @@ public final class QueryGrpc {
                 ibc.applications.transfer.v1.QueryOuterClass.QueryParamsRequest,
                 ibc.applications.transfer.v1.QueryOuterClass.QueryParamsResponse>(
                   this, METHODID_PARAMS)))
+          .addMethod(
+            getDenomHashMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                ibc.applications.transfer.v1.QueryOuterClass.QueryDenomHashRequest,
+                ibc.applications.transfer.v1.QueryOuterClass.QueryDenomHashResponse>(
+                  this, METHODID_DENOM_HASH)))
+          .addMethod(
+            getEscrowAddressMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                ibc.applications.transfer.v1.QueryOuterClass.QueryEscrowAddressRequest,
+                ibc.applications.transfer.v1.QueryOuterClass.QueryEscrowAddressResponse>(
+                  this, METHODID_ESCROW_ADDRESS)))
           .build();
     }
   }
@@ -280,6 +376,28 @@ public final class QueryGrpc {
       asyncUnaryCall(
           getChannel().newCall(getParamsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * DenomHash queries a denomination hash information.
+     * </pre>
+     */
+    public void denomHash(ibc.applications.transfer.v1.QueryOuterClass.QueryDenomHashRequest request,
+        io.grpc.stub.StreamObserver<ibc.applications.transfer.v1.QueryOuterClass.QueryDenomHashResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDenomHashMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * EscrowAddress returns the escrow address for a particular port and channel id.
+     * </pre>
+     */
+    public void escrowAddress(ibc.applications.transfer.v1.QueryOuterClass.QueryEscrowAddressRequest request,
+        io.grpc.stub.StreamObserver<ibc.applications.transfer.v1.QueryOuterClass.QueryEscrowAddressResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getEscrowAddressMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -327,6 +445,26 @@ public final class QueryGrpc {
     public ibc.applications.transfer.v1.QueryOuterClass.QueryParamsResponse params(ibc.applications.transfer.v1.QueryOuterClass.QueryParamsRequest request) {
       return blockingUnaryCall(
           getChannel(), getParamsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * DenomHash queries a denomination hash information.
+     * </pre>
+     */
+    public ibc.applications.transfer.v1.QueryOuterClass.QueryDenomHashResponse denomHash(ibc.applications.transfer.v1.QueryOuterClass.QueryDenomHashRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getDenomHashMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * EscrowAddress returns the escrow address for a particular port and channel id.
+     * </pre>
+     */
+    public ibc.applications.transfer.v1.QueryOuterClass.QueryEscrowAddressResponse escrowAddress(ibc.applications.transfer.v1.QueryOuterClass.QueryEscrowAddressRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getEscrowAddressMethod(), getCallOptions(), request);
     }
   }
 
@@ -379,11 +517,35 @@ public final class QueryGrpc {
       return futureUnaryCall(
           getChannel().newCall(getParamsMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * DenomHash queries a denomination hash information.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<ibc.applications.transfer.v1.QueryOuterClass.QueryDenomHashResponse> denomHash(
+        ibc.applications.transfer.v1.QueryOuterClass.QueryDenomHashRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDenomHashMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * EscrowAddress returns the escrow address for a particular port and channel id.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<ibc.applications.transfer.v1.QueryOuterClass.QueryEscrowAddressResponse> escrowAddress(
+        ibc.applications.transfer.v1.QueryOuterClass.QueryEscrowAddressRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getEscrowAddressMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_DENOM_TRACE = 0;
   private static final int METHODID_DENOM_TRACES = 1;
   private static final int METHODID_PARAMS = 2;
+  private static final int METHODID_DENOM_HASH = 3;
+  private static final int METHODID_ESCROW_ADDRESS = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -413,6 +575,14 @@ public final class QueryGrpc {
         case METHODID_PARAMS:
           serviceImpl.params((ibc.applications.transfer.v1.QueryOuterClass.QueryParamsRequest) request,
               (io.grpc.stub.StreamObserver<ibc.applications.transfer.v1.QueryOuterClass.QueryParamsResponse>) responseObserver);
+          break;
+        case METHODID_DENOM_HASH:
+          serviceImpl.denomHash((ibc.applications.transfer.v1.QueryOuterClass.QueryDenomHashRequest) request,
+              (io.grpc.stub.StreamObserver<ibc.applications.transfer.v1.QueryOuterClass.QueryDenomHashResponse>) responseObserver);
+          break;
+        case METHODID_ESCROW_ADDRESS:
+          serviceImpl.escrowAddress((ibc.applications.transfer.v1.QueryOuterClass.QueryEscrowAddressRequest) request,
+              (io.grpc.stub.StreamObserver<ibc.applications.transfer.v1.QueryOuterClass.QueryEscrowAddressResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -478,6 +648,8 @@ public final class QueryGrpc {
               .addMethod(getDenomTraceMethod())
               .addMethod(getDenomTracesMethod())
               .addMethod(getParamsMethod())
+              .addMethod(getDenomHashMethod())
+              .addMethod(getEscrowAddressMethod())
               .build();
         }
       }

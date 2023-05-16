@@ -52,6 +52,11 @@ internal protocol Ibc_Core_Client_V1_QueryClientProtocol: GRPCClient {
     callOptions: CallOptions?
   ) -> UnaryCall<Ibc_Core_Client_V1_QueryConsensusStatesRequest, Ibc_Core_Client_V1_QueryConsensusStatesResponse>
 
+  func consensusStateHeights(
+    _ request: Ibc_Core_Client_V1_QueryConsensusStateHeightsRequest,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Ibc_Core_Client_V1_QueryConsensusStateHeightsRequest, Ibc_Core_Client_V1_QueryConsensusStateHeightsResponse>
+
   func clientStatus(
     _ request: Ibc_Core_Client_V1_QueryClientStatusRequest,
     callOptions: CallOptions?
@@ -152,6 +157,24 @@ extension Ibc_Core_Client_V1_QueryClientProtocol {
     )
   }
 
+  /// ConsensusStateHeights queries the height of every consensus states associated with a given client.
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to ConsensusStateHeights.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func consensusStateHeights(
+    _ request: Ibc_Core_Client_V1_QueryConsensusStateHeightsRequest,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Ibc_Core_Client_V1_QueryConsensusStateHeightsRequest, Ibc_Core_Client_V1_QueryConsensusStateHeightsResponse> {
+    return self.makeUnaryCall(
+      path: "/ibc.core.client.v1.Query/ConsensusStateHeights",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeConsensusStateHeightsInterceptors() ?? []
+    )
+  }
+
   /// Status queries the status of an IBC client.
   ///
   /// - Parameters:
@@ -170,7 +193,7 @@ extension Ibc_Core_Client_V1_QueryClientProtocol {
     )
   }
 
-  /// ClientParams queries all parameters of the ibc client.
+  /// ClientParams queries all parameters of the ibc client submodule.
   ///
   /// - Parameters:
   ///   - request: Request to send to ClientParams.
@@ -239,6 +262,9 @@ internal protocol Ibc_Core_Client_V1_QueryClientInterceptorFactoryProtocol {
   /// - Returns: Interceptors to use when invoking 'consensusStates'.
   func makeConsensusStatesInterceptors() -> [ClientInterceptor<Ibc_Core_Client_V1_QueryConsensusStatesRequest, Ibc_Core_Client_V1_QueryConsensusStatesResponse>]
 
+  /// - Returns: Interceptors to use when invoking 'consensusStateHeights'.
+  func makeConsensusStateHeightsInterceptors() -> [ClientInterceptor<Ibc_Core_Client_V1_QueryConsensusStateHeightsRequest, Ibc_Core_Client_V1_QueryConsensusStateHeightsResponse>]
+
   /// - Returns: Interceptors to use when invoking 'clientStatus'.
   func makeClientStatusInterceptors() -> [ClientInterceptor<Ibc_Core_Client_V1_QueryClientStatusRequest, Ibc_Core_Client_V1_QueryClientStatusResponse>]
 
@@ -294,10 +320,13 @@ internal protocol Ibc_Core_Client_V1_QueryProvider: CallHandlerProvider {
   /// client.
   func consensusStates(request: Ibc_Core_Client_V1_QueryConsensusStatesRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Ibc_Core_Client_V1_QueryConsensusStatesResponse>
 
+  /// ConsensusStateHeights queries the height of every consensus states associated with a given client.
+  func consensusStateHeights(request: Ibc_Core_Client_V1_QueryConsensusStateHeightsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Ibc_Core_Client_V1_QueryConsensusStateHeightsResponse>
+
   /// Status queries the status of an IBC client.
   func clientStatus(request: Ibc_Core_Client_V1_QueryClientStatusRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Ibc_Core_Client_V1_QueryClientStatusResponse>
 
-  /// ClientParams queries all parameters of the ibc client.
+  /// ClientParams queries all parameters of the ibc client submodule.
   func clientParams(request: Ibc_Core_Client_V1_QueryClientParamsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Ibc_Core_Client_V1_QueryClientParamsResponse>
 
   /// UpgradedClientState queries an Upgraded IBC light client.
@@ -351,6 +380,15 @@ extension Ibc_Core_Client_V1_QueryProvider {
         responseSerializer: ProtobufSerializer<Ibc_Core_Client_V1_QueryConsensusStatesResponse>(),
         interceptors: self.interceptors?.makeConsensusStatesInterceptors() ?? [],
         userFunction: self.consensusStates(request:context:)
+      )
+
+    case "ConsensusStateHeights":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Ibc_Core_Client_V1_QueryConsensusStateHeightsRequest>(),
+        responseSerializer: ProtobufSerializer<Ibc_Core_Client_V1_QueryConsensusStateHeightsResponse>(),
+        interceptors: self.interceptors?.makeConsensusStateHeightsInterceptors() ?? [],
+        userFunction: self.consensusStateHeights(request:context:)
       )
 
     case "ClientStatus":
@@ -412,6 +450,10 @@ internal protocol Ibc_Core_Client_V1_QueryServerInterceptorFactoryProtocol {
   /// - Returns: Interceptors to use when handling 'consensusStates'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeConsensusStatesInterceptors() -> [ServerInterceptor<Ibc_Core_Client_V1_QueryConsensusStatesRequest, Ibc_Core_Client_V1_QueryConsensusStatesResponse>]
+
+  /// - Returns: Interceptors to use when handling 'consensusStateHeights'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeConsensusStateHeightsInterceptors() -> [ServerInterceptor<Ibc_Core_Client_V1_QueryConsensusStateHeightsRequest, Ibc_Core_Client_V1_QueryConsensusStateHeightsResponse>]
 
   /// - Returns: Interceptors to use when handling 'clientStatus'.
   ///   Defaults to calling `self.makeInterceptors()`.

@@ -293,6 +293,40 @@ struct Ibc_Core_Connection_V1_QueryConnectionConsensusStateResponse {
   fileprivate var _proofHeight: Ibc_Core_Client_V1_Height? = nil
 }
 
+/// QueryConnectionParamsRequest is the request type for the Query/ConnectionParams RPC method.
+struct Ibc_Core_Connection_V1_QueryConnectionParamsRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+/// QueryConnectionParamsResponse is the response type for the Query/ConnectionParams RPC method.
+struct Ibc_Core_Connection_V1_QueryConnectionParamsResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  /// params defines the parameters of the module.
+  var params: Ibc_Core_Connection_V1_Params {
+    get {return _params ?? Ibc_Core_Connection_V1_Params()}
+    set {_params = newValue}
+  }
+  /// Returns true if `params` has been explicitly set.
+  var hasParams: Bool {return self._params != nil}
+  /// Clears the value of `params`. Subsequent reads from it will return its default value.
+  mutating func clearParams() {self._params = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _params: Ibc_Core_Connection_V1_Params? = nil
+}
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "ibc.core.connection.v1"
@@ -690,6 +724,57 @@ extension Ibc_Core_Connection_V1_QueryConnectionConsensusStateResponse: SwiftPro
     if lhs.clientID != rhs.clientID {return false}
     if lhs.proof != rhs.proof {return false}
     if lhs._proofHeight != rhs._proofHeight {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Ibc_Core_Connection_V1_QueryConnectionParamsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QueryConnectionParamsRequest"
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let _ = try decoder.nextFieldNumber() {
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Ibc_Core_Connection_V1_QueryConnectionParamsRequest, rhs: Ibc_Core_Connection_V1_QueryConnectionParamsRequest) -> Bool {
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Ibc_Core_Connection_V1_QueryConnectionParamsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QueryConnectionParamsResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "params"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._params) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if let v = self._params {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Ibc_Core_Connection_V1_QueryConnectionParamsResponse, rhs: Ibc_Core_Connection_V1_QueryConnectionParamsResponse) -> Bool {
+    if lhs._params != rhs._params {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -74,7 +74,7 @@ struct Ibc_Core_Commitment_V1_MerkleProof {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var proofs: [Ics23_CommitmentProof] = []
+  var proofs: [Cosmos_Ics23_V1_CommitmentProof] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 

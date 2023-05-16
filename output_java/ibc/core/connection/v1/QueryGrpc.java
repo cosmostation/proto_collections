@@ -185,6 +185,37 @@ public final class QueryGrpc {
     return getConnectionConsensusStateMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest,
+      ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse> getConnectionParamsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ConnectionParams",
+      requestType = ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest.class,
+      responseType = ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest,
+      ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse> getConnectionParamsMethod() {
+    io.grpc.MethodDescriptor<ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest, ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse> getConnectionParamsMethod;
+    if ((getConnectionParamsMethod = QueryGrpc.getConnectionParamsMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getConnectionParamsMethod = QueryGrpc.getConnectionParamsMethod) == null) {
+          QueryGrpc.getConnectionParamsMethod = getConnectionParamsMethod =
+              io.grpc.MethodDescriptor.<ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest, ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ConnectionParams"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("ConnectionParams"))
+              .build();
+        }
+      }
+    }
+    return getConnectionParamsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -289,6 +320,16 @@ public final class QueryGrpc {
       asyncUnimplementedUnaryCall(getConnectionConsensusStateMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * ConnectionParams queries all parameters of the ibc connection submodule.
+     * </pre>
+     */
+    public void connectionParams(ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest request,
+        io.grpc.stub.StreamObserver<ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getConnectionParamsMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -326,6 +367,13 @@ public final class QueryGrpc {
                 ibc.core.connection.v1.QueryOuterClass.QueryConnectionConsensusStateRequest,
                 ibc.core.connection.v1.QueryOuterClass.QueryConnectionConsensusStateResponse>(
                   this, METHODID_CONNECTION_CONSENSUS_STATE)))
+          .addMethod(
+            getConnectionParamsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest,
+                ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse>(
+                  this, METHODID_CONNECTION_PARAMS)))
           .build();
     }
   }
@@ -404,6 +452,17 @@ public final class QueryGrpc {
       asyncUnaryCall(
           getChannel().newCall(getConnectionConsensusStateMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * ConnectionParams queries all parameters of the ibc connection submodule.
+     * </pre>
+     */
+    public void connectionParams(ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest request,
+        io.grpc.stub.StreamObserver<ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getConnectionParamsMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -474,6 +533,16 @@ public final class QueryGrpc {
     public ibc.core.connection.v1.QueryOuterClass.QueryConnectionConsensusStateResponse connectionConsensusState(ibc.core.connection.v1.QueryOuterClass.QueryConnectionConsensusStateRequest request) {
       return blockingUnaryCall(
           getChannel(), getConnectionConsensusStateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * ConnectionParams queries all parameters of the ibc connection submodule.
+     * </pre>
+     */
+    public ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse connectionParams(ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getConnectionParamsMethod(), getCallOptions(), request);
     }
   }
 
@@ -551,6 +620,17 @@ public final class QueryGrpc {
       return futureUnaryCall(
           getChannel().newCall(getConnectionConsensusStateMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * ConnectionParams queries all parameters of the ibc connection submodule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse> connectionParams(
+        ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getConnectionParamsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CONNECTION = 0;
@@ -558,6 +638,7 @@ public final class QueryGrpc {
   private static final int METHODID_CLIENT_CONNECTIONS = 2;
   private static final int METHODID_CONNECTION_CLIENT_STATE = 3;
   private static final int METHODID_CONNECTION_CONSENSUS_STATE = 4;
+  private static final int METHODID_CONNECTION_PARAMS = 5;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -595,6 +676,10 @@ public final class QueryGrpc {
         case METHODID_CONNECTION_CONSENSUS_STATE:
           serviceImpl.connectionConsensusState((ibc.core.connection.v1.QueryOuterClass.QueryConnectionConsensusStateRequest) request,
               (io.grpc.stub.StreamObserver<ibc.core.connection.v1.QueryOuterClass.QueryConnectionConsensusStateResponse>) responseObserver);
+          break;
+        case METHODID_CONNECTION_PARAMS:
+          serviceImpl.connectionParams((ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest) request,
+              (io.grpc.stub.StreamObserver<ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -662,6 +747,7 @@ public final class QueryGrpc {
               .addMethod(getClientConnectionsMethod())
               .addMethod(getConnectionClientStateMethod())
               .addMethod(getConnectionConsensusStateMethod())
+              .addMethod(getConnectionParamsMethod())
               .build();
         }
       }

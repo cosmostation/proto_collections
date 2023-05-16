@@ -83,8 +83,7 @@ struct Ibc_Core_Connection_V1_MsgConnectionOpenTry {
     set {_uniqueStorage()._clientID = newValue}
   }
 
-  /// in the case of crossing hello's, when both chains call OpenInit, we need
-  /// the connection identifier of the previous connection in state INIT
+  /// Deprecated: this field is unused. Crossing hellos are no longer supported in core IBC.
   var previousConnectionID: String {
     get {return _storage._previousConnectionID}
     set {_uniqueStorage()._previousConnectionID = newValue}
@@ -158,6 +157,12 @@ struct Ibc_Core_Connection_V1_MsgConnectionOpenTry {
   var signer: String {
     get {return _storage._signer}
     set {_uniqueStorage()._signer = newValue}
+  }
+
+  /// optional proof data for host state machines that are unable to introspect their own consensus state
+  var hostConsensusStateProof: Data {
+    get {return _storage._hostConsensusStateProof}
+    set {_uniqueStorage()._hostConsensusStateProof = newValue}
   }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -236,6 +241,9 @@ struct Ibc_Core_Connection_V1_MsgConnectionOpenAck {
   mutating func clearConsensusHeight() {self._consensusHeight = nil}
 
   var signer: String = String()
+
+  /// optional proof data for host state machines that are unable to introspect their own consensus state
+  var hostConsensusStateProof: Data = Data()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -394,6 +402,7 @@ extension Ibc_Core_Connection_V1_MsgConnectionOpenTry: SwiftProtobuf.Message, Sw
     10: .standard(proto: "proof_consensus"),
     11: .standard(proto: "consensus_height"),
     12: .same(proto: "signer"),
+    13: .standard(proto: "host_consensus_state_proof"),
   ]
 
   fileprivate class _StorageClass {
@@ -409,6 +418,7 @@ extension Ibc_Core_Connection_V1_MsgConnectionOpenTry: SwiftProtobuf.Message, Sw
     var _proofConsensus: Data = Data()
     var _consensusHeight: Ibc_Core_Client_V1_Height? = nil
     var _signer: String = String()
+    var _hostConsensusStateProof: Data = Data()
 
     static let defaultInstance = _StorageClass()
 
@@ -427,6 +437,7 @@ extension Ibc_Core_Connection_V1_MsgConnectionOpenTry: SwiftProtobuf.Message, Sw
       _proofConsensus = source._proofConsensus
       _consensusHeight = source._consensusHeight
       _signer = source._signer
+      _hostConsensusStateProof = source._hostConsensusStateProof
     }
   }
 
@@ -457,6 +468,7 @@ extension Ibc_Core_Connection_V1_MsgConnectionOpenTry: SwiftProtobuf.Message, Sw
         case 10: try { try decoder.decodeSingularBytesField(value: &_storage._proofConsensus) }()
         case 11: try { try decoder.decodeSingularMessageField(value: &_storage._consensusHeight) }()
         case 12: try { try decoder.decodeSingularStringField(value: &_storage._signer) }()
+        case 13: try { try decoder.decodeSingularBytesField(value: &_storage._hostConsensusStateProof) }()
         default: break
         }
       }
@@ -501,6 +513,9 @@ extension Ibc_Core_Connection_V1_MsgConnectionOpenTry: SwiftProtobuf.Message, Sw
       if !_storage._signer.isEmpty {
         try visitor.visitSingularStringField(value: _storage._signer, fieldNumber: 12)
       }
+      if !_storage._hostConsensusStateProof.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._hostConsensusStateProof, fieldNumber: 13)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -522,6 +537,7 @@ extension Ibc_Core_Connection_V1_MsgConnectionOpenTry: SwiftProtobuf.Message, Sw
         if _storage._proofConsensus != rhs_storage._proofConsensus {return false}
         if _storage._consensusHeight != rhs_storage._consensusHeight {return false}
         if _storage._signer != rhs_storage._signer {return false}
+        if _storage._hostConsensusStateProof != rhs_storage._hostConsensusStateProof {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -563,6 +579,7 @@ extension Ibc_Core_Connection_V1_MsgConnectionOpenAck: SwiftProtobuf.Message, Sw
     8: .standard(proto: "proof_consensus"),
     9: .standard(proto: "consensus_height"),
     10: .same(proto: "signer"),
+    11: .standard(proto: "host_consensus_state_proof"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -581,6 +598,7 @@ extension Ibc_Core_Connection_V1_MsgConnectionOpenAck: SwiftProtobuf.Message, Sw
       case 8: try { try decoder.decodeSingularBytesField(value: &self.proofConsensus) }()
       case 9: try { try decoder.decodeSingularMessageField(value: &self._consensusHeight) }()
       case 10: try { try decoder.decodeSingularStringField(value: &self.signer) }()
+      case 11: try { try decoder.decodeSingularBytesField(value: &self.hostConsensusStateProof) }()
       default: break
       }
     }
@@ -617,6 +635,9 @@ extension Ibc_Core_Connection_V1_MsgConnectionOpenAck: SwiftProtobuf.Message, Sw
     if !self.signer.isEmpty {
       try visitor.visitSingularStringField(value: self.signer, fieldNumber: 10)
     }
+    if !self.hostConsensusStateProof.isEmpty {
+      try visitor.visitSingularBytesField(value: self.hostConsensusStateProof, fieldNumber: 11)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -631,6 +652,7 @@ extension Ibc_Core_Connection_V1_MsgConnectionOpenAck: SwiftProtobuf.Message, Sw
     if lhs.proofConsensus != rhs.proofConsensus {return false}
     if lhs._consensusHeight != rhs._consensusHeight {return false}
     if lhs.signer != rhs.signer {return false}
+    if lhs.hostConsensusStateProof != rhs.hostConsensusStateProof {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

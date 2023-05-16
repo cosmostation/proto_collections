@@ -1665,24 +1665,22 @@ public final class Tx {
 
     /**
      * <pre>
-     * in the case of crossing hello's, when both chains call OpenInit, we need
-     * the connection identifier of the previous connection in state INIT
+     * Deprecated: this field is unused. Crossing hellos are no longer supported in core IBC.
      * </pre>
      *
-     * <code>string previous_connection_id = 2 [(.gogoproto.moretags) = "yaml:&#92;"previous_connection_id&#92;""];</code>
+     * <code>string previous_connection_id = 2 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"previous_connection_id&#92;""];</code>
      * @return The previousConnectionId.
      */
-    java.lang.String getPreviousConnectionId();
+    @java.lang.Deprecated java.lang.String getPreviousConnectionId();
     /**
      * <pre>
-     * in the case of crossing hello's, when both chains call OpenInit, we need
-     * the connection identifier of the previous connection in state INIT
+     * Deprecated: this field is unused. Crossing hellos are no longer supported in core IBC.
      * </pre>
      *
-     * <code>string previous_connection_id = 2 [(.gogoproto.moretags) = "yaml:&#92;"previous_connection_id&#92;""];</code>
+     * <code>string previous_connection_id = 2 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"previous_connection_id&#92;""];</code>
      * @return The bytes for previousConnectionId.
      */
-    com.google.protobuf.ByteString
+    @java.lang.Deprecated com.google.protobuf.ByteString
         getPreviousConnectionIdBytes();
 
     /**
@@ -1817,6 +1815,16 @@ public final class Tx {
      */
     com.google.protobuf.ByteString
         getSignerBytes();
+
+    /**
+     * <pre>
+     * optional proof data for host state machines that are unable to introspect their own consensus state
+     * </pre>
+     *
+     * <code>bytes host_consensus_state_proof = 13;</code>
+     * @return The hostConsensusStateProof.
+     */
+    com.google.protobuf.ByteString getHostConsensusStateProof();
   }
   /**
    * <pre>
@@ -1843,6 +1851,7 @@ public final class Tx {
       proofClient_ = com.google.protobuf.ByteString.EMPTY;
       proofConsensus_ = com.google.protobuf.ByteString.EMPTY;
       signer_ = "";
+      hostConsensusStateProof_ = com.google.protobuf.ByteString.EMPTY;
     }
 
     @java.lang.Override
@@ -1975,6 +1984,11 @@ public final class Tx {
               signer_ = s;
               break;
             }
+            case 106: {
+
+              hostConsensusStateProof_ = input.readBytes();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -2052,15 +2066,14 @@ public final class Tx {
     private volatile java.lang.Object previousConnectionId_;
     /**
      * <pre>
-     * in the case of crossing hello's, when both chains call OpenInit, we need
-     * the connection identifier of the previous connection in state INIT
+     * Deprecated: this field is unused. Crossing hellos are no longer supported in core IBC.
      * </pre>
      *
-     * <code>string previous_connection_id = 2 [(.gogoproto.moretags) = "yaml:&#92;"previous_connection_id&#92;""];</code>
+     * <code>string previous_connection_id = 2 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"previous_connection_id&#92;""];</code>
      * @return The previousConnectionId.
      */
     @java.lang.Override
-    public java.lang.String getPreviousConnectionId() {
+    @java.lang.Deprecated public java.lang.String getPreviousConnectionId() {
       java.lang.Object ref = previousConnectionId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
@@ -2074,15 +2087,14 @@ public final class Tx {
     }
     /**
      * <pre>
-     * in the case of crossing hello's, when both chains call OpenInit, we need
-     * the connection identifier of the previous connection in state INIT
+     * Deprecated: this field is unused. Crossing hellos are no longer supported in core IBC.
      * </pre>
      *
-     * <code>string previous_connection_id = 2 [(.gogoproto.moretags) = "yaml:&#92;"previous_connection_id&#92;""];</code>
+     * <code>string previous_connection_id = 2 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"previous_connection_id&#92;""];</code>
      * @return The bytes for previousConnectionId.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getPreviousConnectionIdBytes() {
       java.lang.Object ref = previousConnectionId_;
       if (ref instanceof java.lang.String) {
@@ -2335,6 +2347,21 @@ public final class Tx {
       }
     }
 
+    public static final int HOST_CONSENSUS_STATE_PROOF_FIELD_NUMBER = 13;
+    private com.google.protobuf.ByteString hostConsensusStateProof_;
+    /**
+     * <pre>
+     * optional proof data for host state machines that are unable to introspect their own consensus state
+     * </pre>
+     *
+     * <code>bytes host_consensus_state_proof = 13;</code>
+     * @return The hostConsensusStateProof.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getHostConsensusStateProof() {
+      return hostConsensusStateProof_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2384,6 +2411,9 @@ public final class Tx {
       }
       if (!getSignerBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, signer_);
+      }
+      if (!hostConsensusStateProof_.isEmpty()) {
+        output.writeBytes(13, hostConsensusStateProof_);
       }
       unknownFields.writeTo(output);
     }
@@ -2439,6 +2469,10 @@ public final class Tx {
       if (!getSignerBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, signer_);
       }
+      if (!hostConsensusStateProof_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(13, hostConsensusStateProof_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2490,6 +2524,8 @@ public final class Tx {
       }
       if (!getSigner()
           .equals(other.getSigner())) return false;
+      if (!getHostConsensusStateProof()
+          .equals(other.getHostConsensusStateProof())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2536,6 +2572,8 @@ public final class Tx {
       }
       hash = (37 * hash) + SIGNER_FIELD_NUMBER;
       hash = (53 * hash) + getSigner().hashCode();
+      hash = (37 * hash) + HOST_CONSENSUS_STATE_PROOF_FIELD_NUMBER;
+      hash = (53 * hash) + getHostConsensusStateProof().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2719,6 +2757,8 @@ public final class Tx {
         }
         signer_ = "";
 
+        hostConsensusStateProof_ = com.google.protobuf.ByteString.EMPTY;
+
         return this;
       }
 
@@ -2782,6 +2822,7 @@ public final class Tx {
           result.consensusHeight_ = consensusHeightBuilder_.build();
         }
         result.signer_ = signer_;
+        result.hostConsensusStateProof_ = hostConsensusStateProof_;
         onBuilt();
         return result;
       }
@@ -2892,6 +2933,9 @@ public final class Tx {
           signer_ = other.signer_;
           onChanged();
         }
+        if (other.getHostConsensusStateProof() != com.google.protobuf.ByteString.EMPTY) {
+          setHostConsensusStateProof(other.getHostConsensusStateProof());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -3001,14 +3045,13 @@ public final class Tx {
       private java.lang.Object previousConnectionId_ = "";
       /**
        * <pre>
-       * in the case of crossing hello's, when both chains call OpenInit, we need
-       * the connection identifier of the previous connection in state INIT
+       * Deprecated: this field is unused. Crossing hellos are no longer supported in core IBC.
        * </pre>
        *
-       * <code>string previous_connection_id = 2 [(.gogoproto.moretags) = "yaml:&#92;"previous_connection_id&#92;""];</code>
+       * <code>string previous_connection_id = 2 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"previous_connection_id&#92;""];</code>
        * @return The previousConnectionId.
        */
-      public java.lang.String getPreviousConnectionId() {
+      @java.lang.Deprecated public java.lang.String getPreviousConnectionId() {
         java.lang.Object ref = previousConnectionId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
@@ -3022,14 +3065,13 @@ public final class Tx {
       }
       /**
        * <pre>
-       * in the case of crossing hello's, when both chains call OpenInit, we need
-       * the connection identifier of the previous connection in state INIT
+       * Deprecated: this field is unused. Crossing hellos are no longer supported in core IBC.
        * </pre>
        *
-       * <code>string previous_connection_id = 2 [(.gogoproto.moretags) = "yaml:&#92;"previous_connection_id&#92;""];</code>
+       * <code>string previous_connection_id = 2 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"previous_connection_id&#92;""];</code>
        * @return The bytes for previousConnectionId.
        */
-      public com.google.protobuf.ByteString
+      @java.lang.Deprecated public com.google.protobuf.ByteString
           getPreviousConnectionIdBytes() {
         java.lang.Object ref = previousConnectionId_;
         if (ref instanceof String) {
@@ -3044,15 +3086,14 @@ public final class Tx {
       }
       /**
        * <pre>
-       * in the case of crossing hello's, when both chains call OpenInit, we need
-       * the connection identifier of the previous connection in state INIT
+       * Deprecated: this field is unused. Crossing hellos are no longer supported in core IBC.
        * </pre>
        *
-       * <code>string previous_connection_id = 2 [(.gogoproto.moretags) = "yaml:&#92;"previous_connection_id&#92;""];</code>
+       * <code>string previous_connection_id = 2 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"previous_connection_id&#92;""];</code>
        * @param value The previousConnectionId to set.
        * @return This builder for chaining.
        */
-      public Builder setPreviousConnectionId(
+      @java.lang.Deprecated public Builder setPreviousConnectionId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
@@ -3064,14 +3105,13 @@ public final class Tx {
       }
       /**
        * <pre>
-       * in the case of crossing hello's, when both chains call OpenInit, we need
-       * the connection identifier of the previous connection in state INIT
+       * Deprecated: this field is unused. Crossing hellos are no longer supported in core IBC.
        * </pre>
        *
-       * <code>string previous_connection_id = 2 [(.gogoproto.moretags) = "yaml:&#92;"previous_connection_id&#92;""];</code>
+       * <code>string previous_connection_id = 2 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"previous_connection_id&#92;""];</code>
        * @return This builder for chaining.
        */
-      public Builder clearPreviousConnectionId() {
+      @java.lang.Deprecated public Builder clearPreviousConnectionId() {
         
         previousConnectionId_ = getDefaultInstance().getPreviousConnectionId();
         onChanged();
@@ -3079,15 +3119,14 @@ public final class Tx {
       }
       /**
        * <pre>
-       * in the case of crossing hello's, when both chains call OpenInit, we need
-       * the connection identifier of the previous connection in state INIT
+       * Deprecated: this field is unused. Crossing hellos are no longer supported in core IBC.
        * </pre>
        *
-       * <code>string previous_connection_id = 2 [(.gogoproto.moretags) = "yaml:&#92;"previous_connection_id&#92;""];</code>
+       * <code>string previous_connection_id = 2 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"previous_connection_id&#92;""];</code>
        * @param value The bytes for previousConnectionId to set.
        * @return This builder for chaining.
        */
-      public Builder setPreviousConnectionIdBytes(
+      @java.lang.Deprecated public Builder setPreviousConnectionIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -4062,6 +4101,52 @@ public final class Tx {
         onChanged();
         return this;
       }
+
+      private com.google.protobuf.ByteString hostConsensusStateProof_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       * optional proof data for host state machines that are unable to introspect their own consensus state
+       * </pre>
+       *
+       * <code>bytes host_consensus_state_proof = 13;</code>
+       * @return The hostConsensusStateProof.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getHostConsensusStateProof() {
+        return hostConsensusStateProof_;
+      }
+      /**
+       * <pre>
+       * optional proof data for host state machines that are unable to introspect their own consensus state
+       * </pre>
+       *
+       * <code>bytes host_consensus_state_proof = 13;</code>
+       * @param value The hostConsensusStateProof to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHostConsensusStateProof(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        hostConsensusStateProof_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * optional proof data for host state machines that are unable to introspect their own consensus state
+       * </pre>
+       *
+       * <code>bytes host_consensus_state_proof = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHostConsensusStateProof() {
+        
+        hostConsensusStateProof_ = getDefaultInstance().getHostConsensusStateProof();
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4671,6 +4756,16 @@ public final class Tx {
      */
     com.google.protobuf.ByteString
         getSignerBytes();
+
+    /**
+     * <pre>
+     * optional proof data for host state machines that are unable to introspect their own consensus state
+     * </pre>
+     *
+     * <code>bytes host_consensus_state_proof = 11;</code>
+     * @return The hostConsensusStateProof.
+     */
+    com.google.protobuf.ByteString getHostConsensusStateProof();
   }
   /**
    * <pre>
@@ -4696,6 +4791,7 @@ public final class Tx {
       proofClient_ = com.google.protobuf.ByteString.EMPTY;
       proofConsensus_ = com.google.protobuf.ByteString.EMPTY;
       signer_ = "";
+      hostConsensusStateProof_ = com.google.protobuf.ByteString.EMPTY;
     }
 
     @java.lang.Override
@@ -4811,6 +4907,11 @@ public final class Tx {
               java.lang.String s = input.readStringRequireUtf8();
 
               signer_ = s;
+              break;
+            }
+            case 90: {
+
+              hostConsensusStateProof_ = input.readBytes();
               break;
             }
             default: {
@@ -5109,6 +5210,21 @@ public final class Tx {
       }
     }
 
+    public static final int HOST_CONSENSUS_STATE_PROOF_FIELD_NUMBER = 11;
+    private com.google.protobuf.ByteString hostConsensusStateProof_;
+    /**
+     * <pre>
+     * optional proof data for host state machines that are unable to introspect their own consensus state
+     * </pre>
+     *
+     * <code>bytes host_consensus_state_proof = 11;</code>
+     * @return The hostConsensusStateProof.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getHostConsensusStateProof() {
+      return hostConsensusStateProof_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5152,6 +5268,9 @@ public final class Tx {
       }
       if (!getSignerBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, signer_);
+      }
+      if (!hostConsensusStateProof_.isEmpty()) {
+        output.writeBytes(11, hostConsensusStateProof_);
       }
       unknownFields.writeTo(output);
     }
@@ -5198,6 +5317,10 @@ public final class Tx {
       }
       if (!getSignerBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, signer_);
+      }
+      if (!hostConsensusStateProof_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(11, hostConsensusStateProof_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5246,6 +5369,8 @@ public final class Tx {
       }
       if (!getSigner()
           .equals(other.getSigner())) return false;
+      if (!getHostConsensusStateProof()
+          .equals(other.getHostConsensusStateProof())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5285,6 +5410,8 @@ public final class Tx {
       }
       hash = (37 * hash) + SIGNER_FIELD_NUMBER;
       hash = (53 * hash) + getSigner().hashCode();
+      hash = (37 * hash) + HOST_CONSENSUS_STATE_PROOF_FIELD_NUMBER;
+      hash = (53 * hash) + getHostConsensusStateProof().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5459,6 +5586,8 @@ public final class Tx {
         }
         signer_ = "";
 
+        hostConsensusStateProof_ = com.google.protobuf.ByteString.EMPTY;
+
         return this;
       }
 
@@ -5511,6 +5640,7 @@ public final class Tx {
           result.consensusHeight_ = consensusHeightBuilder_.build();
         }
         result.signer_ = signer_;
+        result.hostConsensusStateProof_ = hostConsensusStateProof_;
         onBuilt();
         return result;
       }
@@ -5591,6 +5721,9 @@ public final class Tx {
         if (!other.getSigner().isEmpty()) {
           signer_ = other.signer_;
           onChanged();
+        }
+        if (other.getHostConsensusStateProof() != com.google.protobuf.ByteString.EMPTY) {
+          setHostConsensusStateProof(other.getHostConsensusStateProof());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -6462,6 +6595,52 @@ public final class Tx {
   checkByteStringIsUtf8(value);
         
         signer_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString hostConsensusStateProof_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       * optional proof data for host state machines that are unable to introspect their own consensus state
+       * </pre>
+       *
+       * <code>bytes host_consensus_state_proof = 11;</code>
+       * @return The hostConsensusStateProof.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getHostConsensusStateProof() {
+        return hostConsensusStateProof_;
+      }
+      /**
+       * <pre>
+       * optional proof data for host state machines that are unable to introspect their own consensus state
+       * </pre>
+       *
+       * <code>bytes host_consensus_state_proof = 11;</code>
+       * @param value The hostConsensusStateProof to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHostConsensusStateProof(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        hostConsensusStateProof_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * optional proof data for host state machines that are unable to introspect their own consensus state
+       * </pre>
+       *
+       * <code>bytes host_consensus_state_proof = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHostConsensusStateProof() {
+        
+        hostConsensusStateProof_ = getDefaultInstance().getHostConsensusStateProof();
         onChanged();
         return this;
       }
@@ -8457,64 +8636,65 @@ public final class Tx {
       "rsion\030\003 \001(\0132\037.ibc.core.connection.v1.Ver" +
       "sion\022-\n\014delay_period\030\004 \001(\004B\027\362\336\037\023yaml:\"de" +
       "lay_period\"\022\016\n\006signer\030\005 \001(\t:\010\350\240\037\000\210\240\037\000\"\037\n" +
-      "\035MsgConnectionOpenInitResponse\"\352\005\n\024MsgCo" +
+      "\035MsgConnectionOpenInitResponse\"\220\006\n\024MsgCo" +
       "nnectionOpenTry\022\'\n\tclient_id\030\001 \001(\tB\024\362\336\037\020" +
-      "yaml:\"client_id\"\022A\n\026previous_connection_" +
-      "id\030\002 \001(\tB!\362\336\037\035yaml:\"previous_connection_" +
-      "id\"\022D\n\014client_state\030\003 \001(\0132\025.google.proto" +
-      "buf2.AnyB\027\362\336\037\023yaml:\"client_state\"\022@\n\014cou" +
-      "nterparty\030\004 \001(\0132$.ibc.core.connection.v1" +
-      ".CounterpartyB\004\310\336\037\000\022-\n\014delay_period\030\005 \001(" +
-      "\004B\027\362\336\037\023yaml:\"delay_period\"\022`\n\025counterpar" +
-      "ty_versions\030\006 \003(\0132\037.ibc.core.connection." +
-      "v1.VersionB \362\336\037\034yaml:\"counterparty_versi" +
-      "ons\"\022M\n\014proof_height\030\007 \001(\0132\032.ibc.core.cl" +
-      "ient.v1.HeightB\033\362\336\037\023yaml:\"proof_height\"\310" +
-      "\336\037\000\022)\n\nproof_init\030\010 \001(\014B\025\362\336\037\021yaml:\"proof" +
-      "_init\"\022-\n\014proof_client\030\t \001(\014B\027\362\336\037\023yaml:\"" +
-      "proof_client\"\0223\n\017proof_consensus\030\n \001(\014B\032" +
-      "\362\336\037\026yaml:\"proof_consensus\"\022U\n\020consensus_" +
-      "height\030\013 \001(\0132\032.ibc.core.client.v1.Height" +
-      "B\037\362\336\037\027yaml:\"consensus_height\"\310\336\037\000\022\016\n\006sig" +
-      "ner\030\014 \001(\t:\010\350\240\037\000\210\240\037\000\"\036\n\034MsgConnectionOpen" +
-      "TryResponse\"\327\004\n\024MsgConnectionOpenAck\022/\n\r" +
-      "connection_id\030\001 \001(\tB\030\362\336\037\024yaml:\"connectio" +
-      "n_id\"\022I\n\032counterparty_connection_id\030\002 \001(" +
-      "\tB%\362\336\037!yaml:\"counterparty_connection_id\"" +
-      "\0220\n\007version\030\003 \001(\0132\037.ibc.core.connection." +
-      "v1.Version\022D\n\014client_state\030\004 \001(\0132\025.googl" +
-      "e.protobuf2.AnyB\027\362\336\037\023yaml:\"client_state\"" +
-      "\022M\n\014proof_height\030\005 \001(\0132\032.ibc.core.client" +
-      ".v1.HeightB\033\362\336\037\023yaml:\"proof_height\"\310\336\037\000\022" +
-      "\'\n\tproof_try\030\006 \001(\014B\024\362\336\037\020yaml:\"proof_try\"" +
-      "\022-\n\014proof_client\030\007 \001(\014B\027\362\336\037\023yaml:\"proof_" +
-      "client\"\0223\n\017proof_consensus\030\010 \001(\014B\032\362\336\037\026ya" +
-      "ml:\"proof_consensus\"\022U\n\020consensus_height" +
-      "\030\t \001(\0132\032.ibc.core.client.v1.HeightB\037\362\336\037\027" +
-      "yaml:\"consensus_height\"\310\336\037\000\022\016\n\006signer\030\n " +
-      "\001(\t:\010\350\240\037\000\210\240\037\000\"\036\n\034MsgConnectionOpenAckRes" +
-      "ponse\"\335\001\n\030MsgConnectionOpenConfirm\022/\n\rco" +
+      "yaml:\"client_id\"\022C\n\026previous_connection_" +
+      "id\030\002 \001(\tB#\030\001\362\336\037\035yaml:\"previous_connectio" +
+      "n_id\"\022D\n\014client_state\030\003 \001(\0132\025.google.pro" +
+      "tobuf2.AnyB\027\362\336\037\023yaml:\"client_state\"\022@\n\014c" +
+      "ounterparty\030\004 \001(\0132$.ibc.core.connection." +
+      "v1.CounterpartyB\004\310\336\037\000\022-\n\014delay_period\030\005 " +
+      "\001(\004B\027\362\336\037\023yaml:\"delay_period\"\022`\n\025counterp" +
+      "arty_versions\030\006 \003(\0132\037.ibc.core.connectio" +
+      "n.v1.VersionB \362\336\037\034yaml:\"counterparty_ver" +
+      "sions\"\022M\n\014proof_height\030\007 \001(\0132\032.ibc.core." +
+      "client.v1.HeightB\033\362\336\037\023yaml:\"proof_height" +
+      "\"\310\336\037\000\022)\n\nproof_init\030\010 \001(\014B\025\362\336\037\021yaml:\"pro" +
+      "of_init\"\022-\n\014proof_client\030\t \001(\014B\027\362\336\037\023yaml" +
+      ":\"proof_client\"\0223\n\017proof_consensus\030\n \001(\014" +
+      "B\032\362\336\037\026yaml:\"proof_consensus\"\022U\n\020consensu" +
+      "s_height\030\013 \001(\0132\032.ibc.core.client.v1.Heig" +
+      "htB\037\362\336\037\027yaml:\"consensus_height\"\310\336\037\000\022\016\n\006s" +
+      "igner\030\014 \001(\t\022\"\n\032host_consensus_state_proo" +
+      "f\030\r \001(\014:\010\350\240\037\000\210\240\037\000\"\036\n\034MsgConnectionOpenTr" +
+      "yResponse\"\373\004\n\024MsgConnectionOpenAck\022/\n\rco" +
       "nnection_id\030\001 \001(\tB\030\362\336\037\024yaml:\"connection_" +
-      "id\"\022\'\n\tproof_ack\030\002 \001(\014B\024\362\336\037\020yaml:\"proof_" +
-      "ack\"\022M\n\014proof_height\030\003 \001(\0132\032.ibc.core.cl" +
-      "ient.v1.HeightB\033\362\336\037\023yaml:\"proof_height\"\310" +
-      "\336\037\000\022\016\n\006signer\030\004 \001(\t:\010\350\240\037\000\210\240\037\000\"\"\n MsgConn" +
-      "ectionOpenConfirmResponse2\371\003\n\003Msg\022z\n\022Con" +
-      "nectionOpenInit\022-.ibc.core.connection.v1" +
-      ".MsgConnectionOpenInit\0325.ibc.core.connec" +
-      "tion.v1.MsgConnectionOpenInitResponse\022w\n" +
-      "\021ConnectionOpenTry\022,.ibc.core.connection" +
-      ".v1.MsgConnectionOpenTry\0324.ibc.core.conn" +
-      "ection.v1.MsgConnectionOpenTryResponse\022w" +
-      "\n\021ConnectionOpenAck\022,.ibc.core.connectio" +
-      "n.v1.MsgConnectionOpenAck\0324.ibc.core.con" +
-      "nection.v1.MsgConnectionOpenAckResponse\022" +
-      "\203\001\n\025ConnectionOpenConfirm\0220.ibc.core.con" +
-      "nection.v1.MsgConnectionOpenConfirm\0328.ib" +
-      "c.core.connection.v1.MsgConnectionOpenCo" +
-      "nfirmResponseB>Z<github.com/cosmos/ibc-g" +
-      "o/v2/modules/core/03-connection/typesb\006p" +
-      "roto3"
+      "id\"\022I\n\032counterparty_connection_id\030\002 \001(\tB" +
+      "%\362\336\037!yaml:\"counterparty_connection_id\"\0220" +
+      "\n\007version\030\003 \001(\0132\037.ibc.core.connection.v1" +
+      ".Version\022D\n\014client_state\030\004 \001(\0132\025.google." +
+      "protobuf2.AnyB\027\362\336\037\023yaml:\"client_state\"\022M" +
+      "\n\014proof_height\030\005 \001(\0132\032.ibc.core.client.v" +
+      "1.HeightB\033\362\336\037\023yaml:\"proof_height\"\310\336\037\000\022\'\n" +
+      "\tproof_try\030\006 \001(\014B\024\362\336\037\020yaml:\"proof_try\"\022-" +
+      "\n\014proof_client\030\007 \001(\014B\027\362\336\037\023yaml:\"proof_cl" +
+      "ient\"\0223\n\017proof_consensus\030\010 \001(\014B\032\362\336\037\026yaml" +
+      ":\"proof_consensus\"\022U\n\020consensus_height\030\t" +
+      " \001(\0132\032.ibc.core.client.v1.HeightB\037\362\336\037\027ya" +
+      "ml:\"consensus_height\"\310\336\037\000\022\016\n\006signer\030\n \001(" +
+      "\t\022\"\n\032host_consensus_state_proof\030\013 \001(\014:\010\350" +
+      "\240\037\000\210\240\037\000\"\036\n\034MsgConnectionOpenAckResponse\"" +
+      "\335\001\n\030MsgConnectionOpenConfirm\022/\n\rconnecti" +
+      "on_id\030\001 \001(\tB\030\362\336\037\024yaml:\"connection_id\"\022\'\n" +
+      "\tproof_ack\030\002 \001(\014B\024\362\336\037\020yaml:\"proof_ack\"\022M" +
+      "\n\014proof_height\030\003 \001(\0132\032.ibc.core.client.v" +
+      "1.HeightB\033\362\336\037\023yaml:\"proof_height\"\310\336\037\000\022\016\n" +
+      "\006signer\030\004 \001(\t:\010\350\240\037\000\210\240\037\000\"\"\n MsgConnection" +
+      "OpenConfirmResponse2\371\003\n\003Msg\022z\n\022Connectio" +
+      "nOpenInit\022-.ibc.core.connection.v1.MsgCo" +
+      "nnectionOpenInit\0325.ibc.core.connection.v" +
+      "1.MsgConnectionOpenInitResponse\022w\n\021Conne" +
+      "ctionOpenTry\022,.ibc.core.connection.v1.Ms" +
+      "gConnectionOpenTry\0324.ibc.core.connection" +
+      ".v1.MsgConnectionOpenTryResponse\022w\n\021Conn" +
+      "ectionOpenAck\022,.ibc.core.connection.v1.M" +
+      "sgConnectionOpenAck\0324.ibc.core.connectio" +
+      "n.v1.MsgConnectionOpenAckResponse\022\203\001\n\025Co" +
+      "nnectionOpenConfirm\0220.ibc.core.connectio" +
+      "n.v1.MsgConnectionOpenConfirm\0328.ibc.core" +
+      ".connection.v1.MsgConnectionOpenConfirmR" +
+      "esponseB>Z<github.com/cosmos/ibc-go/v7/m" +
+      "odules/core/03-connection/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -8541,7 +8721,7 @@ public final class Tx {
     internal_static_ibc_core_connection_v1_MsgConnectionOpenTry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ibc_core_connection_v1_MsgConnectionOpenTry_descriptor,
-        new java.lang.String[] { "ClientId", "PreviousConnectionId", "ClientState", "Counterparty", "DelayPeriod", "CounterpartyVersions", "ProofHeight", "ProofInit", "ProofClient", "ProofConsensus", "ConsensusHeight", "Signer", });
+        new java.lang.String[] { "ClientId", "PreviousConnectionId", "ClientState", "Counterparty", "DelayPeriod", "CounterpartyVersions", "ProofHeight", "ProofInit", "ProofClient", "ProofConsensus", "ConsensusHeight", "Signer", "HostConsensusStateProof", });
     internal_static_ibc_core_connection_v1_MsgConnectionOpenTryResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_ibc_core_connection_v1_MsgConnectionOpenTryResponse_fieldAccessorTable = new
@@ -8553,7 +8733,7 @@ public final class Tx {
     internal_static_ibc_core_connection_v1_MsgConnectionOpenAck_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ibc_core_connection_v1_MsgConnectionOpenAck_descriptor,
-        new java.lang.String[] { "ConnectionId", "CounterpartyConnectionId", "Version", "ClientState", "ProofHeight", "ProofTry", "ProofClient", "ProofConsensus", "ConsensusHeight", "Signer", });
+        new java.lang.String[] { "ConnectionId", "CounterpartyConnectionId", "Version", "ClientState", "ProofHeight", "ProofTry", "ProofClient", "ProofConsensus", "ConsensusHeight", "Signer", "HostConsensusStateProof", });
     internal_static_ibc_core_connection_v1_MsgConnectionOpenAckResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_ibc_core_connection_v1_MsgConnectionOpenAckResponse_fieldAccessorTable = new

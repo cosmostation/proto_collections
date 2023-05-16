@@ -61,9 +61,12 @@ struct Ibc_Applications_Transfer_V1_MsgTransfer {
   /// Clears the value of `timeoutHeight`. Subsequent reads from it will return its default value.
   mutating func clearTimeoutHeight() {self._timeoutHeight = nil}
 
-  /// Timeout timestamp (in nanoseconds) relative to the current block timestamp.
+  /// Timeout timestamp in absolute nanoseconds since unix epoch.
   /// The timeout is disabled when set to 0.
   var timeoutTimestamp: UInt64 = 0
+
+  /// optional memo
+  var memo: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -78,6 +81,9 @@ struct Ibc_Applications_Transfer_V1_MsgTransferResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
+
+  /// sequence number of the transfer packet sent
+  var sequence: UInt64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -98,6 +104,7 @@ extension Ibc_Applications_Transfer_V1_MsgTransfer: SwiftProtobuf.Message, Swift
     5: .same(proto: "receiver"),
     6: .standard(proto: "timeout_height"),
     7: .standard(proto: "timeout_timestamp"),
+    8: .same(proto: "memo"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -113,6 +120,7 @@ extension Ibc_Applications_Transfer_V1_MsgTransfer: SwiftProtobuf.Message, Swift
       case 5: try { try decoder.decodeSingularStringField(value: &self.receiver) }()
       case 6: try { try decoder.decodeSingularMessageField(value: &self._timeoutHeight) }()
       case 7: try { try decoder.decodeSingularUInt64Field(value: &self.timeoutTimestamp) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self.memo) }()
       default: break
       }
     }
@@ -140,6 +148,9 @@ extension Ibc_Applications_Transfer_V1_MsgTransfer: SwiftProtobuf.Message, Swift
     if self.timeoutTimestamp != 0 {
       try visitor.visitSingularUInt64Field(value: self.timeoutTimestamp, fieldNumber: 7)
     }
+    if !self.memo.isEmpty {
+      try visitor.visitSingularStringField(value: self.memo, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -151,6 +162,7 @@ extension Ibc_Applications_Transfer_V1_MsgTransfer: SwiftProtobuf.Message, Swift
     if lhs.receiver != rhs.receiver {return false}
     if lhs._timeoutHeight != rhs._timeoutHeight {return false}
     if lhs.timeoutTimestamp != rhs.timeoutTimestamp {return false}
+    if lhs.memo != rhs.memo {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -158,18 +170,31 @@ extension Ibc_Applications_Transfer_V1_MsgTransfer: SwiftProtobuf.Message, Swift
 
 extension Ibc_Applications_Transfer_V1_MsgTransferResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MsgTransferResponse"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "sequence"),
+  ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let _ = try decoder.nextFieldNumber() {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularUInt64Field(value: &self.sequence) }()
+      default: break
+      }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.sequence != 0 {
+      try visitor.visitSingularUInt64Field(value: self.sequence, fieldNumber: 1)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: Ibc_Applications_Transfer_V1_MsgTransferResponse, rhs: Ibc_Applications_Transfer_V1_MsgTransferResponse) -> Bool {
+    if lhs.sequence != rhs.sequence {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

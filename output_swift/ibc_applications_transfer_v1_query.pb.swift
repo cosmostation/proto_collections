@@ -27,7 +27,7 @@ struct Ibc_Applications_Transfer_V1_QueryDenomTraceRequest {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  /// hash (in hex format) of the denomination trace information.
+  /// hash (in hex format) or denom (full denom with ibc prefix) of the denomination trace information.
   var hash: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -142,6 +142,67 @@ struct Ibc_Applications_Transfer_V1_QueryParamsResponse {
   init() {}
 
   fileprivate var _params: Ibc_Applications_Transfer_V1_Params? = nil
+}
+
+/// QueryDenomHashRequest is the request type for the Query/DenomHash RPC
+/// method
+struct Ibc_Applications_Transfer_V1_QueryDenomHashRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  /// The denomination trace ([port_id]/[channel_id])+/[denom]
+  var trace: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+/// QueryDenomHashResponse is the response type for the Query/DenomHash RPC
+/// method.
+struct Ibc_Applications_Transfer_V1_QueryDenomHashResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  /// hash (in hex format) of the denomination trace information.
+  var hash: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+/// QueryEscrowAddressRequest is the request type for the EscrowAddress RPC method.
+struct Ibc_Applications_Transfer_V1_QueryEscrowAddressRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  /// unique port identifier
+  var portID: String = String()
+
+  /// unique channel identifier
+  var channelID: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+/// QueryEscrowAddressResponse is the response type of the EscrowAddress RPC method.
+struct Ibc_Applications_Transfer_V1_QueryEscrowAddressResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  /// the escrow account address
+  var escrowAddress: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -328,6 +389,140 @@ extension Ibc_Applications_Transfer_V1_QueryParamsResponse: SwiftProtobuf.Messag
 
   static func ==(lhs: Ibc_Applications_Transfer_V1_QueryParamsResponse, rhs: Ibc_Applications_Transfer_V1_QueryParamsResponse) -> Bool {
     if lhs._params != rhs._params {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Ibc_Applications_Transfer_V1_QueryDenomHashRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QueryDenomHashRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "trace"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.trace) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.trace.isEmpty {
+      try visitor.visitSingularStringField(value: self.trace, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Ibc_Applications_Transfer_V1_QueryDenomHashRequest, rhs: Ibc_Applications_Transfer_V1_QueryDenomHashRequest) -> Bool {
+    if lhs.trace != rhs.trace {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Ibc_Applications_Transfer_V1_QueryDenomHashResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QueryDenomHashResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "hash"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.hash) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.hash.isEmpty {
+      try visitor.visitSingularStringField(value: self.hash, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Ibc_Applications_Transfer_V1_QueryDenomHashResponse, rhs: Ibc_Applications_Transfer_V1_QueryDenomHashResponse) -> Bool {
+    if lhs.hash != rhs.hash {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Ibc_Applications_Transfer_V1_QueryEscrowAddressRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QueryEscrowAddressRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "port_id"),
+    2: .standard(proto: "channel_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.portID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.channelID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.portID.isEmpty {
+      try visitor.visitSingularStringField(value: self.portID, fieldNumber: 1)
+    }
+    if !self.channelID.isEmpty {
+      try visitor.visitSingularStringField(value: self.channelID, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Ibc_Applications_Transfer_V1_QueryEscrowAddressRequest, rhs: Ibc_Applications_Transfer_V1_QueryEscrowAddressRequest) -> Bool {
+    if lhs.portID != rhs.portID {return false}
+    if lhs.channelID != rhs.channelID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Ibc_Applications_Transfer_V1_QueryEscrowAddressResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QueryEscrowAddressResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "escrow_address"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.escrowAddress) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.escrowAddress.isEmpty {
+      try visitor.visitSingularStringField(value: self.escrowAddress, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Ibc_Applications_Transfer_V1_QueryEscrowAddressResponse, rhs: Ibc_Applications_Transfer_V1_QueryEscrowAddressResponse) -> Bool {
+    if lhs.escrowAddress != rhs.escrowAddress {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

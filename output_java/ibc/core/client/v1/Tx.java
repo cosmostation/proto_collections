@@ -1619,30 +1619,30 @@ public final class Tx {
 
     /**
      * <pre>
-     * header to update the light client
+     * client message to update the light client
      * </pre>
      *
-     * <code>.google.protobuf2.Any header = 2;</code>
-     * @return Whether the header field is set.
+     * <code>.google.protobuf2.Any client_message = 2;</code>
+     * @return Whether the clientMessage field is set.
      */
-    boolean hasHeader();
+    boolean hasClientMessage();
     /**
      * <pre>
-     * header to update the light client
+     * client message to update the light client
      * </pre>
      *
-     * <code>.google.protobuf2.Any header = 2;</code>
-     * @return The header.
+     * <code>.google.protobuf2.Any client_message = 2;</code>
+     * @return The clientMessage.
      */
-    com.google.protobuf2.Any getHeader();
+    com.google.protobuf2.Any getClientMessage();
     /**
      * <pre>
-     * header to update the light client
+     * client message to update the light client
      * </pre>
      *
-     * <code>.google.protobuf2.Any header = 2;</code>
+     * <code>.google.protobuf2.Any client_message = 2;</code>
      */
-    com.google.protobuf2.AnyOrBuilder getHeaderOrBuilder();
+    com.google.protobuf2.AnyOrBuilder getClientMessageOrBuilder();
 
     /**
      * <pre>
@@ -1667,7 +1667,7 @@ public final class Tx {
   /**
    * <pre>
    * MsgUpdateClient defines an sdk.Msg to update a IBC client state using
-   * the given header.
+   * the given client message.
    * </pre>
    *
    * Protobuf type {@code ibc.core.client.v1.MsgUpdateClient}
@@ -1724,13 +1724,13 @@ public final class Tx {
             }
             case 18: {
               com.google.protobuf2.Any.Builder subBuilder = null;
-              if (header_ != null) {
-                subBuilder = header_.toBuilder();
+              if (clientMessage_ != null) {
+                subBuilder = clientMessage_.toBuilder();
               }
-              header_ = input.readMessage(com.google.protobuf2.Any.parser(), extensionRegistry);
+              clientMessage_ = input.readMessage(com.google.protobuf2.Any.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(header_);
-                header_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(clientMessage_);
+                clientMessage_ = subBuilder.buildPartial();
               }
 
               break;
@@ -1819,42 +1819,42 @@ public final class Tx {
       }
     }
 
-    public static final int HEADER_FIELD_NUMBER = 2;
-    private com.google.protobuf2.Any header_;
+    public static final int CLIENT_MESSAGE_FIELD_NUMBER = 2;
+    private com.google.protobuf2.Any clientMessage_;
     /**
      * <pre>
-     * header to update the light client
+     * client message to update the light client
      * </pre>
      *
-     * <code>.google.protobuf2.Any header = 2;</code>
-     * @return Whether the header field is set.
+     * <code>.google.protobuf2.Any client_message = 2;</code>
+     * @return Whether the clientMessage field is set.
      */
     @java.lang.Override
-    public boolean hasHeader() {
-      return header_ != null;
+    public boolean hasClientMessage() {
+      return clientMessage_ != null;
     }
     /**
      * <pre>
-     * header to update the light client
+     * client message to update the light client
      * </pre>
      *
-     * <code>.google.protobuf2.Any header = 2;</code>
-     * @return The header.
+     * <code>.google.protobuf2.Any client_message = 2;</code>
+     * @return The clientMessage.
      */
     @java.lang.Override
-    public com.google.protobuf2.Any getHeader() {
-      return header_ == null ? com.google.protobuf2.Any.getDefaultInstance() : header_;
+    public com.google.protobuf2.Any getClientMessage() {
+      return clientMessage_ == null ? com.google.protobuf2.Any.getDefaultInstance() : clientMessage_;
     }
     /**
      * <pre>
-     * header to update the light client
+     * client message to update the light client
      * </pre>
      *
-     * <code>.google.protobuf2.Any header = 2;</code>
+     * <code>.google.protobuf2.Any client_message = 2;</code>
      */
     @java.lang.Override
-    public com.google.protobuf2.AnyOrBuilder getHeaderOrBuilder() {
-      return getHeader();
+    public com.google.protobuf2.AnyOrBuilder getClientMessageOrBuilder() {
+      return getClientMessage();
     }
 
     public static final int SIGNER_FIELD_NUMBER = 3;
@@ -1920,8 +1920,8 @@ public final class Tx {
       if (!getClientIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, clientId_);
       }
-      if (header_ != null) {
-        output.writeMessage(2, getHeader());
+      if (clientMessage_ != null) {
+        output.writeMessage(2, getClientMessage());
       }
       if (!getSignerBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, signer_);
@@ -1938,9 +1938,9 @@ public final class Tx {
       if (!getClientIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, clientId_);
       }
-      if (header_ != null) {
+      if (clientMessage_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getHeader());
+          .computeMessageSize(2, getClientMessage());
       }
       if (!getSignerBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, signer_);
@@ -1962,10 +1962,10 @@ public final class Tx {
 
       if (!getClientId()
           .equals(other.getClientId())) return false;
-      if (hasHeader() != other.hasHeader()) return false;
-      if (hasHeader()) {
-        if (!getHeader()
-            .equals(other.getHeader())) return false;
+      if (hasClientMessage() != other.hasClientMessage()) return false;
+      if (hasClientMessage()) {
+        if (!getClientMessage()
+            .equals(other.getClientMessage())) return false;
       }
       if (!getSigner()
           .equals(other.getSigner())) return false;
@@ -1982,9 +1982,9 @@ public final class Tx {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CLIENT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getClientId().hashCode();
-      if (hasHeader()) {
-        hash = (37 * hash) + HEADER_FIELD_NUMBER;
-        hash = (53 * hash) + getHeader().hashCode();
+      if (hasClientMessage()) {
+        hash = (37 * hash) + CLIENT_MESSAGE_FIELD_NUMBER;
+        hash = (53 * hash) + getClientMessage().hashCode();
       }
       hash = (37 * hash) + SIGNER_FIELD_NUMBER;
       hash = (53 * hash) + getSigner().hashCode();
@@ -2086,7 +2086,7 @@ public final class Tx {
     /**
      * <pre>
      * MsgUpdateClient defines an sdk.Msg to update a IBC client state using
-     * the given header.
+     * the given client message.
      * </pre>
      *
      * Protobuf type {@code ibc.core.client.v1.MsgUpdateClient}
@@ -2128,11 +2128,11 @@ public final class Tx {
         super.clear();
         clientId_ = "";
 
-        if (headerBuilder_ == null) {
-          header_ = null;
+        if (clientMessageBuilder_ == null) {
+          clientMessage_ = null;
         } else {
-          header_ = null;
-          headerBuilder_ = null;
+          clientMessage_ = null;
+          clientMessageBuilder_ = null;
         }
         signer_ = "";
 
@@ -2163,10 +2163,10 @@ public final class Tx {
       public ibc.core.client.v1.Tx.MsgUpdateClient buildPartial() {
         ibc.core.client.v1.Tx.MsgUpdateClient result = new ibc.core.client.v1.Tx.MsgUpdateClient(this);
         result.clientId_ = clientId_;
-        if (headerBuilder_ == null) {
-          result.header_ = header_;
+        if (clientMessageBuilder_ == null) {
+          result.clientMessage_ = clientMessage_;
         } else {
-          result.header_ = headerBuilder_.build();
+          result.clientMessage_ = clientMessageBuilder_.build();
         }
         result.signer_ = signer_;
         onBuilt();
@@ -2221,8 +2221,8 @@ public final class Tx {
           clientId_ = other.clientId_;
           onChanged();
         }
-        if (other.hasHeader()) {
-          mergeHeader(other.getHeader());
+        if (other.hasClientMessage()) {
+          mergeClientMessage(other.getClientMessage());
         }
         if (!other.getSigner().isEmpty()) {
           signer_ = other.signer_;
@@ -2353,159 +2353,159 @@ public final class Tx {
         return this;
       }
 
-      private com.google.protobuf2.Any header_;
+      private com.google.protobuf2.Any clientMessage_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf2.Any, com.google.protobuf2.Any.Builder, com.google.protobuf2.AnyOrBuilder> headerBuilder_;
+          com.google.protobuf2.Any, com.google.protobuf2.Any.Builder, com.google.protobuf2.AnyOrBuilder> clientMessageBuilder_;
       /**
        * <pre>
-       * header to update the light client
+       * client message to update the light client
        * </pre>
        *
-       * <code>.google.protobuf2.Any header = 2;</code>
-       * @return Whether the header field is set.
+       * <code>.google.protobuf2.Any client_message = 2;</code>
+       * @return Whether the clientMessage field is set.
        */
-      public boolean hasHeader() {
-        return headerBuilder_ != null || header_ != null;
+      public boolean hasClientMessage() {
+        return clientMessageBuilder_ != null || clientMessage_ != null;
       }
       /**
        * <pre>
-       * header to update the light client
+       * client message to update the light client
        * </pre>
        *
-       * <code>.google.protobuf2.Any header = 2;</code>
-       * @return The header.
+       * <code>.google.protobuf2.Any client_message = 2;</code>
+       * @return The clientMessage.
        */
-      public com.google.protobuf2.Any getHeader() {
-        if (headerBuilder_ == null) {
-          return header_ == null ? com.google.protobuf2.Any.getDefaultInstance() : header_;
+      public com.google.protobuf2.Any getClientMessage() {
+        if (clientMessageBuilder_ == null) {
+          return clientMessage_ == null ? com.google.protobuf2.Any.getDefaultInstance() : clientMessage_;
         } else {
-          return headerBuilder_.getMessage();
+          return clientMessageBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * header to update the light client
+       * client message to update the light client
        * </pre>
        *
-       * <code>.google.protobuf2.Any header = 2;</code>
+       * <code>.google.protobuf2.Any client_message = 2;</code>
        */
-      public Builder setHeader(com.google.protobuf2.Any value) {
-        if (headerBuilder_ == null) {
+      public Builder setClientMessage(com.google.protobuf2.Any value) {
+        if (clientMessageBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          header_ = value;
+          clientMessage_ = value;
           onChanged();
         } else {
-          headerBuilder_.setMessage(value);
+          clientMessageBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * header to update the light client
+       * client message to update the light client
        * </pre>
        *
-       * <code>.google.protobuf2.Any header = 2;</code>
+       * <code>.google.protobuf2.Any client_message = 2;</code>
        */
-      public Builder setHeader(
+      public Builder setClientMessage(
           com.google.protobuf2.Any.Builder builderForValue) {
-        if (headerBuilder_ == null) {
-          header_ = builderForValue.build();
+        if (clientMessageBuilder_ == null) {
+          clientMessage_ = builderForValue.build();
           onChanged();
         } else {
-          headerBuilder_.setMessage(builderForValue.build());
+          clientMessageBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
        * <pre>
-       * header to update the light client
+       * client message to update the light client
        * </pre>
        *
-       * <code>.google.protobuf2.Any header = 2;</code>
+       * <code>.google.protobuf2.Any client_message = 2;</code>
        */
-      public Builder mergeHeader(com.google.protobuf2.Any value) {
-        if (headerBuilder_ == null) {
-          if (header_ != null) {
-            header_ =
-              com.google.protobuf2.Any.newBuilder(header_).mergeFrom(value).buildPartial();
+      public Builder mergeClientMessage(com.google.protobuf2.Any value) {
+        if (clientMessageBuilder_ == null) {
+          if (clientMessage_ != null) {
+            clientMessage_ =
+              com.google.protobuf2.Any.newBuilder(clientMessage_).mergeFrom(value).buildPartial();
           } else {
-            header_ = value;
+            clientMessage_ = value;
           }
           onChanged();
         } else {
-          headerBuilder_.mergeFrom(value);
+          clientMessageBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * header to update the light client
+       * client message to update the light client
        * </pre>
        *
-       * <code>.google.protobuf2.Any header = 2;</code>
+       * <code>.google.protobuf2.Any client_message = 2;</code>
        */
-      public Builder clearHeader() {
-        if (headerBuilder_ == null) {
-          header_ = null;
+      public Builder clearClientMessage() {
+        if (clientMessageBuilder_ == null) {
+          clientMessage_ = null;
           onChanged();
         } else {
-          header_ = null;
-          headerBuilder_ = null;
+          clientMessage_ = null;
+          clientMessageBuilder_ = null;
         }
 
         return this;
       }
       /**
        * <pre>
-       * header to update the light client
+       * client message to update the light client
        * </pre>
        *
-       * <code>.google.protobuf2.Any header = 2;</code>
+       * <code>.google.protobuf2.Any client_message = 2;</code>
        */
-      public com.google.protobuf2.Any.Builder getHeaderBuilder() {
+      public com.google.protobuf2.Any.Builder getClientMessageBuilder() {
         
         onChanged();
-        return getHeaderFieldBuilder().getBuilder();
+        return getClientMessageFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * header to update the light client
+       * client message to update the light client
        * </pre>
        *
-       * <code>.google.protobuf2.Any header = 2;</code>
+       * <code>.google.protobuf2.Any client_message = 2;</code>
        */
-      public com.google.protobuf2.AnyOrBuilder getHeaderOrBuilder() {
-        if (headerBuilder_ != null) {
-          return headerBuilder_.getMessageOrBuilder();
+      public com.google.protobuf2.AnyOrBuilder getClientMessageOrBuilder() {
+        if (clientMessageBuilder_ != null) {
+          return clientMessageBuilder_.getMessageOrBuilder();
         } else {
-          return header_ == null ?
-              com.google.protobuf2.Any.getDefaultInstance() : header_;
+          return clientMessage_ == null ?
+              com.google.protobuf2.Any.getDefaultInstance() : clientMessage_;
         }
       }
       /**
        * <pre>
-       * header to update the light client
+       * client message to update the light client
        * </pre>
        *
-       * <code>.google.protobuf2.Any header = 2;</code>
+       * <code>.google.protobuf2.Any client_message = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf2.Any, com.google.protobuf2.Any.Builder, com.google.protobuf2.AnyOrBuilder> 
-          getHeaderFieldBuilder() {
-        if (headerBuilder_ == null) {
-          headerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getClientMessageFieldBuilder() {
+        if (clientMessageBuilder_ == null) {
+          clientMessageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf2.Any, com.google.protobuf2.Any.Builder, com.google.protobuf2.AnyOrBuilder>(
-                  getHeader(),
+                  getClientMessage(),
                   getParentForChildren(),
                   isClean());
-          header_ = null;
+          clientMessage_ = null;
         }
-        return headerBuilder_;
+        return clientMessageBuilder_;
       }
 
       private java.lang.Object signer_ = "";
@@ -5046,19 +5046,19 @@ public final class Tx {
      * client unique identifier
      * </pre>
      *
-     * <code>string client_id = 1 [(.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
+     * <code>string client_id = 1 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
      * @return The clientId.
      */
-    java.lang.String getClientId();
+    @java.lang.Deprecated java.lang.String getClientId();
     /**
      * <pre>
      * client unique identifier
      * </pre>
      *
-     * <code>string client_id = 1 [(.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
+     * <code>string client_id = 1 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
      * @return The bytes for clientId.
      */
-    com.google.protobuf.ByteString
+    @java.lang.Deprecated com.google.protobuf.ByteString
         getClientIdBytes();
 
     /**
@@ -5066,52 +5066,53 @@ public final class Tx {
      * misbehaviour used for freezing the light client
      * </pre>
      *
-     * <code>.google.protobuf2.Any misbehaviour = 2;</code>
+     * <code>.google.protobuf2.Any misbehaviour = 2 [deprecated = true];</code>
      * @return Whether the misbehaviour field is set.
      */
-    boolean hasMisbehaviour();
+    @java.lang.Deprecated boolean hasMisbehaviour();
     /**
      * <pre>
      * misbehaviour used for freezing the light client
      * </pre>
      *
-     * <code>.google.protobuf2.Any misbehaviour = 2;</code>
+     * <code>.google.protobuf2.Any misbehaviour = 2 [deprecated = true];</code>
      * @return The misbehaviour.
      */
-    com.google.protobuf2.Any getMisbehaviour();
+    @java.lang.Deprecated com.google.protobuf2.Any getMisbehaviour();
     /**
      * <pre>
      * misbehaviour used for freezing the light client
      * </pre>
      *
-     * <code>.google.protobuf2.Any misbehaviour = 2;</code>
+     * <code>.google.protobuf2.Any misbehaviour = 2 [deprecated = true];</code>
      */
-    com.google.protobuf2.AnyOrBuilder getMisbehaviourOrBuilder();
+    @java.lang.Deprecated com.google.protobuf2.AnyOrBuilder getMisbehaviourOrBuilder();
 
     /**
      * <pre>
      * signer address
      * </pre>
      *
-     * <code>string signer = 3;</code>
+     * <code>string signer = 3 [deprecated = true];</code>
      * @return The signer.
      */
-    java.lang.String getSigner();
+    @java.lang.Deprecated java.lang.String getSigner();
     /**
      * <pre>
      * signer address
      * </pre>
      *
-     * <code>string signer = 3;</code>
+     * <code>string signer = 3 [deprecated = true];</code>
      * @return The bytes for signer.
      */
-    com.google.protobuf.ByteString
+    @java.lang.Deprecated com.google.protobuf.ByteString
         getSignerBytes();
   }
   /**
    * <pre>
    * MsgSubmitMisbehaviour defines an sdk.Msg type that submits Evidence for
    * light client misbehaviour.
+   * Warning: DEPRECATED
    * </pre>
    *
    * Protobuf type {@code ibc.core.client.v1.MsgSubmitMisbehaviour}
@@ -5224,11 +5225,11 @@ public final class Tx {
      * client unique identifier
      * </pre>
      *
-     * <code>string client_id = 1 [(.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
+     * <code>string client_id = 1 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
      * @return The clientId.
      */
     @java.lang.Override
-    public java.lang.String getClientId() {
+    @java.lang.Deprecated public java.lang.String getClientId() {
       java.lang.Object ref = clientId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
@@ -5245,11 +5246,11 @@ public final class Tx {
      * client unique identifier
      * </pre>
      *
-     * <code>string client_id = 1 [(.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
+     * <code>string client_id = 1 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
      * @return The bytes for clientId.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getClientIdBytes() {
       java.lang.Object ref = clientId_;
       if (ref instanceof java.lang.String) {
@@ -5270,11 +5271,11 @@ public final class Tx {
      * misbehaviour used for freezing the light client
      * </pre>
      *
-     * <code>.google.protobuf2.Any misbehaviour = 2;</code>
+     * <code>.google.protobuf2.Any misbehaviour = 2 [deprecated = true];</code>
      * @return Whether the misbehaviour field is set.
      */
     @java.lang.Override
-    public boolean hasMisbehaviour() {
+    @java.lang.Deprecated public boolean hasMisbehaviour() {
       return misbehaviour_ != null;
     }
     /**
@@ -5282,11 +5283,11 @@ public final class Tx {
      * misbehaviour used for freezing the light client
      * </pre>
      *
-     * <code>.google.protobuf2.Any misbehaviour = 2;</code>
+     * <code>.google.protobuf2.Any misbehaviour = 2 [deprecated = true];</code>
      * @return The misbehaviour.
      */
     @java.lang.Override
-    public com.google.protobuf2.Any getMisbehaviour() {
+    @java.lang.Deprecated public com.google.protobuf2.Any getMisbehaviour() {
       return misbehaviour_ == null ? com.google.protobuf2.Any.getDefaultInstance() : misbehaviour_;
     }
     /**
@@ -5294,10 +5295,10 @@ public final class Tx {
      * misbehaviour used for freezing the light client
      * </pre>
      *
-     * <code>.google.protobuf2.Any misbehaviour = 2;</code>
+     * <code>.google.protobuf2.Any misbehaviour = 2 [deprecated = true];</code>
      */
     @java.lang.Override
-    public com.google.protobuf2.AnyOrBuilder getMisbehaviourOrBuilder() {
+    @java.lang.Deprecated public com.google.protobuf2.AnyOrBuilder getMisbehaviourOrBuilder() {
       return getMisbehaviour();
     }
 
@@ -5308,11 +5309,11 @@ public final class Tx {
      * signer address
      * </pre>
      *
-     * <code>string signer = 3;</code>
+     * <code>string signer = 3 [deprecated = true];</code>
      * @return The signer.
      */
     @java.lang.Override
-    public java.lang.String getSigner() {
+    @java.lang.Deprecated public java.lang.String getSigner() {
       java.lang.Object ref = signer_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
@@ -5329,11 +5330,11 @@ public final class Tx {
      * signer address
      * </pre>
      *
-     * <code>string signer = 3;</code>
+     * <code>string signer = 3 [deprecated = true];</code>
      * @return The bytes for signer.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getSignerBytes() {
       java.lang.Object ref = signer_;
       if (ref instanceof java.lang.String) {
@@ -5531,6 +5532,7 @@ public final class Tx {
      * <pre>
      * MsgSubmitMisbehaviour defines an sdk.Msg type that submits Evidence for
      * light client misbehaviour.
+     * Warning: DEPRECATED
      * </pre>
      *
      * Protobuf type {@code ibc.core.client.v1.MsgSubmitMisbehaviour}
@@ -5707,10 +5709,10 @@ public final class Tx {
        * client unique identifier
        * </pre>
        *
-       * <code>string client_id = 1 [(.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
+       * <code>string client_id = 1 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
        * @return The clientId.
        */
-      public java.lang.String getClientId() {
+      @java.lang.Deprecated public java.lang.String getClientId() {
         java.lang.Object ref = clientId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
@@ -5727,10 +5729,10 @@ public final class Tx {
        * client unique identifier
        * </pre>
        *
-       * <code>string client_id = 1 [(.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
+       * <code>string client_id = 1 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
        * @return The bytes for clientId.
        */
-      public com.google.protobuf.ByteString
+      @java.lang.Deprecated public com.google.protobuf.ByteString
           getClientIdBytes() {
         java.lang.Object ref = clientId_;
         if (ref instanceof String) {
@@ -5748,11 +5750,11 @@ public final class Tx {
        * client unique identifier
        * </pre>
        *
-       * <code>string client_id = 1 [(.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
+       * <code>string client_id = 1 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
        * @param value The clientId to set.
        * @return This builder for chaining.
        */
-      public Builder setClientId(
+      @java.lang.Deprecated public Builder setClientId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
@@ -5767,10 +5769,10 @@ public final class Tx {
        * client unique identifier
        * </pre>
        *
-       * <code>string client_id = 1 [(.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
+       * <code>string client_id = 1 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
        * @return This builder for chaining.
        */
-      public Builder clearClientId() {
+      @java.lang.Deprecated public Builder clearClientId() {
         
         clientId_ = getDefaultInstance().getClientId();
         onChanged();
@@ -5781,11 +5783,11 @@ public final class Tx {
        * client unique identifier
        * </pre>
        *
-       * <code>string client_id = 1 [(.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
+       * <code>string client_id = 1 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
        * @param value The bytes for clientId to set.
        * @return This builder for chaining.
        */
-      public Builder setClientIdBytes(
+      @java.lang.Deprecated public Builder setClientIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -5805,10 +5807,10 @@ public final class Tx {
        * misbehaviour used for freezing the light client
        * </pre>
        *
-       * <code>.google.protobuf2.Any misbehaviour = 2;</code>
+       * <code>.google.protobuf2.Any misbehaviour = 2 [deprecated = true];</code>
        * @return Whether the misbehaviour field is set.
        */
-      public boolean hasMisbehaviour() {
+      @java.lang.Deprecated public boolean hasMisbehaviour() {
         return misbehaviourBuilder_ != null || misbehaviour_ != null;
       }
       /**
@@ -5816,10 +5818,10 @@ public final class Tx {
        * misbehaviour used for freezing the light client
        * </pre>
        *
-       * <code>.google.protobuf2.Any misbehaviour = 2;</code>
+       * <code>.google.protobuf2.Any misbehaviour = 2 [deprecated = true];</code>
        * @return The misbehaviour.
        */
-      public com.google.protobuf2.Any getMisbehaviour() {
+      @java.lang.Deprecated public com.google.protobuf2.Any getMisbehaviour() {
         if (misbehaviourBuilder_ == null) {
           return misbehaviour_ == null ? com.google.protobuf2.Any.getDefaultInstance() : misbehaviour_;
         } else {
@@ -5831,9 +5833,9 @@ public final class Tx {
        * misbehaviour used for freezing the light client
        * </pre>
        *
-       * <code>.google.protobuf2.Any misbehaviour = 2;</code>
+       * <code>.google.protobuf2.Any misbehaviour = 2 [deprecated = true];</code>
        */
-      public Builder setMisbehaviour(com.google.protobuf2.Any value) {
+      @java.lang.Deprecated public Builder setMisbehaviour(com.google.protobuf2.Any value) {
         if (misbehaviourBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5851,9 +5853,9 @@ public final class Tx {
        * misbehaviour used for freezing the light client
        * </pre>
        *
-       * <code>.google.protobuf2.Any misbehaviour = 2;</code>
+       * <code>.google.protobuf2.Any misbehaviour = 2 [deprecated = true];</code>
        */
-      public Builder setMisbehaviour(
+      @java.lang.Deprecated public Builder setMisbehaviour(
           com.google.protobuf2.Any.Builder builderForValue) {
         if (misbehaviourBuilder_ == null) {
           misbehaviour_ = builderForValue.build();
@@ -5869,9 +5871,9 @@ public final class Tx {
        * misbehaviour used for freezing the light client
        * </pre>
        *
-       * <code>.google.protobuf2.Any misbehaviour = 2;</code>
+       * <code>.google.protobuf2.Any misbehaviour = 2 [deprecated = true];</code>
        */
-      public Builder mergeMisbehaviour(com.google.protobuf2.Any value) {
+      @java.lang.Deprecated public Builder mergeMisbehaviour(com.google.protobuf2.Any value) {
         if (misbehaviourBuilder_ == null) {
           if (misbehaviour_ != null) {
             misbehaviour_ =
@@ -5891,9 +5893,9 @@ public final class Tx {
        * misbehaviour used for freezing the light client
        * </pre>
        *
-       * <code>.google.protobuf2.Any misbehaviour = 2;</code>
+       * <code>.google.protobuf2.Any misbehaviour = 2 [deprecated = true];</code>
        */
-      public Builder clearMisbehaviour() {
+      @java.lang.Deprecated public Builder clearMisbehaviour() {
         if (misbehaviourBuilder_ == null) {
           misbehaviour_ = null;
           onChanged();
@@ -5909,9 +5911,9 @@ public final class Tx {
        * misbehaviour used for freezing the light client
        * </pre>
        *
-       * <code>.google.protobuf2.Any misbehaviour = 2;</code>
+       * <code>.google.protobuf2.Any misbehaviour = 2 [deprecated = true];</code>
        */
-      public com.google.protobuf2.Any.Builder getMisbehaviourBuilder() {
+      @java.lang.Deprecated public com.google.protobuf2.Any.Builder getMisbehaviourBuilder() {
         
         onChanged();
         return getMisbehaviourFieldBuilder().getBuilder();
@@ -5921,9 +5923,9 @@ public final class Tx {
        * misbehaviour used for freezing the light client
        * </pre>
        *
-       * <code>.google.protobuf2.Any misbehaviour = 2;</code>
+       * <code>.google.protobuf2.Any misbehaviour = 2 [deprecated = true];</code>
        */
-      public com.google.protobuf2.AnyOrBuilder getMisbehaviourOrBuilder() {
+      @java.lang.Deprecated public com.google.protobuf2.AnyOrBuilder getMisbehaviourOrBuilder() {
         if (misbehaviourBuilder_ != null) {
           return misbehaviourBuilder_.getMessageOrBuilder();
         } else {
@@ -5936,7 +5938,7 @@ public final class Tx {
        * misbehaviour used for freezing the light client
        * </pre>
        *
-       * <code>.google.protobuf2.Any misbehaviour = 2;</code>
+       * <code>.google.protobuf2.Any misbehaviour = 2 [deprecated = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf2.Any, com.google.protobuf2.Any.Builder, com.google.protobuf2.AnyOrBuilder> 
@@ -5958,10 +5960,10 @@ public final class Tx {
        * signer address
        * </pre>
        *
-       * <code>string signer = 3;</code>
+       * <code>string signer = 3 [deprecated = true];</code>
        * @return The signer.
        */
-      public java.lang.String getSigner() {
+      @java.lang.Deprecated public java.lang.String getSigner() {
         java.lang.Object ref = signer_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
@@ -5978,10 +5980,10 @@ public final class Tx {
        * signer address
        * </pre>
        *
-       * <code>string signer = 3;</code>
+       * <code>string signer = 3 [deprecated = true];</code>
        * @return The bytes for signer.
        */
-      public com.google.protobuf.ByteString
+      @java.lang.Deprecated public com.google.protobuf.ByteString
           getSignerBytes() {
         java.lang.Object ref = signer_;
         if (ref instanceof String) {
@@ -5999,11 +6001,11 @@ public final class Tx {
        * signer address
        * </pre>
        *
-       * <code>string signer = 3;</code>
+       * <code>string signer = 3 [deprecated = true];</code>
        * @param value The signer to set.
        * @return This builder for chaining.
        */
-      public Builder setSigner(
+      @java.lang.Deprecated public Builder setSigner(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
@@ -6018,10 +6020,10 @@ public final class Tx {
        * signer address
        * </pre>
        *
-       * <code>string signer = 3;</code>
+       * <code>string signer = 3 [deprecated = true];</code>
        * @return This builder for chaining.
        */
-      public Builder clearSigner() {
+      @java.lang.Deprecated public Builder clearSigner() {
         
         signer_ = getDefaultInstance().getSigner();
         onChanged();
@@ -6032,11 +6034,11 @@ public final class Tx {
        * signer address
        * </pre>
        *
-       * <code>string signer = 3;</code>
+       * <code>string signer = 3 [deprecated = true];</code>
        * @param value The bytes for signer to set.
        * @return This builder for chaining.
        */
-      public Builder setSignerBytes(
+      @java.lang.Deprecated public Builder setSignerBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -6584,38 +6586,38 @@ public final class Tx {
       ".AnyB\027\362\336\037\023yaml:\"client_state\"\022J\n\017consens" +
       "us_state\030\002 \001(\0132\025.google.protobuf2.AnyB\032\362" +
       "\336\037\026yaml:\"consensus_state\"\022\016\n\006signer\030\003 \001(" +
-      "\t:\010\350\240\037\000\210\240\037\000\"\031\n\027MsgCreateClientResponse\"{" +
-      "\n\017MsgUpdateClient\022\'\n\tclient_id\030\001 \001(\tB\024\362\336" +
-      "\037\020yaml:\"client_id\"\022%\n\006header\030\002 \001(\0132\025.goo" +
-      "gle.protobuf2.Any\022\016\n\006signer\030\003 \001(\t:\010\350\240\037\000\210" +
-      "\240\037\000\"\031\n\027MsgUpdateClientResponse\"\367\002\n\020MsgUp" +
-      "gradeClient\022\'\n\tclient_id\030\001 \001(\tB\024\362\336\037\020yaml" +
-      ":\"client_id\"\022D\n\014client_state\030\002 \001(\0132\025.goo" +
-      "gle.protobuf2.AnyB\027\362\336\037\023yaml:\"client_stat" +
-      "e\"\022J\n\017consensus_state\030\003 \001(\0132\025.google.pro" +
-      "tobuf2.AnyB\032\362\336\037\026yaml:\"consensus_state\"\022=" +
-      "\n\024proof_upgrade_client\030\004 \001(\014B\037\362\336\037\033yaml:\"" +
-      "proof_upgrade_client\"\022O\n\035proof_upgrade_c" +
-      "onsensus_state\030\005 \001(\014B(\362\336\037$yaml:\"proof_up" +
-      "grade_consensus_state\"\022\016\n\006signer\030\006 \001(\t:\010" +
-      "\350\240\037\000\210\240\037\000\"\032\n\030MsgUpgradeClientResponse\"\207\001\n" +
-      "\025MsgSubmitMisbehaviour\022\'\n\tclient_id\030\001 \001(" +
-      "\tB\024\362\336\037\020yaml:\"client_id\"\022+\n\014misbehaviour\030" +
-      "\002 \001(\0132\025.google.protobuf2.Any\022\016\n\006signer\030\003" +
-      " \001(\t:\010\350\240\037\000\210\240\037\000\"\037\n\035MsgSubmitMisbehaviourR" +
-      "esponse2\242\003\n\003Msg\022`\n\014CreateClient\022#.ibc.co" +
-      "re.client.v1.MsgCreateClient\032+.ibc.core." +
-      "client.v1.MsgCreateClientResponse\022`\n\014Upd" +
-      "ateClient\022#.ibc.core.client.v1.MsgUpdate" +
-      "Client\032+.ibc.core.client.v1.MsgUpdateCli" +
-      "entResponse\022c\n\rUpgradeClient\022$.ibc.core." +
-      "client.v1.MsgUpgradeClient\032,.ibc.core.cl" +
-      "ient.v1.MsgUpgradeClientResponse\022r\n\022Subm" +
-      "itMisbehaviour\022).ibc.core.client.v1.MsgS" +
-      "ubmitMisbehaviour\0321.ibc.core.client.v1.M" +
-      "sgSubmitMisbehaviourResponseB:Z8github.c" +
-      "om/cosmos/ibc-go/v2/modules/core/02-clie" +
-      "nt/typesb\006proto3"
+      "\t:\010\350\240\037\000\210\240\037\000\"\031\n\027MsgCreateClientResponse\"\203" +
+      "\001\n\017MsgUpdateClient\022\'\n\tclient_id\030\001 \001(\tB\024\362" +
+      "\336\037\020yaml:\"client_id\"\022-\n\016client_message\030\002 " +
+      "\001(\0132\025.google.protobuf2.Any\022\016\n\006signer\030\003 \001" +
+      "(\t:\010\350\240\037\000\210\240\037\000\"\031\n\027MsgUpdateClientResponse\"" +
+      "\367\002\n\020MsgUpgradeClient\022\'\n\tclient_id\030\001 \001(\tB" +
+      "\024\362\336\037\020yaml:\"client_id\"\022D\n\014client_state\030\002 " +
+      "\001(\0132\025.google.protobuf2.AnyB\027\362\336\037\023yaml:\"cl" +
+      "ient_state\"\022J\n\017consensus_state\030\003 \001(\0132\025.g" +
+      "oogle.protobuf2.AnyB\032\362\336\037\026yaml:\"consensus" +
+      "_state\"\022=\n\024proof_upgrade_client\030\004 \001(\014B\037\362" +
+      "\336\037\033yaml:\"proof_upgrade_client\"\022O\n\035proof_" +
+      "upgrade_consensus_state\030\005 \001(\014B(\362\336\037$yaml:" +
+      "\"proof_upgrade_consensus_state\"\022\016\n\006signe" +
+      "r\030\006 \001(\t:\010\350\240\037\000\210\240\037\000\"\032\n\030MsgUpgradeClientRes" +
+      "ponse\"\221\001\n\025MsgSubmitMisbehaviour\022)\n\tclien" +
+      "t_id\030\001 \001(\tB\026\030\001\362\336\037\020yaml:\"client_id\"\022/\n\014mi" +
+      "sbehaviour\030\002 \001(\0132\025.google.protobuf2.AnyB" +
+      "\002\030\001\022\022\n\006signer\030\003 \001(\tB\002\030\001:\010\350\240\037\000\210\240\037\000\"\037\n\035Msg" +
+      "SubmitMisbehaviourResponse2\242\003\n\003Msg\022`\n\014Cr" +
+      "eateClient\022#.ibc.core.client.v1.MsgCreat" +
+      "eClient\032+.ibc.core.client.v1.MsgCreateCl" +
+      "ientResponse\022`\n\014UpdateClient\022#.ibc.core." +
+      "client.v1.MsgUpdateClient\032+.ibc.core.cli" +
+      "ent.v1.MsgUpdateClientResponse\022c\n\rUpgrad" +
+      "eClient\022$.ibc.core.client.v1.MsgUpgradeC" +
+      "lient\032,.ibc.core.client.v1.MsgUpgradeCli" +
+      "entResponse\022r\n\022SubmitMisbehaviour\022).ibc." +
+      "core.client.v1.MsgSubmitMisbehaviour\0321.i" +
+      "bc.core.client.v1.MsgSubmitMisbehaviourR" +
+      "esponseB:Z8github.com/cosmos/ibc-go/v7/m" +
+      "odules/core/02-client/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -6640,7 +6642,7 @@ public final class Tx {
     internal_static_ibc_core_client_v1_MsgUpdateClient_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ibc_core_client_v1_MsgUpdateClient_descriptor,
-        new java.lang.String[] { "ClientId", "Header", "Signer", });
+        new java.lang.String[] { "ClientId", "ClientMessage", "Signer", });
     internal_static_ibc_core_client_v1_MsgUpdateClientResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_ibc_core_client_v1_MsgUpdateClientResponse_fieldAccessorTable = new

@@ -3894,7 +3894,7 @@ public final class Genesis {
       "\001 \001(\tB\024\362\336\037\020yaml:\"client_id\"\022\\\n\017client_me" +
       "tadata\030\002 \003(\0132#.ibc.core.client.v1.Genesi" +
       "sMetadataB\036\310\336\037\000\362\336\037\026yaml:\"client_metadata" +
-      "\"B:Z8github.com/cosmos/ibc-go/v2/modules" +
+      "\"B:Z8github.com/cosmos/ibc-go/v7/modules" +
       "/core/02-client/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

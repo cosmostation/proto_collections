@@ -1473,7 +1473,7 @@ public final class Transfer {
       "end_enabled\030\001 \001(\010B\027\362\336\037\023yaml:\"send_enable" +
       "d\"\0223\n\017receive_enabled\030\002 \001(\010B\032\362\336\037\026yaml:\"r" +
       "eceive_enabled\"B9Z7github.com/cosmos/ibc" +
-      "-go/v2/modules/apps/transfer/typesb\006prot" +
+      "-go/v7/modules/apps/transfer/typesb\006prot" +
       "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -188,24 +188,24 @@ public final class Tendermint {
      * Proof specifications used in verifying counterparty state
      * </pre>
      *
-     * <code>repeated .ics23.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
+     * <code>repeated .cosmos.ics23.v1.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
      */
-    java.util.List<ics23.Proofs.ProofSpec> 
+    java.util.List<cosmos.ics23.v1.Proofs.ProofSpec> 
         getProofSpecsList();
     /**
      * <pre>
      * Proof specifications used in verifying counterparty state
      * </pre>
      *
-     * <code>repeated .ics23.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
+     * <code>repeated .cosmos.ics23.v1.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
      */
-    ics23.Proofs.ProofSpec getProofSpecs(int index);
+    cosmos.ics23.v1.Proofs.ProofSpec getProofSpecs(int index);
     /**
      * <pre>
      * Proof specifications used in verifying counterparty state
      * </pre>
      *
-     * <code>repeated .ics23.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
+     * <code>repeated .cosmos.ics23.v1.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
      */
     int getProofSpecsCount();
     /**
@@ -213,18 +213,18 @@ public final class Tendermint {
      * Proof specifications used in verifying counterparty state
      * </pre>
      *
-     * <code>repeated .ics23.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
+     * <code>repeated .cosmos.ics23.v1.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
      */
-    java.util.List<? extends ics23.Proofs.ProofSpecOrBuilder> 
+    java.util.List<? extends cosmos.ics23.v1.Proofs.ProofSpecOrBuilder> 
         getProofSpecsOrBuilderList();
     /**
      * <pre>
      * Proof specifications used in verifying counterparty state
      * </pre>
      *
-     * <code>repeated .ics23.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
+     * <code>repeated .cosmos.ics23.v1.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
      */
-    ics23.Proofs.ProofSpecOrBuilder getProofSpecsOrBuilder(
+    cosmos.ics23.v1.Proofs.ProofSpecOrBuilder getProofSpecsOrBuilder(
         int index);
 
     /**
@@ -294,25 +294,23 @@ public final class Tendermint {
 
     /**
      * <pre>
-     * This flag, when set to true, will allow governance to recover a client
-     * which has expired
+     * allow_update_after_expiry is deprecated
      * </pre>
      *
-     * <code>bool allow_update_after_expiry = 10 [(.gogoproto.moretags) = "yaml:&#92;"allow_update_after_expiry&#92;""];</code>
+     * <code>bool allow_update_after_expiry = 10 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"allow_update_after_expiry&#92;""];</code>
      * @return The allowUpdateAfterExpiry.
      */
-    boolean getAllowUpdateAfterExpiry();
+    @java.lang.Deprecated boolean getAllowUpdateAfterExpiry();
 
     /**
      * <pre>
-     * This flag, when set to true, will allow governance to unfreeze a client
-     * whose chain has experienced a misbehaviour event
+     * allow_update_after_misbehaviour is deprecated
      * </pre>
      *
-     * <code>bool allow_update_after_misbehaviour = 11 [(.gogoproto.moretags) = "yaml:&#92;"allow_update_after_misbehaviour&#92;""];</code>
+     * <code>bool allow_update_after_misbehaviour = 11 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"allow_update_after_misbehaviour&#92;""];</code>
      * @return The allowUpdateAfterMisbehaviour.
      */
-    boolean getAllowUpdateAfterMisbehaviour();
+    @java.lang.Deprecated boolean getAllowUpdateAfterMisbehaviour();
   }
   /**
    * <pre>
@@ -454,11 +452,11 @@ public final class Tendermint {
             }
             case 66: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                proofSpecs_ = new java.util.ArrayList<ics23.Proofs.ProofSpec>();
+                proofSpecs_ = new java.util.ArrayList<cosmos.ics23.v1.Proofs.ProofSpec>();
                 mutable_bitField0_ |= 0x00000001;
               }
               proofSpecs_.add(
-                  input.readMessage(ics23.Proofs.ProofSpec.parser(), extensionRegistry));
+                  input.readMessage(cosmos.ics23.v1.Proofs.ProofSpec.parser(), extensionRegistry));
               break;
             }
             case 74: {
@@ -776,16 +774,16 @@ public final class Tendermint {
     }
 
     public static final int PROOF_SPECS_FIELD_NUMBER = 8;
-    private java.util.List<ics23.Proofs.ProofSpec> proofSpecs_;
+    private java.util.List<cosmos.ics23.v1.Proofs.ProofSpec> proofSpecs_;
     /**
      * <pre>
      * Proof specifications used in verifying counterparty state
      * </pre>
      *
-     * <code>repeated .ics23.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
+     * <code>repeated .cosmos.ics23.v1.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
      */
     @java.lang.Override
-    public java.util.List<ics23.Proofs.ProofSpec> getProofSpecsList() {
+    public java.util.List<cosmos.ics23.v1.Proofs.ProofSpec> getProofSpecsList() {
       return proofSpecs_;
     }
     /**
@@ -793,10 +791,10 @@ public final class Tendermint {
      * Proof specifications used in verifying counterparty state
      * </pre>
      *
-     * <code>repeated .ics23.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
+     * <code>repeated .cosmos.ics23.v1.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends ics23.Proofs.ProofSpecOrBuilder> 
+    public java.util.List<? extends cosmos.ics23.v1.Proofs.ProofSpecOrBuilder> 
         getProofSpecsOrBuilderList() {
       return proofSpecs_;
     }
@@ -805,7 +803,7 @@ public final class Tendermint {
      * Proof specifications used in verifying counterparty state
      * </pre>
      *
-     * <code>repeated .ics23.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
+     * <code>repeated .cosmos.ics23.v1.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
      */
     @java.lang.Override
     public int getProofSpecsCount() {
@@ -816,10 +814,10 @@ public final class Tendermint {
      * Proof specifications used in verifying counterparty state
      * </pre>
      *
-     * <code>repeated .ics23.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
+     * <code>repeated .cosmos.ics23.v1.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
      */
     @java.lang.Override
-    public ics23.Proofs.ProofSpec getProofSpecs(int index) {
+    public cosmos.ics23.v1.Proofs.ProofSpec getProofSpecs(int index) {
       return proofSpecs_.get(index);
     }
     /**
@@ -827,10 +825,10 @@ public final class Tendermint {
      * Proof specifications used in verifying counterparty state
      * </pre>
      *
-     * <code>repeated .ics23.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
+     * <code>repeated .cosmos.ics23.v1.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
      */
     @java.lang.Override
-    public ics23.Proofs.ProofSpecOrBuilder getProofSpecsOrBuilder(
+    public cosmos.ics23.v1.Proofs.ProofSpecOrBuilder getProofSpecsOrBuilder(
         int index) {
       return proofSpecs_.get(index);
     }
@@ -914,15 +912,14 @@ public final class Tendermint {
     private boolean allowUpdateAfterExpiry_;
     /**
      * <pre>
-     * This flag, when set to true, will allow governance to recover a client
-     * which has expired
+     * allow_update_after_expiry is deprecated
      * </pre>
      *
-     * <code>bool allow_update_after_expiry = 10 [(.gogoproto.moretags) = "yaml:&#92;"allow_update_after_expiry&#92;""];</code>
+     * <code>bool allow_update_after_expiry = 10 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"allow_update_after_expiry&#92;""];</code>
      * @return The allowUpdateAfterExpiry.
      */
     @java.lang.Override
-    public boolean getAllowUpdateAfterExpiry() {
+    @java.lang.Deprecated public boolean getAllowUpdateAfterExpiry() {
       return allowUpdateAfterExpiry_;
     }
 
@@ -930,15 +927,14 @@ public final class Tendermint {
     private boolean allowUpdateAfterMisbehaviour_;
     /**
      * <pre>
-     * This flag, when set to true, will allow governance to unfreeze a client
-     * whose chain has experienced a misbehaviour event
+     * allow_update_after_misbehaviour is deprecated
      * </pre>
      *
-     * <code>bool allow_update_after_misbehaviour = 11 [(.gogoproto.moretags) = "yaml:&#92;"allow_update_after_misbehaviour&#92;""];</code>
+     * <code>bool allow_update_after_misbehaviour = 11 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"allow_update_after_misbehaviour&#92;""];</code>
      * @return The allowUpdateAfterMisbehaviour.
      */
     @java.lang.Override
-    public boolean getAllowUpdateAfterMisbehaviour() {
+    @java.lang.Deprecated public boolean getAllowUpdateAfterMisbehaviour() {
       return allowUpdateAfterMisbehaviour_;
     }
 
@@ -2535,26 +2531,26 @@ public final class Tendermint {
         return latestHeightBuilder_;
       }
 
-      private java.util.List<ics23.Proofs.ProofSpec> proofSpecs_ =
+      private java.util.List<cosmos.ics23.v1.Proofs.ProofSpec> proofSpecs_ =
         java.util.Collections.emptyList();
       private void ensureProofSpecsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          proofSpecs_ = new java.util.ArrayList<ics23.Proofs.ProofSpec>(proofSpecs_);
+          proofSpecs_ = new java.util.ArrayList<cosmos.ics23.v1.Proofs.ProofSpec>(proofSpecs_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          ics23.Proofs.ProofSpec, ics23.Proofs.ProofSpec.Builder, ics23.Proofs.ProofSpecOrBuilder> proofSpecsBuilder_;
+          cosmos.ics23.v1.Proofs.ProofSpec, cosmos.ics23.v1.Proofs.ProofSpec.Builder, cosmos.ics23.v1.Proofs.ProofSpecOrBuilder> proofSpecsBuilder_;
 
       /**
        * <pre>
        * Proof specifications used in verifying counterparty state
        * </pre>
        *
-       * <code>repeated .ics23.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
+       * <code>repeated .cosmos.ics23.v1.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
        */
-      public java.util.List<ics23.Proofs.ProofSpec> getProofSpecsList() {
+      public java.util.List<cosmos.ics23.v1.Proofs.ProofSpec> getProofSpecsList() {
         if (proofSpecsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(proofSpecs_);
         } else {
@@ -2566,7 +2562,7 @@ public final class Tendermint {
        * Proof specifications used in verifying counterparty state
        * </pre>
        *
-       * <code>repeated .ics23.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
+       * <code>repeated .cosmos.ics23.v1.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
        */
       public int getProofSpecsCount() {
         if (proofSpecsBuilder_ == null) {
@@ -2580,9 +2576,9 @@ public final class Tendermint {
        * Proof specifications used in verifying counterparty state
        * </pre>
        *
-       * <code>repeated .ics23.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
+       * <code>repeated .cosmos.ics23.v1.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
        */
-      public ics23.Proofs.ProofSpec getProofSpecs(int index) {
+      public cosmos.ics23.v1.Proofs.ProofSpec getProofSpecs(int index) {
         if (proofSpecsBuilder_ == null) {
           return proofSpecs_.get(index);
         } else {
@@ -2594,10 +2590,10 @@ public final class Tendermint {
        * Proof specifications used in verifying counterparty state
        * </pre>
        *
-       * <code>repeated .ics23.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
+       * <code>repeated .cosmos.ics23.v1.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
        */
       public Builder setProofSpecs(
-          int index, ics23.Proofs.ProofSpec value) {
+          int index, cosmos.ics23.v1.Proofs.ProofSpec value) {
         if (proofSpecsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2615,10 +2611,10 @@ public final class Tendermint {
        * Proof specifications used in verifying counterparty state
        * </pre>
        *
-       * <code>repeated .ics23.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
+       * <code>repeated .cosmos.ics23.v1.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
        */
       public Builder setProofSpecs(
-          int index, ics23.Proofs.ProofSpec.Builder builderForValue) {
+          int index, cosmos.ics23.v1.Proofs.ProofSpec.Builder builderForValue) {
         if (proofSpecsBuilder_ == null) {
           ensureProofSpecsIsMutable();
           proofSpecs_.set(index, builderForValue.build());
@@ -2633,9 +2629,9 @@ public final class Tendermint {
        * Proof specifications used in verifying counterparty state
        * </pre>
        *
-       * <code>repeated .ics23.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
+       * <code>repeated .cosmos.ics23.v1.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
        */
-      public Builder addProofSpecs(ics23.Proofs.ProofSpec value) {
+      public Builder addProofSpecs(cosmos.ics23.v1.Proofs.ProofSpec value) {
         if (proofSpecsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2653,10 +2649,10 @@ public final class Tendermint {
        * Proof specifications used in verifying counterparty state
        * </pre>
        *
-       * <code>repeated .ics23.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
+       * <code>repeated .cosmos.ics23.v1.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
        */
       public Builder addProofSpecs(
-          int index, ics23.Proofs.ProofSpec value) {
+          int index, cosmos.ics23.v1.Proofs.ProofSpec value) {
         if (proofSpecsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2674,10 +2670,10 @@ public final class Tendermint {
        * Proof specifications used in verifying counterparty state
        * </pre>
        *
-       * <code>repeated .ics23.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
+       * <code>repeated .cosmos.ics23.v1.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
        */
       public Builder addProofSpecs(
-          ics23.Proofs.ProofSpec.Builder builderForValue) {
+          cosmos.ics23.v1.Proofs.ProofSpec.Builder builderForValue) {
         if (proofSpecsBuilder_ == null) {
           ensureProofSpecsIsMutable();
           proofSpecs_.add(builderForValue.build());
@@ -2692,10 +2688,10 @@ public final class Tendermint {
        * Proof specifications used in verifying counterparty state
        * </pre>
        *
-       * <code>repeated .ics23.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
+       * <code>repeated .cosmos.ics23.v1.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
        */
       public Builder addProofSpecs(
-          int index, ics23.Proofs.ProofSpec.Builder builderForValue) {
+          int index, cosmos.ics23.v1.Proofs.ProofSpec.Builder builderForValue) {
         if (proofSpecsBuilder_ == null) {
           ensureProofSpecsIsMutable();
           proofSpecs_.add(index, builderForValue.build());
@@ -2710,10 +2706,10 @@ public final class Tendermint {
        * Proof specifications used in verifying counterparty state
        * </pre>
        *
-       * <code>repeated .ics23.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
+       * <code>repeated .cosmos.ics23.v1.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
        */
       public Builder addAllProofSpecs(
-          java.lang.Iterable<? extends ics23.Proofs.ProofSpec> values) {
+          java.lang.Iterable<? extends cosmos.ics23.v1.Proofs.ProofSpec> values) {
         if (proofSpecsBuilder_ == null) {
           ensureProofSpecsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -2729,7 +2725,7 @@ public final class Tendermint {
        * Proof specifications used in verifying counterparty state
        * </pre>
        *
-       * <code>repeated .ics23.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
+       * <code>repeated .cosmos.ics23.v1.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
        */
       public Builder clearProofSpecs() {
         if (proofSpecsBuilder_ == null) {
@@ -2746,7 +2742,7 @@ public final class Tendermint {
        * Proof specifications used in verifying counterparty state
        * </pre>
        *
-       * <code>repeated .ics23.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
+       * <code>repeated .cosmos.ics23.v1.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
        */
       public Builder removeProofSpecs(int index) {
         if (proofSpecsBuilder_ == null) {
@@ -2763,9 +2759,9 @@ public final class Tendermint {
        * Proof specifications used in verifying counterparty state
        * </pre>
        *
-       * <code>repeated .ics23.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
+       * <code>repeated .cosmos.ics23.v1.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
        */
-      public ics23.Proofs.ProofSpec.Builder getProofSpecsBuilder(
+      public cosmos.ics23.v1.Proofs.ProofSpec.Builder getProofSpecsBuilder(
           int index) {
         return getProofSpecsFieldBuilder().getBuilder(index);
       }
@@ -2774,9 +2770,9 @@ public final class Tendermint {
        * Proof specifications used in verifying counterparty state
        * </pre>
        *
-       * <code>repeated .ics23.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
+       * <code>repeated .cosmos.ics23.v1.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
        */
-      public ics23.Proofs.ProofSpecOrBuilder getProofSpecsOrBuilder(
+      public cosmos.ics23.v1.Proofs.ProofSpecOrBuilder getProofSpecsOrBuilder(
           int index) {
         if (proofSpecsBuilder_ == null) {
           return proofSpecs_.get(index);  } else {
@@ -2788,9 +2784,9 @@ public final class Tendermint {
        * Proof specifications used in verifying counterparty state
        * </pre>
        *
-       * <code>repeated .ics23.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
+       * <code>repeated .cosmos.ics23.v1.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
        */
-      public java.util.List<? extends ics23.Proofs.ProofSpecOrBuilder> 
+      public java.util.List<? extends cosmos.ics23.v1.Proofs.ProofSpecOrBuilder> 
            getProofSpecsOrBuilderList() {
         if (proofSpecsBuilder_ != null) {
           return proofSpecsBuilder_.getMessageOrBuilderList();
@@ -2803,41 +2799,41 @@ public final class Tendermint {
        * Proof specifications used in verifying counterparty state
        * </pre>
        *
-       * <code>repeated .ics23.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
+       * <code>repeated .cosmos.ics23.v1.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
        */
-      public ics23.Proofs.ProofSpec.Builder addProofSpecsBuilder() {
+      public cosmos.ics23.v1.Proofs.ProofSpec.Builder addProofSpecsBuilder() {
         return getProofSpecsFieldBuilder().addBuilder(
-            ics23.Proofs.ProofSpec.getDefaultInstance());
+            cosmos.ics23.v1.Proofs.ProofSpec.getDefaultInstance());
       }
       /**
        * <pre>
        * Proof specifications used in verifying counterparty state
        * </pre>
        *
-       * <code>repeated .ics23.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
+       * <code>repeated .cosmos.ics23.v1.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
        */
-      public ics23.Proofs.ProofSpec.Builder addProofSpecsBuilder(
+      public cosmos.ics23.v1.Proofs.ProofSpec.Builder addProofSpecsBuilder(
           int index) {
         return getProofSpecsFieldBuilder().addBuilder(
-            index, ics23.Proofs.ProofSpec.getDefaultInstance());
+            index, cosmos.ics23.v1.Proofs.ProofSpec.getDefaultInstance());
       }
       /**
        * <pre>
        * Proof specifications used in verifying counterparty state
        * </pre>
        *
-       * <code>repeated .ics23.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
+       * <code>repeated .cosmos.ics23.v1.ProofSpec proof_specs = 8 [(.gogoproto.moretags) = "yaml:&#92;"proof_specs&#92;""];</code>
        */
-      public java.util.List<ics23.Proofs.ProofSpec.Builder> 
+      public java.util.List<cosmos.ics23.v1.Proofs.ProofSpec.Builder> 
            getProofSpecsBuilderList() {
         return getProofSpecsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          ics23.Proofs.ProofSpec, ics23.Proofs.ProofSpec.Builder, ics23.Proofs.ProofSpecOrBuilder> 
+          cosmos.ics23.v1.Proofs.ProofSpec, cosmos.ics23.v1.Proofs.ProofSpec.Builder, cosmos.ics23.v1.Proofs.ProofSpecOrBuilder> 
           getProofSpecsFieldBuilder() {
         if (proofSpecsBuilder_ == null) {
           proofSpecsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              ics23.Proofs.ProofSpec, ics23.Proofs.ProofSpec.Builder, ics23.Proofs.ProofSpecOrBuilder>(
+              cosmos.ics23.v1.Proofs.ProofSpec, cosmos.ics23.v1.Proofs.ProofSpec.Builder, cosmos.ics23.v1.Proofs.ProofSpecOrBuilder>(
                   proofSpecs_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -3050,28 +3046,26 @@ public final class Tendermint {
       private boolean allowUpdateAfterExpiry_ ;
       /**
        * <pre>
-       * This flag, when set to true, will allow governance to recover a client
-       * which has expired
+       * allow_update_after_expiry is deprecated
        * </pre>
        *
-       * <code>bool allow_update_after_expiry = 10 [(.gogoproto.moretags) = "yaml:&#92;"allow_update_after_expiry&#92;""];</code>
+       * <code>bool allow_update_after_expiry = 10 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"allow_update_after_expiry&#92;""];</code>
        * @return The allowUpdateAfterExpiry.
        */
       @java.lang.Override
-      public boolean getAllowUpdateAfterExpiry() {
+      @java.lang.Deprecated public boolean getAllowUpdateAfterExpiry() {
         return allowUpdateAfterExpiry_;
       }
       /**
        * <pre>
-       * This flag, when set to true, will allow governance to recover a client
-       * which has expired
+       * allow_update_after_expiry is deprecated
        * </pre>
        *
-       * <code>bool allow_update_after_expiry = 10 [(.gogoproto.moretags) = "yaml:&#92;"allow_update_after_expiry&#92;""];</code>
+       * <code>bool allow_update_after_expiry = 10 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"allow_update_after_expiry&#92;""];</code>
        * @param value The allowUpdateAfterExpiry to set.
        * @return This builder for chaining.
        */
-      public Builder setAllowUpdateAfterExpiry(boolean value) {
+      @java.lang.Deprecated public Builder setAllowUpdateAfterExpiry(boolean value) {
         
         allowUpdateAfterExpiry_ = value;
         onChanged();
@@ -3079,14 +3073,13 @@ public final class Tendermint {
       }
       /**
        * <pre>
-       * This flag, when set to true, will allow governance to recover a client
-       * which has expired
+       * allow_update_after_expiry is deprecated
        * </pre>
        *
-       * <code>bool allow_update_after_expiry = 10 [(.gogoproto.moretags) = "yaml:&#92;"allow_update_after_expiry&#92;""];</code>
+       * <code>bool allow_update_after_expiry = 10 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"allow_update_after_expiry&#92;""];</code>
        * @return This builder for chaining.
        */
-      public Builder clearAllowUpdateAfterExpiry() {
+      @java.lang.Deprecated public Builder clearAllowUpdateAfterExpiry() {
         
         allowUpdateAfterExpiry_ = false;
         onChanged();
@@ -3096,28 +3089,26 @@ public final class Tendermint {
       private boolean allowUpdateAfterMisbehaviour_ ;
       /**
        * <pre>
-       * This flag, when set to true, will allow governance to unfreeze a client
-       * whose chain has experienced a misbehaviour event
+       * allow_update_after_misbehaviour is deprecated
        * </pre>
        *
-       * <code>bool allow_update_after_misbehaviour = 11 [(.gogoproto.moretags) = "yaml:&#92;"allow_update_after_misbehaviour&#92;""];</code>
+       * <code>bool allow_update_after_misbehaviour = 11 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"allow_update_after_misbehaviour&#92;""];</code>
        * @return The allowUpdateAfterMisbehaviour.
        */
       @java.lang.Override
-      public boolean getAllowUpdateAfterMisbehaviour() {
+      @java.lang.Deprecated public boolean getAllowUpdateAfterMisbehaviour() {
         return allowUpdateAfterMisbehaviour_;
       }
       /**
        * <pre>
-       * This flag, when set to true, will allow governance to unfreeze a client
-       * whose chain has experienced a misbehaviour event
+       * allow_update_after_misbehaviour is deprecated
        * </pre>
        *
-       * <code>bool allow_update_after_misbehaviour = 11 [(.gogoproto.moretags) = "yaml:&#92;"allow_update_after_misbehaviour&#92;""];</code>
+       * <code>bool allow_update_after_misbehaviour = 11 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"allow_update_after_misbehaviour&#92;""];</code>
        * @param value The allowUpdateAfterMisbehaviour to set.
        * @return This builder for chaining.
        */
-      public Builder setAllowUpdateAfterMisbehaviour(boolean value) {
+      @java.lang.Deprecated public Builder setAllowUpdateAfterMisbehaviour(boolean value) {
         
         allowUpdateAfterMisbehaviour_ = value;
         onChanged();
@@ -3125,14 +3116,13 @@ public final class Tendermint {
       }
       /**
        * <pre>
-       * This flag, when set to true, will allow governance to unfreeze a client
-       * whose chain has experienced a misbehaviour event
+       * allow_update_after_misbehaviour is deprecated
        * </pre>
        *
-       * <code>bool allow_update_after_misbehaviour = 11 [(.gogoproto.moretags) = "yaml:&#92;"allow_update_after_misbehaviour&#92;""];</code>
+       * <code>bool allow_update_after_misbehaviour = 11 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"allow_update_after_misbehaviour&#92;""];</code>
        * @return This builder for chaining.
        */
-      public Builder clearAllowUpdateAfterMisbehaviour() {
+      @java.lang.Deprecated public Builder clearAllowUpdateAfterMisbehaviour() {
         
         allowUpdateAfterMisbehaviour_ = false;
         onChanged();
@@ -3253,7 +3243,7 @@ public final class Tendermint {
     ibc.core.commitment.v1.Commitment.MerkleRootOrBuilder getRootOrBuilder();
 
     /**
-     * <code>bytes next_validators_hash = 3 [(.gogoproto.moretags) = "yaml:&#92;"next_validators_hash&#92;"", (.gogoproto.casttype) = "github.com/tendermint/tendermint/libs/bytes.HexBytes"];</code>
+     * <code>bytes next_validators_hash = 3 [(.gogoproto.moretags) = "yaml:&#92;"next_validators_hash&#92;"", (.gogoproto.casttype) = "github.com/cometbft/cometbft/libs/bytes.HexBytes"];</code>
      * @return The nextValidatorsHash.
      */
     com.google.protobuf.ByteString getNextValidatorsHash();
@@ -3453,7 +3443,7 @@ public final class Tendermint {
     public static final int NEXT_VALIDATORS_HASH_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString nextValidatorsHash_;
     /**
-     * <code>bytes next_validators_hash = 3 [(.gogoproto.moretags) = "yaml:&#92;"next_validators_hash&#92;"", (.gogoproto.casttype) = "github.com/tendermint/tendermint/libs/bytes.HexBytes"];</code>
+     * <code>bytes next_validators_hash = 3 [(.gogoproto.moretags) = "yaml:&#92;"next_validators_hash&#92;"", (.gogoproto.casttype) = "github.com/cometbft/cometbft/libs/bytes.HexBytes"];</code>
      * @return The nextValidatorsHash.
      */
     @java.lang.Override
@@ -4148,7 +4138,7 @@ public final class Tendermint {
 
       private com.google.protobuf.ByteString nextValidatorsHash_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes next_validators_hash = 3 [(.gogoproto.moretags) = "yaml:&#92;"next_validators_hash&#92;"", (.gogoproto.casttype) = "github.com/tendermint/tendermint/libs/bytes.HexBytes"];</code>
+       * <code>bytes next_validators_hash = 3 [(.gogoproto.moretags) = "yaml:&#92;"next_validators_hash&#92;"", (.gogoproto.casttype) = "github.com/cometbft/cometbft/libs/bytes.HexBytes"];</code>
        * @return The nextValidatorsHash.
        */
       @java.lang.Override
@@ -4156,7 +4146,7 @@ public final class Tendermint {
         return nextValidatorsHash_;
       }
       /**
-       * <code>bytes next_validators_hash = 3 [(.gogoproto.moretags) = "yaml:&#92;"next_validators_hash&#92;"", (.gogoproto.casttype) = "github.com/tendermint/tendermint/libs/bytes.HexBytes"];</code>
+       * <code>bytes next_validators_hash = 3 [(.gogoproto.moretags) = "yaml:&#92;"next_validators_hash&#92;"", (.gogoproto.casttype) = "github.com/cometbft/cometbft/libs/bytes.HexBytes"];</code>
        * @param value The nextValidatorsHash to set.
        * @return This builder for chaining.
        */
@@ -4170,7 +4160,7 @@ public final class Tendermint {
         return this;
       }
       /**
-       * <code>bytes next_validators_hash = 3 [(.gogoproto.moretags) = "yaml:&#92;"next_validators_hash&#92;"", (.gogoproto.casttype) = "github.com/tendermint/tendermint/libs/bytes.HexBytes"];</code>
+       * <code>bytes next_validators_hash = 3 [(.gogoproto.moretags) = "yaml:&#92;"next_validators_hash&#92;"", (.gogoproto.casttype) = "github.com/cometbft/cometbft/libs/bytes.HexBytes"];</code>
        * @return This builder for chaining.
        */
       public Builder clearNextValidatorsHash() {
@@ -4237,15 +4227,23 @@ public final class Tendermint {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string client_id = 1 [(.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
+     * <pre>
+     * ClientID is deprecated
+     * </pre>
+     *
+     * <code>string client_id = 1 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
      * @return The clientId.
      */
-    java.lang.String getClientId();
+    @java.lang.Deprecated java.lang.String getClientId();
     /**
-     * <code>string client_id = 1 [(.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
+     * <pre>
+     * ClientID is deprecated
+     * </pre>
+     *
+     * <code>string client_id = 1 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
      * @return The bytes for clientId.
      */
-    com.google.protobuf.ByteString
+    @java.lang.Deprecated com.google.protobuf.ByteString
         getClientIdBytes();
 
     /**
@@ -4396,11 +4394,15 @@ public final class Tendermint {
     public static final int CLIENT_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object clientId_;
     /**
-     * <code>string client_id = 1 [(.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
+     * <pre>
+     * ClientID is deprecated
+     * </pre>
+     *
+     * <code>string client_id = 1 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
      * @return The clientId.
      */
     @java.lang.Override
-    public java.lang.String getClientId() {
+    @java.lang.Deprecated public java.lang.String getClientId() {
       java.lang.Object ref = clientId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
@@ -4413,11 +4415,15 @@ public final class Tendermint {
       }
     }
     /**
-     * <code>string client_id = 1 [(.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
+     * <pre>
+     * ClientID is deprecated
+     * </pre>
+     *
+     * <code>string client_id = 1 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
      * @return The bytes for clientId.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getClientIdBytes() {
       java.lang.Object ref = clientId_;
       if (ref instanceof java.lang.String) {
@@ -4852,10 +4858,14 @@ public final class Tendermint {
 
       private java.lang.Object clientId_ = "";
       /**
-       * <code>string client_id = 1 [(.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
+       * <pre>
+       * ClientID is deprecated
+       * </pre>
+       *
+       * <code>string client_id = 1 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
        * @return The clientId.
        */
-      public java.lang.String getClientId() {
+      @java.lang.Deprecated public java.lang.String getClientId() {
         java.lang.Object ref = clientId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
@@ -4868,10 +4878,14 @@ public final class Tendermint {
         }
       }
       /**
-       * <code>string client_id = 1 [(.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
+       * <pre>
+       * ClientID is deprecated
+       * </pre>
+       *
+       * <code>string client_id = 1 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
        * @return The bytes for clientId.
        */
-      public com.google.protobuf.ByteString
+      @java.lang.Deprecated public com.google.protobuf.ByteString
           getClientIdBytes() {
         java.lang.Object ref = clientId_;
         if (ref instanceof String) {
@@ -4885,11 +4899,15 @@ public final class Tendermint {
         }
       }
       /**
-       * <code>string client_id = 1 [(.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
+       * <pre>
+       * ClientID is deprecated
+       * </pre>
+       *
+       * <code>string client_id = 1 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
        * @param value The clientId to set.
        * @return This builder for chaining.
        */
-      public Builder setClientId(
+      @java.lang.Deprecated public Builder setClientId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
@@ -4900,21 +4918,29 @@ public final class Tendermint {
         return this;
       }
       /**
-       * <code>string client_id = 1 [(.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
+       * <pre>
+       * ClientID is deprecated
+       * </pre>
+       *
+       * <code>string client_id = 1 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
        * @return This builder for chaining.
        */
-      public Builder clearClientId() {
+      @java.lang.Deprecated public Builder clearClientId() {
         
         clientId_ = getDefaultInstance().getClientId();
         onChanged();
         return this;
       }
       /**
-       * <code>string client_id = 1 [(.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
+       * <pre>
+       * ClientID is deprecated
+       * </pre>
+       *
+       * <code>string client_id = 1 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"client_id&#92;""];</code>
        * @param value The bytes for clientId to set.
        * @return This builder for chaining.
        */
-      public Builder setClientIdBytes(
+      @java.lang.Deprecated public Builder setClientIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -7083,64 +7109,65 @@ public final class Tendermint {
       "\n/ibc/lightclients/tendermint/v1/tenderm" +
       "int.proto\022\036ibc.lightclients.tendermint.v" +
       "1\032 tendermint/types/validator.proto\032\034ten" +
-      "dermint/types/types.proto\032\023confio/proofs" +
-      ".proto\032\036google/protobuf/duration.proto\032\037" +
-      "google/protobuf/timestamp.proto\032\037ibc/cor" +
-      "e/client/v1/client.proto\032\'ibc/core/commi" +
-      "tment/v1/commitment.proto\032\024gogoproto/gog" +
-      "o.proto\"\270\006\n\013ClientState\022\020\n\010chain_id\030\001 \001(" +
-      "\t\022Y\n\013trust_level\030\002 \001(\0132(.ibc.lightclient" +
-      "s.tendermint.v1.FractionB\032\310\336\037\000\362\336\037\022yaml:\"" +
-      "trust_level\"\022V\n\017trusting_period\030\003 \001(\0132\031." +
-      "google.protobuf.DurationB\"\310\336\037\000\230\337\037\001\362\336\037\026ya" +
-      "ml:\"trusting_period\"\022X\n\020unbonding_period" +
-      "\030\004 \001(\0132\031.google.protobuf.DurationB#\310\336\037\000\230" +
-      "\337\037\001\362\336\037\027yaml:\"unbonding_period\"\022V\n\017max_cl" +
-      "ock_drift\030\005 \001(\0132\031.google.protobuf.Durati" +
-      "onB\"\310\336\037\000\230\337\037\001\362\336\037\026yaml:\"max_clock_drift\"\022O" +
-      "\n\rfrozen_height\030\006 \001(\0132\032.ibc.core.client." +
-      "v1.HeightB\034\310\336\037\000\362\336\037\024yaml:\"frozen_height\"\022" +
-      "O\n\rlatest_height\030\007 \001(\0132\032.ibc.core.client" +
-      ".v1.HeightB\034\310\336\037\000\362\336\037\024yaml:\"latest_height\"" +
-      "\022=\n\013proof_specs\030\010 \003(\0132\020.ics23.ProofSpecB" +
-      "\026\362\336\037\022yaml:\"proof_specs\"\022-\n\014upgrade_path\030" +
-      "\t \003(\tB\027\362\336\037\023yaml:\"upgrade_path\"\022G\n\031allow_" +
-      "update_after_expiry\030\n \001(\010B$\362\336\037 yaml:\"all" +
-      "ow_update_after_expiry\"\022S\n\037allow_update_" +
-      "after_misbehaviour\030\013 \001(\010B*\362\336\037&yaml:\"allo" +
-      "w_update_after_misbehaviour\":\004\210\240\037\000\"\376\001\n\016C" +
-      "onsensusState\0227\n\ttimestamp\030\001 \001(\0132\032.googl" +
-      "e.protobuf.TimestampB\010\310\336\037\000\220\337\037\001\0226\n\004root\030\002" +
-      " \001(\0132\".ibc.core.commitment.v1.MerkleRoot" +
-      "B\004\310\336\037\000\022u\n\024next_validators_hash\030\003 \001(\014BW\372\336" +
-      "\0374github.com/tendermint/tendermint/libs/" +
-      "bytes.HexBytes\362\336\037\033yaml:\"next_validators_" +
-      "hash\":\004\210\240\037\000\"\361\001\n\014Misbehaviour\022\'\n\tclient_i" +
-      "d\030\001 \001(\tB\024\362\336\037\020yaml:\"client_id\"\022X\n\010header_" +
-      "1\030\002 \001(\0132&.ibc.lightclients.tendermint.v1" +
-      ".HeaderB\036\342\336\037\007Header1\362\336\037\017yaml:\"header_1\"\022" +
-      "X\n\010header_2\030\003 \001(\0132&.ibc.lightclients.ten" +
-      "dermint.v1.HeaderB\036\342\336\037\007Header2\362\336\037\017yaml:\"" +
-      "header_2\":\004\210\240\037\000\"\334\002\n\006Header\022S\n\rsigned_hea" +
-      "der\030\001 \001(\0132\036.tendermint.types.SignedHeade" +
-      "rB\034\320\336\037\001\362\336\037\024yaml:\"signed_header\"\022O\n\rvalid" +
-      "ator_set\030\002 \001(\0132\036.tendermint.types.Valida" +
-      "torSetB\030\362\336\037\024yaml:\"validator_set\"\022Q\n\016trus" +
-      "ted_height\030\003 \001(\0132\032.ibc.core.client.v1.He" +
-      "ightB\035\310\336\037\000\362\336\037\025yaml:\"trusted_height\"\022Y\n\022t" +
-      "rusted_validators\030\004 \001(\0132\036.tendermint.typ" +
-      "es.ValidatorSetB\035\362\336\037\031yaml:\"trusted_valid" +
-      "ators\"\"2\n\010Fraction\022\021\n\tnumerator\030\001 \001(\004\022\023\n" +
-      "\013denominator\030\002 \001(\004BGZEgithub.com/cosmos/" +
-      "ibc-go/v2/modules/light-clients/07-tende" +
-      "rmint/typesb\006proto3"
+      "dermint/types/types.proto\032\034cosmos/ics23/" +
+      "v1/proofs.proto\032\036google/protobuf/duratio" +
+      "n.proto\032\037google/protobuf/timestamp.proto" +
+      "\032\037ibc/core/client/v1/client.proto\032\'ibc/c" +
+      "ore/commitment/v1/commitment.proto\032\024gogo" +
+      "proto/gogo.proto\"\306\006\n\013ClientState\022\020\n\010chai" +
+      "n_id\030\001 \001(\t\022Y\n\013trust_level\030\002 \001(\0132(.ibc.li" +
+      "ghtclients.tendermint.v1.FractionB\032\310\336\037\000\362" +
+      "\336\037\022yaml:\"trust_level\"\022V\n\017trusting_period" +
+      "\030\003 \001(\0132\031.google.protobuf.DurationB\"\310\336\037\000\230" +
+      "\337\037\001\362\336\037\026yaml:\"trusting_period\"\022X\n\020unbondi" +
+      "ng_period\030\004 \001(\0132\031.google.protobuf.Durati" +
+      "onB#\310\336\037\000\230\337\037\001\362\336\037\027yaml:\"unbonding_period\"\022" +
+      "V\n\017max_clock_drift\030\005 \001(\0132\031.google.protob" +
+      "uf.DurationB\"\310\336\037\000\230\337\037\001\362\336\037\026yaml:\"max_clock" +
+      "_drift\"\022O\n\rfrozen_height\030\006 \001(\0132\032.ibc.cor" +
+      "e.client.v1.HeightB\034\310\336\037\000\362\336\037\024yaml:\"frozen" +
+      "_height\"\022O\n\rlatest_height\030\007 \001(\0132\032.ibc.co" +
+      "re.client.v1.HeightB\034\310\336\037\000\362\336\037\024yaml:\"lates" +
+      "t_height\"\022G\n\013proof_specs\030\010 \003(\0132\032.cosmos." +
+      "ics23.v1.ProofSpecB\026\362\336\037\022yaml:\"proof_spec" +
+      "s\"\022-\n\014upgrade_path\030\t \003(\tB\027\362\336\037\023yaml:\"upgr" +
+      "ade_path\"\022I\n\031allow_update_after_expiry\030\n" +
+      " \001(\010B&\030\001\362\336\037 yaml:\"allow_update_after_exp" +
+      "iry\"\022U\n\037allow_update_after_misbehaviour\030" +
+      "\013 \001(\010B,\030\001\362\336\037&yaml:\"allow_update_after_mi" +
+      "sbehaviour\":\004\210\240\037\000\"\372\001\n\016ConsensusState\0227\n\t" +
+      "timestamp\030\001 \001(\0132\032.google.protobuf.Timest" +
+      "ampB\010\310\336\037\000\220\337\037\001\0226\n\004root\030\002 \001(\0132\".ibc.core.c" +
+      "ommitment.v1.MerkleRootB\004\310\336\037\000\022q\n\024next_va" +
+      "lidators_hash\030\003 \001(\014BS\372\336\0370github.com/come" +
+      "tbft/cometbft/libs/bytes.HexBytes\362\336\037\033yam" +
+      "l:\"next_validators_hash\":\004\210\240\037\000\"\363\001\n\014Misbe" +
+      "haviour\022)\n\tclient_id\030\001 \001(\tB\026\030\001\362\336\037\020yaml:\"" +
+      "client_id\"\022X\n\010header_1\030\002 \001(\0132&.ibc.light" +
+      "clients.tendermint.v1.HeaderB\036\342\336\037\007Header" +
+      "1\362\336\037\017yaml:\"header_1\"\022X\n\010header_2\030\003 \001(\0132&" +
+      ".ibc.lightclients.tendermint.v1.HeaderB\036" +
+      "\342\336\037\007Header2\362\336\037\017yaml:\"header_2\":\004\210\240\037\000\"\334\002\n" +
+      "\006Header\022S\n\rsigned_header\030\001 \001(\0132\036.tenderm" +
+      "int.types.SignedHeaderB\034\320\336\037\001\362\336\037\024yaml:\"si" +
+      "gned_header\"\022O\n\rvalidator_set\030\002 \001(\0132\036.te" +
+      "ndermint.types.ValidatorSetB\030\362\336\037\024yaml:\"v" +
+      "alidator_set\"\022Q\n\016trusted_height\030\003 \001(\0132\032." +
+      "ibc.core.client.v1.HeightB\035\310\336\037\000\362\336\037\025yaml:" +
+      "\"trusted_height\"\022Y\n\022trusted_validators\030\004" +
+      " \001(\0132\036.tendermint.types.ValidatorSetB\035\362\336" +
+      "\037\031yaml:\"trusted_validators\"\"2\n\010Fraction\022" +
+      "\021\n\tnumerator\030\001 \001(\004\022\023\n\013denominator\030\002 \001(\004B" +
+      "LZJgithub.com/cosmos/ibc-go/v7/modules/l" +
+      "ight-clients/07-tendermint;tendermintb\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           tendermint.types.ValidatorOuterClass.getDescriptor(),
           tendermint.types.Types.getDescriptor(),
-          ics23.Proofs.getDescriptor(),
+          cosmos.ics23.v1.Proofs.getDescriptor(),
           com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           ibc.core.client.v1.Client.getDescriptor(),
@@ -7191,7 +7218,7 @@ public final class Tendermint {
         .internalUpdateFileDescriptor(descriptor, registry);
     tendermint.types.ValidatorOuterClass.getDescriptor();
     tendermint.types.Types.getDescriptor();
-    ics23.Proofs.getDescriptor();
+    cosmos.ics23.v1.Proofs.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     ibc.core.client.v1.Client.getDescriptor();

@@ -26671,7 +26671,7 @@ public final class QueryOuterClass {
       "e.channel.v1.QueryNextSequenceReceiveRes" +
       "ponse\"P\202\323\344\223\002J\022H/ibc/core/channel/v1/chan" +
       "nels/{channel_id}/ports/{port_id}/next_s" +
-      "equenceB;Z9github.com/cosmos/ibc-go/v2/m" +
+      "equenceB;Z9github.com/cosmos/ibc-go/v7/m" +
       "odules/core/04-channel/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

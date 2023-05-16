@@ -46,6 +46,16 @@ internal protocol Ibc_Applications_Transfer_V1_QueryClientProtocol: GRPCClient {
     _ request: Ibc_Applications_Transfer_V1_QueryParamsRequest,
     callOptions: CallOptions?
   ) -> UnaryCall<Ibc_Applications_Transfer_V1_QueryParamsRequest, Ibc_Applications_Transfer_V1_QueryParamsResponse>
+
+  func denomHash(
+    _ request: Ibc_Applications_Transfer_V1_QueryDenomHashRequest,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Ibc_Applications_Transfer_V1_QueryDenomHashRequest, Ibc_Applications_Transfer_V1_QueryDenomHashResponse>
+
+  func escrowAddress(
+    _ request: Ibc_Applications_Transfer_V1_QueryEscrowAddressRequest,
+    callOptions: CallOptions?
+  ) -> UnaryCall<Ibc_Applications_Transfer_V1_QueryEscrowAddressRequest, Ibc_Applications_Transfer_V1_QueryEscrowAddressResponse>
 }
 
 extension Ibc_Applications_Transfer_V1_QueryClientProtocol {
@@ -106,6 +116,42 @@ extension Ibc_Applications_Transfer_V1_QueryClientProtocol {
       interceptors: self.interceptors?.makeParamsInterceptors() ?? []
     )
   }
+
+  /// DenomHash queries a denomination hash information.
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to DenomHash.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func denomHash(
+    _ request: Ibc_Applications_Transfer_V1_QueryDenomHashRequest,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Ibc_Applications_Transfer_V1_QueryDenomHashRequest, Ibc_Applications_Transfer_V1_QueryDenomHashResponse> {
+    return self.makeUnaryCall(
+      path: "/ibc.applications.transfer.v1.Query/DenomHash",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeDenomHashInterceptors() ?? []
+    )
+  }
+
+  /// EscrowAddress returns the escrow address for a particular port and channel id.
+  ///
+  /// - Parameters:
+  ///   - request: Request to send to EscrowAddress.
+  ///   - callOptions: Call options.
+  /// - Returns: A `UnaryCall` with futures for the metadata, status and response.
+  internal func escrowAddress(
+    _ request: Ibc_Applications_Transfer_V1_QueryEscrowAddressRequest,
+    callOptions: CallOptions? = nil
+  ) -> UnaryCall<Ibc_Applications_Transfer_V1_QueryEscrowAddressRequest, Ibc_Applications_Transfer_V1_QueryEscrowAddressResponse> {
+    return self.makeUnaryCall(
+      path: "/ibc.applications.transfer.v1.Query/EscrowAddress",
+      request: request,
+      callOptions: callOptions ?? self.defaultCallOptions,
+      interceptors: self.interceptors?.makeEscrowAddressInterceptors() ?? []
+    )
+  }
 }
 
 internal protocol Ibc_Applications_Transfer_V1_QueryClientInterceptorFactoryProtocol {
@@ -118,6 +164,12 @@ internal protocol Ibc_Applications_Transfer_V1_QueryClientInterceptorFactoryProt
 
   /// - Returns: Interceptors to use when invoking 'params'.
   func makeParamsInterceptors() -> [ClientInterceptor<Ibc_Applications_Transfer_V1_QueryParamsRequest, Ibc_Applications_Transfer_V1_QueryParamsResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'denomHash'.
+  func makeDenomHashInterceptors() -> [ClientInterceptor<Ibc_Applications_Transfer_V1_QueryDenomHashRequest, Ibc_Applications_Transfer_V1_QueryDenomHashResponse>]
+
+  /// - Returns: Interceptors to use when invoking 'escrowAddress'.
+  func makeEscrowAddressInterceptors() -> [ClientInterceptor<Ibc_Applications_Transfer_V1_QueryEscrowAddressRequest, Ibc_Applications_Transfer_V1_QueryEscrowAddressResponse>]
 }
 
 internal final class Ibc_Applications_Transfer_V1_QueryClient: Ibc_Applications_Transfer_V1_QueryClientProtocol {
@@ -156,6 +208,12 @@ internal protocol Ibc_Applications_Transfer_V1_QueryProvider: CallHandlerProvide
 
   /// Params queries all parameters of the ibc-transfer module.
   func params(request: Ibc_Applications_Transfer_V1_QueryParamsRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Ibc_Applications_Transfer_V1_QueryParamsResponse>
+
+  /// DenomHash queries a denomination hash information.
+  func denomHash(request: Ibc_Applications_Transfer_V1_QueryDenomHashRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Ibc_Applications_Transfer_V1_QueryDenomHashResponse>
+
+  /// EscrowAddress returns the escrow address for a particular port and channel id.
+  func escrowAddress(request: Ibc_Applications_Transfer_V1_QueryEscrowAddressRequest, context: StatusOnlyCallContext) -> EventLoopFuture<Ibc_Applications_Transfer_V1_QueryEscrowAddressResponse>
 }
 
 extension Ibc_Applications_Transfer_V1_QueryProvider {
@@ -195,6 +253,24 @@ extension Ibc_Applications_Transfer_V1_QueryProvider {
         userFunction: self.params(request:context:)
       )
 
+    case "DenomHash":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Ibc_Applications_Transfer_V1_QueryDenomHashRequest>(),
+        responseSerializer: ProtobufSerializer<Ibc_Applications_Transfer_V1_QueryDenomHashResponse>(),
+        interceptors: self.interceptors?.makeDenomHashInterceptors() ?? [],
+        userFunction: self.denomHash(request:context:)
+      )
+
+    case "EscrowAddress":
+      return UnaryServerHandler(
+        context: context,
+        requestDeserializer: ProtobufDeserializer<Ibc_Applications_Transfer_V1_QueryEscrowAddressRequest>(),
+        responseSerializer: ProtobufSerializer<Ibc_Applications_Transfer_V1_QueryEscrowAddressResponse>(),
+        interceptors: self.interceptors?.makeEscrowAddressInterceptors() ?? [],
+        userFunction: self.escrowAddress(request:context:)
+      )
+
     default:
       return nil
     }
@@ -214,4 +290,12 @@ internal protocol Ibc_Applications_Transfer_V1_QueryServerInterceptorFactoryProt
   /// - Returns: Interceptors to use when handling 'params'.
   ///   Defaults to calling `self.makeInterceptors()`.
   func makeParamsInterceptors() -> [ServerInterceptor<Ibc_Applications_Transfer_V1_QueryParamsRequest, Ibc_Applications_Transfer_V1_QueryParamsResponse>]
+
+  /// - Returns: Interceptors to use when handling 'denomHash'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeDenomHashInterceptors() -> [ServerInterceptor<Ibc_Applications_Transfer_V1_QueryDenomHashRequest, Ibc_Applications_Transfer_V1_QueryDenomHashResponse>]
+
+  /// - Returns: Interceptors to use when handling 'escrowAddress'.
+  ///   Defaults to calling `self.makeInterceptors()`.
+  func makeEscrowAddressInterceptors() -> [ServerInterceptor<Ibc_Applications_Transfer_V1_QueryEscrowAddressRequest, Ibc_Applications_Transfer_V1_QueryEscrowAddressResponse>]
 }

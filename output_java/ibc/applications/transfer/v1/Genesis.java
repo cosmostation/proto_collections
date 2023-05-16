@@ -1191,7 +1191,7 @@ public final class Genesis {
       "nsfer.v1.DenomTraceB%\252\337\037\006Traces\310\336\037\000\362\336\037\023y" +
       "aml:\"denom_traces\"\022:\n\006params\030\003 \001(\0132$.ibc" +
       ".applications.transfer.v1.ParamsB\004\310\336\037\000B9" +
-      "Z7github.com/cosmos/ibc-go/v2/modules/ap" +
+      "Z7github.com/cosmos/ibc-go/v7/modules/ap" +
       "ps/transfer/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

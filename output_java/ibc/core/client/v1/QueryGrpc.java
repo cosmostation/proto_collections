@@ -154,6 +154,37 @@ public final class QueryGrpc {
     return getConsensusStatesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<ibc.core.client.v1.QueryOuterClass.QueryConsensusStateHeightsRequest,
+      ibc.core.client.v1.QueryOuterClass.QueryConsensusStateHeightsResponse> getConsensusStateHeightsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ConsensusStateHeights",
+      requestType = ibc.core.client.v1.QueryOuterClass.QueryConsensusStateHeightsRequest.class,
+      responseType = ibc.core.client.v1.QueryOuterClass.QueryConsensusStateHeightsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<ibc.core.client.v1.QueryOuterClass.QueryConsensusStateHeightsRequest,
+      ibc.core.client.v1.QueryOuterClass.QueryConsensusStateHeightsResponse> getConsensusStateHeightsMethod() {
+    io.grpc.MethodDescriptor<ibc.core.client.v1.QueryOuterClass.QueryConsensusStateHeightsRequest, ibc.core.client.v1.QueryOuterClass.QueryConsensusStateHeightsResponse> getConsensusStateHeightsMethod;
+    if ((getConsensusStateHeightsMethod = QueryGrpc.getConsensusStateHeightsMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getConsensusStateHeightsMethod = QueryGrpc.getConsensusStateHeightsMethod) == null) {
+          QueryGrpc.getConsensusStateHeightsMethod = getConsensusStateHeightsMethod =
+              io.grpc.MethodDescriptor.<ibc.core.client.v1.QueryOuterClass.QueryConsensusStateHeightsRequest, ibc.core.client.v1.QueryOuterClass.QueryConsensusStateHeightsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ConsensusStateHeights"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  ibc.core.client.v1.QueryOuterClass.QueryConsensusStateHeightsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  ibc.core.client.v1.QueryOuterClass.QueryConsensusStateHeightsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("ConsensusStateHeights"))
+              .build();
+        }
+      }
+    }
+    return getConsensusStateHeightsMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<ibc.core.client.v1.QueryOuterClass.QueryClientStatusRequest,
       ibc.core.client.v1.QueryOuterClass.QueryClientStatusResponse> getClientStatusMethod;
 
@@ -373,6 +404,16 @@ public final class QueryGrpc {
 
     /**
      * <pre>
+     * ConsensusStateHeights queries the height of every consensus states associated with a given client.
+     * </pre>
+     */
+    public void consensusStateHeights(ibc.core.client.v1.QueryOuterClass.QueryConsensusStateHeightsRequest request,
+        io.grpc.stub.StreamObserver<ibc.core.client.v1.QueryOuterClass.QueryConsensusStateHeightsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getConsensusStateHeightsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Status queries the status of an IBC client.
      * </pre>
      */
@@ -383,7 +424,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * ClientParams queries all parameters of the ibc client.
+     * ClientParams queries all parameters of the ibc client submodule.
      * </pre>
      */
     public void clientParams(ibc.core.client.v1.QueryOuterClass.QueryClientParamsRequest request,
@@ -441,6 +482,13 @@ public final class QueryGrpc {
                 ibc.core.client.v1.QueryOuterClass.QueryConsensusStatesRequest,
                 ibc.core.client.v1.QueryOuterClass.QueryConsensusStatesResponse>(
                   this, METHODID_CONSENSUS_STATES)))
+          .addMethod(
+            getConsensusStateHeightsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                ibc.core.client.v1.QueryOuterClass.QueryConsensusStateHeightsRequest,
+                ibc.core.client.v1.QueryOuterClass.QueryConsensusStateHeightsResponse>(
+                  this, METHODID_CONSENSUS_STATE_HEIGHTS)))
           .addMethod(
             getClientStatusMethod(),
             asyncUnaryCall(
@@ -538,6 +586,17 @@ public final class QueryGrpc {
 
     /**
      * <pre>
+     * ConsensusStateHeights queries the height of every consensus states associated with a given client.
+     * </pre>
+     */
+    public void consensusStateHeights(ibc.core.client.v1.QueryOuterClass.QueryConsensusStateHeightsRequest request,
+        io.grpc.stub.StreamObserver<ibc.core.client.v1.QueryOuterClass.QueryConsensusStateHeightsResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getConsensusStateHeightsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Status queries the status of an IBC client.
      * </pre>
      */
@@ -549,7 +608,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * ClientParams queries all parameters of the ibc client.
+     * ClientParams queries all parameters of the ibc client submodule.
      * </pre>
      */
     public void clientParams(ibc.core.client.v1.QueryOuterClass.QueryClientParamsRequest request,
@@ -642,6 +701,16 @@ public final class QueryGrpc {
 
     /**
      * <pre>
+     * ConsensusStateHeights queries the height of every consensus states associated with a given client.
+     * </pre>
+     */
+    public ibc.core.client.v1.QueryOuterClass.QueryConsensusStateHeightsResponse consensusStateHeights(ibc.core.client.v1.QueryOuterClass.QueryConsensusStateHeightsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getConsensusStateHeightsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * Status queries the status of an IBC client.
      * </pre>
      */
@@ -652,7 +721,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * ClientParams queries all parameters of the ibc client.
+     * ClientParams queries all parameters of the ibc client submodule.
      * </pre>
      */
     public ibc.core.client.v1.QueryOuterClass.QueryClientParamsResponse clientParams(ibc.core.client.v1.QueryOuterClass.QueryClientParamsRequest request) {
@@ -746,6 +815,17 @@ public final class QueryGrpc {
 
     /**
      * <pre>
+     * ConsensusStateHeights queries the height of every consensus states associated with a given client.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<ibc.core.client.v1.QueryOuterClass.QueryConsensusStateHeightsResponse> consensusStateHeights(
+        ibc.core.client.v1.QueryOuterClass.QueryConsensusStateHeightsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getConsensusStateHeightsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Status queries the status of an IBC client.
      * </pre>
      */
@@ -757,7 +837,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * ClientParams queries all parameters of the ibc client.
+     * ClientParams queries all parameters of the ibc client submodule.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<ibc.core.client.v1.QueryOuterClass.QueryClientParamsResponse> clientParams(
@@ -793,10 +873,11 @@ public final class QueryGrpc {
   private static final int METHODID_CLIENT_STATES = 1;
   private static final int METHODID_CONSENSUS_STATE = 2;
   private static final int METHODID_CONSENSUS_STATES = 3;
-  private static final int METHODID_CLIENT_STATUS = 4;
-  private static final int METHODID_CLIENT_PARAMS = 5;
-  private static final int METHODID_UPGRADED_CLIENT_STATE = 6;
-  private static final int METHODID_UPGRADED_CONSENSUS_STATE = 7;
+  private static final int METHODID_CONSENSUS_STATE_HEIGHTS = 4;
+  private static final int METHODID_CLIENT_STATUS = 5;
+  private static final int METHODID_CLIENT_PARAMS = 6;
+  private static final int METHODID_UPGRADED_CLIENT_STATE = 7;
+  private static final int METHODID_UPGRADED_CONSENSUS_STATE = 8;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -830,6 +911,10 @@ public final class QueryGrpc {
         case METHODID_CONSENSUS_STATES:
           serviceImpl.consensusStates((ibc.core.client.v1.QueryOuterClass.QueryConsensusStatesRequest) request,
               (io.grpc.stub.StreamObserver<ibc.core.client.v1.QueryOuterClass.QueryConsensusStatesResponse>) responseObserver);
+          break;
+        case METHODID_CONSENSUS_STATE_HEIGHTS:
+          serviceImpl.consensusStateHeights((ibc.core.client.v1.QueryOuterClass.QueryConsensusStateHeightsRequest) request,
+              (io.grpc.stub.StreamObserver<ibc.core.client.v1.QueryOuterClass.QueryConsensusStateHeightsResponse>) responseObserver);
           break;
         case METHODID_CLIENT_STATUS:
           serviceImpl.clientStatus((ibc.core.client.v1.QueryOuterClass.QueryClientStatusRequest) request,
@@ -912,6 +997,7 @@ public final class QueryGrpc {
               .addMethod(getClientStatesMethod())
               .addMethod(getConsensusStateMethod())
               .addMethod(getConsensusStatesMethod())
+              .addMethod(getConsensusStateHeightsMethod())
               .addMethod(getClientStatusMethod())
               .addMethod(getClientParamsMethod())
               .addMethod(getUpgradedClientStateMethod())

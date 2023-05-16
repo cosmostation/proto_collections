@@ -9089,6 +9089,1121 @@ public final class QueryOuterClass {
 
   }
 
+  public interface QueryConnectionParamsRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:ibc.core.connection.v1.QueryConnectionParamsRequest)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * QueryConnectionParamsRequest is the request type for the Query/ConnectionParams RPC method.
+   * </pre>
+   *
+   * Protobuf type {@code ibc.core.connection.v1.QueryConnectionParamsRequest}
+   */
+  public static final class QueryConnectionParamsRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:ibc.core.connection.v1.QueryConnectionParamsRequest)
+      QueryConnectionParamsRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use QueryConnectionParamsRequest.newBuilder() to construct.
+    private QueryConnectionParamsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private QueryConnectionParamsRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryConnectionParamsRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private QueryConnectionParamsRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return ibc.core.connection.v1.QueryOuterClass.internal_static_ibc_core_connection_v1_QueryConnectionParamsRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return ibc.core.connection.v1.QueryOuterClass.internal_static_ibc_core_connection_v1_QueryConnectionParamsRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest.class, ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest)) {
+        return super.equals(obj);
+      }
+      ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest other = (ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * QueryConnectionParamsRequest is the request type for the Query/ConnectionParams RPC method.
+     * </pre>
+     *
+     * Protobuf type {@code ibc.core.connection.v1.QueryConnectionParamsRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:ibc.core.connection.v1.QueryConnectionParamsRequest)
+        ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return ibc.core.connection.v1.QueryOuterClass.internal_static_ibc_core_connection_v1_QueryConnectionParamsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return ibc.core.connection.v1.QueryOuterClass.internal_static_ibc_core_connection_v1_QueryConnectionParamsRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest.class, ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest.Builder.class);
+      }
+
+      // Construct using ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return ibc.core.connection.v1.QueryOuterClass.internal_static_ibc_core_connection_v1_QueryConnectionParamsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest getDefaultInstanceForType() {
+        return ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest build() {
+        ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest buildPartial() {
+        ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest result = new ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest) {
+          return mergeFrom((ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest other) {
+        if (other == ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:ibc.core.connection.v1.QueryConnectionParamsRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:ibc.core.connection.v1.QueryConnectionParamsRequest)
+    private static final ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest();
+    }
+
+    public static ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QueryConnectionParamsRequest>
+        PARSER = new com.google.protobuf.AbstractParser<QueryConnectionParamsRequest>() {
+      @java.lang.Override
+      public QueryConnectionParamsRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new QueryConnectionParamsRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<QueryConnectionParamsRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QueryConnectionParamsRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface QueryConnectionParamsResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:ibc.core.connection.v1.QueryConnectionParamsResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * params defines the parameters of the module.
+     * </pre>
+     *
+     * <code>.ibc.core.connection.v1.Params params = 1;</code>
+     * @return Whether the params field is set.
+     */
+    boolean hasParams();
+    /**
+     * <pre>
+     * params defines the parameters of the module.
+     * </pre>
+     *
+     * <code>.ibc.core.connection.v1.Params params = 1;</code>
+     * @return The params.
+     */
+    ibc.core.connection.v1.Connection.Params getParams();
+    /**
+     * <pre>
+     * params defines the parameters of the module.
+     * </pre>
+     *
+     * <code>.ibc.core.connection.v1.Params params = 1;</code>
+     */
+    ibc.core.connection.v1.Connection.ParamsOrBuilder getParamsOrBuilder();
+  }
+  /**
+   * <pre>
+   * QueryConnectionParamsResponse is the response type for the Query/ConnectionParams RPC method.
+   * </pre>
+   *
+   * Protobuf type {@code ibc.core.connection.v1.QueryConnectionParamsResponse}
+   */
+  public static final class QueryConnectionParamsResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:ibc.core.connection.v1.QueryConnectionParamsResponse)
+      QueryConnectionParamsResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use QueryConnectionParamsResponse.newBuilder() to construct.
+    private QueryConnectionParamsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private QueryConnectionParamsResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryConnectionParamsResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private QueryConnectionParamsResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              ibc.core.connection.v1.Connection.Params.Builder subBuilder = null;
+              if (params_ != null) {
+                subBuilder = params_.toBuilder();
+              }
+              params_ = input.readMessage(ibc.core.connection.v1.Connection.Params.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(params_);
+                params_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return ibc.core.connection.v1.QueryOuterClass.internal_static_ibc_core_connection_v1_QueryConnectionParamsResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return ibc.core.connection.v1.QueryOuterClass.internal_static_ibc_core_connection_v1_QueryConnectionParamsResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse.class, ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse.Builder.class);
+    }
+
+    public static final int PARAMS_FIELD_NUMBER = 1;
+    private ibc.core.connection.v1.Connection.Params params_;
+    /**
+     * <pre>
+     * params defines the parameters of the module.
+     * </pre>
+     *
+     * <code>.ibc.core.connection.v1.Params params = 1;</code>
+     * @return Whether the params field is set.
+     */
+    @java.lang.Override
+    public boolean hasParams() {
+      return params_ != null;
+    }
+    /**
+     * <pre>
+     * params defines the parameters of the module.
+     * </pre>
+     *
+     * <code>.ibc.core.connection.v1.Params params = 1;</code>
+     * @return The params.
+     */
+    @java.lang.Override
+    public ibc.core.connection.v1.Connection.Params getParams() {
+      return params_ == null ? ibc.core.connection.v1.Connection.Params.getDefaultInstance() : params_;
+    }
+    /**
+     * <pre>
+     * params defines the parameters of the module.
+     * </pre>
+     *
+     * <code>.ibc.core.connection.v1.Params params = 1;</code>
+     */
+    @java.lang.Override
+    public ibc.core.connection.v1.Connection.ParamsOrBuilder getParamsOrBuilder() {
+      return getParams();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (params_ != null) {
+        output.writeMessage(1, getParams());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (params_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getParams());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse)) {
+        return super.equals(obj);
+      }
+      ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse other = (ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse) obj;
+
+      if (hasParams() != other.hasParams()) return false;
+      if (hasParams()) {
+        if (!getParams()
+            .equals(other.getParams())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasParams()) {
+        hash = (37 * hash) + PARAMS_FIELD_NUMBER;
+        hash = (53 * hash) + getParams().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * QueryConnectionParamsResponse is the response type for the Query/ConnectionParams RPC method.
+     * </pre>
+     *
+     * Protobuf type {@code ibc.core.connection.v1.QueryConnectionParamsResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:ibc.core.connection.v1.QueryConnectionParamsResponse)
+        ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return ibc.core.connection.v1.QueryOuterClass.internal_static_ibc_core_connection_v1_QueryConnectionParamsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return ibc.core.connection.v1.QueryOuterClass.internal_static_ibc_core_connection_v1_QueryConnectionParamsResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse.class, ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse.Builder.class);
+      }
+
+      // Construct using ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (paramsBuilder_ == null) {
+          params_ = null;
+        } else {
+          params_ = null;
+          paramsBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return ibc.core.connection.v1.QueryOuterClass.internal_static_ibc_core_connection_v1_QueryConnectionParamsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse getDefaultInstanceForType() {
+        return ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse build() {
+        ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse buildPartial() {
+        ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse result = new ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse(this);
+        if (paramsBuilder_ == null) {
+          result.params_ = params_;
+        } else {
+          result.params_ = paramsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse) {
+          return mergeFrom((ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse other) {
+        if (other == ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse.getDefaultInstance()) return this;
+        if (other.hasParams()) {
+          mergeParams(other.getParams());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private ibc.core.connection.v1.Connection.Params params_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ibc.core.connection.v1.Connection.Params, ibc.core.connection.v1.Connection.Params.Builder, ibc.core.connection.v1.Connection.ParamsOrBuilder> paramsBuilder_;
+      /**
+       * <pre>
+       * params defines the parameters of the module.
+       * </pre>
+       *
+       * <code>.ibc.core.connection.v1.Params params = 1;</code>
+       * @return Whether the params field is set.
+       */
+      public boolean hasParams() {
+        return paramsBuilder_ != null || params_ != null;
+      }
+      /**
+       * <pre>
+       * params defines the parameters of the module.
+       * </pre>
+       *
+       * <code>.ibc.core.connection.v1.Params params = 1;</code>
+       * @return The params.
+       */
+      public ibc.core.connection.v1.Connection.Params getParams() {
+        if (paramsBuilder_ == null) {
+          return params_ == null ? ibc.core.connection.v1.Connection.Params.getDefaultInstance() : params_;
+        } else {
+          return paramsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * params defines the parameters of the module.
+       * </pre>
+       *
+       * <code>.ibc.core.connection.v1.Params params = 1;</code>
+       */
+      public Builder setParams(ibc.core.connection.v1.Connection.Params value) {
+        if (paramsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          params_ = value;
+          onChanged();
+        } else {
+          paramsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * params defines the parameters of the module.
+       * </pre>
+       *
+       * <code>.ibc.core.connection.v1.Params params = 1;</code>
+       */
+      public Builder setParams(
+          ibc.core.connection.v1.Connection.Params.Builder builderForValue) {
+        if (paramsBuilder_ == null) {
+          params_ = builderForValue.build();
+          onChanged();
+        } else {
+          paramsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * params defines the parameters of the module.
+       * </pre>
+       *
+       * <code>.ibc.core.connection.v1.Params params = 1;</code>
+       */
+      public Builder mergeParams(ibc.core.connection.v1.Connection.Params value) {
+        if (paramsBuilder_ == null) {
+          if (params_ != null) {
+            params_ =
+              ibc.core.connection.v1.Connection.Params.newBuilder(params_).mergeFrom(value).buildPartial();
+          } else {
+            params_ = value;
+          }
+          onChanged();
+        } else {
+          paramsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * params defines the parameters of the module.
+       * </pre>
+       *
+       * <code>.ibc.core.connection.v1.Params params = 1;</code>
+       */
+      public Builder clearParams() {
+        if (paramsBuilder_ == null) {
+          params_ = null;
+          onChanged();
+        } else {
+          params_ = null;
+          paramsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * params defines the parameters of the module.
+       * </pre>
+       *
+       * <code>.ibc.core.connection.v1.Params params = 1;</code>
+       */
+      public ibc.core.connection.v1.Connection.Params.Builder getParamsBuilder() {
+        
+        onChanged();
+        return getParamsFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * params defines the parameters of the module.
+       * </pre>
+       *
+       * <code>.ibc.core.connection.v1.Params params = 1;</code>
+       */
+      public ibc.core.connection.v1.Connection.ParamsOrBuilder getParamsOrBuilder() {
+        if (paramsBuilder_ != null) {
+          return paramsBuilder_.getMessageOrBuilder();
+        } else {
+          return params_ == null ?
+              ibc.core.connection.v1.Connection.Params.getDefaultInstance() : params_;
+        }
+      }
+      /**
+       * <pre>
+       * params defines the parameters of the module.
+       * </pre>
+       *
+       * <code>.ibc.core.connection.v1.Params params = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ibc.core.connection.v1.Connection.Params, ibc.core.connection.v1.Connection.Params.Builder, ibc.core.connection.v1.Connection.ParamsOrBuilder> 
+          getParamsFieldBuilder() {
+        if (paramsBuilder_ == null) {
+          paramsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ibc.core.connection.v1.Connection.Params, ibc.core.connection.v1.Connection.Params.Builder, ibc.core.connection.v1.Connection.ParamsOrBuilder>(
+                  getParams(),
+                  getParentForChildren(),
+                  isClean());
+          params_ = null;
+        }
+        return paramsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:ibc.core.connection.v1.QueryConnectionParamsResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:ibc.core.connection.v1.QueryConnectionParamsResponse)
+    private static final ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse();
+    }
+
+    public static ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QueryConnectionParamsResponse>
+        PARSER = new com.google.protobuf.AbstractParser<QueryConnectionParamsResponse>() {
+      @java.lang.Override
+      public QueryConnectionParamsResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new QueryConnectionParamsResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<QueryConnectionParamsResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QueryConnectionParamsResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public ibc.core.connection.v1.QueryOuterClass.QueryConnectionParamsResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_ibc_core_connection_v1_QueryConnectionRequest_descriptor;
   private static final 
@@ -9139,6 +10254,16 @@ public final class QueryOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ibc_core_connection_v1_QueryConnectionConsensusStateResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ibc_core_connection_v1_QueryConnectionParamsRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ibc_core_connection_v1_QueryConnectionParamsRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ibc_core_connection_v1_QueryConnectionParamsResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ibc_core_connection_v1_QueryConnectionParamsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -9186,35 +10311,42 @@ public final class QueryOuterClass {
       "\017consensus_state\030\001 \001(\0132\025.google.protobuf" +
       "2.Any\022\021\n\tclient_id\030\002 \001(\t\022\r\n\005proof\030\003 \001(\014\022" +
       "6\n\014proof_height\030\004 \001(\0132\032.ibc.core.client." +
-      "v1.HeightB\004\310\336\037\0002\217\010\n\005Query\022\252\001\n\nConnection" +
-      "\022..ibc.core.connection.v1.QueryConnectio" +
-      "nRequest\032/.ibc.core.connection.v1.QueryC" +
-      "onnectionResponse\";\202\323\344\223\0025\0223/ibc/core/con" +
-      "nection/v1/connections/{connection_id}\022\235" +
-      "\001\n\013Connections\022/.ibc.core.connection.v1." +
-      "QueryConnectionsRequest\0320.ibc.core.conne" +
-      "ction.v1.QueryConnectionsResponse\"+\202\323\344\223\002" +
-      "%\022#/ibc/core/connection/v1/connections\022\302" +
-      "\001\n\021ClientConnections\0225.ibc.core.connecti" +
-      "on.v1.QueryClientConnectionsRequest\0326.ib" +
-      "c.core.connection.v1.QueryClientConnecti" +
-      "onsResponse\">\202\323\344\223\0028\0226/ibc/core/connectio" +
-      "n/v1/client_connections/{client_id}\022\330\001\n\025" +
-      "ConnectionClientState\0229.ibc.core.connect" +
-      "ion.v1.QueryConnectionClientStateRequest" +
-      "\032:.ibc.core.connection.v1.QueryConnectio" +
-      "nClientStateResponse\"H\202\323\344\223\002B\022@/ibc/core/" +
-      "connection/v1/connections/{connection_id" +
-      "}/client_state\022\230\002\n\030ConnectionConsensusSt" +
-      "ate\022<.ibc.core.connection.v1.QueryConnec" +
-      "tionConsensusStateRequest\032=.ibc.core.con" +
-      "nection.v1.QueryConnectionConsensusState" +
-      "Response\"\177\202\323\344\223\002y\022w/ibc/core/connection/v" +
-      "1/connections/{connection_id}/consensus_" +
-      "state/revision/{revision_number}/height/" +
-      "{revision_height}B>Z<github.com/cosmos/i" +
-      "bc-go/v2/modules/core/03-connection/type" +
-      "sb\006proto3"
+      "v1.HeightB\004\310\336\037\000\"\036\n\034QueryConnectionParams" +
+      "Request\"O\n\035QueryConnectionParamsResponse" +
+      "\022.\n\006params\030\001 \001(\0132\036.ibc.core.connection.v" +
+      "1.Params2\271\t\n\005Query\022\252\001\n\nConnection\022..ibc." +
+      "core.connection.v1.QueryConnectionReques" +
+      "t\032/.ibc.core.connection.v1.QueryConnecti" +
+      "onResponse\";\202\323\344\223\0025\0223/ibc/core/connection" +
+      "/v1/connections/{connection_id}\022\235\001\n\013Conn" +
+      "ections\022/.ibc.core.connection.v1.QueryCo" +
+      "nnectionsRequest\0320.ibc.core.connection.v" +
+      "1.QueryConnectionsResponse\"+\202\323\344\223\002%\022#/ibc" +
+      "/core/connection/v1/connections\022\302\001\n\021Clie" +
+      "ntConnections\0225.ibc.core.connection.v1.Q" +
+      "ueryClientConnectionsRequest\0326.ibc.core." +
+      "connection.v1.QueryClientConnectionsResp" +
+      "onse\">\202\323\344\223\0028\0226/ibc/core/connection/v1/cl" +
+      "ient_connections/{client_id}\022\330\001\n\025Connect" +
+      "ionClientState\0229.ibc.core.connection.v1." +
+      "QueryConnectionClientStateRequest\032:.ibc." +
+      "core.connection.v1.QueryConnectionClient" +
+      "StateResponse\"H\202\323\344\223\002B\022@/ibc/core/connect" +
+      "ion/v1/connections/{connection_id}/clien" +
+      "t_state\022\230\002\n\030ConnectionConsensusState\022<.i" +
+      "bc.core.connection.v1.QueryConnectionCon" +
+      "sensusStateRequest\032=.ibc.core.connection" +
+      ".v1.QueryConnectionConsensusStateRespons" +
+      "e\"\177\202\323\344\223\002y\022w/ibc/core/connection/v1/conne" +
+      "ctions/{connection_id}/consensus_state/r" +
+      "evision/{revision_number}/height/{revisi" +
+      "on_height}\022\247\001\n\020ConnectionParams\0224.ibc.co" +
+      "re.connection.v1.QueryConnectionParamsRe" +
+      "quest\0325.ibc.core.connection.v1.QueryConn" +
+      "ectionParamsResponse\"&\202\323\344\223\002 \022\036/ibc/core/" +
+      "connection/v1/paramsB>Z<github.com/cosmo" +
+      "s/ibc-go/v7/modules/core/03-connection/t" +
+      "ypesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -9286,6 +10418,18 @@ public final class QueryOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ibc_core_connection_v1_QueryConnectionConsensusStateResponse_descriptor,
         new java.lang.String[] { "ConsensusState", "ClientId", "Proof", "ProofHeight", });
+    internal_static_ibc_core_connection_v1_QueryConnectionParamsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_ibc_core_connection_v1_QueryConnectionParamsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ibc_core_connection_v1_QueryConnectionParamsRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_ibc_core_connection_v1_QueryConnectionParamsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_ibc_core_connection_v1_QueryConnectionParamsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ibc_core_connection_v1_QueryConnectionParamsResponse_descriptor,
+        new java.lang.String[] { "Params", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.protobuf2.GoGoProtos.moretags);

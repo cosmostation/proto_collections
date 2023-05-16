@@ -12588,9 +12588,9 @@ public final class Solomachine {
       "PACKET_RECEIPT_ABSENCE\020\007\032\030\212\235 \024PACKETRECE" +
       "IPTABSENCE\0226\n\034DATA_TYPE_NEXT_SEQUENCE_RE" +
       "CV\020\010\032\024\212\235 \020NEXTSEQUENCERECV\022 \n\020DATA_TYPE_" +
-      "HEADER\020\t\032\n\212\235 \006HEADER\032\004\210\243\036\000BHZFgithub.com" +
-      "/cosmos/ibc-go/v2/modules/light-clients/" +
-      "06-solomachine/typesb\006proto3"
+      "HEADER\020\t\032\n\212\235 \006HEADER\032\004\210\243\036\000BBZ@github.com" +
+      "/cosmos/ibc-go/v7/modules/core/02-client" +
+      "/migrations/v7b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

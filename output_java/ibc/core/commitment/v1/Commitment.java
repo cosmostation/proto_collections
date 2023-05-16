@@ -1675,27 +1675,27 @@ public final class Commitment {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .ics23.CommitmentProof proofs = 1;</code>
+     * <code>repeated .cosmos.ics23.v1.CommitmentProof proofs = 1;</code>
      */
-    java.util.List<ics23.Proofs.CommitmentProof> 
+    java.util.List<cosmos.ics23.v1.Proofs.CommitmentProof> 
         getProofsList();
     /**
-     * <code>repeated .ics23.CommitmentProof proofs = 1;</code>
+     * <code>repeated .cosmos.ics23.v1.CommitmentProof proofs = 1;</code>
      */
-    ics23.Proofs.CommitmentProof getProofs(int index);
+    cosmos.ics23.v1.Proofs.CommitmentProof getProofs(int index);
     /**
-     * <code>repeated .ics23.CommitmentProof proofs = 1;</code>
+     * <code>repeated .cosmos.ics23.v1.CommitmentProof proofs = 1;</code>
      */
     int getProofsCount();
     /**
-     * <code>repeated .ics23.CommitmentProof proofs = 1;</code>
+     * <code>repeated .cosmos.ics23.v1.CommitmentProof proofs = 1;</code>
      */
-    java.util.List<? extends ics23.Proofs.CommitmentProofOrBuilder> 
+    java.util.List<? extends cosmos.ics23.v1.Proofs.CommitmentProofOrBuilder> 
         getProofsOrBuilderList();
     /**
-     * <code>repeated .ics23.CommitmentProof proofs = 1;</code>
+     * <code>repeated .cosmos.ics23.v1.CommitmentProof proofs = 1;</code>
      */
-    ics23.Proofs.CommitmentProofOrBuilder getProofsOrBuilder(
+    cosmos.ics23.v1.Proofs.CommitmentProofOrBuilder getProofsOrBuilder(
         int index);
   }
   /**
@@ -1755,11 +1755,11 @@ public final class Commitment {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                proofs_ = new java.util.ArrayList<ics23.Proofs.CommitmentProof>();
+                proofs_ = new java.util.ArrayList<cosmos.ics23.v1.Proofs.CommitmentProof>();
                 mutable_bitField0_ |= 0x00000001;
               }
               proofs_.add(
-                  input.readMessage(ics23.Proofs.CommitmentProof.parser(), extensionRegistry));
+                  input.readMessage(cosmos.ics23.v1.Proofs.CommitmentProof.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -1798,41 +1798,41 @@ public final class Commitment {
     }
 
     public static final int PROOFS_FIELD_NUMBER = 1;
-    private java.util.List<ics23.Proofs.CommitmentProof> proofs_;
+    private java.util.List<cosmos.ics23.v1.Proofs.CommitmentProof> proofs_;
     /**
-     * <code>repeated .ics23.CommitmentProof proofs = 1;</code>
+     * <code>repeated .cosmos.ics23.v1.CommitmentProof proofs = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<ics23.Proofs.CommitmentProof> getProofsList() {
+    public java.util.List<cosmos.ics23.v1.Proofs.CommitmentProof> getProofsList() {
       return proofs_;
     }
     /**
-     * <code>repeated .ics23.CommitmentProof proofs = 1;</code>
+     * <code>repeated .cosmos.ics23.v1.CommitmentProof proofs = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends ics23.Proofs.CommitmentProofOrBuilder> 
+    public java.util.List<? extends cosmos.ics23.v1.Proofs.CommitmentProofOrBuilder> 
         getProofsOrBuilderList() {
       return proofs_;
     }
     /**
-     * <code>repeated .ics23.CommitmentProof proofs = 1;</code>
+     * <code>repeated .cosmos.ics23.v1.CommitmentProof proofs = 1;</code>
      */
     @java.lang.Override
     public int getProofsCount() {
       return proofs_.size();
     }
     /**
-     * <code>repeated .ics23.CommitmentProof proofs = 1;</code>
+     * <code>repeated .cosmos.ics23.v1.CommitmentProof proofs = 1;</code>
      */
     @java.lang.Override
-    public ics23.Proofs.CommitmentProof getProofs(int index) {
+    public cosmos.ics23.v1.Proofs.CommitmentProof getProofs(int index) {
       return proofs_.get(index);
     }
     /**
-     * <code>repeated .ics23.CommitmentProof proofs = 1;</code>
+     * <code>repeated .cosmos.ics23.v1.CommitmentProof proofs = 1;</code>
      */
     @java.lang.Override
-    public ics23.Proofs.CommitmentProofOrBuilder getProofsOrBuilder(
+    public cosmos.ics23.v1.Proofs.CommitmentProofOrBuilder getProofsOrBuilder(
         int index) {
       return proofs_.get(index);
     }
@@ -2187,22 +2187,22 @@ public final class Commitment {
       }
       private int bitField0_;
 
-      private java.util.List<ics23.Proofs.CommitmentProof> proofs_ =
+      private java.util.List<cosmos.ics23.v1.Proofs.CommitmentProof> proofs_ =
         java.util.Collections.emptyList();
       private void ensureProofsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          proofs_ = new java.util.ArrayList<ics23.Proofs.CommitmentProof>(proofs_);
+          proofs_ = new java.util.ArrayList<cosmos.ics23.v1.Proofs.CommitmentProof>(proofs_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          ics23.Proofs.CommitmentProof, ics23.Proofs.CommitmentProof.Builder, ics23.Proofs.CommitmentProofOrBuilder> proofsBuilder_;
+          cosmos.ics23.v1.Proofs.CommitmentProof, cosmos.ics23.v1.Proofs.CommitmentProof.Builder, cosmos.ics23.v1.Proofs.CommitmentProofOrBuilder> proofsBuilder_;
 
       /**
-       * <code>repeated .ics23.CommitmentProof proofs = 1;</code>
+       * <code>repeated .cosmos.ics23.v1.CommitmentProof proofs = 1;</code>
        */
-      public java.util.List<ics23.Proofs.CommitmentProof> getProofsList() {
+      public java.util.List<cosmos.ics23.v1.Proofs.CommitmentProof> getProofsList() {
         if (proofsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(proofs_);
         } else {
@@ -2210,7 +2210,7 @@ public final class Commitment {
         }
       }
       /**
-       * <code>repeated .ics23.CommitmentProof proofs = 1;</code>
+       * <code>repeated .cosmos.ics23.v1.CommitmentProof proofs = 1;</code>
        */
       public int getProofsCount() {
         if (proofsBuilder_ == null) {
@@ -2220,9 +2220,9 @@ public final class Commitment {
         }
       }
       /**
-       * <code>repeated .ics23.CommitmentProof proofs = 1;</code>
+       * <code>repeated .cosmos.ics23.v1.CommitmentProof proofs = 1;</code>
        */
-      public ics23.Proofs.CommitmentProof getProofs(int index) {
+      public cosmos.ics23.v1.Proofs.CommitmentProof getProofs(int index) {
         if (proofsBuilder_ == null) {
           return proofs_.get(index);
         } else {
@@ -2230,10 +2230,10 @@ public final class Commitment {
         }
       }
       /**
-       * <code>repeated .ics23.CommitmentProof proofs = 1;</code>
+       * <code>repeated .cosmos.ics23.v1.CommitmentProof proofs = 1;</code>
        */
       public Builder setProofs(
-          int index, ics23.Proofs.CommitmentProof value) {
+          int index, cosmos.ics23.v1.Proofs.CommitmentProof value) {
         if (proofsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2247,10 +2247,10 @@ public final class Commitment {
         return this;
       }
       /**
-       * <code>repeated .ics23.CommitmentProof proofs = 1;</code>
+       * <code>repeated .cosmos.ics23.v1.CommitmentProof proofs = 1;</code>
        */
       public Builder setProofs(
-          int index, ics23.Proofs.CommitmentProof.Builder builderForValue) {
+          int index, cosmos.ics23.v1.Proofs.CommitmentProof.Builder builderForValue) {
         if (proofsBuilder_ == null) {
           ensureProofsIsMutable();
           proofs_.set(index, builderForValue.build());
@@ -2261,9 +2261,9 @@ public final class Commitment {
         return this;
       }
       /**
-       * <code>repeated .ics23.CommitmentProof proofs = 1;</code>
+       * <code>repeated .cosmos.ics23.v1.CommitmentProof proofs = 1;</code>
        */
-      public Builder addProofs(ics23.Proofs.CommitmentProof value) {
+      public Builder addProofs(cosmos.ics23.v1.Proofs.CommitmentProof value) {
         if (proofsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2277,10 +2277,10 @@ public final class Commitment {
         return this;
       }
       /**
-       * <code>repeated .ics23.CommitmentProof proofs = 1;</code>
+       * <code>repeated .cosmos.ics23.v1.CommitmentProof proofs = 1;</code>
        */
       public Builder addProofs(
-          int index, ics23.Proofs.CommitmentProof value) {
+          int index, cosmos.ics23.v1.Proofs.CommitmentProof value) {
         if (proofsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2294,10 +2294,10 @@ public final class Commitment {
         return this;
       }
       /**
-       * <code>repeated .ics23.CommitmentProof proofs = 1;</code>
+       * <code>repeated .cosmos.ics23.v1.CommitmentProof proofs = 1;</code>
        */
       public Builder addProofs(
-          ics23.Proofs.CommitmentProof.Builder builderForValue) {
+          cosmos.ics23.v1.Proofs.CommitmentProof.Builder builderForValue) {
         if (proofsBuilder_ == null) {
           ensureProofsIsMutable();
           proofs_.add(builderForValue.build());
@@ -2308,10 +2308,10 @@ public final class Commitment {
         return this;
       }
       /**
-       * <code>repeated .ics23.CommitmentProof proofs = 1;</code>
+       * <code>repeated .cosmos.ics23.v1.CommitmentProof proofs = 1;</code>
        */
       public Builder addProofs(
-          int index, ics23.Proofs.CommitmentProof.Builder builderForValue) {
+          int index, cosmos.ics23.v1.Proofs.CommitmentProof.Builder builderForValue) {
         if (proofsBuilder_ == null) {
           ensureProofsIsMutable();
           proofs_.add(index, builderForValue.build());
@@ -2322,10 +2322,10 @@ public final class Commitment {
         return this;
       }
       /**
-       * <code>repeated .ics23.CommitmentProof proofs = 1;</code>
+       * <code>repeated .cosmos.ics23.v1.CommitmentProof proofs = 1;</code>
        */
       public Builder addAllProofs(
-          java.lang.Iterable<? extends ics23.Proofs.CommitmentProof> values) {
+          java.lang.Iterable<? extends cosmos.ics23.v1.Proofs.CommitmentProof> values) {
         if (proofsBuilder_ == null) {
           ensureProofsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -2337,7 +2337,7 @@ public final class Commitment {
         return this;
       }
       /**
-       * <code>repeated .ics23.CommitmentProof proofs = 1;</code>
+       * <code>repeated .cosmos.ics23.v1.CommitmentProof proofs = 1;</code>
        */
       public Builder clearProofs() {
         if (proofsBuilder_ == null) {
@@ -2350,7 +2350,7 @@ public final class Commitment {
         return this;
       }
       /**
-       * <code>repeated .ics23.CommitmentProof proofs = 1;</code>
+       * <code>repeated .cosmos.ics23.v1.CommitmentProof proofs = 1;</code>
        */
       public Builder removeProofs(int index) {
         if (proofsBuilder_ == null) {
@@ -2363,16 +2363,16 @@ public final class Commitment {
         return this;
       }
       /**
-       * <code>repeated .ics23.CommitmentProof proofs = 1;</code>
+       * <code>repeated .cosmos.ics23.v1.CommitmentProof proofs = 1;</code>
        */
-      public ics23.Proofs.CommitmentProof.Builder getProofsBuilder(
+      public cosmos.ics23.v1.Proofs.CommitmentProof.Builder getProofsBuilder(
           int index) {
         return getProofsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ics23.CommitmentProof proofs = 1;</code>
+       * <code>repeated .cosmos.ics23.v1.CommitmentProof proofs = 1;</code>
        */
-      public ics23.Proofs.CommitmentProofOrBuilder getProofsOrBuilder(
+      public cosmos.ics23.v1.Proofs.CommitmentProofOrBuilder getProofsOrBuilder(
           int index) {
         if (proofsBuilder_ == null) {
           return proofs_.get(index);  } else {
@@ -2380,9 +2380,9 @@ public final class Commitment {
         }
       }
       /**
-       * <code>repeated .ics23.CommitmentProof proofs = 1;</code>
+       * <code>repeated .cosmos.ics23.v1.CommitmentProof proofs = 1;</code>
        */
-      public java.util.List<? extends ics23.Proofs.CommitmentProofOrBuilder> 
+      public java.util.List<? extends cosmos.ics23.v1.Proofs.CommitmentProofOrBuilder> 
            getProofsOrBuilderList() {
         if (proofsBuilder_ != null) {
           return proofsBuilder_.getMessageOrBuilderList();
@@ -2391,33 +2391,33 @@ public final class Commitment {
         }
       }
       /**
-       * <code>repeated .ics23.CommitmentProof proofs = 1;</code>
+       * <code>repeated .cosmos.ics23.v1.CommitmentProof proofs = 1;</code>
        */
-      public ics23.Proofs.CommitmentProof.Builder addProofsBuilder() {
+      public cosmos.ics23.v1.Proofs.CommitmentProof.Builder addProofsBuilder() {
         return getProofsFieldBuilder().addBuilder(
-            ics23.Proofs.CommitmentProof.getDefaultInstance());
+            cosmos.ics23.v1.Proofs.CommitmentProof.getDefaultInstance());
       }
       /**
-       * <code>repeated .ics23.CommitmentProof proofs = 1;</code>
+       * <code>repeated .cosmos.ics23.v1.CommitmentProof proofs = 1;</code>
        */
-      public ics23.Proofs.CommitmentProof.Builder addProofsBuilder(
+      public cosmos.ics23.v1.Proofs.CommitmentProof.Builder addProofsBuilder(
           int index) {
         return getProofsFieldBuilder().addBuilder(
-            index, ics23.Proofs.CommitmentProof.getDefaultInstance());
+            index, cosmos.ics23.v1.Proofs.CommitmentProof.getDefaultInstance());
       }
       /**
-       * <code>repeated .ics23.CommitmentProof proofs = 1;</code>
+       * <code>repeated .cosmos.ics23.v1.CommitmentProof proofs = 1;</code>
        */
-      public java.util.List<ics23.Proofs.CommitmentProof.Builder> 
+      public java.util.List<cosmos.ics23.v1.Proofs.CommitmentProof.Builder> 
            getProofsBuilderList() {
         return getProofsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          ics23.Proofs.CommitmentProof, ics23.Proofs.CommitmentProof.Builder, ics23.Proofs.CommitmentProofOrBuilder> 
+          cosmos.ics23.v1.Proofs.CommitmentProof, cosmos.ics23.v1.Proofs.CommitmentProof.Builder, cosmos.ics23.v1.Proofs.CommitmentProofOrBuilder> 
           getProofsFieldBuilder() {
         if (proofsBuilder_ == null) {
           proofsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              ics23.Proofs.CommitmentProof, ics23.Proofs.CommitmentProof.Builder, ics23.Proofs.CommitmentProofOrBuilder>(
+              cosmos.ics23.v1.Proofs.CommitmentProof, cosmos.ics23.v1.Proofs.CommitmentProof.Builder, cosmos.ics23.v1.Proofs.CommitmentProofOrBuilder>(
                   proofs_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -2510,20 +2510,21 @@ public final class Commitment {
     java.lang.String[] descriptorData = {
       "\n\'ibc/core/commitment/v1/commitment.prot" +
       "o\022\026ibc.core.commitment.v1\032\024gogoproto/gog" +
-      "o.proto\032\023confio/proofs.proto\" \n\nMerkleRo" +
-      "ot\022\014\n\004hash\030\001 \001(\014:\004\210\240\037\000\"9\n\014MerklePrefix\022)" +
-      "\n\nkey_prefix\030\001 \001(\014B\025\362\336\037\021yaml:\"key_prefix" +
-      "\"\"9\n\nMerklePath\022%\n\010key_path\030\001 \003(\tB\023\362\336\037\017y" +
-      "aml:\"key_path\":\004\230\240\037\000\"5\n\013MerkleProof\022&\n\006p" +
-      "roofs\030\001 \003(\0132\026.ics23.CommitmentProofB>Z<g" +
-      "ithub.com/cosmos/ibc-go/v2/modules/core/" +
-      "23-commitment/typesb\006proto3"
+      "o.proto\032\034cosmos/ics23/v1/proofs.proto\" \n" +
+      "\nMerkleRoot\022\014\n\004hash\030\001 \001(\014:\004\210\240\037\000\"9\n\014Merkl" +
+      "ePrefix\022)\n\nkey_prefix\030\001 \001(\014B\025\362\336\037\021yaml:\"k" +
+      "ey_prefix\"\"9\n\nMerklePath\022%\n\010key_path\030\001 \003" +
+      "(\tB\023\362\336\037\017yaml:\"key_path\":\004\230\240\037\000\"?\n\013MerkleP" +
+      "roof\0220\n\006proofs\030\001 \003(\0132 .cosmos.ics23.v1.C" +
+      "ommitmentProofB>Z<github.com/cosmos/ibc-" +
+      "go/v7/modules/core/23-commitment/typesb\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf2.GoGoProtos.getDescriptor(),
-          ics23.Proofs.getDescriptor(),
+          cosmos.ics23.v1.Proofs.getDescriptor(),
         });
     internal_static_ibc_core_commitment_v1_MerkleRoot_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2557,7 +2558,7 @@ public final class Commitment {
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf2.GoGoProtos.getDescriptor();
-    ics23.Proofs.getDescriptor();
+    cosmos.ics23.v1.Proofs.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
